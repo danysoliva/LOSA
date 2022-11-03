@@ -35,20 +35,6 @@ namespace LOSA.Calidad.LoteConfConsumo
         {
             InitializeComponent();
             TipoBusquedaActual = pTipo;
-            //switch (TipoBusquedaActual)
-            //{
-            //    case TipoBusqueda.MateriaPrima:
-            //        StoreProcedureConfigActual = "sp_get_lista_materias_primas";
-            //        break;
-            //    case TipoBusqueda.ProductoTerminado:
-            //        StoreProcedureConfigActual = "";
-            //        break;
-            //    case TipoBusqueda.Empleados:
-            //        StoreProcedureConfigActual = "";
-            //        break;
-            //    default:
-            //        break;
-            //}
             StoreProcedureConfigActual = "sp_get_lista_materias_primas";
 
             //MateriaPrimaSelected = new MateriaPrima();

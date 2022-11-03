@@ -12,6 +12,7 @@ using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.RecepcionMP;
 using LOSA.Clases;
+using LOSA.Calidad.LoteConfConsumo;
 
 namespace LOSA.TransaccionesMP
 {
@@ -541,7 +542,8 @@ namespace LOSA.TransaccionesMP
 
         private void txtMP_Name_Click(object sender, EventArgs e)
         {
-            frmMP frm = new frmMP();
+            //frmMP frm = new frmMP();
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
             if (this.MdiParent != null)
             {
                 //frm.MdiParent = this.MdiParent;
@@ -549,9 +551,9 @@ namespace LOSA.TransaccionesMP
             }
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                txtMP_Name.Text = frm.MateriaPrima;
-                ItemCode = frm.ItemCode;
-                Id_MP = frm.id_mp;
+                txtMP_Name.Text = frm.ItemSeleccionado.ItemName;
+                ItemCode = frm.ItemSeleccionado.ItemCode;
+                Id_MP = frm.ItemSeleccionado.id;
                 MateriaPrima mp = new MateriaPrima();
                 if (mp.Get_if_mp_is_granel(Id_MP))
                 {

@@ -191,6 +191,7 @@ namespace LOSA.TransaccionesMP
             this.btnAjustePorLote = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorkerPRD = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerResumenMP = new System.ComponentModel.BackgroundWorker();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -362,13 +363,13 @@ namespace LOSA.TransaccionesMP
             // colexistencia
             // 
             this.colexistencia.Caption = "Existencia";
-            this.colexistencia.DisplayFormat.FormatString = "{0:#,###,##0.00} Kg.";
+            this.colexistencia.DisplayFormat.FormatString = "n2";
             this.colexistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia.FieldName = "existencia";
             this.colexistencia.Name = "colexistencia";
             this.colexistencia.OptionsColumn.AllowEdit = false;
             this.colexistencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "{0:0.##.##} Kg.")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.colexistencia.Visible = true;
             this.colexistencia.VisibleIndex = 6;
             this.colexistencia.Width = 166;
@@ -513,7 +514,7 @@ namespace LOSA.TransaccionesMP
             // colsalida
             // 
             this.colsalida.Caption = "Salida";
-            this.colsalida.DisplayFormat.FormatString = "{0:#,###,##0.00} Kg.";
+            this.colsalida.DisplayFormat.FormatString = "n2";
             this.colsalida.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsalida.FieldName = "salida";
             this.colsalida.Name = "colsalida";
@@ -544,7 +545,7 @@ namespace LOSA.TransaccionesMP
             // colentrada
             // 
             this.colentrada.Caption = "Entrada";
-            this.colentrada.DisplayFormat.FormatString = "{0:#,###,##0.00} Kg.";
+            this.colentrada.DisplayFormat.FormatString = "n2";
             this.colentrada.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colentrada.FieldName = "entrada";
             this.colentrada.Name = "colentrada";
@@ -653,13 +654,13 @@ namespace LOSA.TransaccionesMP
             // colexistencia1
             // 
             this.colexistencia1.Caption = "Totales";
-            this.colexistencia1.DisplayFormat.FormatString = "###,###,##0.00 Kg";
+            this.colexistencia1.DisplayFormat.FormatString = "n2";
             this.colexistencia1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia1.FieldName = "existencia";
             this.colexistencia1.Name = "colexistencia1";
             this.colexistencia1.OptionsColumn.AllowEdit = false;
             this.colexistencia1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:###,###,##0.00 Kg}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.colexistencia1.Visible = true;
             this.colexistencia1.VisibleIndex = 3;
             this.colexistencia1.Width = 820;
@@ -782,13 +783,13 @@ namespace LOSA.TransaccionesMP
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Existencia";
-            this.gridColumn1.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
+            this.gridColumn1.DisplayFormat.FormatString = "n2";
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "existencia";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "{0:0.##.##} Kg.")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 5;
             this.gridColumn1.Width = 87;
@@ -1049,13 +1050,13 @@ namespace LOSA.TransaccionesMP
             // gridColumn20
             // 
             this.gridColumn20.Caption = "Existencia Kg";
-            this.gridColumn20.DisplayFormat.FormatString = "##,###,##0.00 Kg";
+            this.gridColumn20.DisplayFormat.FormatString = "n2";
             this.gridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn20.FieldName = "existencia";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.OptionsColumn.AllowEdit = false;
             this.gridColumn20.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.00 Kg}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 3;
             this.gridColumn20.Width = 161;
@@ -1095,11 +1096,13 @@ namespace LOSA.TransaccionesMP
             // 
             // colexistencia_tm
             // 
-            this.colexistencia_tm.DisplayFormat.FormatString = "###,###,##0.00 TM";
+            this.colexistencia_tm.DisplayFormat.FormatString = "n2";
             this.colexistencia_tm.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_tm.FieldName = "existencia_tm";
             this.colexistencia_tm.Name = "colexistencia_tm";
             this.colexistencia_tm.OptionsColumn.AllowEdit = false;
+            this.colexistencia_tm.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", "SUMA={0:##,###,##0.##} TM")});
             this.colexistencia_tm.Visible = true;
             this.colexistencia_tm.VisibleIndex = 4;
             this.colexistencia_tm.Width = 143;
@@ -1352,6 +1355,7 @@ namespace LOSA.TransaccionesMP
             // tabNavigationPage6
             // 
             this.tabNavigationPage6.Caption = "Materia Prima por Bodega";
+            this.tabNavigationPage6.Controls.Add(this.simpleButton1);
             this.tabNavigationPage6.Controls.Add(this.grdMPBodega);
             this.tabNavigationPage6.Controls.Add(this.btnSearchMP);
             this.tabNavigationPage6.Controls.Add(this.textEdit1);
@@ -1425,13 +1429,13 @@ namespace LOSA.TransaccionesMP
             // colexistencia3
             // 
             this.colexistencia3.Caption = "Existencia Kg";
-            this.colexistencia3.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colexistencia3.DisplayFormat.FormatString = "n2";
             this.colexistencia3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia3.FieldName = "existencia";
             this.colexistencia3.Name = "colexistencia3";
             this.colexistencia3.OptionsColumn.AllowEdit = false;
             this.colexistencia3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:0.##.##} Kg")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.colexistencia3.Visible = true;
             this.colexistencia3.VisibleIndex = 6;
             this.colexistencia3.Width = 114;
@@ -1439,13 +1443,13 @@ namespace LOSA.TransaccionesMP
             // colexistencia_ud1
             // 
             this.colexistencia_ud1.Caption = "Existencia Unidades";
-            this.colexistencia_ud1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.colexistencia_ud1.DisplayFormat.FormatString = "n0";
             this.colexistencia_ud1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_ud1.FieldName = "existencia_ud";
             this.colexistencia_ud1.Name = "colexistencia_ud1";
             this.colexistencia_ud1.OptionsColumn.AllowEdit = false;
             this.colexistencia_ud1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_ud", "SUMA={0:0.##.##} Ud")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_ud", "SUMA={0:0.##} Ud")});
             this.colexistencia_ud1.Visible = true;
             this.colexistencia_ud1.VisibleIndex = 5;
             this.colexistencia_ud1.Width = 154;
@@ -1453,11 +1457,13 @@ namespace LOSA.TransaccionesMP
             // colexistencia_tm1
             // 
             this.colexistencia_tm1.Caption = "Existencia TM";
-            this.colexistencia_tm1.DisplayFormat.FormatString = "{0:0.##.##} Tm";
+            this.colexistencia_tm1.DisplayFormat.FormatString = "n2";
             this.colexistencia_tm1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_tm1.FieldName = "existencia_tm";
             this.colexistencia_tm1.Name = "colexistencia_tm1";
             this.colexistencia_tm1.OptionsColumn.AllowEdit = false;
+            this.colexistencia_tm1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", "SUMA={0:##,###,##0.##} TM")});
             this.colexistencia_tm1.Visible = true;
             this.colexistencia_tm1.VisibleIndex = 7;
             this.colexistencia_tm1.Width = 117;
@@ -1627,6 +1633,18 @@ namespace LOSA.TransaccionesMP
             // 
             this.backgroundWorkerResumenMP.WorkerSupportsCancellation = true;
             this.backgroundWorkerResumenMP.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerResumenMP_DoWork);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(1240, 7);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(114, 39);
+            this.simpleButton1.TabIndex = 16;
+            this.simpleButton1.Text = "Actualizar";
             // 
             // frmReporteInventarioKardexGeneral
             // 
@@ -1798,5 +1816,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.SimpleButton btnRefreshRptMP;
         private DevExpress.XtraEditors.SimpleButton btnRptPRD;
         private DevExpress.XtraEditors.SimpleButton btnRptMPyBod;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
