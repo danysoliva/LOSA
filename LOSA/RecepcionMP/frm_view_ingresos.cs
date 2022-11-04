@@ -100,5 +100,10 @@ namespace LOSA.RecepcionMP
                 
             }
         }
+
+        private void btnactualizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
