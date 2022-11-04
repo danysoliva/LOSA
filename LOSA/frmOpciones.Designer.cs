@@ -933,6 +933,7 @@
             this.simpleButton10.Size = new System.Drawing.Size(199, 42);
             this.simpleButton10.TabIndex = 34;
             this.simpleButton10.Text = "Ajuste de Inventario PT";
+            this.simpleButton10.Visible = false;
             this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
             // 
             // btnReq_PT
