@@ -51,7 +51,7 @@ namespace LOSA.TransaccionesMP
         }
         public void load_dataPorLotes()
         {
-            string query = @"sp_obtener_inventario_general_por_lote_reporte_vencimiento";
+            string query = @"[sp_obtener_inventario_general_por_lote_reporte_vencimientoV3]";
             //string query = @"sp_obtener_inventario_general_por_lote_reporte_vencimientV3";
             try
             {
