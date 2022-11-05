@@ -57,9 +57,9 @@ namespace LOSA.AlmacenesExterno
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryPrint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransferencia = new DevExpress.XtraEditors.SimpleButton();
-            this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).BeginInit();
@@ -247,6 +247,16 @@ namespace LOSA.AlmacenesExterno
             this.colusuario.VisibleIndex = 6;
             this.colusuario.Width = 105;
             // 
+            // colDocNum
+            // 
+            this.colDocNum.Caption = "Orden de Compra SAP";
+            this.colDocNum.FieldName = "DocNum";
+            this.colDocNum.Name = "colDocNum";
+            this.colDocNum.OptionsColumn.AllowEdit = false;
+            this.colDocNum.Visible = true;
+            this.colDocNum.VisibleIndex = 4;
+            this.colDocNum.Width = 147;
+            // 
             // btnAtras
             // 
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -279,16 +289,6 @@ namespace LOSA.AlmacenesExterno
             this.btnTransferencia.TabIndex = 45;
             this.btnTransferencia.Text = "Transf. de Almacénes";
             this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
-            // 
-            // colDocNum
-            // 
-            this.colDocNum.Caption = "Orden de Compra SAP";
-            this.colDocNum.FieldName = "DocNum";
-            this.colDocNum.Name = "colDocNum";
-            this.colDocNum.OptionsColumn.AllowEdit = false;
-            this.colDocNum.Visible = true;
-            this.colDocNum.VisibleIndex = 4;
-            this.colDocNum.Width = 147;
             // 
             // xfrmMovimientoStockMain
             // 

@@ -80,25 +80,25 @@ namespace LOSA.TransaccionesMP
             this.lblBodegaOrigen = new DevExpress.XtraEditors.LabelControl();
             this.lblBodegaDestino = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditOrigen = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bindingSourceBodOrigen = new System.Windows.Forms.BindingSource(this.components);
+            this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridLookUpEditDestino = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bindingSourceBodDestino = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDocumento = new DevExpress.XtraEditors.DateEdit();
             this.spinEditUnidades = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.toggleSwTipoOperacion = new DevExpress.XtraEditors.ToggleSwitch();
-            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bindingSourceBodDestino = new System.Windows.Forms.BindingSource(this.components);
-            this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
-            this.bindingSourceBodOrigen = new System.Windows.Forms.BindingSource(this.components);
-            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tsTipoTransaccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumLote.Properties)).BeginInit();
@@ -115,16 +115,16 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDestino.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodDestino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwTipoOperacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodDestino)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl5
@@ -525,6 +525,16 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditOrigen.Size = new System.Drawing.Size(355, 26);
             this.gridLookUpEditOrigen.TabIndex = 118;
             // 
+            // bindingSourceBodOrigen
+            // 
+            this.bindingSourceBodOrigen.DataMember = "bodega_origen";
+            this.bindingSourceBodOrigen.DataSource = this.dsTarima1;
+            // 
+            // dsTarima1
+            // 
+            this.dsTarima1.DataSetName = "dsTarima";
+            this.dsTarima1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -539,6 +549,7 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.gridLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coldescripcion1, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridLookUpEdit1View.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridLookUpEdit1View_RowClick);
             // 
             // colid1
             // 
@@ -554,6 +565,25 @@ namespace LOSA.TransaccionesMP
             this.coldescripcion1.Visible = true;
             this.coldescripcion1.VisibleIndex = 0;
             this.coldescripcion1.Width = 180;
+            // 
+            // colexistencia
+            // 
+            this.colexistencia.Caption = "Existencia";
+            this.colexistencia.DisplayFormat.FormatString = "n2";
+            this.colexistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia.FieldName = "existencia";
+            this.colexistencia.Name = "colexistencia";
+            this.colexistencia.OptionsColumn.AllowEdit = false;
+            this.colexistencia.Visible = true;
+            this.colexistencia.VisibleIndex = 1;
+            this.colexistencia.Width = 220;
+            // 
+            // colnombre
+            // 
+            this.colnombre.Caption = "Nombre Corto";
+            this.colnombre.FieldName = "nombre";
+            this.colnombre.Name = "colnombre";
+            this.colnombre.Width = 435;
             // 
             // gridLookUpEditDestino
             // 
@@ -571,6 +601,11 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditDestino.TabIndex = 119;
             this.gridLookUpEditDestino.Visible = false;
             // 
+            // bindingSourceBodDestino
+            // 
+            this.bindingSourceBodDestino.DataMember = "bodega_destino";
+            this.bindingSourceBodDestino.DataSource = this.dsTarima1;
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -585,6 +620,40 @@ namespace LOSA.TransaccionesMP
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.FieldName = "id";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Bodega";
+            this.gridColumn2.FieldName = "descripcion";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 144;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Existencia";
+            this.gridColumn3.DisplayFormat.FormatString = "n2";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn3.FieldName = "existencia";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 220;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Nombre Corto";
+            this.gridColumn4.FieldName = "nombre";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Width = 435;
             // 
             // labelControl12
             // 
@@ -654,79 +723,11 @@ namespace LOSA.TransaccionesMP
             this.toggleSwTipoOperacion.TabIndex = 123;
             this.toggleSwTipoOperacion.Toggled += new System.EventHandler(this.toggleSwTipoOperacion_Toggled);
             // 
-            // colexistencia
-            // 
-            this.colexistencia.Caption = "Existencia";
-            this.colexistencia.DisplayFormat.FormatString = "n2";
-            this.colexistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia.FieldName = "existencia";
-            this.colexistencia.Name = "colexistencia";
-            this.colexistencia.OptionsColumn.AllowEdit = false;
-            this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 1;
-            this.colexistencia.Width = 220;
-            // 
-            // bindingSourceBodDestino
-            // 
-            this.bindingSourceBodDestino.DataMember = "bodega_destino";
-            this.bindingSourceBodDestino.DataSource = this.dsTarima1;
-            // 
-            // dsTarima1
-            // 
-            this.dsTarima1.DataSetName = "dsTarima";
-            this.dsTarima1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSourceBodOrigen
-            // 
-            this.bindingSourceBodOrigen.DataMember = "bodega_origen";
-            this.bindingSourceBodOrigen.DataSource = this.dsTarima1;
-            // 
-            // colnombre
-            // 
-            this.colnombre.Caption = "Nombre Corto";
-            this.colnombre.FieldName = "nombre";
-            this.colnombre.Name = "colnombre";
-            this.colnombre.Width = 435;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.FieldName = "id";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Bodega";
-            this.gridColumn2.FieldName = "descripcion";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 144;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Existencia";
-            this.gridColumn3.DisplayFormat.FormatString = "n2";
-            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn3.FieldName = "existencia";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            this.gridColumn3.Width = 220;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Nombre Corto";
-            this.gridColumn4.FieldName = "nombre";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Width = 435;
-            // 
             // frmAsjuteInventarioPorLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 681);
+            this.ClientSize = new System.Drawing.Size(670, 687);
             this.ControlBox = false;
             this.Controls.Add(this.txtCantidadTarimas);
             this.Controls.Add(this.txtUnidadsPorTarima);
@@ -778,16 +779,16 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDestino.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodDestino)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditUnidades.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwTipoOperacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodDestino)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

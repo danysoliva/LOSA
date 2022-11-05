@@ -27,6 +27,8 @@ namespace LOSA.TransaccionesMP
         private decimal FactorUnidades;
         MateriaPrima MateriaPrimaActual;
         bool MostrarExterno;
+        private decimal existencia_bodega_selected;
+        private string bodega_selected;
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -458,6 +460,11 @@ namespace LOSA.TransaccionesMP
             }
             if (tsTipoTransaccion.IsOn == false) //SALIDA EN EL KARDEX GENERAL
             {
+                if (existencia_bodega_selected <= 0)
+                {
+                    CajaDialogo.Error("No puede dar salida al item "+ItemCode+" por que es 0 en la Bodega: "+ bodega_selected);
+                    return;
+                }
                 if (radioLoteExistente.Checked)
                 {
                     try
@@ -765,6 +772,14 @@ namespace LOSA.TransaccionesMP
                 tsTipoTransaccion.Visible = lblTipo_transaccion.Visible = false;
                 tsTipoTransaccion.IsOn = true;
             }
+        }
+
+        private void gridLookUpEdit1View_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            var SelectedBodega = gridLookUpEdit1View.GetDataRow(e.RowHandle);
+
+            existencia_bodega_selected = Convert.ToDecimal(SelectedBodega["existencia"]);
+            bodega_selected = Convert.ToString(SelectedBodega["descripcion"]);
         }
 
         private void txtNumLote_Enter(object sender, EventArgs e)

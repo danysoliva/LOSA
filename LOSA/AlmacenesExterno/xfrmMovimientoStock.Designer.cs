@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcTransferencia = new DevExpress.XtraGrid.GridControl();
-            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource();
+            this.transferenciaStockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvTransferencia = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfrom_almacen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.luBodegaFrom = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.warehouseBindingSource = new System.Windows.Forms.BindingSource();
+            this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsAlmacenesExternos = new LOSA.AlmacenesExterno.dsAlmacenesExternos();
             this.colto_almacen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.luBodegaTO = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -52,6 +53,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCantIngresar = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ceSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.btnBuscarProd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -66,7 +68,6 @@
             this.lueAlmacenDestino = new DevExpress.XtraEditors.LookUpEdit();
             this.btnConfLotes = new DevExpress.XtraEditors.SimpleButton();
             this.txtProveedor = new DevExpress.XtraEditors.MemoEdit();
-            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transferenciaStockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).BeginInit();
@@ -295,6 +296,11 @@
             this.gridColumn5.VisibleIndex = 6;
             this.gridColumn5.Width = 95;
             // 
+            // colid_presentacion
+            // 
+            this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.Name = "colid_presentacion";
+            // 
             // txtCantIngresar
             // 
             this.txtCantIngresar.AutoHeight = false;
@@ -481,11 +487,6 @@
             this.txtProveedor.Properties.Appearance.Options.UseFont = true;
             this.txtProveedor.Size = new System.Drawing.Size(244, 78);
             this.txtProveedor.TabIndex = 50;
-            // 
-            // colid_presentacion
-            // 
-            this.colid_presentacion.FieldName = "id_presentacion";
-            this.colid_presentacion.Name = "colid_presentacion";
             // 
             // xfrmMovimientoStock
             // 
