@@ -118,6 +118,7 @@ namespace LOSA.RecepcionMP
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnfindMP.Size = new System.Drawing.Size(157, 38);
             this.btnfindMP.TabIndex = 34;
+            this.btnfindMP.Visible = false;
             this.btnfindMP.EditValueChanged += new System.EventHandler(this.btnfindMP_EditValueChanged);
             this.btnfindMP.Click += new System.EventHandler(this.btnfindMP_Click);
             // 
@@ -164,6 +165,7 @@ namespace LOSA.RecepcionMP
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.buttonEdit1.Size = new System.Drawing.Size(157, 38);
             this.buttonEdit1.TabIndex = 38;
+            this.buttonEdit1.Visible = false;
             this.buttonEdit1.EditValueChanged += new System.EventHandler(this.buttonEdit1_EditValueChanged);
             this.buttonEdit1.Click += new System.EventHandler(this.buttonEdit1_Click);
             // 

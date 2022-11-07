@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditTarima));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -38,7 +39,7 @@
             this.txtCantidadTarimasTotal = new DevExpress.XtraEditors.TextEdit();
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,7 +68,7 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtMP_Name = new DevExpress.XtraEditors.ButtonEdit();
             this.glueProveedor = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSourceProveedores = new System.Windows.Forms.BindingSource();
+            this.bindingSourceProveedores = new System.Windows.Forms.BindingSource(this.components);
             this.dsLogistica21 = new LOSA.Logistica.dsLogistica2();
             this.gvProveedores = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -475,6 +476,7 @@
             // 
             // txtMP_Name
             // 
+            this.txtMP_Name.Enabled = false;
             this.txtMP_Name.Location = new System.Drawing.Point(182, 162);
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
