@@ -371,6 +371,17 @@
     <Compile Include="AlmacenesExterno\xfrmViewLotes.Designer.cs">
       <DependentUpon>xfrmViewLotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Autorizaciones\dsAutorizaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAutorizaciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Autorizaciones\frmSolicitudAutorizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autorizaciones\frmSolicitudAutorizacion.Designer.cs">
+      <DependentUpon>frmSolicitudAutorizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\ConfiguracionMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1800,6 +1811,17 @@
     <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xss">
       <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
     </None>
+    <None Include="Autorizaciones\dsAutorizaciones.xsc">
+      <DependentUpon>dsAutorizaciones.xsd</DependentUpon>
+    </None>
+    <None Include="Autorizaciones\dsAutorizaciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAutorizaciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Autorizaciones\dsAutorizaciones.xss">
+      <DependentUpon>dsAutorizaciones.xsd</DependentUpon>
+    </None>
     <None Include="Calidad\drReporteCetificado.xsc">
       <DependentUpon>drReporteCetificado.xsd</DependentUpon>
     </None>
@@ -3182,6 +3204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmViewLotes.resx">
       <DependentUpon>xfrmViewLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Autorizaciones\frmSolicitudAutorizacion.resx">
+      <DependentUpon>frmSolicitudAutorizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\ConfiguracionMP.resx">
       <DependentUpon>ConfiguracionMP.cs</DependentUpon>
