@@ -143,8 +143,8 @@ namespace LOSA.Trazabilidad
 
             if (this.rutaActiva != 2)
             {
-                dsReportesTRZ.pt_list_trz.Clear();
-                dsReportesTRZ.detalle_destinos.Clear();
+                //dsReportesTRZ.pt_list_trz.Clear();
+                //dsReportesTRZ.detalle_destinos.Clear();
                 lblMateriaPrimaName.Text = "";
             }
 
@@ -195,29 +195,29 @@ namespace LOSA.Trazabilidad
             this.rutaActiva = 4;
 
 
-            lote_fp = 0;
-            txtlote.Text = "";
-            dsCalidad.trazabilitad.Clear();
-            dsInventarioPT.transacciones.Clear();
-            dsInventarioPT.despachos.Clear();
-            txtversion.Text = "";
-            txtformula.Text = "";
-            txtProducto.Text = "";
-            txtPresentacion.Text = "";
-            txtOrderNum.Text = "";
-            txtCodigoPP.Text = "";
-            txtSacosLiberados.Text = "";
-            txtTotalMP_Utilizada_kg.Text = "";
-            txtCantidadBatch.Text = "";
-            txtcodigo.Text = "";
-            txtTotalKgSacosLiberados.Text = "";
-            txtOrderNum.Text = "";
-            txtCodigoPP.Text = "";
-            txtPresentacion.Text = "";
-            txtCantidadBatch.Text = "";
-            txtEficiencia.Text = "";
-            txtReprocesoKg.Text = "";
-            txtTotalProducido.Text = "";
+            //lote_fp = 0;
+            //txtlote.Text = "";
+            //dsCalidad.trazabilitad.Clear();
+            //dsInventarioPT.transacciones.Clear();
+            //dsInventarioPT.despachos.Clear();
+            //txtversion.Text = "";
+            //txtformula.Text = "";
+            //txtProducto.Text = "";
+            //txtPresentacion.Text = "";
+            //txtOrderNum.Text = "";
+            //txtCodigoPP.Text = "";
+            //txtSacosLiberados.Text = "";
+            //txtTotalMP_Utilizada_kg.Text = "";
+            //txtCantidadBatch.Text = "";
+            //txtcodigo.Text = "";
+            //txtTotalKgSacosLiberados.Text = "";
+            //txtOrderNum.Text = "";
+            //txtCodigoPP.Text = "";
+            //txtPresentacion.Text = "";
+            //txtCantidadBatch.Text = "";
+            //txtEficiencia.Text = "";
+            //txtReprocesoKg.Text = "";
+            //txtTotalProducido.Text = "";
             btnBack.Visible = true;
 
             navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
@@ -325,8 +325,8 @@ namespace LOSA.Trazabilidad
                         txtCodigoPP.Text = ptProducido.OrderCodePP;
                     }
 
-                    string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
-
+                    //string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
+                    string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lotev2]";
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
 
                     try
@@ -342,8 +342,8 @@ namespace LOSA.Trazabilidad
                         {
                             txtcodigo.Text = dr_h.GetString(0);
                             txtProducto.Text = dr_h.GetString(1);
-                            txtformula.Text = dr_h.GetInt32(3).ToString();
-                            txtversion.Text = dr_h.GetInt32(4).ToString();
+                            txtformula.Text = dr_h.GetString(2);
+                            txtversion.Text = dr_h.GetString(3);
                         }
                         dr_h.Close();
                     }
@@ -363,14 +363,16 @@ namespace LOSA.Trazabilidad
         {
             if (!string.IsNullOrEmpty(txtlote.Text))
             {
-                string query = @"[sp_load_report_trazabilitadad_lotev2_group_by_mp]";
+                //string query = @"[sp_load_report_trazabilitadad_lotev2_group_by_mp]";
+                string query = @"[sp_get_detalle_cruce_lote_trz_ruta4]";
+                
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 try
                 {
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@lotept", txtlote.Text);
+                    cmd.Parameters.AddWithValue("@lote_pt", txtlote.Text);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     dsCalidad.trazabilitad.Clear();
                     da.Fill(dsCalidad.trazabilitad);
@@ -378,6 +380,12 @@ namespace LOSA.Trazabilidad
                     if (dsCalidad.trazabilitad.Rows.Count == 0)
                     {
                         errorProvider1.SetError(txtlote, "Este lote aun no tiene materias primas utilizadas!");
+                        dsCalidad.trazabilitadRow row1 = dsCalidad.trazabilitad.NewtrazabilitadRow();
+                        row1.lote_mp = "Sin Resultados Encontrados!";
+                        row1.Contado = 0;
+                        row1.teorico = 0;
+                        dsCalidad.trazabilitad.AddtrazabilitadRow(row1);
+                        dsCalidad.AcceptChanges();
                     }
                     else
                     {
@@ -628,7 +636,6 @@ namespace LOSA.Trazabilidad
             //    frm.MdiParent = this.MdiParent;
             //frm.WindowState = FormWindowState.Maximized;
             //frm.Show();
-
             cargarDatosTarimas(row.code_sap);
             cargarMateriaPrima(row.code_sap);
             navigationFrame1.SelectedPage = npRuta3MP;

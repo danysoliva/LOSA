@@ -136,30 +136,40 @@ namespace LOSA.TransaccionesMP
 
         private void txtRequisicion_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if(e.KeyCode == Keys.Enter)
             {
                 if (!string.IsNullOrEmpty(txtRequisicion.Text))
                 {
-                    if (RequisicionActual.RecuperarRegistroFromBarcode(txtRequisicion.Text.Trim()))
+                    if (RequisicionActual.RecuperarRegistroFromBarcodeClass(txtRequisicion.Text.Trim()))
                     {
-                        //pictureBoxIndicadorOk.Visible = true;
-                        lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion.ToString();
-                        lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
-                        load_tarimas_scan_v2();
-                        //load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
-                        txtTarima.Focus();
-
+                        if (RequisicionActual.Bit_finalizar)
+                        {
+                            Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Esta Requisicion está cerrada!");
+                            if (frm.ShowDialog() == DialogResult.Cancel)
+                            {
+                                lblRequisicionEncontrada.BackColor = Color.Transparent;
+                                lblRequisicionEncontrada.ResetText();
+                                txtRequisicion.Focus();
+                            }
+                        }
+                        else
+                        {
+                            lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion1.ToString() + 
+                                                            "    Estado: " + RequisicionActual.Descripcion_estado;
+                            lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
+                            load_tarimas_scan_v2();
+                            txtTarima.Focus();
+                        }
                     }
                     else
                     {
-                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se encontro la requisa");
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se encontró la requisa");
                         if (frm.ShowDialog() == DialogResult.Cancel)
                         {
                             lblRequisicionEncontrada.BackColor = Color.Transparent;
                             lblRequisicionEncontrada.ResetText();
                             txtRequisicion.Focus();
                         }
-                        
                     }
                 }
                 else
@@ -413,9 +423,10 @@ namespace LOSA.TransaccionesMP
             bool error = false;
             bool disponible = false;
             string mensaje = "";
-            decimal ExistenciaTM = 0;
-            decimal Pentregado = 0;
-            decimal Psolicitado = 0;
+            decimal ExistenciaTarimaKg = 0;
+            decimal ExistenciaTarimaUnidades = 0;
+            decimal PentregadoKg = 0;
+            decimal PsolicitadoKg  = 0;
             decimal factor = 0;
             //tarimaEncontrada = new Tarima();
             //tarimaEncontrada.RecuperarRegistro(0, txtTarima.Text);
@@ -585,46 +596,29 @@ namespace LOSA.TransaccionesMP
                             if (dr.Read())
                             {
                                 disponible = dr.GetBoolean(0);
-                                //if (!disponible)
-                                //{
-                                //    error = true;
-                                //    mensaje = dr.GetString(1);
-                                //    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                                //    if (frm.ShowDialog() == DialogResult.Cancel)
-                                //    {
-
-                                //    }
-
-                                //    lblMensaje.Text = mensaje;
-
-                                //    panelNotificacion.BackColor = Color.Red;
-                                //    timerLimpiarMensaje.Enabled = true;
-                                //    timerLimpiarMensaje.Start();
-                                //    return;
-                                //}
-
-                                ExistenciaTM = dr.GetDecimal(2);
-
-                                //if (ExistenciaTM <= 0)
-                                {
-                                    mensaje = "Esta tarima ya fue entregada en Alimentación!" +
-                                              "\nSi tiene la tarima en fisico, significa que ubico dos rotulos iguales \nen varias tarimas" +
-                                              "\nTip: Debe generar un nuevo rotulo para esta Tarima...";
-                                    frmVentanaMsjTarimaAlimentacion frm = 
-                                        new frmVentanaMsjTarimaAlimentacion(mensaje, tarimaEncontrada.CodigoBarra);
-                                    frm.ShowDialog();
-                                    lblMensaje.Text = mensaje;
-                                    panelNotificacion.BackColor = Color.Red;
-                                    timerLimpiarMensaje.Enabled = true;
-                                    timerLimpiarMensaje.Start();
-                                    return;
-                                }
-
-                                Pentregado = dr.GetDecimal(3);
-                                Psolicitado = dr.GetDecimal(4);
+                                ExistenciaTarimaUnidades = dr.GetDecimal(2);
+                                PentregadoKg = dr.GetDecimal(3);
+                                PsolicitadoKg = dr.GetDecimal(4);
                                 factor = dr.GetDecimal(5);
+                                ExistenciaTarimaKg = dr.GetDecimal(6);
                             }
                             dr.Close();
+
+                            if (ExistenciaTarimaKg <= 0)
+                            {
+                                mensaje = "Esta tarima ya fue entregada en Alimentación!" +
+                                          "\nSi tiene la tarima en fisico, significa que ubico dos rotulos iguales \nen varias tarimas" +
+                                          "\nTip: Debe generar un nuevo rotulo para esta Tarima...";
+                                frmVentanaMsjTarimaAlimentacion frm =
+                                    new frmVentanaMsjTarimaAlimentacion(mensaje, tarimaEncontrada.CodigoBarra);
+                                frm.ShowDialog();
+                                lblMensaje.Text = mensaje;
+                                panelNotificacion.BackColor = Color.Red;
+                                timerLimpiarMensaje.Enabled = true;
+                                timerLimpiarMensaje.Start();
+                                return;
+                            }
+
                             con.Close();
 
                         }
@@ -654,9 +648,10 @@ namespace LOSA.TransaccionesMP
                         //}
                         
 
-                        frmResumenToEntregar frms = new frmResumenToEntregar( ExistenciaTM
-                                                                            , Pentregado
-                                                                            , Psolicitado
+                        frmResumenToEntregar frms = new frmResumenToEntregar( ExistenciaTarimaKg
+                                                                            , ExistenciaTarimaUnidades
+                                                                            , PentregadoKg
+                                                                            , PsolicitadoKg
                                                                             , DT_Tarima
                                                                             , idTarima
                                                                             , factor);

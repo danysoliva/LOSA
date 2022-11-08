@@ -31,7 +31,6 @@ namespace LOSA.TransaccionesPT
             dtFechaDocumento.DateTime = dp1.Now();
 
             gridLookUpEditDestino.EditValue = 10;
-            gridLookUpEditOrigen.EditValue = 0;
 
             LoadPresentaciones();
             radioLoteExistente.Checked = true;
@@ -101,13 +100,13 @@ namespace LOSA.TransaccionesPT
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardex", con);
+                SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardex_pt", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@idbodega", idBodega);
-                dsTarima1.bodega_origen.Clear();
+               // dsTarima1.bodega_origen.Clear();
                 dsTarima1.bodega_destino.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTarima1.bodega_origen);
+                //adat.Fill(dsTarima1.bodega_origen);
                 adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsTarima1.bodega_destino);
 
@@ -190,6 +189,12 @@ namespace LOSA.TransaccionesPT
                     return;
                 }
             }
+
+            if (gridLookUpEditDestino.EditValue == null)
+            {
+                CajaDialogo.Error("Debe seleccionar una Bodega");
+                return;
+            }
             DataOperations dp = new DataOperations();
 
             if (tsTipoTransaccion.IsOn) //ENTRADA EN EL KARDEX GENERAL
@@ -213,8 +218,8 @@ namespace LOSA.TransaccionesPT
                         cmd.Parameters.AddWithValue("@lote_pt",txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@fecha_doc", dtFechaDocumento.EditValue);
-                        if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) > 0)
-                            cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
+                        if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
+                            cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditDestino.EditValue);
                         else
                             cmd.Parameters.AddWithValue("@id_bodega_origen", DBNull.Value);
 
@@ -259,8 +264,8 @@ namespace LOSA.TransaccionesPT
                         cmd.Parameters.AddWithValue("@lote_pt", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@fecha_doc", dtFechaDocumento.EditValue);
-                        if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) > 0)
-                            cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditOrigen.EditValue);
+                        if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) > 0)
+                            cmd.Parameters.AddWithValue("@id_bodega_origen", gridLookUpEditDestino.EditValue);
                         else
                             cmd.Parameters.AddWithValue("@id_bodega_origen", DBNull.Value);
 
@@ -306,16 +311,16 @@ namespace LOSA.TransaccionesPT
                 //radioLoteNuevo.Checked = false;
                 //radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
-                gridLookUpEditDestino.EditValue = 10;
-                gridLookUpEditOrigen.EditValue = 0;
+                //gridLookUpEditDestino.EditValue = 10;
+               // gridLookUpEditOrigen.EditValue = 0;
             }
             else
             {
                 //radioLoteNuevo.Checked = false;
                 //radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
-                gridLookUpEditOrigen.EditValue = 10;
-                gridLookUpEditDestino.EditValue = 0;
+               // gridLookUpEditOrigen.EditValue = 10;
+                //gridLookUpEditDestino.EditValue = 0;
             }
         }
 

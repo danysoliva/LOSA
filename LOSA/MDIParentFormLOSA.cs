@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using LOSA.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,6 +113,16 @@ namespace LOSA
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Normal;
             frm.Show();
+        }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+        }
+
+        private void notificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //xfrmPopup frm = new xfrmPopup();
+            //frm.ShowDialog();
         }
     }
 }

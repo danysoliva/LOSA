@@ -29,33 +29,33 @@ namespace LOSA.TransaccionesPT
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAjusteIKardexPT));
             this.dtFechaDocumento = new DevExpress.XtraEditors.DateEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditDestino = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bodegadestinoBindingSource1 = new System.Windows.Forms.BindingSource();
+            this.bodegadestinoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bodegadestinoBindingSource = new System.Windows.Forms.BindingSource();
+            this.bodegadestinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEditOrigen = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bodegaorigenBindingSource1 = new System.Windows.Forms.BindingSource();
+            this.bodegaorigenBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bodegaorigenBindingSource = new System.Windows.Forms.BindingSource();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.bodegaorigenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.radioLoteExistente = new System.Windows.Forms.RadioButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -67,7 +67,7 @@ namespace LOSA.TransaccionesPT
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource();
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvLookUpEditPresentacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -103,7 +103,7 @@ namespace LOSA.TransaccionesPT
             // dtFechaDocumento
             // 
             this.dtFechaDocumento.EditValue = null;
-            this.dtFechaDocumento.Location = new System.Drawing.Point(222, 320);
+            this.dtFechaDocumento.Location = new System.Drawing.Point(222, 272);
             this.dtFechaDocumento.Name = "dtFechaDocumento";
             this.dtFechaDocumento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.dtFechaDocumento.Properties.Appearance.Options.UseFont = true;
@@ -120,7 +120,7 @@ namespace LOSA.TransaccionesPT
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(22, 320);
+            this.labelControl12.Location = new System.Drawing.Point(22, 272);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(157, 24);
             this.labelControl12.TabIndex = 134;
@@ -129,7 +129,7 @@ namespace LOSA.TransaccionesPT
             // gridLookUpEditDestino
             // 
             this.gridLookUpEditDestino.EditValue = "";
-            this.gridLookUpEditDestino.Location = new System.Drawing.Point(222, 275);
+            this.gridLookUpEditDestino.Location = new System.Drawing.Point(223, 224);
             this.gridLookUpEditDestino.Name = "gridLookUpEditDestino";
             this.gridLookUpEditDestino.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLookUpEditDestino.Properties.Appearance.Options.UseFont = true;
@@ -179,7 +179,7 @@ namespace LOSA.TransaccionesPT
             // gridLookUpEditOrigen
             // 
             this.gridLookUpEditOrigen.EditValue = "";
-            this.gridLookUpEditOrigen.Location = new System.Drawing.Point(223, 224);
+            this.gridLookUpEditOrigen.Location = new System.Drawing.Point(222, 573);
             this.gridLookUpEditOrigen.Name = "gridLookUpEditOrigen";
             this.gridLookUpEditOrigen.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLookUpEditOrigen.Properties.Appearance.Options.UseFont = true;
@@ -191,6 +191,7 @@ namespace LOSA.TransaccionesPT
             this.gridLookUpEditOrigen.Properties.ValueMember = "id";
             this.gridLookUpEditOrigen.Size = new System.Drawing.Size(355, 26);
             this.gridLookUpEditOrigen.TabIndex = 132;
+            this.gridLookUpEditOrigen.Visible = false;
             // 
             // bodegaorigenBindingSource1
             // 
@@ -221,25 +222,15 @@ namespace LOSA.TransaccionesPT
             this.coldescripcion1.Visible = true;
             this.coldescripcion1.VisibleIndex = 0;
             // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(22, 275);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(134, 24);
-            this.labelControl10.TabIndex = 131;
-            this.labelControl10.Text = "Bodega Destino";
-            // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Location = new System.Drawing.Point(23, 224);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(129, 24);
+            this.labelControl9.Size = new System.Drawing.Size(66, 24);
             this.labelControl9.TabIndex = 130;
-            this.labelControl9.Text = "Bodega Origen";
+            this.labelControl9.Text = "Bodega";
             // 
             // radioLoteExistente
             // 
@@ -270,17 +261,17 @@ namespace LOSA.TransaccionesPT
             this.txtPT_Name.Name = "txtPT_Name";
             this.txtPT_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtPT_Name.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject1.Options.UseBackColor = true;
-            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject2.Options.UseBackColor = true;
-            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject3.Options.UseBackColor = true;
-            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject4.Options.UseBackColor = true;
+            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject9.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject9.Options.UseBackColor = true;
+            serializableAppearanceObject10.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject10.Options.UseBackColor = true;
+            serializableAppearanceObject11.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject11.Options.UseBackColor = true;
+            serializableAppearanceObject12.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject12.Options.UseBackColor = true;
             this.txtPT_Name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtPT_Name.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtPT_Name.Properties.ReadOnly = true;
             this.txtPT_Name.Size = new System.Drawing.Size(355, 30);
@@ -314,7 +305,7 @@ namespace LOSA.TransaccionesPT
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(23, 377);
+            this.labelControl5.Location = new System.Drawing.Point(23, 329);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(51, 24);
             this.labelControl5.TabIndex = 137;
@@ -322,21 +313,21 @@ namespace LOSA.TransaccionesPT
             // 
             // txtNumLote
             // 
-            this.txtNumLote.Location = new System.Drawing.Point(223, 366);
+            this.txtNumLote.Location = new System.Drawing.Point(223, 318);
             this.txtNumLote.Name = "txtNumLote";
             this.txtNumLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtNumLote.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject5.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject5.Options.UseBackColor = true;
-            serializableAppearanceObject6.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject6.Options.UseBackColor = true;
-            serializableAppearanceObject7.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject7.Options.UseBackColor = true;
-            serializableAppearanceObject8.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject8.Options.UseBackColor = true;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject1.Options.UseBackColor = true;
+            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject2.Options.UseBackColor = true;
+            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject3.Options.UseBackColor = true;
+            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject4.Options.UseBackColor = true;
             this.txtNumLote.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtNumLote.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtNumLote.Properties.ReadOnly = true;
             this.txtNumLote.Size = new System.Drawing.Size(355, 30);
@@ -379,7 +370,7 @@ namespace LOSA.TransaccionesPT
             // gridLookUpEditPresentacion
             // 
             this.gridLookUpEditPresentacion.EditValue = "";
-            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(222, 421);
+            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(222, 373);
             this.gridLookUpEditPresentacion.Name = "gridLookUpEditPresentacion";
             this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
@@ -440,7 +431,7 @@ namespace LOSA.TransaccionesPT
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(23, 424);
+            this.labelControl11.Location = new System.Drawing.Point(23, 376);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(110, 24);
             this.labelControl11.TabIndex = 140;
@@ -450,7 +441,7 @@ namespace LOSA.TransaccionesPT
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(24, 472);
+            this.labelControl1.Location = new System.Drawing.Point(24, 424);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(80, 24);
             this.labelControl1.TabIndex = 142;
@@ -459,7 +450,7 @@ namespace LOSA.TransaccionesPT
             // txtCantidadUnidades
             // 
             this.txtCantidadUnidades.EditValue = "0";
-            this.txtCantidadUnidades.Location = new System.Drawing.Point(222, 468);
+            this.txtCantidadUnidades.Location = new System.Drawing.Point(222, 420);
             this.txtCantidadUnidades.Name = "txtCantidadUnidades";
             this.txtCantidadUnidades.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtCantidadUnidades.Properties.Appearance.Options.UseFont = true;
@@ -480,7 +471,7 @@ namespace LOSA.TransaccionesPT
             0,
             0});
             this.spinEditPesoKg.Enabled = false;
-            this.spinEditPesoKg.Location = new System.Drawing.Point(222, 521);
+            this.spinEditPesoKg.Location = new System.Drawing.Point(222, 473);
             this.spinEditPesoKg.Name = "spinEditPesoKg";
             this.spinEditPesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.spinEditPesoKg.Properties.Appearance.Options.UseFont = true;
@@ -495,7 +486,7 @@ namespace LOSA.TransaccionesPT
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(24, 524);
+            this.labelControl7.Location = new System.Drawing.Point(24, 476);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(83, 24);
             this.labelControl7.TabIndex = 143;
@@ -517,7 +508,6 @@ namespace LOSA.TransaccionesPT
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.gridLookUpEditDestino);
             this.Controls.Add(this.gridLookUpEditOrigen);
-            this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.radioLoteExistente);
             this.Controls.Add(this.labelControl3);
@@ -566,7 +556,6 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn colid1;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private System.Windows.Forms.RadioButton radioLoteExistente;
         private DevExpress.XtraEditors.LabelControl labelControl3;

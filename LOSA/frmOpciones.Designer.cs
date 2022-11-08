@@ -409,7 +409,7 @@
             this.simpleButton30.Location = new System.Drawing.Point(415, 61);
             this.simpleButton30.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton30.Name = "simpleButton30";
-            this.simpleButton30.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton30.Size = new System.Drawing.Size(199, 43);
             this.simpleButton30.TabIndex = 45;
             this.simpleButton30.Text = "Reporte de\r\n Kardex General";
             this.simpleButton30.Click += new System.EventHandler(this.simpleButton30_Click);
@@ -436,7 +436,7 @@
             this.simpleButton20.Appearance.Options.UseFont = true;
             this.simpleButton20.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton20.ImageOptions.Image")));
-            this.simpleButton20.Location = new System.Drawing.Point(2, 302);
+            this.simpleButton20.Location = new System.Drawing.Point(2, 254);
             this.simpleButton20.Name = "simpleButton20";
             this.simpleButton20.Size = new System.Drawing.Size(199, 42);
             this.simpleButton20.TabIndex = 43;
@@ -491,7 +491,7 @@
             this.btn_rptubicaciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_rptubicaciones.ImageOptions.Image")));
             this.btn_rptubicaciones.Location = new System.Drawing.Point(209, 206);
             this.btn_rptubicaciones.Name = "btn_rptubicaciones";
-            this.btn_rptubicaciones.Size = new System.Drawing.Size(200, 42);
+            this.btn_rptubicaciones.Size = new System.Drawing.Size(200, 41);
             this.btn_rptubicaciones.TabIndex = 42;
             this.btn_rptubicaciones.Text = "Reporte \r\nde Ubicaciones";
             this.btn_rptubicaciones.Click += new System.EventHandler(this.btn_rptubicaciones_Click);
@@ -515,9 +515,9 @@
             this.simpleButton18.Appearance.Options.UseFont = true;
             this.simpleButton18.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton18.ImageOptions.Image")));
-            this.simpleButton18.Location = new System.Drawing.Point(4, 206);
+            this.simpleButton18.Location = new System.Drawing.Point(4, 159);
             this.simpleButton18.Name = "simpleButton18";
-            this.simpleButton18.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton18.Size = new System.Drawing.Size(199, 41);
             this.simpleButton18.TabIndex = 40;
             this.simpleButton18.Text = "Rpt. Almacenes \r\nexternos";
             this.simpleButton18.Click += new System.EventHandler(this.simpleButton18_Click);
@@ -559,11 +559,12 @@
             this.cmdGestionIngresos.Appearance.Options.UseFont = true;
             this.cmdGestionIngresos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGestionIngresos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGestionIngresos.ImageOptions.Image")));
-            this.cmdGestionIngresos.Location = new System.Drawing.Point(3, 62);
+            this.cmdGestionIngresos.Location = new System.Drawing.Point(2, 306);
             this.cmdGestionIngresos.Name = "cmdGestionIngresos";
             this.cmdGestionIngresos.Size = new System.Drawing.Size(199, 42);
             this.cmdGestionIngresos.TabIndex = 27;
             this.cmdGestionIngresos.Text = "Gestión Ingresos";
+            this.cmdGestionIngresos.Visible = false;
             this.cmdGestionIngresos.Click += new System.EventHandler(this.cmdGestionIngresos_Click);
             // 
             // cmdRecepcionMPLogistica
@@ -572,7 +573,7 @@
             this.cmdRecepcionMPLogistica.Appearance.Options.UseFont = true;
             this.cmdRecepcionMPLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRecepcionMPLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRecepcionMPLogistica.ImageOptions.Image")));
-            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(2, 111);
+            this.cmdRecepcionMPLogistica.Location = new System.Drawing.Point(2, 62);
             this.cmdRecepcionMPLogistica.Name = "cmdRecepcionMPLogistica";
             this.cmdRecepcionMPLogistica.Size = new System.Drawing.Size(199, 42);
             this.cmdRecepcionMPLogistica.TabIndex = 9;
@@ -585,9 +586,9 @@
             this.btnAlmacenesExternos.Appearance.Options.UseFont = true;
             this.btnAlmacenesExternos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAlmacenesExternos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAlmacenesExternos.ImageOptions.Image")));
-            this.btnAlmacenesExternos.Location = new System.Drawing.Point(3, 254);
+            this.btnAlmacenesExternos.Location = new System.Drawing.Point(3, 206);
             this.btnAlmacenesExternos.Name = "btnAlmacenesExternos";
-            this.btnAlmacenesExternos.Size = new System.Drawing.Size(199, 42);
+            this.btnAlmacenesExternos.Size = new System.Drawing.Size(199, 41);
             this.btnAlmacenesExternos.TabIndex = 35;
             this.btnAlmacenesExternos.Text = "Transferencias \r\nAlmacenes Ext.";
             this.btnAlmacenesExternos.Click += new System.EventHandler(this.btnAlmacenesExternos_Click);
@@ -600,7 +601,7 @@
             this.btnTransferencia.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.btnTransferencia.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTransferencia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTransferencia.ImageOptions.Image")));
-            this.btnTransferencia.Location = new System.Drawing.Point(3, 159);
+            this.btnTransferencia.Location = new System.Drawing.Point(3, 110);
             this.btnTransferencia.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransferencia.Name = "btnTransferencia";
             this.btnTransferencia.Size = new System.Drawing.Size(199, 42);
@@ -932,6 +933,7 @@
             this.simpleButton10.Size = new System.Drawing.Size(199, 42);
             this.simpleButton10.TabIndex = 34;
             this.simpleButton10.Text = "Ajuste de Inventario PT";
+            this.simpleButton10.Visible = false;
             this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
             // 
             // btnReq_PT

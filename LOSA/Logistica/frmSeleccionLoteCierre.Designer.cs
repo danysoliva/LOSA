@@ -208,15 +208,10 @@ namespace LOSA.Logistica
             // 
             // chauto
             // 
-            this.chauto.Location = new System.Drawing.Point(6, 43);
+            this.chauto.Location = new System.Drawing.Point(6, 28);
             this.chauto.Name = "chauto";
-            this.chauto.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chauto.Properties.Appearance.Options.UseFont = true;
-            this.chauto.Properties.Caption = "Auto Seleccionar Lotes";
-            this.chauto.Size = new System.Drawing.Size(182, 21);
-            this.chauto.TabIndex = 1;
-            this.chauto.Visible = false;
-            this.chauto.CheckedChanged += new System.EventHandler(this.chauto_CheckedChanged);
+            this.chauto.Size = new System.Drawing.Size(75, 19);
+            this.chauto.TabIndex = 0;
             // 
             // grd_existencia_lote
             // 
@@ -297,6 +292,8 @@ namespace LOSA.Logistica
             // colExistenciaAprox
             // 
             this.colExistenciaAprox.Caption = "Existencia";
+            this.colExistenciaAprox.DisplayFormat.FormatString = "n2";
+            this.colExistenciaAprox.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colExistenciaAprox.FieldName = "ExistenciaAprox";
             this.colExistenciaAprox.Name = "colExistenciaAprox";
             this.colExistenciaAprox.OptionsColumn.AllowEdit = false;
@@ -311,6 +308,7 @@ namespace LOSA.Logistica
             this.collote.Caption = "Lote";
             this.collote.FieldName = "lote";
             this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 1;
             this.collote.Width = 168;
@@ -332,6 +330,8 @@ namespace LOSA.Logistica
             // colutilizado
             // 
             this.colutilizado.Caption = "Utilizado";
+            this.colutilizado.DisplayFormat.FormatString = "n2";
+            this.colutilizado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colutilizado.FieldName = "utilizado";
             this.colutilizado.Name = "colutilizado";
             this.colutilizado.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -378,11 +378,11 @@ namespace LOSA.Logistica
             // 
             this.lblAjuste.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAjuste.Appearance.Options.UseFont = true;
-            this.lblAjuste.Location = new System.Drawing.Point(94, 45);
+            this.lblAjuste.Location = new System.Drawing.Point(90, 45);
             this.lblAjuste.Name = "lblAjuste";
-            this.lblAjuste.Size = new System.Drawing.Size(120, 17);
+            this.lblAjuste.Size = new System.Drawing.Size(119, 17);
             this.lblAjuste.TabIndex = 3;
-            this.lblAjuste.Text = "Pendiente de Ajustar";
+            this.lblAjuste.Text = "Se debe ajustar una:";
             // 
             // grd_efectiva
             // 
@@ -485,6 +485,8 @@ namespace LOSA.Logistica
             // colutilizado1
             // 
             this.colutilizado1.Caption = "Utilizada";
+            this.colutilizado1.DisplayFormat.FormatString = "n2";
+            this.colutilizado1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colutilizado1.FieldName = "utilizado";
             this.colutilizado1.Name = "colutilizado1";
             this.colutilizado1.OptionsColumn.AllowEdit = false;
@@ -696,7 +698,7 @@ namespace LOSA.Logistica
             // colExistencia
             // 
             this.colExistencia.Caption = "Nueva Existencia";
-            this.colExistencia.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colExistencia.DisplayFormat.FormatString = "n2";
             this.colExistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colExistencia.FieldName = "toma_fisica";
             this.colExistencia.Name = "colExistencia";
@@ -707,7 +709,7 @@ namespace LOSA.Logistica
             // colExistenciaAnterior
             // 
             this.colExistenciaAnterior.Caption = "Existencia Anterior";
-            this.colExistenciaAnterior.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colExistenciaAnterior.DisplayFormat.FormatString = "n2";
             this.colExistenciaAnterior.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colExistenciaAnterior.FieldName = "ExistenciaAprox";
             this.colExistenciaAnterior.Name = "colExistenciaAnterior";
@@ -718,7 +720,7 @@ namespace LOSA.Logistica
             // colPendienteAjustar
             // 
             this.colPendienteAjustar.Caption = "Diferencia";
-            this.colPendienteAjustar.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.colPendienteAjustar.DisplayFormat.FormatString = "n2";
             this.colPendienteAjustar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPendienteAjustar.FieldName = "diferencia";
             this.colPendienteAjustar.Name = "colPendienteAjustar";

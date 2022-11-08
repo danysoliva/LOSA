@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
+using DevExpress.XtraGrid.Views.Grid;
+using LOSA.RecuentoInventario;
 
 namespace LOSA.Logistica
 {
@@ -70,6 +72,25 @@ namespace LOSA.Logistica
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 grd_data_d.ExportToXlsx(dialog.FileName);
+            }
+        }
+
+        private void repositoryItemEditar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gv = (GridView)grd_data_d.FocusedView;
+            var row = (dsCierreMes.recuentos_dRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+            if (row.contabilizado)
+            {
+                CajaDialogo.Error("No se puede editar este Recuento ya que fue contabilizado!");
+            }
+            else
+            {
+                frmEdtiarDetalleRecuento frm = new frmEdtiarDetalleRecuento(row.id ,row.materia_prima, row.bodega, row.existencia_aprox , row.existencia_fisica, row.diferencia_peso);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    load_data();
+                }
             }
         }
     }

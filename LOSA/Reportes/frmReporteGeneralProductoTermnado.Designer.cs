@@ -497,7 +497,7 @@ namespace LOSA.Reportes
             this.cmdRecargar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdRecargar.Appearance.Options.UseFont = true;
             this.cmdRecargar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdRecargar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.cmdRecargar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdRecargar.ImageOptions.SvgImage")));
             this.cmdRecargar.Location = new System.Drawing.Point(1003, 9);
             this.cmdRecargar.Name = "cmdRecargar";
             this.cmdRecargar.Size = new System.Drawing.Size(104, 47);

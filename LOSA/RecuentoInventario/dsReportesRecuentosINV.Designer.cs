@@ -287,10 +287,6 @@ namespace LOSA.RecuentoInventario {
             
             private global::System.Data.DataColumn columnlote;
             
-            private global::System.Data.DataColumn columnnumero_transaccion;
-            
-            private global::System.Data.DataColumn columnfecha_ingreso;
-            
             private global::System.Data.DataColumn columncode_sap;
             
             private global::System.Data.DataColumn columnentradas;
@@ -298,6 +294,8 @@ namespace LOSA.RecuentoInventario {
             private global::System.Data.DataColumn columnsalidas;
             
             private global::System.Data.DataColumn columnrow;
+            
+            private global::System.Data.DataColumn columnbodega;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -366,22 +364,6 @@ namespace LOSA.RecuentoInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn numero_transaccionColumn {
-                get {
-                    return this.columnnumero_transaccion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn fecha_ingresoColumn {
-                get {
-                    return this.columnfecha_ingreso;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn code_sapColumn {
                 get {
                     return this.columncode_sap;
@@ -409,6 +391,14 @@ namespace LOSA.RecuentoInventario {
             public global::System.Data.DataColumn rowColumn {
                 get {
                     return this.columnrow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn bodegaColumn {
+                get {
+                    return this.columnbodega;
                 }
             }
             
@@ -449,19 +439,18 @@ namespace LOSA.RecuentoInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InventarioA_LaFechaRow AddInventarioA_LaFechaRow(decimal existencia, string nombre_comercial, string id_mp, string lote, string numero_transaccion, System.DateTime fecha_ingreso, string code_sap, decimal entradas, decimal salidas, int row) {
+            public InventarioA_LaFechaRow AddInventarioA_LaFechaRow(decimal existencia, string nombre_comercial, string id_mp, string lote, string code_sap, decimal entradas, decimal salidas, int row, string bodega) {
                 InventarioA_LaFechaRow rowInventarioA_LaFechaRow = ((InventarioA_LaFechaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         existencia,
                         nombre_comercial,
                         id_mp,
                         lote,
-                        numero_transaccion,
-                        fecha_ingreso,
                         code_sap,
                         entradas,
                         salidas,
-                        row};
+                        row,
+                        bodega};
                 rowInventarioA_LaFechaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInventarioA_LaFechaRow);
                 return rowInventarioA_LaFechaRow;
@@ -488,12 +477,11 @@ namespace LOSA.RecuentoInventario {
                 this.columnnombre_comercial = base.Columns["nombre_comercial"];
                 this.columnid_mp = base.Columns["id_mp"];
                 this.columnlote = base.Columns["lote"];
-                this.columnnumero_transaccion = base.Columns["numero_transaccion"];
-                this.columnfecha_ingreso = base.Columns["fecha_ingreso"];
                 this.columncode_sap = base.Columns["code_sap"];
                 this.columnentradas = base.Columns["entradas"];
                 this.columnsalidas = base.Columns["salidas"];
                 this.columnrow = base.Columns["row"];
+                this.columnbodega = base.Columns["bodega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -507,10 +495,6 @@ namespace LOSA.RecuentoInventario {
                 base.Columns.Add(this.columnid_mp);
                 this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlote);
-                this.columnnumero_transaccion = new global::System.Data.DataColumn("numero_transaccion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnumero_transaccion);
-                this.columnfecha_ingreso = new global::System.Data.DataColumn("fecha_ingreso", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_ingreso);
                 this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncode_sap);
                 this.columnentradas = new global::System.Data.DataColumn("entradas", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -519,15 +503,16 @@ namespace LOSA.RecuentoInventario {
                 base.Columns.Add(this.columnsalidas);
                 this.columnrow = new global::System.Data.DataColumn("row", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrow);
+                this.columnbodega = new global::System.Data.DataColumn("bodega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbodega);
                 this.columnexistencia.Caption = "Existencia";
                 this.columnnombre_comercial.Caption = "Nombre MP";
                 this.columnlote.Caption = "Lote";
-                this.columnnumero_transaccion.Caption = "No Ingreso";
-                this.columnfecha_ingreso.Caption = "Fecha Ingreso";
                 this.columncode_sap.Caption = "Item Code";
                 this.columnentradas.Caption = "Entradas";
                 this.columnsalidas.Caption = "Salidas";
                 this.columnrow.Caption = "# Fila";
+                this.columnbodega.Caption = "Bodega";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -735,40 +720,6 @@ namespace LOSA.RecuentoInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string numero_transaccion {
-                get {
-                    try {
-                        return ((string)(this[this.tableInventarioA_LaFecha.numero_transaccionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_transaccion\' de la tabla \'InventarioA_LaFecha\' es " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInventarioA_LaFecha.numero_transaccionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime fecha_ingreso {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableInventarioA_LaFecha.fecha_ingresoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ingreso\' de la tabla \'InventarioA_LaFecha\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableInventarioA_LaFecha.fecha_ingresoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string code_sap {
                 get {
                     try {
@@ -833,6 +784,22 @@ namespace LOSA.RecuentoInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string bodega {
+                get {
+                    try {
+                        return ((string)(this[this.tableInventarioA_LaFecha.bodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'bodega\' de la tabla \'InventarioA_LaFecha\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInventarioA_LaFecha.bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsexistenciaNull() {
                 return this.IsNull(this.tableInventarioA_LaFecha.existenciaColumn);
             }
@@ -881,30 +848,6 @@ namespace LOSA.RecuentoInventario {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isnumero_transaccionNull() {
-                return this.IsNull(this.tableInventarioA_LaFecha.numero_transaccionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setnumero_transaccionNull() {
-                this[this.tableInventarioA_LaFecha.numero_transaccionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isfecha_ingresoNull() {
-                return this.IsNull(this.tableInventarioA_LaFecha.fecha_ingresoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setfecha_ingresoNull() {
-                this[this.tableInventarioA_LaFecha.fecha_ingresoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Iscode_sapNull() {
                 return this.IsNull(this.tableInventarioA_LaFecha.code_sapColumn);
             }
@@ -949,6 +892,18 @@ namespace LOSA.RecuentoInventario {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetrowNull() {
                 this[this.tableInventarioA_LaFecha.rowColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsbodegaNull() {
+                return this.IsNull(this.tableInventarioA_LaFecha.bodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetbodegaNull() {
+                this[this.tableInventarioA_LaFecha.bodegaColumn] = global::System.Convert.DBNull;
             }
         }
         

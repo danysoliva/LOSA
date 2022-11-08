@@ -12,6 +12,7 @@ using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.RecepcionMP;
 using LOSA.Clases;
+using LOSA.Calidad.LoteConfConsumo;
 
 namespace LOSA.TransaccionesMP
 {
@@ -25,6 +26,9 @@ namespace LOSA.TransaccionesMP
         UserLogin UsuarioLogueado;
         private decimal FactorUnidades;
         MateriaPrima MateriaPrimaActual;
+        bool MostrarExterno;
+        private decimal existencia_bodega_selected;
+        private string bodega_selected;
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -82,28 +86,46 @@ namespace LOSA.TransaccionesMP
 
         private void LoadMaestrosBodegas()
         {
-            try
-            {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
+           
+            MostrarExterno = false; //Si es Ajuste Entrada y Salida o Traslado no debe mostrar las Bodegas Externas
 
-                SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardex", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
-                dsTarima1.bodega_origen.Clear();
-                dsTarima1.bodega_destino.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTarima1.bodega_origen);
-                adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTarima1.bodega_destino);
-                
-                con.Close();
-            }
-            catch (Exception ec)
+            DataOperations dp = new DataOperations();
+            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            con.Open();
+
+            //SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardexV2", con);
+            SqlCommand cmd = new SqlCommand("sp_get_maestro_bodegas_ajuste_kardexV2", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@MostrarExterno", MostrarExterno);
+            if (MateriaPrimaActual != null)
             {
-                CajaDialogo.Error(ec.Message);
+                if(MateriaPrimaActual.Recuperado)
+                    cmd.Parameters.AddWithValue("@id_mp", MateriaPrimaActual.IdMP_ACS);
+                else
+                    cmd.Parameters.AddWithValue("@id_mp", 0);
             }
+            else
+            {
+                cmd.Parameters.AddWithValue("@id_mp", 0);
+            }
+            dsTarima1.bodega_origen.Clear();
+            dsTarima1.bodega_destino.Clear();
+            SqlDataAdapter adat = new SqlDataAdapter(cmd);
+            adat.Fill(dsTarima1.bodega_origen);
+            adat = new SqlDataAdapter(cmd);
+            adat.Fill(dsTarima1.bodega_destino);
+
+            con.Close();
+            //    }
+
+            //}
+            //catch (Exception)
+            //{
+
+            //    throw;
+            //}
+
+
         }
 
         void SearchLoteAuto(int pidmp, string plote_)
@@ -262,6 +284,7 @@ namespace LOSA.TransaccionesMP
                     return;
                 }
             }
+            
 
 
             //Si es Ajuste lo vamos a obligar a poner la bodega de Origen
@@ -437,6 +460,11 @@ namespace LOSA.TransaccionesMP
             }
             if (tsTipoTransaccion.IsOn == false) //SALIDA EN EL KARDEX GENERAL
             {
+                if (existencia_bodega_selected <= 0)
+                {
+                    CajaDialogo.Error("No puede dar salida al item "+ItemCode+" por que es 0 en la Bodega: "+ bodega_selected);
+                    return;
+                }
                 if (radioLoteExistente.Checked)
                 {
                     try
@@ -466,6 +494,7 @@ namespace LOSA.TransaccionesMP
                             cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
                         else
                             cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
+
                         cmd.Parameters.AddWithValue("id_presentacion", gridLookUpEditPresentacion.EditValue);
                         cmd.Parameters.AddWithValue("@tipo_operacion", 1);//Forzosamente debe ser ajuste
                         cmd.ExecuteNonQuery();
@@ -487,7 +516,8 @@ namespace LOSA.TransaccionesMP
 
         private void txtMP_Name_Click(object sender, EventArgs e)
         {
-            frmMP frm = new frmMP();
+            //frmMP frm = new frmMP();
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
             if (this.MdiParent != null)
             {
                 //frm.MdiParent = this.MdiParent;
@@ -495,9 +525,13 @@ namespace LOSA.TransaccionesMP
             }
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                txtMP_Name.Text = frm.MateriaPrima;
-                ItemCode = frm.ItemCode;
-                Id_MP = frm.id_mp;
+                txtMP_Name.Text = frm.ItemSeleccionado.ItemName;
+                ItemCode = frm.ItemSeleccionado.ItemCode;
+                Id_MP = frm.ItemSeleccionado.id;
+                if (MateriaPrimaActual == null)
+                    MateriaPrimaActual = new MateriaPrima();
+                if(MateriaPrimaActual.RecuperarRegistroFromID_RM(frm.ItemSeleccionado.id))
+                    LoadMaestrosBodegas();
                 MateriaPrima mp = new MateriaPrima();
                 if (mp.Get_if_mp_is_granel(Id_MP))
                 {
@@ -738,6 +772,14 @@ namespace LOSA.TransaccionesMP
                 tsTipoTransaccion.Visible = lblTipo_transaccion.Visible = false;
                 tsTipoTransaccion.IsOn = true;
             }
+        }
+
+        private void gridLookUpEdit1View_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            var SelectedBodega = gridLookUpEdit1View.GetDataRow(e.RowHandle);
+
+            existencia_bodega_selected = Convert.ToDecimal(SelectedBodega["existencia"]);
+            bodega_selected = Convert.ToString(SelectedBodega["descripcion"]);
         }
 
         private void txtNumLote_Enter(object sender, EventArgs e)

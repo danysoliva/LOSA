@@ -13,14 +13,18 @@ namespace LOSA.Clases
     {
         public MateriaPrima()
         {
-
+            TableMasterData = new dsColleccionesClases.materia_prima_acsDataTable();
+            LoadMasterDataList();
         }
 
+        
 
+        dsColleccionesClases.materia_prima_acsDataTable TableMasterData;
         int _IdMP_ACS;
         string _CodeMP_SAP;
         string _CodigoODOO;
         string _Name;
+        bool _enable;
         string _NameComercial;
         bool _Recuperado;
 
@@ -31,6 +35,47 @@ namespace LOSA.Clases
         public string Name { get => _Name; set => _Name = value; }
         public string NameComercial { get => _NameComercial; set => _NameComercial = value; }
         public bool Recuperado { get => _Recuperado; set => _Recuperado = value; }
+        public bool Enable { get => _enable; set => _enable = value; }
+
+        private void LoadMasterDataList()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_recuperar_registro_materias_primas_all", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@codigo_bodega", pCodigoBodega);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(TableMasterData);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        public bool RecuperarRegistroPreLoaded(string pCodigoSAP)
+        {
+            Recuperado = false;
+            foreach (dsColleccionesClases.materia_prima_acsRow row in TableMasterData.Rows)
+            {
+                if (row.code_sap == pCodigoSAP)
+                {
+                    this.IdMP_ACS = row.id;
+                    this._CodigoODOO = row.codigo;
+                    this.Name = row.material;
+                    this.NameComercial = row.nombre_comercial;
+                    Enable = row.enable; 
+                    Recuperado = true;
+                    break;
+                }
+            }
+            return Recuperado;
+        }
 
         public bool RecuperarRegistroFromID_RM(int pIdRM)
         {

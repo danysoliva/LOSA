@@ -21,9 +21,11 @@ namespace LOSA.TransaccionesMP
     {
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
+        MateriaPrima MateriaPrimaAllBodegas;
         public frmReporteInventarioKardexGeneral(UserLogin pUserLogin)
         {
             InitializeComponent();
+            MateriaPrimaAllBodegas = new MateriaPrima();
 
             switch (pUserLogin.Idnivel)
             {
@@ -385,6 +387,7 @@ namespace LOSA.TransaccionesMP
             {
                 LoadBodegaMP(frm.ItemSeleccionado.id);
                 textEdit1.Text = frm.ItemSeleccionado.ItemCode + " " + frm.ItemSeleccionado.ItemName;
+                MateriaPrimaAllBodegas.RecuperarRegistroFromID_RM(frm.ItemSeleccionado.id);
             }
         }
 
@@ -473,6 +476,38 @@ namespace LOSA.TransaccionesMP
                 }
             }
 
+        }
+
+        private void cmdActualizarResumenPorLote_Click(object sender, EventArgs e)
+        {
+            load_dataPorLotes();
+        }
+
+        private void btnRefreshRptMP_Click(object sender, EventArgs e)
+        {
+            load_data_totales();
+        }
+
+        private void btnRptPRD_Click(object sender, EventArgs e)
+        {
+            load_dataPRD();
+        }
+
+        private void btnRptMPyBod_Click(object sender, EventArgs e)
+        {
+            load_dataResumenMP_por_bodega();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (MateriaPrimaAllBodegas != null)
+            {
+                if (MateriaPrimaAllBodegas.Recuperado)
+                {
+                    LoadBodegaMP(MateriaPrimaAllBodegas.IdMP_ACS);
+                    textEdit1.Text = MateriaPrimaAllBodegas.CodeMP_SAP + " " + MateriaPrimaAllBodegas.NameComercial;// frm.ItemSeleccionado.ItemName;
+                }
+            }
         }
     }
 }

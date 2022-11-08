@@ -32,16 +32,30 @@ namespace LOSA.RecuentoInventario
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetalleRecuento));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnFinContabilziacion = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageMP = new DevExpress.XtraTab.XtraTabPage();
             this.grd_mps = new DevExpress.XtraGrid.GridControl();
             this.dsCierreMes1 = new LOSA.Logistica.dsCierreMes();
+            this.gridViewMP = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryGridBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdv_mps = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_bodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colExistencia = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,11 +66,9 @@ namespace LOSA.RecuentoInventario
             this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPagePT = new DevExpress.XtraTab.XtraTabPage();
             this.grd_pt = new DevExpress.XtraGrid.GridControl();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnConfirmar = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdSelecLote = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.grd_meses_disponibles = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -71,6 +83,10 @@ namespace LOSA.RecuentoInventario
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colejercicio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
+            this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colcontabilizado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -78,21 +94,25 @@ namespace LOSA.RecuentoInventario
             this.xtraTabPageMP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_mps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryGridBodega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_mps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             this.xtraTabPagePT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_pt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_years.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -100,9 +120,10 @@ namespace LOSA.RecuentoInventario
             this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Controls.Add(this.btnRefresh);
+            this.panelControl2.Controls.Add(this.btnFinContabilziacion);
             this.panelControl2.Controls.Add(this.xtraTabControl1);
             this.panelControl2.Controls.Add(this.btnConfirmar);
-            this.panelControl2.Controls.Add(this.cmdSelecLote);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Controls.Add(this.txtComentario);
             this.panelControl2.Controls.Add(this.grd_meses_disponibles);
@@ -114,6 +135,19 @@ namespace LOSA.RecuentoInventario
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1270, 668);
             this.panelControl2.TabIndex = 2;
+            // 
+            // btnFinContabilziacion
+            // 
+            this.btnFinContabilziacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFinContabilziacion.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinContabilziacion.Appearance.Options.UseFont = true;
+            this.btnFinContabilziacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFinContabilziacion.ImageOptions.Image")));
+            this.btnFinContabilziacion.Location = new System.Drawing.Point(570, 13);
+            this.btnFinContabilziacion.Name = "btnFinContabilziacion";
+            this.btnFinContabilziacion.Size = new System.Drawing.Size(186, 50);
+            this.btnFinContabilziacion.TabIndex = 17;
+            this.btnFinContabilziacion.Text = "Finalizar Contabilizacion";
+            this.btnFinContabilziacion.Click += new System.EventHandler(this.btnFinContabilziacion_Click);
             // 
             // xtraTabControl1
             // 
@@ -140,25 +174,180 @@ namespace LOSA.RecuentoInventario
             // 
             // grd_mps
             // 
-            this.grd_mps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_mps.DataMember = "Recuento_mp";
             this.grd_mps.DataSource = this.dsCierreMes1;
+            this.grd_mps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_mps.Location = new System.Drawing.Point(0, 0);
-            this.grd_mps.MainView = this.grdv_mps;
+            this.grd_mps.MainView = this.gridViewMP;
             this.grd_mps.Name = "grd_mps";
             this.grd_mps.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.grd_bodega});
+            this.repositoryGridBodega});
             this.grd_mps.Size = new System.Drawing.Size(1260, 555);
             this.grd_mps.TabIndex = 0;
             this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewMP,
             this.grdv_mps});
             // 
             // dsCierreMes1
             // 
             this.dsCierreMes1.DataSetName = "dsCierreMes";
             this.dsCierreMes1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridViewMP
+            // 
+            this.gridViewMP.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridViewMP.Appearance.Empty.Options.UseFont = true;
+            this.gridViewMP.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridViewMP.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridViewMP.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridViewMP.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridViewMP.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridViewMP.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridViewMP.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridViewMP.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridViewMP.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridViewMP.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridViewMP.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridViewMP.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewMP.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridViewMP.Appearance.Preview.Options.UseFont = true;
+            this.gridViewMP.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridViewMP.Appearance.Row.Options.UseFont = true;
+            this.gridViewMP.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridViewMP.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridViewMP.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.colcontabilizado});
+            this.gridViewMP.GridControl = this.grd_mps;
+            this.gridViewMP.Name = "gridViewMP";
+            this.gridViewMP.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewMP.OptionsView.ShowGroupPanel = false;
+            this.gridViewMP.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridViewMP_RowStyle);
+            this.gridViewMP.DoubleClick += new System.EventHandler(this.gridView3_DoubleClick);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Materia Prima";
+            this.gridColumn1.FieldName = "descripcion";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "idmp";
+            this.gridColumn2.FieldName = "id_mp";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Bodega";
+            this.gridColumn3.ColumnEdit = this.repositoryGridBodega;
+            this.gridColumn3.FieldName = "id_bodega";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // repositoryGridBodega
+            // 
+            this.repositoryGridBodega.AutoHeight = false;
+            this.repositoryGridBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryGridBodega.DataSource = this.bodegasBindingSource;
+            this.repositoryGridBodega.DisplayMember = "whs_code";
+            this.repositoryGridBodega.Name = "repositoryGridBodega";
+            this.repositoryGridBodega.PopupView = this.repositoryItemGridLookUpEdit2View;
+            this.repositoryGridBodega.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryGridBodega.ValueMember = "id";
+            // 
+            // bodegasBindingSource
+            // 
+            this.bodegasBindingSource.DataMember = "bodegas";
+            this.bodegasBindingSource.DataSource = this.dsCierreMes1;
+            // 
+            // repositoryItemGridLookUpEdit2View
+            // 
+            this.repositoryItemGridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit2View.Name = "repositoryItemGridLookUpEdit2View";
+            this.repositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Bodega Cod";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Nueva Existencia Kg";
+            this.gridColumn5.DisplayFormat.FormatString = "n2";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn5.FieldName = "toma_fisica";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Existencia Anterior - Sistema Kg";
+            this.gridColumn6.DisplayFormat.FormatString = "n2";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn6.FieldName = "ExistenciaAprox";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 3;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Diferencia Kg";
+            this.gridColumn7.DisplayFormat.FormatString = "n2";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn7.FieldName = "diferencia";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.UnboundExpression = "[peso] - [seleccionado]";
+            this.gridColumn7.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 5;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "gridColumn1";
+            this.gridColumn8.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn8.FieldName = "seleccionado";
+            this.gridColumn8.Name = "gridColumn8";
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Cod SAP";
+            this.gridColumn9.FieldName = "code_sap";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "count_id";
+            this.gridColumn10.FieldName = "count_id";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
             // 
             // grdv_mps
             // 
@@ -193,7 +382,7 @@ namespace LOSA.RecuentoInventario
             this.colSeleccionado,
             this.colcode_sap,
             this.count_id});
-            this.grdv_mps.CustomizationFormBounds = new System.Drawing.Rectangle(-865, 524, 260, 272);
+            this.grdv_mps.CustomizationFormBounds = new System.Drawing.Rectangle(0, 524, 260, 272);
             this.grdv_mps.GridControl = this.grd_mps;
             this.grdv_mps.Name = "grdv_mps";
             this.grdv_mps.OptionsView.ShowAutoFilterRow = true;
@@ -232,16 +421,10 @@ namespace LOSA.RecuentoInventario
             this.grd_bodega.AutoHeight = false;
             this.grd_bodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grd_bodega.DataSource = this.bodegasBindingSource;
             this.grd_bodega.DisplayMember = "whs_code";
             this.grd_bodega.Name = "grd_bodega";
             this.grd_bodega.PopupView = this.repositoryItemGridLookUpEdit1View;
             this.grd_bodega.ValueMember = "id";
-            // 
-            // bodegasBindingSource
-            // 
-            this.bodegasBindingSource.DataMember = "bodegas";
-            this.bodegasBindingSource.DataSource = this.dsCierreMes1;
             // 
             // repositoryItemGridLookUpEdit1View
             // 
@@ -327,17 +510,19 @@ namespace LOSA.RecuentoInventario
             // 
             // grd_pt
             // 
-            this.grd_pt.DataMember = null;
-            this.grd_pt.DataSource = this.dsCierreMes1;
             this.grd_pt.Location = new System.Drawing.Point(0, 0);
-            this.grd_pt.MainView = this.gridView2;
+            this.grd_pt.MainView = this.gridView5;
             this.grd_pt.Name = "grd_pt";
-            this.grd_pt.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemGridLookUpEdit1});
-            this.grd_pt.Size = new System.Drawing.Size(1260, 555);
-            this.grd_pt.TabIndex = 1;
+            this.grd_pt.Size = new System.Drawing.Size(400, 200);
+            this.grd_pt.TabIndex = 0;
             this.grd_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5,
             this.gridView2});
+            // 
+            // gridView5
+            // 
+            this.gridView5.GridControl = this.grd_pt;
+            this.gridView5.Name = "gridView5";
             // 
             // gridView2
             // 
@@ -366,31 +551,13 @@ namespace LOSA.RecuentoInventario
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // repositoryItemGridLookUpEdit1
-            // 
-            this.repositoryItemGridLookUpEdit1.AutoHeight = false;
-            this.repositoryItemGridLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit1.DataSource = this.bodegasBindingSource;
-            this.repositoryItemGridLookUpEdit1.DisplayMember = "whs_code";
-            this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
-            this.repositoryItemGridLookUpEdit1.PopupView = this.gridView4;
-            this.repositoryItemGridLookUpEdit1.ValueMember = "id";
-            // 
-            // gridView4
-            // 
-            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView4.OptionsView.ShowGroupPanel = false;
-            // 
             // btnConfirmar
             // 
             this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConfirmar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.Appearance.Options.UseFont = true;
             this.btnConfirmar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.ImageOptions.Image")));
-            this.btnConfirmar.Location = new System.Drawing.Point(773, 12);
+            this.btnConfirmar.Location = new System.Drawing.Point(944, 12);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(159, 50);
             this.btnConfirmar.TabIndex = 6;
@@ -398,27 +565,11 @@ namespace LOSA.RecuentoInventario
             this.btnConfirmar.Visible = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // cmdSelecLote
-            // 
-            this.cmdSelecLote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdSelecLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSelecLote.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            this.cmdSelecLote.Appearance.Options.UseFont = true;
-            this.cmdSelecLote.Appearance.Options.UseForeColor = true;
-            this.cmdSelecLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdSelecLote.ImageOptions.Image")));
-            this.cmdSelecLote.Location = new System.Drawing.Point(950, 12);
-            this.cmdSelecLote.Name = "cmdSelecLote";
-            this.cmdSelecLote.Size = new System.Drawing.Size(183, 50);
-            this.cmdSelecLote.TabIndex = 15;
-            this.cmdSelecLote.Text = "Seleccionar Lotes";
-            this.cmdSelecLote.Visible = false;
-            this.cmdSelecLote.Click += new System.EventHandler(this.cmdSelecLote_Click);
-            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(411, 26);
+            this.labelControl1.Location = new System.Drawing.Point(179, 13);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(74, 17);
             this.labelControl1.TabIndex = 13;
@@ -426,7 +577,7 @@ namespace LOSA.RecuentoInventario
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(491, 23);
+            this.txtComentario.Location = new System.Drawing.Point(259, 10);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(261, 47);
@@ -436,7 +587,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.grd_meses_disponibles.EditValue = "";
             this.grd_meses_disponibles.Enabled = false;
-            this.grd_meses_disponibles.Location = new System.Drawing.Point(218, 23);
+            this.grd_meses_disponibles.Location = new System.Drawing.Point(51, 46);
             this.grd_meses_disponibles.Name = "grd_meses_disponibles";
             this.grd_meses_disponibles.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.grd_meses_disponibles.Properties.Appearance.Options.UseFont = true;
@@ -499,7 +650,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(17, 26);
+            this.labelControl3.Location = new System.Drawing.Point(17, 13);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(28, 17);
             this.labelControl3.TabIndex = 10;
@@ -509,7 +660,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(184, 26);
+            this.labelControl2.Location = new System.Drawing.Point(17, 49);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(28, 17);
             this.labelControl2.TabIndex = 8;
@@ -519,7 +670,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.grd_years.EditValue = "";
             this.grd_years.Enabled = false;
-            this.grd_years.Location = new System.Drawing.Point(51, 23);
+            this.grd_years.Location = new System.Drawing.Point(51, 10);
             this.grd_years.Name = "grd_years";
             this.grd_years.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grd_years.Properties.Appearance.Options.UseFont = true;
@@ -588,6 +739,41 @@ namespace LOSA.RecuentoInventario
             this.cmdClose.Text = "Cancelar";
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
+            // repositoryItemGridLookUpEdit1
+            // 
+            this.repositoryItemGridLookUpEdit1.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit1.DisplayMember = "whs_code";
+            this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
+            this.repositoryItemGridLookUpEdit1.PopupView = this.gridView4;
+            this.repositoryItemGridLookUpEdit1.ValueMember = "id";
+            // 
+            // gridView4
+            // 
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // colcontabilizado
+            // 
+            this.colcontabilizado.FieldName = "contabilizado";
+            this.colcontabilizado.Name = "colcontabilizado";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Appearance.Options.UseFont = true;
+            this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(794, 12);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(116, 50);
+            this.btnRefresh.TabIndex = 18;
+            this.btnRefresh.Text = "Actualizar";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmDetalleRecuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,21 +789,25 @@ namespace LOSA.RecuentoInventario
             this.xtraTabPageMP.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_mps)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCierreMes1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryGridBodega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_mps)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_bodega)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             this.xtraTabPagePT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_pt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_meses_disponibles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mesesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_years.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -641,7 +831,6 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraEditors.SimpleButton btnConfirmar;
         private DevExpress.XtraEditors.SimpleButton cmdClose;
         private Logistica.dsCierreMes dsCierreMes1;
-        private System.Windows.Forms.BindingSource bodegasBindingSource;
         private DevExpress.XtraEditors.GridLookUpEdit grd_meses_disponibles;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colmes_numero;
@@ -651,11 +840,8 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraEditors.GridLookUpEdit grd_years;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn colejercicio;
-        private System.Windows.Forms.BindingSource yearsBindingSource;
-        private System.Windows.Forms.BindingSource mesesBindingSource;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtComentario;
-        private DevExpress.XtraEditors.SimpleButton cmdSelecLote;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageMP;
         private DevExpress.XtraTab.XtraTabPage xtraTabPagePT;
@@ -664,5 +850,25 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMP;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryGridBodega;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit2View;
+        private System.Windows.Forms.BindingSource mesesBindingSource;
+        private System.Windows.Forms.BindingSource yearsBindingSource;
+        private System.Windows.Forms.BindingSource bodegasBindingSource;
+        private DevExpress.XtraEditors.SimpleButton btnFinContabilziacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colcontabilizado;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
     }
 }

@@ -54,22 +54,22 @@ namespace LOSA.RecepcionMP
             this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colingreso2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCambiarIngreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnactualizar = new DevExpress.XtraEditors.SimpleButton();
             this.dtFechaHasta = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesde = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.btn_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.colCambiarIngreso = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -289,6 +289,24 @@ namespace LOSA.RecepcionMP
             this.colingreso2.Visible = true;
             this.colingreso2.VisibleIndex = 8;
             // 
+            // colCambiarIngreso
+            // 
+            this.colCambiarIngreso.Caption = "Cambio de Ingreso";
+            this.colCambiarIngreso.ColumnEdit = this.btnEditar;
+            this.colCambiarIngreso.Name = "colCambiarIngreso";
+            this.colCambiarIngreso.Visible = true;
+            this.colCambiarIngreso.VisibleIndex = 8;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // btnactualizar
             // 
             this.btnactualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -303,6 +321,7 @@ namespace LOSA.RecepcionMP
             this.btnactualizar.Size = new System.Drawing.Size(151, 58);
             this.btnactualizar.TabIndex = 34;
             this.btnactualizar.Text = "Actualizar";
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // dtFechaHasta
             // 
@@ -375,24 +394,6 @@ namespace LOSA.RecepcionMP
             this.btn_excel.Text = "Exportar";
             this.btn_excel.Click += new System.EventHandler(this.btn_excel_Click);
             // 
-            // colCambiarIngreso
-            // 
-            this.colCambiarIngreso.Caption = "Cambio de Ingreso";
-            this.colCambiarIngreso.ColumnEdit = this.btnEditar;
-            this.colCambiarIngreso.Name = "colCambiarIngreso";
-            this.colCambiarIngreso.Visible = true;
-            this.colCambiarIngreso.VisibleIndex = 8;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // frm_view_ingresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,11 +415,11 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsingresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

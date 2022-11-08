@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIParentFormLOSA));
-            this.toolTip = new System.Windows.Forms.ToolTip();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.abrirLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblServerName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.notificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,17 +60,19 @@
             // 
             this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.abrirLoginToolStripMenuItem});
+            this.abrirLoginToolStripMenuItem,
+            this.notificacionesToolStripMenuItem});
             this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             this.toolStripSplitButton1.Size = new System.Drawing.Size(32, 20);
             this.toolStripSplitButton1.Text = "toolStripSplitButton1";
+            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
             // 
             // abrirLoginToolStripMenuItem
             // 
             this.abrirLoginToolStripMenuItem.Name = "abrirLoginToolStripMenuItem";
-            this.abrirLoginToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.abrirLoginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abrirLoginToolStripMenuItem.Text = "Abrir Login";
             this.abrirLoginToolStripMenuItem.Click += new System.EventHandler(this.abrirLoginToolStripMenuItem_Click);
             // 
@@ -76,6 +80,13 @@
             // 
             this.lblServerName.Name = "lblServerName";
             this.lblServerName.Size = new System.Drawing.Size(0, 17);
+            // 
+            // notificacionesToolStripMenuItem
+            // 
+            this.notificacionesToolStripMenuItem.Name = "notificacionesToolStripMenuItem";
+            this.notificacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.notificacionesToolStripMenuItem.Text = "Notificaciones";
+            this.notificacionesToolStripMenuItem.Click += new System.EventHandler(this.notificacionesToolStripMenuItem_Click);
             // 
             // MDIParentFormLOSA
             // 
@@ -104,6 +115,7 @@
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
         private System.Windows.Forms.ToolStripMenuItem abrirLoginToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel lblServerName;
+        private System.Windows.Forms.ToolStripMenuItem notificacionesToolStripMenuItem;
     }
 }
 

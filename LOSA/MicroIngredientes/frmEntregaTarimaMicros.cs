@@ -591,7 +591,8 @@ namespace LOSA.TransaccionesMP
             bool error = false;
             //bool disponible = false;
             string mensaje = "";
-            decimal ExistenciaTM = 0;
+            decimal ExistenciaKgTarima = 0;
+            decimal ExistenciaUnidades = 0;
             decimal Pentregado = 0;
             //decimal Psolicitado = 0;
             decimal factor = 0;
@@ -714,9 +715,10 @@ namespace LOSA.TransaccionesMP
                             if (dr.Read())
                             {
                                 //disponible = dr.GetBoolean(0);
-                                ExistenciaTM = dr.GetDecimal(2);
-
-                                if (ExistenciaTM <= 0)
+                                ExistenciaUnidades = dr.GetDecimal(2);
+                                ExistenciaKgTarima = dr.GetDecimal(6);
+                                //ExistenciaUnidades = dr.GetDecimal(3);
+                                if (ExistenciaKgTarima <= 0)
                                 {
                                     mensaje = "Esta tarima ya fue entregada en Alimentación!" +
                                               "\nSi tiene la tarima en fisico, significa que ubico dos rotulos iguales \nen varias tarimas" +
@@ -744,7 +746,8 @@ namespace LOSA.TransaccionesMP
                             CajaDialogo.Error(ec.Message);
                         }
 
-                        frmResumenToEntregar frms = new frmResumenToEntregar(ExistenciaTM
+                        frmResumenToEntregar frms = new frmResumenToEntregar(ExistenciaKgTarima
+                                                                            , ExistenciaUnidades
                                                                             , Pentregado
                                                                             , 0//Psolicitado
                                                                             , DT_Tarima
