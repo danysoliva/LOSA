@@ -29,6 +29,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xsr_traslado_lotes));
@@ -58,7 +59,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlID = new DevExpress.XtraReports.UI.XRLabel();
-            this.dsTrasladoLotes = new DevExpress.DataAccess.Sql.SqlDataSource();
+            this.dsTrasladoLotes = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.ID_H = new DevExpress.XtraReports.Parameters.Parameter();
             this.groupHeaderBand1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
@@ -143,7 +144,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[lote]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[lote]")});
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBorders = false;
@@ -154,7 +155,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell30.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell30.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Origen]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[Origen]")});
             this.xrTableCell30.Multiline = true;
             this.xrTableCell30.Name = "xrTableCell30";
             this.xrTableCell30.StylePriority.UseBorders = false;
@@ -165,7 +166,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Destino]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[Destino]")});
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseBorders = false;
@@ -176,7 +177,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[cantidad]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[cantidad]")});
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseBorders = false;
@@ -203,7 +204,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell6.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[fecha_vencimiento]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[fecha_vencimiento]")});
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBorders = false;
@@ -215,7 +216,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell7.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrTableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[fecha_produccion]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[fecha_produccion]")});
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBorders = false;
@@ -258,7 +259,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // xrLabel9
             // 
             this.xrLabel9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Factura]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[Factura]")});
             this.xrLabel9.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(540.8337F, 60.00001F);
             this.xrLabel9.Multiline = true;
@@ -284,7 +285,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // xrLabel1
             // 
             this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CardName]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[CardName]")});
             this.xrLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(37.70831F, 12.28701F);
             this.xrLabel1.Multiline = true;
@@ -297,7 +298,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // xrLabel2
             // 
             this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Address]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[Address]")});
             this.xrLabel2.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(37.70828F, 40.00001F);
             this.xrLabel2.Multiline = true;
@@ -323,7 +324,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // xrLabel4
             // 
             this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[fecha]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[fecha]")});
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(540.8336F, 13.28701F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
@@ -335,7 +336,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // xrLabel5
             // 
             this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[fecha]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[fecha]")});
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(540.8336F, 37.00001F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
@@ -373,9 +374,10 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // xrlID
             // 
             this.xrlID.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Concat(\'Transferencia de stock \',PadLeft([id_h],5,\'0\' ) )")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Concat(\'Transferencia de stock \',PadLeft([rpt_traslado_almacen_v2].[id_h],5,\'0\' )" +
+                    " )")});
             this.xrlID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.xrlID.LocationFloat = new DevExpress.Utils.PointFloat(0F, 126.8333F);
+            this.xrlID.LocationFloat = new DevExpress.Utils.PointFloat(0.0001430511F, 123.8334F);
             this.xrlID.Multiline = true;
             this.xrlID.Name = "xrlID";
             this.xrlID.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -389,12 +391,12 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.dsTrasladoLotes.ConnectionName = "localhost_LOSA_Connection 2";
             this.dsTrasladoLotes.Name = "dsTrasladoLotes";
-            storedProcQuery1.Name = "rpt_traslado_almacen";
+            storedProcQuery1.Name = "rpt_traslado_almacen_v2";
             queryParameter1.Name = "@id_h";
-            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter1.Value = new DevExpress.DataAccess.Expression("?ID_H", typeof(int));
+            queryParameter1.Type = typeof(int);
+            queryParameter1.ValueInfo = "0";
             storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "rpt_traslado_almacen";
+            storedProcQuery1.StoredProcName = "rpt_traslado_almacen_v2";
             this.dsTrasladoLotes.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});
             this.dsTrasladoLotes.ResultSchemaSerializable = resources.GetString("dsTrasladoLotes.ResultSchemaSerializable");
@@ -526,7 +528,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell14.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[row_number]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[row_number]")});
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.StylePriority.UseBorders = false;
@@ -537,7 +539,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell15.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[code_sap]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[code_sap]")});
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
             this.xrTableCell15.StylePriority.UseBorders = false;
@@ -549,7 +551,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell16.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[nombre_comercial]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[nombre_comercial]")});
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";
             this.xrTableCell16.StylePriority.UseBorders = false;
@@ -561,7 +563,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell17.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Sum([unidades])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([rpt_traslado_almacen_v2].[unidades])")});
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
             this.xrTableCell17.StylePriority.UseBorders = false;
@@ -575,7 +577,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell18.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Sum([cantidad])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([rpt_traslado_almacen_v2].[cantidad])")});
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseBorders = false;
@@ -728,7 +730,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.groupHeaderBand1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.dsTrasladoLotes});
-            this.DataMember = "rpt_traslado_almacen";
+            this.DataMember = "rpt_traslado_almacen_v2";
             this.DataSource = this.dsTrasladoLotes;
             this.FilterString = "[id_h] = ?ID_H";
             this.Font = new System.Drawing.Font("Arial", 9.75F);

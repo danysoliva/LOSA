@@ -48,7 +48,8 @@ namespace LOSA.AlmacenesExterno
         public void load_data_detalle_salida_externa()
         {
             DataOperations dp = new DataOperations();
-            string query = @"sp_get_detalle_salida_externa";
+            //string query = @"sp_get_detalle_salida_externa";
+            string query = @"sp_get_detalle_salida_externav2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -78,7 +79,8 @@ namespace LOSA.AlmacenesExterno
             }
 
             DataOperations dp = new DataOperations();
-            string query = @"sp_get_lote_salida_externa";
+            //string query = @"sp_get_lote_salida_externa";
+            string query = @"sp_get_lote_salida_externav2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {

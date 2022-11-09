@@ -38,6 +38,7 @@ namespace LOSA.TransaccionesMP
             //load_tarimas_scan();
             //load_bines_disponibles();
             LoadDataMicros();
+            LoadTarimas();
             txtTarima.Focus();
         }
 
@@ -56,12 +57,12 @@ namespace LOSA.TransaccionesMP
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsMicro1.informacionPRD_micro);
 
-                cmd = new SqlCommand("sp_get_lotes_micro_ingredientes_V4", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
-                dsMicro1.informacionPRD_micro_tentative.Clear();
-                adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsMicro1.informacionPRD_micro_tentative);
+                //cmd = new SqlCommand("sp_get_lotes_micro_ingredientes_V4", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                ////cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                //dsMicro1.informacionPRD_micro_tentative.Clear();
+                //adat = new SqlDataAdapter(cmd);
+                //adat.Fill(dsMicro1.informacionPRD_micro_tentative);
 
                 con.Close();
             }
@@ -986,6 +987,7 @@ namespace LOSA.TransaccionesMP
         private void cmdRecargar_Click(object sender, EventArgs e)
         {
             LoadDataMicros();
+            LoadTarimas();
         }
 
         private void cmdImprimirHoja_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)

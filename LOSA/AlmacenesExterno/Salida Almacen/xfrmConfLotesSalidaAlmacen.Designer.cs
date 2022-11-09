@@ -945,7 +945,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            this.btnGuardar.Appearance.BackColor = System.Drawing.Color.LightGreen;
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.btnGuardar.Appearance.Options.UseBackColor = true;
             this.btnGuardar.Appearance.Options.UseFont = true;
