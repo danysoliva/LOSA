@@ -21,6 +21,7 @@ using LOSA.Trazabilidad.ReportesTRZ;
 using LOSA.Trazabilidad.Despachos;
 using LOSA.TransaccionesMP;
 
+
 namespace LOSA.Calidad
 {
     public partial class rdEstadoTransporte : DevExpress.XtraEditors.XtraForm
@@ -1483,6 +1484,7 @@ namespace LOSA.Calidad
                             DataOperations dp = new DataOperations();
                             string Path_ = dp.FTP_Tickets_LOSA + row.id_conf + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + row.file_name;
                             if (Upload(Path_, row.path))
+                            //if()
                             {
                                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                                 con.Open();
@@ -1510,7 +1512,9 @@ namespace LOSA.Calidad
                     if (cambioImagen)
                     {
                         string Path_2 = dp.FTP_Tickets_LOSA + "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
-                        if (Upload(Path_2, full_pathImagen))
+                        //if (Upload(Path_2, full_pathImagen))
+                        FTP_Class ftp1 = new FTP_Class();
+                        if (ftp1.GuardarArchivo(UsuarioLogeado, Path_2, full_pathImagen))
                         {
                             SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                             con.Open();

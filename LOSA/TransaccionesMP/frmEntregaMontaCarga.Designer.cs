@@ -36,6 +36,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDevoluciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnResumenTarimas = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdEntregaMicros = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -58,7 +59,7 @@
             this.cmdDetalleMP.ImageOptions.Image = global::LOSA.Properties.Resources.trucksss;
             this.cmdDetalleMP.Location = new System.Drawing.Point(323, 101);
             this.cmdDetalleMP.Name = "cmdDetalleMP";
-            this.cmdDetalleMP.Size = new System.Drawing.Size(274, 81);
+            this.cmdDetalleMP.Size = new System.Drawing.Size(274, 67);
             this.cmdDetalleMP.TabIndex = 15;
             this.cmdDetalleMP.Text = "Materia Prima entregada";
             this.cmdDetalleMP.Click += new System.EventHandler(this.cmdDetalleMP_Click);
@@ -100,9 +101,9 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(323, 188);
+            this.simpleButton1.Location = new System.Drawing.Point(323, 174);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(274, 77);
+            this.simpleButton1.Size = new System.Drawing.Size(274, 67);
             this.simpleButton1.TabIndex = 19;
             this.simpleButton1.Text = "Requisas";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -112,9 +113,9 @@
             this.btnDevoluciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnDevoluciones.Appearance.Options.UseFont = true;
             this.btnDevoluciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDevoluciones.ImageOptions.Image")));
-            this.btnDevoluciones.Location = new System.Drawing.Point(323, 271);
+            this.btnDevoluciones.Location = new System.Drawing.Point(323, 247);
             this.btnDevoluciones.Name = "btnDevoluciones";
-            this.btnDevoluciones.Size = new System.Drawing.Size(274, 88);
+            this.btnDevoluciones.Size = new System.Drawing.Size(274, 67);
             this.btnDevoluciones.TabIndex = 21;
             this.btnDevoluciones.Text = "Devoluciones";
             this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
@@ -124,12 +125,23 @@
             this.btnResumenTarimas.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnResumenTarimas.Appearance.Options.UseFont = true;
             this.btnResumenTarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResumenTarimas.ImageOptions.Image")));
-            this.btnResumenTarimas.Location = new System.Drawing.Point(323, 365);
+            this.btnResumenTarimas.Location = new System.Drawing.Point(323, 320);
             this.btnResumenTarimas.Name = "btnResumenTarimas";
             this.btnResumenTarimas.Size = new System.Drawing.Size(274, 67);
             this.btnResumenTarimas.TabIndex = 22;
             this.btnResumenTarimas.Text = "Tarimas Por Ingreso";
             this.btnResumenTarimas.Click += new System.EventHandler(this.btnResumenTarimas_Click);
+            // 
+            // cmdEntregaMicros
+            // 
+            this.cmdEntregaMicros.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.cmdEntregaMicros.Appearance.Options.UseFont = true;
+            this.cmdEntregaMicros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.cmdEntregaMicros.Location = new System.Drawing.Point(323, 393);
+            this.cmdEntregaMicros.Name = "cmdEntregaMicros";
+            this.cmdEntregaMicros.Size = new System.Drawing.Size(274, 67);
+            this.cmdEntregaMicros.TabIndex = 23;
+            this.cmdEntregaMicros.Text = "Entrega Micros";
             // 
             // frmEntregaMontaCarga
             // 
@@ -137,6 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
+            this.Controls.Add(this.cmdEntregaMicros);
             this.Controls.Add(this.btnResumenTarimas);
             this.Controls.Add(this.btnDevoluciones);
             this.Controls.Add(this.simpleButton1);
@@ -161,5 +174,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnDevoluciones;
         private DevExpress.XtraEditors.SimpleButton btnResumenTarimas;
+        private DevExpress.XtraEditors.SimpleButton cmdEntregaMicros;
     }
 }
