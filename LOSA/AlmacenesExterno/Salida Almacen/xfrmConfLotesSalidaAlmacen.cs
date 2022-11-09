@@ -463,25 +463,34 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 transaction.Commit();
                 cnx.Close();
 
-                foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock)
+                //foreach (var item in dsSalidasAlmacenesExternos.Transferencia_Stock)
+                //{
+                //    frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(id_salida_h, UsuarioLogeado, item.itemcode);
+                //    if (frm.ShowDialog() == DialogResult.OK)
+                //    {
+
+                //        CajaDialogo.Information("TRANSFERENCIA CREADA EXITOSAMENTE");
+                //        this.DialogResult = DialogResult.OK;
+
+                //        xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
+                //        report.Parameters["id_h"].Value = id_salida_h;
+
+
+                //        using (ReportPrintTool printTool = new ReportPrintTool(report))
+                //        {
+                //            // Send the report to the default printer.
+                //            printTool.ShowPreviewDialog();
+                //        }
+                //    }
+                //}
+
+                xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
+                report.Parameters["id_h"].Value = id_salida_h;
+                report.Parameters["tipo_id_reporte"].Value = 1;//PLAN
+                using (ReportPrintTool printTool = new ReportPrintTool(report))
                 {
-                    frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(id_salida_h, UsuarioLogeado, item.itemcode);
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-
-                        CajaDialogo.Information("TRANSFERENCIA CREADA EXITOSAMENTE");
-                        this.DialogResult = DialogResult.OK;
-
-                        xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
-                        report.Parameters["id_h"].Value = id_salida_h;
-
-
-                        using (ReportPrintTool printTool = new ReportPrintTool(report))
-                        {
-                            // Send the report to the default printer.
-                            printTool.ShowPreviewDialog();
-                        }
-                    }
+                    // Send the report to the default printer.
+                    printTool.ShowPreviewDialog();
                 }
             }
             catch (Exception ex)
