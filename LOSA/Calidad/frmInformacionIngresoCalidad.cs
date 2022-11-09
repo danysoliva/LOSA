@@ -1238,13 +1238,14 @@ namespace LOSA.Calidad
                         {
                             if (xtraFolderBrowserDialog1.ShowDialog() == DialogResult.OK)
                             {
-                                DownloadFile(row.path_load, xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name);
-
-                                        Process proceso = new Process();
-                                        proceso.StartInfo.FileName = xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name;
-                                        proceso.Start();
-                            //CajaDialogo.Information(xtraFolderBrowserDialog1.SelectedPath);
-                        }
+                                //DownloadFile(row.path_load, xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name);
+                                FTP_Class ftp1 = new FTP_Class();
+                                ftp1.DownloadFile(row.path_load, xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name, UsuarioLogeado);
+                                Process proceso = new Process();
+                                proceso.StartInfo.FileName = xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name;
+                                proceso.Start();
+                                //CajaDialogo.Information(xtraFolderBrowserDialog1.SelectedPath);
+                            }
                         }
                 }
                 else
@@ -1483,8 +1484,10 @@ namespace LOSA.Calidad
                             string FileName = row.file_name;
                             DataOperations dp = new DataOperations();
                             string Path_ = dp.FTP_Tickets_LOSA + row.id_conf + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + row.file_name;
-                            if (Upload(Path_, row.path))
-                            //if()
+                            //if (Upload(Path_, row.path))
+                            FTP_Class ftp1 = new FTP_Class();
+                            
+                            if(ftp1.GuardarArchivo(UsuarioLogeado, Path_, row.path))
                             {
                                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                                 con.Open();

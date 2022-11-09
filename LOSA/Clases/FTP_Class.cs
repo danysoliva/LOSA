@@ -65,8 +65,8 @@ namespace LOSA.Clases
                 }
 
                 FtpWebRequest request = (FtpWebRequest)WebRequest.Create(pathSource);
-                request.Credentials = new NetworkCredential(dp.User_FTP_Server, dp.Password_UserFTPServer, "AQUAFEEDHN.COM");
-                //request.Credentials = new NetworkCredential(UsuarioLogeado.AD_User, UsuarioLogeado.Password);
+                request.Credentials = new NetworkCredential(user_op, pass, "AQUAFEEDHN.COM");
+                //request.Credentials = new NetworkCredential(user_op, pass);
                 request.Method = WebRequestMethods.Ftp.DownloadFile;
 
                 using (Stream ftpStream = request.GetResponse().GetResponseStream())
