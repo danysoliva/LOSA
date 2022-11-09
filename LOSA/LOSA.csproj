@@ -940,6 +940,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Clases\FTP_Class.cs" />
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\IngresoExternoD.cs" />
     <Compile Include="Clases\IngresoExternoH.cs" />
