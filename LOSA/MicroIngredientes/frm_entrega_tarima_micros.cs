@@ -22,6 +22,7 @@ namespace LOSA.MicroIngredientes
         public decimal UdEnviar;
         public decimal KgEnviar;
         decimal MaximoA_Enviar;
+        int Ud_MaximoA_Enviar;
 
         int IdMP;
         string LoteMP;
@@ -61,6 +62,29 @@ namespace LOSA.MicroIngredientes
                 if (PresentacionActual.RecuperarRegistro(lot1.IdPresentacion))
                     lblPresentacion.Text = PresentacionActual.Descripcion;
                 
+            }
+            IdMP = pidMP;
+            LoteMP = pLote;
+            LoadDataSinTarima();
+        }
+
+        public frm_entrega_tarima_micros(int pidMP, int pIdTarima, string pLote, decimal pCantidadMaxima, int pUdMaxEnviar )
+        {
+            InitializeComponent();
+            TipoTransaccionActual = TipoTransaccion.SinTarima;
+            PresentacionActual = new PresentacionX();
+            MaximoA_Enviar = pCantidadMaxima;
+            Ud_MaximoA_Enviar = pUdMaxEnviar;
+            Tarima tar1 = new Tarima();
+            //if (lot1.RecuperarRegistro(pIdLoteALOSY))
+            //{
+            //    if (PresentacionActual.RecuperarRegistro(lot1.IdPresentacion))
+            //        lblPresentacion.Text = PresentacionActual.Descripcion;
+            //}
+            if (tar1.RecuperarRegistro(pIdTarima))
+            {
+                if (PresentacionActual.RecuperarRegistro(tar1.IdPresentacion))
+                    lblPresentacion.Text = PresentacionActual.Descripcion;
             }
             IdMP = pidMP;
             LoteMP = pLote;
@@ -145,14 +169,29 @@ namespace LOSA.MicroIngredientes
             //switch (TipoTransaccionActual)
             //{
             //    case TipoTransaccion.ConTarima:
-                    UdEnviar = dp.ValidateNumberInt32(txtPorEnviar.Text);
+            if(Ud_MaximoA_Enviar>0)
+            {
+                UdEnviar = dp.ValidateNumberInt32(txtPorEnviar.Text);
+                //CalcularKg(UdEnviar);
+                if (UdEnviar < Ud_MaximoA_Enviar)
+                {
+                    UdEnviar += 1;
                     CalcularKg(UdEnviar);
-                    if (KgEnviar <= MaximoA_Enviar)
-                    {
-                        UdEnviar += 1;
-                        CalcularKg(UdEnviar);
-                        PlaceNewNumber(UdEnviar);
-                    }
+                    PlaceNewNumber(UdEnviar);
+                }
+            }
+            else
+            {
+                UdEnviar = dp.ValidateNumberInt32(txtPorEnviar.Text);
+                CalcularKg(UdEnviar);
+                if (KgEnviar <= MaximoA_Enviar)
+                {
+                    UdEnviar += 1;
+                    CalcularKg(UdEnviar);
+                    PlaceNewNumber(UdEnviar);
+                }
+            }
+            
 
             
         }
