@@ -823,7 +823,9 @@ namespace LOSA.TransaccionesMP
             }
         }
 
+        private void reposEntregaMicros_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
 
-
+        }
     }
 }
