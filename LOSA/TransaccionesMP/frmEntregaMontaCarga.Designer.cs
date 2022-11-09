@@ -36,7 +36,6 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDevoluciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnResumenTarimas = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdEntregaMicros = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -132,24 +131,12 @@
             this.btnResumenTarimas.Text = "Tarimas Por Ingreso";
             this.btnResumenTarimas.Click += new System.EventHandler(this.btnResumenTarimas_Click);
             // 
-            // cmdEntregaMicros
-            // 
-            this.cmdEntregaMicros.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.cmdEntregaMicros.Appearance.Options.UseFont = true;
-            this.cmdEntregaMicros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.cmdEntregaMicros.Location = new System.Drawing.Point(323, 393);
-            this.cmdEntregaMicros.Name = "cmdEntregaMicros";
-            this.cmdEntregaMicros.Size = new System.Drawing.Size(274, 67);
-            this.cmdEntregaMicros.TabIndex = 23;
-            this.cmdEntregaMicros.Text = "Entrega Micros";
-            // 
             // frmEntregaMontaCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
-            this.Controls.Add(this.cmdEntregaMicros);
             this.Controls.Add(this.btnResumenTarimas);
             this.Controls.Add(this.btnDevoluciones);
             this.Controls.Add(this.simpleButton1);
@@ -174,6 +161,5 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnDevoluciones;
         private DevExpress.XtraEditors.SimpleButton btnResumenTarimas;
-        private DevExpress.XtraEditors.SimpleButton cmdEntregaMicros;
     }
 }
