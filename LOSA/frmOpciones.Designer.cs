@@ -73,6 +73,7 @@
             this.cmdRequisiciones_ = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanrequisas = new DevExpress.XtraEditors.SimpleButton();
             this.tabPT = new DevExpress.XtraTab.XtraTabPage();
+            this.btnHistorialPT = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton31 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton22 = new DevExpress.XtraEditors.SimpleButton();
             this.btntarimasactivadasPT = new DevExpress.XtraEditors.SimpleButton();
@@ -809,6 +810,7 @@
             // 
             this.tabPT.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabPT.Appearance.Header.Options.UseFont = true;
+            this.tabPT.Controls.Add(this.btnHistorialPT);
             this.tabPT.Controls.Add(this.simpleButton31);
             this.tabPT.Controls.Add(this.simpleButton22);
             this.tabPT.Controls.Add(this.btntarimasactivadasPT);
@@ -822,6 +824,19 @@
             this.tabPT.Size = new System.Drawing.Size(829, 486);
             this.tabPT.Text = "Producto Terminado";
             this.tabPT.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPT_Paint);
+            // 
+            // btnHistorialPT
+            // 
+            this.btnHistorialPT.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnHistorialPT.Appearance.Options.UseFont = true;
+            this.btnHistorialPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnHistorialPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHistorialPT.ImageOptions.Image")));
+            this.btnHistorialPT.Location = new System.Drawing.Point(208, 14);
+            this.btnHistorialPT.Name = "btnHistorialPT";
+            this.btnHistorialPT.Size = new System.Drawing.Size(199, 42);
+            this.btnHistorialPT.TabIndex = 44;
+            this.btnHistorialPT.Text = "Historial de Producto";
+            this.btnHistorialPT.Click += new System.EventHandler(this.btnHistorialPT_Click);
             // 
             // simpleButton31
             // 
@@ -857,7 +872,7 @@
             this.btntarimasactivadasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
-            this.btntarimasactivadasPT.Location = new System.Drawing.Point(208, 156);
+            this.btntarimasactivadasPT.Location = new System.Drawing.Point(208, 201);
             this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2);
             this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
             this.btntarimasactivadasPT.Size = new System.Drawing.Size(199, 42);
@@ -871,7 +886,7 @@
             this.simpleButton21.Appearance.Options.UseFont = true;
             this.simpleButton21.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton21.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton21.ImageOptions.Image")));
-            this.simpleButton21.Location = new System.Drawing.Point(208, 14);
+            this.simpleButton21.Location = new System.Drawing.Point(207, 156);
             this.simpleButton21.Name = "simpleButton21";
             this.simpleButton21.Size = new System.Drawing.Size(199, 42);
             this.simpleButton21.TabIndex = 41;
@@ -900,10 +915,10 @@
             this.btnMPReproceso.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnMPReproceso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnMPReproceso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMPReproceso.ImageOptions.Image")));
-            this.btnMPReproceso.Location = new System.Drawing.Point(2, 201);
+            this.btnMPReproceso.Location = new System.Drawing.Point(1, 201);
             this.btnMPReproceso.Margin = new System.Windows.Forms.Padding(2);
             this.btnMPReproceso.Name = "btnMPReproceso";
-            this.btnMPReproceso.Size = new System.Drawing.Size(199, 42);
+            this.btnMPReproceso.Size = new System.Drawing.Size(200, 42);
             this.btnMPReproceso.TabIndex = 40;
             this.btnMPReproceso.Text = " Ingreso MP Reproceso";
             this.btnMPReproceso.Visible = false;
@@ -1805,5 +1820,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnTransferenciaPendiente;
+        private DevExpress.XtraEditors.SimpleButton btnHistorialPT;
     }
 }
