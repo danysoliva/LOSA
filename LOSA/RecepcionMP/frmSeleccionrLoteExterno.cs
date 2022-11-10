@@ -34,7 +34,7 @@ namespace LOSA.RecepcionMP
             InitializeComponent();
             id_externo = Pid_externo;
             load_data();
-
+            
 
         }
         public frmSeleccionrLoteExterno(int Pid_externo, int pid_mp)
@@ -43,8 +43,8 @@ namespace LOSA.RecepcionMP
             id_externo = Pid_externo;
             id_mp = pid_mp;
             load_data_forMP();
+            //load_data();
 
-           
         }
 
         public void load_data_forMP()
