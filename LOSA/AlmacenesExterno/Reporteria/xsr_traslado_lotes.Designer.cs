@@ -32,6 +32,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xsr_traslado_lotes));
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -88,6 +89,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell25 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell26 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell27 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tipo_id_reporte = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -393,9 +395,13 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.dsTrasladoLotes.Name = "dsTrasladoLotes";
             storedProcQuery1.Name = "rpt_traslado_almacen_v2";
             queryParameter1.Name = "@id_h";
-            queryParameter1.Type = typeof(int);
-            queryParameter1.ValueInfo = "0";
+            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("?ID_H", typeof(int));
+            queryParameter2.Name = "@tipo_id_reporte";
+            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter2.Value = new DevExpress.DataAccess.Expression("?tipo_id_reporte", typeof(int));
             storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.Parameters.Add(queryParameter2);
             storedProcQuery1.StoredProcName = "rpt_traslado_almacen_v2";
             this.dsTrasladoLotes.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});
@@ -563,7 +569,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell17.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([rpt_traslado_almacen_v2].[unidades])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([unidades])")});
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
             this.xrTableCell17.StylePriority.UseBorders = false;
@@ -577,7 +583,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell18.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([rpt_traslado_almacen_v2].[cantidad])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([cantidad])")});
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseBorders = false;
@@ -684,9 +690,11 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell24.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell24.Font = new System.Drawing.Font("Arial", 7.75F);
             this.xrTableCell24.Multiline = true;
             this.xrTableCell24.Name = "xrTableCell24";
             this.xrTableCell24.StylePriority.UseBorders = false;
+            this.xrTableCell24.StylePriority.UseFont = false;
             this.xrTableCell24.Text = "Fecha de Vencimiento";
             this.xrTableCell24.Weight = 1.0882782299114062D;
             // 
@@ -694,9 +702,11 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell25.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell25.Font = new System.Drawing.Font("Arial", 7.75F);
             this.xrTableCell25.Multiline = true;
             this.xrTableCell25.Name = "xrTableCell25";
             this.xrTableCell25.StylePriority.UseBorders = false;
+            this.xrTableCell25.StylePriority.UseFont = false;
             this.xrTableCell25.Text = "Fecha de frabricación";
             this.xrTableCell25.Weight = 1.0796224259905172D;
             // 
@@ -720,6 +730,13 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell27.Text = "Det.";
             this.xrTableCell27.Weight = 1.7340425918861571D;
             // 
+            // tipo_id_reporte
+            // 
+            this.tipo_id_reporte.Description = "1=Reporta Plan, 2=Reporte Ingresado";
+            this.tipo_id_reporte.Name = "tipo_id_reporte";
+            this.tipo_id_reporte.Type = typeof(int);
+            this.tipo_id_reporte.ValueInfo = "0";
+            // 
             // xsr_traslado_lotes
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -738,7 +755,8 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.PageWidth = 753;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.ID_H});
+            this.ID_H,
+            this.tipo_id_reporte});
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -805,5 +823,6 @@ namespace LOSA.AlmacenesExterno.Reporteria
         public DevExpress.DataAccess.Sql.SqlDataSource dsTrasladoLotes;
         private DevExpress.XtraReports.UI.XRLabel xrLabel9;
         private DevExpress.XtraReports.UI.XRLabel xrLabel8;
+        private DevExpress.XtraReports.Parameters.Parameter tipo_id_reporte;
     }
 }

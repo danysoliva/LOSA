@@ -33,9 +33,10 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
-            this.xrSubreport2 = new DevExpress.XtraReports.UI.XRSubreport();
             this.id_h = new DevExpress.XtraReports.Parameters.Parameter();
             this.SubBand2 = new DevExpress.XtraReports.UI.SubBand();
+            this.tipo_id_reporte = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrSubreport2 = new DevExpress.XtraReports.UI.XRSubreport();
             this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -65,14 +66,6 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.SubBand1.KeepTogether = true;
             this.SubBand1.Name = "SubBand1";
             // 
-            // xrSubreport2
-            // 
-            this.xrSubreport2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.xrSubreport2.Name = "xrSubreport2";
-            this.xrSubreport2.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("ID_H", this.id_h));
-            this.xrSubreport2.ReportSource = new LOSA.AlmacenesExterno.Reporteria.xsr_traslado_lotes();
-            this.xrSubreport2.SizeF = new System.Drawing.SizeF(750F, 161.7917F);
-            // 
             // id_h
             // 
             this.id_h.Description = "Parameter1";
@@ -87,11 +80,29 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrSubreport1});
             this.SubBand2.Name = "SubBand2";
             // 
+            // tipo_id_reporte
+            // 
+            this.tipo_id_reporte.Description = "1=Reporte Plan, 2=Reporte Ingresado";
+            this.tipo_id_reporte.Name = "tipo_id_reporte";
+            this.tipo_id_reporte.Type = typeof(int);
+            this.tipo_id_reporte.ValueInfo = "0";
+            this.tipo_id_reporte.Visible = false;
+            // 
+            // xrSubreport2
+            // 
+            this.xrSubreport2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrSubreport2.Name = "xrSubreport2";
+            this.xrSubreport2.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("ID_H", this.id_h));
+            this.xrSubreport2.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("tipo_id_reporte", this.tipo_id_reporte));
+            this.xrSubreport2.ReportSource = new LOSA.AlmacenesExterno.Reporteria.xsr_traslado_lotes();
+            this.xrSubreport2.SizeF = new System.Drawing.SizeF(750F, 161.7917F);
+            // 
             // xrSubreport1
             // 
             this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrSubreport1.Name = "xrSubreport1";
             this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("ID_Header", this.id_h));
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("tipo_id_reporte", this.tipo_id_reporte));
             this.xrSubreport1.ReportSource = new LOSA.AlmacenesExterno.Reporteria.xsrTransaccionAlmacenes();
             this.xrSubreport1.SizeF = new System.Drawing.SizeF(750F, 100F);
             // 
@@ -104,7 +115,8 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(50, 50, 50, 50);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.id_h});
+            this.id_h,
+            this.tipo_id_reporte});
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -120,5 +132,6 @@ namespace LOSA.AlmacenesExterno.Reporteria
         private DevExpress.XtraReports.UI.SubBand SubBand2;
         private DevExpress.XtraReports.UI.XRSubreport xrSubreport2;
         private DevExpress.XtraReports.Parameters.Parameter id_h;
+        private DevExpress.XtraReports.Parameters.Parameter tipo_id_reporte;
     }
 }
