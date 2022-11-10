@@ -32,7 +32,11 @@ namespace LOSA.RecepcionMP
         int DEFAULT_VALUE = 0;
         string ItemCode;
         decimal factor;
+
         int id_transferencia;
+        int DocEntry;
+        int id_mp;
+
         decimal peso_boleta;
         public int Id_ingreso;
         public string Dscripcion;
@@ -53,9 +57,7 @@ namespace LOSA.RecepcionMP
         int idLoteExterno;
         
         DataOperations dp = new DataOperations();
-        public frmTarima_V2(bool PIstraslado,
-                            UserLogin Puser,
-                            int Pid_traslado)
+        public frmTarima_V2(bool PIstraslado,UserLogin Puser, int Pid_traslado)
         {
             InitializeComponent();
             UsuarioLogeado = Puser;
@@ -69,11 +71,39 @@ namespace LOSA.RecepcionMP
                 btnSelecciondeMp.Visible = false;
                 btnSelccionarProveedor.Visible = false;
                 txtLote.Enabled = false;
+
             }
             else
             {
                 btnSeleccionarLote.Visible = false;
             }
+            LoadPresentaciones();
+            LoadNumeroTransaccion();
+        }
+        public frmTarima_V2(bool PIstraslado, UserLogin Puser, int Pid_traslado, int Pid_transferencia, int pDocEntry, int pId_mp)
+        {
+            InitializeComponent();
+            UsuarioLogeado = Puser;
+            Istraslado = PIstraslado;
+            IdLoteInserted = DEFAULT_VALUE;
+            idLoteExterno = DEFAULT_VALUE;
+            id_transferencia = Pid_transferencia;
+            id_Traslado_a_Ingresar = Pid_traslado;
+            DocEntry = pDocEntry;
+            id_mp = pId_mp;
+            if (Istraslado)
+            {
+                btnSeleccionarLote.Visible = true;
+                btnSelecciondeMp.Visible = false;
+                btnSelccionarProveedor.Visible = false;
+                txtLote.Enabled = false;
+
+            }
+            else
+            {
+                btnSeleccionarLote.Visible = false;
+            }
+
             LoadPresentaciones();
             LoadNumeroTransaccion();
         }
@@ -154,34 +184,36 @@ namespace LOSA.RecepcionMP
 
                     }   
                 }
-
-
+                //Update Salida Externa H, Insert Salida Externa Detalle y Detalle Lote
+                #region Codigo Viejo
                 //Insert salida H en Almacen externo
-                IngresoExternoD ingExD = new IngresoExternoD();
+                //IngresoExternoD ingExD = new IngresoExternoD();
 
-                ingExD.RecuperaRegistroInFromIdIngresoH_and_MP_Code(id_Traslado_a_Ingresar);
+                //ingExD.RecuperaRegistroInFromIdIngresoH_and_MP_Code(id_Traslado_a_Ingresar);
 
-                SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insert", cn);
-                cmdh.CommandType = CommandType.StoredProcedure;
-                //cmdh.Transaction = transaction;
-                cmdh.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = "BG001";
-                if(string.IsNullOrEmpty(ingExD.BodegaIn))
-                    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = DBNull.Value;
-                else
-                    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = ingExD.BodegaIn;
+                //SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insert", cn);
+                //cmdh.CommandType = CommandType.StoredProcedure;
+                ////cmdh.Transaction = transaction;
+                //cmdh.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = "BG001";
+                //if(string.IsNullOrEmpty(ingExD.BodegaIn))
+                //    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = DBNull.Value;
+                //else
+                //    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = ingExD.BodegaIn;
 
-                cmdh.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
+                //cmdh.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
 
-                if(ingExD.DocEntrySAP>0)
-                    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = ingExD.DocEntrySAP;
-                else
-                    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DBNull.Value;
+                //if(ingExD.DocEntrySAP>0)
+                //    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = ingExD.DocEntrySAP;
+                //else
+                //    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DBNull.Value;
 
-                cmdh.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
-                cmdh.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = 0;
-                cmdh.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = DBNull.Value;
+                //cmdh.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
+                //cmdh.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = 0;
+                //cmdh.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = DBNull.Value;
 
-                id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
+                //id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
+                #endregion
+
 
 
                 bool Guardo = false;
@@ -271,7 +303,8 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@factor", pres_factor_actual);
                             cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
                             cmd.Parameters.AddWithValue("@is_traslado_externo", Istraslado );
-                            cmd.Parameters.AddWithValue("@id_salida_h", id_salida_h);
+                            //cmd.Parameters.AddWithValue("@id_salida_h", id_salida_h);
+                            cmd.Parameters.AddWithValue("@id_salida_h", id_transferencia);
 
                             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 

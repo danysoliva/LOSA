@@ -371,6 +371,12 @@
     <Compile Include="AlmacenesExterno\xfrmSeleccionarOC.Designer.cs">
       <DependentUpon>xfrmSeleccionarOC.cs</DependentUpon>
     </Compile>
+    <Compile Include="AlmacenesExterno\xfrmSeleccionarTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlmacenesExterno\xfrmSeleccionarTransferencia.Designer.cs">
+      <DependentUpon>xfrmSeleccionarTransferencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenesExterno\xfrmViewLotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -964,6 +970,7 @@
     <Compile Include="Clases\ProductoTerminado.cs" />
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\Requisicion.cs" />
+    <Compile Include="Clases\SalidaPlanExterno.cs" />
     <Compile Include="Clases\Security.cs" />
     <Compile Include="Clases\SeleccionLoteMPAuto.cs" />
     <Compile Include="Clases\SelectorFor.cs" />
@@ -3238,6 +3245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmSeleccionarOC.resx">
       <DependentUpon>xfrmSeleccionarOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlmacenesExterno\xfrmSeleccionarTransferencia.resx">
+      <DependentUpon>xfrmSeleccionarTransferencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlmacenesExterno\xfrmViewLotes.resx">
       <DependentUpon>xfrmViewLotes.cs</DependentUpon>

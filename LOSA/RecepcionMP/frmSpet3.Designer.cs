@@ -30,11 +30,11 @@ namespace LOSA.RecepcionMP
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSpet3));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
@@ -61,9 +61,11 @@ namespace LOSA.RecepcionMP
             this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcionBodega = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.colEditLote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdEditarLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btnBuscarTransferencia = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
@@ -235,11 +237,12 @@ namespace LOSA.RecepcionMP
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(26, 130);
+            this.labelControl2.Location = new System.Drawing.Point(108, 89);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(509, 20);
             this.labelControl2.TabIndex = 20;
             this.labelControl2.Text = "Seleccione el ingreso de almacen externo para iniciar el proceso del traslado";
+            this.labelControl2.Visible = false;
             // 
             // txtIngresoSeleccionado
             // 
@@ -256,11 +259,12 @@ namespace LOSA.RecepcionMP
             this.btnBuscarIngreso.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnBuscarIngreso.Appearance.Options.UseFont = true;
             this.btnBuscarIngreso.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.btnBuscarIngreso.Location = new System.Drawing.Point(189, 159);
+            this.btnBuscarIngreso.Location = new System.Drawing.Point(170, 12);
             this.btnBuscarIngreso.Name = "btnBuscarIngreso";
             this.btnBuscarIngreso.Size = new System.Drawing.Size(241, 40);
             this.btnBuscarIngreso.TabIndex = 22;
             this.btnBuscarIngreso.Text = "Ingresos de almacen externo";
+            this.btnBuscarIngreso.Visible = false;
             this.btnBuscarIngreso.Click += new System.EventHandler(this.btnBuscarIngreso_Click);
             // 
             // grd_data
@@ -382,16 +386,6 @@ namespace LOSA.RecepcionMP
             this.colDescripcionBodega.VisibleIndex = 2;
             this.colDescripcionBodega.Width = 216;
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(26, 204);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(116, 20);
-            this.labelControl3.TabIndex = 24;
-            this.labelControl3.Text = "Lotes del ingreso:";
-            // 
             // colEditLote
             // 
             this.colEditLote.Caption = "Editar Lote";
@@ -403,18 +397,52 @@ namespace LOSA.RecepcionMP
             // cmdEditarLote
             // 
             this.cmdEditarLote.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.cmdEditarLote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdEditarLote.Name = "cmdEditarLote";
             this.cmdEditarLote.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdEditarLote.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEditarLote_ButtonClick);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(26, 204);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(116, 20);
+            this.labelControl3.TabIndex = 24;
+            this.labelControl3.Text = "Lotes del ingreso:";
+            // 
+            // btnBuscarTransferencia
+            // 
+            this.btnBuscarTransferencia.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnBuscarTransferencia.Appearance.Options.UseFont = true;
+            this.btnBuscarTransferencia.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
+            this.btnBuscarTransferencia.Location = new System.Drawing.Point(202, 159);
+            this.btnBuscarTransferencia.Name = "btnBuscarTransferencia";
+            this.btnBuscarTransferencia.Size = new System.Drawing.Size(216, 40);
+            this.btnBuscarTransferencia.TabIndex = 25;
+            this.btnBuscarTransferencia.Text = "Ligar Transferencia";
+            this.btnBuscarTransferencia.Click += new System.EventHandler(this.btnBuscarTransferencia_Click);
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(26, 130);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(331, 20);
+            this.labelControl7.TabIndex = 26;
+            this.labelControl7.Text = "Seleccione la Transferencia para Ligarla al Ingreso";
             // 
             // frmSpet3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 550);
+            this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.btnBuscarTransferencia);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.btnBuscarIngreso);
@@ -478,5 +506,7 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraGrid.Columns.GridColumn colDescripcionBodega;
         private DevExpress.XtraGrid.Columns.GridColumn colEditLote;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEditarLote;
+        private DevExpress.XtraEditors.SimpleButton btnBuscarTransferencia;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }
