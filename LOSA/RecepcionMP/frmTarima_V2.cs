@@ -214,7 +214,7 @@ namespace LOSA.RecepcionMP
                 //id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
                 #endregion
 
-
+                
 
                 bool Guardo = false;
                 ArrayList List = new ArrayList();
@@ -242,8 +242,8 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@pesotaria", Convert.ToDecimal(row.pesokgxtarima));//   //
                         cmd.Parameters.AddWithValue("@lote_externo", Istraslado ? Convert.ToDecimal(row.id_Externo) : 0);//   //
                         cmd.Parameters.AddWithValue("@idheader", IdHeaderInserted);//    //
-
-
+                        
+                        
 
                         IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -331,8 +331,50 @@ namespace LOSA.RecepcionMP
                             Guardo = true;
                             con.Close();
                         }
-                        
 
+                        if (Istraslado)
+                        {
+                            //Rebajemos de Externo Detalle
+                            string query = @"sp_insert_detlle_salida_externo_d";
+                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            conn.Open();
+                            SqlCommand cmdy = new SqlCommand(query, conn);
+                            cmdy.CommandType = CommandType.StoredProcedure;
+                            cmdy.Parameters.AddWithValue("@is_traslado_externo", Istraslado);
+                            //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                            cmdy.Parameters.AddWithValue("@itemcode", ItemCode);
+                            cmdy.Parameters.AddWithValue("@peso",0);
+                            cmdy.Parameters.AddWithValue("@cant",0);
+                            cmdy.Parameters.AddWithValue("@line_num",0);
+                            cmdy.Parameters.AddWithValue("@DocEntry", DocEntry);
+                            cmdy.Parameters.AddWithValue("@id_inserted_LOSA_salida_externa_h", id_transferencia);
+                            int id_detalle_inserted = Convert.ToInt32(cmdy.ExecuteScalar());
+                            conn.Close();
+
+                            foreach (dsWizard.informacionIngresoRow rowy in dsWizard.informacionIngreso.Rows)
+                            {
+                                //Rebajemos de Externo Detalle Lote
+                                string query2 = @"sp_insert_salida_externo_d_lote";
+                                SqlConnection conn2 = new SqlConnection(dp.ConnectionStringLOSA);
+                                conn2.Open();
+                                SqlCommand cmd2 = new SqlCommand(query2, conn);
+                                cmdy.CommandType = CommandType.StoredProcedure;              
+                                //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                                cmd2.Parameters.AddWithValue("@peso", rowy.totalKgLote);
+                                cmd2.Parameters.AddWithValue("@cant", rowy.TotalUdlote);
+                                cmd2.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                                cmd2.Parameters.AddWithValue("@id_boleta", this.IdSerie);
+                                //cmd2.Parameters.AddWithValue("@DocEntry", DocEntry);
+                                cmd2.Parameters.AddWithValue("@id_materia_prima", id_mp);
+                                //cmd2.Parameters.AddWithValue("@lote_traslado", rowy.);
+                                cmd2.Parameters.AddWithValue("@lote_materia_prima", row.lote);
+                                cmd2.Parameters.AddWithValue("@id_traslado", id_Traslado_a_Ingresar);
+                                cmd2.Parameters.AddWithValue("@id_presentacion", rowy.id_presentacion);
+                   
+                                cmd2.ExecuteNonQuery();
+                                conn2.Close();
+                            }
+                        }
 
                     }
                     catch (Exception ex)
