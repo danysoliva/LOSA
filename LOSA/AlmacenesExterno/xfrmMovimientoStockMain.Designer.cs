@@ -40,6 +40,11 @@ namespace LOSA.AlmacenesExterno
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gcTransferencia = new DevExpress.XtraGrid.GridControl();
             this.dsSalidasAlmacenesExternos1 = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvTransferencia = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -60,11 +65,14 @@ namespace LOSA.AlmacenesExterno
             this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransferencia = new DevExpress.XtraEditors.SimpleButton();
+            this.colPrintIngresoPlanta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdPrintIngresado = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryVerDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryPrint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdPrintIngresado)).BeginInit();
             this.SuspendLayout();
             // 
             // gcTransferencia
@@ -81,7 +89,8 @@ namespace LOSA.AlmacenesExterno
             this.gcTransferencia.Name = "gcTransferencia";
             this.gcTransferencia.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryVerDetalle,
-            this.repositoryPrint});
+            this.repositoryPrint,
+            this.cmdPrintIngresado});
             this.gcTransferencia.Size = new System.Drawing.Size(1152, 448);
             this.gcTransferencia.TabIndex = 36;
             this.gcTransferencia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -115,7 +124,8 @@ namespace LOSA.AlmacenesExterno
             this.gridColumn1,
             this.gridColumn2,
             this.colusuario,
-            this.colDocNum});
+            this.colDocNum,
+            this.colPrintIngresoPlanta});
             this.gvTransferencia.DetailHeight = 284;
             this.gvTransferencia.GridControl = this.gcTransferencia;
             this.gvTransferencia.Name = "gvTransferencia";
@@ -220,7 +230,7 @@ namespace LOSA.AlmacenesExterno
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Imprimir";
+            this.gridColumn2.Caption = "Imprimir Plan";
             this.gridColumn2.ColumnEdit = this.repositoryPrint;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
@@ -290,6 +300,24 @@ namespace LOSA.AlmacenesExterno
             this.btnTransferencia.Text = "Transf. de Almacénes";
             this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
             // 
+            // colPrintIngresoPlanta
+            // 
+            this.colPrintIngresoPlanta.Caption = "Imprimir Ingresado";
+            this.colPrintIngresoPlanta.ColumnEdit = this.cmdPrintIngresado;
+            this.colPrintIngresoPlanta.Name = "colPrintIngresoPlanta";
+            this.colPrintIngresoPlanta.Visible = true;
+            this.colPrintIngresoPlanta.VisibleIndex = 10;
+            // 
+            // cmdPrintIngresado
+            // 
+            this.cmdPrintIngresado.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.cmdPrintIngresado.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdPrintIngresado.Name = "cmdPrintIngresado";
+            this.cmdPrintIngresado.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdPrintIngresado.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdPrintIngresado_ButtonClick);
+            // 
             // xfrmMovimientoStockMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +332,7 @@ namespace LOSA.AlmacenesExterno
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryVerDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryPrint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdPrintIngresado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,5 +359,7 @@ namespace LOSA.AlmacenesExterno
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn colusuario;
         private DevExpress.XtraGrid.Columns.GridColumn colDocNum;
+        private DevExpress.XtraGrid.Columns.GridColumn colPrintIngresoPlanta;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdPrintIngresado;
     }
 }

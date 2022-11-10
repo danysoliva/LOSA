@@ -92,6 +92,7 @@ namespace LOSA.AlmacenesExterno
 
             xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
             report.Parameters["id_h"].Value = row.id;
+            report.Parameters["tipo_id_reporte"].Value = 1;//PLAN
 
 
             using (ReportPrintTool printTool = new ReportPrintTool(report))
@@ -110,6 +111,23 @@ namespace LOSA.AlmacenesExterno
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_data();
+            }
+        }
+
+        private void cmdPrintIngresado_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview1 = (GridView)gcTransferencia.FocusedView;
+            var row = (dsSalidasAlmacenesExternos.Salida_Almacen_HeaderRow)gridview1.GetFocusedDataRow();
+
+            xrpt_Main_traslado_almacen report = new xrpt_Main_traslado_almacen();
+            report.Parameters["id_h"].Value = row.id;
+            report.Parameters["tipo_id_reporte"].Value = 2;//Real Ingresado
+
+
+            using (ReportPrintTool printTool = new ReportPrintTool(report))
+            {
+                // Send the report to the default printer.
+                printTool.ShowPreviewDialog();
             }
         }
     }

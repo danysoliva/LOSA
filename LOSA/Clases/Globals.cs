@@ -144,9 +144,9 @@ namespace ACS.Classes
         //public static string DB_Pass = "AquaF33dHN2014";
 
         ////ACS(Costos)
-        // public static string CTS_ServerAddress = "AQFSVR007\\AQFSVR007";
+        //public static string CTS_ServerAddress = "AQFSVR007\\AQFSVR007";
         //public static string CTS_ServerName = "Servidor Productivo";
-        //public static string CTS_ActiveDB = "ACS";                   
+        //public static string CTS_ActiveDB = "ACS";
         //public static string CTS_DB_User = "sa";
         //public static string CTS_DB_Pass = "AquaF33dHN2014";
 
@@ -182,7 +182,7 @@ namespace ACS.Classes
         ////SAP
         //public static string SAP_ServerAddress = @"AQFSVR006\AQFSVR006";
         //public static string SAP_ServerName = "Servidor de Desarrollo";
-        //public static string SAP_ActiveDB = "AQUA"; 
+        //public static string SAP_ActiveDB = "AQUA";
         //public static string SAP_DB_User = "sa";
         //public static string SAP_DB_Pass = "Aqua2018";
 
@@ -232,13 +232,13 @@ namespace ACS.Classes
         //public static string ActiveDBSDK = "AQUA_AF";
         //public static string ServerSDK = "10.50.11.31";
         //public static string ServerlicenseSDK = "10.50.11.31";
-        //#endregion
-
-        //internal string ConnectionStringAPMS = @"Server=" + Globals.APMS_Server + @";
-        //                                               Database=" + Globals.APMS_ActiveDB + @";
-        //                                               User Id=" + Globals.APMS_DB_User + @";
-        //                                               Password=" + Globals.APMS_DB_Pass + ";";
         #endregion
+
+        internal string ConnectionStringAPMS = @"Server=" + Globals.APMS_Server + @";
+                                                       Database=" + Globals.APMS_ActiveDB + @";
+                                                       User Id=" + Globals.APMS_DB_User + @";
+                                                       Password=" + Globals.APMS_DB_Pass + ";";
+
 
         #region Credenciales Desarrollo
         ////WINCC

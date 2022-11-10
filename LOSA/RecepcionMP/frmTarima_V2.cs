@@ -32,7 +32,11 @@ namespace LOSA.RecepcionMP
         int DEFAULT_VALUE = 0;
         string ItemCode;
         decimal factor;
+
         int id_transferencia;
+        int DocEntry;
+        int id_mp;
+
         decimal peso_boleta;
         public int Id_ingreso;
         public string Dscripcion;
@@ -53,9 +57,7 @@ namespace LOSA.RecepcionMP
         int idLoteExterno;
         
         DataOperations dp = new DataOperations();
-        public frmTarima_V2(bool PIstraslado,
-                            UserLogin Puser,
-                            int Pid_traslado)
+        public frmTarima_V2(bool PIstraslado,UserLogin Puser, int Pid_traslado)
         {
             InitializeComponent();
             UsuarioLogeado = Puser;
@@ -69,11 +71,39 @@ namespace LOSA.RecepcionMP
                 btnSelecciondeMp.Visible = false;
                 btnSelccionarProveedor.Visible = false;
                 txtLote.Enabled = false;
+
             }
             else
             {
                 btnSeleccionarLote.Visible = false;
             }
+            LoadPresentaciones();
+            LoadNumeroTransaccion();
+        }
+        public frmTarima_V2(bool PIstraslado, UserLogin Puser, int Pid_traslado, int Pid_transferencia, int pDocEntry, int pId_mp)
+        {
+            InitializeComponent();
+            UsuarioLogeado = Puser;
+            Istraslado = PIstraslado;
+            IdLoteInserted = DEFAULT_VALUE;
+            idLoteExterno = DEFAULT_VALUE;
+            id_transferencia = Pid_transferencia;
+            id_Traslado_a_Ingresar = Pid_traslado;
+            DocEntry = pDocEntry;
+            id_mp = pId_mp;
+            if (Istraslado)
+            {
+                btnSeleccionarLote.Visible = true;
+                btnSelecciondeMp.Visible = false;
+                btnSelccionarProveedor.Visible = false;
+                txtLote.Enabled = false;
+
+            }
+            else
+            {
+                btnSeleccionarLote.Visible = false;
+            }
+
             LoadPresentaciones();
             LoadNumeroTransaccion();
         }
@@ -109,6 +139,7 @@ namespace LOSA.RecepcionMP
                     CajaDialogo.Error("Debe de haber añadido al menos un lote.");
                     return;
                 }
+
                 decimal totakud = 0;
                 decimal totaltarimas =0;
                 decimal totalpeso=0;
@@ -119,18 +150,25 @@ namespace LOSA.RecepcionMP
                     totalpeso = totalpeso + row.totalKgLote;
                 }
 
+
+
+
+                SqlTransaction TransactionIngreso = null;
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                cn.Open();
-                foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
+                bool Guardo = false;
+                ArrayList List = new ArrayList();
+                try
                 {
-                    try
+                    cn.Open();
+                    TransactionIngreso = cn.BeginTransaction("Transction Order");
+
+                    foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                     {
-                        
-                        SqlCommand cmd = new SqlCommand("sp_insert_ingresos_v2", cn);
+                        SqlCommand cmd = new SqlCommand("sp_insert_ingresos_v2", TransactionIngreso.Connection);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@itemcode", row.itemcode);//
                         cmd.Parameters.AddWithValue("@itemname", row.itemname);//
-                        cmd.Parameters.AddWithValue("@cardcode",  row.cardname);//
+                        cmd.Parameters.AddWithValue("@cardcode", row.cardname);//
                         cmd.Parameters.AddWithValue("@cardname", row.pv);  //
                         cmd.Parameters.AddWithValue("@fecha_ingreso", row.fechaIngreso);
                         cmd.Parameters.AddWithValue("@numero_transaccion", txtNumIngreso.Text); //
@@ -143,57 +181,41 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@pesotaria", totalpeso);//   
                         cmd.Parameters.AddWithValue("@traslado", Istraslado ? Convert.ToDecimal(row.id_traslado) : 0);//
                         IdHeaderInserted = Convert.ToInt32(cmd.ExecuteScalar());
-                        //cn.Close();
                         break;
-
                     }
-                    catch (Exception ex)
-                    {
-                        CajaDialogo.Error(ex.Message);
-                        return;
+                    //Update Salida Externa H, Insert Salida Externa Detalle y Detalle Lote
+                    #region Codigo Viejo
+                    //Insert salida H en Almacen externo
+                    //IngresoExternoD ingExD = new IngresoExternoD();
 
-                    }   
-                }
+                    //ingExD.RecuperaRegistroInFromIdIngresoH_and_MP_Code(id_Traslado_a_Ingresar);
 
+                    //SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insert", cn);
+                    //cmdh.CommandType = CommandType.StoredProcedure;
+                    ////cmdh.Transaction = transaction;
+                    //cmdh.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = "BG001";
+                    //if(string.IsNullOrEmpty(ingExD.BodegaIn))
+                    //    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = DBNull.Value;
+                    //else
+                    //    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = ingExD.BodegaIn;
 
-                //Insert salida H en Almacen externo
-                IngresoExternoD ingExD = new IngresoExternoD();
+                    //cmdh.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
 
-                ingExD.RecuperaRegistroInFromIdIngresoH_and_MP_Code(id_Traslado_a_Ingresar);
+                    //if(ingExD.DocEntrySAP>0)
+                    //    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = ingExD.DocEntrySAP;
+                    //else
+                    //    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DBNull.Value;
 
-                SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insert", cn);
-                cmdh.CommandType = CommandType.StoredProcedure;
-                //cmdh.Transaction = transaction;
-                cmdh.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = "BG001";
-                if(string.IsNullOrEmpty(ingExD.BodegaIn))
-                    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = DBNull.Value;
-                else
-                    cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = ingExD.BodegaIn;
+                    //cmdh.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
+                    //cmdh.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = 0;
+                    //cmdh.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = DBNull.Value;
 
-                cmdh.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
-
-                if(ingExD.DocEntrySAP>0)
-                    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = ingExD.DocEntrySAP;
-                else
-                    cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DBNull.Value;
-
-                cmdh.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
-                cmdh.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = 0;
-                cmdh.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = DBNull.Value;
-
-                id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
-
-
-                bool Guardo = false;
-                ArrayList List = new ArrayList();
-                foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
-                {
+                    //id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
+                    #endregion
                     
-                    try
+                    foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                     {
-                        //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                        //cn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_insert_ingresos_lote_v2", cn);
+                        SqlCommand cmd = new SqlCommand("sp_insert_ingresos_lote_v2", TransactionIngreso.Connection);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@itemcode", row.itemcode);////
                         cmd.Parameters.AddWithValue("@itemname", row.itemname);//    //
@@ -211,27 +233,18 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@lote_externo", Istraslado ? Convert.ToDecimal(row.id_Externo) : 0);//   //
                         cmd.Parameters.AddWithValue("@idheader", IdHeaderInserted);//    //
 
-
-
                         IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
 
-                        
                         int vid_tarima = 0;
-                        
 
                         for (int i = 1; i <= row.canttarimas; i++)
                         {
-
-                            DataOperations dp = new DataOperations();
-                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                            con.Open();
-
-                            SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+                            SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", TransactionIngreso.Connection);
                             cmm.CommandType = CommandType.StoredProcedure;
                             cmm.Parameters.AddWithValue("@id", 1);
                             string barcode = cmm.ExecuteScalar().ToString();
 
-                            cmd = new SqlCommand("sp_insert_new_tarima_v4", con);
+                            cmd = new SqlCommand("sp_insert_new_tarima_v4", TransactionIngreso.Connection);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
                             cmd.Parameters.AddWithValue("@id_proveedor", row.cardname);
@@ -255,7 +268,7 @@ namespace LOSA.RecepcionMP
 
                             PresentacionX pres1 = new PresentacionX();
                             decimal PesoTotalTarima = 0;
-                            decimal pres_factor_actual  = 0;
+                            decimal pres_factor_actual = 0;
                             try
                             {
                                 if (pres1.RecuperarRegistro(row.id_presentacion))
@@ -270,22 +283,18 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@idlotes", IdLoteInserted);
                             cmd.Parameters.AddWithValue("@factor", pres_factor_actual);
                             cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
-                            cmd.Parameters.AddWithValue("@is_traslado_externo", Istraslado );
-                            cmd.Parameters.AddWithValue("@id_salida_h", id_salida_h);
+                            cmd.Parameters.AddWithValue("@is_traslado_externo", Istraslado);
+                            cmd.Parameters.AddWithValue("@id_salida_h", id_transferencia);
 
                             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
                             string query = @"";
                             if (Istraslado)
-                            {
                                 query = @"sp_insert_ubicacion_default_v2";
-
-                            }
                             else
-                            {
                                 query = @"sp_insert_ubicacion_default";
-                            }
-                            SqlCommand cmdx = new SqlCommand(query, con);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
+
+                            SqlCommand cmdx = new SqlCommand(query, TransactionIngreso.Connection);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
                             cmdx.CommandType = CommandType.StoredProcedure;
                             cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
                             cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
@@ -295,20 +304,66 @@ namespace LOSA.RecepcionMP
 
                             List.Add(vid_tarima);
 
-                            Guardo = true;
-                            con.Close();
+                            //Guardo = true;
+                            //con.Close();
                         }
-                        
 
+                        if (Istraslado)
+                        {
+                            //Rebajemos de Externo Detalle
+                            string query = @"sp_insert_detlle_salida_externo_d";
+                            //SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            //conn.Open();
+                            SqlCommand cmdy = new SqlCommand(query, TransactionIngreso.Connection);
+                            cmdy.CommandType = CommandType.StoredProcedure;
+                            cmdy.Parameters.AddWithValue("@is_traslado_externo", Istraslado);
+                            //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                            cmdy.Parameters.AddWithValue("@itemcode", ItemCode);
+                            cmdy.Parameters.AddWithValue("@peso", 0);
+                            cmdy.Parameters.AddWithValue("@cant", 0);
+                            cmdy.Parameters.AddWithValue("@line_num", 0);
+                            cmdy.Parameters.AddWithValue("@DocEntry", DocEntry);
+                            cmdy.Parameters.AddWithValue("@id_inserted_LOSA_salida_externa_h", id_transferencia);
+                            int id_detalle_inserted = Convert.ToInt32(cmdy.ExecuteScalar());
+                            //conn.Close();
 
-                    }
-                    catch (Exception ex)
-                    {
-
-                        CajaDialogo.Error(ex.Message);
-                    }
+                            foreach (dsWizard.informacionIngresoRow rowy in dsWizard.informacionIngreso.Rows)
+                            {
+                                //Rebajemos de Externo Detalle Lote
+                                string query2 = @"sp_insert_salida_externo_d_lote";
+                                //SqlConnection conn2 = new SqlConnection(dp.ConnectionStringLOSA);
+                                //conn2.Open();
+                                SqlCommand cmd2 = new SqlCommand(query2, TransactionIngreso.Connection);
+                                cmdy.CommandType = CommandType.StoredProcedure;
+                                //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                                cmd2.Parameters.AddWithValue("@peso", rowy.totalKgLote);
+                                cmd2.Parameters.AddWithValue("@cant", rowy.TotalUdlote);
+                                cmd2.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                                cmd2.Parameters.AddWithValue("@id_boleta", this.IdSerie);
+                                //cmd2.Parameters.AddWithValue("@DocEntry", DocEntry);
+                                cmd2.Parameters.AddWithValue("@id_materia_prima", id_mp);
+                                cmd2.Parameters.AddWithValue("@id_detalle_inserted", id_detalle_inserted);
+                                cmd2.Parameters.AddWithValue("@id_presentacion", rowy.id_presentacion);
+                                cmd2.Parameters.AddWithValue("@lote_materia_prima", rowy.lote);
+                                cmd2.Parameters.AddWithValue("@id_traslado", id_Traslado_a_Ingresar);
+                                cmd2.Parameters.AddWithValue("@IdHeaderInserted", IdHeaderInserted);
+                                cmd2.ExecuteNonQuery();
+                                //conn2.Close();
+                            }//End foreach
+                        }//if (Istraslado)
+                    }//foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
+                    TransactionIngreso.Commit();
+                    Guardo = true;
                 }
+                catch(Exception ec)
+                {
+                    TransactionIngreso.Rollback();
+                    Guardo = false;
+                }
+
+
                 cn.Close();
+
 
                 if (Guardo)
                 {
@@ -323,8 +378,6 @@ namespace LOSA.RecepcionMP
                             report.ShowPrintMarginsWarning = false;
                             report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                             report.Print();
-
-
                         }
                     }
                     rptLoteRotulo boleta = new rptLoteRotulo(IdLoteInserted);
@@ -332,7 +385,6 @@ namespace LOSA.RecepcionMP
                     boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                     boleta.Print();
                 }
-
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

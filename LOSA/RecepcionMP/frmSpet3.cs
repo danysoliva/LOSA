@@ -24,6 +24,9 @@ namespace LOSA.RecepcionMP
         public string Descripcion_Tipo_Selected = "";
         public bool isTraslado = true;
         public int id_Traslado_Seleccionado;
+        public int id_Transferencia_Seleccionado;
+        public int DocEntry;
+        public int id_mp;
         public frmSpet3(UserLogin Puser, string Ptipo_descripcion, int Pid_tipo)
         {
             InitializeComponent();
@@ -89,13 +92,15 @@ namespace LOSA.RecepcionMP
         {
             if (txtIngresoSeleccionado.Text == "")
             {
-                CajaDialogo.Error("Debe selecionar un ingreso externo para poder continuar con esta gestion.");
+                //CajaDialogo.Error("Debe selecionar un ingreso externo para poder continuar con esta gestion.");
+                CajaDialogo.Error("Debe selecionar una transferencia para poder continuar con esta gestion.");
                 return;
             }
             switch (Tipo_Ingreso_Selected)
             {
                 case 1:   // 1 pues es sacos
-                    frmTarima_V2 frm = new frmTarima_V2(isTraslado,UsuarioLogeado, id_Traslado_Seleccionado);
+                    //frmTarima_V2 frm = new frmTarima_V2(isTraslado,UsuarioLogeado, id_Traslado_Seleccionado);
+                    frmTarima_V2 frm = new frmTarima_V2(isTraslado, UsuarioLogeado, id_Traslado_Seleccionado, id_Transferencia_Seleccionado, DocEntry, id_mp);
                     switch (frm.ShowDialog())
                     {
                         case DialogResult.OK:
@@ -191,6 +196,59 @@ namespace LOSA.RecepcionMP
                 {
                     CajaDialogo.Error(ec.Message);
                 }
+            }
+        }
+
+        private void btnBuscarTransferencia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //xfrmBuscarIngresosAlmacen frm = new xfrmBuscarIngresosAlmacen();
+                xfrmSeleccionarTransferencia frm = new xfrmSeleccionarTransferencia(UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    id_Transferencia_Seleccionado = frm.salid_plan.Id_header;
+                    txtIngresoSeleccionado.Text = id_Transferencia_Seleccionado.ToString();
+                    id_Traslado_Seleccionado = frm.salid_plan.Id_ingreso;
+                    DocEntry = frm.salid_plan.DocEntry;
+                    id_mp = frm.salid_plan.id_mp;
+
+                    string query = @"sp_get_lote_salida_externa_plan_lote_for_id";
+                    DataOperations dp = new DataOperations();
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_header", id_Transferencia_Seleccionado);
+                    //cmd.Parameters.AddWithValue("@id_ingreso", id_Traslado_Seleccionado);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    dsWizard.verLotes.Clear();
+                    da.Fill(dsWizard.verLotes);
+                    conn.Close();
+
+                    //id_Traslado_Seleccionado = frm.ingreso_h.ID;
+                    //txtIngresoSeleccionado.Text = id_Traslado_Seleccionado.ToString();
+                    //string query = @"sp_lotes_in_ingreso_externo";
+                    //DataOperations dp = new DataOperations();
+                    //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    //cn.Open();
+                    //SqlCommand cmd = new SqlCommand(query, cn);
+                    //cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@id_ingreso_Externo", id_Traslado_Seleccionado);
+                    //SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    //dsWizard.verLotes.Clear();
+                    //da.Fill(dsWizard.verLotes);
+                    //cn.Close();
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

@@ -48,7 +48,8 @@ namespace LOSA.AlmacenesExterno
         public void load_data_detalle_salida_externa()
         {
             DataOperations dp = new DataOperations();
-            string query = @"sp_get_detalle_salida_externa";
+            //string query = @"sp_get_detalle_salida_externa";
+            string query = @"sp_get_detalle_salida_externav2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -78,7 +79,8 @@ namespace LOSA.AlmacenesExterno
             }
 
             DataOperations dp = new DataOperations();
-            string query = @"sp_get_lote_salida_externa";
+            string query2 = @"sp_get_lote_salida_externa"; //Ingreso Planta Real
+            string query = @"sp_get_lote_salida_externav2"; //Ingreso Planificado
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -89,7 +91,17 @@ namespace LOSA.AlmacenesExterno
                 cmd.Parameters.AddWithValue("@id_detalle", id_detalle);
                 dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote.Clear();
                 da.Fill(dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote);
+
+                SqlCommand cmd2 = new SqlCommand(query2, cn);
+                cmd2.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd2);
+                cmd2.Parameters.AddWithValue("@id_detalle", id_detalle);
+                dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote_Ingreso.Clear();
+                adat.Fill(dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote_Ingreso);
                 cn.Close();
+
+                
+
             }
             catch (Exception ex)
             {

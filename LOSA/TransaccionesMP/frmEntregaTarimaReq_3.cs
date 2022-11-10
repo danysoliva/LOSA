@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using LOSA.TransaccionesMP.Liquidos;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.TransaccionesMP.VentanasMensajes;
+using LOSA.MicroIngredientes;
 
 namespace LOSA.TransaccionesMP
 {
@@ -823,7 +824,69 @@ namespace LOSA.TransaccionesMP
             }
         }
 
+        private void reposEntregaMicros_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsTransaccionesMP.viewTarimasRow)gridView.GetFocusedDataRow();
 
 
+            frm_entrega_tarima_micros frmx = new frm_entrega_tarima_micros(row.id_mp, row.id_tarima, row.lote, row.kg,dp.ValidateNumberInt32( row.cantidad));
+            //(int pidMP, int pIdTarima, string pLote,bool pMicros )
+            bool Guardo = false;
+            if (frmx.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Tarima tar1 = new Tarima();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima]", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    if(tar1.RecuperarRegistro(row.id_tarima))
+                        cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
+                    else
+                        cmd.Parameters.AddWithValue("@numero_transaccion", 0);
+                    cmd.Parameters.AddWithValue("@id_materia_prima", row.id_mp);
+                    cmd.Parameters.AddWithValue("@lotemp", row.lote);
+                    cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                    cmd.Parameters.AddWithValue("@cantidad_unidades", frmx.UdEnviar);
+                    cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
+
+
+                    //cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        Guardo = dr.GetInt32(0) == 1 ? true : false;
+                    }
+                    dr.Close();
+                    con.Close();
+
+                }
+                catch (Exception ec)
+                {
+                    //CajaDialogo.Error(ec.Message);
+                    lblMensaje.Text = ec.Message;
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                }
+
+            }
+            else
+            {
+                txtTarima.Text = "";
+                txtTarima.Focus();
+            }
+            if (Guardo)
+            {
+                //Mensaje de transaccion exitosa
+                lblMensaje.Text = "Transacción Exitosa!";
+                panelNotificacion.BackColor = Color.MediumSeaGreen;
+                timerLimpiarMensaje.Enabled = true;
+                timerLimpiarMensaje.Start();
+                //LoadDataMicros();
+            }
+        }
     }
 }

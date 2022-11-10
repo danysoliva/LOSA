@@ -58,7 +58,7 @@
             this.cmdDetalleMP.ImageOptions.Image = global::LOSA.Properties.Resources.trucksss;
             this.cmdDetalleMP.Location = new System.Drawing.Point(323, 101);
             this.cmdDetalleMP.Name = "cmdDetalleMP";
-            this.cmdDetalleMP.Size = new System.Drawing.Size(274, 81);
+            this.cmdDetalleMP.Size = new System.Drawing.Size(274, 67);
             this.cmdDetalleMP.TabIndex = 15;
             this.cmdDetalleMP.Text = "Materia Prima entregada";
             this.cmdDetalleMP.Click += new System.EventHandler(this.cmdDetalleMP_Click);
@@ -100,9 +100,9 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(323, 188);
+            this.simpleButton1.Location = new System.Drawing.Point(323, 174);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(274, 77);
+            this.simpleButton1.Size = new System.Drawing.Size(274, 67);
             this.simpleButton1.TabIndex = 19;
             this.simpleButton1.Text = "Requisas";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -112,9 +112,9 @@
             this.btnDevoluciones.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnDevoluciones.Appearance.Options.UseFont = true;
             this.btnDevoluciones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDevoluciones.ImageOptions.Image")));
-            this.btnDevoluciones.Location = new System.Drawing.Point(323, 271);
+            this.btnDevoluciones.Location = new System.Drawing.Point(323, 247);
             this.btnDevoluciones.Name = "btnDevoluciones";
-            this.btnDevoluciones.Size = new System.Drawing.Size(274, 88);
+            this.btnDevoluciones.Size = new System.Drawing.Size(274, 67);
             this.btnDevoluciones.TabIndex = 21;
             this.btnDevoluciones.Text = "Devoluciones";
             this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
@@ -124,7 +124,7 @@
             this.btnResumenTarimas.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.btnResumenTarimas.Appearance.Options.UseFont = true;
             this.btnResumenTarimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResumenTarimas.ImageOptions.Image")));
-            this.btnResumenTarimas.Location = new System.Drawing.Point(323, 365);
+            this.btnResumenTarimas.Location = new System.Drawing.Point(323, 320);
             this.btnResumenTarimas.Name = "btnResumenTarimas";
             this.btnResumenTarimas.Size = new System.Drawing.Size(274, 67);
             this.btnResumenTarimas.TabIndex = 22;
