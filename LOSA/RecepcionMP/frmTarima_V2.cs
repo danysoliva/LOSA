@@ -358,6 +358,7 @@ namespace LOSA.RecepcionMP
                 catch(Exception ec)
                 {
                     TransactionIngreso.Rollback();
+                    CajaDialogo.Error(ec.Message);
                     Guardo = false;
                 }
 
