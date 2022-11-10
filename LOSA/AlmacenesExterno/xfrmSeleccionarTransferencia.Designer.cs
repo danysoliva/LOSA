@@ -29,12 +29,12 @@ namespace LOSA.AlmacenesExterno
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmSeleccionarTransferencia));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.gcTransferencia = new DevExpress.XtraGrid.GridControl();
@@ -144,8 +144,12 @@ namespace LOSA.AlmacenesExterno
             // 
             // colid
             // 
+            this.colid.Caption = "# de Transferencia";
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            this.colid.Visible = true;
+            this.colid.VisibleIndex = 0;
             // 
             // colbodega_in
             // 
@@ -154,7 +158,7 @@ namespace LOSA.AlmacenesExterno
             this.colbodega_in.Name = "colbodega_in";
             this.colbodega_in.OptionsColumn.AllowEdit = false;
             this.colbodega_in.Visible = true;
-            this.colbodega_in.VisibleIndex = 0;
+            this.colbodega_in.VisibleIndex = 2;
             // 
             // colbodega_out
             // 
@@ -163,7 +167,7 @@ namespace LOSA.AlmacenesExterno
             this.colbodega_out.Name = "colbodega_out";
             this.colbodega_out.OptionsColumn.AllowEdit = false;
             this.colbodega_out.Visible = true;
-            this.colbodega_out.VisibleIndex = 1;
+            this.colbodega_out.VisibleIndex = 3;
             // 
             // colfecha
             // 
@@ -174,7 +178,7 @@ namespace LOSA.AlmacenesExterno
             this.colfecha.Name = "colfecha";
             this.colfecha.OptionsColumn.AllowEdit = false;
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 2;
+            this.colfecha.VisibleIndex = 4;
             // 
             // colenable
             // 
@@ -187,7 +191,7 @@ namespace LOSA.AlmacenesExterno
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
             this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 3;
+            this.colDocEntry.VisibleIndex = 5;
             // 
             // coluser_creador
             // 
@@ -203,12 +207,14 @@ namespace LOSA.AlmacenesExterno
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 6;
+            this.colnumero_transaccion.VisibleIndex = 8;
             // 
             // colid_ingreso
             // 
             this.colid_ingreso.FieldName = "id_ingreso";
             this.colid_ingreso.Name = "colid_ingreso";
+            this.colid_ingreso.Visible = true;
+            this.colid_ingreso.VisibleIndex = 1;
             // 
             // colusuario
             // 
@@ -217,7 +223,7 @@ namespace LOSA.AlmacenesExterno
             this.colusuario.Name = "colusuario";
             this.colusuario.OptionsColumn.AllowEdit = false;
             this.colusuario.Visible = true;
-            this.colusuario.VisibleIndex = 5;
+            this.colusuario.VisibleIndex = 7;
             // 
             // colDocNum
             // 
@@ -226,7 +232,7 @@ namespace LOSA.AlmacenesExterno
             this.colDocNum.Name = "colDocNum";
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
-            this.colDocNum.VisibleIndex = 4;
+            this.colDocNum.VisibleIndex = 6;
             // 
             // colSeleccionado
             // 
@@ -234,14 +240,14 @@ namespace LOSA.AlmacenesExterno
             this.colSeleccionado.ColumnEdit = this.reposSeleccionado;
             this.colSeleccionado.Name = "colSeleccionado";
             this.colSeleccionado.Visible = true;
-            this.colSeleccionado.VisibleIndex = 7;
+            this.colSeleccionado.VisibleIndex = 9;
             // 
             // reposSeleccionado
             // 
             this.reposSeleccionado.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.reposSeleccionado.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.reposSeleccionado.Name = "reposSeleccionado";
             this.reposSeleccionado.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.reposSeleccionado.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposSeleccionado_ButtonClick);

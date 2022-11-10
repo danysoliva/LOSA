@@ -500,8 +500,10 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
                 CajaDialogo.Error(ex.Message);
             }
-        }
 
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
 
 
 
