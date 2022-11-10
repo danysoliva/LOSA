@@ -164,7 +164,11 @@ namespace LOSA.RecepcionMP
 
                     foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                     {
-                        SqlCommand cmd = new SqlCommand("sp_insert_ingresos_v2", TransactionIngreso.Connection);
+                        //SqlCommand cmd = new SqlCommand("sp_insert_ingresos_v2", TransactionIngreso.Connection);
+                        SqlCommand cmd = cn.CreateCommand();
+                        cmd.CommandText = "sp_insert_ingresos_v2";
+                        cmd.Connection = cn;
+                        cmd.Transaction = TransactionIngreso;
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@itemcode", row.itemcode);//
                         cmd.Parameters.AddWithValue("@itemname", row.itemname);//
@@ -215,7 +219,11 @@ namespace LOSA.RecepcionMP
                     
                     foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                     {
-                        SqlCommand cmd = new SqlCommand("sp_insert_ingresos_lote_v2", TransactionIngreso.Connection);
+                        //SqlCommand cmd = new SqlCommand("sp_insert_ingresos_lote_v2", TransactionIngreso.Connection);
+                        SqlCommand cmd = cn.CreateCommand();
+                        cmd.CommandText = "sp_insert_ingresos_lote_v2";
+                        cmd.Connection = cn;
+                        cmd.Transaction = TransactionIngreso;
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@itemcode", row.itemcode);////
                         cmd.Parameters.AddWithValue("@itemname", row.itemname);//    //
@@ -239,12 +247,20 @@ namespace LOSA.RecepcionMP
 
                         for (int i = 1; i <= row.canttarimas; i++)
                         {
-                            SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", TransactionIngreso.Connection);
+                            //SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", TransactionIngreso.Connection);
+                            SqlCommand cmm = cn.CreateCommand();
+                            cmm.CommandText = "sp_generar_codigo_from_tables_id";
+                            cmm.Connection = cn;
+                            cmm.Transaction = TransactionIngreso;
                             cmm.CommandType = CommandType.StoredProcedure;
                             cmm.Parameters.AddWithValue("@id", 1);
                             string barcode = cmm.ExecuteScalar().ToString();
 
-                            cmd = new SqlCommand("sp_insert_new_tarima_v4", TransactionIngreso.Connection);
+                            //cmd = new SqlCommand("sp_insert_new_tarima_v4", TransactionIngreso.Connection);
+                            cmd = cn.CreateCommand();
+                            cmd.CommandText = "sp_insert_new_tarima_v4";
+                            cmd.Connection = cn;
+                            cmd.Transaction = TransactionIngreso;
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
                             cmd.Parameters.AddWithValue("@id_proveedor", row.cardname);
@@ -294,7 +310,11 @@ namespace LOSA.RecepcionMP
                             else
                                 query = @"sp_insert_ubicacion_default";
 
-                            SqlCommand cmdx = new SqlCommand(query, TransactionIngreso.Connection);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
+                            //SqlCommand cmdx = new SqlCommand(query, TransactionIngreso.Connection);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
+                            SqlCommand cmdx = cn.CreateCommand();
+                            cmdx.CommandText = query;
+                            cmdx.Connection = cn;
+                            cmdx.Transaction = TransactionIngreso;
                             cmdx.CommandType = CommandType.StoredProcedure;
                             cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
                             cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
@@ -314,7 +334,11 @@ namespace LOSA.RecepcionMP
                             string query = @"sp_insert_detlle_salida_externo_d";
                             //SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                             //conn.Open();
-                            SqlCommand cmdy = new SqlCommand(query, TransactionIngreso.Connection);
+                            //SqlCommand cmdy = new SqlCommand(query, TransactionIngreso.Connection);
+                            SqlCommand cmdy = cn.CreateCommand();
+                            cmdy.CommandText = query;
+                            cmdy.Connection = cn;
+                            cmdy.Transaction = TransactionIngreso;
                             cmdy.CommandType = CommandType.StoredProcedure;
                             cmdy.Parameters.AddWithValue("@is_traslado_externo", Istraslado);
                             //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
@@ -333,8 +357,12 @@ namespace LOSA.RecepcionMP
                                 string query2 = @"sp_insert_salida_externo_d_lote";
                                 //SqlConnection conn2 = new SqlConnection(dp.ConnectionStringLOSA);
                                 //conn2.Open();
-                                SqlCommand cmd2 = new SqlCommand(query2, TransactionIngreso.Connection);
-                                cmdy.CommandType = CommandType.StoredProcedure;
+                                //SqlCommand cmd2 = new SqlCommand(query2, TransactionIngreso.Connection);
+                                SqlCommand cmd2 = cn.CreateCommand();
+                                cmd2.CommandText = query2;
+                                cmd2.Connection = cn;
+                                cmd2.Transaction = TransactionIngreso;
+                                cmd2.CommandType = CommandType.StoredProcedure;
                                 //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
                                 cmd2.Parameters.AddWithValue("@peso", rowy.totalKgLote);
                                 cmd2.Parameters.AddWithValue("@cant", rowy.TotalUdlote);
