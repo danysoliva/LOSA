@@ -72,7 +72,7 @@ namespace LOSA.RecepcionMP
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id_ingreso_Externo", id_externo);
-            cmd.Parameters.AddWithValue("@id_mp", id_mp);
+            //cmd.Parameters.AddWithValue("@id_mp", id_mp);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             dsWizard.verLotes.Clear();
             da.Fill(dsWizard.verLotes);
