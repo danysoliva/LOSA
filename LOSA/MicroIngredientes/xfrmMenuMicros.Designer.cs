@@ -138,6 +138,7 @@
             this.cmdAdicionEnMezcla.Size = new System.Drawing.Size(199, 59);
             this.cmdAdicionEnMezcla.TabIndex = 23;
             this.cmdAdicionEnMezcla.Text = "Adición en Mezclado";
+            this.cmdAdicionEnMezcla.Click += new System.EventHandler(this.cmdAdicionEnMezcla_Click);
             // 
             // cmdTolvasWL_
             // 
@@ -168,6 +169,7 @@
             this.simpleButton4.Size = new System.Drawing.Size(199, 59);
             this.simpleButton4.TabIndex = 26;
             this.simpleButton4.Text = "Alimentación Tarima";
+            this.simpleButton4.Visible = false;
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // xfrmMenuMicros

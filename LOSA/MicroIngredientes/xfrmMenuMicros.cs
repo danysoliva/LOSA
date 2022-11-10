@@ -70,5 +70,12 @@ namespace LOSA.MicroIngredientes
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void cmdAdicionEnMezcla_Click(object sender, EventArgs e)
+        {
+            xfrmAlimentacionTarimaArriba frm = new xfrmAlimentacionTarimaArriba();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

@@ -49,16 +49,20 @@ namespace LOSA.MicroIngredientes
                         if (dr.GetInt32(4)==1 && dr.GetInt32(0)==1)
                         {
                             txtMix1.Text = dr.GetInt32(0).ToString();
-                            txtMix1.BackColor = Color.ForestGreen;
+                            //txtMix1.BackColor = Color.ForestGreen;
+                            txtMix1.BackColor = Color.FromArgb(153,255,153);
 
                             txtOrden1.Text = dr.GetString(1);
-                            txtOrden1.BackColor = Color.ForestGreen;
+                            //txtOrden1.BackColor = Color.ForestGreen;
+                            txtOrden1.BackColor = Color.FromArgb(153, 255, 153);
 
                             txtLotePT1.Text = dr.GetInt64(2).ToString();
-                            txtLotePT1.BackColor = Color.ForestGreen;
+                            //txtLotePT1.BackColor = Color.ForestGreen;
+                            txtLotePT1.BackColor = Color.FromArgb(153, 255, 153);
 
                             txtProducto1.Text = dr.GetString(3).ToString();
-                            txtProducto1.BackColor = Color.ForestGreen;
+                            //txtProducto1.BackColor = Color.ForestGreen;
+                            txtProducto1.BackColor = Color.FromArgb(153, 255, 153);
                         }
 
                         if (dr.GetInt32(4) == 0 && dr.GetInt32(0) == 1)
@@ -82,16 +86,16 @@ namespace LOSA.MicroIngredientes
                         if (dr.GetInt32(4) == 1 && dr.GetInt32(0) == 2)
                         {
                             txtMix2.Text = dr.GetInt32(0).ToString();
-                            txtMix2.BackColor = Color.ForestGreen;
+                            txtMix2.BackColor = Color.FromArgb(153, 255, 153);//= Color.ForestGreen;
 
                             txtOrden2.Text = dr.GetString(1);
-                            txtOrden2.BackColor = Color.ForestGreen;
+                            txtOrden2.BackColor = Color.FromArgb(153, 255, 153); //Color.ForestGreen;
 
                             txtLotePT2.Text = dr.GetInt64(2).ToString();
-                            txtLotePT2.BackColor = Color.ForestGreen;
+                            txtLotePT2.BackColor  = Color.FromArgb(153, 255, 153); //Color.ForestGreen;
 
                             txtProducto2.Text = dr.GetString(3).ToString();
-                            txtProducto2.BackColor = Color.ForestGreen;
+                            txtProducto2.BackColor  = Color.FromArgb(153, 255, 153); //Color.ForestGreen;
                         }
 
                         if (dr.GetInt32(4) == 0 && dr.GetInt32(0) == 2)

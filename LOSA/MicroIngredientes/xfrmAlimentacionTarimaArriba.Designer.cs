@@ -210,7 +210,7 @@ namespace LOSA.MicroIngredientes
             this.txtOrden1.Name = "txtOrden1";
             this.txtOrden1.ReadOnly = true;
             this.txtOrden1.Size = new System.Drawing.Size(206, 33);
-            this.txtOrden1.TabIndex = 1;
+            this.txtOrden1.TabIndex = 2;
             // 
             // xtraTabControl1
             // 
@@ -223,7 +223,7 @@ namespace LOSA.MicroIngredientes
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.Size = new System.Drawing.Size(1143, 399);
-            this.xtraTabControl1.TabIndex = 2;
+            this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
             // 
@@ -373,7 +373,7 @@ namespace LOSA.MicroIngredientes
             this.txtCodBarra.Location = new System.Drawing.Point(153, 29);
             this.txtCodBarra.Name = "txtCodBarra";
             this.txtCodBarra.Size = new System.Drawing.Size(206, 33);
-            this.txtCodBarra.TabIndex = 97;
+            this.txtCodBarra.TabIndex = 0;
             this.txtCodBarra.TextChanged += new System.EventHandler(this.txtCodBarra_TextChanged);
             this.txtCodBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodBarra_KeyDown);
             // 
