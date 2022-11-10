@@ -37,6 +37,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAdicionEnMezcla = new DevExpress.XtraEditors.SimpleButton();
             this.cmdTolvasWL_ = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // cmdMicros
@@ -153,11 +154,28 @@
             this.cmdTolvasWL_.TabIndex = 24;
             this.cmdTolvasWL_.Text = "Adición a Tolvas WL";
             // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.LightPink;
+            this.simpleButton4.Appearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.Options.UseBackColor = true;
+            this.simpleButton4.Appearance.Options.UseBorderColor = true;
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton4.Location = new System.Drawing.Point(50, 294);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(199, 59);
+            this.simpleButton4.TabIndex = 26;
+            this.simpleButton4.Text = "Alimentación Tarima";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
             // xfrmMenuMicros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 298);
+            this.ClientSize = new System.Drawing.Size(519, 377);
+            this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.cmdTolvasWL_);
             this.Controls.Add(this.cmdAdicionEnMezcla);
             this.Controls.Add(this.simpleButton2);
@@ -188,5 +206,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton cmdAdicionEnMezcla;
         private DevExpress.XtraEditors.SimpleButton cmdTolvasWL_;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }
