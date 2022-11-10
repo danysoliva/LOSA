@@ -929,6 +929,7 @@
     <Compile Include="Calidad\xrpCertificadoCalidad.Designer.cs">
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\AlimentacionTolvaMicrosPesaje.cs" />
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\Bodegas.cs" />
     <Compile Include="Clases\Boleta.cs" />
@@ -1539,6 +1540,12 @@
     <Compile Include="MicroIngredientes\Reportes\rptReporteIngresoTarimaMicros.Designer.cs">
       <DependentUpon>rptReporteIngresoTarimaMicros.cs</DependentUpon>
     </Compile>
+    <Compile Include="MicroIngredientes\xfrmAlimentacionTarimaArriba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmAlimentacionTarimaArriba.Designer.cs">
+      <DependentUpon>xfrmAlimentacionTarimaArriba.cs</DependentUpon>
+    </Compile>
     <Compile Include="MicroIngredientes\xfrmAsistentePesajeV2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1568,6 +1575,12 @@
     </Compile>
     <Compile Include="MicroIngredientes\xfrmMenuMicros.Designer.cs">
       <DependentUpon>xfrmMenuMicros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmMezclaMicroShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmMezclaMicroShow.Designer.cs">
+      <DependentUpon>xfrmMezclaMicroShow.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmMicroIngredientes.cs">
       <SubType>Form</SubType>
@@ -3717,6 +3730,9 @@
     <EmbeddedResource Include="MicroIngredientes\Reportes\rptReporteIngresoTarimaMicros.resx">
       <DependentUpon>rptReporteIngresoTarimaMicros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmAlimentacionTarimaArriba.resx">
+      <DependentUpon>xfrmAlimentacionTarimaArriba.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmAsistentePesajeV2.resx">
       <DependentUpon>xfrmAsistentePesajeV2.cs</DependentUpon>
     </EmbeddedResource>
@@ -3731,6 +3747,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmMenuMicros.resx">
       <DependentUpon>xfrmMenuMicros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmMezclaMicroShow.resx">
+      <DependentUpon>xfrmMezclaMicroShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmMicroIngredientes.resx">
       <DependentUpon>xfrmMicroIngredientes.cs</DependentUpon>
