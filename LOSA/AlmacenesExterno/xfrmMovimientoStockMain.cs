@@ -107,7 +107,7 @@ namespace LOSA.AlmacenesExterno
             var gridview1 = (GridView)gcTransferencia.FocusedView;
             var row = (dsSalidasAlmacenesExternos.Salida_Almacen_HeaderRow)gridview1.GetFocusedDataRow();
 
-            xfrmMovimientoStockDetalle frm = new xfrmMovimientoStockDetalle(row.id, row.bodega_in, row.bodega_out, row.fecha);
+            xfrmMovimientoStockDetalle frm = new xfrmMovimientoStockDetalle(row.id, row.bodega_in, row.bodega_out, row.fecha, row.numero_transaccion);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_data();

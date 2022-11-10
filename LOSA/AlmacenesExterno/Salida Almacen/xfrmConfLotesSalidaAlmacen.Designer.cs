@@ -497,6 +497,7 @@
             this.gvLote.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gvLote.OptionsView.ShowFooter = true;
             this.gvLote.OptionsView.ShowGroupPanel = false;
+            this.gvLote.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvLote_CellValueChanging);
             // 
             // colid
             // 

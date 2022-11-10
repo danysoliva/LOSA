@@ -358,6 +358,7 @@ namespace LOSA.RecepcionMP
                 catch(Exception ec)
                 {
                     TransactionIngreso.Rollback();
+                    CajaDialogo.Error(ec.Message);
                     Guardo = false;
                 }
 
@@ -797,7 +798,7 @@ namespace LOSA.RecepcionMP
 
         private void btnSeleccionarLote_Click(object sender, EventArgs e)
         {
-            frmSeleccionrLoteExterno frm = new frmSeleccionrLoteExterno(id_Traslado_a_Ingresar);
+            frmSeleccionrLoteExterno frm = new frmSeleccionrLoteExterno(id_Traslado_a_Ingresar, id_mp);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtLote.Text = frm.lote;
