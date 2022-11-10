@@ -22,11 +22,12 @@ namespace LOSA.AlmacenesExterno
     public partial class xfrmMovimientoStockDetalle : DevExpress.XtraEditors.XtraForm
     {
         int id_header_salida;
+        int numero_transaccion;
         string bodega_origen;
         string bodega_destino;
         DateTime fecha;
 
-        public xfrmMovimientoStockDetalle(int pid, string pbodega_in, string pbodega_out, DateTime pfecha)
+        public xfrmMovimientoStockDetalle(int pid, string pbodega_in, string pbodega_out, DateTime pfecha, int pnum_transa)
         {
             InitializeComponent();
             id_header_salida = pid;
@@ -34,6 +35,7 @@ namespace LOSA.AlmacenesExterno
             bodega_origen = pbodega_in;
             bodega_destino = pbodega_out;
             fecha = pfecha;
+            numero_transaccion = pnum_transa;
 
             load_data_detalle_salida_externa();
             load_data_lote_salida_externa();
@@ -79,7 +81,7 @@ namespace LOSA.AlmacenesExterno
             }
 
             DataOperations dp = new DataOperations();
-            string query2 = @"sp_get_lote_salida_externa"; //Ingreso Planta Real
+            
             string query = @"sp_get_lote_salida_externav2"; //Ingreso Planificado
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
@@ -91,21 +93,26 @@ namespace LOSA.AlmacenesExterno
                 cmd.Parameters.AddWithValue("@id_detalle", id_detalle);
                 dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote.Clear();
                 da.Fill(dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote);
-
-                SqlCommand cmd2 = new SqlCommand(query2, cn);
-                cmd2.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter adat = new SqlDataAdapter(cmd2);
-                cmd2.Parameters.AddWithValue("@id_detalle", id_detalle);
-                dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote_Ingreso.Clear();
-                adat.Fill(dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote_Ingreso);
-                cn.Close();
-
-                
-
             }
             catch (Exception ex)
             {
 
+                CajaDialogo.Error(ex.Message);
+            }
+
+            try
+            {
+                string query2 = @"sp_get_lote_salida_externa_planta_real"; //Ingreso Planta Real
+                SqlCommand cmd2 = new SqlCommand(query2, cn);
+                cmd2.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd2);
+                cmd2.Parameters.AddWithValue("@numero_transaccion", numero_transaccion);
+                dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote_Ingreso.Clear();
+                adat.Fill(dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote_Ingreso);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
                 CajaDialogo.Error(ex.Message);
             }
         }

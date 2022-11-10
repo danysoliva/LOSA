@@ -578,5 +578,49 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         {
 
         }
+
+        private void gvLote_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var gridView = (GridView)gcLote.FocusedView;
+            var row = (dsSalidasAlmacenesExternos.LoteRow)gridView.GetFocusedDataRow();
+
+            try
+            {
+                if (e.Column.FieldName == "Seleccionar")
+                {
+                    PresentacionX pres1 = new PresentacionX();
+                    pres1.RecuperarRegistro(row.id_presentacion);
+
+                    row.CantSeleccionada = row.unidade_seleccionadas * pres1.Factor;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            //try
+            //{
+            //    if (e.Column.FieldName == "seleccionar")
+            //    {
+                    
+            //        row.seleccionar = Convert.ToBoolean(e.Value);
+            //        row.AcceptChanges();
+            //        var list = dsCierreMes.SeleccionLote.AsEnumerable();
+            //        if (list.Count(p => p.seleccionar == true) > 0)
+            //        {
+            //            btnDerecha.Enabled = true;
+            //        }
+            //        else
+            //        {
+            //            btnDerecha.Enabled = false;
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
+        }
     }
 }
