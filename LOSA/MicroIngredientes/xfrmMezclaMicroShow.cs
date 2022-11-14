@@ -15,12 +15,12 @@ namespace LOSA.MicroIngredientes
 {
     public partial class xfrmMezclaMicroShow : DevExpress.XtraEditors.XtraForm
     {
-        int order_id;
+        long order_id;
 
         int ami_id;
 
 
-        public xfrmMezclaMicroShow(int order_id_p, int ami_id_p)
+        public xfrmMezclaMicroShow(long order_id_p, int ami_id_p)
         {
             InitializeComponent();
             order_id = order_id_p;
@@ -55,6 +55,11 @@ namespace LOSA.MicroIngredientes
 
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

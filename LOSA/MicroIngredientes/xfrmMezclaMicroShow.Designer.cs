@@ -30,6 +30,7 @@ namespace LOSA.MicroIngredientes
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMezclaMicroShow));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsReportesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsReportes = new LOSA.Reportes.dsReportes();
@@ -47,6 +48,8 @@ namespace LOSA.MicroIngredientes
             this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltolva = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colreal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnSalir = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).BeginInit();
@@ -57,11 +60,11 @@ namespace LOSA.MicroIngredientes
             // 
             this.gridControl1.DataMember = "detalle_rpt_micros";
             this.gridControl1.DataSource = this.dsReportesBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControl1.Location = new System.Drawing.Point(0, 43);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1135, 240);
+            this.gridControl1.Size = new System.Drawing.Size(1135, 204);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -210,12 +213,45 @@ namespace LOSA.MicroIngredientes
             this.colreal.VisibleIndex = 5;
             this.colreal.Width = 147;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnSalir.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Appearance.Options.UseBackColor = true;
+            this.btnSalir.Appearance.Options.UseFont = true;
+            this.btnSalir.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnSalir.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnSalir.Location = new System.Drawing.Point(1022, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(104, 37);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(0, 9);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(1135, 25);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Mezcla de Micro Ingredientes";
+            // 
             // xfrmMezclaMicroShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 240);
+            this.ClientSize = new System.Drawing.Size(1135, 247);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.labelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "xfrmMezclaMicroShow";
             this.Text = "Mezcla de Micro Ingrediente";
             this.Load += new System.EventHandler(this.xfrmMezclaMicroShow_Load);
@@ -246,5 +282,7 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
         private DevExpress.XtraGrid.Columns.GridColumn coltolva;
         private DevExpress.XtraGrid.Columns.GridColumn colreal;
+        private DevExpress.XtraEditors.SimpleButton btnSalir;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

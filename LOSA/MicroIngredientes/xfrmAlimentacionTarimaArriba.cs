@@ -16,12 +16,12 @@ namespace LOSA.MicroIngredientes
 {
     public partial class xfrmAlimentacionTarimaArriba : DevExpress.XtraEditors.XtraForm
     {
-        int order_id;
+        long order_id;
 
         public xfrmAlimentacionTarimaArriba()
         {
             InitializeComponent();
-            LoadHeader();
+            //LoadHeader();
             LoadData();
             LoadData2();
             timer1.Enabled = true;
@@ -63,6 +63,8 @@ namespace LOSA.MicroIngredientes
                             txtProducto1.Text = dr.GetString(3).ToString();
                             //txtProducto1.BackColor = Color.ForestGreen;
                             txtProducto1.BackColor = Color.FromArgb(153, 255, 153);
+
+                            order_id = dr.GetInt64(5);
                         }
 
                         if (dr.GetInt32(4) == 0 && dr.GetInt32(0) == 1)
@@ -96,6 +98,9 @@ namespace LOSA.MicroIngredientes
 
                             txtProducto2.Text = dr.GetString(3).ToString();
                             txtProducto2.BackColor  = Color.FromArgb(153, 255, 153); //Color.ForestGreen;
+
+                            order_id = dr.GetInt32(5);
+
                         }
 
                         if (dr.GetInt32(4) == 0 && dr.GetInt32(0) == 2)
@@ -132,11 +137,11 @@ namespace LOSA.MicroIngredientes
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
                 {
                     cnx.Open();
-                    dsMicros.plan_microsh_report.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("[sp_get_detalle_orden_pesaje_micros_interfacev2_to_reprint]", cnx);
+                    dsMicros.plan_microsh_report_AlimentacionTarima.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("dbo.[sp_get_detalle_orden_pesaje_micros_interfacev2_to_reprintV2]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id;
-                    da.Fill(dsMicros.plan_microsh_report);
+                    //da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id;
+                    da.Fill(dsMicros.plan_microsh_report_AlimentacionTarima);
                     cnx.Close();
 
                 }
@@ -156,7 +161,7 @@ namespace LOSA.MicroIngredientes
                 {
                     cnx.Open();
                     dsMicros.Micros.Clear();
-                    SqlCommand cmd = new SqlCommand("sp_get_ordenes_pesaje_manual_interface_V6", cnx);
+                    SqlCommand cmd = new SqlCommand("c", cnx);
                     cmd.CommandType = CommandType.StoredProcedure;
                     //cmd.Parameters.AddWithValue("@vertodas", toggleSwitch1.IsOn);
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -178,18 +183,104 @@ namespace LOSA.MicroIngredientes
             this.Close();
         }
 
-        private void txtCodBarra_KeyDown(object sender, KeyEventArgs e)
+        //private void txtCodBarra_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    AlimentacionTolvaMicrosPesaje alimentacionTolva = new AlimentacionTolvaMicrosPesaje();
+        //    xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow(order_id, Convert.ToInt32(txtCodBarra.Text));
+        //    //xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow( order_id,Convert.ToInt32(txtCodBarra.Text));
+        //    DataOperations dp = new DataOperations();
+        //    bool batchCompletados;
+
+        //    try
+        //    {
+
+        //        if (order_id == 0)
+        //        {
+        //            CajaDialogo.Error("NO HAY UNA ORDEN ACTIVA");
+        //            return;
+        //        }
+
+        //        if (alimentacionTolva.RecuperaRegistro(Convert.ToInt32(teCodBarra.Text), order_id))
+        //        {
+        //            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS) )
+        //            {
+        //                cnx.Open();
+
+        //                SqlCommand cmd = new SqlCommand("dbo.sp_insert_adicionMezclado_acumularBatch", cnx);
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.Parameters.Add("@orden_id", SqlDbType.Int).Value= order_id;
+        //                cmd.Parameters.Add("@AMI_ID", SqlDbType.Int).Value= Convert.ToInt32(teCodBarra.Text);
+
+        //                batchCompletados= Convert.ToBoolean( cmd.ExecuteScalar());
+
+        //                cnx.Close();
+        //            }
+
+        //            LoadData2();
+
+        //            if (batchCompletados==true)
+        //            {
+        //                CajaDialogo.Error("NO SE PUEDE ADICIONAR MAS BATCH");
+        //                return;
+        //            }
+        //            else
+        //            frm.ShowDialog();
+
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        CajaDialogo.Error(ex.Message);
+        //    }
+        //}
+
+        private void txtCodBarra_TextChanged(object sender, EventArgs e)
         {
             AlimentacionTolvaMicrosPesaje alimentacionTolva = new AlimentacionTolvaMicrosPesaje();
-            xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow(1169, Convert.ToInt32(txtCodBarra.Text));
+            xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow(order_id, Convert.ToInt32(teCodBarra.Text));
             //xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow( order_id,Convert.ToInt32(txtCodBarra.Text));
+            DataOperations dp = new DataOperations();
+            bool batchCompletados;
 
             try
             {
-                if (alimentacionTolva.RecuperaRegistro(Convert.ToInt32(txtCodBarra.Text), order_id))
-                {
-                    frm.ShowDialog();
 
+                if (order_id == 0)
+                {
+                    CajaDialogo.Error("NO HAY UNA ORDEN ACTIVA");
+                    return;
+                }
+
+                if (alimentacionTolva.RecuperaRegistro(Convert.ToInt32(teCodBarra.Text), order_id))
+                {
+                    using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                    {
+                        cnx.Open();
+
+                        SqlCommand cmd = new SqlCommand("dbo.sp_insert_adicionMezclado_acumularBatch", cnx);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@orden_id", SqlDbType.Int).Value = order_id;
+                        cmd.Parameters.Add("@AMI_ID", SqlDbType.Int).Value = Convert.ToInt32(teCodBarra.Text);
+
+                        batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
+
+                        cnx.Close();
+                    }
+
+                    LoadData2();
+
+                    if (batchCompletados == true)
+                    {
+                        CajaDialogo.Error("NO SE PUEDEN ADICIONAR MAS BATCH");
+                        return;
+                    }
+                    else
+                        frm.ShowDialog();
+                }
+                else
+                {
+                    CajaDialogo.Error("NO EXISTE LA ORDEN ESCANEADA");
                 }
 
             }
@@ -199,14 +290,67 @@ namespace LOSA.MicroIngredientes
             }
         }
 
-        private void txtCodBarra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             LoadData();
         }
+
+        private void teCodBarra_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        //private void teCodBarra_EditValueChanged(object sender, EventArgs e)
+        //{
+
+        //    AlimentacionTolvaMicrosPesaje alimentacionTolva = new AlimentacionTolvaMicrosPesaje();
+        //    xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow(order_id, Convert.ToInt32(txtCodBarra.Text));
+        //    //xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow( order_id,Convert.ToInt32(txtCodBarra.Text));
+        //    DataOperations dp = new DataOperations();
+        //    bool batchCompletados;
+
+        //    try
+        //    {
+
+        //        if (order_id == 0)
+        //        {
+        //            CajaDialogo.Error("NO HAY UNA ORDEN ACTIVA");
+        //            return;
+        //        }
+
+        //        if (alimentacionTolva.RecuperaRegistro(Convert.ToInt32(txtCodBarra.Text), order_id))
+        //        {
+        //            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+        //            {
+        //                cnx.Open();
+
+        //                SqlCommand cmd = new SqlCommand("dbo.sp_insert_adicionMezclado_acumularBatch", cnx);
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.Parameters.Add("@orden_id", SqlDbType.Int).Value = order_id;
+        //                cmd.Parameters.Add("@AMI_ID", SqlDbType.Int).Value = Convert.ToInt32(txtCodBarra.Text);
+
+        //                batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
+
+        //                cnx.Close();
+        //            }
+
+        //            LoadData2();
+
+        //            if (batchCompletados == true)
+        //            {
+        //                CajaDialogo.Error("NO SE PUEDE ADICIONAR MAS BATCH");
+        //                return;
+        //            }
+        //            else
+        //                frm.ShowDialog();
+
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        CajaDialogo.Error(ex.Message);
+        //    }
+        //}
     }
 }
