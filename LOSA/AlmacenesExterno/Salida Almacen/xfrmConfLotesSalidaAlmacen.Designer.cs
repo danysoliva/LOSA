@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmConfLotesSalidaAlmacen));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcLotesSeleccionados = new DevExpress.XtraGrid.GridControl();
             this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -110,6 +110,7 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotesSeleccionados)).BeginInit();
@@ -357,9 +358,9 @@
             // btnDelete2
             // 
             this.btnDelete2.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnDelete2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete2.Name = "btnDelete2";
             this.btnDelete2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -488,7 +489,8 @@
             this.colfecha_produccion,
             this.colunidade_seleccionadas,
             this.colid_ingreso_h,
-            this.colid_presentacion});
+            this.colid_presentacion,
+            this.colpresentacion});
             this.gvLote.DetailHeight = 284;
             this.gvLote.GridControl = this.gcLote;
             this.gvLote.Name = "gvLote";
@@ -512,7 +514,7 @@
             this.colcantidad_disponible.Name = "colcantidad_disponible";
             this.colcantidad_disponible.OptionsColumn.AllowEdit = false;
             this.colcantidad_disponible.Visible = true;
-            this.colcantidad_disponible.VisibleIndex = 1;
+            this.colcantidad_disponible.VisibleIndex = 2;
             this.colcantidad_disponible.Width = 82;
             // 
             // colunidades_disponibles
@@ -524,7 +526,7 @@
             this.colunidades_disponibles.Name = "colunidades_disponibles";
             this.colunidades_disponibles.OptionsColumn.AllowEdit = false;
             this.colunidades_disponibles.Visible = true;
-            this.colunidades_disponibles.VisibleIndex = 2;
+            this.colunidades_disponibles.VisibleIndex = 3;
             this.colunidades_disponibles.Width = 65;
             // 
             // colid_detalle
@@ -550,7 +552,7 @@
             this.colCantSeleccionada.FieldName = "CantSeleccionada";
             this.colCantSeleccionada.Name = "colCantSeleccionada";
             this.colCantSeleccionada.Visible = true;
-            this.colCantSeleccionada.VisibleIndex = 3;
+            this.colCantSeleccionada.VisibleIndex = 4;
             this.colCantSeleccionada.Width = 73;
             // 
             // colSeleccionar
@@ -559,7 +561,7 @@
             this.colSeleccionar.FieldName = "Seleccionar";
             this.colSeleccionar.Name = "colSeleccionar";
             this.colSeleccionar.Visible = true;
-            this.colSeleccionar.VisibleIndex = 7;
+            this.colSeleccionar.VisibleIndex = 8;
             this.colSeleccionar.Width = 65;
             // 
             // colnum_line
@@ -579,7 +581,7 @@
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 5;
+            this.colfecha_vencimiento.VisibleIndex = 6;
             this.colfecha_vencimiento.Width = 55;
             // 
             // colfecha_produccion
@@ -589,7 +591,7 @@
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
             this.colfecha_produccion.Visible = true;
-            this.colfecha_produccion.VisibleIndex = 6;
+            this.colfecha_produccion.VisibleIndex = 7;
             this.colfecha_produccion.Width = 55;
             // 
             // colunidade_seleccionadas
@@ -600,7 +602,7 @@
             this.colunidade_seleccionadas.FieldName = "unidade_seleccionadas";
             this.colunidade_seleccionadas.Name = "colunidade_seleccionadas";
             this.colunidade_seleccionadas.Visible = true;
-            this.colunidade_seleccionadas.VisibleIndex = 4;
+            this.colunidade_seleccionadas.VisibleIndex = 5;
             this.colunidade_seleccionadas.Width = 85;
             // 
             // colid_ingreso_h
@@ -963,6 +965,15 @@
             // 
             this.gridView1.Name = "gridView1";
             // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "Presentacion";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.OptionsColumn.AllowEdit = false;
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 1;
+            // 
             // xfrmConfLotesSalidaAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1088,5 +1099,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colunidade_seleccionadas;
         private DevExpress.XtraGrid.Columns.GridColumn colid_ingreso_h;
         private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
     }
 }
