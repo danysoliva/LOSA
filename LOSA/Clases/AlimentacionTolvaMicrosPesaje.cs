@@ -22,7 +22,7 @@ namespace LOSA.Clases
         public int AMI_ID { get; set; }
         public bool Recuperado { get; set; }
 
-        public bool RecuperaRegistro(int ami_id, int order_id)
+        public bool RecuperaRegistro(int ami_id, long order_id)
         {
 
             try
@@ -36,8 +36,8 @@ namespace LOSA.Clases
                     SqlCommand cmd = new SqlCommand(query, cnx);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ami_id", ami_id);
-                    //cmd.Parameters.AddWithValue("@id_orden", order_id);
-                    cmd.Parameters.AddWithValue("@id_orden", 1169);
+                    cmd.Parameters.AddWithValue("@id_orden", order_id);
+                    //cmd.Parameters.AddWithValue("@id_orden", 1169);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {

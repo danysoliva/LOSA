@@ -64,18 +64,17 @@ namespace LOSA.AlmacenesExterno
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grdIngresoPlanta = new DevExpress.XtraGrid.GridControl();
             this.grdvIngresoPlanta = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colunidades2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coluser_creador1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDocEntry2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vencimiento1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_fabricacion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbodega_in1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbodega_out1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).BeginInit();
@@ -101,7 +100,7 @@ namespace LOSA.AlmacenesExterno
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(1077, 12);
+            this.btnAtras.Location = new System.Drawing.Point(1101, 12);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 44;
@@ -396,7 +395,7 @@ namespace LOSA.AlmacenesExterno
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1235, 86);
+            this.panelControl1.Size = new System.Drawing.Size(1259, 86);
             this.panelControl1.TabIndex = 49;
             // 
             // tabPane1
@@ -459,18 +458,17 @@ namespace LOSA.AlmacenesExterno
             this.grdvIngresoPlanta.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.grdvIngresoPlanta.Appearance.Row.Options.UseFont = true;
             this.grdvIngresoPlanta.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12});
+            this.colid2,
+            this.colpeso2,
+            this.colunidades2,
+            this.colfecha1,
+            this.coluser_creador1,
+            this.colDocEntry2,
+            this.colfecha_vencimiento1,
+            this.colfecha_fabricacion1,
+            this.colbodega_in1,
+            this.colbodega_out1,
+            this.collote1});
             this.grdvIngresoPlanta.DetailHeight = 284;
             this.grdvIngresoPlanta.GridControl = this.grdIngresoPlanta;
             this.grdvIngresoPlanta.Name = "grdvIngresoPlanta";
@@ -479,110 +477,110 @@ namespace LOSA.AlmacenesExterno
             this.grdvIngresoPlanta.OptionsView.ShowFooter = true;
             this.grdvIngresoPlanta.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
+            // colid2
             // 
-            this.gridColumn1.FieldName = "id";
-            this.gridColumn1.Name = "gridColumn1";
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
             // 
-            // gridColumn2
+            // colpeso2
             // 
-            this.gridColumn2.Caption = "Cantidad Kg";
-            this.gridColumn2.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn2.FieldName = "peso";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.colpeso2.Caption = "Cantidad";
+            this.colpeso2.FieldName = "peso";
+            this.colpeso2.Name = "colpeso2";
+            this.colpeso2.OptionsColumn.AllowEdit = false;
+            this.colpeso2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "SUMA={0:#.##}")});
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
-            this.gridColumn2.Width = 184;
+            this.colpeso2.Visible = true;
+            this.colpeso2.VisibleIndex = 7;
+            this.colpeso2.Width = 123;
             // 
-            // gridColumn3
+            // colunidades2
             // 
-            this.gridColumn3.Caption = "Cantidad Ud";
-            this.gridColumn3.DisplayFormat.FormatString = "{0:0.##.##} Ud";
-            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn3.FieldName = "unidades";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.colunidades2.Caption = "Unidades";
+            this.colunidades2.FieldName = "unidades";
+            this.colunidades2.Name = "colunidades2";
+            this.colunidades2.OptionsColumn.AllowEdit = false;
+            this.colunidades2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "SUMA={0:#.##}")});
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 5;
-            this.gridColumn3.Width = 190;
+            this.colunidades2.Visible = true;
+            this.colunidades2.VisibleIndex = 6;
+            this.colunidades2.Width = 123;
             // 
-            // gridColumn4
+            // colfecha1
             // 
-            this.gridColumn4.Caption = "Fecha";
-            this.gridColumn4.FieldName = "fecha";
-            this.gridColumn4.Name = "gridColumn4";
+            this.colfecha1.FieldName = "fecha";
+            this.colfecha1.Name = "colfecha1";
+            this.colfecha1.OptionsColumn.AllowEdit = false;
             // 
-            // gridColumn5
+            // coluser_creador1
             // 
-            this.gridColumn5.FieldName = "user_creador";
-            this.gridColumn5.Name = "gridColumn5";
+            this.coluser_creador1.FieldName = "user_creador";
+            this.coluser_creador1.Name = "coluser_creador1";
             // 
-            // gridColumn6
+            // colDocEntry2
             // 
-            this.gridColumn6.FieldName = "usuario";
-            this.gridColumn6.Name = "gridColumn6";
+            this.colDocEntry2.FieldName = "DocEntry";
+            this.colDocEntry2.Name = "colDocEntry2";
+            this.colDocEntry2.OptionsColumn.AllowEdit = false;
+            this.colDocEntry2.Visible = true;
+            this.colDocEntry2.VisibleIndex = 5;
+            this.colDocEntry2.Width = 123;
             // 
-            // gridColumn7
+            // colfecha_vencimiento1
             // 
-            this.gridColumn7.FieldName = "DocEntry";
-            this.gridColumn7.Name = "gridColumn7";
+            this.colfecha_vencimiento1.Caption = "Fecha de Vencimiento";
+            this.colfecha_vencimiento1.FieldName = "fecha_vencimiento";
+            this.colfecha_vencimiento1.Name = "colfecha_vencimiento1";
+            this.colfecha_vencimiento1.OptionsColumn.AllowEdit = false;
+            this.colfecha_vencimiento1.Visible = true;
+            this.colfecha_vencimiento1.VisibleIndex = 4;
+            this.colfecha_vencimiento1.Width = 127;
             // 
-            // gridColumn8
+            // colfecha_fabricacion1
             // 
-            this.gridColumn8.Caption = "Fecha Vencimiento";
-            this.gridColumn8.DisplayFormat.FormatString = "{0:d}";
-            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn8.FieldName = "fecha_vencimiento";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 3;
-            this.gridColumn8.Width = 225;
+            this.colfecha_fabricacion1.Caption = "Fecha de Fabricacion";
+            this.colfecha_fabricacion1.FieldName = "fecha_fabricacion";
+            this.colfecha_fabricacion1.Name = "colfecha_fabricacion1";
+            this.colfecha_fabricacion1.OptionsColumn.AllowEdit = false;
+            this.colfecha_fabricacion1.Visible = true;
+            this.colfecha_fabricacion1.VisibleIndex = 3;
+            this.colfecha_fabricacion1.Width = 125;
             // 
-            // gridColumn9
+            // colbodega_in1
             // 
-            this.gridColumn9.Caption = "Fecha Fabricacion";
-            this.gridColumn9.DisplayFormat.FormatString = "{0:d}";
-            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn9.FieldName = "fecha_fabricacion";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 4;
-            this.gridColumn9.Width = 276;
+            this.colbodega_in1.Caption = "Destino";
+            this.colbodega_in1.FieldName = "bodega_in";
+            this.colbodega_in1.Name = "colbodega_in1";
+            this.colbodega_in1.OptionsColumn.AllowEdit = false;
+            this.colbodega_in1.Visible = true;
+            this.colbodega_in1.VisibleIndex = 2;
+            this.colbodega_in1.Width = 125;
             // 
-            // gridColumn10
+            // colbodega_out1
             // 
-            this.gridColumn10.FieldName = "bodega_in";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 1;
-            this.gridColumn10.Width = 136;
+            this.colbodega_out1.Caption = "Origen";
+            this.colbodega_out1.FieldName = "bodega_out";
+            this.colbodega_out1.Name = "colbodega_out1";
+            this.colbodega_out1.OptionsColumn.AllowEdit = false;
+            this.colbodega_out1.Visible = true;
+            this.colbodega_out1.VisibleIndex = 1;
+            this.colbodega_out1.Width = 128;
             // 
-            // gridColumn11
+            // collote1
             // 
-            this.gridColumn11.FieldName = "bodega_out";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 2;
-            this.gridColumn11.Width = 152;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "Lote";
-            this.gridColumn12.FieldName = "lote";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 0;
-            this.gridColumn12.Width = 226;
+            this.collote1.Caption = "Lote";
+            this.collote1.FieldName = "lote";
+            this.collote1.Name = "collote1";
+            this.collote1.OptionsColumn.AllowEdit = false;
+            this.collote1.Visible = true;
+            this.collote1.VisibleIndex = 0;
+            this.collote1.Width = 197;
             // 
             // xfrmMovimientoStockDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 672);
+            this.ClientSize = new System.Drawing.Size(1259, 696);
             this.ControlBox = false;
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gcTransferencia);
@@ -645,17 +643,16 @@ namespace LOSA.AlmacenesExterno
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private DevExpress.XtraGrid.GridControl grdIngresoPlanta;
         private DevExpress.XtraGrid.Views.Grid.GridView grdvIngresoPlanta;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn colid2;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso2;
+        private DevExpress.XtraGrid.Columns.GridColumn colunidades2;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha1;
+        private DevExpress.XtraGrid.Columns.GridColumn coluser_creador1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDocEntry2;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_vencimiento1;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_fabricacion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colbodega_in1;
+        private DevExpress.XtraGrid.Columns.GridColumn colbodega_out1;
+        private DevExpress.XtraGrid.Columns.GridColumn collote1;
     }
 }

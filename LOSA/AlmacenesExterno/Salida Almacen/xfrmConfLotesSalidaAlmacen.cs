@@ -574,19 +574,15 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             //}
         }
 
-        private void gvLote_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
 
-        }
-
-        private void gvLote_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        private void gvLote_CellValueChanged_1(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             var gridView = (GridView)gcLote.FocusedView;
             var row = (dsSalidasAlmacenesExternos.LoteRow)gridView.GetFocusedDataRow();
 
             try
             {
-                if (e.Column.FieldName == "Seleccionar")
+                if (e.Column.FieldName == "unidade_seleccionadas")
                 {
                     PresentacionX pres1 = new PresentacionX();
                     pres1.RecuperarRegistro(row.id_presentacion);
@@ -596,31 +592,22 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var gvl = (GridView)gcLote.FocusedView;
+            var row_lote = (dsSalidasAlmacenesExternos.Lote_SeleccionadosRow)gvl.GetDataRow(gvl.FocusedRowHandle);
+
+
+            if (true)
+            {
 
             }
 
-            //try
-            //{
-            //    if (e.Column.FieldName == "seleccionar")
-            //    {
-                    
-            //        row.seleccionar = Convert.ToBoolean(e.Value);
-            //        row.AcceptChanges();
-            //        var list = dsCierreMes.SeleccionLote.AsEnumerable();
-            //        if (list.Count(p => p.seleccionar == true) > 0)
-            //        {
-            //            btnDerecha.Enabled = true;
-            //        }
-            //        else
-            //        {
-            //            btnDerecha.Enabled = false;
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    CajaDialogo.Error(ex.Message);
-            //}
+
         }
     }
 }

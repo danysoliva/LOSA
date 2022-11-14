@@ -102,11 +102,11 @@ namespace LOSA.AlmacenesExterno
 
             try
             {
-                string query2 = @"sp_get_lote_salida_externa_planta_real"; //Ingreso Planta Real
+                string query2 = @"sp_get_lote_salida_externa_planta_realV2"; //Ingreso Planta Real
                 SqlCommand cmd2 = new SqlCommand(query2, cn);
                 cmd2.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd2);
-                cmd2.Parameters.AddWithValue("@numero_transaccion", numero_transaccion);
+                cmd2.Parameters.AddWithValue("@id_salida_header", id_header_salida);
                 dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote_Ingreso.Clear();
                 adat.Fill(dsSalidasAlmacenesExternos1.Salida_Almacen_D_Lote_Ingreso);
                 cn.Close();
