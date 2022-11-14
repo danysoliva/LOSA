@@ -24,7 +24,12 @@ namespace LOSA.RecepcionMP
     {
         public bool Istraslado;
         UserLogin UsuarioLogeado;
+
+        /// <summary>
+        ///Id Ingreso externo
+        /// </summary>
         public int id_Traslado_a_Ingresar;
+
         int IdSerie;
         int NumBoleta;
         int IdMP;
@@ -33,7 +38,11 @@ namespace LOSA.RecepcionMP
         string ItemCode;
         decimal factor;
 
+        /// <summary>
+        /// Id Salida Externo H
+        /// </summary>
         int id_transferencia;
+
         int DocEntry;
         int id_mp;
 
@@ -87,10 +96,11 @@ namespace LOSA.RecepcionMP
             Istraslado = PIstraslado;
             IdLoteInserted = DEFAULT_VALUE;
             idLoteExterno = DEFAULT_VALUE;
-            id_transferencia = Pid_transferencia;
-            id_Traslado_a_Ingresar = Pid_traslado;
+            id_transferencia = Pid_transferencia;//Id Salida Externo H
+            id_Traslado_a_Ingresar = Pid_traslado;//Id Ingreso externo
             DocEntry = pDocEntry;
             id_mp = pId_mp;
+
             if (Istraslado)
             {
                 btnSeleccionarLote.Visible = true;
