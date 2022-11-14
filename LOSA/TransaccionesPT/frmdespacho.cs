@@ -199,23 +199,20 @@ namespace LOSA.TransaccionesPT
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            //if (MessageBox.Show("Desea imprimir el reporte de detalle de carga?", "Pregunta" , MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
-            //{
-                try
-                {
-                    var gridView = (GridView)grd_data.FocusedView;
-                    var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
-                    rpt_despacho frm = new rpt_despacho(row.id);
-                    frm.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                    ReportPrintTool printReport = new ReportPrintTool(frm);
-                    printReport.ShowPreview();
-                }
-                catch (Exception ex)
-                {
+           
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
 
-                    CajaDialogo.Error(ex.Message);
-                }
-            //}
+            try
+            {
+                frmdespacho_tipo_detalle_carga frm1 = new frmdespacho_tipo_detalle_carga(row.id);
+                frm1.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
