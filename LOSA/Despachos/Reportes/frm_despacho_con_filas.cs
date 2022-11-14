@@ -14,16 +14,16 @@ namespace LOSA.Despachos.Reportes
     {
         DataOperations dp = new DataOperations();
         public int Id_despacho;
-        public int id_destino;
+        public int id_destino, estiba;
         public int id_presentacion;
 
-        public frm_despacho_con_filas(int Pid, int pid_destino, int pid_pres)
+        public frm_despacho_con_filas(int Pid,int pestiba, int pid_destino, int pid_pres)
         {
             InitializeComponent();
             Id_despacho = Pid;
             id_destino = pid_destino;
             id_presentacion = pid_pres;
-
+            estiba = pestiba;
             load_informacion();
             load_informacion_detalle();
             load_informacion_resumen();
@@ -78,6 +78,8 @@ namespace LOSA.Despachos.Reportes
                 cmd.Parameters.AddWithValue("@id_despacho_h", Id_despacho);
                 cmd.Parameters.AddWithValue("@id_destino", id_destino);
                 cmd.Parameters.AddWithValue("@id_pres", id_presentacion);
+                cmd.Parameters.AddWithValue("@estiba_id", estiba);
+                //cmd.Parameters.AddWithValue("@", )
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 ds_despachos1.lineas_despacho_rpt.Clear();
                 da.Fill(ds_despachos1.lineas_despacho_rpt);

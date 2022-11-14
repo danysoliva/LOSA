@@ -49,12 +49,15 @@ namespace LOSA.TransaccionesPT
             this.grdPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.conffilasdestinosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsProductos = new LOSA.TransaccionesPT.dsProductos();
+            this.tsTipo = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.presentacionsacosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfactor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dsProductos = new LOSA.TransaccionesPT.dsProductos();
+            this.conffilasdestinosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.presentacionfilasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_fila = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.navigationPageSeleccion.SuspendLayout();
@@ -63,9 +66,11 @@ namespace LOSA.TransaccionesPT
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPresentacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conffilasdestinosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsTipo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionsacosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conffilasdestinosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionfilasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // navigationFrame1
@@ -107,6 +112,8 @@ namespace LOSA.TransaccionesPT
             // 
             // navigationSeleccionEmbalaje
             // 
+            this.navigationSeleccionEmbalaje.Controls.Add(this.labelControl4);
+            this.navigationSeleccionEmbalaje.Controls.Add(this.tsTipo);
             this.navigationSeleccionEmbalaje.Controls.Add(this.labelControl3);
             this.navigationSeleccionEmbalaje.Controls.Add(this.grdPresentacion);
             this.navigationSeleccionEmbalaje.Controls.Add(this.cmdImprimir);
@@ -123,7 +130,7 @@ namespace LOSA.TransaccionesPT
             this.cmdImprimir.Appearance.Options.UseFont = true;
             this.cmdImprimir.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdImprimir.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdAplicar.ImageOptions.SvgImage")));
-            this.cmdImprimir.Location = new System.Drawing.Point(149, 144);
+            this.cmdImprimir.Location = new System.Drawing.Point(149, 159);
             this.cmdImprimir.Name = "cmdImprimir";
             this.cmdImprimir.Size = new System.Drawing.Size(104, 35);
             this.cmdImprimir.TabIndex = 14;
@@ -134,7 +141,7 @@ namespace LOSA.TransaccionesPT
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(125, 32);
+            this.labelControl2.Location = new System.Drawing.Point(110, 21);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(56, 21);
             this.labelControl2.TabIndex = 12;
@@ -143,7 +150,7 @@ namespace LOSA.TransaccionesPT
             // grdDestinos
             // 
             this.grdDestinos.EditValue = "";
-            this.grdDestinos.Location = new System.Drawing.Point(189, 29);
+            this.grdDestinos.Location = new System.Drawing.Point(174, 18);
             this.grdDestinos.Name = "grdDestinos";
             this.grdDestinos.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdDestinos.Properties.Appearance.Options.UseFont = true;
@@ -155,6 +162,7 @@ namespace LOSA.TransaccionesPT
             this.grdDestinos.Properties.ValueMember = "id";
             this.grdDestinos.Size = new System.Drawing.Size(260, 28);
             this.grdDestinos.TabIndex = 0;
+            this.grdDestinos.EditValueChanged += new System.EventHandler(this.grdDestinos_EditValueChanged);
             // 
             // gridLookUpEdit1View
             // 
@@ -233,7 +241,7 @@ namespace LOSA.TransaccionesPT
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(295, 144);
+            this.simpleButton1.Location = new System.Drawing.Point(295, 159);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(104, 35);
             this.simpleButton1.TabIndex = 13;
@@ -243,25 +251,26 @@ namespace LOSA.TransaccionesPT
             // grdPresentacion
             // 
             this.grdPresentacion.EditValue = "";
-            this.grdPresentacion.Location = new System.Drawing.Point(189, 80);
+            this.grdPresentacion.Enabled = false;
+            this.grdPresentacion.Location = new System.Drawing.Point(174, 109);
             this.grdPresentacion.Name = "grdPresentacion";
             this.grdPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdPresentacion.Properties.Appearance.Options.UseFont = true;
             this.grdPresentacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grdPresentacion.Properties.DataSource = this.presentacionsacosBindingSource;
-            this.grdPresentacion.Properties.DisplayMember = "descripcion";
+            this.grdPresentacion.Properties.DataSource = this.presentacionfilasBindingSource;
+            this.grdPresentacion.Properties.DisplayMember = "presentacion";
             this.grdPresentacion.Properties.PopupView = this.gridView1;
-            this.grdPresentacion.Properties.ValueMember = "id";
+            this.grdPresentacion.Properties.ValueMember = "id_presentacion";
             this.grdPresentacion.Size = new System.Drawing.Size(260, 28);
             this.grdPresentacion.TabIndex = 15;
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.coldescripcion1,
-            this.colid1,
-            this.colfactor});
+            this.colid_presentacion,
+            this.colpresentacion,
+            this.colcant_fila});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -271,53 +280,84 @@ namespace LOSA.TransaccionesPT
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(89, 83);
+            this.labelControl3.Location = new System.Drawing.Point(74, 112);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(92, 21);
             this.labelControl3.TabIndex = 16;
             this.labelControl3.Text = "Presentacion:";
             // 
-            // conffilasdestinosBindingSource
+            // tsTipo
             // 
-            this.conffilasdestinosBindingSource.DataMember = "conf_filas_destinos";
-            this.conffilasdestinosBindingSource.DataSource = this.dsProductos;
+            this.tsTipo.EditValue = true;
+            this.tsTipo.Location = new System.Drawing.Point(221, 52);
+            this.tsTipo.Name = "tsTipo";
+            this.tsTipo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tsTipo.Properties.Appearance.Options.UseFont = true;
+            this.tsTipo.Properties.OffText = "Granel";
+            this.tsTipo.Properties.OnText = "Embalado";
+            this.tsTipo.Size = new System.Drawing.Size(190, 32);
+            this.tsTipo.TabIndex = 17;
+            this.tsTipo.Toggled += new System.EventHandler(this.tsTipo_Toggled);
             // 
-            // dsProductos
+            // labelControl4
             // 
-            this.dsProductos.DataSetName = "dsProductos";
-            this.dsProductos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(137, 57);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(78, 21);
+            this.labelControl4.TabIndex = 18;
+            this.labelControl4.Text = "Tipo Estiba:";
             // 
             // presentacionsacosBindingSource
             // 
             this.presentacionsacosBindingSource.DataMember = "presentacion_sacos";
             this.presentacionsacosBindingSource.DataSource = this.dsProductos;
             // 
-            // coldescripcion1
+            // dsProductos
             // 
-            this.coldescripcion1.Caption = "Presentacion";
-            this.coldescripcion1.FieldName = "descripcion";
-            this.coldescripcion1.Name = "coldescripcion1";
-            this.coldescripcion1.Visible = true;
-            this.coldescripcion1.VisibleIndex = 0;
+            this.dsProductos.DataSetName = "dsProductos";
+            this.dsProductos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // colid1
+            // conffilasdestinosBindingSource
             // 
-            this.colid1.FieldName = "id";
-            this.colid1.Name = "colid1";
-            this.colid1.OptionsColumn.AllowEdit = false;
+            this.conffilasdestinosBindingSource.DataMember = "conf_filas_destinos";
+            this.conffilasdestinosBindingSource.DataSource = this.dsProductos;
             // 
-            // colfactor
+            // presentacionfilasBindingSource
             // 
-            this.colfactor.FieldName = "factor";
-            this.colfactor.Name = "colfactor";
+            this.presentacionfilasBindingSource.DataMember = "presentacion_filas";
+            this.presentacionfilasBindingSource.DataSource = this.dsProductos;
+            // 
+            // colid_presentacion
+            // 
+            this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.Name = "colid_presentacion";
+            // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "Presentacion";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 0;
+            // 
+            // colcant_fila
+            // 
+            this.colcant_fila.Caption = "Cantidad de Filas";
+            this.colcant_fila.FieldName = "cant_fila";
+            this.colcant_fila.Name = "colcant_fila";
+            this.colcant_fila.Visible = true;
+            this.colcant_fila.VisibleIndex = 1;
             // 
             // frmdespacho_tipo_detalle_carga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 209);
-            this.ControlBox = false;
             this.Controls.Add(this.navigationFrame1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmdespacho_tipo_detalle_carga";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -331,9 +371,11 @@ namespace LOSA.TransaccionesPT
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPresentacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conffilasdestinosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsTipo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionsacosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conffilasdestinosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionfilasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -361,8 +403,11 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraEditors.GridLookUpEdit grdPresentacion;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.BindingSource presentacionsacosBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
-        private DevExpress.XtraGrid.Columns.GridColumn colid1;
-        private DevExpress.XtraGrid.Columns.GridColumn colfactor;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.ToggleSwitch tsTipo;
+        private System.Windows.Forms.BindingSource presentacionfilasBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colcant_fila;
     }
 }
