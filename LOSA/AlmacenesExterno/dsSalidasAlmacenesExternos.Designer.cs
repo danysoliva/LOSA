@@ -1942,6 +1942,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnid_presentacion;
             
+            private global::System.Data.DataColumn columnpresentacion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LoteDataTable() {
@@ -2089,6 +2091,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn presentacionColumn {
+                get {
+                    return this.columnpresentacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2124,7 +2134,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LoteRow AddLoteRow(int id, decimal cantidad_disponible, decimal unidades_disponibles, int id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, int num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, decimal unidade_seleccionadas, int id_ingreso_h, int id_presentacion) {
+            public LoteRow AddLoteRow(int id, decimal cantidad_disponible, decimal unidades_disponibles, int id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, int num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, decimal unidade_seleccionadas, int id_ingreso_h, int id_presentacion, string presentacion) {
                 LoteRow rowLoteRow = ((LoteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2140,7 +2150,8 @@ namespace LOSA.AlmacenesExterno {
                         fecha_produccion,
                         unidade_seleccionadas,
                         id_ingreso_h,
-                        id_presentacion};
+                        id_presentacion,
+                        presentacion};
                 rowLoteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLoteRow);
                 return rowLoteRow;
@@ -2177,6 +2188,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnunidade_seleccionadas = base.Columns["unidade_seleccionadas"];
                 this.columnid_ingreso_h = base.Columns["id_ingreso_h"];
                 this.columnid_presentacion = base.Columns["id_presentacion"];
+                this.columnpresentacion = base.Columns["presentacion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2210,6 +2222,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnid_ingreso_h);
                 this.columnid_presentacion = new global::System.Data.DataColumn("id_presentacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_presentacion);
+                this.columnpresentacion = new global::System.Data.DataColumn("presentacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpresentacion);
                 this.columnCantSeleccionada.DefaultValue = ((decimal)(0m));
                 this.columnnum_line.DefaultValue = ((int)(-1));
                 this.columnrow_.DefaultValue = ((int)(0));
@@ -6796,6 +6810,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string presentacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableLote.presentacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'presentacion\' de la tabla \'Lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLote.presentacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableLote.idColumn);
             }
@@ -6960,6 +6990,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_presentacionNull() {
                 this[this.tableLote.id_presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IspresentacionNull() {
+                return this.IsNull(this.tableLote.presentacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetpresentacionNull() {
+                this[this.tableLote.presentacionColumn] = global::System.Convert.DBNull;
             }
         }
         

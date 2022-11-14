@@ -34,8 +34,8 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
             this.id_h = new DevExpress.XtraReports.Parameters.Parameter();
-            this.SubBand2 = new DevExpress.XtraReports.UI.SubBand();
             this.tipo_id_reporte = new DevExpress.XtraReports.Parameters.Parameter();
+            this.SubBand2 = new DevExpress.XtraReports.UI.SubBand();
             this.xrSubreport2 = new DevExpress.XtraReports.UI.XRSubreport();
             this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -74,12 +74,6 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.id_h.ValueInfo = "0";
             this.id_h.Visible = false;
             // 
-            // SubBand2
-            // 
-            this.SubBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrSubreport1});
-            this.SubBand2.Name = "SubBand2";
-            // 
             // tipo_id_reporte
             // 
             this.tipo_id_reporte.Description = "1=Reporte Plan, 2=Reporte Ingresado";
@@ -87,6 +81,12 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.tipo_id_reporte.Type = typeof(int);
             this.tipo_id_reporte.ValueInfo = "0";
             this.tipo_id_reporte.Visible = false;
+            // 
+            // SubBand2
+            // 
+            this.SubBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrSubreport1});
+            this.SubBand2.Name = "SubBand2";
             // 
             // xrSubreport2
             // 
