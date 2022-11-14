@@ -440,6 +440,24 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="conf_filas_destinos" msprop:Generator_TableClassName="conf_filas_destinosDataTable" msprop:Generator_TableVarName="tableconf_filas_destinos" msprop:Generator_RowChangedName="conf_filas_destinosRowChanged" msprop:Generator_TablePropName="conf_filas_destinos" msprop:Generator_RowDeletingName="conf_filas_destinosRowDeleting" msprop:Generator_RowChangingName="conf_filas_destinosRowChanging" msprop:Generator_RowEvHandlerName="conf_filas_destinosRowChangeEventHandler" msprop:Generator_RowDeletedName="conf_filas_destinosRowDeleted" msprop:Generator_RowClassName="conf_filas_destinosRow" msprop:Generator_UserTableName="conf_filas_destinos" msprop:Generator_RowEvArgName="conf_filas_destinosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msdata:Caption="Destino" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="presentacion_sacos" msprop:Generator_TableClassName="presentacion_sacosDataTable" msprop:Generator_TableVarName="tablepresentacion_sacos" msprop:Generator_TablePropName="presentacion_sacos" msprop:Generator_RowDeletingName="presentacion_sacosRowDeleting" msprop:Generator_RowChangingName="presentacion_sacosRowChanging" msprop:Generator_RowEvHandlerName="presentacion_sacosRowChangeEventHandler" msprop:Generator_RowDeletedName="presentacion_sacosRowDeleted" msprop:Generator_UserTableName="presentacion_sacos" msprop:Generator_RowChangedName="presentacion_sacosRowChanged" msprop:Generator_RowEvArgName="presentacion_sacosRowChangeEvent" msprop:Generator_RowClassName="presentacion_sacosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="factor" msprop:Generator_ColumnVarNameInTable="columnfactor" msprop:Generator_ColumnPropNameInRow="factor" msprop:Generator_ColumnPropNameInTable="factorColumn" msprop:Generator_UserColumnName="factor" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
