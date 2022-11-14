@@ -112,7 +112,7 @@ namespace LOSA.TransaccionesMP
                 }
                 else
                 {
-                    LOSA.Despachos.frm_despacho_v3 frm = new Despachos.frm_despacho_v3();
+                    LOSA.Despachos.frm_despacho_v3 frm = new Despachos.frm_despacho_v3();//Camino activo desde Montacargas
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
