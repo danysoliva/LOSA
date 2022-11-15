@@ -285,5 +285,17 @@ namespace LOSA.TransaccionesPT
             ReportPrintTool printReport = new ReportPrintTool(cp);
             printReport.ShowPreview();
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                grd_data.ExportToXlsx(dialog.FileName);
+            }
+        }
     }
 }

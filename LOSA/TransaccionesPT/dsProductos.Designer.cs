@@ -11371,9 +11371,17 @@ namespace LOSA.TransaccionesPT {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columndescripcion;
+            private global::System.Data.DataColumn columndestino;
+            
+            private global::System.Data.DataColumn columncant_fila;
+            
+            private global::System.Data.DataColumn columnsacos_por_fila;
+            
+            private global::System.Data.DataColumn columnestiba_id;
             
             private global::System.Data.DataColumn columnenable;
+            
+            private global::System.Data.DataColumn columndestino_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -11418,9 +11426,33 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn descripcionColumn {
+            public global::System.Data.DataColumn destinoColumn {
                 get {
-                    return this.columndescripcion;
+                    return this.columndestino;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cant_filaColumn {
+                get {
+                    return this.columncant_fila;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn sacos_por_filaColumn {
+                get {
+                    return this.columnsacos_por_fila;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn estiba_idColumn {
+                get {
+                    return this.columnestiba_id;
                 }
             }
             
@@ -11429,6 +11461,14 @@ namespace LOSA.TransaccionesPT {
             public global::System.Data.DataColumn enableColumn {
                 get {
                     return this.columnenable;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn destino_idColumn {
+                get {
+                    return this.columndestino_id;
                 }
             }
             
@@ -11469,12 +11509,16 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public conf_filas_destinosRow Addconf_filas_destinosRow(int id, string descripcion, bool enable) {
+            public conf_filas_destinosRow Addconf_filas_destinosRow(int id, string destino, int cant_fila, int sacos_por_fila, int estiba_id, int enable, int destino_id) {
                 conf_filas_destinosRow rowconf_filas_destinosRow = ((conf_filas_destinosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
-                        descripcion,
-                        enable};
+                        destino,
+                        cant_fila,
+                        sacos_por_fila,
+                        estiba_id,
+                        enable,
+                        destino_id};
                 rowconf_filas_destinosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowconf_filas_destinosRow);
                 return rowconf_filas_destinosRow;
@@ -11498,8 +11542,12 @@ namespace LOSA.TransaccionesPT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columndescripcion = base.Columns["descripcion"];
+                this.columndestino = base.Columns["destino"];
+                this.columncant_fila = base.Columns["cant_fila"];
+                this.columnsacos_por_fila = base.Columns["sacos_por_fila"];
+                this.columnestiba_id = base.Columns["estiba_id"];
                 this.columnenable = base.Columns["enable"];
+                this.columndestino_id = base.Columns["destino_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11507,11 +11555,19 @@ namespace LOSA.TransaccionesPT {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescripcion);
-                this.columnenable = new global::System.Data.DataColumn("enable", typeof(bool), null, global::System.Data.MappingType.Element);
+                this.columndestino = new global::System.Data.DataColumn("destino", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndestino);
+                this.columncant_fila = new global::System.Data.DataColumn("cant_fila", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncant_fila);
+                this.columnsacos_por_fila = new global::System.Data.DataColumn("sacos_por_fila", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsacos_por_fila);
+                this.columnestiba_id = new global::System.Data.DataColumn("estiba_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestiba_id);
+                this.columnenable = new global::System.Data.DataColumn("enable", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnenable);
-                this.columndescripcion.Caption = "Destino";
+                this.columndestino_id = new global::System.Data.DataColumn("destino_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndestino_id);
+                this.columndestino.Caption = "Destino";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20246,27 +20302,75 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string descripcion {
+            public string destino {
                 get {
                     try {
-                        return ((string)(this[this.tableconf_filas_destinos.descripcionColumn]));
+                        return ((string)(this[this.tableconf_filas_destinos.destinoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'conf_filas_destinos\' es DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'destino\' de la tabla \'conf_filas_destinos\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableconf_filas_destinos.descripcionColumn] = value;
+                    this[this.tableconf_filas_destinos.destinoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool enable {
+            public int cant_fila {
                 get {
                     try {
-                        return ((bool)(this[this.tableconf_filas_destinos.enableColumn]));
+                        return ((int)(this[this.tableconf_filas_destinos.cant_filaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cant_fila\' de la tabla \'conf_filas_destinos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableconf_filas_destinos.cant_filaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int sacos_por_fila {
+                get {
+                    try {
+                        return ((int)(this[this.tableconf_filas_destinos.sacos_por_filaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'sacos_por_fila\' de la tabla \'conf_filas_destinos\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableconf_filas_destinos.sacos_por_filaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int estiba_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableconf_filas_destinos.estiba_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'estiba_id\' de la tabla \'conf_filas_destinos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableconf_filas_destinos.estiba_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int enable {
+                get {
+                    try {
+                        return ((int)(this[this.tableconf_filas_destinos.enableColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'enable\' de la tabla \'conf_filas_destinos\' es DBNull.", e);
@@ -20274,6 +20378,22 @@ namespace LOSA.TransaccionesPT {
                 }
                 set {
                     this[this.tableconf_filas_destinos.enableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int destino_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableconf_filas_destinos.destino_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'destino_id\' de la tabla \'conf_filas_destinos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableconf_filas_destinos.destino_idColumn] = value;
                 }
             }
             
@@ -20291,14 +20411,50 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdescripcionNull() {
-                return this.IsNull(this.tableconf_filas_destinos.descripcionColumn);
+            public bool IsdestinoNull() {
+                return this.IsNull(this.tableconf_filas_destinos.destinoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdescripcionNull() {
-                this[this.tableconf_filas_destinos.descripcionColumn] = global::System.Convert.DBNull;
+            public void SetdestinoNull() {
+                this[this.tableconf_filas_destinos.destinoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscant_filaNull() {
+                return this.IsNull(this.tableconf_filas_destinos.cant_filaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcant_filaNull() {
+                this[this.tableconf_filas_destinos.cant_filaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Issacos_por_filaNull() {
+                return this.IsNull(this.tableconf_filas_destinos.sacos_por_filaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setsacos_por_filaNull() {
+                this[this.tableconf_filas_destinos.sacos_por_filaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isestiba_idNull() {
+                return this.IsNull(this.tableconf_filas_destinos.estiba_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setestiba_idNull() {
+                this[this.tableconf_filas_destinos.estiba_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20311,6 +20467,18 @@ namespace LOSA.TransaccionesPT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetenableNull() {
                 this[this.tableconf_filas_destinos.enableColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdestino_idNull() {
+                return this.IsNull(this.tableconf_filas_destinos.destino_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdestino_idNull() {
+                this[this.tableconf_filas_destinos.destino_idColumn] = global::System.Convert.DBNull;
             }
         }
         

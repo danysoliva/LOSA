@@ -14,6 +14,7 @@ using ACS.Classes;
 using LOSA.Calidad.LoteConfConsumo;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.TransaccionesPT;
+using DevExpress.XtraPrintingLinks;
 
 namespace LOSA.Reportes
 {
@@ -90,6 +91,18 @@ namespace LOSA.Reportes
 
         private void grdv_inventario_camaron_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                grdvDespachos.ExportToXlsx(dialog.FileName);
+            }
         }
     }
 }

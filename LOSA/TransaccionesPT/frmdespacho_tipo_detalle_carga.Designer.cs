@@ -33,10 +33,7 @@ namespace LOSA.TransaccionesPT
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmdespacho_tipo_detalle_carga));
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPageSeleccion = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.btnclose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnPrintNormal = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPrintEmbalaje = new DevExpress.XtraEditors.SimpleButton();
             this.navigationSeleccionEmbalaje = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.tsTipo = new DevExpress.XtraEditors.ToggleSwitch();
@@ -49,15 +46,22 @@ namespace LOSA.TransaccionesPT
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcant_fila = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdImprimir = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grdDestinos = new DevExpress.XtraEditors.GridLookUpEdit();
             this.conffilasdestinosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.presentacionsacosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldestino = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_fila1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsacos_por_fila = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colestiba_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldestino_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnclose = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrintNormal = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrintEmbalaje = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.navigationPageSeleccion.SuspendLayout();
@@ -86,33 +90,18 @@ namespace LOSA.TransaccionesPT
             this.navigationPageSeleccion,
             this.navigationSeleccionEmbalaje});
             this.navigationFrame1.SelectedPage = this.navigationSeleccionEmbalaje;
-            this.navigationFrame1.Size = new System.Drawing.Size(568, 207);
+            this.navigationFrame1.Size = new System.Drawing.Size(568, 202);
             this.navigationFrame1.TabIndex = 12;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
             // navigationPageSeleccion
             // 
-            this.navigationPageSeleccion.Caption = "navigationPage1";
             this.navigationPageSeleccion.Controls.Add(this.btnclose);
             this.navigationPageSeleccion.Controls.Add(this.labelControl1);
             this.navigationPageSeleccion.Controls.Add(this.btnPrintNormal);
             this.navigationPageSeleccion.Controls.Add(this.btnPrintEmbalaje);
             this.navigationPageSeleccion.Name = "navigationPageSeleccion";
-            this.navigationPageSeleccion.Size = new System.Drawing.Size(568, 207);
-            // 
-            // btnclose
-            // 
-            this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnclose.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclose.Appearance.Options.UseFont = true;
-            this.btnclose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnclose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.ImageOptions.Image")));
-            this.btnclose.Location = new System.Drawing.Point(460, 8);
-            this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(99, 47);
-            this.btnclose.TabIndex = 15;
-            this.btnclose.Text = "Cerrar";
-            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            this.navigationPageSeleccion.Size = new System.Drawing.Size(568, 202);
             // 
             // labelControl1
             // 
@@ -124,37 +113,8 @@ namespace LOSA.TransaccionesPT
             this.labelControl1.TabIndex = 14;
             this.labelControl1.Text = "Seleccione el tipo de Reporte";
             // 
-            // btnPrintNormal
-            // 
-            this.btnPrintNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintNormal.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintNormal.Appearance.Options.UseFont = true;
-            this.btnPrintNormal.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnPrintNormal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintNormal.ImageOptions.Image")));
-            this.btnPrintNormal.Location = new System.Drawing.Point(26, 92);
-            this.btnPrintNormal.Name = "btnPrintNormal";
-            this.btnPrintNormal.Size = new System.Drawing.Size(248, 47);
-            this.btnPrintNormal.TabIndex = 13;
-            this.btnPrintNormal.Text = "Detalle de Carga";
-            this.btnPrintNormal.Click += new System.EventHandler(this.btnPrintNormal_Click);
-            // 
-            // btnPrintEmbalaje
-            // 
-            this.btnPrintEmbalaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintEmbalaje.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnPrintEmbalaje.Appearance.Options.UseFont = true;
-            this.btnPrintEmbalaje.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnPrintEmbalaje.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintEmbalaje.ImageOptions.Image")));
-            this.btnPrintEmbalaje.Location = new System.Drawing.Point(299, 92);
-            this.btnPrintEmbalaje.Name = "btnPrintEmbalaje";
-            this.btnPrintEmbalaje.Size = new System.Drawing.Size(248, 47);
-            this.btnPrintEmbalaje.TabIndex = 12;
-            this.btnPrintEmbalaje.Text = "Detalle de Carga con Embalaje";
-            this.btnPrintEmbalaje.Click += new System.EventHandler(this.btnPrintEmbalaje_Click);
-            // 
             // navigationSeleccionEmbalaje
             // 
-            this.navigationSeleccionEmbalaje.Caption = "navigationSeleccionEmbalaje";
             this.navigationSeleccionEmbalaje.Controls.Add(this.labelControl4);
             this.navigationSeleccionEmbalaje.Controls.Add(this.tsTipo);
             this.navigationSeleccionEmbalaje.Controls.Add(this.labelControl3);
@@ -164,22 +124,23 @@ namespace LOSA.TransaccionesPT
             this.navigationSeleccionEmbalaje.Controls.Add(this.labelControl2);
             this.navigationSeleccionEmbalaje.Controls.Add(this.grdDestinos);
             this.navigationSeleccionEmbalaje.Name = "navigationSeleccionEmbalaje";
-            this.navigationSeleccionEmbalaje.Size = new System.Drawing.Size(568, 207);
+            this.navigationSeleccionEmbalaje.Size = new System.Drawing.Size(568, 202);
             // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(90, 64);
+            this.labelControl4.Location = new System.Drawing.Point(114, 65);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(78, 21);
             this.labelControl4.TabIndex = 18;
             this.labelControl4.Text = "Tipo Estiba:";
+            this.labelControl4.Click += new System.EventHandler(this.labelControl4_Click);
             // 
             // tsTipo
             // 
             this.tsTipo.EditValue = true;
-            this.tsTipo.Location = new System.Drawing.Point(174, 59);
+            this.tsTipo.Location = new System.Drawing.Point(198, 60);
             this.tsTipo.Name = "tsTipo";
             this.tsTipo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tsTipo.Properties.Appearance.Options.UseFont = true;
@@ -193,17 +154,18 @@ namespace LOSA.TransaccionesPT
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(74, 112);
+            this.labelControl3.Location = new System.Drawing.Point(100, 25);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(92, 21);
             this.labelControl3.TabIndex = 16;
             this.labelControl3.Text = "Presentacion:";
+            this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
             // 
             // grdPresentacion
             // 
             this.grdPresentacion.EditValue = "";
             this.grdPresentacion.Enabled = false;
-            this.grdPresentacion.Location = new System.Drawing.Point(174, 109);
+            this.grdPresentacion.Location = new System.Drawing.Point(198, 22);
             this.grdPresentacion.Name = "grdPresentacion";
             this.grdPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdPresentacion.Properties.Appearance.Options.UseFont = true;
@@ -215,6 +177,7 @@ namespace LOSA.TransaccionesPT
             this.grdPresentacion.Properties.ValueMember = "id_presentacion";
             this.grdPresentacion.Size = new System.Drawing.Size(260, 28);
             this.grdPresentacion.TabIndex = 15;
+            this.grdPresentacion.EditValueChanged += new System.EventHandler(this.grdPresentacion_EditValueChanged);
             // 
             // presentacionfilasBindingSource
             // 
@@ -265,53 +228,39 @@ namespace LOSA.TransaccionesPT
             this.cmdImprimir.Appearance.Options.UseFont = true;
             this.cmdImprimir.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdImprimir.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdImprimir.ImageOptions.SvgImage")));
-            this.cmdImprimir.Location = new System.Drawing.Point(149, 159);
+            this.cmdImprimir.Location = new System.Drawing.Point(158, 156);
             this.cmdImprimir.Name = "cmdImprimir";
             this.cmdImprimir.Size = new System.Drawing.Size(104, 35);
             this.cmdImprimir.TabIndex = 14;
             this.cmdImprimir.Text = "Imprimir";
             this.cmdImprimir.Click += new System.EventHandler(this.cmdImprimir_Click);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(295, 159);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(104, 35);
-            this.simpleButton1.TabIndex = 13;
-            this.simpleButton1.Text = "Cerrar";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(110, 21);
+            this.labelControl2.Location = new System.Drawing.Point(136, 107);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(56, 21);
             this.labelControl2.TabIndex = 12;
             this.labelControl2.Text = "Destino:";
+            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // grdDestinos
             // 
             this.grdDestinos.EditValue = "";
-            this.grdDestinos.Location = new System.Drawing.Point(174, 18);
+            this.grdDestinos.Location = new System.Drawing.Point(197, 104);
             this.grdDestinos.Name = "grdDestinos";
             this.grdDestinos.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdDestinos.Properties.Appearance.Options.UseFont = true;
             this.grdDestinos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grdDestinos.Properties.DataSource = this.conffilasdestinosBindingSource;
-            this.grdDestinos.Properties.DisplayMember = "descripcion";
+            this.grdDestinos.Properties.DisplayMember = "destino";
             this.grdDestinos.Properties.PopupView = this.gridLookUpEdit1View;
-            this.grdDestinos.Properties.ValueMember = "id";
-            this.grdDestinos.Size = new System.Drawing.Size(260, 28);
+            this.grdDestinos.Properties.ValueMember = "destino_id";
+            this.grdDestinos.Size = new System.Drawing.Size(261, 28);
             this.grdDestinos.TabIndex = 0;
-            this.grdDestinos.EditValueChanged += new System.EventHandler(this.grdDestinos_EditValueChanged);
             // 
             // conffilasdestinosBindingSource
             // 
@@ -322,40 +271,126 @@ namespace LOSA.TransaccionesPT
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
-            this.coldescripcion,
-            this.colenable});
+            this.coldestino,
+            this.colcant_fila1,
+            this.colsacos_por_fila,
+            this.colestiba_id,
+            this.colenable,
+            this.coldestino_id});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            // 
-            // coldescripcion
-            // 
-            this.coldescripcion.FieldName = "descripcion";
-            this.coldescripcion.Name = "coldescripcion";
-            this.coldescripcion.Visible = true;
-            this.coldescripcion.VisibleIndex = 0;
-            // 
-            // colenable
-            // 
-            this.colenable.FieldName = "enable";
-            this.colenable.Name = "colenable";
             // 
             // presentacionsacosBindingSource
             // 
             this.presentacionsacosBindingSource.DataMember = "presentacion_sacos";
             this.presentacionsacosBindingSource.DataSource = this.dsProductos;
             // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            // 
+            // coldestino
+            // 
+            this.coldestino.FieldName = "destino";
+            this.coldestino.Name = "coldestino";
+            this.coldestino.OptionsColumn.AllowEdit = false;
+            this.coldestino.Visible = true;
+            this.coldestino.VisibleIndex = 0;
+            // 
+            // colcant_fila1
+            // 
+            this.colcant_fila1.Caption = "Cant Filas";
+            this.colcant_fila1.FieldName = "cant_fila";
+            this.colcant_fila1.Name = "colcant_fila1";
+            this.colcant_fila1.OptionsColumn.AllowEdit = false;
+            // 
+            // colsacos_por_fila
+            // 
+            this.colsacos_por_fila.Caption = "Sacos por Filas";
+            this.colsacos_por_fila.FieldName = "sacos_por_fila";
+            this.colsacos_por_fila.Name = "colsacos_por_fila";
+            this.colsacos_por_fila.OptionsColumn.AllowEdit = false;
+            // 
+            // colestiba_id
+            // 
+            this.colestiba_id.FieldName = "estiba_id";
+            this.colestiba_id.Name = "colestiba_id";
+            // 
+            // colenable
+            // 
+            this.colenable.FieldName = "enable";
+            this.colenable.Name = "colenable";
+            // 
+            // coldestino_id
+            // 
+            this.coldestino_id.FieldName = "destino_id";
+            this.coldestino_id.Name = "coldestino_id";
+            // 
+            // btnclose
+            // 
+            this.btnclose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnclose.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclose.Appearance.Options.UseFont = true;
+            this.btnclose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnclose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.ImageOptions.Image")));
+            this.btnclose.Location = new System.Drawing.Point(460, 8);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(99, 47);
+            this.btnclose.TabIndex = 15;
+            this.btnclose.Text = "Cerrar";
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            // 
+            // btnPrintNormal
+            // 
+            this.btnPrintNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintNormal.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintNormal.Appearance.Options.UseFont = true;
+            this.btnPrintNormal.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnPrintNormal.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintNormal.ImageOptions.Image")));
+            this.btnPrintNormal.Location = new System.Drawing.Point(26, 92);
+            this.btnPrintNormal.Name = "btnPrintNormal";
+            this.btnPrintNormal.Size = new System.Drawing.Size(248, 47);
+            this.btnPrintNormal.TabIndex = 13;
+            this.btnPrintNormal.Text = "Detalle de Carga";
+            this.btnPrintNormal.Click += new System.EventHandler(this.btnPrintNormal_Click);
+            // 
+            // btnPrintEmbalaje
+            // 
+            this.btnPrintEmbalaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintEmbalaje.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPrintEmbalaje.Appearance.Options.UseFont = true;
+            this.btnPrintEmbalaje.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnPrintEmbalaje.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintEmbalaje.ImageOptions.Image")));
+            this.btnPrintEmbalaje.Location = new System.Drawing.Point(299, 92);
+            this.btnPrintEmbalaje.Name = "btnPrintEmbalaje";
+            this.btnPrintEmbalaje.Size = new System.Drawing.Size(248, 47);
+            this.btnPrintEmbalaje.TabIndex = 12;
+            this.btnPrintEmbalaje.Text = "Detalle de Carga con Embalaje";
+            this.btnPrintEmbalaje.Click += new System.EventHandler(this.btnPrintEmbalaje_Click);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(304, 156);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(104, 35);
+            this.simpleButton1.TabIndex = 13;
+            this.simpleButton1.Text = "Cerrar";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // frmdespacho_tipo_detalle_carga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 214);
+            this.ClientSize = new System.Drawing.Size(575, 209);
             this.Controls.Add(this.navigationFrame1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -397,9 +432,6 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.BindingSource conffilasdestinosBindingSource;
         private dsProductos dsProductos;
-        private DevExpress.XtraGrid.Columns.GridColumn colid;
-        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
-        private DevExpress.XtraGrid.Columns.GridColumn colenable;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.GridLookUpEdit grdPresentacion;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -410,5 +442,12 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colcant_fila;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn coldestino;
+        private DevExpress.XtraGrid.Columns.GridColumn colcant_fila1;
+        private DevExpress.XtraGrid.Columns.GridColumn colsacos_por_fila;
+        private DevExpress.XtraGrid.Columns.GridColumn colestiba_id;
+        private DevExpress.XtraGrid.Columns.GridColumn colenable;
+        private DevExpress.XtraGrid.Columns.GridColumn coldestino_id;
     }
 }

@@ -444,8 +444,12 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
-              <xs:element name="descripcion" msdata:Caption="Destino" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
-              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" minOccurs="0" />
+              <xs:element name="destino" msdata:Caption="Destino" msprop:Generator_ColumnVarNameInTable="columndestino" msprop:Generator_ColumnPropNameInRow="destino" msprop:Generator_ColumnPropNameInTable="destinoColumn" msprop:Generator_UserColumnName="destino" type="xs:string" minOccurs="0" />
+              <xs:element name="cant_fila" msprop:Generator_ColumnVarNameInTable="columncant_fila" msprop:Generator_ColumnPropNameInRow="cant_fila" msprop:Generator_ColumnPropNameInTable="cant_filaColumn" msprop:Generator_UserColumnName="cant_fila" type="xs:int" minOccurs="0" />
+              <xs:element name="sacos_por_fila" msprop:Generator_ColumnVarNameInTable="columnsacos_por_fila" msprop:Generator_ColumnPropNameInRow="sacos_por_fila" msprop:Generator_ColumnPropNameInTable="sacos_por_filaColumn" msprop:Generator_UserColumnName="sacos_por_fila" type="xs:int" minOccurs="0" />
+              <xs:element name="estiba_id" msprop:Generator_ColumnVarNameInTable="columnestiba_id" msprop:Generator_ColumnPropNameInRow="estiba_id" msprop:Generator_ColumnPropNameInTable="estiba_idColumn" msprop:Generator_UserColumnName="estiba_id" type="xs:int" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:int" minOccurs="0" />
+              <xs:element name="destino_id" msprop:Generator_ColumnVarNameInTable="columndestino_id" msprop:Generator_ColumnPropNameInRow="destino_id" msprop:Generator_ColumnPropNameInTable="destino_idColumn" msprop:Generator_UserColumnName="destino_id" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

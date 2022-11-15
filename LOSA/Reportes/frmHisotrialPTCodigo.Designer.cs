@@ -66,6 +66,7 @@ namespace LOSA.Reportes
             this.colsalida_unidades_totales = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportExcel = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            this.colfecha_factura = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -85,9 +86,9 @@ namespace LOSA.Reportes
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Controls.Add(this.tabPane1);
-            this.panelControl2.Location = new System.Drawing.Point(3, 66);
+            this.panelControl2.Location = new System.Drawing.Point(3, 53);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1322, 644);
+            this.panelControl2.Size = new System.Drawing.Size(1322, 657);
             this.panelControl2.TabIndex = 9;
             // 
             // tabPane1
@@ -100,9 +101,9 @@ namespace LOSA.Reportes
             this.tabPane1.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1318, 640);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1318, 653);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
-            this.tabPane1.Size = new System.Drawing.Size(1318, 640);
+            this.tabPane1.Size = new System.Drawing.Size(1318, 653);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "tabPane1";
             // 
@@ -116,7 +117,7 @@ namespace LOSA.Reportes
             this.tabNavigationPage1.Controls.Add(this.grd_inventario_camaron);
             this.tabNavigationPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1318, 613);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1318, 626);
             // 
             // grdDespachos
             // 
@@ -125,10 +126,10 @@ namespace LOSA.Reportes
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdDespachos.DataMember = "despachos_pt";
             this.grdDespachos.DataSource = this.dsProductos1;
-            this.grdDespachos.Location = new System.Drawing.Point(3, 274);
+            this.grdDespachos.Location = new System.Drawing.Point(3, 297);
             this.grdDespachos.MainView = this.grdvDespachos;
             this.grdDespachos.Name = "grdDespachos";
-            this.grdDespachos.Size = new System.Drawing.Size(1312, 334);
+            this.grdDespachos.Size = new System.Drawing.Size(1312, 324);
             this.grdDespachos.TabIndex = 21;
             this.grdDespachos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvDespachos});
@@ -158,6 +159,7 @@ namespace LOSA.Reportes
             this.coltm_salida,
             this.collote,
             this.colproducto2,
+            this.colfecha_factura,
             this.colOC,
             this.colfactura,
             this.colcode_sap2});
@@ -175,8 +177,8 @@ namespace LOSA.Reportes
             this.colunidades_salida.Name = "colunidades_salida";
             this.colunidades_salida.OptionsColumn.AllowEdit = false;
             this.colunidades_salida.Visible = true;
-            this.colunidades_salida.VisibleIndex = 4;
-            this.colunidades_salida.Width = 129;
+            this.colunidades_salida.VisibleIndex = 5;
+            this.colunidades_salida.Width = 228;
             // 
             // colkg_salida
             // 
@@ -185,8 +187,8 @@ namespace LOSA.Reportes
             this.colkg_salida.Name = "colkg_salida";
             this.colkg_salida.OptionsColumn.AllowEdit = false;
             this.colkg_salida.Visible = true;
-            this.colkg_salida.VisibleIndex = 5;
-            this.colkg_salida.Width = 83;
+            this.colkg_salida.VisibleIndex = 6;
+            this.colkg_salida.Width = 146;
             // 
             // coltm_salida
             // 
@@ -195,8 +197,8 @@ namespace LOSA.Reportes
             this.coltm_salida.Name = "coltm_salida";
             this.coltm_salida.OptionsColumn.AllowEdit = false;
             this.coltm_salida.Visible = true;
-            this.coltm_salida.VisibleIndex = 6;
-            this.coltm_salida.Width = 87;
+            this.coltm_salida.VisibleIndex = 7;
+            this.coltm_salida.Width = 165;
             // 
             // collote
             // 
@@ -206,6 +208,7 @@ namespace LOSA.Reportes
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 1;
+            this.collote.Width = 159;
             // 
             // colproducto2
             // 
@@ -220,23 +223,27 @@ namespace LOSA.Reportes
             this.colOC.OptionsColumn.AllowEdit = false;
             this.colOC.Visible = true;
             this.colOC.VisibleIndex = 2;
+            this.colOC.Width = 152;
             // 
             // colfactura
             // 
+            this.colfactura.Caption = "Factura";
             this.colfactura.FieldName = "factura";
             this.colfactura.Name = "colfactura";
             this.colfactura.OptionsColumn.AllowEdit = false;
             this.colfactura.Visible = true;
             this.colfactura.VisibleIndex = 3;
+            this.colfactura.Width = 158;
             // 
             // colcode_sap2
             // 
+            this.colcode_sap2.Caption = "Codigo Sap";
             this.colcode_sap2.FieldName = "code_sap";
             this.colcode_sap2.Name = "colcode_sap2";
             this.colcode_sap2.OptionsColumn.AllowEdit = false;
             this.colcode_sap2.Visible = true;
             this.colcode_sap2.VisibleIndex = 0;
-            this.colcode_sap2.Width = 82;
+            this.colcode_sap2.Width = 155;
             // 
             // btnSearchPTCamaron
             // 
@@ -281,7 +288,7 @@ namespace LOSA.Reportes
             this.grd_inventario_camaron.Location = new System.Drawing.Point(3, 36);
             this.grd_inventario_camaron.MainView = this.grdv_inventario_camaron;
             this.grd_inventario_camaron.Name = "grd_inventario_camaron";
-            this.grd_inventario_camaron.Size = new System.Drawing.Size(1312, 251);
+            this.grd_inventario_camaron.Size = new System.Drawing.Size(1312, 255);
             this.grd_inventario_camaron.TabIndex = 0;
             this.grd_inventario_camaron.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_camaron});
@@ -501,11 +508,12 @@ namespace LOSA.Reportes
             this.btnExportExcel.Appearance.Options.UseFont = true;
             this.btnExportExcel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportExcel.ImageOptions.Image")));
-            this.btnExportExcel.Location = new System.Drawing.Point(1095, 8);
+            this.btnExportExcel.Location = new System.Drawing.Point(1057, 8);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(104, 39);
             this.btnExportExcel.TabIndex = 10;
             this.btnExportExcel.Text = "Excel";
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
             // btnClose
             // 
@@ -520,6 +528,16 @@ namespace LOSA.Reportes
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Cerrar";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // colfecha_factura
+            // 
+            this.colfecha_factura.Caption = "Fecha Facturacion";
+            this.colfecha_factura.FieldName = "fecha_factura";
+            this.colfecha_factura.Name = "colfecha_factura";
+            this.colfecha_factura.OptionsColumn.AllowEdit = false;
+            this.colfecha_factura.Visible = true;
+            this.colfecha_factura.VisibleIndex = 4;
+            this.colfecha_factura.Width = 131;
             // 
             // frmHisotrialPTCodigo
             // 
@@ -584,5 +602,6 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colOC;
         private DevExpress.XtraGrid.Columns.GridColumn colfactura;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap2;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_factura;
     }
 }

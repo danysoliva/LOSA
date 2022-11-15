@@ -32,7 +32,7 @@
     <Shape ID="DesignTable:Acumulado_FCT" ZOrder="8" X="3864" Y="0" Height="162" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="86" />
     <Shape ID="DesignTable:historico_pt_kardex" ZOrder="5" X="87" Y="277" Height="314" Width="179" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="310" />
     <Shape ID="DesignTable:despachos_pt" ZOrder="4" X="778" Y="291" Height="200" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
-    <Shape ID="DesignTable:conf_filas_destinos" ZOrder="3" X="432" Y="314" Height="86" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
+    <Shape ID="DesignTable:conf_filas_destinos" ZOrder="3" X="432" Y="314" Height="162" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:presentacion_sacos" ZOrder="2" X="1061" Y="325" Height="86" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:presentacion_filas" ZOrder="1" X="1052" Y="441" Height="86" Width="169" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
   </Shapes>

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmConfLotesSalidaAlmacen));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcLotesSeleccionados = new DevExpress.XtraGrid.GridControl();
             this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -76,6 +76,7 @@
             this.colunidade_seleccionadas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_ingreso_h = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCantSeleccionada = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -110,7 +111,6 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotesSeleccionados)).BeginInit();
@@ -148,12 +148,12 @@
             this.layoutControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.layoutControl1.Controls.Add(this.gcLote);
             this.layoutControl1.Controls.Add(this.gcLotesSeleccionados);
             this.layoutControl1.Controls.Add(this.labelControl2);
             this.layoutControl1.Controls.Add(this.labelControl1);
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.btnAdd);
-            this.layoutControl1.Controls.Add(this.gcLote);
             this.layoutControl1.Location = new System.Drawing.Point(-8, 353);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
@@ -212,6 +212,7 @@
             this.gridColumn22,
             this.gridColumn24,
             this.gridColumn29});
+            this.gvLotesSeleccionados.CustomizationFormBounds = new System.Drawing.Rectangle(728, 476, 260, 272);
             this.gvLotesSeleccionados.DetailHeight = 284;
             this.gvLotesSeleccionados.GridControl = this.gcLotesSeleccionados;
             this.gvLotesSeleccionados.Name = "gvLotesSeleccionados";
@@ -358,11 +359,12 @@
             // btnDelete2
             // 
             this.btnDelete2.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnDelete2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete2.Name = "btnDelete2";
             this.btnDelete2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnDelete2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete2_ButtonClick_1);
             // 
             // gridColumn24
             // 
@@ -428,7 +430,6 @@
             this.btnDelete.Size = new System.Drawing.Size(84, 38);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 51;
-            this.btnDelete.Visible = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
@@ -614,6 +615,15 @@
             // 
             this.colid_presentacion.FieldName = "id_presentacion";
             this.colid_presentacion.Name = "colid_presentacion";
+            // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "Presentacion";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.OptionsColumn.AllowEdit = false;
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 1;
             // 
             // txtCantSeleccionada
             // 
@@ -964,15 +974,6 @@
             // gridView1
             // 
             this.gridView1.Name = "gridView1";
-            // 
-            // colpresentacion
-            // 
-            this.colpresentacion.Caption = "Presentacion";
-            this.colpresentacion.FieldName = "presentacion";
-            this.colpresentacion.Name = "colpresentacion";
-            this.colpresentacion.OptionsColumn.AllowEdit = false;
-            this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 1;
             // 
             // xfrmConfLotesSalidaAlmacen
             // 
