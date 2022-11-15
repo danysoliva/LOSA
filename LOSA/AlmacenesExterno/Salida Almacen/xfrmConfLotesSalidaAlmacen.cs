@@ -106,14 +106,14 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
                 //CargarLotesTransferidosEnSalidaAlmacen(row.id_mp,row.to_almacen);
 
-               foreach (var item2 in dsSalidasAlmacenesExternos.Lote.ToList().Where(x => x.id_detalle == row.id).ToList())
-                {
-                    var cant_disponible = lista_lotes_seleccionados.Where(x => x.id == item2.id).Sum(x => x.CantSeleccionada);
-                    var unidades_disponible = lista_lotes_seleccionados.Where(x => x.id == item2.id).Sum(x => x.unidades_seleccionadas);
+               //foreach (var item2 in dsSalidasAlmacenesExternos.Lote.ToList().Where(x => x.id_detalle == row.id).ToList())
+               // {
+               //     var cant_disponible = lista_lotes_seleccionados.Where(x => x.id == item2.id).Sum(x => x.CantSeleccionada);
+               //     var unidades_disponible = lista_lotes_seleccionados.Where(x => x.id == item2.id).Sum(x => x.unidades_seleccionadas);
 
-                    item2.cantidad_disponible = item2.cantidad_disponible- cant_disponible;
-                    item2.unidades_disponibles = item2.unidades_disponibles - unidades_disponible;
-                }
+               //     item2.cantidad_disponible = item2.cantidad_disponible- cant_disponible;
+               //     item2.unidades_disponibles = item2.unidades_disponibles - unidades_disponible;
+               // }
 
             }
             catch (Exception ex)
@@ -598,14 +598,103 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var gvl = (GridView)gcLote.FocusedView;
+            gvLote.PostEditor();
+            int contarRepetidos = 0;
+            var gvl = (GridView)gcLotesSeleccionados.FocusedView;
             var row_lote = (dsSalidasAlmacenesExternos.Lote_SeleccionadosRow)gvl.GetDataRow(gvl.FocusedRowHandle);
 
 
-            if (true)
-            {
 
+            //if (row_lote.cantidad_disponible == 0)
+            //{
+            //    CajaDialogo.Error("LOTE NO DISPONIBLE");
+            //    return;
+            //}
+
+            //if (row_lote.CantSeleccionada > row_lote.cantidad_disponible)
+            //{
+            //    CajaDialogo.Error("DEBE DE INGRESAR UNA CANTIDAD MENOR O IGUAL A LA DISPONIBLE");
+            //    return;
+            //}
+
+
+
+            //if (row_lote.unidade_seleccionadas > row_lote.unidades_disponibles)
+            //{
+            //    CajaDialogo.Error("LAS UNIDADES DEBEN SER MENOR O IGUAL A LAS DISPONIBLES");
+            //    return;
+            //}
+
+            //if (row_lote.CantSeleccionada == 0)
+            //{
+            //    CajaDialogo.Error("DEBE SELECCIONAR UNA CANTIDAD");
+            //    return;
+            //}
+
+            //if (row_lote.unidade_seleccionadas == 0)
+            //{
+            //    CajaDialogo.Error("DEBE SELECCIONAR UNIDADES");
+            //    return;
+            //}
+
+
+
+            foreach (var item in dsSalidasAlmacenesExternos.Lote_Seleccionados)
+            {
+                foreach (var item2 in dsSalidasAlmacenesExternos.Lote)
+                {
+                    if (item.Seleccionar == true)
+                    {
+                        DataRow row = dsSalidasAlmacenesExternos.Lote.NewRow();
+
+                        if (item.lote == item2.lote)
+                        {
+                            item2.cantidad_disponible = item2.cantidad_disponible + item.cantidad;
+                            item2.unidades_disponibles = item2.unidades_disponibles + item.unidades;
+                            dsSalidasAlmacenesExternos.Lote_Seleccionados.Clear();
+                        }
+
+                        //dsSalidasAlmacenesExternos.Lote_Seleccionados.Rows.Add(row);
+
+                        //lista_lotes_seleccionados.Add(row);
+
+                        //item.cantidad_disponible = item.cantidad_disponible - item.CantSeleccionada;
+                        //item.unidades_disponibles = item.unidades_disponibles - item.unidade_seleccionadas;
+
+                    }
+                }
+                //item.CantSeleccionada = 0;
+                //item.unidade_seleccionadas = 0;
             }
+            dsSalidasAlmacenesExternos.Lote.AcceptChanges();
+
+            //var ls = dsSalidasAlmacenesExternos.Lote.ToList();
+
+            lista_lotes_seleccionados.Clear();
+            lista_lotes_seleccionados = dsSalidasAlmacenesExternos.Lote_Seleccionados.ToList();
+
+
+        }
+
+        private void btnDelete2_ButtonClick_1(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)gcLotesSeleccionados.FocusedView;
+            var row = (dsSalidasAlmacenesExternos.Lote_SeleccionadosRow)gridview.GetFocusedDataRow();
+
+            //dsSalidasAlmacenesExternos.Lote_Seleccionados.Clear();
+            foreach (dsSalidasAlmacenesExternos.LoteRow item in dsSalidasAlmacenesExternos.Lote.Rows)
+            {
+                if (item.lote == row.lote)
+                {
+                    item.cantidad_disponible = item.cantidad_disponible + row.cantidad;
+                    item.unidades_disponibles = item.unidades_disponibles + row.unidades;
+                    item.Seleccionar = false;
+
+                    gvLotesSeleccionados.DeleteRow(gvLotesSeleccionados.FocusedRowHandle);
+                    dsSalidasAlmacenesExternos.Lote_Seleccionados.AcceptChanges();
+                }
+            }
+            //dsSalidasAlmacenesExternos.Lote_Seleccionados.Clear();
 
 
         }

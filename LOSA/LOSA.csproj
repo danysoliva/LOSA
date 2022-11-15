@@ -2934,6 +2934,12 @@
     <Compile Include="TransaccionesPT\frmdespacho.Designer.cs">
       <DependentUpon>frmdespacho.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\frmdespacho_detalle_estiba_step_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesPT\frmdespacho_detalle_estiba_step_2.Designer.cs">
+      <DependentUpon>frmdespacho_detalle_estiba_step_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\frmdespacho_tipo_detalle_carga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4295,6 +4301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmdespacho.resx">
       <DependentUpon>frmdespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesPT\frmdespacho_detalle_estiba_step_2.resx">
+      <DependentUpon>frmdespacho_detalle_estiba_step_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesPT\frmdespacho_tipo_detalle_carga.resx">
       <DependentUpon>frmdespacho_tipo_detalle_carga.cs</DependentUpon>

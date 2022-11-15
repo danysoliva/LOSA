@@ -100,6 +100,7 @@
             this.cmdImprimirPlanDespachoPreliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdAddOrdeCargaManual = new DevExpress.XtraEditors.SimpleButton();
             this.tggOpen = new DevExpress.XtraEditors.ToggleSwitch();
+            this.btnExport = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -117,14 +118,14 @@
             // 
             this.cmdHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdHome.Appearance.BackColor = System.Drawing.Color.White;
-            this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdHome.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdHome.Appearance.Options.UseBackColor = true;
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(474, 32);
+            this.cmdHome.Location = new System.Drawing.Point(1002, 43);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(152, 56);
+            this.cmdHome.Size = new System.Drawing.Size(152, 45);
             this.cmdHome.TabIndex = 37;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -140,7 +141,7 @@
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(130, 20);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(372, 39);
+            this.labelControl3.Size = new System.Drawing.Size(900, 39);
             this.labelControl3.TabIndex = 38;
             this.labelControl3.Text = "Planificacion de Despachos";
             // 
@@ -162,7 +163,7 @@
             this.btnver,
             this.btn_ligar_oc,
             this.cmdImprimirPlanDespachoPreliminar});
-            this.grd_data.Size = new System.Drawing.Size(634, 429);
+            this.grd_data.Size = new System.Drawing.Size(1162, 429);
             this.grd_data.TabIndex = 39;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -494,9 +495,9 @@
             this.cmdAddOrdeCargaManual.Appearance.Options.UseFont = true;
             this.cmdAddOrdeCargaManual.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdAddOrdeCargaManual.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAddOrdeCargaManual.ImageOptions.Image")));
-            this.cmdAddOrdeCargaManual.Location = new System.Drawing.Point(12, 32);
+            this.cmdAddOrdeCargaManual.Location = new System.Drawing.Point(12, 20);
             this.cmdAddOrdeCargaManual.Name = "cmdAddOrdeCargaManual";
-            this.cmdAddOrdeCargaManual.Size = new System.Drawing.Size(178, 56);
+            this.cmdAddOrdeCargaManual.Size = new System.Drawing.Size(178, 68);
             this.cmdAddOrdeCargaManual.TabIndex = 40;
             this.cmdAddOrdeCargaManual.Text = "Orden de \r\nCarga Manual";
             this.cmdAddOrdeCargaManual.Visible = false;
@@ -515,11 +516,28 @@
             this.tggOpen.TabIndex = 41;
             this.tggOpen.Toggled += new System.EventHandler(this.tggOpen_Toggled);
             // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Appearance.BackColor = System.Drawing.Color.White;
+            this.btnExport.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Appearance.Options.UseBackColor = true;
+            this.btnExport.Appearance.Options.UseFont = true;
+            this.btnExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnExport.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
+            this.btnExport.Location = new System.Drawing.Point(833, 43);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(152, 45);
+            this.btnExport.TabIndex = 42;
+            this.btnExport.Text = "Exportar";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // frmdespacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(1166, 560);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.tggOpen);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.cmdAddOrdeCargaManual);
@@ -583,5 +601,6 @@
         private DevExpress.XtraEditors.ToggleSwitch tggOpen;
         private DevExpress.XtraGrid.Columns.GridColumn colPlanDespacho;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdImprimirPlanDespachoPreliminar;
+        private DevExpress.XtraEditors.SimpleButton btnExport;
     }
 }

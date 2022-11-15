@@ -20,23 +20,57 @@ namespace LOSA.TransaccionesPT
     {
         DataOperations dp = new DataOperations();
         public int id_despacho;
-        int estiba;
+        int estiba = 0;
         public frmdespacho_tipo_detalle_carga(int pid_despacho)
         {
             InitializeComponent();
 
             id_despacho = pid_despacho;
-            estiba = 1;
-            LoadDestinos();
-            //LoadPresentacion();
+            grdPresentacion.Enabled = false;
+           
+            LoadPresentaciones();
+            LoadPresentacion(id_despacho);
             
             navigationFrame1.SelectedPageIndex = 0;
+            if (tsTipo.IsOn)
+            {
+                estiba = 1; //1 = Embalado 
+                LoadDestinos(estiba);
+            }
+            else
+            {
+                estiba = 2;//2 = Granel
+                LoadDestinos(estiba);
+            }
+        }
+
+        private void LoadPresentaciones()
+        {
+            try
+            {
+                string query = @"sp_get_presentacion_sacos_for_destino_load";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@estiba", estiba);
+                //cmd.Parameters.AddWithValue("@desinto_id", grdDestinos.EditValue);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsProductos.presentacion_filas.Clear();
+                adat.Fill(dsProductos.presentacion_filas);
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void btnclose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
 
         private void btnPrintNormal_Click(object sender, EventArgs e)
         {
@@ -58,34 +92,54 @@ namespace LOSA.TransaccionesPT
         private void btnPrintEmbalaje_Click(object sender, EventArgs e)
         {
             navigationFrame1.SelectedPageIndex = 1;
+            //frmdespacho_detalle_estiba_step_2 frm = new frmdespacho_detalle_estiba_step_2(id_despacho);
+            //frm.Show();
         }
 
 
-        private void LoadDestinos()
+        private void LoadDestinos(int pestiba)
         {
+
+            try
+            {
+                string query = @"sp_get_destinos_conf_despachos";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@estiba", pestiba);
+                cmd.Parameters.AddWithValue("@id_presentacion", grdPresentacion.EditValue);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsProductos.conf_filas_destinos.Clear();
+                adat.Fill(dsProductos.conf_filas_destinos);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
             
-            string query = @"sp_get_destinos_conf_despachos";
-            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter adat = new SqlDataAdapter(cmd);
-            dsProductos.conf_filas_destinos.Clear();
-            adat.Fill(dsProductos.conf_filas_destinos);
         }
 
-        private void LoadPresentacion()
+        private void LoadPresentacion(int id_despacho_h)
         {
             string query = @"sp_get_presentacion_sacos_for_destino";
             SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@estiba", estiba);
-            cmd.Parameters.AddWithValue("@desinto_id", grdDestinos.EditValue);
-            SqlDataAdapter adat = new SqlDataAdapter(cmd);
-            dsProductos.presentacion_filas.Clear();
-            adat.Fill(dsProductos.presentacion_filas);
+            cmd.Parameters.AddWithValue("@id_despacho_h", id_despacho_h);
+            //cmd.Parameters.AddWithValue("@estiba", estiba);
+            //cmd.Parameters.AddWithValue("@desinto_id", grdDestinos.EditValue);
+            //SqlDataAdapter adat = new SqlDataAdapter(cmd);
+            //dsProductos.presentacion_filas.Clear();
+            //adat.Fill(dsProductos.presentacion_filas);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                grdPresentacion.EditValue = dr.GetInt32(0);
+            }
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -99,12 +153,6 @@ namespace LOSA.TransaccionesPT
             {
                 CajaDialogo.Error("Debe seleccionar un Destino!");
                 grdDestinos.Focus();
-            }
-
-            if (string.IsNullOrEmpty(grdPresentacion.Text))
-            {
-                CajaDialogo.Error("Debe seleccionar una Presentacion");
-                grdPresentacion.Focus();
             }
 
             try
@@ -126,21 +174,42 @@ namespace LOSA.TransaccionesPT
         {
             if (tsTipo.IsOn)
             {
-                estiba = 1;
-                LoadPresentacion();
+                estiba = 1; //1 = Embalado 
+                LoadDestinos(this.estiba);
             }
             else
             {
-                estiba = 2;
-                LoadPresentacion();
+                estiba = 2;//2 = Granel
+                LoadDestinos(this.estiba);
             }
+            
 
         }
 
         private void grdDestinos_EditValueChanged(object sender, EventArgs e)
         {
             grdPresentacion.Enabled = true;
-            LoadPresentacion();
+            //LoadPresentacion();
+        }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdPresentacion_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
