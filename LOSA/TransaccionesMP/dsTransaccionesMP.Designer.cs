@@ -5330,6 +5330,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columnid_tarima;
             
+            private global::System.Data.DataColumn columncant_entregada_micros;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public viewTarimasDataTable() {
@@ -5445,6 +5447,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cant_entregada_microsColumn {
+                get {
+                    return this.columncant_entregada_micros;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5480,7 +5490,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public viewTarimasRow AddviewTarimasRow(int id, string req, string mp, decimal cantidad, decimal kg, string tm, string lote, System.DateTime fecha, int id_mp, int id_tarima) {
+            public viewTarimasRow AddviewTarimasRow(int id, string req, string mp, decimal cantidad, decimal kg, string tm, string lote, System.DateTime fecha, int id_mp, int id_tarima, decimal cant_entregada_micros) {
                 viewTarimasRow rowviewTarimasRow = ((viewTarimasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -5492,7 +5502,8 @@ namespace LOSA.TransaccionesMP {
                         lote,
                         fecha,
                         id_mp,
-                        id_tarima};
+                        id_tarima,
+                        cant_entregada_micros};
                 rowviewTarimasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowviewTarimasRow);
                 return rowviewTarimasRow;
@@ -5525,6 +5536,7 @@ namespace LOSA.TransaccionesMP {
                 this.columnfecha = base.Columns["fecha"];
                 this.columnid_mp = base.Columns["id_mp"];
                 this.columnid_tarima = base.Columns["id_tarima"];
+                this.columncant_entregada_micros = base.Columns["cant_entregada_micros"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5550,6 +5562,9 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnid_mp);
                 this.columnid_tarima = new global::System.Data.DataColumn("id_tarima", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_tarima);
+                this.columncant_entregada_micros = new global::System.Data.DataColumn("cant_entregada_micros", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncant_entregada_micros);
+                this.columncant_entregada_micros.Caption = "Micros Cant. Entregada";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10617,6 +10632,23 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal cant_entregada_micros {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableviewTarimas.cant_entregada_microsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cant_entregada_micros\' de la tabla \'viewTarimas\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableviewTarimas.cant_entregada_microsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableviewTarimas.idColumn);
             }
@@ -10733,6 +10765,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_tarimaNull() {
                 this[this.tableviewTarimas.id_tarimaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscant_entregada_microsNull() {
+                return this.IsNull(this.tableviewTarimas.cant_entregada_microsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcant_entregada_microsNull() {
+                this[this.tableviewTarimas.cant_entregada_microsColumn] = global::System.Convert.DBNull;
             }
         }
         
