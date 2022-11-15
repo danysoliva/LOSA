@@ -179,6 +179,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accesos\AccesosUsuarios\AccesoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\AccesosUsuarios\AccesoUsuario.Designer.cs">
+      <DependentUpon>AccesoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\GestionGrupos\CrearGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\GestionGrupos\CrearGrupo.Designer.cs">
+      <DependentUpon>CrearGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\GestionGrupos\EditarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\GestionGrupos\EditarGrupo.Designer.cs">
+      <DependentUpon>EditarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\GestionGrupos\PrincipalGestionGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\GestionGrupos\PrincipalGestionGrupos.Designer.cs">
+      <DependentUpon>PrincipalGestionGrupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\GestionSistema\CrearSistemas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\GestionSistema\CrearSistemas.Designer.cs">
+      <DependentUpon>CrearSistemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\GestionSistema\EditarSistemas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\GestionSistema\EditarSistemas.Designer.cs">
+      <DependentUpon>EditarSistemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\GestionSistema\PrincipalSistemas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\GestionSistema\PrincipalSistemas.Designer.cs">
+      <DependentUpon>PrincipalSistemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\GrupoLosa\CrearGrupoLosa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\GrupoLosa\CrearGrupoLosa.Designer.cs">
+      <DependentUpon>CrearGrupoLosa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\GrupoLosa\EditarGrupoLosa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\GrupoLosa\EditarGrupoLosa.Designer.cs">
+      <DependentUpon>EditarGrupoLosa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\GrupoLosa\PrincipalGrupoLosa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\GrupoLosa\PrincipalGrupoLosa.Designer.cs">
+      <DependentUpon>PrincipalGrupoLosa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\NivelAccesoSistema\NivelAccesoSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\NivelAccesoSistema\NivelAccesoSistema.Designer.cs">
+      <DependentUpon>NivelAccesoSistema.cs</DependentUpon>
+    </Compile>
     <Compile Include="ACS\RRHH\dsRRHH_reportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3193,6 +3259,39 @@
     <Compile Include="Utileria\frmMensajeCalidad.Designer.cs">
       <DependentUpon>frmMensajeCalidad.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Accesos\AccesosUsuarios\AccesoUsuario.resx">
+      <DependentUpon>AccesoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\GestionGrupos\CrearGrupo.resx">
+      <DependentUpon>CrearGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\GestionGrupos\EditarGrupo.resx">
+      <DependentUpon>EditarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\GestionGrupos\PrincipalGestionGrupos.resx">
+      <DependentUpon>PrincipalGestionGrupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\GestionSistema\CrearSistemas.resx">
+      <DependentUpon>CrearSistemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\GestionSistema\EditarSistemas.resx">
+      <DependentUpon>EditarSistemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\GestionSistema\PrincipalSistemas.resx">
+      <DependentUpon>PrincipalSistemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\GrupoLosa\CrearGrupoLosa.resx">
+      <DependentUpon>CrearGrupoLosa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\GrupoLosa\EditarGrupoLosa.resx">
+      <DependentUpon>EditarGrupoLosa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\GrupoLosa\PrincipalGrupoLosa.resx">
+      <DependentUpon>PrincipalGrupoLosa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\NivelAccesoSistema\NivelAccesoSistema.resx">
+      <DependentUpon>NivelAccesoSistema.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ACS\RRHH\frmReporteAsistencia.resx">
       <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
     </EmbeddedResource>
