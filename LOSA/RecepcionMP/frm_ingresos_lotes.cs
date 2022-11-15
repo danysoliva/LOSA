@@ -245,6 +245,30 @@ namespace LOSA.RecepcionMP
                         }
                     }//end for 
 
+                    ////Se debe validar si procede de un transferencia de externo
+                    //try
+                    //{
+                    //    Transferencia trans = new Transferencia();
+                    //    trans.RecuIsTraslado(numero_transaccion);
+
+                    //    int traslado = trans.IsTraslado1;
+
+                    //    if (traslado == 1) //Existe una Transferencia Ligada al Ingreso
+                    //    {
+                    //        //Vamos a darle Salida Externa Detalle Lote
+
+                            
+                            
+
+
+                    //    }
+                    //    //pues nada..
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    CajaDialogo.Error(ex.Message);
+                    //}
+
                     if (List1.Count > 0)
                     {
                         DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");

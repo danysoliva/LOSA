@@ -1045,6 +1045,7 @@
     <Compile Include="Clases\Tarima.cs" />
     <Compile Include="Clases\TarimaMicroingrediente.cs" />
     <Compile Include="Clases\Teclado.cs" />
+    <Compile Include="Clases\Transferencia.cs" />
     <Compile Include="Clases\Ubicaciones.cs" />
     <Compile Include="Clases\Ubicacion_Tarima.cs" />
     <Compile Include="Clases\UserLogin.cs" />
