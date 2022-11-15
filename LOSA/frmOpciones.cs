@@ -1,4 +1,11 @@
-﻿using ACS.Classes;
+﻿
+using ACS.Classes;
+using LOSA.Accesos;
+using LOSA.Accesos.AccesosUsuarios;
+using LOSA.Accesos.GestionGrupos;
+using LOSA.Accesos.GestionSistemas;
+using LOSA.Accesos.GrupoLosa;
+using LOSA.Accesos.NivelAccesoSistema;
 using LOSA.ACS.RRHH;
 using LOSA.AlmacenesExterno;
 using LOSA.AlmacenesExterno.Salida_Almacen;
@@ -1129,6 +1136,56 @@ namespace LOSA
             frmHisotrialPTCodigo frm = new frmHisotrialPTCodigo();
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void cmdUsuarios_Click(object sender, EventArgs e)
+        {
+            AccesoUsuario frm = new AccesoUsuario();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void cmdGrupos_Click(object sender, EventArgs e)
+        {
+            PrincipalGestionGrupos frm = new PrincipalGestionGrupos();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void cmdSistemas_Click(object sender, EventArgs e)
+        {
+            PrincipalSistemas frm = new PrincipalSistemas();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void cmdGruposAlosy_Click(object sender, EventArgs e)
+        {
+            PrincipalGrupoLosa frm = new PrincipalGrupoLosa();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void cmdAccesoSistemas_Click(object sender, EventArgs e)
+        {
+            NivelAccesoSistema frm = new NivelAccesoSistema();
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
     }

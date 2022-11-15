@@ -134,6 +134,11 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdUsuarios = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdGrupos = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdSistemas = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdGruposAlosy = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdAccesoSistemas = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1389,6 +1394,11 @@
             // 
             // TabAdmin
             // 
+            this.TabAdmin.Controls.Add(this.cmdAccesoSistemas);
+            this.TabAdmin.Controls.Add(this.cmdGruposAlosy);
+            this.TabAdmin.Controls.Add(this.cmdSistemas);
+            this.TabAdmin.Controls.Add(this.cmdGrupos);
+            this.TabAdmin.Controls.Add(this.cmdUsuarios);
             this.TabAdmin.Controls.Add(this.btnEstadosRequisiciones);
             this.TabAdmin.Controls.Add(this.btnKardexTiposTransacciones);
             this.TabAdmin.Controls.Add(this.btnEstadosProgramacionesRequisiciones);
@@ -1407,7 +1417,7 @@
             this.btnEstadosRequisiciones.Appearance.Options.UseTextOptions = true;
             this.btnEstadosRequisiciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEstadosRequisiciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnEstadosRequisiciones.Location = new System.Drawing.Point(419, 44);
+            this.btnEstadosRequisiciones.Location = new System.Drawing.Point(611, 32);
             this.btnEstadosRequisiciones.Name = "btnEstadosRequisiciones";
             this.btnEstadosRequisiciones.Size = new System.Drawing.Size(204, 71);
             this.btnEstadosRequisiciones.TabIndex = 11;
@@ -1421,7 +1431,7 @@
             this.btnKardexTiposTransacciones.Appearance.Options.UseTextOptions = true;
             this.btnKardexTiposTransacciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnKardexTiposTransacciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnKardexTiposTransacciones.Location = new System.Drawing.Point(419, 140);
+            this.btnKardexTiposTransacciones.Location = new System.Drawing.Point(611, 128);
             this.btnKardexTiposTransacciones.Name = "btnKardexTiposTransacciones";
             this.btnKardexTiposTransacciones.Size = new System.Drawing.Size(204, 71);
             this.btnKardexTiposTransacciones.TabIndex = 10;
@@ -1435,7 +1445,7 @@
             this.btnEstadosProgramacionesRequisiciones.Appearance.Options.UseTextOptions = true;
             this.btnEstadosProgramacionesRequisiciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnEstadosProgramacionesRequisiciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnEstadosProgramacionesRequisiciones.Location = new System.Drawing.Point(419, 239);
+            this.btnEstadosProgramacionesRequisiciones.Location = new System.Drawing.Point(611, 227);
             this.btnEstadosProgramacionesRequisiciones.Name = "btnEstadosProgramacionesRequisiciones";
             this.btnEstadosProgramacionesRequisiciones.Size = new System.Drawing.Size(204, 71);
             this.btnEstadosProgramacionesRequisiciones.TabIndex = 9;
@@ -1447,7 +1457,7 @@
             this.btnTiposPresentaciones.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTiposPresentaciones.Appearance.Options.UseFont = true;
             this.btnTiposPresentaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnTiposPresentaciones.Location = new System.Drawing.Point(9, 140);
+            this.btnTiposPresentaciones.Location = new System.Drawing.Point(390, 128);
             this.btnTiposPresentaciones.Name = "btnTiposPresentaciones";
             this.btnTiposPresentaciones.Size = new System.Drawing.Size(204, 71);
             this.btnTiposPresentaciones.TabIndex = 8;
@@ -1459,7 +1469,7 @@
             this.btnBodegas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBodegas.Appearance.Options.UseFont = true;
             this.btnBodegas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBodegas.Location = new System.Drawing.Point(9, 44);
+            this.btnBodegas.Location = new System.Drawing.Point(390, 32);
             this.btnBodegas.Name = "btnBodegas";
             this.btnBodegas.Size = new System.Drawing.Size(204, 71);
             this.btnBodegas.TabIndex = 5;
@@ -1682,6 +1692,66 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // cmdUsuarios
+            // 
+            this.cmdUsuarios.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdUsuarios.Appearance.Options.UseFont = true;
+            this.cmdUsuarios.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdUsuarios.Location = new System.Drawing.Point(6, 45);
+            this.cmdUsuarios.Name = "cmdUsuarios";
+            this.cmdUsuarios.Size = new System.Drawing.Size(204, 71);
+            this.cmdUsuarios.TabIndex = 12;
+            this.cmdUsuarios.Text = "Usuarios";
+            this.cmdUsuarios.Click += new System.EventHandler(this.cmdUsuarios_Click);
+            // 
+            // cmdGrupos
+            // 
+            this.cmdGrupos.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGrupos.Appearance.Options.UseFont = true;
+            this.cmdGrupos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGrupos.Location = new System.Drawing.Point(6, 124);
+            this.cmdGrupos.Name = "cmdGrupos";
+            this.cmdGrupos.Size = new System.Drawing.Size(204, 71);
+            this.cmdGrupos.TabIndex = 13;
+            this.cmdGrupos.Text = "Gestion Grupos";
+            this.cmdGrupos.Click += new System.EventHandler(this.cmdGrupos_Click);
+            // 
+            // cmdSistemas
+            // 
+            this.cmdSistemas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdSistemas.Appearance.Options.UseFont = true;
+            this.cmdSistemas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdSistemas.Location = new System.Drawing.Point(6, 203);
+            this.cmdSistemas.Name = "cmdSistemas";
+            this.cmdSistemas.Size = new System.Drawing.Size(204, 71);
+            this.cmdSistemas.TabIndex = 14;
+            this.cmdSistemas.Text = "Gestion Sistemas";
+            this.cmdSistemas.Click += new System.EventHandler(this.cmdSistemas_Click);
+            // 
+            // cmdGruposAlosy
+            // 
+            this.cmdGruposAlosy.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGruposAlosy.Appearance.Options.UseFont = true;
+            this.cmdGruposAlosy.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGruposAlosy.Location = new System.Drawing.Point(6, 361);
+            this.cmdGruposAlosy.Name = "cmdGruposAlosy";
+            this.cmdGruposAlosy.Size = new System.Drawing.Size(204, 71);
+            this.cmdGruposAlosy.TabIndex = 15;
+            this.cmdGruposAlosy.Text = "Grupos ALOSY";
+            this.cmdGruposAlosy.Click += new System.EventHandler(this.cmdGruposAlosy_Click);
+            // 
+            // cmdAccesoSistemas
+            // 
+            this.cmdAccesoSistemas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAccesoSistemas.Appearance.Options.UseFont = true;
+            this.cmdAccesoSistemas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdAccesoSistemas.Location = new System.Drawing.Point(6, 282);
+            this.cmdAccesoSistemas.Name = "cmdAccesoSistemas";
+            this.cmdAccesoSistemas.Size = new System.Drawing.Size(204, 71);
+            this.cmdAccesoSistemas.TabIndex = 16;
+            this.cmdAccesoSistemas.Text = "Nivel Acceso Sistemas";
+            this.cmdAccesoSistemas.Click += new System.EventHandler(this.cmdAccesoSistemas_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1821,5 +1891,10 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnTransferenciaPendiente;
         private DevExpress.XtraEditors.SimpleButton btnHistorialPT;
+        private DevExpress.XtraEditors.SimpleButton cmdAccesoSistemas;
+        private DevExpress.XtraEditors.SimpleButton cmdGruposAlosy;
+        private DevExpress.XtraEditors.SimpleButton cmdSistemas;
+        private DevExpress.XtraEditors.SimpleButton cmdGrupos;
+        private DevExpress.XtraEditors.SimpleButton cmdUsuarios;
     }
 }
