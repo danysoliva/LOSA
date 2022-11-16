@@ -166,6 +166,7 @@ namespace LOSA.Accesos.GestionGrupos
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Crear";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // PrincipalGestionGrupos
             // 
