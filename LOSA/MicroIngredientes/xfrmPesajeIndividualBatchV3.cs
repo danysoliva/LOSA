@@ -242,6 +242,9 @@ namespace LOSA.MicroIngredientes
         int indicePeso = 0;
         private void txtCodBarra_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode != Keys.Enter)
+                return;
+
             try
             {
                 TarimaMicroingrediente tarima = new TarimaMicroingrediente();
@@ -281,6 +284,7 @@ namespace LOSA.MicroIngredientes
 
                         row.mp = tarima.MateriaPrima;
                         row.lote = tarima.LoteMP;
+                        lblLoteName.Text = "Lote: " + tarima.LoteMP;
                         row.id_mp = tarima.Id_materiaprima;
                         row.id_tarima_origen = tarima.IdTarimaOrigen;
                         row.id_tarima_micro = tarima.Id;
@@ -425,6 +429,12 @@ namespace LOSA.MicroIngredientes
                                 break;
                         }
 
+                    }
+                    else
+                    {
+                        //Tarima No recuperada
+                        lblLoteName.Text = "";
+                        lblMP.Text = "";
                     }
                 }
 

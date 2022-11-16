@@ -26,12 +26,18 @@ namespace LOSA.Accesos.GestionSistemas
         #region Eventos
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombreSistema.Text))
+            {
+                CajaDialogo.Error("No se permite guardar un Sistema en Blanco!");
+                return;
+            }
+
             if (XtraMessageBox.Show("Esta seguro que desea guardar este sistema?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@nombre", textEdit1.EditValue);
-                sqlCommand.Parameters.AddWithValue("@codigo", textEdit2.EditValue);
-                sqlCommand.Parameters.AddWithValue("@nombre_corto", textEdit3.EditValue);
+                sqlCommand.Parameters.AddWithValue("@nombre", txtNombreSistema.Text);
+                sqlCommand.Parameters.AddWithValue("@codigo", textEdit2.Text);
+                sqlCommand.Parameters.AddWithValue("@nombre_corto", textEdit3.Text);
                 sqlCommand.Parameters.AddWithValue("@habilitado", checkEditHabilitado.Checked);
                 if (sqlConnection.State != ConnectionState.Open)
                 {

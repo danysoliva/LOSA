@@ -17,6 +17,7 @@ namespace LOSA.Accesos.NivelAccesoSistema
         private XtraMessageBoxArgs args;
 
         private const string query = "SELECT * FROM [conf_sistemas_master_data];";
+
         private const string query2 = @"SELECT
                                         Distinct
                                         TT.id,
@@ -56,7 +57,7 @@ namespace LOSA.Accesos.NivelAccesoSistema
                 var reader = sqlCommand.ExecuteReader();
                 while (reader.Read())
                 {
-                    this.comboBoxEditSistemas.Properties.Items.Add(new KeyValuePair<int, string>(Convert.ToInt32(reader.GetValue(0)), Convert.ToString(reader.GetValue(1))));
+                    this.comboBoxEditSistemas.Properties.Items.Add(new KeyValuePair<int, string>(Convert.ToInt32(reader.GetValue(0)), Convert.ToString(reader.GetValue(2))));
                 }
                 sqlConnection.Close();
             }

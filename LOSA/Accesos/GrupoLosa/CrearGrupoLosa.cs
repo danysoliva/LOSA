@@ -43,6 +43,11 @@ namespace LOSA.Accesos.GrupoLosa
 
         private void botonGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textEditGrupo.Text))
+            {
+                CajaDialogo.Error("No se permite guardar un Grupo en Blanco!");
+                return;
+            }
 
             if (XtraMessageBox.Show("Esta seguro que desea guarda este grupo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {

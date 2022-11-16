@@ -18,10 +18,12 @@ namespace LOSA.Accesos.AccesosUsuarios
         private XtraMessageBoxArgs args;
         //private const string connectionString = @"Server=DESKTOP-4Q0PPMK\SQLEXPRESS;Database=ACS;User Id=sa;Password=Sap5erver;";
         private const string query = @"SELECT [id]
-                                      ,[nombre]
-                                      ,[usuario]
+                                              ,[nombre]
+                                              ,[usuario]
                                       FROM[ACS].[dbo].[conf_usuarios]
-                                            WHERE activo = 1;";
+                                      WHERE activo = 1
+                                      Order by [nombre];";
+
         private const string query2 = @"Select T0.id, 
                                               T0.nombre, 
                                               T0.usuario,
@@ -96,6 +98,8 @@ namespace LOSA.Accesos.AccesosUsuarios
             }
             return listaAcceosSistemas;
         }
+
+
         private List<FlatData> TraerdatosFlatDataDB(int idUsuario)
         {
             var listaAcceosSistemas = new List<FlatData>();

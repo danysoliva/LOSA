@@ -829,6 +829,17 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsTransaccionesMP.viewTarimasRow)gridView.GetFocusedDataRow();
 
+            if(dp.ValidateNumberDecimal(row.cant_entregada_micros)>= dp.ValidateNumberDecimal(row.kg))
+            {
+                string mensaje = "La tarima ya fue entregada en Micro Ingredientes!";
+                lblMensaje.Text = mensaje;
+                Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                frm.ShowDialog();
+                panelNotificacion.BackColor = Color.Red;
+                timerLimpiarMensaje.Enabled = true;
+                timerLimpiarMensaje.Start();
+                return;
+            }
 
             frm_entrega_tarima_micros frmx = new frm_entrega_tarima_micros(row.id_mp, row.id_tarima, row.lote, row.kg,dp.ValidateNumberInt32( row.cantidad));
             //(int pidMP, int pIdTarima, string pLote,bool pMicros )
@@ -885,6 +896,7 @@ namespace LOSA.TransaccionesMP
                 panelNotificacion.BackColor = Color.MediumSeaGreen;
                 timerLimpiarMensaje.Enabled = true;
                 timerLimpiarMensaje.Start();
+                load_tarimas_scan();
                 //LoadDataMicros();
             }
         }

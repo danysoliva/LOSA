@@ -41,11 +41,17 @@ namespace LOSA.Accesos.GestionGrupos
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                CajaDialogo.Error("No se permite guardar un Grupo en Blanco!");
+                return;
+            }
+
             if (XtraMessageBox.Show("Esta seguro que desea guarda este grupo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@grupo", textEdit1.EditValue);
-                sqlCommand.Parameters.AddWithValue("@descripcion", textEdit2.EditValue);
+                sqlCommand.Parameters.AddWithValue("@grupo", textEdit1.Text);
+                sqlCommand.Parameters.AddWithValue("@descripcion", textEdit2.Text);
                 sqlCommand.Parameters.AddWithValue("@habilitado", checkEditHabilitado.Checked);
                 if (sqlConnection.State != ConnectionState.Open)
                 {

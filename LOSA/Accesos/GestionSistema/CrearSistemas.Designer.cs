@@ -32,14 +32,14 @@ namespace LOSA.Accesos.GestionSistemas
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.checkEditHabilitado = new DevExpress.XtraEditors.CheckEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNombreSistema = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditHabilitado.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreSistema.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             this.SuspendLayout();
@@ -70,15 +70,15 @@ namespace LOSA.Accesos.GestionSistemas
             this.checkEditHabilitado.Location = new System.Drawing.Point(28, 181);
             this.checkEditHabilitado.Name = "checkEditHabilitado";
             this.checkEditHabilitado.Properties.Caption = "Habilitado";
-            this.checkEditHabilitado.Size = new System.Drawing.Size(75, 20);
+            this.checkEditHabilitado.Size = new System.Drawing.Size(75, 19);
             this.checkEditHabilitado.TabIndex = 4;
             // 
-            // textEdit1
+            // txtNombreSistema
             // 
-            this.textEdit1.Location = new System.Drawing.Point(28, 45);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(229, 20);
-            this.textEdit1.TabIndex = 1;
+            this.txtNombreSistema.Location = new System.Drawing.Point(28, 45);
+            this.txtNombreSistema.Name = "txtNombreSistema";
+            this.txtNombreSistema.Size = new System.Drawing.Size(229, 20);
+            this.txtNombreSistema.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -130,12 +130,12 @@ namespace LOSA.Accesos.GestionSistemas
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.checkEditHabilitado);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txtNombreSistema);
             this.Controls.Add(this.labelControl1);
             this.Name = "CrearSistemas";
-            this.Text = "CrearSistemas";
+            this.Text = "Nuevo Sistema";
             ((System.ComponentModel.ISupportInitialize)(this.checkEditHabilitado.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreSistema.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -148,7 +148,7 @@ namespace LOSA.Accesos.GestionSistemas
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.CheckEdit checkEditHabilitado;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtNombreSistema;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
