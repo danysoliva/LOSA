@@ -96,6 +96,7 @@ namespace LOSA.Clases
                 SqlCommand cmd = new SqlCommand("sp_get_salida_d_lote_for_numero_ingreso", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@numero_transaccion", pNumero_transaccion);
+                
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {

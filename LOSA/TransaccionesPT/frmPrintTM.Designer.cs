@@ -150,6 +150,7 @@
             this.collote_fp,
             this.colimprimir,
             this.colSiguiente});
+            this.grdv_data.CustomizationFormBounds = new System.Drawing.Rectangle(-1330, 490, 260, 312);
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;

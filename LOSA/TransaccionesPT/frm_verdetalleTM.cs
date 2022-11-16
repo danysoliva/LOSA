@@ -61,93 +61,93 @@ namespace LOSA.TransaccionesPT
 
         private void btnduplicar_Click(object sender, EventArgs e)
         {
-            frmInputBox frm = new frmInputBox();
-            frm.Text = "Duplicar Tarima";
-            frm.lblInstrucciones.Text = "Ingrese la cantidad de tarimas a duplicar:";
-            frm.txtValue.Text = "1";
-            frm.ValidInteger = true;
+            //frmInputBox frm = new frmInputBox();
+            //frm.Text = "Duplicar Tarima";
+            //frm.lblInstrucciones.Text = "Ingrese la cantidad de tarimas a duplicar:";
+            //frm.txtValue.Text = "1";
+            //frm.ValidInteger = true;
 
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                int cant = 0;
-                try
-                {
-                    cant = Convert.ToInt32(frm.txtValue.Text);
-                }
-                catch { }
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    int cant = 0;
+            //    try
+            //    {
+            //        cant = Convert.ToInt32(frm.txtValue.Text);
+            //    }
+            //    catch { }
 
-                if (cant <= 0)
-                {
-                    CajaDialogo.Error("No se puede duplicar la Tarima! El valor debe ser mayor a cero.");
-                    return;
-                }
+            //    if (cant <= 0)
+            //    {
+            //        CajaDialogo.Error("No se puede duplicar la Tarima! El valor debe ser mayor a cero.");
+            //        return;
+            //    }
 
-                var gridView = (GridView)grd_data.FocusedView;
-                var row = (dsPT.tm_ptRow)gridView.GetFocusedDataRow();
+            //    var gridView = (GridView)grd_data.FocusedView;
+            //    var row = (dsPT.tm_ptRow)gridView.GetFocusedDataRow();
 
-                ArrayList List1 = new ArrayList();
+            //    ArrayList List1 = new ArrayList();
 
-                Tarima tar1 = new Tarima();
-                if (tar1.RecuperarRegistro(row.id))
-                {
+            //    Tarima tar1 = new Tarima();
+            //    if (tar1.RecuperarRegistro(row.id))
+            //    {
 
-                    for (int i = 1; i <= cant; i++)
-                    {
-                        try
-                        {
-                            DataOperations dp = new DataOperations();
-                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                            con.Open();
+            //        for (int i = 1; i <= cant; i++)
+            //        {
+            //            try
+            //            {
+            //                DataOperations dp = new DataOperations();
+            //                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            //                con.Open();
 
-                            SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
-                            cmm.CommandType = CommandType.StoredProcedure;
-                            cmm.Parameters.AddWithValue("@id", 1);
-                            string barcode = cmm.ExecuteScalar().ToString();
+            //                SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
+            //                cmm.CommandType = CommandType.StoredProcedure;
+            //                cmm.Parameters.AddWithValue("@id", 1);
+            //                string barcode = cmm.ExecuteScalar().ToString();
 
-                            string vItemCodeMP = "";
-                            ProductoTerminado mpx = new ProductoTerminado(dp.ConnectionStringLOSA);
-                            if (mpx.Recuperar_producto(row.id_producto_termiado))
-                            {
-                                vItemCodeMP = mpx.CodigoMP;
-                            }
+            //                string vItemCodeMP = "";
+            //                ProductoTerminado mpx = new ProductoTerminado(dp.ConnectionStringLOSA);
+            //                if (mpx.Recuperar_producto(row.id_producto_termiado))
+            //                {
+            //                    vItemCodeMP = mpx.CodigoMP;
+            //                }
 
 
-                            SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_lote_pt", con);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@id_tarima", row.id);
-                            cmd.Parameters.AddWithValue("@codigo_tarima", barcode);
-                            int vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
+            //                SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_lote_pt", con);
+            //                cmd.CommandType = CommandType.StoredProcedure;
+            //                cmd.Parameters.AddWithValue("@id_tarima", row.id);
+            //                cmd.Parameters.AddWithValue("@codigo_tarima", barcode);
+            //                int vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
-                            List1.Add(vid_tarima);
+            //                List1.Add(vid_tarima);
 
-                            con.Close();
-                            //this.Close();
-                        }
-                        catch (Exception ec)
-                        {
-                            CajaDialogo.Error(ec.Message);
-                        }
-                    }//end for 
+            //                con.Close();
+            //                //this.Close();
+            //            }
+            //            catch (Exception ec)
+            //            {
+            //                CajaDialogo.Error(ec.Message);
+            //            }
+            //        }//end for 
 
-                    if (List1.Count > 0)
-                    {
-                        DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");
-                        if (r == DialogResult.Yes)
-                        {
-                            foreach (int i in List1)
-                            {
-                                int id_tarimax = i;
-                                rptReporteTarimaPT report = new rptReporteTarimaPT(id_tarimax);
-                                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                                ReportPrintTool printReport = new ReportPrintTool(report);
-                                printReport.ShowPreview();
-                            }
-                        }
-                        load_data();
-                    }
-                    List1.Clear();
-                }//end if recuperar registro
-            }//end dialog 
+            //        if (List1.Count > 0)
+            //        {
+            //            DialogResult r = CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?");
+            //            if (r == DialogResult.Yes)
+            //            {
+            //                foreach (int i in List1)
+            //                {
+            //                    int id_tarimax = i;
+            //                    rptReporteTarimaPT report = new rptReporteTarimaPT(id_tarimax);
+            //                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            //                    ReportPrintTool printReport = new ReportPrintTool(report);
+            //                    printReport.ShowPreview();
+            //                }
+            //            }
+            //            load_data();
+            //        }
+            //        List1.Clear();
+            //    }//end if recuperar registro
+            //}//end dialog 
         }
 
         private void btnimprimir_Click(object sender, EventArgs e)
