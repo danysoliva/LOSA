@@ -138,8 +138,6 @@ namespace LOSA.TransaccionesMP
             this.colnumero_ingreso.FieldName = "numero_ingreso";
             this.colnumero_ingreso.Name = "colnumero_ingreso";
             this.colnumero_ingreso.OptionsColumn.AllowEdit = false;
-            this.colnumero_ingreso.Visible = true;
-            this.colnumero_ingreso.VisibleIndex = 2;
             this.colnumero_ingreso.Width = 144;
             // 
             // colid_unidadmedida
@@ -163,7 +161,7 @@ namespace LOSA.TransaccionesMP
             this.gridColumn1.ColumnEdit = this.btnSeleccionar;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.VisibleIndex = 3;
             this.gridColumn1.Width = 150;
             // 
             // btnSeleccionar
@@ -183,7 +181,7 @@ namespace LOSA.TransaccionesMP
             this.colunidad_medida.Name = "colunidad_medida";
             this.colunidad_medida.OptionsColumn.AllowEdit = false;
             this.colunidad_medida.Visible = true;
-            this.colunidad_medida.VisibleIndex = 3;
+            this.colunidad_medida.VisibleIndex = 2;
             this.colunidad_medida.Width = 144;
             // 
             // btnAtras
