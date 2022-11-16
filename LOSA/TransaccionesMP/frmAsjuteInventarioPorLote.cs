@@ -45,8 +45,8 @@ namespace LOSA.TransaccionesMP
             InitializeComponent();
             DataOperations dp1 = new DataOperations();
             dtFechaDocumento.DateTime = dp1.Now();
-            LoadMaestrosBodegas();
-            MateriaPrima MateriaPrimaActual = new MateriaPrima();
+            //LoadMaestrosBodegas();
+            MateriaPrimaActual = new MateriaPrima();
             UsuarioLogueado = pUserLogin;
             radioLoteExistente.Checked = true;
             LoadPresentaciones();
@@ -58,7 +58,7 @@ namespace LOSA.TransaccionesMP
                 radioLoteNuevo.Checked = false;
                 SearchLoteAuto(pIdMP, pLote);
                 ItemCode = MateriaPrimaActual.CodeMP_SAP;
-
+                LoadMaestrosBodegas();
                 //frmLotePorMP frm = new frmLotePorMP(Id_MP);
                 //if (this.MdiParent != null)
                 //{

@@ -37,7 +37,7 @@ namespace LOSA.Accesos.GestionSistemas
                 var reader = sqlCommand.ExecuteReader();
                 while (reader.Read())
                 {
-                    this.textEdit1.EditValue = Convert.ToString(reader.GetValue(1));
+                    this.txtNombreSistema.EditValue = Convert.ToString(reader.GetValue(1));
                     this.textEdit2.EditValue = Convert.ToString(reader.GetValue(2));
                     this.textEdit3.EditValue = Convert.ToString(reader.GetValue(3));
                     this.checkEditHabilitado.Checked = Convert.ToBoolean(reader.GetValue(4));
@@ -68,12 +68,18 @@ namespace LOSA.Accesos.GestionSistemas
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombreSistema.Text))
+            {
+                CajaDialogo.Error("No se permite guardar un Sistema en Blanco!");
+                return;
+            }
+
             if (XtraMessageBox.Show("Esta seguro que desea editar este sistema?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("@nombre", textEdit1.EditValue);
-                sqlCommand.Parameters.AddWithValue("@codigo", textEdit2.EditValue);
-                sqlCommand.Parameters.AddWithValue("@nombre_corto", textEdit3.EditValue);
+                sqlCommand.Parameters.AddWithValue("@nombre", txtNombreSistema.Text);
+                sqlCommand.Parameters.AddWithValue("@codigo", textEdit2.Text);
+                sqlCommand.Parameters.AddWithValue("@nombre_corto", textEdit3.Text);
                 sqlCommand.Parameters.AddWithValue("@habilitado", checkEditHabilitado.Checked);
                 sqlCommand.Parameters.AddWithValue("@id", id);
                 if (sqlConnection.State != ConnectionState.Open)

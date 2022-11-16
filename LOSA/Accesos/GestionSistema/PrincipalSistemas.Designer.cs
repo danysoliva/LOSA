@@ -44,7 +44,7 @@ namespace LOSA.Accesos.GestionSistemas
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(95, 65);
+            this.simpleButton2.Location = new System.Drawing.Point(85, 76);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
             this.simpleButton2.TabIndex = 5;
@@ -53,7 +53,7 @@ namespace LOSA.Accesos.GestionSistemas
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(14, 65);
+            this.simpleButton1.Location = new System.Drawing.Point(4, 76);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 4;
@@ -63,10 +63,13 @@ namespace LOSA.Accesos.GestionSistemas
             // gridControlSistemas
             // 
             this.gridControlSistemas.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.True;
-            this.gridControlSistemas.Location = new System.Drawing.Point(14, 105);
+            this.gridControlSistemas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlSistemas.Location = new System.Drawing.Point(1, 105);
             this.gridControlSistemas.MainView = this.gridView1;
             this.gridControlSistemas.Name = "gridControlSistemas";
-            this.gridControlSistemas.Size = new System.Drawing.Size(799, 394);
+            this.gridControlSistemas.Size = new System.Drawing.Size(824, 440);
             this.gridControlSistemas.TabIndex = 3;
             this.gridControlSistemas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -93,6 +96,7 @@ namespace LOSA.Accesos.GestionSistemas
             this.Id.OptionsColumn.AllowEdit = false;
             this.Id.Visible = true;
             this.Id.VisibleIndex = 0;
+            this.Id.Width = 96;
             // 
             // Nombre
             // 
@@ -102,7 +106,8 @@ namespace LOSA.Accesos.GestionSistemas
             this.Nombre.Name = "Nombre";
             this.Nombre.OptionsColumn.AllowEdit = false;
             this.Nombre.Visible = true;
-            this.Nombre.VisibleIndex = 1;
+            this.Nombre.VisibleIndex = 2;
+            this.Nombre.Width = 386;
             // 
             // Habilitado
             // 
@@ -113,6 +118,7 @@ namespace LOSA.Accesos.GestionSistemas
             this.Habilitado.OptionsColumn.AllowEdit = false;
             this.Habilitado.Visible = true;
             this.Habilitado.VisibleIndex = 3;
+            this.Habilitado.Width = 198;
             // 
             // Codigo
             // 
@@ -121,7 +127,8 @@ namespace LOSA.Accesos.GestionSistemas
             this.Codigo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Codigo.ImageOptions.Image")));
             this.Codigo.Name = "Codigo";
             this.Codigo.Visible = true;
-            this.Codigo.VisibleIndex = 2;
+            this.Codigo.VisibleIndex = 1;
+            this.Codigo.Width = 126;
             // 
             // PrincipalSistemas
             // 

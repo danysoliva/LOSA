@@ -36,6 +36,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.gridViewDetalleSistemas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Nivel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.comboUsuarios = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -53,7 +54,6 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDetalleSistemas)).BeginInit();
@@ -151,6 +151,17 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.Nivel.VisibleIndex = 1;
             this.Nivel.Width = 103;
             // 
+            // Codigo
+            // 
+            this.Codigo.Caption = "Codigo";
+            this.Codigo.FieldName = "Codigo";
+            this.Codigo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Codigo.ImageOptions.Image")));
+            this.Codigo.Name = "Codigo";
+            this.Codigo.OptionsColumn.AllowEdit = false;
+            this.Codigo.OptionsColumn.AllowFocus = false;
+            this.Codigo.Visible = true;
+            this.Codigo.VisibleIndex = 2;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.labelControl1);
@@ -181,7 +192,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.comboUsuarios.Properties.NullText = "";
             this.comboUsuarios.Properties.PopupSizeable = false;
             this.comboUsuarios.Properties.PopupView = this.searchLookUpEdit1View;
-            this.comboUsuarios.Size = new System.Drawing.Size(198, 20);
+            this.comboUsuarios.Size = new System.Drawing.Size(260, 20);
             this.comboUsuarios.TabIndex = 6;
             this.comboUsuarios.EditValueChanged += new System.EventHandler(this.comboSistemas_EditValueChanged);
             // 
@@ -205,6 +216,9 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.idColumn.Name = "idColumn";
             this.idColumn.OptionsColumn.AllowEdit = false;
             this.idColumn.OptionsColumn.AllowFocus = false;
+            this.idColumn.Visible = true;
+            this.idColumn.VisibleIndex = 0;
+            this.idColumn.Width = 112;
             // 
             // usuarioColumn
             // 
@@ -214,7 +228,8 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.usuarioColumn.OptionsColumn.AllowEdit = false;
             this.usuarioColumn.OptionsColumn.AllowFocus = false;
             this.usuarioColumn.Visible = true;
-            this.usuarioColumn.VisibleIndex = 0;
+            this.usuarioColumn.VisibleIndex = 1;
+            this.usuarioColumn.Width = 252;
             // 
             // nombreColumn
             // 
@@ -224,7 +239,8 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.nombreColumn.OptionsColumn.AllowEdit = false;
             this.nombreColumn.OptionsColumn.AllowFocus = false;
             this.nombreColumn.Visible = true;
-            this.nombreColumn.VisibleIndex = 1;
+            this.nombreColumn.VisibleIndex = 2;
+            this.nombreColumn.Width = 356;
             // 
             // panel3
             // 
@@ -325,17 +341,6 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.gridColumn4.Caption = "IdNivel";
             this.gridColumn4.FieldName = "IdNivel";
             this.gridColumn4.Name = "gridColumn4";
-            // 
-            // Codigo
-            // 
-            this.Codigo.Caption = "Codigo";
-            this.Codigo.FieldName = "Codigo";
-            this.Codigo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Codigo.ImageOptions.Image")));
-            this.Codigo.Name = "Codigo";
-            this.Codigo.OptionsColumn.AllowEdit = false;
-            this.Codigo.OptionsColumn.AllowFocus = false;
-            this.Codigo.Visible = true;
-            this.Codigo.VisibleIndex = 2;
             // 
             // AccesoUsuario
             // 
