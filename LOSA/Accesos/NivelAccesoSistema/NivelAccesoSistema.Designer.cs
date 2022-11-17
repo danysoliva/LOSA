@@ -65,7 +65,7 @@ namespace LOSA.Accesos.NivelAccesoSistema
             // labelControlComboSistemas
             // 
             this.labelControlComboSistemas.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControlComboSistemas.Location = new System.Drawing.Point(3, 24);
+            this.labelControlComboSistemas.Location = new System.Drawing.Point(3, 71);
             this.labelControlComboSistemas.Name = "labelControlComboSistemas";
             this.labelControlComboSistemas.Size = new System.Drawing.Size(63, 13);
             this.labelControlComboSistemas.TabIndex = 7;
@@ -73,7 +73,7 @@ namespace LOSA.Accesos.NivelAccesoSistema
             // 
             // comboBoxEditSistemas
             // 
-            this.comboBoxEditSistemas.Location = new System.Drawing.Point(3, 43);
+            this.comboBoxEditSistemas.Location = new System.Drawing.Point(3, 90);
             this.comboBoxEditSistemas.Name = "comboBoxEditSistemas";
             this.comboBoxEditSistemas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});

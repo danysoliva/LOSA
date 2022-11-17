@@ -16,7 +16,7 @@ namespace LOSA.Accesos.NivelAccesoSistema
         private SqlCommand sqlCommand;
         private XtraMessageBoxArgs args;
 
-        private const string query = "SELECT * FROM [conf_sistemas_master_data];";
+        private const string query = "SELECT * FROM [conf_sistemas_master_data] where enable = 1;";
 
         private const string query2 = @"SELECT
                                         Distinct
@@ -32,7 +32,9 @@ namespace LOSA.Accesos.NivelAccesoSistema
 				                                        T1.nivel from [conf_sistemas_master_data] T0
 				                                          inner join conf_niveles_acceso T1 on 1 = 1) TT
                                           left join conf_sistemas_niveles_acceso T3 on T3.id_nivel = TT.IdNivel and TT.id = T3.id_sistema";
+
         private const string query3 = "INSERT INTO [conf_sistemas_niveles_acceso]([id_sistema],[id_nivel],[enable]) VALUES(@id_sistema,@id_nivel,@enable);";
+
         private const string query4 = "Update [conf_sistemas_niveles_acceso] SET [enable]=@enable  WHERE id = @id;";
         //private const string connectionString = @"Server=DESKTOP-4Q0PPMK\SQLEXPRESS;Database=ACS;User Id=sa;Password=Sap5erver;";
         DataOperations dp = new DataOperations();

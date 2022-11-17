@@ -77,5 +77,12 @@ namespace LOSA.Accesos.GestionGrupos
         }
         #endregion
 
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            CrearGrupo crearGrupo = new CrearGrupo();
+            crearGrupo.StartPosition = FormStartPosition.CenterParent;
+            crearGrupo.FormClosed += CrearGrupo_FormClosed;
+            crearGrupo.ShowDialog(this);
+        }
     }
 }
