@@ -70,7 +70,8 @@ namespace LOSA
 
                             break;
                         case 4://Depth With Delta
-
+                            tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                            tabOpciones.TabPages[i].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
 
