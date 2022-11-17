@@ -37,6 +37,14 @@ namespace LOSA.Clases
         int id_tipo_transaccion;
         int IsTraslado;
 
+        #region Miembros Header
+        int id_transferencia;
+        DateTime fecha_h;
+        int id_ingreso;
+        int DocEntryH;
+        int numero_transaccion;
+        #endregion
+
         public int Id_d_lote { get => id_d_lote; set => id_d_lote = value; }
         public bool Recuperado { get => recuperado; set => recuperado = value; }
         public decimal Peso { get => peso; set => peso = value; }
@@ -56,6 +64,11 @@ namespace LOSA.Clases
         public bool Bit_configurado { get => bit_configurado; set => bit_configurado = value; }
         public int Id_tipo_transaccion { get => id_tipo_transaccion; set => id_tipo_transaccion = value; }
         public int IsTraslado1 { get => this.IsTraslado; set => this.IsTraslado = value; }
+        public int Id_transferencia { get => id_transferencia; set => id_transferencia = value; }
+        public DateTime Fecha_h { get => fecha_h; set => fecha_h = value; }
+        public int Id_ingreso { get => id_ingreso; set => id_ingreso = value; }
+        public int DocEntryH1 { get => DocEntryH; set => DocEntryH = value; }
+        public int Numero_transaccion { get => numero_transaccion; set => numero_transaccion = value; }
 
         public bool RecuIsTraslado(int pNumero_transaccion)
         {
@@ -128,6 +141,40 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
+
+        public bool RecuperarHeaderTransf(int pNumero_transaccion)
+        {
+            string query = @"sp_get_transferencia_header_for_numero_ingreso";
+            Recuperado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@numero_transaccion", pNumero_transaccion);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id_transferencia = dr.GetInt32(0);
+                    Fecha_h = dr.GetDateTime(1);
+                    Id_ingreso = dr.GetInt32(2);
+                    DocEntryH1 = dr.GetInt32(3);
+                    Numero_transaccion = dr.GetInt32(4);
+                    recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            return Recuperado;
+        }
+
     }
 
 

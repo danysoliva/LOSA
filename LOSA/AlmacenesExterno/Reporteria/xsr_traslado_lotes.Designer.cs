@@ -155,7 +155,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBorders = false;
             this.xrTableCell1.Text = "xrTableCell20";
-            this.xrTableCell1.Weight = 0.57512558260057256D;
+            this.xrTableCell1.Weight = 0.85294168264667491D;
             // 
             // xrTableCell30
             // 
@@ -166,7 +166,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell30.Name = "xrTableCell30";
             this.xrTableCell30.StylePriority.UseBorders = false;
             this.xrTableCell30.Text = "xrTableCell30";
-            this.xrTableCell30.Weight = 0.62984654018889707D;
+            this.xrTableCell30.Weight = 0.59779125172138259D;
             // 
             // xrTableCell2
             // 
@@ -177,7 +177,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseBorders = false;
             this.xrTableCell2.Text = "xrTableCell21";
-            this.xrTableCell2.Weight = 0.62984654018889707D;
+            this.xrTableCell2.Weight = 0.75806878970939717D;
             // 
             // xrTableCell3
             // 
@@ -188,7 +188,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseBorders = false;
             this.xrTableCell3.Text = "xrTableCell22";
-            this.xrTableCell3.Weight = 0.71610668405693634D;
+            this.xrTableCell3.Weight = 0.65654379993434453D;
             // 
             // xrTableCell4
             // 
@@ -196,7 +196,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBorders = false;
-            this.xrTableCell4.Weight = 0.60591839546670578D;
+            this.xrTableCell4.Weight = 0.024795613922866389D;
             // 
             // xrTableCell5
             // 
@@ -204,7 +204,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBorders = false;
-            this.xrTableCell5.Weight = 0.95710624704020875D;
+            this.xrTableCell5.Weight = 1.480252176737364D;
             // 
             // xrTableCell6
             // 
@@ -216,7 +216,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell6.StylePriority.UseBorders = false;
             this.xrTableCell6.Text = "xrTableCell25";
             this.xrTableCell6.TextFormatString = "{0:d/M/yyyy}";
-            this.xrTableCell6.Weight = 0.76541741621032744D;
+            this.xrTableCell6.Weight = 0.80815960083083516D;
             // 
             // xrTableCell7
             // 
@@ -228,7 +228,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell7.StylePriority.UseBorders = false;
             this.xrTableCell7.Text = "xrTableCell26";
             this.xrTableCell7.TextFormatString = "{0:d/M/yyyy}";
-            this.xrTableCell7.Weight = 0.75932977068680929D;
+            this.xrTableCell7.Weight = 0.8127563471164424D;
             // 
             // xrTableCell8
             // 
@@ -236,7 +236,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorders = false;
-            this.xrTableCell8.Weight = 0.76324165843263736D;
+            this.xrTableCell8.Weight = 0.020833457885029216D;
             // 
             // xrTableCell28
             // 
@@ -244,7 +244,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseBorders = false;
-            this.xrTableCell28.Weight = 1.2196022324359401D;
+            this.xrTableCell28.Weight = 1.6093983468035955D;
             // 
             // PageHeader
             // 
@@ -695,8 +695,10 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell19.Multiline = true;
             this.xrTableCell19.Name = "xrTableCell19";
             this.xrTableCell19.StylePriority.UseBorders = false;
+            this.xrTableCell19.StylePriority.UseTextAlignment = false;
             this.xrTableCell19.Text = "\r\nLote";
-            this.xrTableCell19.Weight = 0.8177200745905937D;
+            this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrTableCell19.Weight = 1.2127206051821942D;
             // 
             // xrTableCell29
             // 
@@ -706,7 +708,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell29.Name = "xrTableCell29";
             this.xrTableCell29.StylePriority.UseBorders = false;
             this.xrTableCell29.Text = "Origen";
-            this.xrTableCell29.Weight = 0.89552213754128585D;
+            this.xrTableCell29.Weight = 0.84994493497809653D;
             // 
             // xrTableCell20
             // 
@@ -715,8 +717,10 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell20.Multiline = true;
             this.xrTableCell20.Name = "xrTableCell20";
             this.xrTableCell20.StylePriority.UseBorders = false;
+            this.xrTableCell20.StylePriority.UseTextAlignment = false;
             this.xrTableCell20.Text = "Destino";
-            this.xrTableCell20.Weight = 0.89552213754128585D;
+            this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell20.Weight = 1.077829946346728D;
             // 
             // xrTableCell21
             // 
@@ -726,9 +730,9 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell21.Name = "xrTableCell21";
             this.xrTableCell21.StylePriority.UseBorders = false;
             this.xrTableCell21.StylePriority.UseTextAlignment = false;
-            this.xrTableCell21.Text = "\r\nCantidad";
-            this.xrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell21.Weight = 1.0181666744071951D;
+            this.xrTableCell21.Text = "Cantidad";
+            this.xrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell21.Weight = 0.93348239783839648D;
             // 
             // xrTableCell22
             // 
@@ -738,7 +742,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.StylePriority.UseBorders = false;
             this.xrTableCell22.Text = "N° serie\r\nfabricante";
-            this.xrTableCell22.Weight = 1.0286164031201377D;
+            this.xrTableCell22.Weight = 0.978386420696063D;
             // 
             // xrTableCell23
             // 
@@ -748,7 +752,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell23.Name = "xrTableCell23";
             this.xrTableCell23.StylePriority.UseBorders = false;
             this.xrTableCell23.Text = "Número de serie interno";
-            this.xrTableCell23.Weight = 1.1937083762543068D;
+            this.xrTableCell23.Weight = 1.16150622584882D;
             // 
             // xrTableCell24
             // 
@@ -760,7 +764,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell24.StylePriority.UseBorders = false;
             this.xrTableCell24.StylePriority.UseFont = false;
             this.xrTableCell24.Text = "Fecha de Vencimiento";
-            this.xrTableCell24.Weight = 1.0882782299114062D;
+            this.xrTableCell24.Weight = 1.1490477220570678D;
             // 
             // xrTableCell25
             // 
@@ -772,7 +776,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell25.StylePriority.UseBorders = false;
             this.xrTableCell25.StylePriority.UseFont = false;
             this.xrTableCell25.Text = "Fecha de frabricación";
-            this.xrTableCell25.Weight = 1.0796224259905172D;
+            this.xrTableCell25.Weight = 1.1555852091659662D;
             // 
             // xrTableCell26
             // 
@@ -782,7 +786,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell26.Name = "xrTableCell26";
             this.xrTableCell26.StylePriority.UseBorders = false;
             this.xrTableCell26.Text = "Fecha de adminisión";
-            this.xrTableCell26.Weight = 1.085185498506517D;
+            this.xrTableCell26.Weight = 1.2219162160206936D;
             // 
             // xrTableCell27
             // 
@@ -792,7 +796,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTableCell27.Name = "xrTableCell27";
             this.xrTableCell27.StylePriority.UseBorders = false;
             this.xrTableCell27.Text = "Det.";
-            this.xrTableCell27.Weight = 1.7340425918861571D;
+            this.xrTableCell27.Weight = 1.0959648716153772D;
             // 
             // tipo_id_reporte
             // 

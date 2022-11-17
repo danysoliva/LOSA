@@ -23,11 +23,12 @@ namespace LOSA.Reportes
         public frmHisotrialPTCodigo()
         {
             InitializeComponent();
+            LoadKardexPT();
         }
 
         private void btnSearchPTCamaron_Click(object sender, EventArgs e)
         {
-            LoadPT();
+            //LoadPT();
         }
 
         private void LoadPT()
@@ -35,10 +36,33 @@ namespace LOSA.Reportes
             frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.ProductoTerminado);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                LoadDataPT(frm.ItemSeleccionado.id);
+                //LoadDataPT(frm.ItemSeleccionado.id);
                 //textEdit1.Text = frm.ItemSeleccionado.ItemCode + " " + frm.ItemSeleccionado.ItemName;
                 //MateriaPrimaAllBodegas.RecuperarRegistroFromID_RM(frm.ItemSeleccionado.id);
             }
+        }
+        private void LoadKardexPT()
+        {
+            string query = @"sp_get_kardex_pt_existencia";
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@id_pt", pid_pt);
+                dsProductos1.kardex_pt_existencia.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsProductos1.kardex_pt_existencia);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
         }
 
 
@@ -58,23 +82,15 @@ namespace LOSA.Reportes
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsProductos1.historico_pt_kardex);
                 con.Close();
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
-            }
-
-            try
-            {
-                DataOperations dp = new DataOperations();
+           
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(@"sp_get_despachado_por_lote_codigo", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_pt", pid_pt);
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                SqlCommand cmd1 = new SqlCommand(@"sp_get_despachado_por_lote_codigo", conn);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.Parameters.AddWithValue("@id_pt", pid_pt);
+                SqlDataAdapter adat1 = new SqlDataAdapter(cmd1);
                 dsProductos1.despachos_pt.Clear();
-                adat.Fill(dsProductos1.despachos_pt);
+                adat1.Fill(dsProductos1.despachos_pt);
                 conn.Close();
             }
             catch (Exception ex)
@@ -103,6 +119,15 @@ namespace LOSA.Reportes
             {
                 grdvDespachos.ExportToXlsx(dialog.FileName);
             }
+        }
+
+        private void grdVKardexPtExistencia_RowClick(object sender, RowClickEventArgs e)
+        {
+            var gridview = (GridView)grdKardexPtExistencia.FocusedView;
+            var row = (dsProductos.kardex_pt_existenciaRow)grdVKardexPtExistencia.GetFocusedDataRow();
+
+
+            LoadDataPT(row.id_pt);
         }
     }
 }

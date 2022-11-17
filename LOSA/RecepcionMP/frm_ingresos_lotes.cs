@@ -164,6 +164,7 @@ namespace LOSA.RecepcionMP
             if (row.id_materia_prima == 1101 || row.id_materia_prima == 1110)
             {
                 CajaDialogo.Error("No puede duplicar Tarimas de Reproceso, Genere un Ingreso Nuevo!");
+                return;
             }
 
             Transferencia trans = new Transferencia();
