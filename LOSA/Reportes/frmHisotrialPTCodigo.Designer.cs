@@ -76,6 +76,10 @@ namespace LOSA.Reportes
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnExportExcel = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            this.colseleccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposCheckEdit = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -89,6 +93,9 @@ namespace LOSA.Reportes
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_camaron)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_camaron)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchPTCamaron.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposCheckEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -121,6 +128,7 @@ namespace LOSA.Reportes
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "Inventario de Producto Terminado";
+            this.tabNavigationPage1.Controls.Add(this.gridControl1);
             this.tabNavigationPage1.Controls.Add(this.grdKardexPtExistencia);
             this.tabNavigationPage1.Controls.Add(this.grdDespachos);
             this.tabNavigationPage1.Controls.Add(this.grd_inventario_camaron);
@@ -137,7 +145,9 @@ namespace LOSA.Reportes
             this.grdKardexPtExistencia.Location = new System.Drawing.Point(3, 5);
             this.grdKardexPtExistencia.MainView = this.grdVKardexPtExistencia;
             this.grdKardexPtExistencia.Name = "grdKardexPtExistencia";
-            this.grdKardexPtExistencia.Size = new System.Drawing.Size(1312, 200);
+            this.grdKardexPtExistencia.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.reposCheckEdit});
+            this.grdKardexPtExistencia.Size = new System.Drawing.Size(735, 200);
             this.grdKardexPtExistencia.TabIndex = 22;
             this.grdKardexPtExistencia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdVKardexPtExistencia});
@@ -162,11 +172,11 @@ namespace LOSA.Reportes
             this.collote_pt1,
             this.colexistencia_unidades,
             this.colexistencia_kg,
-            this.colexistencia_tm1});
+            this.colexistencia_tm1,
+            this.colseleccion});
             this.grdVKardexPtExistencia.GridControl = this.grdKardexPtExistencia;
             this.grdVKardexPtExistencia.Name = "grdVKardexPtExistencia";
             this.grdVKardexPtExistencia.OptionsView.ShowGroupPanel = false;
-            this.grdVKardexPtExistencia.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.grdVKardexPtExistencia_RowClick);
             // 
             // colid_pt1
             // 
@@ -180,7 +190,8 @@ namespace LOSA.Reportes
             this.colcode_sap1.Name = "colcode_sap1";
             this.colcode_sap1.OptionsColumn.AllowEdit = false;
             this.colcode_sap1.Visible = true;
-            this.colcode_sap1.VisibleIndex = 0;
+            this.colcode_sap1.VisibleIndex = 1;
+            this.colcode_sap1.Width = 238;
             // 
             // colProducto1
             // 
@@ -189,7 +200,8 @@ namespace LOSA.Reportes
             this.colProducto1.Name = "colProducto1";
             this.colProducto1.OptionsColumn.AllowEdit = false;
             this.colProducto1.Visible = true;
-            this.colProducto1.VisibleIndex = 1;
+            this.colProducto1.VisibleIndex = 2;
+            this.colProducto1.Width = 238;
             // 
             // collote_pt1
             // 
@@ -205,7 +217,8 @@ namespace LOSA.Reportes
             this.colexistencia_unidades.Name = "colexistencia_unidades";
             this.colexistencia_unidades.OptionsColumn.AllowEdit = false;
             this.colexistencia_unidades.Visible = true;
-            this.colexistencia_unidades.VisibleIndex = 2;
+            this.colexistencia_unidades.VisibleIndex = 3;
+            this.colexistencia_unidades.Width = 238;
             // 
             // colexistencia_kg
             // 
@@ -216,7 +229,8 @@ namespace LOSA.Reportes
             this.colexistencia_kg.Name = "colexistencia_kg";
             this.colexistencia_kg.OptionsColumn.AllowEdit = false;
             this.colexistencia_kg.Visible = true;
-            this.colexistencia_kg.VisibleIndex = 3;
+            this.colexistencia_kg.VisibleIndex = 4;
+            this.colexistencia_kg.Width = 238;
             // 
             // colexistencia_tm1
             // 
@@ -227,7 +241,8 @@ namespace LOSA.Reportes
             this.colexistencia_tm1.Name = "colexistencia_tm1";
             this.colexistencia_tm1.OptionsColumn.AllowEdit = false;
             this.colexistencia_tm1.Visible = true;
-            this.colexistencia_tm1.VisibleIndex = 4;
+            this.colexistencia_tm1.VisibleIndex = 5;
+            this.colexistencia_tm1.Width = 250;
             // 
             // grdDespachos
             // 
@@ -369,7 +384,7 @@ namespace LOSA.Reportes
             this.grd_inventario_camaron.Location = new System.Drawing.Point(2, 211);
             this.grd_inventario_camaron.MainView = this.grdv_inventario_camaron;
             this.grd_inventario_camaron.Name = "grd_inventario_camaron";
-            this.grd_inventario_camaron.Size = new System.Drawing.Size(1312, 178);
+            this.grd_inventario_camaron.Size = new System.Drawing.Size(1312, 189);
             this.grd_inventario_camaron.TabIndex = 0;
             this.grd_inventario_camaron.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_camaron});
@@ -646,6 +661,56 @@ namespace LOSA.Reportes
             this.btnClose.Text = "Cerrar";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // colseleccion
+            // 
+            this.colseleccion.Caption = "Seleccionar";
+            this.colseleccion.FieldName = "seleccion";
+            this.colseleccion.Name = "colseleccion";
+            this.colseleccion.Visible = true;
+            this.colseleccion.VisibleIndex = 0;
+            this.colseleccion.Width = 92;
+            // 
+            // reposCheckEdit
+            // 
+            this.reposCheckEdit.AutoHeight = false;
+            this.reposCheckEdit.Name = "reposCheckEdit";
+            this.reposCheckEdit.CheckedChanged += new System.EventHandler(this.reposCheckEdit_CheckedChanged);
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.DataMember = null;
+            this.gridControl1.DataSource = this.dsProductos1;
+            this.gridControl1.Location = new System.Drawing.Point(744, 5);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(570, 200);
+            this.gridControl1.TabIndex = 23;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView1.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowViewCaption = true;
+            this.gridView1.ViewCaption = "Unidades Retenidas por Calidad";
+            // 
             // frmHisotrialPTCodigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -672,6 +737,9 @@ namespace LOSA.Reportes
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_camaron)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_camaron)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchPTCamaron.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposCheckEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,5 +792,9 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_unidades;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_kg;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_tm1;
+        private DevExpress.XtraGrid.Columns.GridColumn colseleccion;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit reposCheckEdit;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

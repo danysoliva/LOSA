@@ -129,5 +129,31 @@ namespace LOSA.Reportes
 
             LoadDataPT(row.id_pt);
         }
+
+        private void reposCheckEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var gv = (GridView)grdKardexPtExistencia.FocusedView;
+                var row = (dsProductos.kardex_pt_existenciaRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+
+                foreach (var item in dsProductos1.kardex_pt_existencia)
+                {
+                    item.seleccion = false;
+                }
+
+                row.seleccion = true;
+
+                LoadDataPT(row.id_pt);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }

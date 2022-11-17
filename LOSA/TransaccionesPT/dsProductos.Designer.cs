@@ -12300,6 +12300,8 @@ namespace LOSA.TransaccionesPT {
             
             private global::System.Data.DataColumn columnexistencia_tm;
             
+            private global::System.Data.DataColumn columnseleccion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public kardex_pt_existenciaDataTable() {
@@ -12391,6 +12393,14 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionColumn {
+                get {
+                    return this.columnseleccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -12426,7 +12436,7 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public kardex_pt_existenciaRow Addkardex_pt_existenciaRow(int id_pt, string code_sap, string Producto, string lote_pt, int existencia_unidades, decimal existencia_kg, decimal existencia_tm) {
+            public kardex_pt_existenciaRow Addkardex_pt_existenciaRow(int id_pt, string code_sap, string Producto, string lote_pt, int existencia_unidades, decimal existencia_kg, decimal existencia_tm, bool seleccion) {
                 kardex_pt_existenciaRow rowkardex_pt_existenciaRow = ((kardex_pt_existenciaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_pt,
@@ -12435,7 +12445,8 @@ namespace LOSA.TransaccionesPT {
                         lote_pt,
                         existencia_unidades,
                         existencia_kg,
-                        existencia_tm};
+                        existencia_tm,
+                        seleccion};
                 rowkardex_pt_existenciaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowkardex_pt_existenciaRow);
                 return rowkardex_pt_existenciaRow;
@@ -12465,6 +12476,7 @@ namespace LOSA.TransaccionesPT {
                 this.columnexistencia_unidades = base.Columns["existencia_unidades"];
                 this.columnexistencia_kg = base.Columns["existencia_kg"];
                 this.columnexistencia_tm = base.Columns["existencia_tm"];
+                this.columnseleccion = base.Columns["seleccion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12484,6 +12496,8 @@ namespace LOSA.TransaccionesPT {
                 base.Columns.Add(this.columnexistencia_kg);
                 this.columnexistencia_tm = new global::System.Data.DataColumn("existencia_tm", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnexistencia_tm);
+                this.columnseleccion = new global::System.Data.DataColumn("seleccion", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21179,6 +21193,22 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccion {
+                get {
+                    try {
+                        return ((bool)(this[this.tablekardex_pt_existencia.seleccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccion\' de la tabla \'kardex_pt_existencia\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex_pt_existencia.seleccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_ptNull() {
                 return this.IsNull(this.tablekardex_pt_existencia.id_ptColumn);
             }
@@ -21259,6 +21289,18 @@ namespace LOSA.TransaccionesPT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setexistencia_tmNull() {
                 this[this.tablekardex_pt_existencia.existencia_tmColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionNull() {
+                return this.IsNull(this.tablekardex_pt_existencia.seleccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionNull() {
+                this[this.tablekardex_pt_existencia.seleccionColumn] = global::System.Convert.DBNull;
             }
         }
         
