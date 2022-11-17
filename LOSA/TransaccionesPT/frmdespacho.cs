@@ -78,7 +78,9 @@ namespace LOSA.TransaccionesPT
 
         private void btnfinalizar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea marcar como finalizada este despacho? No podra seguir recibiendo tarimas.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+
+            if (MessageBox.Show("Desea marcar como finalizada este despacho? No podra seguir recibiendo tarimas.", 
+                "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 try
                 {
