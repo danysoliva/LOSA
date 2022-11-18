@@ -125,6 +125,8 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.2777.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.PostgreSql, Version=7.21.1985.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -1013,6 +1015,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Clases\EmailTicketParams.cs" />
+    <Compile Include="Clases\Email_IT_RequestParams.cs" />
+    <Compile Include="Clases\FMOP.cs" />
     <Compile Include="Clases\FTP_Class.cs" />
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\IngresoExternoD.cs" />
@@ -1038,6 +1043,7 @@
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\Requisicion.cs" />
     <Compile Include="Clases\SalidaPlanExterno.cs" />
+    <Compile Include="Clases\SecOps.cs" />
     <Compile Include="Clases\Security.cs" />
     <Compile Include="Clases\SeleccionLoteMPAuto.cs" />
     <Compile Include="Clases\SelectorFor.cs" />
@@ -1731,6 +1737,74 @@
     <Compile Include="Micro\frmOpcionesMicro.Designer.cs">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\DataSetx\dsProduccion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\DataSetx\dsReportPRD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportPRD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_NewFormula_view_only.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_NewFormula_view_only.designer.cs">
+      <DependentUpon>FML_NewFormula_view_only.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\DataSet_\dsReportesPRD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesPRD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\DataSet_\dsTrazabilidad.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTrazabilidad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Operator_Panel_v2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Operator_Panel_v2.designer.cs">
+      <DependentUpon>PP_Operator_Panel_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Order_Copy_Dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Order_Copy_Dialog.Designer.cs">
+      <DependentUpon>PP_Order_Copy_Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.designer.cs">
+      <DependentUpon>RPT_Trazabilidad_Lote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.designer.cs">
+      <DependentUpon>RPT_FB_Manual_RM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RPTS\PRD\RPT_NC_BuildReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RPTS\PRD\RPT_NC_BuildReport.Designer.cs">
+      <DependentUpon>RPT_NC_BuildReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RPTS\PRD\RPT_PRD_Formula_Local.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RPTS\PRD\RPT_PRD_Formula_Local.designer.cs">
+      <DependentUpon>RPT_PRD_Formula_Local.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\WaitForm1.designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nir\dsNir.cs">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </Compile>
@@ -2070,6 +2144,50 @@
     </None>
     <None Include="Logistica\dsCierreMes.xss">
       <DependentUpon>dsCierreMes.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsProduccion.xsc">
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsProduccion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProduccion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsProduccion.xss">
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsReportPRD.xsc">
+      <DependentUpon>dsReportPRD.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsReportPRD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportPRD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsReportPRD.xss">
+      <DependentUpon>dsReportPRD.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\DataSet_\dsReportesPRD.xsc">
+      <DependentUpon>dsReportesPRD.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\DataSet_\dsReportesPRD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesPRD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Produccion\DataSet_\dsReportesPRD.xss">
+      <DependentUpon>dsReportesPRD.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\DataSet_\dsTrazabilidad.xsc">
+      <DependentUpon>dsTrazabilidad.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\DataSet_\dsTrazabilidad.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTrazabilidad.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Produccion\DataSet_\dsTrazabilidad.xss">
+      <DependentUpon>dsTrazabilidad.xsd</DependentUpon>
     </None>
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
@@ -3919,6 +4037,30 @@
     <EmbeddedResource Include="Micro\frmOpcionesMicro.resx">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_NewFormula_view_only.resx">
+      <DependentUpon>FML_NewFormula_view_only.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\PP_Operator_Panel_v2.resx">
+      <DependentUpon>PP_Operator_Panel_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\PP_Order_Copy_Dialog.resx">
+      <DependentUpon>PP_Order_Copy_Dialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.resx">
+      <DependentUpon>RPT_Trazabilidad_Lote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.resx">
+      <DependentUpon>RPT_FB_Manual_RM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_NC_BuildReport.resx">
+      <DependentUpon>RPT_NC_BuildReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_PRD_Formula_Local.resx">
+      <DependentUpon>RPT_PRD_Formula_Local.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nir\frmLecturas.resx">
       <DependentUpon>frmLecturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -4878,6 +5020,7 @@
     <Content Include="logo1.ico" />
     <None Include="Resources\2264828.png" />
     <None Include="Resources\Accept-icon128px.png" />
+    <None Include="Resources\Accept_24x24.png" />
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
     <None Include="Resources\batch-processing_32X32.png" />
@@ -4889,6 +5032,7 @@
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />
     <Content Include="Resources\cancel.png" />
+    <None Include="Resources\cancel_24x24.png" />
     <Content Include="Resources\cargo.png" />
     <None Include="Resources\CCT-2000C-SQ-800x800.jpg" />
     <Content Include="Resources\check-in.png" />
@@ -4918,10 +5062,14 @@
     <None Include="Resources\edit24px.png" />
     <None Include="Resources\Finance-Expired-icon32px.png" />
     <None Include="Resources\floppy-disk32px1.png" />
+    <None Include="Resources\exit_24x24.png" />
+    <None Include="Resources\it_services_16px.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\log-file24px.png" />
+    <None Include="Resources\Logo_x32.png" />
+    <None Include="Resources\List-details-icon16px.png" />
     <Content Include="Resources\medal.png" />
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />

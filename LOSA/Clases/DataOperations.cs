@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
 using System.Reflection;
+using Devart.Data.PostgreSql;
 
 namespace ACS.Classes 
 {
@@ -139,7 +140,101 @@ namespace ACS.Classes
         }
 
 
+        public int APMS_Exec_SP_GetID(string Procedure_Name, SqlCommand command, SqlParameter returnParameter)
+        {
+            Int32 ID;
 
+            SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
+
+            if (command.CommandType == CommandType.StoredProcedure)
+            {
+                command.Connection = conn;
+                command.CommandText = Procedure_Name;
+                conn.Open();
+                command.ExecuteNonQuery();
+
+                ID = Convert.ToInt32(returnParameter.Value);
+
+                conn.Close();
+            }
+            else
+            {
+                ID = -1;
+            }
+
+            return ID;
+        }
+
+        public DataTable APMS_Exec_SP_Get_Data(string Procedure_Name, SqlCommand command)
+        {
+            DataTable data = new DataTable();
+
+            SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
+
+            command.CommandText = Procedure_Name;
+            command.Connection = conn;
+            command.CommandType = CommandType.StoredProcedure;
+
+            conn.Open();
+
+            data.Load(command.ExecuteReader());
+
+            conn.Close();
+
+            return data;
+        }
+
+
+        public void APMS_Exec_SP(string Procedure_Name, SqlCommand command)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
+
+                if (command.CommandType == CommandType.StoredProcedure)
+                {
+                    command.Connection = conn;
+                    command.CommandText = Procedure_Name;
+                    conn.Open();
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public DataSet APMS_GetSelectData(string FixedQuery)
+        {
+            DataSet data = new DataSet();
+
+            SqlConnection Conn = new SqlConnection(ConnectionStringAPMS);
+            Conn.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter(FixedQuery, Conn);
+            adapter.Fill(data);
+
+            Conn.Close();
+
+            return data;
+        }
+
+
+        public void ODOO_Exec_SP(string procedure_name, PgSqlCommand command)
+        {
+            PgSqlConnection Conn = new PgSqlConnection(ConnectionStringODOO);
+            Conn.Open();
+
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = procedure_name;
+            command.Connection = Conn;
+            command.ExecuteNonQuery();
+
+            Conn.Close();
+        }
         //public Boolean CompanyIsconected(string puser, string ppass)
         //{
         //    SAPbobsCOM.Company oCmp;

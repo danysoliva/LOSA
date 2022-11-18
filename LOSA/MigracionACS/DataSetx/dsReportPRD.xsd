@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportPRD" targetNamespace="http://tempuri.org/dsReportPRD.xsd" xmlns:mstns="http://tempuri.org/dsReportPRD.xsd" xmlns="http://tempuri.org/dsReportPRD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportPRD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportPRD" msprop:Generator_UserDSName="dsReportPRD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="formula" msprop:Generator_TableClassName="formulaDataTable" msprop:Generator_TableVarName="tableformula" msprop:Generator_TablePropName="formula" msprop:Generator_RowDeletingName="formulaRowDeleting" msprop:Generator_RowChangingName="formulaRowChanging" msprop:Generator_RowEvHandlerName="formulaRowChangeEventHandler" msprop:Generator_RowDeletedName="formulaRowDeleted" msprop:Generator_UserTableName="formula" msprop:Generator_RowChangedName="formulaRowChanged" msprop:Generator_RowEvArgName="formulaRowChangeEvent" msprop:Generator_RowClassName="formulaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="formula_id" msprop:Generator_ColumnVarNameInTable="columnformula_id" msprop:Generator_ColumnPropNameInRow="formula_id" msprop:Generator_ColumnPropNameInTable="formula_idColumn" msprop:Generator_UserColumnName="formula_id" type="xs:int" minOccurs="0" />
+              <xs:element name="formula_code" msprop:Generator_ColumnVarNameInTable="columnformula_code" msprop:Generator_ColumnPropNameInRow="formula_code" msprop:Generator_ColumnPropNameInTable="formula_codeColumn" msprop:Generator_UserColumnName="formula_code" type="xs:string" minOccurs="0" />
+              <xs:element name="formula_fullCode" msprop:Generator_ColumnVarNameInTable="columnformula_fullCode" msprop:Generator_ColumnPropNameInRow="formula_fullCode" msprop:Generator_ColumnPropNameInTable="formula_fullCodeColumn" msprop:Generator_UserColumnName="formula_fullCode" type="xs:string" minOccurs="0" />
+              <xs:element name="formula_name" msprop:Generator_ColumnVarNameInTable="columnformula_name" msprop:Generator_ColumnPropNameInRow="formula_name" msprop:Generator_ColumnPropNameInTable="formula_nameColumn" msprop:Generator_UserColumnName="formula_name" type="xs:string" minOccurs="0" />
+              <xs:element name="formula_date" msprop:Generator_ColumnVarNameInTable="columnformula_date" msprop:Generator_ColumnPropNameInRow="formula_date" msprop:Generator_ColumnPropNameInTable="formula_dateColumn" msprop:Generator_UserColumnName="formula_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="rm_id" msprop:Generator_ColumnVarNameInTable="columnrm_id" msprop:Generator_ColumnPropNameInRow="rm_id" msprop:Generator_ColumnPropNameInTable="rm_idColumn" msprop:Generator_UserColumnName="rm_id" type="xs:int" minOccurs="0" />
+              <xs:element name="rm_code" msprop:Generator_ColumnVarNameInTable="columnrm_code" msprop:Generator_ColumnPropNameInRow="rm_code" msprop:Generator_ColumnPropNameInTable="rm_codeColumn" msprop:Generator_UserColumnName="rm_code" type="xs:string" minOccurs="0" />
+              <xs:element name="rm_shortName" msprop:Generator_ColumnVarNameInTable="columnrm_shortName" msprop:Generator_ColumnPropNameInRow="rm_shortName" msprop:Generator_ColumnPropNameInTable="rm_shortNameColumn" msprop:Generator_UserColumnName="rm_shortName" type="xs:string" minOccurs="0" />
+              <xs:element name="formula_weight" msprop:Generator_ColumnVarNameInTable="columnformula_weight" msprop:Generator_ColumnPropNameInRow="formula_weight" msprop:Generator_ColumnPropNameInTable="formula_weightColumn" msprop:Generator_UserColumnName="formula_weight" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="formula_nc" msprop:Generator_TableClassName="formula_ncDataTable" msprop:Generator_TableVarName="tableformula_nc" msprop:Generator_TablePropName="formula_nc" msprop:Generator_RowDeletingName="formula_ncRowDeleting" msprop:Generator_RowChangingName="formula_ncRowChanging" msprop:Generator_RowEvHandlerName="formula_ncRowChangeEventHandler" msprop:Generator_RowDeletedName="formula_ncRowDeleted" msprop:Generator_UserTableName="formula_nc" msprop:Generator_RowChangedName="formula_ncRowChanged" msprop:Generator_RowEvArgName="formula_ncRowChangeEvent" msprop:Generator_RowClassName="formula_ncRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="formula_id" msprop:Generator_ColumnVarNameInTable="columnformula_id" msprop:Generator_ColumnPropNameInRow="formula_id" msprop:Generator_ColumnPropNameInTable="formula_idColumn" msprop:Generator_UserColumnName="formula_id" type="xs:int" minOccurs="0" />
+              <xs:element name="formula_code" msprop:Generator_ColumnVarNameInTable="columnformula_code" msprop:Generator_ColumnPropNameInRow="formula_code" msprop:Generator_ColumnPropNameInTable="formula_codeColumn" msprop:Generator_UserColumnName="formula_code" type="xs:string" minOccurs="0" />
+              <xs:element name="formula_fullCode" msprop:Generator_ColumnVarNameInTable="columnformula_fullCode" msprop:Generator_ColumnPropNameInRow="formula_fullCode" msprop:Generator_ColumnPropNameInTable="formula_fullCodeColumn" msprop:Generator_UserColumnName="formula_fullCode" type="xs:string" minOccurs="0" />
+              <xs:element name="formula_name" msprop:Generator_ColumnVarNameInTable="columnformula_name" msprop:Generator_ColumnPropNameInRow="formula_name" msprop:Generator_ColumnPropNameInTable="formula_nameColumn" msprop:Generator_UserColumnName="formula_name" type="xs:string" minOccurs="0" />
+              <xs:element name="formula_date" msprop:Generator_ColumnVarNameInTable="columnformula_date" msprop:Generator_ColumnPropNameInRow="formula_date" msprop:Generator_ColumnPropNameInTable="formula_dateColumn" msprop:Generator_UserColumnName="formula_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="rm_id" msprop:Generator_ColumnVarNameInTable="columnrm_id" msprop:Generator_ColumnPropNameInRow="rm_id" msprop:Generator_ColumnPropNameInTable="rm_idColumn" msprop:Generator_UserColumnName="rm_id" type="xs:int" minOccurs="0" />
+              <xs:element name="rm_code" msprop:Generator_ColumnVarNameInTable="columnrm_code" msprop:Generator_ColumnPropNameInRow="rm_code" msprop:Generator_ColumnPropNameInTable="rm_codeColumn" msprop:Generator_UserColumnName="rm_code" type="xs:string" minOccurs="0" />
+              <xs:element name="rm_shortName" msprop:Generator_ColumnVarNameInTable="columnrm_shortName" msprop:Generator_ColumnPropNameInRow="rm_shortName" msprop:Generator_ColumnPropNameInTable="rm_shortNameColumn" msprop:Generator_UserColumnName="rm_shortName" type="xs:string" minOccurs="0" />
+              <xs:element name="formula_weight" msprop:Generator_ColumnVarNameInTable="columnformula_weight" msprop:Generator_ColumnPropNameInRow="formula_weight" msprop:Generator_ColumnPropNameInTable="formula_weightColumn" msprop:Generator_UserColumnName="formula_weight" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
