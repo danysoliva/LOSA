@@ -78,31 +78,55 @@ namespace LOSA.TransaccionesPT
 
         private void btnfinalizar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea marcar como finalizada este despacho? No podra seguir recibiendo tarimas.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            var gridView = (GridView)grd_data.FocusedView;
+            var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
+
+            int Unidades_Escaneadas = 0;
+
+            try
             {
-                try
+                string query = @"sp_get_entregado_por_id_despacho_h";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_h", row.id);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
                 {
-                    var gridView = (GridView)grd_data.FocusedView;
-                    var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
-                    string query = @"sp_finalizar_despacho";
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(query,cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", row.id);
-                    cmd.ExecuteNonQuery();
-                    CajaDialogo.Error("Se finalizo correctamente este despacho.");
-                    cn.Close();
-                    load_desicion();
-
+                    Unidades_Escaneadas = dr.GetInt32(0);
                 }
-                catch (Exception ex)
-                {
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
 
-                    CajaDialogo.Error(ex.Message);
-                }
+            if (Unidades_Escaneadas < row.U_plan)
+            {
+                CajaDialogo.Pregunta("Desea marcar como finalizado este despacho? No se han escaneado los "+row.U_plan+" planificado para este despacho!");
+            }
+
+            try
+            {       
+                string query = @"sp_finalizar_despacho_con_log";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query,cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", row.id);
+                cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                cmd.ExecuteNonQuery();
+                CajaDialogo.Error("Se finalizo correctamente este despacho.");
+                cn.Close();
+                load_desicion();
 
             }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }            
         }
 
         private void btndelete_Click(object sender, EventArgs e)
@@ -149,12 +173,13 @@ namespace LOSA.TransaccionesPT
                 try
                 {
                    
-                    string query = @"sp_eliminar_despacho";
+                    string query = @"sp_eliminar_despacho_con_log";
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", row.id);
+                    cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
                     cmd.ExecuteNonQuery();
                     CajaDialogo.Error("Se elimino correctamente este despacho.");
                     cn.Close();

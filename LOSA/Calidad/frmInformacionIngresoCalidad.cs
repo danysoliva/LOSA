@@ -596,7 +596,7 @@ namespace LOSA.Calidad
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                cmd.Parameters.AddWithValue(@"@id_mp", id_materiaPrima);
+                cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsMantenimientoC.parametros.Clear();
                 da.Fill(dsMantenimientoC.parametros);

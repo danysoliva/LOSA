@@ -20,9 +20,13 @@ namespace LOSA.Reportes
 {
     public partial class frmHisotrialPTCodigo : DevExpress.XtraEditors.XtraForm
     {
+        DataOperations dp = new DataOperations();
+        public int id_pt;
         public frmHisotrialPTCodigo()
         {
             InitializeComponent();
+
+            dtFinal.Value = dp.Now();
             LoadKardexPT();
         }
 
@@ -43,7 +47,7 @@ namespace LOSA.Reportes
         }
         private void LoadKardexPT()
         {
-            string query = @"sp_get_kardex_pt_existencia";
+            string query = @"sp_get_kardex_pt_existenciaV2";
             try
             {
                 DataOperations dp = new DataOperations();
@@ -52,7 +56,7 @@ namespace LOSA.Reportes
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@id_pt", pid_pt);
+                //cmd.Parameters.AddWithValue("@fecha_final", dtFinal.Value);
                 dsProductos1.kardex_pt_existencia.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsProductos1.kardex_pt_existencia);
@@ -121,14 +125,7 @@ namespace LOSA.Reportes
             }
         }
 
-        private void grdVKardexPtExistencia_RowClick(object sender, RowClickEventArgs e)
-        {
-            var gridview = (GridView)grdKardexPtExistencia.FocusedView;
-            var row = (dsProductos.kardex_pt_existenciaRow)grdVKardexPtExistencia.GetFocusedDataRow();
 
-
-            LoadDataPT(row.id_pt);
-        }
 
         private void reposCheckEdit_CheckedChanged(object sender, EventArgs e)
         {
@@ -146,13 +143,70 @@ namespace LOSA.Reportes
                 row.seleccion = true;
 
                 LoadDataPT(row.id_pt);
-
-
-
+                LoadTarimasRetenidas(row.id_pt);
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void LoadTarimasRetenidas(int pid_pt)
+        {
+            string query = @"sp_get_tarimas_retenidas_obs_calidad";
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd1 = new SqlCommand(query, conn);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.Parameters.AddWithValue("@id_pt", pid_pt);
+                SqlDataAdapter adat1 = new SqlDataAdapter(cmd1);
+                dsProductos1.unidades_retenidas.Clear();
+                adat1.Fill(dsProductos1.unidades_retenidas);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        
+        }
+
+        private void grdVKardexPtExistencia_RowClick(object sender, RowClickEventArgs e)
+        {
+            var gridview = (GridView)grdKardexPtExistencia.FocusedView;
+            var row = (dsProductos.kardex_pt_existenciaRow)grdVKardexPtExistencia.GetFocusedDataRow();
+
+
+            LoadDataPT(row.id_pt);
+            LoadTarimasRetenidas(row.id_pt);
+
+        }
+
+        private void grdVKardexPtExistencia_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName == "seleccion")
+            {
+                var gridView = (GridView)grdKardexPtExistencia.FocusedView;
+                var row = (dsProductos.kardex_pt_existenciaRow)gridView.GetFocusedDataRow();
+
+                if (Convert.ToBoolean(e.Value))
+                {
+                    id_pt = row.id_pt;
+                    row.seleccion = true;
+                }
+
+                foreach (dsProductos.kardex_pt_existenciaRow row1 in dsProductos1.kardex_pt_existencia.Rows)
+                {
+                    if (row1.id_pt != id_pt)
+                        row1.seleccion = false;
+                }
+
+                LoadDataPT(row.id_pt);
+                LoadTarimasRetenidas(row.id_pt);
+
             }
         }
     }

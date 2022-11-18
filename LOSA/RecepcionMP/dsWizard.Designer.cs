@@ -1365,6 +1365,8 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnid_Externo;
             
+            private global::System.Data.DataColumn columnid_lote_externo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public informacionIngresoDataTable() {
@@ -1576,6 +1578,14 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_lote_externoColumn {
+                get {
+                    return this.columnid_lote_externo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1633,7 +1643,8 @@ namespace LOSA.RecepcionMP {
                         int id_presentacion, 
                         decimal totalKgLote, 
                         decimal TotalUdlote, 
-                        int id_Externo) {
+                        int id_Externo, 
+                        int id_lote_externo) {
                 informacionIngresoRow rowinformacionIngresoRow = ((informacionIngresoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1657,7 +1668,8 @@ namespace LOSA.RecepcionMP {
                         id_presentacion,
                         totalKgLote,
                         TotalUdlote,
-                        id_Externo};
+                        id_Externo,
+                        id_lote_externo};
                 rowinformacionIngresoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowinformacionIngresoRow);
                 return rowinformacionIngresoRow;
@@ -1702,6 +1714,7 @@ namespace LOSA.RecepcionMP {
                 this.columntotalKgLote = base.Columns["totalKgLote"];
                 this.columnTotalUdlote = base.Columns["TotalUdlote"];
                 this.columnid_Externo = base.Columns["id_Externo"];
+                this.columnid_lote_externo = base.Columns["id_lote_externo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1751,6 +1764,8 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnTotalUdlote);
                 this.columnid_Externo = new global::System.Data.DataColumn("id_Externo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_Externo);
+                this.columnid_lote_externo = new global::System.Data.DataColumn("id_lote_externo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_lote_externo);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2772,6 +2787,23 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_lote_externo {
+                get {
+                    try {
+                        return ((int)(this[this.tableinformacionIngreso.id_lote_externoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_lote_externo\' de la tabla \'informacionIngreso\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableinformacionIngreso.id_lote_externoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableinformacionIngreso.idColumn);
             }
@@ -3032,6 +3064,18 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_ExternoNull() {
                 this[this.tableinformacionIngreso.id_ExternoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_lote_externoNull() {
+                return this.IsNull(this.tableinformacionIngreso.id_lote_externoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_lote_externoNull() {
+                this[this.tableinformacionIngreso.id_lote_externoColumn] = global::System.Convert.DBNull;
             }
         }
         

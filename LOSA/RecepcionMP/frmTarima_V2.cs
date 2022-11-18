@@ -80,6 +80,7 @@ namespace LOSA.RecepcionMP
                 btnSelecciondeMp.Visible = false;
                 btnSelccionarProveedor.Visible = false;
                 txtLote.Enabled = false;
+                txtid_lote.Enabled = false;
 
             }
             else
@@ -107,7 +108,7 @@ namespace LOSA.RecepcionMP
                 btnSelecciondeMp.Visible = false;
                 btnSelccionarProveedor.Visible = false;
                 txtLote.Enabled = false;
-
+                txtid_lote.Enabled = false;
             }
             else
             {
@@ -367,7 +368,7 @@ namespace LOSA.RecepcionMP
                         foreach (dsWizard.informacionIngresoRow rowy in dsWizard.informacionIngreso.Rows)
                         {
                             //Rebajemos de Externo Detalle Lote
-                            string query2 = @"sp_insert_salida_externo_d_lote";
+                            string query2 = @"sp_insert_salida_externo_d_loteV2";
                             //SqlConnection conn2 = new SqlConnection(dp.ConnectionStringLOSA);
                             //conn2.Open();
                             //SqlCommand cmd2 = new SqlCommand(query2, TransactionIngreso.Connection);
@@ -388,6 +389,7 @@ namespace LOSA.RecepcionMP
                             cmd2.Parameters.AddWithValue("@lote_materia_prima", rowy.lote);
                             cmd2.Parameters.AddWithValue("@id_traslado", id_Traslado_a_Ingresar);
                             cmd2.Parameters.AddWithValue("@IdHeaderInserted", IdHeaderInserted);
+                            cmd2.Parameters.AddWithValue("@id_lote_ingreso_externo", rowy.id_lote_externo);
                             cmd2.ExecuteNonQuery();
                             //conn2.Close();
                         }//End foreach
@@ -642,6 +644,11 @@ namespace LOSA.RecepcionMP
             row["bit_promedio"] = Tg_presentacion_promedio.IsOn;
             row["id_presentacion"] = gridLookUpEditPresentacion.EditValue;
             row["id_Externo"] = idLoteExterno;
+            if (Istraslado)
+                row["id_lote_externo"] = txtid_lote.EditValue;
+            else
+                row["id_lote_externo"] = 0;
+
             idLoteExterno = DEFAULT_VALUE;
             decimal CantidadDeUd = 0;
             decimal CantidadDeKG = 0;
@@ -851,6 +858,7 @@ namespace LOSA.RecepcionMP
                 dtFechaVencimiento.EditValue = frm.fvencimiento;
                 LimiteKgloteportraslado = frm.LimiteKG;
                 idLoteExterno = frm.id_lote_externo;
+                txtid_lote.EditValue = frm.id_lote_externo;
             }
         }
 

@@ -33,16 +33,14 @@ namespace LOSA.Reportes
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.grdKardexPtExistencia = new DevExpress.XtraGrid.GridControl();
             this.dsProductos1 = new LOSA.TransaccionesPT.dsProductos();
             this.grdVKardexPtExistencia = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_pt1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProducto1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote_pt1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia_unidades = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia_kg = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia_tm1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colseleccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdDespachos = new DevExpress.XtraGrid.GridControl();
             this.grdvDespachos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colunidades_salida = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,15 +74,22 @@ namespace LOSA.Reportes
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnExportExcel = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.colseleccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.reposCheckEdit = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colcantidad_retenida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_retenido = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltm_retenidas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltm_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFinal = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdKardexPtExistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdVKardexPtExistencia)).BeginInit();
@@ -93,9 +98,6 @@ namespace LOSA.Reportes
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_camaron)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_camaron)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchPTCamaron.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposCheckEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -106,7 +108,7 @@ namespace LOSA.Reportes
             this.panelControl2.Controls.Add(this.tabPane1);
             this.panelControl2.Location = new System.Drawing.Point(3, 53);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1322, 657);
+            this.panelControl2.Size = new System.Drawing.Size(1468, 891);
             this.panelControl2.TabIndex = 9;
             // 
             // tabPane1
@@ -119,35 +121,41 @@ namespace LOSA.Reportes
             this.tabPane1.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1318, 653);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1464, 887);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
-            this.tabPane1.Size = new System.Drawing.Size(1318, 653);
+            this.tabPane1.Size = new System.Drawing.Size(1464, 887);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "tabPane1";
             // 
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "Inventario de Producto Terminado";
-            this.tabNavigationPage1.Controls.Add(this.gridControl1);
-            this.tabNavigationPage1.Controls.Add(this.grdKardexPtExistencia);
+            this.tabNavigationPage1.Controls.Add(this.panelControl3);
             this.tabNavigationPage1.Controls.Add(this.grdDespachos);
             this.tabNavigationPage1.Controls.Add(this.grd_inventario_camaron);
             this.tabNavigationPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1318, 626);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1464, 860);
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl3.Controls.Add(this.grdKardexPtExistencia);
+            this.panelControl3.Location = new System.Drawing.Point(3, 7);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(1455, 234);
+            this.panelControl3.TabIndex = 25;
             // 
             // grdKardexPtExistencia
             // 
-            this.grdKardexPtExistencia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grdKardexPtExistencia.DataMember = "kardex_pt_existencia";
             this.grdKardexPtExistencia.DataSource = this.dsProductos1;
-            this.grdKardexPtExistencia.Location = new System.Drawing.Point(3, 5);
+            this.grdKardexPtExistencia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdKardexPtExistencia.Location = new System.Drawing.Point(2, 2);
             this.grdKardexPtExistencia.MainView = this.grdVKardexPtExistencia;
             this.grdKardexPtExistencia.Name = "grdKardexPtExistencia";
-            this.grdKardexPtExistencia.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.reposCheckEdit});
-            this.grdKardexPtExistencia.Size = new System.Drawing.Size(735, 200);
+            this.grdKardexPtExistencia.Size = new System.Drawing.Size(1451, 230);
             this.grdKardexPtExistencia.TabIndex = 22;
             this.grdKardexPtExistencia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdVKardexPtExistencia});
@@ -169,14 +177,18 @@ namespace LOSA.Reportes
             this.colid_pt1,
             this.colcode_sap1,
             this.colProducto1,
-            this.collote_pt1,
-            this.colexistencia_unidades,
-            this.colexistencia_kg,
-            this.colexistencia_tm1,
-            this.colseleccion});
+            this.colseleccion,
+            this.colcantidad_retenida,
+            this.colpeso_retenido,
+            this.coltm_retenidas,
+            this.colcantidad_existencia,
+            this.colpeso_existencia,
+            this.coltm_existencia});
+            this.grdVKardexPtExistencia.CustomizationFormBounds = new System.Drawing.Rectangle(-665, 188, 260, 272);
             this.grdVKardexPtExistencia.GridControl = this.grdKardexPtExistencia;
             this.grdVKardexPtExistencia.Name = "grdVKardexPtExistencia";
             this.grdVKardexPtExistencia.OptionsView.ShowGroupPanel = false;
+            this.grdVKardexPtExistencia.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdVKardexPtExistencia_CellValueChanging);
             // 
             // colid_pt1
             // 
@@ -203,46 +215,14 @@ namespace LOSA.Reportes
             this.colProducto1.VisibleIndex = 2;
             this.colProducto1.Width = 238;
             // 
-            // collote_pt1
+            // colseleccion
             // 
-            this.collote_pt1.FieldName = "lote_pt";
-            this.collote_pt1.Name = "collote_pt1";
-            // 
-            // colexistencia_unidades
-            // 
-            this.colexistencia_unidades.Caption = "Existencia Unidades";
-            this.colexistencia_unidades.DisplayFormat.FormatString = "n0";
-            this.colexistencia_unidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia_unidades.FieldName = "existencia_unidades";
-            this.colexistencia_unidades.Name = "colexistencia_unidades";
-            this.colexistencia_unidades.OptionsColumn.AllowEdit = false;
-            this.colexistencia_unidades.Visible = true;
-            this.colexistencia_unidades.VisibleIndex = 3;
-            this.colexistencia_unidades.Width = 238;
-            // 
-            // colexistencia_kg
-            // 
-            this.colexistencia_kg.Caption = "Existencia Kg";
-            this.colexistencia_kg.DisplayFormat.FormatString = "n2";
-            this.colexistencia_kg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia_kg.FieldName = "existencia_kg";
-            this.colexistencia_kg.Name = "colexistencia_kg";
-            this.colexistencia_kg.OptionsColumn.AllowEdit = false;
-            this.colexistencia_kg.Visible = true;
-            this.colexistencia_kg.VisibleIndex = 4;
-            this.colexistencia_kg.Width = 238;
-            // 
-            // colexistencia_tm1
-            // 
-            this.colexistencia_tm1.Caption = "Existencia TM";
-            this.colexistencia_tm1.DisplayFormat.FormatString = "n2";
-            this.colexistencia_tm1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia_tm1.FieldName = "existencia_tm";
-            this.colexistencia_tm1.Name = "colexistencia_tm1";
-            this.colexistencia_tm1.OptionsColumn.AllowEdit = false;
-            this.colexistencia_tm1.Visible = true;
-            this.colexistencia_tm1.VisibleIndex = 5;
-            this.colexistencia_tm1.Width = 250;
+            this.colseleccion.Caption = "Seleccionar";
+            this.colseleccion.FieldName = "seleccion";
+            this.colseleccion.Name = "colseleccion";
+            this.colseleccion.Visible = true;
+            this.colseleccion.VisibleIndex = 0;
+            this.colseleccion.Width = 92;
             // 
             // grdDespachos
             // 
@@ -250,10 +230,10 @@ namespace LOSA.Reportes
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdDespachos.DataMember = "despachos_pt";
             this.grdDespachos.DataSource = this.dsProductos1;
-            this.grdDespachos.Location = new System.Drawing.Point(3, 406);
+            this.grdDespachos.Location = new System.Drawing.Point(5, 523);
             this.grdDespachos.MainView = this.grdvDespachos;
             this.grdDespachos.Name = "grdDespachos";
-            this.grdDespachos.Size = new System.Drawing.Size(1312, 215);
+            this.grdDespachos.Size = new System.Drawing.Size(1451, 332);
             this.grdDespachos.TabIndex = 21;
             this.grdDespachos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvDespachos});
@@ -376,15 +356,13 @@ namespace LOSA.Reportes
             // 
             // grd_inventario_camaron
             // 
-            this.grd_inventario_camaron.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_inventario_camaron.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_inventario_camaron.DataMember = "historico_pt_kardex";
             this.grd_inventario_camaron.DataSource = this.dsProductos1;
-            this.grd_inventario_camaron.Location = new System.Drawing.Point(2, 211);
+            this.grd_inventario_camaron.Location = new System.Drawing.Point(5, 247);
             this.grd_inventario_camaron.MainView = this.grdv_inventario_camaron;
             this.grd_inventario_camaron.Name = "grd_inventario_camaron";
-            this.grd_inventario_camaron.Size = new System.Drawing.Size(1312, 189);
+            this.grd_inventario_camaron.Size = new System.Drawing.Size(1451, 270);
             this.grd_inventario_camaron.TabIndex = 0;
             this.grd_inventario_camaron.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_camaron});
@@ -603,7 +581,7 @@ namespace LOSA.Reportes
             this.btnSearchPTCamaron.Appearance.Options.UseFont = true;
             this.btnSearchPTCamaron.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnSearchPTCamaron.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchPTCamaron.ImageOptions.Image")));
-            this.btnSearchPTCamaron.Location = new System.Drawing.Point(399, 6);
+            this.btnSearchPTCamaron.Location = new System.Drawing.Point(923, 8);
             this.btnSearchPTCamaron.Name = "btnSearchPTCamaron";
             this.btnSearchPTCamaron.Size = new System.Drawing.Size(78, 32);
             this.btnSearchPTCamaron.TabIndex = 20;
@@ -613,7 +591,7 @@ namespace LOSA.Reportes
             // 
             // txtSearchPTCamaron
             // 
-            this.txtSearchPTCamaron.Location = new System.Drawing.Point(127, 12);
+            this.txtSearchPTCamaron.Location = new System.Drawing.Point(651, 14);
             this.txtSearchPTCamaron.Name = "txtSearchPTCamaron";
             this.txtSearchPTCamaron.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchPTCamaron.Properties.Appearance.Options.UseFont = true;
@@ -626,7 +604,7 @@ namespace LOSA.Reportes
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(7, 16);
+            this.labelControl2.Location = new System.Drawing.Point(531, 18);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(114, 15);
             this.labelControl2.TabIndex = 18;
@@ -640,7 +618,7 @@ namespace LOSA.Reportes
             this.btnExportExcel.Appearance.Options.UseFont = true;
             this.btnExportExcel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnExportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportExcel.ImageOptions.Image")));
-            this.btnExportExcel.Location = new System.Drawing.Point(1081, 4);
+            this.btnExportExcel.Location = new System.Drawing.Point(1227, 4);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(104, 39);
             this.btnExportExcel.TabIndex = 10;
@@ -654,68 +632,112 @@ namespace LOSA.Reportes
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1205, 4);
+            this.btnClose.Location = new System.Drawing.Point(1351, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(101, 39);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Cerrar";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // colseleccion
+            // colcantidad_retenida
             // 
-            this.colseleccion.Caption = "Seleccionar";
-            this.colseleccion.FieldName = "seleccion";
-            this.colseleccion.Name = "colseleccion";
-            this.colseleccion.Visible = true;
-            this.colseleccion.VisibleIndex = 0;
-            this.colseleccion.Width = 92;
+            this.colcantidad_retenida.Caption = "Unidadres Retenidas";
+            this.colcantidad_retenida.FieldName = "cantidad_retenida";
+            this.colcantidad_retenida.Name = "colcantidad_retenida";
+            this.colcantidad_retenida.OptionsColumn.AllowEdit = false;
+            this.colcantidad_retenida.Visible = true;
+            this.colcantidad_retenida.VisibleIndex = 3;
             // 
-            // reposCheckEdit
+            // colpeso_retenido
             // 
-            this.reposCheckEdit.AutoHeight = false;
-            this.reposCheckEdit.Name = "reposCheckEdit";
-            this.reposCheckEdit.CheckedChanged += new System.EventHandler(this.reposCheckEdit_CheckedChanged);
+            this.colpeso_retenido.Caption = "Kg Retenidos";
+            this.colpeso_retenido.FieldName = "peso_retenido";
+            this.colpeso_retenido.Name = "colpeso_retenido";
+            this.colpeso_retenido.OptionsColumn.AllowEdit = false;
+            this.colpeso_retenido.Visible = true;
+            this.colpeso_retenido.VisibleIndex = 4;
             // 
-            // gridControl1
+            // coltm_retenidas
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.DataMember = null;
-            this.gridControl1.DataSource = this.dsProductos1;
-            this.gridControl1.Location = new System.Drawing.Point(744, 5);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(570, 200);
-            this.gridControl1.TabIndex = 23;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.coltm_retenidas.Caption = "TM Retenidos";
+            this.coltm_retenidas.FieldName = "tm_retenidas";
+            this.coltm_retenidas.Name = "coltm_retenidas";
+            this.coltm_retenidas.OptionsColumn.AllowEdit = false;
+            this.coltm_retenidas.Visible = true;
+            this.coltm_retenidas.VisibleIndex = 5;
             // 
-            // gridView1
+            // colcantidad_existencia
             // 
-            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.GroupRow.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.gridView1.Appearance.TopNewRow.Options.UseFont = true;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.OptionsView.ShowViewCaption = true;
-            this.gridView1.ViewCaption = "Unidades Retenidas por Calidad";
+            this.colcantidad_existencia.Caption = "Unidades Existentes";
+            this.colcantidad_existencia.FieldName = "cantidad_existencia";
+            this.colcantidad_existencia.Name = "colcantidad_existencia";
+            this.colcantidad_existencia.OptionsColumn.AllowEdit = false;
+            this.colcantidad_existencia.Visible = true;
+            this.colcantidad_existencia.VisibleIndex = 6;
+            // 
+            // colpeso_existencia
+            // 
+            this.colpeso_existencia.Caption = "Kilogramos Existencia";
+            this.colpeso_existencia.FieldName = "peso_existencia";
+            this.colpeso_existencia.Name = "colpeso_existencia";
+            this.colpeso_existencia.OptionsColumn.AllowEdit = false;
+            this.colpeso_existencia.Visible = true;
+            this.colpeso_existencia.VisibleIndex = 7;
+            // 
+            // coltm_existencia
+            // 
+            this.coltm_existencia.Caption = "TM Existencia";
+            this.coltm_existencia.FieldName = "tm_existencia";
+            this.coltm_existencia.Name = "coltm_existencia";
+            this.coltm_existencia.OptionsColumn.AllowEdit = false;
+            this.coltm_existencia.Visible = true;
+            this.coltm_existencia.VisibleIndex = 8;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(214, 8);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(105, 32);
+            this.simpleButton1.TabIndex = 21;
+            this.simpleButton1.Text = "Generar";
+            this.simpleButton1.Visible = false;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(12, 17);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(69, 17);
+            this.labelControl1.TabIndex = 22;
+            this.labelControl1.Text = "Fecha Final";
+            this.labelControl1.Visible = false;
+            // 
+            // dtFinal
+            // 
+            this.dtFinal.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtFinal.CustomFormat = "";
+            this.dtFinal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFinal.Location = new System.Drawing.Point(88, 12);
+            this.dtFinal.Name = "dtFinal";
+            this.dtFinal.Size = new System.Drawing.Size(118, 25);
+            this.dtFinal.TabIndex = 23;
+            this.dtFinal.Value = new System.DateTime(2022, 11, 17, 0, 0, 0, 0);
+            this.dtFinal.Visible = false;
             // 
             // frmHisotrialPTCodigo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1329, 713);
+            this.ClientSize = new System.Drawing.Size(1475, 947);
+            this.Controls.Add(this.dtFinal);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.btnSearchPTCamaron);
             this.Controls.Add(this.panelControl2);
@@ -729,6 +751,8 @@ namespace LOSA.Reportes
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdKardexPtExistencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdVKardexPtExistencia)).EndInit();
@@ -737,9 +761,6 @@ namespace LOSA.Reportes
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_camaron)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_camaron)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchPTCamaron.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposCheckEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -788,13 +809,16 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colid_pt1;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap1;
         private DevExpress.XtraGrid.Columns.GridColumn colProducto1;
-        private DevExpress.XtraGrid.Columns.GridColumn collote_pt1;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_unidades;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_kg;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_tm1;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccion;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit reposCheckEdit;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_retenida;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso_retenido;
+        private DevExpress.XtraGrid.Columns.GridColumn coltm_retenidas;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_existencia;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso_existencia;
+        private DevExpress.XtraGrid.Columns.GridColumn coltm_existencia;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.DateTimePicker dtFinal;
     }
 }
