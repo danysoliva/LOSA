@@ -301,8 +301,6 @@ namespace LOSA
             UserLogin Log1 = new UserLogin();
             if (Log1.RecuperarRegistro(1035))
             {
-                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
-                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
                 Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
                 Log1.ADuser1 = "op_tablet";
                 Log1.Pass = "Tempo1234";
@@ -314,9 +312,6 @@ namespace LOSA
                 Log1.ADuser1 = "op_tablet";
                 Log1.Pass = "Tempo1234";
             }
-
-            //frmTipoIngreso_v2 frm = new frmTipoIngreso_v2(53, Log1);
-            //frm.Show();
 
             frmOpciones frm = new frmOpciones(Log1);
             frm.MdiParent = this.MdiParent;
