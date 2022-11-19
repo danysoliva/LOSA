@@ -23,11 +23,13 @@ namespace LOSA.Tools
         public int unidades_x_tarima; 
         public decimal peso_x_tarima;
         private int IsTrasladoMP;
+        private string lote;
         public frmInputBox(int pnumero_Transaccion, int pid_tarima)
         {
             InitializeComponent();
             Numero_transaccion = pnumero_Transaccion;
             id_tarima = pid_tarima;
+
             LoadDetalle_lote_salida();
             txtValue.Text = "1";
 

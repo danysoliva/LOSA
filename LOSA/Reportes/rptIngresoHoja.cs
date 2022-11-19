@@ -5,6 +5,7 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using ACS.Classes;
 using System.Data.SqlClient;
+using LOSA.Clases;
 
 namespace LOSA.Reportes
 {
@@ -40,6 +41,13 @@ namespace LOSA.Reportes
             if (isTraslado > 0)
             {
                 xrLabel1.Text = @"TRASLADO DE MATERIA PRIMA";
+                xrLabel6.Visible = true;
+                txtNTransferencia.Visible = true;
+
+                Transferencia transf = new Transferencia();
+                transf.RecuperarHeaderTransf(Convert.ToInt32(txtingreso.Text));
+
+                txtNTransferencia.Text = Convert.ToString(transf.Id_transferencia);
             }
             
         }

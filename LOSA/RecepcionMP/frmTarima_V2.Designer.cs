@@ -31,11 +31,11 @@ namespace LOSA.RecepcionMP
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarima_V2));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -115,6 +115,8 @@ namespace LOSA.RecepcionMP
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.btnSelccionarProveedor = new DevExpress.XtraEditors.SimpleButton();
             this.txtfactura = new DevExpress.XtraEditors.TextEdit();
+            this.txtid_lote = new DevExpress.XtraEditors.TextEdit();
+            this.colid_lote_externo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).BeginInit();
@@ -148,6 +150,7 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.step1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfactura.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtid_lote.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -383,13 +386,13 @@ namespace LOSA.RecepcionMP
             // txtLote
             // 
             this.txtLote.EditValue = "";
-            this.txtLote.Location = new System.Drawing.Point(416, 225);
+            this.txtLote.Location = new System.Drawing.Point(470, 225);
             this.txtLote.Name = "txtLote";
             this.txtLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtLote.Properties.Appearance.Options.UseFont = true;
             this.txtLote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtLote.Size = new System.Drawing.Size(251, 24);
+            this.txtLote.Size = new System.Drawing.Size(197, 24);
             this.txtLote.TabIndex = 66;
             // 
             // dtFechaVencimiento
@@ -651,6 +654,7 @@ namespace LOSA.RecepcionMP
             this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_data.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_lote_externo,
             this.colid1,
             this.colid_traslado,
             this.colitemcode,
@@ -704,7 +708,7 @@ namespace LOSA.RecepcionMP
             this.colitemname.Name = "colitemname";
             this.colitemname.OptionsColumn.AllowEdit = false;
             this.colitemname.Visible = true;
-            this.colitemname.VisibleIndex = 1;
+            this.colitemname.VisibleIndex = 2;
             this.colitemname.Width = 136;
             // 
             // colpv
@@ -714,7 +718,7 @@ namespace LOSA.RecepcionMP
             this.colpv.Name = "colpv";
             this.colpv.OptionsColumn.AllowEdit = false;
             this.colpv.Visible = true;
-            this.colpv.VisibleIndex = 2;
+            this.colpv.VisibleIndex = 3;
             this.colpv.Width = 130;
             // 
             // colcardname
@@ -730,7 +734,7 @@ namespace LOSA.RecepcionMP
             this.colfechaIngreso.Name = "colfechaIngreso";
             this.colfechaIngreso.OptionsColumn.AllowEdit = false;
             this.colfechaIngreso.Visible = true;
-            this.colfechaIngreso.VisibleIndex = 6;
+            this.colfechaIngreso.VisibleIndex = 7;
             this.colfechaIngreso.Width = 59;
             // 
             // coludxtarima
@@ -742,7 +746,7 @@ namespace LOSA.RecepcionMP
             this.coludxtarima.Name = "coludxtarima";
             this.coludxtarima.OptionsColumn.AllowEdit = false;
             this.coludxtarima.Visible = true;
-            this.coludxtarima.VisibleIndex = 3;
+            this.coludxtarima.VisibleIndex = 4;
             this.coludxtarima.Width = 79;
             // 
             // colpesokgxtarima
@@ -754,7 +758,7 @@ namespace LOSA.RecepcionMP
             this.colpesokgxtarima.Name = "colpesokgxtarima";
             this.colpesokgxtarima.OptionsColumn.AllowEdit = false;
             this.colpesokgxtarima.Visible = true;
-            this.colpesokgxtarima.VisibleIndex = 5;
+            this.colpesokgxtarima.VisibleIndex = 6;
             this.colpesokgxtarima.Width = 71;
             // 
             // colfvencimiento
@@ -764,7 +768,7 @@ namespace LOSA.RecepcionMP
             this.colfvencimiento.Name = "colfvencimiento";
             this.colfvencimiento.OptionsColumn.AllowEdit = false;
             this.colfvencimiento.Visible = true;
-            this.colfvencimiento.VisibleIndex = 8;
+            this.colfvencimiento.VisibleIndex = 9;
             this.colfvencimiento.Width = 89;
             // 
             // colfproduccion
@@ -774,7 +778,7 @@ namespace LOSA.RecepcionMP
             this.colfproduccion.Name = "colfproduccion";
             this.colfproduccion.OptionsColumn.AllowEdit = false;
             this.colfproduccion.Visible = true;
-            this.colfproduccion.VisibleIndex = 7;
+            this.colfproduccion.VisibleIndex = 8;
             this.colfproduccion.Width = 86;
             // 
             // colpresentacion
@@ -784,7 +788,7 @@ namespace LOSA.RecepcionMP
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 9;
+            this.colpresentacion.VisibleIndex = 10;
             this.colpresentacion.Width = 74;
             // 
             // colfactor
@@ -801,7 +805,7 @@ namespace LOSA.RecepcionMP
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 0;
+            this.collote.VisibleIndex = 1;
             this.collote.Width = 99;
             // 
             // colcanttarimas
@@ -811,7 +815,7 @@ namespace LOSA.RecepcionMP
             this.colcanttarimas.Name = "colcanttarimas";
             this.colcanttarimas.OptionsColumn.AllowEdit = false;
             this.colcanttarimas.Visible = true;
-            this.colcanttarimas.VisibleIndex = 4;
+            this.colcanttarimas.VisibleIndex = 5;
             this.colcanttarimas.Width = 81;
             // 
             // coloc
@@ -821,7 +825,7 @@ namespace LOSA.RecepcionMP
             this.coloc.Name = "coloc";
             this.coloc.OptionsColumn.AllowEdit = false;
             this.coloc.Visible = true;
-            this.coloc.VisibleIndex = 10;
+            this.coloc.VisibleIndex = 11;
             this.coloc.Width = 65;
             // 
             // colfactura
@@ -831,7 +835,7 @@ namespace LOSA.RecepcionMP
             this.colfactura.Name = "colfactura";
             this.colfactura.OptionsColumn.AllowEdit = false;
             this.colfactura.Visible = true;
-            this.colfactura.VisibleIndex = 11;
+            this.colfactura.VisibleIndex = 12;
             this.colfactura.Width = 68;
             // 
             // colTotalUdlote
@@ -845,7 +849,7 @@ namespace LOSA.RecepcionMP
             this.colTotalUdlote.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalUdlote", "{0:0.##.##} Ud.")});
             this.colTotalUdlote.Visible = true;
-            this.colTotalUdlote.VisibleIndex = 13;
+            this.colTotalUdlote.VisibleIndex = 14;
             this.colTotalUdlote.Width = 77;
             // 
             // colbit_promedio
@@ -865,7 +869,7 @@ namespace LOSA.RecepcionMP
             this.coltotalKgLote.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalKgLote", "{0:0.##.##} Kg.")});
             this.coltotalKgLote.Visible = true;
-            this.coltotalKgLote.VisibleIndex = 12;
+            this.coltotalKgLote.VisibleIndex = 13;
             this.coltotalKgLote.Width = 82;
             // 
             // colid_presentacion
@@ -880,15 +884,15 @@ namespace LOSA.RecepcionMP
             this.colEliminar.ColumnEdit = this.btnEliminar;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 14;
+            this.colEliminar.VisibleIndex = 15;
             this.colEliminar.Width = 53;
             // 
             // btnEliminar
             // 
             this.btnEliminar.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -1073,11 +1077,32 @@ namespace LOSA.RecepcionMP
             this.txtfactura.Size = new System.Drawing.Size(265, 24);
             this.txtfactura.TabIndex = 101;
             // 
+            // txtid_lote
+            // 
+            this.txtid_lote.EditValue = "";
+            this.txtid_lote.Location = new System.Drawing.Point(424, 225);
+            this.txtid_lote.Name = "txtid_lote";
+            this.txtid_lote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtid_lote.Properties.Appearance.Options.UseFont = true;
+            this.txtid_lote.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtid_lote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtid_lote.Size = new System.Drawing.Size(40, 24);
+            this.txtid_lote.TabIndex = 102;
+            // 
+            // colid_lote_externo
+            // 
+            this.colid_lote_externo.FieldName = "id_lote_externo";
+            this.colid_lote_externo.Name = "colid_lote_externo";
+            this.colid_lote_externo.OptionsColumn.AllowEdit = false;
+            this.colid_lote_externo.Visible = true;
+            this.colid_lote_externo.VisibleIndex = 0;
+            // 
             // frmTarima_V2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 694);
+            this.Controls.Add(this.txtid_lote);
             this.Controls.Add(this.txtfactura);
             this.Controls.Add(this.btnSelccionarProveedor);
             this.Controls.Add(this.labelControl16);
@@ -1158,6 +1183,7 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.step1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfactura.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtid_lote.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1243,5 +1269,7 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraEditors.TextEdit txtfactura;
         private System.Windows.Forms.BindingSource presentacionesBindingSource;
         private dsRecepcionMPx dsRecepcionMPx;
+        private DevExpress.XtraEditors.TextEdit txtid_lote;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_lote_externo;
     }
 }
