@@ -14,7 +14,7 @@ namespace LOSA.Clases
         public string codigo, descripcion, fecha, estado, formula_code, tamaño, diametro, registro, codigo_unite;
         public TimeSpan horasP;
         public decimal proteinas, grasa, size;
-        public int id, id_bag, id_category, id_proceso, id_portafolio, id_tamaño, especie, family, idOr;
+        public int id, id_bag, id_category, id_proceso, id_portafolio, id_tamaño, especie, family, idOr, dias_vencimiento, dias_venc_despacho;
         public bool recuperado;
         public string material, nombre_comercial, customer_visibility, oldCode, mixType, CodigoMP;
         public int tipo, tipof, grouping_id, tipor;
@@ -251,6 +251,42 @@ namespace LOSA.Clases
                 recuperado = false;
             }
             return recuperado;
+        }
+
+
+        public string GenerarSiguienteCodigo(int pIdSiguiente)
+        {
+            string cod = "";
+            string val = "";
+            string pref = "";
+            try
+            {
+                string sql = @"SELECT prefijo, siguiente
+                               FROM conf_tables_id
+                               WHERE id = " + pIdSiguiente.ToString();
+                SqlConnection conn = new SqlConnection(ConnectionString);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    pref = dr.GetString(0);
+                    val = dr.GetInt32(1).ToString();
+                    while (val.Length < 4)
+                    {
+                        val = "0" + val;
+                    }
+                    cod = pref + val;
+
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return cod;
         }
     }
 

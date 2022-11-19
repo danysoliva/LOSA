@@ -223,6 +223,56 @@ namespace ACS.Classes
         }
 
 
+        public SAPbobsCOM.Company Company(string puser, string ppass)
+        {
+            SAPbobsCOM.Company oCmp;
+            oCmp = new SAPbobsCOM.Company();
+            oCmp.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016;
+            oCmp.LicenseServer = Globals.ServerlicenseSDK;
+            oCmp.Server = Globals.ServerSDK;
+            oCmp.CompanyDB = Globals.ActiveDBSDK;
+            oCmp.UserName = puser;
+            oCmp.Password = ppass;
+            int result = oCmp.Connect();
+            if (result != 0)
+                //CajaDialogo.Information("Conexion exitosa a " + oCmp.CompanyName);
+                //else
+                CajaDialogo.Error("No se pudo realizar la coneccion al server de SAP. Error en el objeto company. Error: " + oCmp.GetLastErrorDescription());
+
+            return oCmp;
+        }
+
+
+        public Boolean CompanyIsconected(string puser, string ppass)
+        {
+            SAPbobsCOM.Company oCmp;
+            oCmp = new SAPbobsCOM.Company();
+            oCmp.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016;
+            oCmp.LicenseServer = Globals.ServerlicenseSDK;
+            oCmp.Server = Globals.ServerSDK;
+            oCmp.CompanyDB = Globals.ActiveDBSDK;
+            oCmp.UseTrusted = false;
+            oCmp.UserName = puser;
+            oCmp.DbUserName = "sa";
+            oCmp.DbPassword = Globals.SAP_DB_Pass;
+            oCmp.Password = ppass;
+            oCmp.language = SAPbobsCOM.BoSuppLangs.ln_Spanish_La;
+            string error = "";
+            int result = oCmp.Connect();
+            if (result == 0)
+            {
+                oCmp.Disconnect();
+                error = oCmp.GetLastErrorDescription();
+                return true;
+            }
+            else
+                oCmp.Disconnect();
+            error = oCmp.GetLastErrorDescription();
+            oCmp.Disconnect();
+            return false;
+        }
+
+
         public void ODOO_Exec_SP(string procedure_name, PgSqlCommand command)
         {
             PgSqlConnection Conn = new PgSqlConnection(ConnectionStringODOO);
