@@ -263,6 +263,26 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Asociar_Arribos_fix_x24 {
+            get {
+                object obj = ResourceManager.GetObject("Asociar_Arribos_fix_x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asociar_Arribos_fix_x32 {
+            get {
+                object obj = ResourceManager.GetObject("Asociar_Arribos_fix_x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backspace {
             get {
                 object obj = ResourceManager.GetObject("backspace", resourceCulture);
@@ -476,6 +496,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap Checklist_icon {
             get {
                 object obj = ResourceManager.GetObject("Checklist-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_round_24 {
+            get {
+                object obj = ResourceManager.GetObject("close_round_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1416,6 +1446,26 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap RawMaterial_32x32 {
             get {
                 object obj = ResourceManager.GetObject("RawMaterial_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reaload_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("reaload_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reaload_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("reaload_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
