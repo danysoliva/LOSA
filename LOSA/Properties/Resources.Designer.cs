@@ -783,6 +783,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Excel_2_icon32px {
+            get {
+                object obj = ResourceManager.GetObject("Excel_2_icon32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap excel_24x24 {
             get {
                 object obj = ResourceManager.GetObject("excel_24x24", resourceCulture);
@@ -966,6 +976,26 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap formula_nucleo_x32 {
             get {
                 object obj = ResourceManager.GetObject("formula_nucleo_x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Generate_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("Generate_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Generate_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Generate_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1173,6 +1203,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pdf_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("pdf_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pin_expand_16x16 {
             get {
                 object obj = ResourceManager.GetObject("pin_expand_16x16", resourceCulture);
@@ -1363,6 +1403,46 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("print_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("print_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print_preview_24 {
+            get {
+                object obj = ResourceManager.GetObject("print_preview_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print_preview_32 {
+            get {
+                object obj = ResourceManager.GetObject("print_preview_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap prod {
             get {
                 object obj = ResourceManager.GetObject("prod", resourceCulture);
@@ -1483,6 +1563,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap refresh_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("refresh_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap refresh_button32px {
             get {
                 object obj = ResourceManager.GetObject("refresh-button32px", resourceCulture);
@@ -1536,6 +1626,26 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap report_consumr_48x48 {
             get {
                 object obj = ResourceManager.GetObject("report_consumr_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salir_24 {
+            get {
+                object obj = ResourceManager.GetObject("salir_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Salir_32 {
+            get {
+                object obj = ResourceManager.GetObject("Salir_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1856,6 +1966,26 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap Users_Group_icon64px {
             get {
                 object obj = ResourceManager.GetObject("Users-Group-icon64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viewFormula_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("viewFormula_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viewFormula_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("viewFormula_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
