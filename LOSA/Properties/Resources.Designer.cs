@@ -73,6 +73,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _click_32X32 {
+            get {
+                object obj = ResourceManager.GetObject("_click_32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Accept_24x24 {
             get {
                 object obj = ResourceManager.GetObject("Accept_24x24", resourceCulture);
@@ -496,6 +506,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap Checklist_icon {
             get {
                 object obj = ResourceManager.GetObject("Checklist-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap click_32X32 {
+            get {
+                object obj = ResourceManager.GetObject("click_32X32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1136,6 +1156,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap medal {
             get {
                 object obj = ResourceManager.GetObject("medal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_image_icon_0 {
+            get {
+                object obj = ResourceManager.GetObject("no_image_icon_0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

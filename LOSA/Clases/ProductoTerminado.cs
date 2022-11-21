@@ -11,7 +11,7 @@ namespace LOSA.Clases
     public class ProductoTerminado
     {
         string ConnectionString;
-        public string codigo, descripcion, fecha, estado, formula_code, tamaño, diametro, registro, codigo_unite;
+        public string codigo, descripcion, fecha, estado, codesap,formula_code, tamaño, diametro, registro, codigo_unite;
         public TimeSpan horasP;
         public decimal proteinas, grasa, size;
         public int id, id_bag, id_category, id_proceso, id_portafolio, id_tamaño, especie, family, idOr, dias_vencimiento, dias_venc_despacho;
@@ -287,6 +287,73 @@ namespace LOSA.Clases
                 MessageBox.Show(ex.Message);
             }
             return cod;
+        }
+
+        public bool Recuperar_productoFromSapCode(string Pcodigo)
+        {
+            try
+            {//Recupera las caracteristicas 
+                string sql = @"SELECT [id]
+                                      ,[Descripcion]
+                                      ,coalesce ([Proteina], 0.0) as [Proteina]
+                                      ,coalesce ([Grasa], 0.0) as [Grasa]
+                                      ,[Especie]
+                                      ,coalesce ([family], 0) as [family]
+                                      ,coalesce ([id_bag],0) as [id_bag]
+                                      ,coalesce ([size], 0) as [size]
+                                      ,coalesce ([formula_code], '') as [formula_code]
+                                      ,coalesce ([id_category], '0') as [id_category]
+                                      ,coalesce ([id_proceso], 0) as [id_proceso]
+                                      ,coalesce ([id_portafolio], 0) as [id_portafolio]
+                                      ,[proteina]
+                                      ,[grasa]
+                                      ,coalesce ([tamanio] , ' ') as [tamaño]
+                                      ,coalesce ([id_origen] , 0) as [id_origen]
+                                      ,coalesce ([Registro], ' ') as [Registro]
+                                      ,coalesce ([diametro], ' ') as [diametro]
+                                      ,coalesce ([code_sap], ' ') as [code_sap]
+                                      ,coalesce ([codigo], ' ') as [code]
+                                  FROM [dbo].[PT_Productos]
+                                  where [code_sap] = '" + Pcodigo + "'";
+                //,coalesce([HorasTon], '00:00:00 a.m.') as HorasP
+                SqlConnection con = new SqlConnection(ConnectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader dl = cmd.ExecuteReader();
+                if (dl.Read())
+                {
+
+                    id = dl.GetInt32(0);
+                    descripcion = dl.GetString(1);
+                    proteinas = dl.GetDecimal(2);
+                    grasa = dl.GetDecimal(3);
+                    especie = dl.GetInt32(4);
+                    family = dl.GetInt32(5);
+                    id_bag = dl.GetInt32(6);
+                    size = dl.GetDecimal(7);
+                    formula_code = dl.GetString(8);
+                    id_category = dl.GetInt32(9);
+                    id_proceso = dl.GetInt32(10);
+                    id_portafolio = dl.GetInt32(11);
+                    proteinas = dl.GetDecimal(12);
+                    grasa = dl.GetDecimal(13);
+                    tamaño = dl.GetString(14);
+                    idOr = dl.GetInt32(15);
+                    registro = dl.GetString(16);
+                    diametro = dl.GetString(17);
+                    codesap = dl.GetString(18);
+                    codigo = dl.GetString(19);
+                    // horasP = dl.GetTimeSpan(18);
+                    recuperado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                recuperado = false;
+                MessageBox.Show(ex.Message);
+            }
+            return recuperado;
         }
     }
 

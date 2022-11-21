@@ -94,12 +94,23 @@ namespace ACS.Classes
         internal string User_FTP_Server = "roger.euceda";
         internal string Password_UserFTPServer = "Aqua2021?";
 
+        internal string FTP_BannerTv_PRD = @"ftp://10.50.11.32/BannerTV_PRD/";
+
         //       internal string ConnectionStringPRININ = @"Server=" + Globals.prinin_ServerAddress + @";
         //                                                   Database=" + Globals.prinin_ActiveDB + @";
         //                                                   User Id=" + Globals.prinin_DB_User + @";
         //                                                   Password=" + Globals.prinin_DB_Pass + ";";
 
-
+        public bool ValidateStringIsNullOrEmpty(object val)
+        {
+            bool IsNull = true;
+            try
+            {
+                IsNull = string.IsNullOrEmpty(val.ToString());
+            }
+            catch { }
+            return IsNull;
+        }
 
         /// <summary>
         /// Objeto de conexion para SAP

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFCT_PRD" targetNamespace="http://tempuri.org/dsFCT_PRD.xsd" xmlns:mstns="http://tempuri.org/dsFCT_PRD.xsd" xmlns="http://tempuri.org/dsFCT_PRD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFCT_PRD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsFCT_PRD" msprop:Generator_UserDSName="dsFCT_PRD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="new_prod" msprop:Generator_TableClassName="new_prodDataTable" msprop:Generator_TableVarName="tablenew_prod" msprop:Generator_TablePropName="new_prod" msprop:Generator_RowDeletingName="new_prodRowDeleting" msprop:Generator_RowChangingName="new_prodRowChanging" msprop:Generator_RowEvHandlerName="new_prodRowChangeEventHandler" msprop:Generator_RowDeletedName="new_prodRowDeleted" msprop:Generator_UserTableName="new_prod" msprop:Generator_RowChangedName="new_prodRowChanged" msprop:Generator_RowEvArgName="new_prodRowChangeEvent" msprop:Generator_RowClassName="new_prodRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codesap" msprop:Generator_ColumnVarNameInTable="columncodesap" msprop:Generator_ColumnPropNameInRow="codesap" msprop:Generator_ColumnPropNameInTable="codesapColumn" msprop:Generator_UserColumnName="codesap" type="xs:string" minOccurs="0" />
+              <xs:element name="codeodoo" msprop:Generator_ColumnVarNameInTable="columncodeodoo" msprop:Generator_ColumnPropNameInRow="codeodoo" msprop:Generator_ColumnPropNameInTable="codeodooColumn" msprop:Generator_UserColumnName="codeodoo" type="xs:string" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" type="xs:string" minOccurs="0" />
+              <xs:element name="idpt" msprop:Generator_ColumnVarNameInTable="columnidpt" msprop:Generator_ColumnPropNameInRow="idpt" msprop:Generator_ColumnPropNameInTable="idptColumn" msprop:Generator_UserColumnName="idpt" type="xs:int" minOccurs="0" />
+              <xs:element name="tm" msprop:Generator_ColumnVarNameInTable="columntm" msprop:Generator_ColumnPropNameInRow="tm" msprop:Generator_ColumnPropNameInTable="tmColumn" msprop:Generator_UserColumnName="tm" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="new_prodmast" msprop:Generator_TableClassName="new_prodmastDataTable" msprop:Generator_TableVarName="tablenew_prodmast" msprop:Generator_TablePropName="new_prodmast" msprop:Generator_RowDeletingName="new_prodmastRowDeleting" msprop:Generator_RowChangingName="new_prodmastRowChanging" msprop:Generator_RowEvHandlerName="new_prodmastRowChangeEventHandler" msprop:Generator_RowDeletedName="new_prodmastRowDeleted" msprop:Generator_UserTableName="new_prodmast" msprop:Generator_RowChangedName="new_prodmastRowChanged" msprop:Generator_RowEvArgName="new_prodmastRowChangeEvent" msprop:Generator_RowClassName="new_prodmastRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codesap" msprop:Generator_ColumnVarNameInTable="columncodesap" msprop:Generator_ColumnPropNameInRow="codesap" msprop:Generator_ColumnPropNameInTable="codesapColumn" msprop:Generator_UserColumnName="codesap" type="xs:string" minOccurs="0" />
+              <xs:element name="codeodoo" msprop:Generator_ColumnVarNameInTable="columncodeodoo" msprop:Generator_ColumnPropNameInRow="codeodoo" msprop:Generator_ColumnPropNameInTable="codeodooColumn" msprop:Generator_UserColumnName="codeodoo" type="xs:string" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" type="xs:string" minOccurs="0" />
+              <xs:element name="idpt" msprop:Generator_ColumnVarNameInTable="columnidpt" msprop:Generator_ColumnPropNameInRow="idpt" msprop:Generator_ColumnPropNameInTable="idptColumn" msprop:Generator_UserColumnName="idpt" type="xs:int" minOccurs="0" />
+              <xs:element name="tm" msprop:Generator_ColumnVarNameInTable="columntm" msprop:Generator_ColumnPropNameInRow="tm" msprop:Generator_ColumnPropNameInTable="tmColumn" msprop:Generator_UserColumnName="tm" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="fct_prd" msprop:Generator_TableClassName="fct_prdDataTable" msprop:Generator_TableVarName="tablefct_prd" msprop:Generator_TablePropName="fct_prd" msprop:Generator_RowDeletingName="fct_prdRowDeleting" msprop:Generator_RowChangingName="fct_prdRowChanging" msprop:Generator_RowEvHandlerName="fct_prdRowChangeEventHandler" msprop:Generator_RowDeletedName="fct_prdRowDeleted" msprop:Generator_UserTableName="fct_prd" msprop:Generator_RowChangedName="fct_prdRowChanged" msprop:Generator_RowEvArgName="fct_prdRowChangeEvent" msprop:Generator_RowClassName="fct_prdRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codesap" msprop:Generator_ColumnVarNameInTable="columncodesap" msprop:Generator_ColumnPropNameInRow="codesap" msprop:Generator_ColumnPropNameInTable="codesapColumn" msprop:Generator_UserColumnName="codesap" type="xs:string" minOccurs="0" />
+              <xs:element name="codeodoo" msprop:Generator_ColumnVarNameInTable="columncodeodoo" msprop:Generator_ColumnPropNameInRow="codeodoo" msprop:Generator_ColumnPropNameInTable="codeodooColumn" msprop:Generator_UserColumnName="codeodoo" type="xs:string" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" type="xs:string" minOccurs="0" />
+              <xs:element name="tm" msprop:Generator_ColumnVarNameInTable="columntm" msprop:Generator_ColumnPropNameInRow="tm" msprop:Generator_ColumnPropNameInTable="tmColumn" msprop:Generator_UserColumnName="tm" type="xs:decimal" minOccurs="0" />
+              <xs:element name="idpt" msprop:Generator_ColumnVarNameInTable="columnidpt" msprop:Generator_ColumnPropNameInRow="idpt" msprop:Generator_ColumnPropNameInTable="idptColumn" msprop:Generator_UserColumnName="idpt" type="xs:int" minOccurs="0" />
+              <xs:element name="prod" msprop:Generator_ColumnVarNameInTable="columnprod" msprop:Generator_ColumnPropNameInRow="prod" msprop:Generator_ColumnPropNameInTable="prodColumn" msprop:Generator_UserColumnName="prod" type="xs:decimal" minOccurs="0" />
+              <xs:element name="percent" msprop:Generator_ColumnVarNameInTable="columnpercent" msprop:Generator_ColumnPropNameInRow="percent" msprop:Generator_ColumnPropNameInTable="percentColumn" msprop:Generator_UserColumnName="percent" type="xs:decimal" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

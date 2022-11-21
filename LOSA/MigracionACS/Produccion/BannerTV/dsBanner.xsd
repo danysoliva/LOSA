@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsBanner" targetNamespace="http://tempuri.org/dsBanner.xsd" xmlns:mstns="http://tempuri.org/dsBanner.xsd" xmlns="http://tempuri.org/dsBanner.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsBanner" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsBanner" msprop:Generator_UserDSName="dsBanner">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="bannerhome" msprop:Generator_TableClassName="bannerhomeDataTable" msprop:Generator_TableVarName="tablebannerhome" msprop:Generator_TablePropName="bannerhome" msprop:Generator_RowDeletingName="bannerhomeRowDeleting" msprop:Generator_RowChangingName="bannerhomeRowChanging" msprop:Generator_RowEvHandlerName="bannerhomeRowChangeEventHandler" msprop:Generator_RowDeletedName="bannerhomeRowDeleted" msprop:Generator_UserTableName="bannerhome" msprop:Generator_RowChangedName="bannerhomeRowChanged" msprop:Generator_RowEvArgName="bannerhomeRowChangeEvent" msprop:Generator_RowClassName="bannerhomeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="caption" msprop:Generator_ColumnVarNameInTable="columncaption" msprop:Generator_ColumnPropNameInRow="caption" msprop:Generator_ColumnPropNameInTable="captionColumn" msprop:Generator_UserColumnName="caption" type="xs:string" minOccurs="0" />
+              <xs:element name="id_tab" msprop:Generator_ColumnVarNameInTable="columnid_tab" msprop:Generator_ColumnPropNameInRow="id_tab" msprop:Generator_ColumnPropNameInTable="id_tabColumn" msprop:Generator_UserColumnName="id_tab" type="xs:int" minOccurs="0" />
+              <xs:element name="id_adjunto" msprop:Generator_ColumnVarNameInTable="columnid_adjunto" msprop:Generator_ColumnPropNameInRow="id_adjunto" msprop:Generator_ColumnPropNameInTable="id_adjuntoColumn" msprop:Generator_UserColumnName="id_adjunto" type="xs:int" minOccurs="0" />
+              <xs:element name="visible" msprop:Generator_ColumnVarNameInTable="columnvisible" msprop:Generator_ColumnPropNameInRow="visible" msprop:Generator_ColumnPropNameInTable="visibleColumn" msprop:Generator_UserColumnName="visible" type="xs:string" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:string" minOccurs="0" />
+              <xs:element name="date_" msprop:Generator_ColumnVarNameInTable="columndate_" msprop:Generator_ColumnPropNameInRow="date_" msprop:Generator_ColumnPropNameInTable="date_Column" msprop:Generator_UserColumnName="date_" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="last_user_update" msprop:Generator_ColumnVarNameInTable="columnlast_user_update" msprop:Generator_ColumnPropNameInRow="last_user_update" msprop:Generator_ColumnPropNameInTable="last_user_updateColumn" msprop:Generator_UserColumnName="last_user_update" type="xs:int" minOccurs="0" />
+              <xs:element name="last_update" msprop:Generator_ColumnVarNameInTable="columnlast_update" msprop:Generator_ColumnPropNameInRow="last_update" msprop:Generator_ColumnPropNameInTable="last_updateColumn" msprop:Generator_UserColumnName="last_update" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Path" msprop:Generator_ColumnVarNameInTable="columnPath" msprop:Generator_ColumnPropNameInRow="Path" msprop:Generator_ColumnPropNameInTable="PathColumn" msprop:Generator_UserColumnName="Path" type="xs:string" minOccurs="0" />
+              <xs:element name="FileName" msprop:Generator_ColumnVarNameInTable="columnFileName" msprop:Generator_ColumnPropNameInRow="FileName" msprop:Generator_ColumnPropNameInTable="FileNameColumn" msprop:Generator_UserColumnName="FileName" type="xs:string" minOccurs="0" />
+              <xs:element name="use_image" msprop:Generator_ColumnVarNameInTable="columnuse_image" msprop:Generator_ColumnPropNameInRow="use_image" msprop:Generator_ColumnPropNameInTable="use_imageColumn" msprop:Generator_UserColumnName="use_image" type="xs:boolean" minOccurs="0" />
+              <xs:element name="interval" msprop:Generator_ColumnVarNameInTable="columninterval" msprop:Generator_ColumnPropNameInRow="interval" msprop:Generator_ColumnPropNameInTable="intervalColumn" msprop:Generator_UserColumnName="interval" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
