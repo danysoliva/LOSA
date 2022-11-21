@@ -29,6 +29,7 @@ namespace LOSA.RecepcionMP
         public DateTime fvencimiento;
         public int id_lote_externo;
         public int id_mp;
+        public string bodega_Externa;
         public frmSeleccionrLoteExterno(int Pid_externo)
         {
             InitializeComponent();
@@ -37,11 +38,12 @@ namespace LOSA.RecepcionMP
             
 
         }
-        public frmSeleccionrLoteExterno(int Pid_externo, int pid_mp)
+        public frmSeleccionrLoteExterno(int Pid_externo, int pid_mp, string pbodega_ext)
         {
             InitializeComponent();
             id_externo = Pid_externo;
             id_mp = pid_mp;
+            bodega_Externa = pbodega_ext;
             load_data_forMP();
             //load_data();
 
@@ -49,7 +51,7 @@ namespace LOSA.RecepcionMP
 
         public void load_data_forMP()
         {
-            string query = @"sp_lotes_in_ingreso_externo_forid_mp";
+            string query = @"sp_lotes_in_ingreso_externo_forid_mpV2";
             DataOperations dp = new DataOperations();
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
@@ -57,6 +59,7 @@ namespace LOSA.RecepcionMP
             cmd.CommandType = CommandType.StoredProcedure;
             //cmd.Parameters.AddWithValue("@id_ingreso_Externo", id_externo);
             cmd.Parameters.AddWithValue("@id_mp", id_mp);
+            cmd.Parameters.AddWithValue("@bodega_Externa", bodega_Externa);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             dsWizard.verLotes.Clear();
             da.Fill(dsWizard.verLotes);

@@ -175,6 +175,40 @@ namespace LOSA.Clases
             return Recuperado;
         }
 
+        public bool RecuperarHeaderTransf_for_id_transfer(int pid_transf)
+        {
+            string query = @"sp_get_transferencia_header_for_id_transferencia";
+            Recuperado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_transferencia", pid_transf);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Bodega_in = dr.GetString(0);
+                    Fecha_h = dr.GetDateTime(1);
+                    Id_ingreso = dr.GetInt32(2);
+                    DocEntryH1 = dr.GetInt32(3);
+                    Numero_transaccion = dr.GetInt32(4);
+                    Bodega_out = dr.GetString(5);
+                    recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            return Recuperado;
+        }
+
     }
 
 
