@@ -94,12 +94,23 @@ namespace ACS.Classes
         internal string User_FTP_Server = "roger.euceda";
         internal string Password_UserFTPServer = "Aqua2021?";
 
+        internal string FTP_BannerTv_PRD = @"ftp://10.50.11.32/BannerTV_PRD/";
+
         //       internal string ConnectionStringPRININ = @"Server=" + Globals.prinin_ServerAddress + @";
         //                                                   Database=" + Globals.prinin_ActiveDB + @";
         //                                                   User Id=" + Globals.prinin_DB_User + @";
         //                                                   Password=" + Globals.prinin_DB_Pass + ";";
 
-
+        public bool ValidateStringIsNullOrEmpty(object val)
+        {
+            bool IsNull = true;
+            try
+            {
+                IsNull = string.IsNullOrEmpty(val.ToString());
+            }
+            catch { }
+            return IsNull;
+        }
 
         /// <summary>
         /// Objeto de conexion para SAP
@@ -220,6 +231,56 @@ namespace ACS.Classes
             Conn.Close();
 
             return data;
+        }
+
+
+        public SAPbobsCOM.Company Company(string puser, string ppass)
+        {
+            SAPbobsCOM.Company oCmp;
+            oCmp = new SAPbobsCOM.Company();
+            oCmp.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016;
+            oCmp.LicenseServer = Globals.ServerlicenseSDK;
+            oCmp.Server = Globals.ServerSDK;
+            oCmp.CompanyDB = Globals.ActiveDBSDK;
+            oCmp.UserName = puser;
+            oCmp.Password = ppass;
+            int result = oCmp.Connect();
+            if (result != 0)
+                //CajaDialogo.Information("Conexion exitosa a " + oCmp.CompanyName);
+                //else
+                CajaDialogo.Error("No se pudo realizar la coneccion al server de SAP. Error en el objeto company. Error: " + oCmp.GetLastErrorDescription());
+
+            return oCmp;
+        }
+
+
+        public Boolean CompanyIsconected(string puser, string ppass)
+        {
+            SAPbobsCOM.Company oCmp;
+            oCmp = new SAPbobsCOM.Company();
+            oCmp.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016;
+            oCmp.LicenseServer = Globals.ServerlicenseSDK;
+            oCmp.Server = Globals.ServerSDK;
+            oCmp.CompanyDB = Globals.ActiveDBSDK;
+            oCmp.UseTrusted = false;
+            oCmp.UserName = puser;
+            oCmp.DbUserName = "sa";
+            oCmp.DbPassword = Globals.SAP_DB_Pass;
+            oCmp.Password = ppass;
+            oCmp.language = SAPbobsCOM.BoSuppLangs.ln_Spanish_La;
+            string error = "";
+            int result = oCmp.Connect();
+            if (result == 0)
+            {
+                oCmp.Disconnect();
+                error = oCmp.GetLastErrorDescription();
+                return true;
+            }
+            else
+                oCmp.Disconnect();
+            error = oCmp.GetLastErrorDescription();
+            oCmp.Disconnect();
+            return false;
         }
 
 

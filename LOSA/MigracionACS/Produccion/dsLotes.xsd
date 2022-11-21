@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLotes" targetNamespace="http://tempuri.org/dsLotes.xsd" xmlns:mstns="http://tempuri.org/dsLotes.xsd" xmlns="http://tempuri.org/dsLotes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLotes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsLotes" msprop:Generator_UserDSName="dsLotes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="gestionlotes" msprop:Generator_TableClassName="gestionlotesDataTable" msprop:Generator_TableVarName="tablegestionlotes" msprop:Generator_TablePropName="gestionlotes" msprop:Generator_RowDeletingName="gestionlotesRowDeleting" msprop:Generator_RowChangingName="gestionlotesRowChanging" msprop:Generator_RowEvHandlerName="gestionlotesRowChangeEventHandler" msprop:Generator_RowDeletedName="gestionlotesRowDeleted" msprop:Generator_UserTableName="gestionlotes" msprop:Generator_RowChangedName="gestionlotesRowChanged" msprop:Generator_RowEvArgName="gestionlotesRowChangeEvent" msprop:Generator_RowClassName="gestionlotesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="lote_fp" msprop:Generator_ColumnVarNameInTable="columnlote_fp" msprop:Generator_ColumnPropNameInRow="lote_fp" msprop:Generator_ColumnPropNameInTable="lote_fpColumn" msprop:Generator_UserColumnName="lote_fp" type="xs:int" minOccurs="0" />
+              <xs:element name="order_id" msprop:Generator_ColumnVarNameInTable="columnorder_id" msprop:Generator_ColumnPropNameInRow="order_id" msprop:Generator_ColumnPropNameInTable="order_idColumn" msprop:Generator_UserColumnName="order_id" type="xs:int" minOccurs="0" />
+              <xs:element name="UserReserv" msprop:Generator_ColumnVarNameInTable="columnUserReserv" msprop:Generator_ColumnPropNameInRow="UserReserv" msprop:Generator_ColumnPropNameInTable="UserReservColumn" msprop:Generator_UserColumnName="UserReserv" type="xs:string" minOccurs="0" />
+              <xs:element name="UserAsig" msprop:Generator_ColumnVarNameInTable="columnUserAsig" msprop:Generator_ColumnPropNameInRow="UserAsig" msprop:Generator_ColumnPropNameInTable="UserAsigColumn" msprop:Generator_UserColumnName="UserAsig" type="xs:string" minOccurs="0" />
+              <xs:element name="pp_code" msprop:Generator_ColumnVarNameInTable="columnpp_code" msprop:Generator_ColumnPropNameInRow="pp_code" msprop:Generator_ColumnPropNameInTable="pp_codeColumn" msprop:Generator_UserColumnName="pp_code" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_reservacion" msprop:Generator_ColumnVarNameInTable="columnfecha_reservacion" msprop:Generator_ColumnPropNameInRow="fecha_reservacion" msprop:Generator_ColumnPropNameInTable="fecha_reservacionColumn" msprop:Generator_UserColumnName="fecha_reservacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_asignacion" msprop:Generator_ColumnVarNameInTable="columnfecha_asignacion" msprop:Generator_ColumnPropNameInRow="fecha_asignacion" msprop:Generator_ColumnPropNameInTable="fecha_asignacionColumn" msprop:Generator_UserColumnName="fecha_asignacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="reservado" msprop:Generator_ColumnVarNameInTable="columnreservado" msprop:Generator_ColumnPropNameInRow="reservado" msprop:Generator_ColumnPropNameInTable="reservadoColumn" msprop:Generator_UserColumnName="reservado" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="reservar" msprop:Generator_TableClassName="reservarDataTable" msprop:Generator_TableVarName="tablereservar" msprop:Generator_TablePropName="reservar" msprop:Generator_RowDeletingName="reservarRowDeleting" msprop:Generator_RowChangingName="reservarRowChanging" msprop:Generator_RowEvHandlerName="reservarRowChangeEventHandler" msprop:Generator_RowDeletedName="reservarRowDeleted" msprop:Generator_UserTableName="reservar" msprop:Generator_RowChangedName="reservarRowChanged" msprop:Generator_RowEvArgName="reservarRowChangeEvent" msprop:Generator_RowClassName="reservarRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:int" minOccurs="0" />
+              <xs:element name="numero" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnPropNameInTable="numeroColumn" msprop:Generator_UserColumnName="numero" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

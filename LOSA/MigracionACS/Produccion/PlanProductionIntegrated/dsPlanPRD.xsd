@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPlanPRD" targetNamespace="http://tempuri.org/dsPlanPRD.xsd" xmlns:mstns="http://tempuri.org/dsPlanPRD.xsd" xmlns="http://tempuri.org/dsPlanPRD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPlanPRD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPlanPRD" msprop:Generator_UserDSName="dsPlanPRD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="formula_list" msprop:Generator_TableClassName="formula_listDataTable" msprop:Generator_TableVarName="tableformula_list" msprop:Generator_TablePropName="formula_list" msprop:Generator_RowDeletingName="formula_listRowDeleting" msprop:Generator_RowChangingName="formula_listRowChanging" msprop:Generator_RowEvHandlerName="formula_listRowChangeEventHandler" msprop:Generator_RowDeletedName="formula_listRowDeleted" msprop:Generator_UserTableName="formula_list" msprop:Generator_RowChangedName="formula_listRowChanged" msprop:Generator_RowEvArgName="formula_listRowChangeEvent" msprop:Generator_RowClassName="formula_listRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo" msdata:Caption="Código" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="version" msdata:Caption="Versión" msprop:Generator_ColumnVarNameInTable="columnversion" msprop:Generator_ColumnPropNameInRow="version" msprop:Generator_ColumnPropNameInTable="versionColumn" msprop:Generator_UserColumnName="version" type="xs:int" minOccurs="0" />
+              <xs:element name="tipo_short" msdata:Caption="Tipo Fórmula" msprop:Generator_ColumnVarNameInTable="columntipo_short" msprop:Generator_ColumnPropNameInRow="tipo_short" msprop:Generator_ColumnPropNameInTable="tipo_shortColumn" msprop:Generator_UserColumnName="tipo_short" type="xs:string" minOccurs="0" />
+              <xs:element name="fml_code" msprop:Generator_ColumnVarNameInTable="columnfml_code" msprop:Generator_ColumnPropNameInRow="fml_code" msprop:Generator_ColumnPropNameInTable="fml_codeColumn" msprop:Generator_UserColumnName="fml_code" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo" msdata:Caption="Tipo" msprop:Generator_ColumnVarNameInTable="columntipo" msprop:Generator_ColumnPropNameInRow="tipo" msprop:Generator_ColumnPropNameInTable="tipoColumn" msprop:Generator_UserColumnName="tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre" msdata:Caption="Nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="especie" msdata:Caption="Especie" msprop:Generator_ColumnVarNameInTable="columnespecie" msprop:Generator_ColumnPropNameInRow="especie" msprop:Generator_ColumnPropNameInTable="especieColumn" msprop:Generator_UserColumnName="especie" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_c" msdata:Caption="Fecha Creada" msprop:Generator_ColumnVarNameInTable="columnfecha_c" msprop:Generator_ColumnPropNameInRow="fecha_c" msprop:Generator_ColumnPropNameInTable="fecha_cColumn" msprop:Generator_UserColumnName="fecha_c" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="creado" msdata:Caption="Usuario" msprop:Generator_ColumnVarNameInTable="columncreado" msprop:Generator_ColumnPropNameInRow="creado" msprop:Generator_ColumnPropNameInTable="creadoColumn" msprop:Generator_UserColumnName="creado" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_m" msdata:Caption="Fecha Modificado" msprop:Generator_ColumnVarNameInTable="columnfecha_m" msprop:Generator_ColumnPropNameInRow="fecha_m" msprop:Generator_ColumnPropNameInTable="fecha_mColumn" msprop:Generator_UserColumnName="fecha_m" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="modificado" msdata:Caption="Modificado Por" msprop:Generator_ColumnVarNameInTable="columnmodificado" msprop:Generator_ColumnPropNameInRow="modificado" msprop:Generator_ColumnPropNameInTable="modificadoColumn" msprop:Generator_UserColumnName="modificado" type="xs:string" minOccurs="0" />
+              <xs:element name="estado" msdata:Caption="Código Estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:int" minOccurs="0" />
+              <xs:element name="estado_desc" msdata:Caption="Estado Descripción" msprop:Generator_ColumnVarNameInTable="columnestado_desc" msprop:Generator_ColumnPropNameInRow="estado_desc" msprop:Generator_ColumnPropNameInTable="estado_descColumn" msprop:Generator_UserColumnName="estado_desc" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
