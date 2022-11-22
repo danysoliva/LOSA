@@ -28,6 +28,52 @@ namespace LOSA.Clases
         public string Pass { get => pass; set => pass = value; }
         public int Idnivel { get => idnivel; set => idnivel = value; }
 
+
+        //Migracion ACS
+
+        #region Members
+        int vUserid;
+        string vNombre;
+        string vAlias;
+        bool vRecuperado;
+        DataOperations dp;
+        bool vSuperUser;
+        string vPassword;
+        #endregion
+
+        #region Properties
+        //public bool Recuperado
+        //{
+        //    get { return vRecuperado; }
+        //    set { vRecuperado = value; }
+        //}
+        public int UserId
+        {
+            get { return vUserid; }
+            set { vUserid = value; }
+        }
+        public string Nombre
+        {
+            get { return vNombre; }
+            set { vNombre = value; }
+        }
+        public string AD_User
+        {
+            get { return vAlias; }
+            set { vAlias = value; }
+        }
+        /// <summary>
+        /// Set or Get bool if the user login is Super User
+        /// </summary>
+        public bool IsSuperUser
+        {
+            get { return vSuperUser; }
+            set { vSuperUser = value; }
+        }
+
+        public string Password { get => vPassword; set => vPassword = value; }
+        #endregion
+
         public UserLogin()
         {
             GrupoUsuario = new GrupoUser();
@@ -126,7 +172,64 @@ namespace LOSA.Clases
             return id;
         }
 
+        internal bool ValidarNivelPermisos(int pIdVentana)
+        {
+            bool r = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection Conn = new SqlConnection(dp.ConnectionStringCostos);
+                Conn.Open();
+                string sql = @"SELECT count(*)
+                                FROM [dbo].conf_usuario_ventanas vv 
+                                where vv.id_ventana = " + pIdVentana.ToString() +
+                                      "and vv.id_usuario = " + UserId.ToString();
+                SqlCommand cmd = new SqlCommand(sql, Conn);
+                int v = Convert.ToInt32(cmd.ExecuteScalar());
+                if (v > 0)
+                    r = true;
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return r;
+        }
 
+
+        //Vamos a cargar desde sql toda la data del usuario
+        public bool RecuperarRegistro(string pUserID)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection Conn = new SqlConnection(dp.ConnectionStringCostos);
+                Conn.Open();
+                string sql = @"SELECT [id]
+                                      ,[nombre]
+                                      ,[ADUser]
+                                      ,[super_user]
+                                  FROM [dbo].[conf_usuarios]
+                                  where id = " + pUserID;
+                SqlCommand cmd = new SqlCommand(sql, Conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    UserId = dr.GetInt32(0);
+                    Nombre = dr.GetString(1);
+                    AD_User = dr.GetString(2);
+                    IsSuperUser = dr.GetBoolean(3);
+                }
+                vRecuperado = true;
+                Conn.Close();
+            }
+            catch (Exception ec)
+            {
+                vRecuperado = false;
+                CajaDialogo.Error(ec.Message);
+            }
+            return vRecuperado;
+        }
 
 
 

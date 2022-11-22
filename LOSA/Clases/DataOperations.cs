@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
 using System.Reflection;
+using Devart.Data.PostgreSql;
 
 namespace ACS.Classes 
 {
@@ -94,12 +95,23 @@ namespace ACS.Classes
         internal string User_FTP_Server = "roger.euceda";
         internal string Password_UserFTPServer = "Aqua2021?";
 
+        internal string FTP_BannerTv_PRD = @"ftp://10.50.11.32/BannerTV_PRD/";
+
         //       internal string ConnectionStringPRININ = @"Server=" + Globals.prinin_ServerAddress + @";
         //                                                   Database=" + Globals.prinin_ActiveDB + @";
         //                                                   User Id=" + Globals.prinin_DB_User + @";
         //                                                   Password=" + Globals.prinin_DB_Pass + ";";
 
-
+        public bool ValidateStringIsNullOrEmpty(object val)
+        {
+            bool IsNull = true;
+            try
+            {
+                IsNull = string.IsNullOrEmpty(val.ToString());
+            }
+            catch { }
+            return IsNull;
+        }
 
         /// <summary>
         /// Objeto de conexion para SAP
@@ -140,7 +152,151 @@ namespace ACS.Classes
         }
 
 
+        public int APMS_Exec_SP_GetID(string Procedure_Name, SqlCommand command, SqlParameter returnParameter)
+        {
+            Int32 ID;
 
+            SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
+
+            if (command.CommandType == CommandType.StoredProcedure)
+            {
+                command.Connection = conn;
+                command.CommandText = Procedure_Name;
+                conn.Open();
+                command.ExecuteNonQuery();
+
+                ID = Convert.ToInt32(returnParameter.Value);
+
+                conn.Close();
+            }
+            else
+            {
+                ID = -1;
+            }
+
+            return ID;
+        }
+
+        public DataTable APMS_Exec_SP_Get_Data(string Procedure_Name, SqlCommand command)
+        {
+            DataTable data = new DataTable();
+
+            SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
+
+            command.CommandText = Procedure_Name;
+            command.Connection = conn;
+            command.CommandType = CommandType.StoredProcedure;
+
+            conn.Open();
+
+            data.Load(command.ExecuteReader());
+
+            conn.Close();
+
+            return data;
+        }
+
+
+        public void APMS_Exec_SP(string Procedure_Name, SqlCommand command)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConnectionStringAPMS);
+
+                if (command.CommandType == CommandType.StoredProcedure)
+                {
+                    command.Connection = conn;
+                    command.CommandText = Procedure_Name;
+                    conn.Open();
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public DataSet APMS_GetSelectData(string FixedQuery)
+        {
+            DataSet data = new DataSet();
+
+            SqlConnection Conn = new SqlConnection(ConnectionStringAPMS);
+            Conn.Open();
+
+            SqlDataAdapter adapter = new SqlDataAdapter(FixedQuery, Conn);
+            adapter.Fill(data);
+
+            Conn.Close();
+
+            return data;
+        }
+
+
+        public SAPbobsCOM.Company Company(string puser, string ppass)
+        {
+            SAPbobsCOM.Company oCmp; 
+            oCmp = new SAPbobsCOM.Company();
+            oCmp.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016;
+            oCmp.LicenseServer = Globals.ServerlicenseSDK;
+            oCmp.Server = Globals.ServerSDK;
+            oCmp.CompanyDB = Globals.ActiveDBSDK;
+            oCmp.UserName = puser;
+            oCmp.Password = ppass;
+            int result = oCmp.Connect();
+            if (result != 0)
+                //CajaDialogo.Information("Conexion exitosa a " + oCmp.CompanyName);
+                //else
+                CajaDialogo.Error("No se pudo realizar la coneccion al server de SAP. Error en el objeto company. Error: " + oCmp.GetLastErrorDescription());
+
+            return oCmp;
+        }
+
+
+        public Boolean CompanyIsconected(string puser, string ppass)
+        {
+            SAPbobsCOM.Company oCmp;
+            oCmp = new SAPbobsCOM.Company();
+            oCmp.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016;
+            oCmp.LicenseServer = Globals.ServerlicenseSDK;
+            oCmp.Server = Globals.ServerSDK;
+            oCmp.CompanyDB = Globals.ActiveDBSDK;
+            oCmp.UseTrusted = false;
+            oCmp.UserName = puser;
+            oCmp.DbUserName = "sa";
+            oCmp.DbPassword = Globals.SAP_DB_Pass;
+            oCmp.Password = ppass;
+            oCmp.language = SAPbobsCOM.BoSuppLangs.ln_Spanish_La;
+            string error = "";
+            int result = oCmp.Connect();
+            if (result == 0)
+            {
+                oCmp.Disconnect();
+                error = oCmp.GetLastErrorDescription();
+                return true;
+            }
+            else
+                oCmp.Disconnect();
+            error = oCmp.GetLastErrorDescription();
+            oCmp.Disconnect();
+            return false;
+        }
+
+
+        public void ODOO_Exec_SP(string procedure_name, PgSqlCommand command)
+        {
+            PgSqlConnection Conn = new PgSqlConnection(ConnectionStringODOO);
+            Conn.Open();
+
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = procedure_name;
+            command.Connection = Conn;
+            command.ExecuteNonQuery();
+
+            Conn.Close();
+        }
         //public Boolean CompanyIsconected(string puser, string ppass)
         //{
         //    SAPbobsCOM.Company oCmp;

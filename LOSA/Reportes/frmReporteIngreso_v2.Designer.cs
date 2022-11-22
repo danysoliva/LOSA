@@ -46,6 +46,8 @@ namespace LOSA.Reportes
             this.colCodigoP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colF_registro = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colf_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBoleta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colplaca = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfurgon = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,8 +63,6 @@ namespace LOSA.Reportes
             this.colf_consumo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colf_final_consumo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colantiguedad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcodigo_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colf_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdYEAR.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yearBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).BeginInit();
@@ -78,9 +78,9 @@ namespace LOSA.Reportes
             this.btnclose.Appearance.Options.UseFont = true;
             this.btnclose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnclose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.ImageOptions.Image")));
-            this.btnclose.Location = new System.Drawing.Point(1203, 8);
+            this.btnclose.Location = new System.Drawing.Point(1198, 59);
             this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(172, 44);
+            this.btnclose.Size = new System.Drawing.Size(131, 44);
             this.btnclose.TabIndex = 36;
             this.btnclose.Text = "Home";
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
@@ -91,9 +91,9 @@ namespace LOSA.Reportes
             this.btnExcel.Appearance.Options.UseFont = true;
             this.btnExcel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(10, 8);
+            this.btnExcel.Location = new System.Drawing.Point(12, 59);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(170, 44);
+            this.btnExcel.Size = new System.Drawing.Size(132, 44);
             this.btnExcel.TabIndex = 40;
             this.btnExcel.Text = "Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
@@ -102,7 +102,7 @@ namespace LOSA.Reportes
             // 
             this.lblyear.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblyear.Appearance.Options.UseFont = true;
-            this.lblyear.Location = new System.Drawing.Point(11, 74);
+            this.lblyear.Location = new System.Drawing.Point(166, 77);
             this.lblyear.Name = "lblyear";
             this.lblyear.Size = new System.Drawing.Size(38, 21);
             this.lblyear.TabIndex = 42;
@@ -110,7 +110,7 @@ namespace LOSA.Reportes
             // 
             // grdYEAR
             // 
-            this.grdYEAR.Location = new System.Drawing.Point(55, 67);
+            this.grdYEAR.Location = new System.Drawing.Point(210, 73);
             this.grdYEAR.Name = "grdYEAR";
             this.grdYEAR.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdYEAR.Properties.Appearance.Options.UseFont = true;
@@ -275,6 +275,24 @@ namespace LOSA.Reportes
             this.colF_registro.Visible = true;
             this.colF_registro.VisibleIndex = 3;
             // 
+            // colcodigo_produccion
+            // 
+            this.colcodigo_produccion.Caption = "C. produccion";
+            this.colcodigo_produccion.FieldName = "codigo_produccion";
+            this.colcodigo_produccion.Name = "colcodigo_produccion";
+            this.colcodigo_produccion.OptionsColumn.AllowEdit = false;
+            this.colcodigo_produccion.Visible = true;
+            this.colcodigo_produccion.VisibleIndex = 4;
+            // 
+            // colf_produccion
+            // 
+            this.colf_produccion.Caption = "F produccion";
+            this.colf_produccion.FieldName = "f_produccion";
+            this.colf_produccion.Name = "colf_produccion";
+            this.colf_produccion.OptionsColumn.AllowEdit = false;
+            this.colf_produccion.Visible = true;
+            this.colf_produccion.VisibleIndex = 5;
+            // 
             // colBoleta
             // 
             this.colBoleta.Caption = "Boleta";
@@ -406,24 +424,6 @@ namespace LOSA.Reportes
             this.colantiguedad.OptionsColumn.AllowEdit = false;
             this.colantiguedad.Visible = true;
             this.colantiguedad.VisibleIndex = 17;
-            // 
-            // colcodigo_produccion
-            // 
-            this.colcodigo_produccion.Caption = "C. produccion";
-            this.colcodigo_produccion.FieldName = "codigo_produccion";
-            this.colcodigo_produccion.Name = "colcodigo_produccion";
-            this.colcodigo_produccion.OptionsColumn.AllowEdit = false;
-            this.colcodigo_produccion.Visible = true;
-            this.colcodigo_produccion.VisibleIndex = 4;
-            // 
-            // colf_produccion
-            // 
-            this.colf_produccion.Caption = "F produccion";
-            this.colf_produccion.FieldName = "f_produccion";
-            this.colf_produccion.Name = "colf_produccion";
-            this.colf_produccion.OptionsColumn.AllowEdit = false;
-            this.colf_produccion.Visible = true;
-            this.colf_produccion.VisibleIndex = 5;
             // 
             // frmReporteIngreso_v2
             // 

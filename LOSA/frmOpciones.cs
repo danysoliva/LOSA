@@ -1134,7 +1134,7 @@ namespace LOSA
 
         private void btnHistorialPT_Click(object sender, EventArgs e)
         {
-            frmHisotrialPTCodigo frm = new frmHisotrialPTCodigo();
+            frmHisotrialPTCodigo frm = new frmHisotrialPTCodigo();            
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.Show();

@@ -29,16 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmConfLotesSalidaAlmacen));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.gcLote = new DevExpress.XtraGrid.GridControl();
+            this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
+            this.gvLote = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_disponible = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colunidades_disponibles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_detalle = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCantSeleccionada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnum_line = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrow_ = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colunidade_seleccionadas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_ingreso_h = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtCantSeleccionada = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gcLotesSeleccionados = new DevExpress.XtraGrid.GridControl();
             this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
             this.gvLotesSeleccionados = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,24 +78,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.gcLote = new DevExpress.XtraGrid.GridControl();
-            this.gvLote = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcantidad_disponible = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colunidades_disponibles = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_detalle = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCantSeleccionada = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnum_line = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colrow_ = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha_produccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colunidade_seleccionadas = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_ingreso_h = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtCantSeleccionada = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -113,15 +113,15 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcLote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvLote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantSeleccionada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotesSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loteSeleccionadosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotesSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcLote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvLote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantSeleccionada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -163,292 +163,6 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // gcLotesSeleccionados
-            // 
-            this.gcLotesSeleccionados.DataSource = this.loteSeleccionadosBindingSource;
-            this.gcLotesSeleccionados.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcLotesSeleccionados.Location = new System.Drawing.Point(659, 33);
-            this.gcLotesSeleccionados.MainView = this.gvLotesSeleccionados;
-            this.gcLotesSeleccionados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gcLotesSeleccionados.Name = "gcLotesSeleccionados";
-            this.gcLotesSeleccionados.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit1,
-            this.btnDelete2});
-            this.gcLotesSeleccionados.Size = new System.Drawing.Size(521, 245);
-            this.gcLotesSeleccionados.TabIndex = 55;
-            this.gcLotesSeleccionados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvLotesSeleccionados});
-            // 
-            // loteSeleccionadosBindingSource
-            // 
-            this.loteSeleccionadosBindingSource.DataMember = "Lote_Seleccionados";
-            this.loteSeleccionadosBindingSource.DataSource = this.dsSalidasAlmacenesExternos;
-            // 
-            // dsSalidasAlmacenesExternos
-            // 
-            this.dsSalidasAlmacenesExternos.DataSetName = "dsSalidasAlmacenesExternos";
-            this.dsSalidasAlmacenesExternos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gvLotesSeleccionados
-            // 
-            this.gvLotesSeleccionados.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gvLotesSeleccionados.Appearance.FocusedRow.Options.UseFont = true;
-            this.gvLotesSeleccionados.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gvLotesSeleccionados.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvLotesSeleccionados.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gvLotesSeleccionados.Appearance.Row.Options.UseFont = true;
-            this.gvLotesSeleccionados.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn8,
-            this.gridColumn10,
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
-            this.gridColumn18,
-            this.gridColumn22,
-            this.gridColumn24,
-            this.gridColumn29});
-            this.gvLotesSeleccionados.CustomizationFormBounds = new System.Drawing.Rectangle(728, 476, 260, 272);
-            this.gvLotesSeleccionados.DetailHeight = 284;
-            this.gvLotesSeleccionados.GridControl = this.gcLotesSeleccionados;
-            this.gvLotesSeleccionados.Name = "gvLotesSeleccionados";
-            this.gvLotesSeleccionados.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gvLotesSeleccionados.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
-            this.gvLotesSeleccionados.OptionsView.ShowFooter = true;
-            this.gvLotesSeleccionados.OptionsView.ShowGroupPanel = false;
-            this.gvLotesSeleccionados.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvLotesSeleccionados_CellValueChanged);
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.FieldName = "id";
-            this.gridColumn4.MinWidth = 21;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Width = 81;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gridColumn5.AppearanceCell.Options.UseBackColor = true;
-            this.gridColumn5.Caption = "Cantidad ";
-            this.gridColumn5.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn5.FieldName = "cantidad";
-            this.gridColumn5.MinWidth = 21;
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.OptionsFilter.AllowFilter = false;
-            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "Total={0:N2}")});
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 106;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gridColumn6.AppearanceCell.Options.UseBackColor = true;
-            this.gridColumn6.Caption = "Unidades";
-            this.gridColumn6.DisplayFormat.FormatString = "{0:0.##.##} Ud";
-            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn6.FieldName = "unidades";
-            this.gridColumn6.MinWidth = 21;
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.OptionsFilter.AllowFilter = false;
-            this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "Total={0:N2}")});
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 61;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.FieldName = "id_detalle";
-            this.gridColumn8.MinWidth = 21;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Width = 81;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Lote";
-            this.gridColumn10.FieldName = "lote";
-            this.gridColumn10.MinWidth = 21;
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.OptionsFilter.AllowFilter = false;
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 0;
-            this.gridColumn10.Width = 61;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "Cant. Seleccionada";
-            this.gridColumn13.ColumnEdit = this.repositoryItemTextEdit1;
-            this.gridColumn13.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn13.FieldName = "CantSeleccionada";
-            this.gridColumn13.MinWidth = 21;
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.OptionsColumn.AllowEdit = false;
-            this.gridColumn13.OptionsFilter.AllowFilter = false;
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 1;
-            // 
-            // repositoryItemTextEdit1
-            // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Caption = "Selecc.";
-            this.gridColumn14.FieldName = "Seleccionar";
-            this.gridColumn14.MinWidth = 21;
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.OptionsFilter.AllowFilter = false;
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 5;
-            this.gridColumn14.Width = 49;
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.FieldName = "num_line";
-            this.gridColumn15.MinWidth = 21;
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Width = 81;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "row";
-            this.gridColumn16.FieldName = "row_";
-            this.gridColumn16.MinWidth = 21;
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Width = 81;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "Fecha Venc.";
-            this.gridColumn17.FieldName = "fecha_vencimiento";
-            this.gridColumn17.MinWidth = 21;
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.OptionsFilter.AllowFilter = false;
-            this.gridColumn17.Width = 69;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "Fecha Prod.";
-            this.gridColumn18.FieldName = "fecha_produccion";
-            this.gridColumn18.MinWidth = 21;
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.OptionsFilter.AllowFilter = false;
-            this.gridColumn18.Width = 78;
-            // 
-            // gridColumn22
-            // 
-            this.gridColumn22.Caption = "Borrar";
-            this.gridColumn22.ColumnEdit = this.btnDelete2;
-            this.gridColumn22.MinWidth = 21;
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.OptionsFilter.AllowFilter = false;
-            this.gridColumn22.Width = 78;
-            // 
-            // btnDelete2
-            // 
-            this.btnDelete2.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            this.btnDelete2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnDelete2.Name = "btnDelete2";
-            this.btnDelete2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnDelete2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete2_ButtonClick_1);
-            // 
-            // gridColumn24
-            // 
-            this.gridColumn24.Caption = "Unidades Seleccionadas";
-            this.gridColumn24.DisplayFormat.FormatString = "{0:0.##.##} Ud";
-            this.gridColumn24.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn24.FieldName = "unidades_seleccionadas";
-            this.gridColumn24.MinWidth = 21;
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.OptionsColumn.AllowEdit = false;
-            this.gridColumn24.OptionsFilter.AllowFilter = false;
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 2;
-            this.gridColumn24.Width = 73;
-            // 
-            // gridColumn29
-            // 
-            this.gridColumn29.FieldName = "id_ingreso_h";
-            this.gridColumn29.Name = "gridColumn29";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseTextOptions = true;
-            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(659, 12);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(521, 17);
-            this.labelControl2.StyleController = this.layoutControl1;
-            this.labelControl2.TabIndex = 56;
-            this.labelControl2.Text = "Lotes a Transferir";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseTextOptions = true;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(12, 12);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(555, 17);
-            this.labelControl1.StyleController = this.layoutControl1;
-            this.labelControl1.TabIndex = 54;
-            this.labelControl1.Text = "Lotes disponibles en Almacén";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Appearance.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnDelete.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.btnDelete.Appearance.Options.UseBackColor = true;
-            this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnDelete.Location = new System.Drawing.Point(571, 146);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(84, 38);
-            this.btnDelete.StyleController = this.layoutControl1;
-            this.btnDelete.TabIndex = 51;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Appearance.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.btnAdd.Appearance.Options.UseBackColor = true;
-            this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
-            this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAdd.Location = new System.Drawing.Point(571, 104);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(84, 38);
-            this.btnAdd.StyleController = this.layoutControl1;
-            this.btnAdd.TabIndex = 50;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // gcLote
             // 
             this.gcLote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -467,6 +181,11 @@
             this.gcLote.TabIndex = 45;
             this.gcLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLote});
+            // 
+            // dsSalidasAlmacenesExternos
+            // 
+            this.dsSalidasAlmacenesExternos.DataSetName = "dsSalidasAlmacenesExternos";
+            this.dsSalidasAlmacenesExternos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvLote
             // 
@@ -629,6 +348,288 @@
             // 
             this.txtCantSeleccionada.AutoHeight = false;
             this.txtCantSeleccionada.Name = "txtCantSeleccionada";
+            // 
+            // gcLotesSeleccionados
+            // 
+            this.gcLotesSeleccionados.DataSource = this.loteSeleccionadosBindingSource;
+            this.gcLotesSeleccionados.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcLotesSeleccionados.Location = new System.Drawing.Point(659, 33);
+            this.gcLotesSeleccionados.MainView = this.gvLotesSeleccionados;
+            this.gcLotesSeleccionados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gcLotesSeleccionados.Name = "gcLotesSeleccionados";
+            this.gcLotesSeleccionados.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1,
+            this.btnDelete2});
+            this.gcLotesSeleccionados.Size = new System.Drawing.Size(521, 245);
+            this.gcLotesSeleccionados.TabIndex = 55;
+            this.gcLotesSeleccionados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvLotesSeleccionados});
+            // 
+            // loteSeleccionadosBindingSource
+            // 
+            this.loteSeleccionadosBindingSource.DataMember = "Lote_Seleccionados";
+            this.loteSeleccionadosBindingSource.DataSource = this.dsSalidasAlmacenesExternos;
+            // 
+            // gvLotesSeleccionados
+            // 
+            this.gvLotesSeleccionados.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvLotesSeleccionados.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvLotesSeleccionados.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvLotesSeleccionados.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvLotesSeleccionados.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvLotesSeleccionados.Appearance.Row.Options.UseFont = true;
+            this.gvLotesSeleccionados.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn8,
+            this.gridColumn10,
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn22,
+            this.gridColumn24,
+            this.gridColumn29});
+            this.gvLotesSeleccionados.CustomizationFormBounds = new System.Drawing.Rectangle(728, 476, 260, 272);
+            this.gvLotesSeleccionados.DetailHeight = 284;
+            this.gvLotesSeleccionados.GridControl = this.gcLotesSeleccionados;
+            this.gvLotesSeleccionados.Name = "gvLotesSeleccionados";
+            this.gvLotesSeleccionados.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gvLotesSeleccionados.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gvLotesSeleccionados.OptionsView.ShowFooter = true;
+            this.gvLotesSeleccionados.OptionsView.ShowGroupPanel = false;
+            this.gvLotesSeleccionados.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvLotesSeleccionados_CellValueChanged);
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.FieldName = "id";
+            this.gridColumn4.MinWidth = 21;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Width = 81;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gridColumn5.AppearanceCell.Options.UseBackColor = true;
+            this.gridColumn5.Caption = "Cantidad ";
+            this.gridColumn5.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn5.FieldName = "cantidad";
+            this.gridColumn5.MinWidth = 21;
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsFilter.AllowFilter = false;
+            this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "Total={0:N2}")});
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.Width = 106;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gridColumn6.AppearanceCell.Options.UseBackColor = true;
+            this.gridColumn6.Caption = "Unidades";
+            this.gridColumn6.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn6.FieldName = "unidades";
+            this.gridColumn6.MinWidth = 21;
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsFilter.AllowFilter = false;
+            this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "Total={0:N2}")});
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.Width = 61;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.FieldName = "id_detalle";
+            this.gridColumn8.MinWidth = 21;
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Width = 81;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Lote";
+            this.gridColumn10.FieldName = "lote";
+            this.gridColumn10.MinWidth = 21;
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.OptionsFilter.AllowFilter = false;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 0;
+            this.gridColumn10.Width = 61;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Cant. Seleccionada";
+            this.gridColumn13.ColumnEdit = this.repositoryItemTextEdit1;
+            this.gridColumn13.DisplayFormat.FormatString = "{0:0.##.##} Kg";
+            this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn13.FieldName = "CantSeleccionada";
+            this.gridColumn13.MinWidth = 21;
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowEdit = false;
+            this.gridColumn13.OptionsFilter.AllowFilter = false;
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 1;
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Selecc.";
+            this.gridColumn14.FieldName = "Seleccionar";
+            this.gridColumn14.MinWidth = 21;
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsFilter.AllowFilter = false;
+            this.gridColumn14.Width = 49;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.FieldName = "num_line";
+            this.gridColumn15.MinWidth = 21;
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Width = 81;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "row";
+            this.gridColumn16.FieldName = "row_";
+            this.gridColumn16.MinWidth = 21;
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Width = 81;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Fecha Venc.";
+            this.gridColumn17.FieldName = "fecha_vencimiento";
+            this.gridColumn17.MinWidth = 21;
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.OptionsFilter.AllowFilter = false;
+            this.gridColumn17.Width = 69;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Fecha Prod.";
+            this.gridColumn18.FieldName = "fecha_produccion";
+            this.gridColumn18.MinWidth = 21;
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.OptionsFilter.AllowFilter = false;
+            this.gridColumn18.Width = 78;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "Borrar";
+            this.gridColumn22.ColumnEdit = this.btnDelete2;
+            this.gridColumn22.MinWidth = 21;
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.OptionsFilter.AllowFilter = false;
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 5;
+            this.gridColumn22.Width = 78;
+            // 
+            // btnDelete2
+            // 
+            this.btnDelete2.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnDelete2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnDelete2.Name = "btnDelete2";
+            this.btnDelete2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnDelete2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete2_ButtonClick_1);
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "Unidades Seleccionadas";
+            this.gridColumn24.DisplayFormat.FormatString = "{0:0.##.##} Ud";
+            this.gridColumn24.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn24.FieldName = "unidades_seleccionadas";
+            this.gridColumn24.MinWidth = 21;
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.OptionsColumn.AllowEdit = false;
+            this.gridColumn24.OptionsFilter.AllowFilter = false;
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 2;
+            this.gridColumn24.Width = 73;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.FieldName = "id_ingreso_h";
+            this.gridColumn29.Name = "gridColumn29";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Location = new System.Drawing.Point(659, 12);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(521, 17);
+            this.labelControl2.StyleController = this.layoutControl1;
+            this.labelControl2.TabIndex = 56;
+            this.labelControl2.Text = "Lotes a Transferir";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(555, 17);
+            this.labelControl1.StyleController = this.layoutControl1;
+            this.labelControl1.TabIndex = 54;
+            this.labelControl1.Text = "Lotes disponibles en Almacén";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Appearance.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.btnDelete.Appearance.Options.UseBackColor = true;
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
+            this.btnDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnDelete.Location = new System.Drawing.Point(571, 146);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(84, 38);
+            this.btnDelete.StyleController = this.layoutControl1;
+            this.btnDelete.TabIndex = 51;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Appearance.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.btnAdd.Appearance.Options.UseBackColor = true;
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnAdd.Location = new System.Drawing.Point(571, 104);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(84, 38);
+            this.btnAdd.StyleController = this.layoutControl1;
+            this.btnAdd.TabIndex = 50;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Root
             // 
@@ -991,15 +992,15 @@
             this.Load += new System.EventHandler(this.xfrmConfLotesSalidaAlmacen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcLote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvLote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantSeleccionada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotesSeleccionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loteSeleccionadosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotesSeleccionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcLote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvLote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantSeleccionada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();

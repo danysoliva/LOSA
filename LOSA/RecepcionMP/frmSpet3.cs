@@ -116,7 +116,7 @@ namespace LOSA.RecepcionMP
                     }
                     break;
                 case 2:
-                    frmMP_Granel frmGranel = new frmMP_Granel(UsuarioLogeado,isTraslado, id_Traslado_Seleccionado);
+                    frmMP_Granel frmGranel = new frmMP_Granel(UsuarioLogeado,isTraslado, id_Traslado_Seleccionado, id_Transferencia_Seleccionado);
 
 
                     if (this.MdiParent != null)

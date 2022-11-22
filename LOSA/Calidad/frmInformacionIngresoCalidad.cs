@@ -596,7 +596,7 @@ namespace LOSA.Calidad
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                cmd.Parameters.AddWithValue(@"@id_mp", id_materiaPrima);
+                cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsMantenimientoC.parametros.Clear();
                 da.Fill(dsMantenimientoC.parametros);
@@ -1484,7 +1484,8 @@ namespace LOSA.Calidad
                         {
                             string FileName = row.file_name;
                             DataOperations dp = new DataOperations();
-                            string Path_ = dp.FTP_Tickets_LOSA + row.id_conf + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + row.file_name;
+                            //string Path_ = dp.FTP_Tickets_LOSA + row.id_conf + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + row.file_name;
+                            string Path_ =  row.id_conf + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + row.file_name;
                             //if (Upload(Path_, row.path))
                             FTP_Class ftp1 = new FTP_Class();
                             
@@ -1515,7 +1516,8 @@ namespace LOSA.Calidad
                 {
                     if (cambioImagen)
                     {
-                        string Path_2 = dp.FTP_Tickets_LOSA + "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
+                        //string Path_2 = dp.FTP_Tickets_LOSA + "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
+                        string Path_2 = "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
                         //if (Upload(Path_2, full_pathImagen))
                         FTP_Class ftp1 = new FTP_Class();
                         if (ftp1.GuardarArchivo(UsuarioLogeado, Path_2, full_pathImagen))

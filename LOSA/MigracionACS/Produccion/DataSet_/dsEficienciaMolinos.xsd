@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEficienciaMolinos" targetNamespace="http://tempuri.org/dsEficienciaMolinos.xsd" xmlns:mstns="http://tempuri.org/dsEficienciaMolinos.xsd" xmlns="http://tempuri.org/dsEficienciaMolinos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEficienciaMolinos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsEficienciaMolinos" msprop:Generator_UserDSName="dsEficienciaMolinos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="eficienciasimple" msprop:Generator_TableClassName="eficienciasimpleDataTable" msprop:Generator_TableVarName="tableeficienciasimple" msprop:Generator_TablePropName="eficienciasimple" msprop:Generator_RowDeletingName="eficienciasimpleRowDeleting" msprop:Generator_RowChangingName="eficienciasimpleRowChanging" msprop:Generator_RowEvHandlerName="eficienciasimpleRowChangeEventHandler" msprop:Generator_RowDeletedName="eficienciasimpleRowDeleted" msprop:Generator_UserTableName="eficienciasimple" msprop:Generator_RowChangedName="eficienciasimpleRowChanged" msprop:Generator_RowEvArgName="eficienciasimpleRowChangeEvent" msprop:Generator_RowClassName="eficienciasimpleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msdata:Caption="Nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="horase" msdata:Caption="Horas Encendido" msprop:Generator_ColumnVarNameInTable="columnhorase" msprop:Generator_ColumnPropNameInRow="horase" msprop:Generator_ColumnPropNameInTable="horaseColumn" msprop:Generator_UserColumnName="horase" type="xs:decimal" minOccurs="0" />
+              <xs:element name="horasm" msdata:Caption="Horas Molienda" msprop:Generator_ColumnVarNameInTable="columnhorasm" msprop:Generator_ColumnPropNameInRow="horasm" msprop:Generator_ColumnPropNameInTable="horasmColumn" msprop:Generator_UserColumnName="horasm" type="xs:decimal" minOccurs="0" />
+              <xs:element name="eficiencia" msdata:Caption="Eficiencia %" msprop:Generator_ColumnVarNameInTable="columneficiencia" msprop:Generator_ColumnPropNameInRow="eficiencia" msprop:Generator_ColumnPropNameInTable="eficienciaColumn" msprop:Generator_UserColumnName="eficiencia" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
