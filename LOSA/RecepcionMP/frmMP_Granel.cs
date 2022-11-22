@@ -20,7 +20,7 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado;
         ArrayList list = new ArrayList();
         ArrayList listMP = new ArrayList();
-        int id_lote_Traslado;
+        int id_lote_Traslado, id_transferencia_h;
         string itemcode;
         decimal InAlmacenExterno;
         dsWizard dsWizard;
@@ -34,12 +34,13 @@ namespace LOSA.RecepcionMP
             LoadUbicaciones();
         }
 
-        public frmMP_Granel(UserLogin pUsuarioLogeado, bool Istraslado, int idLote)
+        public frmMP_Granel(UserLogin pUsuarioLogeado, bool Istraslado, int idLote, int pid_transferencia_h)
         {
             InitializeComponent();
             id_lote_Traslado = idLote;
             istraslado = Istraslado;
             UsuarioLogeado = pUsuarioLogeado;
+            id_transferencia_h = pid_transferencia_h;
             LoadData();
             LoadBarcos();
             LoadUbicaciones();
@@ -224,7 +225,7 @@ namespace LOSA.RecepcionMP
 
                     if (istraslado)
                     {
-                        frmIngresoGranelAlosy frm1 = new frmIngresoGranelAlosy(this.UsuarioLogeado, ListaBoletas, Item,istraslado, id_lote_Traslado);
+                        frmIngresoGranelAlosy frm1 = new frmIngresoGranelAlosy(this.UsuarioLogeado, ListaBoletas, Item,istraslado, id_lote_Traslado, id_transferencia_h);
                         if (frm1.ShowDialog() == DialogResult.OK)
                         {
                             LoadData();

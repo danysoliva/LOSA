@@ -27,7 +27,7 @@ namespace LOSA.RecepcionMP
         int ingreso;
         bool Istraslado = false;
         int id_externo_ingreso = 0;
-
+        int id_transferencia_h;
         public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem)
         {
             InitializeComponent();
@@ -109,7 +109,7 @@ namespace LOSA.RecepcionMP
         }
 
 
-        public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem, bool istraslado, int id_ingreso)
+        public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem, bool istraslado, int id_ingreso, int pid_transferencia_h)
         {
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
@@ -122,6 +122,7 @@ namespace LOSA.RecepcionMP
             Istraslado = istraslado;
             id_externo_ingreso = id_ingreso;
             txtIngresoExterno.Text = id_ingreso.ToString();
+            id_transferencia_h = pid_transferencia_h;
             LoadBarcos();
             LoadUbicaciones();
 
@@ -351,10 +352,14 @@ namespace LOSA.RecepcionMP
 
                 if (tggNuevoIngreso.IsOn)//Es un nuevo ingreso
                 {
-                    string quer = @"sp_obtener_numero_ingreso";
+                    cmd = cnx.CreateCommand();
+                    cmd.CommandText = "sp_obtener_numero_ingreso";
+                    cmd.Connection = cnx;
+                    cmd.Transaction = transaction;
+                    //string quer = @"sp_obtener_numero_ingreso";
                     //cn = new SqlConnection(dp.ConnectionStringLOSA);
                     //cn.Open();
-                    cmd = new SqlCommand(quer, transaction.Connection);
+                    //cmd = new SqlCommand(quer, transaction.Connection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     ingreso = Convert.ToInt32(cmd.ExecuteScalar());
                     //cn.Close();
@@ -447,18 +452,21 @@ namespace LOSA.RecepcionMP
                 {
                     if (DetalleExterno1.RecuperaRegistroInFromIdIngresoH_and_MP_Code(id_externo_ingreso))
                     {
-                        SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insert", transaction.Connection);
+                        //SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insert", transaction.Connection);
+                        SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insertV2", transaction.Connection);
                         cmdh.CommandType = CommandType.StoredProcedure;
                         cmdh.Transaction = transaction;
-                        cmdh.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = DetalleExterno1.BodegaIn;
-                        cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = "BG001";//Id bodega MP
-                        cmdh.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
-                        cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
-                        cmdh.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
-                        cmdh.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = ingreso;
-                        cmdh.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = id_externo_ingreso;
-
-                        id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
+                        //cmdh.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = DetalleExterno1.BodegaIn;
+                        //cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = "BG001";//Id bodega MP
+                        //cmdh.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
+                        //cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
+                        //cmdh.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
+                        //cmdh.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = ingreso;
+                        //cmdh.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = id_externo_ingreso;
+                        cmdh.Parameters.AddWithValue("@numero_transaccion", ingreso);
+                        cmdh.Parameters.AddWithValue("@id_transferencia", id_transferencia_h);
+                        //id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
+                        id_salida_h = id_transferencia_h;
                     }
                 }
 
@@ -569,7 +577,7 @@ namespace LOSA.RecepcionMP
                     
                 }
 
-                transaction.Commit();
+                //transaction.Commit();
                 cnx.Close();
             }
             catch (Exception ec)
