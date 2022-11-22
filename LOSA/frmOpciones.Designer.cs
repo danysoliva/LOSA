@@ -114,6 +114,11 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLotesCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdAccesoSistemas = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdGruposAlosy = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdSistemas = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdGrupos = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdUsuarios = new DevExpress.XtraEditors.SimpleButton();
             this.btnEstadosRequisiciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnKardexTiposTransacciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnEstadosProgramacionesRequisiciones = new DevExpress.XtraEditors.SimpleButton();
@@ -134,11 +139,6 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdUsuarios = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdGrupos = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdSistemas = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdGruposAlosy = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdAccesoSistemas = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1410,6 +1410,66 @@
             this.TabAdmin.Size = new System.Drawing.Size(835, 518);
             this.TabAdmin.Text = "Administrador";
             // 
+            // cmdAccesoSistemas
+            // 
+            this.cmdAccesoSistemas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAccesoSistemas.Appearance.Options.UseFont = true;
+            this.cmdAccesoSistemas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdAccesoSistemas.Location = new System.Drawing.Point(6, 282);
+            this.cmdAccesoSistemas.Name = "cmdAccesoSistemas";
+            this.cmdAccesoSistemas.Size = new System.Drawing.Size(204, 71);
+            this.cmdAccesoSistemas.TabIndex = 16;
+            this.cmdAccesoSistemas.Text = "Nivel Acceso Sistemas";
+            this.cmdAccesoSistemas.Click += new System.EventHandler(this.cmdAccesoSistemas_Click);
+            // 
+            // cmdGruposAlosy
+            // 
+            this.cmdGruposAlosy.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGruposAlosy.Appearance.Options.UseFont = true;
+            this.cmdGruposAlosy.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGruposAlosy.Location = new System.Drawing.Point(6, 361);
+            this.cmdGruposAlosy.Name = "cmdGruposAlosy";
+            this.cmdGruposAlosy.Size = new System.Drawing.Size(204, 71);
+            this.cmdGruposAlosy.TabIndex = 15;
+            this.cmdGruposAlosy.Text = "Grupos ALOSY";
+            this.cmdGruposAlosy.Click += new System.EventHandler(this.cmdGruposAlosy_Click);
+            // 
+            // cmdSistemas
+            // 
+            this.cmdSistemas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdSistemas.Appearance.Options.UseFont = true;
+            this.cmdSistemas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdSistemas.Location = new System.Drawing.Point(6, 203);
+            this.cmdSistemas.Name = "cmdSistemas";
+            this.cmdSistemas.Size = new System.Drawing.Size(204, 71);
+            this.cmdSistemas.TabIndex = 14;
+            this.cmdSistemas.Text = "Gestion Sistemas";
+            this.cmdSistemas.Click += new System.EventHandler(this.cmdSistemas_Click);
+            // 
+            // cmdGrupos
+            // 
+            this.cmdGrupos.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGrupos.Appearance.Options.UseFont = true;
+            this.cmdGrupos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGrupos.Location = new System.Drawing.Point(6, 124);
+            this.cmdGrupos.Name = "cmdGrupos";
+            this.cmdGrupos.Size = new System.Drawing.Size(204, 71);
+            this.cmdGrupos.TabIndex = 13;
+            this.cmdGrupos.Text = "Gestion Grupos";
+            this.cmdGrupos.Click += new System.EventHandler(this.cmdGrupos_Click);
+            // 
+            // cmdUsuarios
+            // 
+            this.cmdUsuarios.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdUsuarios.Appearance.Options.UseFont = true;
+            this.cmdUsuarios.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdUsuarios.Location = new System.Drawing.Point(6, 45);
+            this.cmdUsuarios.Name = "cmdUsuarios";
+            this.cmdUsuarios.Size = new System.Drawing.Size(204, 71);
+            this.cmdUsuarios.TabIndex = 12;
+            this.cmdUsuarios.Text = "Usuarios";
+            this.cmdUsuarios.Click += new System.EventHandler(this.cmdUsuarios_Click);
+            // 
             // btnEstadosRequisiciones
             // 
             this.btnEstadosRequisiciones.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1691,66 +1751,6 @@
             this.labelControl3.Size = new System.Drawing.Size(578, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // cmdUsuarios
-            // 
-            this.cmdUsuarios.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdUsuarios.Appearance.Options.UseFont = true;
-            this.cmdUsuarios.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdUsuarios.Location = new System.Drawing.Point(6, 45);
-            this.cmdUsuarios.Name = "cmdUsuarios";
-            this.cmdUsuarios.Size = new System.Drawing.Size(204, 71);
-            this.cmdUsuarios.TabIndex = 12;
-            this.cmdUsuarios.Text = "Usuarios";
-            this.cmdUsuarios.Click += new System.EventHandler(this.cmdUsuarios_Click);
-            // 
-            // cmdGrupos
-            // 
-            this.cmdGrupos.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdGrupos.Appearance.Options.UseFont = true;
-            this.cmdGrupos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdGrupos.Location = new System.Drawing.Point(6, 124);
-            this.cmdGrupos.Name = "cmdGrupos";
-            this.cmdGrupos.Size = new System.Drawing.Size(204, 71);
-            this.cmdGrupos.TabIndex = 13;
-            this.cmdGrupos.Text = "Gestion Grupos";
-            this.cmdGrupos.Click += new System.EventHandler(this.cmdGrupos_Click);
-            // 
-            // cmdSistemas
-            // 
-            this.cmdSistemas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSistemas.Appearance.Options.UseFont = true;
-            this.cmdSistemas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdSistemas.Location = new System.Drawing.Point(6, 203);
-            this.cmdSistemas.Name = "cmdSistemas";
-            this.cmdSistemas.Size = new System.Drawing.Size(204, 71);
-            this.cmdSistemas.TabIndex = 14;
-            this.cmdSistemas.Text = "Gestion Sistemas";
-            this.cmdSistemas.Click += new System.EventHandler(this.cmdSistemas_Click);
-            // 
-            // cmdGruposAlosy
-            // 
-            this.cmdGruposAlosy.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdGruposAlosy.Appearance.Options.UseFont = true;
-            this.cmdGruposAlosy.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdGruposAlosy.Location = new System.Drawing.Point(6, 361);
-            this.cmdGruposAlosy.Name = "cmdGruposAlosy";
-            this.cmdGruposAlosy.Size = new System.Drawing.Size(204, 71);
-            this.cmdGruposAlosy.TabIndex = 15;
-            this.cmdGruposAlosy.Text = "Grupos ALOSY";
-            this.cmdGruposAlosy.Click += new System.EventHandler(this.cmdGruposAlosy_Click);
-            // 
-            // cmdAccesoSistemas
-            // 
-            this.cmdAccesoSistemas.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdAccesoSistemas.Appearance.Options.UseFont = true;
-            this.cmdAccesoSistemas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdAccesoSistemas.Location = new System.Drawing.Point(6, 282);
-            this.cmdAccesoSistemas.Name = "cmdAccesoSistemas";
-            this.cmdAccesoSistemas.Size = new System.Drawing.Size(204, 71);
-            this.cmdAccesoSistemas.TabIndex = 16;
-            this.cmdAccesoSistemas.Text = "Nivel Acceso Sistemas";
-            this.cmdAccesoSistemas.Click += new System.EventHandler(this.cmdAccesoSistemas_Click);
             // 
             // frmOpciones
             // 

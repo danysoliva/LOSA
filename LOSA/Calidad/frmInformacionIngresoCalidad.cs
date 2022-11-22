@@ -1412,6 +1412,7 @@ namespace LOSA.Calidad
                 cmd.Parameters.AddWithValue("@resp3", rdTranporte3.EditValue);
                 cmd.Parameters.AddWithValue("@resp4", rdTranporte4.EditValue);
                 int conta1 = 1;
+
                 foreach(dsTarima.ultimas_cargasRow row in dsTarima1.ultimas_cargas.Rows)
                 {
                     switch (conta1)

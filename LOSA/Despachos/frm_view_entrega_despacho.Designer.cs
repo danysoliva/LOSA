@@ -66,6 +66,7 @@
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfila = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproducto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfilaUP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnUp = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -95,7 +96,6 @@
             this.txtNumDoc = new DevExpress.XtraEditors.TextEdit();
             this.txtNumBoleta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtconductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtplaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfurgon.Properties)).BeginInit();
@@ -365,6 +365,15 @@
             this.collote.Visible = true;
             this.collote.VisibleIndex = 1;
             this.collote.Width = 77;
+            // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.Caption = "COD. BARRA";
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra.Visible = true;
+            this.colcodigo_barra.VisibleIndex = 2;
             // 
             // colproducto
             // 
@@ -661,15 +670,6 @@
             this.labelControl8.Size = new System.Drawing.Size(85, 20);
             this.labelControl8.TabIndex = 54;
             this.labelControl8.Text = "Num. Boleta";
-            // 
-            // colcodigo_barra
-            // 
-            this.colcodigo_barra.Caption = "COD. BARRA";
-            this.colcodigo_barra.FieldName = "codigo_barra";
-            this.colcodigo_barra.Name = "colcodigo_barra";
-            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
-            this.colcodigo_barra.Visible = true;
-            this.colcodigo_barra.VisibleIndex = 2;
             // 
             // frm_view_entrega_despacho
             // 

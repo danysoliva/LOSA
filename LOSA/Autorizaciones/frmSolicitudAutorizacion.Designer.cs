@@ -29,11 +29,12 @@ namespace LOSA.Autorizaciones
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitudAutorizacion));
             this.label1 = new System.Windows.Forms.Label();
             this.lueUsuario = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource();
-            this.dsAutorizacionesBindingSource = new System.Windows.Forms.BindingSource();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsAutorizacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsAutorizaciones = new LOSA.Autorizaciones.dsAutorizaciones();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,19 +46,19 @@ namespace LOSA.Autorizaciones
             this.label4 = new System.Windows.Forms.Label();
             this.lueDocumento = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtComentario = new DevExpress.XtraEditors.MemoEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.lueTipoSolicitu = new DevExpress.XtraEditors.LookUpEdit();
-            this.tiposSolicitudBindingSource = new System.Windows.Forms.BindingSource();
+            this.tiposSolicitudBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.slueRuta = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.rutasAprobacionBindingSource = new System.Windows.Forms.BindingSource();
+            this.rutasAprobacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lueUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAutorizacionesBindingSource)).BeginInit();
@@ -221,6 +222,14 @@ namespace LOSA.Autorizaciones
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Usuario";
+            this.gridColumn3.FieldName = "nombre";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
             // txtComentario
             // 
             this.txtComentario.Location = new System.Drawing.Point(222, 332);
@@ -311,6 +320,14 @@ namespace LOSA.Autorizaciones
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Usuario";
+            this.gridColumn4.FieldName = "nombre";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            // 
             // btnSave
             // 
             this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -336,22 +353,6 @@ namespace LOSA.Autorizaciones
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Usuario";
-            this.gridColumn4.FieldName = "nombre";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Usuario";
-            this.gridColumn3.FieldName = "nombre";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
             // 
             // frmSolicitudAutorizacion
             // 

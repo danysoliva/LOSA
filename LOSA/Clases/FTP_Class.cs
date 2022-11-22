@@ -19,30 +19,38 @@ namespace LOSA.Clases
         public bool GuardarArchivo(UserLogin pUsuarioLogeado, string pFileName, string pathFile)
         {
             bool Guardado = false;
-            DataOperations dp = new DataOperations();
-
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(dp.FTP_Tickets_LOSA + pFileName);
-            //request.Credentials = new NetworkCredential(dp.User_FTP_Server, dp.Password_UserFTPServer);
-            string pass = "Tempo1234";
-            string user_op = "operador";
-            if (pUsuarioLogeado != null)
+            try
             {
-                if (!string.IsNullOrEmpty(pUsuarioLogeado.Pass))
+                DataOperations dp = new DataOperations();
+
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(dp.FTP_Tickets_LOSA + pFileName);
+                //request.Credentials = new NetworkCredential(dp.User_FTP_Server, dp.Password_UserFTPServer);
+                string pass = "Tempo1234";
+                string user_op = "operador";
+                if (pUsuarioLogeado != null)
                 {
-                    user_op = pUsuarioLogeado.ADuser1;
-                    pass = pUsuarioLogeado.Pass;
+                    if (!string.IsNullOrEmpty(pUsuarioLogeado.Pass))
+                    {
+                        user_op = pUsuarioLogeado.ADuser1;
+                        pass = pUsuarioLogeado.Pass;
+                    }
+                }
+
+                request.Credentials = new NetworkCredential(user_op, pass, "AQUAFEEDHN.COM");
+                //request.Credentials = new NetworkCredential(user_op, pass);
+                request.Method = WebRequestMethods.Ftp.UploadFile;
+                //request.EnableSsl = false;
+
+                using (Stream fileStream = File.OpenRead(pathFile))
+                using (Stream ftpStream = request.GetRequestStream())
+                {
+                    fileStream.CopyTo(ftpStream);
+                    Guardado = true;
                 }
             }
-
-            request.Credentials = new NetworkCredential(user_op, pass, "AQUAFEEDHN.COM");
-            request.Method = WebRequestMethods.Ftp.UploadFile;
-            request.EnableSsl = false;
-
-            using (Stream fileStream = File.OpenRead(pathFile))
-            using (Stream ftpStream = request.GetRequestStream())
+            catch(Exception ec)
             {
-                fileStream.CopyTo(ftpStream);
-                Guardado = true;
+                throw new Exception(ec.Message);
             }
 
             return Guardado;

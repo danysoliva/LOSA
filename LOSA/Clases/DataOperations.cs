@@ -90,6 +90,7 @@ namespace ACS.Classes
                                                  Password=" + Globals.odoo4_DB_Pass + @";";
 
         internal string FTP_Tickets_LOSA = @"ftp://10.50.11.32/ALOSY/";
+        internal string FTP_Tickets_ACS = @"ftp://10.50.11.32/Tickets/";
         internal string User_FTP_Server = "roger.euceda";
         internal string Password_UserFTPServer = "Aqua2021?";
 
