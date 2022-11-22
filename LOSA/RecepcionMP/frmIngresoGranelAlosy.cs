@@ -577,7 +577,7 @@ namespace LOSA.RecepcionMP
                     
                 }
 
-                //transaction.Commit();
+                transaction.Commit();
                 cnx.Close();
             }
             catch (Exception ec)
