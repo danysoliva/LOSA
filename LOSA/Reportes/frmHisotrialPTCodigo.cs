@@ -15,6 +15,8 @@ using LOSA.Calidad.LoteConfConsumo;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.TransaccionesPT;
 using DevExpress.XtraPrintingLinks;
+using System.Diagnostics;
+using DevExpress.XtraPrinting;
 
 namespace LOSA.Reportes
 {
@@ -22,6 +24,7 @@ namespace LOSA.Reportes
     {
         DataOperations dp = new DataOperations();
         public int id_pt;
+
         public frmHisotrialPTCodigo()
         {
             InitializeComponent();
@@ -123,9 +126,22 @@ namespace LOSA.Reportes
             {
                 grdvDespachos.ExportToXlsx(dialog.FileName);
             }
+
+            //grdKardexPtExistencia.ForceInitialize();
+            //grd_inventario_camaron.ForceInitialize();
+            //grdDespachos.ForceInitialize();
+
+            //compositeLink.CreatePageForEachLink();
+
+            //XlsxExportOptions options = new DevExpress.XtraPrinting.XlsxExportOptions();
+            //options.ExportMode = XlsxExportMode.SingleFilePageByPage;
+            //compositeLink.ExportToXlsx("rptProductoTerminado.xlsx", options);
+            //Process.Start("rptProductoTerminado.xlsx");
+
+
         }
 
-
+    
 
         private void reposCheckEdit_CheckedChanged(object sender, EventArgs e)
         {

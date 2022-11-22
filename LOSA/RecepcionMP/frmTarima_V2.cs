@@ -64,6 +64,7 @@ namespace LOSA.RecepcionMP
         int IdLoteInserted ;
 
         int idLoteExterno;
+        string Bodega_Externa;
         
         DataOperations dp = new DataOperations();
         public frmTarima_V2(bool PIstraslado,UserLogin Puser, int Pid_traslado)
@@ -81,7 +82,9 @@ namespace LOSA.RecepcionMP
                 btnSelccionarProveedor.Visible = false;
                 txtLote.Enabled = false;
                 txtid_lote.Enabled = false;
-
+                Transferencia trans = new Transferencia();
+                trans.RecuperarHeaderTransf_for_id_transfer(id_transferencia);
+                Bodega_Externa = trans.Bodega_in;
             }
             else
             {
@@ -109,6 +112,9 @@ namespace LOSA.RecepcionMP
                 btnSelccionarProveedor.Visible = false;
                 txtLote.Enabled = false;
                 txtid_lote.Enabled = false;
+                Transferencia trans = new Transferencia();
+                trans.RecuperarHeaderTransf_for_id_transfer(id_transferencia);
+                Bodega_Externa = trans.Bodega_in;
             }
             else
             {
@@ -846,7 +852,7 @@ namespace LOSA.RecepcionMP
 
         private void btnSeleccionarLote_Click(object sender, EventArgs e)
         {
-            frmSeleccionrLoteExterno frm = new frmSeleccionrLoteExterno(id_Traslado_a_Ingresar, id_mp);
+            frmSeleccionrLoteExterno frm = new frmSeleccionrLoteExterno(id_Traslado_a_Ingresar, id_mp, Bodega_Externa);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtLote.Text = frm.lote;

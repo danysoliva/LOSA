@@ -41,6 +41,12 @@ namespace LOSA.Reportes
             this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProducto1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_retenida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_retenido = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltm_retenidas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltm_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdDespachos = new DevExpress.XtraGrid.GridControl();
             this.grdvDespachos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colunidades_salida = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,12 +80,6 @@ namespace LOSA.Reportes
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnExportExcel = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.colcantidad_retenida = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpeso_retenido = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltm_retenidas = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcantidad_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpeso_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltm_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dtFinal = new System.Windows.Forms.DateTimePicker();
@@ -224,6 +224,60 @@ namespace LOSA.Reportes
             this.colseleccion.VisibleIndex = 0;
             this.colseleccion.Width = 92;
             // 
+            // colcantidad_retenida
+            // 
+            this.colcantidad_retenida.Caption = "Unidadres Retenidas";
+            this.colcantidad_retenida.FieldName = "cantidad_retenida";
+            this.colcantidad_retenida.Name = "colcantidad_retenida";
+            this.colcantidad_retenida.OptionsColumn.AllowEdit = false;
+            this.colcantidad_retenida.Visible = true;
+            this.colcantidad_retenida.VisibleIndex = 3;
+            // 
+            // colpeso_retenido
+            // 
+            this.colpeso_retenido.Caption = "Kg Retenidos";
+            this.colpeso_retenido.FieldName = "peso_retenido";
+            this.colpeso_retenido.Name = "colpeso_retenido";
+            this.colpeso_retenido.OptionsColumn.AllowEdit = false;
+            this.colpeso_retenido.Visible = true;
+            this.colpeso_retenido.VisibleIndex = 4;
+            // 
+            // coltm_retenidas
+            // 
+            this.coltm_retenidas.Caption = "TM Retenidos";
+            this.coltm_retenidas.FieldName = "tm_retenidas";
+            this.coltm_retenidas.Name = "coltm_retenidas";
+            this.coltm_retenidas.OptionsColumn.AllowEdit = false;
+            this.coltm_retenidas.Visible = true;
+            this.coltm_retenidas.VisibleIndex = 5;
+            // 
+            // colcantidad_existencia
+            // 
+            this.colcantidad_existencia.Caption = "Unidades Existentes";
+            this.colcantidad_existencia.FieldName = "cantidad_existencia";
+            this.colcantidad_existencia.Name = "colcantidad_existencia";
+            this.colcantidad_existencia.OptionsColumn.AllowEdit = false;
+            this.colcantidad_existencia.Visible = true;
+            this.colcantidad_existencia.VisibleIndex = 6;
+            // 
+            // colpeso_existencia
+            // 
+            this.colpeso_existencia.Caption = "Kilogramos Existencia";
+            this.colpeso_existencia.FieldName = "peso_existencia";
+            this.colpeso_existencia.Name = "colpeso_existencia";
+            this.colpeso_existencia.OptionsColumn.AllowEdit = false;
+            this.colpeso_existencia.Visible = true;
+            this.colpeso_existencia.VisibleIndex = 7;
+            // 
+            // coltm_existencia
+            // 
+            this.coltm_existencia.Caption = "TM Existencia";
+            this.coltm_existencia.FieldName = "tm_existencia";
+            this.coltm_existencia.Name = "coltm_existencia";
+            this.coltm_existencia.OptionsColumn.AllowEdit = false;
+            this.coltm_existencia.Visible = true;
+            this.coltm_existencia.VisibleIndex = 8;
+            // 
             // grdDespachos
             // 
             this.grdDespachos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -327,7 +381,7 @@ namespace LOSA.Reportes
             // 
             // colOC
             // 
-            this.colOC.FieldName = "OC";
+            this.colOC.FieldName = "Orden de Venta";
             this.colOC.Name = "colOC";
             this.colOC.OptionsColumn.AllowEdit = false;
             this.colOC.Visible = true;
@@ -453,7 +507,7 @@ namespace LOSA.Reportes
             this.collote_pt.Name = "collote_pt";
             this.collote_pt.OptionsColumn.AllowEdit = false;
             this.collote_pt.Visible = true;
-            this.collote_pt.VisibleIndex = 4;
+            this.collote_pt.VisibleIndex = 3;
             this.collote_pt.Width = 58;
             // 
             // colpresentacion
@@ -463,7 +517,7 @@ namespace LOSA.Reportes
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 5;
+            this.colpresentacion.VisibleIndex = 4;
             this.colpresentacion.Width = 98;
             // 
             // colEspecie
@@ -472,8 +526,6 @@ namespace LOSA.Reportes
             this.colEspecie.FieldName = "Especie";
             this.colEspecie.Name = "colEspecie";
             this.colEspecie.OptionsColumn.AllowEdit = false;
-            this.colEspecie.Visible = true;
-            this.colEspecie.VisibleIndex = 3;
             this.colEspecie.Width = 64;
             // 
             // colingreso_unidades
@@ -487,7 +539,7 @@ namespace LOSA.Reportes
             this.colingreso_unidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ingreso_unidades", "SUMA={0:n0}")});
             this.colingreso_unidades.Visible = true;
-            this.colingreso_unidades.VisibleIndex = 6;
+            this.colingreso_unidades.VisibleIndex = 5;
             this.colingreso_unidades.Width = 126;
             // 
             // colfecha_vencimiento
@@ -497,7 +549,7 @@ namespace LOSA.Reportes
             this.colfecha_vencimiento.Name = "colfecha_vencimiento";
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento.Visible = true;
-            this.colfecha_vencimiento.VisibleIndex = 7;
+            this.colfecha_vencimiento.VisibleIndex = 6;
             this.colfecha_vencimiento.Width = 95;
             // 
             // coldias_elaborado
@@ -507,7 +559,7 @@ namespace LOSA.Reportes
             this.coldias_elaborado.Name = "coldias_elaborado";
             this.coldias_elaborado.OptionsColumn.AllowEdit = false;
             this.coldias_elaborado.Visible = true;
-            this.coldias_elaborado.VisibleIndex = 8;
+            this.coldias_elaborado.VisibleIndex = 7;
             this.coldias_elaborado.Width = 110;
             // 
             // colplazo_vencimiento
@@ -517,7 +569,7 @@ namespace LOSA.Reportes
             this.colplazo_vencimiento.Name = "colplazo_vencimiento";
             this.colplazo_vencimiento.OptionsColumn.AllowEdit = false;
             this.colplazo_vencimiento.Visible = true;
-            this.colplazo_vencimiento.VisibleIndex = 9;
+            this.colplazo_vencimiento.VisibleIndex = 8;
             this.colplazo_vencimiento.Width = 162;
             // 
             // coldisponible_kg
@@ -531,7 +583,7 @@ namespace LOSA.Reportes
             this.coldisponible_kg.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "disponible_kg", "SUMA={0:n2}")});
             this.coldisponible_kg.Visible = true;
-            this.coldisponible_kg.VisibleIndex = 11;
+            this.coldisponible_kg.VisibleIndex = 10;
             this.coldisponible_kg.Width = 102;
             // 
             // coldisponible_unidades
@@ -544,7 +596,7 @@ namespace LOSA.Reportes
             this.coldisponible_unidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "disponible_unidades", "SUMA={0:#.##}")});
             this.coldisponible_unidades.Visible = true;
-            this.coldisponible_unidades.VisibleIndex = 12;
+            this.coldisponible_unidades.VisibleIndex = 11;
             this.coldisponible_unidades.Width = 143;
             // 
             // colexistencia_tm
@@ -558,7 +610,7 @@ namespace LOSA.Reportes
             this.colexistencia_tm.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", "SUMA={0:n2}")});
             this.colexistencia_tm.Visible = true;
-            this.colexistencia_tm.VisibleIndex = 13;
+            this.colexistencia_tm.VisibleIndex = 12;
             this.colexistencia_tm.Width = 73;
             // 
             // colsalida_unidades_totales
@@ -572,7 +624,7 @@ namespace LOSA.Reportes
             this.colsalida_unidades_totales.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "salida_unidades_totales", "SUMA={0:n0}")});
             this.colsalida_unidades_totales.Visible = true;
-            this.colsalida_unidades_totales.VisibleIndex = 10;
+            this.colsalida_unidades_totales.VisibleIndex = 9;
             this.colsalida_unidades_totales.Width = 89;
             // 
             // btnSearchPTCamaron
@@ -638,60 +690,6 @@ namespace LOSA.Reportes
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Cerrar";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // colcantidad_retenida
-            // 
-            this.colcantidad_retenida.Caption = "Unidadres Retenidas";
-            this.colcantidad_retenida.FieldName = "cantidad_retenida";
-            this.colcantidad_retenida.Name = "colcantidad_retenida";
-            this.colcantidad_retenida.OptionsColumn.AllowEdit = false;
-            this.colcantidad_retenida.Visible = true;
-            this.colcantidad_retenida.VisibleIndex = 3;
-            // 
-            // colpeso_retenido
-            // 
-            this.colpeso_retenido.Caption = "Kg Retenidos";
-            this.colpeso_retenido.FieldName = "peso_retenido";
-            this.colpeso_retenido.Name = "colpeso_retenido";
-            this.colpeso_retenido.OptionsColumn.AllowEdit = false;
-            this.colpeso_retenido.Visible = true;
-            this.colpeso_retenido.VisibleIndex = 4;
-            // 
-            // coltm_retenidas
-            // 
-            this.coltm_retenidas.Caption = "TM Retenidos";
-            this.coltm_retenidas.FieldName = "tm_retenidas";
-            this.coltm_retenidas.Name = "coltm_retenidas";
-            this.coltm_retenidas.OptionsColumn.AllowEdit = false;
-            this.coltm_retenidas.Visible = true;
-            this.coltm_retenidas.VisibleIndex = 5;
-            // 
-            // colcantidad_existencia
-            // 
-            this.colcantidad_existencia.Caption = "Unidades Existentes";
-            this.colcantidad_existencia.FieldName = "cantidad_existencia";
-            this.colcantidad_existencia.Name = "colcantidad_existencia";
-            this.colcantidad_existencia.OptionsColumn.AllowEdit = false;
-            this.colcantidad_existencia.Visible = true;
-            this.colcantidad_existencia.VisibleIndex = 6;
-            // 
-            // colpeso_existencia
-            // 
-            this.colpeso_existencia.Caption = "Kilogramos Existencia";
-            this.colpeso_existencia.FieldName = "peso_existencia";
-            this.colpeso_existencia.Name = "colpeso_existencia";
-            this.colpeso_existencia.OptionsColumn.AllowEdit = false;
-            this.colpeso_existencia.Visible = true;
-            this.colpeso_existencia.VisibleIndex = 7;
-            // 
-            // coltm_existencia
-            // 
-            this.coltm_existencia.Caption = "TM Existencia";
-            this.coltm_existencia.FieldName = "tm_existencia";
-            this.coltm_existencia.Name = "coltm_existencia";
-            this.coltm_existencia.OptionsColumn.AllowEdit = false;
-            this.coltm_existencia.Visible = true;
-            this.coltm_existencia.VisibleIndex = 8;
             // 
             // simpleButton1
             // 

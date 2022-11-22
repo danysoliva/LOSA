@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>433</ApplicationRevision>
+    <ApplicationRevision>434</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -125,8 +125,11 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Devart.Data, Version=5.0.2777.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
-    <Reference Include="Devart.Data.PostgreSql, Version=7.21.1985.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data, Version=5.0.2938.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\packages\Devart.Data.5.0.2938\lib\netstandard2.0\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql, Version=7.13.1366.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.PostgreSql.Vs, Version=7.13.1366.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -136,6 +139,7 @@
     <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v18.2.UI, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -144,7 +148,6 @@
     <Reference Include="DevExpress.XtraDialogs.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGauges.v18.2.Win, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -164,13 +167,8 @@
     <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraWizard.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="Interop.SAPbobsCOM">
-      <HintPath>..\..\ACS\ACS\obj\x64\Debug\Interop.SAPbobsCOM.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Interop.SAPbouiCOM">
-      <HintPath>..\..\ACS\ACS\obj\x64\Debug\Interop.SAPbouiCOM.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -178,6 +176,12 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -1013,9 +1017,7 @@
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\AlimentacionTolvaMicrosPesaje.cs" />
-    <Compile Include="Clases\APMS_OrderProduction.cs" />
     <Compile Include="Clases\BagsPT.cs" />
-    <Compile Include="Clases\BannerTV_Tab.cs" />
     <Compile Include="Clases\Bodegas.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
@@ -1030,7 +1032,6 @@
     <Compile Include="Clases\Email_IT_RequestParams.cs" />
     <Compile Include="Clases\FMOP.cs" />
     <Compile Include="Clases\FTP_Class.cs" />
-    <Compile Include="Clases\Funciones.cs" />
     <Compile Include="Clases\Globals.cs" />
     <Compile Include="Clases\IngresoExternoD.cs" />
     <Compile Include="Clases\IngresoExternoH.cs" />
@@ -1053,7 +1054,6 @@
     <Compile Include="Clases\PresentacionX.cs" />
     <Compile Include="Clases\ProductoTerminado.cs" />
     <Compile Include="Clases\Proveedor.cs" />
-    <Compile Include="Clases\ReporteProceso.cs" />
     <Compile Include="Clases\Requisicion.cs" />
     <Compile Include="Clases\SalidaPlanExterno.cs" />
     <Compile Include="Clases\SecOps.cs" />
@@ -1750,268 +1750,21 @@
     <Compile Include="Micro\frmOpcionesMicro.Designer.cs">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </Compile>
-    <Compile Include="MigracionACS\ACSDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ACSDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Controles\dsControles.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsControles.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Controles\xCheckBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Controles\xCheckBox.designer.cs">
-      <DependentUpon>xCheckBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Controles\xxSeleccionLookupEdit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Controles\xxSeleccionLookupEdit.designer.cs">
-      <DependentUpon>xxSeleccionLookupEdit.cs</DependentUpon>
-    </Compile>
     <Compile Include="MigracionACS\DataSetx\dsProduccion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsProduccion.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\DataSetx\DSProductos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSProductos.xsd</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\DataSetx\dsReportPRD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsReportPRD.xsd</DependentUpon>
     </Compile>
-    <Compile Include="MigracionACS\DataSetx\PRBdata.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PRBdata.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\DataSetx\PRB_DATA.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PRB_DATA.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Forecast\FCT_Proyeccion_Copy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Forecast\FCT_Proyeccion_Copy.designer.cs">
-      <DependentUpon>FCT_Proyeccion_Copy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_Comment_Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_Comment_Add.designer.cs">
-      <DependentUpon>FML_Comment_Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_FF_Select.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_FF_Select.designer.cs">
-      <DependentUpon>FML_FF_Select.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_Formulas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_Formulas.designer.cs">
-      <DependentUpon>FML_Formulas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_Formulas_v2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_Formulas_v2.designer.cs">
-      <DependentUpon>FML_Formulas_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_Material_Selector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_Material_Selector.designer.cs">
-      <DependentUpon>FML_Material_Selector.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_NC_Structure_View.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_NC_Structure_View.designer.cs">
-      <DependentUpon>FML_NC_Structure_View.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_NewFormula.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_NewFormula.designer.cs">
-      <DependentUpon>FML_NewFormula.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_NewFormula_v2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_NewFormula_v2.designer.cs">
-      <DependentUpon>FML_NewFormula_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_NewFormula_v3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Formulas\FML_NewFormula_v3.designer.cs">
-      <DependentUpon>FML_NewFormula_v3.cs</DependentUpon>
-    </Compile>
     <Compile Include="MigracionACS\Formulas\FML_NewFormula_view_only.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_NewFormula_view_only.designer.cs">
       <DependentUpon>FML_NewFormula_view_only.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Item_Selecction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Item_Selecction.designer.cs">
-      <DependentUpon>Item_Selecction.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\MP\SplashForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\MP\SplashForm.designer.cs">
-      <DependentUpon>SplashForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\BannerTV\dsBanner.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsBanner.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\BannerTV\frmAdjuntar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\BannerTV\frmAdjuntar.designer.cs">
-      <DependentUpon>frmAdjuntar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\BannerTV\frmBannerMainTV_PRD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\BannerTV\frmBannerMainTV_PRD.designer.cs">
-      <DependentUpon>frmBannerMainTV_PRD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\BannerTV\frmMantoPhotosTV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\BannerTV\frmMantoPhotosTV.designer.cs">
-      <DependentUpon>frmMantoPhotosTV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Configuraciones\dsConfiguraciones.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsConfiguraciones.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Configuraciones\Model\MaquinaDado.cs" />
-    <Compile Include="MigracionACS\Produccion\Configuraciones\xfrmMainConfiguracion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Configuraciones\xfrmMainConfiguracion.designer.cs">
-      <DependentUpon>xfrmMainConfiguracion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Configuraciones\xfrmMaquinasDadoCRUD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Configuraciones\xfrmMaquinasDadoCRUD.designer.cs">
-      <DependentUpon>xfrmMaquinasDadoCRUD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Configuraciones\xfrmMaquinasDadoMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Configuraciones\xfrmMaquinasDadoMain.designer.cs">
-      <DependentUpon>xfrmMaquinasDadoMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Configuraciones\xfrmTipoMaquina.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Configuraciones\xfrmTipoMaquina.designer.cs">
-      <DependentUpon>xfrmTipoMaquina.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Consumos\dsIntakeReportsPRD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsIntakeReportsPRD.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Consumos\frmsearchOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Consumos\frmsearchOrder.designer.cs">
-      <DependentUpon>frmsearchOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Consumos\IntakeBatchViewerFull.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Consumos\IntakeBatchViewerFull.designer.cs">
-      <DependentUpon>IntakeBatchViewerFull.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Consumos\rpt_resumen_consumo_by_batch_and_MP.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Consumos\rpt_resumen_consumo_by_batch_and_MP.designer.cs">
-      <DependentUpon>rpt_resumen_consumo_by_batch_and_MP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\dsDashBoard.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsDashBoard.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\dsReporteEficiencia.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsReporteEficiencia.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmCuadroLotes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmCuadroLotes.designer.cs">
-      <DependentUpon>frmCuadroLotes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmDashBoard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmDashBoard.designer.cs">
-      <DependentUpon>frmDashBoard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmDashBoardEficiencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmDashBoardEficiencia.designer.cs">
-      <DependentUpon>frmDashBoardEficiencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmEficiencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmEficiencia.designer.cs">
-      <DependentUpon>frmEficiencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmPrintReportEficiencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmPrintReportEficiencia.designer.cs">
-      <DependentUpon>frmPrintReportEficiencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmReprocesoDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmReprocesoDashboard.designer.cs">
-      <DependentUpon>frmReprocesoDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmResumenBrom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DashBoard\frmResumenBrom.designer.cs">
-      <DependentUpon>frmResumenBrom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DataSet_\dsEficiencia.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsEficiencia.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\DataSet_\dsEficienciaMolinos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsEficienciaMolinos.xsd</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Produccion\DataSet_\dsReportesPRD.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2022,210 +1775,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTrazabilidad.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\dsLotes.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsLotes.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\ds_reportprod.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ds_reportprod.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\DatosBromatologicos\frmDatosBrom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\DatosBromatologicos\frmDatosBrom.designer.cs">
-      <DependentUpon>frmDatosBrom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\dsLotePick.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsLotePick.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmDetalleActivado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmDetalleActivado.designer.cs">
-      <DependentUpon>frmDetalleActivado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmEditCantidadSacosEficiencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmEditCantidadSacosEficiencia.designer.cs">
-      <DependentUpon>frmEditCantidadSacosEficiencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmHorasPorPeriodioMaquinas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmHorasPorPeriodioMaquinas.designer.cs">
-      <DependentUpon>frmHorasPorPeriodioMaquinas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmHorometrosLineas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmHorometrosLineas.designer.cs">
-      <DependentUpon>frmHorometrosLineas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmPresentacionLotes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmPresentacionLotes.designer.cs">
-      <DependentUpon>frmPresentacionLotes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmPT_Adicional_Eficiencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frmPT_Adicional_Eficiencia.designer.cs">
-      <DependentUpon>frmPT_Adicional_Eficiencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frm_new_detail_prd_efi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frm_new_detail_prd_efi.designer.cs">
-      <DependentUpon>frm_new_detail_prd_efi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frm_seleccion_tarimas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\frm_seleccion_tarimas.designer.cs">
-      <DependentUpon>frm_seleccion_tarimas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v3.designer.cs">
-      <DependentUpon>PRB_Lote_Pick_v3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v4.designer.cs">
-      <DependentUpon>PRB_Lote_Pick_v4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\ReportesEf\rptEficienciaBasico.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Eficiencia\ReportesEf\rptEficienciaBasico.designer.cs">
-      <DependentUpon>rptEficienciaBasico.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\ForecastPRD\dsFCT_PRD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsFCT_PRD.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\ForecastPRD\frmAddFCT_produccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\ForecastPRD\frmAddFCT_produccion.designer.cs">
-      <DependentUpon>frmAddFCT_produccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\ForecastPRD\frmFCT_produccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\ForecastPRD\frmFCT_produccion.designer.cs">
-      <DependentUpon>frmFCT_produccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Llenado_Zarandas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Llenado_Zarandas.designer.cs">
-      <DependentUpon>Llenado_Zarandas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Molinos\dsMolinosEficiencia.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsMolinosEficiencia.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Molinos\xfrmEficienciaMolinos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Molinos\xfrmEficienciaMolinos.designer.cs">
-      <DependentUpon>xfrmEficienciaMolinos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Nuevo_Pedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Nuevo_Pedido.designer.cs">
-      <DependentUpon>Nuevo_Pedido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PBR_Reimpresion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PBR_Reimpresion.designer.cs">
-      <DependentUpon>PBR_Reimpresion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PlanProductionIntegrated\dsPlanPRD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsPlanPRD.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PlanProductionIntegrated\frmBusarFormula.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PlanProductionIntegrated\frmBusarFormula.designer.cs">
-      <DependentUpon>frmBusarFormula.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PlanProductionIntegrated\PP_Nuevo_Plan_full_PedidoAquaForecas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PlanProductionIntegrated\PP_Nuevo_Plan_full_PedidoAquaForecas.designer.cs">
-      <DependentUpon>PP_Nuevo_Plan_full_PedidoAquaForecas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Active_Plans.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Active_Plans.designer.cs">
-      <DependentUpon>PP_Active_Plans.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Actual_Running_Orders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Actual_Running_Orders.designer.cs">
-      <DependentUpon>PP_Actual_Running_Orders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Gestion_lote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Gestion_lote.designer.cs">
-      <DependentUpon>PP_Gestion_lote.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Main_Products_Order.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Main_Products_Order.designer.cs">
-      <DependentUpon>PP_Main_Products_Order.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Orden.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Orden.Designer.cs">
-      <DependentUpon>PP_Nuevo_Orden.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Orden_v2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Orden_v2.designer.cs">
-      <DependentUpon>PP_Nuevo_Orden_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan.designer.cs">
-      <DependentUpon>PP_Nuevo_Plan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full.designer.cs">
-      <DependentUpon>PP_Nuevo_Plan_full.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_Pedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_Pedido.designer.cs">
-      <DependentUpon>PP_Nuevo_Plan_full_Pedido.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Produccion\PP_Operator_Panel_v2.cs">
       <SubType>Form</SubType>
@@ -2239,300 +1788,17 @@
     <Compile Include="MigracionACS\Produccion\PP_Order_Copy_Dialog.Designer.cs">
       <DependentUpon>PP_Order_Copy_Dialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Productions_Orders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_Productions_Orders.designer.cs">
-      <DependentUpon>PP_Productions_Orders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_reserva.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_reserva.designer.cs">
-      <DependentUpon>PP_reserva.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_seleccionLote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PP_seleccionLote.designer.cs">
-      <DependentUpon>PP_seleccionLote.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Add_Reproceso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Add_Reproceso.designer.cs">
-      <DependentUpon>PRB_Add_Reproceso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Calidad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Calidad.designer.cs">
-      <DependentUpon>PRB_Calidad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Causas_de_paro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Causas_de_paro.designer.cs">
-      <DependentUpon>PRB_Causas_de_paro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Causes_New.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Causes_New.designer.cs">
-      <DependentUpon>PRB_Causes_New.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Create.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Create.designer.cs">
-      <DependentUpon>PRB_Create.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Logistic.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Logistic.designer.cs">
-      <DependentUpon>PRB_Logistic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Lote_Pick.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Lote_Pick.designer.cs">
-      <DependentUpon>PRB_Lote_Pick.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_New_Details.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_New_Details.designer.cs">
-      <DependentUpon>PRB_New_Details.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Registro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Registro.designer.cs">
-      <DependentUpon>PRB_Registro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Report_v2.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PRB_Report_v2.designer.cs">
-      <DependentUpon>PRB_Report_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Prod_Ordenes_Produccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Prod_Ordenes_Produccion.designer.cs">
-      <DependentUpon>Prod_Ordenes_Produccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\ProgramaProduccion.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\ProgramaProduccion.designer.cs">
-      <DependentUpon>ProgramaProduccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PT_Cargar_Pedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\PT_Cargar_Pedido.designer.cs">
-      <DependentUpon>PT_Cargar_Pedido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmEficienciaMolinos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmEficienciaMolinos.designer.cs">
-      <DependentUpon>frmEficienciaMolinos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmIntakeFullReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmIntakeFullReport.designer.cs">
-      <DependentUpon>frmIntakeFullReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmintakeKepserver.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmintakeKepserver.designer.cs">
-      <DependentUpon>frmintakeKepserver.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmReporteEnsacadora.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmReporteEnsacadora.designer.cs">
-      <DependentUpon>frmReporteEnsacadora.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmSacosPorLote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\frmSacosPorLote.designer.cs">
-      <DependentUpon>frmSacosPorLote.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\IntakeReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\IntakeReport.designer.cs">
-      <DependentUpon>IntakeReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\PP_Production_Orders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\PP_Production_Orders.designer.cs">
-      <DependentUpon>PP_Production_Orders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\PP_Production_Orders_Detail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\PP_Production_Orders_Detail.designer.cs">
-      <DependentUpon>PP_Production_Orders_Detail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\PRB_Report_v2.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\PRB_Report_v2.designer.cs">
-      <DependentUpon>PRB_Report_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\rpt_trazabilidad.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\Reports\rpt_trazabilidad.designer.cs">
-      <DependentUpon>rpt_trazabilidad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\rpt_reporte_produccion.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\rpt_reporte_produccion.designer.cs">
-      <DependentUpon>rpt_reporte_produccion.cs</DependentUpon>
-    </Compile>
     <Compile Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.designer.cs">
       <DependentUpon>RPT_Trazabilidad_Lote.cs</DependentUpon>
     </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsTemperatura.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Model\OrdenActivaConsola.cs" />
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Model\Transaccion_H.cs" />
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturas.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturas.Designer.cs">
-      <DependentUpon>rptTemperaturas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasMolinosCamaron.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasMolinosCamaron.Designer.cs">
-      <DependentUpon>rptTemperaturasMolinosCamaron.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasMolinosTilapia.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasMolinosTilapia.Designer.cs">
-      <DependentUpon>rptTemperaturasMolinosTilapia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasPellet1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasPellet1.Designer.cs">
-      <DependentUpon>rptTemperaturasPellet1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasPellet2.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasPellet2.Designer.cs">
-      <DependentUpon>rptTemperaturasPellet2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmMenuTemperatura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmMenuTemperatura.designer.cs">
-      <DependentUpon>xfrmMenuTemperatura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmSelectTransaccion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmSelectTransaccion.designer.cs">
-      <DependentUpon>xfrmSelectTransaccion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaExtusora.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaExtusora.designer.cs">
-      <DependentUpon>xfrmTemperaturaExtusora.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaMolinosCamaron.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaMolinosCamaron.designer.cs">
-      <DependentUpon>xfrmTemperaturaMolinosCamaron.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaMolinosTilapia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaMolinosTilapia.designer.cs">
-      <DependentUpon>xfrmTemperaturaMolinosTilapia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaPellet_1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaPellet_1.designer.cs">
-      <DependentUpon>xfrmTemperaturaPellet_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaPellet_2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaPellet_2.designer.cs">
-      <DependentUpon>xfrmTemperaturaPellet_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\PT\EditarProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\PT\EditarProductos.designer.cs">
-      <DependentUpon>EditarProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\PT\frmNewProductoUniversal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\PT\frmNewProductoUniversal.designer.cs">
-      <DependentUpon>frmNewProductoUniversal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_AgregarGasto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_AgregarGasto.Designer.cs">
-      <DependentUpon>PT_AgregarGasto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_NewGrp_Dtl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_NewGrp_Dtl.designer.cs">
-      <DependentUpon>PT_NewGrp_Dtl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_NuevoProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_NuevoProducto.designer.cs">
-      <DependentUpon>PT_NuevoProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_Productos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_Productos.designer.cs">
-      <DependentUpon>PT_Productos.cs</DependentUpon>
-    </Compile>
     <Compile Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.designer.cs">
       <DependentUpon>RPT_FB_Manual_RM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM_Complete.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM_Complete.designer.cs">
-      <DependentUpon>RPT_FB_Manual_RM_Complete.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\RPTS\PRD\RPT_NC_BuildReport.cs">
       <SubType>Component</SubType>
@@ -2545,12 +1811,6 @@
     </Compile>
     <Compile Include="MigracionACS\RPTS\PRD\RPT_PRD_Formula_Local.designer.cs">
       <DependentUpon>RPT_PRD_Formula_Local.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\SAP\frmLoginSAP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\SAP\frmLoginSAP.designer.cs">
-      <DependentUpon>frmLoginSAP.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\WaitForm1.cs">
       <SubType>Form</SubType>
@@ -2898,28 +2158,6 @@
     <None Include="Logistica\dsCierreMes.xss">
       <DependentUpon>dsCierreMes.xsd</DependentUpon>
     </None>
-    <None Include="MigracionACS\ACSDataSet2.xsc">
-      <DependentUpon>ACSDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\ACSDataSet2.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ACSDataSet2.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\ACSDataSet2.xss">
-      <DependentUpon>ACSDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Controles\dsControles.xsc">
-      <DependentUpon>dsControles.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Controles\dsControles.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsControles.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Controles\dsControles.xss">
-      <DependentUpon>dsControles.xsd</DependentUpon>
-    </None>
     <None Include="MigracionACS\DataSetx\dsProduccion.xsc">
       <DependentUpon>dsProduccion.xsd</DependentUpon>
     </None>
@@ -2931,17 +2169,6 @@
     <None Include="MigracionACS\DataSetx\dsProduccion.xss">
       <DependentUpon>dsProduccion.xsd</DependentUpon>
     </None>
-    <None Include="MigracionACS\DataSetx\DSProductos.xsc">
-      <DependentUpon>DSProductos.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\DataSetx\DSProductos.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSProductos.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\DataSetx\DSProductos.xss">
-      <DependentUpon>DSProductos.xsd</DependentUpon>
-    </None>
     <None Include="MigracionACS\DataSetx\dsReportPRD.xsc">
       <DependentUpon>dsReportPRD.xsd</DependentUpon>
     </None>
@@ -2952,105 +2179,6 @@
     </None>
     <None Include="MigracionACS\DataSetx\dsReportPRD.xss">
       <DependentUpon>dsReportPRD.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\DataSetx\PRBdata.xsc">
-      <DependentUpon>PRBdata.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\DataSetx\PRBdata.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PRBdata.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\DataSetx\PRBdata.xss">
-      <DependentUpon>PRBdata.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\DataSetx\PRB_DATA.xsc">
-      <DependentUpon>PRB_DATA.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\DataSetx\PRB_DATA.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PRB_DATA.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\DataSetx\PRB_DATA.xss">
-      <DependentUpon>PRB_DATA.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\BannerTV\dsBanner.xsc">
-      <DependentUpon>dsBanner.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\BannerTV\dsBanner.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsBanner.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\BannerTV\dsBanner.xss">
-      <DependentUpon>dsBanner.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\Configuraciones\dsConfiguraciones.xsc">
-      <DependentUpon>dsConfiguraciones.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\Configuraciones\dsConfiguraciones.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsConfiguraciones.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\Configuraciones\dsConfiguraciones.xss">
-      <DependentUpon>dsConfiguraciones.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\Consumos\dsIntakeReportsPRD.xsc">
-      <DependentUpon>dsIntakeReportsPRD.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\Consumos\dsIntakeReportsPRD.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsIntakeReportsPRD.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\Consumos\dsIntakeReportsPRD.xss">
-      <DependentUpon>dsIntakeReportsPRD.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\DashBoard\dsDashBoard.xsc">
-      <DependentUpon>dsDashBoard.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\DashBoard\dsDashBoard.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsDashBoard.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\DashBoard\dsDashBoard.xss">
-      <DependentUpon>dsDashBoard.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\DashBoard\dsReporteEficiencia.xsc">
-      <DependentUpon>dsReporteEficiencia.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\DashBoard\dsReporteEficiencia.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsReporteEficiencia.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\DashBoard\dsReporteEficiencia.xss">
-      <DependentUpon>dsReporteEficiencia.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\DataSet_\dsEficiencia.xsc">
-      <DependentUpon>dsEficiencia.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\DataSet_\dsEficiencia.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsEficiencia.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\DataSet_\dsEficiencia.xss">
-      <DependentUpon>dsEficiencia.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\DataSet_\dsEficienciaMolinos.xsc">
-      <DependentUpon>dsEficienciaMolinos.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\DataSet_\dsEficienciaMolinos.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsEficienciaMolinos.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\DataSet_\dsEficienciaMolinos.xss">
-      <DependentUpon>dsEficienciaMolinos.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Produccion\DataSet_\dsReportesPRD.xsc">
       <DependentUpon>dsReportesPRD.xsd</DependentUpon>
@@ -3074,83 +2202,6 @@
     <None Include="MigracionACS\Produccion\DataSet_\dsTrazabilidad.xss">
       <DependentUpon>dsTrazabilidad.xsd</DependentUpon>
     </None>
-    <None Include="MigracionACS\Produccion\dsLotes.xsc">
-      <DependentUpon>dsLotes.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\dsLotes.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsLotes.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\dsLotes.xss">
-      <DependentUpon>dsLotes.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\ds_reportprod.xsc">
-      <DependentUpon>ds_reportprod.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\ds_reportprod.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ds_reportprod.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\ds_reportprod.xss">
-      <DependentUpon>ds_reportprod.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\Eficiencia\dsLotePick.xsc">
-      <DependentUpon>dsLotePick.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\Eficiencia\dsLotePick.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsLotePick.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\Eficiencia\dsLotePick.xss">
-      <DependentUpon>dsLotePick.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\ForecastPRD\dsFCT_PRD.xsc">
-      <DependentUpon>dsFCT_PRD.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\ForecastPRD\dsFCT_PRD.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsFCT_PRD.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\ForecastPRD\dsFCT_PRD.xss">
-      <DependentUpon>dsFCT_PRD.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\Molinos\dsMolinosEficiencia.xsc">
-      <DependentUpon>dsMolinosEficiencia.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\Molinos\dsMolinosEficiencia.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsMolinosEficiencia.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\Molinos\dsMolinosEficiencia.xss">
-      <DependentUpon>dsMolinosEficiencia.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\PlanProductionIntegrated\dsPlanPRD.xsc">
-      <DependentUpon>dsPlanPRD.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\PlanProductionIntegrated\dsPlanPRD.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsPlanPRD.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\PlanProductionIntegrated\dsPlanPRD.xss">
-      <DependentUpon>dsPlanPRD.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura.xsc">
-      <DependentUpon>dsTemperatura.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsTemperatura.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura.xss">
-      <DependentUpon>dsTemperatura.xsd</DependentUpon>
-    </None>
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
@@ -3162,6 +2213,7 @@
     <None Include="Nir\dsNir.xss">
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsDevoluciones.Designer.cs">
@@ -4999,188 +4051,8 @@
     <EmbeddedResource Include="Micro\frmOpcionesMicro.resx">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Controles\xCheckBox.resx">
-      <DependentUpon>xCheckBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Controles\xxSeleccionLookupEdit.resx">
-      <DependentUpon>xxSeleccionLookupEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Forecast\FCT_Proyeccion_Copy.resx">
-      <DependentUpon>FCT_Proyeccion_Copy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Formulas\FML_Comment_Add.resx">
-      <DependentUpon>FML_Comment_Add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Select.resx">
-      <DependentUpon>FML_FF_Select.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Formulas\FML_Formulas.resx">
-      <DependentUpon>FML_Formulas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Formulas\FML_Formulas_v2.resx">
-      <DependentUpon>FML_Formulas_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Formulas\FML_Material_Selector.resx">
-      <DependentUpon>FML_Material_Selector.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Formulas\FML_NC_Structure_View.resx">
-      <DependentUpon>FML_NC_Structure_View.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Formulas\FML_NewFormula.resx">
-      <DependentUpon>FML_NewFormula.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Formulas\FML_NewFormula_v2.resx">
-      <DependentUpon>FML_NewFormula_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Formulas\FML_NewFormula_v3.resx">
-      <DependentUpon>FML_NewFormula_v3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_NewFormula_view_only.resx">
       <DependentUpon>FML_NewFormula_view_only.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Item_Selecction.resx">
-      <DependentUpon>Item_Selecction.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\MP\SplashForm.resx">
-      <DependentUpon>SplashForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\BannerTV\frmAdjuntar.resx">
-      <DependentUpon>frmAdjuntar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\BannerTV\frmBannerMainTV_PRD.resx">
-      <DependentUpon>frmBannerMainTV_PRD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\BannerTV\frmMantoPhotosTV.resx">
-      <DependentUpon>frmMantoPhotosTV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Configuraciones\xfrmMainConfiguracion.resx">
-      <DependentUpon>xfrmMainConfiguracion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Configuraciones\xfrmMaquinasDadoCRUD.resx">
-      <DependentUpon>xfrmMaquinasDadoCRUD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Configuraciones\xfrmMaquinasDadoMain.resx">
-      <DependentUpon>xfrmMaquinasDadoMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Configuraciones\xfrmTipoMaquina.resx">
-      <DependentUpon>xfrmTipoMaquina.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Consumos\frmsearchOrder.resx">
-      <DependentUpon>frmsearchOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Consumos\IntakeBatchViewerFull.resx">
-      <DependentUpon>IntakeBatchViewerFull.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Consumos\rpt_resumen_consumo_by_batch_and_MP.resx">
-      <DependentUpon>rpt_resumen_consumo_by_batch_and_MP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmCuadroLotes.resx">
-      <DependentUpon>frmCuadroLotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmDashBoard.resx">
-      <DependentUpon>frmDashBoard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmDashBoardEficiencia.resx">
-      <DependentUpon>frmDashBoardEficiencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmEficiencia.resx">
-      <DependentUpon>frmEficiencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmPrintReportEficiencia.resx">
-      <DependentUpon>frmPrintReportEficiencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmReprocesoDashboard.resx">
-      <DependentUpon>frmReprocesoDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmResumenBrom.resx">
-      <DependentUpon>frmResumenBrom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\DatosBromatologicos\frmDatosBrom.resx">
-      <DependentUpon>frmDatosBrom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frmDetalleActivado.resx">
-      <DependentUpon>frmDetalleActivado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frmEditCantidadSacosEficiencia.resx">
-      <DependentUpon>frmEditCantidadSacosEficiencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frmHorasPorPeriodioMaquinas.resx">
-      <DependentUpon>frmHorasPorPeriodioMaquinas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frmHorometrosLineas.resx">
-      <DependentUpon>frmHorometrosLineas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frmPresentacionLotes.resx">
-      <DependentUpon>frmPresentacionLotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frmPT_Adicional_Eficiencia.resx">
-      <DependentUpon>frmPT_Adicional_Eficiencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frm_new_detail_prd_efi.resx">
-      <DependentUpon>frm_new_detail_prd_efi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frm_seleccion_tarimas.resx">
-      <DependentUpon>frm_seleccion_tarimas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v3.resx">
-      <DependentUpon>PRB_Lote_Pick_v3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v4.resx">
-      <DependentUpon>PRB_Lote_Pick_v4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\ReportesEf\rptEficienciaBasico.resx">
-      <DependentUpon>rptEficienciaBasico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\ForecastPRD\frmAddFCT_produccion.resx">
-      <DependentUpon>frmAddFCT_produccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\ForecastPRD\frmFCT_produccion.resx">
-      <DependentUpon>frmFCT_produccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Llenado_Zarandas.resx">
-      <DependentUpon>Llenado_Zarandas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Molinos\xfrmEficienciaMolinos.resx">
-      <DependentUpon>xfrmEficienciaMolinos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Nuevo_Pedido.resx">
-      <DependentUpon>Nuevo_Pedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PBR_Reimpresion.resx">
-      <DependentUpon>PBR_Reimpresion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PlanProductionIntegrated\frmBusarFormula.resx">
-      <DependentUpon>frmBusarFormula.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PlanProductionIntegrated\PP_Nuevo_Plan_full_PedidoAquaForecas.resx">
-      <DependentUpon>PP_Nuevo_Plan_full_PedidoAquaForecas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Active_Plans.resx">
-      <DependentUpon>PP_Active_Plans.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Actual_Running_Orders.resx">
-      <DependentUpon>PP_Actual_Running_Orders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Gestion_lote.resx">
-      <DependentUpon>PP_Gestion_lote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Main_Products_Order.resx">
-      <DependentUpon>PP_Main_Products_Order.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Orden.resx">
-      <DependentUpon>PP_Nuevo_Orden.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Orden_v2.resx">
-      <DependentUpon>PP_Nuevo_Orden_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan.resx">
-      <DependentUpon>PP_Nuevo_Plan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full.resx">
-      <DependentUpon>PP_Nuevo_Plan_full.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_Pedido.resx">
-      <DependentUpon>PP_Nuevo_Plan_full_Pedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\PP_Operator_Panel_v2.resx">
       <DependentUpon>PP_Operator_Panel_v2.cs</DependentUpon>
@@ -5188,164 +4060,17 @@
     <EmbeddedResource Include="MigracionACS\Produccion\PP_Order_Copy_Dialog.resx">
       <DependentUpon>PP_Order_Copy_Dialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_Productions_Orders.resx">
-      <DependentUpon>PP_Productions_Orders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_reserva.resx">
-      <DependentUpon>PP_reserva.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PP_seleccionLote.resx">
-      <DependentUpon>PP_seleccionLote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_Add_Reproceso.resx">
-      <DependentUpon>PRB_Add_Reproceso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_Calidad.resx">
-      <DependentUpon>PRB_Calidad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_Causas_de_paro.resx">
-      <DependentUpon>PRB_Causas_de_paro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_Causes_New.resx">
-      <DependentUpon>PRB_Causes_New.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_Create.resx">
-      <DependentUpon>PRB_Create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_Logistic.resx">
-      <DependentUpon>PRB_Logistic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_Lote_Pick.resx">
-      <DependentUpon>PRB_Lote_Pick.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_New_Details.resx">
-      <DependentUpon>PRB_New_Details.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_Registro.resx">
-      <DependentUpon>PRB_Registro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PRB_Report_v2.resx">
-      <DependentUpon>PRB_Report_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Prod_Ordenes_Produccion.resx">
-      <DependentUpon>Prod_Ordenes_Produccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\ProgramaProduccion.resx">
-      <DependentUpon>ProgramaProduccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\PT_Cargar_Pedido.resx">
-      <DependentUpon>PT_Cargar_Pedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\frmEficienciaMolinos.resx">
-      <DependentUpon>frmEficienciaMolinos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\frmIntakeFullReport.resx">
-      <DependentUpon>frmIntakeFullReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\frmintakeKepserver.resx">
-      <DependentUpon>frmintakeKepserver.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\frmReporteEnsacadora.resx">
-      <DependentUpon>frmReporteEnsacadora.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\frmSacosPorLote.resx">
-      <DependentUpon>frmSacosPorLote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\IntakeReport.resx">
-      <DependentUpon>IntakeReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\PP_Production_Orders.resx">
-      <DependentUpon>PP_Production_Orders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\PP_Production_Orders_Detail.resx">
-      <DependentUpon>PP_Production_Orders_Detail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\PRB_Report_v2.resx">
-      <DependentUpon>PRB_Report_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\Reports\rpt_trazabilidad.resx">
-      <DependentUpon>rpt_trazabilidad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\rpt_reporte_produccion.resx">
-      <DependentUpon>rpt_reporte_produccion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.resx">
       <DependentUpon>RPT_Trazabilidad_Lote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturas.resx">
-      <DependentUpon>rptTemperaturas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasMolinosCamaron.resx">
-      <DependentUpon>rptTemperaturasMolinosCamaron.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasMolinosTilapia.resx">
-      <DependentUpon>rptTemperaturasMolinosTilapia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasPellet1.resx">
-      <DependentUpon>rptTemperaturasPellet1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturasPellet2.resx">
-      <DependentUpon>rptTemperaturasPellet2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmMenuTemperatura.resx">
-      <DependentUpon>xfrmMenuTemperatura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmSelectTransaccion.resx">
-      <DependentUpon>xfrmSelectTransaccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaExtusora.resx">
-      <DependentUpon>xfrmTemperaturaExtusora.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaMolinosCamaron.resx">
-      <DependentUpon>xfrmTemperaturaMolinosCamaron.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaMolinosTilapia.resx">
-      <DependentUpon>xfrmTemperaturaMolinosTilapia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaPellet_1.resx">
-      <DependentUpon>xfrmTemperaturaPellet_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\xfrmTemperaturaPellet_2.resx">
-      <DependentUpon>xfrmTemperaturaPellet_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\PT\EditarProductos.ii-CN.resx">
-      <DependentUpon>EditarProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\PT\EditarProductos.resx">
-      <DependentUpon>EditarProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\PT\EditarProductos.yo.resx">
-      <DependentUpon>EditarProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\PT\frmNewProductoUniversal.resx">
-      <DependentUpon>frmNewProductoUniversal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\PT\PT_AgregarGasto.resx">
-      <DependentUpon>PT_AgregarGasto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\PT\PT_NewGrp_Dtl.resx">
-      <DependentUpon>PT_NewGrp_Dtl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\PT\PT_NuevoProducto.resx">
-      <DependentUpon>PT_NuevoProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\PT\PT_Productos.resx">
-      <DependentUpon>PT_Productos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.resx">
       <DependentUpon>RPT_FB_Manual_RM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM_Complete.resx">
-      <DependentUpon>RPT_FB_Manual_RM_Complete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_NC_BuildReport.resx">
       <DependentUpon>RPT_NC_BuildReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_PRD_Formula_Local.resx">
       <DependentUpon>RPT_PRD_Formula_Local.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\SAP\frmLoginSAP.resx">
-      <DependentUpon>frmLoginSAP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
@@ -6307,20 +5032,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo1.ico" />
-    <None Include="Resources\_click_32X32.png" />
     <None Include="Resources\2264828.png" />
     <None Include="Resources\Accept-icon128px.png" />
     <None Include="Resources\Accept_24x24.png" />
-    <None Include="Resources\Accept_32x32.png" />
-    <None Include="Resources\Accept_48x48.png" />
-    <None Include="Resources\activate_32x32.png" />
-    <None Include="Resources\add_32x32.png" />
-    <None Include="Resources\add_16x16.png" />
-    <None Include="Resources\ACS_Official_Folder_Png.png" />
-    <None Include="Resources\activate_24x24.png" />
-    <None Include="Resources\accept2_24.png" />
-    <None Include="Resources\accept2_48.png" />
-    <None Include="Resources\accept2_32.png" />
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
     <None Include="Resources\batch-processing_32X32.png" />
@@ -6328,25 +5042,13 @@
     <Content Include="Resources\ajustes_kardex2.png" />
     <None Include="Resources\Alerta64px.png" />
     <Content Include="Resources\alimentacion_manual.png" />
-    <None Include="Resources\approve_16.png" />
-    <None Include="Resources\approve_24.png" />
-    <None Include="Resources\approve_32.png" />
-    <None Include="Resources\Asociar Arribos_fix_x24.png" />
-    <None Include="Resources\Asociar Arribos_fix_x32.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />
-    <None Include="Resources\calendar_day_24x24.png" />
-    <None Include="Resources\calendar_month_24x24.png" />
     <Content Include="Resources\cancel.png" />
     <None Include="Resources\cancel_24x24.png" />
-    <None Include="Resources\cancel_32x32.png" />
-    <None Include="Resources\cancel2_24.png" />
-    <None Include="Resources\cancel2_32.png" />
     <Content Include="Resources\cargo.png" />
     <None Include="Resources\CCT-2000C-SQ-800x800.jpg" />
-    <None Include="Resources\check-icon16px.png" />
-    <None Include="Resources\check-icon24px.png" />
     <Content Include="Resources\check-in.png" />
     <None Include="Resources\edit-table%281%29.png" />
     <None Include="Resources\Container-icon32px.png" />
@@ -6361,20 +5063,7 @@
     <None Include="Resources\close32px.png" />
     <None Include="Resources\check32px.png" />
     <None Include="Resources\close32px1.png" />
-    <None Include="Resources\detail_32x32.png" />
-    <None Include="Resources\Details_32x32.png" />
-    <None Include="Resources\copy_32x32.png" />
-    <None Include="Resources\copy_24x24.png" />
-    <None Include="Resources\copy_48x48.png" />
-    <None Include="Resources\code_16.png" />
-    <None Include="Resources\c_16.png" />
-    <None Include="Resources\close_round_24.png" />
-    <None Include="Resources\click_32X32.png" />
     <Content Include="Resources\devoluciones.png" />
-    <None Include="Resources\disable_32x32.png" />
-    <None Include="Resources\disable_24x24.png" />
-    <None Include="Resources\down_24x24.png" />
-    <None Include="Resources\down_32x32.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />
@@ -6389,34 +5078,12 @@
     <None Include="Resources\floppy-disk32px1.png" />
     <None Include="Resources\exit_24x24.png" />
     <None Include="Resources\it_services_16px.png" />
-    <None Include="Resources\formula_32x32.png" />
-    <None Include="Resources\excel_24x24.png" />
-    <None Include="Resources\edit_32x32.png" />
-    <None Include="Resources\formula_24x24.png" />
-    <None Include="Resources\formula_nucleo_x24.png" />
-    <None Include="Resources\formula_nucleo_x32.png" />
-    <None Include="Resources\edit_24x24.png" />
-    <None Include="Resources\Extract-todays-changes-icon16px.png" />
-    <None Include="Resources\fml_estr_gen_x24.png" />
-    <None Include="Resources\fml_estr_gen_x32.png" />
-    <None Include="Resources\E_16.png" />
-    <None Include="Resources\f_16.png" />
-    <None Include="Resources\exit_32x32.png" />
-    <None Include="Resources\excel_32x32.png" />
-    <None Include="Resources\export_32x32.png" />
-    <None Include="Resources\Generate_24x24.png" />
-    <None Include="Resources\Generate_32x32.png" />
-    <None Include="Resources\Excel-2-icon32px.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\log-file24px.png" />
     <None Include="Resources\Logo_x32.png" />
     <None Include="Resources\List-details-icon16px.png" />
-    <None Include="Resources\materials.png" />
-    <None Include="Resources\lab-main-img-banner.png" />
-    <None Include="Resources\Logo Aquafeed.png" />
-    <None Include="Resources\logoAguaFeed.png" />
     <Content Include="Resources\medal.png" />
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />
@@ -6424,61 +5091,17 @@
     <None Include="Resources\oil-barrel.png" />
     <None Include="Resources\pin16x16.png" />
     <None Include="Resources\pin_expand_16x16.png" />
-    <None Include="Resources\pdf_24x24.png" />
-    <None Include="Resources\pdf_32x32.png" />
-    <None Include="Resources\no-image-icon-0.jpg" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
     <None Include="Resources\portapapeles32px.png" />
-    <None Include="Resources\pp_icon_24.png" />
-    <None Include="Resources\pp_new_32.png" />
-    <None Include="Resources\pp_OnProcess_32.png" />
-    <None Include="Resources\pp_old_32.png" />
-    <None Include="Resources\po_new_24.png" />
-    <None Include="Resources\po_edit_24.png" />
-    <None Include="Resources\po_delete_24.png" />
-    <None Include="Resources\pp_queue_plan_24.png" />
-    <None Include="Resources\pp_queue_plan_32.png" />
-    <None Include="Resources\pp_active_32.png" />
-    <None Include="Resources\pp_active_plan_32.png" />
-    <None Include="Resources\pp_cancel_plan_32.png" />
-    <None Include="Resources\pp_OnProcess_24.png" />
-    <None Include="Resources\pp_new_24.png" />
-    <None Include="Resources\pp_old_24.png" />
-    <None Include="Resources\prod.png" />
-    <None Include="Resources\print_24x24.png" />
-    <None Include="Resources\print_32x32.png" />
-    <None Include="Resources\print_preview_24.png" />
-    <None Include="Resources\print_preview_32.png" />
     <Content Include="Resources\production.png" />
-    <None Include="Resources\pt_32x32.png" />
-    <None Include="Resources\quitar_mp_x24.png" />
-    <None Include="Resources\quitar_mp_x32.png" />
-    <None Include="Resources\p_16.png" />
     <Content Include="Resources\raw-material.png" />
     <Content Include="Resources\raw-material1.png" />
     <None Include="Resources\seo-report24px.png" />
     <None Include="Resources\seo-report64px.png" />
     <None Include="Resources\seo-report32px_.png" />
     <None Include="Resources\refresh-button32px.png" />
-    <None Include="Resources\RawMaterial_32x32.png" />
-    <None Include="Resources\search_16x16.png" />
-    <None Include="Resources\search_24x24.png" />
-    <None Include="Resources\search_32x32.png" />
-    <None Include="Resources\save_32x32.png" />
-    <None Include="Resources\saveChanges_32x32.png" />
-    <None Include="Resources\remove_16x16.png" />
-    <None Include="Resources\refresh_24x24.png" />
-    <None Include="Resources\report_consumr_24x24.png" />
-    <None Include="Resources\report_consumr_32x32.png" />
-    <None Include="Resources\report_consumr_48x48.png" />
-    <None Include="Resources\report_32x32.png" />
-    <None Include="Resources\reaload_24x24.png" />
-    <None Include="Resources\reaload_32x32.png" />
-    <None Include="Resources\refresh_32x32.png" />
-    <None Include="Resources\salir_24.png" />
-    <None Include="Resources\Salir_32.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />
@@ -6493,10 +5116,6 @@
     <None Include="Resources\signpost.png" />
     <None Include="Resources\signpost24X24.png" />
     <None Include="Resources\sigma_32X32.png" />
-    <None Include="Resources\Sin título1.png" />
-    <None Include="Resources\Sin título21.png" />
-    <None Include="Resources\Sin título22.png" />
-    <None Include="Resources\Sin título2.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
@@ -6505,8 +5124,6 @@
     <None Include="Resources\weighing-machine_32X32.png" />
     <None Include="Resources\web_apply_32px.png" />
     <None Include="Resources\weighing-machine_32X321.png" />
-    <None Include="Resources\viewFormula_16x16.png" />
-    <None Include="Resources\viewFormula_32x32.png" />
     <Content Include="Resources\weighing_machine24px.png" />
     <Content Include="Resources\wheat.png" />
     <Content Include="Resources\wrench.png" />
@@ -6523,6 +5140,25 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SAPbouiCOM">
+      <Guid>{6048236A-956D-498D-A6F1-9C81C13AB6E8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

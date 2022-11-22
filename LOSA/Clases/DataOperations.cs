@@ -236,7 +236,7 @@ namespace ACS.Classes
 
         public SAPbobsCOM.Company Company(string puser, string ppass)
         {
-            SAPbobsCOM.Company oCmp;
+            SAPbobsCOM.Company oCmp; 
             oCmp = new SAPbobsCOM.Company();
             oCmp.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016;
             oCmp.LicenseServer = Globals.ServerlicenseSDK;
