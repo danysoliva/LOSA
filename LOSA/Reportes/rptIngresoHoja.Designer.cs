@@ -41,6 +41,8 @@
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.txtNTransferencia = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -79,6 +81,8 @@
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.id_ingreso = new DevExpress.XtraReports.Parameters.Parameter();
+            this.is_granel = new DevExpress.XtraReports.Parameters.Parameter();
+            this.id_materia_prima = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel29 = new DevExpress.XtraReports.UI.XRLabel();
@@ -239,8 +243,6 @@
             this.xrLabel154 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel156 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel155 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.txtNTransferencia = new DevExpress.XtraReports.UI.XRLabel();
             this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -404,6 +406,33 @@
             this.xrLabel1});
             this.ReportHeader.HeightF = 222.5833F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // txtNTransferencia
+            // 
+            this.txtNTransferencia.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.txtNTransferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtNTransferencia.LocationFloat = new DevExpress.Utils.PointFloat(898.2326F, 73.82736F);
+            this.txtNTransferencia.Multiline = true;
+            this.txtNTransferencia.Name = "txtNTransferencia";
+            this.txtNTransferencia.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txtNTransferencia.SizeF = new System.Drawing.SizeF(90.34204F, 25.08334F);
+            this.txtNTransferencia.StylePriority.UseBorders = false;
+            this.txtNTransferencia.StylePriority.UseFont = false;
+            this.txtNTransferencia.Visible = false;
+            // 
+            // xrLabel6
+            // 
+            this.xrLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(735.8514F, 73.82736F);
+            this.xrLabel6.Multiline = true;
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(162.381F, 25.08334F);
+            this.xrLabel6.StylePriority.UseFont = false;
+            this.xrLabel6.Text = "N Transferencia";
+            this.xrLabel6.Visible = false;
             // 
             // xrTable2
             // 
@@ -935,6 +964,20 @@
             this.id_ingreso.Type = typeof(int);
             this.id_ingreso.ValueInfo = "0";
             this.id_ingreso.Visible = false;
+            // 
+            // is_granel
+            // 
+            this.is_granel.Name = "is_granel";
+            this.is_granel.Type = typeof(int);
+            this.is_granel.ValueInfo = "0";
+            this.is_granel.Visible = false;
+            // 
+            // id_materia_prima
+            // 
+            this.id_materia_prima.Name = "id_materia_prima";
+            this.id_materia_prima.Type = typeof(short);
+            this.id_materia_prima.ValueInfo = "0";
+            this.id_materia_prima.Visible = false;
             // 
             // xrLabel27
             // 
@@ -3156,38 +3199,13 @@
             this.xrLabel155.StylePriority.UseBorders = false;
             this.xrLabel155.StylePriority.UseFont = false;
             // 
-            // xrLabel6
-            // 
-            this.xrLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(735.8514F, 73.82736F);
-            this.xrLabel6.Multiline = true;
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(162.381F, 25.08334F);
-            this.xrLabel6.StylePriority.UseFont = false;
-            this.xrLabel6.Text = "N Transferencia";
-            this.xrLabel6.Visible = false;
-            // 
-            // txtNTransferencia
-            // 
-            this.txtNTransferencia.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.txtNTransferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtNTransferencia.LocationFloat = new DevExpress.Utils.PointFloat(898.2326F, 73.82736F);
-            this.txtNTransferencia.Multiline = true;
-            this.txtNTransferencia.Name = "txtNTransferencia";
-            this.txtNTransferencia.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtNTransferencia.SizeF = new System.Drawing.SizeF(90.34204F, 25.08334F);
-            this.txtNTransferencia.StylePriority.UseBorders = false;
-            this.txtNTransferencia.StylePriority.UseFont = false;
-            this.txtNTransferencia.Visible = false;
-            // 
             // xrSubreport1
             // 
             this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 383.4886F);
             this.xrSubreport1.Name = "xrSubreport1";
             this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_ingreso", this.id_ingreso));
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_materia_prima", this.id_materia_prima));
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("is_granel", this.is_granel));
             this.xrSubreport1.ReportSource = new LOSA.Reportes.subReporteIngresoHoja();
             this.xrSubreport1.SizeF = new System.Drawing.SizeF(862.6894F, 100F);
             // 
@@ -3210,7 +3228,9 @@
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.id_ingreso});
+            this.id_ingreso,
+            this.id_materia_prima,
+            this.is_granel});
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -3434,5 +3454,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel69;
         private DevExpress.XtraReports.UI.XRLabel txtNTransferencia;
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
+        private DevExpress.XtraReports.Parameters.Parameter is_granel;
+        private DevExpress.XtraReports.Parameters.Parameter id_materia_prima;
     }
 }
