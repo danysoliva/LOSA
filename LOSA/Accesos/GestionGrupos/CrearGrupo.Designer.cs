@@ -67,7 +67,7 @@ namespace LOSA.Accesos.GestionGrupos
             this.checkEditHabilitado.Location = new System.Drawing.Point(26, 153);
             this.checkEditHabilitado.Name = "checkEditHabilitado";
             this.checkEditHabilitado.Properties.Caption = "Habilitado";
-            this.checkEditHabilitado.Size = new System.Drawing.Size(75, 20);
+            this.checkEditHabilitado.Size = new System.Drawing.Size(75, 19);
             this.checkEditHabilitado.TabIndex = 3;
             // 
             // textEdit1

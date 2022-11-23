@@ -60,6 +60,7 @@ namespace LOSA.TransaccionesMP
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposEntregaMicros = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colcant_entregada_micros = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -102,7 +103,6 @@ namespace LOSA.TransaccionesMP
             this.ColSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
-            this.colcant_entregada_micros = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -355,6 +355,16 @@ namespace LOSA.TransaccionesMP
             this.reposEntregaMicros.Name = "reposEntregaMicros";
             this.reposEntregaMicros.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.reposEntregaMicros.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposEntregaMicros_ButtonClick);
+            // 
+            // colcant_entregada_micros
+            // 
+            this.colcant_entregada_micros.DisplayFormat.FormatString = "n2";
+            this.colcant_entregada_micros.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcant_entregada_micros.FieldName = "cant_entregada_micros";
+            this.colcant_entregada_micros.Name = "colcant_entregada_micros";
+            this.colcant_entregada_micros.OptionsColumn.AllowEdit = false;
+            this.colcant_entregada_micros.Visible = true;
+            this.colcant_entregada_micros.VisibleIndex = 7;
             // 
             // gcTarima
             // 
@@ -907,16 +917,6 @@ namespace LOSA.TransaccionesMP
             this.cmdLotesProximosVencerMP.TabIndex = 113;
             this.cmdLotesProximosVencerMP.Text = "Orden Lotes MP \r\nUltima Tarima Escaneada";
             this.cmdLotesProximosVencerMP.Click += new System.EventHandler(this.cmdLotesProximosVencerMP_Click);
-            // 
-            // colcant_entregada_micros
-            // 
-            this.colcant_entregada_micros.DisplayFormat.FormatString = "n2";
-            this.colcant_entregada_micros.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colcant_entregada_micros.FieldName = "cant_entregada_micros";
-            this.colcant_entregada_micros.Name = "colcant_entregada_micros";
-            this.colcant_entregada_micros.OptionsColumn.AllowEdit = false;
-            this.colcant_entregada_micros.Visible = true;
-            this.colcant_entregada_micros.VisibleIndex = 7;
             // 
             // frmEntregaTarimaReq_3
             // 

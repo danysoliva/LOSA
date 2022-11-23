@@ -80,9 +80,10 @@
             this.txtsap = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             this.id_ingreso = new DevExpress.XtraReports.Parameters.Parameter();
-            this.is_granel = new DevExpress.XtraReports.Parameters.Parameter();
             this.id_materia_prima = new DevExpress.XtraReports.Parameters.Parameter();
+            this.is_granel = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel29 = new DevExpress.XtraReports.UI.XRLabel();
@@ -243,7 +244,6 @@
             this.xrLabel154 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel156 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel155 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportes1)).BeginInit();
@@ -958,6 +958,16 @@
             this.GroupFooter1.HeightF = 541.3378F;
             this.GroupFooter1.Name = "GroupFooter1";
             // 
+            // xrSubreport1
+            // 
+            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 383.4886F);
+            this.xrSubreport1.Name = "xrSubreport1";
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_ingreso", this.id_ingreso));
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_materia_prima", this.id_materia_prima));
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("is_granel", this.is_granel));
+            this.xrSubreport1.ReportSource = new LOSA.Reportes.subReporteIngresoHoja();
+            this.xrSubreport1.SizeF = new System.Drawing.SizeF(862.6894F, 100F);
+            // 
             // id_ingreso
             // 
             this.id_ingreso.Name = "id_ingreso";
@@ -965,19 +975,19 @@
             this.id_ingreso.ValueInfo = "0";
             this.id_ingreso.Visible = false;
             // 
-            // is_granel
-            // 
-            this.is_granel.Name = "is_granel";
-            this.is_granel.Type = typeof(int);
-            this.is_granel.ValueInfo = "0";
-            this.is_granel.Visible = false;
-            // 
             // id_materia_prima
             // 
             this.id_materia_prima.Name = "id_materia_prima";
-            this.id_materia_prima.Type = typeof(short);
+            this.id_materia_prima.Type = typeof(int);
             this.id_materia_prima.ValueInfo = "0";
             this.id_materia_prima.Visible = false;
+            // 
+            // is_granel
+            // 
+            this.is_granel.Name = "is_granel";
+            this.is_granel.Type = typeof(bool);
+            this.is_granel.ValueInfo = "False";
+            this.is_granel.Visible = false;
             // 
             // xrLabel27
             // 
@@ -1639,7 +1649,7 @@
             // 
             this.xrCheckBox5.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrCheckBox5.Font = new System.Drawing.Font("Arial", 8F);
-            this.xrCheckBox5.LocationFloat = new DevExpress.Utils.PointFloat(867.3832F, 123.0832F);
+            this.xrCheckBox5.LocationFloat = new DevExpress.Utils.PointFloat(867.3834F, 123.0832F);
             this.xrCheckBox5.Name = "xrCheckBox5";
             this.xrCheckBox5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrCheckBox5.SizeF = new System.Drawing.SizeF(30.84924F, 31.33332F);
@@ -3199,16 +3209,6 @@
             this.xrLabel155.StylePriority.UseBorders = false;
             this.xrLabel155.StylePriority.UseFont = false;
             // 
-            // xrSubreport1
-            // 
-            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 383.4886F);
-            this.xrSubreport1.Name = "xrSubreport1";
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_ingreso", this.id_ingreso));
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_materia_prima", this.id_materia_prima));
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("is_granel", this.is_granel));
-            this.xrSubreport1.ReportSource = new LOSA.Reportes.subReporteIngresoHoja();
-            this.xrSubreport1.SizeF = new System.Drawing.SizeF(862.6894F, 100F);
-            // 
             // rptIngresoHoja
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -3454,7 +3454,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel69;
         private DevExpress.XtraReports.UI.XRLabel txtNTransferencia;
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
-        private DevExpress.XtraReports.Parameters.Parameter is_granel;
         private DevExpress.XtraReports.Parameters.Parameter id_materia_prima;
+        public DevExpress.XtraReports.Parameters.Parameter is_granel;
     }
 }

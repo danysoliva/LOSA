@@ -65,6 +65,8 @@
             this.xrLabel18 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.lblLotePT = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
@@ -75,8 +77,6 @@
             this.BarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
             this.lblNombreProducto = new DevExpress.XtraReports.UI.XRLabel();
             this.lblNumero = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel26 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblLotePT = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dSReportes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -132,7 +132,10 @@
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel8.SizeF = new System.Drawing.SizeF(85.74371F, 23F);
             this.xrLabel8.StylePriority.UseBorders = false;
+            this.xrLabel8.StylePriority.UseTextAlignment = false;
             this.xrLabel8.Text = "xrLabel8";
+            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.xrLabel8.TextFormatString = "{0:n2}";
             // 
             // xrLabel5
             // 
@@ -183,7 +186,10 @@
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(168.1824F, 23F);
             this.xrLabel2.StylePriority.UseBorders = false;
+            this.xrLabel2.StylePriority.UseTextAlignment = false;
             this.xrLabel2.Text = "xrLabel2";
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.xrLabel2.TextFormatString = "{0:n2}";
             // 
             // dSReportes1
             // 
@@ -559,6 +565,39 @@
             this.PageHeader.HeightF = 199.2916F;
             this.PageHeader.Name = "PageHeader";
             // 
+            // lblLotePT
+            // 
+            this.lblLotePT.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblLotePT.BorderWidth = 2F;
+            this.lblLotePT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLotePT.LocationFloat = new DevExpress.Utils.PointFloat(554.1249F, 127.8973F);
+            this.lblLotePT.Name = "lblLotePT";
+            this.lblLotePT.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblLotePT.SizeF = new System.Drawing.SizeF(221.875F, 29.25F);
+            this.lblLotePT.StylePriority.UseBorders = false;
+            this.lblLotePT.StylePriority.UseBorderWidth = false;
+            this.lblLotePT.StylePriority.UseFont = false;
+            this.lblLotePT.StylePriority.UseTextAlignment = false;
+            this.lblLotePT.Text = "N/D";
+            this.lblLotePT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel26
+            // 
+            this.xrLabel26.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrLabel26.BorderWidth = 2F;
+            this.xrLabel26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(356.2538F, 127.8973F);
+            this.xrLabel26.Name = "xrLabel26";
+            this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel26.SizeF = new System.Drawing.SizeF(197.8712F, 29.25F);
+            this.xrLabel26.StylePriority.UseBorders = false;
+            this.xrLabel26.StylePriority.UseBorderWidth = false;
+            this.xrLabel26.StylePriority.UseFont = false;
+            this.xrLabel26.StylePriority.UseTextAlignment = false;
+            this.xrLabel26.Text = "Lote PT:";
+            this.xrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // xrLabel25
             // 
             this.xrLabel25.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
@@ -619,6 +658,7 @@
             this.lblnumeroSAP.StylePriority.UseTextAlignment = false;
             this.lblnumeroSAP.Text = "Numero SAP: ";
             this.lblnumeroSAP.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.lblnumeroSAP.Visible = false;
             // 
             // xrLabel9
             // 
@@ -703,39 +743,6 @@
             this.lblNumero.StylePriority.UseTextAlignment = false;
             this.lblNumero.Text = "Numero de requisición: ";
             this.lblNumero.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrLabel26
-            // 
-            this.xrLabel26.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel26.BorderWidth = 2F;
-            this.xrLabel26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(356.2538F, 127.8973F);
-            this.xrLabel26.Name = "xrLabel26";
-            this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel26.SizeF = new System.Drawing.SizeF(197.8712F, 29.25F);
-            this.xrLabel26.StylePriority.UseBorders = false;
-            this.xrLabel26.StylePriority.UseBorderWidth = false;
-            this.xrLabel26.StylePriority.UseFont = false;
-            this.xrLabel26.StylePriority.UseTextAlignment = false;
-            this.xrLabel26.Text = "Lote PT:";
-            this.xrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // lblLotePT
-            // 
-            this.lblLotePT.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblLotePT.BorderWidth = 2F;
-            this.lblLotePT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLotePT.LocationFloat = new DevExpress.Utils.PointFloat(554.1249F, 127.8973F);
-            this.lblLotePT.Name = "lblLotePT";
-            this.lblLotePT.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblLotePT.SizeF = new System.Drawing.SizeF(221.875F, 29.25F);
-            this.lblLotePT.StylePriority.UseBorders = false;
-            this.lblLotePT.StylePriority.UseBorderWidth = false;
-            this.lblLotePT.StylePriority.UseFont = false;
-            this.lblLotePT.StylePriority.UseTextAlignment = false;
-            this.lblLotePT.Text = "N/D";
-            this.lblLotePT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // lblNumeroReq
             // 

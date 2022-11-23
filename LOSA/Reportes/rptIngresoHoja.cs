@@ -40,6 +40,11 @@ namespace LOSA.Reportes
                 //load_lote();
             }
             load_lote();
+
+            id_ingreso.Value = Pid;
+            id_materia_prima.Value = Pid_mp;
+            is_granel.Value = isGranel;
+
             if (isTraslado > 0)
             {
                 xrLabel1.Text = @"TRASLADO DE MATERIA PRIMA";

@@ -30,7 +30,15 @@
         {
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmplanes));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.grd_planes = new DevExpress.XtraGrid.GridControl();
             this.ds_despachos = new LOSA.Despachos.ds_despachos();
@@ -66,10 +74,9 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(169, 13);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelControl1.Location = new System.Drawing.Point(145, 11);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(464, 49);
+            this.labelControl1.Size = new System.Drawing.Size(398, 40);
             this.labelControl1.TabIndex = 37;
             this.labelControl1.Text = "Planes de Despacho";
             // 
@@ -80,13 +87,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_planes.DataMember = "planes_creados";
             this.grd_planes.DataSource = this.ds_despachos;
-            this.grd_planes.Location = new System.Drawing.Point(1, 80);
+            this.grd_planes.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grd_planes.Location = new System.Drawing.Point(1, 65);
             this.grd_planes.MainView = this.grdv_planes;
+            this.grd_planes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_planes.Name = "grd_planes";
             this.grd_planes.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnver,
             this.btnejecutar});
-            this.grd_planes.Size = new System.Drawing.Size(833, 559);
+            this.grd_planes.Size = new System.Drawing.Size(714, 454);
             this.grd_planes.TabIndex = 38;
             this.grd_planes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_planes});
@@ -116,6 +125,7 @@
             this.colid_orden_de_venta,
             this.colitemcode,
             this.colprioridad});
+            this.grdv_planes.DetailHeight = 284;
             this.grdv_planes.GridControl = this.grd_planes;
             this.grdv_planes.Name = "grdv_planes";
             this.grdv_planes.OptionsBehavior.AutoExpandAllGroups = true;
@@ -125,69 +135,77 @@
             // 
             this.colDocNum.Caption = "N. SAP";
             this.colDocNum.FieldName = "DocNum";
+            this.colDocNum.MinWidth = 17;
             this.colDocNum.Name = "colDocNum";
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
-            this.colDocNum.Width = 82;
+            this.colDocNum.Width = 70;
             // 
             // colid
             // 
             this.colid.FieldName = "id";
+            this.colid.MinWidth = 17;
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
+            this.colid.Width = 64;
             // 
             // colCardName
             // 
             this.colCardName.Caption = "Cod. Cliente";
             this.colCardName.FieldName = "CardName";
+            this.colCardName.MinWidth = 17;
             this.colCardName.Name = "colCardName";
             this.colCardName.OptionsColumn.AllowEdit = false;
-            this.colCardName.Width = 196;
+            this.colCardName.Width = 168;
             // 
             // colCardCode
             // 
             this.colCardCode.Caption = "Cliente";
             this.colCardCode.FieldName = "CardCode";
+            this.colCardCode.MinWidth = 17;
             this.colCardCode.Name = "colCardCode";
             this.colCardCode.OptionsColumn.AllowEdit = false;
-            this.colCardCode.Width = 133;
+            this.colCardCode.Width = 114;
             // 
             // coldate_plafinificada
             // 
             this.coldate_plafinificada.Caption = "Fecha de plan";
             this.coldate_plafinificada.FieldName = "date_plafinificada";
+            this.coldate_plafinificada.MinWidth = 17;
             this.coldate_plafinificada.Name = "coldate_plafinificada";
             this.coldate_plafinificada.OptionsColumn.AllowEdit = false;
             this.coldate_plafinificada.Visible = true;
             this.coldate_plafinificada.VisibleIndex = 3;
-            this.coldate_plafinificada.Width = 168;
+            this.coldate_plafinificada.Width = 144;
             // 
             // coldscripcion
             // 
             this.coldscripcion.Caption = "Producto T.";
             this.coldscripcion.FieldName = "dscripcion";
+            this.coldscripcion.MinWidth = 17;
             this.coldscripcion.Name = "coldscripcion";
             this.coldscripcion.OptionsColumn.AllowEdit = false;
             this.coldscripcion.Visible = true;
             this.coldscripcion.VisibleIndex = 1;
-            this.coldscripcion.Width = 154;
+            this.coldscripcion.Width = 132;
             // 
             // colver
             // 
             this.colver.Caption = "Ver plan";
             this.colver.ColumnEdit = this.btnver;
+            this.colver.MinWidth = 17;
             this.colver.Name = "colver";
             this.colver.Visible = true;
             this.colver.VisibleIndex = 5;
-            this.colver.Width = 85;
+            this.colver.Width = 73;
             // 
             // btnver
             // 
             this.btnver.AutoHeight = false;
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnver.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions1, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnver.Name = "btnver";
             this.btnver.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnver.Click += new System.EventHandler(this.btnver_Click);
@@ -196,17 +214,18 @@
             // 
             this.colejecutar.Caption = "Ejecutar";
             this.colejecutar.ColumnEdit = this.btnejecutar;
+            this.colejecutar.MinWidth = 17;
             this.colejecutar.Name = "colejecutar";
             this.colejecutar.Visible = true;
             this.colejecutar.VisibleIndex = 6;
-            this.colejecutar.Width = 89;
+            this.colejecutar.Width = 76;
             // 
             // btnejecutar
             // 
             this.btnejecutar.AutoHeight = false;
             editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnejecutar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(editorButtonImageOptions2, DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, null)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnejecutar.Name = "btnejecutar";
             this.btnejecutar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnejecutar.Click += new System.EventHandler(this.btnejecutar_Click);
@@ -214,26 +233,30 @@
             // colid_orden_de_venta
             // 
             this.colid_orden_de_venta.FieldName = "id_orden_de_venta";
+            this.colid_orden_de_venta.MinWidth = 17;
             this.colid_orden_de_venta.Name = "colid_orden_de_venta";
+            this.colid_orden_de_venta.Width = 64;
             // 
             // colitemcode
             // 
             this.colitemcode.Caption = "Cod.  PT.";
             this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.MinWidth = 17;
             this.colitemcode.Name = "colitemcode";
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 2;
-            this.colitemcode.Width = 122;
+            this.colitemcode.Width = 105;
             // 
             // colprioridad
             // 
             this.colprioridad.Caption = "Prioridad";
             this.colprioridad.FieldName = "prioridad";
+            this.colprioridad.MinWidth = 17;
             this.colprioridad.Name = "colprioridad";
             this.colprioridad.Visible = true;
             this.colprioridad.VisibleIndex = 4;
-            this.colprioridad.Width = 113;
+            this.colprioridad.Width = 97;
             // 
             // btnAtras
             // 
@@ -245,23 +268,23 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(644, 4);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAtras.Location = new System.Drawing.Point(552, 3);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(180, 50);
+            this.btnAtras.Size = new System.Drawing.Size(154, 41);
             this.btnAtras.TabIndex = 39;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // frmplanes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 642);
+            this.ClientSize = new System.Drawing.Size(714, 522);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.grd_planes);
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmplanes";
             this.Text = "frmplanes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
