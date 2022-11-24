@@ -1750,6 +1750,19 @@ namespace LOSA
             }
         }
 
+        private void nbPlanProduccion_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
 
+                Prod_Ordenes_Produccion frm = new Prod_Ordenes_Produccion(ActiveUserCode, ActiveUserName, ActiveUserType);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }
