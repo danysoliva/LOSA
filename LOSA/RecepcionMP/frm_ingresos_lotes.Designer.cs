@@ -122,6 +122,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(110, 73);
             this.btnAgregar.TabIndex = 29;
             this.btnAgregar.Text = "Agregar \r\nlote";
+            this.btnAgregar.Visible = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // labelControl3
