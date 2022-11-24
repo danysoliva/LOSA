@@ -11,9 +11,10 @@ using DevExpress.XtraEditors;
 using ACS.Classes;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
-using ACS.DataSetx;
+using LOSA.MigracionACS.DataSetx;
+using LOSA.Clases;
 
-namespace ACS.Produccion
+namespace LOSA.MigracionACS.Produccion
 {
     public partial class PP_Nuevo_Plan_full_Pedido : DevExpress.XtraEditors.XtraForm
     {
@@ -348,7 +349,7 @@ namespace ACS.Produccion
                     int id_inserted = 0;
                     try
                     {
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringACS);
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
                         cn.Open();
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -474,7 +475,7 @@ namespace ACS.Produccion
                     int id_inserted = 0;
                     try
                     {
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringACS);
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
                         cn.Open();
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -1315,7 +1316,7 @@ namespace ACS.Produccion
             try
             {
                 string query = @"sp_get_id_formula_pedido_detalle";
-                 SqlConnection  cn = new SqlConnection(dp.ConnectionStringACS);
+                 SqlConnection  cn = new SqlConnection(dp.ConnectionStringCostos);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;

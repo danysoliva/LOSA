@@ -1,6 +1,6 @@
 ﻿namespace LOSA
 {
-    partial class frmOpciones
+    partial class frmOpciones2
     {
         /// <summary>
         /// Required designer variable.
@@ -171,6 +171,8 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1630,8 +1632,9 @@
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
             this.navBarControl1.Size = new System.Drawing.Size(347, 518);
-            this.navBarControl1.TabIndex = 20;
+            this.navBarControl1.TabIndex = 19;
             this.navBarControl1.Text = "navBarControl1";
+            this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
             // 
             // navBarGroup1
             // 
@@ -1663,7 +1666,7 @@
             this.navBarItem1.Caption = "Panel del Operador";
             this.navBarItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem1.ImageOptions.SvgImage")));
             this.navBarItem1.Name = "navBarItem1";
-            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
+            this.navBarItem1.LinkPressed += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkPressed);
             // 
             // nbTrazabilidad
             // 
@@ -1676,6 +1679,7 @@
             this.nbTrazabilidad.Caption = "Trazabilidad de Lote";
             this.nbTrazabilidad.ImageOptions.SmallImage = global::LOSA.Properties.Resources.checklist;
             this.nbTrazabilidad.Name = "nbTrazabilidad";
+            this.nbTrazabilidad.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbTrazabilidad_LinkClicked);
             // 
             // nbPlanProduccion
             // 
@@ -1688,6 +1692,7 @@
             this.nbPlanProduccion.Caption = "Plan de Producción";
             this.nbPlanProduccion.ImageOptions.SmallImage = global::LOSA.Properties.Resources.orders_production_24px;
             this.nbPlanProduccion.Name = "nbPlanProduccion";
+            this.nbPlanProduccion.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbPlanProduccion_LinkClicked);
             // 
             // bnProgramaProduccion
             // 
@@ -1970,7 +1975,6 @@
             this.navBarGroup3.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup3.AppearancePressed.Options.UseFont = true;
             this.navBarGroup3.Caption = "Generales";
-            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
@@ -2066,7 +2070,7 @@
             this.simpleButton33.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton33.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton33.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton33.ImageOptions.Image")));
-            this.simpleButton33.Location = new System.Drawing.Point(392, 223);
+            this.simpleButton33.Location = new System.Drawing.Point(382, 206);
             this.simpleButton33.Name = "simpleButton33";
             this.simpleButton33.Size = new System.Drawing.Size(199, 71);
             this.simpleButton33.TabIndex = 18;
@@ -2082,7 +2086,7 @@
             this.simpleButton17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
-            this.simpleButton17.Location = new System.Drawing.Point(610, 223);
+            this.simpleButton17.Location = new System.Drawing.Point(600, 206);
             this.simpleButton17.Name = "simpleButton17";
             this.simpleButton17.Size = new System.Drawing.Size(199, 71);
             this.simpleButton17.TabIndex = 17;
@@ -2096,7 +2100,7 @@
             this.simpleButton7.Appearance.Options.UseFont = true;
             this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
-            this.simpleButton7.Location = new System.Drawing.Point(610, 131);
+            this.simpleButton7.Location = new System.Drawing.Point(600, 114);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(199, 71);
             this.simpleButton7.TabIndex = 16;
@@ -2112,7 +2116,7 @@
             this.btnPrint.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnPrint.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(610, 40);
+            this.btnPrint.Location = new System.Drawing.Point(600, 23);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(199, 71);
             this.btnPrint.TabIndex = 11;
@@ -2128,7 +2132,7 @@
             this.cmdTarimasPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cmdTarimasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdTarimasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdTarimasPT.ImageOptions.Image")));
-            this.cmdTarimasPT.Location = new System.Drawing.Point(392, 131);
+            this.cmdTarimasPT.Location = new System.Drawing.Point(382, 114);
             this.cmdTarimasPT.Name = "cmdTarimasPT";
             this.cmdTarimasPT.Size = new System.Drawing.Size(199, 71);
             this.cmdTarimasPT.TabIndex = 10;
@@ -2144,7 +2148,7 @@
             this.btnAlimentacionManual.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnAlimentacionManual.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAlimentacionManual.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAlimentacionManual.ImageOptions.Image")));
-            this.btnAlimentacionManual.Location = new System.Drawing.Point(392, 40);
+            this.btnAlimentacionManual.Location = new System.Drawing.Point(382, 23);
             this.btnAlimentacionManual.Name = "btnAlimentacionManual";
             this.btnAlimentacionManual.Size = new System.Drawing.Size(199, 71);
             this.btnAlimentacionManual.TabIndex = 9;
@@ -2263,6 +2267,15 @@
             this.labelControl3.Size = new System.Drawing.Size(578, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
+            // 
+
+            // navBarItem2
+            // 
+            this.navBarItem2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.Appearance.Options.UseFont = true;
+            this.navBarItem2.Caption = "Alimentacion Manual";
+            this.navBarItem2.ImageOptions.SmallImage = global::LOSA.Properties.Resources.alimentacion_manual;
+            this.navBarItem2.Name = "navBarItem2";
             // 
             // frmOpciones
             // 
@@ -2411,6 +2424,7 @@
         private DevExpress.XtraEditors.SimpleButton cmdUsuarios;
         private DevExpress.XtraNavBar.NavBarControl navBarControl1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem nbTrazabilidad;
         private DevExpress.XtraNavBar.NavBarItem nbPlanProduccion;
@@ -2420,7 +2434,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
         private DevExpress.XtraNavBar.NavBarItem nbConsultaHora;
         private DevExpress.XtraNavBar.NavBarItem navBarItem9;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem nbReporteBatch;
         private DevExpress.XtraNavBar.NavBarItem nbReporteEnsacadora;
         private DevExpress.XtraNavBar.NavBarItem navBarItem12;
@@ -2435,11 +2448,12 @@
         private DevExpress.XtraNavBar.NavBarItem nbConfiguraciones;
         private DevExpress.XtraNavBar.NavBarItem navBarItem22;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem10;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem8;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem10;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
     }
 }

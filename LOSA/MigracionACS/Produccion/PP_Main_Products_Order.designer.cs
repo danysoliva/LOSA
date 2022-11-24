@@ -1,4 +1,6 @@
-﻿namespace ACS.Produccion
+﻿using LOSA.MigracionACS.Produccion;
+
+namespace LOSA.MigracionACS.Produccion
 {
     partial class PP_Main_Products_Order
     {
@@ -81,7 +83,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dSProductos1 = new ACS.DataSetx.DSProductos();
+            this.dSProductos1 = new MigracionACS.DataSetx.DSProductos();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -140,7 +142,7 @@
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.ds_reportprod1 = new ACS.Produccion.ds_reportprod();
+            this.ds_reportprod1 = new LOSA.MigracionACS.Produccion.ds_reportprod();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonNuevo = new DevExpress.XtraBars.BarButtonItem();
@@ -664,7 +666,7 @@
             // 
             // repositoryItemButtonEdit2
             // 
-            this.repositoryItemButtonEdit2.Appearance.Image = global::ACS.Properties.Resources.Asociar_Arribos_fix_x32;
+            this.repositoryItemButtonEdit2.Appearance.Image = global::LOSA.Properties.Resources.Asociar_Arribos_fix_x32;
             this.repositoryItemButtonEdit2.Appearance.Options.UseImage = true;
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
@@ -972,7 +974,7 @@
             // 
             this.barButtonItem5.Caption = "Exportar Excel";
             this.barButtonItem5.Id = 7;
-            this.barButtonItem5.ImageOptions.Image = global::ACS.Properties.Resources.excel_24x24;
+            this.barButtonItem5.ImageOptions.Image = global::LOSA.Properties.Resources.excel_24x24;
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
@@ -1071,7 +1073,7 @@
             // 
             this.btnRecargar.Caption = "Recargar";
             this.btnRecargar.Id = 19;
-            this.btnRecargar.ImageOptions.Image = global::ACS.Properties.Resources.reaload_24x24;
+            this.btnRecargar.ImageOptions.Image = global::LOSA.Properties.Resources.reaload_24x24;
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRecargar_ItemClick);
             // 
@@ -1736,7 +1738,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DataSetx.DSProductos dSProductos1;
+        private LOSA.MigracionACS.DataSetx.DSProductos dSProductos1;
         private DevExpress.XtraGrid.Columns.GridColumn colCodigo;
         private DevExpress.XtraGrid.Columns.GridColumn colDescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn colid_pedido;

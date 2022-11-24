@@ -1,4 +1,4 @@
-﻿namespace ACS.Produccion
+﻿namespace LOSA.MigracionACS.Produccion
 {
     partial class PP_Nuevo_Plan_full_Pedido
     {
@@ -63,7 +63,7 @@
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.grd_udtm = new DevExpress.XtraEditors.GridLookUpEdit();
             this.unidadestarimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsProduccion1 = new ACS.DataSetx.dsProduccion();
+            this.dsProduccion1 = new LOSA.MigracionACS.DataSetx.dsProduccion();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -101,7 +101,7 @@
             this.txt_Codigo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lineasproduccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSProductos = new ACS.DataSetx.DSProductos();
+            this.dSProductos = new LOSA.MigracionACS.DataSetx.DSProductos();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridTilapia = new DevExpress.XtraGrid.GridControl();
             this.grdTilapia = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -1850,7 +1850,7 @@
         private DevExpress.XtraEditors.DateEdit dt_desde;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DataSetx.DSProductos dSProductos;
+        private LOSA.MigracionACS.DataSetx.DSProductos dSProductos;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.GridControl gridTilapia;
@@ -1918,7 +1918,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.SpinEdit txt_KgProduccion;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private DataSetx.dsProduccion dsProduccion1;
+        private LOSA.MigracionACS.DataSetx.dsProduccion dsProduccion1;
         private System.Windows.Forms.BindingSource unidadestarimaBindingSource;
         private System.Windows.Forms.BindingSource bagsBindingSource;
         private DevExpress.XtraEditors.ToggleSwitch tgg_reservarlote;

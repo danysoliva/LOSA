@@ -11,14 +11,16 @@ using ACS.Classes;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
-using ACS.DataSetx;
+using LOSA.MigracionACS.DataSetx;
 using DevExpress.XtraReports.UI;
 using System.IO;
 using System.Data.OleDb;
-using ACS.SAP;
-using ACS.Produccion.PlanProductionIntegrated;
+using LOSA.MigracionACS.SAP;
+using LOSA.MigracionACS.Produccion.PlanProductionIntegrated;
+using LOSA.Clases;
+using LOSA.MigracionACS.Produccion;
 
-namespace ACS.Produccion
+namespace LOSA.MigracionACS.Produccion
 {
     public partial class PP_Main_Products_Order : Form
     {
@@ -1536,7 +1538,7 @@ namespace ACS.Produccion
                     var row = (DSProductos.PedidoDetalleRow)gridView.GetFocusedDataRow();
 
                     DataOperations dp = new DataOperations();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringACS);
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand("sp_set_update_id_formula_pedido_detalle_v2", con);
@@ -1571,7 +1573,7 @@ namespace ACS.Produccion
                     var row = (DSProductos.PedidoDetalleTilapiaRow)gridView.GetFocusedDataRow();
 
                     DataOperations dp = new DataOperations();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringACS);
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand("sp_set_update_id_formula_pedido_detalle_v2", con);
