@@ -61,7 +61,7 @@ namespace LOSA.Reproceso
             this.btnReprocesoIngreso.Appearance.Options.UseFont = true;
             this.btnReprocesoIngreso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnReprocesoIngreso.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnReprocesoIngreso.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnReprocesoIngreso.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReprocesoIngreso.ImageOptions.SvgImage")));
             this.btnReprocesoIngreso.Location = new System.Drawing.Point(254, 51);
             this.btnReprocesoIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.btnReprocesoIngreso.Name = "btnReprocesoIngreso";
@@ -106,7 +106,7 @@ namespace LOSA.Reproceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 155);
+            this.ClientSize = new System.Drawing.Size(777, 161);
             this.ControlBox = false;
             this.Controls.Add(this.btnDetaleTarimaReproceso);
             this.Controls.Add(this.cmdHome);
