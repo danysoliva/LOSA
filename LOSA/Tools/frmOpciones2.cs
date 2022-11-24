@@ -49,7 +49,7 @@ using System.Windows.Forms;
 
 namespace LOSA
 {
-    public partial class frmOpciones : Form
+    public partial class frmOpciones2 : Form
     {
         UserLogin UsuarioLogeado;
         string ActiveUserCode;
@@ -58,7 +58,7 @@ namespace LOSA
         string ActiveADUser;
         DataTable UserGroups;
 
-        public frmOpciones(UserLogin pUser)
+        public frmOpciones2(UserLogin pUser)
         {
             InitializeComponent();
             UsuarioLogeado = pUser;
@@ -1208,62 +1208,28 @@ namespace LOSA
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
-       
 
-        private void navBarItem10_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            //frmAlimentacionManual frm = new frmAlimentacionManual(UsuarioLogeado);
-            //frm.Show();
-            frmAlimentacionPanel frm = new frmAlimentacionPanel();
-            frm.Show();
-        }
-
-        private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            frmPrintTM frm = new frmPrintTM(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
-        private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            frmactivacionPT frm = new frmactivacionPT(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
-        private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            frm_reporte_alimentacion frm = new frm_reporte_alimentacion();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
-        private void navBarItem6_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            xfrmCheckActiveBin frm = new xfrmCheckActiveBin();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
-        }
-
-        private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void navBarControl1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void navBarItem1_LinkPressed(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            //Produccion.PP_Operator_Panel_v2 form = new Produccion.PP_Operator_Panel_v2(ActiveUserCode, ActiveUserName, "N/A", ActiveUserType, UserGroups);
+            //form.ShowDialog();
+
             try
             {
 
-                PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(ActiveUserCode, ActiveUserName, "N/A", ActiveUserType, UserGroups); ;
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
+            PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(ActiveUserCode, ActiveUserName, "N/A", ActiveUserType, UserGroups); ;
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+               
             }
         }
 
@@ -1272,7 +1238,22 @@ namespace LOSA
             try
             {
 
-                RPT_Trazabilidad_Lote frm = new RPT_Trazabilidad_Lote();
+            RPT_Trazabilidad_Lote frm = new RPT_Trazabilidad_Lote();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void nbPlanProduccion_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+
+            Prod_Ordenes_Produccion frm = new Prod_Ordenes_Produccion(ActiveUserCode, ActiveUserName, ActiveUserType);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
@@ -1287,11 +1268,11 @@ namespace LOSA
             try
             {
 
-                PP_Main_Products_Order MPO = new PP_Main_Products_Order(UsuarioLogeado);
-                MPO.ActiveUserCodeP = ActiveUserCode;
-                MPO.ActiveUserNameP = ActiveUserName;
-                MPO.ActiveUserTypeP = ActiveUserType;
-                MPO.MdiParent = this.MdiParent;
+            PP_Main_Products_Order MPO = new PP_Main_Products_Order(UsuarioLogeado);
+            MPO.ActiveUserCodeP = ActiveUserCode;
+            MPO.ActiveUserNameP = ActiveUserName;
+            MPO.ActiveUserTypeP = ActiveUserType;
+            MPO.MdiParent = this.MdiParent;
                 MPO.Show();
             }
             catch (Exception ex)
@@ -1335,9 +1316,9 @@ namespace LOSA
                 pp.MdiParent = this.MdiParent;
                 pp.Show();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                CajaDialogo.Error(ex.Message);
+
 
             }
         }
@@ -1360,7 +1341,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+         
             }
         }
 
@@ -1368,8 +1349,8 @@ namespace LOSA
         {
             try
             {
-                frmHorometrosLineas frm = new frmHorometrosLineas();
-                frm.MdiParent = this.MdiParent;
+            frmHorometrosLineas frm = new frmHorometrosLineas();
+            frm.MdiParent = this.MdiParent;
                 frm.Show();
 
             }
@@ -1410,7 +1391,7 @@ namespace LOSA
                     if (UsuarioLogeado.ValidarNivelPermisos(68))
                     {
                         //frmMantoPhotosTV frm = new frmMantoPhotosTV(UsuarioLogeado);
-                        PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(ActiveUserCode, ActiveUserName, "N/A", ActiveUserType, UserGroups);
+                       PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(ActiveUserCode, ActiveUserName, "N/A", ActiveUserType, UserGroups);
                         frm.MdiParent = this;
                         frm.Show();
                     }
@@ -1423,7 +1404,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+               
             }
         }
 
@@ -1446,7 +1427,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+                
             }
         }
 
@@ -1470,7 +1451,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+                
             }
         }
 
@@ -1495,7 +1476,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+                
             }
         }
 
@@ -1511,7 +1492,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+                
             }
         }
 
@@ -1526,7 +1507,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+                
             }
         }
 
@@ -1535,10 +1516,10 @@ namespace LOSA
             try
             {
 
-                //Imprimir reporte de eficiencia
-                frmPrintReportEficiencia frm = new frmPrintReportEficiencia(this.UsuarioLogeado);
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
+            //Imprimir reporte de eficiencia
+            frmPrintReportEficiencia frm = new frmPrintReportEficiencia(this.UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
             }
             catch (Exception ex)
             {
@@ -1557,7 +1538,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+                
             }
         }
 
@@ -1574,7 +1555,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+               
             }
         }
 
@@ -1636,7 +1617,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+               
             }
         }
 
@@ -1684,7 +1665,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+               
             }
         }
 
@@ -1731,7 +1712,7 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
+                
             }
         }
 
@@ -1750,19 +1731,51 @@ namespace LOSA
             }
         }
 
-        private void nbPlanProduccion_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void navBarItem10_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            try
-            {
+            //frmAlimentacionManual frm = new frmAlimentacionManual(UsuarioLogeado);
+            //frm.Show();
+            frmAlimentacionPanel frm = new frmAlimentacionPanel();
+            frm.Show();
+        }
 
-                Prod_Ordenes_Produccion frm = new Prod_Ordenes_Produccion(ActiveUserCode, ActiveUserName, ActiveUserType);
+        private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmPrintTM frm = new frmPrintTM(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmactivacionPT frm = new frmactivacionPT(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frm_reporte_alimentacion frm = new frm_reporte_alimentacion();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem6_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            xfrmCheckActiveBin frm = new xfrmCheckActiveBin();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem8_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            xfrmIngresosMP_Reproceso frm = new xfrmIngresosMP_Reproceso(UsuarioLogeado);
+
+            if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
-                frm.Show();
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
+
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }

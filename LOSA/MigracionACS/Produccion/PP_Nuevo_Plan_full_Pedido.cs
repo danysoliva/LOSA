@@ -19,6 +19,8 @@ namespace LOSA.MigracionACS.Produccion
     public partial class PP_Nuevo_Plan_full_Pedido : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
+        UserLogin UsuarioLogeado;
+        int LotePT;
         FMOP fmop = new FMOP();
         DataSet orders;
         int countT, countC;
@@ -234,6 +236,8 @@ namespace LOSA.MigracionACS.Produccion
                 cmd.Parameters.Add(new SqlParameter("@valid_to", SqlDbType.Date));
                 cmd.Parameters.Add(new SqlParameter("@status", SqlDbType.Int));
                 cmd.Parameters.Add(new SqlParameter("@created_by", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@id_usuario", SqlDbType.Int));
+                //cmd.Parameters.Add(new SqlParameter("@lote_pt", SqlDbType.Int));
 
                 SqlParameter param = cmd.Parameters.Add(new SqlParameter("@InsertedID", SqlDbType.Int));
                 param.Direction = ParameterDirection.ReturnValue;
@@ -243,9 +247,12 @@ namespace LOSA.MigracionACS.Produccion
                 cmd.Parameters["@valid_from"].Value = string.Format("{0:yyyy-MM-dd}", dt_desde.EditValue);
                 cmd.Parameters["@valid_to"].Value = string.Format("{0:yyyy-MM-dd}", dt_Hasta.EditValue);
                 cmd.Parameters["@status"].Value = 10;
-                cmd.Parameters["@created_by"].Value = ActiveUserCode;
+                cmd.Parameters["@created_by"].Value = UsuarioLogeado.UserId;// ActiveUserCode;
+                //cmd.Parameters["@id_usuario"].Value = UsuarioLogeado.UserId;
+                //cmd.Parameters["@lote_pt"].Value = UsuarioLogeado.UserId;
 
                 return dp.ACS_Exec_SP_GetID("PP_Plan_Main_Insert", cmd, param);
+                //return dp.ACS_Exec_SP_GetID("PP_Plan_Main_Insert_v2", cmd, param);
             }
             catch (Exception ex)
             {
@@ -346,13 +353,11 @@ namespace LOSA.MigracionACS.Produccion
                         cn.Open();
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_3";
+                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_4";
                         id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
                         int PesajeidManual = InsertOrdenPesajeManual(id_inserted, lote_fp, Convert.ToInt32(row["batch"]));
                         InsertOrdenPesajeManualDetalle(PesajeidManual, id_inserted);
-
-
                     }
                     catch (Exception ex)
                     {
@@ -474,7 +479,7 @@ namespace LOSA.MigracionACS.Produccion
                         cn.Open();
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_3";
+                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_4";
                         id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
                         int PesajeidManual = InsertOrdenPesajeManual(id_inserted,lote_fp,Convert.ToInt32(row["batch"]));
@@ -641,9 +646,11 @@ namespace LOSA.MigracionACS.Produccion
             return Convert.ToInt32(Cmd.ExecuteScalar());
             
         }
-        public PP_Nuevo_Plan_full_Pedido(int PiDPedido)
+        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, UserLogin pUsuarioLogeado, int pLotePT)
         {
             InitializeComponent();
+            UsuarioLogeado = pUsuarioLogeado;
+            LotePT = pLotePT;
             btn_NewOP.Enabled = false;
             this.FormAction = "new";
             Id_Pedido1 = PiDPedido;
@@ -668,9 +675,11 @@ namespace LOSA.MigracionACS.Produccion
             llenado_mp_all_Reck();
         }
         int Especie;
-        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, int pIdPedidoDetalle, int PEspecie)
+        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, int pIdPedidoDetalle, int PEspecie, UserLogin pUsuarioLogeado, int pLotePt)
         {
             InitializeComponent();
+            LotePT = pLotePt;
+            UsuarioLogeado = pUsuarioLogeado;
             load_unidades_por_tarima();
             load_presentacion();
             TypeTrans = 2;
@@ -1083,19 +1092,7 @@ namespace LOSA.MigracionACS.Produccion
 
                 if (MessageBox.Show(string.Format("¿Seguro que desea crear el Plan de Producción por {0}Kg de alimento.", cantKilos), "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    //if (MessageBox.Show("¿Deseas Guardar la Informacion de Consumos antes de cerrar?", "Consumos Materia Prima", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                    //{
-                    //    SaveFileDialog dialog = new SaveFileDialog();
-                    //    dialog.Filter = "Excel File (.xlsx)|*.xlsx";
-                    //    dialog.FilterIndex = 0;
-
-                    //    if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    //    {
-                    //        //grd_rmReq.ExportToXlsx((string.Format("{0} - Diarios.xlsx", dialog.FileName.Substring(0, (dialog.FileName.Length - 5)))));
-                    //        grd_reqMP_Total.ExportToXlsx((string.Format("{0} - Totales.xlsx", dialog.FileName.Substring(0, (dialog.FileName.Length - 5)))));
-                    //    }
-                    //}
-
+                    
                     int rmi = 0;
 
                     foreach (DataRow row in dSProductos.OrdenTilapia.Rows)
@@ -1211,40 +1208,59 @@ namespace LOSA.MigracionACS.Produccion
                 return;
             }
 
+            //if (dSProductos.OrdenTilapia.Count > 0)
+            //{
+
+            //    if (dSProductos.OrdenCamaron.Count > 0)
+            //    {
+            //        ParPlan = Insert_Header();
+            //        Validacion_Camaron(ParPlan);
+
+            //    }
+            //    else
+            //    {
+            //        ParPlan = Insert_Header();
+            //        Validacion_Tilapia(ParPlan);
+            //    }
+
+            //}
+            //else
+            //{
+            //    if (dSProductos.OrdenCamaron.Count > 0)
+            //    {
+            //        ParPlan = Insert_Header();
+            //        Validacion_Camaron(ParPlan);
+
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No hay datos ingresados...");
+            //        this.Close();
+            //    }
+
+            //}
+
+            bool Guardo = false;
             if (dSProductos.OrdenTilapia.Count > 0)
             {
-
-                if (dSProductos.OrdenCamaron.Count > 0)
-                {
-                    ParPlan = Insert_Header();
-                    Validacion_Camaron(ParPlan);
-
-                }
-                else
-                {
-                    ParPlan = Insert_Header();
-                    Validacion_Tilapia(ParPlan);
-                }
-
+                ParPlan = Insert_Header();
+                Validacion_Tilapia(ParPlan);
+                Guardo = true;
             }
-            else
+
+            if (dSProductos.OrdenCamaron.Count > 0)
             {
-                if (dSProductos.OrdenCamaron.Count > 0)
-                {
-                    ParPlan = Insert_Header();
-                    Validacion_Camaron(ParPlan);
-
-                }
-                else
-                {
-                    MessageBox.Show("No hay datos ingresados...");
-                    this.Close();
-                }
-
+                ParPlan = Insert_Header();
+                Validacion_Camaron(ParPlan);
+                Guardo = true;
             }
 
-
-
+            if (!Guardo)
+            {
+                MessageBox.Show("No hay datos ingresados...");
+                this.Close();
+            }
+            
         }
 
         private void btn_EditOP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

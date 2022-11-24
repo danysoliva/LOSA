@@ -1,4 +1,6 @@
-﻿namespace LOSA.MigracionACS.Produccion
+﻿using LOSA.MigracionACS.Produccion;
+
+namespace LOSA.MigracionACS.Produccion
 {
     partial class PP_Main_Products_Order
     {
@@ -81,7 +83,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dSProductos1 = new LOSA.MigracionACS.DataSetx.DSProductos();
+            this.dSProductos1 = new MigracionACS.DataSetx.DSProductos();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -472,6 +474,7 @@
             this.colid_proceso.Caption = "Proceso";
             this.colid_proceso.FieldName = "id_proceso";
             this.colid_proceso.Name = "colid_proceso";
+            this.colid_proceso.OptionsColumn.AllowShowHide = false;
             this.colid_proceso.OptionsColumn.ReadOnly = true;
             this.colid_proceso.Width = 31;
             // 
@@ -539,6 +542,7 @@
             this.colRegistro.AppearanceCell.Options.UseBackColor = true;
             this.colRegistro.FieldName = "Registro";
             this.colRegistro.Name = "colRegistro";
+            this.colRegistro.OptionsColumn.AllowShowHide = false;
             this.colRegistro.Width = 30;
             // 
             // colid_presentacion
@@ -615,6 +619,7 @@
             this.colid_bag.Caption = "Peso del saco";
             this.colid_bag.FieldName = "id_bag";
             this.colid_bag.Name = "colid_bag";
+            this.colid_bag.OptionsColumn.AllowShowHide = false;
             this.colid_bag.OptionsColumn.ReadOnly = true;
             this.colid_bag.Width = 45;
             // 
@@ -623,6 +628,7 @@
             this.colid_portafolio.Caption = "Tipo de saco";
             this.colid_portafolio.FieldName = "id_portafolio";
             this.colid_portafolio.Name = "colid_portafolio";
+            this.colid_portafolio.OptionsColumn.AllowShowHide = false;
             this.colid_portafolio.OptionsColumn.ReadOnly = true;
             this.colid_portafolio.Width = 43;
             // 
@@ -637,6 +643,7 @@
             // 
             this.colEspecie.FieldName = "Especie";
             this.colEspecie.Name = "colEspecie";
+            this.colEspecie.OptionsColumn.AllowShowHide = false;
             this.colEspecie.OptionsColumn.ReadOnly = true;
             this.colEspecie.Width = 152;
             // 
@@ -644,6 +651,7 @@
             // 
             this.colspicie.FieldName = "spicie";
             this.colspicie.Name = "colspicie";
+            this.colspicie.OptionsColumn.AllowShowHide = false;
             // 
             // gridColumn1
             // 
@@ -651,6 +659,7 @@
             this.gridColumn1.ColumnEdit = this.repositoryItemButtonEdit2;
             this.gridColumn1.FieldName = "gridColumn1";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowShowHide = false;
             this.gridColumn1.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn1.Width = 33;
@@ -671,6 +680,7 @@
             this.colzardetalle.Caption = "Detalle Zaranda";
             this.colzardetalle.FieldName = "zardetalle";
             this.colzardetalle.Name = "colzardetalle";
+            this.colzardetalle.OptionsColumn.AllowShowHide = false;
             this.colzardetalle.Width = 160;
             // 
             // colfecha_de_trabajo
@@ -699,6 +709,7 @@
             this.colid.Caption = "gridColumn2";
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowShowHide = false;
             // 
             // colid_origen
             // 
@@ -715,6 +726,7 @@
             this.colTamanio.Caption = "Tamaño de la particula";
             this.colTamanio.FieldName = "tamanio";
             this.colTamanio.Name = "colTamanio";
+            this.colTamanio.OptionsColumn.AllowShowHide = false;
             this.colTamanio.OptionsColumn.ReadOnly = true;
             this.colTamanio.Width = 88;
             // 
@@ -762,8 +774,7 @@
             this.colsapup.Caption = "Subir";
             this.colsapup.ColumnEdit = this.btn_SAP;
             this.colsapup.Name = "colsapup";
-            this.colsapup.Visible = true;
-            this.colsapup.VisibleIndex = 22;
+            this.colsapup.OptionsColumn.AllowShowHide = false;
             this.colsapup.Width = 60;
             // 
             // btn_SAP
@@ -791,6 +802,7 @@
             this.colEstado.Caption = "Estado SAP";
             this.colEstado.ColumnEdit = this.grdSAP;
             this.colEstado.Name = "colEstado";
+            this.colEstado.OptionsColumn.AllowShowHide = false;
             // 
             // grdSAP
             // 
@@ -1006,6 +1018,7 @@
             this.barButtonItem8.ItemAppearance.Normal.BackColor = System.Drawing.Color.Transparent;
             this.barButtonItem8.ItemAppearance.Normal.Options.UseBackColor = true;
             this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // barEditItem1
@@ -1024,6 +1037,7 @@
             this.barStaticItem1.Caption = "Desconectado de SAP";
             this.barStaticItem1.Id = 14;
             this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // btnLiberar
             // 
@@ -1357,6 +1371,7 @@
             this.gridColumn12.Caption = "Proceso";
             this.gridColumn12.FieldName = "id_proceso";
             this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.AllowShowHide = false;
             this.gridColumn12.OptionsColumn.ReadOnly = true;
             this.gridColumn12.Width = 38;
             // 
@@ -1441,6 +1456,7 @@
             this.gridColumn15.Caption = "Peso del saco";
             this.gridColumn15.FieldName = "id_bag";
             this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.OptionsColumn.AllowShowHide = false;
             this.gridColumn15.OptionsColumn.ReadOnly = true;
             this.gridColumn15.Width = 52;
             // 
@@ -1449,6 +1465,7 @@
             this.gridColumn16.Caption = "Tipo de saco";
             this.gridColumn16.FieldName = "id_portafolio";
             this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.AllowShowHide = false;
             this.gridColumn16.OptionsColumn.ReadOnly = true;
             this.gridColumn16.Width = 49;
             // 
@@ -1456,6 +1473,7 @@
             // 
             this.gridColumn17.FieldName = "Especie";
             this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.OptionsColumn.AllowShowHide = false;
             this.gridColumn17.OptionsColumn.ReadOnly = true;
             this.gridColumn17.Width = 40;
             // 
@@ -1463,6 +1481,7 @@
             // 
             this.gridColumn18.FieldName = "spicie";
             this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.OptionsColumn.AllowShowHide = false;
             // 
             // gridColumn19
             // 
@@ -1470,6 +1489,7 @@
             this.gridColumn19.ColumnEdit = this.repositoryItemButtonEdit3;
             this.gridColumn19.FieldName = "gridColumn1";
             this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.OptionsColumn.AllowShowHide = false;
             this.gridColumn19.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn19.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn19.Width = 49;
@@ -1489,6 +1509,7 @@
             this.gridColumn20.Caption = "Detalle Zaranda";
             this.gridColumn20.FieldName = "zardetalle";
             this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.OptionsColumn.AllowShowHide = false;
             this.gridColumn20.Width = 209;
             // 
             // gridColumn21
@@ -1523,6 +1544,7 @@
             this.gridColumn24.Caption = "Tamaño de la particula";
             this.gridColumn24.FieldName = "tamanio";
             this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.OptionsColumn.AllowShowHide = false;
             this.gridColumn24.OptionsColumn.ReadOnly = true;
             this.gridColumn24.Width = 100;
             // 
@@ -1560,6 +1582,7 @@
             this.colSAPbtn.Caption = "Subir";
             this.colSAPbtn.ColumnEdit = this.btnSAPUp;
             this.colSAPbtn.Name = "colSAPbtn";
+            this.colSAPbtn.OptionsColumn.AllowShowHide = false;
             this.colSAPbtn.Width = 48;
             // 
             // btnSAPUp
@@ -1715,7 +1738,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DataSetx.DSProductos dSProductos1;
+        private LOSA.MigracionACS.DataSetx.DSProductos dSProductos1;
         private DevExpress.XtraGrid.Columns.GridColumn colCodigo;
         private DevExpress.XtraGrid.Columns.GridColumn colDescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn colid_pedido;

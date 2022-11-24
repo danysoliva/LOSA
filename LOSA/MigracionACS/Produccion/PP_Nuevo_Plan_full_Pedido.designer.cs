@@ -1850,7 +1850,7 @@
         private DevExpress.XtraEditors.DateEdit dt_desde;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DataSetx.DSProductos dSProductos;
+        private LOSA.MigracionACS.DataSetx.DSProductos dSProductos;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.GridControl gridTilapia;
@@ -1918,7 +1918,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.SpinEdit txt_KgProduccion;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private DataSetx.dsProduccion dsProduccion1;
+        private LOSA.MigracionACS.DataSetx.dsProduccion dsProduccion1;
         private System.Windows.Forms.BindingSource unidadestarimaBindingSource;
         private System.Windows.Forms.BindingSource bagsBindingSource;
         private DevExpress.XtraEditors.ToggleSwitch tgg_reservarlote;

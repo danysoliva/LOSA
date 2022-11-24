@@ -11,7 +11,7 @@ using ACS.Classes;
 using LOSA.MigracionACS.DataSetx;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
-using LOSA.Classes;
+using LOSA.Clases;
 
 namespace LOSA.MigracionACS.Produccion.Eficiencia
 {

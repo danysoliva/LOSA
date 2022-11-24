@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LOSA.Classes
+namespace LOSA.Clases
 {
     public class ReporteProceso
     {

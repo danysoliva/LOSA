@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.MigracionACS.DataSetx;
 using DevExpress.XtraGrid.Views.Grid;
-using LOSA.Classes;
+using LOSA.Clases;
 
 namespace LOSA.MigracionACS.Produccion.Eficiencia
 {

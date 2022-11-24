@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using ACS.Classes;
 
-namespace LOSA.Classes
+namespace LOSA.Clases
 {
     public class APMS_OrderProduction
     {

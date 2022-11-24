@@ -16,8 +16,9 @@ using DevExpress.XtraReports.UI;
 using System.IO;
 using System.Data.OleDb;
 using LOSA.MigracionACS.SAP;
-using LOSA.Clases;
 using LOSA.MigracionACS.Produccion.PlanProductionIntegrated;
+using LOSA.Clases;
+using LOSA.MigracionACS.Produccion;
 
 namespace LOSA.MigracionACS.Produccion
 {
@@ -1601,7 +1602,7 @@ namespace LOSA.MigracionACS.Produccion
             var row = (DSProductos.PedidoDetalleRow)gridView.GetFocusedDataRow();
 
             //Crear orden de fabricacion individual
-            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id,2);
+            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id, 2, this.UsuarioLogeado, row.lote);
             PNPFP.ActiveUserCodeP = this.ActiveUserCode;
             PNPFP.ActiveUserNameP = this.ActiveUserName;
             PNPFP.ActiveUserTypeP = this.ActiveUserType;
@@ -1625,7 +1626,7 @@ namespace LOSA.MigracionACS.Produccion
             //    return;
             //}
             //Crear orden de fabricacion individual
-            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id,1);
+            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id,1, UsuarioLogeado, 0);
             PNPFP.ActiveUserCodeP = this.ActiveUserCode;
             PNPFP.ActiveUserNameP = this.ActiveUserName;
             PNPFP.ActiveUserTypeP = this.ActiveUserType;
@@ -1644,7 +1645,7 @@ namespace LOSA.MigracionACS.Produccion
             //var row = (dsMensualidades.mensualidadesRow)gridView.GetFocusedDataRow();
             string name = sender.ToString();
             //Crear orden de fabricacion individual
-            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido);
+            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido,UsuarioLogeado,0);
             PNPFP.ActiveUserCodeP = this.ActiveUserCode;
             PNPFP.ActiveUserNameP = this.ActiveUserName;
             PNPFP.ActiveUserTypeP = this.ActiveUserType;
