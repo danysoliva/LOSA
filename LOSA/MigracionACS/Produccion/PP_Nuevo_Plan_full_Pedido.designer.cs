@@ -1,4 +1,4 @@
-﻿namespace LOSA.MigracionACS.Produccion
+﻿namespace ACS.Produccion
 {
     partial class PP_Nuevo_Plan_full_Pedido
     {
@@ -63,7 +63,7 @@
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.grd_udtm = new DevExpress.XtraEditors.GridLookUpEdit();
             this.unidadestarimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsProduccion1 = new LOSA.MigracionACS.DataSetx.dsProduccion();
+            this.dsProduccion1 = new ACS.DataSetx.dsProduccion();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -101,7 +101,7 @@
             this.txt_Codigo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lineasproduccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSProductos = new LOSA.MigracionACS.DataSetx.DSProductos();
+            this.dSProductos = new ACS.DataSetx.DSProductos();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridTilapia = new DevExpress.XtraGrid.GridControl();
             this.grdTilapia = new DevExpress.XtraGrid.Views.Grid.GridView();

@@ -11,15 +11,14 @@ using ACS.Classes;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
-using LOSA.MigracionACS.DataSetx;
+using ACS.DataSetx;
 using DevExpress.XtraReports.UI;
 using System.IO;
 using System.Data.OleDb;
-using LOSA.MigracionACS.SAP;
-using LOSA.Clases;
-using LOSA.MigracionACS.Produccion.PlanProductionIntegrated;
+using ACS.SAP;
+using ACS.Produccion.PlanProductionIntegrated;
 
-namespace LOSA.MigracionACS.Produccion
+namespace ACS.Produccion
 {
     public partial class PP_Main_Products_Order : Form
     {
@@ -1537,7 +1536,7 @@ namespace LOSA.MigracionACS.Produccion
                     var row = (DSProductos.PedidoDetalleRow)gridView.GetFocusedDataRow();
 
                     DataOperations dp = new DataOperations();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringACS);
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand("sp_set_update_id_formula_pedido_detalle_v2", con);
@@ -1572,7 +1571,7 @@ namespace LOSA.MigracionACS.Produccion
                     var row = (DSProductos.PedidoDetalleTilapiaRow)gridView.GetFocusedDataRow();
 
                     DataOperations dp = new DataOperations();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringACS);
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand("sp_set_update_id_formula_pedido_detalle_v2", con);
@@ -1601,7 +1600,7 @@ namespace LOSA.MigracionACS.Produccion
             var row = (DSProductos.PedidoDetalleRow)gridView.GetFocusedDataRow();
 
             //Crear orden de fabricacion individual
-            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id,2);
+            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id, 2, this.UsuarioLogeado, row.lote);
             PNPFP.ActiveUserCodeP = this.ActiveUserCode;
             PNPFP.ActiveUserNameP = this.ActiveUserName;
             PNPFP.ActiveUserTypeP = this.ActiveUserType;
@@ -1625,7 +1624,7 @@ namespace LOSA.MigracionACS.Produccion
             //    return;
             //}
             //Crear orden de fabricacion individual
-            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id,1);
+            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id,1, UsuarioLogeado, 0);
             PNPFP.ActiveUserCodeP = this.ActiveUserCode;
             PNPFP.ActiveUserNameP = this.ActiveUserName;
             PNPFP.ActiveUserTypeP = this.ActiveUserType;
@@ -1644,7 +1643,7 @@ namespace LOSA.MigracionACS.Produccion
             //var row = (dsMensualidades.mensualidadesRow)gridView.GetFocusedDataRow();
             string name = sender.ToString();
             //Crear orden de fabricacion individual
-            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido);
+            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido,UsuarioLogeado,0);
             PNPFP.ActiveUserCodeP = this.ActiveUserCode;
             PNPFP.ActiveUserNameP = this.ActiveUserName;
             PNPFP.ActiveUserTypeP = this.ActiveUserType;

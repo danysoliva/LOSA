@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using ACS.Classes;
-using LOSA.Classes;
+using LOSA.Clases;
 
 namespace LOSA.MigracionACS.Produccion.Reports
 {
