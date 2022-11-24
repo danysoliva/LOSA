@@ -38,21 +38,21 @@ namespace LOSA.Accesos.GrupoLosa
             ((System.ComponentModel.ISupportInitialize)(this.textEditGrupo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton2
+            // botonCancelar
             // 
             this.botonCancelar.Appearance.BackColor = System.Drawing.Color.Red;
             this.botonCancelar.Appearance.Options.UseBackColor = true;
             this.botonCancelar.Location = new System.Drawing.Point(107, 233);
-            this.botonCancelar.Name = "simpleButton2";
+            this.botonCancelar.Name = "botonCancelar";
             this.botonCancelar.Size = new System.Drawing.Size(75, 23);
             this.botonCancelar.TabIndex = 9;
             this.botonCancelar.Text = "Cancelar";
             this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
-            // simpleButton1
+            // botonGuardar
             // 
             this.botonGuardar.Location = new System.Drawing.Point(24, 233);
-            this.botonGuardar.Name = "simpleButton1";
+            this.botonGuardar.Name = "botonGuardar";
             this.botonGuardar.Size = new System.Drawing.Size(75, 23);
             this.botonGuardar.TabIndex = 8;
             this.botonGuardar.Text = "Guardar";
@@ -63,20 +63,20 @@ namespace LOSA.Accesos.GrupoLosa
             this.checkEditHabilitado.Location = new System.Drawing.Point(25, 108);
             this.checkEditHabilitado.Name = "checkEditHabilitado";
             this.checkEditHabilitado.Properties.Caption = "Habilitado";
-            this.checkEditHabilitado.Size = new System.Drawing.Size(75, 20);
+            this.checkEditHabilitado.Size = new System.Drawing.Size(75, 19);
             this.checkEditHabilitado.TabIndex = 7;
             // 
-            // textEdit1
+            // textEditGrupo
             // 
             this.textEditGrupo.Location = new System.Drawing.Point(25, 59);
-            this.textEditGrupo.Name = "textEdit1";
+            this.textEditGrupo.Name = "textEditGrupo";
             this.textEditGrupo.Size = new System.Drawing.Size(229, 20);
             this.textEditGrupo.TabIndex = 6;
             // 
-            // labelControl1
+            // labelControlGrupo
             // 
             this.labelControlGrupo.Location = new System.Drawing.Point(25, 40);
-            this.labelControlGrupo.Name = "labelControl1";
+            this.labelControlGrupo.Name = "labelControlGrupo";
             this.labelControlGrupo.Size = new System.Drawing.Size(29, 13);
             this.labelControlGrupo.TabIndex = 5;
             this.labelControlGrupo.Text = "Grupo";

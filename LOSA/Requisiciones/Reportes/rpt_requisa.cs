@@ -38,8 +38,6 @@ namespace LOSA.Requisiciones.Reportes
                     lblNombreProducto.Text = "(" + dr.GetString(6) + ") - " + dr.GetString(7);
                     lblNumero.Text = lblNumero.Text + dr.GetInt32(0).ToString();
                     BarCode1.Text = dr.GetString(5);
-
-                    
                 }
                 dr.Close();
                 cn.Close();

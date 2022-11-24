@@ -26,18 +26,25 @@ namespace LOSA.Reportes
             
             Id_mp = Pid_mp;
             validar_tipoingreso();
+
             if (isGranel == 1)
             {
                 load_data_granel();
                 load_detalle_granel();
-                load_lote_granel();
+                //load_lote_granel();
             }
             else
             {
                 load_data();
                 load_detalle();
-                load_lote();
+                //load_lote();
             }
+            load_lote();
+
+            id_ingreso.Value = Pid;
+            id_materia_prima.Value = Pid_mp;
+            is_granel.Value = isGranel;
+
             if (isTraslado > 0)
             {
                 xrLabel1.Text = @"TRASLADO DE MATERIA PRIMA";
@@ -189,13 +196,14 @@ namespace LOSA.Reportes
         {
             try
             {
-                string query = @"sp_rpt_print_detalle_lote_v2";
+                string query = @"sp_rpt_print_detalle_lote_tarima_granel";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_ingreso", Id);
                 cmd.Parameters.AddWithValue("@Id_mp", Id_mp);
+                cmd.Parameters.AddWithValue("@isgranel", isGranel);
                 dsReportes1.Lote.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsReportes1.Lote);
@@ -203,29 +211,40 @@ namespace LOSA.Reportes
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
+
+
+            //if (isGranel == 1)
+            //{
+            //    try
+            //    {
+            //        string query = @"[sp_rpt_print_detalle_lote_tarima_granel]";
+            //        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            //        cn.Open();
+            //        SqlCommand cmd = new SqlCommand(query, cn);
+            //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            //        cmd.Parameters.AddWithValue("@id_ingreso", Id);
+            //        dsReportes1.Lote.Clear();
+            //        SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //        da.Fill(dsReportes1.Lote);
+            //        cn.Close();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        CajaDialogo.Error(ex.Message);
+            //    }
+            //}
+            //else
+            //{
+               
+            //}
+            
         }
 
         public void load_lote_granel()
         {
-            try
-            {
-                string query = @"sp_rpt_print_detalle_lote_granel";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_ingreso", Id);
-                dsReportes1.Lote.Clear();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsReportes1.Lote);
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-
-            }
+            
         }
         private void ReportHeader1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {

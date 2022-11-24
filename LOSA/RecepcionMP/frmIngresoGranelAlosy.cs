@@ -27,7 +27,7 @@ namespace LOSA.RecepcionMP
         int ingreso;
         bool Istraslado = false;
         int id_externo_ingreso = 0;
-
+        int id_transferencia_h;
         public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem)
         {
             InitializeComponent();
@@ -109,7 +109,7 @@ namespace LOSA.RecepcionMP
         }
 
 
-        public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem, bool istraslado, int id_ingreso)
+        public frmIngresoGranelAlosy(UserLogin pUsuarioLogeado, ArrayList pArray, ItemMP_Lote pItem, bool istraslado, int id_ingreso, int pid_transferencia_h)
         {
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
@@ -122,6 +122,7 @@ namespace LOSA.RecepcionMP
             Istraslado = istraslado;
             id_externo_ingreso = id_ingreso;
             txtIngresoExterno.Text = id_ingreso.ToString();
+            id_transferencia_h = pid_transferencia_h;
             LoadBarcos();
             LoadUbicaciones();
 
@@ -351,10 +352,14 @@ namespace LOSA.RecepcionMP
 
                 if (tggNuevoIngreso.IsOn)//Es un nuevo ingreso
                 {
-                    string quer = @"sp_obtener_numero_ingreso";
+                    cmd = cnx.CreateCommand();
+                    cmd.CommandText = "sp_obtener_numero_ingreso";
+                    cmd.Connection = cnx;
+                    cmd.Transaction = transaction;
+                    //string quer = @"sp_obtener_numero_ingreso";
                     //cn = new SqlConnection(dp.ConnectionStringLOSA);
                     //cn.Open();
-                    cmd = new SqlCommand(quer, transaction.Connection);
+                    //cmd = new SqlCommand(quer, transaction.Connection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     ingreso = Convert.ToInt32(cmd.ExecuteScalar());
                     //cn.Close();
@@ -385,80 +390,94 @@ namespace LOSA.RecepcionMP
                 {
                     if (Istraslado)
                     {
-                        string query = @"sp_insert_ingreso_granel-v3";//Insert into [LOSA_ingreso_mp_h] and [LOSA_ingreso_mp_lotes]
+                        //string query = @"sp_insert_ingreso_granel-v3";//Insert into [LOSA_ingreso_mp_h] and [LOSA_ingreso_mp_lotes]
                         //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         //con.Open();
-                        SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
-                        Comnd.CommandType = CommandType.StoredProcedure;
-                        Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
-                        Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
-                        Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
-                        Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
-                        Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-                        Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
-                        Comnd.Parameters.AddWithValue("@id_traslado", id_externo_ingreso);
+                        cmd = cnx.CreateCommand();
+                        cmd.CommandText = "sp_insert_ingreso_granel-v3";
+                        cmd.Connection = cnx;
+                        cmd.Transaction = transaction;
+                        //SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@entrada", sumar_Kg);
+                        cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                        cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                        cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                        cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                        cmd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+                        cmd.Parameters.AddWithValue("@id_traslado", id_externo_ingreso);
 
-                        Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+                        Id_lote_generado = Convert.ToInt32(cmd.ExecuteScalar());
                     }
                     else
                     {
-                        string query = @"sp_insert_ingreso_granel";//Insert into [LOSA_ingreso_mp_h] and [LOSA_ingreso_mp_lotes]
+                        //string query = @"sp_insert_ingreso_granel";//Insert into [LOSA_ingreso_mp_h] and [LOSA_ingreso_mp_lotes]
                         //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         //con.Open();
-                        SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
-                        Comnd.CommandType = CommandType.StoredProcedure;
-                        Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
-                        Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
-                        Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
-                        Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
-                        Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-                        Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+                        cmd = cnx.CreateCommand();
+                        cmd.CommandText = "sp_insert_ingreso_granel";
+                        cmd.Connection = cnx;
+                        cmd.Transaction = transaction;
+                        //SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@entrada", sumar_Kg);
+                        cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                        cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                        cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                        cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                        cmd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
 
-                        Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+                        Id_lote_generado = Convert.ToInt32(cmd.ExecuteScalar());
                     }
                 }
                 else//Ingreso existente
                 {
-                    string query = @"sp_validar_si_ya_existe_este_ingreso";
+                    //string query = @"sp_validar_si_ya_existe_este_ingreso";
                     //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     //con.Open();
-                    SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
-                    Comnd.CommandType = CommandType.StoredProcedure;
-                    Comnd.Parameters.AddWithValue("@entrada", sumar_Kg);
-                    Comnd.Parameters.AddWithValue("@lote", txtLote.Text);
-                    Comnd.Parameters.AddWithValue("@id_ingreso", ingreso);
-                    Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
-                    Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-                    Comnd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
-                    Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
+                    cmd = cnx.CreateCommand();
+                    cmd.CommandText = "sp_validar_si_ya_existe_este_ingreso";
+                    cmd.Connection = cnx;
+                    cmd.Transaction = transaction;
+                    //SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@entrada", sumar_Kg);
+                    cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                    cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                    cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                    cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                    cmd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+                    Id_lote_generado = Convert.ToInt32(cmd.ExecuteScalar());
                 }
-
-
-
 
                 //Registro de Salida Externa H
                 //es el equivalente a una transferencia desde almacen externo
                 int id_salida_h = 0;
                 IngresoExternoH IngresoExterno1 = new IngresoExternoH();
                 IngresoExternoD DetalleExterno1 = new IngresoExternoD();
-
                 
                 if (IngresoExterno1.RecuperarRegistro(id_externo_ingreso))
                 {
                     if (DetalleExterno1.RecuperaRegistroInFromIdIngresoH_and_MP_Code(id_externo_ingreso))
                     {
-                        SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insert", transaction.Connection);
-                        cmdh.CommandType = CommandType.StoredProcedure;
-                        cmdh.Transaction = transaction;
-                        cmdh.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = DetalleExterno1.BodegaIn;
-                        cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = "BG001";//Id bodega MP
-                        cmdh.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
-                        cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
-                        cmdh.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
-                        cmdh.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = ingreso;
-                        cmdh.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = id_externo_ingreso;
-
-                        id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
+                        //SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insert", transaction.Connection);
+                        //SqlCommand cmdh = new SqlCommand("sp_salida_almacenes_externos_h_insertV2", transaction.Connection);
+                        cmd = cnx.CreateCommand();
+                        cmd.CommandText = "sp_salida_almacenes_externos_h_insertV2";
+                        cmd.Connection = cnx;
+                        cmd.Transaction = transaction;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //cmdh.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = DetalleExterno1.BodegaIn;
+                        //cmdh.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = "BG001";//Id bodega MP
+                        //cmdh.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
+                        //cmdh.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
+                        //cmdh.Parameters.Add("@user_creador", SqlDbType.Int).Value = this.UsuarioLogeado.Id;
+                        //cmdh.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = ingreso;
+                        //cmdh.Parameters.Add("@id_ingreso", SqlDbType.Int).Value = id_externo_ingreso;
+                        cmd.Parameters.AddWithValue("@numero_transaccion", ingreso);
+                        cmd.Parameters.AddWithValue("@id_transferencia", id_transferencia_h);
+                        //id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
+                        id_salida_h = id_transferencia_h;
                     }
                 }
 
@@ -472,46 +491,50 @@ namespace LOSA.RecepcionMP
 
                 int id_linea_d = 0;
 
-                SqlCommand cmd2 = new SqlCommand("sp_salida_almacenes_externos_d_insert", transaction.Connection);
-                cmd2.CommandType = CommandType.StoredProcedure;
-                cmd2.Transaction = transaction;
+                //SqlCommand cmd2 = new SqlCommand("sp_salida_almacenes_externos_d_insert", transaction.Connection);
+                cmd = cnx.CreateCommand();
+                cmd.CommandText = "sp_salida_almacenes_externos_d_insert";
+                cmd.Connection = cnx;
+                cmd.Transaction = transaction;
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.Add("@id_mp", SqlDbType.Int).Value = mp1.IdMP_ACS;
+                cmd.Parameters.Add("@id_h", SqlDbType.Int).Value = id_salida_h;
+                cmd.Parameters.Add("@peso", SqlDbType.Decimal).Value = TotalKg;
+                cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = 1;
+                cmd.Parameters.Add("@LineNum", SqlDbType.Int).Value = id_linea_d;
+                cmd.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
 
-                cmd2.Parameters.Add("@id_mp", SqlDbType.Int).Value = mp1.IdMP_ACS;
-                cmd2.Parameters.Add("@id_h", SqlDbType.Int).Value = id_salida_h;
-                cmd2.Parameters.Add("@peso", SqlDbType.Decimal).Value = TotalKg;
-                cmd2.Parameters.Add("@unidades", SqlDbType.Decimal).Value = 1;
-                cmd2.Parameters.Add("@LineNum", SqlDbType.Int).Value = id_linea_d;
-                cmd2.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
-
-                int id_salida_d = Convert.ToInt32(cmd2.ExecuteScalar());
-
+                int id_salida_d = Convert.ToInt32(cmd.ExecuteScalar());
 
                 //Insertar detalle de salida de almacen
                 foreach (dsRecepcionMPx.granelRow item2 in dsRecepcionMPx1.granel)
                 {
                     id_linea_d++;
-                    SqlCommand cmd3 = new SqlCommand("sp_salida_almacenes_externos_lotes_insert ", transaction.Connection);
-                    cmd3.CommandType = CommandType.StoredProcedure;
-                    cmd3.Transaction = transaction;
+                    //SqlCommand cmd3 = new SqlCommand("sp_salida_almacenes_externos_lotes_insert ", transaction.Connection);
+                    cmd = cnx.CreateCommand();
+                    cmd.CommandText = "sp_salida_almacenes_externos_lotes_insert";
+                    cmd.Connection = cnx;
+                    cmd.Transaction = transaction;
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd3.Parameters.Add("@peso", SqlDbType.Decimal).Value = item2.PesoProd;
-                    cmd3.Parameters.Add("@unidades", SqlDbType.Decimal).Value = 1;
-                    cmd3.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now;
-                    cmd3.Parameters.Add("@user_creador", SqlDbType.Int).Value = UsuarioLogeado.Id;
-                    cmd3.Parameters.Add("@id_serie", SqlDbType.Int).Value = item2.id;
-                    cmd3.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
-                    cmd3.Parameters.Add("@id_mp", SqlDbType.Int).Value = mp1.IdMP_ACS;
-                    cmd3.Parameters.Add("@id_lote_externo", SqlDbType.Int).Value = item2.id;
-                    cmd3.Parameters.Add("@id_detalle", SqlDbType.Int).Value = id_salida_d;
-                    cmd3.Parameters.Add("@id_presentacio", SqlDbType.Int).Value = DBNull.Value;
-                    cmd3.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = DetalleExterno1.BodegaIn;
-                    cmd3.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = "BG001";//Id bodega MP
-                    cmd3.Parameters.Add("@LineNum", SqlDbType.Int).Value = id_linea_d;
+                    cmd.Parameters.Add("@peso", SqlDbType.Decimal).Value = item2.PesoProd;
+                    cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = 1;
+                    cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now;
+                    cmd.Parameters.Add("@user_creador", SqlDbType.Int).Value = UsuarioLogeado.Id;
+                    cmd.Parameters.Add("@id_serie", SqlDbType.Int).Value = item2.id;
+                    cmd.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
+                    cmd.Parameters.Add("@id_mp", SqlDbType.Int).Value = mp1.IdMP_ACS;
+                    cmd.Parameters.Add("@id_lote_externo", SqlDbType.Int).Value = item2.id;
+                    cmd.Parameters.Add("@id_detalle", SqlDbType.Int).Value = id_salida_d;
+                    cmd.Parameters.Add("@id_presentacio", SqlDbType.Int).Value = DBNull.Value;
+                    cmd.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = DetalleExterno1.BodegaIn;
+                    cmd.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = "BG001";//Id bodega MP
+                    cmd.Parameters.Add("@LineNum", SqlDbType.Int).Value = id_linea_d;
                     //cmd3.Parameters.Add("@id_ingreso_lote", SqlDbType.Int).Value = ingreso_h.ID;
-                    cmd3.Parameters.Add("@id_ingreso_lote", SqlDbType.Int).Value = Id_lote_generado;
+                    cmd.Parameters.Add("@id_ingreso_lote", SqlDbType.Int).Value = Id_lote_generado;
 
-                    cmd3.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
                 }
 
              
@@ -544,13 +567,16 @@ namespace LOSA.RecepcionMP
                 foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
                 {
                     //
-                    
-                        //DataOperations dp = new DataOperations();
-                        //cn = new SqlConnection(dp.ConnectionStringLOSA);
-                        //cn.Open();
 
-                        string SQL = @"sp_set_insert_tarimas_graneles_v4";
-                        cmd = new SqlCommand(SQL, transaction.Connection);
+                    //DataOperations dp = new DataOperations();
+                    //cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    //cn.Open();
+
+                        //string SQL = @"sp_set_insert_tarimas_graneles_v4";
+                        cmd = cnx.CreateCommand();
+                        cmd.CommandText = "sp_set_insert_tarimas_graneles_v4";
+                        cmd.Connection = cnx;
+                        cmd.Transaction = transaction;
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
                         cmd.Parameters.AddWithValue("@entrada", row.PesoProd);

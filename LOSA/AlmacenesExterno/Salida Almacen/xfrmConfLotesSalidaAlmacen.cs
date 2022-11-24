@@ -681,20 +681,34 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             var gridview = (GridView)gcLotesSeleccionados.FocusedView;
             var row = (dsSalidasAlmacenesExternos.Lote_SeleccionadosRow)gridview.GetFocusedDataRow();
 
-            //dsSalidasAlmacenesExternos.Lote_Seleccionados.Clear();
-            foreach (dsSalidasAlmacenesExternos.LoteRow item in dsSalidasAlmacenesExternos.Lote.Rows)
-            {
-                if (item.lote == row.lote)
-                {
-                    item.cantidad_disponible = item.cantidad_disponible + row.cantidad;
-                    item.unidades_disponibles = item.unidades_disponibles + row.unidades;
-                    item.Seleccionar = false;
+            DialogResult r = CajaDialogo.Pregunta("Desea eliminar este detalle?");
+            if (r != System.Windows.Forms.DialogResult.Yes)
+                return;
 
-                    gvLotesSeleccionados.DeleteRow(gvLotesSeleccionados.FocusedRowHandle);
-                    dsSalidasAlmacenesExternos.Lote_Seleccionados.AcceptChanges();
+            try
+            {
+                foreach (dsSalidasAlmacenesExternos.LoteRow item in dsSalidasAlmacenesExternos.Lote.Rows)
+                {
+                    if (item.lote == row.lote && item.id == row.id)
+                    {
+                        decimal kg = 0;
+                        decimal ud = 0;
+                        item.cantidad_disponible = kg + row.cantidad;
+                        item.unidades_disponibles = ud + row.unidades;
+                        item.Seleccionar = false;
+                    }
                 }
+
+                gvLotesSeleccionados.DeleteRow(gvLotesSeleccionados.FocusedRowHandle);
             }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
             //dsSalidasAlmacenesExternos.Lote_Seleccionados.Clear();
+            
+           
 
 
         }

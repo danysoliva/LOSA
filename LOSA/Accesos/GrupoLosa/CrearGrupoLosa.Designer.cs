@@ -59,7 +59,7 @@ namespace LOSA.Accesos.GrupoLosa
             this.checkEditHabilitado.Location = new System.Drawing.Point(24, 112);
             this.checkEditHabilitado.Name = "checkEditHabilitado";
             this.checkEditHabilitado.Properties.Caption = "Habilitado";
-            this.checkEditHabilitado.Size = new System.Drawing.Size(75, 20);
+            this.checkEditHabilitado.Size = new System.Drawing.Size(75, 19);
             this.checkEditHabilitado.TabIndex = 2;
             // 
             // botonGuardar
