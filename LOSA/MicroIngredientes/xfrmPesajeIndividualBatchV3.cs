@@ -144,6 +144,7 @@ namespace LOSA.MicroIngredientes
                 CajaDialogo.Error(ex.Message);
                 throw;
             }
+            txtCodBarra.Focus();
         }
 
         private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -153,7 +154,7 @@ namespace LOSA.MicroIngredientes
             gvPesaje.DeleteRow(gvPesaje.FocusedRowHandle);
             timer1.Enabled = true;
             indicePeso = gvPesaje.RowCount - 1;
-
+            txtCodBarra.Focus();
         }
 
 
@@ -202,6 +203,7 @@ namespace LOSA.MicroIngredientes
                 CajaDialogo.Error(ex.Message);
                 throw;
             }
+            txtCodBarra.Focus();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -210,7 +212,7 @@ namespace LOSA.MicroIngredientes
             btnBasc1.Appearance.BackColor = default(Color);
             btnBasc2.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
             btnBascAmbas.Appearance.BackColor = default(Color);
-
+            txtCodBarra.Focus();
         }
 
         private void lblRequerido_Click(object sender, EventArgs e)
@@ -224,6 +226,7 @@ namespace LOSA.MicroIngredientes
             btnBasc1.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
             btnBasc2.Appearance.BackColor = default(Color);
             btnBascAmbas.Appearance.BackColor = default(Color);
+            txtCodBarra.Focus();
         }
 
         private void btnBascAmbas_Click(object sender, EventArgs e)
@@ -232,6 +235,7 @@ namespace LOSA.MicroIngredientes
             btnBasc1.Appearance.BackColor= default(Color);
             btnBasc2.Appearance.BackColor= default(Color);
             btnBascAmbas.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+            txtCodBarra.Focus();
         }
 
         private void lblValorBascula1_Click(object sender, EventArgs e)
@@ -244,7 +248,6 @@ namespace LOSA.MicroIngredientes
         {
             if (e.KeyCode == Keys.Enter)
             {
-
                 try
                 {
                     TarimaMicroingrediente tarima = new TarimaMicroingrediente();
@@ -322,8 +325,8 @@ namespace LOSA.MicroIngredientes
                             limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
 
                             //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-                            lblInferior.Text = "Límite Máximo: " + limiteInferior.ToString("N2");
-                            lblSuperior.Text = "Límite Mínimo: " + limiteSuperior.ToString("N2");
+                            lblInferior.Text = "Límite Mínimo: " + limiteInferior.ToString("N2");
+                            lblSuperior.Text = "Límite Máximo: " + limiteSuperior.ToString("N2");
 
 
                             switch (BasculaId)
@@ -491,13 +494,10 @@ namespace LOSA.MicroIngredientes
 
                             pesoBasculaAcumuladoTMP1 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
                             pesoBasculaAcumuladoTMP_ALL = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-
-
                         }
                         else
                         {
                             lblValorBascula1.Text = "Valor en Báscula: 0.00 Kg";
-
                         }
 
                         //pesoBasculaAcumuladoTMP1 = pesoBasculaAcumuladoTMP1 + pesoBascula1;
