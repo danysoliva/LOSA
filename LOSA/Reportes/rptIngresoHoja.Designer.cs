@@ -251,7 +251,7 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 17F;
+            this.TopMargin.HeightF = 17.00001F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin

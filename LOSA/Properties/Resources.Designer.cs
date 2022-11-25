@@ -523,6 +523,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clock_24 {
+            get {
+                object obj = ResourceManager.GetObject("clock_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_round_24 {
             get {
                 object obj = ResourceManager.GetObject("close_round_24", resourceCulture);
@@ -556,6 +566,26 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap code_16 {
             get {
                 object obj = ResourceManager.GetObject("code_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap config_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("config_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap config_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("config_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -606,6 +636,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap copy_48x48 {
             get {
                 object obj = ResourceManager.GetObject("copy_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dakirby309_Simply_Styled_Settings {
+            get {
+                object obj = ResourceManager.GetObject("Dakirby309-Simply-Styled-Settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1176,6 +1216,26 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap oil_barrel {
             get {
                 object obj = ResourceManager.GetObject("oil-barrel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap orders_production_24px {
+            get {
+                object obj = ResourceManager.GetObject("orders_production_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap orders_production_32px {
+            get {
+                object obj = ResourceManager.GetObject("orders_production_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1963,6 +2023,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap thermometer32px {
+            get {
+                object obj = ResourceManager.GetObject("thermometer32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trazabilidad {
             get {
                 object obj = ResourceManager.GetObject("trazabilidad", resourceCulture);
@@ -1976,6 +2046,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap trucksss {
             get {
                 object obj = ResourceManager.GetObject("trucksss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tv {
+            get {
+                object obj = ResourceManager.GetObject("tv", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

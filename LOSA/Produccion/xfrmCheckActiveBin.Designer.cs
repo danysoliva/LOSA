@@ -29,6 +29,7 @@ namespace LOSA.Produccion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pcTank1 = new DevExpress.XtraEditors.PanelControl();
             this.pcTank2 = new DevExpress.XtraEditors.PanelControl();
             this.pcTank3 = new DevExpress.XtraEditors.PanelControl();
@@ -68,7 +69,7 @@ namespace LOSA.Produccion
             this.lblMP9 = new DevExpress.XtraEditors.LabelControl();
             this.lblMP11 = new DevExpress.XtraEditors.LabelControl();
             this.lblMP12 = new DevExpress.XtraEditors.LabelControl();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pcTank1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcTank2)).BeginInit();
