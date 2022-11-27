@@ -79,7 +79,6 @@
             this.colestado_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnFinalizar = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -117,7 +116,7 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(114, 6);
+            this.btnAgregar.Location = new System.Drawing.Point(130, 6);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(110, 73);
             this.btnAgregar.TabIndex = 29;
@@ -439,22 +438,6 @@
             this.simpleButton1.Text = "Lotes";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnFinalizar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Appearance.Options.UseBackColor = true;
-            this.btnFinalizar.Appearance.Options.UseFont = true;
-            this.btnFinalizar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizar.ImageOptions.Image")));
-            this.btnFinalizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnFinalizar.Location = new System.Drawing.Point(114, 17);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(113, 47);
-            this.btnFinalizar.TabIndex = 54;
-            this.btnFinalizar.Text = "Fin. Traslado";
-            this.btnFinalizar.Visible = false;
-            this.btnFinalizar.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
             // btnPrintSeleccionados
             // 
             this.btnPrintSeleccionados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -493,7 +476,6 @@
             this.Controls.Add(this.checkBoxSelectAll);
             this.Controls.Add(this.btnPrintSeleccionados);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.labelControl3);
@@ -542,7 +524,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
         private DevExpress.XtraGrid.Columns.GridColumn colEliminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btneliminarTm;
-        private DevExpress.XtraEditors.SimpleButton btnFinalizar;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionado;
         private DevExpress.XtraEditors.SimpleButton btnPrintSeleccionados;
         private System.Windows.Forms.CheckBox checkBoxSelectAll;

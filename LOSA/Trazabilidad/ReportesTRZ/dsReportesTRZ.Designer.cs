@@ -1691,6 +1691,12 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             private global::System.Data.DataColumn columnCode;
             
+            private global::System.Data.DataColumn columnsaco_desde;
+            
+            private global::System.Data.DataColumn columnsaco_hasta;
+            
+            private global::System.Data.DataColumn columncodigo_barra;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_despachosDataTable() {
@@ -1790,6 +1796,30 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn saco_desdeColumn {
+                get {
+                    return this.columnsaco_desde;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn saco_hastaColumn {
+                get {
+                    return this.columnsaco_hasta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigo_barraColumn {
+                get {
+                    return this.columncodigo_barra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1825,7 +1855,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public detalle_despachosRow Adddetalle_despachosRow(int _Cod__Despacho, int Fila, int Lote, decimal Cantidad, decimal Peso, decimal Kg, string Producto, string Code) {
+            public detalle_despachosRow Adddetalle_despachosRow(int _Cod__Despacho, int Fila, int Lote, decimal Cantidad, decimal Peso, decimal Kg, string Producto, string Code, short saco_desde, int saco_hasta, string codigo_barra) {
                 detalle_despachosRow rowdetalle_despachosRow = ((detalle_despachosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _Cod__Despacho,
@@ -1835,7 +1865,10 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                         Peso,
                         Kg,
                         Producto,
-                        Code};
+                        Code,
+                        saco_desde,
+                        saco_hasta,
+                        codigo_barra};
                 rowdetalle_despachosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_despachosRow);
                 return rowdetalle_despachosRow;
@@ -1866,6 +1899,9 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 this.columnKg = base.Columns["Kg"];
                 this.columnProducto = base.Columns["Producto"];
                 this.columnCode = base.Columns["Code"];
+                this.columnsaco_desde = base.Columns["saco_desde"];
+                this.columnsaco_hasta = base.Columns["saco_hasta"];
+                this.columncodigo_barra = base.Columns["codigo_barra"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1889,6 +1925,12 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 base.Columns.Add(this.columnProducto);
                 this.columnCode = new global::System.Data.DataColumn("Code", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCode);
+                this.columnsaco_desde = new global::System.Data.DataColumn("saco_desde", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsaco_desde);
+                this.columnsaco_hasta = new global::System.Data.DataColumn("saco_hasta", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsaco_hasta);
+                this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_barra);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4605,6 +4647,54 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public short saco_desde {
+                get {
+                    try {
+                        return ((short)(this[this.tabledetalle_despachos.saco_desdeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'saco_desde\' de la tabla \'detalle_despachos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_despachos.saco_desdeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int saco_hasta {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalle_despachos.saco_hastaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'saco_hasta\' de la tabla \'detalle_despachos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_despachos.saco_hastaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigo_barra {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_despachos.codigo_barraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo_barra\' de la tabla \'detalle_despachos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_despachos.codigo_barraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is_Cod__DespachoNull() {
                 return this.IsNull(this.tabledetalle_despachos._Cod__DespachoColumn);
             }
@@ -4697,6 +4787,42 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCodeNull() {
                 this[this.tabledetalle_despachos.CodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Issaco_desdeNull() {
+                return this.IsNull(this.tabledetalle_despachos.saco_desdeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setsaco_desdeNull() {
+                this[this.tabledetalle_despachos.saco_desdeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Issaco_hastaNull() {
+                return this.IsNull(this.tabledetalle_despachos.saco_hastaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setsaco_hastaNull() {
+                this[this.tabledetalle_despachos.saco_hastaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscodigo_barraNull() {
+                return this.IsNull(this.tabledetalle_despachos.codigo_barraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcodigo_barraNull() {
+                this[this.tabledetalle_despachos.codigo_barraColumn] = global::System.Convert.DBNull;
             }
         }
         

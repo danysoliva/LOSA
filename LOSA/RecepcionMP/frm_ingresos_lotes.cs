@@ -38,7 +38,7 @@ namespace LOSA.RecepcionMP
             Numero_transaccion = Pnumero_transaccion;
             Id_ingreso = Pid_ingreso;
             UsuarioLogeado = Puser;
-            btnFinalizar.Visible = !Finalizado && id_traslado !=0 ? true : false;
+            //btnFinalizar.Visible = !Finalizado && id_traslado !=0 ? true : false;
             ItemCode = pItemCode;
             LoadTarimas();
 
@@ -330,6 +330,7 @@ namespace LOSA.RecepcionMP
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
+
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
@@ -426,13 +427,23 @@ namespace LOSA.RecepcionMP
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmagregarlote frm = new frmagregarlote(Id_ingreso,Numero_transaccion, UsuarioLogeado);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
+            //Debemos validar si es compra puede agregar mas tarimas
+            //if () //Es Compra
+            //{
+                frmagregarlote frm = new frmagregarlote(Id_ingreso, Numero_transaccion, UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadTarimas();
+                }
+            //}
+            //else
+            //{
+            //    CajaDialogo.Error("No puede agregar otro lote si es traslado de MP");
+            //}
 
-                LoadTarimas();
-                
-            }
+            //Si es traslado pues no.
+
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

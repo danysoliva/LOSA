@@ -72,6 +72,9 @@
               <xs:element name="Kg" msprop:Generator_ColumnVarNameInTable="columnKg" msprop:Generator_ColumnPropNameInRow="Kg" msprop:Generator_ColumnPropNameInTable="KgColumn" msprop:Generator_UserColumnName="Kg" type="xs:decimal" minOccurs="0" />
               <xs:element name="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_UserColumnName="Producto" type="xs:string" minOccurs="0" />
               <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="saco_desde" msprop:Generator_ColumnVarNameInTable="columnsaco_desde" msprop:Generator_ColumnPropNameInRow="saco_desde" msprop:Generator_ColumnPropNameInTable="saco_desdeColumn" msprop:Generator_UserColumnName="saco_desde" type="xs:short" minOccurs="0" />
+              <xs:element name="saco_hasta" msprop:Generator_ColumnVarNameInTable="columnsaco_hasta" msprop:Generator_ColumnPropNameInRow="saco_hasta" msprop:Generator_ColumnPropNameInTable="saco_hastaColumn" msprop:Generator_UserColumnName="saco_hasta" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
