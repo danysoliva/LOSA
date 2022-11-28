@@ -42,6 +42,7 @@ namespace LOSA.Clases
         decimal _factor;
         int id_estadoCalidad;
         int _id_ingreso;
+        int _id_ingresoH;
         int id_alimentacion;
         private int id_turno;
         DateTime fecha_produccion_pt;
@@ -101,6 +102,7 @@ namespace LOSA.Clases
         public int Id_tarima_reproceso { get => _id_tarima_reproceso; set => _id_tarima_reproceso = value; }
         public string ProductoTerminadoName_Detalle { get => _productoTerminadoName_Detalle; set => _productoTerminadoName_Detalle = value; }
         public string Turno { get => turno; set => turno = value; }
+        public int Id_ingresoH { get => _id_ingresoH; set => _id_ingresoH = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -426,6 +428,13 @@ namespace LOSA.Clases
                     Id_alimentacion = dr.GetInt32(22);
                     Fecha_produccion_pt = dr.GetDateTime(23);
                     Id_turno = dr.GetInt32(24);
+                    Itemcode = dr.GetString(25);
+                    if (!dr.IsDBNull(dr.GetOrdinal("id_ingreso_h")))
+                        Id_ingresoH = dr.GetInt32(26);
+                    if (!dr.IsDBNull(dr.GetOrdinal("nombre_comercial")))
+                        MateriaPrima = dr.GetString(27);
+                    if (!dr.IsDBNull(dr.GetOrdinal("CardName")))
+                        _Proveedor = dr.GetString(28);
                     Recuperado = true;
                 }
                 dr.Close();

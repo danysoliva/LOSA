@@ -63,9 +63,10 @@ namespace LOSA.MicroIngredientes
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
+                        id = dr.GetInt32(0);
                         id_order_apms = dr.GetInt64(1);
                         lblNumOrden.Text = id_order_apms.ToString();
-                        lblCodOrden.Text = dr.GetString(2);
+                        codigoOrden = lblCodOrden.Text = dr.GetString(2);
                         lbl_Lote.Text = dr.GetInt32(4).ToString();
                         TotalBatchOrden = dr.GetInt32(5);
                         lblTotalBatchOrden.Text = TotalBatchOrden.ToString();
@@ -222,6 +223,11 @@ namespace LOSA.MicroIngredientes
         int ami_id = 0;
         private void gvDetalle_RowClick(object sender, RowClickEventArgs e)
         {
+            CargarDetalleMezcla();
+        }
+
+        private void CargarDetalleMezcla()
+        {
             //Cargar el detalle
             var gridView = (GridView)gcDetalle.FocusedView;
             var row = (dsMicros.plan_microshRow)gridView.GetFocusedDataRow();
@@ -285,38 +291,11 @@ namespace LOSA.MicroIngredientes
                 pesajeManualInfo.BatchPlan = row.cant_batch;
                 pesajeManualInfo.AMI_ID = ami_id;
                 pesajeManualInfo.PesoPorBatch = row.set_point;
-                //pesajeManualInfo.CantBatchMaximo=
-                //frmSelectLotePesaje frm = new frmSelectLotePesaje(pesajeManualInfo);
-
-
-                //if (frm.ShowDialog()== DialogResult.OK)
-                //{
-                //    //LoadData();
-                //    gvDetalle_RowClick(null, null);
-
-
-                //}
-
-
-
-
-                ////var row = (dsMicros.DetalleOrdenesPesajeIndividualRow)gvPesajeIndividual.GetDataRow(gvPesajeIndividual.FocusedRowHandle);
-                //PesajeIndividualInfo pesajeIndividual = new PesajeIndividualInfo();
+                
                 PesajeBasculaInfo pesaje = new PesajeBasculaInfo();
-
-                //if (row != null)
-                //{
-
-                //    if (row.Batch_Completados == row.Batch_Plan)
-                //    {
-                //        CajaDialogo.Error("YA HA COMPLETADO ESTE PLAN");
-                //        return;
-                //    }
-
 
                 pesaje.Batch_Plan = row.cant_batch;
                 pesaje.CantBatchMaximo = Convert.ToInt32((row.total - row.batch_real));
-                //pesajeIndividual.CantBatchMaximo = (row.Batch_Plan - row.Batch_Completados);
                 pesaje.id_orden_pesaje_header = row.id_orden_encabezado;
                 pesaje.MateriaPrimaID = row.id_rm;
                 pesaje.MateriaPrima = row.namerm;
@@ -330,6 +309,7 @@ namespace LOSA.MicroIngredientes
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadDataIndividual();
+                    CargarDetalleMezcla();
                 }
             }
             
@@ -673,13 +653,15 @@ namespace LOSA.MicroIngredientes
             try
             {
 
-                var row = (dsMicros.plan_microshRow)gvDetalle.GetFocusedDataRow();
+                //var row = (dsMicros.plan_microshRow)gvDetalle.GetFocusedDataRow();
 
-                if (row != null)
+                //if (row != null)
+                if (id > 0)
                 {
 
 
-                    xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(row.id_orden_encabezado, row.order_code);
+                    //xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(row.id_orden_encabezado, row.order_code);
+                    xfrmSpinBatchPlan frm = new xfrmSpinBatchPlan(id, codigoOrden);
 
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
@@ -703,7 +685,7 @@ namespace LOSA.MicroIngredientes
                                 SqlCommand cmd = new SqlCommand("sp_acumulador_batch_real", cnx);
                                 cmd.CommandType = CommandType.StoredProcedure;
 
-                                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = row.id_orden_encabezado;
+                                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = id;// row.id_orden_encabezado;
                                 cmd.Parameters.AddWithValue("@batch_acumulado", SqlDbType.Int).Value = frm.cantBatch;
 
                                 cmd.ExecuteNonQuery();
