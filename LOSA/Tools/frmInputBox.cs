@@ -23,7 +23,7 @@ namespace LOSA.Tools
         public int unidades_x_tarima; 
         public decimal peso_x_tarima;
         private int IsTrasladoMP;
-        private string lote;
+        public string LoteMP;
         public frmInputBox(int pnumero_Transaccion, int pid_tarima)
         {
             InitializeComponent();
@@ -77,6 +77,7 @@ namespace LOSA.Tools
             if (IsTrasladoMP == 1)
             {
                 id_lote_externo = Convert.ToInt32(grdlookLoteExterno.EditValue);
+                LoteMP = grdlookLoteExterno.Text;
             }
             unidades_x_tarima = Convert.ToInt32(txtUnidades.EditValue);
             peso_x_tarima = Convert.ToDecimal(txtPeso.EditValue);
@@ -189,6 +190,11 @@ namespace LOSA.Tools
 
                 throw;
             }
+        }
+
+        private void grdlookLoteExterno_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btndown_Click(object sender, EventArgs e)

@@ -229,23 +229,70 @@ namespace LOSA.RecepcionMP
                             }
 
 
-                            SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_lote", con);
+                            //SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_lote", con);
+                            //cmd.CommandType = CommandType.StoredProcedure;
+                            //cmd.Parameters.AddWithValue("@itemcode", vItemCodeMP);
+                            //cmd.Parameters.AddWithValue("@id_proveedor", tar1.IdProveedor);
+                            //cmd.Parameters.AddWithValue("@fecha_ingreso", tar1.FechaIngreso);
+                            //cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
+                            //cmd.Parameters.AddWithValue("@fecha_vencimiento", tar1.FechaVencimiento);
+                            //cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", tar1.FechaProduccionMP);
+                            //cmd.Parameters.AddWithValue("@lote_materia_prima", tar1.LoteMP);
+                            //cmd.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);
+                            //cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                            //cmd.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);
+                            //cmd.Parameters.AddWithValue("@codigo_barra", barcode);
+                            //cmd.Parameters.AddWithValue("@cant", unidades);
+                            //cmd.Parameters.AddWithValue("@peso", peso);
+                            //cmd.Parameters.AddWithValue("@idlotes", tar1.Id_ingreso);
+                            //int vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
+
+                            //MateriaPrima MP1 = new MateriaPrima();
+                            //MP1.RecuperarRegistroFromCode(tar1.)
+
+
+                            //Insert a [LOSA].[dbo].[LOSA_ingreso_mp_lotes]
+                            SqlCommand cmd = con.CreateCommand();
+                            cmd.CommandText = "sp_insert_ingresos_lote_v2";
+                            cmd.Connection = con;
+                            //cmd.Transaction = TransactionIngreso;
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@itemcode", vItemCodeMP);
-                            cmd.Parameters.AddWithValue("@id_proveedor", tar1.IdProveedor);
-                            cmd.Parameters.AddWithValue("@fecha_ingreso", tar1.FechaIngreso);
-                            cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
-                            cmd.Parameters.AddWithValue("@fecha_vencimiento", tar1.FechaVencimiento);
-                            cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", tar1.FechaProduccionMP);
-                            cmd.Parameters.AddWithValue("@lote_materia_prima", tar1.LoteMP);
-                            cmd.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);
-                            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                            cmd.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);
-                            cmd.Parameters.AddWithValue("@codigo_barra", barcode);
-                            cmd.Parameters.AddWithValue("@cant", unidades);
-                            cmd.Parameters.AddWithValue("@peso", peso);
-                            cmd.Parameters.AddWithValue("@idlotes", tar1.Id_ingreso);
-                            int vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
+                            cmd.Parameters.AddWithValue("@itemcode", tar1.ItemCode);////
+                            cmd.Parameters.AddWithValue("@itemname", tar1.MateriaPrima);//
+                            cmd.Parameters.AddWithValue("@cardcode", tar1.IdProveedor);//        //
+                            cmd.Parameters.AddWithValue("@cardname", tar1.Proveedor);  //     //
+                            cmd.Parameters.AddWithValue("@fecha_ingreso", tar1.FechaIngreso);      // //
+                            cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion); 
+                            cmd.Parameters.AddWithValue("@lote_materia_prima", frm.LoteMP);//        //
+                            cmd.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);//     //
+                            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//   //
+                            cmd.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);//     //
+                            cmd.Parameters.AddWithValue("@cant", unidades);//        //
+                            cmd.Parameters.AddWithValue("@TotalTarimas", cant);//    //
+                            cmd.Parameters.AddWithValue("@pesotaria", peso);//   //
+                            cmd.Parameters.AddWithValue("@lote_externo", frm.id_lote_externo);//   //
+                            cmd.Parameters.AddWithValue("@idheader", tar1.Id_ingreso);//    //
+
+                            int IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
+
+                            SqlCommand cmd2 = new SqlCommand("sp_insert_new_tarima_lote", con);
+                            cmd2.CommandType = CommandType.StoredProcedure;
+                            cmd2.Parameters.AddWithValue("@itemcode", vItemCodeMP);
+                            cmd2.Parameters.AddWithValue("@id_proveedor", tar1.IdProveedor);
+                            cmd2.Parameters.AddWithValue("@fecha_ingreso", tar1.FechaIngreso);
+                            cmd2.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
+                            cmd2.Parameters.AddWithValue("@fecha_vencimiento", tar1.FechaVencimiento);
+                            cmd2.Parameters.AddWithValue("@fecha_produccion_materia_prima", tar1.FechaProduccionMP);
+                            cmd2.Parameters.AddWithValue("@lote_materia_prima", tar1.LoteMP);
+                            cmd2.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);
+                            cmd2.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                            cmd2.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);
+                            cmd2.Parameters.AddWithValue("@codigo_barra", barcode);
+                            cmd2.Parameters.AddWithValue("@cant", unidades);
+                            cmd2.Parameters.AddWithValue("@peso", peso);
+                            cmd2.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                            int vid_tarima = Convert.ToInt32(cmd2.ExecuteScalar());
+
 
                             List1.Add(vid_tarima);
                             acumulado_kg_temp = peso;
