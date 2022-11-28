@@ -24,19 +24,23 @@ namespace LOSA.Tools
         public decimal peso_x_tarima;
         private int IsTrasladoMP;
         public string LoteMP;
-        public frmInputBox(int pnumero_Transaccion, int pid_tarima)
+        
+        public frmInputBox(int pnumero_Transaccion, int pid_tarima, int pIdLoteExterno)
         {
             InitializeComponent();
             Numero_transaccion = pnumero_Transaccion;
             id_tarima = pid_tarima;
 
-            LoadDetalle_lote_salida();
+            if(pIdLoteExterno>0)
+                LoadDetalle_lote_salida(pIdLoteExterno);
+
             txtValue.Text = "1";
 
             Transferencia Traslado = new Transferencia();
             Traslado.RecuIsTraslado(Numero_transaccion);
             IsTrasladoMP = Traslado.IsTraslado1;
             Traslado.RecuIsTraslado(Numero_transaccion);
+
             if (IsTrasladoMP == 0) //No es traslado! es Duplicar Tarima de Compra Directa
             {
                 grdlookLoteExterno.Visible = false;
@@ -91,22 +95,41 @@ namespace LOSA.Tools
             this.Close();
         }
 
-        private void LoadDetalle_lote_salida()
+        private void LoadDetalle_lote_salida(int _pIdLoteExterno)
         {
+            //DataOperations dp = new DataOperations();
+            //string query = @"sp_get_salida_d_lote_for_numero_ingreso";
+            //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            //try
+            //{
+            //    cn.Open();
+            //    SqlCommand cmd = new SqlCommand(query, cn);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@numero_transaccion", Numero_transaccion);
+            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //    dsRecepcionMPx.detalle_lote_externo.Clear();
+            //    da.Fill(dsRecepcionMPx.detalle_lote_externo);
+            //    cn.Close();
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
+
             DataOperations dp = new DataOperations();
-            string query = @"sp_get_salida_d_lote_for_numero_ingreso";
+            string query = @"sp_get_lista_lotes_factura_ingreso_externo";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@numero_transaccion", Numero_transaccion);
+                cmd.Parameters.AddWithValue("@id_lote_externo", _pIdLoteExterno);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsRecepcionMPx.detalle_lote_externo.Clear();
                 da.Fill(dsRecepcionMPx.detalle_lote_externo);
                 cn.Close();
-
             }
             catch (Exception ex)
             {

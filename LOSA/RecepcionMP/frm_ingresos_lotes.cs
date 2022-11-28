@@ -171,7 +171,14 @@ namespace LOSA.RecepcionMP
 
             int traslado = trans.IsTraslado1;
 
-            frmInputBox frm = new frmInputBox(numero_transaccion, row.id);
+            Tarima tar1x = new Tarima();
+            int idLoteExterno = 0;
+            if (tar1x.RecuperarRegistro(row.id))
+            {
+                idLoteExterno = tar1x.Id_lote_externo;
+            }
+            
+            frmInputBox frm = new frmInputBox(numero_transaccion, row.id, idLoteExterno);
             frm.Text = "Duplicar Tarima";
             frm.lblInstrucciones.Text = "Ingrese la cantidad de tarimas a duplicar:";
             frm.txtValue.Text = "1";
@@ -207,15 +214,39 @@ namespace LOSA.RecepcionMP
                 Tarima tar1 = new Tarima();
                 if (tar1.RecuperarRegistro(row.id))
                 {
-
-                    for (int i = 1; i <= cant; i++)
+                    try
                     {
-                        try
-                        {
-                            DataOperations dp = new DataOperations();
-                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                            con.Open();
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
 
+                        //Insert a [LOSA].[dbo].[LOSA_ingreso_mp_lotes]
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandText = "sp_insert_ingresos_lote_v2";
+                        cmd.Connection = con;
+
+                        //cmd.Transaction = TransactionIngreso;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@itemcode", tar1.ItemCode);////
+                        cmd.Parameters.AddWithValue("@itemname", tar1.MateriaPrima);//
+                        cmd.Parameters.AddWithValue("@cardcode", tar1.IdProveedor);//        //
+                        cmd.Parameters.AddWithValue("@cardname", tar1.Proveedor);  //     //
+                        cmd.Parameters.AddWithValue("@fecha_ingreso", tar1.FechaIngreso);      // //
+                        cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
+                        cmd.Parameters.AddWithValue("@lote_materia_prima", frm.LoteMP);//        //
+                        cmd.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);//     //
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//   //
+                        cmd.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);//     //
+                        cmd.Parameters.AddWithValue("@cant", unidades);//        //
+                        cmd.Parameters.AddWithValue("@TotalTarimas", cant);//    //
+                        cmd.Parameters.AddWithValue("@pesotaria", peso);//   //
+                        cmd.Parameters.AddWithValue("@lote_externo", frm.id_lote_externo);//   //
+                        cmd.Parameters.AddWithValue("@idheader", tar1.Id_ingresoH);//    //
+
+                        int IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        for (int i = 1; i <= cant; i++)
+                        {
                             SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", con);
                             cmm.CommandType = CommandType.StoredProcedure;
                             cmm.Parameters.AddWithValue("@id", 1);
@@ -227,7 +258,6 @@ namespace LOSA.RecepcionMP
                             {
                                 vItemCodeMP = mpx.CodeMP_SAP;
                             }
-
 
                             //SqlCommand cmd = new SqlCommand("sp_insert_new_tarima_lote", con);
                             //cmd.CommandType = CommandType.StoredProcedure;
@@ -249,32 +279,6 @@ namespace LOSA.RecepcionMP
 
                             //MateriaPrima MP1 = new MateriaPrima();
                             //MP1.RecuperarRegistroFromCode(tar1.)
-                            
-
-                            //Insert a [LOSA].[dbo].[LOSA_ingreso_mp_lotes]
-                            SqlCommand cmd = con.CreateCommand();
-                            cmd.CommandText = "sp_insert_ingresos_lote_v2";
-                            cmd.Connection = con;
-
-                            //cmd.Transaction = TransactionIngreso;
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@itemcode", tar1.ItemCode);////
-                            cmd.Parameters.AddWithValue("@itemname", tar1.MateriaPrima);//
-                            cmd.Parameters.AddWithValue("@cardcode", tar1.IdProveedor);//        //
-                            cmd.Parameters.AddWithValue("@cardname", tar1.Proveedor);  //     //
-                            cmd.Parameters.AddWithValue("@fecha_ingreso", tar1.FechaIngreso);      // //
-                            cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion); 
-                            cmd.Parameters.AddWithValue("@lote_materia_prima", frm.LoteMP);//        //
-                            cmd.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);//     //
-                            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//   //
-                            cmd.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);//     //
-                            cmd.Parameters.AddWithValue("@cant", unidades);//        //
-                            cmd.Parameters.AddWithValue("@TotalTarimas", cant);//    //
-                            cmd.Parameters.AddWithValue("@pesotaria", peso);//   //
-                            cmd.Parameters.AddWithValue("@lote_externo", frm.id_lote_externo);//   //
-                            cmd.Parameters.AddWithValue("@idheader", tar1.Id_ingresoH);//    //
-
-                            int IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
 
                             SqlCommand cmd2 = new SqlCommand("sp_insert_new_tarima_lote", con);
                             cmd2.CommandType = CommandType.StoredProcedure;
@@ -298,20 +302,21 @@ namespace LOSA.RecepcionMP
                             List1.Add(vid_tarima);
                             acumulado_kg_temp = peso;
                             acumulado_ud_temp = unidades;
-                            con.Close();
+                            
                             //this.Close();
-                        }
-                        catch (Exception ec)
-                        {
-                            CajaDialogo.Error(ec.Message);
-                        }
-                        
-                        //Total de Kg y Ud por registro.
-                        
-                        TotalKg = acumulado_kg_temp + TotalKg;
-                        TotalUd = acumulado_ud_temp + TotalUd;
+                            //Total de Kg y Ud por registro.
 
-                    }//end for 
+                            TotalKg = acumulado_kg_temp + TotalKg;
+                            TotalUd = acumulado_ud_temp + TotalUd;
+
+                        }//end for 
+
+                        con.Close();
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
 
                     //Se debe validar si procede de un transferencia de externo
                     try
