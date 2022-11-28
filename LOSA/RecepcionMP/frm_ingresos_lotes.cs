@@ -249,12 +249,13 @@ namespace LOSA.RecepcionMP
 
                             //MateriaPrima MP1 = new MateriaPrima();
                             //MP1.RecuperarRegistroFromCode(tar1.)
-
+                            
 
                             //Insert a [LOSA].[dbo].[LOSA_ingreso_mp_lotes]
                             SqlCommand cmd = con.CreateCommand();
                             cmd.CommandText = "sp_insert_ingresos_lote_v2";
                             cmd.Connection = con;
+
                             //cmd.Transaction = TransactionIngreso;
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@itemcode", tar1.ItemCode);////
@@ -271,7 +272,7 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@TotalTarimas", cant);//    //
                             cmd.Parameters.AddWithValue("@pesotaria", peso);//   //
                             cmd.Parameters.AddWithValue("@lote_externo", frm.id_lote_externo);//   //
-                            cmd.Parameters.AddWithValue("@idheader", tar1.Id_ingreso);//    //
+                            cmd.Parameters.AddWithValue("@idheader", tar1.Id_ingresoH);//    //
 
                             int IdLoteInserted = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -283,7 +284,7 @@ namespace LOSA.RecepcionMP
                             cmd2.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
                             cmd2.Parameters.AddWithValue("@fecha_vencimiento", tar1.FechaVencimiento);
                             cmd2.Parameters.AddWithValue("@fecha_produccion_materia_prima", tar1.FechaProduccionMP);
-                            cmd2.Parameters.AddWithValue("@lote_materia_prima", tar1.LoteMP);
+                            cmd2.Parameters.AddWithValue("@lote_materia_prima", frm.LoteMP);
                             cmd2.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);
                             cmd2.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                             cmd2.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);
