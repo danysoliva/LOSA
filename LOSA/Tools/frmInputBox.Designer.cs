@@ -200,16 +200,15 @@
             this.colid_lote_externo.Caption = "# Lote";
             this.colid_lote_externo.FieldName = "id_lote_externo";
             this.colid_lote_externo.Name = "colid_lote_externo";
-            this.colid_lote_externo.Visible = true;
-            this.colid_lote_externo.VisibleIndex = 0;
             // 
             // collote
             // 
             this.collote.Caption = "Lote Externo";
             this.collote.FieldName = "lote";
             this.collote.Name = "collote";
+            this.collote.OptionsColumn.AllowShowHide = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 1;
+            this.collote.VisibleIndex = 0;
             // 
             // colpeso
             // 
@@ -218,8 +217,7 @@
             this.colpeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
-            this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 2;
+            this.colpeso.OptionsColumn.AllowShowHide = false;
             // 
             // colunidades
             // 
@@ -228,8 +226,7 @@
             this.colunidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colunidades.FieldName = "unidades";
             this.colunidades.Name = "colunidades";
-            this.colunidades.Visible = true;
-            this.colunidades.VisibleIndex = 3;
+            this.colunidades.OptionsColumn.AllowShowHide = false;
             // 
             // labelControl1
             // 

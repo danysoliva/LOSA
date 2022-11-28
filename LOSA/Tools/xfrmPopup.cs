@@ -182,5 +182,45 @@ namespace LOSA.Tools
         {
             this.Close();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (tpLeidas.SelectedPageIndex == 0)
+            {
+                foreach (dsTools.NotificacionesRow row in dsTools.Notificaciones)
+                {
+
+
+                    try
+                    {
+                        NotificacionesGenerales notifications = new NotificacionesGenerales();
+                        DataOperations dp = new DataOperations();
+                        if (row != null)
+                        {
+                            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
+                            {
+                                cnx.Open();
+
+                                SqlCommand cmd = new SqlCommand("dbo.sp_set_notificaciones_marcar_como_leido", cnx);
+                                cmd.CommandType = CommandType.StoredProcedure;
+
+                                cmd.Parameters.Add("@id", SqlDbType.Int).Value = row.id;
+                                cmd.ExecuteNonQuery();
+
+                                row.leida = true;
+
+                                cnx.Close();
+                            }
+
+                            LoadNotificacionesLeidas(usuarioLogueado.Id);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+                }
+            }
+        }
     }
 }
