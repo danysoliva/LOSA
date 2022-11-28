@@ -65,7 +65,9 @@ namespace LOSA.RecepcionMP
 
         int idLoteExterno;
         string Bodega_Externa;
-        
+        int id_detalle_inserted;
+
+
         DataOperations dp = new DataOperations();
         public frmTarima_V2(bool PIstraslado,UserLogin Puser, int Pid_traslado)
         {
@@ -233,7 +235,60 @@ namespace LOSA.RecepcionMP
 
                     //id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
                     #endregion
-                    
+
+                    if (Istraslado)
+                    {
+                        //Rebajemos de Externo Detalle
+                        string query = @"sp_insert_detlle_salida_externo_d";
+                        //SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        //conn.Open();
+                        //SqlCommand cmdy = new SqlCommand(query, TransactionIngreso.Connection);
+                        SqlCommand cmdy = cn.CreateCommand();
+                        cmdy.CommandText = query;
+                        cmdy.Connection = cn;
+                        cmdy.Transaction = TransactionIngreso;
+                        cmdy.CommandType = CommandType.StoredProcedure;
+                        cmdy.Parameters.AddWithValue("@is_traslado_externo", Istraslado);
+                        //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                        cmdy.Parameters.AddWithValue("@id_materia_prima", id_mp);
+                        cmdy.Parameters.AddWithValue("@peso", 0);
+                        cmdy.Parameters.AddWithValue("@cant", 0);
+                        cmdy.Parameters.AddWithValue("@line_num", 0);
+                        cmdy.Parameters.AddWithValue("@DocEntry", DocEntry);
+                        cmdy.Parameters.AddWithValue("@id_inserted_LOSA_salida_externa_h", id_transferencia);
+                        id_detalle_inserted = Convert.ToInt32(cmdy.ExecuteScalar());
+                        //conn.Close();
+
+                        foreach (dsWizard.informacionIngresoRow rowy in dsWizard.informacionIngreso.Rows)
+                        {
+                            //Rebajemos de Externo Detalle Lote
+                            string query2 = @"sp_insert_salida_externo_d_loteV2";
+                            //SqlConnection conn2 = new SqlConnection(dp.ConnectionStringLOSA);
+                            //conn2.Open();
+                            //SqlCommand cmd2 = new SqlCommand(query2, TransactionIngreso.Connection);
+                            SqlCommand cmd2 = cn.CreateCommand();
+                            cmd2.CommandText = query2;
+                            cmd2.Connection = cn;
+                            cmd2.Transaction = TransactionIngreso;
+                            cmd2.CommandType = CommandType.StoredProcedure;
+                            //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                            cmd2.Parameters.AddWithValue("@peso", rowy.totalKgLote);
+                            cmd2.Parameters.AddWithValue("@cant", rowy.TotalUdlote);
+                            cmd2.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                            cmd2.Parameters.AddWithValue("@id_boleta", this.IdSerie);
+                            //cmd2.Parameters.AddWithValue("@DocEntry", DocEntry);
+                            cmd2.Parameters.AddWithValue("@id_materia_prima", id_mp);
+                            cmd2.Parameters.AddWithValue("@id_detalle_inserted", id_detalle_inserted);
+                            cmd2.Parameters.AddWithValue("@id_presentacion", rowy.id_presentacion);
+                            cmd2.Parameters.AddWithValue("@lote_materia_prima", rowy.lote);
+                            cmd2.Parameters.AddWithValue("@id_traslado", id_Traslado_a_Ingresar);
+                            cmd2.Parameters.AddWithValue("@IdHeaderInserted", IdHeaderInserted);
+                            cmd2.Parameters.AddWithValue("@id_lote_ingreso_externo", rowy.id_lote_externo);
+                            cmd2.ExecuteNonQuery();
+                            //conn2.Close();
+                        }//End foreach
+                    }//if (Istraslado)
+
                     foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
                     {
                         //SqlCommand cmd = new SqlCommand("sp_insert_ingresos_lote_v2", TransactionIngreso.Connection);
@@ -275,7 +330,7 @@ namespace LOSA.RecepcionMP
 
                             //cmd = new SqlCommand("sp_insert_new_tarima_v4", TransactionIngreso.Connection);
                             cmd = cn.CreateCommand();
-                            cmd.CommandText = "sp_insert_new_tarima_v4";
+                            cmd.CommandText = "sp_insert_new_tarima_v5";
                             cmd.Connection = cn;
                             cmd.Transaction = TransactionIngreso;
                             cmd.CommandType = CommandType.StoredProcedure;
@@ -318,6 +373,9 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@bit_promedio", Tg_presentacion_promedio.IsOn ? 1 : 0);
                             cmd.Parameters.AddWithValue("@is_traslado_externo", Istraslado);
                             cmd.Parameters.AddWithValue("@id_salida_h", id_transferencia);
+                            //Parametros para la salida de tarima de externo
+                            cmd.Parameters.AddWithValue("@id_d_salida_lote", id_detalle_inserted);
+                            cmd.Parameters.AddWithValue("@id_lote_ingreso_externo", idLoteExterno);
 
                             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -348,58 +406,7 @@ namespace LOSA.RecepcionMP
                         
                     }//foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
 
-                    if (Istraslado)
-                    {
-                        //Rebajemos de Externo Detalle
-                        string query = @"sp_insert_detlle_salida_externo_d";
-                        //SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                        //conn.Open();
-                        //SqlCommand cmdy = new SqlCommand(query, TransactionIngreso.Connection);
-                        SqlCommand cmdy = cn.CreateCommand();
-                        cmdy.CommandText = query;
-                        cmdy.Connection = cn;
-                        cmdy.Transaction = TransactionIngreso;
-                        cmdy.CommandType = CommandType.StoredProcedure;
-                        cmdy.Parameters.AddWithValue("@is_traslado_externo", Istraslado);
-                        //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
-                        cmdy.Parameters.AddWithValue("@id_materia_prima", id_mp);
-                        cmdy.Parameters.AddWithValue("@peso", 0);
-                        cmdy.Parameters.AddWithValue("@cant", 0);
-                        cmdy.Parameters.AddWithValue("@line_num", 0);
-                        cmdy.Parameters.AddWithValue("@DocEntry", DocEntry);
-                        cmdy.Parameters.AddWithValue("@id_inserted_LOSA_salida_externa_h", id_transferencia);
-                        int id_detalle_inserted = Convert.ToInt32(cmdy.ExecuteScalar());
-                        //conn.Close();
-
-                        foreach (dsWizard.informacionIngresoRow rowy in dsWizard.informacionIngreso.Rows)
-                        {
-                            //Rebajemos de Externo Detalle Lote
-                            string query2 = @"sp_insert_salida_externo_d_loteV2";
-                            //SqlConnection conn2 = new SqlConnection(dp.ConnectionStringLOSA);
-                            //conn2.Open();
-                            //SqlCommand cmd2 = new SqlCommand(query2, TransactionIngreso.Connection);
-                            SqlCommand cmd2 = cn.CreateCommand();
-                            cmd2.CommandText = query2;
-                            cmd2.Connection = cn;
-                            cmd2.Transaction = TransactionIngreso;
-                            cmd2.CommandType = CommandType.StoredProcedure;
-                            //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
-                            cmd2.Parameters.AddWithValue("@peso", rowy.totalKgLote);
-                            cmd2.Parameters.AddWithValue("@cant", rowy.TotalUdlote);
-                            cmd2.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                            cmd2.Parameters.AddWithValue("@id_boleta", this.IdSerie);
-                            //cmd2.Parameters.AddWithValue("@DocEntry", DocEntry);
-                            cmd2.Parameters.AddWithValue("@id_materia_prima", id_mp);
-                            cmd2.Parameters.AddWithValue("@id_detalle_inserted", id_detalle_inserted);
-                            cmd2.Parameters.AddWithValue("@id_presentacion", rowy.id_presentacion);
-                            cmd2.Parameters.AddWithValue("@lote_materia_prima", rowy.lote);
-                            cmd2.Parameters.AddWithValue("@id_traslado", id_Traslado_a_Ingresar);
-                            cmd2.Parameters.AddWithValue("@IdHeaderInserted", IdHeaderInserted);
-                            cmd2.Parameters.AddWithValue("@id_lote_ingreso_externo", rowy.id_lote_externo);
-                            cmd2.ExecuteNonQuery();
-                            //conn2.Close();
-                        }//End foreach
-                    }//if (Istraslado)
+                    
 
                     TransactionIngreso.Commit();
                     Guardo = true;
