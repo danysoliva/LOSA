@@ -189,8 +189,6 @@ namespace LOSA.Tools
             {
                 foreach (dsTools.NotificacionesRow row in dsTools.Notificaciones)
                 {
-
-
                     try
                     {
                         NotificacionesGenerales notifications = new NotificacionesGenerales();
@@ -200,18 +198,13 @@ namespace LOSA.Tools
                             using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA))
                             {
                                 cnx.Open();
-
                                 SqlCommand cmd = new SqlCommand("dbo.sp_set_notificaciones_marcar_como_leido", cnx);
                                 cmd.CommandType = CommandType.StoredProcedure;
-
                                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = row.id;
                                 cmd.ExecuteNonQuery();
-
                                 row.leida = true;
-
                                 cnx.Close();
                             }
-
                             LoadNotificacionesLeidas(usuarioLogueado.Id);
                         }
                     }
