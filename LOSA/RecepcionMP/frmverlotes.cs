@@ -31,7 +31,7 @@ namespace LOSA.RecepcionMP
         }
             public void load_data()
         {
-            string Query = @"sp_load_lotes_to_print";
+            string Query = @"sp_load_lotes_to_printv2";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -63,7 +63,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                rpt_cartilla report = new rpt_cartilla(row.id);               
+                rpt_cartilla report = new rpt_cartilla(row.numero_transaccion, row.lote);               
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool printReport = new ReportPrintTool(report);
                 printReport.ShowPreview();
@@ -82,7 +82,7 @@ namespace LOSA.RecepcionMP
              
               
 
-                rptLoteRotulo boleta = new rptLoteRotulo(row.id);
+                rptLoteRotulo boleta = new rptLoteRotulo(row.numero_transaccion,  row.lote);
                 boleta.ShowPrintMarginsWarning = false;
                 boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint); 
                 boleta.Print(); 
@@ -145,7 +145,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                rptLoteRotulo report = new rptLoteRotulo(row.id);
+                rptLoteRotulo report = new rptLoteRotulo(row.numero_transaccion, row.lote);
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool printReport = new ReportPrintTool(report);
                 printReport.ShowPreview();   

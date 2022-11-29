@@ -51,7 +51,7 @@ namespace LOSA.AlmacenesExterno
         public void load_data()
         {
             DataOperations dp = new DataOperations();
-            string query = @"sp_load_salida_externa_header";
+            string query = @"sp_load_salida_externa_headerV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {

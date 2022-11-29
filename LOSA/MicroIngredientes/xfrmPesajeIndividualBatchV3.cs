@@ -144,6 +144,7 @@ namespace LOSA.MicroIngredientes
                 CajaDialogo.Error(ex.Message);
                 throw;
             }
+            txtCodBarra.Focus();
         }
 
         private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -153,7 +154,7 @@ namespace LOSA.MicroIngredientes
             gvPesaje.DeleteRow(gvPesaje.FocusedRowHandle);
             timer1.Enabled = true;
             indicePeso = gvPesaje.RowCount - 1;
-
+            txtCodBarra.Focus();
         }
 
 
@@ -202,6 +203,7 @@ namespace LOSA.MicroIngredientes
                 CajaDialogo.Error(ex.Message);
                 throw;
             }
+            txtCodBarra.Focus();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -210,7 +212,7 @@ namespace LOSA.MicroIngredientes
             btnBasc1.Appearance.BackColor = default(Color);
             btnBasc2.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
             btnBascAmbas.Appearance.BackColor = default(Color);
-
+            txtCodBarra.Focus();
         }
 
         private void lblRequerido_Click(object sender, EventArgs e)
@@ -224,6 +226,7 @@ namespace LOSA.MicroIngredientes
             btnBasc1.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
             btnBasc2.Appearance.BackColor = default(Color);
             btnBascAmbas.Appearance.BackColor = default(Color);
+            txtCodBarra.Focus();
         }
 
         private void btnBascAmbas_Click(object sender, EventArgs e)
@@ -232,6 +235,7 @@ namespace LOSA.MicroIngredientes
             btnBasc1.Appearance.BackColor= default(Color);
             btnBasc2.Appearance.BackColor= default(Color);
             btnBascAmbas.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+            txtCodBarra.Focus();
         }
 
         private void lblValorBascula1_Click(object sender, EventArgs e)
@@ -242,207 +246,207 @@ namespace LOSA.MicroIngredientes
         int indicePeso = 0;
         private void txtCodBarra_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode != Keys.Enter)
-                return;
-
-            try
+            if (e.KeyCode == Keys.Enter)
             {
-                TarimaMicroingrediente tarima = new TarimaMicroingrediente();
-
-                if (!string.IsNullOrEmpty(txtCodBarra.Text))
+                try
                 {
-                    //if (pesaje.MateriaPrimaID != tarima.Id_materiaprima)
-                    //{
-                    //    CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
-                    //    txtCodBarra.Text = "";
-                    //    return;
-                    //}
+                    TarimaMicroingrediente tarima = new TarimaMicroingrediente();
 
-
-                    timer1.Enabled = true;
-                    indicePeso = 0;
-
-                    if (BasculaId == 0)
+                    if (!string.IsNullOrEmpty(txtCodBarra.Text))
                     {
-                        CajaDialogo.Error("DEBE SELECCIONAR UNA BASCULA");
-                        return;
-                    }
-
-                    idTarimaOrigen = tarima.IdTarimaOrigen;
-                    lote_tarima_micros = tarima.LoteMP;
-
-                    tarima.RecuperarRegistroPorCodBarra(txtCodBarra.Text);
-
-                    if (tarima.Recuperado == true)
-                    {
-                        lblMP.Text = "MP: " + tarima.MateriaPrima;
+                        //if (pesaje.MateriaPrimaID != tarima.Id_materiaprima)
+                        //{
+                        //    CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
+                        //    txtCodBarra.Text = "";
+                        //    return;
+                        //}
 
 
-                        var row = (dsMicros.MP_EscaneoRow)dsMicros.MP_Escaneo.NewRow();
+                        timer1.Enabled = true;
+                        indicePeso = 0;
 
-                        
-
-                        row.mp = tarima.MateriaPrima;
-                        row.lote = tarima.LoteMP;
-                        lblLoteName.Text = "Lote: " + tarima.LoteMP;
-                        row.id_mp = tarima.Id_materiaprima;
-                        row.id_tarima_origen = tarima.IdTarimaOrigen;
-                        row.id_tarima_micro = tarima.Id;
-
-
-                        if (BasculaId == (int)Basculas.Bascula1)
+                        if (BasculaId == 0)
                         {
-                            row.peso = pesoBascula1;
-
+                            CajaDialogo.Error("DEBE SELECCIONAR UNA BASCULA");
+                            return;
                         }
-                        else if (BasculaId == (int)Basculas.Bascula2)
-                        {
 
-                            row.peso = pesoBascula2;
+                        idTarimaOrigen = tarima.IdTarimaOrigen;
+                        lote_tarima_micros = tarima.LoteMP;
+
+                        tarima.RecuperarRegistroPorCodBarra(txtCodBarra.Text);
+
+                        if (tarima.Recuperado == true)
+                        {
+                            lblMP.Text = "MP: " + tarima.MateriaPrima;
+
+
+                            var row = (dsMicros.MP_EscaneoRow)dsMicros.MP_Escaneo.NewRow();
+
+
+
+                            row.mp = tarima.MateriaPrima;
+                            row.lote = tarima.LoteMP;
+                            lblLoteName.Text = "Lote: " + tarima.LoteMP;
+                            row.id_mp = tarima.Id_materiaprima;
+                            row.id_tarima_origen = tarima.IdTarimaOrigen;
+                            row.id_tarima_micro = tarima.Id;
+
+
+                            if (BasculaId == (int)Basculas.Bascula1)
+                            {
+                                row.peso = pesoBascula1;
+
+                            }
+                            else if (BasculaId == (int)Basculas.Bascula2)
+                            {
+
+                                row.peso = pesoBascula2;
+                            }
+                            else
+                            {
+                                row.peso = pesoBascula1 + pesoBascula2;
+
+                            }
+
+                            dsMicros.MP_Escaneo.Rows.Add(row);
+
+                            indicePeso = dsMicros.MP_Escaneo.Rows.IndexOf(row);
+
+
+                            pesoBasculaAcumulado1 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+                            pesoBasculaAcumulado2 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+                            pesoBasculaAcumuladoALL = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+
+
+
+
+                            limiteInferior = pesaje.PesoPorBatch - (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
+                            limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
+
+                            //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
+                            lblInferior.Text = "Límite Mínimo: " + limiteInferior.ToString("N2");
+                            lblSuperior.Text = "Límite Máximo: " + limiteSuperior.ToString("N2");
+
+
+                            switch (BasculaId)
+                            {
+                                case (int)Basculas.Bascula1:
+                                    if (pesoBasculaAcumulado1 >= limiteInferior && pesoBasculaAcumulado1 <= limiteSuperior)
+                                    {
+                                        //btnGuardar.Enabled = true;
+                                        lblError.Visible = true;
+                                        lblSuperior.Visible = true;
+                                        lblInferior.Visible = true;
+                                        //peso_bascula_finish = pesoBascula1;
+                                        btnBascula1.Enabled = true;
+                                        lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1.ToString("N2") + "Kg";
+                                        lblError.ForeColor = Color.Green;
+                                        txtCodBarra.Enabled = false;
+                                    }
+                                    else
+                                    {
+                                        //btnGuardar.Enabled = false;
+                                        lblError.Visible = true;
+                                        lblSuperior.Visible = true;
+                                        lblInferior.Visible = true;
+                                        btnBascula1.Enabled = false;
+                                        btnBascula2.Enabled = false;
+
+
+                                        if (BasculaId == (int)Basculas.Bascula1)
+                                        {
+
+                                            lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1 + " Kg no esta dentro de los límites de tolerancia";
+                                            lblError.ForeColor = Color.Red;
+
+                                        }
+                                        else
+                                        {
+                                            lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado2 + " Kg no esta dentro de los límites de tolerancia";
+                                            lblError.ForeColor = Color.Red;
+
+                                        }
+                                        txtCodBarra.Enabled = true;
+                                        row.peso = pesoBascula1;
+                                    }
+                                    break;
+
+                                case (int)Basculas.Bascula2:
+                                    if (pesoBasculaAcumulado2 >= limiteInferior && pesoBasculaAcumulado2 <= limiteSuperior)
+                                    {
+                                        //btnGuardar.Enabled = true;
+                                        lblError.Visible = true;
+                                        lblSuperior.Visible = true;
+                                        lblInferior.Visible = true;
+                                        //peso_bascula_finish = true;
+                                        btnBascula2.Enabled = true;
+                                        lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado2.ToString("N2") + "Kg";
+                                        lblError.ForeColor = Color.Green;
+                                        txtCodBarra.Enabled = false;
+
+                                    }
+                                    else
+                                    {
+                                        //btnGuardar.Enabled = false;
+                                        lblError.Visible = true;
+                                        lblSuperior.Visible = true;
+                                        lblInferior.Visible = true;
+                                        btnBascula1.Enabled = false;
+                                        btnBascula2.Enabled = false;
+
+                                        if (BasculaId == (int)Basculas.Bascula1)
+                                        {
+
+                                            lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1 + " Kg no esta dentro de los límites de tolerancia";
+                                            lblError.ForeColor = Color.Red;
+
+                                        }
+                                        else
+                                        {
+                                            lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado2 + " Kg no esta dentro de los límites de tolerancia";
+                                            lblError.ForeColor = Color.Red;
+
+                                        }
+                                        txtCodBarra.Enabled = true;
+                                        row.peso = pesoBascula2;
+
+                                    }
+                                    break;
+
+                                case (int)Basculas.Ambas:
+                                    if (pesoBasculaAcumuladoALL >= limiteInferior && pesoBasculaAcumuladoALL <= limiteSuperior)
+                                    {
+                                        //btnGuardar.Enabled = true;
+                                        lblError.Visible = true;
+                                        lblSuperior.Visible = true;
+                                        lblInferior.Visible = true;
+                                        //peso_bascula_finish = true;
+                                        btnBascula1.Enabled = true;
+                                        btnBascula2.Enabled = true;
+                                        lblError.Text = "El peso acumulado es de " + pesoBasculaAcumuladoALL.ToString("N2") + "Kg";
+                                        lblError.ForeColor = Color.Green;
+                                        txtCodBarra.Enabled = false;
+
+                                    }
+                                    break;
+                            }
+
                         }
                         else
                         {
-                            row.peso = pesoBascula1+pesoBascula2;
-
+                            //Tarima No recuperada
+                            lblLoteName.Text = "";
+                            lblMP.Text = "";
                         }
-
-                        dsMicros.MP_Escaneo.Rows.Add(row);
-
-                        indicePeso = dsMicros.MP_Escaneo.Rows.IndexOf(row);
-
-
-                        pesoBasculaAcumulado1 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-                        pesoBasculaAcumulado2 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-                        pesoBasculaAcumuladoALL = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-
-
-
-
-                        limiteInferior = pesaje.PesoPorBatch - (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
-                        limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
-
-                        //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-                        lblInferior.Text = "Límite Máximo: " + limiteInferior.ToString("N2");
-                        lblSuperior.Text = "Límite Mínimo: " + limiteSuperior.ToString("N2");
-
-
-                        switch (BasculaId)
-                        {
-                            case (int)Basculas.Bascula1:
-                                if (pesoBasculaAcumulado1 >= limiteInferior && pesoBasculaAcumulado1 <= limiteSuperior)
-                                {
-                                    //btnGuardar.Enabled = true;
-                                    lblError.Visible = true;
-                                    lblSuperior.Visible = true;
-                                    lblInferior.Visible = true;
-                                    //peso_bascula_finish = pesoBascula1;
-                                    btnBascula1.Enabled = true;
-                                    lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1.ToString("N2") + "Kg";
-                                    lblError.ForeColor = Color.Green;
-                                    txtCodBarra.Enabled = false;
-                                }
-                                else
-                                {
-                                    //btnGuardar.Enabled = false;
-                                    lblError.Visible = true;
-                                    lblSuperior.Visible = true;
-                                    lblInferior.Visible = true;
-                                    btnBascula1.Enabled = false;
-                                    btnBascula2.Enabled = false;
-
-
-                                    if (BasculaId == (int)Basculas.Bascula1)
-                                    {
-
-                                        lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1 + " Kg no esta dentro de los límites de tolerancia";
-                                        lblError.ForeColor = Color.Red;
-
-                                    }
-                                    else
-                                    {
-                                        lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado2 + " Kg no esta dentro de los límites de tolerancia";
-                                        lblError.ForeColor = Color.Red;
-
-                                    }
-                                    txtCodBarra.Enabled = true;
-                                    row.peso = pesoBascula1;
-                                }
-                                break;
-
-                            case (int)Basculas.Bascula2:
-                                if (pesoBasculaAcumulado2 >= limiteInferior && pesoBasculaAcumulado2 <= limiteSuperior)
-                                {
-                                    //btnGuardar.Enabled = true;
-                                    lblError.Visible = true;
-                                    lblSuperior.Visible = true;
-                                    lblInferior.Visible = true;
-                                    //peso_bascula_finish = true;
-                                    btnBascula2.Enabled = true;
-                                    lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado2.ToString("N2") + "Kg";
-                                    lblError.ForeColor = Color.Green;
-                                    txtCodBarra.Enabled = false;
-
-                                }
-                                else
-                                {
-                                    //btnGuardar.Enabled = false;
-                                    lblError.Visible = true;
-                                    lblSuperior.Visible = true;
-                                    lblInferior.Visible = true;
-                                    btnBascula1.Enabled = false;
-                                    btnBascula2.Enabled = false;
-
-                                    if (BasculaId == (int)Basculas.Bascula1)
-                                    {
-
-                                        lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1 + " Kg no esta dentro de los límites de tolerancia";
-                                        lblError.ForeColor = Color.Red;
-
-                                    }
-                                    else
-                                    {
-                                        lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado2 + " Kg no esta dentro de los límites de tolerancia";
-                                        lblError.ForeColor = Color.Red;
-
-                                    }
-                                    txtCodBarra.Enabled = true;
-                                    row.peso = pesoBascula2;
-
-                                }
-                                break;
-
-                            case (int)Basculas.Ambas:
-                                if (pesoBasculaAcumuladoALL >= limiteInferior && pesoBasculaAcumuladoALL <= limiteSuperior)
-                                {
-                                    //btnGuardar.Enabled = true;
-                                    lblError.Visible = true;
-                                    lblSuperior.Visible = true;
-                                    lblInferior.Visible = true;
-                                    //peso_bascula_finish = true;
-                                    btnBascula1.Enabled = true;
-                                    btnBascula2.Enabled = true;
-                                    lblError.Text = "El peso acumulado es de " + pesoBasculaAcumuladoALL.ToString("N2") + "Kg";
-                                    lblError.ForeColor = Color.Green;
-                                    txtCodBarra.Enabled = false;
-
-                                }
-                                break;
-                        }
-
                     }
-                    else
-                    {
-                        //Tarima No recuperada
-                        lblLoteName.Text = "";
-                        lblMP.Text = "";
-                    }
+
+                    txtCodBarra.Text = "";
                 }
-
-                txtCodBarra.Text = "";
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
         }
 
@@ -490,13 +494,10 @@ namespace LOSA.MicroIngredientes
 
                             pesoBasculaAcumuladoTMP1 = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
                             pesoBasculaAcumuladoTMP_ALL = Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-
-
                         }
                         else
                         {
                             lblValorBascula1.Text = "Valor en Báscula: 0.00 Kg";
-
                         }
 
                         //pesoBasculaAcumuladoTMP1 = pesoBasculaAcumuladoTMP1 + pesoBascula1;

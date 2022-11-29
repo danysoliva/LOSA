@@ -43,6 +43,9 @@ namespace LOSA.Trazabilidad.Despachos
             this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsaco_desde = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsaco_hasta = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -78,7 +81,10 @@ namespace LOSA.Trazabilidad.Despachos
             this.colPeso,
             this.colKg,
             this.colProducto,
-            this.colCode});
+            this.colCode,
+            this.colcodigo_barra,
+            this.colsaco_desde,
+            this.colsaco_hasta});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -97,7 +103,7 @@ namespace LOSA.Trazabilidad.Despachos
             this.colFila.OptionsColumn.AllowEdit = false;
             this.colFila.Visible = true;
             this.colFila.VisibleIndex = 0;
-            this.colFila.Width = 39;
+            this.colFila.Width = 30;
             // 
             // colLote
             // 
@@ -106,7 +112,7 @@ namespace LOSA.Trazabilidad.Despachos
             this.colLote.OptionsColumn.AllowEdit = false;
             this.colLote.Visible = true;
             this.colLote.VisibleIndex = 1;
-            this.colLote.Width = 71;
+            this.colLote.Width = 55;
             // 
             // colCantidad
             // 
@@ -119,7 +125,7 @@ namespace LOSA.Trazabilidad.Despachos
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Cantidad", "SUM={0:#,###,##0.00}")});
             this.colCantidad.Visible = true;
             this.colCantidad.VisibleIndex = 2;
-            this.colCantidad.Width = 88;
+            this.colCantidad.Width = 68;
             // 
             // colPeso
             // 
@@ -128,7 +134,7 @@ namespace LOSA.Trazabilidad.Despachos
             this.colPeso.OptionsColumn.AllowEdit = false;
             this.colPeso.Visible = true;
             this.colPeso.VisibleIndex = 3;
-            this.colPeso.Width = 70;
+            this.colPeso.Width = 54;
             // 
             // colKg
             // 
@@ -141,7 +147,7 @@ namespace LOSA.Trazabilidad.Despachos
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Kg", "SUM={0:#,###,##0.00}")});
             this.colKg.Visible = true;
             this.colKg.VisibleIndex = 4;
-            this.colKg.Width = 100;
+            this.colKg.Width = 77;
             // 
             // colProducto
             // 
@@ -150,7 +156,7 @@ namespace LOSA.Trazabilidad.Despachos
             this.colProducto.OptionsColumn.AllowEdit = false;
             this.colProducto.Visible = true;
             this.colProducto.VisibleIndex = 5;
-            this.colProducto.Width = 323;
+            this.colProducto.Width = 216;
             // 
             // colCode
             // 
@@ -159,7 +165,7 @@ namespace LOSA.Trazabilidad.Despachos
             this.colCode.OptionsColumn.AllowEdit = false;
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 6;
-            this.colCode.Width = 94;
+            this.colCode.Width = 63;
             // 
             // cmdHome
             // 
@@ -193,6 +199,35 @@ namespace LOSA.Trazabilidad.Despachos
             this.simpleButton1.Text = "Export Excel";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.Caption = "Codigo Barra";
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra.Visible = true;
+            this.colcodigo_barra.VisibleIndex = 9;
+            this.colcodigo_barra.Width = 76;
+            // 
+            // colsaco_desde
+            // 
+            this.colsaco_desde.Caption = "Num. Saco Desde:";
+            this.colsaco_desde.FieldName = "saco_desde";
+            this.colsaco_desde.Name = "colsaco_desde";
+            this.colsaco_desde.OptionsColumn.AllowEdit = false;
+            this.colsaco_desde.Visible = true;
+            this.colsaco_desde.VisibleIndex = 7;
+            // 
+            // colsaco_hasta
+            // 
+            this.colsaco_hasta.Caption = "Num. Saco Hasta:";
+            this.colsaco_hasta.FieldName = "saco_hasta";
+            this.colsaco_hasta.Name = "colsaco_hasta";
+            this.colsaco_hasta.OptionsColumn.AllowEdit = false;
+            this.colsaco_hasta.Visible = true;
+            this.colsaco_hasta.VisibleIndex = 8;
+            this.colsaco_hasta.Width = 71;
+            // 
             // frmDetalleDespacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,5 +260,8 @@ namespace LOSA.Trazabilidad.Despachos
         private DevExpress.XtraGrid.Columns.GridColumn colProducto;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private DevExpress.XtraGrid.Columns.GridColumn colsaco_desde;
+        private DevExpress.XtraGrid.Columns.GridColumn colsaco_hasta;
     }
 }

@@ -3086,6 +3086,10 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnDocNum;
             
+            private global::System.Data.DataColumn columnitemcode;
+            
+            private global::System.Data.DataColumn columnmp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Salida_Almacen_HeaderDataTable() {
@@ -3209,6 +3213,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn itemcodeColumn {
+                get {
+                    return this.columnitemcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn mpColumn {
+                get {
+                    return this.columnmp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3244,7 +3264,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Salida_Almacen_HeaderRow AddSalida_Almacen_HeaderRow(int id, string bodega_in, string bodega_out, System.DateTime fecha, bool enable, int DocEntry, string user_creador, int numero_transaccion, int id_ingreso, string usuario, string DocNum) {
+            public Salida_Almacen_HeaderRow AddSalida_Almacen_HeaderRow(int id, string bodega_in, string bodega_out, System.DateTime fecha, bool enable, int DocEntry, string user_creador, int numero_transaccion, int id_ingreso, string usuario, string DocNum, string itemcode, string mp) {
                 Salida_Almacen_HeaderRow rowSalida_Almacen_HeaderRow = ((Salida_Almacen_HeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3257,7 +3277,9 @@ namespace LOSA.AlmacenesExterno {
                         numero_transaccion,
                         id_ingreso,
                         usuario,
-                        DocNum};
+                        DocNum,
+                        itemcode,
+                        mp};
                 rowSalida_Almacen_HeaderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalida_Almacen_HeaderRow);
                 return rowSalida_Almacen_HeaderRow;
@@ -3291,6 +3313,8 @@ namespace LOSA.AlmacenesExterno {
                 this.columnid_ingreso = base.Columns["id_ingreso"];
                 this.columnusuario = base.Columns["usuario"];
                 this.columnDocNum = base.Columns["DocNum"];
+                this.columnitemcode = base.Columns["itemcode"];
+                this.columnmp = base.Columns["mp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3318,6 +3342,10 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnusuario);
                 this.columnDocNum = new global::System.Data.DataColumn("DocNum", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDocNum);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
+                this.columnmp = new global::System.Data.DataColumn("mp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmp);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7722,6 +7750,38 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string itemcode {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalida_Almacen_Header.itemcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'Salida_Almacen_Header\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalida_Almacen_Header.itemcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string mp {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalida_Almacen_Header.mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mp\' de la tabla \'Salida_Almacen_Header\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalida_Almacen_Header.mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableSalida_Almacen_Header.idColumn);
             }
@@ -7850,6 +7910,30 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDocNumNull() {
                 this[this.tableSalida_Almacen_Header.DocNumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tableSalida_Almacen_Header.itemcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetitemcodeNull() {
+                this[this.tableSalida_Almacen_Header.itemcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsmpNull() {
+                return this.IsNull(this.tableSalida_Almacen_Header.mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetmpNull() {
+                this[this.tableSalida_Almacen_Header.mpColumn] = global::System.Convert.DBNull;
             }
         }
         

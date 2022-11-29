@@ -131,6 +131,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(150, 71);
             this.btnGuardar.TabIndex = 36;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Visible = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cmdHome
@@ -171,8 +172,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEditPresentacion.Properties.DataSource = this.presentacionesBindingSource;
             this.gridLookUpEditPresentacion.Properties.DisplayMember = "descripcion";
+            this.gridLookUpEditPresentacion.Properties.PopupView = this.gridLookUpEdit1View;
             this.gridLookUpEditPresentacion.Properties.ValueMember = "id";
-            this.gridLookUpEditPresentacion.Properties.View = this.gridLookUpEdit1View;
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(178, 30);
             this.gridLookUpEditPresentacion.TabIndex = 52;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
@@ -382,8 +383,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grdproveedores.Properties.DataSource = this.proveedoresBindingSource;
             this.grdproveedores.Properties.DisplayMember = "CardName";
+            this.grdproveedores.Properties.PopupView = this.gridView1;
             this.grdproveedores.Properties.ValueMember = "CardCode";
-            this.grdproveedores.Properties.View = this.gridView1;
             this.grdproveedores.Size = new System.Drawing.Size(427, 30);
             this.grdproveedores.TabIndex = 67;
             // 
@@ -435,8 +436,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grdProducto.Properties.DataSource = this.mPBindingSource;
             this.grdProducto.Properties.DisplayMember = "descripcion";
+            this.grdProducto.Properties.PopupView = this.gridView2;
             this.grdProducto.Properties.ValueMember = "id";
-            this.grdProducto.Properties.View = this.gridView2;
             this.grdProducto.Size = new System.Drawing.Size(427, 30);
             this.grdProducto.TabIndex = 68;
             // 

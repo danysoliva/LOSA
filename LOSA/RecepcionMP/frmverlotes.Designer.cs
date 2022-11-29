@@ -95,7 +95,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(538, 4);
+            this.btnAtras.Location = new System.Drawing.Point(741, 4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 12;
@@ -118,7 +118,7 @@
             this.btnver,
             this.btn_imprimir,
             this.btnEditar});
-            this.grd_data.Size = new System.Drawing.Size(689, 397);
+            this.grd_data.Size = new System.Drawing.Size(892, 397);
             this.grd_data.TabIndex = 13;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -183,7 +183,7 @@
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
             this.colnumero_transaccion.VisibleIndex = 0;
-            this.colnumero_transaccion.Width = 73;
+            this.colnumero_transaccion.Width = 84;
             // 
             // collote
             // 
@@ -193,7 +193,7 @@
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 1;
-            this.collote.Width = 110;
+            this.collote.Width = 128;
             // 
             // colmp
             // 
@@ -203,7 +203,7 @@
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
             this.colmp.VisibleIndex = 2;
-            this.colmp.Width = 241;
+            this.colmp.Width = 219;
             // 
             // colprint
             // 
@@ -211,8 +211,8 @@
             this.colprint.ColumnEdit = this.btnnuevo;
             this.colprint.Name = "colprint";
             this.colprint.Visible = true;
-            this.colprint.VisibleIndex = 5;
-            this.colprint.Width = 74;
+            this.colprint.VisibleIndex = 4;
+            this.colprint.Width = 92;
             // 
             // btnnuevo
             // 
@@ -230,8 +230,8 @@
             this.colEliminarLote.ColumnEdit = this.btnEliminar;
             this.colEliminarLote.Name = "colEliminarLote";
             this.colEliminarLote.Visible = true;
-            this.colEliminarLote.VisibleIndex = 7;
-            this.colEliminarLote.Width = 47;
+            this.colEliminarLote.VisibleIndex = 6;
+            this.colEliminarLote.Width = 73;
             // 
             // btnEliminar
             // 
@@ -248,9 +248,7 @@
             this.colVer.Caption = "Ver lote";
             this.colVer.ColumnEdit = this.btnver;
             this.colVer.Name = "colVer";
-            this.colVer.Visible = true;
-            this.colVer.VisibleIndex = 4;
-            this.colVer.Width = 58;
+            this.colVer.Width = 80;
             // 
             // btnver
             // 
@@ -270,7 +268,7 @@
             this.colCantidad.OptionsColumn.AllowEdit = false;
             this.colCantidad.Visible = true;
             this.colCantidad.VisibleIndex = 3;
-            this.colCantidad.Width = 68;
+            this.colCantidad.Width = 89;
             // 
             // colImprimirLote
             // 
@@ -278,7 +276,8 @@
             this.colImprimirLote.ColumnEdit = this.btn_imprimir;
             this.colImprimirLote.Name = "colImprimirLote";
             this.colImprimirLote.Visible = true;
-            this.colImprimirLote.VisibleIndex = 6;
+            this.colImprimirLote.VisibleIndex = 5;
+            this.colImprimirLote.Width = 116;
             // 
             // btn_imprimir
             // 
@@ -296,7 +295,8 @@
             this.coleditar.ColumnEdit = this.btnEditar;
             this.coleditar.Name = "coleditar";
             this.coleditar.Visible = true;
-            this.coleditar.VisibleIndex = 8;
+            this.coleditar.VisibleIndex = 7;
+            this.coleditar.Width = 73;
             // 
             // btnEditar
             // 
@@ -319,7 +319,7 @@
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(196, 15);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(283, 36);
+            this.labelControl3.Size = new System.Drawing.Size(486, 36);
             this.labelControl3.TabIndex = 32;
             this.labelControl3.Text = "Lotes ingresados";
             // 
@@ -343,7 +343,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 483);
+            this.ClientSize = new System.Drawing.Size(898, 483);
             this.Controls.Add(this.btnImprimirTodas);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.grd_data);
