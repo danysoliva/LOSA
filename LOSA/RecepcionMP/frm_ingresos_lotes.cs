@@ -557,7 +557,7 @@ namespace LOSA.RecepcionMP
                 }
                 else
                 {
-                    string query = @"sp_deshabilitar_tm_por_id_v2";
+                    string query = @"sp_deshabilitar_tm_por_id_v3";
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(query, cn);

@@ -352,34 +352,35 @@ namespace LOSA.RecepcionMP
 
                             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
-                            //Rebajemos de Externo Detalle Lote
-                            string query2 = @"sp_insert_salida_externo_d_loteV3";
-                            //SqlConnection conn2 = new SqlConnection(dp.ConnectionStringLOSA);
-                            //conn2.Open();
-                            //SqlCommand cmd2 = new SqlCommand(query2, TransactionIngreso.Connection);
-                            SqlCommand cmd2 = cn.CreateCommand();
-                            cmd2.CommandText = query2;
-                            cmd2.Connection = cn;
-                            cmd2.Transaction = TransactionIngreso;
-                            cmd2.CommandType = CommandType.StoredProcedure;
-                            //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
-                            cmd2.Parameters.AddWithValue("@peso", PesoTotalTarima);
-                            cmd2.Parameters.AddWithValue("@cant", row.udxtarima);
-                            cmd2.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                            cmd2.Parameters.AddWithValue("@id_boleta", this.IdSerie);
-                            //cmd2.Parameters.AddWithValue("@DocEntry", DocEntry);
-                            cmd2.Parameters.AddWithValue("@id_materia_prima", id_mp);
-                            cmd2.Parameters.AddWithValue("@id_detalle_inserted", id_detalle_inserted);
-                            cmd2.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
-                            cmd2.Parameters.AddWithValue("@lote_materia_prima", row.lote);
-                            cmd2.Parameters.AddWithValue("@id_traslado", id_Traslado_a_Ingresar);
-                            cmd2.Parameters.AddWithValue("@IdHeaderInserted", IdHeaderInserted);
-                            cmd2.Parameters.AddWithValue("@id_lote_ingreso_externo", idLoteExterno);
-                            cmd2.Parameters.AddWithValue("@idtarima", vid_tarima);
-                            cmd2.ExecuteNonQuery();
-                            //conn2.Close();
-
-
+                            if (Istraslado)
+                            {
+                                //Rebajemos de Externo Detalle Lote
+                                string query2 = @"sp_insert_salida_externo_d_loteV3";
+                                //SqlConnection conn2 = new SqlConnection(dp.ConnectionStringLOSA);
+                                //conn2.Open();
+                                //SqlCommand cmd2 = new SqlCommand(query2, TransactionIngreso.Connection);
+                                SqlCommand cmd2 = cn.CreateCommand();
+                                cmd2.CommandText = query2;
+                                cmd2.Connection = cn;
+                                cmd2.Transaction = TransactionIngreso;
+                                cmd2.CommandType = CommandType.StoredProcedure;
+                                //cmdy.Parameters.AddWithValue("@idlotes", IdLoteInserted);
+                                cmd2.Parameters.AddWithValue("@peso", PesoTotalTarima);
+                                cmd2.Parameters.AddWithValue("@cant", row.udxtarima);
+                                cmd2.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                                cmd2.Parameters.AddWithValue("@id_boleta", this.IdSerie);
+                                //cmd2.Parameters.AddWithValue("@DocEntry", DocEntry);
+                                cmd2.Parameters.AddWithValue("@id_materia_prima", id_mp);
+                                cmd2.Parameters.AddWithValue("@id_detalle_inserted", id_detalle_inserted);
+                                cmd2.Parameters.AddWithValue("@id_presentacion", row.id_presentacion);
+                                cmd2.Parameters.AddWithValue("@lote_materia_prima", row.lote);
+                                cmd2.Parameters.AddWithValue("@id_traslado", id_Traslado_a_Ingresar);
+                                cmd2.Parameters.AddWithValue("@IdHeaderInserted", IdHeaderInserted);
+                                cmd2.Parameters.AddWithValue("@id_lote_ingreso_externo", idLoteExterno);
+                                cmd2.Parameters.AddWithValue("@idtarima", vid_tarima);
+                                cmd2.ExecuteNonQuery();
+                                //conn2.Close();
+                            }
 
                             string query = @"";
                             if (Istraslado)
@@ -403,12 +404,8 @@ namespace LOSA.RecepcionMP
 
                             //Guardo = true;
                             //con.Close();
-                        }
-
-                        
+                        } 
                     }//foreach (dsWizard.informacionIngresoRow row in dsWizard.informacionIngreso.Rows)
-
-                    
 
                     TransactionIngreso.Commit();
                     Guardo = true;
