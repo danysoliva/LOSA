@@ -63,7 +63,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                rpt_cartilla report = new rpt_cartilla(row.id);               
+                rpt_cartilla report = new rpt_cartilla(row.numero_transaccion, row.lote);               
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool printReport = new ReportPrintTool(report);
                 printReport.ShowPreview();
@@ -145,7 +145,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                rptLoteRotulo report = new rptLoteRotulo(row.id);
+                rptLoteRotulo report = new rptLoteRotulo(row.numero_transaccion, row.lote);
                 report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool printReport = new ReportPrintTool(report);
                 printReport.ShowPreview();   

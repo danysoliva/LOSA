@@ -41,7 +41,10 @@ namespace LOSA.RecepcionMP
             //btnFinalizar.Visible = !Finalizado && id_traslado !=0 ? true : false;
             ItemCode = pItemCode;
             LoadTarimas();
-
+            if (id_traslado == 0)
+            {
+                btnAgregar.Visible = true;
+            }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -298,6 +301,36 @@ namespace LOSA.RecepcionMP
                             cmd2.Parameters.AddWithValue("@idlotes", IdLoteInserted);
                             int vid_tarima = Convert.ToInt32(cmd2.ExecuteScalar());
 
+                            //Se debe validar si procede de un transferencia de externo
+                            if (traslado == 1) //Existe una Transferencia Ligada al Ingreso
+                            {
+                                int id_lote_externo = frm.id_lote_externo;
+                                //Vamos a darle Salida Externa Detalle Lote
+
+                                Transferencia trans2 = new Transferencia();
+                                trans2.RecuperarRegistro(numero_transaccion);
+
+                                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                                conn.Open();
+                                SqlCommand cmd3 = new SqlCommand(@"sp_insert_salida_externo_d_lote_duplicar_tarimaV2", conn);
+                                cmd3.CommandType = CommandType.StoredProcedure;
+                                cmd3.Parameters.AddWithValue("@peso", peso);
+                                cmd3.Parameters.AddWithValue("@cant", unidades);
+                                cmd3.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                                cmd3.Parameters.AddWithValue("@id_boleta", trans2.Id_serie);
+                                cmd3.Parameters.AddWithValue("@DocEntry", trans2.DocEntry1);
+                                cmd3.Parameters.AddWithValue("@id_materia_prima", trans2.Id_mp);
+                                cmd3.Parameters.AddWithValue("@id_lote_ingreso_externo", frm.id_lote_externo);
+                                cmd3.Parameters.AddWithValue("@id_detalle_inserted", trans2.Id_detalle);
+                                cmd3.Parameters.AddWithValue("@id_presentacion", trans2.Id_presentacio);
+                                cmd3.Parameters.AddWithValue("@bodega_out", trans2.Bodega_out);
+                                cmd3.Parameters.AddWithValue("@id_ingreso_ext", trans2.Id_ingreso_lote);
+                                cmd3.Parameters.AddWithValue("@id_tarima", vid_tarima);
+                                cmd3.ExecuteNonQuery();
+
+                            }
+                            //pues nada..
+
 
                             List1.Add(vid_tarima);
                             acumulado_kg_temp = peso;
@@ -316,44 +349,6 @@ namespace LOSA.RecepcionMP
                     catch (Exception ec)
                     {
                         CajaDialogo.Error(ec.Message);
-                    }
-
-                    //Se debe validar si procede de un transferencia de externo
-                    try
-                    {
-                        
-                        if (traslado == 1) //Existe una Transferencia Ligada al Ingreso
-                        {
-                            int id_lote_externo = frm.id_lote_externo;
-                            //Vamos a darle Salida Externa Detalle Lote
-
-                            Transferencia trans2 = new Transferencia();
-                            trans2.RecuperarRegistro(numero_transaccion);
-
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand(@"sp_insert_salida_externo_d_lote_duplicar_tarima", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@peso", TotalKg);
-                            cmd.Parameters.AddWithValue("@cant", TotalUd);
-                            cmd.Parameters.AddWithValue("@id_usuario", trans2.User_creador);
-                            cmd.Parameters.AddWithValue("@id_boleta", trans2.Id_serie);
-                            cmd.Parameters.AddWithValue("@DocEntry", trans2.DocEntry1);
-                            cmd.Parameters.AddWithValue("@id_materia_prima", trans2.Id_mp);
-                            cmd.Parameters.AddWithValue("@id_lote_ingreso_externo", id_lote_externo);
-                            cmd.Parameters.AddWithValue("@id_detalle_inserted", trans2.Id_detalle);
-                            cmd.Parameters.AddWithValue("@id_presentacion", trans2.Id_presentacio);
-                            cmd.Parameters.AddWithValue("@bodega_out", trans2.Bodega_out);
-                            cmd.Parameters.AddWithValue("@id_ingreso_ext", trans2.Id_ingreso_lote);
-                            cmd.ExecuteNonQuery();
-
-
-                        }
-                        //pues nada..
-                    }
-                    catch (Exception ex)
-                    {
-                        CajaDialogo.Error(ex.Message);
                     }
 
                     if (List1.Count > 0)

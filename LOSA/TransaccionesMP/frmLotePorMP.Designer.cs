@@ -104,6 +104,7 @@ namespace LOSA.TransaccionesMP
             this.colid_tipoIngreso,
             this.gridColumn1,
             this.colunidad_medida});
+            this.gvMP.CustomizationFormBounds = new System.Drawing.Rectangle(-1433, 394, 260, 312);
             this.gvMP.GridControl = this.gcLotePorMP;
             this.gvMP.Name = "gvMP";
             this.gvMP.OptionsCustomization.AllowFilter = false;
