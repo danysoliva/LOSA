@@ -125,7 +125,6 @@ namespace LOSA.MigracionACS.Produccion
                 load_EditCamaron();
                 load_EditTilapia();
 
-                //load_Data();
             }
         }
 
