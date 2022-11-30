@@ -135,7 +135,6 @@
             this.nbControlProduccion = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
             this.nbConsultaHora = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbReporteBatch = new DevExpress.XtraNavBar.NavBarItem();
             this.nbReporteEnsacadora = new DevExpress.XtraNavBar.NavBarItem();
@@ -1605,7 +1604,6 @@
             this.nbControlProduccion,
             this.navBarItem7,
             this.nbConsultaHora,
-            this.navBarItem9,
             this.nbReporteBatch,
             this.nbReporteEnsacadora,
             this.navBarItem12,
@@ -1649,8 +1647,7 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.bnPortafolio),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbControlProduccion),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.nbConsultaHora),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbConsultaHora)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navBarItem1
@@ -1756,19 +1753,6 @@
             this.nbConsultaHora.ImageOptions.SmallImage = global::LOSA.Properties.Resources.clock_24;
             this.nbConsultaHora.Name = "nbConsultaHora";
             this.nbConsultaHora.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbConsultaHora_LinkClicked);
-            // 
-            // navBarItem9
-            // 
-            this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.Appearance.Options.UseFont = true;
-            this.navBarItem9.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearancePressed.Options.UseFont = true;
-            this.navBarItem9.Caption = "Panel de Operador Administradores";
-            this.navBarItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem9.ImageOptions.SvgImage")));
-            this.navBarItem9.Name = "navBarItem9";
-            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
             // 
             // navBarGroup2
             // 
@@ -2421,7 +2405,6 @@
         private DevExpress.XtraNavBar.NavBarItem nbControlProduccion;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
         private DevExpress.XtraNavBar.NavBarItem nbConsultaHora;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem nbReporteBatch;
         private DevExpress.XtraNavBar.NavBarItem nbReporteEnsacadora;

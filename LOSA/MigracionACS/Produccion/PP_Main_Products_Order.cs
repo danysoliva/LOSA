@@ -1602,9 +1602,9 @@ namespace LOSA.MigracionACS.Produccion
 
             //Crear orden de fabricacion individual
             PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id, 2, this.UsuarioLogeado, row.lote);
-            PNPFP.ActiveUserCodeP = this.ActiveUserCode;
-            PNPFP.ActiveUserNameP = this.ActiveUserName;
-            PNPFP.ActiveUserTypeP = this.ActiveUserType;
+            //PNPFP.ActiveUserCodeP = this.ActiveUserCode;
+            //PNPFP.ActiveUserNameP = this.ActiveUserName;
+            //PNPFP.ActiveUserTypeP = this.ActiveUserType;
             PNPFP.Id_Pedido1 = this.ID_Pedido;
             if (PNPFP.ShowDialog() == DialogResult.OK)
             {
@@ -1626,9 +1626,9 @@ namespace LOSA.MigracionACS.Produccion
             //}
             //Crear orden de fabricacion individual
             PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id,1, UsuarioLogeado, 0);
-            PNPFP.ActiveUserCodeP = this.ActiveUserCode;
-            PNPFP.ActiveUserNameP = this.ActiveUserName;
-            PNPFP.ActiveUserTypeP = this.ActiveUserType;
+            //PNPFP.ActiveUserCodeP = this.ActiveUserCode;
+            //PNPFP.ActiveUserNameP = this.ActiveUserName;
+            //PNPFP.ActiveUserTypeP = this.ActiveUserType;
             PNPFP.Id_Pedido1 = this.ID_Pedido;
             if (PNPFP.ShowDialog() == DialogResult.OK)
             {
@@ -1645,9 +1645,9 @@ namespace LOSA.MigracionACS.Produccion
             string name = sender.ToString();
             //Crear orden de fabricacion individual
             PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido,UsuarioLogeado,0);
-            PNPFP.ActiveUserCodeP = this.ActiveUserCode;
-            PNPFP.ActiveUserNameP = this.ActiveUserName;
-            PNPFP.ActiveUserTypeP = this.ActiveUserType;
+            //PNPFP.ActiveUserCodeP = this.ActiveUserCode;
+            //PNPFP.ActiveUserNameP = this.ActiveUserName;
+            //PNPFP.ActiveUserTypeP = this.ActiveUserType;
             PNPFP.Id_Pedido1 = this.ID_Pedido;
             PNPFP.Show();
         }

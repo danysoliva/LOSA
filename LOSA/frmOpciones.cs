@@ -104,6 +104,36 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Administradores:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
+
+                    idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+                    switch (idNivel)
+                    {
+                        case 1://Basic View
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel;
+                            break;
+                        case 2://Basic No Autorization
+
+                            break;
+                        case 3://Medium Autorization
+
+                            break;
+                        case 4://Depth With Delta
+                            tabOpciones.TabPages[0].PageVisible = true;
+                            tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[2].PageVisible = true;
+                            tabOpciones.TabPages[3].PageVisible = true;
+                            tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.TabPages[5].PageVisible = true;
+                            break;
+                        case 5://Depth Without Delta
+
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                            tabOpciones.TabPages[i].PageVisible = true;
+                            break;
+                    }
                     break;
                 case GrupoUser.GrupoUsuario.Produccion:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -129,7 +159,12 @@ namespace LOSA
 
                             break;
                         case 4://Depth With Delta
-
+                            tabOpciones.TabPages[0].PageVisible = true;
+                            tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[2].PageVisible = true;
+                            tabOpciones.TabPages[3].PageVisible = true;
+                            tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.TabPages[5].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
 
@@ -1255,8 +1290,7 @@ namespace LOSA
         {
             try
             {
-
-                PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(ActiveUserCode, ActiveUserName, "N/A", ActiveUserType, UserGroups); ;
+                PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
@@ -1381,50 +1415,50 @@ namespace LOSA
 
         private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            try
-            {
-                bool accesoprevio = false;
-                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
-                switch (idNivel)
-                {
-                    case 1://Basic View
-                        break;
-                    case 2://Basic No Autorization
-                        break;
-                    case 3://Medium Autorization
-                        break;
-                    case 4://Depth With Delta
-                        accesoprevio = true;
-                        PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(ActiveUserCode, ActiveUserName, "N/A", ActiveUserType, UserGroups);
-                        frm.MdiParent = this;
-                        frm.Show();
-                        break;
-                    case 5://Depth Without Delta
-                        break;
-                    default:
-                        break;
-                }
+            //accesoprevio = true;
+            PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
+            frm.MdiParent = this;
+            frm.Show();
+            //try
+            //{
+            //    bool accesoprevio = false;
+            //    int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7=ALOSY, 9=AMS
+            //    switch (idNivel)
+            //    {
+            //        case 1://Basic View
+            //        case 2://Basic No Autorization
+            //        case 3://Medium Autorization
+            //        case 4://Depth With Delta
+            //        case 5://Depth Without Delta
+            //            accesoprevio = true;
+            //            PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
+            //            frm.MdiParent = this;
+            //            frm.Show();
+            //            break;
+            //        default:
+            //            break;
+            //    }
 
-                if (!accesoprevio)
-                {
-                    if (UsuarioLogeado.ValidarNivelPermisos(68))
-                    {
-                        //frmMantoPhotosTV frm = new frmMantoPhotosTV(UsuarioLogeado);
-                        PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(ActiveUserCode, ActiveUserName, "N/A", ActiveUserType, UserGroups);
-                        frm.MdiParent = this;
-                        frm.Show();
-                    }
-                    else
-                    {
-                        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
+            //    if (!accesoprevio)
+            //    {
+            //        if (UsuarioLogeado.ValidarNivelPermisos(69))
+            //        {
+            //            //frmMantoPhotosTV frm = new frmMantoPhotosTV(UsuarioLogeado);
+            //            PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
+            //            frm.MdiParent = this;
+            //            frm.Show();
+            //        }
+            //        else
+            //        {
+            //            CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
 
-            }
+            //}
         }
 
         private void nbReporteBatch_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

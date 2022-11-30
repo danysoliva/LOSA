@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression2 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PP_Operator_Panel_v2));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -315,18 +315,18 @@
             this.col_line_id,
             this.col_line_name});
             this.grdv_data.DetailHeight = 284;
-            gridFormatRule1.ApplyToRow = true;
-            gridFormatRule1.Name = "Format0";
-            formatConditionRuleExpression1.Appearance.BackColor = System.Drawing.Color.LightGreen;
-            formatConditionRuleExpression1.Appearance.BackColor2 = System.Drawing.Color.PaleGreen;
-            formatConditionRuleExpression1.Appearance.BorderColor = System.Drawing.Color.SeaGreen;
-            formatConditionRuleExpression1.Appearance.ForeColor = System.Drawing.Color.DarkGreen;
-            formatConditionRuleExpression1.Appearance.Options.UseBackColor = true;
-            formatConditionRuleExpression1.Appearance.Options.UseBorderColor = true;
-            formatConditionRuleExpression1.Appearance.Options.UseForeColor = true;
-            formatConditionRuleExpression1.Expression = "[status] == 50";
-            gridFormatRule1.Rule = formatConditionRuleExpression1;
-            this.grdv_data.FormatRules.Add(gridFormatRule1);
+            gridFormatRule2.ApplyToRow = true;
+            gridFormatRule2.Name = "Format0";
+            formatConditionRuleExpression2.Appearance.BackColor = System.Drawing.Color.LightGreen;
+            formatConditionRuleExpression2.Appearance.BackColor2 = System.Drawing.Color.PaleGreen;
+            formatConditionRuleExpression2.Appearance.BorderColor = System.Drawing.Color.SeaGreen;
+            formatConditionRuleExpression2.Appearance.ForeColor = System.Drawing.Color.DarkGreen;
+            formatConditionRuleExpression2.Appearance.Options.UseBackColor = true;
+            formatConditionRuleExpression2.Appearance.Options.UseBorderColor = true;
+            formatConditionRuleExpression2.Appearance.Options.UseForeColor = true;
+            formatConditionRuleExpression2.Expression = "[status] == 50";
+            gridFormatRule2.Rule = formatConditionRuleExpression2;
+            this.grdv_data.FormatRules.Add(gridFormatRule2);
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.GroupCount = 1;
             this.grdv_data.Name = "grdv_data";
@@ -608,9 +608,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "PP_Operator_Panel_v2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordenes de Producción";

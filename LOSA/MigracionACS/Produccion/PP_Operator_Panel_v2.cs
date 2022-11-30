@@ -45,6 +45,7 @@ namespace LOSA.MigracionACS.Produccion
         DataOperations dp = new DataOperations();
         FMOP fmop = new FMOP();
         SqlConnection conn = new SqlConnection();
+        UserLogin UsuarioLogeado;
 
         #endregion
 
@@ -175,54 +176,80 @@ namespace LOSA.MigracionACS.Produccion
 
         #region Form Constructors
 
-        public PP_Operator_Panel_v2(string ActiveUserCode, string ActiveUserName, string FormAction, string ActiveUserType, DataTable UserGroups)
+        public PP_Operator_Panel_v2(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
-
-            this.ActiveUserCode = ActiveUserCode;
-            this.ActiveUserName = ActiveUserName;
-            this.ActiveUserType = ActiveUserType;
-            this.FormAction = FormAction;
-            this.UserGroups = UserGroups;
+            UsuarioLogeado = pUsuarioLogeado;
+            ValidatePermisos();
+            //this.ActiveUserCode = ActiveUserCode;
+            //this.ActiveUserName = ActiveUserName;
+            //this.ActiveUserType = ActiveUserType;
+            //this.FormAction = FormAction;
+            //this.UserGroups = UserGroups;
         }
 
         #endregion
 
         #region Form Events
 
-        private void PP_Operator_Panel_v2_Load(object sender, EventArgs e)
+        private void ValidatePermisos()
         {
-            try
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(69))
             {
-                if (FormAction == "view") 
+                btnc_CancelOrder.Enabled = true;
+                btnc_CloseOrder.Enabled = true;
+                btnc_CopyOrder.Enabled = true;
+                btnc_SendProducction.Enabled = true;
+                btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+            //else
+            //{
+            //    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
+            //}
+
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
                 {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
                         btnc_CancelOrder.Enabled = false;
                         btnc_CloseOrder.Enabled = false;
                         btnc_CopyOrder.Enabled = false;
                         btnc_SendProducction.Enabled = false;
                         btnc_VerifyReach.Enabled = false;
-                }
-                foreach (DataRow row in UserGroups.Rows)
-                {
-                    string group = row["GroupName"].ToString();
-                    if ( group == "app_acs_prod_support" ||
-                         group == "app_acs_fml_planner"  ||
-                         group == "app_acs_it_admin")
-                    {
+                        AccesoPrevio = true;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
                         btnc_CancelOrder.Enabled = true;
                         btnc_CloseOrder.Enabled = true;
                         btnc_CopyOrder.Enabled = true;
                         btnc_SendProducction.Enabled = true;
                         btnc_VerifyReach.Enabled = true;
+                        AccesoPrevio = true;
                         break;
-                    }
+                    default:
+                        break;
                 }
+            }
 
+            if (!AccesoPrevio)
+            {
+
+                CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
+            }
+            else
+            {
                 load_orders();
 
                 conn.ConnectionString = dp.ConnectionStringCostos;
                 conn.Open();
-                if (conn.State == ConnectionState.Open) 
+                if (conn.State == ConnectionState.Open)
                 {
                     txt_dbMessage.Caption = "[Conexión Establecida]";
                     txt_dbMessage.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Green;
@@ -233,10 +260,108 @@ namespace LOSA.MigracionACS.Produccion
                     txt_dbMessage.ItemAppearance.Normal.ForeColor = System.Drawing.Color.DarkRed;
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Algo resulto mal, contacta al departamento de sistemas Detalle:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        }
+
+        private void PP_Operator_Panel_v2_Load(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    //if (FormAction == "view") 
+            //    //{
+            //    //        btnc_CancelOrder.Enabled = false;
+            //    //        btnc_CloseOrder.Enabled = false;
+            //    //        btnc_CopyOrder.Enabled = false;
+            //    //        btnc_SendProducction.Enabled = false;
+            //    //        btnc_VerifyReach.Enabled = false;
+            //    //}
+
+            //    //foreach (DataRow row in UserGroups.Rows)
+            //    //{
+            //    //    string group = row["GroupName"].ToString();
+            //    //    if ( group == "app_acs_prod_support" ||
+            //    //         group == "app_acs_fml_planner"  ||
+            //    //         group == "app_acs_it_admin")
+            //    //    {
+            //    //        btnc_CancelOrder.Enabled = true;
+            //    //        btnc_CloseOrder.Enabled = true;
+            //    //        btnc_CopyOrder.Enabled = true;
+            //    //        btnc_SendProducction.Enabled = true;
+            //    //        btnc_VerifyReach.Enabled = true;
+            //    //        break;
+            //    //    }
+            //    //}
+
+            //    bool AccesoPrevio = false;
+            //    if (UsuarioLogeado.ValidarNivelPermisos(69))
+            //    {
+            //        btnc_CancelOrder.Enabled = true;
+            //        btnc_CloseOrder.Enabled = true;
+            //        btnc_CopyOrder.Enabled = true;
+            //        btnc_SendProducction.Enabled = true;
+            //        btnc_VerifyReach.Enabled = true;
+            //        AccesoPrevio = true;
+            //    }
+            //    //else
+            //    //{
+            //    //    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
+            //    //}
+
+            //    if (!AccesoPrevio)
+            //    {
+            //        int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7=ALOSY, 9=AMS
+            //        switch (idNivel)
+            //        {
+            //            case 1://Basic View
+            //            case 2://Basic No Autorization
+            //                btnc_CancelOrder.Enabled = false;
+            //                btnc_CloseOrder.Enabled = false;
+            //                btnc_CopyOrder.Enabled = false;
+            //                btnc_SendProducction.Enabled = false;
+            //                btnc_VerifyReach.Enabled = false;
+            //                AccesoPrevio = true;
+            //                break;
+            //            case 3://Medium Autorization
+            //            case 4://Depth With Delta
+            //            case 5://Depth Without Delta
+            //                btnc_CancelOrder.Enabled = true;
+            //                btnc_CloseOrder.Enabled = true;
+            //                btnc_CopyOrder.Enabled = true;
+            //                btnc_SendProducction.Enabled = true;
+            //                btnc_VerifyReach.Enabled = true;
+            //                AccesoPrevio = true;
+            //                break;
+            //            default:
+            //                break;
+            //        }
+            //    }
+
+            //    if (!AccesoPrevio)
+            //    {
+                    
+            //        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
+            //    }
+            //    else
+            //    {
+            //        load_orders();
+
+            //        conn.ConnectionString = dp.ConnectionStringCostos;
+            //        conn.Open();
+            //        if (conn.State == ConnectionState.Open)
+            //        {
+            //            txt_dbMessage.Caption = "[Conexión Establecida]";
+            //            txt_dbMessage.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Green;
+            //        }
+            //        else
+            //        {
+            //            txt_dbMessage.Caption = "[Conexión Erronea]";
+            //            txt_dbMessage.ItemAppearance.Normal.ForeColor = System.Drawing.Color.DarkRed;
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Algo resulto mal, contacta al departamento de sistemas Detalle:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btn_exit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
