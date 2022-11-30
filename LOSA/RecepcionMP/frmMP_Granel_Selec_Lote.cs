@@ -26,7 +26,7 @@ namespace LOSA.RecepcionMP
             InitializeComponent();
             vLista = pArray;
 
-            
+            LoadListaLotesActivos();
             foreach (ItemMP_Lote item in pArray)
             {
                 dsRecepcionMPx.cruce_lote_mpRow row1 = dsRecepcionMPx1.cruce_lote_mp.Newcruce_lote_mpRow();
@@ -36,9 +36,8 @@ namespace LOSA.RecepcionMP
                 dsRecepcionMPx1.cruce_lote_mp.Addcruce_lote_mpRow(row1);
                 dsRecepcionMPx1.AcceptChanges();
 
-                itemcode = row1.itemcode;
             }
-            LoadListaLotesActivos(itemcode);
+            
         }
         public frmMP_Granel_Selec_Lote(ArrayList pArray, int id_externo)
         {
@@ -70,7 +69,7 @@ namespace LOSA.RecepcionMP
 
         }
 
-        public void LoadListaLotesActivos(string pitemcode)
+        public void LoadListaLotesActivos()
         {
             try
             {
