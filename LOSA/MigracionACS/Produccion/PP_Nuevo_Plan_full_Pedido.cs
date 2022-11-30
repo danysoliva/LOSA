@@ -19,15 +19,15 @@ namespace LOSA.MigracionACS.Produccion
     public partial class PP_Nuevo_Plan_full_Pedido : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        UserLogin UsuarioLogeado;
+        public UserLogin UsuarioLogeado;
         int LotePT;
         FMOP fmop = new FMOP();
         DataSet orders;
         int countT, countC;
         int TypeTrans = 1;
-        string ActiveUserCode;
-        string ActiveUserName;
-        string ActiveUserType;
+        //string ActiveUserCode;
+        //string ActiveUserName;
+        //string ActiveUserType;
         string FormAction;
         int IdPedidoDetalle;
         decimal PesoTotalKG;
@@ -36,23 +36,23 @@ namespace LOSA.MigracionACS.Produccion
         int Id_Pedido;
         int id_gestion_lote;
         int lote_fp = 0;
-        public string ActiveUserCodeP
-        {
-            get { return ActiveUserCode; }
-            set { ActiveUserCode = value; }
-        }
+        //public string ActiveUserCodeP
+        //{
+        //    get { return ActiveUserCode; }
+        //    set { ActiveUserCode = value; }
+        //}
 
-        public string ActiveUserNameP
-        {
-            get { return ActiveUserName; }
-            set { ActiveUserName = value; }
-        }
+        //public string ActiveUserNameP
+        //{
+        //    get { return ActiveUserName; }
+        //    set { ActiveUserName = value; }
+        //}
 
-        public string ActiveUserTypeP
-        {
-            get { return ActiveUserType; }
-            set { ActiveUserType = value; }
-        }
+        //public string ActiveUserTypeP
+        //{
+        //    get { return ActiveUserType; }
+        //    set { ActiveUserType = value; }
+        //}
 
         public int Id_Pedido1
         {
@@ -334,8 +334,8 @@ namespace LOSA.MigracionACS.Produccion
                     cmd.Parameters["@date_prouction"].Value = Convert.ToDateTime(string.Format("{0:yyyy-MM-dd HH:mm:ss}", row["fecha_de_trabajo"]));
                     cmd.Parameters["@priority"].Value = row["Prioridad"];
                     cmd.Parameters["@status"].Value = 40;
-                    cmd.Parameters["@created_by"].Value = int.Parse(ActiveUserCode);
-                    cmd.Parameters["@last_mod_by"].Value = int.Parse(ActiveUserCode);
+                    cmd.Parameters["@created_by"].Value = this.UsuarioLogeado.UserId;//int.Parse(ActiveUserCode);
+                    cmd.Parameters["@last_mod_by"].Value = this.UsuarioLogeado.UserId;// int.Parse(ActiveUserCode);
                     cmd.Parameters["@kg_reached"].Value = 0.00;
                     cmd.Parameters["@kg_difference"].Value = 0.00;
                     cmd.Parameters["@cant_paradas"].Value = row["batch"];
@@ -372,7 +372,8 @@ namespace LOSA.MigracionACS.Produccion
 
                     if (status < 50)
                     {
-                        fmop.local_formula_change_status(Convert.ToInt32(save), int.Parse(ActiveUserCode), 50);
+                        //fmop.local_formula_change_status(Convert.ToInt32(save), int.Parse(ActiveUserCode), 50);
+                        fmop.local_formula_change_status(Convert.ToInt32(save), this.UsuarioLogeado.UserId, 50);
 
                         int nucleo = int.Parse(dp.ACS_GetSelectData(string.Format(@"SELECT COALESCE([nucleo], 0 ) AS nucleo FROM [dbo].[FML_Ingredientes_v2] WHERE [formula] = {0} AND [tipo] = 'NC' ", save)).Tables[0].Rows[0][0].ToString());
 
@@ -382,7 +383,8 @@ namespace LOSA.MigracionACS.Produccion
 
                             if (status < 50)
                             {
-                                fmop.local_formula_change_status(nucleo, int.Parse(ActiveUserCode), 50);
+                                //fmop.local_formula_change_status(nucleo, int.Parse(ActiveUserCode), 50);
+                                fmop.local_formula_change_status(nucleo, this.UsuarioLogeado.UserId, 50);
                             }
                         }
                     }
@@ -461,8 +463,8 @@ namespace LOSA.MigracionACS.Produccion
                     cmd.Parameters["@date_prouction"].Value = Convert.ToDateTime(string.Format("{0:yyyy-MM-dd HH:mm:ss}", row["fecha_de_trabajo"]));
                     cmd.Parameters["@priority"].Value = row["Prioridad"];
                     cmd.Parameters["@status"].Value = 40;
-                    cmd.Parameters["@created_by"].Value = int.Parse(ActiveUserCode);
-                    cmd.Parameters["@last_mod_by"].Value = int.Parse(ActiveUserCode);
+                    cmd.Parameters["@created_by"].Value = this.UsuarioLogeado.UserId;
+                    cmd.Parameters["@last_mod_by"].Value = this.UsuarioLogeado.UserId; //int.Parse(ActiveUserCode);
                     cmd.Parameters["@kg_reached"].Value = 0.00;
                     cmd.Parameters["@kg_difference"].Value = 0.00;
                     cmd.Parameters["@cant_paradas"].Value = row["batch"];
@@ -499,8 +501,8 @@ namespace LOSA.MigracionACS.Produccion
 
                     if (status < 50)
                     {
-                        fmop.local_formula_change_status(Convert.ToInt32(save), int.Parse(ActiveUserCode), 50);
-
+                        //fmop.local_formula_change_status(Convert.ToInt32(save), int.Parse(ActiveUserCode), 50);
+                        fmop.local_formula_change_status(Convert.ToInt32(save), this.UsuarioLogeado.UserId, 50);
                         int nucleo = int.Parse(dp.ACS_GetSelectData(string.Format(@"SELECT COALESCE([nucleo], 0 ) AS nucleo FROM [dbo].[FML_Ingredientes_v2] WHERE [formula] = {0} AND [tipo] = 'NC' ", save)).Tables[0].Rows[0][0].ToString());
 
                         if (nucleo > 0)
@@ -509,7 +511,8 @@ namespace LOSA.MigracionACS.Produccion
 
                             if (status < 50)
                             {
-                                fmop.local_formula_change_status(nucleo, int.Parse(ActiveUserCode), 50);
+                                //fmop.local_formula_change_status(nucleo, int.Parse(ActiveUserCode), 50);
+                                fmop.local_formula_change_status(nucleo, this.UsuarioLogeado.UserId, 50);
                             }
                         }
                     }
@@ -607,7 +610,7 @@ namespace LOSA.MigracionACS.Produccion
                 cmd.Parameters.Add(new SqlParameter("@Action", SqlDbType.VarChar, 10));
                 cmd.Parameters.Add(new SqlParameter("@FormulaID", SqlDbType.VarChar, 100));
 
-                cmd.Parameters["@UserID"].Value = ActiveUserCode;
+                cmd.Parameters["@UserID"].Value = this.UsuarioLogeado.UserId;
                 cmd.Parameters["@Action"].Value = action;
                 cmd.Parameters["@FormulaID"].Value = formula;
 
@@ -1014,7 +1017,7 @@ namespace LOSA.MigracionACS.Produccion
 
             cmd.Parameters["@FormulaID"].Value = InsertedRow["id_formula"].ToString();
             cmd.Parameters["@BatchNo"].Value = InsertedRow["cant_paradas"].ToString();
-            cmd.Parameters["@UserID"].Value = ActiveUserCode;
+            cmd.Parameters["@UserID"].Value = this.UsuarioLogeado.UserId;
             cmd.Parameters["@date_production"].Value = InsertedRow["date_prouction"];
 
             if (conn.State == ConnectionState.Closed)
