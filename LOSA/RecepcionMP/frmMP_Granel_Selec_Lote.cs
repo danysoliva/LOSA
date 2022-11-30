@@ -135,34 +135,65 @@ namespace LOSA.RecepcionMP
                 var gridView = (GridView)gridControl1.FocusedView;
                 var row = (dsRecepcionMPx.cruce_lote_mpRow)gridView.GetFocusedDataRow();
 
-                //Bypass para unificar las soyas en un solo codigo
-                switch (vItemCod)
-                {
-                    case "MP00002":
-                    case "MP00003":
-                    case "MP00004":
-                        row.id_lote = id_lote_selected;
-                        row.lote_b = row.lote = GridLoook1.Text;
-                        break;
-                    default:
-                        if (vItemCod != row.itemcode)
-                        {
-                            //Significa que no es la misma materia prima
-                            CajaDialogo.Error("Debe seleccionar un lote que pertenezca a la misma Materia Prima!");
-                            GridLoook1.EditValue = "";
-                            GridLoook1.Text = "";
-                            row.id_lote = 0;
-                            return;
-                        }
-                        else
-                        {
-                            row.id_lote = id_lote_selected;
-                            row.lote_b = row.lote = GridLoook1.Text;
-                        }
-                        break;
-                }//end switch
+                #region Codigo Validacion Anterior
 
-               
+                //switch (vItemCod)
+                //{
+                //    case "MP00002":
+                //    case "MP00003":
+                //    case "MP00004":
+                //        //row.id_lote = id_lote_selected;
+                //        //row.lote_b = row.lote = GridLoook1.Text;
+                //        if (vItemCod != row.itemcode)
+                //        {
+                //            //Significa que no es la misma materia prima
+                //            CajaDialogo.Error("Debe seleccionar un lote que pertenezca a la misma Materia Prima!");
+                //            GridLoook1.EditValue = "";
+                //            GridLoook1.Text = "";
+                //            row.id_lote = 0;
+                //            return;
+                //        }
+                //        else
+                //        {
+                //            row.id_lote = id_lote_selected;
+                //            row.lote_b = row.lote = GridLoook1.Text;
+                //        }
+                //        break;
+                //    default:
+                //        if (vItemCod != row.itemcode)
+                //        {
+                //            //Significa que no es la misma materia prima
+                //            CajaDialogo.Error("Debe seleccionar un lote que pertenezca a la misma Materia Prima!");
+                //            GridLoook1.EditValue = "";
+                //            GridLoook1.Text = "";
+                //            row.id_lote = 0;
+                //            return;
+                //        }
+                //        else
+                //        {
+                //            row.id_lote = id_lote_selected;
+                //            row.lote_b = row.lote = GridLoook1.Text;
+                //        }
+                //        break;
+                //}//end switch
+                #endregion
+
+                //Bypass para unificar las soyas en un solo codigo
+                if (vItemCod != row.itemcode)
+                {
+                    //Significa que no es la misma materia prima
+                    CajaDialogo.Error("Debe seleccionar un lote que pertenezca a la misma Materia Prima!");
+                    GridLoook1.EditValue = "";
+                    GridLoook1.Text = "";
+                    row.id_lote = 0;
+                    return;
+                }
+                else
+                {
+                    row.id_lote = id_lote_selected;
+                    row.lote_b = row.lote = GridLoook1.Text;
+                }
+
             }
         }
 

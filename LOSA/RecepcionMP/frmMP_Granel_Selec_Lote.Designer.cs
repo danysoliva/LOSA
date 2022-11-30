@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMP_Granel_Selec_Lote));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -47,8 +47,9 @@
             this.colid_lote_externo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemcode1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcantidad_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcantidad_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcard_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_lote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdSelectLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -56,7 +57,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSiguiente = new DevExpress.XtraEditors.SimpleButton();
-            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -131,14 +131,17 @@
             this.GridLookUpEditLoteEmbedded.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.GridLookUpEditLoteEmbedded.DataSource = this.listalotesgranelBindingSource;
+            this.GridLookUpEditLoteEmbedded.DisplayMember = "lote";
             this.GridLookUpEditLoteEmbedded.Name = "GridLookUpEditLoteEmbedded";
+            this.GridLookUpEditLoteEmbedded.PopupFormSize = new System.Drawing.Size(500, 0);
             this.GridLookUpEditLoteEmbedded.PopupView = this.repositoryItemGridLookUpEdit1View;
+            this.GridLookUpEditLoteEmbedded.ValueMember = "id_lote_externo";
             this.GridLookUpEditLoteEmbedded.EditValueChanged += new System.EventHandler(this.GridLookUpEditLoteEmbedded_EditValueChanged);
             // 
             // listalotesgranelBindingSource
             // 
             this.listalotesgranelBindingSource.DataMember = "lista_lotes_granel";
-            this.listalotesgranelBindingSource.DataSource = this.dsRecepcionMPx;
+            this.listalotesgranelBindingSource.DataSource = this.dsRecepcionMPx1;
             // 
             // dsRecepcionMPx
             // 
@@ -165,6 +168,7 @@
             // 
             this.colid_lote_externo.FieldName = "id_lote_externo";
             this.colid_lote_externo.Name = "colid_lote_externo";
+            this.colid_lote_externo.OptionsColumn.AllowShowHide = false;
             // 
             // colitemcode1
             // 
@@ -181,17 +185,18 @@
             this.collote1.FieldName = "lote";
             this.collote1.Name = "collote1";
             this.collote1.OptionsColumn.AllowEdit = false;
+            this.collote1.OptionsColumn.AllowShowHide = false;
             this.collote1.Visible = true;
-            this.collote1.VisibleIndex = 1;
+            this.collote1.VisibleIndex = 0;
             // 
-            // colcantidad_existencia
+            // colbodega
             // 
-            this.colcantidad_existencia.Caption = "Existencia";
-            this.colcantidad_existencia.FieldName = "cantidad_existencia";
-            this.colcantidad_existencia.Name = "colcantidad_existencia";
-            this.colcantidad_existencia.OptionsColumn.AllowEdit = false;
-            this.colcantidad_existencia.Visible = true;
-            this.colcantidad_existencia.VisibleIndex = 2;
+            this.colbodega.Caption = "Bodega";
+            this.colbodega.FieldName = "bodega";
+            this.colbodega.Name = "colbodega";
+            this.colbodega.OptionsColumn.AllowEdit = false;
+            this.colbodega.Visible = true;
+            this.colbodega.VisibleIndex = 4;
             // 
             // colfactura
             // 
@@ -201,6 +206,15 @@
             this.colfactura.OptionsColumn.AllowEdit = false;
             this.colfactura.Visible = true;
             this.colfactura.VisibleIndex = 3;
+            // 
+            // colcantidad_existencia
+            // 
+            this.colcantidad_existencia.Caption = "Existencia";
+            this.colcantidad_existencia.FieldName = "cantidad_existencia";
+            this.colcantidad_existencia.Name = "colcantidad_existencia";
+            this.colcantidad_existencia.OptionsColumn.AllowEdit = false;
+            this.colcantidad_existencia.Visible = true;
+            this.colcantidad_existencia.VisibleIndex = 2;
             // 
             // colcard_name
             // 
@@ -219,9 +233,9 @@
             // cmdSelectLote
             // 
             this.cmdSelectLote.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.cmdSelectLote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdSelectLote.Name = "cmdSelectLote";
             this.cmdSelectLote.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdSelectLote_ButtonClick);
             // 
@@ -271,15 +285,6 @@
             this.cmdSiguiente.TabIndex = 66;
             this.cmdSiguiente.Text = "Siguiente";
             this.cmdSiguiente.Click += new System.EventHandler(this.cmdSiguiente_Click);
-            // 
-            // colbodega
-            // 
-            this.colbodega.Caption = "Bodega";
-            this.colbodega.FieldName = "bodega";
-            this.colbodega.Name = "colbodega";
-            this.colbodega.OptionsColumn.AllowEdit = false;
-            this.colbodega.Visible = true;
-            this.colbodega.VisibleIndex = 4;
             // 
             // frmMP_Granel_Selec_Lote
             // 
