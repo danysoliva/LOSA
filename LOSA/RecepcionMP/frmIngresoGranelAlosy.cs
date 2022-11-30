@@ -254,13 +254,6 @@ namespace LOSA.RecepcionMP
 
         private void cmdGenerarIngreso_Click(object sender, EventArgs e)
         {
-            //Guardar Ingresos
-            //if (idUbicacionSelected == 0)
-            //{
-            //    CajaDialogo.Error("Es necesario seleccionar una Ubicación Valida!");
-            //    return;
-            //}
-
             if(dtFechaVencimiento.EditValue == null)
             {
                 CajaDialogo.Error("Es necesario seleccionar una fecha de Vencimiento!");
@@ -274,6 +267,7 @@ namespace LOSA.RecepcionMP
             }
 
             bool PuedeContinuar = false;
+            //Buscamos que al menos haya una linea con ubicacion
             foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
             {
                 try
@@ -295,6 +289,7 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
+            //Buscamos que al menos haya una linea con Barco Asignado
             PuedeContinuar = false;
             foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
             {
@@ -323,30 +318,22 @@ namespace LOSA.RecepcionMP
 
             SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
 
+            DialogResult r = CajaDialogo.Pregunta("Esta seguro de generar estos ingresos de Materia Prima Granel?");
+            if (r != DialogResult.Yes)
+                return;
+
+            if (!tggNuevoIngreso.IsOn)//Es un nuevo ingreso
+            {
+                if (string.IsNullOrEmpty(txtingreso.Text))
+                {
+                    CajaDialogo.Error("No tiene un ingreso seleccionado para poder ligar. Debe seleccionar uno antes de crear los documentos.");
+                    return;
+                }
+            }
+
             bool Guardo = false;
             try
             {
-                //if (!tggNuevoIngreso.IsOn)
-                //{
-                //    string quer = @"sp_obtener_numero_ingreso";
-                //    cn = new SqlConnection(dp.ConnectionStringLOSA);
-                //    cn.Open();
-                //    cmd = new SqlCommand(quer, cn);
-                //    cmd.CommandType = CommandType.StoredProcedure;
-                //    ingreso = Convert.ToInt32(cmd.ExecuteScalar());
-                //    cn.Close();
-                //}
-                //else
-                //{
-
-                //    if (txtingreso.Text == "")
-                //    {
-                //        CajaDialogo.Error("No tiene un ingreso seleccionado para poder ligar. Debe seleccionar uno antes de crear los documentos.");
-                //        return;
-                //    }
-                //    ingreso = Convert.ToInt32(txtingreso.Text);
-                //}
-
                 cnx.Open();
                 transaction = cnx.BeginTransaction("SampleTransaction");
 
@@ -356,48 +343,30 @@ namespace LOSA.RecepcionMP
                     cmd.CommandText = "sp_obtener_numero_ingreso";
                     cmd.Connection = cnx;
                     cmd.Transaction = transaction;
-                    //string quer = @"sp_obtener_numero_ingreso";
-                    //cn = new SqlConnection(dp.ConnectionStringLOSA);
-                    //cn.Open();
-                    //cmd = new SqlCommand(quer, transaction.Connection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     ingreso = Convert.ToInt32(cmd.ExecuteScalar());
-                    //cn.Close();
                 }
                 else//Es ingreso existente
-                {
-                    if (string.IsNullOrEmpty(txtingreso.Text))
-                    {
-                        CajaDialogo.Error("No tiene un ingreso seleccionado para poder ligar. Debe seleccionar uno antes de crear los documentos.");
-                        return;
-                    }
+                {   
                     ingreso = Convert.ToInt32(txtingreso.Text);
                 }
 
                 //Validar ingreso si es necesario
-                
-                DialogResult r = CajaDialogo.Pregunta("Esta seguro de generar estos ingresos de Materia Prima Granel?");
-                if (r != DialogResult.Yes)
-                    return;
-
                 decimal sumar_Kg = 0;
                 foreach (dsRecepcionMPx.granelRow row in dsRecepcionMPx1.granel.Rows)
                 {
                     sumar_Kg = sumar_Kg + row.PesoProd;
                 }
-                int Id_lote_generado = 0;
+
+                int Id_lote_ALOSY = 0;
                 if (tggNuevoIngreso.IsOn)//Ingreso nuevo
                 {
                     if (Istraslado)
                     {
-                        //string query = @"sp_insert_ingreso_granel-v3";//Insert into [LOSA_ingreso_mp_h] and [LOSA_ingreso_mp_lotes]
-                        //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                        //con.Open();
                         cmd = cnx.CreateCommand();
                         cmd.CommandText = "sp_insert_ingreso_granel-v3";
                         cmd.Connection = cnx;
                         cmd.Transaction = transaction;
-                        //SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@entrada", sumar_Kg);
                         cmd.Parameters.AddWithValue("@lote", txtLote.Text);
@@ -407,18 +376,14 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
                         cmd.Parameters.AddWithValue("@id_traslado", id_externo_ingreso);
 
-                        Id_lote_generado = Convert.ToInt32(cmd.ExecuteScalar());
+                        Id_lote_ALOSY = Convert.ToInt32(cmd.ExecuteScalar());
                     }
                     else
                     {
-                        //string query = @"sp_insert_ingreso_granel";//Insert into [LOSA_ingreso_mp_h] and [LOSA_ingreso_mp_lotes]
-                        //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                        //con.Open();
                         cmd = cnx.CreateCommand();
                         cmd.CommandText = "sp_insert_ingreso_granel";
                         cmd.Connection = cnx;
                         cmd.Transaction = transaction;
-                        //SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@entrada", sumar_Kg);
                         cmd.Parameters.AddWithValue("@lote", txtLote.Text);
@@ -427,19 +392,15 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
 
-                        Id_lote_generado = Convert.ToInt32(cmd.ExecuteScalar());
+                        Id_lote_ALOSY = Convert.ToInt32(cmd.ExecuteScalar());
                     }
                 }
                 else//Ingreso existente
                 {
-                    //string query = @"sp_validar_si_ya_existe_este_ingreso";
-                    //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    //con.Open();
                     cmd = cnx.CreateCommand();
                     cmd.CommandText = "sp_validar_si_ya_existe_este_ingreso";
                     cmd.Connection = cnx;
                     cmd.Transaction = transaction;
-                    //SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@entrada", sumar_Kg);
                     cmd.Parameters.AddWithValue("@lote", txtLote.Text);
@@ -447,7 +408,7 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                     cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
                     cmd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
-                    Id_lote_generado = Convert.ToInt32(cmd.ExecuteScalar());
+                    Id_lote_ALOSY = Convert.ToInt32(cmd.ExecuteScalar());
                 }
 
                 //Registro de Salida Externa H
@@ -477,6 +438,7 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@numero_transaccion", ingreso);
                         cmd.Parameters.AddWithValue("@id_transferencia", id_transferencia_h);
                         //id_salida_h = Convert.ToInt32(cmdh.ExecuteScalar());
+                        cmd.ExecuteNonQuery();
                         id_salida_h = id_transferencia_h;
                     }
                 }
@@ -499,7 +461,7 @@ namespace LOSA.RecepcionMP
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("@id_mp", SqlDbType.Int).Value = mp1.IdMP_ACS;
-                cmd.Parameters.Add("@id_h", SqlDbType.Int).Value = id_salida_h;
+                cmd.Parameters.Add("@id_h", SqlDbType.Int).Value = id_transferencia_h;// id_salida_h;
                 cmd.Parameters.Add("@peso", SqlDbType.Decimal).Value = TotalKg;
                 cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = 1;
                 cmd.Parameters.Add("@LineNum", SqlDbType.Int).Value = id_linea_d;
@@ -520,7 +482,7 @@ namespace LOSA.RecepcionMP
 
                     cmd.Parameters.Add("@peso", SqlDbType.Decimal).Value = item2.PesoProd;
                     cmd.Parameters.Add("@unidades", SqlDbType.Decimal).Value = 1;
-                    cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now;
+                    cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
                     cmd.Parameters.Add("@user_creador", SqlDbType.Int).Value = UsuarioLogeado.Id;
                     cmd.Parameters.Add("@id_serie", SqlDbType.Int).Value = item2.id;
                     cmd.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
@@ -532,7 +494,7 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.Add("@bodega_out", SqlDbType.VarChar).Value = "BG001";//Id bodega MP
                     cmd.Parameters.Add("@LineNum", SqlDbType.Int).Value = id_linea_d;
                     //cmd3.Parameters.Add("@id_ingreso_lote", SqlDbType.Int).Value = ingreso_h.ID;
-                    cmd.Parameters.Add("@id_ingreso_lote", SqlDbType.Int).Value = Id_lote_generado;
+                    cmd.Parameters.Add("@id_ingreso_lote", SqlDbType.Int).Value = Id_lote_ALOSY;
 
                     cmd.ExecuteNonQuery();
                 }
@@ -587,7 +549,7 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
                         cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
                         cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-                        cmd.Parameters.AddWithValue("@id_lote_alosy", Id_lote_generado);
+                        cmd.Parameters.AddWithValue("@id_lote_alosy", Id_lote_ALOSY);
 
                         cmd.ExecuteNonQuery();
                         Guardo = true;
