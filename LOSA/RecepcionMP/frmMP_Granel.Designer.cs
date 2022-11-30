@@ -526,6 +526,7 @@ namespace LOSA.RecepcionMP
             this.cmdLoteActivo.Size = new System.Drawing.Size(166, 56);
             this.cmdLoteActivo.TabIndex = 10;
             this.cmdLoteActivo.Text = "Conf. Lote Activo";
+            this.cmdLoteActivo.Visible = false;
             this.cmdLoteActivo.Click += new System.EventHandler(this.cmdLoteActivo_Click);
             // 
             // checkBoxSeleccionarTodas

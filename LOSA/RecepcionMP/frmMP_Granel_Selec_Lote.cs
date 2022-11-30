@@ -20,12 +20,13 @@ namespace LOSA.RecepcionMP
     {
         ArrayList vLista = new ArrayList();
         public ArrayList ListaResultados;
+        string itemcode;
         public frmMP_Granel_Selec_Lote(ArrayList pArray)
         {
             InitializeComponent();
             vLista = pArray;
-            LoadListaLotesActivos();
 
+            
             foreach (ItemMP_Lote item in pArray)
             {
                 dsRecepcionMPx.cruce_lote_mpRow row1 = dsRecepcionMPx1.cruce_lote_mp.Newcruce_lote_mpRow();
@@ -34,13 +35,16 @@ namespace LOSA.RecepcionMP
                 //pendiente agregar el valor de lote
                 dsRecepcionMPx1.cruce_lote_mp.Addcruce_lote_mpRow(row1);
                 dsRecepcionMPx1.AcceptChanges();
+
+                itemcode = row1.itemcode;
             }
+            LoadListaLotesActivos(itemcode);
         }
         public frmMP_Granel_Selec_Lote(ArrayList pArray, int id_externo)
         {
             InitializeComponent();
             vLista = pArray;
-            LoadListaLotesActivos();
+            //LoadListaLotesActivos();
 
             foreach (ItemMP_Lote item in pArray)
             {
@@ -66,20 +70,22 @@ namespace LOSA.RecepcionMP
 
         }
 
-        public void LoadListaLotesActivos()
+        public void LoadListaLotesActivos(string pitemcode)
         {
             try
             {
                 DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringBascula);
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_lista_lotes_activos_granel", con);
+                //SqlCommand cmd = new SqlCommand("sp_get_lista_lotes_activos_granel", con);
+                SqlCommand cmd = new SqlCommand("sp_get_granel_en_externo", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@idbodega", idBodega);
-                dsRecepcionMPx1.lista_lotes_activos.Clear();
+                //cmd.Parameters.AddWithValue("@itemcode", pitemcode);
+                dsRecepcionMPx1.lista_lotes_granel.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsRecepcionMPx1.lista_lotes_activos);
+                adat.Fill(dsRecepcionMPx1.lista_lotes_granel);
 
                 con.Close();
             }

@@ -310,6 +310,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="lista_lotes_granel" msprop:Generator_TableClassName="lista_lotes_granelDataTable" msprop:Generator_TableVarName="tablelista_lotes_granel" msprop:Generator_RowChangedName="lista_lotes_granelRowChanged" msprop:Generator_TablePropName="lista_lotes_granel" msprop:Generator_RowDeletingName="lista_lotes_granelRowDeleting" msprop:Generator_RowChangingName="lista_lotes_granelRowChanging" msprop:Generator_RowEvHandlerName="lista_lotes_granelRowChangeEventHandler" msprop:Generator_RowDeletedName="lista_lotes_granelRowDeleted" msprop:Generator_RowClassName="lista_lotes_granelRow" msprop:Generator_UserTableName="lista_lotes_granel" msprop:Generator_RowEvArgName="lista_lotes_granelRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_lote_externo" msprop:Generator_ColumnVarNameInTable="columnid_lote_externo" msprop:Generator_ColumnPropNameInRow="id_lote_externo" msprop:Generator_ColumnPropNameInTable="id_lote_externoColumn" msprop:Generator_UserColumnName="id_lote_externo" type="xs:int" minOccurs="0" />
+              <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad_existencia" msprop:Generator_ColumnVarNameInTable="columncantidad_existencia" msprop:Generator_ColumnPropNameInRow="cantidad_existencia" msprop:Generator_ColumnPropNameInTable="cantidad_existenciaColumn" msprop:Generator_UserColumnName="cantidad_existencia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="factura" msprop:Generator_ColumnVarNameInTable="columnfactura" msprop:Generator_ColumnPropNameInRow="factura" msprop:Generator_ColumnPropNameInTable="facturaColumn" msprop:Generator_UserColumnName="factura" type="xs:string" minOccurs="0" />
+              <xs:element name="bodega" msprop:Generator_ColumnVarNameInTable="columnbodega" msprop:Generator_ColumnPropNameInRow="bodega" msprop:Generator_ColumnPropNameInTable="bodegaColumn" msprop:Generator_UserColumnName="bodega" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

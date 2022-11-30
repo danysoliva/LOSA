@@ -29,7 +29,6 @@ namespace LOSA.RecepcionMP
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarima_V2));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -49,7 +48,7 @@ namespace LOSA.RecepcionMP
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource();
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,6 +76,7 @@ namespace LOSA.RecepcionMP
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsWizard = new LOSA.RecepcionMP.dsWizard();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_lote_externo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_traslado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -116,7 +116,6 @@ namespace LOSA.RecepcionMP
             this.btnSelccionarProveedor = new DevExpress.XtraEditors.SimpleButton();
             this.txtfactura = new DevExpress.XtraEditors.TextEdit();
             this.txtid_lote = new DevExpress.XtraEditors.TextEdit();
-            this.colid_lote_externo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).BeginInit();
@@ -683,6 +682,14 @@ namespace LOSA.RecepcionMP
             this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             // 
+            // colid_lote_externo
+            // 
+            this.colid_lote_externo.FieldName = "id_lote_externo";
+            this.colid_lote_externo.Name = "colid_lote_externo";
+            this.colid_lote_externo.OptionsColumn.AllowEdit = false;
+            this.colid_lote_externo.Visible = true;
+            this.colid_lote_externo.VisibleIndex = 0;
+            // 
             // colid1
             // 
             this.colid1.FieldName = "id";
@@ -1088,14 +1095,6 @@ namespace LOSA.RecepcionMP
             this.txtid_lote.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtid_lote.Size = new System.Drawing.Size(40, 24);
             this.txtid_lote.TabIndex = 102;
-            // 
-            // colid_lote_externo
-            // 
-            this.colid_lote_externo.FieldName = "id_lote_externo";
-            this.colid_lote_externo.Name = "colid_lote_externo";
-            this.colid_lote_externo.OptionsColumn.AllowEdit = false;
-            this.colid_lote_externo.Visible = true;
-            this.colid_lote_externo.VisibleIndex = 0;
             // 
             // frmTarima_V2
             // 
