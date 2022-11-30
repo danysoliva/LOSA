@@ -106,6 +106,8 @@ namespace LOSA.MigracionACS.PT
             {
                 btn_Edit.Enabled = true;
             }
+
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btn_New_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

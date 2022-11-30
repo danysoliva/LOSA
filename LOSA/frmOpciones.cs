@@ -811,6 +811,10 @@ namespace LOSA
                 NotificacionesGenerales notifications = new NotificacionesGenerales();
                 xfrmPopup frm = new xfrmPopup(UsuarioLogeado);
                 //frm.MdiParent = this.MdiParent;
+                this.ActiveUserCode = UsuarioLogeado.Id.ToString();
+                this.ActiveUserName = UsuarioLogeado.NombreUser;
+                this.ActiveUserType = UsuarioLogeado.Tipo;
+
 
                 if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
                 {
@@ -1303,6 +1307,7 @@ namespace LOSA
         private void bnPortafolio_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             PT_Productos prod = new PT_Productos(ActiveUserCode, ActiveUserName, ActiveUserType);
+            //PT_Test prod = new PT_Test();
             prod.MdiParent = this.MdiParent;
             prod.Show();
         }
