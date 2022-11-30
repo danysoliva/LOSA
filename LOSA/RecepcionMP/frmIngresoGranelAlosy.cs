@@ -53,6 +53,7 @@ namespace LOSA.RecepcionMP
             {
                 dtFechaProduccion.EditValue = pItem.FechaProd;
                 dtFechaVencimiento.EditValue = pItem.FechaVence;
+                
             }
 
             foreach (dsRecepcionMPx.granelRow rowg in pArray)
@@ -126,7 +127,7 @@ namespace LOSA.RecepcionMP
             LoadBarcos();
             LoadUbicaciones();
 
-            if (pItem.RecuperarRegistro(pItem.IdLote))
+            if (pItem.RecuperarRegistroForID_Lote_Externo(pItem.IdLote))
             {
                 dtFechaProduccion.EditValue = pItem.FechaProd;
                 dtFechaVencimiento.EditValue = pItem.FechaVence;
@@ -487,7 +488,7 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.Add("@id_serie", SqlDbType.Int).Value = item2.id;
                     cmd.Parameters.Add("@DocEntry", SqlDbType.Int).Value = DetalleExterno1.DocEntrySAP;
                     cmd.Parameters.Add("@id_mp", SqlDbType.Int).Value = mp1.IdMP_ACS;
-                    cmd.Parameters.Add("@id_lote_externo", SqlDbType.Int).Value = item2.id;
+                    cmd.Parameters.Add("@id_lote_externo", SqlDbType.Int).Value = IdLoteSelected;
                     cmd.Parameters.Add("@id_detalle", SqlDbType.Int).Value = id_salida_d;
                     cmd.Parameters.Add("@id_presentacio", SqlDbType.Int).Value = DBNull.Value;
                     cmd.Parameters.Add("@bodega_in", SqlDbType.VarChar).Value = DetalleExterno1.BodegaIn;

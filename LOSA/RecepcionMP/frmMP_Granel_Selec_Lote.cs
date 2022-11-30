@@ -35,7 +35,6 @@ namespace LOSA.RecepcionMP
                 //pendiente agregar el valor de lote
                 dsRecepcionMPx1.cruce_lote_mp.Addcruce_lote_mpRow(row1);
                 dsRecepcionMPx1.AcceptChanges();
-
             }
             
         }
@@ -224,6 +223,7 @@ namespace LOSA.RecepcionMP
                     Item.Lote = row.lote_b; 
                     Item.Card_Name = row.card_name;
                     Item.IdLote = row.id_lote;
+                    //Item.FechaProd = 
                     ListaResultados.Add(Item);
                 }
             }

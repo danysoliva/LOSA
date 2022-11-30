@@ -254,6 +254,7 @@ namespace LOSA.RecepcionMP
                 ItemMP_Lote Item = new ItemMP_Lote();
                 Item.ItemCode = itemcode;
                 Item.Card_Name = pName;
+                
                 list.Add(Item);
             }
             else
