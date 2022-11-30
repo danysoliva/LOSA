@@ -376,7 +376,12 @@ namespace LOSA.RecepcionMP
                                 cmd2.Parameters.AddWithValue("@lote_materia_prima", row.lote);
                                 cmd2.Parameters.AddWithValue("@id_traslado", id_Traslado_a_Ingresar);
                                 cmd2.Parameters.AddWithValue("@IdHeaderInserted", IdHeaderInserted);
-                                cmd2.Parameters.AddWithValue("@id_lote_ingreso_externo", idLoteExterno);
+                                
+                                if(row.id_lote_externo == 0)
+                                    cmd2.Parameters.AddWithValue("@id_lote_ingreso_externo", DBNull.Value);
+                                else
+                                    cmd2.Parameters.AddWithValue("@id_lote_ingreso_externo", row.id_lote_externo);
+
                                 cmd2.Parameters.AddWithValue("@idtarima", vid_tarima);
                                 cmd2.ExecuteNonQuery();
                                 //conn2.Close();

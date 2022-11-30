@@ -19,6 +19,7 @@ namespace LOSA.Clases
         private string ADuser;
         private string pass;
         private int idnivel;
+        private string tipo;
 
         public bool Recuperado { get => recuperado; set => recuperado = value; }
         public int Id { get => id; set => id = value; }
@@ -27,6 +28,7 @@ namespace LOSA.Clases
         public string ADuser1 { get => ADuser; set => ADuser = value; }
         public string Pass { get => pass; set => pass = value; }
         public int Idnivel { get => idnivel; set => idnivel = value; }
+        public string Tipo { get => tipo; set => tipo = value; }
 
 
         //Migracion ACS
@@ -124,7 +126,8 @@ namespace LOSA.Clases
                 con.Open();
                 string sql = @"SELECT id, 
                                        nombre, 
-	                                   id_grupo_losa
+	                                   id_grupo_losa,
+                                       tipo
                                 FROM [ACS].dbo.conf_usuarios 
                                 where id ="+ pId;
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -135,6 +138,7 @@ namespace LOSA.Clases
                     Id = dr.GetInt32(0);
                     nombreUser = dr.GetString(1);
                     idGrupo = dr.GetInt32(2);
+                    Tipo = dr.GetString(3);
                     recuperado = true;
                 }
                 dr.Close();
