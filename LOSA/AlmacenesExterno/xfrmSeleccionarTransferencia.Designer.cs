@@ -53,6 +53,8 @@ namespace LOSA.AlmacenesExterno
             this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposSeleccionado = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).BeginInit();
@@ -132,7 +134,9 @@ namespace LOSA.AlmacenesExterno
             this.colid_ingreso,
             this.colusuario,
             this.colDocNum,
-            this.colSeleccionado});
+            this.colSeleccionado,
+            this.colitemcode,
+            this.colmp});
             this.gvTransferencia.CustomizationFormBounds = new System.Drawing.Rectangle(1200, 465, 260, 272);
             this.gvTransferencia.DetailHeight = 284;
             this.gvTransferencia.GridControl = this.gcTransferencia;
@@ -158,7 +162,7 @@ namespace LOSA.AlmacenesExterno
             this.colbodega_in.Name = "colbodega_in";
             this.colbodega_in.OptionsColumn.AllowEdit = false;
             this.colbodega_in.Visible = true;
-            this.colbodega_in.VisibleIndex = 2;
+            this.colbodega_in.VisibleIndex = 1;
             // 
             // colbodega_out
             // 
@@ -167,7 +171,7 @@ namespace LOSA.AlmacenesExterno
             this.colbodega_out.Name = "colbodega_out";
             this.colbodega_out.OptionsColumn.AllowEdit = false;
             this.colbodega_out.Visible = true;
-            this.colbodega_out.VisibleIndex = 3;
+            this.colbodega_out.VisibleIndex = 2;
             // 
             // colfecha
             // 
@@ -178,7 +182,7 @@ namespace LOSA.AlmacenesExterno
             this.colfecha.Name = "colfecha";
             this.colfecha.OptionsColumn.AllowEdit = false;
             this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 4;
+            this.colfecha.VisibleIndex = 5;
             // 
             // colenable
             // 
@@ -191,7 +195,7 @@ namespace LOSA.AlmacenesExterno
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
             this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 5;
+            this.colDocEntry.VisibleIndex = 6;
             // 
             // coluser_creador
             // 
@@ -207,14 +211,12 @@ namespace LOSA.AlmacenesExterno
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
             this.colnumero_transaccion.Visible = true;
-            this.colnumero_transaccion.VisibleIndex = 8;
+            this.colnumero_transaccion.VisibleIndex = 9;
             // 
             // colid_ingreso
             // 
             this.colid_ingreso.FieldName = "id_ingreso";
             this.colid_ingreso.Name = "colid_ingreso";
-            this.colid_ingreso.Visible = true;
-            this.colid_ingreso.VisibleIndex = 1;
             // 
             // colusuario
             // 
@@ -223,7 +225,7 @@ namespace LOSA.AlmacenesExterno
             this.colusuario.Name = "colusuario";
             this.colusuario.OptionsColumn.AllowEdit = false;
             this.colusuario.Visible = true;
-            this.colusuario.VisibleIndex = 7;
+            this.colusuario.VisibleIndex = 8;
             // 
             // colDocNum
             // 
@@ -232,7 +234,7 @@ namespace LOSA.AlmacenesExterno
             this.colDocNum.Name = "colDocNum";
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
-            this.colDocNum.VisibleIndex = 6;
+            this.colDocNum.VisibleIndex = 7;
             // 
             // colSeleccionado
             // 
@@ -240,7 +242,7 @@ namespace LOSA.AlmacenesExterno
             this.colSeleccionado.ColumnEdit = this.reposSeleccionado;
             this.colSeleccionado.Name = "colSeleccionado";
             this.colSeleccionado.Visible = true;
-            this.colSeleccionado.VisibleIndex = 9;
+            this.colSeleccionado.VisibleIndex = 10;
             // 
             // reposSeleccionado
             // 
@@ -251,6 +253,24 @@ namespace LOSA.AlmacenesExterno
             this.reposSeleccionado.Name = "reposSeleccionado";
             this.reposSeleccionado.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.reposSeleccionado.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposSeleccionado_ButtonClick);
+            // 
+            // colitemcode
+            // 
+            this.colitemcode.Caption = "Cod. SAP";
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            this.colitemcode.OptionsColumn.AllowEdit = false;
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 3;
+            // 
+            // colmp
+            // 
+            this.colmp.Caption = "Materia Prima";
+            this.colmp.FieldName = "mp";
+            this.colmp.Name = "colmp";
+            this.colmp.OptionsColumn.AllowEdit = false;
+            this.colmp.Visible = true;
+            this.colmp.VisibleIndex = 4;
             // 
             // xfrmSeleccionarTransferencia
             // 
@@ -291,5 +311,7 @@ namespace LOSA.AlmacenesExterno
         private DevExpress.XtraGrid.Columns.GridColumn colDocNum;
         private DevExpress.XtraGrid.Columns.GridColumn colSeleccionado;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposSeleccionado;
+        private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colmp;
     }
 }

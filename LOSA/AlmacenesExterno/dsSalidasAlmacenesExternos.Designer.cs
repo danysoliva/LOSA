@@ -4266,6 +4266,10 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnid_mp;
             
+            private global::System.Data.DataColumn columnitemcode;
+            
+            private global::System.Data.DataColumn columnmp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Salida_Almacen_H_SeleccionDataTable() {
@@ -4397,6 +4401,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn itemcodeColumn {
+                get {
+                    return this.columnitemcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn mpColumn {
+                get {
+                    return this.columnmp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4432,7 +4452,7 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Salida_Almacen_H_SeleccionRow AddSalida_Almacen_H_SeleccionRow(int id, string bodega_in, string bodega_out, System.DateTime fecha, bool enable, int DocEntry, string user_creador, int numero_transaccion, int id_ingreso, string usuario, string DocNum, int id_mp) {
+            public Salida_Almacen_H_SeleccionRow AddSalida_Almacen_H_SeleccionRow(int id, string bodega_in, string bodega_out, System.DateTime fecha, bool enable, int DocEntry, string user_creador, int numero_transaccion, int id_ingreso, string usuario, string DocNum, int id_mp, string itemcode, string mp) {
                 Salida_Almacen_H_SeleccionRow rowSalida_Almacen_H_SeleccionRow = ((Salida_Almacen_H_SeleccionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -4446,7 +4466,9 @@ namespace LOSA.AlmacenesExterno {
                         id_ingreso,
                         usuario,
                         DocNum,
-                        id_mp};
+                        id_mp,
+                        itemcode,
+                        mp};
                 rowSalida_Almacen_H_SeleccionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalida_Almacen_H_SeleccionRow);
                 return rowSalida_Almacen_H_SeleccionRow;
@@ -4481,6 +4503,8 @@ namespace LOSA.AlmacenesExterno {
                 this.columnusuario = base.Columns["usuario"];
                 this.columnDocNum = base.Columns["DocNum"];
                 this.columnid_mp = base.Columns["id_mp"];
+                this.columnitemcode = base.Columns["itemcode"];
+                this.columnmp = base.Columns["mp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4510,6 +4534,10 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnDocNum);
                 this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_mp);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
+                this.columnmp = new global::System.Data.DataColumn("mp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmp);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8783,6 +8811,39 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string itemcode {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalida_Almacen_H_Seleccion.itemcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'Salida_Almacen_H_Seleccion\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalida_Almacen_H_Seleccion.itemcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string mp {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalida_Almacen_H_Seleccion.mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'mp\' de la tabla \'Salida_Almacen_H_Seleccion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalida_Almacen_H_Seleccion.mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableSalida_Almacen_H_Seleccion.idColumn);
             }
@@ -8923,6 +8984,30 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_mpNull() {
                 this[this.tableSalida_Almacen_H_Seleccion.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tableSalida_Almacen_H_Seleccion.itemcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetitemcodeNull() {
+                this[this.tableSalida_Almacen_H_Seleccion.itemcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsmpNull() {
+                return this.IsNull(this.tableSalida_Almacen_H_Seleccion.mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetmpNull() {
+                this[this.tableSalida_Almacen_H_Seleccion.mpColumn] = global::System.Convert.DBNull;
             }
         }
         
