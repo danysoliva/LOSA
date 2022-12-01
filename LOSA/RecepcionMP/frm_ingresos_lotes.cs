@@ -57,7 +57,7 @@ namespace LOSA.RecepcionMP
 
         public void LoadTarimas()
         {
-            string SqlCommandSp = @"ps_obtener_tarimas_de_ingreso";
+            string SqlCommandSp = @"ps_obtener_tarimas_de_ingresoV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {

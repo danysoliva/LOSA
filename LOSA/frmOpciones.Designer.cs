@@ -716,6 +716,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(199, 42);
             this.simpleButton2.TabIndex = 26;
             this.simpleButton2.Text = "Graneles";
+            this.simpleButton2.Visible = false;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
             // btnLiquidos
