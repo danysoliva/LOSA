@@ -1023,6 +1023,7 @@
     <Compile Include="Clases\APMS_OrderProduction.cs" />
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\BannerTV_Tab.cs" />
+    <Compile Include="Clases\BinGranel.cs" />
     <Compile Include="Clases\Bodegas.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
@@ -1881,6 +1882,82 @@
     </Compile>
     <Compile Include="MigracionACS\MP\SplashForm.designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\dsAceites.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAceites.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\dsGranelesLOSA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGranelesLOSA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmDetalle.designer.cs">
+      <DependentUpon>frmDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmDetalleTraslados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmDetalleTraslados.designer.cs">
+      <DependentUpon>frmDetalleTraslados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmLoteActivoGraneles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmLoteActivoGraneles.designer.cs">
+      <DependentUpon>frmLoteActivoGraneles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmLotesDisponiblesGranel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmLotesDisponiblesGranel.designer.cs">
+      <DependentUpon>frmLotesDisponiblesGranel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmOilRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmOilRequest.designer.cs">
+      <DependentUpon>frmOilRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmOilSingle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmOilSingle.designer.cs">
+      <DependentUpon>frmOilSingle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteConsumoLinea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteConsumoLinea.designer.cs">
+      <DependentUpon>frmReporteConsumoLinea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.designer.cs">
+      <DependentUpon>frmReporteTrasladosArribaByLotePT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.designer.cs">
+      <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmTipoReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmTipoReq.Designer.cs">
+      <DependentUpon>frmTipoReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frm_report_oil_in_and_out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frm_report_oil_in_and_out.designer.cs">
+      <DependentUpon>frm_report_oil_in_and_out.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Produccion\BannerTV\dsBanner.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2981,6 +3058,28 @@
     </None>
     <None Include="MigracionACS\DataSetx\PRB_DATA.xss">
       <DependentUpon>PRB_DATA.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\OIL\dsAceites.xsc">
+      <DependentUpon>dsAceites.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\OIL\dsAceites.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAceites.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\OIL\dsAceites.xss">
+      <DependentUpon>dsAceites.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\OIL\dsGranelesLOSA.xsc">
+      <DependentUpon>dsGranelesLOSA.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\OIL\dsGranelesLOSA.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGranelesLOSA.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\OIL\dsGranelesLOSA.xss">
+      <DependentUpon>dsGranelesLOSA.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Produccion\BannerTV\dsBanner.xsc">
       <DependentUpon>dsBanner.xsd</DependentUpon>
@@ -5052,6 +5151,39 @@
     <EmbeddedResource Include="MigracionACS\MP\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmDetalle.resx">
+      <DependentUpon>frmDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmDetalleTraslados.resx">
+      <DependentUpon>frmDetalleTraslados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmLoteActivoGraneles.resx">
+      <DependentUpon>frmLoteActivoGraneles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmLotesDisponiblesGranel.resx">
+      <DependentUpon>frmLotesDisponiblesGranel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmOilRequest.resx">
+      <DependentUpon>frmOilRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmOilSingle.resx">
+      <DependentUpon>frmOilSingle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteConsumoLinea.resx">
+      <DependentUpon>frmReporteConsumoLinea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.resx">
+      <DependentUpon>frmReporteTrasladosArribaByLotePT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.resx">
+      <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmTipoReq.resx">
+      <DependentUpon>frmTipoReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frm_report_oil_in_and_out.resx">
+      <DependentUpon>frm_report_oil_in_and_out.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\BannerTV\frmAdjuntar.resx">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
     </EmbeddedResource>
@@ -5433,6 +5565,7 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -6320,6 +6453,9 @@
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
     <None Include="Resources\batch-processing_32X32.png" />
+    <None Include="Resources\Aha-Soft-Transport-Pipe-line.ico" />
+    <None Include="Resources\Aha-Soft-Transport-Pipe-line1.ico" />
+    <None Include="Resources\Aha-Soft-Transport-Pipe-line.png" />
     <Content Include="Resources\ajustes_kardex.png" />
     <Content Include="Resources\ajustes_kardex2.png" />
     <None Include="Resources\Alerta64px.png" />
@@ -6349,6 +6485,8 @@
     <None Include="Resources\config_32x32.png" />
     <None Include="Resources\Dakirby309-Simply-Styled-Settings.ico" />
     <None Include="Resources\clock_24.png" />
+    <None Include="Resources\ConsumoMP_16.png" />
+    <None Include="Resources\ConsumoMP_24.png" />
     <Content Include="Resources\devoluciones.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
@@ -6379,6 +6517,7 @@
     <None Include="Resources\pin_expand_16x16.png" />
     <None Include="Resources\orders_production_24px.png" />
     <None Include="Resources\orders_production_32px.png" />
+    <None Include="Resources\modulo bin.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
@@ -6404,6 +6543,8 @@
     <None Include="Resources\signpost.png" />
     <None Include="Resources\signpost24X24.png" />
     <None Include="Resources\sigma_32X32.png" />
+    <None Include="Resources\silo.png" />
+    <None Include="Resources\tanque cono.jpg" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
@@ -6450,5 +6591,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
