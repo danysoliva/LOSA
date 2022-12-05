@@ -34,5 +34,10 @@ namespace LOSA.Reportes
             adt.Fill(dSReportes1.tarimasvs);
             conn.Close();
         }
+
+        private void cmdHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

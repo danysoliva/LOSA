@@ -104,6 +104,7 @@ namespace LOSA.Reportes
             this.btnExport.Size = new System.Drawing.Size(129, 45);
             this.btnExport.TabIndex = 45;
             this.btnExport.Text = "Exportar";
+            this.btnExport.Visible = false;
             // 
             // cmdHome
             // 
@@ -119,6 +120,7 @@ namespace LOSA.Reportes
             this.cmdHome.Size = new System.Drawing.Size(129, 45);
             this.cmdHome.TabIndex = 43;
             this.cmdHome.Text = "Cerrar";
+            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
             // labelControl3
             // 
