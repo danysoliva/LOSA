@@ -1935,6 +1935,12 @@
     <Compile Include="MigracionACS\OIL\frmReporteConsumoLinea.designer.cs">
       <DependentUpon>frmReporteConsumoLinea.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTraslados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTraslados.designer.cs">
+      <DependentUpon>frmReporteTraslados.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1946,6 +1952,12 @@
     </Compile>
     <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.designer.cs">
       <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.designer.cs">
+      <DependentUpon>frmSetRM_Tantques_Ext.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\OIL\frmTipoReq.cs">
       <SubType>Form</SubType>
@@ -5172,11 +5184,17 @@
     <EmbeddedResource Include="MigracionACS\OIL\frmReporteConsumoLinea.resx">
       <DependentUpon>frmReporteConsumoLinea.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteTraslados.resx">
+      <DependentUpon>frmReporteTraslados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.resx">
       <DependentUpon>frmReporteTrasladosArribaByLotePT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.resx">
       <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.resx">
+      <DependentUpon>frmSetRM_Tantques_Ext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\OIL\frmTipoReq.resx">
       <DependentUpon>frmTipoReq.cs</DependentUpon>
