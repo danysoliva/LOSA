@@ -236,7 +236,10 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@cardname", tar1.Proveedor);  //     //
                         cmd.Parameters.AddWithValue("@fecha_ingreso", tar1.FechaIngreso);      // //
                         cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
-                        cmd.Parameters.AddWithValue("@lote_materia_prima", frm.LoteMP);//        //
+                        if(!string.IsNullOrEmpty(frm.LoteMP))
+                            cmd.Parameters.AddWithValue("@lote_materia_prima", frm.LoteMP);//        //
+                        else
+                            cmd.Parameters.AddWithValue("@lote_materia_prima", tar1.LoteMP);
                         cmd.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);//     //
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);//   //
                         cmd.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);//     //
@@ -291,7 +294,10 @@ namespace LOSA.RecepcionMP
                             cmd2.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
                             cmd2.Parameters.AddWithValue("@fecha_vencimiento", tar1.FechaVencimiento);
                             cmd2.Parameters.AddWithValue("@fecha_produccion_materia_prima", tar1.FechaProduccionMP);
-                            cmd2.Parameters.AddWithValue("@lote_materia_prima", frm.LoteMP);
+                            if (!string.IsNullOrEmpty(frm.LoteMP))
+                                cmd2.Parameters.AddWithValue("@lote_materia_prima", frm.LoteMP);
+                            else
+                                cmd2.Parameters.AddWithValue("@lote_materia_prima", tar1.LoteMP);
                             cmd2.Parameters.AddWithValue("@id_presentacion", tar1.IdPresentacion);
                             cmd2.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
                             cmd2.Parameters.AddWithValue("@id_boleta", tar1.IdBoleta);
