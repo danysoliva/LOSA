@@ -176,5 +176,10 @@ namespace LOSA.Reportes
                 frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void frmTmVirtuales_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

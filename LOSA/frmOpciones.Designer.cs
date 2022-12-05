@@ -170,6 +170,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.frmTmVirtuales = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2140,6 +2141,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.frmTmVirtuales);
             this.txtProduccion.Controls.Add(this.simpleButton36);
             this.txtProduccion.Controls.Add(this.simpleButton35);
             this.txtProduccion.Controls.Add(this.cmdReporteReqManuales);
@@ -2249,6 +2251,19 @@
             this.labelControl3.Size = new System.Drawing.Size(578, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
+            // 
+            // frmTmVirtuales
+            // 
+            this.frmTmVirtuales.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmTmVirtuales.Appearance.Options.UseFont = true;
+            this.frmTmVirtuales.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.frmTmVirtuales.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmTmVirtuales.ImageOptions.Image")));
+            this.frmTmVirtuales.Location = new System.Drawing.Point(248, 174);
+            this.frmTmVirtuales.Name = "frmTmVirtuales";
+            this.frmTmVirtuales.Size = new System.Drawing.Size(200, 69);
+            this.frmTmVirtuales.TabIndex = 47;
+            this.frmTmVirtuales.Text = "Reporte de\r\n TM Virtuales vs Activadas";
+            this.frmTmVirtuales.Click += new System.EventHandler(this.frmTmVirtuales_Click);
             // 
             // frmOpciones
             // 
@@ -2426,5 +2441,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraEditors.SimpleButton frmTmVirtuales;
     }
 }

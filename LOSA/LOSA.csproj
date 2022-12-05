@@ -3736,6 +3736,12 @@
     <Compile Include="Reportes\frmRequisicionesManualesReporte.Designer.cs">
       <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmrptarimasvirtuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrptarimasvirtuales.Designer.cs">
+      <DependentUpon>frmrptarimasvirtuales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmrptPlansemanal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -5789,6 +5795,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmRequisicionesManualesReporte.resx">
       <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrptarimasvirtuales.resx">
+      <DependentUpon>frmrptarimasvirtuales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmrptPlansemanal.resx">
       <DependentUpon>frmrptPlansemanal.cs</DependentUpon>

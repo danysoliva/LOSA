@@ -1803,5 +1803,19 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void frmTmVirtuales_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmrptarimasvirtuales frm = new frmrptarimasvirtuales();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }
