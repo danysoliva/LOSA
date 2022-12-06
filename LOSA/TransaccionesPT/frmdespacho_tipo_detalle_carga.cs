@@ -158,7 +158,8 @@ namespace LOSA.TransaccionesPT
             try
             {
                 //Reporte con Filas
-                LOSA.Despachos.Reportes.frm_despacho_con_filas rpt = new LOSA.Despachos.Reportes.frm_despacho_con_filas(id_despacho, estiba, Convert.ToInt32(grdDestinos.EditValue),Convert.ToInt32(grdPresentacion.EditValue));
+                LOSA.Despachos.Reportes.frm_despacho_con_filas rpt = 
+                    new LOSA.Despachos.Reportes.frm_despacho_con_filas(id_despacho, estiba, Convert.ToInt32(grdDestinos.EditValue),Convert.ToInt32(grdPresentacion.EditValue));
                 rpt.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                 ReportPrintTool printReport = new ReportPrintTool(rpt);
                 printReport.ShowPreview();

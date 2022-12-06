@@ -12,15 +12,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.MigracionACS.RPTS.PRD;
+using LOSA.Clases;
 
 namespace ACS.Produccion
 {
     public partial class RPT_Trazabilidad_Lote : Form
     {
-        public RPT_Trazabilidad_Lote()
+        public bool CerrarForm;
+        UserLogin UsuarioLogeado;
+        public RPT_Trazabilidad_Lote(UserLogin pUserLogin)
         {
             InitializeComponent();
+            UsuarioLogeado = pUserLogin;
             TipoBusquedaActual = TipoBusqueda.Lote;
+            ValidatePermisos();
+
             tabFiltros.TabPages.Clear();
             tabFiltros.TabPages.Add(tabLote);
         }
@@ -31,6 +37,56 @@ namespace ACS.Produccion
             Lote = 0,
             OP = 1,
             Fechas = 2
+        }
+
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(14))
+            {
+                //Botones y opciones habilitadas
+                cmdPrint.Visible = simpleButton1.Visible = true;
+                AccesoPrevio = true;
+            }
+
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(14))
+            {
+                //Botones y opciones habilitadas
+                cmdPrint.Visible = simpleButton1.Visible = true;
+                AccesoPrevio = true;
+            }
+
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                        //Botones y opciones NO habilitadas
+                        cmdPrint.Visible = simpleButton1.Visible = false;
+                        AccesoPrevio = true;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        //Botones y opciones habilitadas
+                        cmdPrint.Visible = simpleButton1.Visible = true;
+                        AccesoPrevio = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #14");
+            }
+            
         }
 
         TipoBusqueda TipoBusquedaActual = TipoBusqueda.Lote;

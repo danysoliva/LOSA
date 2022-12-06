@@ -1296,7 +1296,11 @@ namespace LOSA
             {
                 PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
                 frm.MdiParent = this.MdiParent;
-                frm.Show();
+
+                if(!frm.CerrarForm)
+                    frm.Show();
+                else 
+                    frm.Dispose();
             }
             catch (Exception ex)
             {
@@ -1310,7 +1314,7 @@ namespace LOSA
             try
             {
 
-                RPT_Trazabilidad_Lote frm = new RPT_Trazabilidad_Lote();
+                RPT_Trazabilidad_Lote frm = new RPT_Trazabilidad_Lote(this.UsuarioLogeado);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
@@ -1801,6 +1805,25 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void nbTrazabilidad_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                RPT_Trazabilidad_Lote frm = new RPT_Trazabilidad_Lote(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
             }
         }
     }

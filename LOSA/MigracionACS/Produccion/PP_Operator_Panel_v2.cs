@@ -42,6 +42,8 @@ namespace LOSA.MigracionACS.Produccion
 
         int selStatus;
 
+        public bool CerrarForm;
+
         DataOperations dp = new DataOperations();
         FMOP fmop = new FMOP();
         SqlConnection conn = new SqlConnection();
@@ -180,6 +182,7 @@ namespace LOSA.MigracionACS.Produccion
         {
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
+            CerrarForm = false;
             ValidatePermisos();
             //this.ActiveUserCode = ActiveUserCode;
             //this.ActiveUserName = ActiveUserName;
@@ -204,14 +207,22 @@ namespace LOSA.MigracionACS.Produccion
                 btnc_VerifyReach.Enabled = true;
                 AccesoPrevio = true;
             }
-            //else
-            //{
-            //    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
-            //}
 
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(69))
+            {
+                btnc_CancelOrder.Enabled = true;
+                btnc_CloseOrder.Enabled = true;
+                btnc_CopyOrder.Enabled = true;
+                btnc_SendProducction.Enabled = true;
+                btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
             if (!AccesoPrevio)
             {
-                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7=ALOSY, 9=AMS
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
                 switch (idNivel)
                 {
                     case 1://Basic View
@@ -240,7 +251,7 @@ namespace LOSA.MigracionACS.Produccion
 
             if (!AccesoPrevio)
             {
-
+                CerrarForm = true;
                 CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
             }
             else
@@ -337,7 +348,7 @@ namespace LOSA.MigracionACS.Produccion
 
             //    if (!AccesoPrevio)
             //    {
-                    
+
             //        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
             //    }
             //    else
@@ -362,6 +373,8 @@ namespace LOSA.MigracionACS.Produccion
             //{
             //    MessageBox.Show("Algo resulto mal, contacta al departamento de sistemas Detalle:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
+
+           
         }
 
         private void btn_exit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

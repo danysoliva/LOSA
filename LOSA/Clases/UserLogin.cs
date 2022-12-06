@@ -235,7 +235,27 @@ namespace LOSA.Clases
             return vRecuperado;
         }
 
-
-
+        internal bool ValidarNivelPermisosTemporal(int pIdNIvelVentana)
+        {
+            bool r = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection Conn = new SqlConnection(dp.ConnectionStringCostos);
+                Conn.Open();
+                string sql = @"sp_get_validacion_permisos_temporales_usuarios";
+                SqlCommand cmd = new SqlCommand(sql, Conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_ventana", pIdNIvelVentana);
+                int v1 = Convert.ToInt32(cmd.ExecuteScalar());
+                if (v1 > 0)
+                    r = true;
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error("Error situado en Class: UserLogin, Function: ValidarNivelPermisosTemporal. Msj Erro: " + ec.Message);
+            }
+            return r;
+        }
     }
 }
