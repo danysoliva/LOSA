@@ -29,13 +29,15 @@ namespace LOSA.Reportes
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmrptarimasvirtuales));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grdTarimasV = new DevExpress.XtraGrid.GridControl();
-            this.grdvTarimasV = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnExport = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.dSReportes1 = new LOSA.Requisiciones.dSReportes();
+            this.grdvTarimasV = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsap_code = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_pt = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,9 +49,15 @@ namespace LOSA.Reportes
             this.coltarimas_retenidas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltarimas_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colud_esperadas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposbuttonVerVirtuales = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnExport = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grdTarimasV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdvTarimasV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSReportes1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvTarimasV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposbuttonVerVirtuales)).BeginInit();
             this.SuspendLayout();
             // 
             // grdTarimasV
@@ -62,10 +70,17 @@ namespace LOSA.Reportes
             this.grdTarimasV.Location = new System.Drawing.Point(3, 86);
             this.grdTarimasV.MainView = this.grdvTarimasV;
             this.grdTarimasV.Name = "grdTarimasV";
+            this.grdTarimasV.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.reposbuttonVerVirtuales});
             this.grdTarimasV.Size = new System.Drawing.Size(1469, 626);
             this.grdTarimasV.TabIndex = 0;
             this.grdTarimasV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvTarimasV});
+            // 
+            // dSReportes1
+            // 
+            this.dSReportes1.DataSetName = "dSReportes";
+            this.dSReportes1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdvTarimasV
             // 
@@ -84,11 +99,144 @@ namespace LOSA.Reportes
             this.coltarimas_virtuales,
             this.coltarimas_retenidas,
             this.coltarimas_bodega,
-            this.colud_esperadas});
+            this.colud_esperadas,
+            this.gridColumn1});
             this.grdvTarimasV.GridControl = this.grdTarimasV;
             this.grdvTarimasV.Name = "grdvTarimasV";
+            this.grdvTarimasV.OptionsView.ShowAutoFilterRow = true;
             this.grdvTarimasV.OptionsView.ShowFooter = true;
             this.grdvTarimasV.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            // 
+            // colsap_code
+            // 
+            this.colsap_code.Caption = "Cod Sap";
+            this.colsap_code.FieldName = "sap_code";
+            this.colsap_code.Name = "colsap_code";
+            this.colsap_code.OptionsColumn.AllowEdit = false;
+            this.colsap_code.Visible = true;
+            this.colsap_code.VisibleIndex = 0;
+            this.colsap_code.Width = 74;
+            // 
+            // collote_pt
+            // 
+            this.collote_pt.Caption = "Lote PT";
+            this.collote_pt.FieldName = "lote_pt";
+            this.collote_pt.Name = "collote_pt";
+            this.collote_pt.OptionsColumn.AllowEdit = false;
+            this.collote_pt.Visible = true;
+            this.collote_pt.VisibleIndex = 1;
+            this.collote_pt.Width = 93;
+            // 
+            // colproducto
+            // 
+            this.colproducto.Caption = "Producto";
+            this.colproducto.FieldName = "producto";
+            this.colproducto.Name = "colproducto";
+            this.colproducto.OptionsColumn.AllowEdit = false;
+            this.colproducto.Visible = true;
+            this.colproducto.VisibleIndex = 2;
+            this.colproducto.Width = 152;
+            // 
+            // coldate_create
+            // 
+            this.coldate_create.Caption = "Fecha";
+            this.coldate_create.FieldName = "date_create";
+            this.coldate_create.Name = "coldate_create";
+            this.coldate_create.OptionsColumn.AllowEdit = false;
+            this.coldate_create.Visible = true;
+            this.coldate_create.VisibleIndex = 3;
+            this.coldate_create.Width = 78;
+            // 
+            // coludxtarima
+            // 
+            this.coludxtarima.Caption = "Unidadres por Tarima";
+            this.coludxtarima.FieldName = "udxtarima";
+            this.coludxtarima.Name = "coludxtarima";
+            this.coludxtarima.OptionsColumn.AllowEdit = false;
+            this.coludxtarima.Visible = true;
+            this.coludxtarima.VisibleIndex = 4;
+            this.coludxtarima.Width = 159;
+            // 
+            // colcant_tm
+            // 
+            this.colcant_tm.Caption = "Tarimas Planificadas";
+            this.colcant_tm.FieldName = "cant_tm";
+            this.colcant_tm.Name = "colcant_tm";
+            this.colcant_tm.OptionsColumn.AllowEdit = false;
+            this.colcant_tm.Visible = true;
+            this.colcant_tm.VisibleIndex = 6;
+            this.colcant_tm.Width = 147;
+            // 
+            // coltarimas_virtuales
+            // 
+            this.coltarimas_virtuales.Caption = "Tarimas Virtuales";
+            this.coltarimas_virtuales.FieldName = "tarimas_virtuales";
+            this.coltarimas_virtuales.Name = "coltarimas_virtuales";
+            this.coltarimas_virtuales.OptionsColumn.AllowEdit = false;
+            this.coltarimas_virtuales.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "tarimas_virtuales", "SUMA={0:#.##}")});
+            this.coltarimas_virtuales.Visible = true;
+            this.coltarimas_virtuales.VisibleIndex = 7;
+            this.coltarimas_virtuales.Width = 134;
+            // 
+            // coltarimas_retenidas
+            // 
+            this.coltarimas_retenidas.Caption = "Tarimas Retenidas";
+            this.coltarimas_retenidas.FieldName = "tarimas_retenidas";
+            this.coltarimas_retenidas.Name = "coltarimas_retenidas";
+            this.coltarimas_retenidas.OptionsColumn.AllowEdit = false;
+            this.coltarimas_retenidas.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "tarimas_retenidas", "SUMA={0:#.##}")});
+            this.coltarimas_retenidas.Visible = true;
+            this.coltarimas_retenidas.VisibleIndex = 8;
+            this.coltarimas_retenidas.Width = 131;
+            // 
+            // coltarimas_bodega
+            // 
+            this.coltarimas_bodega.Caption = "Tarimas en Bodega";
+            this.coltarimas_bodega.FieldName = "tarimas_bodega";
+            this.coltarimas_bodega.Name = "coltarimas_bodega";
+            this.coltarimas_bodega.OptionsColumn.AllowEdit = false;
+            this.coltarimas_bodega.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "tarimas_bodega", "SUMA={0:#.##}")});
+            this.coltarimas_bodega.Visible = true;
+            this.coltarimas_bodega.VisibleIndex = 9;
+            this.coltarimas_bodega.Width = 136;
+            // 
+            // colud_esperadas
+            // 
+            this.colud_esperadas.Caption = "Unidades Planificadas";
+            this.colud_esperadas.FieldName = "ud_esperadas";
+            this.colud_esperadas.Name = "colud_esperadas";
+            this.colud_esperadas.OptionsColumn.AllowEdit = false;
+            this.colud_esperadas.Visible = true;
+            this.colud_esperadas.VisibleIndex = 5;
+            this.colud_esperadas.Width = 152;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Ver Tarimas Virtuales";
+            this.gridColumn1.ColumnEdit = this.reposbuttonVerVirtuales;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 10;
+            this.gridColumn1.Width = 195;
+            // 
+            // reposbuttonVerVirtuales
+            // 
+            this.reposbuttonVerVirtuales.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            this.reposbuttonVerVirtuales.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposbuttonVerVirtuales.Name = "reposbuttonVerVirtuales";
+            this.reposbuttonVerVirtuales.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposbuttonVerVirtuales.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposbuttonVerVirtuales_ButtonClick);
             // 
             // btnExport
             // 
@@ -105,6 +253,7 @@ namespace LOSA.Reportes
             this.btnExport.TabIndex = 45;
             this.btnExport.Text = "Exportar";
             this.btnExport.Visible = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // cmdHome
             // 
@@ -137,123 +286,6 @@ namespace LOSA.Reportes
             this.labelControl3.TabIndex = 44;
             this.labelControl3.Text = "Tarimas Virtuales vs Activadas";
             // 
-            // dSReportes1
-            // 
-            this.dSReportes1.DataSetName = "dSReportes";
-            this.dSReportes1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            this.colid.OptionsColumn.AllowEdit = false;
-            // 
-            // colsap_code
-            // 
-            this.colsap_code.Caption = "Cod Sap";
-            this.colsap_code.FieldName = "sap_code";
-            this.colsap_code.Name = "colsap_code";
-            this.colsap_code.OptionsColumn.AllowEdit = false;
-            this.colsap_code.Visible = true;
-            this.colsap_code.VisibleIndex = 0;
-            this.colsap_code.Width = 103;
-            // 
-            // collote_pt
-            // 
-            this.collote_pt.Caption = "Lote PT";
-            this.collote_pt.FieldName = "lote_pt";
-            this.collote_pt.Name = "collote_pt";
-            this.collote_pt.OptionsColumn.AllowEdit = false;
-            this.collote_pt.Visible = true;
-            this.collote_pt.VisibleIndex = 1;
-            this.collote_pt.Width = 110;
-            // 
-            // colproducto
-            // 
-            this.colproducto.Caption = "Producto";
-            this.colproducto.FieldName = "producto";
-            this.colproducto.Name = "colproducto";
-            this.colproducto.OptionsColumn.AllowEdit = false;
-            this.colproducto.Visible = true;
-            this.colproducto.VisibleIndex = 2;
-            this.colproducto.Width = 153;
-            // 
-            // coldate_create
-            // 
-            this.coldate_create.Caption = "Fecha";
-            this.coldate_create.FieldName = "date_create";
-            this.coldate_create.Name = "coldate_create";
-            this.coldate_create.OptionsColumn.AllowEdit = false;
-            this.coldate_create.Visible = true;
-            this.coldate_create.VisibleIndex = 3;
-            this.coldate_create.Width = 125;
-            // 
-            // coludxtarima
-            // 
-            this.coludxtarima.Caption = "Unidadres por Tarima";
-            this.coludxtarima.FieldName = "udxtarima";
-            this.coludxtarima.Name = "coludxtarima";
-            this.coludxtarima.OptionsColumn.AllowEdit = false;
-            this.coludxtarima.Visible = true;
-            this.coludxtarima.VisibleIndex = 4;
-            this.coludxtarima.Width = 160;
-            // 
-            // colcant_tm
-            // 
-            this.colcant_tm.Caption = "Tarimas Planificadas";
-            this.colcant_tm.FieldName = "cant_tm";
-            this.colcant_tm.Name = "colcant_tm";
-            this.colcant_tm.OptionsColumn.AllowEdit = false;
-            this.colcant_tm.Visible = true;
-            this.colcant_tm.VisibleIndex = 6;
-            this.colcant_tm.Width = 156;
-            // 
-            // coltarimas_virtuales
-            // 
-            this.coltarimas_virtuales.Caption = "Tarimas Virtuales";
-            this.coltarimas_virtuales.FieldName = "tarimas_virtuales";
-            this.coltarimas_virtuales.Name = "coltarimas_virtuales";
-            this.coltarimas_virtuales.OptionsColumn.AllowEdit = false;
-            this.coltarimas_virtuales.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "tarimas_virtuales", "SUMA={0:#.##}")});
-            this.coltarimas_virtuales.Visible = true;
-            this.coltarimas_virtuales.VisibleIndex = 7;
-            this.coltarimas_virtuales.Width = 156;
-            // 
-            // coltarimas_retenidas
-            // 
-            this.coltarimas_retenidas.Caption = "Tarimas Retenidas";
-            this.coltarimas_retenidas.FieldName = "tarimas_retenidas";
-            this.coltarimas_retenidas.Name = "coltarimas_retenidas";
-            this.coltarimas_retenidas.OptionsColumn.AllowEdit = false;
-            this.coltarimas_retenidas.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "tarimas_retenidas", "SUMA={0:#.##}")});
-            this.coltarimas_retenidas.Visible = true;
-            this.coltarimas_retenidas.VisibleIndex = 8;
-            this.coltarimas_retenidas.Width = 156;
-            // 
-            // coltarimas_bodega
-            // 
-            this.coltarimas_bodega.Caption = "Tarimas en Bodega";
-            this.coltarimas_bodega.FieldName = "tarimas_bodega";
-            this.coltarimas_bodega.Name = "coltarimas_bodega";
-            this.coltarimas_bodega.OptionsColumn.AllowEdit = false;
-            this.coltarimas_bodega.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "tarimas_bodega", "SUMA={0:#.##}")});
-            this.coltarimas_bodega.Visible = true;
-            this.coltarimas_bodega.VisibleIndex = 9;
-            this.coltarimas_bodega.Width = 156;
-            // 
-            // colud_esperadas
-            // 
-            this.colud_esperadas.Caption = "Unidades Planificadas";
-            this.colud_esperadas.FieldName = "ud_esperadas";
-            this.colud_esperadas.Name = "colud_esperadas";
-            this.colud_esperadas.OptionsColumn.AllowEdit = false;
-            this.colud_esperadas.Visible = true;
-            this.colud_esperadas.VisibleIndex = 5;
-            this.colud_esperadas.Width = 176;
-            // 
             // frmrptarimasvirtuales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,8 +297,9 @@ namespace LOSA.Reportes
             this.Controls.Add(this.grdTarimasV);
             this.Name = "frmrptarimasvirtuales";
             ((System.ComponentModel.ISupportInitialize)(this.grdTarimasV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdvTarimasV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSReportes1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvTarimasV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposbuttonVerVirtuales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -290,5 +323,7 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn coltarimas_retenidas;
         private DevExpress.XtraGrid.Columns.GridColumn coltarimas_bodega;
         private DevExpress.XtraGrid.Columns.GridColumn colud_esperadas;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposbuttonVerVirtuales;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }
