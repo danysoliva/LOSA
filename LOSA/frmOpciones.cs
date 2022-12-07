@@ -1804,11 +1804,18 @@ namespace LOSA
             }
         }
 
-        private void simpleButton37_Click(object sender, EventArgs e)
+        private void frmTmVirtuales_Click(object sender, EventArgs e)
         {
-            xfrmAccesosTemporalesAdmin frm = new xfrmAccesosTemporalesAdmin(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            try
+            {
+                frmrptarimasvirtuales frm = new frmrptarimasvirtuales();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

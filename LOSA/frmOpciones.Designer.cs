@@ -114,7 +114,6 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLotesCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
-            this.simpleButton37 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAccesoSistemas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdGruposAlosy = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSistemas = new DevExpress.XtraEditors.SimpleButton();
@@ -171,6 +170,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.frmTmVirtuales = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -717,6 +717,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(199, 42);
             this.simpleButton2.TabIndex = 26;
             this.simpleButton2.Text = "Graneles";
+            this.simpleButton2.Visible = false;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click_1);
             // 
             // btnLiquidos
@@ -1428,7 +1429,6 @@
             // 
             // TabAdmin
             // 
-            this.TabAdmin.Controls.Add(this.simpleButton37);
             this.TabAdmin.Controls.Add(this.cmdAccesoSistemas);
             this.TabAdmin.Controls.Add(this.cmdGruposAlosy);
             this.TabAdmin.Controls.Add(this.cmdSistemas);
@@ -1444,18 +1444,6 @@
             this.TabAdmin.PageVisible = false;
             this.TabAdmin.Size = new System.Drawing.Size(835, 518);
             this.TabAdmin.Text = "Administrador";
-            // 
-            // simpleButton37
-            // 
-            this.simpleButton37.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton37.Appearance.Options.UseFont = true;
-            this.simpleButton37.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton37.Location = new System.Drawing.Point(6, 438);
-            this.simpleButton37.Name = "simpleButton37";
-            this.simpleButton37.Size = new System.Drawing.Size(204, 71);
-            this.simpleButton37.TabIndex = 17;
-            this.simpleButton37.Text = "Accesos Temporales";
-            this.simpleButton37.Click += new System.EventHandler(this.simpleButton37_Click);
             // 
             // cmdAccesoSistemas
             // 
@@ -2153,6 +2141,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.frmTmVirtuales);
             this.txtProduccion.Controls.Add(this.simpleButton36);
             this.txtProduccion.Controls.Add(this.simpleButton35);
             this.txtProduccion.Controls.Add(this.cmdReporteReqManuales);
@@ -2262,6 +2251,19 @@
             this.labelControl3.Size = new System.Drawing.Size(578, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
+            // 
+            // frmTmVirtuales
+            // 
+            this.frmTmVirtuales.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmTmVirtuales.Appearance.Options.UseFont = true;
+            this.frmTmVirtuales.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.frmTmVirtuales.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmTmVirtuales.ImageOptions.Image")));
+            this.frmTmVirtuales.Location = new System.Drawing.Point(248, 174);
+            this.frmTmVirtuales.Name = "frmTmVirtuales";
+            this.frmTmVirtuales.Size = new System.Drawing.Size(200, 69);
+            this.frmTmVirtuales.TabIndex = 47;
+            this.frmTmVirtuales.Text = "Reporte de\r\n TM Virtuales vs Activadas";
+            this.frmTmVirtuales.Click += new System.EventHandler(this.frmTmVirtuales_Click);
             // 
             // frmOpciones
             // 
@@ -2439,6 +2441,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton37;
+        private DevExpress.XtraEditors.SimpleButton frmTmVirtuales;
     }
 }

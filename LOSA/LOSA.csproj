@@ -3768,6 +3768,12 @@
     <Compile Include="Reportes\frmRequisicionesManualesReporte.Designer.cs">
       <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmrptarimasvirtuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrptarimasvirtuales.Designer.cs">
+      <DependentUpon>frmrptarimasvirtuales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmrptPlansemanal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3791,6 +3797,12 @@
     </Compile>
     <Compile Include="Reportes\frmtarimasporbodega.Designer.cs">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmVerTarimasVirtuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmVerTarimasVirtuales.Designer.cs">
+      <DependentUpon>frmVerTarimasVirtuales.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frm_getfinish.cs">
       <SubType>Form</SubType>
@@ -3917,6 +3929,9 @@
     </Compile>
     <Compile Include="Reproceso\rptTarimaReproceso.Designer.cs">
       <DependentUpon>rptTarimaReproceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Requisiciones\dSReportes.cs">
+      <DependentUpon>dSReportes.xsd</DependentUpon>
     </Compile>
     <Compile Include="Requisiciones\dSReportes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -5828,6 +5843,9 @@
     <EmbeddedResource Include="Reportes\frmRequisicionesManualesReporte.resx">
       <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrptarimasvirtuales.resx">
+      <DependentUpon>frmrptarimasvirtuales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmrptPlansemanal.resx">
       <DependentUpon>frmrptPlansemanal.cs</DependentUpon>
     </EmbeddedResource>
@@ -5839,6 +5857,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmVerTarimasVirtuales.resx">
+      <DependentUpon>frmVerTarimasVirtuales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_getfinish.resx">
       <DependentUpon>frm_getfinish.cs</DependentUpon>
