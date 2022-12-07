@@ -203,6 +203,20 @@
     <Compile Include="Accesos\AccesosUsuarios\AccesoUsuario.Designer.cs">
       <DependentUpon>AccesoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesCRUD.Designer.cs">
+      <DependentUpon>xfrmAccesosTemporalesCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\dsAccesos.cs">
+      <DependentUpon>dsAccesos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\dsAccesos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAccesos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Accesos\GestionGrupos\CrearGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,11 +271,18 @@
     <Compile Include="Accesos\GrupoLosa\PrincipalGrupoLosa.Designer.cs">
       <DependentUpon>PrincipalGrupoLosa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accesos\Models\AccesoTemporal.cs" />
     <Compile Include="Accesos\NivelAccesoSistema\NivelAccesoSistema.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Accesos\NivelAccesoSistema\NivelAccesoSistema.Designer.cs">
       <DependentUpon>NivelAccesoSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.Designer.cs">
+      <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="ACS\RRHH\dsRRHH_reportes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2818,6 +2839,17 @@
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <None Include="Accesos\dsAccesos.xsc">
+      <DependentUpon>dsAccesos.xsd</DependentUpon>
+    </None>
+    <None Include="Accesos\dsAccesos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAccesos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Accesos\dsAccesos.xss">
+      <DependentUpon>dsAccesos.xsd</DependentUpon>
+    </None>
     <None Include="ACS\RRHH\dsRRHH_reportes.xsc">
       <DependentUpon>dsRRHH_reportes.xsd</DependentUpon>
     </None>
@@ -4483,6 +4515,9 @@
     <EmbeddedResource Include="Accesos\AccesosUsuarios\AccesoUsuario.resx">
       <DependentUpon>AccesoUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesCRUD.resx">
+      <DependentUpon>xfrmAccesosTemporalesCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accesos\GestionGrupos\CrearGrupo.resx">
       <DependentUpon>CrearGrupo.cs</DependentUpon>
     </EmbeddedResource>
@@ -4512,6 +4547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accesos\NivelAccesoSistema\NivelAccesoSistema.resx">
       <DependentUpon>NivelAccesoSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.resx">
+      <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ACS\RRHH\frmReporteAsistencia.resx">
       <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
