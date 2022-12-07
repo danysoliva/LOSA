@@ -1803,5 +1803,12 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void simpleButton37_Click(object sender, EventArgs e)
+        {
+            xfrmAccesosTemporalesAdmin frm = new xfrmAccesosTemporalesAdmin(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

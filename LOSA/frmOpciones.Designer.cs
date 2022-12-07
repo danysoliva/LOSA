@@ -114,6 +114,7 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLotesCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton37 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAccesoSistemas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdGruposAlosy = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSistemas = new DevExpress.XtraEditors.SimpleButton();
@@ -1427,6 +1428,7 @@
             // 
             // TabAdmin
             // 
+            this.TabAdmin.Controls.Add(this.simpleButton37);
             this.TabAdmin.Controls.Add(this.cmdAccesoSistemas);
             this.TabAdmin.Controls.Add(this.cmdGruposAlosy);
             this.TabAdmin.Controls.Add(this.cmdSistemas);
@@ -1442,6 +1444,18 @@
             this.TabAdmin.PageVisible = false;
             this.TabAdmin.Size = new System.Drawing.Size(835, 518);
             this.TabAdmin.Text = "Administrador";
+            // 
+            // simpleButton37
+            // 
+            this.simpleButton37.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton37.Appearance.Options.UseFont = true;
+            this.simpleButton37.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton37.Location = new System.Drawing.Point(6, 438);
+            this.simpleButton37.Name = "simpleButton37";
+            this.simpleButton37.Size = new System.Drawing.Size(204, 71);
+            this.simpleButton37.TabIndex = 17;
+            this.simpleButton37.Text = "Accesos Temporales";
+            this.simpleButton37.Click += new System.EventHandler(this.simpleButton37_Click);
             // 
             // cmdAccesoSistemas
             // 
@@ -2425,5 +2439,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton37;
     }
 }
