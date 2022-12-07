@@ -25,9 +25,14 @@ namespace LOSA.RecepcionMP
         public string cardcode;
         public DateTime fecha_creacion;
         UserLogin UsuarioLogeado;
-        public frm_edit_data(int Pingreso, DateTime pfecha_creacion, UserLogin pUserLogin)
+        public frm_edit_data(int Pingreso, DateTime pfecha_creacion, UserLogin pUserLogin, int pid_traslado)
         {
             InitializeComponent();
+            if (pid_traslado == 0)
+            {
+                btnfindMP.Visible = true;
+                buttonEdit1.Visible = true;
+            }
             UsuarioLogeado = pUserLogin;
             Id_ingreso = Pingreso;
             load_data();

@@ -217,7 +217,7 @@ namespace LOSA.RecepcionMP
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
                 if (row.tipo_ingreso == 1)
                 {
-                    frm_edit_data frm = new frm_edit_data(row.id, row.fecha_creacion, UsuarioLogeado);
+                    frm_edit_data frm = new frm_edit_data(row.id, row.fecha_creacion, UsuarioLogeado, row.id_traslado);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         Load_Info();
