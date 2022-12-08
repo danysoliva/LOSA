@@ -267,7 +267,7 @@ namespace LOSA.MicroIngredientes
 
                             if (frm.ShowDialog() == DialogResult.OK)
                             {
-
+                                
 
                                 DataOperations dp2 = new DataOperations();
                                 SqlConnection cnx3 = new SqlConnection(dp2.ConnectionStringAPMS);
