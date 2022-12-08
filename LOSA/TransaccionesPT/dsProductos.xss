@@ -37,7 +37,7 @@
     <Shape ID="DesignTable:presentacion_filas" ZOrder="4" X="1052" Y="441" Height="86" Width="169" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
     <Shape ID="DesignTable:kardex_pt_existencia" ZOrder="3" X="415" Y="523" Height="219" Width="185" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
     <Shape ID="DesignTable:unidades_retenidas" ZOrder="2" X="827" Y="546" Height="181" Width="177" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
-    <Shape ID="DesignTable:destinos_empaques_pt" ZOrder="1" X="695" Y="131" Height="124" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
+    <Shape ID="DesignTable:destinos_empaques_pt" ZOrder="1" X="572" Y="113" Height="162" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
