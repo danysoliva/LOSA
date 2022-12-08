@@ -203,6 +203,20 @@
     <Compile Include="Accesos\AccesosUsuarios\AccesoUsuario.Designer.cs">
       <DependentUpon>AccesoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesCRUD.Designer.cs">
+      <DependentUpon>xfrmAccesosTemporalesCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\dsAccesos.cs">
+      <DependentUpon>dsAccesos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\dsAccesos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAccesos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Accesos\GestionGrupos\CrearGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,11 +271,18 @@
     <Compile Include="Accesos\GrupoLosa\PrincipalGrupoLosa.Designer.cs">
       <DependentUpon>PrincipalGrupoLosa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accesos\Models\AccesoTemporal.cs" />
     <Compile Include="Accesos\NivelAccesoSistema\NivelAccesoSistema.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Accesos\NivelAccesoSistema\NivelAccesoSistema.Designer.cs">
       <DependentUpon>NivelAccesoSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.Designer.cs">
+      <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="ACS\RRHH\dsRRHH_reportes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1023,6 +1044,7 @@
     <Compile Include="Clases\APMS_OrderProduction.cs" />
     <Compile Include="Clases\BagsPT.cs" />
     <Compile Include="Clases\BannerTV_Tab.cs" />
+    <Compile Include="Clases\BinGranel.cs" />
     <Compile Include="Clases\Bodegas.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
@@ -1882,6 +1904,100 @@
     <Compile Include="MigracionACS\MP\SplashForm.designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\OIL\dsAceites.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAceites.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\dsGranelesLOSA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGranelesLOSA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmDetalle.designer.cs">
+      <DependentUpon>frmDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmDetalleTraslados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmDetalleTraslados.designer.cs">
+      <DependentUpon>frmDetalleTraslados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmLoteActivoGraneles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmLoteActivoGraneles.designer.cs">
+      <DependentUpon>frmLoteActivoGraneles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmLotesDisponiblesGranel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmLotesDisponiblesGranel.designer.cs">
+      <DependentUpon>frmLotesDisponiblesGranel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmOilRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmOilRequest.designer.cs">
+      <DependentUpon>frmOilRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmOilSingle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmOilSingle.designer.cs">
+      <DependentUpon>frmOilSingle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteConsumoLinea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteConsumoLinea.designer.cs">
+      <DependentUpon>frmReporteConsumoLinea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTraslados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTraslados.designer.cs">
+      <DependentUpon>frmReporteTraslados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaAdvanced.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaAdvanced.designer.cs">
+      <DependentUpon>frmReporteTrasladosArribaAdvanced.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.designer.cs">
+      <DependentUpon>frmReporteTrasladosArribaByLotePT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.designer.cs">
+      <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.designer.cs">
+      <DependentUpon>frmSetRM_Tantques_Ext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmTipoReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmTipoReq.Designer.cs">
+      <DependentUpon>frmTipoReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frm_report_oil_in_and_out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frm_report_oil_in_and_out.designer.cs">
+      <DependentUpon>frm_report_oil_in_and_out.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\BannerTV\dsBanner.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2729,6 +2845,17 @@
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <None Include="Accesos\dsAccesos.xsc">
+      <DependentUpon>dsAccesos.xsd</DependentUpon>
+    </None>
+    <None Include="Accesos\dsAccesos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAccesos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Accesos\dsAccesos.xss">
+      <DependentUpon>dsAccesos.xsd</DependentUpon>
+    </None>
     <None Include="ACS\RRHH\dsRRHH_reportes.xsc">
       <DependentUpon>dsRRHH_reportes.xsd</DependentUpon>
     </None>
@@ -2981,6 +3108,28 @@
     </None>
     <None Include="MigracionACS\DataSetx\PRB_DATA.xss">
       <DependentUpon>PRB_DATA.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\OIL\dsAceites.xsc">
+      <DependentUpon>dsAceites.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\OIL\dsAceites.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAceites.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\OIL\dsAceites.xss">
+      <DependentUpon>dsAceites.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\OIL\dsGranelesLOSA.xsc">
+      <DependentUpon>dsGranelesLOSA.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\OIL\dsGranelesLOSA.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGranelesLOSA.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\OIL\dsGranelesLOSA.xss">
+      <DependentUpon>dsGranelesLOSA.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Produccion\BannerTV\dsBanner.xsc">
       <DependentUpon>dsBanner.xsd</DependentUpon>
@@ -3625,6 +3774,12 @@
     <Compile Include="Reportes\frmRequisicionesManualesReporte.Designer.cs">
       <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmrptarimasvirtuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrptarimasvirtuales.Designer.cs">
+      <DependentUpon>frmrptarimasvirtuales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmrptPlansemanal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3648,6 +3803,12 @@
     </Compile>
     <Compile Include="Reportes\frmtarimasporbodega.Designer.cs">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmVerTarimasVirtuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmVerTarimasVirtuales.Designer.cs">
+      <DependentUpon>frmVerTarimasVirtuales.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frm_getfinish.cs">
       <SubType>Form</SubType>
@@ -3774,6 +3935,9 @@
     </Compile>
     <Compile Include="Reproceso\rptTarimaReproceso.Designer.cs">
       <DependentUpon>rptTarimaReproceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Requisiciones\dSReportes.cs">
+      <DependentUpon>dSReportes.xsd</DependentUpon>
     </Compile>
     <Compile Include="Requisiciones\dSReportes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -4360,6 +4524,9 @@
     <EmbeddedResource Include="Accesos\AccesosUsuarios\AccesoUsuario.resx">
       <DependentUpon>AccesoUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesCRUD.resx">
+      <DependentUpon>xfrmAccesosTemporalesCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accesos\GestionGrupos\CrearGrupo.resx">
       <DependentUpon>CrearGrupo.cs</DependentUpon>
     </EmbeddedResource>
@@ -4389,6 +4556,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accesos\NivelAccesoSistema\NivelAccesoSistema.resx">
       <DependentUpon>NivelAccesoSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.resx">
+      <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ACS\RRHH\frmReporteAsistencia.resx">
       <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
@@ -5055,6 +5225,48 @@
     <EmbeddedResource Include="MigracionACS\MP\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmDetalle.resx">
+      <DependentUpon>frmDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmDetalleTraslados.resx">
+      <DependentUpon>frmDetalleTraslados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmLoteActivoGraneles.resx">
+      <DependentUpon>frmLoteActivoGraneles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmLotesDisponiblesGranel.resx">
+      <DependentUpon>frmLotesDisponiblesGranel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmOilRequest.resx">
+      <DependentUpon>frmOilRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmOilSingle.resx">
+      <DependentUpon>frmOilSingle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteConsumoLinea.resx">
+      <DependentUpon>frmReporteConsumoLinea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteTraslados.resx">
+      <DependentUpon>frmReporteTraslados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaAdvanced.resx">
+      <DependentUpon>frmReporteTrasladosArribaAdvanced.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.resx">
+      <DependentUpon>frmReporteTrasladosArribaByLotePT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.resx">
+      <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.resx">
+      <DependentUpon>frmSetRM_Tantques_Ext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmTipoReq.resx">
+      <DependentUpon>frmTipoReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frm_report_oil_in_and_out.resx">
+      <DependentUpon>frm_report_oil_in_and_out.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\BannerTV\frmAdjuntar.resx">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
     </EmbeddedResource>
@@ -5643,6 +5855,9 @@
     <EmbeddedResource Include="Reportes\frmRequisicionesManualesReporte.resx">
       <DependentUpon>frmRequisicionesManualesReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrptarimasvirtuales.resx">
+      <DependentUpon>frmrptarimasvirtuales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmrptPlansemanal.resx">
       <DependentUpon>frmrptPlansemanal.cs</DependentUpon>
     </EmbeddedResource>
@@ -5654,6 +5869,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmtarimasporbodega.resx">
       <DependentUpon>frmtarimasporbodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmVerTarimasVirtuales.resx">
+      <DependentUpon>frmVerTarimasVirtuales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_getfinish.resx">
       <DependentUpon>frm_getfinish.cs</DependentUpon>
@@ -6324,6 +6542,9 @@
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
     <None Include="Resources\batch-processing_32X32.png" />
+    <None Include="Resources\Aha-Soft-Transport-Pipe-line.ico" />
+    <None Include="Resources\Aha-Soft-Transport-Pipe-line1.ico" />
+    <None Include="Resources\Aha-Soft-Transport-Pipe-line.png" />
     <Content Include="Resources\ajustes_kardex.png" />
     <Content Include="Resources\ajustes_kardex2.png" />
     <None Include="Resources\Alerta64px.png" />
@@ -6353,6 +6574,8 @@
     <None Include="Resources\config_32x32.png" />
     <None Include="Resources\Dakirby309-Simply-Styled-Settings.ico" />
     <None Include="Resources\clock_24.png" />
+    <None Include="Resources\ConsumoMP_16.png" />
+    <None Include="Resources\ConsumoMP_24.png" />
     <Content Include="Resources\devoluciones.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
@@ -6383,6 +6606,7 @@
     <None Include="Resources\pin_expand_16x16.png" />
     <None Include="Resources\orders_production_24px.png" />
     <None Include="Resources\orders_production_32px.png" />
+    <None Include="Resources\modulo bin.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
@@ -6394,6 +6618,8 @@
     <None Include="Resources\seo-report64px.png" />
     <None Include="Resources\seo-report32px_.png" />
     <None Include="Resources\refresh-button32px.png" />
+    <None Include="Resources\settings-icon24px.png" />
+    <None Include="Resources\Reports-icon24px.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />
@@ -6408,6 +6634,8 @@
     <None Include="Resources\signpost.png" />
     <None Include="Resources\signpost24X24.png" />
     <None Include="Resources\sigma_32X32.png" />
+    <None Include="Resources\silo.png" />
+    <None Include="Resources\tanque cono.jpg" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
@@ -6454,5 +6682,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

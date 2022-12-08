@@ -210,7 +210,7 @@ namespace LOSA.MicroIngredientes
                                     cmd.Parameters.Add("@bascula", SqlDbType.VarChar).Value = bascula[frm2.BasculaId-1];
                                     cmd.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value =  1;
                                     cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = DBNull.Value; //??
-                                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = DBNull.Value;//??
+                                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = //??
                                     cmd.Parameters.Add("@cant_batch", SqlDbType.Int).Value = pesaje.CantBatch;
                                     cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;//??
                                     cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = DBNull.Value;//??
@@ -267,7 +267,7 @@ namespace LOSA.MicroIngredientes
 
                             if (frm.ShowDialog() == DialogResult.OK)
                             {
-
+                                
 
                                 DataOperations dp2 = new DataOperations();
                                 SqlConnection cnx3 = new SqlConnection(dp2.ConnectionStringAPMS);

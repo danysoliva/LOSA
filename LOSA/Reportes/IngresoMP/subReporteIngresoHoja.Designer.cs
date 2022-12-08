@@ -93,11 +93,11 @@ namespace LOSA.Reportes
             this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[cantlote]")});
             this.xrLabel4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(372.5893F, 0F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(386.131F, 0F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(128.125F, 17.79169F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(114.5833F, 17.79169F);
             this.xrLabel4.StylePriority.UseBorders = false;
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.Text = "xrLabel4";
@@ -109,7 +109,7 @@ namespace LOSA.Reportes
             this.xrLabel3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[fvencimiento]")});
             this.xrLabel3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(244.4643F, 0F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(258.006F, 0F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -125,11 +125,11 @@ namespace LOSA.Reportes
             this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[fproduccion]")});
             this.xrLabel2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(128.8393F, 0F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(139.2559F, 0F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(115.625F, 17.79169F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(118.7501F, 17.79169F);
             this.xrLabel2.StylePriority.UseBorders = false;
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.Text = "xrLabel2";
@@ -142,11 +142,11 @@ namespace LOSA.Reportes
             this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[lote]")});
             this.xrLabel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(28.83929F, 0F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(28.83924F, 0F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(99.99999F, 17.79169F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(110.4167F, 17.79169F);
             this.xrLabel1.StylePriority.UseBorders = false;
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.Text = "xrLabel1";
@@ -199,28 +199,28 @@ namespace LOSA.Reportes
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
             this.xrTableCell1.Text = "Lote\t\t";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrTableCell1.Weight = 1D;
+            this.xrTableCell1.Weight = 1.1041665596432209D;
             // 
             // xrTableCell2
             // 
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Text = "Fecha de Produccion\t";
-            this.xrTableCell2.Weight = 1.1562501525878906D;
+            this.xrTableCell2.Weight = 1.1875001509984333D;
             // 
             // xrTableCell3
             // 
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Text = "Fecha de Vencimiento\t";
-            this.xrTableCell3.Weight = 1.2812498474121095D;
+            this.xrTableCell3.Weight = 1.2812499999999922D;
             // 
             // xrTableCell5
             // 
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.Text = "Cantidad por Lote\t";
-            this.xrTableCell5.Weight = 1.2812498474121095D;
+            this.xrTableCell5.Weight = 1.1458331367704631D;
             // 
             // xrTableCell4
             // 

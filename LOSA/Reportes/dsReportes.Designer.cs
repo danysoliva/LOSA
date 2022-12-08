@@ -8795,6 +8795,8 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columnpeso;
             
+            private global::System.Data.DataColumn columnlote_pt;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public salida_mpV2DataTable() {
@@ -8902,6 +8904,14 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_ptColumn {
+                get {
+                    return this.columnlote_pt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8937,7 +8947,7 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public salida_mpV2Row Addsalida_mpV2Row(int id, string code_sap, string mp, string codigo_barra, string lote, string usuario, System.DateTime fecha_entrega, int cantidad, string peso) {
+            public salida_mpV2Row Addsalida_mpV2Row(int id, string code_sap, string mp, string codigo_barra, string lote, string usuario, System.DateTime fecha_entrega, int cantidad, string peso, int lote_pt) {
                 salida_mpV2Row rowsalida_mpV2Row = ((salida_mpV2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -8948,7 +8958,8 @@ namespace LOSA.Reportes {
                         usuario,
                         fecha_entrega,
                         cantidad,
-                        peso};
+                        peso,
+                        lote_pt};
                 rowsalida_mpV2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsalida_mpV2Row);
                 return rowsalida_mpV2Row;
@@ -8980,6 +8991,7 @@ namespace LOSA.Reportes {
                 this.columnfecha_entrega = base.Columns["fecha_entrega"];
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnpeso = base.Columns["peso"];
+                this.columnlote_pt = base.Columns["lote_pt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9003,6 +9015,8 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columncantidad);
                 this.columnpeso = new global::System.Data.DataColumn("peso", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpeso);
+                this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_pt);
                 this.columncode_sap.Caption = "Codigo SAP";
                 this.columnmp.Caption = "Materia Prima";
                 this.columncodigo_barra.Caption = "Codigo de Barra";
@@ -15217,6 +15231,22 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int lote_pt {
+                get {
+                    try {
+                        return ((int)(this[this.tablesalida_mpV2.lote_ptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_pt\' de la tabla \'salida_mpV2\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesalida_mpV2.lote_ptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablesalida_mpV2.idColumn);
             }
@@ -15321,6 +15351,18 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetpesoNull() {
                 this[this.tablesalida_mpV2.pesoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_ptNull() {
+                return this.IsNull(this.tablesalida_mpV2.lote_ptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_ptNull() {
+                this[this.tablesalida_mpV2.lote_ptColumn] = global::System.Convert.DBNull;
             }
         }
         

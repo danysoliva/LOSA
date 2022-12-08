@@ -32,12 +32,12 @@
     <Shape ID="DesignTable:Acumulado_FCT" ZOrder="11" X="3864" Y="0" Height="162" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="86" />
     <Shape ID="DesignTable:historico_pt_kardex" ZOrder="8" X="87" Y="277" Height="314" Width="179" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="310" />
     <Shape ID="DesignTable:despachos_pt" ZOrder="7" X="778" Y="291" Height="200" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
-    <Shape ID="DesignTable:conf_filas_destinos" ZOrder="6" X="432" Y="314" Height="162" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
+    <Shape ID="DesignTable:conf_filas_destinos" ZOrder="6" X="354" Y="312" Height="162" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:presentacion_sacos" ZOrder="5" X="1061" Y="325" Height="86" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:presentacion_filas" ZOrder="4" X="1052" Y="441" Height="86" Width="169" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
     <Shape ID="DesignTable:kardex_pt_existencia" ZOrder="3" X="415" Y="523" Height="219" Width="185" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
     <Shape ID="DesignTable:unidades_retenidas" ZOrder="2" X="827" Y="546" Height="181" Width="177" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
-    <Shape ID="DesignTable:destinos_empaques_pt" ZOrder="1" X="129" Y="661" Height="162" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
+    <Shape ID="DesignTable:destinos_empaques_pt" ZOrder="1" X="560" Y="129" Height="124" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

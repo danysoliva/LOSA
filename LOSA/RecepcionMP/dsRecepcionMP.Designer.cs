@@ -2561,6 +2561,8 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnpresentacion;
             
+            private global::System.Data.DataColumn columnexistencia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public lista_tarimasDataTable() {
@@ -2732,6 +2734,14 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existenciaColumn {
+                get {
+                    return this.columnexistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2784,7 +2794,8 @@ namespace LOSA.RecepcionMP {
                         bool seleccionado, 
                         string estado_tarima, 
                         int id_estado_tarima, 
-                        string presentacion) {
+                        string presentacion, 
+                        decimal existencia) {
                 lista_tarimasRow rowlista_tarimasRow = ((lista_tarimasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2803,7 +2814,8 @@ namespace LOSA.RecepcionMP {
                         seleccionado,
                         estado_tarima,
                         id_estado_tarima,
-                        presentacion};
+                        presentacion,
+                        existencia};
                 rowlista_tarimasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlista_tarimasRow);
                 return rowlista_tarimasRow;
@@ -2843,6 +2855,7 @@ namespace LOSA.RecepcionMP {
                 this.columnestado_tarima = base.Columns["estado_tarima"];
                 this.columnid_estado_tarima = base.Columns["id_estado_tarima"];
                 this.columnpresentacion = base.Columns["presentacion"];
+                this.columnexistencia = base.Columns["existencia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2882,6 +2895,8 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnid_estado_tarima);
                 this.columnpresentacion = new global::System.Data.DataColumn("presentacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpresentacion);
+                this.columnexistencia = new global::System.Data.DataColumn("existencia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia);
                 this.columnseleccionado.DefaultValue = ((bool)(false));
             }
             
@@ -8581,6 +8596,8 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnfecha_vencimiento;
             
+            private global::System.Data.DataColumn columnOC;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public lista_lotes_granelDataTable() {
@@ -8680,6 +8697,14 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OCColumn {
+                get {
+                    return this.columnOC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8715,7 +8740,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public lista_lotes_granelRow Addlista_lotes_granelRow(int id_lote_externo, string itemcode, string lote, decimal cantidad_existencia, string factura, string bodega, System.DateTime fecha_produccion, System.DateTime fecha_vencimiento) {
+            public lista_lotes_granelRow Addlista_lotes_granelRow(int id_lote_externo, string itemcode, string lote, decimal cantidad_existencia, string factura, string bodega, System.DateTime fecha_produccion, System.DateTime fecha_vencimiento, int OC) {
                 lista_lotes_granelRow rowlista_lotes_granelRow = ((lista_lotes_granelRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_lote_externo,
@@ -8725,7 +8750,8 @@ namespace LOSA.RecepcionMP {
                         factura,
                         bodega,
                         fecha_produccion,
-                        fecha_vencimiento};
+                        fecha_vencimiento,
+                        OC};
                 rowlista_lotes_granelRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlista_lotes_granelRow);
                 return rowlista_lotes_granelRow;
@@ -8756,6 +8782,7 @@ namespace LOSA.RecepcionMP {
                 this.columnbodega = base.Columns["bodega"];
                 this.columnfecha_produccion = base.Columns["fecha_produccion"];
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
+                this.columnOC = base.Columns["OC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8777,6 +8804,8 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnfecha_produccion);
                 this.columnfecha_vencimiento = new global::System.Data.DataColumn("fecha_vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_vencimiento);
+                this.columnOC = new global::System.Data.DataColumn("OC", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOC);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10347,6 +10376,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal existencia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablelista_tarimas.existenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia\' de la tabla \'lista_tarimas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_tarimas.existenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablelista_tarimas.idColumn);
             }
@@ -10547,6 +10592,18 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetpresentacionNull() {
                 this[this.tablelista_tarimas.presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsexistenciaNull() {
+                return this.IsNull(this.tablelista_tarimas.existenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetexistenciaNull() {
+                this[this.tablelista_tarimas.existenciaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -14045,6 +14102,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OC {
+                get {
+                    try {
+                        return ((int)(this[this.tablelista_lotes_granel.OCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'OC\' de la tabla \'lista_lotes_granel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelista_lotes_granel.OCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_lote_externoNull() {
                 return this.IsNull(this.tablelista_lotes_granel.id_lote_externoColumn);
             }
@@ -14137,6 +14210,18 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfecha_vencimientoNull() {
                 this[this.tablelista_lotes_granel.fecha_vencimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOCNull() {
+                return this.IsNull(this.tablelista_lotes_granel.OCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOCNull() {
+                this[this.tablelista_lotes_granel.OCColumn] = global::System.Convert.DBNull;
             }
         }
         

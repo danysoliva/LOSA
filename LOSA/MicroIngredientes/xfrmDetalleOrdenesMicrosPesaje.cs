@@ -436,24 +436,35 @@ namespace LOSA.MicroIngredientes
                    
                 }
 
-                //if (row.id_turno == 0)
-                //{
-                //    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe seleccionar el turno para imprimir el reporte.");
-                //    if (frm.ShowDialog() == DialogResult.Cancel)
-                //    {
-                //        return;
-                //    }
-                //}
+                if (Convert.ToString(row.id_turno) == " ")
+                {
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe seleccionar el turno para imprimir el reporte.");
+                    if (frm.ShowDialog() == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
+                if (row.id_turno == 0)
+                {
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe seleccionar el turno para imprimir el reporte.");
+                    if (frm.ShowDialog() == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
 
-                //string query = @"sp_update_plan_asignar_turnos";
-                //SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
-                //cn.Open();
-                //SqlCommand cmd = new SqlCommand(query,cn);
-                //cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@id_turno", row.id_turno);
-                //cmd.Parameters.AddWithValue("@AMI",row.AMI_ID);
-                //cmd.ExecuteNonQuery();
-                //cn.Close();
+
+
+
+                string query1 = @"sp_update_plan_asignar_turnos";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+                conn.Open();
+                SqlCommand cmd1 = new SqlCommand(query1, conn);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.Parameters.AddWithValue("@id_turno", row.id_turno);
+                cmd1.Parameters.AddWithValue("@AMI", row.AMI_ID);
+                cmd1.ExecuteNonQuery();
+                conn.Close();
 
 
                 xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID, row.id_orden_encabezado);
@@ -473,6 +484,7 @@ namespace LOSA.MicroIngredientes
                 cn.Close();
 
                 //LoadData();
+
 
 
             }

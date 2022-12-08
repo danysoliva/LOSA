@@ -46,6 +46,7 @@
             this.colfecha_entrega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_pt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
@@ -72,16 +73,16 @@
             // 
             this.dtDesde.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtDesde.EditValue = null;
-            this.dtDesde.Location = new System.Drawing.Point(461, 28);
+            this.dtDesde.Location = new System.Drawing.Point(461, 35);
             this.dtDesde.Name = "dtDesde";
-            this.dtDesde.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtDesde.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtDesde.Properties.Appearance.Options.UseFont = true;
             this.dtDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtDesde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dtDesde.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtDesde.Size = new System.Drawing.Size(121, 24);
+            this.dtDesde.Size = new System.Drawing.Size(121, 22);
             this.dtDesde.TabIndex = 1;
             this.dtDesde.EditValueChanged += new System.EventHandler(this.dtDesde_EditValueChanged);
             this.dtDesde.Validated += new System.EventHandler(this.dtDesde_Validated);
@@ -90,16 +91,16 @@
             // 
             this.dtHasta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtHasta.EditValue = null;
-            this.dtHasta.Location = new System.Drawing.Point(461, 58);
+            this.dtHasta.Location = new System.Drawing.Point(461, 62);
             this.dtHasta.Name = "dtHasta";
-            this.dtHasta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtHasta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtHasta.Properties.Appearance.Options.UseFont = true;
             this.dtHasta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtHasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dtHasta.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtHasta.Size = new System.Drawing.Size(121, 24);
+            this.dtHasta.Size = new System.Drawing.Size(121, 22);
             this.dtHasta.TabIndex = 2;
             this.dtHasta.EditValueChanged += new System.EventHandler(this.dtHasta_EditValueChanged);
             // 
@@ -107,10 +108,10 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(399, 31);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(399, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 18);
+            this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Desde:";
             // 
@@ -118,10 +119,10 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(404, 61);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(404, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 18);
+            this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Hasta:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -157,7 +158,8 @@
             this.colusuario,
             this.colfecha_entrega,
             this.colcantidad,
-            this.colpeso});
+            this.colpeso,
+            this.collote_pt});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -236,6 +238,15 @@
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
             this.colpeso.VisibleIndex = 7;
+            // 
+            // collote_pt
+            // 
+            this.collote_pt.Caption = "Lote PT ";
+            this.collote_pt.FieldName = "lote_pt";
+            this.collote_pt.Name = "collote_pt";
+            this.collote_pt.OptionsColumn.AllowEdit = false;
+            this.collote_pt.Visible = true;
+            this.collote_pt.VisibleIndex = 8;
             // 
             // cmdHome
             // 
@@ -320,5 +331,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_entrega;
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
         private DevExpress.XtraGrid.Columns.GridColumn colpeso;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_pt;
     }
 }

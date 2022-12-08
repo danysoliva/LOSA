@@ -27,7 +27,7 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado; 
         public int Id_ingreso { get => id_ingreso; set => id_ingreso = value; }
         public int Numero_transaccion { get => numero_transaccion; set => numero_transaccion = value; }
-
+        int Id_traslado;
         string ItemCode;
 
         public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser, bool Finalizado, int id_traslado, string pItemCode)
@@ -41,7 +41,8 @@ namespace LOSA.RecepcionMP
             //btnFinalizar.Visible = !Finalizado && id_traslado !=0 ? true : false;
             ItemCode = pItemCode;
             LoadTarimas();
-            if (id_traslado == 0)
+            Id_traslado = id_traslado;
+            if (Id_traslado == 0)
             {
                 btnAgregar.Visible = true;
             }
@@ -57,7 +58,7 @@ namespace LOSA.RecepcionMP
 
         public void LoadTarimas()
         {
-            string SqlCommandSp = @"ps_obtener_tarimas_de_ingreso";
+            string SqlCommandSp = @"ps_obtener_tarimas_de_ingresoV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {

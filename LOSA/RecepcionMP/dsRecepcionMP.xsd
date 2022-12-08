@@ -95,6 +95,7 @@
               <xs:element name="estado_tarima" msprop:Generator_ColumnVarNameInTable="columnestado_tarima" msprop:Generator_ColumnPropNameInRow="estado_tarima" msprop:Generator_ColumnPropNameInTable="estado_tarimaColumn" msprop:Generator_UserColumnName="estado_tarima" type="xs:string" minOccurs="0" />
               <xs:element name="id_estado_tarima" msprop:Generator_ColumnVarNameInTable="columnid_estado_tarima" msprop:Generator_ColumnPropNameInRow="id_estado_tarima" msprop:Generator_ColumnPropNameInTable="id_estado_tarimaColumn" msprop:Generator_UserColumnName="id_estado_tarima" type="xs:int" minOccurs="0" />
               <xs:element name="presentacion" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:string" minOccurs="0" />
+              <xs:element name="existencia" msprop:Generator_ColumnVarNameInTable="columnexistencia" msprop:Generator_ColumnPropNameInRow="existencia" msprop:Generator_ColumnPropNameInTable="existenciaColumn" msprop:Generator_UserColumnName="existencia" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -321,6 +322,7 @@
               <xs:element name="bodega" msprop:Generator_ColumnVarNameInTable="columnbodega" msprop:Generator_ColumnPropNameInRow="bodega" msprop:Generator_ColumnPropNameInTable="bodegaColumn" msprop:Generator_UserColumnName="bodega" type="xs:string" minOccurs="0" />
               <xs:element name="fecha_produccion" msprop:Generator_ColumnVarNameInTable="columnfecha_produccion" msprop:Generator_ColumnPropNameInRow="fecha_produccion" msprop:Generator_ColumnPropNameInTable="fecha_produccionColumn" msprop:Generator_UserColumnName="fecha_produccion" type="xs:dateTime" minOccurs="0" />
               <xs:element name="fecha_vencimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OC" msprop:Generator_ColumnVarNameInTable="columnOC" msprop:Generator_ColumnPropNameInRow="OC" msprop:Generator_ColumnPropNameInTable="OCColumn" msprop:Generator_UserColumnName="OC" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

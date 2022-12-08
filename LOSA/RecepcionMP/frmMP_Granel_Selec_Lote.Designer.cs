@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMP_Granel_Selec_Lote));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -42,7 +42,6 @@
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GridLookUpEditLoteEmbedded = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.listalotesgranelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_lote_externo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemcode1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,18 +52,20 @@
             this.colcard_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_lote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdSelectLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.bindingSourceListaLotesActivos = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdSiguiente = new DevExpress.XtraEditors.SimpleButton();
+            this.colOC = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditLoteEmbedded)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listalotesgranelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdSelectLote)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaLotesActivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,7 +134,7 @@
             this.GridLookUpEditLoteEmbedded.DataSource = this.listalotesgranelBindingSource;
             this.GridLookUpEditLoteEmbedded.DisplayMember = "lote";
             this.GridLookUpEditLoteEmbedded.Name = "GridLookUpEditLoteEmbedded";
-            this.GridLookUpEditLoteEmbedded.PopupFormSize = new System.Drawing.Size(500, 0);
+            this.GridLookUpEditLoteEmbedded.PopupFormSize = new System.Drawing.Size(700, 0);
             this.GridLookUpEditLoteEmbedded.PopupView = this.repositoryItemGridLookUpEdit1View;
             this.GridLookUpEditLoteEmbedded.ValueMember = "id_lote_externo";
             this.GridLookUpEditLoteEmbedded.EditValueChanged += new System.EventHandler(this.GridLookUpEditLoteEmbedded_EditValueChanged);
@@ -142,11 +143,6 @@
             // 
             this.listalotesgranelBindingSource.DataMember = "lista_lotes_granel";
             this.listalotesgranelBindingSource.DataSource = this.dsRecepcionMPx1;
-            // 
-            // dsRecepcionMPx
-            // 
-            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // repositoryItemGridLookUpEdit1View
             // 
@@ -158,6 +154,7 @@
             this.collote1,
             this.colbodega,
             this.colfactura,
+            this.colOC,
             this.colcantidad_existencia});
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
@@ -187,7 +184,7 @@
             this.collote1.OptionsColumn.AllowEdit = false;
             this.collote1.OptionsColumn.AllowShowHide = false;
             this.collote1.Visible = true;
-            this.collote1.VisibleIndex = 0;
+            this.collote1.VisibleIndex = 1;
             // 
             // colbodega
             // 
@@ -233,11 +230,16 @@
             // cmdSelectLote
             // 
             this.cmdSelectLote.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.cmdSelectLote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdSelectLote.Name = "cmdSelectLote";
             this.cmdSelectLote.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdSelectLote_ButtonClick);
+            // 
+            // dsRecepcionMPx
+            // 
+            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingSourceListaLotesActivos
             // 
@@ -286,6 +288,14 @@
             this.cmdSiguiente.Text = "Siguiente";
             this.cmdSiguiente.Click += new System.EventHandler(this.cmdSiguiente_Click);
             // 
+            // colOC
+            // 
+            this.colOC.Caption = "Orden C";
+            this.colOC.FieldName = "OC";
+            this.colOC.Name = "colOC";
+            this.colOC.Visible = true;
+            this.colOC.VisibleIndex = 5;
+            // 
             // frmMP_Granel_Selec_Lote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,9 +312,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridLookUpEditLoteEmbedded)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listalotesgranelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdSelectLote)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceListaLotesActivos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -335,5 +345,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad_existencia;
         private DevExpress.XtraGrid.Columns.GridColumn colfactura;
         private DevExpress.XtraGrid.Columns.GridColumn colbodega;
+        private DevExpress.XtraGrid.Columns.GridColumn colOC;
     }
 }

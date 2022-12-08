@@ -81,6 +81,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
+            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -186,6 +187,7 @@
             this.Editar,
             this.colpresentacion,
             this.colnum,
+            this.colexistencia,
             this.colcodigo_barra,
             this.colcantidad,
             this.colEliminar,
@@ -280,8 +282,6 @@
             this.colid_boleta.MinWidth = 17;
             this.colid_boleta.Name = "colid_boleta";
             this.colid_boleta.OptionsColumn.AllowEdit = false;
-            this.colid_boleta.Visible = true;
-            this.colid_boleta.VisibleIndex = 7;
             this.colid_boleta.Width = 64;
             // 
             // colPrint
@@ -351,7 +351,7 @@
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 9;
+            this.colpresentacion.VisibleIndex = 8;
             this.colpresentacion.Width = 99;
             // 
             // colnum
@@ -382,7 +382,7 @@
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 8;
+            this.colcantidad.VisibleIndex = 7;
             this.colcantidad.Width = 90;
             // 
             // colEliminar
@@ -411,7 +411,7 @@
             this.colestado_tarima.Name = "colestado_tarima";
             this.colestado_tarima.OptionsColumn.AllowEdit = false;
             this.colestado_tarima.Visible = true;
-            this.colestado_tarima.VisibleIndex = 10;
+            this.colestado_tarima.VisibleIndex = 9;
             this.colestado_tarima.Width = 83;
             // 
             // colseleccionado
@@ -467,6 +467,15 @@
             this.checkBoxSelectAll.Text = "Seleccionar Todas";
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
+            // 
+            // colexistencia
+            // 
+            this.colexistencia.Caption = "Existencia";
+            this.colexistencia.FieldName = "existencia";
+            this.colexistencia.Name = "colexistencia";
+            this.colexistencia.OptionsColumn.AllowEdit = false;
+            this.colexistencia.Visible = true;
+            this.colexistencia.VisibleIndex = 10;
             // 
             // frm_ingresos_lotes
             // 
@@ -529,5 +538,6 @@
         private System.Windows.Forms.CheckBox checkBoxSelectAll;
         private DevExpress.XtraGrid.Columns.GridColumn colestado_tarima;
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colexistencia;
     }
 }
