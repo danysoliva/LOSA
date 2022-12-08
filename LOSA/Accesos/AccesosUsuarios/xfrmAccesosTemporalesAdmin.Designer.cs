@@ -221,7 +221,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.cmdNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdNew.ImageOptions.Image")));
             this.cmdNew.Location = new System.Drawing.Point(691, 21);
             this.cmdNew.Name = "cmdNew";
-            this.cmdNew.Size = new System.Drawing.Size(103, 39);
+            this.cmdNew.Size = new System.Drawing.Size(103, 45);
             this.cmdNew.TabIndex = 1;
             this.cmdNew.Text = "Nuevo";
             this.cmdNew.Click += new System.EventHandler(this.cmdNew_Click);
@@ -239,7 +239,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.cmdCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCancelar.ImageOptions.Image")));
             this.cmdCancelar.Location = new System.Drawing.Point(804, 21);
             this.cmdCancelar.Name = "cmdCancelar";
-            this.cmdCancelar.Size = new System.Drawing.Size(103, 39);
+            this.cmdCancelar.Size = new System.Drawing.Size(103, 45);
             this.cmdCancelar.TabIndex = 2;
             this.cmdCancelar.Text = "Cancelar";
             this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
