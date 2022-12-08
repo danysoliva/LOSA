@@ -1763,6 +1763,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Reports_icon24px {
+            get {
+                object obj = ResourceManager.GetObject("Reports-icon24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap salir_24 {
             get {
                 object obj = ResourceManager.GetObject("salir_24", resourceCulture);
@@ -1866,6 +1876,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings_icon24px {
+            get {
+                object obj = ResourceManager.GetObject("settings-icon24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
