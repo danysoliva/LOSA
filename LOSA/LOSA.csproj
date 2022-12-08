@@ -1962,6 +1962,12 @@
     <Compile Include="MigracionACS\OIL\frmReporteTraslados.designer.cs">
       <DependentUpon>frmReporteTraslados.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaAdvanced.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaAdvanced.designer.cs">
+      <DependentUpon>frmReporteTrasladosArribaAdvanced.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -5240,6 +5246,9 @@
     <EmbeddedResource Include="MigracionACS\OIL\frmReporteTraslados.resx">
       <DependentUpon>frmReporteTraslados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaAdvanced.resx">
+      <DependentUpon>frmReporteTrasladosArribaAdvanced.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaByLotePT.resx">
       <DependentUpon>frmReporteTrasladosArribaByLotePT.cs</DependentUpon>
     </EmbeddedResource>
@@ -6606,6 +6615,8 @@
     <None Include="Resources\seo-report64px.png" />
     <None Include="Resources\seo-report32px_.png" />
     <None Include="Resources\refresh-button32px.png" />
+    <None Include="Resources\settings-icon24px.png" />
+    <None Include="Resources\Reports-icon24px.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />

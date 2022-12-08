@@ -24,6 +24,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             InitializeComponent();
             usuarioLogin = pUser;
             LoadAccesos();
+            LoadUsers();
         }
 
         void LoadAccesos()
@@ -75,7 +76,7 @@ namespace LOSA.Accesos.AccesosUsuarios
 
         private void xfrmAccesosTemporalesAdmin_Load(object sender, EventArgs e)
         {
-            colusuario.GroupIndex = 1;
+            //colusuario.GroupIndex = 1;
         }
 
         private void btnEditar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -105,6 +106,36 @@ namespace LOSA.Accesos.AccesosUsuarios
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void LoadUsers()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringCostos))
+                {
+                    cnx.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter("dbo.sp_load_user", cnx);
+                    dsAccesos.Usuarios.Clear();
+
+                    da.Fill(dsAccesos.Usuarios);
+                    cnx.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+        private void gridLookUpEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+            //gridView1.ActiveFilterString = "[id_usuario] LIKE '%" + txtNombre.Text + "%'"; //FiltroNombre("DirectorioMedicos.Nombre");
+            gridView1.ActiveFilterString = "[id_usuario] =" + gridLookUpEdit2.EditValue; 
         }
     }
 }

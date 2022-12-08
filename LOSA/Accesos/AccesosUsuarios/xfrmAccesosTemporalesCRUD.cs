@@ -282,7 +282,7 @@ namespace LOSA.Accesos.AccesosUsuarios
                 SqlConnection cnx = new SqlConnection(dp.ConnectionStringCostos);
 
 
-                switch (acceso.UserID)
+                switch (form_CRUD)
                 {
                     case (int)formCRUD.Nuevo:
                         if (dsAccesos.Window.Rows.Count > 0)
@@ -330,12 +330,14 @@ namespace LOSA.Accesos.AccesosUsuarios
 
         private void xfrmAccesosTemporalesCRUD_Load(object sender, EventArgs e)
         {
+           
             if (form_CRUD == (int)formCRUD.Editar)
             {
                 LoadVentanasByUser();
                 lueUsuario.EditValue = acceso.UserID;
 
                 lueUsuario.Enabled = false;
+                cmdNew.Enabled = false;
             }
         }
 
@@ -351,36 +353,38 @@ namespace LOSA.Accesos.AccesosUsuarios
                 //    return;
                 //}
 
-                //if (e.Column.FieldName!="nombre")
-                //{
+                if (e.Column.FieldName != "nombre")
+                {
 
-                //switch (form_CRUD)
-                //{
-                    
-                //    case (int)formCRUD.Editar:
-                //        DataOperations dp = new DataOperations();
+                    switch (form_CRUD)
+                    {
 
-                //        using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringCostos))
-                //        {
-                //            cnx.Open();
+                        case (int)formCRUD.Editar:
+                            DataOperations dp = new DataOperations();
 
-                //            SqlCommand cmd = new SqlCommand("dbo.sp_update_ventana_by_user", cnx);
-                //            cmd.CommandType = CommandType.StoredProcedure;
+                            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringCostos))
+                            {
+                                cnx.Open();
 
-                //            cmd.Parameters.Add("@id_user", SqlDbType.Int).Value = acceso.UserID;
-                //            cmd.Parameters.Add("@id_ventana_old", SqlDbType.Int).Value = row.id_ventana;
-                //            cmd.Parameters.Add("@id_ventana_new", SqlDbType.Int).Value = row.id_ventana;
-                //            cmd.Parameters.Add("@fecha_inicio", SqlDbType.DateTime).Value = row.fecha_inicio;
-                //            cmd.Parameters.Add("@fecha_fin", SqlDbType.DateTime).Value = row.fecha_fin;
-                //            cmd.Parameters.Add("@fecha_vinculo", SqlDbType.DateTime).Value = row.fecha_vinculo;
+                                SqlCommand cmd = new SqlCommand("dbo.sp_update_ventana_by_user", cnx);
+                                cmd.CommandType = CommandType.StoredProcedure;
 
-                //            cmd.ExecuteNonQuery();
-                //            cnx.Close();
-                //        }
-                //        break;
-                //}
-                //}
-            }
+                                cmd.Parameters.Add("@id_user", SqlDbType.Int).Value = acceso.UserID;
+                                cmd.Parameters.Add("@id_userCreated", SqlDbType.Int).Value = usuarioLogin.Id;
+                                cmd.Parameters.Add("@id_ventana_old", SqlDbType.Int).Value = row.id_ventana;
+                                cmd.Parameters.Add("@id_ventana_new", SqlDbType.Int).Value = row.id_ventana;
+                                cmd.Parameters.Add("@fecha_inicio", SqlDbType.DateTime).Value = row.fecha_inicio;
+                                cmd.Parameters.Add("@fecha_fin", SqlDbType.DateTime).Value = row.fecha_fin;
+                                cmd.Parameters.Add("@fecha_vinculo", SqlDbType.DateTime).Value = row.fecha_vinculo;
+                                cmd.Parameters.Add("@id", SqlDbType.Int).Value = row.id;
+
+                                cmd.ExecuteNonQuery();
+                                cnx.Close();
+                            }
+                            break;
+                    }
+                }
+                }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);

@@ -1356,6 +1356,8 @@ namespace LOSA.Accesos {
             
             private global::System.Data.DataColumn columnADUser;
             
+            private global::System.Data.DataColumn columnuser;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public UsuariosDataTable() {
@@ -1415,6 +1417,14 @@ namespace LOSA.Accesos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn userColumn {
+                get {
+                    return this.columnuser;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1450,12 +1460,13 @@ namespace LOSA.Accesos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsuariosRow AddUsuariosRow(int id, string nombre, string ADUser) {
+            public UsuariosRow AddUsuariosRow(int id, string nombre, string ADUser, string user) {
                 UsuariosRow rowUsuariosRow = ((UsuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         nombre,
-                        ADUser};
+                        ADUser,
+                        user};
                 rowUsuariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsuariosRow);
                 return rowUsuariosRow;
@@ -1481,6 +1492,7 @@ namespace LOSA.Accesos {
                 this.columnid = base.Columns["id"];
                 this.columnnombre = base.Columns["nombre"];
                 this.columnADUser = base.Columns["ADUser"];
+                this.columnuser = base.Columns["user"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1492,6 +1504,8 @@ namespace LOSA.Accesos {
                 base.Columns.Add(this.columnnombre);
                 this.columnADUser = new global::System.Data.DataColumn("ADUser", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnADUser);
+                this.columnuser = new global::System.Data.DataColumn("user", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2260,6 +2274,22 @@ namespace LOSA.Accesos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string user {
+                get {
+                    try {
+                        return ((string)(this[this.tableUsuarios.userColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'user\' in table \'Usuarios\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsuarios.userColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableUsuarios.idColumn);
             }
@@ -2292,6 +2322,18 @@ namespace LOSA.Accesos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetADUserNull() {
                 this[this.tableUsuarios.ADUserColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsuserNull() {
+                return this.IsNull(this.tableUsuarios.userColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetuserNull() {
+                this[this.tableUsuarios.userColumn] = global::System.Convert.DBNull;
             }
         }
         

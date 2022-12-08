@@ -29,26 +29,25 @@ namespace LOSA.Accesos.AccesosUsuarios
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmAccesosTemporalesCRUD));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lueUsuario = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsAccesosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsAccesosBindingSource = new System.Windows.Forms.BindingSource();
             this.dsAccesos = new LOSA.Accesos.dsAccesos();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ventanaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ventanaBindingSource = new System.Windows.Forms.BindingSource();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gvVentana = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_ventana = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lueVentana = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
-            this.ventanaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ventanaBindingSource1 = new System.Windows.Forms.BindingSource();
             this.repositoryItemSearchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -140,7 +139,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.lueVentana,
             this.btnDelete});
-            this.gridControl1.Size = new System.Drawing.Size(747, 279);
+            this.gridControl1.Size = new System.Drawing.Size(890, 368);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvVentana});
@@ -149,7 +148,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             // 
             this.gvVentana.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvVentana.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvVentana.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvVentana.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvVentana.Appearance.Row.Options.UseFont = true;
             this.gvVentana.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid_ventana,
@@ -235,9 +234,9 @@ namespace LOSA.Accesos.AccesosUsuarios
             // btnDelete
             // 
             this.btnDelete.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete_ButtonClick);
@@ -289,7 +288,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl5.Location = new System.Drawing.Point(0, 6);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(747, 25);
+            this.labelControl5.Size = new System.Drawing.Size(890, 25);
             this.labelControl5.TabIndex = 12;
             this.labelControl5.Text = "Acceso Temporal";
             // 
@@ -304,7 +303,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.cmdCancelar.Appearance.Options.UseForeColor = true;
             this.cmdCancelar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCancelar.ImageOptions.Image")));
-            this.cmdCancelar.Location = new System.Drawing.Point(635, 28);
+            this.cmdCancelar.Location = new System.Drawing.Point(778, 28);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(103, 43);
             this.cmdCancelar.TabIndex = 14;
@@ -322,7 +321,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.cmdNew.Appearance.Options.UseForeColor = true;
             this.cmdNew.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdNew.ImageOptions.Image")));
-            this.cmdNew.Location = new System.Drawing.Point(522, 28);
+            this.cmdNew.Location = new System.Drawing.Point(665, 28);
             this.cmdNew.Name = "cmdNew";
             this.cmdNew.Size = new System.Drawing.Size(103, 43);
             this.cmdNew.TabIndex = 13;
@@ -333,7 +332,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 368);
+            this.ClientSize = new System.Drawing.Size(887, 457);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.cmdNew);
             this.Controls.Add(this.labelControl5);
