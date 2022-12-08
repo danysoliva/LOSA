@@ -17,6 +17,7 @@ namespace LOSA.MicroIngredientes
 {
     public partial class xfrmPesajeIndividualBatchV3 : DevExpress.XtraEditors.XtraForm
     {
+        DataOperations dp = new DataOperations();
         //string batch_completados;
         //PesajeIndividualInfo pesajeIndividual = new PesajeIndividualInfo();
         //PesajeManualInfo pesajeManual = new PesajeManualInfo();
@@ -35,6 +36,7 @@ namespace LOSA.MicroIngredientes
 
         public xfrmPesajeIndividualBatchV3(string completados, string bascula, PesajeIndividualInfo pPesaje, string pMP)
         {
+            //PESAJE INDIVIDUAL
             InitializeComponent();
             lblCompletados.Text = completados;
             //lblBascula.Text = bascula;
@@ -46,12 +48,19 @@ namespace LOSA.MicroIngredientes
 
         public xfrmPesajeIndividualBatchV3(string completados, string bascula, PesajeBasculaInfo pPesaje)
         {
+            //PESAJE NUCLEO
             InitializeComponent();
             lblCompletados.Text = completados;
             //lblBascula.Text = bascula;
             pesaje = pPesaje;
             lblRequerido.Text = "Valor Requerido: " + pesaje.PesoPorBatch.ToString("N2") + " Kg";
             //lblMP.Text = pMP;
+
+            BasculaId = (int)Basculas.Bascula1;
+            btnBasc1.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+            btnBasc2.Appearance.BackColor = default(Color);
+            btnBascAmbas.Appearance.BackColor = default(Color);
+            txtCodBarra.Focus();
         }
 
 
@@ -128,7 +137,7 @@ namespace LOSA.MicroIngredientes
                 {
 
                     timer1.Enabled = false;
-                    fecha = DateTime.Now;
+                    fecha = dp.Now();
 
                     this.DialogResult = DialogResult.OK;
                 }
