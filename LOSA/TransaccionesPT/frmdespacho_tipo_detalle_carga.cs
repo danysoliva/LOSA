@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 //using LOSA.Despachos.Reportes;
 
 namespace LOSA.TransaccionesPT
@@ -21,26 +22,72 @@ namespace LOSA.TransaccionesPT
         DataOperations dp = new DataOperations();
         public int id_despacho;
         int estiba = 0;
+        int Cantidad_Ud_Despachos;
+
         public frmdespacho_tipo_detalle_carga(int pid_despacho)
         {
             InitializeComponent();
 
             id_despacho = pid_despacho;
             grdPresentacion.Enabled = false;
-           
-            LoadPresentaciones();
-            LoadPresentacion(id_despacho);
-            
-            navigationFrame1.SelectedPageIndex = 0;
-            if (tsTipo.IsOn)
+
+            LoadCantidadCargadaDespacho(pid_despacho);
+
+            //LoadPresentaciones();
+            //LoadPresentacion(id_despacho);
+
+            //navigationFrame1.SelectedPageIndex = 0;
+            //if (tsTipo.IsOn)
+            //{
+            //    estiba = 1; //1 = Embalado 
+            //    LoadDestinos(estiba);
+            //}
+            //else
+            //{
+            //    estiba = 2;//2 = Granel
+            //    LoadDestinos(estiba);
+            //}
+
+            LoadPresentacionesHabilitadas(Cantidad_Ud_Despachos);
+        }
+
+        private void LoadPresentacionesHabilitadas(int pcantidad_Ud_Despachos)
+        {
+            try
             {
-                estiba = 1; //1 = Embalado 
-                LoadDestinos(estiba);
+                string query = @"sp_get_grid_lista_destinos_config_despacho_pt";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cantidad", pcantidad_Ud_Despachos);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsProductos.destinos_empaques_pt.Clear();
+                adat.Fill(dsProductos.destinos_empaques_pt);
             }
-            else
+            catch (Exception ex)
             {
-                estiba = 2;//2 = Granel
-                LoadDestinos(estiba);
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void LoadCantidadCargadaDespacho(int pid_despacho)
+        {
+            //Cantidad_Ud_Despachos
+            try
+            {
+                string query = @"sp_get_cantidad_cargada_despacho_pt";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_despacho", pid_despacho);
+                //cmd.Parameters.AddWithValue("@desinto_id", grdDestinos.EditValue);
+                Cantidad_Ud_Despachos = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -210,6 +257,35 @@ namespace LOSA.TransaccionesPT
 
         private void labelControl4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void gridView2_DoubleClick(object sender, EventArgs e)
+        {
+            var gridView = (GridView)grid_lista_destinos.FocusedView;
+            var row = (dsProductos.destinos_empaques_ptRow)gridView.GetFocusedDataRow();
+
+            //if (string.IsNullOrEmpty(grdDestinos.Text))
+            //{
+            //    CajaDialogo.Error("Debe seleccionar un Destino!");
+            //    grdDestinos.Focus();
+            //}
+
+            try
+            {
+                //Reporte con Filas
+                LOSA.Despachos.Reportes.frm_despacho_con_filas rpt =
+                    //new LOSA.Despachos.Reportes.frm_despacho_con_filas(id_despacho, estiba, Convert.ToInt32(grdDestinos.EditValue), Convert.ToInt32(grdPresentacion.EditValue));
+                    new LOSA.Despachos.Reportes.frm_despacho_con_filas(id_despacho, row.estiba_id, row.destino_id, row.id_presentacion);
+                rpt.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(rpt);
+                printReport.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
 
         }
     }

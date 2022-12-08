@@ -4052,6 +4052,9 @@
     <Compile Include="TransaccionesMP\VentanasMensajes\frmVentanaMsjTarimaAlimentacion.Designer.cs">
       <DependentUpon>frmVentanaMsjTarimaAlimentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\dsProductos.cs">
+      <DependentUpon>dsProductos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\dsProductos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
