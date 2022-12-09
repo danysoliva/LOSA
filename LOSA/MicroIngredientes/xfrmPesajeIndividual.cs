@@ -1,5 +1,6 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
+using LOSA.Clases;
 using LOSA.MicroIngredientes.Models;
 using System;
 using System.Collections.Generic;
@@ -177,9 +178,13 @@ namespace LOSA.MicroIngredientes
                 DataOperations dp = new DataOperations();
 
                 ///******Por Validar**********
+               
+
 
                 switch (tipoPesaje)
                 {
+                    
+
                     case (int)TipoPesaje.PesajeNucleo:
 
 
@@ -191,26 +196,29 @@ namespace LOSA.MicroIngredientes
 
                             if (frm2.ShowDialog() == DialogResult.OK)
                             {
+                                TarimaMicroingrediente tmmicro = new TarimaMicroingrediente();
+                                tmmicro.RecuperarRegistroTarimaMicros(frm2.id_tarima_micros, " ");
 
                                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
                                 {
                                     cnx.Open();
 
-                                //transaction = cnx.BeginTransaction("SampleTransaction");
+                                    //transaction = cnx.BeginTransaction("SampleTransaction");
+                                    
 
                                     SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccionV2", cnx);
                                     cmd.CommandType = CommandType.StoredProcedure;
                                     //cmd.Transaction = transaction;
-
+                                    
                                     cmd.Parameters.Add("@id_orden_encabezado", SqlDbType.Int).Value = pesaje.id_orden_pesaje_header;
                                     cmd.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesaje.Total;
-                                    cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = DateTime.Now;
+                                    cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = dp.Now();
                                     cmd.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = frm2.peso_bascula_finish;
                                     cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;// IdMP;
                                     cmd.Parameters.Add("@bascula", SqlDbType.VarChar).Value = bascula[frm2.BasculaId-1];
                                     cmd.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value =  1;
-                                    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = DBNull.Value; //??
-                                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = //??
+                                    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = tmmicro.LoteMP; //??
+                                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm2.id_tarima_micros; //??
                                     cmd.Parameters.Add("@cant_batch", SqlDbType.Int).Value = pesaje.CantBatch;
                                     cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;//??
                                     cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = DBNull.Value;//??
@@ -267,7 +275,8 @@ namespace LOSA.MicroIngredientes
 
                             if (frm.ShowDialog() == DialogResult.OK)
                             {
-                                
+                                TarimaMicroingrediente tmmicro = new TarimaMicroingrediente();
+                                tmmicro.RecuperarRegistroTarimaMicros(frm.id_tarima_micros, " ");
 
                                 DataOperations dp2 = new DataOperations();
                                 SqlConnection cnx3 = new SqlConnection(dp2.ConnectionStringAPMS);
@@ -280,7 +289,7 @@ namespace LOSA.MicroIngredientes
                                 //cmd.Transaction = transaction;
 
 
-                                cmd3.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now;
+                                cmd3.Parameters.Add("@fecha", SqlDbType.DateTime).Value = dp.Now();
                                 cmd3.Parameters.Add("@id_orden_pesaje_h", SqlDbType.Int).Value = pesaje.id_orden_pesaje_header;
                                 cmd3.Parameters.Add("@id_code", SqlDbType.Int).Value = DBNull.Value;
 
@@ -292,13 +301,13 @@ namespace LOSA.MicroIngredientes
 
                                 cmd4.Parameters.Add("@id_orden_encabezado", SqlDbType.Int).Value = pesaje.id_orden_pesaje_header;
                                 cmd4.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesaje.Batch_Plan;
-                                cmd4.Parameters.Add("@date", SqlDbType.DateTime).Value = DateTime.Now;
+                                cmd4.Parameters.Add("@date", SqlDbType.DateTime).Value = dp.Now();
                                 cmd4.Parameters.Add("@batch_real", SqlDbType.Decimal).Value =frm.peso_bascula_finish;//?
                                 cmd4.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;// IdMP;
                                 cmd4.Parameters.Add("@bascula", SqlDbType.VarChar).Value = bascula[frm.BasculaId-1];
                                 cmd4.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value = 2;
-                                cmd4.Parameters.Add("@lote", SqlDbType.VarChar).Value = DBNull.Value;//Dejar este parametro con espacios
-                                cmd4.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = DBNull.Value; //??
+                                cmd4.Parameters.Add("@lote", SqlDbType.VarChar).Value = tmmicro.LoteMP;//Dejar este parametro con espacios
+                                cmd4.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm.id_tarima_micros; //??
                                 cmd4.Parameters.Add("@cant_batch", SqlDbType.Int).Value = pesaje.CantBatch;
                                 cmd4.Parameters.Add("@cant_sacos", SqlDbType.Int).Value = DBNull.Value;
                                 cmd4.Parameters.Add("@ami_id", SqlDbType.Int).Value = DBNull.Value;
@@ -327,9 +336,7 @@ namespace LOSA.MicroIngredientes
 
                                         cmd5.ExecuteNonQuery();
                                     }
-
                                 }
-
                                 //transaction.Commit();
                                 cnx3.Close();
                             }

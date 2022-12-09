@@ -26,6 +26,7 @@ namespace LOSA.MicroIngredientes
         decimal limiteSuperior = 0;
         public int BasculaId;
         public DateTime fecha;
+        public long id_tarima_micros;
 
         enum Basculas
         {
@@ -125,9 +126,9 @@ namespace LOSA.MicroIngredientes
                         MateriaPrima = row.mp,
                         TarimaOrigeId = row.id_tarima_origen,
                         TarimaMicroId=row.id_tarima_micro,
-                        Peso=row.peso
+                        Peso=row.peso,
                     });
-
+                    id_tarima_micros = row.id_tarima_micro;
                 }
 
                 peso_bascula_finish = PesajeAcumulado.Sum(t => t.Peso);
