@@ -304,7 +304,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "gridColumn2";
+            this.gridColumn3.Caption = "Usuario";
             this.gridColumn3.FieldName = "user";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;

@@ -1773,6 +1773,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rrhh_24X24 {
+            get {
+                object obj = ResourceManager.GetObject("rrhh_24X24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap salir_24 {
             get {
                 object obj = ResourceManager.GetObject("salir_24", resourceCulture);

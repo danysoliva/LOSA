@@ -182,6 +182,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -235,7 +236,8 @@
             this.TabCalidad,
             this.TabAdmin,
             this.tabProduccion,
-            this.txtProduccion});
+            this.txtProduccion,
+            this.xtraTabPage1});
             // 
             // TabMontacarga
             // 
@@ -2441,6 +2443,13 @@
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
             // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.ImageOptions.Image = global::LOSA.Properties.Resources.rrhh_24X24;
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage1.Text = "RRHH";
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2629,5 +2638,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private DevExpress.XtraNavBar.NavBarItem navBarItem17;
         private DevExpress.XtraNavBar.NavBarItem navBarItem19;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
     }
 }
