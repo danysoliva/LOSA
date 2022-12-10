@@ -181,8 +181,8 @@
             this.simpleButton15 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2428,6 +2428,14 @@
             this.btnRequisasManuales.Text = "Requisas Manuales";
             this.btnRequisasManuales.Click += new System.EventHandler(this.btnRequisasManuales_Click);
             // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.ImageOptions.Image = global::LOSA.Properties.Resources.rrhh_24X24;
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.PageVisible = false;
+            this.xtraTabPage1.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage1.Text = "RRHH";
+            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2442,13 +2450,6 @@
             this.labelControl3.Size = new System.Drawing.Size(578, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.ImageOptions.Image = global::LOSA.Properties.Resources.rrhh_24X24;
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(835, 518);
-            this.xtraTabPage1.Text = "RRHH";
             // 
             // frmOpciones
             // 
