@@ -1808,6 +1808,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ACSDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\AquaForecast\AFC_ConsumoReal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\AquaForecast\AFC_ConsumoReal.designer.cs">
+      <DependentUpon>AFC_ConsumoReal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\AquaForecast\AFC_ProyeccionVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\AquaForecast\AFC_ProyeccionVentas.designer.cs">
+      <DependentUpon>AFC_ProyeccionVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\AquaForecast\dsAquaForecastReports1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAquaForecastReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Controles\dsControles.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1919,11 +1936,23 @@
     <Compile Include="MigracionACS\Forecast\FCT_MRP_New_Action.designer.cs">
       <DependentUpon>FCT_MRP_New_Action.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Forecast\FCT_Proyecccion_CRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Forecast\FCT_Proyecccion_CRUD.designer.cs">
+      <DependentUpon>FCT_Proyecccion_CRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Forecast\FCT_Proyecciones_Ventas_New.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MigracionACS\Forecast\FCT_Proyecciones_Ventas_New.designer.cs">
       <DependentUpon>FCT_Proyecciones_Ventas_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Forecast\FCT_Proyeccion_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Forecast\FCT_Proyeccion_Admin.Designer.cs">
+      <DependentUpon>FCT_Proyeccion_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Forecast\FCT_Proyeccion_Copy.cs">
       <SubType>Form</SubType>
@@ -2039,6 +2068,12 @@
     </Compile>
     <Compile Include="MigracionACS\Item_Selecction.designer.cs">
       <DependentUpon>Item_Selecction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.designer.cs">
+      <DependentUpon>FML_Compare_Cost_External_Local.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\MP\SplashForm.cs">
       <SubType>Form</SubType>
@@ -3417,6 +3452,17 @@
     </None>
     <None Include="MigracionACS\ACSDataSet2.xss">
       <DependentUpon>ACSDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\AquaForecast\dsAquaForecastReports.xsc">
+      <DependentUpon>dsAquaForecastReports.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\AquaForecast\dsAquaForecastReports.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAquaForecastReports1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\AquaForecast\dsAquaForecastReports.xss">
+      <DependentUpon>dsAquaForecastReports.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Controles\dsControles.xsc">
       <DependentUpon>dsControles.xsd</DependentUpon>
@@ -5676,6 +5722,12 @@
     <EmbeddedResource Include="Micro\frmOpcionesMicro.resx">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\AquaForecast\AFC_ConsumoReal.resx">
+      <DependentUpon>AFC_ConsumoReal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\AquaForecast\AFC_ProyeccionVentas.resx">
+      <DependentUpon>AFC_ProyeccionVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Controles\xCheckBox.resx">
       <DependentUpon>xCheckBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -5709,8 +5761,14 @@
     <EmbeddedResource Include="MigracionACS\Forecast\FCT_MRP_New_Action.resx">
       <DependentUpon>FCT_MRP_New_Action.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Forecast\FCT_Proyecccion_CRUD.resx">
+      <DependentUpon>FCT_Proyecccion_CRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Forecast\FCT_Proyecciones_Ventas_New.resx">
       <DependentUpon>FCT_Proyecciones_Ventas_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Forecast\FCT_Proyeccion_Admin.resx">
+      <DependentUpon>FCT_Proyeccion_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Forecast\FCT_Proyeccion_Copy.resx">
       <DependentUpon>FCT_Proyeccion_Copy.cs</DependentUpon>
@@ -5768,6 +5826,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Item_Selecction.resx">
       <DependentUpon>Item_Selecction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.resx">
+      <DependentUpon>FML_Compare_Cost_External_Local.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\MP\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
@@ -7199,6 +7260,7 @@
     <Content Include="Resources\alimentacion_manual.png" />
     <None Include="Resources\Background.png" />
     <None Include="Resources\Background_test.png" />
+    <None Include="Resources\bomba-de-gas_32X32.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />
@@ -7249,6 +7311,8 @@
     <None Include="Resources\Finance2_32x32.png" />
     <None Include="Resources\inventory_24x24.png" />
     <None Include="Resources\inventory_32x32.png" />
+    <None Include="Resources\graph_32X32.png" />
+    <None Include="Resources\forecast1_24x24.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
@@ -7273,6 +7337,7 @@
     <None Include="Resources\month_32x32.png" />
     <None Include="Resources\Options_32x32.png" />
     <None Include="Resources\MRP_222x222.png" />
+    <None Include="Resources\MRP_32x32.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />

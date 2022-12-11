@@ -1,6 +1,8 @@
 ﻿
 using ACS.Classes;
+using ACS.Forecast;
 using ACS.Produccion;
+using ACS.RRHH.HorasExtra;
 using LOSA.Accesos;
 using LOSA.Accesos.AccesosUsuarios;
 using LOSA.Accesos.GestionGrupos;
@@ -18,7 +20,11 @@ using LOSA.Despachos;
 using LOSA.Liquidos;
 using LOSA.Logistica;
 using LOSA.Mantenimientos;
+using LOSA.MigracionACS.AquaForecast;
+using LOSA.MigracionACS.Forecast;
+using LOSA.MigracionACS.Management;
 using LOSA.MigracionACS.OIL;
+using LOSA.MigracionACS.Ordenes_Combustible;
 using LOSA.MigracionACS.Produccion;
 using LOSA.MigracionACS.Produccion.BannerTV;
 using LOSA.MigracionACS.Produccion.Configuraciones;
@@ -30,6 +36,11 @@ using LOSA.MigracionACS.Produccion.Produccion.DashBoard;
 using LOSA.MigracionACS.Produccion.Reports;
 using LOSA.MigracionACS.Produccion.TemperaturaMaquinas;
 using LOSA.MigracionACS.PT;
+using LOSA.MigracionACS.RRHH;
+using LOSA.MigracionACS.RRHH.Encuesta;
+using LOSA.MigracionACS.RRHH.Liquidaciones;
+using LOSA.MigracionACS.RRHH.RelojFace;
+using LOSA.MigracionACS.RRHH.Reportes;
 using LOSA.Nir;
 using LOSA.PlanMPreque;
 using LOSA.Produccion;
@@ -144,7 +155,7 @@ namespace LOSA
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
-                    tabOpciones.TabPages[i-1].PageVisible = true;
+                    tabOpciones.TabPages[i - 1].PageVisible = true;
 
                     idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
@@ -444,7 +455,7 @@ namespace LOSA
 
         private void btnTrazabilidad_Click(object sender, EventArgs e)
         {
-           frmTrazabilidadLote frm = new frmTrazabilidadLote();
+            frmTrazabilidadLote frm = new frmTrazabilidadLote();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
@@ -517,7 +528,7 @@ namespace LOSA
             //frmTarimaManual FRM = new frmTarimaManual(UsuarioLogeado);
             //FRM.Show();
             frmMP_Granel frm = new frmMP_Granel(UsuarioLogeado);
-            
+
 
             if (this.MdiParent != null)
             {
@@ -574,7 +585,7 @@ namespace LOSA
 
         private void btnRecuento_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnAlimentacion_Click(object sender, EventArgs e)
@@ -763,7 +774,7 @@ namespace LOSA
         private void btnMPReproceso_Click(object sender, EventArgs e)
         {
 
-           xfrmReprocesoMenu frm = new xfrmReprocesoMenu(UsuarioLogeado);
+            xfrmReprocesoMenu frm = new xfrmReprocesoMenu(UsuarioLogeado);
 
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
@@ -937,9 +948,9 @@ namespace LOSA
         private void btnReporteProduccionDespachos_Click(object sender, EventArgs e)
         {
             frmrptPlansemanal frm = new frmrptPlansemanal();
-            if(this.MdiParent != null)
-                if(!frm.IsMdiChild)
-                frm.MdiParent = this.MdiParent;
+            if (this.MdiParent != null)
+                if (!frm.IsMdiChild)
+                    frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
@@ -966,7 +977,7 @@ namespace LOSA
 
         private void simpleButton27_Click(object sender, EventArgs e)
         {
-            frmGestionUbicaciones frm = new frmGestionUbicaciones(this.UsuarioLogeado,1);
+            frmGestionUbicaciones frm = new frmGestionUbicaciones(this.UsuarioLogeado, 1);
             if (this.MdiParent != null)
             {
                 frm.MdiParent = this.MdiParent;
@@ -1188,12 +1199,12 @@ namespace LOSA
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.Show();
-            
+
         }
 
         private void btnHistorialPT_Click(object sender, EventArgs e)
         {
-            frmHisotrialPTCodigo frm = new frmHisotrialPTCodigo();            
+            frmHisotrialPTCodigo frm = new frmHisotrialPTCodigo();
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.Show();
@@ -1248,7 +1259,7 @@ namespace LOSA
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
-       
+
 
         private void navBarItem10_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -1298,9 +1309,9 @@ namespace LOSA
                 PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
                 frm.MdiParent = this.MdiParent;
 
-                if(!frm.CerrarForm)
+                if (!frm.CerrarForm)
                     frm.Show();
-                else 
+                else
                     frm.Dispose();
             }
             catch (Exception ex)
@@ -1825,7 +1836,7 @@ namespace LOSA
 
         private void simpleButton37_Click(object sender, EventArgs e)
         {
-            xfrmAccesosTemporalesAdmin frm =  new xfrmAccesosTemporalesAdmin(UsuarioLogeado);
+            xfrmAccesosTemporalesAdmin frm = new xfrmAccesosTemporalesAdmin(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
@@ -1951,6 +1962,308 @@ namespace LOSA
             {
                 CajaDialogo.Error(ex.Message);
 
+            }
+        }
+
+        private void simpleButton38_Click(object sender, EventArgs e)
+        {
+            frmEmpleadosM FRM = new frmEmpleadosM();
+            FRM.MdiParent = this.MdiParent;
+            FRM.Show();
+        }
+
+        private void simpleButton39_Click(object sender, EventArgs e)
+        {
+            OC_Menu frmCom = new OC_Menu(UsuarioLogeado);
+            frmCom.MdiParent = this.MdiParent;
+            frmCom.WindowState = FormWindowState.Maximized;
+            frmCom.Show();
+        }
+
+        private void simpleButton40_Click(object sender, EventArgs e)
+        {
+
+            if (UsuarioLogeado.ValidarNivelPermisos(57))
+            {
+                frmGestionAccesosEncuesta frm = new frmGestionAccesosEncuesta();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            else
+            {
+                CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #57");
+            }
+        }
+
+        private void simpleButton41_Click(object sender, EventArgs e)
+        {
+            Frm_MantenimientoFace frm = new Frm_MantenimientoFace();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton42_Click(object sender, EventArgs e)
+        {
+            frmResumenHorasExtra frm = new frmResumenHorasExtra(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton43_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmResumenNominas frm = new frmResumenNominas();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void simpleButton44_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmResumenVacaciones frm = new frmResumenVacaciones();
+                    frm.MdiParent = this;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void simpleButton45_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmLiquidacionesOP frm = new frmLiquidacionesOP(UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void simpleButton46_Click(object sender, EventArgs e)
+        {
+            frmSaldosVacacionesRRHH frm = new frmSaldosVacacionesRRHH(this.UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton49_Click(object sender, EventArgs e)
+        {
+            FML_Compare_Cost_External_Local form = new FML_Compare_Cost_External_Local();
+            form.MdiParent = this.MdiParent;
+            form.Show();
+        }
+
+        private void simpleButton47_Click(object sender, EventArgs e)
+        {
+            FCT_Proyeccion_Ventas forecast = new FCT_Proyeccion_Ventas();
+            //forecast.MdiParent = this;
+            forecast.ActiveUserCode = ActiveUserCode;
+            forecast.ShowDialog();
+        }
+
+        private void simpleButton51_Click(object sender, EventArgs e)
+        {
+            FCT_Volumenes vol = new FCT_Volumenes();
+            //vol.MdiParent = this;
+            vol.ActiveUserCode = ActiveUserCode;
+            vol.ShowDialog();
+        }
+
+        private void simpleButton50_Click(object sender, EventArgs e)
+        {
+            FCT_MRP mrp = new FCT_MRP(this.UsuarioLogeado);
+            //mrp.MdiParent = this;
+            mrp.ActiveUserCode = ActiveUserCode;
+            mrp.ShowDialog();
+        }
+
+        private void simpleButton48_Click(object sender, EventArgs e)
+        {
+            FCT_Proyeccion_Sacos frm = new FCT_Proyeccion_Sacos();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton56_Click(object sender, EventArgs e)
+        {
+            FCT_Proyeccion_Etiquetas frm = new FCT_Proyeccion_Etiquetas();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton52_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    FCT_MRP_Complete frm = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void simpleButton53_Click(object sender, EventArgs e)
+        {
+            //AFC_ProyeccionVentas
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    AFC_ProyeccionVentas frm = new AFC_ProyeccionVentas(UsuarioLogeado);
+                    frm.MdiParent = this;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void simpleButton54_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmFCT_produccion frm = new frmFCT_produccion(this.UsuarioLogeado);
+                    frm.MdiParent = this;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(71))
+                {
+                    //frmMantoPhotosTV frm = new frmMantoPhotosTV(UsuarioLogeado);
+                    frmFCT_produccion frm = new frmFCT_produccion(this.UsuarioLogeado);
+                    frm.MdiParent = this;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #71");
+                }
+            }
+        }
+
+        private void simpleButton55_Click(object sender, EventArgs e)
+        {
+            //AFC_ConsumoReal
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    AFC_ConsumoReal frm = new AFC_ConsumoReal();
+                    frm.MdiParent = this;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(71))
+                {
+                    AFC_ConsumoReal frm = new AFC_ConsumoReal();
+                    frm.MdiParent = this;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #71");
+                }
             }
         }
     }
