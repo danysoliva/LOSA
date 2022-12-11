@@ -132,6 +132,26 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Devart\dotConnect\PostgreSQL\Devart.Data.PostgreSql.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Dashboard.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 18.2\Components\Bin\Framework\DevExpress.Dashboard.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v18.2.Web.Mvc5, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 18.2\Components\Bin\Framework\DevExpress.Dashboard.v18.2.Web.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v18.2.Web.WebForms, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 18.2\Components\Bin\Framework\DevExpress.Dashboard.v18.2.Web.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v18.2.Win, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 18.2\Components\Bin\Framework\DevExpress.Dashboard.v18.2.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v18.2.Wpf, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 18.2\Components\Bin\Framework\DevExpress.Dashboard.v18.2.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -1057,6 +1077,7 @@
     </Compile>
     <Compile Include="Clases\EmailTicketParams.cs" />
     <Compile Include="Clases\Email_IT_RequestParams.cs" />
+    <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\FMOP.cs" />
     <Compile Include="Clases\FTP_Class.cs" />
     <Compile Include="Clases\Funciones.cs" />
@@ -1067,6 +1088,7 @@
     <Compile Include="Clases\ItemBusqueda.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
     <Compile Include="Clases\Kardex.cs" />
+    <Compile Include="Clases\Liquidacion.cs" />
     <Compile Include="Clases\LoteAlmacenExternoD.cs" />
     <Compile Include="Clases\LoteExterno.cs" />
     <Compile Include="Clases\LoteMP.cs" />
@@ -1076,6 +1098,7 @@
     <Compile Include="Clases\MicroIngrediente.cs" />
     <Compile Include="Clases\NotificacionesGenerales.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
+    <Compile Include="Clases\OrdenesCombustible.cs" />
     <Compile Include="Clases\OrdenProduccionH.cs" />
     <Compile Include="Clases\PlantaPrvTrz.cs" />
     <Compile Include="Clases\Plan_Semanal.cs" />
@@ -1998,6 +2021,53 @@
     <Compile Include="MigracionACS\OIL\frm_report_oil_in_and_out.designer.cs">
       <DependentUpon>frm_report_oil_in_and_out.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\dsOrdenesCombustible.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsOrdenesCombustible.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_Menu.designer.cs">
+      <DependentUpon>OC_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_NewEditPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_NewEditPerfiles.designer.cs">
+      <DependentUpon>OC_NewEditPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_OrdenManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_OrdenManual.designer.cs">
+      <DependentUpon>OC_OrdenManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_Perfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_Perfiles.designer.cs">
+      <DependentUpon>OC_Perfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_PreVisualizacionesOrdenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_PreVisualizacionesOrdenes.designer.cs">
+      <DependentUpon>OC_PreVisualizacionesOrdenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_ReImprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\OC_ReImprimir.designer.cs">
+      <DependentUpon>OC_ReImprimir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\Rpts_OCombustible.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ordenes Combustible\Rpts_OCombustible.designer.cs">
+      <DependentUpon>Rpts_OCombustible.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\BannerTV\dsBanner.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2669,6 +2739,192 @@
     <Compile Include="MigracionACS\RPTS\PRD\RPT_PRD_Formula_Local.designer.cs">
       <DependentUpon>RPT_PRD_Formula_Local.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\RRHH\DSrrhh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSrrhh.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\dsRRHH_.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRRHH_.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\dsRRHH_B1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRRHH_B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\dsEncuesta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEncuesta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\frmGestionAccesosEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\frmGestionAccesosEncuesta.designer.cs">
+      <DependentUpon>frmGestionAccesosEncuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\frmNewAccesoEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\frmNewAccesoEncuesta.designer.cs">
+      <DependentUpon>frmNewAccesoEncuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\Model\Encuesta_Master_Header.cs" />
+    <Compile Include="MigracionACS\RRHH\Encuesta\rptCodigosEncuesta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\rptCodigosEncuesta.designer.cs">
+      <DependentUpon>rptCodigosEncuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\xfrmGenerarEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Encuesta\xfrmGenerarEncuesta.designer.cs">
+      <DependentUpon>xfrmGenerarEncuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\frmEmpleadosLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\frmEmpleadosLista.designer.cs">
+      <DependentUpon>frmEmpleadosLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\frmEmpleadosM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\frmEmpleadosM.designer.cs">
+      <DependentUpon>frmEmpleadosM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\frmSaldosVacacionesRRHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\frmSaldosVacacionesRRHH.designer.cs">
+      <DependentUpon>frmSaldosVacacionesRRHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\HorasExtra\dsHorasExtra.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsHorasExtra.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\HorasExtra\frmDetalleSemanaEmpleadoRRHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\HorasExtra\frmDetalleSemanaEmpleadoRRHH.designer.cs">
+      <DependentUpon>frmDetalleSemanaEmpleadoRRHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\HorasExtra\frmResumenHorasExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\HorasExtra\frmResumenHorasExtra.designer.cs">
+      <DependentUpon>frmResumenHorasExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmConfDeducciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmConfDeducciones.Designer.cs">
+      <DependentUpon>frmConfDeducciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmConfDeduccionesOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmConfDeduccionesOP.Designer.cs">
+      <DependentUpon>frmConfDeduccionesOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmConfPorcentajeLiqui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmConfPorcentajeLiqui.Designer.cs">
+      <DependentUpon>frmConfPorcentajeLiqui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmConfPorcentajeLiquiOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmConfPorcentajeLiquiOP.Designer.cs">
+      <DependentUpon>frmConfPorcentajeLiquiOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmEmpleadosListaLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmEmpleadosListaLiquidacion.Designer.cs">
+      <DependentUpon>frmEmpleadosListaLiquidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmLiquidaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmLiquidaciones.Designer.cs">
+      <DependentUpon>frmLiquidaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmLiquidacionesOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\frmLiquidacionesOP.Designer.cs">
+      <DependentUpon>frmLiquidacionesOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\rptLiquidacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\rptLiquidacion.Designer.cs">
+      <DependentUpon>rptLiquidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\subReportCalculoMeses.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\subReportCalculoMeses.Designer.cs">
+      <DependentUpon>subReportCalculoMeses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\subReportVacaciones.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\subReportVacaciones.Designer.cs">
+      <DependentUpon>subReportVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\subrReportUltimosMesesxVaca.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Liquidaciones\subrReportUltimosMesesxVaca.Designer.cs">
+      <DependentUpon>subrReportUltimosMesesxVaca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\RelojFace\dsFaceReloj.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFaceReloj.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\RelojFace\frmDetalleMarcasFaceID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\RelojFace\frmDetalleMarcasFaceID.designer.cs">
+      <DependentUpon>frmDetalleMarcasFaceID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\RelojFace\Frm_MantenimientoFace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\RelojFace\Frm_MantenimientoFace.designer.cs">
+      <DependentUpon>Frm_MantenimientoFace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\RelojFace\frm_Operaciones_Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\RelojFace\frm_Operaciones_Marcas.designer.cs">
+      <DependentUpon>frm_Operaciones_Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Reportes\dsReportesRRHH1.Designer.cs">
+      <DependentUpon>dsReportesRRHH.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Reportes\frmResumenNominas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Reportes\frmResumenNominas.Designer.cs">
+      <DependentUpon>frmResumenNominas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.Designer.cs">
+      <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\SAP\frmLoginSAP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3131,6 +3387,17 @@
     <None Include="MigracionACS\OIL\dsGranelesLOSA.xss">
       <DependentUpon>dsGranelesLOSA.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\Ordenes Combustible\dsOrdenesCombustible.xsc">
+      <DependentUpon>dsOrdenesCombustible.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Ordenes Combustible\dsOrdenesCombustible.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsOrdenesCombustible.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Ordenes Combustible\dsOrdenesCombustible.xss">
+      <DependentUpon>dsOrdenesCombustible.xsd</DependentUpon>
+    </None>
     <None Include="MigracionACS\Produccion\BannerTV\dsBanner.xsc">
       <DependentUpon>dsBanner.xsd</DependentUpon>
     </None>
@@ -3306,6 +3573,83 @@
     </None>
     <None Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura.xss">
       <DependentUpon>dsTemperatura.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\DSrrhh.xsc">
+      <DependentUpon>DSrrhh.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\DSrrhh.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSrrhh.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\RRHH\DSrrhh.xss">
+      <DependentUpon>DSrrhh.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\dsRRHH_.xsc">
+      <DependentUpon>dsRRHH_.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\dsRRHH_.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRRHH_.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\RRHH\dsRRHH_.xss">
+      <DependentUpon>dsRRHH_.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\dsRRHH_B.xsc">
+      <DependentUpon>dsRRHH_B.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\dsRRHH_B.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRRHH_B1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\RRHH\dsRRHH_B.xss">
+      <DependentUpon>dsRRHH_B.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Encuesta\dsEncuesta.xsc">
+      <DependentUpon>dsEncuesta.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Encuesta\dsEncuesta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEncuesta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\RRHH\Encuesta\dsEncuesta.xss">
+      <DependentUpon>dsEncuesta.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\HorasExtra\dsHorasExtra.xsc">
+      <DependentUpon>dsHorasExtra.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\HorasExtra\dsHorasExtra.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHorasExtra.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\RRHH\HorasExtra\dsHorasExtra.xss">
+      <DependentUpon>dsHorasExtra.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\RelojFace\dsFaceReloj.xsc">
+      <DependentUpon>dsFaceReloj.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\RelojFace\dsFaceReloj.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFaceReloj.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\RRHH\RelojFace\dsFaceReloj.xss">
+      <DependentUpon>dsFaceReloj.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Reportes\dsReportesRRHH.xsc">
+      <DependentUpon>dsReportesRRHH.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Reportes\dsReportesRRHH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesRRHH1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\RRHH\Reportes\dsReportesRRHH.xss">
+      <DependentUpon>dsReportesRRHH.xsd</DependentUpon>
     </None>
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
@@ -5267,6 +5611,27 @@
     <EmbeddedResource Include="MigracionACS\OIL\frm_report_oil_in_and_out.resx">
       <DependentUpon>frm_report_oil_in_and_out.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ordenes Combustible\OC_Menu.resx">
+      <DependentUpon>OC_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ordenes Combustible\OC_NewEditPerfiles.resx">
+      <DependentUpon>OC_NewEditPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ordenes Combustible\OC_OrdenManual.resx">
+      <DependentUpon>OC_OrdenManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ordenes Combustible\OC_Perfiles.resx">
+      <DependentUpon>OC_Perfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ordenes Combustible\OC_PreVisualizacionesOrdenes.resx">
+      <DependentUpon>OC_PreVisualizacionesOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ordenes Combustible\OC_ReImprimir.resx">
+      <DependentUpon>OC_ReImprimir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ordenes Combustible\Rpts_OCombustible.resx">
+      <DependentUpon>Rpts_OCombustible.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\BannerTV\frmAdjuntar.resx">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
     </EmbeddedResource>
@@ -5566,6 +5931,81 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_PRD_Formula_Local.resx">
       <DependentUpon>RPT_PRD_Formula_Local.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Encuesta\frmGestionAccesosEncuesta.resx">
+      <DependentUpon>frmGestionAccesosEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Encuesta\frmNewAccesoEncuesta.resx">
+      <DependentUpon>frmNewAccesoEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Encuesta\rptCodigosEncuesta.resx">
+      <DependentUpon>rptCodigosEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Encuesta\xfrmGenerarEncuesta.resx">
+      <DependentUpon>xfrmGenerarEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\frmEmpleadosLista.resx">
+      <DependentUpon>frmEmpleadosLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\frmEmpleadosM.resx">
+      <DependentUpon>frmEmpleadosM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\frmSaldosVacacionesRRHH.resx">
+      <DependentUpon>frmSaldosVacacionesRRHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\HorasExtra\frmDetalleSemanaEmpleadoRRHH.resx">
+      <DependentUpon>frmDetalleSemanaEmpleadoRRHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\HorasExtra\frmResumenHorasExtra.resx">
+      <DependentUpon>frmResumenHorasExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\frmConfDeducciones.resx">
+      <DependentUpon>frmConfDeducciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\frmConfDeduccionesOP.resx">
+      <DependentUpon>frmConfDeduccionesOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\frmConfPorcentajeLiqui.resx">
+      <DependentUpon>frmConfPorcentajeLiqui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\frmConfPorcentajeLiquiOP.resx">
+      <DependentUpon>frmConfPorcentajeLiquiOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\frmEmpleadosListaLiquidacion.resx">
+      <DependentUpon>frmEmpleadosListaLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\frmLiquidaciones.resx">
+      <DependentUpon>frmLiquidaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\frmLiquidacionesOP.resx">
+      <DependentUpon>frmLiquidacionesOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\rptLiquidacion.resx">
+      <DependentUpon>rptLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\subReportCalculoMeses.resx">
+      <DependentUpon>subReportCalculoMeses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\subReportVacaciones.resx">
+      <DependentUpon>subReportVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Liquidaciones\subrReportUltimosMesesxVaca.resx">
+      <DependentUpon>subrReportUltimosMesesxVaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\RelojFace\frmDetalleMarcasFaceID.resx">
+      <DependentUpon>frmDetalleMarcasFaceID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\RelojFace\Frm_MantenimientoFace.resx">
+      <DependentUpon>Frm_MantenimientoFace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\RelojFace\frm_Operaciones_Marcas.resx">
+      <DependentUpon>frm_Operaciones_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmResumenNominas.resx">
+      <DependentUpon>frmResumenNominas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.resx">
+      <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAP\frmLoginSAP.resx">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>
@@ -6539,6 +6979,9 @@
     <None Include="Resources\2264828.png" />
     <None Include="Resources\Accept-icon128px.png" />
     <None Include="Resources\Accept_24x24.png" />
+    <None Include="Resources\ACS Icon_32.png" />
+    <None Include="Resources\ACS Icon_48.png" />
+    <None Include="Resources\ACS Icon_64.png" />
     <Content Include="Resources\admin.png" />
     <None Include="Resources\backspace.png" />
     <None Include="Resources\batch-processing_32X32.png" />
@@ -6591,6 +7034,8 @@
     <None Include="Resources\floppy-disk32px1.png" />
     <None Include="Resources\exit_24x24.png" />
     <None Include="Resources\it_services_16px.png" />
+    <None Include="Resources\image-not-available.png" />
+    <None Include="Resources\Excel-2-icon32px1.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
@@ -6607,6 +7052,9 @@
     <None Include="Resources\orders_production_24px.png" />
     <None Include="Resources\orders_production_32px.png" />
     <None Include="Resources\modulo bin.png" />
+    <None Include="Resources\new_24x24.png" />
+    <None Include="Resources\new_32x32.png" />
+    <None Include="Resources\new_48x48.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
@@ -6647,6 +7095,7 @@
     <None Include="Resources\weighing-machine_32X32.png" />
     <None Include="Resources\web_apply_32px.png" />
     <None Include="Resources\weighing-machine_32X321.png" />
+    <None Include="Resources\usergroup_32x32.png" />
     <Content Include="Resources\weighing_machine24px.png" />
     <Content Include="Resources\wheat.png" />
     <Content Include="Resources\wrench.png" />
