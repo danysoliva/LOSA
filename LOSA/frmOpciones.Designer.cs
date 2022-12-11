@@ -183,6 +183,7 @@
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton38 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -200,6 +201,7 @@
             this.tabProduccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.txtProduccion.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -2430,6 +2432,7 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.simpleButton38);
             this.xtraTabPage1.ImageOptions.Image = global::LOSA.Properties.Resources.rrhh_24X24;
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.PageVisible = false;
@@ -2450,6 +2453,21 @@
             this.labelControl3.Size = new System.Drawing.Size(578, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
+            // 
+            // simpleButton38
+            // 
+            this.simpleButton38.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton38.Appearance.Options.UseFont = true;
+            this.simpleButton38.Appearance.Options.UseTextOptions = true;
+            this.simpleButton38.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton38.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton38.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton38.ImageOptions.Image")));
+            this.simpleButton38.Location = new System.Drawing.Point(28, 30);
+            this.simpleButton38.Name = "simpleButton38";
+            this.simpleButton38.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton38.TabIndex = 10;
+            this.simpleButton38.Text = "Alimentación Manual";
+            this.simpleButton38.Visible = false;
             // 
             // frmOpciones
             // 
@@ -2481,6 +2499,7 @@
             this.tabProduccion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.txtProduccion.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2640,5 +2659,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem17;
         private DevExpress.XtraNavBar.NavBarItem navBarItem19;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton38;
     }
 }
