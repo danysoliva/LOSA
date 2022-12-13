@@ -24,7 +24,7 @@ using LOSA.TransaccionesMP;
 
 namespace LOSA.Calidad
 {
-    public partial class rdEstadoTransporte : DevExpress.XtraEditors.XtraForm
+    public partial class frmInspeccionCalidadPorIngresoLoteMP : DevExpress.XtraEditors.XtraForm
     {
         public int Id_ingreso;
         UserLogin UsuarioLogeado;
@@ -48,7 +48,7 @@ namespace LOSA.Calidad
 
 
         DataOperations dp = new DataOperations();
-        public rdEstadoTransporte(int id_ingreso_lote,
+        public frmInspeccionCalidadPorIngresoLoteMP(int id_ingreso_lote,
                                   UserLogin Puser)
         {
             InitializeComponent();
@@ -89,7 +89,7 @@ namespace LOSA.Calidad
             }
         }
 
-        public rdEstadoTransporte(int pNumeroIngreso, int pIdMP,string pLote, UserLogin Puser)
+        public frmInspeccionCalidadPorIngresoLoteMP(int pNumeroIngreso, int pIdMP,string pLote, UserLogin Puser)
         {
             InitializeComponent();
             UsuarioLogeado = Puser;
@@ -131,7 +131,7 @@ namespace LOSA.Calidad
             }
         }
 
-        public rdEstadoTransporte(string pLoteMP,
+        public frmInspeccionCalidadPorIngresoLoteMP(string pLoteMP,
                                   UserLogin Puser)
         {
             InitializeComponent();
@@ -171,7 +171,7 @@ namespace LOSA.Calidad
         }
 
 
-        public rdEstadoTransporte(int id_ingreso_lote, UserLogin Puser,int tipo_transaccion)
+        public frmInspeccionCalidadPorIngresoLoteMP(int id_ingreso_lote, UserLogin Puser,int tipo_transaccion)
         {
             InitializeComponent();
             Id_ingreso = id_ingreso_lote;
@@ -894,14 +894,18 @@ namespace LOSA.Calidad
         }
         public void load_data()
         {
-            string query = @"sp_get_informacion_get_to_show_calidad_v2";
+            string query = @"[sp_get_informacion_get_to_show_calidad_v3]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
+                //cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
+                cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
+                cmd.Parameters.AddWithValue("@idmp", IdMP);
+                cmd.Parameters.AddWithValue("@lote", Lote);
+
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -1778,7 +1782,7 @@ namespace LOSA.Calidad
             }
         }
 
-        private void rdEstadoTransporte_Load(object sender, EventArgs e)
+        private void frmInspeccionCalidadPorIngresoLoteMP_Load(object sender, EventArgs e)
         {
             LoteMP LoteMP_ = new LoteMP();
             if (LoteMP_.RecuperarRegistro(txtloteMP.Text))
