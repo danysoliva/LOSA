@@ -301,7 +301,7 @@ namespace LOSA.MicroIngredientes
                                 cmd4.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm.id_tarima_micros; //??
                                 cmd4.Parameters.Add("@cant_batch", SqlDbType.Int).Value = pesaje.CantBatch;
                                 cmd4.Parameters.Add("@cant_sacos", SqlDbType.Int).Value = DBNull.Value;
-                                cmd4.Parameters.Add("@ami_id", SqlDbType.Int).Value = DBNull.Value;
+                                cmd4.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesaje.AMI_ID;
                                 cmd4.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;
 
                                 int id_orden_pesaje_manual_transaccion2= (int)cmd4.ExecuteScalar();
