@@ -73,13 +73,8 @@ namespace LOSA.MicroIngredientes
                     dsMicros.Pesaje_Bascula.Clear();
                     SqlDataAdapter da = new SqlDataAdapter("sp_get_OP_Orden_pesaje_real", cnx);
                     da.Fill(dsMicros.Pesaje_Bascula);
-
-
                     cnx.Close();
-
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -158,7 +153,6 @@ namespace LOSA.MicroIngredientes
             lblMensaje.Visible = false;
         }
 
-
         SqlTransaction transaction;
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -171,15 +165,12 @@ namespace LOSA.MicroIngredientes
                 //    CajaDialogo.Error("DEBE SELECCIONAR UNA BASCULA");
                 //    return;
                 //}
-
                 //pesajeIndividual.BasculaID = BasculaSelected;
 
                 List<PesajeIndividualCompletados> pesajesCompletados = new List<PesajeIndividualCompletados>();
                 DataOperations dp = new DataOperations();
 
                 ///******Por Validar**********
-               
-
 
                 switch (tipoPesaje)
                 {
@@ -357,13 +348,6 @@ namespace LOSA.MicroIngredientes
                 //transaction.Rollback();
                 CajaDialogo.Error(ex.Message);                                      
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-           
-
-            //lblValorbascula.Text = "Valor en Báscula: " + peso_bascula + " Kg";
         }
 
         private void xfrmPesajeIndividual_Load(object sender, EventArgs e)

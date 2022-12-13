@@ -480,7 +480,7 @@ namespace LOSA.MicroIngredientes
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_orden_encabezado", row.id_orden_encabezado);
                 cmd.Parameters.AddWithValue("@AMI", row.AMI_ID);
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
                 cn.Close();
 
                 //LoadData();
@@ -742,6 +742,11 @@ namespace LOSA.MicroIngredientes
 
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void repostPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
         }
     }
 }

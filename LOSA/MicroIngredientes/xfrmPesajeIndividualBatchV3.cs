@@ -357,6 +357,7 @@ namespace LOSA.MicroIngredientes
                                     else
                                     {
                                         //btnGuardar.Enabled = false;
+                                        btnGuardar.Enabled = true;
                                         lblError.Visible = true;
                                         lblSuperior.Visible = true;
                                         lblInferior.Visible = true;
@@ -458,6 +459,7 @@ namespace LOSA.MicroIngredientes
                     CajaDialogo.Error(ex.Message);
                 }
             }
+            //btnBascula2.Enabled = true;
         }
 
 
@@ -493,6 +495,7 @@ namespace LOSA.MicroIngredientes
                         lblBascula1.Text = item.descripcion;
 
                         pesoBascula1 = pesoBascula1 + item.peso;
+                        
                         lblValorBascula1.Text = "Valor en Báscula: " + item.peso.ToString("N2") + " Kg";
 
                         //Random rand = new Random();
@@ -540,6 +543,9 @@ namespace LOSA.MicroIngredientes
                     }
                 }
 
+                //decimal peso_test = 0.95M;
+                //lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";MI0000000095
+
             }
 
 
@@ -553,10 +559,10 @@ namespace LOSA.MicroIngredientes
             lblInferior.Text = "Límite Máximo: " + limiteInferior.ToString("N2") + " Kg";
             lblSuperior.Text = "Límite Mínimo: " + limiteSuperior.ToString("N2") + " Kg";
 
-
+            //pesoBasculaAcumulado1 = 0.95M;
             switch (BasculaId)
             {
-
+                
                 case (int)Basculas.Bascula1:
 
                     if (pesoBasculaAcumulado1 >= limiteInferior && pesoBasculaAcumulado1 <= limiteSuperior)
