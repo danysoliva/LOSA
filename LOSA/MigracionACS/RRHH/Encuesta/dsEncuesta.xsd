@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEncuesta" targetNamespace="http://tempuri.org/dsEncuesta.xsd" xmlns:mstns="http://tempuri.org/dsEncuesta.xsd" xmlns="http://tempuri.org/dsEncuesta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEncuesta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsEncuesta" msprop:Generator_UserDSName="dsEncuesta">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="codigos" msprop:Generator_TableClassName="codigosDataTable" msprop:Generator_TableVarName="tablecodigos" msprop:Generator_TablePropName="codigos" msprop:Generator_RowDeletingName="codigosRowDeleting" msprop:Generator_RowChangingName="codigosRowChanging" msprop:Generator_RowEvHandlerName="codigosRowChangeEventHandler" msprop:Generator_RowDeletedName="codigosRowDeleted" msprop:Generator_UserTableName="codigos" msprop:Generator_RowChangedName="codigosRowChanged" msprop:Generator_RowEvArgName="codigosRowChangeEvent" msprop:Generator_RowClassName="codigosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="asignado" msprop:Generator_ColumnVarNameInTable="columnasignado" msprop:Generator_ColumnPropNameInRow="asignado" msprop:Generator_ColumnPropNameInTable="asignadoColumn" msprop:Generator_UserColumnName="asignado" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="finish" msprop:Generator_ColumnVarNameInTable="columnfinish" msprop:Generator_ColumnPropNameInRow="finish" msprop:Generator_ColumnPropNameInTable="finishColumn" msprop:Generator_UserColumnName="finish" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:int" minOccurs="0" />
+              <xs:element name="seleccionado" msprop:Generator_ColumnVarNameInTable="columnseleccionado" msprop:Generator_ColumnPropNameInRow="seleccionado" msprop:Generator_ColumnPropNameInTable="seleccionadoColumn" msprop:Generator_UserColumnName="seleccionado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="delete" msprop:Generator_ColumnVarNameInTable="columndelete" msprop:Generator_ColumnPropNameInRow="delete" msprop:Generator_ColumnPropNameInTable="deleteColumn" msprop:Generator_UserColumnName="delete" type="xs:string" minOccurs="0" />
+              <xs:element name="encuesta" msprop:Generator_ColumnVarNameInTable="columnencuesta" msprop:Generator_ColumnPropNameInRow="encuesta" msprop:Generator_ColumnPropNameInTable="encuestaColumn" msprop:Generator_UserColumnName="encuesta" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="table" msprop:Generator_TableClassName="tableDataTable" msprop:Generator_TableVarName="tabletable" msprop:Generator_TablePropName="table" msprop:Generator_RowDeletingName="tableRowDeleting" msprop:Generator_RowChangingName="tableRowChanging" msprop:Generator_RowEvHandlerName="tableRowChangeEventHandler" msprop:Generator_RowDeletedName="tableRowDeleted" msprop:Generator_UserTableName="table" msprop:Generator_RowChangedName="tableRowChanged" msprop:Generator_RowEvArgName="tableRowChangeEvent" msprop:Generator_RowClassName="tableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
