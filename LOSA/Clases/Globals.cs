@@ -86,6 +86,13 @@ namespace ACS.Classes
         public static string APMS_DB_Pass = "AquaF33dHN2017";
         public static string APMS_ActiveDB = "APMS";
 
+        //AMS
+        public static string AMS_ServerAddress = $"AQFSVR007\\AQFSVR007";
+        public static string AMS_ServerName = $"AQFSVR007\\AQFSVR007";
+        public static string AMS_ActiveDB = "AMS";
+        public static string AMS_DB_User = "sa";
+        public static string AMS_DB_Pass = "AquaF33dHN2014";
+
         //public static string APMS_Server = @"AQFSVR007\AQFSVR007";
         //public static string APMS_DB_User = "sa";
         //public static string APMS_DB_Pass = "AquaF33dHN2014";
@@ -112,6 +119,13 @@ namespace ACS.Classes
         public static string odoo4_ActiveDB = "odoo_sap";
         public static string odoo4_DB_User = "aquafeed";
         public static string odoo4_DB_Pass = "Aqua3820";
+
+        //ODOO5
+        public static string odoo5_ServerAddress = "10.50.11.136";
+        public static string odoo5_ServerName = "Servidor Odoo Virtual";
+        public static string odoo5_ActiveDB = "dbaquafeed";
+        public static string odoo5_DB_User = "vegeta";
+        public static string odoo5_DB_Pass = "innova2020";
 
 
         ////Promix -- TEST ---

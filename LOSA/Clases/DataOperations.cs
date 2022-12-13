@@ -90,6 +90,17 @@ namespace ACS.Classes
                                                  User Id=" + Globals.odoo4_DB_User + @";
                                                  Password=" + Globals.odoo4_DB_Pass + @";";
 
+        internal string ConnectionStringODOO5 = @"Server=" + Globals.odoo5_ServerAddress + @";
+                                                 Port=5432;
+                                                 Database=" + Globals.odoo5_ActiveDB + @";
+                                                 User Id=" + Globals.odoo5_DB_User + @";
+                                                 Password=" + Globals.odoo5_DB_Pass + @";";
+
+        internal string ConnectionStringAMS = @"Server=" + Globals.AMS_ServerName + @";
+                                                       Database=" + Globals.AMS_ActiveDB + @";
+                                                       User Id=" + Globals.AMS_DB_User + @";
+                                                       Password=" + Globals.AMS_DB_Pass + ";";
+
         internal string FTP_Tickets_LOSA = @"ftp://10.50.11.32/ALOSY/";
         internal string FTP_Tickets_ACS = @"ftp://10.50.11.32/Tickets/";
         internal string User_FTP_Server = "roger.euceda";
