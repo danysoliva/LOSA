@@ -19,7 +19,9 @@ namespace LOSA
             Administradores = 3,
             Produccion=4,
             ProduccionV2 = 5,
-            Contabilidad = 6
+            Contabilidad = 6,
+            RRHH=8,
+            Forecasting=9
         }
 
         public GrupoUsuario GrupoUsuarioActivo;

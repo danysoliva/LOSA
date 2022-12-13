@@ -213,6 +213,14 @@ namespace LOSA
                             break;
                     }
                     break;
+                case GrupoUser.GrupoUsuario.RRHH:
+                    //tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[6].PageVisible = true;
+                    break;
+                case GrupoUser.GrupoUsuario.Forecasting:
+                    //tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                    tabOpciones.TabPages[7].PageVisible = true;
+                    break;
                 default:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;

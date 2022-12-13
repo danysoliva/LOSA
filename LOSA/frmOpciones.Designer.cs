@@ -2481,7 +2481,6 @@
             this.simpleButton46.Size = new System.Drawing.Size(199, 71);
             this.simpleButton46.TabIndex = 18;
             this.simpleButton46.Text = "Saldos de Vacaciones";
-            this.simpleButton46.Visible = false;
             this.simpleButton46.Click += new System.EventHandler(this.simpleButton46_Click);
             // 
             // simpleButton45
@@ -2497,7 +2496,6 @@
             this.simpleButton45.Size = new System.Drawing.Size(199, 71);
             this.simpleButton45.TabIndex = 17;
             this.simpleButton45.Text = "Liquidaciones";
-            this.simpleButton45.Visible = false;
             this.simpleButton45.Click += new System.EventHandler(this.simpleButton45_Click);
             // 
             // simpleButton44
@@ -2513,7 +2511,6 @@
             this.simpleButton44.Size = new System.Drawing.Size(199, 71);
             this.simpleButton44.TabIndex = 16;
             this.simpleButton44.Text = "Resumen Inasistencias";
-            this.simpleButton44.Visible = false;
             this.simpleButton44.Click += new System.EventHandler(this.simpleButton44_Click);
             // 
             // simpleButton43
@@ -2529,7 +2526,6 @@
             this.simpleButton43.Size = new System.Drawing.Size(199, 71);
             this.simpleButton43.TabIndex = 15;
             this.simpleButton43.Text = "Resumen Nómina";
-            this.simpleButton43.Visible = false;
             this.simpleButton43.Click += new System.EventHandler(this.simpleButton43_Click);
             // 
             // simpleButton42
@@ -2545,7 +2541,6 @@
             this.simpleButton42.Size = new System.Drawing.Size(199, 71);
             this.simpleButton42.TabIndex = 14;
             this.simpleButton42.Text = "Resumen Horas Extras";
-            this.simpleButton42.Visible = false;
             this.simpleButton42.Click += new System.EventHandler(this.simpleButton42_Click);
             // 
             // simpleButton41
@@ -2561,7 +2556,6 @@
             this.simpleButton41.Size = new System.Drawing.Size(199, 71);
             this.simpleButton41.TabIndex = 13;
             this.simpleButton41.Text = "Resumen Horas Trabajadas";
-            this.simpleButton41.Visible = false;
             this.simpleButton41.Click += new System.EventHandler(this.simpleButton41_Click);
             // 
             // simpleButton40
@@ -2577,7 +2571,6 @@
             this.simpleButton40.Size = new System.Drawing.Size(199, 71);
             this.simpleButton40.TabIndex = 12;
             this.simpleButton40.Text = "Encuesta Clima Laboral";
-            this.simpleButton40.Visible = false;
             this.simpleButton40.Click += new System.EventHandler(this.simpleButton40_Click);
             // 
             // simpleButton39
@@ -2593,7 +2586,6 @@
             this.simpleButton39.Size = new System.Drawing.Size(199, 71);
             this.simpleButton39.TabIndex = 11;
             this.simpleButton39.Text = "Ordenes de Combustible";
-            this.simpleButton39.Visible = false;
             this.simpleButton39.Click += new System.EventHandler(this.simpleButton39_Click);
             // 
             // simpleButton38
@@ -2609,7 +2601,6 @@
             this.simpleButton38.Size = new System.Drawing.Size(199, 71);
             this.simpleButton38.TabIndex = 10;
             this.simpleButton38.Text = "Mantenimiento Empleado";
-            this.simpleButton38.Visible = false;
             this.simpleButton38.Click += new System.EventHandler(this.simpleButton38_Click);
             // 
             // xtraTabPage2
@@ -2626,6 +2617,7 @@
             this.xtraTabPage2.Controls.Add(this.simpleButton47);
             this.xtraTabPage2.ImageOptions.Image = global::LOSA.Properties.Resources.graph_32X32;
             this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.PageVisible = false;
             this.xtraTabPage2.Size = new System.Drawing.Size(835, 518);
             this.xtraTabPage2.Text = "Forecasting";
             // 
@@ -2642,7 +2634,6 @@
             this.simpleButton52.Size = new System.Drawing.Size(223, 71);
             this.simpleButton52.TabIndex = 20;
             this.simpleButton52.Text = "MRP NEW";
-            this.simpleButton52.Visible = false;
             this.simpleButton52.Click += new System.EventHandler(this.simpleButton52_Click);
             // 
             // simpleButton53
@@ -2658,7 +2649,6 @@
             this.simpleButton53.Size = new System.Drawing.Size(223, 71);
             this.simpleButton53.TabIndex = 19;
             this.simpleButton53.Text = "Proyección Venta Aqua Forecast";
-            this.simpleButton53.Visible = false;
             this.simpleButton53.Click += new System.EventHandler(this.simpleButton53_Click);
             // 
             // simpleButton54
@@ -2674,7 +2664,6 @@
             this.simpleButton54.Size = new System.Drawing.Size(223, 71);
             this.simpleButton54.TabIndex = 18;
             this.simpleButton54.Text = "Forecast Producción";
-            this.simpleButton54.Visible = false;
             this.simpleButton54.Click += new System.EventHandler(this.simpleButton54_Click);
             // 
             // simpleButton55
@@ -2690,7 +2679,6 @@
             this.simpleButton55.Size = new System.Drawing.Size(223, 71);
             this.simpleButton55.TabIndex = 17;
             this.simpleButton55.Text = "Consumo Consola Por Mes";
-            this.simpleButton55.Visible = false;
             this.simpleButton55.Click += new System.EventHandler(this.simpleButton55_Click);
             // 
             // simpleButton56
@@ -2706,7 +2694,6 @@
             this.simpleButton56.Size = new System.Drawing.Size(223, 71);
             this.simpleButton56.TabIndex = 16;
             this.simpleButton56.Text = "Proyección Etiquetas";
-            this.simpleButton56.Visible = false;
             this.simpleButton56.Click += new System.EventHandler(this.simpleButton56_Click);
             // 
             // simpleButton51
@@ -2722,7 +2709,6 @@
             this.simpleButton51.Size = new System.Drawing.Size(223, 71);
             this.simpleButton51.TabIndex = 15;
             this.simpleButton51.Text = "Consumo Teorico";
-            this.simpleButton51.Visible = false;
             this.simpleButton51.Click += new System.EventHandler(this.simpleButton51_Click);
             // 
             // simpleButton50
@@ -2738,7 +2724,6 @@
             this.simpleButton50.Size = new System.Drawing.Size(223, 71);
             this.simpleButton50.TabIndex = 14;
             this.simpleButton50.Text = "Material Requirements Planning";
-            this.simpleButton50.Visible = false;
             this.simpleButton50.Click += new System.EventHandler(this.simpleButton50_Click);
             // 
             // simpleButton49
@@ -2754,7 +2739,6 @@
             this.simpleButton49.Size = new System.Drawing.Size(223, 71);
             this.simpleButton49.TabIndex = 13;
             this.simpleButton49.Text = "Fórmula Compare Board";
-            this.simpleButton49.Visible = false;
             this.simpleButton49.Click += new System.EventHandler(this.simpleButton49_Click);
             // 
             // simpleButton48
@@ -2770,7 +2754,6 @@
             this.simpleButton48.Size = new System.Drawing.Size(223, 71);
             this.simpleButton48.TabIndex = 12;
             this.simpleButton48.Text = "Proyección Sacos";
-            this.simpleButton48.Visible = false;
             this.simpleButton48.Click += new System.EventHandler(this.simpleButton48_Click);
             // 
             // simpleButton47
@@ -2786,7 +2769,6 @@
             this.simpleButton47.Size = new System.Drawing.Size(223, 71);
             this.simpleButton47.TabIndex = 11;
             this.simpleButton47.Text = "Proyecciones de Ventas";
-            this.simpleButton47.Visible = false;
             this.simpleButton47.Click += new System.EventHandler(this.simpleButton47_Click);
             // 
             // labelControl3
