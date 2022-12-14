@@ -214,6 +214,8 @@ namespace LOSA.MicroIngredientes
                                     cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;//??
                                     cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = DBNull.Value;//??
                                     cmd.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesaje.AMI_ID;
+                                    cmd.Parameters.Add("@fecha_vence", SqlDbType.Date).Value = tmmicro.FechaVencimiento;
+                                    cmd.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = tmmicro.NumeroTransaccion;
 
                                     id_orden_pesaje_manual_transaccion = (int)cmd.ExecuteScalar();
 
@@ -303,6 +305,8 @@ namespace LOSA.MicroIngredientes
                                 cmd4.Parameters.Add("@cant_sacos", SqlDbType.Int).Value = DBNull.Value;
                                 cmd4.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesaje.AMI_ID;
                                 cmd4.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;
+                                cmd4.Parameters.Add("@fecha_vence", SqlDbType.Date).Value = tmmicro.FechaVencimiento;
+                                cmd4.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = tmmicro.NumeroTransaccion;
 
                                 int id_orden_pesaje_manual_transaccion2= (int)cmd4.ExecuteScalar();
 

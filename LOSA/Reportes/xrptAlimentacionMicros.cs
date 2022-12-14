@@ -12,16 +12,35 @@ namespace LOSA.Reportes
     {
         int Pid;
         int Pencabezado;
+        int id_mp;
         DataOperations dp = new DataOperations();
         public xrptAlimentacionMicros(int idm, int id_encabezado)
         {
+            //PESAJE NUCLEO
             InitializeComponent();
             DataOperations dp = new DataOperations();
             Pid = idm;
             Pencabezado = id_encabezado;
+            id_mp = 0;
             Load_detalle();
             load_Encabezado();
             load_cantidades();
+        }
+        public xrptAlimentacionMicros(int pid_encabezado, int pid_rm, int pbatch_completados)
+        {
+            //PESAJE INDIVIDUAL
+            InitializeComponent();
+            DataOperations dp = new DataOperations();
+            Pid = 0;
+            id_mp = pid_rm;
+            Pencabezado = pid_encabezado;
+            xrLabel8.Visible = false;
+            txtnumero.Visible = false;
+            xrLabel9.Text = "Pesaje Individual de Micro Ingrediente";
+            batchpesados.Text = Convert.ToString(pbatch_completados);
+            Load_detalle();
+            load_Encabezado();
+
         }
 
         public void load_cantidades() 
@@ -35,6 +54,7 @@ namespace LOSA.Reportes
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ami_id", Pid);
                 cmd.Parameters.AddWithValue("@id_orden", Pencabezado);
+                cmd.Parameters.AddWithValue("@id_mp", id_mp);
                 dsReportes2.detalle_rpt_5toNivel.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsReportes2.detalle_rpt_5toNivel);
@@ -48,15 +68,18 @@ namespace LOSA.Reportes
         }
         public void Load_detalle() 
         {
+            //int tipo_pesaje;
+           
             string query = @"sp_load_op_reporte_detalle_micro_ingrediente";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
             try
             {
                 cn.Open();
-                SqlCommand cmd = new SqlCommand(query,cn);
+                SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ami_id", Pid);
                 cmd.Parameters.AddWithValue("@id_orden", Pencabezado);
+                cmd.Parameters.AddWithValue("@id_mp", id_mp);
                 dsReportes2.detalle_rpt_micros.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsReportes2.detalle_rpt_micros);
@@ -64,10 +87,12 @@ namespace LOSA.Reportes
             }
             catch (Exception ex)
             {
-
+                //
                 CajaDialogo.Error(ex.Message);
             }
+           
         }
+       
 
         public void load_Encabezado()
         {
