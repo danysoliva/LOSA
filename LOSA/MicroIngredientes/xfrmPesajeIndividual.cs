@@ -205,15 +205,17 @@ namespace LOSA.MicroIngredientes
                                     cmd.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesaje.Total;
                                     cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = dp.Now();
                                     cmd.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = frm2.peso_bascula_finish;
-                                    cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;// IdMP;
+                                    cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;
                                     cmd.Parameters.Add("@bascula", SqlDbType.VarChar).Value = bascula[frm2.BasculaId-1];
                                     cmd.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value =  1;
-                                    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = tmmicro.LoteMP; //??
-                                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm2.id_tarima_micros; //??
+                                    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = tmmicro.LoteMP;
+                                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm2.id_tarima_micros; 
                                     cmd.Parameters.Add("@cant_batch", SqlDbType.Int).Value = pesaje.CantBatch;
-                                    cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;//??
-                                    cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = DBNull.Value;//??
+                                    cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;
+                                    cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = DBNull.Value;
                                     cmd.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesaje.AMI_ID;
+                                    cmd.Parameters.Add("@fecha_vence", SqlDbType.Date).Value = tmmicro.FechaVencimiento;
+                                    cmd.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = tmmicro.Id_ingreso;
 
                                     id_orden_pesaje_manual_transaccion = (int)cmd.ExecuteScalar();
 

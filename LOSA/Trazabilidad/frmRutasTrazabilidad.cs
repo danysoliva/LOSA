@@ -221,6 +221,7 @@ namespace LOSA.Trazabilidad
             btnBack.Visible = true;
 
             navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+            txtlote.Focus();
         }
 
 
@@ -737,9 +738,9 @@ namespace LOSA.Trazabilidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_despacho", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_detalle_despacho_v3]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@numid", despachoId);
+                cmd.Parameters.AddWithValue("@lote", LoteActual.LotePT_Num);
                 dsReportesTRZ.detalle_despachos.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsReportesTRZ.detalle_despachos);
@@ -898,6 +899,7 @@ namespace LOSA.Trazabilidad
                 load_header();
                 load_data();
                 Load_Despachos();
+                LoadDatosDetalleDespacho(0);
                 load_informacion_de_inventario();
                 load_tarimas_rechazadas();
                 load_MuestreoPT();
