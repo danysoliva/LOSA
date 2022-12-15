@@ -205,17 +205,17 @@ namespace LOSA.MicroIngredientes
                                     cmd.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesaje.Total;
                                     cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = dp.Now();
                                     cmd.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = frm2.peso_bascula_finish;
-                                    cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;
+                                    cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;// IdMP;
                                     cmd.Parameters.Add("@bascula", SqlDbType.VarChar).Value = bascula[frm2.BasculaId-1];
                                     cmd.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value =  1;
-                                    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = tmmicro.LoteMP;
-                                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm2.id_tarima_micros; 
+                                    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = tmmicro.LoteMP; //??
+                                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm2.id_tarima_micros; //??
                                     cmd.Parameters.Add("@cant_batch", SqlDbType.Int).Value = pesaje.CantBatch;
-                                    cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;
-                                    cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = DBNull.Value;
+                                    cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;//??
+                                    cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = DBNull.Value;//??
                                     cmd.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesaje.AMI_ID;
                                     cmd.Parameters.Add("@fecha_vence", SqlDbType.Date).Value = tmmicro.FechaVencimiento;
-                                    cmd.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = tmmicro.Id_ingreso;
+                                    cmd.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = tmmicro.NumeroTransaccion;
 
                                     id_orden_pesaje_manual_transaccion = (int)cmd.ExecuteScalar();
 
@@ -271,6 +271,8 @@ namespace LOSA.MicroIngredientes
                                 TarimaMicroingrediente tmmicro = new TarimaMicroingrediente();
                                 tmmicro.RecuperarRegistroTarimaMicros(frm.id_tarima_micros, " ");
 
+                                string barcode = null;
+
                                 DataOperations dp2 = new DataOperations();
                                 SqlConnection cnx3 = new SqlConnection(dp2.ConnectionStringAPMS);
                                 cnx3.Open();
@@ -287,8 +289,24 @@ namespace LOSA.MicroIngredientes
                                 cmd3.Parameters.Add("@id_code", SqlDbType.Int).Value = DBNull.Value;
 
                                 cmd3.ExecuteNonQuery();
+                                
+                                //Vamos a sacar el codigo de barra
+                                SqlCommand cmdBar = new SqlCommand("sp_get_contar_cant_batch_pesaje_individual", cnx3);
+                                cmdBar.CommandType = CommandType.StoredProcedure;
+                                cmdBar.Parameters.AddWithValue("@id_orden_encabezado", pesaje.id_orden_pesaje_header);
+                                cmdBar.Parameters.AddWithValue("@id_rm", pesaje.MateriaPrimaID);
+                                int contador = Convert.ToInt32(cmdBar.ExecuteScalar());
 
-                                SqlCommand cmd4 = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccionV2", cnx3);
+                                if (contador == 0)
+                                {
+                                    //Crear codigo de barra para pesaje individual 
+                                    SqlCommand cmdBar1 = new SqlCommand("sp_generar_codigo_from_tables_id_pesaje_individual", cnx3);
+                                    cmdBar1.CommandType = CommandType.StoredProcedure;
+                                    barcode = cmdBar1.ExecuteScalar().ToString();
+                                }
+
+
+                                SqlCommand cmd4 = new SqlCommand("[sp_insert_OP_Orden_pesaje_manual_transaccionV3]", cnx3);
                                 cmd4.CommandType = CommandType.StoredProcedure;
                                 //cmd3.Transaction = transaction;
 
@@ -305,6 +323,13 @@ namespace LOSA.MicroIngredientes
                                 cmd4.Parameters.Add("@cant_sacos", SqlDbType.Int).Value = DBNull.Value;
                                 cmd4.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesaje.AMI_ID;
                                 cmd4.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;
+                                cmd4.Parameters.Add("@fecha_vence", SqlDbType.Date).Value = tmmicro.FechaVencimiento;
+                                cmd4.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = tmmicro.NumeroTransaccion;
+                                cmd4.Parameters.AddWithValue("@contador", contador);
+                                if (barcode == null)
+                                    cmd4.Parameters.AddWithValue("@codigo_barra", " ");
+                                else
+                                    cmd4.Parameters.AddWithValue("@codigo_barra", barcode);
 
                                 int id_orden_pesaje_manual_transaccion2= (int)cmd4.ExecuteScalar();
 
@@ -330,6 +355,8 @@ namespace LOSA.MicroIngredientes
                                         cmd5.ExecuteNonQuery();
                                     }
                                 }
+
+                                
                                 //transaction.Commit();
                                 cnx3.Close();
                             }

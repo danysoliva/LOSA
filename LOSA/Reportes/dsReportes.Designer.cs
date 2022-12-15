@@ -7883,7 +7883,7 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columntolva;
             
-            private global::System.Data.DataColumn columnreal;
+            private global::System.Data.DataColumn columncant_batch_real;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -8016,9 +8016,9 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn realColumn {
+            public global::System.Data.DataColumn cant_batch_realColumn {
                 get {
-                    return this.columnreal;
+                    return this.columncant_batch_real;
                 }
             }
             
@@ -8059,7 +8059,7 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public detalle_rpt_microsRow Adddetalle_rpt_microsRow(int id, int AMI_ID, string lote, int id_tarima, decimal cant_sacos_seleccionados, decimal set_point, decimal cant_batch_seleccionados, string nombre_ingrediente, decimal cant_x_batch, System.DateTime fecha_vencimiento, int numero_transaccion, string tolva, decimal real) {
+            public detalle_rpt_microsRow Adddetalle_rpt_microsRow(int id, int AMI_ID, string lote, int id_tarima, decimal cant_sacos_seleccionados, decimal set_point, decimal cant_batch_seleccionados, string nombre_ingrediente, decimal cant_x_batch, System.DateTime fecha_vencimiento, int numero_transaccion, string tolva, decimal cant_batch_real) {
                 detalle_rpt_microsRow rowdetalle_rpt_microsRow = ((detalle_rpt_microsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -8074,7 +8074,7 @@ namespace LOSA.Reportes {
                         fecha_vencimiento,
                         numero_transaccion,
                         tolva,
-                        real};
+                        cant_batch_real};
                 rowdetalle_rpt_microsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_rpt_microsRow);
                 return rowdetalle_rpt_microsRow;
@@ -8109,7 +8109,7 @@ namespace LOSA.Reportes {
                 this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
                 this.columnnumero_transaccion = base.Columns["numero_transaccion"];
                 this.columntolva = base.Columns["tolva"];
-                this.columnreal = base.Columns["real"];
+                this.columncant_batch_real = base.Columns["cant_batch_real"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8139,8 +8139,8 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnnumero_transaccion);
                 this.columntolva = new global::System.Data.DataColumn("tolva", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntolva);
-                this.columnreal = new global::System.Data.DataColumn("real", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnreal);
+                this.columncant_batch_real = new global::System.Data.DataColumn("cant_batch_real", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncant_batch_real);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14373,17 +14373,18 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal real {
+            public decimal cant_batch_real {
                 get {
                     try {
-                        return ((decimal)(this[this.tabledetalle_rpt_micros.realColumn]));
+                        return ((decimal)(this[this.tabledetalle_rpt_micros.cant_batch_realColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'real\' de la tabla \'detalle_rpt_micros\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cant_batch_real\' de la tabla \'detalle_rpt_micros\' es DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tabledetalle_rpt_micros.realColumn] = value;
+                    this[this.tabledetalle_rpt_micros.cant_batch_realColumn] = value;
                 }
             }
             
@@ -14533,14 +14534,14 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsrealNull() {
-                return this.IsNull(this.tabledetalle_rpt_micros.realColumn);
+            public bool Iscant_batch_realNull() {
+                return this.IsNull(this.tabledetalle_rpt_micros.cant_batch_realColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetrealNull() {
-                this[this.tabledetalle_rpt_micros.realColumn] = global::System.Convert.DBNull;
+            public void Setcant_batch_realNull() {
+                this[this.tabledetalle_rpt_micros.cant_batch_realColumn] = global::System.Convert.DBNull;
             }
         }
         
