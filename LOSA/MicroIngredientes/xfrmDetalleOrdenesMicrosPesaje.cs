@@ -468,7 +468,7 @@ namespace LOSA.MicroIngredientes
                 rpt.ShowPrintMarginsWarning = false;
                 rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                 rpt.Print();
-                //rpt.ShowPreviewDialog();
+                rpt.ShowPreviewDialog();
 
 
                 string query = @"sp_update_close_pesaje";

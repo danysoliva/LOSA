@@ -39,7 +39,8 @@ namespace LOSA.Reportes
             xrLabel9.Text = "Pesaje Individual de Micro Ingrediente";
             batchpesados.Text = Convert.ToString(pbatch_completados);
             Load_detalle();
-            load_Encabezado();
+            load_encabezado_pesaje_individual();
+            load_cantidades();
 
         }
 
@@ -92,10 +93,44 @@ namespace LOSA.Reportes
             }
            
         }
-       
+
+        public void load_encabezado_pesaje_individual()
+        {
+            string query = @"sp_load_encabezado_reporte_micros_individual";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_rm", id_mp);
+                cmd.Parameters.AddWithValue("@id_orden", Pencabezado);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    dtFecha.Text = string.Format("{0:dd/MM/yyyy}", dr.GetDateTime(1));
+                    txtlote.Text = dr.GetInt32(2).ToString();
+                    txtcodigoPT.Text = dr.GetString(5);
+                    txtturno.Text = dr.GetString(7);
+                    txtformula.Text = dr.GetString(6);
+                    txtproducto.Text = dr.GetString(4);
+                    txt_barcode.Text = dr.GetInt32(9).ToString();
+                    batchpesados.Text = dr.GetInt32(8).ToString();
+                    txtnumero.Text = Pid.ToString();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
 
         public void load_Encabezado()
         {
+
             string query = @"sp_load_encabezado_reporte_micros";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
             try
@@ -126,7 +161,8 @@ namespace LOSA.Reportes
 
                 CajaDialogo.Error(ex.Message);
             }
-        }
+        }   
+        
 
        
 

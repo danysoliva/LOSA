@@ -288,6 +288,9 @@ namespace LOSA.MicroIngredientes
 
                                 cmd3.ExecuteNonQuery();
 
+                                //SqlCommand cmdBar = new SqlCommand("");
+
+
                                 SqlCommand cmd4 = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccionV2", cnx3);
                                 cmd4.CommandType = CommandType.StoredProcedure;
                                 //cmd3.Transaction = transaction;
