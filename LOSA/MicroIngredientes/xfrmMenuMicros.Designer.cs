@@ -154,6 +154,7 @@
             this.cmdTolvasWL_.Size = new System.Drawing.Size(199, 59);
             this.cmdTolvasWL_.TabIndex = 24;
             this.cmdTolvasWL_.Text = "Adición a Tolvas WL";
+            this.cmdTolvasWL_.Click += new System.EventHandler(this.cmdTolvasWL__Click);
             // 
             // simpleButton4
             // 

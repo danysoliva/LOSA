@@ -114,7 +114,7 @@ namespace LOSA.Reportes
                     txtturno.Text = dr.GetString(7);
                     txtformula.Text = dr.GetString(6);
                     txtproducto.Text = dr.GetString(4);
-                    txt_barcode.Text = dr.GetInt32(9).ToString();
+                    txt_barcode.Text = dr.GetString(9);
                     batchpesados.Text = dr.GetInt32(8).ToString();
                     txtnumero.Text = Pid.ToString();
 

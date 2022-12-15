@@ -77,5 +77,10 @@ namespace LOSA.MicroIngredientes
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void cmdTolvasWL__Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
