@@ -46,9 +46,12 @@ namespace LOSA.Clases
                     {
                         Id_pesajeIndividualConf = dr.GetInt32(0);
                         Id_orden = dr.GetInt32(1);
-                        IdMP = dr.GetInt32(2);
+                        if (!dr.IsDBNull(dr.GetOrdinal("idmp")))
+                            IdMP = dr.GetInt32(2);
                         Enable_ = dr.GetBoolean(3);
                         KgPorBatch = dr.GetDecimal(4);
+                        if (!dr.IsDBNull(dr.GetOrdinal("lote")))
+                            Lot = dr.GetInt32(7);
                         CodigoBarra = pCodigoBarra;
                         Recuperado = true;
                     }

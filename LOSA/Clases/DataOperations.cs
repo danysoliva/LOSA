@@ -1084,8 +1084,17 @@ namespace ACS.Classes
             }
             catch 
             {
-                decimal valDecimal = Convert.ToDecimal(val);
-                valor = Decimal.ToInt32(valDecimal);
+                string vals;
+                try
+                {
+                    vals = val.ToString();
+                    decimal valDecimal = Convert.ToDecimal(val);
+                    valor = Decimal.ToInt32(valDecimal);
+                }
+                catch
+                {
+                    valor = 0;
+                }
             }
             return valor;
         }

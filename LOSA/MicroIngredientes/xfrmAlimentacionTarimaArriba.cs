@@ -299,12 +299,25 @@ namespace LOSA.MicroIngredientes
         {
             if (e.KeyCode == Keys.Enter)
             {
+                DataOperations dp = new DataOperations();
+                int LotePT = dp.ValidateNumberInt32(txtLotePT1.Text);
+                if (LotePT == 0)
+                {
+                    CajaDialogo.Error("No hay una orden activa en Consola en el mezclado 1!");
+                    return;
+                }
+                
                 AlimentacionTolvaMicrosPesaje alimentacionTolva = new AlimentacionTolvaMicrosPesaje();
                 if (alimentacionTolva.RecuperaRegistro(teCodBarra.Text))
                 {
+                    if (alimentacionTolva.Lot != LotePT)
+                    {
+                        CajaDialogo.Error("Esta orden no pertenece al Lote: " + LotePT.ToString() + "!" );
+                        return;
+                    }
+
                     xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow(order_id, 0, teCodBarra.Text, alimentacionTolva.IdMP);
                     //xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow( order_id,Convert.ToInt32(txtCodBarra.Text));
-                    DataOperations dp = new DataOperations();
                     bool batchCompletados;
 
                     try
@@ -340,7 +353,8 @@ namespace LOSA.MicroIngredientes
                                 return;
                             }
                             else
-                                frm.ShowDialog();
+                                //frm.ShowDialog();
+                                teCodBarra.Focus();
 
                         }
 
