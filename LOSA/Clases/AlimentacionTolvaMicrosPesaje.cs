@@ -20,7 +20,49 @@ namespace LOSA.Clases
         public string Producto { get; set; }
         public int CodigoPesaje { get; set; }
         public int AMI_ID { get; set; }
+        public int Id_orden { get; set; }
+        public int Id_pesajeIndividualConf { get; set; }
+        public int IdMP { get; set; }
+        public bool Enable_ { get; set; }
+        public decimal KgPorBatch { get; set; }
+        public string CodigoBarra { get; set; }
         public bool Recuperado { get; set; }
+
+        public bool RecuperaRegistro(string pCodigoBarra)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+                    string query = @"sp_get_class_micros_pesaje_individual_conf";
+                    SqlCommand cmd = new SqlCommand(query, cnx);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
+                    //cmd.Parameters.AddWithValue("@idmp", pIdMP);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        Id_pesajeIndividualConf = dr.GetInt32(0);
+                        Id_orden = dr.GetInt32(1);
+                        IdMP = dr.GetInt32(2);
+                        Enable_ = dr.GetBoolean(3);
+                        KgPorBatch = dr.GetDecimal(4);
+                        CodigoBarra = pCodigoBarra;
+                        Recuperado = true;
+                    }
+                    cnx.Close();
+                }
+                return Recuperado;
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                Recuperado = false;
+                return Recuperado;
+            }
+        }
 
         public bool RecuperaRegistro(int ami_id, long order_id)
         {
