@@ -152,6 +152,7 @@ namespace LOSA.Reportes
                     txt_barcode.Text = dr.GetInt32(9).ToString();
                     batchpesados.Text = dr.GetInt32(8).ToString();
                     txtnumero.Text = Pid.ToString();
+                    txt_barcode.Text = dr.GetString(10);
 
                 }
 
