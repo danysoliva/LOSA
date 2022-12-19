@@ -33,7 +33,7 @@ namespace LOSA.Calidad
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdAceptar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdVerConfExistente = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
@@ -76,25 +76,25 @@ namespace LOSA.Calidad
             this.cmdClose.Text = "No";
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
-            // simpleButton3
+            // cmdVerConfExistente
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(307, 145);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(152, 48);
-            this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "Ver Conf. Existente";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.cmdVerConfExistente.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdVerConfExistente.Appearance.Options.UseFont = true;
+            this.cmdVerConfExistente.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdVerConfExistente.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.cmdVerConfExistente.Location = new System.Drawing.Point(307, 145);
+            this.cmdVerConfExistente.Name = "cmdVerConfExistente";
+            this.cmdVerConfExistente.Size = new System.Drawing.Size(152, 48);
+            this.cmdVerConfExistente.TabIndex = 3;
+            this.cmdVerConfExistente.Text = "Ver Conf. Existente";
+            this.cmdVerConfExistente.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // cmdCancelar
             // 
             this.cmdCancelar.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCancelar.Appearance.Options.UseFont = true;
             this.cmdCancelar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdCancelar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.cmdCancelar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdCancelar.ImageOptions.SvgImage")));
             this.cmdCancelar.Location = new System.Drawing.Point(435, 3);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(91, 48);
@@ -107,10 +107,10 @@ namespace LOSA.Calidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 208);
+            this.ClientSize = new System.Drawing.Size(530, 200);
             this.ControlBox = false;
             this.Controls.Add(this.cmdCancelar);
-            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.cmdVerConfExistente);
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.cmdAceptar);
             this.Controls.Add(this.labelControl1);
@@ -129,7 +129,7 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton cmdAceptar;
         private DevExpress.XtraEditors.SimpleButton cmdClose;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton cmdVerConfExistente;
         private DevExpress.XtraEditors.SimpleButton cmdCancelar;
     }
 }

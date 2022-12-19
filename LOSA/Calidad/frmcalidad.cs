@@ -35,7 +35,7 @@ namespace LOSA.Calidad
       
         public void Load_Info()
         {
-            string query = @"ps_load_ingresos_from_tarimas_v2";
+            string query = @"ps_load_ingresos_from_tarimas_v6";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -68,88 +68,129 @@ namespace LOSA.Calidad
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
 
                 DataOperations dp = new DataOperations();
-                Lote_Ingreso_Conf_Calidad item_conf = new Lote_Ingreso_Conf_Calidad();
-                
-                string sp = "dbo.sp_get_conf_calidad";
-                SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
+                //Lote_Ingreso_Conf_Calidad item_conf = new Lote_Ingreso_Conf_Calidad();
 
-                SqlCommand cmd = new SqlCommand(sp,cnx);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@id_ingreso", SqlDbType.Int).Value=row.Ningreso;
-                cmd.Parameters.Add("@itemcode", SqlDbType.VarChar).Value=row.itemcode;
-                cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value=row.lote;
+                //string sp = "dbo.sp_get_conf_calidad";
+                //SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
 
-                cnx.Open();
+                //SqlCommand cmd = new SqlCommand(sp,cnx);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.Add("@id_ingreso", SqlDbType.Int).Value=row.Ningreso;
+                //cmd.Parameters.Add("@itemcode", SqlDbType.VarChar).Value=row.itemcode;
+                //cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value=row.lote;
 
-                SqlDataReader dr = cmd.ExecuteReader();
+                //cnx.Open();
 
-                item_conf = null;
-                while (dr.Read())
-                {
-                    
-                    item_conf = new Lote_Ingreso_Conf_Calidad{
-                                                                    ID = dr.GetInt32(0),
-                                                                    NumeroIngreso = dr.GetInt32(1),
-                                                                    ItemCode = dr.GetString(2),
-                                                                    ID_MP = dr.GetInt32(3),
-                                                                    Lote = dr.GetString(4),
+                //SqlDataReader dr = cmd.ExecuteReader();
 
-                                                                };
-                }
+                //item_conf = null;
+                //while (dr.Read())
+                //{
 
-                cnx.Close();
+                //    item_conf = new Lote_Ingreso_Conf_Calidad{
+                //                                                    ID = dr.GetInt32(0),
+                //                                                    NumeroIngreso = dr.GetInt32(1),
+                //                                                    ItemCode = dr.GetString(2),
+                //                                                    ID_MP = dr.GetInt32(3),
+                //                                                    Lote = dr.GetString(4),
+
+                //                                                };
+                //}
+
+                //cnx.Close();
+
+                #region Codigo Anterior
+                //if (item_conf != null)
+                //{
+                //    if (item_conf.Lote != row.lote)
+                //    {
+                //        xfrmWizardConfCalidad frm2 = new xfrmWizardConfCalidad(item_conf.ID, UsuarioLogeado);
+
+                //        if (frm2.ShowDialog() == DialogResult.OK)
+                //        {
+                //            cnx.Open();
+                //            transaccion = cnx.BeginTransaction();
+
+                //            SqlCommand cmd2 = new SqlCommand("dbo.sp_copiar_configuracion_lote_mp_calidad", transaccion.Connection);
+                //            cmd2.CommandType = CommandType.StoredProcedure;
+                //            cmd2.Transaction = transaccion;
+
+                //            cmd2.Parameters.Add("@id_ingreso_conf", SqlDbType.Int).Value = item_conf.ID;
+                //            cmd2.Parameters.Add("@id_ingreso_nuevo", SqlDbType.Int).Value = row.id;
+                //            cmd2.Parameters.Add("@id_user", SqlDbType.Int).Value = UsuarioLogeado.Id;
+                //            cmd2.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now;
+
+                //            cmd2.ExecuteNonQuery();
+
+                //            transaccion.Commit();
+                //            cnx.Close();
+                //        }
+                //        else
+                //        {
+                //            rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
+                //            if (this.MdiParent != null)
+                //                frm.MdiParent = this.MdiParent;
+                //            frm.Show();
+                //        }
+                //    }
+                //    else
+                //    {
+                //        rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
+                //        if (this.MdiParent != null)
+                //            frm.MdiParent = this.MdiParent;
+                //        frm.Show();
+                //    }
+
+                //}
+                //else
+                //{
+                //    rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
+                //    if (this.MdiParent != null)
+                //        frm.MdiParent = this.MdiParent;
+                //    frm.Show();
+
+                //}
+                #endregion
 
 
-                if (item_conf != null)
-                {
-                   if (item_conf.Lote!=row.lote)
-                    {
-                        xfrmWizardConfCalidad frm2 = new xfrmWizardConfCalidad(item_conf.ID,UsuarioLogeado);
 
-                        if (frm2.ShowDialog()== DialogResult.OK)
-                        {
-                                cnx.Open();
-                                transaccion = cnx.BeginTransaction();
 
-                            SqlCommand cmd2 = new SqlCommand("dbo.sp_copiar_configuracion_lote_mp_calidad", transaccion.Connection);
-                            cmd2.CommandType = CommandType.StoredProcedure;
-                            cmd2.Transaction = transaccion;
+                //xfrmWizardConfCalidad frm2 = new xfrmWizardConfCalidad(row.Ningreso, UsuarioLogeado, row.id_mp, row.lote);
+                //if (frm2.ShowDialog() == DialogResult.OK)
+                //{
+                //SqlConnection cnx = new SqlConnection(dp.ConnectionStringLOSA);
+                //cnx.Open();
+                ////transaccion = cnx.BeginTransaction();
 
-                            cmd2.Parameters.Add("@id_ingreso_conf", SqlDbType.Int).Value = item_conf.ID;
-                            cmd2.Parameters.Add("@id_ingreso_nuevo", SqlDbType.Int).Value = row.id;
-                            cmd2.Parameters.Add("@id_user", SqlDbType.Int).Value = UsuarioLogeado.Id;
-                            cmd2.Parameters.Add("@fecha", SqlDbType.DateTime).Value = DateTime.Now;
+                //SqlCommand cmd2 = new SqlCommand("sp_copiar_configuracion_lote_mp_calidad_v2", transaccion.Connection);
+                //cmd2.CommandType = CommandType.StoredProcedure;
+                //cmd2.Transaction = transaccion;
 
-                            cmd2.ExecuteNonQuery();
+                //cmd2.Parameters.AddWithValue("@id_user",UsuarioLogeado.Id);
+                //cmd2.Parameters.AddWithValue("@NumeroTransaccion",);
+                //cmd2.Parameters.AddWithValue("@numeroTransaccion_new",);
+                //cmd2.Parameters.AddWithValue("@idmp",);
+                //cmd2.Parameters.AddWithValue("@idmp_new",);
+                //cmd2.Parameters.AddWithValue("@lote",);
+                //cmd2.Parameters.AddWithValue("@lote_new",);
 
-                            transaccion.Commit();
-                            cnx.Close();
-                        }
-                        else
-                        {
-                            rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
-                            if (this.MdiParent != null)
-                                frm.MdiParent = this.MdiParent;
-                            frm.Show();
-                        }
-                    }
-                    else
-                    {
-                        rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
-                        if (this.MdiParent != null)
-                            frm.MdiParent = this.MdiParent;
-                        frm.Show();
-                    }
+                //cmd2.ExecuteNonQuery();
 
-                }
-                else
-                {
-                    rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
-                    if (this.MdiParent != null)
-                        frm.MdiParent = this.MdiParent;
-                    frm.Show();
+                //transaccion.Commit();
+                //cnx.Close();
+                //}
+                //else
+                //{
+                //    rdEstadoTransporte frm = new rdEstadoTransporte(row.id, UsuarioLogeado);
+                //    if (this.MdiParent != null)
+                //        frm.MdiParent = this.MdiParent;
+                //    frm.Show();
+                //}
+                frmInspeccionCalidadPorIngresoLoteMP frm = new frmInspeccionCalidadPorIngresoLoteMP(row.Ningreso, row.id_mp, row.lote, UsuarioLogeado);
+                if (this.MdiParent != null)
+                    frm.MdiParent = this.MdiParent;
+                frm.Show();
 
-                }
             }
             catch (Exception ex)
             {

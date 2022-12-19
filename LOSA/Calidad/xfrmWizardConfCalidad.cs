@@ -16,6 +16,9 @@ namespace LOSA.Calidad
     {
         public int Id_ingreso;
         UserLogin UsuarioLogeado;
+        int NumeroIngreso;
+        int IdMP;
+        string Lote;
 
         enum TipoTransaccion
         {
@@ -30,9 +33,21 @@ namespace LOSA.Calidad
             UsuarioLogeado = Puser;
         }
 
+        public xfrmWizardConfCalidad(int pNumeroIngreso, UserLogin Puser, int pIdMP, string pLote)
+        {
+            InitializeComponent();
+            NumeroIngreso = pNumeroIngreso;
+            IdMP = pIdMP;
+            Lote = pLote;
+            UsuarioLogeado = Puser;
+        }
+
+        //cmdVerConfExistente
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            rdEstadoTransporte frm = new rdEstadoTransporte(Id_ingreso,UsuarioLogeado, Convert.ToInt32(TipoTransaccion.Ver));
+            //rdEstadoTransporte frm = new rdEstadoTransporte(Id_ingreso,UsuarioLogeado, Convert.ToInt32(TipoTransaccion.Ver));
+            //frm.Show();
+            frmInspeccionCalidadPorIngresoLoteMP frm = new frmInspeccionCalidadPorIngresoLoteMP(NumeroIngreso, IdMP, Lote, UsuarioLogeado);
             frm.Show();
         }
 

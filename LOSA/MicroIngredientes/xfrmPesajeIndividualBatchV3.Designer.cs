@@ -29,7 +29,6 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividualBatchV3));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -40,12 +39,12 @@ namespace LOSA.MicroIngredientes
             this.lblValorBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.lblCompletados = new DevExpress.XtraEditors.LabelControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.lblError = new DevExpress.XtraEditors.LabelControl();
             this.lblSuperior = new DevExpress.XtraEditors.LabelControl();
             this.lblInferior = new DevExpress.XtraEditors.LabelControl();
             this.lblRequerido = new DevExpress.XtraEditors.LabelControl();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource();
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.lblValorBascula2 = new DevExpress.XtraEditors.LabelControl();
             this.lblBascula2 = new DevExpress.XtraEditors.LabelControl();
@@ -56,7 +55,7 @@ namespace LOSA.MicroIngredientes
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsMicrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsMicrosBindingSource = new System.Windows.Forms.BindingSource();
             this.gvPesaje = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();

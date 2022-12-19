@@ -42,6 +42,9 @@ namespace LOSA.Calidad
         string NombreSAP_Proveedor;
         int idPlanta_Fabricante;
         string FabricantePlantaNombre;
+        int NumeroTransaccion;
+        int IdMP;
+        string Lote;
 
 
         DataOperations dp = new DataOperations();
@@ -59,6 +62,48 @@ namespace LOSA.Calidad
             Load_cargas_nir();
             Inicializar_data_logistica();
             load_zonas(); 
+            load_especie();
+            load_tipo();
+            load_paises();
+            LoadLotesPT();
+            LoadInventarioKardex();
+            //Load_Despachos();
+            if (ChCalidad)
+            {
+                load_criterios_configurados();
+                Inicalizar_Archivo_configurados();
+                get_imagen();
+                load_empaque_estado_Mp();
+                load_trasporte_estado_transporte();
+                load_criterios_adicionales();
+
+                if (full_pathImagen != "")
+                {
+                    pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+                }
+            }
+            else
+            {
+                inicializar_criterios();
+                Inicalizar_Archivo();
+            }
+        }
+
+        public rdEstadoTransporte(int pNumeroIngreso, int pIdMP,string pLote, UserLogin Puser)
+        {
+            InitializeComponent();
+            UsuarioLogeado = Puser;
+            NumeroTransaccion = pNumeroIngreso;
+            IdMP = pIdMP;
+            Lote = pLote;
+
+            tabPageLotesPT.Visible = false;
+            //tabControl1.TabPages[4]
+            load_data();
+            load_data_ingreso();
+            Load_cargas_nir();
+            Inicializar_data_logistica();
+            load_zonas();
             load_especie();
             load_tipo();
             load_paises();

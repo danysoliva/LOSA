@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dSRPT" targetNamespace="http://tempuri.org/dSRPT.xsd" xmlns:mstns="http://tempuri.org/dSRPT.xsd" xmlns="http://tempuri.org/dSRPT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dSRPT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dSRPT" msprop:Generator_UserDSName="dSRPT">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RPT_Teorico" msprop:Generator_TableClassName="RPT_TeoricoDataTable" msprop:Generator_TableVarName="tableRPT_Teorico" msprop:Generator_RowChangedName="RPT_TeoricoRowChanged" msprop:Generator_TablePropName="RPT_Teorico" msprop:Generator_RowDeletingName="RPT_TeoricoRowDeleting" msprop:Generator_RowChangingName="RPT_TeoricoRowChanging" msprop:Generator_RowEvHandlerName="RPT_TeoricoRowChangeEventHandler" msprop:Generator_RowDeletedName="RPT_TeoricoRowDeleted" msprop:Generator_RowClassName="RPT_TeoricoRow" msprop:Generator_UserTableName="RPT_Teorico" msprop:Generator_RowEvArgName="RPT_TeoricoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="h_fml_id" msprop:Generator_ColumnVarNameInTable="columnh_fml_id" msprop:Generator_ColumnPropNameInRow="h_fml_id" msprop:Generator_ColumnPropNameInTable="h_fml_idColumn" msprop:Generator_UserColumnName="h_fml_id" type="xs:int" minOccurs="0" />
+              <xs:element name="h_skt_code" msprop:Generator_ColumnVarNameInTable="columnh_skt_code" msprop:Generator_ColumnPropNameInRow="h_skt_code" msprop:Generator_ColumnPropNameInTable="h_skt_codeColumn" msprop:Generator_UserColumnName="h_skt_code" type="xs:string" minOccurs="0" />
+              <xs:element name="h_type" msprop:Generator_ColumnVarNameInTable="columnh_type" msprop:Generator_ColumnPropNameInRow="h_type" msprop:Generator_ColumnPropNameInTable="h_typeColumn" msprop:Generator_UserColumnName="h_type" type="xs:string" minOccurs="0" />
+              <xs:element name="h_name" msprop:Generator_ColumnVarNameInTable="columnh_name" msprop:Generator_ColumnPropNameInRow="h_name" msprop:Generator_ColumnPropNameInTable="h_nameColumn" msprop:Generator_UserColumnName="h_name" type="xs:string" minOccurs="0" />
+              <xs:element name="h_specie_name" msprop:Generator_ColumnVarNameInTable="columnh_specie_name" msprop:Generator_ColumnPropNameInRow="h_specie_name" msprop:Generator_ColumnPropNameInTable="h_specie_nameColumn" msprop:Generator_UserColumnName="h_specie_name" type="xs:string" minOccurs="0" />
+              <xs:element name="s_material_code" msprop:Generator_ColumnVarNameInTable="columns_material_code" msprop:Generator_ColumnPropNameInRow="s_material_code" msprop:Generator_ColumnPropNameInTable="s_material_codeColumn" msprop:Generator_UserColumnName="s_material_code" type="xs:string" minOccurs="0" />
+              <xs:element name="Codigo_Sap" msprop:Generator_ColumnVarNameInTable="columnCodigo_Sap" msprop:Generator_ColumnPropNameInRow="Codigo_Sap" msprop:Generator_ColumnPropNameInTable="Codigo_SapColumn" msprop:Generator_UserColumnName="Codigo_Sap" type="xs:string" minOccurs="0" />
+              <xs:element name="s_material_name" msprop:Generator_ColumnVarNameInTable="columns_material_name" msprop:Generator_ColumnPropNameInRow="s_material_name" msprop:Generator_ColumnPropNameInTable="s_material_nameColumn" msprop:Generator_UserColumnName="s_material_name" type="xs:string" minOccurs="0" />
+              <xs:element name="s_batch_kg" msprop:Generator_ColumnVarNameInTable="columns_batch_kg" msprop:Generator_ColumnPropNameInRow="s_batch_kg" msprop:Generator_ColumnPropNameInTable="s_batch_kgColumn" msprop:Generator_UserColumnName="s_batch_kg" type="xs:decimal" minOccurs="0" />
+              <xs:element name="s_cost_tm_mp" msprop:Generator_ColumnVarNameInTable="columns_cost_tm_mp" msprop:Generator_ColumnPropNameInRow="s_cost_tm_mp" msprop:Generator_ColumnPropNameInTable="s_cost_tm_mpColumn" msprop:Generator_UserColumnName="s_cost_tm_mp" type="xs:string" minOccurs="0" />
+              <xs:element name="inclusion" msprop:Generator_ColumnVarNameInTable="columninclusion" msprop:Generator_ColumnPropNameInRow="inclusion" msprop:Generator_ColumnPropNameInTable="inclusionColumn" msprop:Generator_UserColumnName="inclusion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="batch_count" msprop:Generator_ColumnVarNameInTable="columnbatch_count" msprop:Generator_ColumnPropNameInRow="batch_count" msprop:Generator_ColumnPropNameInTable="batch_countColumn" msprop:Generator_UserColumnName="batch_count" type="xs:int" minOccurs="0" />
+              <xs:element name="kg_totales" msprop:Generator_ColumnVarNameInTable="columnkg_totales" msprop:Generator_ColumnPropNameInRow="kg_totales" msprop:Generator_ColumnPropNameInTable="kg_totalesColumn" msprop:Generator_UserColumnName="kg_totales" type="xs:decimal" minOccurs="0" />
+              <xs:element name="costo_total" msprop:Generator_ColumnVarNameInTable="columncosto_total" msprop:Generator_ColumnPropNameInRow="costo_total" msprop:Generator_ColumnPropNameInTable="costo_totalColumn" msprop:Generator_UserColumnName="costo_total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="inclusionCal" msprop:Generator_ColumnVarNameInTable="columninclusionCal" msprop:Generator_ColumnPropNameInRow="inclusionCal" msprop:Generator_ColumnPropNameInTable="inclusionCalColumn" msprop:Generator_UserColumnName="inclusionCal" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

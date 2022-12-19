@@ -308,6 +308,65 @@ namespace ACS.Classes
 
             Conn.Close();
         }
+
+
+        public DataSet ODOO_GetSelectData(string FixedQuery)
+        {
+            DataSet data = new DataSet();
+
+            PgSqlConnection Conn = new PgSqlConnection(ConnectionStringODOO);
+            //NpgSqlConnection Conn = new NpgSqlConnection(ConnectionStringODOO);
+            Conn.Open();
+
+            PgSqlCommand cmd = new PgSqlCommand(FixedQuery, Conn);
+            PgSqlDataAdapter adapter = new PgSqlDataAdapter(cmd);
+
+            adapter.Fill(data);
+
+            Conn.Close();
+
+            return data;
+        }
+
+        public DataSet ODOO_GetSP_Results(string ProcedureName, PgSqlCommand cmd)
+        {
+            DataSet data = new DataSet();
+
+            PgSqlConnection Conn = new PgSqlConnection(ConnectionStringODOO);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = ProcedureName;
+            cmd.Connection = Conn;
+
+            Conn.Open();
+
+            PgSqlDataAdapter adapter = new PgSqlDataAdapter(cmd);
+            adapter.Fill(data);
+
+            Conn.Close();
+
+            return data;
+        }
+
+        public DataSet ODOO2_GetSP_Results(string ProcedureName, PgSqlCommand cmd)
+        {
+            DataSet data = new DataSet();
+
+            PgSqlConnection Conn = new PgSqlConnection(ConnectionStringODOO2);
+
+            //cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = ProcedureName;
+            cmd.Connection = Conn;
+
+            Conn.Open();
+
+            PgSqlDataAdapter adapter = new PgSqlDataAdapter(cmd);
+            adapter.Fill(data);
+
+            Conn.Close();
+
+            return data;
+        }
         //public Boolean CompanyIsconected(string puser, string ppass)
         //{
         //    SAPbobsCOM.Company oCmp;
@@ -1084,8 +1143,17 @@ namespace ACS.Classes
             }
             catch 
             {
-                decimal valDecimal = Convert.ToDecimal(val);
-                valor = Decimal.ToInt32(valDecimal);
+                string vals;
+                try
+                {
+                    vals = val.ToString();
+                    decimal valDecimal = Convert.ToDecimal(val);
+                    valor = Decimal.ToInt32(valDecimal);
+                }
+                catch
+                {
+                    valor = 0;
+                }
             }
             return valor;
         }

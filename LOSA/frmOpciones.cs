@@ -21,6 +21,7 @@ using LOSA.Liquidos;
 using LOSA.Logistica;
 using LOSA.Mantenimientos;
 using LOSA.MigracionACS.AquaForecast;
+using LOSA.MigracionACS.Finanzas.Reports;
 using LOSA.MigracionACS.Forecast;
 using LOSA.MigracionACS.Management;
 using LOSA.MigracionACS.OIL;
@@ -36,6 +37,7 @@ using LOSA.MigracionACS.Produccion.Produccion.DashBoard;
 using LOSA.MigracionACS.Produccion.Reports;
 using LOSA.MigracionACS.Produccion.TemperaturaMaquinas;
 using LOSA.MigracionACS.PT;
+using LOSA.MigracionACS.RPTS;
 using LOSA.MigracionACS.RRHH;
 using LOSA.MigracionACS.RRHH.Encuesta;
 using LOSA.MigracionACS.RRHH.Liquidaciones;
@@ -2324,6 +2326,167 @@ namespace LOSA
             }
         }
 
-      
+        private void simpleButton58_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MigracionACS.Produccion.Reports.Rep_Fml_Uso form = new MigracionACS.Produccion.Reports.Rep_Fml_Uso();
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);               
+            }
+        }
+
+        private void simpleButton59_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MigracionACS.Finanzas.Reports.Rep_Fml_Uso form = new MigracionACS.Finanzas.Reports.Rep_Fml_Uso();
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        
+        }
+
+        private void simpleButton62_Click(object sender, EventArgs e)
+        {
+            try
+            {
+              MigracionACS.Finanzas.Reports.RPT_Conta_Varios form = new MigracionACS.Finanzas.Reports.RPT_Conta_Varios(ActiveUserCode, ActiveUserType, ActiveADUser, UserGroups, this.UsuarioLogeado);
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void simpleButton65_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            MigracionACS. Finanzas.Reports.RPT_FML_NC_MasterDetailReport form = new MigracionACS.Finanzas.Reports.RPT_FML_NC_MasterDetailReport();
+                form.MdiParent = this.MdiParent;
+            form.Show();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void simpleButton61_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               MigracionACS.Finanzas.Reports.RPT_FML_FL_FF_CostVar_MasterDetailReport form = new MigracionACS.Finanzas.Reports.RPT_FML_FL_FF_CostVar_MasterDetailReport(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups);
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void simpleButton60_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int user_id = int.Parse(ActiveUserCode);
+                //user_id = GetUserID(ActiveUserName);
+
+                if (user_id == 1020 || user_id == 1035 || user_id == 1037)
+                {
+                    frm_Reporteador_Validate_byUser frm = new frm_Reporteador_Validate_byUser(ActiveUserCode, ActiveUserName, ActiveUserType);
+                frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene permisos para Abrir esta ventana");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                
+            }
+        }
+
+        private void simpleButton66_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(34))
+                {
+                   MigracionACS.SAR.SAR_Main frmAll = new MigracionACS.SAR.SAR_Main();
+                    frmAll.MdiParent = this.MdiParent;
+                    frmAll.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #34");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+                throw;
+            }
+        }
+
+        private void simpleButton63_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(58))
+                {
+                    frmConsumoConsolaReal frm = new frmConsumoConsolaReal();
+                    frm.MdiParent = this;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+             
+            }
+        }
+
+        private void simpleButton64_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(58))
+                {
+                    frmConsumoConsolaTeorico frm = new frmConsumoConsolaTeorico();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            
+            }
+        }
     }
 }

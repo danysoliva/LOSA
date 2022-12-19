@@ -73,6 +73,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _click_24X24 {
+            get {
+                object obj = ResourceManager.GetObject("_click_24X24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _click_32X32 {
             get {
                 object obj = ResourceManager.GetObject("_click_32X32", resourceCulture);
@@ -293,6 +303,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ani_wait {
+            get {
+                object obj = ResourceManager.GetObject("ani_wait", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap approve_16 {
             get {
                 object obj = ResourceManager.GetObject("approve_16", resourceCulture);
@@ -426,6 +446,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap c_16 {
             get {
                 object obj = ResourceManager.GetObject("c_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calculo {
+            get {
+                object obj = ResourceManager.GetObject("calculo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1006,6 +1036,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap excel_32x32 {
             get {
                 object obj = ResourceManager.GetObject("excel_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excel_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("excel_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1953,6 +1993,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap refresh_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("refresh_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap refresh_24x24 {
             get {
                 object obj = ResourceManager.GetObject("refresh_24x24", resourceCulture);
@@ -2466,6 +2516,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap tv {
             get {
                 object obj = ResourceManager.GetObject("tv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap txt_24 {
+            get {
+                object obj = ResourceManager.GetObject("txt_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

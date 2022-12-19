@@ -161,6 +161,7 @@
               <xs:element name="bit_fin" msprop:Generator_ColumnVarNameInTable="columnbit_fin" msprop:Generator_ColumnPropNameInRow="bit_fin" msprop:Generator_ColumnPropNameInTable="bit_finColumn" msprop:Generator_UserColumnName="bit_fin" type="xs:boolean" default="false" minOccurs="0" />
               <xs:element name="id_traslado" msprop:Generator_ColumnVarNameInTable="columnid_traslado" msprop:Generator_ColumnPropNameInRow="id_traslado" msprop:Generator_ColumnPropNameInTable="id_trasladoColumn" msprop:Generator_UserColumnName="id_traslado" type="xs:int" default="0" minOccurs="0" />
               <xs:element name="fecha_creacion" msprop:Generator_ColumnVarNameInTable="columnfecha_creacion" msprop:Generator_ColumnPropNameInRow="fecha_creacion" msprop:Generator_ColumnPropNameInTable="fecha_creacionColumn" msprop:Generator_UserColumnName="fecha_creacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
