@@ -214,6 +214,7 @@
             this.simpleButton58 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton57 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -234,6 +235,7 @@
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -2810,7 +2812,7 @@
             this.simpleButton65.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton65.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton65.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton65.ImageOptions.Image")));
-            this.simpleButton65.Location = new System.Drawing.Point(43, 382);
+            this.simpleButton65.Location = new System.Drawing.Point(60, 297);
             this.simpleButton65.Name = "simpleButton65";
             this.simpleButton65.Size = new System.Drawing.Size(223, 71);
             this.simpleButton65.TabIndex = 22;
@@ -2825,7 +2827,7 @@
             this.simpleButton66.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton66.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton66.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton66.ImageOptions.Image")));
-            this.simpleButton66.Location = new System.Drawing.Point(299, 212);
+            this.simpleButton66.Location = new System.Drawing.Point(302, 127);
             this.simpleButton66.Name = "simpleButton66";
             this.simpleButton66.Size = new System.Drawing.Size(223, 71);
             this.simpleButton66.TabIndex = 21;
@@ -2840,7 +2842,7 @@
             this.simpleButton64.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton64.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton64.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton64.ImageOptions.SvgImage")));
-            this.simpleButton64.Location = new System.Drawing.Point(299, 382);
+            this.simpleButton64.Location = new System.Drawing.Point(302, 297);
             this.simpleButton64.Name = "simpleButton64";
             this.simpleButton64.Size = new System.Drawing.Size(223, 71);
             this.simpleButton64.TabIndex = 19;
@@ -2855,7 +2857,7 @@
             this.simpleButton63.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton63.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton63.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton63.ImageOptions.Image")));
-            this.simpleButton63.Location = new System.Drawing.Point(299, 297);
+            this.simpleButton63.Location = new System.Drawing.Point(302, 212);
             this.simpleButton63.Name = "simpleButton63";
             this.simpleButton63.Size = new System.Drawing.Size(223, 71);
             this.simpleButton63.TabIndex = 18;
@@ -2870,7 +2872,7 @@
             this.simpleButton60.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton60.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton60.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton60.ImageOptions.Image")));
-            this.simpleButton60.Location = new System.Drawing.Point(299, 127);
+            this.simpleButton60.Location = new System.Drawing.Point(302, 42);
             this.simpleButton60.Name = "simpleButton60";
             this.simpleButton60.Size = new System.Drawing.Size(223, 71);
             this.simpleButton60.TabIndex = 17;
@@ -2885,7 +2887,7 @@
             this.simpleButton61.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton61.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton61.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton61.ImageOptions.Image")));
-            this.simpleButton61.Location = new System.Drawing.Point(299, 42);
+            this.simpleButton61.Location = new System.Drawing.Point(60, 384);
             this.simpleButton61.Name = "simpleButton61";
             this.simpleButton61.Size = new System.Drawing.Size(223, 71);
             this.simpleButton61.TabIndex = 16;
@@ -2900,7 +2902,7 @@
             this.simpleButton62.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton62.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton62.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton62.ImageOptions.Image")));
-            this.simpleButton62.Location = new System.Drawing.Point(43, 297);
+            this.simpleButton62.Location = new System.Drawing.Point(60, 212);
             this.simpleButton62.Name = "simpleButton62";
             this.simpleButton62.Size = new System.Drawing.Size(223, 71);
             this.simpleButton62.TabIndex = 15;
@@ -2915,7 +2917,7 @@
             this.simpleButton59.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton59.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton59.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton59.ImageOptions.SvgImage")));
-            this.simpleButton59.Location = new System.Drawing.Point(43, 212);
+            this.simpleButton59.Location = new System.Drawing.Point(60, 127);
             this.simpleButton59.Name = "simpleButton59";
             this.simpleButton59.Size = new System.Drawing.Size(223, 71);
             this.simpleButton59.TabIndex = 14;
@@ -2930,7 +2932,7 @@
             this.simpleButton58.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton58.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton58.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton58.ImageOptions.SvgImage")));
-            this.simpleButton58.Location = new System.Drawing.Point(43, 127);
+            this.simpleButton58.Location = new System.Drawing.Point(60, 42);
             this.simpleButton58.Name = "simpleButton58";
             this.simpleButton58.Size = new System.Drawing.Size(223, 71);
             this.simpleButton58.TabIndex = 13;
@@ -2945,11 +2947,13 @@
             this.simpleButton57.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton57.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton57.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton57.ImageOptions.SvgImage")));
-            this.simpleButton57.Location = new System.Drawing.Point(43, 42);
+            this.simpleButton57.Location = new System.Drawing.Point(603, 429);
             this.simpleButton57.Name = "simpleButton57";
             this.simpleButton57.Size = new System.Drawing.Size(223, 71);
             this.simpleButton57.TabIndex = 12;
             this.simpleButton57.Text = "Report Manager";
+            this.simpleButton57.Visible = false;
+            this.simpleButton57.Click += new System.EventHandler(this.simpleButton57_Click);
             // 
             // labelControl3
             // 
@@ -2965,6 +2969,11 @@
             this.labelControl3.Size = new System.Drawing.Size(578, 39);
             this.labelControl3.TabIndex = 31;
             this.labelControl3.Text = "Menu principal";
+            // 
+            // rd_OdooMenu
+            // 
+            this.rd_OdooMenu.AutoExpand = true;
+            this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
             // frmOpciones
             // 
@@ -2999,6 +3008,7 @@
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3189,5 +3199,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton58;
         private DevExpress.XtraEditors.SimpleButton simpleButton57;
         private DevExpress.XtraEditors.SimpleButton simpleButton65;
+        private DevExpress.XtraBars.Ribbon.RadialMenu rd_OdooMenu;
     }
 }

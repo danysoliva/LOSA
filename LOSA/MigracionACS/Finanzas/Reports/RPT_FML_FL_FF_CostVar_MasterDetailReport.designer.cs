@@ -675,11 +675,10 @@
             // 
             // barStaticItem1
             // 
-            this.barStaticItem1.Glyph = global::LOSA.Properties.Resources.Logo_x32;
             this.barStaticItem1.Id = 1;
+            this.barStaticItem1.ImageOptions.Image = global::LOSA.Properties.Resources.Logo_x32;
             this.barStaticItem1.Name = "barStaticItem1";
             this.barStaticItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
-            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
             // barHeaderItem1
             // 
@@ -690,16 +689,16 @@
             // btn_generate
             // 
             this.btn_generate.Caption = "Generar Reporte";
-            this.btn_generate.Glyph = global::LOSA.Properties.Resources.Generate_32x32;
             this.btn_generate.Id = 0;
+            this.btn_generate.ImageOptions.Image = global::LOSA.Properties.Resources.Generate_32x32;
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_generate_ItemClick);
             // 
             // barSubItem1
             // 
             this.barSubItem1.Caption = "Exportar";
-            this.barSubItem1.Glyph = global::LOSA.Properties.Resources.export_32x32;
             this.barSubItem1.Id = 9;
+            this.barSubItem1.ImageOptions.Image = global::LOSA.Properties.Resources.export_32x32;
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_exportExcel),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_exportDetail),
@@ -710,24 +709,24 @@
             // btn_exportExcel
             // 
             this.btn_exportExcel.Caption = "Resumen";
-            this.btn_exportExcel.Glyph = global::LOSA.Properties.Resources.excel_24x24;
             this.btn_exportExcel.Id = 3;
+            this.btn_exportExcel.ImageOptions.Image = global::LOSA.Properties.Resources.excel_24x24;
             this.btn_exportExcel.Name = "btn_exportExcel";
             this.btn_exportExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // btn_exportDetail
             // 
             this.btn_exportDetail.Caption = "Resumen y detalle";
-            this.btn_exportDetail.Glyph = global::LOSA.Properties.Resources.excel_24x24;
             this.btn_exportDetail.Id = 10;
+            this.btn_exportDetail.ImageOptions.Image = global::LOSA.Properties.Resources.excel_24x24;
             this.btn_exportDetail.Name = "btn_exportDetail";
             this.btn_exportDetail.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
             // btn_exporWYSIWYG
             // 
             this.btn_exporWYSIWYG.Caption = "WYSIWYG";
-            this.btn_exporWYSIWYG.Glyph = global::LOSA.Properties.Resources.excel_24x24;
             this.btn_exporWYSIWYG.Id = 11;
+            this.btn_exporWYSIWYG.ImageOptions.Image = global::LOSA.Properties.Resources.excel_24x24;
             this.btn_exporWYSIWYG.Name = "btn_exporWYSIWYG";
             this.btn_exporWYSIWYG.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_exporWYSIWYG_ItemClick);
             // 
@@ -735,8 +734,8 @@
             // 
             this.btn_Close.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.btn_Close.Caption = "Cerrar";
-            this.btn_Close.Glyph = global::LOSA.Properties.Resources.exit_24x24;
             this.btn_Close.Id = 4;
+            this.btn_Close.ImageOptions.Image = global::LOSA.Properties.Resources.exit_24x24;
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Close_ItemClick);
             // 
@@ -745,6 +744,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(1274, 47);
             // 
             // barDockControlBottom
@@ -752,6 +752,7 @@
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 482);
+            this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1274, 0);
             // 
             // barDockControlLeft
@@ -759,6 +760,7 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 435);
             // 
             // barDockControlRight
@@ -766,6 +768,7 @@
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1274, 47);
+            this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 435);
             // 
             // barEditItem1
@@ -825,7 +828,7 @@
             // 
             this.btn_ViewFormula.Caption = "Ver Formula";
             this.btn_ViewFormula.Id = 12;
-            this.btn_ViewFormula.ImageUri.Uri = "Find";
+            this.btn_ViewFormula.ImageOptions.ImageUri.Uri = "Find";
             this.btn_ViewFormula.Name = "btn_ViewFormula";
             this.btn_ViewFormula.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ViewFormula_ItemClick);
             // 
@@ -854,6 +857,8 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
             this.labelControl5.Location = new System.Drawing.Point(825, 31);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(142, 16);
@@ -888,6 +893,8 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseForeColor = true;
             this.labelControl4.Location = new System.Drawing.Point(551, 30);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(159, 16);
@@ -954,6 +961,8 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseForeColor = true;
             this.labelControl3.Location = new System.Drawing.Point(461, 30);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(58, 16);
@@ -964,6 +973,8 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
             this.labelControl2.Location = new System.Drawing.Point(240, 31);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(38, 16);
@@ -974,6 +985,8 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(12, 30);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(40, 16);
@@ -1044,7 +1057,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RPT_FML_FL_FF_CostVar_MasterDetailReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
