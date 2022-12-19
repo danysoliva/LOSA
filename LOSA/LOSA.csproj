@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>451</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <ApplicationRevision>452</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -3407,6 +3407,12 @@
     <Compile Include="Produccion\ctl_keypadNumber.Designer.cs">
       <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frm_MateriaPrimaEnBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frm_MateriaPrimaEnBodega.Designer.cs">
+      <DependentUpon>frm_MateriaPrimaEnBodega.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frm_requisaManual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -6635,6 +6641,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmTolva.resx">
       <DependentUpon>frmTolva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frm_MateriaPrimaEnBodega.resx">
+      <DependentUpon>frm_MateriaPrimaEnBodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frm_requisaManual.resx">
       <DependentUpon>frm_requisaManual.cs</DependentUpon>

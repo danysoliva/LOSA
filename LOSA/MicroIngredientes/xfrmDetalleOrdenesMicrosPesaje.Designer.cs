@@ -157,12 +157,12 @@
             this.colAMI_ID2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colorder_id2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colorder_code1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LookTurno = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colreprint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_reprint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.collot = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVistaPrevia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdVistaPreviaPesaje = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.LookTurno = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.btnConfiguracion = new DevExpress.XtraEditors.SimpleButton();
             this.btnBatch = new DevExpress.XtraEditors.SimpleButton();
             this.lblCodOrden = new DevExpress.XtraEditors.LabelControl();
@@ -205,9 +205,9 @@
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LookTurno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reprint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdVistaPreviaPesaje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookTurno)).BeginInit();
             this.SuspendLayout();
             // 
             // coltotal
@@ -1051,17 +1051,6 @@
             this.colorder_code1.VisibleIndex = 2;
             this.colorder_code1.Width = 142;
             // 
-            // LookTurno
-            // 
-            this.LookTurno.AutoHeight = false;
-            this.LookTurno.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.LookTurno.DataSource = this.turnoBindingSource;
-            this.LookTurno.DisplayMember = "Turno";
-            this.LookTurno.KeyMember = "id";
-            this.LookTurno.Name = "LookTurno";
-            this.LookTurno.ValueMember = "id";
-            // 
             // colreprint
             // 
             this.colreprint.Caption = "Reimprimir";
@@ -1108,6 +1097,17 @@
             this.cmdVistaPreviaPesaje.Name = "cmdVistaPreviaPesaje";
             this.cmdVistaPreviaPesaje.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdVistaPreviaPesaje.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdVistaPreviaPesaje_ButtonClick);
+            // 
+            // LookTurno
+            // 
+            this.LookTurno.AutoHeight = false;
+            this.LookTurno.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LookTurno.DataSource = this.turnoBindingSource;
+            this.LookTurno.DisplayMember = "Turno";
+            this.LookTurno.KeyMember = "id";
+            this.LookTurno.Name = "LookTurno";
+            this.LookTurno.ValueMember = "id";
             // 
             // btnConfiguracion
             // 
@@ -1358,9 +1358,9 @@
             this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LookTurno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reprint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdVistaPreviaPesaje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookTurno)).EndInit();
             this.ResumeLayout(false);
 
         }
