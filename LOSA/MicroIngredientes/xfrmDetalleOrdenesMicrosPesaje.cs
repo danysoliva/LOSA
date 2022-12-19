@@ -425,17 +425,18 @@ namespace LOSA.MicroIngredientes
                 //    {
                 //        Selecionado = Selecionado + detalle.pesaje;
                 //    }
-                //}
-                if (row.cant_batch> row.batch_real)
-                {
-                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe de pesar todas las materias primas.");
-                    if (frm.ShowDialog() == DialogResult.Cancel )
-                    {
-                        return;
-                    }
+                ////}
+                //if (row.cant_batch> row.batch_real)
+                //{
+                //    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe de pesar todas las materias primas.");
+                //    if (frm.ShowDialog() == DialogResult.Cancel )
+                //    {
+                //        return;
+                //    }
                    
-                }
+                //}
 
+                #region Turno
                 //if (Convert.ToString(row.id_turno) == " ")
                 //{
                 //    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, "Debe seleccionar el turno para imprimir el reporte.");
@@ -462,6 +463,7 @@ namespace LOSA.MicroIngredientes
                 //cmd1.Parameters.AddWithValue("@AMI", row.AMI_ID);
                 //cmd1.ExecuteNonQuery();
                 //conn.Close();
+                #endregion
 
 
                 xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.AMI_ID, row.id_orden_encabezado);
@@ -752,7 +754,8 @@ namespace LOSA.MicroIngredientes
                 xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.id_orden_encabezado, row.id_rm, row.Batch_Completados);
                 rpt.ShowPrintMarginsWarning = false;
                 rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                rpt.ShowPreview();
+                //rpt.ShowPreview();
+                rpt.Print();
             }
             catch (Exception ex)
             {
