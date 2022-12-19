@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportes2" targetNamespace="http://tempuri.org/dsReportes2.xsd" xmlns:mstns="http://tempuri.org/dsReportes2.xsd" xmlns="http://tempuri.org/dsReportes2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportes2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportes2" msprop:Generator_UserDSName="dsReportes2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="filtro_cuentas" msprop:Generator_TableClassName="filtro_cuentasDataTable" msprop:Generator_TableVarName="tablefiltro_cuentas" msprop:Generator_TablePropName="filtro_cuentas" msprop:Generator_RowDeletingName="filtro_cuentasRowDeleting" msprop:Generator_RowChangingName="filtro_cuentasRowChanging" msprop:Generator_RowEvHandlerName="filtro_cuentasRowChangeEventHandler" msprop:Generator_RowDeletedName="filtro_cuentasRowDeleted" msprop:Generator_UserTableName="filtro_cuentas" msprop:Generator_RowChangedName="filtro_cuentasRowChanged" msprop:Generator_RowEvArgName="filtro_cuentasRowChangeEvent" msprop:Generator_RowClassName="filtro_cuentasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_cuenta" msprop:Generator_ColumnVarNameInTable="columnid_cuenta" msprop:Generator_ColumnPropNameInRow="id_cuenta" msprop:Generator_ColumnPropNameInTable="id_cuentaColumn" msprop:Generator_UserColumnName="id_cuenta" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

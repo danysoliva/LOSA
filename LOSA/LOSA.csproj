@@ -1808,6 +1808,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ACSDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\ADVD\DeveloperTools\Select_Items_v3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\ADVD\DeveloperTools\Select_Items_v3.designer.cs">
+      <DependentUpon>Select_Items_v3.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\AquaForecast\AFC_ConsumoReal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1857,6 +1863,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsProyeccionesVentas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\DataSetx\dsReportes21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportes2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\DataSetx\dsReportPRD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1876,6 +1887,64 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PRB_DATA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\dSRPT1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dSRPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaReal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaReal.designer.cs">
+      <DependentUpon>frmConsumoConsolaReal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaTeorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaTeorico.designer.cs">
+      <DependentUpon>frmConsumoConsolaTeorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\datarpt1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datarpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_Conta_Varios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_Conta_Varios.designer.cs">
+      <DependentUpon>RPT_Conta_Varios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_FML_FL_FF_CostVar_MasterDetailReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_FML_FL_FF_CostVar_MasterDetailReport.designer.cs">
+      <DependentUpon>RPT_FML_FL_FF_CostVar_MasterDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_FML_NC_MasterDetailReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_FML_NC_MasterDetailReport.designer.cs">
+      <DependentUpon>RPT_FML_NC_MasterDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_seleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_seleccion.designer.cs">
+      <DependentUpon>RPT_seleccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_Uso_Fml_Costo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Reports\RPT_Uso_Fml_Costo.designer.cs">
+      <DependentUpon>RPT_Uso_Fml_Costo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\RPT_Teorico_Costo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\RPT_Teorico_Costo.designer.cs">
+      <DependentUpon>RPT_Teorico_Costo.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Forecast\dsForecast_.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2008,6 +2077,12 @@
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_Comment_Add.designer.cs">
       <DependentUpon>FML_Comment_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Costeo_Formulas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Costeo_Formulas.designer.cs">
+      <DependentUpon>FML_Costeo_Formulas.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_FF_Select.cs">
       <SubType>Form</SubType>
@@ -2869,6 +2944,12 @@
     <Compile Include="MigracionACS\PT\PT_Productos.designer.cs">
       <DependentUpon>PT_Productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.designer.cs">
+      <DependentUpon>frm_Reporteador_Validate_byUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -3084,6 +3165,96 @@
     </Compile>
     <Compile Include="MigracionACS\SAP\frmLoginSAP.designer.cs">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\dS_SAR.cs">
+      <DependentUpon>dS_SAR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\dS_SAR.designer.cs">
+      <DependentUpon>dS_SAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\dS_SAR1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dS_SAR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\frmPickArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\frmPickArticulo.designer.cs">
+      <DependentUpon>frmPickArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\frm_select_pv.cd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\frm_select_pv.cd.designer.cs">
+      <DependentUpon>frm_select_pv.cd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\OrdenSAP.cs" />
+    <Compile Include="MigracionACS\SAR\SAR_capitulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_capitulos.designer.cs">
+      <DependentUpon>SAR_capitulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_DASHBOARD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_DASHBOARD.designer.cs">
+      <DependentUpon>SAR_DASHBOARD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Details.designer.cs">
+      <DependentUpon>SAR_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_detalle.designer.cs">
+      <DependentUpon>SAR_detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_exoneracionNueva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_exoneracionNueva.designer.cs">
+      <DependentUpon>SAR_exoneracionNueva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Main.designer.cs">
+      <DependentUpon>SAR_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_mantimientoXRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_mantimientoXRubro.designer.cs">
+      <DependentUpon>SAR_mantimientoXRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Orden_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Orden_detalle.designer.cs">
+      <DependentUpon>SAR_Orden_detalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_orderSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_orderSelector.designer.cs">
+      <DependentUpon>SAR_orderSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Saldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Saldo.designer.cs">
+      <DependentUpon>SAR_Saldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Selection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\SAR\SAR_Selection.designer.cs">
+      <DependentUpon>SAR_Selection.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\WaitForm1.cs">
       <SubType>Form</SubType>
@@ -3508,6 +3679,17 @@
     <None Include="MigracionACS\DataSetx\dsProyeccionesVentas.xss">
       <DependentUpon>dsProyeccionesVentas.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\DataSetx\dsReportes2.xsc">
+      <DependentUpon>dsReportes2.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsReportes2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportes21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsReportes2.xss">
+      <DependentUpon>dsReportes2.xsd</DependentUpon>
+    </None>
     <None Include="MigracionACS\DataSetx\dsReportPRD.xsc">
       <DependentUpon>dsReportPRD.xsd</DependentUpon>
     </None>
@@ -3551,6 +3733,28 @@
     </None>
     <None Include="MigracionACS\DataSetx\PRB_DATA.xss">
       <DependentUpon>PRB_DATA.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\dSRPT.xsc">
+      <DependentUpon>dSRPT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\dSRPT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dSRPT1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Finanzas\dSRPT.xss">
+      <DependentUpon>dSRPT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\Reports\datarpt.xsc">
+      <DependentUpon>datarpt.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\Reports\datarpt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datarpt1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Finanzas\Reports\datarpt.xss">
+      <DependentUpon>datarpt.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Forecast\dsForecast_.xsc">
       <DependentUpon>dsForecast_.xsd</DependentUpon>
@@ -3848,6 +4052,17 @@
     </None>
     <None Include="MigracionACS\RRHH\Reportes\dsReportesRRHH.xss">
       <DependentUpon>dsReportesRRHH.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\SAR\dS_SAR.xsc">
+      <DependentUpon>dS_SAR.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\SAR\dS_SAR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dS_SAR1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\SAR\dS_SAR.xss">
+      <DependentUpon>dS_SAR.xsd</DependentUpon>
     </None>
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
@@ -5722,6 +5937,9 @@
     <EmbeddedResource Include="Micro\frmOpcionesMicro.resx">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\ADVD\DeveloperTools\Select_Items_v3.resx">
+      <DependentUpon>Select_Items_v3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\AquaForecast\AFC_ConsumoReal.resx">
       <DependentUpon>AFC_ConsumoReal.cs</DependentUpon>
     </EmbeddedResource>
@@ -5733,6 +5951,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Controles\xxSeleccionLookupEdit.resx">
       <DependentUpon>xxSeleccionLookupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaReal.resx">
+      <DependentUpon>frmConsumoConsolaReal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaTeorico.resx">
+      <DependentUpon>frmConsumoConsolaTeorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_Conta_Varios.resx">
+      <DependentUpon>RPT_Conta_Varios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_FML_FL_FF_CostVar_MasterDetailReport.resx">
+      <DependentUpon>RPT_FML_FL_FF_CostVar_MasterDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_FML_NC_MasterDetailReport.resx">
+      <DependentUpon>RPT_FML_NC_MasterDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_seleccion.resx">
+      <DependentUpon>RPT_seleccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Reports\RPT_Uso_Fml_Costo.resx">
+      <DependentUpon>RPT_Uso_Fml_Costo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\RPT_Teorico_Costo.resx">
+      <DependentUpon>RPT_Teorico_Costo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Forecast\FCT_EDITPRO.resx">
       <DependentUpon>FCT_EDITPRO.cs</DependentUpon>
@@ -5796,6 +6038,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_Comment_Add.resx">
       <DependentUpon>FML_Comment_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_Costeo_Formulas.resx">
+      <DependentUpon>FML_Costeo_Formulas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Select.resx">
       <DependentUpon>FML_FF_Select.cs</DependentUpon>
@@ -6184,6 +6429,9 @@
     <EmbeddedResource Include="MigracionACS\PT\PT_Productos.resx">
       <DependentUpon>PT_Productos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.resx">
+      <DependentUpon>frm_Reporteador_Validate_byUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RPTS\PRD\RPT_FB_Manual_RM.resx">
       <DependentUpon>RPT_FB_Manual_RM.cs</DependentUpon>
     </EmbeddedResource>
@@ -6273,6 +6521,45 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAP\frmLoginSAP.resx">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\frmPickArticulo.resx">
+      <DependentUpon>frmPickArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\frm_select_pv.cd.resx">
+      <DependentUpon>frm_select_pv.cd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_capitulos.resx">
+      <DependentUpon>SAR_capitulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_DASHBOARD.resx">
+      <DependentUpon>SAR_DASHBOARD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Details.resx">
+      <DependentUpon>SAR_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_detalle.resx">
+      <DependentUpon>SAR_detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_exoneracionNueva.resx">
+      <DependentUpon>SAR_exoneracionNueva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Main.resx">
+      <DependentUpon>SAR_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_mantimientoXRubro.resx">
+      <DependentUpon>SAR_mantimientoXRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Orden_detalle.resx">
+      <DependentUpon>SAR_Orden_detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_orderSelector.resx">
+      <DependentUpon>SAR_orderSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Saldo.resx">
+      <DependentUpon>SAR_Saldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\SAR\SAR_Selection.resx">
+      <DependentUpon>SAR_Selection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
@@ -7240,6 +7527,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo1.ico" />
+    <None Include="Resources\_click_24X24.png" />
     <None Include="Resources\year_24x24.png" />
     <None Include="Resources\2264828.png" />
     <None Include="Resources\Accept-icon128px.png" />
@@ -7261,6 +7549,7 @@
     <None Include="Resources\Background.png" />
     <None Include="Resources\Background_test.png" />
     <None Include="Resources\bomba-de-gas_32X32.png" />
+    <None Include="Resources\ani_wait.gif" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />
@@ -7313,6 +7602,7 @@
     <None Include="Resources\inventory_32x32.png" />
     <None Include="Resources\graph_32X32.png" />
     <None Include="Resources\forecast1_24x24.png" />
+    <None Include="Resources\excel_48x48.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
@@ -7356,6 +7646,7 @@
     <None Include="Resources\saveChanges_24x24.png" />
     <None Include="Resources\save_24x24.png" />
     <None Include="Resources\sack_black_32px.png" />
+    <None Include="Resources\refresh_16x16.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />
@@ -7383,6 +7674,7 @@
     <None Include="Resources\Upload_24x24.png" />
     <None Include="Resources\Upload_32x32.png" />
     <None Include="Resources\up_24x24.png" />
+    <None Include="Resources\txt_24.png" />
     <Content Include="Resources\user.png" />
     <None Include="Resources\weighing-machine_32X32.png" />
     <None Include="Resources\web_apply_32px.png" />
