@@ -250,10 +250,10 @@
             this.txt_barcode.LocationFloat = new DevExpress.Utils.PointFloat(1.999965F, 76.49537F);
             this.txt_barcode.Name = "txt_barcode";
             this.txt_barcode.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.txt_barcode.ShowText = false;
             this.txt_barcode.SizeF = new System.Drawing.SizeF(250.1436F, 75.00001F);
             this.txt_barcode.StylePriority.UseTextAlignment = false;
             this.txt_barcode.Symbology = code93Generator1;
+            this.txt_barcode.Text = "PN-PI";
             this.txt_barcode.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // txtformula

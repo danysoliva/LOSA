@@ -157,7 +157,6 @@
             this.colAMI_ID2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colorder_id2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colorder_code1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_turno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookTurno = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colreprint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_reprint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -978,7 +977,6 @@
             this.colAMI_ID2,
             this.colorder_id2,
             this.colorder_code1,
-            this.colid_turno,
             this.colreprint,
             this.collot,
             this.colVistaPrevia});
@@ -1053,17 +1051,6 @@
             this.colorder_code1.VisibleIndex = 2;
             this.colorder_code1.Width = 142;
             // 
-            // colid_turno
-            // 
-            this.colid_turno.Caption = "Turno";
-            this.colid_turno.ColumnEdit = this.LookTurno;
-            this.colid_turno.FieldName = "id_turno";
-            this.colid_turno.Name = "colid_turno";
-            this.colid_turno.OptionsColumn.AllowEdit = false;
-            this.colid_turno.Visible = true;
-            this.colid_turno.VisibleIndex = 7;
-            this.colid_turno.Width = 142;
-            // 
             // LookTurno
             // 
             this.LookTurno.AutoHeight = false;
@@ -1081,7 +1068,7 @@
             this.colreprint.ColumnEdit = this.btn_reprint;
             this.colreprint.Name = "colreprint";
             this.colreprint.Visible = true;
-            this.colreprint.VisibleIndex = 9;
+            this.colreprint.VisibleIndex = 8;
             this.colreprint.Width = 128;
             // 
             // btn_reprint
@@ -1109,7 +1096,7 @@
             this.colVistaPrevia.ColumnEdit = this.cmdVistaPreviaPesaje;
             this.colVistaPrevia.Name = "colVistaPrevia";
             this.colVistaPrevia.Visible = true;
-            this.colVistaPrevia.VisibleIndex = 8;
+            this.colVistaPrevia.VisibleIndex = 7;
             this.colVistaPrevia.Width = 141;
             // 
             // cmdVistaPreviaPesaje
@@ -1449,7 +1436,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAMI_ID2;
         private DevExpress.XtraGrid.Columns.GridColumn colorder_id2;
         private DevExpress.XtraGrid.Columns.GridColumn colorder_code1;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_turno;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookTurno;
         private DevExpress.XtraGrid.Columns.GridColumn colreprint;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_reprint;

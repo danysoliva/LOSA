@@ -480,7 +480,7 @@ namespace LOSA.MicroIngredientes
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_orden_encabezado", row.id_orden_encabezado);
                 cmd.Parameters.AddWithValue("@AMI", row.AMI_ID);
-                //cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
                 cn.Close();
 
                 //LoadData();
@@ -754,7 +754,8 @@ namespace LOSA.MicroIngredientes
                 xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.id_orden_encabezado, row.id_rm, row.Batch_Completados);
                 rpt.ShowPrintMarginsWarning = false;
                 rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                rpt.ShowPreview();
+                //rpt.ShowPreview();
+                rpt.Print();
             }
             catch (Exception ex)
             {
