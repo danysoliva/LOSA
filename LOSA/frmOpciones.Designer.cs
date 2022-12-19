@@ -202,6 +202,17 @@
             this.simpleButton49 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton48 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton47 = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton65 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton66 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton64 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton63 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton60 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton61 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton62 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton59 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton58 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton57 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
@@ -222,6 +233,7 @@
             this.txtProduccion.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
+            this.xtraTabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -260,7 +272,8 @@
             this.tabProduccion,
             this.txtProduccion,
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3});
             // 
             // TabMontacarga
             // 
@@ -2771,6 +2784,173 @@
             this.simpleButton47.Text = "Proyecciones de Ventas";
             this.simpleButton47.Click += new System.EventHandler(this.simpleButton47_Click);
             // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.simpleButton65);
+            this.xtraTabPage3.Controls.Add(this.simpleButton66);
+            this.xtraTabPage3.Controls.Add(this.simpleButton64);
+            this.xtraTabPage3.Controls.Add(this.simpleButton63);
+            this.xtraTabPage3.Controls.Add(this.simpleButton60);
+            this.xtraTabPage3.Controls.Add(this.simpleButton61);
+            this.xtraTabPage3.Controls.Add(this.simpleButton62);
+            this.xtraTabPage3.Controls.Add(this.simpleButton59);
+            this.xtraTabPage3.Controls.Add(this.simpleButton58);
+            this.xtraTabPage3.Controls.Add(this.simpleButton57);
+            this.xtraTabPage3.ImageOptions.Image = global::LOSA.Properties.Resources.calculo;
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.PageVisible = false;
+            this.xtraTabPage3.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage3.Text = "Contabilidad";
+            // 
+            // simpleButton65
+            // 
+            this.simpleButton65.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton65.Appearance.Options.UseFont = true;
+            this.simpleButton65.Appearance.Options.UseTextOptions = true;
+            this.simpleButton65.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton65.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton65.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton65.ImageOptions.Image")));
+            this.simpleButton65.Location = new System.Drawing.Point(43, 382);
+            this.simpleButton65.Name = "simpleButton65";
+            this.simpleButton65.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton65.TabIndex = 22;
+            this.simpleButton65.Text = "Reporte Nucleos";
+            this.simpleButton65.Click += new System.EventHandler(this.simpleButton65_Click);
+            // 
+            // simpleButton66
+            // 
+            this.simpleButton66.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton66.Appearance.Options.UseFont = true;
+            this.simpleButton66.Appearance.Options.UseTextOptions = true;
+            this.simpleButton66.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton66.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton66.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton66.ImageOptions.Image")));
+            this.simpleButton66.Location = new System.Drawing.Point(299, 212);
+            this.simpleButton66.Name = "simpleButton66";
+            this.simpleButton66.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton66.TabIndex = 21;
+            this.simpleButton66.Text = "Reportes Fiscales";
+            this.simpleButton66.Click += new System.EventHandler(this.simpleButton66_Click);
+            // 
+            // simpleButton64
+            // 
+            this.simpleButton64.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton64.Appearance.Options.UseFont = true;
+            this.simpleButton64.Appearance.Options.UseTextOptions = true;
+            this.simpleButton64.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton64.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton64.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton64.ImageOptions.SvgImage")));
+            this.simpleButton64.Location = new System.Drawing.Point(299, 382);
+            this.simpleButton64.Name = "simpleButton64";
+            this.simpleButton64.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton64.TabIndex = 19;
+            this.simpleButton64.Text = "Base Consola Teórico";
+            this.simpleButton64.Click += new System.EventHandler(this.simpleButton64_Click);
+            // 
+            // simpleButton63
+            // 
+            this.simpleButton63.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton63.Appearance.Options.UseFont = true;
+            this.simpleButton63.Appearance.Options.UseTextOptions = true;
+            this.simpleButton63.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton63.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton63.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton63.ImageOptions.Image")));
+            this.simpleButton63.Location = new System.Drawing.Point(299, 297);
+            this.simpleButton63.Name = "simpleButton63";
+            this.simpleButton63.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton63.TabIndex = 18;
+            this.simpleButton63.Text = "Base Datos Consola";
+            this.simpleButton63.Click += new System.EventHandler(this.simpleButton63_Click);
+            // 
+            // simpleButton60
+            // 
+            this.simpleButton60.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton60.Appearance.Options.UseFont = true;
+            this.simpleButton60.Appearance.Options.UseTextOptions = true;
+            this.simpleButton60.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton60.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton60.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton60.ImageOptions.Image")));
+            this.simpleButton60.Location = new System.Drawing.Point(299, 127);
+            this.simpleButton60.Name = "simpleButton60";
+            this.simpleButton60.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton60.TabIndex = 17;
+            this.simpleButton60.Text = "Reportes 2.0";
+            this.simpleButton60.Click += new System.EventHandler(this.simpleButton60_Click);
+            // 
+            // simpleButton61
+            // 
+            this.simpleButton61.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton61.Appearance.Options.UseFont = true;
+            this.simpleButton61.Appearance.Options.UseTextOptions = true;
+            this.simpleButton61.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton61.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton61.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton61.ImageOptions.Image")));
+            this.simpleButton61.Location = new System.Drawing.Point(299, 42);
+            this.simpleButton61.Name = "simpleButton61";
+            this.simpleButton61.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton61.TabIndex = 16;
+            this.simpleButton61.Text = "Varianza de Costo";
+            this.simpleButton61.Click += new System.EventHandler(this.simpleButton61_Click);
+            // 
+            // simpleButton62
+            // 
+            this.simpleButton62.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton62.Appearance.Options.UseFont = true;
+            this.simpleButton62.Appearance.Options.UseTextOptions = true;
+            this.simpleButton62.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton62.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton62.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton62.ImageOptions.Image")));
+            this.simpleButton62.Location = new System.Drawing.Point(43, 297);
+            this.simpleButton62.Name = "simpleButton62";
+            this.simpleButton62.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton62.TabIndex = 15;
+            this.simpleButton62.Text = "Reportes Varios";
+            this.simpleButton62.Click += new System.EventHandler(this.simpleButton62_Click);
+            // 
+            // simpleButton59
+            // 
+            this.simpleButton59.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton59.Appearance.Options.UseFont = true;
+            this.simpleButton59.Appearance.Options.UseTextOptions = true;
+            this.simpleButton59.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton59.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton59.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton59.ImageOptions.SvgImage")));
+            this.simpleButton59.Location = new System.Drawing.Point(43, 212);
+            this.simpleButton59.Name = "simpleButton59";
+            this.simpleButton59.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton59.TabIndex = 14;
+            this.simpleButton59.Text = "Reporte Uso Formula  Costo";
+            this.simpleButton59.Click += new System.EventHandler(this.simpleButton59_Click);
+            // 
+            // simpleButton58
+            // 
+            this.simpleButton58.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton58.Appearance.Options.UseFont = true;
+            this.simpleButton58.Appearance.Options.UseTextOptions = true;
+            this.simpleButton58.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton58.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton58.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton58.ImageOptions.SvgImage")));
+            this.simpleButton58.Location = new System.Drawing.Point(43, 127);
+            this.simpleButton58.Name = "simpleButton58";
+            this.simpleButton58.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton58.TabIndex = 13;
+            this.simpleButton58.Text = "Reporte Consumo Producción";
+            this.simpleButton58.Click += new System.EventHandler(this.simpleButton58_Click);
+            // 
+            // simpleButton57
+            // 
+            this.simpleButton57.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton57.Appearance.Options.UseFont = true;
+            this.simpleButton57.Appearance.Options.UseTextOptions = true;
+            this.simpleButton57.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton57.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton57.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton57.ImageOptions.SvgImage")));
+            this.simpleButton57.Location = new System.Drawing.Point(43, 42);
+            this.simpleButton57.Name = "simpleButton57";
+            this.simpleButton57.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton57.TabIndex = 12;
+            this.simpleButton57.Text = "Report Manager";
+            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2818,6 +2998,7 @@
             this.txtProduccion.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
+            this.xtraTabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2997,5 +3178,16 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton49;
         private DevExpress.XtraEditors.SimpleButton simpleButton48;
         private DevExpress.XtraEditors.SimpleButton simpleButton47;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton66;
+        private DevExpress.XtraEditors.SimpleButton simpleButton64;
+        private DevExpress.XtraEditors.SimpleButton simpleButton63;
+        private DevExpress.XtraEditors.SimpleButton simpleButton60;
+        private DevExpress.XtraEditors.SimpleButton simpleButton61;
+        private DevExpress.XtraEditors.SimpleButton simpleButton62;
+        private DevExpress.XtraEditors.SimpleButton simpleButton59;
+        private DevExpress.XtraEditors.SimpleButton simpleButton58;
+        private DevExpress.XtraEditors.SimpleButton simpleButton57;
+        private DevExpress.XtraEditors.SimpleButton simpleButton65;
     }
 }
