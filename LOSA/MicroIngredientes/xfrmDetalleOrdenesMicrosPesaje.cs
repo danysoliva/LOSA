@@ -116,21 +116,7 @@ namespace LOSA.MicroIngredientes
                     da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = id;
                     da.Fill(dsMicros.plan_microsh);
                     cnx.Close();
-
                 }
-
-                //if (dsMicros.plan_microsh.Rows.Count > 0)
-                //{
-
-                //    lblPT.Text = "PT: " + dsMicros.plan_microsh.FirstOrDefault().pt_name;
-                //    lblBatch.Text = "Batch Real: " + dsMicros.plan_microsh.FirstOrDefault().batch_real;
-                //}
-                //else
-                //{
-                //    lblPT.Text = "PT: #";
-                //    lblBatch.Text = "Batch Real: #";
-                //}
-
             }
             catch (Exception ex)
             {
