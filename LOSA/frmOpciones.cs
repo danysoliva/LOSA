@@ -846,7 +846,9 @@ namespace LOSA
 
         private void simpleButton9_Click(object sender, EventArgs e)
         {
-
+            frm_MateriaPrimaEnBodegaPRd frm = new frm_MateriaPrimaEnBodegaPRd(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
 
         private void simpleButton17_Click(object sender, EventArgs e)
@@ -2494,6 +2496,20 @@ namespace LOSA
         private void simpleButton57_Click(object sender, EventArgs e)
         {
             rd_OdooMenu.ShowPopup(new Point((this.Width / 2), (this.Height / 2)));
+        }
+
+        private void btnMP_BodsegaPRD_Click(object sender, EventArgs e)
+        {
+            frm_MateriaPrimaEnBodegaPRd frm = new frm_MateriaPrimaEnBodegaPRd(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btn_mp_bodega_prd_finanzas_Click(object sender, EventArgs e)
+        {
+            frm_MateriaPrimaEnBodegaPRd frm = new frm_MateriaPrimaEnBodegaPRd(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

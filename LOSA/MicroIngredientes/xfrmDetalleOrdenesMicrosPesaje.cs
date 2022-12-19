@@ -470,7 +470,7 @@ namespace LOSA.MicroIngredientes
                 rpt.ShowPrintMarginsWarning = false;
                 rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                 rpt.Print();
-                rpt.ShowPreviewDialog();
+                //rpt.ShowPreviewDialog();
 
 
                 string query = @"sp_update_close_pesaje";
@@ -480,7 +480,7 @@ namespace LOSA.MicroIngredientes
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_orden_encabezado", row.id_orden_encabezado);
                 cmd.Parameters.AddWithValue("@AMI", row.AMI_ID);
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
                 cn.Close();
 
                 //LoadData();

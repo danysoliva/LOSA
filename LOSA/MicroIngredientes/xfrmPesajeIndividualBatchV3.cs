@@ -186,7 +186,8 @@ namespace LOSA.MicroIngredientes
                         Lote = row.lote,
                         MateriaPrima = row.mp,
                         TarimaOrigeId = row.id_tarima_origen,
-
+                        TarimaMicroId = row.id_tarima_micro,
+                        Peso = row.peso,
                     });
 
                 }

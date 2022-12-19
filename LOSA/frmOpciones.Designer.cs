@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpciones));
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
@@ -214,7 +215,9 @@
             this.simpleButton58 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton57 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu();
+            this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.btnMP_BodsegaPRD = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_mp_bodega_prd_finanzas = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1414,7 +1417,7 @@
             // 
             // simpleButton9
             // 
-            this.simpleButton9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton9.Appearance.Options.UseFont = true;
             this.simpleButton9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.ImageOptions.Image")));
@@ -1422,8 +1425,7 @@
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(199, 59);
             this.simpleButton9.TabIndex = 16;
-            this.simpleButton9.Text = "Lotes de PT";
-            this.simpleButton9.Visible = false;
+            this.simpleButton9.Text = "MP en Bodega Prd";
             this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
             // 
             // simpleButton6
@@ -2357,6 +2359,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.btnMP_BodsegaPRD);
             this.txtProduccion.Controls.Add(this.frmTmVirtuales);
             this.txtProduccion.Controls.Add(this.simpleButton36);
             this.txtProduccion.Controls.Add(this.simpleButton35);
@@ -2788,6 +2791,7 @@
             // 
             // xtraTabPage3
             // 
+            this.xtraTabPage3.Controls.Add(this.btn_mp_bodega_prd_finanzas);
             this.xtraTabPage3.Controls.Add(this.simpleButton65);
             this.xtraTabPage3.Controls.Add(this.simpleButton66);
             this.xtraTabPage3.Controls.Add(this.simpleButton64);
@@ -2974,6 +2978,32 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
+            // 
+            // btnMP_BodsegaPRD
+            // 
+            this.btnMP_BodsegaPRD.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMP_BodsegaPRD.Appearance.Options.UseFont = true;
+            this.btnMP_BodsegaPRD.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnMP_BodsegaPRD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton67.ImageOptions.Image")));
+            this.btnMP_BodsegaPRD.Location = new System.Drawing.Point(249, 249);
+            this.btnMP_BodsegaPRD.Name = "btnMP_BodsegaPRD";
+            this.btnMP_BodsegaPRD.Size = new System.Drawing.Size(199, 69);
+            this.btnMP_BodsegaPRD.TabIndex = 48;
+            this.btnMP_BodsegaPRD.Text = "MP en Bodega Prd";
+            this.btnMP_BodsegaPRD.Click += new System.EventHandler(this.btnMP_BodsegaPRD_Click);
+            // 
+            // btn_mp_bodega_prd_finanzas
+            // 
+            this.btn_mp_bodega_prd_finanzas.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mp_bodega_prd_finanzas.Appearance.Options.UseFont = true;
+            this.btn_mp_bodega_prd_finanzas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_mp_bodega_prd_finanzas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton67.ImageOptions.Image1")));
+            this.btn_mp_bodega_prd_finanzas.Location = new System.Drawing.Point(302, 384);
+            this.btn_mp_bodega_prd_finanzas.Name = "btn_mp_bodega_prd_finanzas";
+            this.btn_mp_bodega_prd_finanzas.Size = new System.Drawing.Size(223, 71);
+            this.btn_mp_bodega_prd_finanzas.TabIndex = 49;
+            this.btn_mp_bodega_prd_finanzas.Text = "MP en Bodega Prd";
+            this.btn_mp_bodega_prd_finanzas.Click += new System.EventHandler(this.btn_mp_bodega_prd_finanzas_Click);
             // 
             // frmOpciones
             // 
@@ -3200,5 +3230,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton57;
         private DevExpress.XtraEditors.SimpleButton simpleButton65;
         private DevExpress.XtraBars.Ribbon.RadialMenu rd_OdooMenu;
+        private DevExpress.XtraEditors.SimpleButton btnMP_BodsegaPRD;
+        private DevExpress.XtraEditors.SimpleButton btn_mp_bodega_prd_finanzas;
     }
 }
