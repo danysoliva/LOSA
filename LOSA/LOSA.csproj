@@ -880,6 +880,12 @@
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\InspeccionIngreso\frmInspeccionCalidadPorIngresoLoteMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\InspeccionIngreso\frmInspeccionCalidadPorIngresoLoteMP.Designer.cs">
+      <DependentUpon>frmInspeccionCalidadPorIngresoLoteMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.cs">
       <DependentUpon>dsConfigLoteConsumo.xsd</DependentUpon>
     </Compile>
@@ -5562,6 +5568,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.resx">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\InspeccionIngreso\frmInspeccionCalidadPorIngresoLoteMP.resx">
+      <DependentUpon>frmInspeccionCalidadPorIngresoLoteMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\LoteConfConsumo\frmConfigLoteConsumoFirst.resx">
       <DependentUpon>frmConfigLoteConsumoFirst.cs</DependentUpon>

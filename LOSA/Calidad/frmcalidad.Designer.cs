@@ -121,7 +121,7 @@
             this.grdv_ingreso.GridControl = this.grd_ingreso;
             this.grdv_ingreso.Name = "grdv_ingreso";
             this.grdv_ingreso.OptionsView.ShowAutoFilterRow = true;
-            this.grdv_ingreso.OptionsView.ShowGroupPanel = false;
+            this.grdv_ingreso.OptionsView.ShowFooter = true;
             // 
             // colNingreso
             // 

@@ -335,8 +335,8 @@ namespace LOSA.MicroIngredientes
                             limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
 
                             //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-                            lblInferior.Text = "Límite Mínimo: " + limiteInferior.ToString("N2");
-                            lblSuperior.Text = "Límite Máximo: " + limiteSuperior.ToString("N2");
+                            lblInferior.Text = "Límite Minimo: " + limiteInferior.ToString("N2");
+                            lblSuperior.Text = "Límite Maximo: " + limiteSuperior.ToString("N2");
 
 
                             switch (BasculaId)
@@ -556,8 +556,8 @@ namespace LOSA.MicroIngredientes
             limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
 
             //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-            lblInferior.Text = "Límite Máximo: " + limiteInferior.ToString("N2") + " Kg";
-            lblSuperior.Text = "Límite Mínimo: " + limiteSuperior.ToString("N2") + " Kg";
+            lblInferior.Text = "Límite Minimo: " + limiteInferior.ToString("N2") + " Kg";
+            lblSuperior.Text = "Límite Maximo: " + limiteSuperior.ToString("N2") + " Kg";
 
             //pesoBasculaAcumulado1 = 0.95M;
             switch (BasculaId)

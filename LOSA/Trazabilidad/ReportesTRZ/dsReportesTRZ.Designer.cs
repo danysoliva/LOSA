@@ -1697,6 +1697,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             private global::System.Data.DataColumn columncodigo_barra;
             
+            private global::System.Data.DataColumn columndate_trans;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_despachosDataTable() {
@@ -1820,6 +1822,14 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn date_transColumn {
+                get {
+                    return this.columndate_trans;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1855,7 +1865,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public detalle_despachosRow Adddetalle_despachosRow(int _Cod__Despacho, int Fila, int Lote, decimal Cantidad, decimal Peso, decimal Kg, string Producto, string Code, short saco_desde, int saco_hasta, string codigo_barra) {
+            public detalle_despachosRow Adddetalle_despachosRow(int _Cod__Despacho, int Fila, int Lote, decimal Cantidad, decimal Peso, decimal Kg, string Producto, string Code, short saco_desde, int saco_hasta, string codigo_barra, System.DateTime date_trans) {
                 detalle_despachosRow rowdetalle_despachosRow = ((detalle_despachosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _Cod__Despacho,
@@ -1868,7 +1878,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                         Code,
                         saco_desde,
                         saco_hasta,
-                        codigo_barra};
+                        codigo_barra,
+                        date_trans};
                 rowdetalle_despachosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_despachosRow);
                 return rowdetalle_despachosRow;
@@ -1902,6 +1913,7 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 this.columnsaco_desde = base.Columns["saco_desde"];
                 this.columnsaco_hasta = base.Columns["saco_hasta"];
                 this.columncodigo_barra = base.Columns["codigo_barra"];
+                this.columndate_trans = base.Columns["date_trans"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1931,6 +1943,9 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 base.Columns.Add(this.columnsaco_hasta);
                 this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo_barra);
+                this.columndate_trans = new global::System.Data.DataColumn("date_trans", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_trans);
+                this.columndate_trans.Caption = "Date Transaction";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4695,6 +4710,22 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime date_trans {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledetalle_despachos.date_transColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'date_trans\' de la tabla \'detalle_despachos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_despachos.date_transColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is_Cod__DespachoNull() {
                 return this.IsNull(this.tabledetalle_despachos._Cod__DespachoColumn);
             }
@@ -4823,6 +4854,18 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcodigo_barraNull() {
                 this[this.tabledetalle_despachos.codigo_barraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdate_transNull() {
+                return this.IsNull(this.tabledetalle_despachos.date_transColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdate_transNull() {
+                this[this.tabledetalle_despachos.date_transColumn] = global::System.Convert.DBNull;
             }
         }
         

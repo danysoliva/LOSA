@@ -24,7 +24,7 @@ using LOSA.TransaccionesMP;
 
 namespace LOSA.Calidad
 {
-    public partial class rdEstadoTransporte : DevExpress.XtraEditors.XtraForm
+    public partial class frmInspeccionCalidadPorIngresoLoteMP : DevExpress.XtraEditors.XtraForm
     {
         public int Id_ingreso;
         UserLogin UsuarioLogeado;
@@ -48,7 +48,7 @@ namespace LOSA.Calidad
 
 
         DataOperations dp = new DataOperations();
-        public rdEstadoTransporte(int id_ingreso_lote,
+        public frmInspeccionCalidadPorIngresoLoteMP(int id_ingreso_lote,
                                   UserLogin Puser)
         {
             InitializeComponent();
@@ -89,7 +89,7 @@ namespace LOSA.Calidad
             }
         }
 
-        public rdEstadoTransporte(int pNumeroIngreso, int pIdMP,string pLote, UserLogin Puser)
+        public frmInspeccionCalidadPorIngresoLoteMP(int pNumeroIngreso, int pIdMP,string pLote, UserLogin Puser)
         {
             InitializeComponent();
             UsuarioLogeado = Puser;
@@ -98,7 +98,6 @@ namespace LOSA.Calidad
             Lote = pLote;
 
             tabPageLotesPT.Visible = false;
-            //tabControl1.TabPages[4]
             load_data();
             load_data_ingreso();
             Load_cargas_nir();
@@ -131,7 +130,7 @@ namespace LOSA.Calidad
             }
         }
 
-        public rdEstadoTransporte(string pLoteMP,
+        public frmInspeccionCalidadPorIngresoLoteMP(string pLoteMP,
                                   UserLogin Puser)
         {
             InitializeComponent();
@@ -171,7 +170,7 @@ namespace LOSA.Calidad
         }
 
 
-        public rdEstadoTransporte(int id_ingreso_lote, UserLogin Puser,int tipo_transaccion)
+        public frmInspeccionCalidadPorIngresoLoteMP(int id_ingreso_lote, UserLogin Puser,int tipo_transaccion)
         {
             InitializeComponent();
             Id_ingreso = id_ingreso_lote;
@@ -236,22 +235,22 @@ namespace LOSA.Calidad
             labelControl4.Visible = false;
             labelControl6.Visible=false;
             labelControl7.Visible=false;
-            txtreferencia.Visible = false;
-            dtproduccion.Visible = false;
-            dtvencimiento.Visible = false;
-            dt_f_ingreso.Visible = false;
-            txtdiasvencimiento.Visible = false;
+            //txtreferencia.Visible = false;
+            //dtproduccion.Visible = false;
+            //dtvencimiento.Visible = false;
+            //dt_f_ingreso.Visible = false;
+            //txtdiasvencimiento.Visible = false;
             txtingresada.Visible = false;
             txtinventarioActual.Visible = false;
             txtingresadaUD.Visible = false;
             txtFacturas.Visible = false;
-            labelControl8.Visible = false;
-            labelControl9.Visible = false;
-            labelControl10.Visible = false;
-            labelControl11.Visible = false;
+            //labelControl8.Visible = false;
+            //labelControl9.Visible = false;
+            //labelControl10.Visible = false;
+            //labelControl11.Visible = false;
             labelControl12.Visible = false;
             labelControl13.Visible = false;
-            labelControl44.Visible = false;
+            //labelControl44.Visible = false;
             labelControl32.Visible = false;
             labelControl15.Visible = false;
             btnRecientes.Visible = false;
@@ -894,14 +893,18 @@ namespace LOSA.Calidad
         }
         public void load_data()
         {
-            string query = @"sp_get_informacion_get_to_show_calidad_v2";
+            string query = @"[sp_get_informacion_get_to_show_calidad_v3]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
+                //cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
+                cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
+                cmd.Parameters.AddWithValue("@idmp", IdMP);
+                cmd.Parameters.AddWithValue("@lote", Lote);
+
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -911,7 +914,7 @@ namespace LOSA.Calidad
                     txtproveedor.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
                     txtnumtraslado.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
                     txtoc.Text = dr.IsDBNull(6) ? "" : dr.GetString(5).ToString();
-                    txtreferencia.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
+                    //txtreferencia.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
                     ChCalidad = dr.IsDBNull(7) ? false : dr.GetBoolean(7);
                     code_sap = dr.IsDBNull(8) ? "" : dr.GetString(8);
                     codigo = dr.IsDBNull(9) ? "" : dr.GetString(9);
@@ -958,7 +961,7 @@ namespace LOSA.Calidad
                     txtproveedor.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
                     txtnumtraslado.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
                     txtoc.Text = dr.IsDBNull(6) ? "" : dr.GetString(5).ToString();
-                    txtreferencia.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
+                    //txtreferencia.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
                     ChCalidad = dr.IsDBNull(7) ? false : dr.GetBoolean(7);
                     code_sap = dr.IsDBNull(8) ? "" : dr.GetString(8);
                     codigo = dr.IsDBNull(9) ? "" : dr.GetString(9);
@@ -983,21 +986,24 @@ namespace LOSA.Calidad
         }
         public void load_data_ingreso()
         {
-            string query = @"sp_get_informacion_get_to_show_calidad_data_mp";
+            string query = @"[sp_get_informacion_get_to_show_calidad_data_mp_v2]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
+                //cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
+                cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
+                cmd.Parameters.AddWithValue("@idmp", IdMP);
+                cmd.Parameters.AddWithValue("@lote", Lote);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    dtproduccion.EditValue = dr.IsDBNull(0) ? DateTime.Now : dr.GetDateTime(0);
-                    dtvencimiento.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);
-                    dt_f_ingreso.EditValue = dr.IsDBNull(2) ? DateTime.Now : dr.GetDateTime(2);
-                    txtdiasvencimiento.Text = dr.IsDBNull(3) ? "0" : dr.GetInt32(3).ToString();
+                    //dtproduccion.EditValue = dr.IsDBNull(0) ? DateTime.Now : dr.GetDateTime(0);
+                    //dtvencimiento.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);
+                    //dt_f_ingreso.EditValue = dr.IsDBNull(2) ? DateTime.Now : dr.GetDateTime(2);
+                    //txtdiasvencimiento.Text = dr.IsDBNull(3) ? "0" : dr.GetInt32(3).ToString();
                     txtingresada.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
                     txtingresadaUD.Text = dr.IsDBNull(5) ? "" : dr.GetDecimal(5).ToString();
                     txtinventarioActual.Text = dr.IsDBNull(6) ? "" : dr.GetDecimal(6).ToString();
@@ -1025,9 +1031,9 @@ namespace LOSA.Calidad
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    dtproduccion.EditValue = dr.IsDBNull(0) ? DateTime.Now : dr.GetDateTime(0);
-                    dtvencimiento.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);
-                    txtdiasvencimiento.Text = dr.IsDBNull(2) ? "0" : dr.GetInt32(2).ToString();
+                    //dtproduccion.EditValue = dr.IsDBNull(0) ? DateTime.Now : dr.GetDateTime(0);
+                    //dtvencimiento.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);
+                    //txtdiasvencimiento.Text = dr.IsDBNull(2) ? "0" : dr.GetInt32(2).ToString();
                     txtingresada.Text = dr.IsDBNull(3) ? "" : dr.GetDecimal(3).ToString();
                     txtinventarioActual.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
                     id_materiaPrima = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
@@ -1311,13 +1317,13 @@ namespace LOSA.Calidad
             try
             {
 
-                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text,Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text));
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
+                //frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text,Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text));
+                //if (frm.ShowDialog() == DialogResult.OK)
+                //{
 
-                    Load_cargas_nir();
-                    Inicializar_data_logistica();
-                }
+                //    Load_cargas_nir();
+                //    Inicializar_data_logistica();
+                //}
             }
             catch (Exception ex)
             {
@@ -1778,7 +1784,7 @@ namespace LOSA.Calidad
             }
         }
 
-        private void rdEstadoTransporte_Load(object sender, EventArgs e)
+        private void frmInspeccionCalidadPorIngresoLoteMP_Load(object sender, EventArgs e)
         {
             LoteMP LoteMP_ = new LoteMP();
             if (LoteMP_.RecuperarRegistro(txtloteMP.Text))
