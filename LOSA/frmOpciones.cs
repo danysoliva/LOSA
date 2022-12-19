@@ -58,6 +58,7 @@ using LOSA.Trazabilidad.ReportesTRZ;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -212,6 +213,7 @@ namespace LOSA
                         default:
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
                             tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[8].PageVisible = true;
                             break;
                     }
                     break;
@@ -2487,6 +2489,11 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
             
             }
+        }
+
+        private void simpleButton57_Click(object sender, EventArgs e)
+        {
+            rd_OdooMenu.ShowPopup(new Point((this.Width / 2), (this.Height / 2)));
         }
     }
 }
