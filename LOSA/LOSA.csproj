@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>453</ApplicationRevision>
+    <ApplicationRevision>454</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1782,6 +1782,12 @@
     </Compile>
     <Compile Include="MicroIngredientes\xfrmConfPlanBatch.Designer.cs">
       <DependentUpon>xfrmConfPlanBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeNucleo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MicroIngredientes\xfrmPesajeNucleo.Designer.cs">
+      <DependentUpon>xfrmPesajeNucleo.cs</DependentUpon>
     </Compile>
     <Compile Include="MicroIngredientes\xfrmResumenMPIndividual.cs">
       <SubType>Form</SubType>
@@ -5942,6 +5948,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmConfPlanBatch.resx">
       <DependentUpon>xfrmConfPlanBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MicroIngredientes\xfrmPesajeNucleo.resx">
+      <DependentUpon>xfrmPesajeNucleo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MicroIngredientes\xfrmResumenMPIndividual.resx">
       <DependentUpon>xfrmResumenMPIndividual.cs</DependentUpon>
