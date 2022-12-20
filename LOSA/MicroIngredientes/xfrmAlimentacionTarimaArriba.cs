@@ -24,6 +24,7 @@ namespace LOSA.MicroIngredientes
             //LoadHeader();
             LoadData();
             LoadData2();
+            LoadDataIndividual();
             timer1.Enabled = true;
         }
 
@@ -145,8 +146,18 @@ namespace LOSA.MicroIngredientes
                     cnx.Close();
 
                 }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
 
-                
+        private void LoadDataIndividual()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
                 {
                     cnx.Open();
@@ -163,6 +174,7 @@ namespace LOSA.MicroIngredientes
             {
                 CajaDialogo.Error(ex.Message);
             }
+        
         }
 
 
@@ -325,11 +337,11 @@ namespace LOSA.MicroIngredientes
                 AlimentacionTolvaMicrosPesaje alimentacionTolva = new AlimentacionTolvaMicrosPesaje();
                 if (alimentacionTolva.RecuperaRegistro(teCodBarra.Text))
                 {
-                    //if (alimentacionTolva.Lot != LotePT)
-                    //{
-                    //    CajaDialogo.Error("Esta orden no pertenece al Lote: " + LotePT.ToString() + "!" );
-                    //    return;
-                    //}
+                    if (alimentacionTolva.Lot != LotePT)
+                    {
+                        CajaDialogo.Error("Esta orden no pertenece al Lote: " + LotePT.ToString() + "!");
+                        return;
+                    }
 
                     xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow(order_id, 0, teCodBarra.Text, alimentacionTolva.IdMP);
                     //xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow( order_id,Convert.ToInt32(txtCodBarra.Text));
@@ -361,26 +373,30 @@ namespace LOSA.MicroIngredientes
                             }
 
 
-                            LoadData2();
+                            
                             //if (batchCompletados == true)
                             //{
                             //    CajaDialogo.Error("NO SE PUEDE ADICIONAR MAS BATCH");
                             //    return;
                             //}
                             //else
-                            //    //frm.ShowDialog();
-                            //    teCodBarra.Focus();
+                            //    frm.ShowDialog();
+
                             if (tipo_pesaje == 1)
                             {
                                 //PESAJE DE NUCLEO
                                 xtraTabControl1.SelectedTabPage = xtraTabPage1;
-                                
+                                LoadData2();
                             }
                             else
                             {
                                 //PESAJE INDIVIDUAL
                                 xtraTabControl1.SelectedTabPage = xtraTabPage2;
+                                LoadDataIndividual();
                             }
+
+                            teCodBarra.Text = "";
+                            teCodBarra.Focus();
 
                         }
 

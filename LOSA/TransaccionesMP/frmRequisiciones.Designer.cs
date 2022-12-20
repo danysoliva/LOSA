@@ -49,6 +49,7 @@
             this.grRequisicoinesMP = new DevExpress.XtraGrid.GridControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             this.gvTarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colLote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_usuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluser_ = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,7 +68,6 @@
             this.btnend = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colfinalizado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tggView = new DevExpress.XtraEditors.ToggleSwitch();
-            this.colLote = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grRequisicoinesMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
@@ -178,12 +178,22 @@
             this.gvTarimas.OptionsView.ShowGroupPanel = false;
             this.gvTarimas.RowHeight = 16;
             // 
+            // colLote
+            // 
+            this.colLote.FieldName = "Lote";
+            this.colLote.Name = "colLote";
+            this.colLote.OptionsColumn.AllowEdit = false;
+            this.colLote.Visible = true;
+            this.colLote.VisibleIndex = 1;
+            this.colLote.Width = 77;
+            // 
             // colid
             // 
             this.colid.Caption = "Num.";
             this.colid.FieldName = "id";
             this.colid.MinWidth = 15;
             this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
             // 
@@ -230,6 +240,7 @@
             this.colfecha_a_producir.FieldName = "fecha_a_producir";
             this.colfecha_a_producir.MinWidth = 15;
             this.colfecha_a_producir.Name = "colfecha_a_producir";
+            this.colfecha_a_producir.OptionsColumn.AllowEdit = false;
             this.colfecha_a_producir.Visible = true;
             this.colfecha_a_producir.VisibleIndex = 4;
             this.colfecha_a_producir.Width = 76;
@@ -349,15 +360,6 @@
             this.tggView.Size = new System.Drawing.Size(232, 30);
             this.tggView.TabIndex = 36;
             this.tggView.Toggled += new System.EventHandler(this.tggView_Toggled);
-            // 
-            // colLote
-            // 
-            this.colLote.FieldName = "Lote";
-            this.colLote.Name = "colLote";
-            this.colLote.OptionsColumn.AllowEdit = false;
-            this.colLote.Visible = true;
-            this.colLote.VisibleIndex = 1;
-            this.colLote.Width = 77;
             // 
             // frmRequisiciones
             // 

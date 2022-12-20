@@ -336,7 +336,7 @@ namespace LOSA.Produccion
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnCerrar.Appearance.Options.UseFont = true;
-            this.btnCerrar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnCerrar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCerrar.ImageOptions.SvgImage")));
             this.btnCerrar.Location = new System.Drawing.Point(1220, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(114, 39);
@@ -354,7 +354,6 @@ namespace LOSA.Produccion
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "frm_MateriaPrimaEnBodegaPRd";
-            this.Text = "frm_MateriaPrimaEnBodega";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
