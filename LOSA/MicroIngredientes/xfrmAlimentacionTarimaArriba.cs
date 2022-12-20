@@ -145,12 +145,27 @@ namespace LOSA.MicroIngredientes
                     cnx.Close();
 
                 }
+
+                
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+                    dsMicros.resumen_pesaje_individual_pendiente.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("dbo.[sp_get_detalle_orden_pesaje_micros_individual]", cnx);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    //da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id;
+                    da.Fill(dsMicros.resumen_pesaje_individual_pendiente);
+                    cnx.Close();
+
+                }
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+
 
         private void LoadHeader()
         {
@@ -310,16 +325,16 @@ namespace LOSA.MicroIngredientes
                 AlimentacionTolvaMicrosPesaje alimentacionTolva = new AlimentacionTolvaMicrosPesaje();
                 if (alimentacionTolva.RecuperaRegistro(teCodBarra.Text))
                 {
-                    if (alimentacionTolva.Lot != LotePT)
-                    {
-                        CajaDialogo.Error("Esta orden no pertenece al Lote: " + LotePT.ToString() + "!" );
-                        return;
-                    }
+                    //if (alimentacionTolva.Lot != LotePT)
+                    //{
+                    //    CajaDialogo.Error("Esta orden no pertenece al Lote: " + LotePT.ToString() + "!" );
+                    //    return;
+                    //}
 
                     xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow(order_id, 0, teCodBarra.Text, alimentacionTolva.IdMP);
                     //xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow( order_id,Convert.ToInt32(txtCodBarra.Text));
                     bool batchCompletados;
-
+                    int tipo_pesaje = 0;
                     try
                     {
 
@@ -340,21 +355,32 @@ namespace LOSA.MicroIngredientes
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@codigo_barra_pesaje_individual", alimentacionTolva.CodigoBarra);
 
-                                batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
-
+                                //batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
+                                tipo_pesaje = Convert.ToInt32(cmd.ExecuteScalar());
                                 cnx.Close();
                             }
 
-                            LoadData2();
 
-                            if (batchCompletados == true)
+                            LoadData2();
+                            //if (batchCompletados == true)
+                            //{
+                            //    CajaDialogo.Error("NO SE PUEDE ADICIONAR MAS BATCH");
+                            //    return;
+                            //}
+                            //else
+                            //    //frm.ShowDialog();
+                            //    teCodBarra.Focus();
+                            if (tipo_pesaje == 1)
                             {
-                                CajaDialogo.Error("NO SE PUEDE ADICIONAR MAS BATCH");
-                                return;
+                                //PESAJE DE NUCLEO
+                                xtraTabControl1.SelectedTabPage = xtraTabPage1;
+                                
                             }
                             else
-                                //frm.ShowDialog();
-                                teCodBarra.Focus();
+                            {
+                                //PESAJE INDIVIDUAL
+                                xtraTabControl1.SelectedTabPage = xtraTabPage2;
+                            }
 
                         }
 
