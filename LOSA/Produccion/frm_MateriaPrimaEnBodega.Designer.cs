@@ -39,6 +39,7 @@ namespace LOSA.Produccion
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_MateriaPrimaEnBodegaPRd));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -62,6 +63,8 @@ namespace LOSA.Produccion
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.btnRefreshRptMP = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCerrar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -315,15 +318,42 @@ namespace LOSA.Produccion
             this.labelControl1.TabIndex = 21;
             this.labelControl1.Text = "Materia Prima en Bodega de Produccion";
             // 
+            // btnRefreshRptMP
+            // 
+            this.btnRefreshRptMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefreshRptMP.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnRefreshRptMP.Appearance.Options.UseFont = true;
+            this.btnRefreshRptMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefreshRptMP.ImageOptions.SvgImage")));
+            this.btnRefreshRptMP.Location = new System.Drawing.Point(1079, 12);
+            this.btnRefreshRptMP.Name = "btnRefreshRptMP";
+            this.btnRefreshRptMP.Size = new System.Drawing.Size(114, 39);
+            this.btnRefreshRptMP.TabIndex = 22;
+            this.btnRefreshRptMP.Text = "Actualizar";
+            this.btnRefreshRptMP.Click += new System.EventHandler(this.btnRefreshRptMP_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnCerrar.Appearance.Options.UseFont = true;
+            this.btnCerrar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCerrar.ImageOptions.SvgImage")));
+            this.btnCerrar.Location = new System.Drawing.Point(1220, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(114, 39);
+            this.btnCerrar.TabIndex = 23;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // frm_MateriaPrimaEnBodegaPRd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 758);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnRefreshRptMP);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "frm_MateriaPrimaEnBodegaPRd";
-            this.Text = "frm_MateriaPrimaEnBodega";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
@@ -360,5 +390,7 @@ namespace LOSA.Produccion
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
         private TransaccionesMP.dsTarima dsTarima1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton btnRefreshRptMP;
+        private DevExpress.XtraEditors.SimpleButton btnCerrar;
     }
 }

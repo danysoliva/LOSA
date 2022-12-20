@@ -59,6 +59,13 @@ namespace LOSA.TransaccionesMP
             //Boton editar
             var gridView = (GridView)grDetalleLote.FocusedView;
             var row = (dsTransaccionesMP.requisiciones_dRow)gridView.GetFocusedDataRow();
+
+            if (row.entregada == 0)
+            {
+                CajaDialogo.Error("No se a entregado Materia Prima");
+                return;
+            }
+
             if (row.asignado == 0)
             {
                 frmSeleccionLote frm = new frmSeleccionLote(UsuarioLogeado,
@@ -68,7 +75,7 @@ namespace LOSA.TransaccionesMP
                                                            row.id_unidad_medida,
                                                            row.unidad
                                                            , row.pendiente);
-                frm.WindowState = FormWindowState.Maximized;
+                //frm.WindowState = FormWindowState.Maximized;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadDatos();
@@ -85,7 +92,7 @@ namespace LOSA.TransaccionesMP
                                                                 row.id_unidad_medida,
                                                                 row.unidad
                                                                 ,row.pendiente);
-                    frm.WindowState = FormWindowState.Maximized;
+                    //frm.WindowState = FormWindowState.Maximized;
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadDatos();

@@ -51,5 +51,15 @@ namespace LOSA.Produccion
             //backgroundWorkerPRD.CancelAsync();
             //backgroundWorkerPRD.Dispose();
         }
+
+        private void btnRefreshRptMP_Click(object sender, EventArgs e)
+        {
+            load_dataPRD();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

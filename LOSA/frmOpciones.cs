@@ -2511,5 +2511,29 @@ namespace LOSA
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnRutas_traza_produccion_Click(object sender, EventArgs e)
+        {
+            frmRutasTrazabilidad frm = new frmRutasTrazabilidad(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnrutas_traz_logistica_Click(object sender, EventArgs e)
+        {
+            frmRutasTrazabilidad frm = new frmRutasTrazabilidad(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btn_rutas_traza_contabilidad_Click(object sender, EventArgs e)
+        {
+            frmRutasTrazabilidad frm = new frmRutasTrazabilidad(this.UsuarioLogeado);
+            if (this.MdiParent != null)
+                frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }
