@@ -1337,6 +1337,7 @@ namespace LOSA.Trazabilidad
             this.npMain.Controls.Add(this.labelControl79);
             this.npMain.Name = "npMain";
             this.npMain.Size = new System.Drawing.Size(1301, 856);
+            this.npMain.Paint += new System.Windows.Forms.PaintEventHandler(this.npMain_Paint);
             // 
             // btnSalir
             // 
@@ -5715,7 +5716,7 @@ namespace LOSA.Trazabilidad
             // 
             // grd_despachos
             // 
-            this.grd_despachos.DataMember = "detalle_despachos";
+            this.grd_despachos.DataMember = "detalle_despachos_home";
             this.grd_despachos.DataSource = this.dsReportesTRZ;
             this.grd_despachos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_despachos.Location = new System.Drawing.Point(0, 0);

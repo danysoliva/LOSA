@@ -366,7 +366,7 @@ namespace LOSA.Trazabilidad
             {
                 //string query = @"[sp_load_report_trazabilitadad_lotev2_group_by_mp]";
                 string query = @"[sp_get_detalle_cruce_lote_trz_ruta4]";
-                
+                dsCalidad.trazabilitad.Clear();
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 try
                 {
@@ -375,7 +375,7 @@ namespace LOSA.Trazabilidad
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@lote_pt", txtlote.Text);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    dsCalidad.trazabilitad.Clear();
+                    
                     da.Fill(dsCalidad.trazabilitad);
                     cn.Close();
                     if (dsCalidad.trazabilitad.Rows.Count == 0)
@@ -437,6 +437,7 @@ namespace LOSA.Trazabilidad
             {
                 CajaDialogo.Error("Debe de especificar el lote que desea encontrar resultados.");
             }
+            dsCalidad.trazabilitad.Clear();
             load_data();//Detalle de materias primas usadas en lote de PT
             load_header();
             Load_Despachos();
@@ -743,8 +744,10 @@ namespace LOSA.Trazabilidad
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lote", LoteActual.LotePT_Num);
                 dsReportesTRZ.detalle_despachos.Clear();
+                dsReportesTRZ.detalle_despachos_home.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsReportesTRZ.detalle_despachos);
+                adat.Fill(dsReportesTRZ.detalle_despachos_home);
                 con.Close();
             }
             catch (Exception ec)
@@ -921,6 +924,7 @@ namespace LOSA.Trazabilidad
                 {
                     CajaDialogo.Error("Debe de especificar el lote que desea encontrar resultados.");
                 }
+                dsCalidad.trazabilitad.Clear();
                 load_header();
                 load_data();
                 Load_Despachos();
@@ -2261,6 +2265,11 @@ namespace LOSA.Trazabilidad
             {
                 CajaDialogo.Error(ec.Message);
             }
+        }
+
+        private void npMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
