@@ -97,7 +97,8 @@ namespace LOSA.Calidad.LoteConfConsumo
                 cmd.Parameters.AddWithValue("@fecha_nueva",dtFechaVencimiento.EditValue);
                 cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                 cmd.Parameters.AddWithValue("@lote",txtLoteMP.Text);
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@id_ingreso", id_ingreso);
+                //cmd.ExecuteNonQuery();
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
