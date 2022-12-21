@@ -2271,5 +2271,11 @@ namespace LOSA.Trazabilidad
         {
 
         }
+
+        private void cmdVerDetallePesajes_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Version detalle de pesajes por materia prima, lote mp y lote pt
+
+        }
     }
 }
