@@ -163,7 +163,7 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                frmeditarLote frm = new frmeditarLote(row.id);
+                frmeditarLote frm = new frmeditarLote(row.numero_transaccion, row.lote);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     load_data();

@@ -356,11 +356,11 @@ namespace LOSA.TransaccionesPT
             this.cmdImprimir.Appearance.Options.UseFont = true;
             this.cmdImprimir.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdImprimir.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdImprimir.ImageOptions.SvgImage")));
-            this.cmdImprimir.Location = new System.Drawing.Point(225, 205);
+            this.cmdImprimir.Location = new System.Drawing.Point(8, 205);
             this.cmdImprimir.Name = "cmdImprimir";
-            this.cmdImprimir.Size = new System.Drawing.Size(104, 35);
+            this.cmdImprimir.Size = new System.Drawing.Size(193, 35);
             this.cmdImprimir.TabIndex = 14;
-            this.cmdImprimir.Text = "Imprimir";
+            this.cmdImprimir.Text = "Imprimir Detalle Normal";
             this.cmdImprimir.Visible = false;
             this.cmdImprimir.Click += new System.EventHandler(this.cmdImprimir_Click);
             // 

@@ -207,6 +207,7 @@
             this.simpleButton48 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton47 = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.btn_rutas_traza_contabilidad = new DevExpress.XtraEditors.SimpleButton();
             this.btn_mp_bodega_prd_finanzas = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton65 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton66 = new DevExpress.XtraEditors.SimpleButton();
@@ -220,7 +221,8 @@
             this.simpleButton57 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btn_rutas_traza_contabilidad = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAprobaTarimasConta = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_add_tarimas_pt = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -923,6 +925,7 @@
             // 
             this.tabPT.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabPT.Appearance.Header.Options.UseFont = true;
+            this.tabPT.Controls.Add(this.btn_add_tarimas_pt);
             this.tabPT.Controls.Add(this.btnHistorialPT);
             this.tabPT.Controls.Add(this.simpleButton31);
             this.tabPT.Controls.Add(this.simpleButton22);
@@ -2839,6 +2842,7 @@
             // 
             // xtraTabPage3
             // 
+            this.xtraTabPage3.Controls.Add(this.btnAprobaTarimasConta);
             this.xtraTabPage3.Controls.Add(this.btn_rutas_traza_contabilidad);
             this.xtraTabPage3.Controls.Add(this.btn_mp_bodega_prd_finanzas);
             this.xtraTabPage3.Controls.Add(this.simpleButton65);
@@ -2856,6 +2860,21 @@
             this.xtraTabPage3.PageVisible = false;
             this.xtraTabPage3.Size = new System.Drawing.Size(835, 518);
             this.xtraTabPage3.Text = "Contabilidad";
+            // 
+            // btn_rutas_traza_contabilidad
+            // 
+            this.btn_rutas_traza_contabilidad.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rutas_traza_contabilidad.Appearance.Options.UseFont = true;
+            this.btn_rutas_traza_contabilidad.Appearance.Options.UseTextOptions = true;
+            this.btn_rutas_traza_contabilidad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btn_rutas_traza_contabilidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_rutas_traza_contabilidad.ImageOptions.Image = global::LOSA.Properties.Resources.signpost24X24;
+            this.btn_rutas_traza_contabilidad.Location = new System.Drawing.Point(545, 42);
+            this.btn_rutas_traza_contabilidad.Name = "btn_rutas_traza_contabilidad";
+            this.btn_rutas_traza_contabilidad.Size = new System.Drawing.Size(223, 71);
+            this.btn_rutas_traza_contabilidad.TabIndex = 50;
+            this.btn_rutas_traza_contabilidad.Text = "Rutas de Trazabilidad";
+            this.btn_rutas_traza_contabilidad.Click += new System.EventHandler(this.btn_rutas_traza_contabilidad_Click);
             // 
             // btn_mp_bodega_prd_finanzas
             // 
@@ -3041,20 +3060,37 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // btn_rutas_traza_contabilidad
+            // btnAprobaTarimasConta
             // 
-            this.btn_rutas_traza_contabilidad.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_rutas_traza_contabilidad.Appearance.Options.UseFont = true;
-            this.btn_rutas_traza_contabilidad.Appearance.Options.UseTextOptions = true;
-            this.btn_rutas_traza_contabilidad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btn_rutas_traza_contabilidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_rutas_traza_contabilidad.ImageOptions.Image = global::LOSA.Properties.Resources.signpost24X24;
-            this.btn_rutas_traza_contabilidad.Location = new System.Drawing.Point(545, 42);
-            this.btn_rutas_traza_contabilidad.Name = "btn_rutas_traza_contabilidad";
-            this.btn_rutas_traza_contabilidad.Size = new System.Drawing.Size(223, 71);
-            this.btn_rutas_traza_contabilidad.TabIndex = 50;
-            this.btn_rutas_traza_contabilidad.Text = "Rutas de Trazabilidad";
-            this.btn_rutas_traza_contabilidad.Click += new System.EventHandler(this.btn_rutas_traza_contabilidad_Click);
+            this.btnAprobaTarimasConta.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAprobaTarimasConta.Appearance.Options.UseFont = true;
+            this.btnAprobaTarimasConta.Appearance.Options.UseTextOptions = true;
+            this.btnAprobaTarimasConta.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnAprobaTarimasConta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnAprobaTarimasConta.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton67.ImageOptions.SvgImage1")));
+            this.btnAprobaTarimasConta.Location = new System.Drawing.Point(545, 127);
+            this.btnAprobaTarimasConta.Name = "btnAprobaTarimasConta";
+            this.btnAprobaTarimasConta.Size = new System.Drawing.Size(223, 71);
+            this.btnAprobaTarimasConta.TabIndex = 51;
+            this.btnAprobaTarimasConta.Text = "Aprobacion de Tarimas PT";
+            this.btnAprobaTarimasConta.Visible = false;
+            this.btnAprobaTarimasConta.Click += new System.EventHandler(this.btnAprobaTarimasConta_Click);
+            // 
+            // btn_add_tarimas_pt
+            // 
+            this.btn_add_tarimas_pt.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btn_add_tarimas_pt.Appearance.Options.UseFont = true;
+            this.btn_add_tarimas_pt.Appearance.Options.UseTextOptions = true;
+            this.btn_add_tarimas_pt.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btn_add_tarimas_pt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_add_tarimas_pt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton67.ImageOptions.SvgImage")));
+            this.btn_add_tarimas_pt.Location = new System.Drawing.Point(411, 201);
+            this.btn_add_tarimas_pt.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_add_tarimas_pt.Name = "btn_add_tarimas_pt";
+            this.btn_add_tarimas_pt.Size = new System.Drawing.Size(199, 42);
+            this.btn_add_tarimas_pt.TabIndex = 45;
+            this.btn_add_tarimas_pt.Text = "Creacion de Tarimas PT";
+            this.btn_add_tarimas_pt.Click += new System.EventHandler(this.btn_add_tarimas_pt_Click);
             // 
             // frmOpciones
             // 
@@ -3286,5 +3322,7 @@
         private DevExpress.XtraEditors.SimpleButton btnRutas_traza_produccion;
         private DevExpress.XtraEditors.SimpleButton btnrutas_traz_logistica;
         private DevExpress.XtraEditors.SimpleButton btn_rutas_traza_contabilidad;
+        private DevExpress.XtraEditors.SimpleButton btnAprobaTarimasConta;
+        private DevExpress.XtraEditors.SimpleButton btn_add_tarimas_pt;
     }
 }

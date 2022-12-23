@@ -956,6 +956,8 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnproveedor;
             
+            private global::System.Data.DataColumn columnunidades;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public verLotesDataTable() {
@@ -1079,6 +1081,14 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn unidadesColumn {
+                get {
+                    return this.columnunidades;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1114,7 +1124,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public verLotesRow AddverLotesRow(int id, string lote, decimal Existencia, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, string bodega, string DescripcionBodega, string code_sap, string nombre_comercial, string cardcode, string proveedor) {
+            public verLotesRow AddverLotesRow(int id, string lote, decimal Existencia, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, string bodega, string DescripcionBodega, string code_sap, string nombre_comercial, string cardcode, string proveedor, decimal unidades) {
                 verLotesRow rowverLotesRow = ((verLotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1127,7 +1137,8 @@ namespace LOSA.RecepcionMP {
                         code_sap,
                         nombre_comercial,
                         cardcode,
-                        proveedor};
+                        proveedor,
+                        unidades};
                 rowverLotesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowverLotesRow);
                 return rowverLotesRow;
@@ -1161,6 +1172,7 @@ namespace LOSA.RecepcionMP {
                 this.columnnombre_comercial = base.Columns["nombre_comercial"];
                 this.columncardcode = base.Columns["cardcode"];
                 this.columnproveedor = base.Columns["proveedor"];
+                this.columnunidades = base.Columns["unidades"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1188,6 +1200,8 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columncardcode);
                 this.columnproveedor = new global::System.Data.DataColumn("proveedor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproveedor);
+                this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidades);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2282,6 +2296,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal unidades {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableverLotes.unidadesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades\' de la tabla \'verLotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableverLotes.unidadesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableverLotes.idColumn);
             }
@@ -2410,6 +2440,18 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetproveedorNull() {
                 this[this.tableverLotes.proveedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsunidadesNull() {
+                return this.IsNull(this.tableverLotes.unidadesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetunidadesNull() {
+                this[this.tableverLotes.unidadesColumn] = global::System.Convert.DBNull;
             }
         }
         
