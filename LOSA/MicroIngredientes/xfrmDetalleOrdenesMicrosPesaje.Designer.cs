@@ -271,7 +271,7 @@
             this.gridColumn12,
             this.gridColumn13,
             this.colLote});
-            this.gvDetalle.CustomizationFormBounds = new System.Drawing.Rectangle(-1082, 541, 260, 352);
+            this.gvDetalle.CustomizationFormBounds = new System.Drawing.Rectangle(0, 541, 260, 352);
             this.gvDetalle.GridControl = this.gcDetalle;
             this.gvDetalle.Name = "gvDetalle";
             this.gvDetalle.OptionsView.ShowFooter = true;
@@ -571,7 +571,7 @@
             this.colPesar1,
             this.gridColumn7,
             this.gridColumn8});
-            this.gridView2.CustomizationFormBounds = new System.Drawing.Rectangle(-748, 541, 260, 352);
+            this.gridView2.CustomizationFormBounds = new System.Drawing.Rectangle(0, 541, 260, 352);
             gridFormatRule1.ApplyToRow = true;
             gridFormatRule1.Column = this.coltotal;
             gridFormatRule1.ColumnApplyTo = this.coltotal;
