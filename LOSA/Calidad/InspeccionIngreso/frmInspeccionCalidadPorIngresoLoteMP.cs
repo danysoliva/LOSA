@@ -89,7 +89,7 @@ namespace LOSA.Calidad
             }
         }
 
-        public frmInspeccionCalidadPorIngresoLoteMP(int pNumeroIngreso, int pIdMP,string pLote, UserLogin Puser)
+        public frmInspeccionCalidadPorIngresoLoteMP(int pNumeroIngreso, int pIdMP, string pLote, UserLogin Puser)
         {
             InitializeComponent();
             UsuarioLogeado = Puser;
@@ -294,7 +294,7 @@ namespace LOSA.Calidad
 
                 SqlCommand cmd = new SqlCommand("sp_load_lotes_pt_trz_from_lote_mp", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lotemp", txtloteMP.Text);
+                cmd.Parameters.AddWithValue("@lotemp", Lote);
                 dsReportesTRZ1.pt_list_trz.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsReportesTRZ1.pt_list_trz);
@@ -343,7 +343,7 @@ namespace LOSA.Calidad
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lotemp", txtloteMP.Text);
+                cmd.Parameters.AddWithValue("@lotemp", Lote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsTarima1.informacion.Clear();
                 da.Fill(dsTarima1.informacion);
@@ -358,12 +358,15 @@ namespace LOSA.Calidad
 
         public void load_criterios_adicionales()
         {
-            string query = @"sp_load_trz_criterio_ingreso_calidad_adicionales";
+            //string query = @"sp_load_trz_criterio_ingreso_calidad_adicionales";
+            string query = @"[sp_load_trz_criterio_ingreso_calidad_adicionales_by_lotempv2]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+            cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
+            cmd.Parameters.AddWithValue("@_lotemp", Lote);
+            cmd.Parameters.AddWithValue("@idmp", IdMP);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -406,14 +409,37 @@ namespace LOSA.Calidad
             dr.Close();
         }
 
+        //public void load_empaque_estado_Mp()
+        //{
+        //    string query = @"sp_load_trz_criterio_ingreso_empaque";
+        //    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+        //    cn.Open();
+        //    SqlCommand cmd = new SqlCommand(query, cn);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+        //    SqlDataReader dr = cmd.ExecuteReader();
+        //    if (dr.Read())
+        //    {
+
+        //        rdEmpaque1.EditValue = dr.IsDBNull(1) ? true : dr.GetBoolean(1);
+        //        rdEmpaque2.EditValue = dr.IsDBNull(2) ? true : dr.GetBoolean(2);
+        //        rdEmpaque3.EditValue = dr.IsDBNull(3) ? true : dr.GetBoolean(3);
+        //        rdEmpaque4.EditValue = dr.IsDBNull(4) ? true : dr.GetBoolean(4);
+        //        rdEstadomp.EditValue = dr.IsDBNull(6) ? true : dr.GetBoolean(6);
+        //        txtObseracionesMP.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
+        //    }
+        //    dr.Close();
+        //}
         public void load_empaque_estado_Mp()
         {
-            string query = @"sp_load_trz_criterio_ingreso_empaque";
+            string query = @"[sp_load_trz_criterio_ingreso_empaque_by_lotempv2]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+            cmd.Parameters.AddWithValue("@_lotemp", Lote);
+            cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
+            cmd.Parameters.AddWithValue("@idmp", IdMP);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -453,12 +479,15 @@ namespace LOSA.Calidad
 
         public void load_trasporte_estado_transporte()
         {
-            string query = @"sp_load_trz_criterio_ingreso_transporte";
+            //string query = @"sp_load_trz_criterio_ingreso_transporte";
+            string query = @"[sp_load_trz_criterio_ingreso_transporte_by_lotempv2]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+            cmd.Parameters.AddWithValue("@_lotemp", Lote);
+            cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
+            cmd.Parameters.AddWithValue("@idmp", IdMP);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -530,14 +559,32 @@ namespace LOSA.Calidad
         }
 
 
+        //public void get_imagen()
+        // {
+        //        string query = @"sp_get_imagen_of_ingreso_calidad";
+        //        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+        //        cn.Open();
+        //        SqlCommand cmd = new SqlCommand(query, cn);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+        //    SqlDataReader dr = cmd.ExecuteReader();
+        //    if (dr.Read())
+        //    {
+        //        fileNameImagen = dr.GetString(0);
+        //        full_pathImagen = dr.GetString(1);
+        //    }
+        //    dr.Close();
+        //}
         public void get_imagen()
-         {
-                string query = @"sp_get_imagen_of_ingreso_calidad";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+        {
+            string query = @"[sp_get_imagen_of_ingreso_calidad_by_lotempv2]";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@_lotemp", Lote);
+            cmd.Parameters.AddWithValue("@idmp", IdMP);
+            cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -568,12 +615,15 @@ namespace LOSA.Calidad
         {
             try
             {
-                string query = @"sp_load_trz_documentos_ingreso";
+                //string query = @"sp_load_trz_documentos_ingreso";
+                string query = "[sp_load_trz_documentos_ingresov2]";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
+                cmd.Parameters.AddWithValue("@id_mp", IdMP);
+                cmd.Parameters.AddWithValue("@lote", Lote);
                 dsMantenimientoC.adjuntos.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsMantenimientoC.adjuntos);
@@ -632,15 +682,36 @@ namespace LOSA.Calidad
 
         public void load_criterios_configurados()
         {
-            string query = @"sp_load_trz_criterio_ingreso_respuesta";
+            #region Codigo Funcion Anterior
+            //string query = @"sp_load_trz_criterio_ingreso_respuesta";
+            //try
+            //{
+            //    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            //    cn.Open();
+            //    SqlCommand cmd = new SqlCommand(query, cn);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+            //    cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //    dsMantenimientoC.parametros.Clear();
+            //    da.Fill(dsMantenimientoC.parametros);
+            //    cn.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
+            #endregion
+            string query = @"[sp_load_trz_criterio_ingreso_respuesta_v2]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
+                cmd.Parameters.AddWithValue("@id_mp", IdMP);
+                cmd.Parameters.AddWithValue("@lotemp", Lote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsMantenimientoC.parametros.Clear();
                 da.Fill(dsMantenimientoC.parametros);
@@ -763,7 +834,7 @@ namespace LOSA.Calidad
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(@"@id_ingreso", Id_ingreso);
+                cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
                 dsMantenimientoC.logisticaInformacion.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsMantenimientoC.logisticaInformacion);
@@ -825,15 +896,17 @@ namespace LOSA.Calidad
 
         public void Load_cargas_nir()
         {
-            string query = @"sp_load_validaciones_del_nir_to_show_calidad";
+            //string query = @"sp_load_validaciones_del_nir_to_show_calidad";
+            string query = @"[sp_load_validaciones_del_nir_to_show_calidad_by_lote_v2]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(@"@id_mp", id_materiaPrima);
-                cmd.Parameters.AddWithValue(@"@id_ingreso", Id_ingreso);
+                cmd.Parameters.AddWithValue("@id_mp", IdMP);
+                cmd.Parameters.AddWithValue("@_lotemp", Lote);
+                //cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsMantenimientoC.show_nir.Clear();
                 da.Fill(dsMantenimientoC.show_nir);
@@ -878,7 +951,7 @@ namespace LOSA.Calidad
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(@"@id_mp", id_materiaPrima);
+                cmd.Parameters.AddWithValue("@id_mp", IdMP);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsMantenimientoC.parametros.Clear();
                 da.Fill(dsMantenimientoC.parametros);
@@ -1004,12 +1077,24 @@ namespace LOSA.Calidad
                     //dtvencimiento.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);
                     //dt_f_ingreso.EditValue = dr.IsDBNull(2) ? DateTime.Now : dr.GetDateTime(2);
                     //txtdiasvencimiento.Text = dr.IsDBNull(3) ? "0" : dr.GetInt32(3).ToString();
-                    txtingresada.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
-                    txtingresadaUD.Text = dr.IsDBNull(5) ? "" : dr.GetDecimal(5).ToString();
+                    //txtingresada.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
+                    //txtingresadaUD.Text = dr.IsDBNull(5) ? "" : dr.GetDecimal(5).ToString();
                     txtinventarioActual.Text = dr.IsDBNull(6) ? "" : dr.GetDecimal(6).ToString();
                     id_materiaPrima = dr.IsDBNull(7) ? 0 : dr.GetInt32(7);
                 }
                 dr.Close();
+
+                query = @"[sp_get_informacion_get_to_show_calidad_data_mp_v3]";
+                cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
+                cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
+                cmd.Parameters.AddWithValue("@idmp", IdMP);
+                cmd.Parameters.AddWithValue("@lote", Lote);
+                dsMantenimientoC.Ingresos_Lote_detalle.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMantenimientoC.Ingresos_Lote_detalle);
+
                 cn.Close();
             }
             catch (Exception ex)
@@ -1317,13 +1402,13 @@ namespace LOSA.Calidad
             try
             {
 
-                //frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text,Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text));
-                //if (frm.ShowDialog() == DialogResult.OK)
-                //{
+                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text, Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text));
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
 
-                //    Load_cargas_nir();
-                //    Inicializar_data_logistica();
-                //}
+                    Load_cargas_nir();
+                    Inicializar_data_logistica();
+                }
             }
             catch (Exception ex)
             {
