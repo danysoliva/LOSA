@@ -225,33 +225,33 @@ namespace LOSA.Calidad
             grd_tipo.Enabled = false;
             btnAdjuntarImagen.Enabled = false;
             spsustentable.Enabled = false;
-            labelControl5.Visible = false;
-            txtboleta.Visible = false;
-            btnRevisarBoleta.Visible = false;
-            btnOC.Visible = false;
-            txtproveedor.Visible = false;
-            txtoc.Visible = false;
+            //labelControl5.Visible = false;
+            //txtboleta.Visible = false;
+            //btnRevisarBoleta.Visible = false;
+            //btnOC.Visible = false;
+            //txtproveedor.Visible = false;
+            //txtoc.Visible = false;
             txtnumtraslado.Visible = false;
-            labelControl4.Visible = false;
-            labelControl6.Visible=false;
+            //labelControl4.Visible = false;
+            //labelControl6.Visible=false;
             labelControl7.Visible=false;
             //txtreferencia.Visible = false;
             //dtproduccion.Visible = false;
             //dtvencimiento.Visible = false;
             //dt_f_ingreso.Visible = false;
             //txtdiasvencimiento.Visible = false;
-            txtingresada.Visible = false;
+            //txtingresada.Visible = false;
             txtinventarioActual.Visible = false;
-            txtingresadaUD.Visible = false;
+            //txtingresadaUD.Visible = false;
             txtFacturas.Visible = false;
             //labelControl8.Visible = false;
             //labelControl9.Visible = false;
             //labelControl10.Visible = false;
             //labelControl11.Visible = false;
-            labelControl12.Visible = false;
+            //labelControl12.Visible = false;
             labelControl13.Visible = false;
             //labelControl44.Visible = false;
-            labelControl32.Visible = false;
+            //labelControl32.Visible = false;
             labelControl15.Visible = false;
             btnRecientes.Visible = false;
 
@@ -983,10 +983,10 @@ namespace LOSA.Calidad
                 {
                     txtloteMP.Text = dr.IsDBNull(0) ? "" : dr.GetString(0);
                     txtnombreMP.Text = dr.IsDBNull(1) ? "" : dr.GetString(1);
-                    txtboleta.Text = dr.IsDBNull(2) ? "" : dr.GetInt32(2).ToString();
-                    txtproveedor.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
+                    //txtboleta.Text = dr.IsDBNull(2) ? "" : dr.GetInt32(2).ToString();
+                    //txtproveedor.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
                     txtnumtraslado.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
-                    txtoc.Text = dr.IsDBNull(6) ? "" : dr.GetString(5).ToString();
+                    //txtoc.Text = dr.IsDBNull(6) ? "" : dr.GetString(5).ToString();
                     //txtreferencia.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
                     ChCalidad = dr.IsDBNull(7) ? false : dr.GetBoolean(7);
                     code_sap = dr.IsDBNull(8) ? "" : dr.GetString(8);
@@ -1002,7 +1002,7 @@ namespace LOSA.Calidad
                     txtdireccion.Text = Direccion;
                     txtFacturas.Text = dr.IsDBNull(15) ? "" : dr.GetString(15);
                     CodeSAP_Proveedor = dr.IsDBNull(16) ? "" : dr.GetString(16);
-                    NombreSAP_Proveedor = txtproveedor.Text;
+                    //NombreSAP_Proveedor = txtproveedor.Text;
                     idPlanta_Fabricante = dr.IsDBNull(17) ? 0 : dr.GetInt32(17);
                     txtFabricante.Text = FabricantePlantaNombre = dr.IsDBNull(18) ? "" : dr.GetString(18);
                 }
@@ -1030,10 +1030,10 @@ namespace LOSA.Calidad
                 {
                     txtloteMP.Text = dr.IsDBNull(0) ? "" : dr.GetString(0);
                     txtnombreMP.Text = dr.IsDBNull(1) ? "" : dr.GetString(1);
-                    txtboleta.Text = dr.IsDBNull(2) ? "" : dr.GetInt32(2).ToString();
-                    txtproveedor.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
+                    //txtboleta.Text = dr.IsDBNull(2) ? "" : dr.GetInt32(2).ToString();
+                    //txtproveedor.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
                     txtnumtraslado.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
-                    txtoc.Text = dr.IsDBNull(6) ? "" : dr.GetString(5).ToString();
+                    //txtoc.Text = dr.IsDBNull(6) ? "" : dr.GetString(5).ToString();
                     //txtreferencia.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
                     ChCalidad = dr.IsDBNull(7) ? false : dr.GetBoolean(7);
                     code_sap = dr.IsDBNull(8) ? "" : dr.GetString(8);
@@ -1079,8 +1079,8 @@ namespace LOSA.Calidad
                     //txtdiasvencimiento.Text = dr.IsDBNull(3) ? "0" : dr.GetInt32(3).ToString();
                     //txtingresada.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
                     //txtingresadaUD.Text = dr.IsDBNull(5) ? "" : dr.GetDecimal(5).ToString();
-                    txtinventarioActual.Text = dr.IsDBNull(6) ? "" : dr.GetDecimal(6).ToString();
-                    id_materiaPrima = dr.IsDBNull(7) ? 0 : dr.GetInt32(7);
+                    txtinventarioActual.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
+                    id_materiaPrima = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
                 }
                 dr.Close();
 
@@ -1088,7 +1088,7 @@ namespace LOSA.Calidad
                 cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
-                cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
+                //cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
                 cmd.Parameters.AddWithValue("@idmp", IdMP);
                 cmd.Parameters.AddWithValue("@lote", Lote);
                 dsMantenimientoC.Ingresos_Lote_detalle.Clear();
@@ -1119,7 +1119,7 @@ namespace LOSA.Calidad
                     //dtproduccion.EditValue = dr.IsDBNull(0) ? DateTime.Now : dr.GetDateTime(0);
                     //dtvencimiento.EditValue = dr.IsDBNull(1) ? DateTime.Now : dr.GetDateTime(1);
                     //txtdiasvencimiento.Text = dr.IsDBNull(2) ? "0" : dr.GetInt32(2).ToString();
-                    txtingresada.Text = dr.IsDBNull(3) ? "" : dr.GetDecimal(3).ToString();
+                    //txtingresada.Text = dr.IsDBNull(3) ? "" : dr.GetDecimal(3).ToString();
                     txtinventarioActual.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
                     id_materiaPrima = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
                 }
@@ -1402,13 +1402,13 @@ namespace LOSA.Calidad
             try
             {
 
-                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text, Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text));
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
+                //frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text, Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text));
+                //if (frm.ShowDialog() == DialogResult.OK)
+                //{
 
-                    Load_cargas_nir();
-                    Inicializar_data_logistica();
-                }
+                //    Load_cargas_nir();
+                //    Inicializar_data_logistica();
+                //}
             }
             catch (Exception ex)
             {
@@ -1748,16 +1748,16 @@ namespace LOSA.Calidad
         private void btnRevisarBoleta_Click(object sender, EventArgs e)
         {
             
-            frmViewBasculaBoleta frm = new frmViewBasculaBoleta(Convert.ToInt32(txtboleta.Text));
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.Show();
+            //frmViewBasculaBoleta frm = new frmViewBasculaBoleta(Convert.ToInt32(txtboleta.Text));
+            //frm.StartPosition = FormStartPosition.CenterScreen;
+            //frm.Show();
         }
 
         private void btnOC_Click(object sender, EventArgs e)
         {
-            frmOC_SAP_View frm = new frmOC_SAP_View(Convert.ToInt32(txtoc.Text));
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.Show();
+            //frmOC_SAP_View frm = new frmOC_SAP_View(Convert.ToInt32(txtoc.Text));
+            //frm.StartPosition = FormStartPosition.CenterScreen;
+            //frm.Show();
         }
 
         private void btnRecientes_Click(object sender, EventArgs e)
@@ -1880,26 +1880,26 @@ namespace LOSA.Calidad
 
         private void cmdSelectUltimasCargas_Click(object sender, EventArgs e)
         {
-            Boleta bol1 = new Boleta();
-            if (bol1.RecuperarRegistro(dp.ValidateNumberInt32(txtboleta.Text)))
-            {
-                frmBuscarDatosBascula frm = new frmBuscarDatosBascula(bol1.Furgon, bol1.Id, bol1.Placa_vehiculo);
-                if(frm.ShowDialog() == DialogResult.OK)
-                {
-                    dsTarima1.ultimas_cargas.Clear();
-                    foreach (string var_ in frm.ListaDatos)
-                    {
-                        dsTarima.ultimas_cargasRow row1 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
-                        row1.descripcion = var_;
-                        dsTarima1.ultimas_cargas.Addultimas_cargasRow(row1);
-                        dsTarima1.AcceptChanges();
-                    }
-                }
-            }
-            else
-            {
-                CajaDialogo.Error("No hay una boleta asociada!");
-            }
+            //Boleta bol1 = new Boleta();
+            //if (bol1.RecuperarRegistro(dp.ValidateNumberInt32(txtboleta.Text)))
+            //{
+            //    frmBuscarDatosBascula frm = new frmBuscarDatosBascula(bol1.Furgon, bol1.Id, bol1.Placa_vehiculo);
+            //    if(frm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        dsTarima1.ultimas_cargas.Clear();
+            //        foreach (string var_ in frm.ListaDatos)
+            //        {
+            //            dsTarima.ultimas_cargasRow row1 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+            //            row1.descripcion = var_;
+            //            dsTarima1.ultimas_cargas.Addultimas_cargasRow(row1);
+            //            dsTarima1.AcceptChanges();
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    CajaDialogo.Error("No hay una boleta asociada!");
+            //}
             //txtboleta
 
         }
