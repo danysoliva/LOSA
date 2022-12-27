@@ -31,11 +31,11 @@ namespace LOSA.MicroIngredientes
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeNucleoV2));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lblBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.lblValorBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
@@ -85,7 +85,7 @@ namespace LOSA.MicroIngredientes
             this.lblBascula1.Appearance.Options.UseTextOptions = true;
             this.lblBascula1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblBascula1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblBascula1.Location = new System.Drawing.Point(0, 163);
+            this.lblBascula1.Location = new System.Drawing.Point(0, 138);
             this.lblBascula1.Name = "lblBascula1";
             this.lblBascula1.Size = new System.Drawing.Size(307, 19);
             this.lblBascula1.TabIndex = 20;
@@ -98,7 +98,7 @@ namespace LOSA.MicroIngredientes
             this.lblValorBascula1.Appearance.Options.UseTextOptions = true;
             this.lblValorBascula1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblValorBascula1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblValorBascula1.Location = new System.Drawing.Point(-1, 188);
+            this.lblValorBascula1.Location = new System.Drawing.Point(-1, 163);
             this.lblValorBascula1.Name = "lblValorBascula1";
             this.lblValorBascula1.Size = new System.Drawing.Size(367, 30);
             this.lblValorBascula1.TabIndex = 21;
@@ -113,7 +113,7 @@ namespace LOSA.MicroIngredientes
             this.btnGuardar.Enabled = false;
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
-            this.btnGuardar.Location = new System.Drawing.Point(322, 679);
+            this.btnGuardar.Location = new System.Drawing.Point(322, 654);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(97, 63);
             this.btnGuardar.TabIndex = 22;
@@ -128,7 +128,7 @@ namespace LOSA.MicroIngredientes
             this.lblCompletados.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblCompletados.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.lblCompletados.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCompletados.Location = new System.Drawing.Point(-1, 646);
+            this.lblCompletados.Location = new System.Drawing.Point(-1, 621);
             this.lblCompletados.Name = "lblCompletados";
             this.lblCompletados.Size = new System.Drawing.Size(757, 27);
             this.lblCompletados.TabIndex = 24;
@@ -150,7 +150,7 @@ namespace LOSA.MicroIngredientes
             this.lblError.Appearance.Options.UseTextOptions = true;
             this.lblError.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblError.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblError.Location = new System.Drawing.Point(-1, 556);
+            this.lblError.Location = new System.Drawing.Point(-1, 531);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(757, 26);
             this.lblError.TabIndex = 25;
@@ -168,7 +168,7 @@ namespace LOSA.MicroIngredientes
             this.lblSuperior.Appearance.Options.UseTextOptions = true;
             this.lblSuperior.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblSuperior.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblSuperior.Location = new System.Drawing.Point(-1, 585);
+            this.lblSuperior.Location = new System.Drawing.Point(-1, 560);
             this.lblSuperior.Name = "lblSuperior";
             this.lblSuperior.Size = new System.Drawing.Size(757, 29);
             this.lblSuperior.TabIndex = 26;
@@ -186,7 +186,7 @@ namespace LOSA.MicroIngredientes
             this.lblInferior.Appearance.Options.UseTextOptions = true;
             this.lblInferior.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblInferior.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblInferior.Location = new System.Drawing.Point(-1, 613);
+            this.lblInferior.Location = new System.Drawing.Point(-1, 588);
             this.lblInferior.Name = "lblInferior";
             this.lblInferior.Size = new System.Drawing.Size(757, 32);
             this.lblInferior.TabIndex = 27;
@@ -224,7 +224,7 @@ namespace LOSA.MicroIngredientes
             this.lblValorBascula2.Appearance.Options.UseTextOptions = true;
             this.lblValorBascula2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblValorBascula2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblValorBascula2.Location = new System.Drawing.Point(391, 188);
+            this.lblValorBascula2.Location = new System.Drawing.Point(391, 163);
             this.lblValorBascula2.Name = "lblValorBascula2";
             this.lblValorBascula2.Size = new System.Drawing.Size(359, 30);
             this.lblValorBascula2.TabIndex = 31;
@@ -237,7 +237,7 @@ namespace LOSA.MicroIngredientes
             this.lblBascula2.Appearance.Options.UseTextOptions = true;
             this.lblBascula2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblBascula2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblBascula2.Location = new System.Drawing.Point(442, 163);
+            this.lblBascula2.Location = new System.Drawing.Point(442, 138);
             this.lblBascula2.Name = "lblBascula2";
             this.lblBascula2.Size = new System.Drawing.Size(308, 19);
             this.lblBascula2.TabIndex = 30;
@@ -252,7 +252,7 @@ namespace LOSA.MicroIngredientes
             this.lblMP.Appearance.Options.UseTextOptions = true;
             this.lblMP.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblMP.Location = new System.Drawing.Point(0, 330);
+            this.lblMP.Location = new System.Drawing.Point(0, 305);
             this.lblMP.Name = "lblMP";
             this.lblMP.Size = new System.Drawing.Size(756, 29);
             this.lblMP.TabIndex = 32;
@@ -265,7 +265,7 @@ namespace LOSA.MicroIngredientes
             this.btnBascula1.Enabled = false;
             this.btnBascula1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnBascula1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula1.ImageOptions.SvgImage")));
-            this.btnBascula1.Location = new System.Drawing.Point(101, 220);
+            this.btnBascula1.Location = new System.Drawing.Point(101, 195);
             this.btnBascula1.Name = "btnBascula1";
             this.btnBascula1.Size = new System.Drawing.Size(104, 74);
             this.btnBascula1.TabIndex = 1;
@@ -280,7 +280,7 @@ namespace LOSA.MicroIngredientes
             this.btnBascula2.Enabled = false;
             this.btnBascula2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnBascula2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula2.ImageOptions.SvgImage")));
-            this.btnBascula2.Location = new System.Drawing.Point(539, 220);
+            this.btnBascula2.Location = new System.Drawing.Point(539, 195);
             this.btnBascula2.Name = "btnBascula2";
             this.btnBascula2.Size = new System.Drawing.Size(104, 74);
             this.btnBascula2.TabIndex = 2;
@@ -289,7 +289,7 @@ namespace LOSA.MicroIngredientes
             // 
             // txtCodBarra
             // 
-            this.txtCodBarra.Location = new System.Drawing.Point(122, 117);
+            this.txtCodBarra.Location = new System.Drawing.Point(122, 92);
             this.txtCodBarra.Name = "txtCodBarra";
             this.txtCodBarra.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodBarra.Properties.Appearance.Options.UseFont = true;
@@ -304,7 +304,7 @@ namespace LOSA.MicroIngredientes
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(23, 111);
+            this.labelControl1.Location = new System.Drawing.Point(23, 86);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(93, 32);
             this.labelControl1.TabIndex = 36;
@@ -325,7 +325,7 @@ namespace LOSA.MicroIngredientes
             // 
             this.gridControl1.DataMember = "MP_Escaneo";
             this.gridControl1.DataSource = this.dsMicrosBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(0, 360);
+            this.gridControl1.Location = new System.Drawing.Point(0, 335);
             this.gridControl1.MainView = this.gvPesaje;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -419,9 +419,9 @@ namespace LOSA.MicroIngredientes
             // btnDelete
             // 
             this.btnDelete.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete_ButtonClick);
@@ -432,7 +432,7 @@ namespace LOSA.MicroIngredientes
             this.btnBasc1.Appearance.Options.UseFont = true;
             this.btnBasc1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnBasc1.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
-            this.btnBasc1.Location = new System.Drawing.Point(201, 49);
+            this.btnBasc1.Location = new System.Drawing.Point(201, 39);
             this.btnBasc1.Name = "btnBasc1";
             this.btnBasc1.Size = new System.Drawing.Size(112, 49);
             this.btnBasc1.TabIndex = 41;
@@ -446,7 +446,7 @@ namespace LOSA.MicroIngredientes
             this.btnBasc2.Appearance.Options.UseFont = true;
             this.btnBasc2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnBasc2.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X32;
-            this.btnBasc2.Location = new System.Drawing.Point(322, 49);
+            this.btnBasc2.Location = new System.Drawing.Point(322, 39);
             this.btnBasc2.Name = "btnBasc2";
             this.btnBasc2.Size = new System.Drawing.Size(112, 49);
             this.btnBasc2.TabIndex = 42;
@@ -460,7 +460,7 @@ namespace LOSA.MicroIngredientes
             this.btnBascAmbas.Appearance.Options.UseFont = true;
             this.btnBascAmbas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnBascAmbas.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X32;
-            this.btnBascAmbas.Location = new System.Drawing.Point(443, 49);
+            this.btnBascAmbas.Location = new System.Drawing.Point(443, 39);
             this.btnBascAmbas.Name = "btnBascAmbas";
             this.btnBascAmbas.Size = new System.Drawing.Size(112, 49);
             this.btnBascAmbas.TabIndex = 43;
@@ -477,7 +477,7 @@ namespace LOSA.MicroIngredientes
             this.lblLoteName.Appearance.Options.UseTextOptions = true;
             this.lblLoteName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblLoteName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblLoteName.Location = new System.Drawing.Point(-1, 297);
+            this.lblLoteName.Location = new System.Drawing.Point(-1, 272);
             this.lblLoteName.Name = "lblLoteName";
             this.lblLoteName.Size = new System.Drawing.Size(757, 32);
             this.lblLoteName.TabIndex = 44;
@@ -487,6 +487,7 @@ namespace LOSA.MicroIngredientes
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 750);
+            this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.lblLoteName);
             this.Controls.Add(this.btnBascAmbas);
             this.Controls.Add(this.btnBasc2);
@@ -499,7 +500,6 @@ namespace LOSA.MicroIngredientes
             this.Controls.Add(this.lblMP);
             this.Controls.Add(this.lblValorBascula2);
             this.Controls.Add(this.lblBascula2);
-            this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.lblInferior);
             this.Controls.Add(this.lblSuperior);
             this.Controls.Add(this.lblError);
