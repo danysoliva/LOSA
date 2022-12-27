@@ -950,12 +950,13 @@
             this.btn_add_tarimas_pt.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btn_add_tarimas_pt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_add_tarimas_pt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_add_tarimas_pt.ImageOptions.SvgImage")));
-            this.btn_add_tarimas_pt.Location = new System.Drawing.Point(411, 201);
+            this.btn_add_tarimas_pt.Location = new System.Drawing.Point(4, 109);
             this.btn_add_tarimas_pt.Margin = new System.Windows.Forms.Padding(2);
             this.btn_add_tarimas_pt.Name = "btn_add_tarimas_pt";
-            this.btn_add_tarimas_pt.Size = new System.Drawing.Size(199, 42);
+            this.btn_add_tarimas_pt.Size = new System.Drawing.Size(198, 42);
             this.btn_add_tarimas_pt.TabIndex = 45;
             this.btn_add_tarimas_pt.Text = "Creacion de Tarimas PT";
+            this.btn_add_tarimas_pt.Visible = false;
             this.btn_add_tarimas_pt.Click += new System.EventHandler(this.btn_add_tarimas_pt_Click);
             // 
             // btnHistorialPT
@@ -1076,7 +1077,7 @@
             this.simpleButton10.Appearance.Options.UseFont = true;
             this.simpleButton10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton10.ImageOptions.Image")));
-            this.simpleButton10.Location = new System.Drawing.Point(2, 109);
+            this.simpleButton10.Location = new System.Drawing.Point(1, 282);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(199, 42);
             this.simpleButton10.TabIndex = 34;
