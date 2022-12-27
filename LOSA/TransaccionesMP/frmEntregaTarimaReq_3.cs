@@ -906,16 +906,23 @@ namespace LOSA.TransaccionesMP
         {
             if (txtRequisicion.Text != "")
             {
-                string barcode_req = txtRequisicion.Text;
-                frmWizardSelectGranel_Liqu frm = new frmWizardSelectGranel_Liqu(usuarioLogueado, barcode_req);
-                frm.Show();
+                if (txtRequisicion.Text.Length >= 12) //tamaño de el cod bar requisa
+                {
+                    string barcode_req = txtRequisicion.Text;
+                    frmWizardSelectGranel_Liqu frm = new frmWizardSelectGranel_Liqu(usuarioLogueado, barcode_req);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        load_tarimas_scan();
+                        load_bines_disponibles();
+                        txtRequisicion.Text = "";
+                        txtRequisicion.Focus();
+                    }
+                }
             }
             else
             {
                 CajaDialogo.Error("No se Encontro la Requisa! Escanee Nuevamente la Requisa!");
             }
-
-            
         }
     }
 }

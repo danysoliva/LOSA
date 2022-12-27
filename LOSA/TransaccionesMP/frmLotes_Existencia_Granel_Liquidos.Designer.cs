@@ -29,15 +29,16 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLotes_Existencia_Granel_Liquidos));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grdLoteExist = new DevExpress.XtraGrid.GridControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             this.grdvLoteExist = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colexistencia_kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,10 +46,9 @@ namespace LOSA.TransaccionesMP
             this.colenable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reportItem = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colwhs_equivalente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.colwhs_equivalente = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdLoteExist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvLoteExist)).BeginInit();
@@ -93,6 +93,16 @@ namespace LOSA.TransaccionesMP
             this.grdvLoteExist.GridControl = this.grdLoteExist;
             this.grdvLoteExist.Name = "grdvLoteExist";
             this.grdvLoteExist.OptionsView.ShowGroupPanel = false;
+            // 
+            // colnombre_comercial
+            // 
+            this.colnombre_comercial.Caption = "Materia Prima";
+            this.colnombre_comercial.FieldName = "nombre_comercial";
+            this.colnombre_comercial.Name = "colnombre_comercial";
+            this.colnombre_comercial.OptionsColumn.AllowEdit = false;
+            this.colnombre_comercial.Visible = true;
+            this.colnombre_comercial.VisibleIndex = 0;
+            this.colnombre_comercial.Width = 142;
             // 
             // collote_mp
             // 
@@ -147,12 +157,22 @@ namespace LOSA.TransaccionesMP
             // reportItem
             // 
             this.reportItem.AutoHeight = false;
-            editorButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions4.SvgImage")));
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
             this.reportItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.reportItem.Name = "reportItem";
             this.reportItem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.reportItem.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reportItem_ButtonClick);
+            // 
+            // colwhs_equivalente
+            // 
+            this.colwhs_equivalente.Caption = "Bodega";
+            this.colwhs_equivalente.FieldName = "whs_equivalente";
+            this.colwhs_equivalente.Name = "colwhs_equivalente";
+            this.colwhs_equivalente.OptionsColumn.AllowEdit = false;
+            this.colwhs_equivalente.Visible = true;
+            this.colwhs_equivalente.VisibleIndex = 2;
+            this.colwhs_equivalente.Width = 200;
             // 
             // cmdHome
             // 
@@ -180,26 +200,6 @@ namespace LOSA.TransaccionesMP
             this.labelControl2.Size = new System.Drawing.Size(157, 25);
             this.labelControl2.TabIndex = 10;
             this.labelControl2.Text = "Seleccione el Lote";
-            // 
-            // colwhs_equivalente
-            // 
-            this.colwhs_equivalente.Caption = "Bodega";
-            this.colwhs_equivalente.FieldName = "whs_equivalente";
-            this.colwhs_equivalente.Name = "colwhs_equivalente";
-            this.colwhs_equivalente.OptionsColumn.AllowEdit = false;
-            this.colwhs_equivalente.Visible = true;
-            this.colwhs_equivalente.VisibleIndex = 2;
-            this.colwhs_equivalente.Width = 200;
-            // 
-            // colnombre_comercial
-            // 
-            this.colnombre_comercial.Caption = "Materia Prima";
-            this.colnombre_comercial.FieldName = "nombre_comercial";
-            this.colnombre_comercial.Name = "colnombre_comercial";
-            this.colnombre_comercial.OptionsColumn.AllowEdit = false;
-            this.colnombre_comercial.Visible = true;
-            this.colnombre_comercial.VisibleIndex = 0;
-            this.colnombre_comercial.Width = 142;
             // 
             // frmLotes_Existencia_Granel_Liquidos
             // 

@@ -28,7 +28,7 @@ namespace LOSA.TransaccionesMP
 
         string lote, bodega;
         decimal cant_a_requisar;
-        int id_materia_p;
+        int id_materia_p,id_bodega;
 
         public frmWizardSelectGranel_Liqu(UserLogin pUserLogin, string pbarcode_requisa)
         {
@@ -65,8 +65,40 @@ namespace LOSA.TransaccionesMP
             }
         }
 
+        private void gridvDetalleRequisa_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            //var gridview = (GridView)gridDetalleRequisa.FocusedView;
+            //var row = (dsTransaccionesMP.requisiciones_dRow)gridview.GetFocusedDataRow();
+
+            //foreach (dsTransaccionesMP.requisiciones_dRow item in dsTransaccionesMP1.requisiciones_d.Rows)
+            //{
+            //    if (item.solicitada <= item.entregada)
+            //    {
+            //        e.Appearance.BackColor = Color.LightGreen;
+            //    }
+            //    else
+            //    {
+            //        e.Appearance.BackColor = Color.White;
+            //    }
+
+            //    //GridView View = sender as GridView;
+            //    //if (e.RowHandle >= 0)
+            //    //{
+            //    //    if (row.solicitada >= row.entregada)
+            //    //    {
+            //    //        e.Appearance.BackColor = Color.Green;
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        e.Appearance.BackColor = Color.White;
+            //    //    }
+            //    //}
+            //}
+        }
+
         private void cmdHome_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -91,28 +123,37 @@ namespace LOSA.TransaccionesMP
                     bodega = frm.bodega;
                     cant_a_requisar = frm.cant_a_requisar;
                     id_materia_p = frm.id_materia_p;
+                    id_bodega = frm.id_bodega;
+
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_insert_kardex_requisicion_granel_liquidos", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@lote", lote);
+                        cmd.Parameters.AddWithValue("@bodega ", bodega);
+                        cmd.Parameters.AddWithValue("@cant_a_requisar", dp.ValidateNumberDecimal(cant_a_requisar));
+                        cmd.Parameters.AddWithValue("@id_materia_p", id_materia_p);
+                        cmd.Parameters.AddWithValue("@id_requisa", id_requisa);
+                        cmd.Parameters.AddWithValue("@id_bodega", id_bodega);
+                        cmd.Parameters.AddWithValue("@user_id", UsuarioLogeadol.Id);
+                        cmd.ExecuteNonQuery();
+
+                        Load_Detalle(id_requisa);
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+                    
+
                 }
 
-                try
-                {
-                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@lote", lote);
-                    cmd.Parameters.AddWithValue("@bodega ",bodega);
-                    cmd.Parameters.AddWithValue("@cant_a_requisar", dp.ValidateNumberDecimal(cant_a_requisar));
-                    cmd.Parameters.AddWithValue("@id_materia_p", id_materia_p);
-                    cmd.Parameters.AddWithValue("@id_requisa", id_requisa);
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    CajaDialogo.Error(ex.Message);
-                }
-                Load_Detalle(id_requisa);
+                
             }
-
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

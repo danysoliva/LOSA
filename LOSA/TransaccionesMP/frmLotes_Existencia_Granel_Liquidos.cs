@@ -21,11 +21,12 @@ namespace LOSA.TransaccionesMP
     public partial class frmLotes_Existencia_Granel_Liquidos : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        public int id_materia_p;
+        public int id_materia_p, id_bodega;
         decimal cant_necesaria_requisa = 0;
         public string lote;
         public decimal cant_a_requisar = 0;
         public string bodega;
+        UserLogin UsuarioLogeado;
 
         public frmLotes_Existencia_Granel_Liquidos(int pid_mp, decimal pcant_necesaria_requisa)
         {
@@ -57,7 +58,7 @@ namespace LOSA.TransaccionesMP
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void reportItem_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -78,6 +79,7 @@ namespace LOSA.TransaccionesMP
             id_materia_p = row.id_mp;
             bodega = row.whs_equivalente;
             id_materia_p = row.id_mp;
+            id_bodega = row.id_bodega;
 
             this.DialogResult = DialogResult.OK;
             this.Close();

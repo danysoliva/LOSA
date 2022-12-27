@@ -6926,6 +6926,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columnid_mp;
             
+            private global::System.Data.DataColumn columnid_bodega;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_lote_granel_liquidosDataTable() {
@@ -7033,6 +7035,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_bodegaColumn {
+                get {
+                    return this.columnid_bodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7068,7 +7078,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public detalle_lote_granel_liquidosRow Adddetalle_lote_granel_liquidosRow(string lote_mp, decimal existencia_kg, System.DateTime fecha_ingreso, System.DateTime fecha_vencimiento, bool enable, bool seleccionar, string nombre_comercial, string whs_equivalente, int id_mp) {
+            public detalle_lote_granel_liquidosRow Adddetalle_lote_granel_liquidosRow(string lote_mp, decimal existencia_kg, System.DateTime fecha_ingreso, System.DateTime fecha_vencimiento, bool enable, bool seleccionar, string nombre_comercial, string whs_equivalente, int id_mp, int id_bodega) {
                 detalle_lote_granel_liquidosRow rowdetalle_lote_granel_liquidosRow = ((detalle_lote_granel_liquidosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         lote_mp,
@@ -7079,7 +7089,8 @@ namespace LOSA.TransaccionesMP {
                         seleccionar,
                         nombre_comercial,
                         whs_equivalente,
-                        id_mp};
+                        id_mp,
+                        id_bodega};
                 rowdetalle_lote_granel_liquidosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_lote_granel_liquidosRow);
                 return rowdetalle_lote_granel_liquidosRow;
@@ -7111,6 +7122,7 @@ namespace LOSA.TransaccionesMP {
                 this.columnnombre_comercial = base.Columns["nombre_comercial"];
                 this.columnwhs_equivalente = base.Columns["whs_equivalente"];
                 this.columnid_mp = base.Columns["id_mp"];
+                this.columnid_bodega = base.Columns["id_bodega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7134,6 +7146,8 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnwhs_equivalente);
                 this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_mp);
+                this.columnid_bodega = new global::System.Data.DataColumn("id_bodega", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_bodega);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12353,6 +12367,23 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_bodega {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalle_lote_granel_liquidos.id_bodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_bodega\' de la tabla \'detalle_lote_granel_liquidos\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.id_bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Islote_mpNull() {
                 return this.IsNull(this.tabledetalle_lote_granel_liquidos.lote_mpColumn);
             }
@@ -12457,6 +12488,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_mpNull() {
                 this[this.tabledetalle_lote_granel_liquidos.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_bodegaNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.id_bodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_bodegaNull() {
+                this[this.tabledetalle_lote_granel_liquidos.id_bodegaColumn] = global::System.Convert.DBNull;
             }
         }
         

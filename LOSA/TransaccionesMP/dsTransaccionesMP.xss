@@ -22,7 +22,7 @@
     <Shape ID="DesignTable:bines_disponibles" ZOrder="5" X="563" Y="606" Height="162" Width="168" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:bines_dispo_prd" ZOrder="4" X="390" Y="796" Height="296" Width="159" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="292" />
     <Shape ID="DesignTable:tarima_monta_carga" ZOrder="3" X="1617" Y="407" Height="353" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="349" />
-    <Shape ID="DesignTable:detalle_lote_granel_liquidos" ZOrder="1" X="910" Y="396" Height="200" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
+    <Shape ID="DesignTable:detalle_lote_granel_liquidos" ZOrder="1" X="910" Y="396" Height="219" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

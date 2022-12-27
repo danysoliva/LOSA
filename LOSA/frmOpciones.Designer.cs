@@ -779,6 +779,7 @@
             this.btnLoteActivoGranel.Size = new System.Drawing.Size(199, 42);
             this.btnLoteActivoGranel.TabIndex = 42;
             this.btnLoteActivoGranel.Text = "Lote Activo";
+            this.btnLoteActivoGranel.Visible = false;
             this.btnLoteActivoGranel.Click += new System.EventHandler(this.btnLoteActivoGranel_Click);
             // 
             // simpleButton2
