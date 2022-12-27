@@ -219,7 +219,7 @@
             this.coltotal.Name = "coltotal";
             this.coltotal.OptionsColumn.AllowEdit = false;
             this.coltotal.Visible = true;
-            this.coltotal.VisibleIndex = 5;
+            this.coltotal.VisibleIndex = 3;
             this.coltotal.Width = 102;
             // 
             // gcDetalle
@@ -602,8 +602,6 @@
             this.colset_point.FieldName = "set_point";
             this.colset_point.Name = "colset_point";
             this.colset_point.OptionsColumn.AllowEdit = false;
-            this.colset_point.Visible = true;
-            this.colset_point.VisibleIndex = 4;
             this.colset_point.Width = 125;
             // 
             // colfecha1
@@ -619,8 +617,6 @@
             this.colcant_batch1.FieldName = "cant_batch";
             this.colcant_batch1.Name = "colcant_batch1";
             this.colcant_batch1.OptionsColumn.AllowEdit = false;
-            this.colcant_batch1.Visible = true;
-            this.colcant_batch1.VisibleIndex = 3;
             this.colcant_batch1.Width = 112;
             // 
             // colAMI_ID1
@@ -681,7 +677,7 @@
             this.colpesaje.Name = "colpesaje";
             this.colpesaje.OptionsColumn.AllowEdit = false;
             this.colpesaje.Visible = true;
-            this.colpesaje.VisibleIndex = 6;
+            this.colpesaje.VisibleIndex = 4;
             this.colpesaje.Width = 102;
             // 
             // colPesar1
@@ -690,7 +686,7 @@
             this.colPesar1.ColumnEdit = this.cmdPesar1;
             this.colPesar1.Name = "colPesar1";
             this.colPesar1.Visible = true;
-            this.colPesar1.VisibleIndex = 7;
+            this.colPesar1.VisibleIndex = 5;
             this.colPesar1.Width = 79;
             // 
             // cmdPesar1

@@ -276,6 +276,23 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Ingresos_Lote_detalle" msprop:Generator_TableClassName="Ingresos_Lote_detalleDataTable" msprop:Generator_TableVarName="tableIngresos_Lote_detalle" msprop:Generator_RowChangedName="Ingresos_Lote_detalleRowChanged" msprop:Generator_TablePropName="Ingresos_Lote_detalle" msprop:Generator_RowDeletingName="Ingresos_Lote_detalleRowDeleting" msprop:Generator_RowChangingName="Ingresos_Lote_detalleRowChanging" msprop:Generator_RowEvHandlerName="Ingresos_Lote_detalleRowChangeEventHandler" msprop:Generator_RowDeletedName="Ingresos_Lote_detalleRowDeleted" msprop:Generator_RowClassName="Ingresos_Lote_detalleRow" msprop:Generator_UserTableName="Ingresos_Lote_detalle" msprop:Generator_RowEvArgName="Ingresos_Lote_detalleRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha_produccion_materia_prima" msdata:Caption="Fecha Producción" msprop:Generator_ColumnVarNameInTable="columnfecha_produccion_materia_prima" msprop:Generator_ColumnPropNameInRow="fecha_produccion_materia_prima" msprop:Generator_ColumnPropNameInTable="fecha_produccion_materia_primaColumn" msprop:Generator_UserColumnName="fecha_produccion_materia_prima" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_vencimiento" msdata:Caption="Fecha Vencimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_ingreso" msdata:Caption="Fecha Ingreso" msprop:Generator_ColumnVarNameInTable="columnfecha_ingreso" msprop:Generator_ColumnPropNameInRow="fecha_ingreso" msprop:Generator_ColumnPropNameInTable="fecha_ingresoColumn" msprop:Generator_UserColumnName="fecha_ingreso" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="por_vencer" msdata:Caption="Dias por Vencer" msprop:Generator_ColumnVarNameInTable="columnpor_vencer" msprop:Generator_ColumnPropNameInRow="por_vencer" msprop:Generator_ColumnPropNameInTable="por_vencerColumn" msprop:Generator_UserColumnName="por_vencer" type="xs:int" minOccurs="0" />
+              <xs:element name="numero_transaccion" msdata:Caption="No. Ingreso" msprop:Generator_ColumnVarNameInTable="columnnumero_transaccion" msprop:Generator_ColumnPropNameInRow="numero_transaccion" msprop:Generator_ColumnPropNameInTable="numero_transaccionColumn" msprop:Generator_UserColumnName="numero_transaccion" type="xs:int" minOccurs="0" />
+              <xs:element name="NumID" msdata:Caption="Boleta" msprop:Generator_ColumnVarNameInTable="columnNumID" msprop:Generator_ColumnPropNameInRow="NumID" msprop:Generator_ColumnPropNameInTable="NumIDColumn" msprop:Generator_UserColumnName="NumID" type="xs:int" minOccurs="0" />
+              <xs:element name="id_proveedor" msdata:Caption="CardCode" msprop:Generator_ColumnVarNameInTable="columnid_proveedor" msprop:Generator_ColumnPropNameInRow="id_proveedor" msprop:Generator_ColumnPropNameInTable="id_proveedorColumn" msprop:Generator_UserColumnName="id_proveedor" type="xs:string" minOccurs="0" />
+              <xs:element name="CardName" msprop:Generator_ColumnVarNameInTable="columnCardName" msprop:Generator_ColumnPropNameInRow="CardName" msprop:Generator_ColumnPropNameInTable="CardNameColumn" msprop:Generator_UserColumnName="CardName" type="xs:string" minOccurs="0" />
+              <xs:element name="NumOC" msprop:Generator_ColumnVarNameInTable="columnNumOC" msprop:Generator_ColumnPropNameInRow="NumOC" msprop:Generator_ColumnPropNameInTable="NumOCColumn" msprop:Generator_UserColumnName="NumOC" type="xs:string" minOccurs="0" />
+              <xs:element name="kg_ingresadas" msdata:Caption="Kg Ingresadas" msprop:Generator_ColumnVarNameInTable="columnkg_ingresadas" msprop:Generator_ColumnPropNameInRow="kg_ingresadas" msprop:Generator_ColumnPropNameInTable="kg_ingresadasColumn" msprop:Generator_UserColumnName="kg_ingresadas" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ud_ingresadas" msdata:Caption="Ud Ingresadas" msprop:Generator_ColumnVarNameInTable="columnud_ingresadas" msprop:Generator_ColumnPropNameInRow="ud_ingresadas" msprop:Generator_ColumnPropNameInTable="ud_ingresadasColumn" msprop:Generator_UserColumnName="ud_ingresadas" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

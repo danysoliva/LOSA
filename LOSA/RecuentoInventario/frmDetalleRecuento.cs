@@ -369,7 +369,7 @@ namespace LOSA.RecuentoInventario
 
                 try
                 {
-                    if (contabilizado == false)
+                    if (row.contabilizado == false)
                     {
                         using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
                         {

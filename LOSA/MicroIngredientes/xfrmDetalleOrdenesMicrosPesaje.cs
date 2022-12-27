@@ -290,15 +290,22 @@ namespace LOSA.MicroIngredientes
                 pesaje.AMI_ID = ami_id;
                 pesaje.CantBatch = row.cant_batch;
 
-                xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesaje, (int)TipoPesaje.PesajeNucleo);
+                //xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesaje, (int)TipoPesaje.PesajeNucleo);
 
+                //if (frm.ShowDialog() == DialogResult.OK)
+                //{
+                //    LoadDataIndividual();
+                //    CargarDetalleMezcla();
+                //}
+                xfrmPesajeNucleoV2 frm = new xfrmPesajeNucleoV2(row.batch_real, row.total, row.namerm);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadDataIndividual();
                     CargarDetalleMezcla();
                 }
+
             }
-            
+
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);

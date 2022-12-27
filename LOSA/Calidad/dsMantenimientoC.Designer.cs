@@ -78,6 +78,8 @@ namespace LOSA.Calidad {
         
         private header_ingreso_CDataTable tableheader_ingreso_C;
         
+        private Ingresos_Lote_detalleDataTable tableIngresos_Lote_detalle;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -186,6 +188,9 @@ namespace LOSA.Calidad {
                 }
                 if ((ds.Tables["header_ingreso_C"] != null)) {
                     base.Tables.Add(new header_ingreso_CDataTable(ds.Tables["header_ingreso_C"]));
+                }
+                if ((ds.Tables["Ingresos_Lote_detalle"] != null)) {
+                    base.Tables.Add(new Ingresos_Lote_detalleDataTable(ds.Tables["Ingresos_Lote_detalle"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -477,6 +482,16 @@ namespace LOSA.Calidad {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Ingresos_Lote_detalleDataTable Ingresos_Lote_detalle {
+            get {
+                return this.tableIngresos_Lote_detalle;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -622,6 +637,9 @@ namespace LOSA.Calidad {
                 }
                 if ((ds.Tables["header_ingreso_C"] != null)) {
                     base.Tables.Add(new header_ingreso_CDataTable(ds.Tables["header_ingreso_C"]));
+                }
+                if ((ds.Tables["Ingresos_Lote_detalle"] != null)) {
+                    base.Tables.Add(new Ingresos_Lote_detalleDataTable(ds.Tables["Ingresos_Lote_detalle"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -818,6 +836,12 @@ namespace LOSA.Calidad {
                     this.tableheader_ingreso_C.InitVars();
                 }
             }
+            this.tableIngresos_Lote_detalle = ((Ingresos_Lote_detalleDataTable)(base.Tables["Ingresos_Lote_detalle"]));
+            if ((initTable == true)) {
+                if ((this.tableIngresos_Lote_detalle != null)) {
+                    this.tableIngresos_Lote_detalle.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -882,6 +906,8 @@ namespace LOSA.Calidad {
             base.Tables.Add(this.tableFormula);
             this.tableheader_ingreso_C = new header_ingreso_CDataTable();
             base.Tables.Add(this.tableheader_ingreso_C);
+            this.tableIngresos_Lote_detalle = new Ingresos_Lote_detalleDataTable();
+            base.Tables.Add(this.tableIngresos_Lote_detalle);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1048,6 +1074,12 @@ namespace LOSA.Calidad {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeIngresos_Lote_detalle() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1181,6 +1213,9 @@ namespace LOSA.Calidad {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void header_ingreso_CRowChangeEventHandler(object sender, header_ingreso_CRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void Ingresos_Lote_detalleRowChangeEventHandler(object sender, Ingresos_Lote_detalleRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -8941,6 +8976,402 @@ namespace LOSA.Calidad {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Ingresos_Lote_detalleDataTable : global::System.Data.TypedTableBase<Ingresos_Lote_detalleRow> {
+            
+            private global::System.Data.DataColumn columnfecha_produccion_materia_prima;
+            
+            private global::System.Data.DataColumn columnfecha_vencimiento;
+            
+            private global::System.Data.DataColumn columnfecha_ingreso;
+            
+            private global::System.Data.DataColumn columnpor_vencer;
+            
+            private global::System.Data.DataColumn columnnumero_transaccion;
+            
+            private global::System.Data.DataColumn columnNumID;
+            
+            private global::System.Data.DataColumn columnid_proveedor;
+            
+            private global::System.Data.DataColumn columnCardName;
+            
+            private global::System.Data.DataColumn columnNumOC;
+            
+            private global::System.Data.DataColumn columnkg_ingresadas;
+            
+            private global::System.Data.DataColumn columnud_ingresadas;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ingresos_Lote_detalleDataTable() {
+                this.TableName = "Ingresos_Lote_detalle";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Ingresos_Lote_detalleDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected Ingresos_Lote_detalleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_produccion_materia_primaColumn {
+                get {
+                    return this.columnfecha_produccion_materia_prima;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_vencimientoColumn {
+                get {
+                    return this.columnfecha_vencimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_ingresoColumn {
+                get {
+                    return this.columnfecha_ingreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn por_vencerColumn {
+                get {
+                    return this.columnpor_vencer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numero_transaccionColumn {
+                get {
+                    return this.columnnumero_transaccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NumIDColumn {
+                get {
+                    return this.columnNumID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_proveedorColumn {
+                get {
+                    return this.columnid_proveedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CardNameColumn {
+                get {
+                    return this.columnCardName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NumOCColumn {
+                get {
+                    return this.columnNumOC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn kg_ingresadasColumn {
+                get {
+                    return this.columnkg_ingresadas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ud_ingresadasColumn {
+                get {
+                    return this.columnud_ingresadas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ingresos_Lote_detalleRow this[int index] {
+                get {
+                    return ((Ingresos_Lote_detalleRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ingresos_Lote_detalleRowChangeEventHandler Ingresos_Lote_detalleRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ingresos_Lote_detalleRowChangeEventHandler Ingresos_Lote_detalleRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ingresos_Lote_detalleRowChangeEventHandler Ingresos_Lote_detalleRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ingresos_Lote_detalleRowChangeEventHandler Ingresos_Lote_detalleRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddIngresos_Lote_detalleRow(Ingresos_Lote_detalleRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ingresos_Lote_detalleRow AddIngresos_Lote_detalleRow(System.DateTime fecha_produccion_materia_prima, System.DateTime fecha_vencimiento, System.DateTime fecha_ingreso, int por_vencer, int numero_transaccion, int NumID, string id_proveedor, string CardName, string NumOC, decimal kg_ingresadas, decimal ud_ingresadas) {
+                Ingresos_Lote_detalleRow rowIngresos_Lote_detalleRow = ((Ingresos_Lote_detalleRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        fecha_produccion_materia_prima,
+                        fecha_vencimiento,
+                        fecha_ingreso,
+                        por_vencer,
+                        numero_transaccion,
+                        NumID,
+                        id_proveedor,
+                        CardName,
+                        NumOC,
+                        kg_ingresadas,
+                        ud_ingresadas};
+                rowIngresos_Lote_detalleRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowIngresos_Lote_detalleRow);
+                return rowIngresos_Lote_detalleRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Ingresos_Lote_detalleDataTable cln = ((Ingresos_Lote_detalleDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Ingresos_Lote_detalleDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnfecha_produccion_materia_prima = base.Columns["fecha_produccion_materia_prima"];
+                this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
+                this.columnfecha_ingreso = base.Columns["fecha_ingreso"];
+                this.columnpor_vencer = base.Columns["por_vencer"];
+                this.columnnumero_transaccion = base.Columns["numero_transaccion"];
+                this.columnNumID = base.Columns["NumID"];
+                this.columnid_proveedor = base.Columns["id_proveedor"];
+                this.columnCardName = base.Columns["CardName"];
+                this.columnNumOC = base.Columns["NumOC"];
+                this.columnkg_ingresadas = base.Columns["kg_ingresadas"];
+                this.columnud_ingresadas = base.Columns["ud_ingresadas"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnfecha_produccion_materia_prima = new global::System.Data.DataColumn("fecha_produccion_materia_prima", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_produccion_materia_prima);
+                this.columnfecha_vencimiento = new global::System.Data.DataColumn("fecha_vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_vencimiento);
+                this.columnfecha_ingreso = new global::System.Data.DataColumn("fecha_ingreso", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_ingreso);
+                this.columnpor_vencer = new global::System.Data.DataColumn("por_vencer", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpor_vencer);
+                this.columnnumero_transaccion = new global::System.Data.DataColumn("numero_transaccion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_transaccion);
+                this.columnNumID = new global::System.Data.DataColumn("NumID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumID);
+                this.columnid_proveedor = new global::System.Data.DataColumn("id_proveedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_proveedor);
+                this.columnCardName = new global::System.Data.DataColumn("CardName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCardName);
+                this.columnNumOC = new global::System.Data.DataColumn("NumOC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumOC);
+                this.columnkg_ingresadas = new global::System.Data.DataColumn("kg_ingresadas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkg_ingresadas);
+                this.columnud_ingresadas = new global::System.Data.DataColumn("ud_ingresadas", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnud_ingresadas);
+                this.columnfecha_produccion_materia_prima.Caption = "Fecha Producción";
+                this.columnfecha_vencimiento.Caption = "Fecha Vencimiento";
+                this.columnfecha_ingreso.Caption = "Fecha Ingreso";
+                this.columnpor_vencer.Caption = "Dias por Vencer";
+                this.columnnumero_transaccion.Caption = "No. Ingreso";
+                this.columnNumID.Caption = "Boleta";
+                this.columnid_proveedor.Caption = "CardCode";
+                this.columnkg_ingresadas.Caption = "Kg Ingresadas";
+                this.columnud_ingresadas.Caption = "Ud Ingresadas";
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ingresos_Lote_detalleRow NewIngresos_Lote_detalleRow() {
+                return ((Ingresos_Lote_detalleRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Ingresos_Lote_detalleRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Ingresos_Lote_detalleRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Ingresos_Lote_detalleRowChanged != null)) {
+                    this.Ingresos_Lote_detalleRowChanged(this, new Ingresos_Lote_detalleRowChangeEvent(((Ingresos_Lote_detalleRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Ingresos_Lote_detalleRowChanging != null)) {
+                    this.Ingresos_Lote_detalleRowChanging(this, new Ingresos_Lote_detalleRowChangeEvent(((Ingresos_Lote_detalleRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Ingresos_Lote_detalleRowDeleted != null)) {
+                    this.Ingresos_Lote_detalleRowDeleted(this, new Ingresos_Lote_detalleRowChangeEvent(((Ingresos_Lote_detalleRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Ingresos_Lote_detalleRowDeleting != null)) {
+                    this.Ingresos_Lote_detalleRowDeleting(this, new Ingresos_Lote_detalleRowChangeEvent(((Ingresos_Lote_detalleRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveIngresos_Lote_detalleRow(Ingresos_Lote_detalleRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMantenimientoC ds = new dsMantenimientoC();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Ingresos_Lote_detalleDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class OlorRow : global::System.Data.DataRow {
@@ -12262,6 +12693,337 @@ namespace LOSA.Calidad {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Ingresos_Lote_detalleRow : global::System.Data.DataRow {
+            
+            private Ingresos_Lote_detalleDataTable tableIngresos_Lote_detalle;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Ingresos_Lote_detalleRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableIngresos_Lote_detalle = ((Ingresos_Lote_detalleDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_produccion_materia_prima {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableIngresos_Lote_detalle.fecha_produccion_materia_primaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_produccion_materia_prima\' de la tabla \'Ingresos_Lot" +
+                                "e_detalle\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.fecha_produccion_materia_primaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_vencimiento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableIngresos_Lote_detalle.fecha_vencimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vencimiento\' de la tabla \'Ingresos_Lote_detalle\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.fecha_vencimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_ingreso {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableIngresos_Lote_detalle.fecha_ingresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ingreso\' de la tabla \'Ingresos_Lote_detalle\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.fecha_ingresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int por_vencer {
+                get {
+                    try {
+                        return ((int)(this[this.tableIngresos_Lote_detalle.por_vencerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'por_vencer\' de la tabla \'Ingresos_Lote_detalle\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.por_vencerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int numero_transaccion {
+                get {
+                    try {
+                        return ((int)(this[this.tableIngresos_Lote_detalle.numero_transaccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_transaccion\' de la tabla \'Ingresos_Lote_detalle\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.numero_transaccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int NumID {
+                get {
+                    try {
+                        return ((int)(this[this.tableIngresos_Lote_detalle.NumIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NumID\' de la tabla \'Ingresos_Lote_detalle\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.NumIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string id_proveedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableIngresos_Lote_detalle.id_proveedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_proveedor\' de la tabla \'Ingresos_Lote_detalle\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.id_proveedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CardName {
+                get {
+                    try {
+                        return ((string)(this[this.tableIngresos_Lote_detalle.CardNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CardName\' de la tabla \'Ingresos_Lote_detalle\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.CardNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NumOC {
+                get {
+                    try {
+                        return ((string)(this[this.tableIngresos_Lote_detalle.NumOCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NumOC\' de la tabla \'Ingresos_Lote_detalle\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.NumOCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal kg_ingresadas {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableIngresos_Lote_detalle.kg_ingresadasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'kg_ingresadas\' de la tabla \'Ingresos_Lote_detalle\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.kg_ingresadasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ud_ingresadas {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableIngresos_Lote_detalle.ud_ingresadasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ud_ingresadas\' de la tabla \'Ingresos_Lote_detalle\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIngresos_Lote_detalle.ud_ingresadasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_produccion_materia_primaNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.fecha_produccion_materia_primaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_produccion_materia_primaNull() {
+                this[this.tableIngresos_Lote_detalle.fecha_produccion_materia_primaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_vencimientoNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.fecha_vencimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_vencimientoNull() {
+                this[this.tableIngresos_Lote_detalle.fecha_vencimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_ingresoNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.fecha_ingresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_ingresoNull() {
+                this[this.tableIngresos_Lote_detalle.fecha_ingresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispor_vencerNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.por_vencerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpor_vencerNull() {
+                this[this.tableIngresos_Lote_detalle.por_vencerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnumero_transaccionNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.numero_transaccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnumero_transaccionNull() {
+                this[this.tableIngresos_Lote_detalle.numero_transaccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNumIDNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.NumIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNumIDNull() {
+                this[this.tableIngresos_Lote_detalle.NumIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_proveedorNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.id_proveedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_proveedorNull() {
+                this[this.tableIngresos_Lote_detalle.id_proveedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCardNameNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.CardNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCardNameNull() {
+                this[this.tableIngresos_Lote_detalle.CardNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNumOCNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.NumOCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNumOCNull() {
+                this[this.tableIngresos_Lote_detalle.NumOCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iskg_ingresadasNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.kg_ingresadasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setkg_ingresadasNull() {
+                this[this.tableIngresos_Lote_detalle.kg_ingresadasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isud_ingresadasNull() {
+                return this.IsNull(this.tableIngresos_Lote_detalle.ud_ingresadasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setud_ingresadasNull() {
+                this[this.tableIngresos_Lote_detalle.ud_ingresadasColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -13165,6 +13927,40 @@ namespace LOSA.Calidad {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public header_ingreso_CRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class Ingresos_Lote_detalleRowChangeEvent : global::System.EventArgs {
+            
+            private Ingresos_Lote_detalleRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ingresos_Lote_detalleRowChangeEvent(Ingresos_Lote_detalleRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ingresos_Lote_detalleRow Row {
                 get {
                     return this.eventRow;
                 }
