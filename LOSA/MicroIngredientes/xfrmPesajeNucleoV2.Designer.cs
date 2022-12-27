@@ -1,7 +1,7 @@
 ﻿
 namespace LOSA.MicroIngredientes
 {
-    partial class xfrmPesajeIndividualBatchV3
+    partial class xfrmPesajeNucleoV2
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@ namespace LOSA.MicroIngredientes
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividualBatchV3));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeNucleoV2));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lblBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.lblValorBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
@@ -113,12 +113,11 @@ namespace LOSA.MicroIngredientes
             this.btnGuardar.Enabled = false;
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
-            this.btnGuardar.Location = new System.Drawing.Point(635, 649);
+            this.btnGuardar.Location = new System.Drawing.Point(322, 679);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(97, 63);
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Visible = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // lblCompletados
@@ -127,10 +126,11 @@ namespace LOSA.MicroIngredientes
             this.lblCompletados.Appearance.Options.UseFont = true;
             this.lblCompletados.Appearance.Options.UseTextOptions = true;
             this.lblCompletados.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblCompletados.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.lblCompletados.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblCompletados.Location = new System.Drawing.Point(-1, 705);
+            this.lblCompletados.Location = new System.Drawing.Point(-1, 646);
             this.lblCompletados.Name = "lblCompletados";
-            this.lblCompletados.Size = new System.Drawing.Size(757, 23);
+            this.lblCompletados.Size = new System.Drawing.Size(757, 27);
             this.lblCompletados.TabIndex = 24;
             this.lblCompletados.Text = "Asistente";
             // 
@@ -150,7 +150,7 @@ namespace LOSA.MicroIngredientes
             this.lblError.Appearance.Options.UseTextOptions = true;
             this.lblError.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblError.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblError.Location = new System.Drawing.Point(-1, 587);
+            this.lblError.Location = new System.Drawing.Point(-1, 556);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(757, 26);
             this.lblError.TabIndex = 25;
@@ -168,7 +168,7 @@ namespace LOSA.MicroIngredientes
             this.lblSuperior.Appearance.Options.UseTextOptions = true;
             this.lblSuperior.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblSuperior.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblSuperior.Location = new System.Drawing.Point(-1, 628);
+            this.lblSuperior.Location = new System.Drawing.Point(-1, 585);
             this.lblSuperior.Name = "lblSuperior";
             this.lblSuperior.Size = new System.Drawing.Size(757, 29);
             this.lblSuperior.TabIndex = 26;
@@ -186,7 +186,7 @@ namespace LOSA.MicroIngredientes
             this.lblInferior.Appearance.Options.UseTextOptions = true;
             this.lblInferior.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblInferior.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblInferior.Location = new System.Drawing.Point(-1, 657);
+            this.lblInferior.Location = new System.Drawing.Point(-1, 613);
             this.lblInferior.Name = "lblInferior";
             this.lblInferior.Size = new System.Drawing.Size(757, 32);
             this.lblInferior.TabIndex = 27;
@@ -252,9 +252,9 @@ namespace LOSA.MicroIngredientes
             this.lblMP.Appearance.Options.UseTextOptions = true;
             this.lblMP.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblMP.Location = new System.Drawing.Point(0, 334);
+            this.lblMP.Location = new System.Drawing.Point(0, 330);
             this.lblMP.Name = "lblMP";
-            this.lblMP.Size = new System.Drawing.Size(756, 32);
+            this.lblMP.Size = new System.Drawing.Size(756, 29);
             this.lblMP.TabIndex = 32;
             this.lblMP.Text = "MP Name";
             // 
@@ -265,11 +265,11 @@ namespace LOSA.MicroIngredientes
             this.btnBascula1.Enabled = false;
             this.btnBascula1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnBascula1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula1.ImageOptions.SvgImage")));
-            this.btnBascula1.Location = new System.Drawing.Point(105, 230);
+            this.btnBascula1.Location = new System.Drawing.Point(101, 220);
             this.btnBascula1.Name = "btnBascula1";
-            this.btnBascula1.Size = new System.Drawing.Size(93, 74);
+            this.btnBascula1.Size = new System.Drawing.Size(104, 74);
             this.btnBascula1.TabIndex = 1;
-            this.btnBascula1.Text = "Guardar";
+            this.btnBascula1.Text = "Acumular";
             this.btnBascula1.Click += new System.EventHandler(this.btnBascula1_Click);
             // 
             // btnBascula2
@@ -280,11 +280,11 @@ namespace LOSA.MicroIngredientes
             this.btnBascula2.Enabled = false;
             this.btnBascula2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnBascula2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula2.ImageOptions.SvgImage")));
-            this.btnBascula2.Location = new System.Drawing.Point(532, 230);
+            this.btnBascula2.Location = new System.Drawing.Point(539, 220);
             this.btnBascula2.Name = "btnBascula2";
-            this.btnBascula2.Size = new System.Drawing.Size(93, 74);
+            this.btnBascula2.Size = new System.Drawing.Size(104, 74);
             this.btnBascula2.TabIndex = 2;
-            this.btnBascula2.Text = "Guardar";
+            this.btnBascula2.Text = "Acumular";
             this.btnBascula2.Click += new System.EventHandler(this.btnBascula2_Click);
             // 
             // txtCodBarra
@@ -325,7 +325,7 @@ namespace LOSA.MicroIngredientes
             // 
             this.gridControl1.DataMember = "MP_Escaneo";
             this.gridControl1.DataSource = this.dsMicrosBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(0, 381);
+            this.gridControl1.Location = new System.Drawing.Point(0, 360);
             this.gridControl1.MainView = this.gvPesaje;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -419,9 +419,9 @@ namespace LOSA.MicroIngredientes
             // btnDelete
             // 
             this.btnDelete.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete_ButtonClick);
@@ -437,6 +437,7 @@ namespace LOSA.MicroIngredientes
             this.btnBasc1.Size = new System.Drawing.Size(112, 49);
             this.btnBasc1.TabIndex = 41;
             this.btnBasc1.Text = "Báscula 1";
+            this.btnBasc1.Visible = false;
             this.btnBasc1.Click += new System.EventHandler(this.btnBasc1_Click);
             // 
             // btnBasc2
@@ -450,6 +451,7 @@ namespace LOSA.MicroIngredientes
             this.btnBasc2.Size = new System.Drawing.Size(112, 49);
             this.btnBasc2.TabIndex = 42;
             this.btnBasc2.Text = "Báscula 2";
+            this.btnBasc2.Visible = false;
             this.btnBasc2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btnBascAmbas
@@ -463,6 +465,7 @@ namespace LOSA.MicroIngredientes
             this.btnBascAmbas.Size = new System.Drawing.Size(112, 49);
             this.btnBascAmbas.TabIndex = 43;
             this.btnBascAmbas.Text = "Ambas";
+            this.btnBascAmbas.Visible = false;
             this.btnBascAmbas.Click += new System.EventHandler(this.btnBascAmbas_Click);
             // 
             // lblLoteName
@@ -474,16 +477,16 @@ namespace LOSA.MicroIngredientes
             this.lblLoteName.Appearance.Options.UseTextOptions = true;
             this.lblLoteName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblLoteName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblLoteName.Location = new System.Drawing.Point(-1, 308);
+            this.lblLoteName.Location = new System.Drawing.Point(-1, 297);
             this.lblLoteName.Name = "lblLoteName";
             this.lblLoteName.Size = new System.Drawing.Size(757, 32);
             this.lblLoteName.TabIndex = 44;
             // 
-            // xfrmPesajeIndividualBatchV3
+            // xfrmPesajeNucleoV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 777);
+            this.ClientSize = new System.Drawing.Size(757, 750);
             this.Controls.Add(this.lblLoteName);
             this.Controls.Add(this.btnBascAmbas);
             this.Controls.Add(this.btnBasc2);
@@ -506,10 +509,9 @@ namespace LOSA.MicroIngredientes
             this.Controls.Add(this.lblCompletados);
             this.Controls.Add(this.lblRequerido);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "xfrmPesajeIndividualBatchV3";
+            this.Name = "xfrmPesajeNucleoV2";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "xfrmPesajeIndividualBatch";
             this.Load += new System.EventHandler(this.xfrmPesajeIndividualBatch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).EndInit();

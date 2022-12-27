@@ -472,9 +472,9 @@ namespace LOSA.MicroIngredientes
             pesoBascula1 = 0;
             pesoBascula2 = 0;
 
-            pesoBasculaAcumulado1= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-            pesoBasculaAcumulado2= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
-            pesoBasculaAcumuladoALL= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+            //pesoBasculaAcumulado1= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+            //pesoBasculaAcumulado2= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
+            //pesoBasculaAcumuladoALL= Convert.ToDecimal(colpeso.Summary[0].SummaryValue.ToString());
 
            
 
@@ -544,26 +544,28 @@ namespace LOSA.MicroIngredientes
                     }
                 }
 
-                //decimal peso_test = 0.95M;
-                //lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";MI0000000095
+                decimal peso_test = 0.95M;
+                lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";//MI0000000095
 
             }
 
 
 
-            var row = (dsMicros.MP_EscaneoRow)gvPesaje.GetDataRow(indicePeso);            
+            var row = (dsMicros.MP_EscaneoRow)gvPesaje.GetDataRow(indicePeso);
 
             limiteInferior = pesaje.PesoPorBatch - (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
             limiteSuperior = pesaje.PesoPorBatch + (pesaje.PesoPorBatch * Convert.ToDecimal(0.03));
 
-            //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
+            ////lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
             lblInferior.Text = "Límite Minimo: " + limiteInferior.ToString("N2") + " Kg";
             lblSuperior.Text = "Límite Maximo: " + limiteSuperior.ToString("N2") + " Kg";
 
             //pesoBasculaAcumulado1 = 0.95M;
+
+
             switch (BasculaId)
             {
-                
+
                 case (int)Basculas.Bascula1:
 
                     if (pesoBasculaAcumulado1 >= limiteInferior && pesoBasculaAcumulado1 <= limiteSuperior)
@@ -598,7 +600,7 @@ namespace LOSA.MicroIngredientes
                         pesoBasculaAcumuladoTMP_ALL = 0;
                         pesoBasculaAcumuladoTMP2 = 0;
 
-                        if (indicePeso >= 0 && gvPesaje.RowCount>0)
+                        if (indicePeso >= 0 && gvPesaje.RowCount > 0)
                         {
                             row.peso = pesoBascula1;
 
@@ -731,6 +733,7 @@ namespace LOSA.MicroIngredientes
                     break;
             }
         }
+
 
         public class LoteMPAcumulado
         {

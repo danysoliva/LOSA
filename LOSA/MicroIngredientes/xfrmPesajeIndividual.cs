@@ -168,16 +168,14 @@ namespace LOSA.MicroIngredientes
                 //pesajeIndividual.BasculaID = BasculaSelected;
 
                 List<PesajeIndividualCompletados> pesajesCompletados = new List<PesajeIndividualCompletados>();
+
+
                 DataOperations dp = new DataOperations();
 
                 ///******Por Validar**********
-
                 switch (tipoPesaje)
                 {
-                    
-
                     case (int)TipoPesaje.PesajeNucleo:
-
 
                         for (int i = 1; i <= pesaje.CantBatch; i++)
                         {
@@ -196,7 +194,6 @@ namespace LOSA.MicroIngredientes
 
                                     //transaction = cnx.BeginTransaction("SampleTransaction");
                                     
-
                                     SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccionV2", cnx);
                                     cmd.CommandType = CommandType.StoredProcedure;
                                     //cmd.Transaction = transaction;
