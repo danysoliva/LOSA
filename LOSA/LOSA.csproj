@@ -1094,6 +1094,7 @@
     <Compile Include="Clases\IngresoMP.cs" />
     <Compile Include="Clases\ItemBusqueda.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
+    <Compile Include="Clases\ItemPesajeManualNucleo.cs" />
     <Compile Include="Clases\Kardex.cs" />
     <Compile Include="Clases\Liquidacion.cs" />
     <Compile Include="Clases\LoteAlmacenExternoD.cs" />

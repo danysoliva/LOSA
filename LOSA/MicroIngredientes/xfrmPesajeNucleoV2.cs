@@ -4,6 +4,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 using LOSA.MicroIngredientes.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,7 @@ namespace LOSA.MicroIngredientes
         decimal ActualAcumuladoKg;
         decimal Max_kg;
         TarimaMicroingrediente TarimaEscaneada;
+        public ArrayList ListaPesajes;
 
         enum Basculas
         {
@@ -40,6 +42,7 @@ namespace LOSA.MicroIngredientes
         {
             //PESAJE INDIVIDUAL
             InitializeComponent();
+            ListaPesajes = new ArrayList();
             TarimaEscaneada = new TarimaMicroingrediente();
             ActualAcumuladoKg = pActualAcumuladoKg;
             Max_kg = max_kg;
@@ -62,12 +65,25 @@ namespace LOSA.MicroIngredientes
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-
+            this.peso_bascula_finish = pesoBasculaAcumuladoALL;
+            foreach(dsMicros.MP_EscaneoRow row in dsMicros.MP_Escaneo)
+            {
+                ItemPesajeManualNucleo item = new ItemPesajeManualNucleo();
+                item.Id_mp = row.id_mp;
+                item.Lote = row.lote;
+                item.Peso = row.peso;
+                item.Id_tarima_micro = row.id_tarima_micro;
+                item.Id_tarima_origen = row.id_tarima_origen;
+                ListaPesajes.Add(item);
+            }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void cmdClose_Click(object sender, EventArgs e)
         {  
             this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void xfrmPesajeIndividualBatch_Load(object sender, EventArgs e)
@@ -93,7 +109,6 @@ namespace LOSA.MicroIngredientes
                 row.id_mp = TarimaEscaneada.Id_materiaprima;
                 row.id_tarima_origen = TarimaEscaneada.IdTarimaOrigen;
                 row.id_tarima_micro = TarimaEscaneada.Id;
-
                 row.peso = pesoBasculaAcumulado1;
                 
                 dsMicros.MP_Escaneo.AddMP_EscaneoRow(row);
@@ -441,11 +456,11 @@ namespace LOSA.MicroIngredientes
                     }
                 }
 
-                decimal peso_test = 3.35M;
-                pesoBasculaAcumulado1 = 1.35M;
-                pesoBasculaAcumulado2 = 2.42M;
+                //decimal peso_test = 3.35M;
+                //pesoBasculaAcumulado1 = 1.35M;
+                //pesoBasculaAcumulado2 = 2.42M;
 
-                lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";//MI0000000095
+                //lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";//MI0000000095
 
             }
 
