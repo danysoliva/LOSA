@@ -135,11 +135,12 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                     cnx.Open();
 
                     dsSalidasAlmacenesExternos.Lote.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_almacenes_externos_get_lotes_disponibles_by_id_detalle_salida_externa_V2]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("[dbo].[sp_almacenes_externos_get_lotes_disponibles_by_id_detalle_salida_externa_V3]", cnx);
 
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand.Parameters.Add("@id_mp", SqlDbType.Int).Value = id_mp;
                     da.SelectCommand.Parameters.Add("@id_bodega", SqlDbType.VarChar).Value = bodega_in;
+                    da.SelectCommand.Parameters.AddWithValue("@id_d", id_d);
 
                     da.Fill(dsSalidasAlmacenesExternos.Lote);
 

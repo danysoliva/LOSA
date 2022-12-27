@@ -72,6 +72,7 @@
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -81,7 +82,6 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
-            this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -197,7 +197,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
             // colid
             // 
@@ -365,6 +365,19 @@
             this.colnum.VisibleIndex = 0;
             this.colnum.Width = 46;
             // 
+            // colexistencia
+            // 
+            this.colexistencia.Caption = "Existencia";
+            this.colexistencia.DisplayFormat.FormatString = "n0";
+            this.colexistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia.FieldName = "existencia";
+            this.colexistencia.Name = "colexistencia";
+            this.colexistencia.OptionsColumn.AllowEdit = false;
+            this.colexistencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:n1}")});
+            this.colexistencia.Visible = true;
+            this.colexistencia.VisibleIndex = 10;
+            // 
             // colcodigo_barra
             // 
             this.colcodigo_barra.Caption = "Tarima";
@@ -381,6 +394,8 @@
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
+            this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUMA={0:#.##}")});
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 7;
             this.colcantidad.Width = 90;
@@ -468,15 +483,6 @@
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
             // 
-            // colexistencia
-            // 
-            this.colexistencia.Caption = "Existencia";
-            this.colexistencia.FieldName = "existencia";
-            this.colexistencia.Name = "colexistencia";
-            this.colexistencia.OptionsColumn.AllowEdit = false;
-            this.colexistencia.Visible = true;
-            this.colexistencia.VisibleIndex = 10;
-            // 
             // frm_ingresos_lotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,6 +498,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_ingresos_lotes";
             this.ShowIcon = false;
+            this.Text = "kl";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();

@@ -73,7 +73,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(473, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(846, 12);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(104, 47);
             this.simpleButton1.TabIndex = 7;
@@ -87,7 +87,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(583, 12);
+            this.btnClose.Location = new System.Drawing.Point(956, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(99, 47);
             this.btnClose.TabIndex = 6;
@@ -149,7 +149,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryEditarFechaVenc});
-            this.gridControl1.Size = new System.Drawing.Size(691, 391);
+            this.gridControl1.Size = new System.Drawing.Size(1064, 575);
             this.gridControl1.TabIndex = 12;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -180,6 +180,9 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colid_lote_alosy});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colLinea
             // 
@@ -197,6 +200,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             this.colexistencia.FieldName = "existencia";
             this.colexistencia.Name = "colexistencia";
             this.colexistencia.OptionsColumn.AllowEdit = false;
+            this.colexistencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:n2}")});
             this.colexistencia.Visible = true;
             this.colexistencia.VisibleIndex = 9;
             this.colexistencia.Width = 67;
@@ -313,7 +318,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 505);
+            this.ClientSize = new System.Drawing.Size(1067, 689);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.textEdit1);

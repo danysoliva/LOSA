@@ -80,7 +80,7 @@ namespace LOSA.TransaccionesMP
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
-            this.cmdLiquidos = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdLiquidosGranel = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -689,21 +689,22 @@ namespace LOSA.TransaccionesMP
             this.timerLimpiarMensaje.Interval = 5500;
             this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
             // 
-            // cmdLiquidos
+            // cmdLiquidosGranel
             // 
-            this.cmdLiquidos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdLiquidos.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.cmdLiquidos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdLiquidos.Appearance.Options.UseBackColor = true;
-            this.cmdLiquidos.Appearance.Options.UseFont = true;
-            this.cmdLiquidos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdLiquidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdLiquidos.ImageOptions.Image")));
-            this.cmdLiquidos.Location = new System.Drawing.Point(307, 16);
-            this.cmdLiquidos.Name = "cmdLiquidos";
-            this.cmdLiquidos.Size = new System.Drawing.Size(175, 48);
-            this.cmdLiquidos.TabIndex = 111;
-            this.cmdLiquidos.Text = "Liquidos";
-            this.cmdLiquidos.Visible = false;
+            this.cmdLiquidosGranel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdLiquidosGranel.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cmdLiquidosGranel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdLiquidosGranel.Appearance.Options.UseBackColor = true;
+            this.cmdLiquidosGranel.Appearance.Options.UseFont = true;
+            this.cmdLiquidosGranel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdLiquidosGranel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdLiquidosGranel.ImageOptions.Image")));
+            this.cmdLiquidosGranel.Location = new System.Drawing.Point(271, 16);
+            this.cmdLiquidosGranel.Name = "cmdLiquidosGranel";
+            this.cmdLiquidosGranel.Size = new System.Drawing.Size(211, 48);
+            this.cmdLiquidosGranel.TabIndex = 111;
+            this.cmdLiquidosGranel.Text = "Entrega Manual";
+            this.cmdLiquidosGranel.Visible = false;
+            this.cmdLiquidosGranel.Click += new System.EventHandler(this.cmdLiquidosGranel_Click);
             // 
             // xtraTabControl1
             // 
@@ -923,10 +924,10 @@ namespace LOSA.TransaccionesMP
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 757);
+            this.Controls.Add(this.cmdLiquidosGranel);
             this.Controls.Add(this.txtRequisicion);
             this.Controls.Add(this.cmdLotesProximosVencerMP);
             this.Controls.Add(this.xtraTabControl1);
-            this.Controls.Add(this.cmdLiquidos);
             this.Controls.Add(this.gcTarima);
             this.Controls.Add(this.txtTarima);
             this.Controls.Add(this.cmdSelectTarima);
@@ -985,7 +986,7 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colkg;
         private DevExpress.XtraGrid.Columns.GridColumn coltm;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
-        private DevExpress.XtraEditors.SimpleButton cmdLiquidos;
+        private DevExpress.XtraEditors.SimpleButton cmdLiquidosGranel;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;

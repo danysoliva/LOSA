@@ -49,6 +49,8 @@ namespace LOSA.TransaccionesPT
             //}
 
             LoadPresentacionesHabilitadas(Cantidad_Ud_Despachos);
+
+            
         }
 
         private void LoadPresentacionesHabilitadas(int pcantidad_Ud_Despachos)
@@ -196,26 +198,43 @@ namespace LOSA.TransaccionesPT
 
         private void cmdImprimir_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(grdDestinos.Text))
+            if (gridView2.DataRowCount == 0)
             {
-                CajaDialogo.Error("Debe seleccionar un Destino!");
-                grdDestinos.Focus();
-            }
+                try
+                {
 
-            try
-            {
-                //Reporte con Filas
-                LOSA.Despachos.Reportes.frm_despacho_con_filas rpt = 
-                    new LOSA.Despachos.Reportes.frm_despacho_con_filas(id_despacho, estiba, Convert.ToInt32(grdDestinos.EditValue),Convert.ToInt32(grdPresentacion.EditValue));
-                rpt.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                ReportPrintTool printReport = new ReportPrintTool(rpt);
-                printReport.ShowPreview();
-            }
-            catch (Exception ex)
-            {
+                    rpt_despacho frm = new rpt_despacho(id_despacho);
+                    frm.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(frm);
+                    printReport.ShowPreview();
+                }
+                catch (Exception ex)
+                {
 
-                CajaDialogo.Error(ex.Message);
+                    CajaDialogo.Error(ex.Message);
+                }
             }
+            
+            //if (string.IsNullOrEmpty(grdDestinos.Text))
+            //{
+            //    CajaDialogo.Error("Debe seleccionar un Destino!");
+            //    grdDestinos.Focus();
+            //}
+
+            //try
+            //{
+            //    //Reporte con Filas
+            //    LOSA.Despachos.Reportes.frm_despacho_con_filas rpt = 
+            //        new LOSA.Despachos.Reportes.frm_despacho_con_filas(id_despacho, estiba, Convert.ToInt32(grdDestinos.EditValue),Convert.ToInt32(grdPresentacion.EditValue));
+            //    rpt.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            //    ReportPrintTool printReport = new ReportPrintTool(rpt);
+            //    printReport.ShowPreview();
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
 
         private void tsTipo_Toggled(object sender, EventArgs e)

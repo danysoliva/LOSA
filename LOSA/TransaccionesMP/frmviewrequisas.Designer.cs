@@ -178,6 +178,7 @@
             this.colid.FieldName = "id";
             this.colid.MinWidth = 15;
             this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
             this.colid.Width = 56;
@@ -225,6 +226,7 @@
             this.colfecha_a_producir.FieldName = "fecha_a_producir";
             this.colfecha_a_producir.MinWidth = 15;
             this.colfecha_a_producir.Name = "colfecha_a_producir";
+            this.colfecha_a_producir.OptionsColumn.AllowEdit = false;
             this.colfecha_a_producir.Visible = true;
             this.colfecha_a_producir.VisibleIndex = 4;
             this.colfecha_a_producir.Width = 76;
@@ -263,8 +265,6 @@
             this.colDocEntry.MinWidth = 15;
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
-            this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 6;
             this.colDocEntry.Width = 81;
             // 
             // gridColumn1
@@ -274,7 +274,7 @@
             this.gridColumn1.MinWidth = 15;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 8;
+            this.gridColumn1.VisibleIndex = 7;
             this.gridColumn1.Width = 49;
             // 
             // btnVerD
@@ -295,7 +295,7 @@
             this.colcomentario.Name = "colcomentario";
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
-            this.colcomentario.VisibleIndex = 7;
+            this.colcomentario.VisibleIndex = 6;
             this.colcomentario.Width = 71;
             // 
             // colimprimir

@@ -17,25 +17,31 @@ namespace LOSA.RecepcionMP
     public partial class frmeditarLote : DevExpress.XtraEditors.XtraForm
     {
         public int id_L;
+        int numero_trans;
+        string lote_mp;
         int id_mp;
         string sapcode;
         DataOperations dp = new DataOperations();
-        public frmeditarLote(int id_lote)
+        public frmeditarLote(int pnumero_trans, string plote)
         {
             InitializeComponent();
-            id_L = id_lote;
+            numero_trans = pnumero_trans;
+            lote_mp = plote;
+            //id_L = id_lote;
             load_data();
         }
         public void load_data()
         {
-            string query = @"sp_load_informacion_of_ingreso_lote";
+            string query = @"sp_load_informacion_of_ingreso_loteV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id_L);
+                //cmd.Parameters.AddWithValue("@id", id_L);
+                cmd.Parameters.AddWithValue("@numero_transaccion", numero_trans);
+                cmd.Parameters.AddWithValue("@lote_mp", lote_mp);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -78,9 +84,13 @@ namespace LOSA.RecepcionMP
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                
+
+                string lote_viejo = lote_mp;
+
                 cmd.Parameters.AddWithValue("@lote", txtlote.Text);
-                cmd.Parameters.AddWithValue("@id", id_L);
+                cmd.Parameters.AddWithValue("@lote_viejo", lote_viejo);
+                cmd.Parameters.AddWithValue("@numero_trans", numero_trans);
+                //cmd.Parameters.AddWithValue("@id", id_L);
                 cmd.Parameters.AddWithValue("@sapcode", sapcode);
                 cmd.ExecuteNonQuery();
                 cn.Close();

@@ -43,9 +43,10 @@ namespace LOSA.Calidad.LoteConfConsumo
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_lotes_configurados_por_mpv2", con);
+                //SqlCommand cmd = new SqlCommand("sp_get_detalle_lotes_configurados_por_mpv2", con);
+                SqlCommand cmd = new SqlCommand("sp_get_obtener_inventario_general_por_lote_y_mp_vencimiento", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idmp", pidRM);
+                cmd.Parameters.AddWithValue("@id_materia_prima", pidRM);
                 dsConfigLoteConsumo1.config_lote.Clear();
                 //dsPresupuesto1.estados.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
@@ -91,7 +92,7 @@ namespace LOSA.Calidad.LoteConfConsumo
             else
             {
 
-                frmEditFechaVencimientoIngreso frm = new frmEditFechaVencimientoIngreso(row.id_mp, row.numero_transaccion, row.lote, row.fecha_vence, row.id_lote_alosy, UsuarioLogeado);
+                frmEditFechaVencimientoIngreso frm = new frmEditFechaVencimientoIngreso(row.id_mp, row.numero_transaccion, row.lote, row.fecha_vence, UsuarioLogeado);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadLotesMP(row.id_mp);

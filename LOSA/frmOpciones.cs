@@ -2535,5 +2535,15 @@ namespace LOSA
                 frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnAprobaTarimasConta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_add_tarimas_pt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
