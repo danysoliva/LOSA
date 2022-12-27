@@ -456,11 +456,11 @@ namespace LOSA.MicroIngredientes
                     }
                 }
 
-                decimal peso_test = 3.35M;
-                pesoBasculaAcumulado1 = 1.35M;
-                pesoBasculaAcumulado2 = 2.42M;
+                //decimal peso_test = 3.35M;
+                //pesoBasculaAcumulado1 = 1.35M;
+                //pesoBasculaAcumulado2 = 2.42M;
 
-                lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";//MI0000000095
+                //lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";//MI0000000095
 
             }
 
