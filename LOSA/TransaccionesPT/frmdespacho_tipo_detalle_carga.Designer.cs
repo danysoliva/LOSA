@@ -361,7 +361,6 @@ namespace LOSA.TransaccionesPT
             this.cmdImprimir.Size = new System.Drawing.Size(193, 35);
             this.cmdImprimir.TabIndex = 14;
             this.cmdImprimir.Text = "Imprimir Detalle Normal";
-            this.cmdImprimir.Visible = false;
             this.cmdImprimir.Click += new System.EventHandler(this.cmdImprimir_Click);
             // 
             // simpleButton1

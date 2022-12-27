@@ -274,6 +274,21 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="detalle_lote_granel_liquidos" msprop:Generator_TableClassName="detalle_lote_granel_liquidosDataTable" msprop:Generator_TableVarName="tabledetalle_lote_granel_liquidos" msprop:Generator_RowChangedName="detalle_lote_granel_liquidosRowChanged" msprop:Generator_TablePropName="detalle_lote_granel_liquidos" msprop:Generator_RowDeletingName="detalle_lote_granel_liquidosRowDeleting" msprop:Generator_RowChangingName="detalle_lote_granel_liquidosRowChanging" msprop:Generator_RowEvHandlerName="detalle_lote_granel_liquidosRowChangeEventHandler" msprop:Generator_RowDeletedName="detalle_lote_granel_liquidosRowDeleted" msprop:Generator_RowClassName="detalle_lote_granel_liquidosRow" msprop:Generator_UserTableName="detalle_lote_granel_liquidos" msprop:Generator_RowEvArgName="detalle_lote_granel_liquidosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lote_mp" msprop:Generator_ColumnVarNameInTable="columnlote_mp" msprop:Generator_ColumnPropNameInRow="lote_mp" msprop:Generator_ColumnPropNameInTable="lote_mpColumn" msprop:Generator_UserColumnName="lote_mp" type="xs:string" minOccurs="0" />
+              <xs:element name="existencia_kg" msprop:Generator_ColumnVarNameInTable="columnexistencia_kg" msprop:Generator_ColumnPropNameInRow="existencia_kg" msprop:Generator_ColumnPropNameInTable="existencia_kgColumn" msprop:Generator_UserColumnName="existencia_kg" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fecha_ingreso" msprop:Generator_ColumnVarNameInTable="columnfecha_ingreso" msprop:Generator_ColumnPropNameInRow="fecha_ingreso" msprop:Generator_ColumnPropNameInTable="fecha_ingresoColumn" msprop:Generator_UserColumnName="fecha_ingreso" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_vencimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" minOccurs="0" />
+              <xs:element name="seleccionar" msprop:Generator_ColumnVarNameInTable="columnseleccionar" msprop:Generator_ColumnPropNameInRow="seleccionar" msprop:Generator_ColumnPropNameInTable="seleccionarColumn" msprop:Generator_UserColumnName="seleccionar" type="xs:boolean" minOccurs="0" />
+              <xs:element name="nombre_comercial" msprop:Generator_ColumnVarNameInTable="columnnombre_comercial" msprop:Generator_ColumnPropNameInRow="nombre_comercial" msprop:Generator_ColumnPropNameInTable="nombre_comercialColumn" msprop:Generator_UserColumnName="nombre_comercial" type="xs:string" minOccurs="0" />
+              <xs:element name="whs_equivalente" msprop:Generator_ColumnVarNameInTable="columnwhs_equivalente" msprop:Generator_ColumnPropNameInRow="whs_equivalente" msprop:Generator_ColumnPropNameInTable="whs_equivalenteColumn" msprop:Generator_UserColumnName="whs_equivalente" type="xs:string" minOccurs="0" />
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

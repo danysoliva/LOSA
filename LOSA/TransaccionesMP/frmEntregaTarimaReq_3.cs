@@ -160,6 +160,7 @@ namespace LOSA.TransaccionesMP
                             lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
                             load_tarimas_scan_v2();
                             txtTarima.Focus();
+                            cmdLiquidosGranel.Visible = true;
                         }
                     }
                     else
@@ -899,6 +900,22 @@ namespace LOSA.TransaccionesMP
                 load_tarimas_scan();
                 //LoadDataMicros();
             }
+        }
+
+        private void cmdLiquidosGranel_Click(object sender, EventArgs e)
+        {
+            if (txtRequisicion.Text != "")
+            {
+                string barcode_req = txtRequisicion.Text;
+                frmWizardSelectGranel_Liqu frm = new frmWizardSelectGranel_Liqu(usuarioLogueado, barcode_req);
+                frm.Show();
+            }
+            else
+            {
+                CajaDialogo.Error("No se Encontro la Requisa! Escanee Nuevamente la Requisa!");
+            }
+
+            
         }
     }
 }

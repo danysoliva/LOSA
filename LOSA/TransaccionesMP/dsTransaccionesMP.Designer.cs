@@ -56,6 +56,8 @@ namespace LOSA.TransaccionesMP {
         
         private tarima_monta_cargaDataTable tabletarima_monta_carga;
         
+        private detalle_lote_granel_liquidosDataTable tabledetalle_lote_granel_liquidos;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -131,6 +133,9 @@ namespace LOSA.TransaccionesMP {
                 }
                 if ((ds.Tables["tarima_monta_carga"] != null)) {
                     base.Tables.Add(new tarima_monta_cargaDataTable(ds.Tables["tarima_monta_carga"]));
+                }
+                if ((ds.Tables["detalle_lote_granel_liquidos"] != null)) {
+                    base.Tables.Add(new detalle_lote_granel_liquidosDataTable(ds.Tables["detalle_lote_granel_liquidos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -312,6 +317,16 @@ namespace LOSA.TransaccionesMP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public detalle_lote_granel_liquidosDataTable detalle_lote_granel_liquidos {
+            get {
+                return this.tabledetalle_lote_granel_liquidos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -424,6 +439,9 @@ namespace LOSA.TransaccionesMP {
                 }
                 if ((ds.Tables["tarima_monta_carga"] != null)) {
                     base.Tables.Add(new tarima_monta_cargaDataTable(ds.Tables["tarima_monta_carga"]));
+                }
+                if ((ds.Tables["detalle_lote_granel_liquidos"] != null)) {
+                    base.Tables.Add(new detalle_lote_granel_liquidosDataTable(ds.Tables["detalle_lote_granel_liquidos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -554,6 +572,12 @@ namespace LOSA.TransaccionesMP {
                     this.tabletarima_monta_carga.InitVars();
                 }
             }
+            this.tabledetalle_lote_granel_liquidos = ((detalle_lote_granel_liquidosDataTable)(base.Tables["detalle_lote_granel_liquidos"]));
+            if ((initTable == true)) {
+                if ((this.tabledetalle_lote_granel_liquidos != null)) {
+                    this.tabledetalle_lote_granel_liquidos.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -596,6 +620,8 @@ namespace LOSA.TransaccionesMP {
             base.Tables.Add(this.tablebines_dispo_prd);
             this.tabletarima_monta_carga = new tarima_monta_cargaDataTable();
             base.Tables.Add(this.tabletarima_monta_carga);
+            this.tabledetalle_lote_granel_liquidos = new detalle_lote_granel_liquidosDataTable();
+            base.Tables.Add(this.tabledetalle_lote_granel_liquidos);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -691,6 +717,12 @@ namespace LOSA.TransaccionesMP {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializetarima_monta_carga() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializedetalle_lote_granel_liquidos() {
             return false;
         }
         
@@ -796,6 +828,9 @@ namespace LOSA.TransaccionesMP {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void tarima_monta_cargaRowChangeEventHandler(object sender, tarima_monta_cargaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void detalle_lote_granel_liquidosRowChangeEventHandler(object sender, detalle_lote_granel_liquidosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -6867,6 +6902,365 @@ namespace LOSA.TransaccionesMP {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class detalle_lote_granel_liquidosDataTable : global::System.Data.TypedTableBase<detalle_lote_granel_liquidosRow> {
+            
+            private global::System.Data.DataColumn columnlote_mp;
+            
+            private global::System.Data.DataColumn columnexistencia_kg;
+            
+            private global::System.Data.DataColumn columnfecha_ingreso;
+            
+            private global::System.Data.DataColumn columnfecha_vencimiento;
+            
+            private global::System.Data.DataColumn columnenable;
+            
+            private global::System.Data.DataColumn columnseleccionar;
+            
+            private global::System.Data.DataColumn columnnombre_comercial;
+            
+            private global::System.Data.DataColumn columnwhs_equivalente;
+            
+            private global::System.Data.DataColumn columnid_mp;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_lote_granel_liquidosDataTable() {
+                this.TableName = "detalle_lote_granel_liquidos";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal detalle_lote_granel_liquidosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected detalle_lote_granel_liquidosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_mpColumn {
+                get {
+                    return this.columnlote_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existencia_kgColumn {
+                get {
+                    return this.columnexistencia_kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_ingresoColumn {
+                get {
+                    return this.columnfecha_ingreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_vencimientoColumn {
+                get {
+                    return this.columnfecha_vencimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn enableColumn {
+                get {
+                    return this.columnenable;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn seleccionarColumn {
+                get {
+                    return this.columnseleccionar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombre_comercialColumn {
+                get {
+                    return this.columnnombre_comercial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn whs_equivalenteColumn {
+                get {
+                    return this.columnwhs_equivalente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_lote_granel_liquidosRow this[int index] {
+                get {
+                    return ((detalle_lote_granel_liquidosRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalle_lote_granel_liquidosRowChangeEventHandler detalle_lote_granel_liquidosRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalle_lote_granel_liquidosRowChangeEventHandler detalle_lote_granel_liquidosRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalle_lote_granel_liquidosRowChangeEventHandler detalle_lote_granel_liquidosRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalle_lote_granel_liquidosRowChangeEventHandler detalle_lote_granel_liquidosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Adddetalle_lote_granel_liquidosRow(detalle_lote_granel_liquidosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_lote_granel_liquidosRow Adddetalle_lote_granel_liquidosRow(string lote_mp, decimal existencia_kg, System.DateTime fecha_ingreso, System.DateTime fecha_vencimiento, bool enable, bool seleccionar, string nombre_comercial, string whs_equivalente, int id_mp) {
+                detalle_lote_granel_liquidosRow rowdetalle_lote_granel_liquidosRow = ((detalle_lote_granel_liquidosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        lote_mp,
+                        existencia_kg,
+                        fecha_ingreso,
+                        fecha_vencimiento,
+                        enable,
+                        seleccionar,
+                        nombre_comercial,
+                        whs_equivalente,
+                        id_mp};
+                rowdetalle_lote_granel_liquidosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdetalle_lote_granel_liquidosRow);
+                return rowdetalle_lote_granel_liquidosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                detalle_lote_granel_liquidosDataTable cln = ((detalle_lote_granel_liquidosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new detalle_lote_granel_liquidosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnlote_mp = base.Columns["lote_mp"];
+                this.columnexistencia_kg = base.Columns["existencia_kg"];
+                this.columnfecha_ingreso = base.Columns["fecha_ingreso"];
+                this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
+                this.columnenable = base.Columns["enable"];
+                this.columnseleccionar = base.Columns["seleccionar"];
+                this.columnnombre_comercial = base.Columns["nombre_comercial"];
+                this.columnwhs_equivalente = base.Columns["whs_equivalente"];
+                this.columnid_mp = base.Columns["id_mp"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnlote_mp = new global::System.Data.DataColumn("lote_mp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_mp);
+                this.columnexistencia_kg = new global::System.Data.DataColumn("existencia_kg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia_kg);
+                this.columnfecha_ingreso = new global::System.Data.DataColumn("fecha_ingreso", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_ingreso);
+                this.columnfecha_vencimiento = new global::System.Data.DataColumn("fecha_vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_vencimiento);
+                this.columnenable = new global::System.Data.DataColumn("enable", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnenable);
+                this.columnseleccionar = new global::System.Data.DataColumn("seleccionar", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionar);
+                this.columnnombre_comercial = new global::System.Data.DataColumn("nombre_comercial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_comercial);
+                this.columnwhs_equivalente = new global::System.Data.DataColumn("whs_equivalente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwhs_equivalente);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_lote_granel_liquidosRow Newdetalle_lote_granel_liquidosRow() {
+                return ((detalle_lote_granel_liquidosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new detalle_lote_granel_liquidosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(detalle_lote_granel_liquidosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.detalle_lote_granel_liquidosRowChanged != null)) {
+                    this.detalle_lote_granel_liquidosRowChanged(this, new detalle_lote_granel_liquidosRowChangeEvent(((detalle_lote_granel_liquidosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.detalle_lote_granel_liquidosRowChanging != null)) {
+                    this.detalle_lote_granel_liquidosRowChanging(this, new detalle_lote_granel_liquidosRowChangeEvent(((detalle_lote_granel_liquidosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.detalle_lote_granel_liquidosRowDeleted != null)) {
+                    this.detalle_lote_granel_liquidosRowDeleted(this, new detalle_lote_granel_liquidosRowChangeEvent(((detalle_lote_granel_liquidosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.detalle_lote_granel_liquidosRowDeleting != null)) {
+                    this.detalle_lote_granel_liquidosRowDeleting(this, new detalle_lote_granel_liquidosRowChangeEvent(((detalle_lote_granel_liquidosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removedetalle_lote_granel_liquidosRow(detalle_lote_granel_liquidosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsTransaccionesMP ds = new dsTransaccionesMP();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "detalle_lote_granel_liquidosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ordenes_fabricacion_hRow : global::System.Data.DataRow {
@@ -11791,6 +12185,282 @@ namespace LOSA.TransaccionesMP {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class detalle_lote_granel_liquidosRow : global::System.Data.DataRow {
+            
+            private detalle_lote_granel_liquidosDataTable tabledetalle_lote_granel_liquidos;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal detalle_lote_granel_liquidosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledetalle_lote_granel_liquidos = ((detalle_lote_granel_liquidosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote_mp {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_lote_granel_liquidos.lote_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_mp\' de la tabla \'detalle_lote_granel_liquidos\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.lote_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal existencia_kg {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledetalle_lote_granel_liquidos.existencia_kgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia_kg\' de la tabla \'detalle_lote_granel_liquidos\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.existencia_kgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_ingreso {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledetalle_lote_granel_liquidos.fecha_ingresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ingreso\' de la tabla \'detalle_lote_granel_liquidos\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.fecha_ingresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_vencimiento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledetalle_lote_granel_liquidos.fecha_vencimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vencimiento\' de la tabla \'detalle_lote_granel_liqui" +
+                                "dos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.fecha_vencimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool enable {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledetalle_lote_granel_liquidos.enableColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'enable\' de la tabla \'detalle_lote_granel_liquidos\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.enableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool seleccionar {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledetalle_lote_granel_liquidos.seleccionarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'seleccionar\' de la tabla \'detalle_lote_granel_liquidos\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.seleccionarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre_comercial {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_lote_granel_liquidos.nombre_comercialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_comercial\' de la tabla \'detalle_lote_granel_liquid" +
+                                "os\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.nombre_comercialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string whs_equivalente {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_lote_granel_liquidos.whs_equivalenteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'whs_equivalente\' de la tabla \'detalle_lote_granel_liquido" +
+                                "s\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.whs_equivalenteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalle_lote_granel_liquidos.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'detalle_lote_granel_liquidos\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_lote_granel_liquidos.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_mpNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.lote_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_mpNull() {
+                this[this.tabledetalle_lote_granel_liquidos.lote_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexistencia_kgNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.existencia_kgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexistencia_kgNull() {
+                this[this.tabledetalle_lote_granel_liquidos.existencia_kgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_ingresoNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.fecha_ingresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_ingresoNull() {
+                this[this.tabledetalle_lote_granel_liquidos.fecha_ingresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_vencimientoNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.fecha_vencimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_vencimientoNull() {
+                this[this.tabledetalle_lote_granel_liquidos.fecha_vencimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsenableNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.enableColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetenableNull() {
+                this[this.tabledetalle_lote_granel_liquidos.enableColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsseleccionarNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.seleccionarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetseleccionarNull() {
+                this[this.tabledetalle_lote_granel_liquidos.seleccionarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnombre_comercialNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.nombre_comercialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnombre_comercialNull() {
+                this[this.tabledetalle_lote_granel_liquidos.nombre_comercialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iswhs_equivalenteNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.whs_equivalenteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setwhs_equivalenteNull() {
+                this[this.tabledetalle_lote_granel_liquidos.whs_equivalenteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tabledetalle_lote_granel_liquidos.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tabledetalle_lote_granel_liquidos.id_mpColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -12320,6 +12990,40 @@ namespace LOSA.TransaccionesMP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tarima_monta_cargaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class detalle_lote_granel_liquidosRowChangeEvent : global::System.EventArgs {
+            
+            private detalle_lote_granel_liquidosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_lote_granel_liquidosRowChangeEvent(detalle_lote_granel_liquidosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_lote_granel_liquidosRow Row {
                 get {
                     return this.eventRow;
                 }

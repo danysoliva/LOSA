@@ -4867,6 +4867,12 @@
     <Compile Include="TransaccionesMP\frmLotePorMP.Designer.cs">
       <DependentUpon>frmLotePorMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmLotes_Existencia_Granel_Liquidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmLotes_Existencia_Granel_Liquidos.Designer.cs">
+      <DependentUpon>frmLotes_Existencia_Granel_Liquidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmMontaCargaTarimaResumen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4950,6 +4956,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmviewrequisas.Designer.cs">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmWizardSelectGranel_Liqu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmWizardSelectGranel_Liqu.Designer.cs">
+      <DependentUpon>frmWizardSelectGranel_Liqu.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frm_reporte_alimentacion.cs">
       <SubType>Form</SubType>
@@ -7017,6 +7029,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmLotePorMP.resx">
       <DependentUpon>frmLotePorMP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmLotes_Existencia_Granel_Liquidos.resx">
+      <DependentUpon>frmLotes_Existencia_Granel_Liquidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmMontaCargaTarimaResumen.resx">
       <DependentUpon>frmMontaCargaTarimaResumen.cs</DependentUpon>
     </EmbeddedResource>
@@ -7058,6 +7073,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmviewrequisas.resx">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmWizardSelectGranel_Liqu.resx">
+      <DependentUpon>frmWizardSelectGranel_Liqu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frm_reporte_alimentacion.resx">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
