@@ -22,7 +22,7 @@ namespace LOSA.MicroIngredientes
         //int id_orden_pesaje_h;
         int BasculaSelected = 0;
         int tipoPesaje = 0;
-
+        int batch_realizados;
         string[] bascula = { "B1", "B2", "Ambas" };
 
        public enum TipoPesaje
@@ -43,6 +43,7 @@ namespace LOSA.MicroIngredientes
             seBatch.Properties.MaxValue = pesaje.CantBatchMaximo;
             LoadBasculas();
             tipoPesaje = pTipoPesaje;
+            //batch_realizados = pbatch_realizados;
         }
 
 

@@ -113,7 +113,7 @@ namespace LOSA.MicroIngredientes
             this.btnGuardar.Enabled = false;
             this.btnGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
-            this.btnGuardar.Location = new System.Drawing.Point(635, 649);
+            this.btnGuardar.Location = new System.Drawing.Point(633, 669);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(97, 63);
             this.btnGuardar.TabIndex = 22;
@@ -484,6 +484,7 @@ namespace LOSA.MicroIngredientes
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 777);
+            this.Controls.Add(this.lblCompletados);
             this.Controls.Add(this.lblLoteName);
             this.Controls.Add(this.btnBascAmbas);
             this.Controls.Add(this.btnBasc2);
@@ -503,7 +504,6 @@ namespace LOSA.MicroIngredientes
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblValorBascula1);
             this.Controls.Add(this.lblBascula1);
-            this.Controls.Add(this.lblCompletados);
             this.Controls.Add(this.lblRequerido);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
