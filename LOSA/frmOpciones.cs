@@ -1598,48 +1598,73 @@ namespace LOSA
 
         private void nbReporteBatch_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            //try
+            //{
+            //    if (UsuarioLogeado.ValidarNivelPermisos(46))
+            //    {
+            //        frmintakeKepserver frm = new frmintakeKepserver();
+            //        frm.MdiParent = this.MdiParent;
+            //        frm.Show();
+            //    }
+            //    else
+            //    {
+            //        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #46");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
             try
             {
-                //
-                if (UsuarioLogeado.ValidarNivelPermisos(46))
-                {
-                    frmintakeKepserver frm = new frmintakeKepserver();
-                    frm.MdiParent = this.MdiParent;
+                frmintakeKepserver frm = new frmintakeKepserver(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
                     frm.Show();
-                }
                 else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #46");
-                }
+                    frm.Dispose();
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
             }
         }
 
         private void nbReporteEnsacadora_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            //try
+            //{
+            //    //reporte ensacadora
+            //    if (UsuarioLogeado.ValidarNivelPermisos(48))
+            //    {
+            //        frmReporteEnsacadora frm = new frmReporteEnsacadora();
+            //        frm.MdiParent = this.MdiParent;
+            //        frm.WindowState = FormWindowState.Maximized;
+            //        frm.Show();
+            //    }
+            //    else
+            //    {
+            //        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #48");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+
+            //}
             try
             {
-                //reporte ensacadora
-                if (UsuarioLogeado.ValidarNivelPermisos(48))
-                {
-                    frmReporteEnsacadora frm = new frmReporteEnsacadora();
-                    frm.MdiParent = this.MdiParent;
-                    frm.WindowState = FormWindowState.Maximized;
+                frmReporteEnsacadora frm = new frmReporteEnsacadora(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
                     frm.Show();
-                }
                 else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #48");
-                }
+                    frm.Dispose();
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
             }
         }
 
