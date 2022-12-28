@@ -456,8 +456,8 @@ namespace LOSA.Liquidos
                 cmd2.Parameters.AddWithValue("@id_tanque", id_tanque);
                 cmd2.Parameters.AddWithValue("@salida", 0);
                 cmd2.Parameters.AddWithValue("@id_tarima", DBNull.Value);
-                cmd2.Parameters.AddWithValue("@date_ingreso", DateTime.Now);
-                cmd2.Parameters.AddWithValue("@lote", txtLote);
+                cmd2.Parameters.AddWithValue("@date_ingreso", dp.Now());
+                cmd2.Parameters.AddWithValue("@lote", txtLote.Text);
                 cmd2.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                 cmd2.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                 cmd2.ExecuteNonQuery();
@@ -535,7 +535,7 @@ namespace LOSA.Liquidos
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }   
 
             if (Guardo)
@@ -572,15 +572,14 @@ namespace LOSA.Liquidos
         {
             try
             {
-               
+              
+                int idUbicaciones = Convert.ToInt32(grdUbicaciones.EditValue);
+                foreach (dsLiquidos_.Camiones_INRow row in dsLiquidos_.Camiones_IN.Rows)
+                {
+                    row.id_ubicacion = idUbicaciones;
+                }
 
-                    int idUbicaciones = Convert.ToInt32(grdUbicaciones.EditValue);
-                    foreach (dsLiquidos_.Camiones_INRow row in dsLiquidos_.Camiones_IN.Rows)
-                    {
-                        row.id_ubicacion = idUbicaciones;
-                    }
-
-                    dsLiquidos_.Camiones_IN.AcceptChanges();
+                dsLiquidos_.Camiones_IN.AcceptChanges();
                
             }
             catch (Exception ex)

@@ -444,9 +444,9 @@ namespace LOSA.MicroIngredientes
                     pesaje.PesoPorBatch = row.Peso_por_Batch;
                     //pesajeIndividual.AMI_ID = ami_id;
 
+                    //int batch_realizados = row.Batch_Completados;
 
                     xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesaje, (int)TipoPesaje.PesajeIndividual);
-
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadDataIndividual();

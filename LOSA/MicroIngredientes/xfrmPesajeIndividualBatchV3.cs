@@ -262,6 +262,8 @@ namespace LOSA.MicroIngredientes
                 try
                 {
                     TarimaMicroingrediente tarima = new TarimaMicroingrediente();
+                    //tarima.RecuperarRegistroPorCodBarra(txtCodBarra.Text);
+                   
 
                     if (!string.IsNullOrEmpty(txtCodBarra.Text))
                     {
