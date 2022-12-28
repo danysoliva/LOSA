@@ -7693,6 +7693,7 @@
     <None Include="Resources\Options_32x32.png" />
     <None Include="Resources\MRP_222x222.png" />
     <None Include="Resources\MRP_32x32.png" />
+    <None Include="Resources\oil_pipe-line-icon32px.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />

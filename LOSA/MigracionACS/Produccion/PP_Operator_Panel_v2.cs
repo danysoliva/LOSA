@@ -251,12 +251,11 @@ namespace LOSA.MigracionACS.Produccion
             if (!AccesoPrevio)
             {
                 CerrarForm = true;
-                CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #69");
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #69");
             }
             else
             {
                 load_orders();
-
                 conn.ConnectionString = dp.ConnectionStringCostos;
                 conn.Open();
                 if (conn.State == ConnectionState.Open)

@@ -1380,7 +1380,6 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
             }
         }
 
@@ -1403,13 +1402,15 @@ namespace LOSA
         {
             try
             {
-
-                PP_Main_Products_Order MPO = new PP_Main_Products_Order(UsuarioLogeado);
-                MPO.ActiveUserCodeP = ActiveUserCode;
-                MPO.ActiveUserNameP = ActiveUserName;
-                MPO.ActiveUserTypeP = ActiveUserType;
-                MPO.MdiParent = this.MdiParent;
-                MPO.Show();
+                PP_Main_Products_Order frm = new PP_Main_Products_Order(UsuarioLogeado);
+                frm.ActiveUserCodeP = ActiveUserCode;
+                frm.ActiveUserNameP = ActiveUserName;
+                frm.ActiveUserTypeP = ActiveUserType;
+                frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
             }
             catch (Exception ex)
             {
@@ -1419,18 +1420,25 @@ namespace LOSA
 
         private void bnPortafolio_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            PT_Productos prod = new PT_Productos(ActiveUserCode, ActiveUserName, ActiveUserType);
-            //PT_Test prod = new PT_Test();
-            prod.MdiParent = this.MdiParent;
-            prod.Show();
+            try
+            {
+                PT_Productos frm = new PT_Productos(ActiveUserCode, ActiveUserName, ActiveUserType, this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void nbControlProduccion_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             try
             {
-                //comentario 
-                //sincronizacion
                 string a = null;
                 int group = 0;
                 string Query = @"SELECT 
@@ -1447,11 +1455,27 @@ namespace LOSA
                 {
                     group = dr.GetInt32(0);
                 }
-                PRB_Registro pp = new PRB_Registro(ActiveUserCode, group, this.UsuarioLogeado);
-                pp.UsuarioLog1 = ActiveUserName;
-                pp.CodigoUss = ActiveUserCode;
-                pp.MdiParent = this.MdiParent;
-                pp.Show();
+                //PRB_Registro pp = new PRB_Registro(ActiveUserCode, group, this.UsuarioLogeado);
+                //pp.UsuarioLog1 = ActiveUserName;
+                //pp.CodigoUss = ActiveUserCode;
+                //pp.MdiParent = this.MdiParent;
+                //pp.Show();
+
+                try
+                {
+                    PRB_Registro frm = new PRB_Registro(ActiveUserCode, group, this.UsuarioLogeado);
+                    frm.UsuarioLog1 = ActiveUserName;
+                    frm.CodigoUss = ActiveUserCode;
+                    frm.MdiParent = this.MdiParent;
+                    if (!frm.CerrarForm)
+                        frm.Show();
+                    else
+                        frm.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
             catch (Exception ex)
             {
@@ -1462,23 +1486,35 @@ namespace LOSA
 
         private void navBarItem7_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            //try
+            //{
+            //    if (UsuarioLogeado.ValidarNivelPermisos(60))
+            //    {
+            //        frmDatosBrom frm = new frmDatosBrom(this.UsuarioLogeado);
+            //        frm.MdiParent = this.MdiParent;
+            //        frm.Show();
+            //    }
+            //    else
+            //    {
+            //        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #60");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
             try
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(60))
-                {
-                    frmDatosBrom frm = new frmDatosBrom(this.UsuarioLogeado);
-                    frm.MdiParent = this.MdiParent;
+                frmDatosBrom frm = new frmDatosBrom(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
                     frm.Show();
-                }
                 else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #60");
-                }
+                    frm.Dispose();
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-
             }
         }
 
@@ -1489,7 +1525,6 @@ namespace LOSA
                 frmHorometrosLineas frm = new frmHorometrosLineas();
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
-
             }
             catch (Exception ex)
             {
@@ -1499,10 +1534,26 @@ namespace LOSA
 
         private void navBarItem9_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            try
+            {
+                PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+
             //accesoprevio = true;
-            PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
-            frm.MdiParent = this;
-            frm.Show();
+            //PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
+            //frm.MdiParent = this;
+            //frm.Show();
             //try
             //{
             //    bool accesoprevio = false;
@@ -1872,10 +1923,12 @@ namespace LOSA
         {
             try
             {
-
-                Prod_Ordenes_Produccion frm = new Prod_Ordenes_Produccion(ActiveUserCode, ActiveUserName, ActiveUserType);
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
+                Prod_Ordenes_Produccion frm = new Prod_Ordenes_Produccion(ActiveUserCode, ActiveUserName, ActiveUserType, this.UsuarioLogeado);
+                //frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
             }
             catch (Exception ex)
             {

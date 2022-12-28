@@ -51,14 +51,69 @@ namespace LOSA.MigracionACS.Produccion
             set { ActiveUserType = value; }
         }
         UserLogin UsuarioLogeado;
+        public bool CerrarForm;
         public PP_Main_Products_Order(UserLogin pUser)
         {
             InitializeComponent();
             UsuarioLogeado = pUser;
+            ValidatePermisos();
             dp = new DataOperations();
-            LoadPresentaciones();
-            LoadClasesAdicional();
         }
+
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(82))
+            {
+                barButtonNuevo.Enabled = true;
+                barButtonNuevo.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                AccesoPrevio = true;
+            }
+
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(82))
+            {
+                barButtonNuevo.Enabled = true;
+                barButtonNuevo.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                AccesoPrevio = true;
+            }
+
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                        barButtonNuevo.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                        barButtonNuevo.Enabled = false;
+                        AccesoPrevio = true;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        barButtonNuevo.Enabled = true;
+                        barButtonNuevo.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        AccesoPrevio = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #82");
+            }
+            else
+            {
+                LoadPresentaciones();
+                LoadClasesAdicional();
+            }
+        }
+
 
         private void LoadClasesAdicional()
         {
