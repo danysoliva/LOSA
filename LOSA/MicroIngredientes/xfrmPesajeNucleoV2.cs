@@ -58,9 +58,9 @@ namespace LOSA.MicroIngredientes
             limiteSuperior = pmax_kg + (pmax_kg * Convert.ToDecimal(0.03));
 
             //lblValorBascula1.Text = "Valor en Báscula: " + peso_bascula.ToString("N2")+ " Kg";
-            lblInferior.Text = "Límite Minimo: " + limiteInferior.ToString("N2") + " Kg";
+            //lblInferior.Text = "Límite Minimo: " + limiteInferior.ToString("N2") + " Kg";
             lblSuperior.Text = "Límite Maximo: " + limiteSuperior.ToString("N2") + " Kg";
-            lblInferior.Visible = lblSuperior.Visible = true;
+            //lblInferior.Visible = lblSuperior.Visible = true;
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
@@ -470,14 +470,14 @@ namespace LOSA.MicroIngredientes
             {
                 //pesoBasculaAcumulado2 = 0;
                 //pesoBasculaAcumuladoALL = 0;
-                lblError.Visible = true;
+                //lblError.Visible = true;
                 lblSuperior.Visible = true;
-                lblInferior.Visible = true;
+                //lblInferior.Visible = true;
                 btnBascula1.Enabled = true;
-                lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1.ToString("N2") + " Kg";
-                lblError.ForeColor = Color.Green;
+                //lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1.ToString("N2") + " Kg";
+                //lblError.ForeColor = Color.Green;
                 lblSuperior.ForeColor = Color.Green;
-                lblInferior.ForeColor = Color.Green;
+                //lblInferior.ForeColor = Color.Green;
             }
             else
             {
@@ -489,14 +489,14 @@ namespace LOSA.MicroIngredientes
                 //lblError.Text = "El Peso de " + pesoBasculaAcumulado1.ToString("N2") + " Kg no cumple los límite";
                 //lblError.ForeColor = Color.Red;
                 //lblError.Visible =true; 
-                lblError.ForeColor = Color.Black;
-                lblError.Visible =false;
+                //lblError.ForeColor = Color.Black;
+                //lblError.Visible =false;
                 lblSuperior.Visible = true;
-                lblInferior.Visible = true;
+                //lblInferior.Visible = true;
                 btnBascula1.Enabled = false;
                 btnBascula2.Enabled = false;
                 lblSuperior.ForeColor = Color.Red;
-                lblInferior.ForeColor = Color.Red;
+                //lblInferior.ForeColor = Color.Red;
             }
 
             //Bascula 2
@@ -506,10 +506,10 @@ namespace LOSA.MicroIngredientes
                 //pesoBasculaAcumuladoALL = 0;
                 //lblError.Visible = true;
                 lblSuperior.Visible = false;
-                lblInferior.Visible = false;
+                //lblInferior.Visible = false;
                 btnBascula2.Enabled = true;
-                lblError.Text = "El peso " + pesoBasculaAcumulado2.ToString("N2") + " Kg cumple con los límites";
-                lblError.ForeColor = Color.Green;
+                //lblError.Text = "El peso " + pesoBasculaAcumulado2.ToString("N2") + " Kg cumple con los límites";
+                //lblError.ForeColor = Color.Green;
             }
             else
             {
@@ -522,15 +522,15 @@ namespace LOSA.MicroIngredientes
                 //lblError.Text = "El Peso de " + pesoBasculaAcumulado2.ToString("N2") + " Kg no cumple con los límites";
                 //lblError.ForeColor = Color.Red;
                 //lblError.Visible = true;
-                lblError.ForeColor = Color.Black;
-                lblError.Visible = false;
+                //lblError.ForeColor = Color.Black;
+                //lblError.Visible = false;
 
                 lblSuperior.Visible = true;
-                lblInferior.Visible = true;
+                //lblInferior.Visible = true;
                 //btnBascula1.Enabled = false;
                 btnBascula2.Enabled = false;
                 lblSuperior.ForeColor = Color.Red;
-                lblInferior.ForeColor = Color.Red;
+                //lblInferior.ForeColor = Color.Red;
             }
 
             pesoBasculaAcumuladoALL = 0;
@@ -544,11 +544,11 @@ namespace LOSA.MicroIngredientes
             {
                 lblError.Visible = true;
                 lblSuperior.Visible = true;
-                lblInferior.Visible = true;
-                lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1.ToString("N2") + " Kg";
+                //lblInferior.Visible = true;
+                lblError.Text = "El peso a guardar es de " + pesoBasculaAcumuladoALL.ToString("N2") + " Kg";
                 lblError.ForeColor = Color.Green;
                 lblSuperior.ForeColor = Color.Green;
-                lblInferior.ForeColor = Color.Green; 
+                //lblInferior.ForeColor = Color.Green; 
                 btnGuardar.Enabled = true;
             }
             else
@@ -557,16 +557,16 @@ namespace LOSA.MicroIngredientes
                 //pesoBasculaAcumuladoALL = 0;
                 //pesoBasculaAcumuladoTMP_ALL = 0;
                 //pesoBasculaAcumuladoTMP2 = 0;
-                //lblError.Text = "El Peso de " + pesoBasculaAcumulado1.ToString("N2") + " Kg no cumple los límite";
-                //lblError.ForeColor = Color.Red;
-                //lblError.Visible = true;
-                lblError.ForeColor = Color.Black;
-                lblError.Visible = false;
+                lblError.Text = "El Peso de " + pesoBasculaAcumuladoALL.ToString("N2") + " Kg no cumple los límite Superior Permitido!";
+                lblError.ForeColor = Color.Red;
+                lblError.Visible = true;
+                //lblError.ForeColor = Color.Black;
+                //lblError.Visible = false;
 
                 lblSuperior.Visible = true;
-                lblInferior.Visible = true;
+                //lblInferior.Visible = true;
                 lblSuperior.ForeColor = Color.Red;
-                lblInferior.ForeColor = Color.Red;
+                //lblInferior.ForeColor = Color.Red;
                 btnGuardar.Enabled = false;
             }
 

@@ -29,10 +29,9 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmMezclaMicroShow));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsReportesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsReportesBindingSource = new System.Windows.Forms.BindingSource();
             this.dsReportes = new LOSA.Reportes.dsReportes();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();

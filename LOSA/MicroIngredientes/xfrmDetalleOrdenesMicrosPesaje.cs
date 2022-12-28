@@ -28,6 +28,8 @@ namespace LOSA.MicroIngredientes
         int id_orden = 0;
         Int64 id_order_apms = 0;
         string pt_name;
+        string ItemCode;
+        int LotePT;
         int TotalBatchOrden;
 
         public xfrmDetalleOrdenesMicrosPesaje(int _ID, string _CodigoOrden)
@@ -68,11 +70,12 @@ namespace LOSA.MicroIngredientes
                         id_order_apms = dr.GetInt64(1);
                         lblNumOrden.Text = id_order_apms.ToString();
                         codigoOrden = lblCodOrden.Text = dr.GetString(2);
-                        lbl_Lote.Text = dr.GetInt32(4).ToString();
+                        LotePT = dr.GetInt32(4);
+                        lbl_Lote.Text = LotePT.ToString();
                         TotalBatchOrden = dr.GetInt32(5);
                         lblTotalBatchOrden.Text = TotalBatchOrden.ToString();
                         lblPT.Text = dr.GetString(9);
-                        lblItemCode.Text = dr.GetString(10);
+                        ItemCode = lblItemCode.Text = dr.GetString(10);
                     }
                 }
             }
@@ -230,8 +233,6 @@ namespace LOSA.MicroIngredientes
             {
                 DataOperations dp = new DataOperations();
                 using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
-
-
                 {
                     cnx.Open();
                     dsMicros.plan_microsd.Clear();
@@ -240,6 +241,37 @@ namespace LOSA.MicroIngredientes
                     da.SelectCommand.Parameters.AddWithValue("@ami_id", SqlDbType.Int).Value = row.AMI_ID;
                     da.Fill(dsMicros.plan_microsd);
                     cnx.Close();
+
+                    cnx.Open();
+                    bool Finalizado = true;
+                    foreach (dsMicros.plan_microsdRow rowi in dsMicros.plan_microsd)
+                    {
+                        Finalizado = true;
+
+                        if (rowi.batch_real == 0)
+                        {
+                            Finalizado = false;
+                        }
+                        else
+                        //if (rowi.total > rowi.batch_real)
+                        {
+                            decimal val = 100 - ((rowi.batch_real / rowi.total) * 100);
+                            if (Math.Abs(val) > 3)
+                                Finalizado = false;
+                        }
+
+                        if (Finalizado)
+                        {
+                            //Update Row
+                            SqlCommand cmd = new SqlCommand("sp_get_update_complete_pesaje_mezcla_micro_ingredientes", cnx);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@ami_id",rowi.AMI_ID);
+                            cmd.Parameters.AddWithValue("@id_orden_encabezado", rowi.id_orden_encabezado);
+                            cmd.Parameters.AddWithValue("@id_rm", rowi.id_rm);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
 
                 }
             }
@@ -341,7 +373,7 @@ namespace LOSA.MicroIngredientes
 
                         int id_orden_pesaje_manual_transaccion = (int)cmd.ExecuteScalar();
 
-                        SqlCommand cmd2 = new SqlCommand("[dbo].[sp_LOSA_insert_detallePesajeBascula_Micros]", cnxLOSA);
+                        SqlCommand cmd2 = new SqlCommand("[dbo].[sp_LOSA_insert_detallePesajeBascula_Microsv2]", cnxLOSA);
                         cmd2.CommandType = CommandType.StoredProcedure;
                         cmd2.Parameters.Add("@id_orden_h", SqlDbType.Int).Value = id_orden_pesaje_manual_transaccion;
                         cmd2.Parameters.Add("@id_tarima_micros", SqlDbType.Int).Value = item.Id_tarima_micro;
@@ -349,6 +381,9 @@ namespace LOSA.MicroIngredientes
                         cmd2.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.Id_mp;
                         cmd2.Parameters.Add("@lote", SqlDbType.VarChar).Value = item.Lote;
                         cmd2.Parameters.Add("@peso", SqlDbType.Decimal).Value = item.Peso;
+                        cmd2.Parameters.AddWithValue("@itemcode", ItemCode);
+                        cmd2.Parameters.AddWithValue("@lotept", LotePT);
+                        cmd2.Parameters.AddWithValue("@id_oden", id_order_apms);
                         cmd2.ExecuteNonQuery();
                     }
                     cnx.Close();
