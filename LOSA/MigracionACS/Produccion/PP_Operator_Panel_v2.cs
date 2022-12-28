@@ -190,7 +190,6 @@ namespace LOSA.MigracionACS.Produccion
             //this.FormAction = FormAction;
             //this.UserGroups = UserGroups;
         }
-
         #endregion
 
         #region Form Events

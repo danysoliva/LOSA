@@ -264,7 +264,7 @@ namespace LOSA.MicroIngredientes
                 var gridView = (GridView)gridControl2.FocusedView;
                 var row = (dsMicros.plan_microsdRow)gridView.GetFocusedDataRow();
 
-                if (row.pesaje >= row.total)
+                if (row.batch_real >= row.total)
                 {
                     CajaDialogo.Error("YA SE PESÓ ESTA MATERIA PRIMA");
                     return;

@@ -444,8 +444,8 @@ namespace LOSA.MicroIngredientes
                     {
                         lblBascula1.Text = item.descripcion;
 
-                        pesoBascula1 = pesoBascula1 + item.peso;
-
+                        //pesoBascula1 = pesoBascula1 + item.peso;
+                        pesoBascula1 = item.peso;
                         lblValorBascula1.Text = "Valor en Báscula: " + item.peso.ToString("N2") + " Kg";
                     }
                     else if (item.id_bascula == 2)//(int)Basculas.Bascula2)
@@ -457,9 +457,8 @@ namespace LOSA.MicroIngredientes
                 }
 
                 //decimal peso_test = 3.35M;
-                //pesoBasculaAcumulado1 = 1.35M;
-                //pesoBasculaAcumulado2 = 2.42M;
-
+                pesoBasculaAcumulado1 = pesoBascula1;// 1.35M;
+                pesoBasculaAcumulado2 = pesoBascula2;// 2.42M;
                 //lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";//MI0000000095
 
             }
