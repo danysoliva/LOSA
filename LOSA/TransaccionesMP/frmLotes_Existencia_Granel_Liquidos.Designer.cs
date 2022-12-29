@@ -65,7 +65,7 @@ namespace LOSA.TransaccionesMP
             this.grdLoteExist.Name = "grdLoteExist";
             this.grdLoteExist.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.reportItem});
-            this.grdLoteExist.Size = new System.Drawing.Size(937, 308);
+            this.grdLoteExist.Size = new System.Drawing.Size(670, 308);
             this.grdLoteExist.TabIndex = 1;
             this.grdLoteExist.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvLoteExist});
@@ -102,7 +102,7 @@ namespace LOSA.TransaccionesMP
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 0;
-            this.colnombre_comercial.Width = 142;
+            this.colnombre_comercial.Width = 143;
             // 
             // collote_mp
             // 
@@ -112,7 +112,7 @@ namespace LOSA.TransaccionesMP
             this.collote_mp.OptionsColumn.AllowEdit = false;
             this.collote_mp.Visible = true;
             this.collote_mp.VisibleIndex = 1;
-            this.collote_mp.Width = 169;
+            this.collote_mp.Width = 151;
             // 
             // colexistencia_kg
             // 
@@ -124,7 +124,7 @@ namespace LOSA.TransaccionesMP
             this.colexistencia_kg.OptionsColumn.AllowEdit = false;
             this.colexistencia_kg.Visible = true;
             this.colexistencia_kg.VisibleIndex = 3;
-            this.colexistencia_kg.Width = 200;
+            this.colexistencia_kg.Width = 114;
             // 
             // colfecha_ingreso
             // 
@@ -152,7 +152,7 @@ namespace LOSA.TransaccionesMP
             this.colseleccionar.Name = "colseleccionar";
             this.colseleccionar.Visible = true;
             this.colseleccionar.VisibleIndex = 4;
-            this.colseleccionar.Width = 208;
+            this.colseleccionar.Width = 112;
             // 
             // reportItem
             // 
@@ -172,7 +172,7 @@ namespace LOSA.TransaccionesMP
             this.colwhs_equivalente.OptionsColumn.AllowEdit = false;
             this.colwhs_equivalente.Visible = true;
             this.colwhs_equivalente.VisibleIndex = 2;
-            this.colwhs_equivalente.Width = 200;
+            this.colwhs_equivalente.Width = 132;
             // 
             // cmdHome
             // 
@@ -183,7 +183,7 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(787, 1);
+            this.cmdHome.Location = new System.Drawing.Point(520, 1);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(149, 48);
             this.cmdHome.TabIndex = 9;
@@ -195,7 +195,7 @@ namespace LOSA.TransaccionesMP
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(378, 14);
+            this.labelControl2.Location = new System.Drawing.Point(245, 14);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(157, 25);
             this.labelControl2.TabIndex = 10;
@@ -205,7 +205,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 362);
+            this.ClientSize = new System.Drawing.Size(670, 362);
             this.ControlBox = false;
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cmdHome);
