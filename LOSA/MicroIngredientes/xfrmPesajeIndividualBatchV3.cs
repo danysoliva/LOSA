@@ -189,7 +189,7 @@ namespace LOSA.MicroIngredientes
                         TarimaMicroId = row.id_tarima_micro,
                         Peso = row.peso,
                     });
-
+                    id_tarima_micros = row.id_tarima_micro;
                 }
 
                 peso_bascula_finish = PesajeAcumulado.Sum(t => t.Peso);
@@ -262,17 +262,17 @@ namespace LOSA.MicroIngredientes
                 try
                 {
                     TarimaMicroingrediente tarima = new TarimaMicroingrediente();
-                    //tarima.RecuperarRegistroPorCodBarra(txtCodBarra.Text);
+                    tarima.RecuperarRegistroTarimaMicros(0,txtCodBarra.Text);
                    
 
                     if (!string.IsNullOrEmpty(txtCodBarra.Text))
                     {
-                        //if (pesaje.MateriaPrimaID != tarima.Id_materiaprima)
-                        //{
-                        //    CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
-                        //    txtCodBarra.Text = "";
-                        //    return;
-                        //}
+                        if (pesaje.MateriaPrimaID != tarima.IdRM)
+                        {
+                            CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
+                            txtCodBarra.Text = "";
+                            return;
+                        }
 
 
                         timer1.Enabled = true;
@@ -546,8 +546,8 @@ namespace LOSA.MicroIngredientes
                     }
                 }
 
-                decimal peso_test = 0.95M;
-                lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";//MI0000000095
+                //decimal peso_test = 0.95M;
+                //lblValorBascula1.Text = "Valor en Báscula: " + peso_test + " Kg";//MI0000000095
 
             }
 

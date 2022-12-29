@@ -29,12 +29,13 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWizardSelectGranel_Liqu));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridDetalleRequisa = new DevExpress.XtraGrid.GridControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
@@ -62,12 +63,16 @@ namespace LOSA.TransaccionesMP
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtLotePT = new DevExpress.XtraEditors.TextEdit();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.lblMensaje = new System.Windows.Forms.Label();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
+            this.panelNotificacion = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalleRequisa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridvDetalleRequisa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositemEntregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarCodeRequisa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLotePT.Properties)).BeginInit();
+            this.panelNotificacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -90,7 +95,7 @@ namespace LOSA.TransaccionesMP
             this.gridDetalleRequisa.Name = "gridDetalleRequisa";
             this.gridDetalleRequisa.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositemEntregar});
-            this.gridDetalleRequisa.Size = new System.Drawing.Size(747, 450);
+            this.gridDetalleRequisa.Size = new System.Drawing.Size(757, 404);
             this.gridDetalleRequisa.TabIndex = 3;
             this.gridDetalleRequisa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridvDetalleRequisa});
@@ -257,9 +262,9 @@ namespace LOSA.TransaccionesMP
             // repositemEntregar
             // 
             this.repositemEntregar.AutoHeight = false;
-            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
+            editorButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions4.SvgImage")));
             this.repositemEntregar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositemEntregar.Name = "repositemEntregar";
             this.repositemEntregar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositemEntregar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositemEntregar_ButtonClick);
@@ -320,12 +325,40 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
+            // lblMensaje
+            // 
+            this.lblMensaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMensaje.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.Location = new System.Drawing.Point(3, 6);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(757, 55);
+            this.lblMensaje.TabIndex = 9;
+            // 
+            // timerLimpiarMensaje
+            // 
+            this.timerLimpiarMensaje.Interval = 5500;
+            this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
+            // 
+            // panelNotificacion
+            // 
+            this.panelNotificacion.BackColor = System.Drawing.Color.White;
+            this.panelNotificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelNotificacion.Controls.Add(this.lblMensaje);
+            this.panelNotificacion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelNotificacion.Location = new System.Drawing.Point(0, 466);
+            this.panelNotificacion.Name = "panelNotificacion";
+            this.panelNotificacion.Size = new System.Drawing.Size(763, 71);
+            this.panelNotificacion.TabIndex = 105;
+            // 
             // frmWizardSelectGranel_Liqu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 531);
+            this.ClientSize = new System.Drawing.Size(763, 537);
             this.ControlBox = false;
+            this.Controls.Add(this.panelNotificacion);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.txtLotePT);
             this.Controls.Add(this.labelControl3);
@@ -343,6 +376,7 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.repositemEntregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarCodeRequisa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLotePT.Properties)).EndInit();
+            this.panelNotificacion.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,5 +411,8 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositemEntregar;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
+        private System.Windows.Forms.Label lblMensaje;
+        private System.Windows.Forms.Timer timerLimpiarMensaje;
+        private System.Windows.Forms.Panel panelNotificacion;
     }
 }

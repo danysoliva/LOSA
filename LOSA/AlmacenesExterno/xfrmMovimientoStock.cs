@@ -277,7 +277,8 @@ namespace LOSA.AlmacenesExterno
                     ingresos_Externos_D.IDMP = item.id_mp;
                     ingresos_Externos_D.BodegaIN = lueAlmacenFROM.Text;
                     ingresos_Externos_D.BodegaOUT = lueAlmacenDestino.Text;
-                    
+                    ingresos_Externos_D.factura = item.factura;
+                    ingresos_Externos_D.docnum = item.DocNum;
 
                     lista.Add(ingresos_Externos_D);
 

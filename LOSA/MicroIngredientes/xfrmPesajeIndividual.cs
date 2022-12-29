@@ -24,6 +24,7 @@ namespace LOSA.MicroIngredientes
         int tipoPesaje = 0;
         int batch_realizados;
         string[] bascula = { "B1", "B2", "Ambas" };
+        int id_orden, LotePT;
 
        public enum TipoPesaje
         {
@@ -36,13 +37,15 @@ namespace LOSA.MicroIngredientes
         PesajeBasculaInfo pesaje = new PesajeBasculaInfo();
         
 
-        public xfrmPesajeIndividual(PesajeBasculaInfo ppesaje, int pTipoPesaje)
+        public xfrmPesajeIndividual(PesajeBasculaInfo ppesaje, int pTipoPesaje, int pid_orden, int pLotePT)
         {
             InitializeComponent();
             pesaje = ppesaje;
             seBatch.Properties.MaxValue = pesaje.CantBatchMaximo;
             LoadBasculas();
             tipoPesaje = pTipoPesaje;
+            id_orden = pid_orden;
+            LotePT = pLotePT;
             //batch_realizados = pbatch_realizados;
         }
 
@@ -334,23 +337,28 @@ namespace LOSA.MicroIngredientes
 
                                 foreach (var item in frm.PesajeAcumulado)
                                 {
-                                    using (SqlConnection cnx4 = new SqlConnection(dp.ConnectionStringLOSA))
+                                    if (item.Lote != null && LotePT != 0 && LotePT != null)
                                     {
-                                        if (cnx4.State == ConnectionState.Closed)
-                                            cnx4.Open();
+                                        using (SqlConnection cnx4 = new SqlConnection(dp.ConnectionStringLOSA))
+                                        {
+                                            if (cnx4.State == ConnectionState.Closed)
+                                                cnx4.Open();
 
-                                        SqlCommand cmd5 = new SqlCommand("[dbo].[sp_LOSA_insert_detallePesajeBascula_Micros]", cnx4);
-                                        cmd5.CommandType = CommandType.StoredProcedure;
-                                        //cmd5.Transaction = transaction;
+                                            SqlCommand cmd5 = new SqlCommand("[dbo].[sp_LOSA_insert_detallePesajeBascula_Micros]", cnx4);
+                                            cmd5.CommandType = CommandType.StoredProcedure;
+                                            //cmd5.Transaction = transaction;
 
-                                        cmd5.Parameters.Add("@id_orden_h", SqlDbType.Int).Value = id_orden_pesaje_manual_transaccion2;
-                                        cmd5.Parameters.Add("@id_tarima_micros", SqlDbType.Int).Value = item.TarimaMicroId;
-                                        cmd5.Parameters.Add("@id_tarima_origen", SqlDbType.Int).Value = item.TarimaOrigeId;
-                                        cmd5.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.MateriaPrimaId;
-                                        cmd5.Parameters.Add("@lote", SqlDbType.VarChar).Value = item.Lote;
-                                        cmd5.Parameters.Add("@peso", SqlDbType.Decimal).Value = item.Peso;
-
-                                        cmd5.ExecuteNonQuery();
+                                            cmd5.Parameters.Add("@id_orden_h", SqlDbType.Int).Value = id_orden_pesaje_manual_transaccion2;
+                                            cmd5.Parameters.Add("@id_tarima_micros", SqlDbType.Int).Value = item.TarimaMicroId;
+                                            cmd5.Parameters.Add("@id_tarima_origen", SqlDbType.Int).Value = item.TarimaOrigeId;
+                                            cmd5.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.MateriaPrimaId;
+                                            cmd5.Parameters.Add("@lote", SqlDbType.VarChar).Value = item.Lote;
+                                            cmd5.Parameters.Add("@peso", SqlDbType.Decimal).Value = item.Peso;
+                                            //cmd5.Parameters.AddWithValue("@itemcode")
+                                            cmd5.Parameters.AddWithValue("@id_oden", id_orden);
+                                            cmd5.Parameters.AddWithValue("@lotept", LotePT);
+                                            cmd5.ExecuteNonQuery();
+                                        }
                                     }
                                 }
 

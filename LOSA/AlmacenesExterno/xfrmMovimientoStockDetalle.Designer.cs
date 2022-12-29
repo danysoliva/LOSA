@@ -75,6 +75,7 @@ namespace LOSA.AlmacenesExterno
             this.colbodega_in1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbodega_out1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).BeginInit();
@@ -100,7 +101,7 @@ namespace LOSA.AlmacenesExterno
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(1101, 12);
+            this.btnAtras.Location = new System.Drawing.Point(1107, 12);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(153, 47);
             this.btnAtras.TabIndex = 44;
@@ -395,7 +396,7 @@ namespace LOSA.AlmacenesExterno
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1259, 86);
+            this.panelControl1.Size = new System.Drawing.Size(1265, 86);
             this.panelControl1.TabIndex = 49;
             // 
             // tabPane1
@@ -468,7 +469,8 @@ namespace LOSA.AlmacenesExterno
             this.colfecha_fabricacion1,
             this.colbodega_in1,
             this.colbodega_out1,
-            this.collote1});
+            this.collote1,
+            this.colDocNum});
             this.grdvIngresoPlanta.DetailHeight = 284;
             this.grdvIngresoPlanta.GridControl = this.grdIngresoPlanta;
             this.grdvIngresoPlanta.Name = "grdvIngresoPlanta";
@@ -522,8 +524,6 @@ namespace LOSA.AlmacenesExterno
             this.colDocEntry2.FieldName = "DocEntry";
             this.colDocEntry2.Name = "colDocEntry2";
             this.colDocEntry2.OptionsColumn.AllowEdit = false;
-            this.colDocEntry2.Visible = true;
-            this.colDocEntry2.VisibleIndex = 5;
             this.colDocEntry2.Width = 123;
             // 
             // colfecha_vencimiento1
@@ -533,7 +533,7 @@ namespace LOSA.AlmacenesExterno
             this.colfecha_vencimiento1.Name = "colfecha_vencimiento1";
             this.colfecha_vencimiento1.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento1.Visible = true;
-            this.colfecha_vencimiento1.VisibleIndex = 4;
+            this.colfecha_vencimiento1.VisibleIndex = 5;
             this.colfecha_vencimiento1.Width = 127;
             // 
             // colfecha_fabricacion1
@@ -543,7 +543,7 @@ namespace LOSA.AlmacenesExterno
             this.colfecha_fabricacion1.Name = "colfecha_fabricacion1";
             this.colfecha_fabricacion1.OptionsColumn.AllowEdit = false;
             this.colfecha_fabricacion1.Visible = true;
-            this.colfecha_fabricacion1.VisibleIndex = 3;
+            this.colfecha_fabricacion1.VisibleIndex = 4;
             this.colfecha_fabricacion1.Width = 125;
             // 
             // colbodega_in1
@@ -576,11 +576,20 @@ namespace LOSA.AlmacenesExterno
             this.collote1.VisibleIndex = 0;
             this.collote1.Width = 197;
             // 
+            // colDocNum
+            // 
+            this.colDocNum.Caption = "OC de Sap";
+            this.colDocNum.FieldName = "DocNum";
+            this.colDocNum.Name = "colDocNum";
+            this.colDocNum.OptionsColumn.AllowEdit = false;
+            this.colDocNum.Visible = true;
+            this.colDocNum.VisibleIndex = 3;
+            // 
             // xfrmMovimientoStockDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 696);
+            this.ClientSize = new System.Drawing.Size(1265, 702);
             this.ControlBox = false;
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gcTransferencia);
@@ -654,5 +663,6 @@ namespace LOSA.AlmacenesExterno
         private DevExpress.XtraGrid.Columns.GridColumn colbodega_in1;
         private DevExpress.XtraGrid.Columns.GridColumn colbodega_out1;
         private DevExpress.XtraGrid.Columns.GridColumn collote1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDocNum;
     }
 }

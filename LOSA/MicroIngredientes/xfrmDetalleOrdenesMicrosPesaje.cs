@@ -359,7 +359,7 @@ namespace LOSA.MicroIngredientes
                         cmd.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesaje.Total;
                         cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = dp.Now();
                         cmd.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = item.Peso;
-                        cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = item.Id_mp;// IdMP;
+                        cmd.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.Id_mp;// IdMP;
                         cmd.Parameters.Add("@bascula", SqlDbType.VarChar).Value = DBNull.Value;// bascula[frm2.BasculaId - 1];
                         cmd.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value = 1;
                         cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = item.Lote; //??
@@ -445,8 +445,8 @@ namespace LOSA.MicroIngredientes
                     //pesajeIndividual.AMI_ID = ami_id;
 
                     //int batch_realizados = row.Batch_Completados;
-
-                    xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesaje, (int)TipoPesaje.PesajeIndividual);
+                    id_orden = Convert.ToInt32(lblNumOrden.Text);
+                    xfrmPesajeIndividual frm = new xfrmPesajeIndividual(pesaje, (int)TipoPesaje.PesajeIndividual, id_orden, LotePT);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadDataIndividual();

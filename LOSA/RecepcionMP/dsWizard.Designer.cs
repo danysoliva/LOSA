@@ -958,6 +958,10 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnunidades;
             
+            private global::System.Data.DataColumn columnDocNum;
+            
+            private global::System.Data.DataColumn columnfactura;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public verLotesDataTable() {
@@ -1089,6 +1093,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DocNumColumn {
+                get {
+                    return this.columnDocNum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn facturaColumn {
+                get {
+                    return this.columnfactura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1124,7 +1144,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public verLotesRow AddverLotesRow(int id, string lote, decimal Existencia, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, string bodega, string DescripcionBodega, string code_sap, string nombre_comercial, string cardcode, string proveedor, decimal unidades) {
+            public verLotesRow AddverLotesRow(int id, string lote, decimal Existencia, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, string bodega, string DescripcionBodega, string code_sap, string nombre_comercial, string cardcode, string proveedor, decimal unidades, int DocNum, string factura) {
                 verLotesRow rowverLotesRow = ((verLotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1138,7 +1158,9 @@ namespace LOSA.RecepcionMP {
                         nombre_comercial,
                         cardcode,
                         proveedor,
-                        unidades};
+                        unidades,
+                        DocNum,
+                        factura};
                 rowverLotesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowverLotesRow);
                 return rowverLotesRow;
@@ -1173,6 +1195,8 @@ namespace LOSA.RecepcionMP {
                 this.columncardcode = base.Columns["cardcode"];
                 this.columnproveedor = base.Columns["proveedor"];
                 this.columnunidades = base.Columns["unidades"];
+                this.columnDocNum = base.Columns["DocNum"];
+                this.columnfactura = base.Columns["factura"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1202,6 +1226,10 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnproveedor);
                 this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades);
+                this.columnDocNum = new global::System.Data.DataColumn("DocNum", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocNum);
+                this.columnfactura = new global::System.Data.DataColumn("factura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfactura);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2312,6 +2340,38 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DocNum {
+                get {
+                    try {
+                        return ((int)(this[this.tableverLotes.DocNumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DocNum\' de la tabla \'verLotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableverLotes.DocNumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string factura {
+                get {
+                    try {
+                        return ((string)(this[this.tableverLotes.facturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'factura\' de la tabla \'verLotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableverLotes.facturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableverLotes.idColumn);
             }
@@ -2452,6 +2512,30 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetunidadesNull() {
                 this[this.tableverLotes.unidadesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDocNumNull() {
+                return this.IsNull(this.tableverLotes.DocNumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDocNumNull() {
+                this[this.tableverLotes.DocNumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfacturaNull() {
+                return this.IsNull(this.tableverLotes.facturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfacturaNull() {
+                this[this.tableverLotes.facturaColumn] = global::System.Convert.DBNull;
             }
         }
         
