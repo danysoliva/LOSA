@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,9 +18,91 @@ namespace LOSA.MigracionACS.Produccion.Reports
 {
     public partial class frmintakeKepserver : Form
     {
-        public frmintakeKepserver()
+        public bool CerrarForm;
+        UserLogin UsuarioLogeado;
+        public frmintakeKepserver(UserLogin puser)
         {
             InitializeComponent();
+            this.UsuarioLogeado = puser;
+            ValidatePermisos();
+        }
+
+
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(46))
+            {
+                //btnc_CancelOrder.Enabled = true;
+                //btnc_CloseOrder.Enabled = true;
+                //btnc_CopyOrder.Enabled = true;
+                //btnc_SendProducction.Enabled = true;
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(46))
+            {
+                //btnc_CancelOrder.Enabled = true;
+                //btnc_CloseOrder.Enabled = true;
+                //btnc_CopyOrder.Enabled = true;
+                //btnc_SendProducction.Enabled = true;
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                        //btnc_CancelOrder.Enabled = false;
+                        //btnc_CloseOrder.Enabled = false;
+                        //btnc_CopyOrder.Enabled = false;
+                        //btnc_SendProducction.Enabled = false;
+                        //btnc_VerifyReach.Enabled = false;
+                        AccesoPrevio = true;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        //btnc_CancelOrder.Enabled = true;
+                        //btnc_CloseOrder.Enabled = true;
+                        //btnc_CopyOrder.Enabled = true;
+                        //btnc_SendProducction.Enabled = true;
+                        //btnc_VerifyReach.Enabled = true;
+                        AccesoPrevio = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #46");
+            }
+            else
+            {
+                //load_orders();
+                //conn.ConnectionString = dp.ConnectionStringCostos;
+                //conn.Open();
+                //if (conn.State == ConnectionState.Open)
+                //{
+                //    txt_dbMessage.Caption = "[Conexión Establecida]";
+                //    txt_dbMessage.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Green;
+                //}
+                //else
+                //{
+                //    txt_dbMessage.Caption = "[Conexión Erronea]";
+                //    txt_dbMessage.ItemAppearance.Normal.ForeColor = System.Drawing.Color.DarkRed;
+                //}
+            }
         }
 
         private void cmdExcel_Click(object sender, EventArgs e)

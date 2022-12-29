@@ -32,72 +32,122 @@ namespace LOSA.MigracionACS.Produccion
         
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
+        public bool CerrarForm;
         public PRB_Registro(string codigoUss, int group, UserLogin pUser)
         {
             this.gruopp = group;
             Jefe = false;
             UsuarioLogeado = pUser;
+            this.codigoUss = codigoUss;
             InitializeComponent();
-            load_dataCausas();
-            LoadPresentacionSacos();
-            LoadMotivosParos();
-            LoadTipoReproceso();
-            
+            ValidatePermisos();
+        }
 
-            barStaticItem5.Caption = DateTime.Now.ToString("dddd MMMMM yyyy HH:mm:ss");
-            timer1.Interval = 1000;
-            timer1.Start();
-            this.codigoUss = codigoUss;
-          
 
-            if (gruopp== 1)
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(31))
             {
                 btnNew.Enabled = true;
-                //btnNuevoDescrip.Enabled = true;
-                //btncausas.Enabled = true;
-                load_H();
-                load_advance();
-                this.Text = "Registro de Trabajo - (Produccion)";
+                AccesoPrevio = true;
             }
-            if (gruopp == 2)
-            {
-               
-                load_advance();
-                this.Text = "Registro de Trabajo - (Logistica)";
-            }
-            if (gruopp == 3)
-            {
-                load_advance();
 
-                this.Text = "Registro de Trabajo - (Calidad)";
-            }
-            if (gruopp == 4)
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(31))
             {
                 btnNew.Enabled = true;
-                //btnNuevoDescrip.Enabled = true;
-                //btncausas.Enabled = true;
-                load_advance();
-                this.Text = "Registro de Trabajo - (Desarrollo)";
+                AccesoPrevio = true;
             }
-            this.codigoUss = codigoUss;
-            
-             var tt = new ToolTip();
-            //tt.SetToolTip(btnNuevoDescrip, "Al cambiar de lote se agrega un registro.");
 
-            if (UsuarioLogeado.ValidarNivelPermisos(61))
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
             {
-                //cmdEditar2.Visible = true;
-                dtFechaDesde.Visibility = dtFechaHasta.Visibility = cmdCargarDatosJefe.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                Jefe = true;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                        btnNew.Enabled = false;
+                        AccesoPrevio = true;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        AccesoPrevio = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #31");
             }
             else
             {
-                //CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #60");
-                dtFechaDesde.Visibility = dtFechaHasta.Visibility = cmdCargarDatosJefe.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                //cmdEditar2.Visible = false;
-                Jefe = false;
+                load_dataCausas();
+                LoadPresentacionSacos();
+                LoadMotivosParos();
+                LoadTipoReproceso();
+
+                barStaticItem5.Caption = DateTime.Now.ToString("dddd MMMMM yyyy HH:mm:ss");
+                timer1.Interval = 1000;
+                timer1.Start();
+
+
+                if (gruopp == 1)
+                {
+                    btnNew.Enabled = true;
+                    //btnNuevoDescrip.Enabled = true;
+                    //btncausas.Enabled = true;
+                    load_H();
+                    load_advance();
+                    this.Text = "Registro de Trabajo - (Produccion)";
+                }
+                if (gruopp == 2)
+                {
+
+                    load_advance();
+                    this.Text = "Registro de Trabajo - (Logistica)";
+                }
+                if (gruopp == 3)
+                {
+                    load_advance();
+
+                    this.Text = "Registro de Trabajo - (Calidad)";
+                }
+                if (gruopp == 4)
+                {
+                    btnNew.Enabled = true;
+                    //btnNuevoDescrip.Enabled = true;
+                    //btncausas.Enabled = true;
+                    load_advance();
+                    this.Text = "Registro de Trabajo - (Desarrollo)";
+                }
+
+                var tt = new ToolTip();
+                //tt.SetToolTip(btnNuevoDescrip, "Al cambiar de lote se agrega un registro.");
+
+                if (UsuarioLogeado.ValidarNivelPermisos(61))
+                {
+                    //cmdEditar2.Visible = true;
+                    dtFechaDesde.Visibility = dtFechaHasta.Visibility = cmdCargarDatosJefe.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    Jefe = true;
+                }
+                else
+                {
+                    //CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #60");
+                    dtFechaDesde.Visibility = dtFechaHasta.Visibility = cmdCargarDatosJefe.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    //cmdEditar2.Visible = false;
+                    Jefe = false;
+                }
             }
         }
+
+
 
         private void LoadRendimiento()
         {

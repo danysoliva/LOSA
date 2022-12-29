@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpciones));
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
@@ -221,7 +222,7 @@
             this.simpleButton58 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton57 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu();
+            this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1756,7 +1757,6 @@
             this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup1.AppearancePressed.Options.UseFont = true;
             this.navBarGroup1.Caption = "Producción";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrazabilidad),
@@ -1879,7 +1879,8 @@
             this.navBarGroup2.Appearance.Options.UseFont = true;
             this.navBarGroup2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup2.AppearancePressed.Options.UseFont = true;
-            this.navBarGroup2.Caption = "Gestion de Producción";
+            this.navBarGroup2.Caption = "Gestión de Producción";
+            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbReporteBatch),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbReporteEnsacadora),
@@ -2171,7 +2172,6 @@
             this.navBarGroup4.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup4.AppearancePressed.Options.UseFont = true;
             this.navBarGroup4.Caption = "Inventario";
-            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrasladoAceiteExterno),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbSetMaterial),
@@ -2193,7 +2193,7 @@
             this.nbTrasladoAceiteExterno.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbTrasladoAceiteExterno.AppearancePressed.Options.UseFont = true;
             this.nbTrasladoAceiteExterno.Caption = "Traslado de Aceite Externo";
-            this.nbTrasladoAceiteExterno.ImageOptions.SmallImage = global::LOSA.Properties.Resources.Aha_Soft_Transport_Pipe_line1;
+            this.nbTrasladoAceiteExterno.ImageOptions.SmallImage = global::LOSA.Properties.Resources.oil_pipe_line_icon32px;
             this.nbTrasladoAceiteExterno.Name = "nbTrasladoAceiteExterno";
             this.nbTrasladoAceiteExterno.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbTrasladoAceiteExterno_LinkClicked);
             // 
