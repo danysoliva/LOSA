@@ -96,6 +96,18 @@ namespace LOSA.TransaccionesMP
             //}
         }
 
+        private void timerLimpiarMensaje_Tick(object sender, EventArgs e)
+        {
+            timerLimpiarMensaje.Stop();
+            timerLimpiarMensaje.Enabled = false;
+            panelNotificacion.BackColor = Color.White;
+            //txtCantidadT.Text = txtPeso.Text = "0";
+            //txtTarima.Text = "";
+            //gcTarima.DataSource = null;
+            lblMensaje.Text = "";
+            ///txtTarima.Focus();
+        }
+
         private void cmdHome_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
@@ -141,6 +153,12 @@ namespace LOSA.TransaccionesMP
                         cmd.ExecuteNonQuery();
 
                         Load_Detalle(id_requisa);
+
+                        //Mensaje de transaccion exitosa
+                        lblMensaje.Text = "Transacción Exitosa!";
+                        panelNotificacion.BackColor = Color.MediumSeaGreen;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
                     }
                     catch (Exception ex)
                     {
@@ -149,11 +167,9 @@ namespace LOSA.TransaccionesMP
                     
 
                 }
-
-                
             }
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            //this.DialogResult = DialogResult.OK;
+            //this.Close();
         }
     }
 }

@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:mp_pendiente" ZOrder="4" X="307" Y="94" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:tipo_Ingreso" ZOrder="3" X="597" Y="202" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
-    <Shape ID="DesignTable:verLotes" ZOrder="2" X="1123" Y="148" Height="257" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="253" />
+    <Shape ID="DesignTable:verLotes" ZOrder="2" X="1123" Y="148" Height="296" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="292" />
     <Shape ID="DesignTable:informacionIngreso" ZOrder="1" X="780" Y="75" Height="543" Width="180" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="539" />
   </Shapes>
   <Connectors />

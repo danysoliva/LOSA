@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmConfLotesSalidaAlmacen));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcLote = new DevExpress.XtraGrid.GridControl();
             this.dsSalidasAlmacenesExternos = new LOSA.AlmacenesExterno.dsSalidasAlmacenesExternos();
@@ -111,6 +111,8 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfactura = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLote)).BeginInit();
@@ -540,9 +542,9 @@
             // btnDelete2
             // 
             this.btnDelete2.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnDelete2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete2.Name = "btnDelete2";
             this.btnDelete2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDelete2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete2_ButtonClick_1);
@@ -785,7 +787,10 @@
             this.colIDDetalle,
             this.DocEntry,
             this.colFromAlmacen,
-            this.gridColumn25});
+            this.gridColumn25,
+            this.colDocNum,
+            this.colfactura});
+            this.gvIngreso.CustomizationFormBounds = new System.Drawing.Rectangle(-957, 473, 260, 272);
             this.gvIngreso.DetailHeight = 284;
             this.gvIngreso.GridControl = this.gcIngreso;
             this.gvIngreso.Name = "gvIngreso";
@@ -805,7 +810,7 @@
             this.colItemCode.OptionsFilter.AllowFilter = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 1;
-            this.colItemCode.Width = 149;
+            this.colItemCode.Width = 113;
             // 
             // colCantidadIngresada
             // 
@@ -820,8 +825,8 @@
             this.colCantidadIngresada.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "Total ={0:N2}")});
             this.colCantidadIngresada.Visible = true;
-            this.colCantidadIngresada.VisibleIndex = 5;
-            this.colCantidadIngresada.Width = 140;
+            this.colCantidadIngresada.VisibleIndex = 7;
+            this.colCantidadIngresada.Width = 102;
             // 
             // colDescripcion
             // 
@@ -833,7 +838,7 @@
             this.colDescripcion.OptionsFilter.AllowFilter = false;
             this.colDescripcion.Visible = true;
             this.colDescripcion.VisibleIndex = 2;
-            this.colDescripcion.Width = 381;
+            this.colDescripcion.Width = 206;
             // 
             // gridColumn19
             // 
@@ -848,8 +853,8 @@
             this.gridColumn19.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "Total ={0:N2}")});
             this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 6;
-            this.gridColumn19.Width = 176;
+            this.gridColumn19.VisibleIndex = 8;
+            this.gridColumn19.Width = 179;
             // 
             // gridColumn20
             // 
@@ -885,7 +890,7 @@
             this.colSeleccionar1.OptionsFilter.AllowFilter = false;
             this.colSeleccionar1.Visible = true;
             this.colSeleccionar1.VisibleIndex = 0;
-            this.colSeleccionar1.Width = 65;
+            this.colSeleccionar1.Width = 57;
             // 
             // ceSeleccionar
             // 
@@ -917,8 +922,8 @@
             this.colFromAlmacen.Name = "colFromAlmacen";
             this.colFromAlmacen.OptionsFilter.AllowFilter = false;
             this.colFromAlmacen.Visible = true;
-            this.colFromAlmacen.VisibleIndex = 3;
-            this.colFromAlmacen.Width = 117;
+            this.colFromAlmacen.VisibleIndex = 5;
+            this.colFromAlmacen.Width = 120;
             // 
             // gridColumn25
             // 
@@ -927,8 +932,8 @@
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.OptionsFilter.AllowFilter = false;
             this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 4;
-            this.gridColumn25.Width = 126;
+            this.gridColumn25.VisibleIndex = 6;
+            this.gridColumn25.Width = 91;
             // 
             // txtCantIngresar
             // 
@@ -975,6 +980,26 @@
             // gridView1
             // 
             this.gridView1.Name = "gridView1";
+            // 
+            // colDocNum
+            // 
+            this.colDocNum.Caption = "OC de SAP";
+            this.colDocNum.FieldName = "DocNum";
+            this.colDocNum.Name = "colDocNum";
+            this.colDocNum.OptionsColumn.AllowEdit = false;
+            this.colDocNum.Visible = true;
+            this.colDocNum.VisibleIndex = 3;
+            this.colDocNum.Width = 117;
+            // 
+            // colfactura
+            // 
+            this.colfactura.Caption = "Factura";
+            this.colfactura.FieldName = "factura";
+            this.colfactura.Name = "colfactura";
+            this.colfactura.OptionsColumn.AllowEdit = false;
+            this.colfactura.Visible = true;
+            this.colfactura.VisibleIndex = 4;
+            this.colfactura.Width = 169;
             // 
             // xfrmConfLotesSalidaAlmacen
             // 
@@ -1102,5 +1127,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colid_ingreso_h;
         private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colDocNum;
+        private DevExpress.XtraGrid.Columns.GridColumn colfactura;
     }
 }

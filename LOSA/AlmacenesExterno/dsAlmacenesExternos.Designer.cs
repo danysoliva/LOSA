@@ -803,6 +803,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnItemName;
             
+            private global::System.Data.DataColumn columnfactura;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ingreso_externo_hDataTable() {
@@ -974,6 +976,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn facturaColumn {
+                get {
+                    return this.columnfactura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1026,7 +1036,8 @@ namespace LOSA.AlmacenesExterno {
                         decimal unidades, 
                         string codigoMP, 
                         int DocNum, 
-                        string ItemName) {
+                        string ItemName, 
+                        string factura) {
                 ingreso_externo_hRow rowingreso_externo_hRow = ((ingreso_externo_hRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1045,7 +1056,8 @@ namespace LOSA.AlmacenesExterno {
                         unidades,
                         codigoMP,
                         DocNum,
-                        ItemName};
+                        ItemName,
+                        factura};
                 rowingreso_externo_hRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowingreso_externo_hRow);
                 return rowingreso_externo_hRow;
@@ -1085,6 +1097,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columncodigoMP = base.Columns["codigoMP"];
                 this.columnDocNum = base.Columns["DocNum"];
                 this.columnItemName = base.Columns["ItemName"];
+                this.columnfactura = base.Columns["factura"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1124,6 +1137,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnDocNum);
                 this.columnItemName = new global::System.Data.DataColumn("ItemName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItemName);
+                this.columnfactura = new global::System.Data.DataColumn("factura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfactura);
                 this.columnItemName.Caption = "Nombre MP";
             }
             
@@ -6551,6 +6566,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string factura {
+                get {
+                    try {
+                        return ((string)(this[this.tableingreso_externo_h.facturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'factura\' de la tabla \'ingreso_externo_h\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableingreso_externo_h.facturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableingreso_externo_h.idColumn);
             }
@@ -6751,6 +6782,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetItemNameNull() {
                 this[this.tableingreso_externo_h.ItemNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfacturaNull() {
+                return this.IsNull(this.tableingreso_externo_h.facturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfacturaNull() {
+                this[this.tableingreso_externo_h.facturaColumn] = global::System.Convert.DBNull;
             }
         }
         

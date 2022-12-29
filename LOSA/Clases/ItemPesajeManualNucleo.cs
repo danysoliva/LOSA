@@ -17,5 +17,6 @@ namespace LOSA.Clases
         public int Id_tarima_origen;
         public Int64 Id_tarima_micro;
         public decimal Peso;
+        //public int Id_rm;
     }
 }

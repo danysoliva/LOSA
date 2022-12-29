@@ -75,7 +75,9 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
                 workRow["DocEntrySAP"] = item.DocEntry;
                 workRow["from_almacen"] = item.BodegaIN;
                 workRow["to_almacen"] = item.BodegaOUT;
-
+                workRow["factura"] = item.factura;
+                workRow["DocNum"] = item.docnum;
+ 
                 dsSalidasAlmacenesExternos.Transferencia_Stock.Rows.Add(workRow);
             }
         }
