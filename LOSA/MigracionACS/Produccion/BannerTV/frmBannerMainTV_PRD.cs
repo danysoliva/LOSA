@@ -20,77 +20,128 @@ namespace LOSA.MigracionACS.Produccion.BannerTV
     public partial class frmBannerMainTV_PRD : DevExpress.XtraEditors.XtraForm
     {
         UserLogin UsuarioLogeado;
+        public bool CerrarForm;
+        DataOperations dp;
         public frmBannerMainTV_PRD(UserLogin pUser)
         {
             InitializeComponent();
             UsuarioLogeado = pUser;
-            DataOperations dp = new DataOperations();
+            dp = new DataOperations();
             DateTime Now = dp.Now();
             lblFechaHora.Text = Now.DayOfWeek + " " + string.Format("{0:dd/MMMM/yyyy HH:mm}", Now);
-            //timerNextPage.Interval = 3000;
-            Load_TM_Producidas();
-            Load_TM_EficienciaPorLineaY_Turno();
-            timerNextPage.Enabled = true;
-            timerNextPage.Start();
-            timerFechaHora.Enabled = true;
-            timerFechaHora.Start();
+            ValidatePermisos();
+        }
 
-            //Cargar Imagenes en los tabs.
-            //skip 2
-            try
+
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(68))
             {
-                
-                SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
-                con.Open();
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
 
-                SqlCommand cmd = new SqlCommand("sp_get_bannertv_list_tabs", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
-                dsBanner1.bannerhome.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsBanner1.bannerhome);
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(68))
+            {
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
 
-                foreach(dsBanner.bannerhomeRow row in dsBanner1.bannerhome.Rows)
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
                 {
-                    if (row.use_image)
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                        //btnc_VerifyReach.Enabled = false;
+                        AccesoPrevio = true;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        //btnc_VerifyReach.Enabled = true;
+                        AccesoPrevio = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #68");
+            }
+            else
+            {
+                Load_TM_Producidas();
+                Load_TM_EficienciaPorLineaY_Turno();
+                timerNextPage.Enabled = true;
+                timerNextPage.Start();
+                timerFechaHora.Enabled = true;
+                timerFechaHora.Start();
+
+                //Cargar Imagenes en los tabs.
+                //skip 2
+                try
+                {
+
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_get_bannertv_list_tabs", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                    dsBanner1.bannerhome.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsBanner1.bannerhome);
+
+                    foreach (dsBanner.bannerhomeRow row in dsBanner1.bannerhome.Rows)
                     {
-                        if (row.Path != null)
+                        if (row.use_image)
                         {
-                            if (!string.IsNullOrEmpty(row.Path))
+                            if (row.Path != null)
                             {
-                                switch (row.id_tab)
+                                if (!string.IsNullOrEmpty(row.Path))
                                 {
-                                    case 0:
-                                        pictureBox1.Image = ByteToImage(GetImgByte(row.Path));
-                                        break;
-                                    case 2:
-                                        pictureBox3.Image = ByteToImage(GetImgByte(row.Path));
-                                        break;
-                                    case 3:
-                                        pictureBox4.Image = ByteToImage(GetImgByte(row.Path));
-                                        break;
-                                    case 4:
-                                        pictureBox5.Image = ByteToImage(GetImgByte(row.Path));
-                                        break;
-                                    case 5:
-                                        break;
-                                    default:
-                                        break;
+                                    switch (row.id_tab)
+                                    {
+                                        case 0:
+                                            pictureBox1.Image = ByteToImage(GetImgByte(row.Path));
+                                            break;
+                                        case 2:
+                                            pictureBox3.Image = ByteToImage(GetImgByte(row.Path));
+                                            break;
+                                        case 3:
+                                            pictureBox4.Image = ByteToImage(GetImgByte(row.Path));
+                                            break;
+                                        case 4:
+                                            pictureBox5.Image = ByteToImage(GetImgByte(row.Path));
+                                            break;
+                                        case 5:
+                                            break;
+                                        default:
+                                            break;
 
+                                    }
+
+                                    //Loading();
+                                    //ObtenerCantidadImagenes();
+                                    //row_id_muestra_actual = MuestrasRepuesto_list.Find(x => x.ID == id_muestra).RowNumber;
                                 }
-
-                                //Loading();
-                                //ObtenerCantidadImagenes();
-                                //row_id_muestra_actual = MuestrasRepuesto_list.Find(x => x.ID == id_muestra).RowNumber;
                             }
                         }
                     }
+
                 }
-                
-            }
-            catch (Exception EX)
-            {
-                CajaDialogo.Error(EX.Message);
+                catch (Exception EX)
+                {
+                    CajaDialogo.Error(EX.Message);
+                }
             }
         }
         public static Bitmap ByteToImage(byte[] blob)
