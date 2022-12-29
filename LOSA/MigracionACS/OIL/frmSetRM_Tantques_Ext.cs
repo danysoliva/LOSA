@@ -20,14 +20,68 @@ namespace LOSA.MigracionACS.OIL
         int idRM_Ext1;
         int idRM_Ext2;
         int idRM_Ext3;
-        UserLogin UsuarioLogueado;
+        UserLogin UsuarioLogeado;
+        public bool CerrarForm;
+        bool allowEdit;
 
         public frmSetRM_Tantques_Ext(UserLogin pUser)
         {
             InitializeComponent();
             dp = new DataOperations();
-            CargarMateriales();
-            UsuarioLogueado = pUser;            
+            UsuarioLogeado = pUser;
+            allowEdit = true;
+            ValidatePermisos();
+        }
+
+
+        private void ValidatePermisos()
+        {
+            bool AccesoPrevio = false;
+            if (UsuarioLogeado.ValidarNivelPermisos(8))
+            {
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Validar si cuenta con un permiso temporal para acceder
+            if (UsuarioLogeado.ValidarNivelPermisosTemporal(8))
+            {
+                //btnc_VerifyReach.Enabled = true;
+                AccesoPrevio = true;
+            }
+
+            //Si no se consiguio acceso previo vamos a validar niveles permanentes
+            if (!AccesoPrevio)
+            {
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7=ALOSY, 9=AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                        //btnc_VerifyReach.Enabled = false;
+                        AccesoPrevio = true;
+                        allowEdit = false;
+                        break;
+                    case 3://Medium Autorization
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        //btnc_VerifyReach.Enabled = true;
+                        AccesoPrevio = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!AccesoPrevio)
+            {
+                CerrarForm = true;
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #8");
+            }
+            else
+            {
+                CargarMateriales();
+            }
         }
 
         void CargarMateriales() 
@@ -110,39 +164,46 @@ namespace LOSA.MigracionACS.OIL
 
         private void xSeleccionRM_OnItemSeleccionado(object sender, EventArgs e)
         {
-            try
+            if (allowEdit)
             {
-                int Bin_ID;
-                switch (xSeleccionRM.ProIndex)
+                try
                 {
-                    case 1:
-                        Bin_ID = 88;
-                        break;
-                    case 2:
-                        Bin_ID = 90;
-                        break;
-                    case 3:
-                        Bin_ID = 91;
-                        break;
-                    default:
-                        Bin_ID = 0;
-                        break;
-                }
+                    int Bin_ID;
+                    switch (xSeleccionRM.ProIndex)
+                    {
+                        case 1:
+                            Bin_ID = 88;
+                            break;
+                        case 2:
+                            Bin_ID = 90;
+                            break;
+                        case 3:
+                            Bin_ID = 91;
+                            break;
+                        default:
+                            Bin_ID = 0;
+                            break;
+                    }
 
-                string sql = @"UPDATE [dbo].[MD_Bins]
+                    string sql = @"UPDATE [dbo].[MD_Bins]
                                    SET [set_rm_id] = " + xSeleccionRM.ProIdSeleccionado.ToString() +
-                               " WHERE id = " + Bin_ID.ToString();
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                CargarMateriales();
-                flyoutPanelCambiarRM.HidePopup();
+                                   " WHERE id = " + Bin_ID.ToString();
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    CargarMateriales();
+                    flyoutPanelCambiarRM.HidePopup();
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
             }
-            catch (Exception ec)
+            else
             {
-                CajaDialogo.Error(ec.Message);
+                CajaDialogo.Error("No tiene privilegios para esta función! El permiso requerido es #8");
             }
         }
 

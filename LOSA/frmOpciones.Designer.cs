@@ -1880,7 +1880,6 @@
             this.navBarGroup2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup2.AppearancePressed.Options.UseFont = true;
             this.navBarGroup2.Caption = "Gestión de Producción";
-            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbReporteBatch),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbReporteEnsacadora),
@@ -2262,6 +2261,7 @@
             this.nbSetLoteGranel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbSetLoteGranel.ImageOptions.LargeImage")));
             this.nbSetLoteGranel.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbSetLoteGranel.ImageOptions.SmallImage")));
             this.nbSetLoteGranel.Name = "nbSetLoteGranel";
+            this.nbSetLoteGranel.Visible = false;
             this.nbSetLoteGranel.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbSetLoteGranel_LinkClicked);
             // 
             // navBarItem16
@@ -2301,6 +2301,7 @@
             this.navBarItem19.Caption = "Resumen Aceites por Lote";
             this.navBarItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem19.ImageOptions.SvgImage")));
             this.navBarItem19.Name = "navBarItem19";
+            this.navBarItem19.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem19_LinkClicked);
             // 
             // simpleButton33
             // 
