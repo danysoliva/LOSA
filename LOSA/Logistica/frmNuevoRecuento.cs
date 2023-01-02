@@ -687,5 +687,20 @@ namespace LOSA.Logistica
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void grdv_dataMP_CellValueChanging(object sender, CellValueChangedEventArgs e)
+        {
+           
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+            {
+                item.diferencia = item.ExistenciaAprox- item.toma_fisica;
+
+                item.peso /* Nueva Cantidad */ = item.toma_fisica;
+            }
+        }
     }
 }

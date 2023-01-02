@@ -379,7 +379,9 @@ namespace LOSA.Logistica
                     //{
 
                     //}
-                    dr["id_lote_alosy"] = recorrido.id_lote_alosy;
+                    
+                    //dr["id_lote_alosy"] = recorrido.id_lote_alosy;
+                    dr["id_lote_alosy"] = 0;
 
                     dr["id_bodega"] = bodega;
                     dr["id_lote_count"] = id_count_selected;
@@ -392,7 +394,8 @@ namespace LOSA.Logistica
                     drw["lote"] = recorrido.lote;
                     drw["seleccionar"] = false;
                     drw["utilizado"] = recorrido.utilizado;
-                    drw["id_lote_alosy"] = recorrido.id_lote_alosy;
+                    dr["id_lote_alosy"] = 0;
+                    //drw["id_lote_alosy"] = recorrido.id_lote_alosy;
                     drw["id_bodega"] = bodega;
                     drw["id_lote_count"] = id_count_selected;             
                     dsCierreMes.memory_config.Rows.Add(drw);

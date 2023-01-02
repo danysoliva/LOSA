@@ -51,7 +51,6 @@ namespace LOSA.Logistica
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colExistenciaAprox = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_lote_alosy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colutilizado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
@@ -66,7 +65,6 @@ namespace LOSA.Logistica
             this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionar1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colutilizado1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_lote_alosy1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_lote_count = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -262,7 +260,6 @@ namespace LOSA.Logistica
             this.coldescripcion,
             this.colExistenciaAprox,
             this.collote,
-            this.colid_lote_alosy,
             this.colseleccionar,
             this.colutilizado});
             this.grdv_existencia_lote.GridControl = this.grd_existencia_lote;
@@ -312,11 +309,6 @@ namespace LOSA.Logistica
             this.collote.Visible = true;
             this.collote.VisibleIndex = 1;
             this.collote.Width = 168;
-            // 
-            // colid_lote_alosy
-            // 
-            this.colid_lote_alosy.FieldName = "id_lote_alosy";
-            this.colid_lote_alosy.Name = "colid_lote_alosy";
             // 
             // colseleccionar
             // 
@@ -432,7 +424,6 @@ namespace LOSA.Logistica
             this.collote1,
             this.colseleccionar1,
             this.colutilizado1,
-            this.colid_lote_alosy1,
             this.colid_bodega,
             this.colid_lote_count,
             this.gridColumn1});
@@ -493,13 +484,6 @@ namespace LOSA.Logistica
             this.colutilizado1.Visible = true;
             this.colutilizado1.VisibleIndex = 2;
             this.colutilizado1.Width = 155;
-            // 
-            // colid_lote_alosy1
-            // 
-            this.colid_lote_alosy1.FieldName = "id_lote_alosy";
-            this.colid_lote_alosy1.Name = "colid_lote_alosy1";
-            this.colid_lote_alosy1.OptionsColumn.AllowEdit = false;
-            this.colid_lote_alosy1.Width = 49;
             // 
             // colid_bodega
             // 
@@ -848,14 +832,12 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn collote;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionar;
         private DevExpress.XtraGrid.Columns.GridColumn colutilizado;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_lote_alosy;
         private DevExpress.XtraGrid.Columns.GridColumn colid_mp1;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
         private DevExpress.XtraGrid.Columns.GridColumn colExistenciaAprox1;
         private DevExpress.XtraGrid.Columns.GridColumn collote1;
         private DevExpress.XtraGrid.Columns.GridColumn colseleccionar1;
         private DevExpress.XtraGrid.Columns.GridColumn colutilizado1;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_lote_alosy1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_bodega;
         private DevExpress.XtraGrid.Columns.GridColumn colid_lote_count;
         private DevExpress.XtraGrid.Columns.GridColumn count_id;
