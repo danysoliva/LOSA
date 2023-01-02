@@ -43,7 +43,8 @@ namespace LOSA.Logistica
             dateEdit1.EditValue = dp.Now();
 
             grd_years.Text = Convert.ToString(dateEdit1.DateTime.Year);
-            grd_meses_disponibles.Text = Convert.ToString(dateEdit1.DateTime.Month); 
+            grd_meses_disponibles.Text = Convert.ToString(dateEdit1.DateTime.Month);
+            grd_years.Enabled = true;
         }
 
         public void Inicializar_productos()
