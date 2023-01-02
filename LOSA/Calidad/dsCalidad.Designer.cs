@@ -9807,7 +9807,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Reporte_Lotes_a_consumirRow AddReporte_Lotes_a_consumirRow(string _Row_, string ItemCode, string ItemName, string Lote, string Existencia, System.DateTime fecha_vence) {
+            public Reporte_Lotes_a_consumirRow AddReporte_Lotes_a_consumirRow(string _Row_, string ItemCode, string ItemName, string Lote, decimal Existencia, System.DateTime fecha_vence) {
                 Reporte_Lotes_a_consumirRow rowReporte_Lotes_a_consumirRow = ((Reporte_Lotes_a_consumirRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _Row_,
@@ -9859,7 +9859,7 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnItemName);
                 this.columnLote = new global::System.Data.DataColumn("Lote", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLote);
-                this.columnExistencia = new global::System.Data.DataColumn("Existencia", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnExistencia = new global::System.Data.DataColumn("Existencia", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExistencia);
                 this.columnfecha_vence = new global::System.Data.DataColumn("fecha_vence", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_vence);
@@ -16143,10 +16143,10 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Existencia {
+            public decimal Existencia {
                 get {
                     try {
-                        return ((string)(this[this.tableReporte_Lotes_a_consumir.ExistenciaColumn]));
+                        return ((decimal)(this[this.tableReporte_Lotes_a_consumir.ExistenciaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Existencia\' in table \'Reporte_Lotes_a_consumir\' is DBNull.", e);

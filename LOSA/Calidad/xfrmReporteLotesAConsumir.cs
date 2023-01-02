@@ -44,5 +44,10 @@ namespace LOSA.Calidad
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

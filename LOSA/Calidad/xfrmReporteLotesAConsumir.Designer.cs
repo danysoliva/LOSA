@@ -153,7 +153,7 @@ namespace LOSA.Calidad
             this.cmdCancelar.Size = new System.Drawing.Size(91, 48);
             this.cmdCancelar.TabIndex = 5;
             this.cmdCancelar.Text = "Cancelar";
-            this.cmdCancelar.Visible = false;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
             // 
             // labelControl1
             // 
