@@ -8076,6 +8076,11 @@
     <None Include="Resources\hc_trash3_24.png" />
     <None Include="Resources\formula_local_48.png" />
     <None Include="Resources\Error-en-Windows.png" />
+    <None Include="Resources\hapag-4-icon48px.png" />
+    <None Include="Resources\formula_external_24.png" />
+    <None Include="Resources\formula_external_32.png" />
+    <None Include="Resources\formula_external_48.png" />
+    <None Include="Resources\formula_local_32.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
@@ -8105,6 +8110,9 @@
     <None Include="Resources\oil_pipe-line-icon32px.png" />
     <None Include="Resources\optionsRound_24.png" />
     <None Include="Resources\optionsRound_32.png" />
+    <None Include="Resources\planning.png" />
+    <None Include="Resources\planning_32X32.png" />
+    <None Include="Resources\plan_icon48X48.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />

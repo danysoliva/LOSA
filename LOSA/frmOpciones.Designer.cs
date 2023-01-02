@@ -95,6 +95,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton67 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRutas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteProximosVencer = new DevExpress.XtraEditors.SimpleButton();
             this.cmdVerConfiguracionLotesVencimientoMP = new DevExpress.XtraEditors.SimpleButton();
@@ -160,6 +161,7 @@
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbTrasladoAceiteExterno = new DevExpress.XtraNavBar.NavBarItem();
             this.nbSetMaterial = new DevExpress.XtraNavBar.NavBarItem();
@@ -221,10 +223,16 @@
             this.simpleButton59 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton58 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton57 = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton71 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton70 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton69 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton68 = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton73 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.simpleButton67 = new DevExpress.XtraEditors.SimpleButton();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -245,6 +253,8 @@
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
+            this.xtraTabPage4.SuspendLayout();
+            this.xtraTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -285,7 +295,9 @@
             this.txtProduccion,
             this.xtraTabPage1,
             this.xtraTabPage2,
-            this.xtraTabPage3});
+            this.xtraTabPage3,
+            this.xtraTabPage4,
+            this.xtraTabPage5});
             // 
             // TabMontacarga
             // 
@@ -1238,6 +1250,21 @@
             this.TabCalidad.Size = new System.Drawing.Size(835, 518);
             this.TabCalidad.Text = "Calidad";
             // 
+            // simpleButton67
+            // 
+            this.simpleButton67.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton67.Appearance.Options.UseFont = true;
+            this.simpleButton67.Appearance.Options.UseTextOptions = true;
+            this.simpleButton67.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton67.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton67.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton67.ImageOptions.Image")));
+            this.simpleButton67.Location = new System.Drawing.Point(627, 24);
+            this.simpleButton67.Name = "simpleButton67";
+            this.simpleButton67.Size = new System.Drawing.Size(199, 59);
+            this.simpleButton67.TabIndex = 48;
+            this.simpleButton67.Text = "Reporte de Lotes a Consumir";
+            this.simpleButton67.Click += new System.EventHandler(this.simpleButton67_Click);
+            // 
             // btnRutas
             // 
             this.btnRutas.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
@@ -2168,6 +2195,20 @@
             this.navBarItem6.Name = "navBarItem6";
             this.navBarItem6.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem6_LinkClicked);
             // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.Appearance.Options.UseFont = true;
+            this.navBarItem2.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.AppearancePressed.Options.UseFont = true;
+            this.navBarItem2.Caption = "Reporte de Lotes a Consumir";
+            this.navBarItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.ImageOptions.LargeImage")));
+            this.navBarItem2.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_consumr_48x48;
+            this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
+            // 
             // navBarGroup4
             // 
             this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
@@ -3080,6 +3121,114 @@
             this.simpleButton57.Visible = false;
             this.simpleButton57.Click += new System.EventHandler(this.simpleButton57_Click);
             // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.simpleButton71);
+            this.xtraTabPage4.Controls.Add(this.simpleButton70);
+            this.xtraTabPage4.Controls.Add(this.simpleButton69);
+            this.xtraTabPage4.Controls.Add(this.simpleButton68);
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage4.Text = "Báscula";
+            // 
+            // simpleButton71
+            // 
+            this.simpleButton71.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton71.Appearance.Options.UseFont = true;
+            this.simpleButton71.Appearance.Options.UseTextOptions = true;
+            this.simpleButton71.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton71.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton71.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton71.ImageOptions.Image")));
+            this.simpleButton71.Location = new System.Drawing.Point(60, 122);
+            this.simpleButton71.Name = "simpleButton71";
+            this.simpleButton71.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton71.TabIndex = 54;
+            this.simpleButton71.Text = "Reporte de Báscula";
+            this.simpleButton71.Click += new System.EventHandler(this.simpleButton71_Click);
+            // 
+            // simpleButton70
+            // 
+            this.simpleButton70.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton70.Appearance.Options.UseFont = true;
+            this.simpleButton70.Appearance.Options.UseTextOptions = true;
+            this.simpleButton70.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton70.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton70.ImageOptions.Image = global::LOSA.Properties.Resources.hapag_4_icon48px;
+            this.simpleButton70.Location = new System.Drawing.Point(60, 206);
+            this.simpleButton70.Name = "simpleButton70";
+            this.simpleButton70.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton70.TabIndex = 53;
+            this.simpleButton70.Text = "En Predio";
+            this.simpleButton70.Click += new System.EventHandler(this.simpleButton70_Click);
+            // 
+            // simpleButton69
+            // 
+            this.simpleButton69.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton69.Appearance.Options.UseFont = true;
+            this.simpleButton69.Appearance.Options.UseTextOptions = true;
+            this.simpleButton69.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton69.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton69.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton69.ImageOptions.SvgImage")));
+            this.simpleButton69.Location = new System.Drawing.Point(60, 290);
+            this.simpleButton69.Name = "simpleButton69";
+            this.simpleButton69.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton69.TabIndex = 52;
+            this.simpleButton69.Text = "Reporte Salidas Desecho";
+            this.simpleButton69.Click += new System.EventHandler(this.simpleButton69_Click);
+            // 
+            // simpleButton68
+            // 
+            this.simpleButton68.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton68.Appearance.Options.UseFont = true;
+            this.simpleButton68.Appearance.Options.UseTextOptions = true;
+            this.simpleButton68.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton68.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton68.ImageOptions.Image = global::LOSA.Properties.Resources.plan_icon48X48;
+            this.simpleButton68.Location = new System.Drawing.Point(60, 38);
+            this.simpleButton68.Name = "simpleButton68";
+            this.simpleButton68.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton68.TabIndex = 51;
+            this.simpleButton68.Text = "Plan de Arribos";
+            this.simpleButton68.Click += new System.EventHandler(this.simpleButton68_Click);
+            // 
+            // xtraTabPage5
+            // 
+            this.xtraTabPage5.Controls.Add(this.simpleButton73);
+            this.xtraTabPage5.Controls.Add(this.simpleButton72);
+            this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage5.Text = "Formulación";
+            // 
+            // simpleButton73
+            // 
+            this.simpleButton73.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton73.Appearance.Options.UseFont = true;
+            this.simpleButton73.Appearance.Options.UseTextOptions = true;
+            this.simpleButton73.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton73.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton73.ImageOptions.Image = global::LOSA.Properties.Resources.formula_local_32;
+            this.simpleButton73.Location = new System.Drawing.Point(60, 133);
+            this.simpleButton73.Name = "simpleButton73";
+            this.simpleButton73.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton73.TabIndex = 53;
+            this.simpleButton73.Text = "Fórmulas Aprobadas Para Planta";
+            this.simpleButton73.Click += new System.EventHandler(this.simpleButton73_Click);
+            // 
+            // simpleButton72
+            // 
+            this.simpleButton72.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton72.Appearance.Options.UseFont = true;
+            this.simpleButton72.Appearance.Options.UseTextOptions = true;
+            this.simpleButton72.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton72.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton72.ImageOptions.Image = global::LOSA.Properties.Resources.formula_external_32;
+            this.simpleButton72.Location = new System.Drawing.Point(60, 44);
+            this.simpleButton72.Name = "simpleButton72";
+            this.simpleButton72.Size = new System.Drawing.Size(223, 71);
+            this.simpleButton72.TabIndex = 52;
+            this.simpleButton72.Text = "Fórmulas Aprobadas por Finanzas";
+            this.simpleButton72.Click += new System.EventHandler(this.simpleButton72_Click);
+            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -3099,35 +3248,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // simpleButton67
-            // 
-            this.simpleButton67.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.simpleButton67.Appearance.Options.UseFont = true;
-            this.simpleButton67.Appearance.Options.UseTextOptions = true;
-            this.simpleButton67.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton67.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton67.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton67.ImageOptions.Image")));
-            this.simpleButton67.Location = new System.Drawing.Point(627, 24);
-            this.simpleButton67.Name = "simpleButton67";
-            this.simpleButton67.Size = new System.Drawing.Size(199, 59);
-            this.simpleButton67.TabIndex = 48;
-            this.simpleButton67.Text = "Reporte de Lotes a Consumir";
-            this.simpleButton67.Click += new System.EventHandler(this.simpleButton67_Click);
-            // 
-            // navBarItem2
-            // 
-            this.navBarItem2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem2.Appearance.Options.UseFont = true;
-            this.navBarItem2.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem2.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem2.AppearancePressed.Options.UseFont = true;
-            this.navBarItem2.Caption = "Reporte de Lotes a Consumir";
-            this.navBarItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.ImageOptions.LargeImage")));
-            this.navBarItem2.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_consumr_48x48;
-            this.navBarItem2.Name = "navBarItem2";
-            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
             // 
             // frmOpciones
             // 
@@ -3162,6 +3282,8 @@
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
+            this.xtraTabPage4.ResumeLayout(false);
+            this.xtraTabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
             this.ResumeLayout(false);
 
@@ -3363,5 +3485,13 @@
         private DevExpress.XtraEditors.SimpleButton btn_add_tarimas_pt;
         private DevExpress.XtraEditors.SimpleButton simpleButton67;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton71;
+        private DevExpress.XtraEditors.SimpleButton simpleButton70;
+        private DevExpress.XtraEditors.SimpleButton simpleButton69;
+        private DevExpress.XtraEditors.SimpleButton simpleButton68;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton73;
+        private DevExpress.XtraEditors.SimpleButton simpleButton72;
     }
 }

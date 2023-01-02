@@ -1253,6 +1253,46 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap formula_external_24 {
+            get {
+                object obj = ResourceManager.GetObject("formula_external_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formula_external_32 {
+            get {
+                object obj = ResourceManager.GetObject("formula_external_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formula_external_48 {
+            get {
+                object obj = ResourceManager.GetObject("formula_external_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap formula_local_32 {
+            get {
+                object obj = ResourceManager.GetObject("formula_local_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap formula_local_48 {
             get {
                 object obj = ResourceManager.GetObject("formula_local_48", resourceCulture);
@@ -1326,6 +1366,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap hapag_4_icon {
             get {
                 object obj = ResourceManager.GetObject("hapag-4-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hapag_4_icon48px {
+            get {
+                object obj = ResourceManager.GetObject("hapag-4-icon48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1776,6 +1826,36 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap pin16x16 {
             get {
                 object obj = ResourceManager.GetObject("pin16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plan_icon48X48 {
+            get {
+                object obj = ResourceManager.GetObject("plan_icon48X48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap planning {
+            get {
+                object obj = ResourceManager.GetObject("planning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap planning_32X32 {
+            get {
+                object obj = ResourceManager.GetObject("planning_32X32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
