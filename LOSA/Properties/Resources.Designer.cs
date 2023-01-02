@@ -1303,6 +1303,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap formula_market_research {
+            get {
+                object obj = ResourceManager.GetObject("formula_market_research", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap formula_nucleo_x24 {
             get {
                 object obj = ResourceManager.GetObject("formula_nucleo_x24", resourceCulture);

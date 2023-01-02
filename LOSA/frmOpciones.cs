@@ -282,6 +282,62 @@ namespace LOSA
                     }
                     break;
 
+                case GrupoUser.GrupoUsuario.Bascula:
+                    int idNivel10 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+
+                    switch (idNivel10)
+                    {
+                        case 1://Basic View
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel10;
+                            break;
+                        case 2://Basic No Autorization
+
+                            break;
+                        case 3://Medium Autorization
+
+                            break;
+                        case 4://Depth With Delta
+
+                            break;
+                        case 5://Depth Without Delta
+
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = 8;//RRHH
+                            tabOpciones.TabPages[8].PageVisible = true;
+                            break;
+                    }
+                    break;
+
+                case GrupoUser.GrupoUsuario.Formulacion:
+                    int idNivel11 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+
+                    switch (idNivel11)
+                    {
+                        case 1://Basic View
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel11;
+                            break;
+                        case 2://Basic No Autorization
+
+                            break;
+                        case 3://Medium Autorization
+
+                            break;
+                        case 4://Depth With Delta
+
+                            break;
+                        case 5://Depth Without Delta
+
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = 9;//RRHH
+                            tabOpciones.TabPages[9].PageVisible = true;
+                            break;
+                    }
+                    break;
+
                 default:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;

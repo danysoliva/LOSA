@@ -310,7 +310,7 @@
             this.TabMontacarga.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.ImageOptions.Image")));
             this.TabMontacarga.Name = "TabMontacarga";
             this.TabMontacarga.PageVisible = false;
-            this.TabMontacarga.Size = new System.Drawing.Size(835, 518);
+            this.TabMontacarga.Size = new System.Drawing.Size(835, 502);
             this.TabMontacarga.Text = "MontaCarga";
             // 
             // labelControl4
@@ -434,7 +434,7 @@
             this.TabLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabLogistica.ImageOptions.Image")));
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
-            this.TabLogistica.Size = new System.Drawing.Size(835, 518);
+            this.TabLogistica.Size = new System.Drawing.Size(835, 502);
             this.TabLogistica.Text = "Logistica";
             // 
             // xtraTabControl1
@@ -443,7 +443,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.TabMP_Sacos;
-            this.xtraTabControl1.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabControl1.Size = new System.Drawing.Size(835, 502);
             this.xtraTabControl1.TabIndex = 42;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMP_Sacos,
@@ -478,7 +478,7 @@
             this.TabMP_Sacos.Controls.Add(this.btnTransferencia);
             this.TabMP_Sacos.Controls.Add(this.btnajuste);
             this.TabMP_Sacos.Name = "TabMP_Sacos";
-            this.TabMP_Sacos.Size = new System.Drawing.Size(829, 486);
+            this.TabMP_Sacos.Size = new System.Drawing.Size(829, 470);
             this.TabMP_Sacos.Text = "MP en Sacos";
             // 
             // btnrutas_traz_logistica
@@ -761,7 +761,7 @@
             this.tabMP_Granel.Controls.Add(this.btnLiquidos);
             this.tabMP_Granel.Controls.Add(this.simpleButton14);
             this.tabMP_Granel.Name = "tabMP_Granel";
-            this.tabMP_Granel.Size = new System.Drawing.Size(829, 486);
+            this.tabMP_Granel.Size = new System.Drawing.Size(829, 470);
             this.tabMP_Granel.Text = "MP Granel";
             // 
             // cmdLoteActivoGranel
@@ -852,7 +852,7 @@
             this.tabEntregaMP.Controls.Add(this.cmdRequisiciones_);
             this.tabEntregaMP.Controls.Add(this.btnplanrequisas);
             this.tabEntregaMP.Name = "tabEntregaMP";
-            this.tabEntregaMP.Size = new System.Drawing.Size(829, 486);
+            this.tabEntregaMP.Size = new System.Drawing.Size(829, 470);
             this.tabEntregaMP.Text = "Entrega MP - PRD";
             this.tabEntregaMP.Paint += new System.Windows.Forms.PaintEventHandler(this.tabEntregaMP_Paint);
             // 
@@ -952,7 +952,7 @@
             this.tabPT.Controls.Add(this.simpleButton10);
             this.tabPT.Controls.Add(this.btnReq_PT);
             this.tabPT.Name = "tabPT";
-            this.tabPT.Size = new System.Drawing.Size(829, 486);
+            this.tabPT.Size = new System.Drawing.Size(829, 470);
             this.tabPT.Text = "Producto Terminado";
             this.tabPT.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPT_Paint);
             // 
@@ -1121,7 +1121,7 @@
             this.tabMasterData.Controls.Add(this.simpleButton23);
             this.tabMasterData.Controls.Add(this.btn_andenes);
             this.tabMasterData.Name = "tabMasterData";
-            this.tabMasterData.Size = new System.Drawing.Size(829, 486);
+            this.tabMasterData.Size = new System.Drawing.Size(829, 470);
             this.tabMasterData.Text = "Configuraciones";
             this.tabMasterData.Paint += new System.Windows.Forms.PaintEventHandler(this.tabMasterData_Paint);
             // 
@@ -1172,7 +1172,7 @@
             this.tabReportes.Controls.Add(this.btnreportes);
             this.tabReportes.Controls.Add(this.simpleButton8);
             this.tabReportes.Name = "tabReportes";
-            this.tabReportes.Size = new System.Drawing.Size(829, 486);
+            this.tabReportes.Size = new System.Drawing.Size(829, 470);
             this.tabReportes.Text = "Reportes";
             // 
             // btnReporteProduccionDespachos
@@ -1247,7 +1247,7 @@
             this.TabCalidad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabCalidad.ImageOptions.Image")));
             this.TabCalidad.Name = "TabCalidad";
             this.TabCalidad.PageVisible = false;
-            this.TabCalidad.Size = new System.Drawing.Size(835, 518);
+            this.TabCalidad.Size = new System.Drawing.Size(835, 502);
             this.TabCalidad.Text = "Calidad";
             // 
             // simpleButton67
@@ -1566,7 +1566,7 @@
             this.TabAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabAdmin.ImageOptions.Image")));
             this.TabAdmin.Name = "TabAdmin";
             this.TabAdmin.PageVisible = false;
-            this.TabAdmin.Size = new System.Drawing.Size(835, 518);
+            this.TabAdmin.Size = new System.Drawing.Size(835, 502);
             this.TabAdmin.Text = "Administrador";
             // 
             // simpleButton37
@@ -1719,7 +1719,7 @@
             this.tabProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabProduccion.ImageOptions.Image")));
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
-            this.tabProduccion.Size = new System.Drawing.Size(835, 518);
+            this.tabProduccion.Size = new System.Drawing.Size(835, 502);
             this.tabProduccion.Text = "Producción";
             // 
             // navBarControl1
@@ -1777,7 +1777,7 @@
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
-            this.navBarControl1.Size = new System.Drawing.Size(347, 518);
+            this.navBarControl1.Size = new System.Drawing.Size(347, 502);
             this.navBarControl1.TabIndex = 20;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -2458,7 +2458,7 @@
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
             this.txtProduccion.Name = "txtProduccion";
             this.txtProduccion.PageVisible = false;
-            this.txtProduccion.Size = new System.Drawing.Size(835, 518);
+            this.txtProduccion.Size = new System.Drawing.Size(835, 502);
             this.txtProduccion.Text = "Produccion Administrativo";
             // 
             // btnRutas_traza_produccion
@@ -2599,7 +2599,7 @@
             this.xtraTabPage1.ImageOptions.Image = global::LOSA.Properties.Resources.rrhh_24X24;
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.PageVisible = false;
-            this.xtraTabPage1.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage1.Size = new System.Drawing.Size(835, 502);
             this.xtraTabPage1.Text = "RRHH";
             // 
             // simpleButton46
@@ -2752,7 +2752,7 @@
             this.xtraTabPage2.ImageOptions.Image = global::LOSA.Properties.Resources.graph_32X32;
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.PageVisible = false;
-            this.xtraTabPage2.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage2.Size = new System.Drawing.Size(835, 502);
             this.xtraTabPage2.Text = "Forecasting";
             // 
             // simpleButton52
@@ -2923,7 +2923,7 @@
             this.xtraTabPage3.ImageOptions.Image = global::LOSA.Properties.Resources.calculo;
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.PageVisible = false;
-            this.xtraTabPage3.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage3.Size = new System.Drawing.Size(835, 502);
             this.xtraTabPage3.Text = "Contabilidad";
             // 
             // btnAprobaTarimasConta
@@ -3127,9 +3127,10 @@
             this.xtraTabPage4.Controls.Add(this.simpleButton70);
             this.xtraTabPage4.Controls.Add(this.simpleButton69);
             this.xtraTabPage4.Controls.Add(this.simpleButton68);
+            this.xtraTabPage4.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.PageVisible = false;
-            this.xtraTabPage4.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage4.Size = new System.Drawing.Size(835, 502);
             this.xtraTabPage4.Text = "Báscula";
             // 
             // simpleButton71
@@ -3196,9 +3197,10 @@
             // 
             this.xtraTabPage5.Controls.Add(this.simpleButton73);
             this.xtraTabPage5.Controls.Add(this.simpleButton72);
+            this.xtraTabPage5.ImageOptions.Image = global::LOSA.Properties.Resources.formula_market_research;
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(835, 518);
+            this.xtraTabPage5.Size = new System.Drawing.Size(835, 502);
             this.xtraTabPage5.Text = "Formulación";
             // 
             // simpleButton73
