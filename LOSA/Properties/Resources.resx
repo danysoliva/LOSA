@@ -919,4 +919,43 @@
   <data name="oil_pipe-line-icon32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\oil_pipe-line-icon32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="code2_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\code2_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="code_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\code_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_en_Windows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Error-en-Windows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="formula_local_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\formula_local_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hacha_x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hacha_x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hc_checkLater_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hc_checkLater_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hc_trash2_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hc_trash2_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hc_trash3_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hc_trash3_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="optionsRound_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\optionsRound_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="optionsRound_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\optionsRound_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xml_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xml_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoLimp_x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoLimp_x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
