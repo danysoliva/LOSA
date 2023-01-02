@@ -3128,6 +3128,7 @@
             this.xtraTabPage4.Controls.Add(this.simpleButton69);
             this.xtraTabPage4.Controls.Add(this.simpleButton68);
             this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.PageVisible = false;
             this.xtraTabPage4.Size = new System.Drawing.Size(835, 518);
             this.xtraTabPage4.Text = "Báscula";
             // 
@@ -3196,6 +3197,7 @@
             this.xtraTabPage5.Controls.Add(this.simpleButton73);
             this.xtraTabPage5.Controls.Add(this.simpleButton72);
             this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.PageVisible = false;
             this.xtraTabPage5.Size = new System.Drawing.Size(835, 518);
             this.xtraTabPage5.Text = "Formulación";
             // 
