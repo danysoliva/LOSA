@@ -2866,5 +2866,19 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void simpleButton67_Click(object sender, EventArgs e)
+        {
+            xfrmReporteLotesAConsumir frm = new xfrmReporteLotesAConsumir();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            xfrmReporteLotesAConsumir frm = new xfrmReporteLotesAConsumir();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

@@ -1043,6 +1043,12 @@
     <Compile Include="Calidad\xfrmCertificadoCalidadCRUD.Designer.cs">
       <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\xfrmReporteLotesAConsumir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmReporteLotesAConsumir.Designer.cs">
+      <DependentUpon>xfrmReporteLotesAConsumir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\xfrmTrazabilidadClientesLotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -5668,6 +5674,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmCertificadoCalidadCRUD.resx">
       <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmReporteLotesAConsumir.resx">
+      <DependentUpon>xfrmReporteLotesAConsumir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmTrazabilidadClientesLotes.resx">
       <DependentUpon>xfrmTrazabilidadClientesLotes.cs</DependentUpon>

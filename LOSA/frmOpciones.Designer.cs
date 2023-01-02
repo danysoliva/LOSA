@@ -223,6 +223,8 @@
             this.simpleButton57 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.simpleButton67 = new DevExpress.XtraEditors.SimpleButton();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1208,6 +1210,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.simpleButton67);
             this.TabCalidad.Controls.Add(this.btnRutas);
             this.TabCalidad.Controls.Add(this.cmdReporteProximosVencer);
             this.TabCalidad.Controls.Add(this.cmdVerConfiguracionLotesVencimientoMP);
@@ -1741,7 +1744,8 @@
             this.nbSetLoteGranel,
             this.navBarItem16,
             this.navBarItem17,
-            this.navBarItem19});
+            this.navBarItem19,
+            this.navBarItem2});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
@@ -2075,13 +2079,15 @@
             this.navBarGroup3.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup3.AppearancePressed.Options.UseFont = true;
             this.navBarGroup3.Caption = "Generales";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarItem10
@@ -3094,6 +3100,35 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // simpleButton67
+            // 
+            this.simpleButton67.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.simpleButton67.Appearance.Options.UseFont = true;
+            this.simpleButton67.Appearance.Options.UseTextOptions = true;
+            this.simpleButton67.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton67.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton67.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton67.ImageOptions.Image")));
+            this.simpleButton67.Location = new System.Drawing.Point(627, 24);
+            this.simpleButton67.Name = "simpleButton67";
+            this.simpleButton67.Size = new System.Drawing.Size(199, 59);
+            this.simpleButton67.TabIndex = 48;
+            this.simpleButton67.Text = "Reporte de Lotes a Consumir";
+            this.simpleButton67.Click += new System.EventHandler(this.simpleButton67_Click);
+            // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.Appearance.Options.UseFont = true;
+            this.navBarItem2.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem2.AppearancePressed.Options.UseFont = true;
+            this.navBarItem2.Caption = "Reporte de Lotes a Consumir";
+            this.navBarItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.ImageOptions.LargeImage")));
+            this.navBarItem2.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_consumr_48x48;
+            this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3326,5 +3361,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_rutas_traza_contabilidad;
         private DevExpress.XtraEditors.SimpleButton btnAprobaTarimasConta;
         private DevExpress.XtraEditors.SimpleButton btn_add_tarimas_pt;
+        private DevExpress.XtraEditors.SimpleButton simpleButton67;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
     }
 }
