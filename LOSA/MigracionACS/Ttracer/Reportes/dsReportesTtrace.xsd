@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReportesTtrace" targetNamespace="http://tempuri.org/dsReportesTtrace.xsd" xmlns:mstns="http://tempuri.org/dsReportesTtrace.xsd" xmlns="http://tempuri.org/dsReportesTtrace.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReportesTtrace" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReportesTtrace" msprop:Generator_UserDSName="dsReportesTtrace">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rpt_desechos" msprop:Generator_TableClassName="rpt_desechosDataTable" msprop:Generator_TableVarName="tablerpt_desechos" msprop:Generator_RowChangedName="rpt_desechosRowChanged" msprop:Generator_TablePropName="rpt_desechos" msprop:Generator_RowDeletingName="rpt_desechosRowDeleting" msprop:Generator_RowChangingName="rpt_desechosRowChanging" msprop:Generator_RowEvHandlerName="rpt_desechosRowChangeEventHandler" msprop:Generator_RowDeletedName="rpt_desechosRowDeleted" msprop:Generator_RowClassName="rpt_desechosRow" msprop:Generator_UserTableName="rpt_desechos" msprop:Generator_RowEvArgName="rpt_desechosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="itemcode" msdata:Caption="Code Item" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="itemdescrip" msdata:Caption="Item Description" msprop:Generator_ColumnVarNameInTable="columnitemdescrip" msprop:Generator_ColumnPropNameInRow="itemdescrip" msprop:Generator_ColumnPropNameInTable="itemdescripColumn" msprop:Generator_UserColumnName="itemdescrip" type="xs:string" minOccurs="0" />
+              <xs:element name="nmes" msdata:Caption="Month" msprop:Generator_ColumnVarNameInTable="columnnmes" msprop:Generator_ColumnPropNameInRow="nmes" msprop:Generator_ColumnPropNameInTable="nmesColumn" msprop:Generator_UserColumnName="nmes" type="xs:int" minOccurs="0" />
+              <xs:element name="mes" msdata:Caption="Month Name" msprop:Generator_ColumnVarNameInTable="columnmes" msprop:Generator_ColumnPropNameInRow="mes" msprop:Generator_ColumnPropNameInTable="mesColumn" msprop:Generator_UserColumnName="mes" type="xs:string" minOccurs="0" />
+              <xs:element name="peso_total_kg" msdata:Caption="Kg" msprop:Generator_ColumnVarNameInTable="columnpeso_total_kg" msprop:Generator_ColumnPropNameInRow="peso_total_kg" msprop:Generator_ColumnPropNameInTable="peso_total_kgColumn" msprop:Generator_UserColumnName="peso_total_kg" type="xs:decimal" minOccurs="0" />
+              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -23,6 +23,7 @@ using LOSA.Mantenimientos;
 using LOSA.MigracionACS.AquaForecast;
 using LOSA.MigracionACS.Finanzas.Reports;
 using LOSA.MigracionACS.Forecast;
+using LOSA.MigracionACS.Formulas;
 using LOSA.MigracionACS.Management;
 using LOSA.MigracionACS.OIL;
 using LOSA.MigracionACS.Ordenes_Combustible;
@@ -43,6 +44,9 @@ using LOSA.MigracionACS.RRHH.Encuesta;
 using LOSA.MigracionACS.RRHH.Liquidaciones;
 using LOSA.MigracionACS.RRHH.RelojFace;
 using LOSA.MigracionACS.RRHH.Reportes;
+using LOSA.MigracionACS.Ttracer;
+using LOSA.MigracionACS.Ttracer.Reportes;
+using LOSA.MigracionACS.Ttracer.ViewLogistica;
 using LOSA.Nir;
 using LOSA.PlanMPreque;
 using LOSA.Produccion;
@@ -274,6 +278,62 @@ namespace LOSA
                         default:
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             tabOpciones.TabPages[7].PageVisible = true;
+                            break;
+                    }
+                    break;
+
+                case GrupoUser.GrupoUsuario.Bascula:
+                    int idNivel10 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+
+                    switch (idNivel10)
+                    {
+                        case 1://Basic View
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel10;
+                            break;
+                        case 2://Basic No Autorization
+
+                            break;
+                        case 3://Medium Autorization
+
+                            break;
+                        case 4://Depth With Delta
+
+                            break;
+                        case 5://Depth Without Delta
+
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = 8;//RRHH
+                            tabOpciones.TabPages[8].PageVisible = true;
+                            break;
+                    }
+                    break;
+
+                case GrupoUser.GrupoUsuario.Formulacion:
+                    int idNivel11 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+
+                    switch (idNivel11)
+                    {
+                        case 1://Basic View
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel11;
+                            break;
+                        case 2://Basic No Autorization
+
+                            break;
+                        case 3://Medium Autorization
+
+                            break;
+                        case 4://Depth With Delta
+
+                            break;
+                        case 5://Depth Without Delta
+
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = 9;//RRHH
+                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                     }
                     break;
@@ -2860,6 +2920,124 @@ namespace LOSA
                     frm.Show();
                 else
                     frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void simpleButton67_Click(object sender, EventArgs e)
+        {
+            xfrmReporteLotesAConsumir frm = new xfrmReporteLotesAConsumir();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            xfrmReporteLotesAConsumir frm = new xfrmReporteLotesAConsumir();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void simpleButton68_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TT_Arribo arrib = new TT_Arribo(ActiveUserCode);
+                arrib.MdiParent = this.MdiParent;
+                arrib.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void simpleButton71_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TT_reporte_bascula rept = new TT_reporte_bascula();
+                rept.MdiParent = this.MdiParent;
+                rept.WindowState = FormWindowState.Maximized;
+                rept.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void simpleButton70_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmCamionesEnPredio rept = new frmCamionesEnPredio(UsuarioLogeado);
+                rept.MdiParent = this.MdiParent;
+                //rept.WindowState = FormWindowState.Maximized;
+                rept.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void simpleButton69_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                        accesoprevio = true;
+                        frmDetalleDesechos frm = new frmDetalleDesechos(this.UsuarioLogeado);
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
+                        break;
+                    case 5://Depth Without Delta
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void simpleButton72_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FML_FF_Main_Panel form = new FML_FF_Main_Panel(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups);
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void simpleButton73_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FML_Formulas_v2 fm = new FML_Formulas_v2(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups);
+                fm.MdiParent = this.MdiParent;
+                fm.Show();
             }
             catch (Exception ex)
             {
