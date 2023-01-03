@@ -1043,6 +1043,12 @@
     <Compile Include="Calidad\xfrmCertificadoCalidadCRUD.Designer.cs">
       <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\xfrmReporteLotesAConsumir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\xfrmReporteLotesAConsumir.Designer.cs">
+      <DependentUpon>xfrmReporteLotesAConsumir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\xfrmTrazabilidadClientesLotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1097,6 +1103,7 @@
     <Compile Include="Clases\ItemPesajeManualNucleo.cs" />
     <Compile Include="Clases\Kardex.cs" />
     <Compile Include="Clases\Liquidacion.cs" />
+    <Compile Include="Clases\LoadXML.cs" />
     <Compile Include="Clases\LoteAlmacenExternoD.cs" />
     <Compile Include="Clases\LoteExterno.cs" />
     <Compile Include="Clases\LoteMP.cs" />
@@ -1850,6 +1857,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsAquaForecastReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\CargarXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\CargarXML.designer.cs">
+      <DependentUpon>CargarXML.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Controles\dsControles.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1866,6 +1879,11 @@
     </Compile>
     <Compile Include="MigracionACS\Controles\xxSeleccionLookupEdit.designer.cs">
       <DependentUpon>xxSeleccionLookupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\DataSetx\dsFormulacion1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFormulacion.xsd</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\DataSetx\dsProduccion.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1906,6 +1924,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PRB_DATA.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\DataSetx\PruebaXMLxsd.cs">
+      <DependentUpon>PruebaXMLxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\DataSetx\PruebaXMLxsd.designer.cs">
+      <DependentUpon>PruebaXMLxsd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\DataSetx\PruebaXMLxsd1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PruebaXMLxsd.xsd</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Finanzas\dSRPT1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2103,11 +2132,35 @@
     <Compile Include="MigracionACS\Formulas\FML_Costeo_Formulas.designer.cs">
       <DependentUpon>FML_Costeo_Formulas.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Edit.designer.cs">
+      <DependentUpon>FML_FF_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Main_Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_FF_Main_Panel.designer.cs">
+      <DependentUpon>FML_FF_Main_Panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Formulas\FML_FF_Select.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_FF_Select.designer.cs">
       <DependentUpon>FML_FF_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Fomula_Format_Masive_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Fomula_Format_Masive_Import.designer.cs">
+      <DependentUpon>FML_Fomula_Format_Masive_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Format_Import_Custom_Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Format_Import_Custom_Error.designer.cs">
+      <DependentUpon>FML_Format_Import_Custom_Error.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_Formulas.cs">
       <SubType>Form</SubType>
@@ -2120,6 +2173,12 @@
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_Formulas_v2.designer.cs">
       <DependentUpon>FML_Formulas_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Formula_Format_Import_Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\FML_Formula_Format_Import_Interface.designer.cs">
+      <DependentUpon>FML_Formula_Format_Import_Interface.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_Material_Selector.cs">
       <SubType>Form</SubType>
@@ -2156,6 +2215,23 @@
     </Compile>
     <Compile Include="MigracionACS\Formulas\FML_NewFormula_view_only.designer.cs">
       <DependentUpon>FML_NewFormula_view_only.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\Reports\FML_FF_Main_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\Reports\FML_FF_Main_Report.designer.cs">
+      <DependentUpon>FML_FF_Main_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Formulas\sdformula1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sdformula.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\HeadXmlLook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\HeadXmlLook.designer.cs">
+      <DependentUpon>HeadXmlLook.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Item_Selecction.cs">
       <SubType>Form</SubType>
@@ -3275,6 +3351,172 @@
     <Compile Include="MigracionACS\SAR\SAR_Selection.designer.cs">
       <DependentUpon>SAR_Selection.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Ttracer\dSTtracer.cs">
+      <DependentUpon>dSTtracer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\dSTtracer.designer.cs">
+      <DependentUpon>dSTtracer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\dSTtracer1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dSTtracer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\dsReportesTtrace1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\frmDetalleDesechos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\frmDetalleDesechos.designer.cs">
+      <DependentUpon>frmDetalleDesechos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\TTR_Arribo_Doc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\Reportes\TTR_Arribo_Doc.designer.cs">
+      <DependentUpon>TTR_Arribo_Doc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addetails.designer.cs">
+      <DependentUpon>TT_addetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addpt.Designer.cs">
+      <DependentUpon>TT_addpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addtara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_addtara.designer.cs">
+      <DependentUpon>TT_addtara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Arribo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Arribo.designer.cs">
+      <DependentUpon>TT_Arribo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Arribo_Asociar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Arribo_Asociar.designer.cs">
+      <DependentUpon>TT_Arribo_Asociar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_CargoPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_CargoPlan.designer.cs">
+      <DependentUpon>TT_CargoPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_conductor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_conductor.designer.cs">
+      <DependentUpon>TT_conductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_LoadDship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_LoadDship.designer.cs">
+      <DependentUpon>TT_LoadDship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_LoadOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_LoadOrder.designer.cs">
+      <DependentUpon>TT_LoadOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Load_Vehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Load_Vehiculo.designer.cs">
+      <DependentUpon>TT_Load_Vehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_mship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_mship.designer.cs">
+      <DependentUpon>TT_mship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_newPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_newPlan.designer.cs">
+      <DependentUpon>TT_newPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Nuevo.designer.cs">
+      <DependentUpon>TT_Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_NuevoShip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_NuevoShip.Designer.cs">
+      <DependentUpon>TT_NuevoShip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_reporte_bascula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_reporte_bascula.designer.cs">
+      <DependentUpon>TT_reporte_bascula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_SeleccionarPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_SeleccionarPlan.designer.cs">
+      <DependentUpon>TT_SeleccionarPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Seleccionempre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Seleccionempre.designer.cs">
+      <DependentUpon>TT_Seleccionempre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_shipconfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_shipconfig.designer.cs">
+      <DependentUpon>TT_shipconfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_shipmant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_shipmant.designer.cs">
+      <DependentUpon>TT_shipmant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Shipselect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_Shipselect.designer.cs">
+      <DependentUpon>TT_Shipselect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_showdetalleship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_showdetalleship.designer.cs">
+      <DependentUpon>TT_showdetalleship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_SocioNegocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\TT_SocioNegocio.designer.cs">
+      <DependentUpon>TT_SocioNegocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\ViewLogistica\frmCamionesEnPredio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Ttracer\ViewLogistica\frmCamionesEnPredio.Designer.cs">
+      <DependentUpon>frmCamionesEnPredio.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\WaitForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3671,6 +3913,17 @@
     <None Include="MigracionACS\Controles\dsControles.xss">
       <DependentUpon>dsControles.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\DataSetx\dsFormulacion.xsc">
+      <DependentUpon>dsFormulacion.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsFormulacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFormulacion1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\DataSetx\dsFormulacion.xss">
+      <DependentUpon>dsFormulacion.xsd</DependentUpon>
+    </None>
     <None Include="MigracionACS\DataSetx\dsProduccion.xsc">
       <DependentUpon>dsProduccion.xsd</DependentUpon>
     </None>
@@ -3759,6 +4012,17 @@
     <None Include="MigracionACS\DataSetx\PRB_DATA.xss">
       <DependentUpon>PRB_DATA.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\DataSetx\PruebaXMLxsd.xsc">
+      <DependentUpon>PruebaXMLxsd.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\DataSetx\PruebaXMLxsd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PruebaXMLxsd1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\DataSetx\PruebaXMLxsd.xss">
+      <DependentUpon>PruebaXMLxsd.xsd</DependentUpon>
+    </None>
     <None Include="MigracionACS\Finanzas\dSRPT.xsc">
       <DependentUpon>dSRPT.xsd</DependentUpon>
     </None>
@@ -3791,6 +4055,17 @@
     </None>
     <None Include="MigracionACS\Forecast\dsForecast_.xss">
       <DependentUpon>dsForecast_.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Formulas\sdformula.xsc">
+      <DependentUpon>sdformula.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Formulas\sdformula.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sdformula1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Formulas\sdformula.xss">
+      <DependentUpon>sdformula.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\OIL\dsAceites.xsc">
       <DependentUpon>dsAceites.xsd</DependentUpon>
@@ -4088,6 +4363,28 @@
     </None>
     <None Include="MigracionACS\SAR\dS_SAR.xss">
       <DependentUpon>dS_SAR.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Ttracer\dSTtracer.xsc">
+      <DependentUpon>dSTtracer.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Ttracer\dSTtracer.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dSTtracer1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Ttracer\dSTtracer.xss">
+      <DependentUpon>dSTtracer.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Ttracer\Reportes\dsReportesTtrace.xsc">
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Ttracer\Reportes\dsReportesTtrace.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesTtrace1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Ttracer\Reportes\dsReportesTtrace.xss">
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
     </None>
     <None Include="Nir\dsNir.xsc">
       <DependentUpon>dsNir.xsd</DependentUpon>
@@ -5669,6 +5966,9 @@
     <EmbeddedResource Include="Calidad\xfrmCertificadoCalidadCRUD.resx">
       <DependentUpon>xfrmCertificadoCalidadCRUD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\xfrmReporteLotesAConsumir.resx">
+      <DependentUpon>xfrmReporteLotesAConsumir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xfrmTrazabilidadClientesLotes.resx">
       <DependentUpon>xfrmTrazabilidadClientesLotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -5998,6 +6298,9 @@
     <EmbeddedResource Include="MigracionACS\AquaForecast\AFC_ProyeccionVentas.resx">
       <DependentUpon>AFC_ProyeccionVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\CargarXML.resx">
+      <DependentUpon>CargarXML.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Controles\xCheckBox.resx">
       <DependentUpon>xCheckBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -6094,14 +6397,29 @@
     <EmbeddedResource Include="MigracionACS\Formulas\FML_Costeo_Formulas.resx">
       <DependentUpon>FML_Costeo_Formulas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Edit.resx">
+      <DependentUpon>FML_FF_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Main_Panel.resx">
+      <DependentUpon>FML_FF_Main_Panel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_FF_Select.resx">
       <DependentUpon>FML_FF_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_Fomula_Format_Masive_Import.resx">
+      <DependentUpon>FML_Fomula_Format_Masive_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_Format_Import_Custom_Error.resx">
+      <DependentUpon>FML_Format_Import_Custom_Error.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_Formulas.resx">
       <DependentUpon>FML_Formulas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_Formulas_v2.resx">
       <DependentUpon>FML_Formulas_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\FML_Formula_Format_Import_Interface.resx">
+      <DependentUpon>FML_Formula_Format_Import_Interface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_Material_Selector.resx">
       <DependentUpon>FML_Material_Selector.cs</DependentUpon>
@@ -6120,6 +6438,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Formulas\FML_NewFormula_view_only.resx">
       <DependentUpon>FML_NewFormula_view_only.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Formulas\Reports\FML_FF_Main_Report.resx">
+      <DependentUpon>FML_FF_Main_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\HeadXmlLook.resx">
+      <DependentUpon>HeadXmlLook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Item_Selecction.resx">
       <DependentUpon>Item_Selecction.cs</DependentUpon>
@@ -6612,6 +6936,81 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAR\SAR_Selection.resx">
       <DependentUpon>SAR_Selection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\Reportes\frmDetalleDesechos.resx">
+      <DependentUpon>frmDetalleDesechos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\Reportes\TTR_Arribo_Doc.resx">
+      <DependentUpon>TTR_Arribo_Doc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_addetails.resx">
+      <DependentUpon>TT_addetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_addpt.resx">
+      <DependentUpon>TT_addpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_addtara.resx">
+      <DependentUpon>TT_addtara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Arribo.resx">
+      <DependentUpon>TT_Arribo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Arribo_Asociar.resx">
+      <DependentUpon>TT_Arribo_Asociar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_CargoPlan.resx">
+      <DependentUpon>TT_CargoPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_conductor.resx">
+      <DependentUpon>TT_conductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_LoadDship.resx">
+      <DependentUpon>TT_LoadDship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_LoadOrder.resx">
+      <DependentUpon>TT_LoadOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Load_Vehiculo.resx">
+      <DependentUpon>TT_Load_Vehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_mship.resx">
+      <DependentUpon>TT_mship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_newPlan.resx">
+      <DependentUpon>TT_newPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Nuevo.resx">
+      <DependentUpon>TT_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_NuevoShip.resx">
+      <DependentUpon>TT_NuevoShip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_reporte_bascula.resx">
+      <DependentUpon>TT_reporte_bascula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_SeleccionarPlan.resx">
+      <DependentUpon>TT_SeleccionarPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Seleccionempre.resx">
+      <DependentUpon>TT_Seleccionempre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_shipconfig.resx">
+      <DependentUpon>TT_shipconfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_shipmant.resx">
+      <DependentUpon>TT_shipmant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_Shipselect.resx">
+      <DependentUpon>TT_Shipselect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_showdetalleship.resx">
+      <DependentUpon>TT_showdetalleship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\TT_SocioNegocio.resx">
+      <DependentUpon>TT_SocioNegocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Ttracer\ViewLogistica\frmCamionesEnPredio.resx">
+      <DependentUpon>frmCamionesEnPredio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
@@ -7591,6 +7990,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo1.ico" />
+    <None Include="Resources\xml_24x24.png" />
     <None Include="Resources\_click_24X24.png" />
     <None Include="Resources\year_24x24.png" />
     <None Include="Resources\2264828.png" />
@@ -7645,6 +8045,8 @@
     <None Include="Resources\ConsumoMP_24.png" />
     <None Include="Resources\commentv_32x32.png" />
     <None Include="Resources\commentn_32x32.png" />
+    <None Include="Resources\code_24.png" />
+    <None Include="Resources\code2_24.png" />
     <Content Include="Resources\devoluciones.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
@@ -7668,6 +8070,18 @@
     <None Include="Resources\graph_32X32.png" />
     <None Include="Resources\forecast1_24x24.png" />
     <None Include="Resources\excel_48x48.png" />
+    <None Include="Resources\hacha_x24.png" />
+    <None Include="Resources\hc_checkLater_24.png" />
+    <None Include="Resources\hc_trash2_24.png" />
+    <None Include="Resources\hc_trash3_24.png" />
+    <None Include="Resources\formula_local_48.png" />
+    <None Include="Resources\Error-en-Windows.png" />
+    <None Include="Resources\hapag-4-icon48px.png" />
+    <None Include="Resources\formula_external_24.png" />
+    <None Include="Resources\formula_external_32.png" />
+    <None Include="Resources\formula_external_48.png" />
+    <None Include="Resources\formula_local_32.png" />
+    <None Include="Resources\formula_market_research.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
@@ -7675,6 +8089,7 @@
     <None Include="Resources\Logo_x32.png" />
     <None Include="Resources\List-details-icon16px.png" />
     <None Include="Resources\label-icon32px.png" />
+    <None Include="Resources\LogoLimp_x32.png" />
     <Content Include="Resources\medal.png" />
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />
@@ -7694,6 +8109,11 @@
     <None Include="Resources\MRP_222x222.png" />
     <None Include="Resources\MRP_32x32.png" />
     <None Include="Resources\oil_pipe-line-icon32px.png" />
+    <None Include="Resources\optionsRound_24.png" />
+    <None Include="Resources\optionsRound_32.png" />
+    <None Include="Resources\planning.png" />
+    <None Include="Resources\planning_32X32.png" />
+    <None Include="Resources\plan_icon48X48.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
@@ -7713,6 +8133,7 @@
     <None Include="Resources\save_24x24.png" />
     <None Include="Resources\sack_black_32px.png" />
     <None Include="Resources\refresh_16x16.png" />
+    <None Include="Resources\remove_24x24.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />

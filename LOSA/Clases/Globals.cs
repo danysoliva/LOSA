@@ -139,6 +139,8 @@ namespace ACS.Classes
         public static string ActiveDBSDK = "AQUA_AF";
         public static string ServerSDK = "10.50.11.31";
         public static string ServerlicenseSDK = "10.50.11.31";
+
+
         #endregion
 
         #region Credenciales Pruebas AQFSVR007\\AQFSVR007

@@ -360,6 +360,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Reporte_Lotes_a_consumir" msprop:Generator_TableClassName="Reporte_Lotes_a_consumirDataTable" msprop:Generator_TableVarName="tableReporte_Lotes_a_consumir" msprop:Generator_RowChangedName="Reporte_Lotes_a_consumirRowChanged" msprop:Generator_TablePropName="Reporte_Lotes_a_consumir" msprop:Generator_RowDeletingName="Reporte_Lotes_a_consumirRowDeleting" msprop:Generator_RowChangingName="Reporte_Lotes_a_consumirRowChanging" msprop:Generator_RowEvHandlerName="Reporte_Lotes_a_consumirRowChangeEventHandler" msprop:Generator_RowDeletedName="Reporte_Lotes_a_consumirRowDeleted" msprop:Generator_RowClassName="Reporte_Lotes_a_consumirRow" msprop:Generator_UserTableName="Reporte_Lotes_a_consumir" msprop:Generator_RowEvArgName="Reporte_Lotes_a_consumirRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Row_x0023_" msprop:Generator_ColumnVarNameInTable="_columnRow_" msprop:Generator_ColumnPropNameInRow="_Row_" msprop:Generator_ColumnPropNameInTable="_Row_Column" msprop:Generator_UserColumnName="Row#" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemCode" msprop:Generator_ColumnVarNameInTable="columnItemCode" msprop:Generator_ColumnPropNameInRow="ItemCode" msprop:Generator_ColumnPropNameInTable="ItemCodeColumn" msprop:Generator_UserColumnName="ItemCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" msprop:Generator_UserColumnName="ItemName" type="xs:string" minOccurs="0" />
+              <xs:element name="Lote" msprop:Generator_ColumnVarNameInTable="columnLote" msprop:Generator_ColumnPropNameInRow="Lote" msprop:Generator_ColumnPropNameInTable="LoteColumn" msprop:Generator_UserColumnName="Lote" type="xs:string" minOccurs="0" />
+              <xs:element name="Existencia" msprop:Generator_ColumnVarNameInTable="columnExistencia" msprop:Generator_ColumnPropNameInRow="Existencia" msprop:Generator_ColumnPropNameInTable="ExistenciaColumn" msprop:Generator_UserColumnName="Existencia" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fecha_vence" msprop:Generator_ColumnVarNameInTable="columnfecha_vence" msprop:Generator_ColumnPropNameInRow="fecha_vence" msprop:Generator_ColumnPropNameInTable="fecha_venceColumn" msprop:Generator_UserColumnName="fecha_vence" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
