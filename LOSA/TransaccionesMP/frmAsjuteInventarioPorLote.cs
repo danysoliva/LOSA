@@ -592,6 +592,7 @@ namespace LOSA.TransaccionesMP
         {
             txtLoteNuevo.Enabled = true;
             txtLoteNuevo.Visible = true;
+            txtNumLote.Visible = false;
             buttonProveedores.Enabled = true;
             txtCantidadTarimas.Enabled = true;
             txtUnidadsPorTarima.Enabled = true;
@@ -617,6 +618,7 @@ namespace LOSA.TransaccionesMP
             buttonProveedores.Enabled = false;
             txtCantidadTarimas.Enabled = false;
             txtUnidadsPorTarima.Enabled = false;
+            txtNumLote.Visible = true;
             buttonProveedores.Text = "";
         }
 
