@@ -40,13 +40,13 @@ namespace LOSA.RecuentoInventario
             this.colentradas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalidas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrow = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dtFechaHasta = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdGenerarReporte = new System.Windows.Forms.Button();
             this.cmdExcel = new System.Windows.Forms.Button();
             this.cmdCerrar = new System.Windows.Forms.Button();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesRecuentosINV1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -171,6 +171,14 @@ namespace LOSA.RecuentoInventario
             this.colrow.VisibleIndex = 0;
             this.colrow.Width = 45;
             // 
+            // colbodega
+            // 
+            this.colbodega.FieldName = "bodega";
+            this.colbodega.Name = "colbodega";
+            this.colbodega.OptionsColumn.AllowEdit = false;
+            this.colbodega.Visible = true;
+            this.colbodega.VisibleIndex = 4;
+            // 
             // dtFechaHasta
             // 
             this.dtFechaHasta.EditValue = null;
@@ -255,14 +263,6 @@ namespace LOSA.RecuentoInventario
             this.labelControl2.Size = new System.Drawing.Size(240, 21);
             this.labelControl2.TabIndex = 6;
             this.labelControl2.Text = "Resumen de Inventario a la fecha";
-            // 
-            // colbodega
-            // 
-            this.colbodega.FieldName = "bodega";
-            this.colbodega.Name = "colbodega";
-            this.colbodega.OptionsColumn.AllowEdit = false;
-            this.colbodega.Visible = true;
-            this.colbodega.VisibleIndex = 4;
             // 
             // frmReporteInvPorLoteA_LaFecha
             // 
