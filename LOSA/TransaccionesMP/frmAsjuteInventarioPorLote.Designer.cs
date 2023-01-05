@@ -54,8 +54,6 @@ namespace LOSA.TransaccionesMP
             this.txtMP_Name = new DevExpress.XtraEditors.ButtonEdit();
             this.txtNumLote = new DevExpress.XtraEditors.ButtonEdit();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gvLookUpEditPresentacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,8 +73,6 @@ namespace LOSA.TransaccionesMP
             this.txtCantidadTarimas = new DevExpress.XtraEditors.TextEdit();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.spinEditPesoKg = new DevExpress.XtraEditors.SpinEdit();
-            this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
-            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblBodegaOrigen = new DevExpress.XtraEditors.LabelControl();
             this.lblBodegaDestino = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditOrigen = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -99,12 +95,14 @@ namespace LOSA.TransaccionesMP
             this.spinEditUnidades = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.toggleSwTipoOperacion = new DevExpress.XtraEditors.ToggleSwitch();
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
+            this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
+            this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tsTipoTransaccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumLote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLookUpEditPresentacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteNuevo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonProveedores.Properties)).BeginInit();
@@ -112,8 +110,6 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditPesoKg.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
@@ -125,6 +121,10 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwTipoOperacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl5
@@ -133,9 +133,9 @@ namespace LOSA.TransaccionesMP
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Location = new System.Drawing.Point(16, 391);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(302, 24);
+            this.labelControl5.Size = new System.Drawing.Size(212, 24);
             this.labelControl5.TabIndex = 85;
-            this.labelControl5.Text = "# Lote_________________________";
+            this.labelControl5.Text = "# Lote________________";
             // 
             // tsTipoTransaccion
             // 
@@ -243,16 +243,6 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(355, 32);
             this.gridLookUpEditPresentacion.TabIndex = 10;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
-            // 
-            // presentacionesBindingSource
-            // 
-            this.presentacionesBindingSource.DataMember = "presentaciones";
-            this.presentacionesBindingSource.DataSource = this.dsRecepcionMPx;
-            // 
-            // dsRecepcionMPx
-            // 
-            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvLookUpEditPresentacion
             // 
@@ -478,16 +468,6 @@ namespace LOSA.TransaccionesMP
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spinEditPesoKg.Size = new System.Drawing.Size(355, 32);
             this.spinEditPesoKg.TabIndex = 115;
-            // 
-            // dsRecepcionMPx1
-            // 
-            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
-            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // proveedoresBindingSource
-            // 
-            this.proveedoresBindingSource.DataMember = "proveedores";
-            this.proveedoresBindingSource.DataSource = this.dsRecepcionMPx1;
             // 
             // lblBodegaOrigen
             // 
@@ -723,11 +703,31 @@ namespace LOSA.TransaccionesMP
             this.toggleSwTipoOperacion.TabIndex = 123;
             this.toggleSwTipoOperacion.Toggled += new System.EventHandler(this.toggleSwTipoOperacion_Toggled);
             // 
+            // presentacionesBindingSource
+            // 
+            this.presentacionesBindingSource.DataMember = "presentaciones";
+            this.presentacionesBindingSource.DataSource = this.dsRecepcionMPx;
+            // 
+            // dsRecepcionMPx
+            // 
+            this.dsRecepcionMPx.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dsRecepcionMPx1
+            // 
+            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // proveedoresBindingSource
+            // 
+            this.proveedoresBindingSource.DataMember = "proveedores";
+            this.proveedoresBindingSource.DataSource = this.dsRecepcionMPx1;
+            // 
             // frmAsjuteInventarioPorLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 687);
+            this.ClientSize = new System.Drawing.Size(676, 693);
             this.ControlBox = false;
             this.Controls.Add(this.txtCantidadTarimas);
             this.Controls.Add(this.txtUnidadsPorTarima);
@@ -767,8 +767,6 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumLote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLookUpEditPresentacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteNuevo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonProveedores.Properties)).EndInit();
@@ -776,8 +774,6 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditPesoKg.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
@@ -789,6 +785,10 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditUnidades.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwTipoOperacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
