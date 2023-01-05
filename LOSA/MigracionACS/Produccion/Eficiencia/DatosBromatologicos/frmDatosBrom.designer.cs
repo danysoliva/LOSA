@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatosBrom));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsReportesPRD1 = new LOSA.MigracionACS.Produccion.DataSet_.dsReportesPRD();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -59,6 +59,8 @@
             this.colproteina_promedio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhumedad_brom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhumedad_promedio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldelete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdButtonEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colgrasa_brom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colgrasa_promedio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,8 +74,6 @@
             this.colproducto_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.coldelete = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdButtonEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesPRD1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -379,6 +379,28 @@
             this.colhumedad_promedio.VisibleIndex = 9;
             this.colhumedad_promedio.Width = 60;
             // 
+            // coldelete
+            // 
+            this.coldelete.Caption = "Eliminar";
+            this.coldelete.ColumnEdit = this.cmdButtonEliminar;
+            this.coldelete.FieldName = "delete";
+            this.coldelete.Name = "coldelete";
+            this.coldelete.Visible = true;
+            this.coldelete.VisibleIndex = 15;
+            this.coldelete.Width = 60;
+            // 
+            // cmdButtonEliminar
+            // 
+            this.cmdButtonEliminar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            serializableAppearanceObject1.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject1.Image")));
+            serializableAppearanceObject1.Options.UseImage = true;
+            this.cmdButtonEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdButtonEliminar.Name = "cmdButtonEliminar";
+            this.cmdButtonEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdButtonEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdButtonEliminar_ButtonClick);
+            // 
             // colgrasa_brom
             // 
             this.colgrasa_brom.Caption = "Grasa Según Bromatología";
@@ -506,28 +528,6 @@
             this.labelControl3.Size = new System.Drawing.Size(264, 29);
             this.labelControl3.TabIndex = 18;
             this.labelControl3.Text = "Bromatología en Proceso";
-            // 
-            // coldelete
-            // 
-            this.coldelete.Caption = "Eliminar";
-            this.coldelete.ColumnEdit = this.cmdButtonEliminar;
-            this.coldelete.FieldName = "delete";
-            this.coldelete.Name = "coldelete";
-            this.coldelete.Visible = true;
-            this.coldelete.VisibleIndex = 15;
-            this.coldelete.Width = 60;
-            // 
-            // cmdButtonEliminar
-            // 
-            this.cmdButtonEliminar.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
-            serializableAppearanceObject17.Image = ((System.Drawing.Image)(resources.GetObject("serializableAppearanceObject17.Image")));
-            serializableAppearanceObject17.Options.UseImage = true;
-            this.cmdButtonEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmdButtonEliminar.Name = "cmdButtonEliminar";
-            this.cmdButtonEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdButtonEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdButtonEliminar_ButtonClick);
             // 
             // frmDatosBrom
             // 
