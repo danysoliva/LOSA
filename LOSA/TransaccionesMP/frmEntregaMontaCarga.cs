@@ -80,5 +80,12 @@ namespace LOSA.TransaccionesMP
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnEntregaBines_Click(object sender, EventArgs e)
+        {
+            frmEntregaBines frm = new frmEntregaBines(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

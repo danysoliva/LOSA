@@ -36,6 +36,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDevoluciones = new DevExpress.XtraEditors.SimpleButton();
             this.btnResumenTarimas = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEntregaBines = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -131,12 +132,25 @@
             this.btnResumenTarimas.Text = "Tarimas Por Ingreso";
             this.btnResumenTarimas.Click += new System.EventHandler(this.btnResumenTarimas_Click);
             // 
+            // btnEntregaBines
+            // 
+            this.btnEntregaBines.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntregaBines.Appearance.Options.UseFont = true;
+            this.btnEntregaBines.ImageOptions.Image = global::LOSA.Properties.Resources.tanque;
+            this.btnEntregaBines.Location = new System.Drawing.Point(323, 394);
+            this.btnEntregaBines.Name = "btnEntregaBines";
+            this.btnEntregaBines.Size = new System.Drawing.Size(274, 67);
+            this.btnEntregaBines.TabIndex = 23;
+            this.btnEntregaBines.Text = "Entrega de Liquidos / Bines";
+            this.btnEntregaBines.Click += new System.EventHandler(this.btnEntregaBines_Click);
+            // 
             // frmEntregaMontaCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 521);
+            this.Controls.Add(this.btnEntregaBines);
             this.Controls.Add(this.btnResumenTarimas);
             this.Controls.Add(this.btnDevoluciones);
             this.Controls.Add(this.simpleButton1);
@@ -161,5 +175,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnDevoluciones;
         private DevExpress.XtraEditors.SimpleButton btnResumenTarimas;
+        private DevExpress.XtraEditors.SimpleButton btnEntregaBines;
     }
 }

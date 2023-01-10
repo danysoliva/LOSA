@@ -702,7 +702,7 @@ namespace LOSA.TransaccionesMP
             this.cmdLiquidosGranel.Name = "cmdLiquidosGranel";
             this.cmdLiquidosGranel.Size = new System.Drawing.Size(211, 48);
             this.cmdLiquidosGranel.TabIndex = 111;
-            this.cmdLiquidosGranel.Text = "Entrega Manual";
+            this.cmdLiquidosGranel.Text = "Entrega Granel";
             this.cmdLiquidosGranel.Visible = false;
             this.cmdLiquidosGranel.Click += new System.EventHandler(this.cmdLiquidosGranel_Click);
             // 

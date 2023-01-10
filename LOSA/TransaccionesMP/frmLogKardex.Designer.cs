@@ -142,7 +142,7 @@ namespace LOSA.TransaccionesMP
             // colfecha_transaccion
             // 
             this.colfecha_transaccion.Caption = "Fecha";
-            this.colfecha_transaccion.DisplayFormat.FormatString = "d";
+            this.colfecha_transaccion.DisplayFormat.FormatString = "g";
             this.colfecha_transaccion.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha_transaccion.FieldName = "fecha_transaccion";
             this.colfecha_transaccion.Name = "colfecha_transaccion";

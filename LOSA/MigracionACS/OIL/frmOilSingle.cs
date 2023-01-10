@@ -24,6 +24,8 @@ namespace LOSA.MigracionACS.OIL
         int idRM_Ext2;
         int idRM_Ext3;
 
+        decimal existencia_tanques_externos;
+
         int TanqueO;
         int TanqueD;
         int idRM;
@@ -51,6 +53,10 @@ namespace LOSA.MigracionACS.OIL
             lblNombreTanque2.Text = GetMaterialName(idRM_Ext2);
             lblNombreTanque3.Text = GetMaterialName(idRM_Ext3);
 
+            txtTanqueExt1.Text = GetExistenciaTanqueExterno(idRM_Ext1);
+            txtTanqueExt2.Text = GetExistenciaTanqueExterno(idRM_Ext2);
+            txtTanqueExt3.Text = GetExistenciaTanqueExterno(idRM_Ext3);
+
             lblTanqueInt1.Text = GetMaterialName(idRM_int1);
             lblTanqueInt2.Text = GetMaterialName(idRM_int2);
             lblTanqueInt3.Text = GetMaterialName(idRM_int3);
@@ -59,14 +65,17 @@ namespace LOSA.MigracionACS.OIL
         public string GetMaterialName(int pIdRM)
         {
             string RM = "";
+            
             try
             {
-                string sql = @"SELECT short_name
-                               FROM [dbo].[MD_Raw_Material]
-                               where id = " + pIdRM;
+                //string sql = @"SELECT short_name
+                //               FROM [dbo].[MD_Raw_Material]
+                //               where id = " + pIdRM;
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlCommand cmd = new SqlCommand("sp_get_material_name_aceites_for_id_rm", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@pIdRM", pIdRM);
                 RM = cmd.ExecuteScalar().ToString();
                 conn.Close();
             }
@@ -75,6 +84,28 @@ namespace LOSA.MigracionACS.OIL
                 MessageBox.Show("Detalle del Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return RM;
+        }
+
+        public string GetExistenciaTanqueExterno(int pIdRM)
+        {
+            decimal existencia_tanque = 0;
+            try
+            {
+
+                SqlConnection connLosa = new SqlConnection(dp.ConnectionStringLOSA);
+                connLosa.Open();
+                SqlCommand cmdLosa = new SqlCommand("sp_get_existencia_tanque_aceite", connLosa);
+                cmdLosa.CommandType = CommandType.StoredProcedure;
+                cmdLosa.Parameters.AddWithValue("@id_rm", pIdRM);
+                
+                existencia_tanque = Convert.ToDecimal(cmdLosa.ExecuteScalar());
+                connLosa.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            return Convert.ToString(existencia_tanque);
         }
 
 
@@ -103,16 +134,31 @@ namespace LOSA.MigracionACS.OIL
         private void xCheckBoxTQExt1_OnCheckedChanged(object sender, EventArgs e)
         {
             xCheckBoxTQExt2.Value = xCheckBoxTQExt3.Value = false;
+            if (Convert.ToDecimal(txtTanqueExt1.EditValue) <= 0)
+            {
+                CajaDialogo.Error("No hay Inventario en la Bodega BG004 de: "+ lblNombreTanque1.Text +" Solicite a Logistica el Ingreso de Inventario!");
+                xCheckBoxTQExt1.Value = false;
+            }
         }
 
         private void xCheckBoxTQExt2_OnCheckedChanged(object sender, EventArgs e)
         {
             xCheckBoxTQExt1.Value = xCheckBoxTQExt3.Value = false;
+            if (Convert.ToDecimal(txtTanqueExt2.EditValue) <= 0)
+            {
+                CajaDialogo.Error("No hay Inventario en la Bodega BG004 de: " + lblNombreTanque2.Text + " Solicite a Logistica el Ingreso de Inventario!");
+                xCheckBoxTQExt2.Value = false;
+            }
         }
 
         private void xCheckBoxTQExt3_OnCheckedChanged(object sender, EventArgs e)
         {
             xCheckBoxTQExt2.Value = xCheckBoxTQExt1.Value = false;
+            if (Convert.ToDecimal(txtTanqueExt3.EditValue) <= 0)
+            {
+                CajaDialogo.Error("No hay Inventario en la Bodega BG004 de: " + lblNombreTanque3.Text + " Solicite a Logistica el Ingreso de Inventario!");
+                xCheckBoxTQExt3.Value = false;
+            }
         }
 
         private void xCheckBoxTQInt1_OnCheckedChanged(object sender, EventArgs e)
@@ -267,6 +313,11 @@ namespace LOSA.MigracionACS.OIL
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

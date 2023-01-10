@@ -43,13 +43,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.xCheckBoxTQInt1 = new MigracionACS.Controles.xCheckBox();
-            this.xCheckBoxTQInt3 = new MigracionACS.Controles.xCheckBox();
-            this.xCheckBoxTQInt2 = new MigracionACS.Controles.xCheckBox();
-
-            this.xCheckBoxTQExt3 = new MigracionACS.Controles.xCheckBox();
-            this.xCheckBoxTQExt2 = new MigracionACS.Controles.xCheckBox();
-            this.xCheckBoxTQExt1 = new MigracionACS.Controles.xCheckBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -59,6 +52,16 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTanqueExt1 = new DevExpress.XtraEditors.TextEdit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTanqueExt2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtTanqueExt3 = new DevExpress.XtraEditors.TextEdit();
+            this.xCheckBoxTQInt1 = new LOSA.MigracionACS.Controles.xCheckBox();
+            this.xCheckBoxTQInt3 = new LOSA.MigracionACS.Controles.xCheckBox();
+            this.xCheckBoxTQInt2 = new LOSA.MigracionACS.Controles.xCheckBox();
+            this.xCheckBoxTQExt3 = new LOSA.MigracionACS.Controles.xCheckBox();
+            this.xCheckBoxTQExt2 = new LOSA.MigracionACS.Controles.xCheckBox();
+            this.xCheckBoxTQExt1 = new LOSA.MigracionACS.Controles.xCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -66,6 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,7 +80,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 25);
+            this.label1.Size = new System.Drawing.Size(168, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tanques Externos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -174,7 +180,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 306);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 25);
+            this.label6.Size = new System.Drawing.Size(165, 25);
             this.label6.TabIndex = 18;
             this.label6.Text = "Tanques Internos";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -213,39 +219,6 @@
             this.pictureBox4.TabIndex = 28;
             this.pictureBox4.TabStop = false;
             // 
-            // xCheckBoxTQInt1
-            // 
-            this.xCheckBoxTQInt1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQInt1.BackgroundImage")));
-            this.xCheckBoxTQInt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xCheckBoxTQInt1.Location = new System.Drawing.Point(611, 334);
-            this.xCheckBoxTQInt1.Name = "xCheckBoxTQInt1";
-            this.xCheckBoxTQInt1.Size = new System.Drawing.Size(35, 31);
-            this.xCheckBoxTQInt1.TabIndex = 25;
-            this.xCheckBoxTQInt1.Value = false;
-            this.xCheckBoxTQInt1.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQInt1_OnCheckedChanged);
-            // 
-            // xCheckBoxTQInt3
-            // 
-            this.xCheckBoxTQInt3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQInt3.BackgroundImage")));
-            this.xCheckBoxTQInt3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xCheckBoxTQInt3.Location = new System.Drawing.Point(388, 334);
-            this.xCheckBoxTQInt3.Name = "xCheckBoxTQInt3";
-            this.xCheckBoxTQInt3.Size = new System.Drawing.Size(35, 31);
-            this.xCheckBoxTQInt3.TabIndex = 27;
-            this.xCheckBoxTQInt3.Value = false;
-            this.xCheckBoxTQInt3.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQInt3_OnCheckedChanged);
-            // 
-            // xCheckBoxTQInt2
-            // 
-            this.xCheckBoxTQInt2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQInt2.BackgroundImage")));
-            this.xCheckBoxTQInt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xCheckBoxTQInt2.Location = new System.Drawing.Point(161, 334);
-            this.xCheckBoxTQInt2.Name = "xCheckBoxTQInt2";
-            this.xCheckBoxTQInt2.Size = new System.Drawing.Size(35, 31);
-            this.xCheckBoxTQInt2.TabIndex = 26;
-            this.xCheckBoxTQInt2.Value = false;
-            this.xCheckBoxTQInt2.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQInt2_OnCheckedChanged);
-            // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::LOSA.Properties.Resources.tanque_cono;
@@ -255,39 +228,6 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 15;
             this.pictureBox6.TabStop = false;
-            // 
-            // xCheckBoxTQExt3
-            // 
-            this.xCheckBoxTQExt3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQExt3.BackgroundImage")));
-            this.xCheckBoxTQExt3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xCheckBoxTQExt3.Location = new System.Drawing.Point(611, 248);
-            this.xCheckBoxTQExt3.Name = "xCheckBoxTQExt3";
-            this.xCheckBoxTQExt3.Size = new System.Drawing.Size(35, 31);
-            this.xCheckBoxTQExt3.TabIndex = 12;
-            this.xCheckBoxTQExt3.Value = false;
-            this.xCheckBoxTQExt3.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQExt3_OnCheckedChanged);
-            // 
-            // xCheckBoxTQExt2
-            // 
-            this.xCheckBoxTQExt2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQExt2.BackgroundImage")));
-            this.xCheckBoxTQExt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xCheckBoxTQExt2.Location = new System.Drawing.Point(388, 248);
-            this.xCheckBoxTQExt2.Name = "xCheckBoxTQExt2";
-            this.xCheckBoxTQExt2.Size = new System.Drawing.Size(35, 31);
-            this.xCheckBoxTQExt2.TabIndex = 11;
-            this.xCheckBoxTQExt2.Value = false;
-            this.xCheckBoxTQExt2.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQExt2_OnCheckedChanged);
-            // 
-            // xCheckBoxTQExt1
-            // 
-            this.xCheckBoxTQExt1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQExt1.BackgroundImage")));
-            this.xCheckBoxTQExt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xCheckBoxTQExt1.Location = new System.Drawing.Point(161, 248);
-            this.xCheckBoxTQExt1.Name = "xCheckBoxTQExt1";
-            this.xCheckBoxTQExt1.Size = new System.Drawing.Size(35, 31);
-            this.xCheckBoxTQExt1.TabIndex = 10;
-            this.xCheckBoxTQExt1.Value = false;
-            this.xCheckBoxTQExt1.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQExt1_OnCheckedChanged);
             // 
             // pictureBox3
             // 
@@ -379,6 +319,126 @@
             this.labelControl11.TabIndex = 36;
             this.labelControl11.Text = "5";
             // 
+            // txtTanqueExt1
+            // 
+            this.txtTanqueExt1.EditValue = "0";
+            this.txtTanqueExt1.Enabled = false;
+            this.txtTanqueExt1.Location = new System.Drawing.Point(103, 250);
+            this.txtTanqueExt1.Name = "txtTanqueExt1";
+            this.txtTanqueExt1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTanqueExt1.Properties.Appearance.Options.UseFont = true;
+            this.txtTanqueExt1.Properties.Mask.EditMask = "n";
+            this.txtTanqueExt1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtTanqueExt1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTanqueExt1.Size = new System.Drawing.Size(87, 26);
+            this.txtTanqueExt1.TabIndex = 37;
+            this.txtTanqueExt1.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(5, 255);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 17);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Existencia Kg:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtTanqueExt2
+            // 
+            this.txtTanqueExt2.EditValue = "0";
+            this.txtTanqueExt2.Enabled = false;
+            this.txtTanqueExt2.Location = new System.Drawing.Point(328, 250);
+            this.txtTanqueExt2.Name = "txtTanqueExt2";
+            this.txtTanqueExt2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTanqueExt2.Properties.Appearance.Options.UseFont = true;
+            this.txtTanqueExt2.Properties.Mask.EditMask = "n2";
+            this.txtTanqueExt2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtTanqueExt2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTanqueExt2.Size = new System.Drawing.Size(87, 26);
+            this.txtTanqueExt2.TabIndex = 39;
+            // 
+            // txtTanqueExt3
+            // 
+            this.txtTanqueExt3.EditValue = "0";
+            this.txtTanqueExt3.Enabled = false;
+            this.txtTanqueExt3.Location = new System.Drawing.Point(558, 250);
+            this.txtTanqueExt3.Name = "txtTanqueExt3";
+            this.txtTanqueExt3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtTanqueExt3.Properties.Appearance.Options.UseFont = true;
+            this.txtTanqueExt3.Properties.Mask.EditMask = "n2";
+            this.txtTanqueExt3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtTanqueExt3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTanqueExt3.Size = new System.Drawing.Size(87, 26);
+            this.txtTanqueExt3.TabIndex = 41;
+            // 
+            // xCheckBoxTQInt1
+            // 
+            this.xCheckBoxTQInt1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQInt1.BackgroundImage")));
+            this.xCheckBoxTQInt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.xCheckBoxTQInt1.Location = new System.Drawing.Point(611, 334);
+            this.xCheckBoxTQInt1.Name = "xCheckBoxTQInt1";
+            this.xCheckBoxTQInt1.Size = new System.Drawing.Size(35, 31);
+            this.xCheckBoxTQInt1.TabIndex = 25;
+            this.xCheckBoxTQInt1.Value = false;
+            this.xCheckBoxTQInt1.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQInt1_OnCheckedChanged);
+            // 
+            // xCheckBoxTQInt3
+            // 
+            this.xCheckBoxTQInt3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQInt3.BackgroundImage")));
+            this.xCheckBoxTQInt3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.xCheckBoxTQInt3.Location = new System.Drawing.Point(388, 334);
+            this.xCheckBoxTQInt3.Name = "xCheckBoxTQInt3";
+            this.xCheckBoxTQInt3.Size = new System.Drawing.Size(35, 31);
+            this.xCheckBoxTQInt3.TabIndex = 27;
+            this.xCheckBoxTQInt3.Value = false;
+            this.xCheckBoxTQInt3.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQInt3_OnCheckedChanged);
+            // 
+            // xCheckBoxTQInt2
+            // 
+            this.xCheckBoxTQInt2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQInt2.BackgroundImage")));
+            this.xCheckBoxTQInt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.xCheckBoxTQInt2.Location = new System.Drawing.Point(161, 334);
+            this.xCheckBoxTQInt2.Name = "xCheckBoxTQInt2";
+            this.xCheckBoxTQInt2.Size = new System.Drawing.Size(35, 31);
+            this.xCheckBoxTQInt2.TabIndex = 26;
+            this.xCheckBoxTQInt2.Value = false;
+            this.xCheckBoxTQInt2.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQInt2_OnCheckedChanged);
+            // 
+            // xCheckBoxTQExt3
+            // 
+            this.xCheckBoxTQExt3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQExt3.BackgroundImage")));
+            this.xCheckBoxTQExt3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.xCheckBoxTQExt3.Location = new System.Drawing.Point(651, 248);
+            this.xCheckBoxTQExt3.Name = "xCheckBoxTQExt3";
+            this.xCheckBoxTQExt3.Size = new System.Drawing.Size(35, 31);
+            this.xCheckBoxTQExt3.TabIndex = 12;
+            this.xCheckBoxTQExt3.Value = false;
+            this.xCheckBoxTQExt3.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQExt3_OnCheckedChanged);
+            // 
+            // xCheckBoxTQExt2
+            // 
+            this.xCheckBoxTQExt2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQExt2.BackgroundImage")));
+            this.xCheckBoxTQExt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.xCheckBoxTQExt2.Location = new System.Drawing.Point(421, 248);
+            this.xCheckBoxTQExt2.Name = "xCheckBoxTQExt2";
+            this.xCheckBoxTQExt2.Size = new System.Drawing.Size(35, 31);
+            this.xCheckBoxTQExt2.TabIndex = 11;
+            this.xCheckBoxTQExt2.Value = false;
+            this.xCheckBoxTQExt2.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQExt2_OnCheckedChanged);
+            // 
+            // xCheckBoxTQExt1
+            // 
+            this.xCheckBoxTQExt1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQExt1.BackgroundImage")));
+            this.xCheckBoxTQExt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.xCheckBoxTQExt1.Location = new System.Drawing.Point(196, 248);
+            this.xCheckBoxTQExt1.Name = "xCheckBoxTQExt1";
+            this.xCheckBoxTQExt1.Size = new System.Drawing.Size(35, 31);
+            this.xCheckBoxTQExt1.TabIndex = 10;
+            this.xCheckBoxTQExt1.Value = false;
+            this.xCheckBoxTQExt1.OnCheckedChanged += new System.EventHandler(this.xCheckBoxTQExt1_OnCheckedChanged);
+            // 
             // frmOilSingle
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -386,6 +446,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 655);
+            this.Controls.Add(this.txtTanqueExt3);
+            this.Controls.Add(this.txtTanqueExt2);
+            this.Controls.Add(this.txtTanqueExt1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl9);
@@ -425,6 +489,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt3.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,5 +528,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit txtTanqueExt1;
+        private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.TextEdit txtTanqueExt2;
+        private DevExpress.XtraEditors.TextEdit txtTanqueExt3;
     }
 }

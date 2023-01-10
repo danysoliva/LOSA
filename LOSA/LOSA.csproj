@@ -5111,6 +5111,12 @@
     <Compile Include="TransaccionesMP\frmEntradaPT.Designer.cs">
       <DependentUpon>frmEntradaPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaBines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmEntregaBines.Designer.cs">
+      <DependentUpon>frmEntregaBines.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmEntregaDeComponentesReq.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7407,6 +7413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmEntradaPT.resx">
       <DependentUpon>frmEntradaPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmEntregaBines.resx">
+      <DependentUpon>frmEntregaBines.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmEntregaDeComponentesReq.resx">
       <DependentUpon>frmEntregaDeComponentesReq.cs</DependentUpon>
