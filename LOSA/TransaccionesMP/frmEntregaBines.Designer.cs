@@ -93,6 +93,7 @@ namespace LOSA.TransaccionesMP
             this.txtRequisicion.Size = new System.Drawing.Size(356, 44);
             this.txtRequisicion.TabIndex = 103;
             this.txtRequisicion.ToolTip = "Hola";
+            this.txtRequisicion.Visible = false;
             this.txtRequisicion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRequisicion_KeyDown);
             // 
             // labelControl3
@@ -101,11 +102,12 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(16, 52);
+            this.labelControl3.Location = new System.Drawing.Point(12, 48);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(173, 37);
             this.labelControl3.TabIndex = 104;
             this.labelControl3.Text = "Requisición:";
+            this.labelControl3.Visible = false;
             // 
             // pictureBox1
             // 

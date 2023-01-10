@@ -145,10 +145,18 @@ namespace LOSA.RecepcionMP
             {
                 var gridview = (GridView)grd_data.FocusedView;
                 var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                rptLoteRotulo report = new rptLoteRotulo(row.numero_transaccion, row.lote);
-                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                ReportPrintTool printReport = new ReportPrintTool(report);
-                printReport.ShowPreview();   
+
+                //rptLoteRotulo report = new rptLoteRotulo(row.numero_transaccion, row.lote);
+                //report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                //ReportPrintTool printReport = new ReportPrintTool(report);
+                //printReport.ShowPreview();
+
+                ReportPrintTool tool;
+
+                tool = new ReportPrintTool(new rptLoteRotulo(row.numero_transaccion, row.lote));
+                tool.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                (tool.Report as XtraReport).Tag = tool;
+                tool.ShowPreview();
             }
             catch (Exception ex)
             {

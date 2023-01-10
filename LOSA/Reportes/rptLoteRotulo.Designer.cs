@@ -622,6 +622,8 @@
             this.ReportHeader});
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(91, 57, 29, 55);
+            this.ScriptReferencesString = "DevExpress.XtraPrinting.v18.1.dll\r\nDevExpress.Utils.v18.1.dll";
+            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
