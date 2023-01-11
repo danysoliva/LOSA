@@ -186,12 +186,14 @@ namespace LOSA.TransaccionesMP
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLogKardex = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnSearchMP = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTitulo_Inv_Por_MPyBodega = new DevExpress.XtraEditors.TextEdit();
+            this.lblTitulo_Inv_Por_MPyBodega = new DevExpress.XtraEditors.LabelControl();
             this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             this.btnAjustePorLote = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorkerPRD = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerResumenMP = new System.ComponentModel.BackgroundWorker();
+            this.tggMostrarTotasInv_por_mp_y_bodega = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -221,7 +223,8 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAjuste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLogKardex)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_Inv_Por_MPyBodega.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -1353,11 +1356,13 @@ namespace LOSA.TransaccionesMP
             // tabNavigationPage6
             // 
             this.tabNavigationPage6.Caption = "Materia Prima por Bodega";
+            this.tabNavigationPage6.Controls.Add(this.labelControl1);
+            this.tabNavigationPage6.Controls.Add(this.tggMostrarTotasInv_por_mp_y_bodega);
             this.tabNavigationPage6.Controls.Add(this.simpleButton1);
             this.tabNavigationPage6.Controls.Add(this.grdMPBodega);
             this.tabNavigationPage6.Controls.Add(this.btnSearchMP);
-            this.tabNavigationPage6.Controls.Add(this.textEdit1);
-            this.tabNavigationPage6.Controls.Add(this.labelControl2);
+            this.tabNavigationPage6.Controls.Add(this.txtTitulo_Inv_Por_MPyBodega);
+            this.tabNavigationPage6.Controls.Add(this.lblTitulo_Inv_Por_MPyBodega);
             this.tabNavigationPage6.Name = "tabNavigationPage6";
             this.tabNavigationPage6.Size = new System.Drawing.Size(1362, 646);
             // 
@@ -1583,32 +1588,32 @@ namespace LOSA.TransaccionesMP
             this.btnSearchMP.Appearance.Options.UseFont = true;
             this.btnSearchMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnSearchMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchMP.ImageOptions.Image")));
-            this.btnSearchMP.Location = new System.Drawing.Point(366, 12);
+            this.btnSearchMP.Location = new System.Drawing.Point(631, 12);
             this.btnSearchMP.Name = "btnSearchMP";
             this.btnSearchMP.Size = new System.Drawing.Size(78, 32);
             this.btnSearchMP.TabIndex = 14;
             this.btnSearchMP.Text = "Buscar";
             this.btnSearchMP.Click += new System.EventHandler(this.btnSearchMP_Click);
             // 
-            // textEdit1
+            // txtTitulo_Inv_Por_MPyBodega
             // 
-            this.textEdit1.Location = new System.Drawing.Point(94, 18);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.ReadOnly = true;
-            this.textEdit1.Size = new System.Drawing.Size(266, 22);
-            this.textEdit1.TabIndex = 13;
+            this.txtTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(359, 18);
+            this.txtTitulo_Inv_Por_MPyBodega.Name = "txtTitulo_Inv_Por_MPyBodega";
+            this.txtTitulo_Inv_Por_MPyBodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo_Inv_Por_MPyBodega.Properties.Appearance.Options.UseFont = true;
+            this.txtTitulo_Inv_Por_MPyBodega.Properties.ReadOnly = true;
+            this.txtTitulo_Inv_Por_MPyBodega.Size = new System.Drawing.Size(266, 22);
+            this.txtTitulo_Inv_Por_MPyBodega.TabIndex = 13;
             // 
-            // labelControl2
+            // lblTitulo_Inv_Por_MPyBodega
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(14, 22);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(78, 15);
-            this.labelControl2.TabIndex = 12;
-            this.labelControl2.Text = "Materia Prima";
+            this.lblTitulo_Inv_Por_MPyBodega.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo_Inv_Por_MPyBodega.Appearance.Options.UseFont = true;
+            this.lblTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(275, 21);
+            this.lblTitulo_Inv_Por_MPyBodega.Name = "lblTitulo_Inv_Por_MPyBodega";
+            this.lblTitulo_Inv_Por_MPyBodega.Size = new System.Drawing.Size(78, 15);
+            this.lblTitulo_Inv_Por_MPyBodega.TabIndex = 12;
+            this.lblTitulo_Inv_Por_MPyBodega.Text = "Materia Prima";
             // 
             // btnExcel
             // 
@@ -1644,6 +1649,28 @@ namespace LOSA.TransaccionesMP
             // 
             this.backgroundWorkerResumenMP.WorkerSupportsCancellation = true;
             this.backgroundWorkerResumenMP.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerResumenMP_DoWork);
+            // 
+            // tggMostrarTotasInv_por_mp_y_bodega
+            // 
+            this.tggMostrarTotasInv_por_mp_y_bodega.Location = new System.Drawing.Point(101, 16);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Name = "tggMostrarTotasInv_por_mp_y_bodega";
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Options.UseFont = true;
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OffText = "No";
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OnText = "Si";
+            this.tggMostrarTotasInv_por_mp_y_bodega.Size = new System.Drawing.Size(109, 26);
+            this.tggMostrarTotasInv_por_mp_y_bodega.TabIndex = 17;
+            this.tggMostrarTotasInv_por_mp_y_bodega.Toggled += new System.EventHandler(this.tggMostrarTotasInv_por_mp_y_bodega_Toggled);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(8, 21);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(87, 15);
+            this.labelControl1.TabIndex = 18;
+            this.labelControl1.Text = "Mostrar Toda(s)";
             // 
             // frmReporteInventarioKardexGeneral
             // 
@@ -1687,7 +1714,8 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAjuste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLogKardex)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_Inv_Por_MPyBodega.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1795,8 +1823,8 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.GridControl grdMPBodega;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraEditors.SimpleButton btnSearchMP;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtTitulo_Inv_Por_MPyBodega;
+        private DevExpress.XtraEditors.LabelControl lblTitulo_Inv_Por_MPyBodega;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia3;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_ud1;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_tm1;
@@ -1816,5 +1844,7 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.SimpleButton btnRptPRD;
         private DevExpress.XtraEditors.SimpleButton btnRptMPyBod;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.ToggleSwitch tggMostrarTotasInv_por_mp_y_bodega;
     }
 }
