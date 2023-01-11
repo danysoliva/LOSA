@@ -924,5 +924,10 @@ namespace LOSA.TransaccionesMP
                 CajaDialogo.Error("No se Encontro la Requisa! Escanee Nuevamente la Requisa!");
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
