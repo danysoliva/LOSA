@@ -80,6 +80,12 @@ namespace LOSA.Reportes
             load_data();
 
         }
+
+        private void rptLoteRotulo_AfterPrint(object sender, EventArgs e)
+        {
+            this.ClosePreview();
+        }
+
         public void load_data()
         {
             string query = @"rpt_load_informacion_ingreso_lote";
