@@ -38,7 +38,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.CargarDatos = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsAceites1 = new MigracionACS.OIL.dsAceites();
+            this.dsAceites1 = new LOSA.MigracionACS.OIL.dsAceites();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcant_batch = new DevExpress.XtraGrid.Columns.GridColumn();

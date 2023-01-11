@@ -703,6 +703,7 @@ namespace LOSA.Trazabilidad
             this.acordionRuta4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.npRuta2.SuspendLayout();
@@ -8324,6 +8325,11 @@ namespace LOSA.Trazabilidad
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // timerRuta4
+            // 
+            this.timerRuta4.Interval = 3000;
+            this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
+            // 
             // frmRutasTrazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -9232,5 +9238,6 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraGrid.Columns.GridColumn colsaco_hasta;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdVerDetallePesajes;
+        private System.Windows.Forms.Timer timerRuta4;
     }
 }

@@ -2775,7 +2775,7 @@ namespace LOSA
                 if (user_id == 1020 || user_id == 1035 || user_id == 1037)
                 {
                     frm_Reporteador_Validate_byUser frm = new frm_Reporteador_Validate_byUser(ActiveUserCode, ActiveUserName, ActiveUserType);
-                frm.MdiParent = this.MdiParent;
+                    frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
                 else

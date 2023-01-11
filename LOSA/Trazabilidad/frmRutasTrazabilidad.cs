@@ -439,12 +439,8 @@ namespace LOSA.Trazabilidad
             }
             dsCalidad.trazabilitad.Clear();
             load_data();//Detalle de materias primas usadas en lote de PT
-            load_header();
-            Load_Despachos();
-            LoadDatosDetalleDespacho();
-            load_informacion_de_inventario();
-            load_tarimas_rechazadas();
-            load_MuestreoPT();
+            timerRuta4.Enabled = true;
+            timerRuta4.Start();
         }
 
         private void Load_Despachos()
@@ -927,11 +923,13 @@ namespace LOSA.Trazabilidad
                 dsCalidad.trazabilitad.Clear();
                 load_header();
                 load_data();
-                Load_Despachos();
-                LoadDatosDetalleDespacho();
-                load_informacion_de_inventario();
-                load_tarimas_rechazadas();
-                load_MuestreoPT();
+                timerRuta4.Enabled = true;
+                timerRuta4.Start();
+                //Load_Despachos();
+                //LoadDatosDetalleDespacho();
+                //load_informacion_de_inventario();
+                //load_tarimas_rechazadas();
+                //load_MuestreoPT();
             }
         }
 
@@ -2276,6 +2274,18 @@ namespace LOSA.Trazabilidad
         {
             //Version detalle de pesajes por materia prima, lote mp y lote pt
 
+        }
+
+        private void timerRuta4_Tick(object sender, EventArgs e)
+        {
+            load_header();
+            Load_Despachos();
+            LoadDatosDetalleDespacho();
+            load_informacion_de_inventario();
+            load_tarimas_rechazadas();
+            load_MuestreoPT();
+            timerRuta4.Enabled = false;
+            timerRuta4.Stop();
         }
     }
 }

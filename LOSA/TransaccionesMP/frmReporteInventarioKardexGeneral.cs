@@ -382,13 +382,22 @@ namespace LOSA.TransaccionesMP
 
         private void LoadLotesBG()
         {
-            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (tggMostrarTotasInv_por_mp_y_bodega.IsOn)//Mostrar Todos
             {
-                LoadBodegaMP(frm.ItemSeleccionado.id);
-                textEdit1.Text = frm.ItemSeleccionado.ItemCode + " " + frm.ItemSeleccionado.ItemName;
-                MateriaPrimaAllBodegas.RecuperarRegistroFromID_RM(frm.ItemSeleccionado.id);
+                LoadBodegaMP(0);
             }
+            else//Mostrar solo MP Seleccionada
+            {
+                frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadBodegaMP(frm.ItemSeleccionado.id);
+                    txtTitulo_Inv_Por_MPyBodega.Text = frm.ItemSeleccionado.ItemCode + " " + frm.ItemSeleccionado.ItemName;
+                    MateriaPrimaAllBodegas.RecuperarRegistroFromID_RM(frm.ItemSeleccionado.id);
+                }
+            }
+           
+
         }
 
         private void LoadBodegaMP(int pidRM)
@@ -399,7 +408,7 @@ namespace LOSA.TransaccionesMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_obtener_inventario_general_por_bodega_for_MP", con);
+                SqlCommand cmd = new SqlCommand("[sp_obtener_inventario_general_por_bodega_for_MP_v2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", pidRM);
                 dsTarima.mp_bodega_lote.Clear();
@@ -439,41 +448,50 @@ namespace LOSA.TransaccionesMP
             }
             else
             {
-                decimal Existencia_Positiva = 0;
-                decimal Unidades_Positiva = 0;
-                Existencia_Positiva = Math.Abs(row.existencia);
-                Unidades_Positiva = Math.Abs(row.existencia_ud);
-
-                DialogResult r = CajaDialogo.Pregunta("Se va ajustar el Lote: "+ row.lote+" Desea continuar? Cantidad a Ajustar: " + Existencia_Positiva);
-                if (r != System.Windows.Forms.DialogResult.Yes)
+                if(row.TipoId == 1)//Externo
+                {
+                    CajaDialogo.Error("Esta funcion no puede ajustar negativos de inventarios de Bodegas Externas!");
                     return;
-
-                try
-                {
-                    DataOperations dp = new DataOperations();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    con.Open();
-
-                    SqlCommand cmd = new SqlCommand("sp_insert_kardex_ajuste", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@entrada", Existencia_Positiva);
-                    //cmd.Parameters.AddWithValue("@id_referencia_operacion", );
-                    //cmd.Parameters.AddWithValue("@id_lote_alosy",  );
-                    cmd.Parameters.AddWithValue("@lote", row.lote);
-                    cmd.Parameters.AddWithValue("@id_mp", row.id_mp);
-                    cmd.Parameters.AddWithValue("@itemcode", row.code_sap );
-                    cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
-                    cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                    cmd.Parameters.AddWithValue("@ud_entrada", Unidades_Positiva);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-
-                    LoadBodegaMP(row.id_mp);
                 }
-                catch (Exception ec)
+                else
                 {
-                    CajaDialogo.Error(ec.Message);
+                    decimal Existencia_Positiva = 0;
+                    decimal Unidades_Positiva = 0;
+                    Existencia_Positiva = Math.Abs(row.existencia);
+                    Unidades_Positiva = Math.Abs(row.existencia_ud);
+
+                    DialogResult r = CajaDialogo.Pregunta("Se va ajustar el Lote: " + row.lote + " Desea continuar? Cantidad a Ajustar: " + Existencia_Positiva);
+                    if (r != System.Windows.Forms.DialogResult.Yes)
+                        return;
+
+                    try
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand("sp_insert_kardex_ajuste", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@entrada", Existencia_Positiva);
+                        //cmd.Parameters.AddWithValue("@id_referencia_operacion", );
+                        //cmd.Parameters.AddWithValue("@id_lote_alosy",  );
+                        cmd.Parameters.AddWithValue("@lote", row.lote);
+                        cmd.Parameters.AddWithValue("@id_mp", row.id_mp);
+                        cmd.Parameters.AddWithValue("@itemcode", row.code_sap);
+                        cmd.Parameters.AddWithValue("@id_bodega", row.id_bodega);
+                        cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                        cmd.Parameters.AddWithValue("@ud_entrada", Unidades_Positiva);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+
+                        LoadBodegaMP(row.id_mp);
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
                 }
+                
             }
 
         }
@@ -505,9 +523,26 @@ namespace LOSA.TransaccionesMP
                 if (MateriaPrimaAllBodegas.Recuperado)
                 {
                     LoadBodegaMP(MateriaPrimaAllBodegas.IdMP_ACS);
-                    textEdit1.Text = MateriaPrimaAllBodegas.CodeMP_SAP + " " + MateriaPrimaAllBodegas.NameComercial;// frm.ItemSeleccionado.ItemName;
+                    txtTitulo_Inv_Por_MPyBodega.Text = MateriaPrimaAllBodegas.CodeMP_SAP + " " + MateriaPrimaAllBodegas.NameComercial;// frm.ItemSeleccionado.ItemName;
                 }
             }
         }
+
+        private void tggMostrarTotasInv_por_mp_y_bodega_Toggled(object sender, EventArgs e)
+        {
+            if (tggMostrarTotasInv_por_mp_y_bodega.IsOn)//Mostrar Todos
+            {
+                btnSearchMP.Enabled = txtTitulo_Inv_Por_MPyBodega.Enabled = false;
+                LoadLotesBG();
+            }
+            else//Mostrar solo MP Seleccionada
+            {
+                btnSearchMP.Enabled = txtTitulo_Inv_Por_MPyBodega.Enabled = true;
+            }
+        }
+
+
+
+
     }
 }
