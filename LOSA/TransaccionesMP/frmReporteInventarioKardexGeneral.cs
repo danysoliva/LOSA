@@ -518,13 +518,22 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (MateriaPrimaAllBodegas != null)
+            //if (MateriaPrimaAllBodegas != null)
+            //{
+            //    if (MateriaPrimaAllBodegas.Recuperado)
+            //    {
+            //        LoadBodegaMP(MateriaPrimaAllBodegas.IdMP_ACS);
+            //        txtTitulo_Inv_Por_MPyBodega.Text = MateriaPrimaAllBodegas.CodeMP_SAP + " " + MateriaPrimaAllBodegas.NameComercial;// frm.ItemSeleccionado.ItemName;
+            //    }
+            //}
+            if (tggMostrarTotasInv_por_mp_y_bodega.IsOn)//Mostrar Todos
             {
-                if (MateriaPrimaAllBodegas.Recuperado)
-                {
-                    LoadBodegaMP(MateriaPrimaAllBodegas.IdMP_ACS);
-                    txtTitulo_Inv_Por_MPyBodega.Text = MateriaPrimaAllBodegas.CodeMP_SAP + " " + MateriaPrimaAllBodegas.NameComercial;// frm.ItemSeleccionado.ItemName;
-                }
+                btnSearchMP.Enabled = txtTitulo_Inv_Por_MPyBodega.Enabled = false;
+                LoadLotesBG();
+            }
+            else//Mostrar solo MP Seleccionada
+            {
+                btnSearchMP.Enabled = txtTitulo_Inv_Por_MPyBodega.Enabled = true;
             }
         }
 
