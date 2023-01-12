@@ -50,6 +50,8 @@ namespace LOSA.TransaccionesMP
             this.colud_salida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.colid_tipo_consumo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltipo_consumo_name = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdLogkardex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -96,7 +98,9 @@ namespace LOSA.TransaccionesMP
             this.coluser_id,
             this.colud_entrada,
             this.colud_salida,
-            this.colusuario});
+            this.colusuario,
+            this.colid_tipo_consumo,
+            this.coltipo_consumo_name});
             this.gridView1.GridControl = this.grdLogkardex;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -254,6 +258,16 @@ namespace LOSA.TransaccionesMP
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Registro de Entrada/Salida por Lote y Bodega";
             // 
+            // colid_tipo_consumo
+            // 
+            this.colid_tipo_consumo.FieldName = "id_tipo_consumo";
+            this.colid_tipo_consumo.Name = "colid_tipo_consumo";
+            // 
+            // coltipo_consumo_name
+            // 
+            this.coltipo_consumo_name.FieldName = "tipo_consumo_name";
+            this.coltipo_consumo_name.Name = "coltipo_consumo_name";
+            // 
             // frmLogKardex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,5 +308,7 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colud_salida;
         private DevExpress.XtraGrid.Columns.GridColumn colusuario;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tipo_consumo;
+        private DevExpress.XtraGrid.Columns.GridColumn coltipo_consumo_name;
     }
 }
