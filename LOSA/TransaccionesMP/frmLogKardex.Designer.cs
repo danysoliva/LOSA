@@ -120,6 +120,7 @@ namespace LOSA.TransaccionesMP
             this.coltipo_operacion.OptionsColumn.AllowEdit = false;
             this.coltipo_operacion.Visible = true;
             this.coltipo_operacion.VisibleIndex = 0;
+            this.coltipo_operacion.Width = 110;
             // 
             // colentrada
             // 
@@ -129,6 +130,7 @@ namespace LOSA.TransaccionesMP
             this.colentrada.OptionsColumn.AllowEdit = false;
             this.colentrada.Visible = true;
             this.colentrada.VisibleIndex = 1;
+            this.colentrada.Width = 84;
             // 
             // colsalida
             // 
@@ -138,17 +140,19 @@ namespace LOSA.TransaccionesMP
             this.colsalida.OptionsColumn.AllowEdit = false;
             this.colsalida.Visible = true;
             this.colsalida.VisibleIndex = 2;
+            this.colsalida.Width = 120;
             // 
             // colfecha_transaccion
             // 
             this.colfecha_transaccion.Caption = "Fecha";
-            this.colfecha_transaccion.DisplayFormat.FormatString = "g";
+            this.colfecha_transaccion.DisplayFormat.FormatString = "G";
             this.colfecha_transaccion.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha_transaccion.FieldName = "fecha_transaccion";
             this.colfecha_transaccion.Name = "colfecha_transaccion";
             this.colfecha_transaccion.OptionsColumn.AllowEdit = false;
             this.colfecha_transaccion.Visible = true;
             this.colfecha_transaccion.VisibleIndex = 3;
+            this.colfecha_transaccion.Width = 182;
             // 
             // colid_lote_alosy
             // 
@@ -162,6 +166,7 @@ namespace LOSA.TransaccionesMP
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 4;
+            this.collote.Width = 111;
             // 
             // colid_mp
             // 
@@ -176,6 +181,7 @@ namespace LOSA.TransaccionesMP
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 5;
+            this.colnombre_comercial.Width = 111;
             // 
             // colitemcode
             // 
@@ -185,6 +191,7 @@ namespace LOSA.TransaccionesMP
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 6;
+            this.colitemcode.Width = 111;
             // 
             // colid_bodega
             // 
@@ -199,6 +206,7 @@ namespace LOSA.TransaccionesMP
             this.colbodega_destin.OptionsColumn.AllowEdit = false;
             this.colbodega_destin.Visible = true;
             this.colbodega_destin.VisibleIndex = 7;
+            this.colbodega_destin.Width = 111;
             // 
             // coluser_id
             // 
@@ -213,6 +221,7 @@ namespace LOSA.TransaccionesMP
             this.colud_entrada.OptionsColumn.AllowEdit = false;
             this.colud_entrada.Visible = true;
             this.colud_entrada.VisibleIndex = 8;
+            this.colud_entrada.Width = 111;
             // 
             // colud_salida
             // 
@@ -222,6 +231,7 @@ namespace LOSA.TransaccionesMP
             this.colud_salida.OptionsColumn.AllowEdit = false;
             this.colud_salida.Visible = true;
             this.colud_salida.VisibleIndex = 9;
+            this.colud_salida.Width = 111;
             // 
             // colusuario
             // 
@@ -231,6 +241,7 @@ namespace LOSA.TransaccionesMP
             this.colusuario.OptionsColumn.AllowEdit = false;
             this.colusuario.Visible = true;
             this.colusuario.VisibleIndex = 10;
+            this.colusuario.Width = 128;
             // 
             // labelControl1
             // 

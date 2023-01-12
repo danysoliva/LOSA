@@ -13,7 +13,7 @@
     <Shape ID="DesignTable:totales" ZOrder="12" X="471" Y="456" Height="162" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:ultimas_cargas" ZOrder="11" X="26" Y="260" Height="48" Width="151" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="44" />
     <Shape ID="DesignTable:ultimas_cargasSelect" ZOrder="10" X="25" Y="322" Height="86" Width="185" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
-    <Shape ID="DesignTable:informacionPRD" ZOrder="9" X="1213" Y="243" Height="257" Width="153" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="86" />
+    <Shape ID="DesignTable:informacionPRD" ZOrder="9" X="1205" Y="137" Height="257" Width="153" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
     <Shape ID="DesignTable:bodega_origen" ZOrder="8" X="22" Y="418" Height="105" Width="152" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
     <Shape ID="DesignTable:bodega_destino" ZOrder="7" X="15" Y="538" Height="105" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:totales_bodega" ZOrder="6" X="508" Y="40" Height="162" Width="154" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
@@ -21,7 +21,7 @@
     <Shape ID="DesignTable:totales_bodegav2" ZOrder="4" X="644" Y="491" Height="258" Width="168" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:kardex_by_Reproceso" ZOrder="3" X="941" Y="62" Height="257" Width="190" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="253" />
     <Shape ID="DesignTable:mp_bodega_lote" ZOrder="2" X="946" Y="374" Height="238" Width="161" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
-    <Shape ID="DesignTable:LogKardex_MP" ZOrder="1" X="1211" Y="509" Height="353" Width="152" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="349" />
+    <Shape ID="DesignTable:LogKardex_MP" ZOrder="1" X="1204" Y="430" Height="429" Width="152" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="425" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
