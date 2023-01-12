@@ -50,6 +50,8 @@ namespace LOSA.TransaccionesMP
             this.colud_salida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.colid_tipo_consumo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltipo_consumo_name = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdLogkardex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -96,7 +98,9 @@ namespace LOSA.TransaccionesMP
             this.coluser_id,
             this.colud_entrada,
             this.colud_salida,
-            this.colusuario});
+            this.colusuario,
+            this.colid_tipo_consumo,
+            this.coltipo_consumo_name});
             this.gridView1.GridControl = this.grdLogkardex;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -120,6 +124,7 @@ namespace LOSA.TransaccionesMP
             this.coltipo_operacion.OptionsColumn.AllowEdit = false;
             this.coltipo_operacion.Visible = true;
             this.coltipo_operacion.VisibleIndex = 0;
+            this.coltipo_operacion.Width = 110;
             // 
             // colentrada
             // 
@@ -129,6 +134,7 @@ namespace LOSA.TransaccionesMP
             this.colentrada.OptionsColumn.AllowEdit = false;
             this.colentrada.Visible = true;
             this.colentrada.VisibleIndex = 1;
+            this.colentrada.Width = 84;
             // 
             // colsalida
             // 
@@ -138,17 +144,19 @@ namespace LOSA.TransaccionesMP
             this.colsalida.OptionsColumn.AllowEdit = false;
             this.colsalida.Visible = true;
             this.colsalida.VisibleIndex = 2;
+            this.colsalida.Width = 120;
             // 
             // colfecha_transaccion
             // 
             this.colfecha_transaccion.Caption = "Fecha";
-            this.colfecha_transaccion.DisplayFormat.FormatString = "g";
+            this.colfecha_transaccion.DisplayFormat.FormatString = "G";
             this.colfecha_transaccion.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha_transaccion.FieldName = "fecha_transaccion";
             this.colfecha_transaccion.Name = "colfecha_transaccion";
             this.colfecha_transaccion.OptionsColumn.AllowEdit = false;
             this.colfecha_transaccion.Visible = true;
             this.colfecha_transaccion.VisibleIndex = 3;
+            this.colfecha_transaccion.Width = 182;
             // 
             // colid_lote_alosy
             // 
@@ -162,6 +170,7 @@ namespace LOSA.TransaccionesMP
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 4;
+            this.collote.Width = 111;
             // 
             // colid_mp
             // 
@@ -176,6 +185,7 @@ namespace LOSA.TransaccionesMP
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 5;
+            this.colnombre_comercial.Width = 111;
             // 
             // colitemcode
             // 
@@ -185,6 +195,7 @@ namespace LOSA.TransaccionesMP
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 6;
+            this.colitemcode.Width = 111;
             // 
             // colid_bodega
             // 
@@ -199,6 +210,7 @@ namespace LOSA.TransaccionesMP
             this.colbodega_destin.OptionsColumn.AllowEdit = false;
             this.colbodega_destin.Visible = true;
             this.colbodega_destin.VisibleIndex = 7;
+            this.colbodega_destin.Width = 111;
             // 
             // coluser_id
             // 
@@ -213,6 +225,7 @@ namespace LOSA.TransaccionesMP
             this.colud_entrada.OptionsColumn.AllowEdit = false;
             this.colud_entrada.Visible = true;
             this.colud_entrada.VisibleIndex = 8;
+            this.colud_entrada.Width = 111;
             // 
             // colud_salida
             // 
@@ -222,6 +235,7 @@ namespace LOSA.TransaccionesMP
             this.colud_salida.OptionsColumn.AllowEdit = false;
             this.colud_salida.Visible = true;
             this.colud_salida.VisibleIndex = 9;
+            this.colud_salida.Width = 111;
             // 
             // colusuario
             // 
@@ -231,6 +245,7 @@ namespace LOSA.TransaccionesMP
             this.colusuario.OptionsColumn.AllowEdit = false;
             this.colusuario.Visible = true;
             this.colusuario.VisibleIndex = 10;
+            this.colusuario.Width = 128;
             // 
             // labelControl1
             // 
@@ -242,6 +257,16 @@ namespace LOSA.TransaccionesMP
             this.labelControl1.Size = new System.Drawing.Size(375, 19);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Registro de Entrada/Salida por Lote y Bodega";
+            // 
+            // colid_tipo_consumo
+            // 
+            this.colid_tipo_consumo.FieldName = "id_tipo_consumo";
+            this.colid_tipo_consumo.Name = "colid_tipo_consumo";
+            // 
+            // coltipo_consumo_name
+            // 
+            this.coltipo_consumo_name.FieldName = "tipo_consumo_name";
+            this.coltipo_consumo_name.Name = "coltipo_consumo_name";
             // 
             // frmLogKardex
             // 
@@ -283,5 +308,7 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colud_salida;
         private DevExpress.XtraGrid.Columns.GridColumn colusuario;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tipo_consumo;
+        private DevExpress.XtraGrid.Columns.GridColumn coltipo_consumo_name;
     }
 }

@@ -5909,6 +5909,10 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columnusuario;
             
+            private global::System.Data.DataColumn columnid_tipo_consumo;
+            
+            private global::System.Data.DataColumn columntipo_consumo_name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LogKardex_MPDataTable() {
@@ -6080,6 +6084,22 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_tipo_consumoColumn {
+                get {
+                    return this.columnid_tipo_consumo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn tipo_consumo_nameColumn {
+                get {
+                    return this.columntipo_consumo_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6132,7 +6152,9 @@ namespace LOSA.TransaccionesMP {
                         int user_id, 
                         int ud_entrada, 
                         int ud_salida, 
-                        string usuario) {
+                        string usuario, 
+                        int id_tipo_consumo, 
+                        string tipo_consumo_name) {
                 LogKardex_MPRow rowLogKardex_MPRow = ((LogKardex_MPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -6151,7 +6173,9 @@ namespace LOSA.TransaccionesMP {
                         user_id,
                         ud_entrada,
                         ud_salida,
-                        usuario};
+                        usuario,
+                        id_tipo_consumo,
+                        tipo_consumo_name};
                 rowLogKardex_MPRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLogKardex_MPRow);
                 return rowLogKardex_MPRow;
@@ -6191,6 +6215,8 @@ namespace LOSA.TransaccionesMP {
                 this.columnud_entrada = base.Columns["ud_entrada"];
                 this.columnud_salida = base.Columns["ud_salida"];
                 this.columnusuario = base.Columns["usuario"];
+                this.columnid_tipo_consumo = base.Columns["id_tipo_consumo"];
+                this.columntipo_consumo_name = base.Columns["tipo_consumo_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6230,6 +6256,10 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnud_salida);
                 this.columnusuario = new global::System.Data.DataColumn("usuario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnusuario);
+                this.columnid_tipo_consumo = new global::System.Data.DataColumn("id_tipo_consumo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_tipo_consumo);
+                this.columntipo_consumo_name = new global::System.Data.DataColumn("tipo_consumo_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo_consumo_name);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9990,6 +10020,38 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_tipo_consumo {
+                get {
+                    try {
+                        return ((int)(this[this.tableLogKardex_MP.id_tipo_consumoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_tipo_consumo\' de la tabla \'LogKardex_MP\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLogKardex_MP.id_tipo_consumoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string tipo_consumo_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableLogKardex_MP.tipo_consumo_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tipo_consumo_name\' de la tabla \'LogKardex_MP\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLogKardex_MP.tipo_consumo_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableLogKardex_MP.idColumn);
             }
@@ -10190,6 +10252,30 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetusuarioNull() {
                 this[this.tableLogKardex_MP.usuarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_tipo_consumoNull() {
+                return this.IsNull(this.tableLogKardex_MP.id_tipo_consumoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_tipo_consumoNull() {
+                this[this.tableLogKardex_MP.id_tipo_consumoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Istipo_consumo_nameNull() {
+                return this.IsNull(this.tableLogKardex_MP.tipo_consumo_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Settipo_consumo_nameNull() {
+                this[this.tableLogKardex_MP.tipo_consumo_nameColumn] = global::System.Convert.DBNull;
             }
         }
         
