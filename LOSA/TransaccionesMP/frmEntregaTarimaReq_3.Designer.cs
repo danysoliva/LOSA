@@ -103,7 +103,7 @@ namespace LOSA.TransaccionesMP
             this.ColSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEntregaBinesRequissa = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -920,29 +920,28 @@ namespace LOSA.TransaccionesMP
             this.cmdLotesProximosVencerMP.Text = "Orden Lotes MP \r\nUltima Tarima Escaneada";
             this.cmdLotesProximosVencerMP.Click += new System.EventHandler(this.cmdLotesProximosVencerMP_Click);
             // 
-            // simpleButton1
+            // btnEntregaBinesRequissa
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(9, 16);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(211, 48);
-            this.simpleButton1.TabIndex = 114;
-            this.simpleButton1.Text = "Entrega Liquidos";
-            this.simpleButton1.Visible = false;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnEntregaBinesRequissa.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEntregaBinesRequissa.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntregaBinesRequissa.Appearance.Options.UseBackColor = true;
+            this.btnEntregaBinesRequissa.Appearance.Options.UseFont = true;
+            this.btnEntregaBinesRequissa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnEntregaBinesRequissa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEntregaBinesRequissa.ImageOptions.Image")));
+            this.btnEntregaBinesRequissa.Location = new System.Drawing.Point(9, 16);
+            this.btnEntregaBinesRequissa.Name = "btnEntregaBinesRequissa";
+            this.btnEntregaBinesRequissa.Size = new System.Drawing.Size(211, 48);
+            this.btnEntregaBinesRequissa.TabIndex = 114;
+            this.btnEntregaBinesRequissa.Text = "Entrega Liquidos";
+            this.btnEntregaBinesRequissa.Visible = false;
+            this.btnEntregaBinesRequissa.Click += new System.EventHandler(this.btnEntregaBinesRequissa_Click);
             // 
             // frmEntregaTarimaReq_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 757);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnEntregaBinesRequissa);
             this.Controls.Add(this.cmdLiquidosGranel);
             this.Controls.Add(this.txtRequisicion);
             this.Controls.Add(this.cmdLotesProximosVencerMP);
@@ -1045,6 +1044,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposEntregaMicros;
         private DevExpress.XtraGrid.Columns.GridColumn colcant_entregada_micros;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnEntregaBinesRequissa;
     }
 }
