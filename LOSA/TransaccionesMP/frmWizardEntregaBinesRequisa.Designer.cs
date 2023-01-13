@@ -29,6 +29,7 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWizardEntregaBinesRequisa));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -45,7 +46,6 @@ namespace LOSA.TransaccionesMP
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridDetalleRequisa = new DevExpress.XtraGrid.GridControl();
             this.gridvDetalleRequisa = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositemEntregar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,6 +55,8 @@ namespace LOSA.TransaccionesMP
             this.colunidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositemEntregar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLotePT.Properties)).BeginInit();
@@ -183,16 +185,6 @@ namespace LOSA.TransaccionesMP
             this.gridvDetalleRequisa.Name = "gridvDetalleRequisa";
             this.gridvDetalleRequisa.OptionsView.ShowGroupPanel = false;
             // 
-            // repositemEntregar
-            // 
-            this.repositemEntregar.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
-            this.repositemEntregar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositemEntregar.Name = "repositemEntregar";
-            this.repositemEntregar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositemEntregar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositemEntregar_ButtonClick);
-            // 
             // colid
             // 
             this.colid.FieldName = "id";
@@ -261,6 +253,20 @@ namespace LOSA.TransaccionesMP
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 4;
             // 
+            // repositemEntregar
+            // 
+            this.repositemEntregar.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            this.repositemEntregar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositemEntregar.Name = "repositemEntregar";
+            this.repositemEntregar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositemEntregar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositemEntregar_ButtonClick);
+            // 
+            // timerLimpiarMensaje
+            // 
+            this.timerLimpiarMensaje.Interval = 5500;
+            // 
             // frmWizardEntregaBinesRequisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,5 +315,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn colunidad;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private System.Windows.Forms.Timer timerLimpiarMensaje;
     }
 }

@@ -24,6 +24,9 @@ namespace LOSA.TransaccionesMP
         public UserLogin UsuarioLogeadol;
         string barcode_requisa;
         int id_requisa = 0;
+        decimal cant_necesaria = 0;
+
+
 
         public frmWizardEntregaBinesRequisa(UserLogin pUserLogin, string pbarcode_requisa)
         {
@@ -74,11 +77,44 @@ namespace LOSA.TransaccionesMP
 
             if (row.entregada >= row.solicitada)
             {
-                CajaDialogo.Error("Ya se completo la Materia Prima Solicitada en la requisa!");
-                return;
+                //CajaDialogo.Error("Ya se completo la Materia Prima Solicitada en la requisa!");
+                //return;
+
+                lblMensaje.Text = "Ya se entrego la Materia Prima en este Requisa!";
+                lblMensaje.BackColor = Color.White;
+                panelNotificacion.BackColor = Color.Red;
+                timerLimpiarMensaje.Enabled = true;
+                timerLimpiarMensaje.Start();
             }
             else
             {
+                cant_necesaria = row.solicitada - row.entregada;
+
+                frmSeleccionTarimaMP frm = new frmSeleccionTarimaMP(row.id_materia_prima, cant_necesaria);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_get_insert_requisa_mp_entrega_bines", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_requisa", id_requisa);
+                        cmd.Parameters.AddWithValue("@cant_requisada", frm.cant_a_requisar);
+                        cmd.Parameters.AddWithValue("@id_tarima", frm.id_tarima);
+                        cmd.Parameters.AddWithValue("@id_materia_p", frm.id_materia_p);
+                        cmd.Parameters.AddWithValue("@lote", frm.lote);
+                        cmd.Parameters.AddWithValue("@itemcode", frm.itemcode);
+                        cmd.Parameters.AddWithValue("@user_id", UsuarioLogeadol.Id);
+                        cmd.Parameters.AddWithValue("@codigo_barra", frm.codigo_barra);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+                    Load_Detalle(id_requisa);
+                }
 
             }
 

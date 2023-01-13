@@ -927,7 +927,6 @@ namespace LOSA.TransaccionesMP
             this.btnEntregaBinesRequissa.Appearance.Options.UseBackColor = true;
             this.btnEntregaBinesRequissa.Appearance.Options.UseFont = true;
             this.btnEntregaBinesRequissa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnEntregaBinesRequissa.Enabled = false;
             this.btnEntregaBinesRequissa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEntregaBinesRequissa.ImageOptions.Image")));
             this.btnEntregaBinesRequissa.Location = new System.Drawing.Point(9, 16);
             this.btnEntregaBinesRequissa.Name = "btnEntregaBinesRequissa";

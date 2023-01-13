@@ -210,6 +210,23 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="detalle_pesajes_individuales_reprint" msprop:Generator_TableClassName="detalle_pesajes_individuales_reprintDataTable" msprop:Generator_TableVarName="tabledetalle_pesajes_individuales_reprint" msprop:Generator_RowChangedName="detalle_pesajes_individuales_reprintRowChanged" msprop:Generator_TablePropName="detalle_pesajes_individuales_reprint" msprop:Generator_RowDeletingName="detalle_pesajes_individuales_reprintRowDeleting" msprop:Generator_RowChangingName="detalle_pesajes_individuales_reprintRowChanging" msprop:Generator_RowEvHandlerName="detalle_pesajes_individuales_reprintRowChangeEventHandler" msprop:Generator_RowDeletedName="detalle_pesajes_individuales_reprintRowDeleted" msprop:Generator_RowClassName="detalle_pesajes_individuales_reprintRow" msprop:Generator_UserTableName="detalle_pesajes_individuales_reprint" msprop:Generator_RowEvArgName="detalle_pesajes_individuales_reprintRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="id_orden_encabezado" msprop:Generator_ColumnVarNameInTable="columnid_orden_encabezado" msprop:Generator_ColumnPropNameInRow="id_orden_encabezado" msprop:Generator_ColumnPropNameInTable="id_orden_encabezadoColumn" msprop:Generator_UserColumnName="id_orden_encabezado" type="xs:int" minOccurs="0" />
+              <xs:element name="id_rm" msprop:Generator_ColumnVarNameInTable="columnid_rm" msprop:Generator_ColumnPropNameInRow="id_rm" msprop:Generator_ColumnPropNameInTable="id_rmColumn" msprop:Generator_UserColumnName="id_rm" type="xs:int" minOccurs="0" />
+              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material" type="xs:string" minOccurs="0" />
+              <xs:element name="pesoxbatch" msprop:Generator_ColumnVarNameInTable="columnpesoxbatch" msprop:Generator_ColumnPropNameInRow="pesoxbatch" msprop:Generator_ColumnPropNameInTable="pesoxbatchColumn" msprop:Generator_UserColumnName="pesoxbatch" type="xs:decimal" minOccurs="0" />
+              <xs:element name="batch_plan" msprop:Generator_ColumnVarNameInTable="columnbatch_plan" msprop:Generator_ColumnPropNameInRow="batch_plan" msprop:Generator_ColumnPropNameInTable="batch_planColumn" msprop:Generator_UserColumnName="batch_plan" type="xs:int" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="batch_completados" msprop:Generator_ColumnVarNameInTable="columnbatch_completados" msprop:Generator_ColumnPropNameInRow="batch_completados" msprop:Generator_ColumnPropNameInTable="batch_completadosColumn" msprop:Generator_UserColumnName="batch_completados" type="xs:int" minOccurs="0" />
+              <xs:element name="peso_real" msprop:Generator_ColumnVarNameInTable="columnpeso_real" msprop:Generator_ColumnPropNameInRow="peso_real" msprop:Generator_ColumnPropNameInTable="peso_realColumn" msprop:Generator_UserColumnName="peso_real" type="xs:decimal" minOccurs="0" />
+              <xs:element name="order_id" msprop:Generator_ColumnVarNameInTable="columnorder_id" msprop:Generator_ColumnPropNameInRow="order_id" msprop:Generator_ColumnPropNameInTable="order_idColumn" msprop:Generator_UserColumnName="order_id" type="xs:int" minOccurs="0" />
+              <xs:element name="lote_pt" msprop:Generator_ColumnVarNameInTable="columnlote_pt" msprop:Generator_ColumnPropNameInRow="lote_pt" msprop:Generator_ColumnPropNameInTable="lote_ptColumn" msprop:Generator_UserColumnName="lote_pt" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

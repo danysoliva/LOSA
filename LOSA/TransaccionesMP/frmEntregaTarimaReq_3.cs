@@ -161,7 +161,7 @@ namespace LOSA.TransaccionesMP
                             load_tarimas_scan_v2();
                             txtTarima.Focus();
                             cmdLiquidosGranel.Visible = true; //Esto solo es Granel
-                            //btnEntregaBinesRequissa.Visible = true; //Esto solo es Liquidos Especiales
+                            btnEntregaBinesRequissa.Visible = true; //Esto solo es Liquidos Especiales
                         }
                     }
                     else

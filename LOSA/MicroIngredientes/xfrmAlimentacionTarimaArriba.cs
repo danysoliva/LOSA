@@ -139,9 +139,9 @@ namespace LOSA.MicroIngredientes
                 {
                     cnx.Open();
                     dsMicros.plan_microsh_report_AlimentacionTarima.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("dbo.[sp_get_detalle_orden_pesaje_micros_interfacev2_to_reprintV2]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("dbo.[sp_get_detalle_orden_pesaje_micros_interfacev2_Aliementacion_5toNivel]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    //da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id;
+                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id;
                     da.Fill(dsMicros.plan_microsh_report_AlimentacionTarima);
                     cnx.Close();
 
@@ -162,9 +162,9 @@ namespace LOSA.MicroIngredientes
                 {
                     cnx.Open();
                     dsMicros.resumen_pesaje_individual_pendiente.Clear();
-                    SqlDataAdapter da = new SqlDataAdapter("dbo.[sp_get_detalle_orden_pesaje_micros_individual]", cnx);
+                    SqlDataAdapter da = new SqlDataAdapter("dbo.[sp_get_detalle_orden_pesaje_micros_individualV2]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    //da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id;
+                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id;
                     da.Fill(dsMicros.resumen_pesaje_individual_pendiente);
                     cnx.Close();
 
