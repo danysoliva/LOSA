@@ -160,7 +160,8 @@ namespace LOSA.TransaccionesMP
                             lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
                             load_tarimas_scan_v2();
                             txtTarima.Focus();
-                            cmdLiquidosGranel.Visible = true;
+                            cmdLiquidosGranel.Visible = true; //Esto solo es Granel
+                            btnEntregaBinesRequissa.Visible = true; //Esto solo es Liquidos Especiales
                         }
                     }
                     else
@@ -922,6 +923,25 @@ namespace LOSA.TransaccionesMP
             else
             {
                 CajaDialogo.Error("No se Encontro la Requisa! Escanee Nuevamente la Requisa!");
+            }
+        }
+
+        private void btnEntregaBinesRequissa_Click(object sender, EventArgs e)
+        {
+            if (txtRequisicion.Text != "")
+            {
+                if (txtRequisicion.Text.Length >= 12)
+                {
+                    string barcode_req = txtRequisicion.Text.Trim();
+                    frmWizardEntregaBinesRequisa frm = new frmWizardEntregaBinesRequisa(usuarioLogueado, barcode_req);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        load_tarimas_scan();
+                        load_bines_disponibles();
+                        txtRequisicion.Text = "";
+                        txtRequisicion.Focus();
+                    }
+                }
             }
         }
     }

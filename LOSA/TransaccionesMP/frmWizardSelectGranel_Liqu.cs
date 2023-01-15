@@ -51,9 +51,10 @@ namespace LOSA.TransaccionesMP
             {
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_requisa_granel_liquido", conn);
+                SqlCommand cmd = new SqlCommand("[sp_get_detalle_requisa_granel_liquidoV2]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_requisa", pid_requisa);
+                cmd.Parameters.AddWithValue("@isgranel", 1);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsTransaccionesMP1.requisiciones_d.Clear();
                 adat.Fill(dsTransaccionesMP1.requisiciones_d);

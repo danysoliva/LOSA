@@ -29,6 +29,7 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -78,7 +79,7 @@ namespace LOSA.TransaccionesMP
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.cmdLiquidosGranel = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -102,6 +103,7 @@ namespace LOSA.TransaccionesMP
             this.ColSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEntregaBinesRequissa = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -129,9 +131,9 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(488, 16);
+            this.cmdHome.Location = new System.Drawing.Point(526, 16);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(175, 48);
+            this.cmdHome.Size = new System.Drawing.Size(137, 48);
             this.cmdHome.TabIndex = 7;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -697,7 +699,7 @@ namespace LOSA.TransaccionesMP
             this.cmdLiquidosGranel.Appearance.Options.UseFont = true;
             this.cmdLiquidosGranel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdLiquidosGranel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdLiquidosGranel.ImageOptions.Image")));
-            this.cmdLiquidosGranel.Location = new System.Drawing.Point(271, 16);
+            this.cmdLiquidosGranel.Location = new System.Drawing.Point(294, 16);
             this.cmdLiquidosGranel.Name = "cmdLiquidosGranel";
             this.cmdLiquidosGranel.Size = new System.Drawing.Size(211, 48);
             this.cmdLiquidosGranel.TabIndex = 111;
@@ -918,11 +920,28 @@ namespace LOSA.TransaccionesMP
             this.cmdLotesProximosVencerMP.Text = "Orden Lotes MP \r\nUltima Tarima Escaneada";
             this.cmdLotesProximosVencerMP.Click += new System.EventHandler(this.cmdLotesProximosVencerMP_Click);
             // 
+            // btnEntregaBinesRequissa
+            // 
+            this.btnEntregaBinesRequissa.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEntregaBinesRequissa.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntregaBinesRequissa.Appearance.Options.UseBackColor = true;
+            this.btnEntregaBinesRequissa.Appearance.Options.UseFont = true;
+            this.btnEntregaBinesRequissa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnEntregaBinesRequissa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEntregaBinesRequissa.ImageOptions.Image")));
+            this.btnEntregaBinesRequissa.Location = new System.Drawing.Point(9, 16);
+            this.btnEntregaBinesRequissa.Name = "btnEntregaBinesRequissa";
+            this.btnEntregaBinesRequissa.Size = new System.Drawing.Size(211, 48);
+            this.btnEntregaBinesRequissa.TabIndex = 114;
+            this.btnEntregaBinesRequissa.Text = "Entrega Liquidos";
+            this.btnEntregaBinesRequissa.Visible = false;
+            this.btnEntregaBinesRequissa.Click += new System.EventHandler(this.btnEntregaBinesRequissa_Click);
+            // 
             // frmEntregaTarimaReq_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 757);
+            this.Controls.Add(this.btnEntregaBinesRequissa);
             this.Controls.Add(this.cmdLiquidosGranel);
             this.Controls.Add(this.txtRequisicion);
             this.Controls.Add(this.cmdLotesProximosVencerMP);
@@ -1025,5 +1044,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposEntregaMicros;
         private DevExpress.XtraGrid.Columns.GridColumn colcant_entregada_micros;
+        private DevExpress.XtraEditors.SimpleButton btnEntregaBinesRequissa;
     }
 }

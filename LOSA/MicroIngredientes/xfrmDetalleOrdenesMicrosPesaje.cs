@@ -49,6 +49,30 @@ namespace LOSA.MicroIngredientes
             LoadDataIndividual();
             load_turno();
             Load_reprint();
+            Load_reprint_individual();
+        }
+
+        private void Load_reprint_individual()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                {
+                    cnx.Open();
+                    dsMicros.detalle_pesajes_individuales_reprint.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter("sp_get_detalle_orden_pesaje_micros_reprint_indiv", cnx);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    //da.SelectCommand.Parameters.AddWithValue("@orden_id", id_order_apms);
+                    da.Fill(dsMicros.detalle_pesajes_individuales_reprint);
+                    cnx.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void LoadHeader()
@@ -835,6 +859,45 @@ namespace LOSA.MicroIngredientes
                 rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
                 //rpt.ShowPreview();
                 rpt.Print();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void repost_reprint_direct_individual_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                string pesaje = " ";
+                var gridView = (GridView)grdPesajeIndAll.FocusedView;
+                var row = (dsMicros.detalle_pesajes_individuales_reprintRow)gridView.GetFocusedDataRow();
+                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.id_orden_encabezado, row.id_rm, row.batch_completados);
+                rpt.ShowPrintMarginsWarning = false;
+                rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                //rpt.ShowPreview();
+                rpt.Print();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void repost_reprint_vista_previa_individual_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                string pesaje = " ";
+                var gridView = (GridView)grdPesajeIndAll.FocusedView;
+                var row = (dsMicros.detalle_pesajes_individuales_reprintRow)gridView.GetFocusedDataRow();
+                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.id_orden_encabezado, row.id_rm, row.batch_completados);
+                rpt.ShowPrintMarginsWarning = false;
+                rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                rpt.ShowPreview();
             }
             catch (Exception ex)
             {
