@@ -43,7 +43,7 @@ namespace LOSA.TransaccionesMP
             {
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_lote_for_id_mp", conn);
+                SqlCommand cmd = new SqlCommand("[sp_get_detalle_lote_for_id_mp_tarimas]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", id_materia_p);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);

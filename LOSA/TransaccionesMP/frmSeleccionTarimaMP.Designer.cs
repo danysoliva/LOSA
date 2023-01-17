@@ -29,16 +29,16 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionTarimaMP));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grdtarimas = new DevExpress.XtraGrid.GridControl();
-            this.grdvtarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
+            this.grdvtarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_tarima_prd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,12 +51,12 @@ namespace LOSA.TransaccionesMP
             this.colkg_entregados = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colexistencia_kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.reposSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grdtarimas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdvtarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvtarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposSeleccionar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(703, 3);
+            this.cmdHome.Location = new System.Drawing.Point(678, 3);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(129, 49);
             this.cmdHome.TabIndex = 9;
@@ -87,10 +87,15 @@ namespace LOSA.TransaccionesMP
             this.grdtarimas.Name = "grdtarimas";
             this.grdtarimas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.reposSeleccionar});
-            this.grdtarimas.Size = new System.Drawing.Size(830, 382);
+            this.grdtarimas.Size = new System.Drawing.Size(805, 382);
             this.grdtarimas.TabIndex = 10;
             this.grdtarimas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvtarimas});
+            // 
+            // dsTransaccionesMP1
+            // 
+            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
+            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdvtarimas
             // 
@@ -116,11 +121,6 @@ namespace LOSA.TransaccionesMP
             this.grdvtarimas.Name = "grdvtarimas";
             this.grdvtarimas.OptionsView.ShowGroupPanel = false;
             // 
-            // dsTransaccionesMP1
-            // 
-            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
-            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // colid
             // 
             this.colid.FieldName = "id";
@@ -144,7 +144,7 @@ namespace LOSA.TransaccionesMP
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
             this.colmp.VisibleIndex = 1;
-            this.colmp.Width = 112;
+            this.colmp.Width = 117;
             // 
             // colitemcode
             // 
@@ -162,7 +162,7 @@ namespace LOSA.TransaccionesMP
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 2;
-            this.collote.Width = 97;
+            this.collote.Width = 95;
             // 
             // colfecha_venc
             // 
@@ -179,7 +179,7 @@ namespace LOSA.TransaccionesMP
             this.colfecha_ingreso_prd.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso_prd.Visible = true;
             this.colfecha_ingreso_prd.VisibleIndex = 3;
-            this.colfecha_ingreso_prd.Width = 112;
+            this.colfecha_ingreso_prd.Width = 108;
             // 
             // colkg_iniciales
             // 
@@ -191,7 +191,7 @@ namespace LOSA.TransaccionesMP
             this.colkg_iniciales.OptionsColumn.AllowEdit = false;
             this.colkg_iniciales.Visible = true;
             this.colkg_iniciales.VisibleIndex = 4;
-            this.colkg_iniciales.Width = 88;
+            this.colkg_iniciales.Width = 86;
             // 
             // colkg_entregados
             // 
@@ -203,7 +203,7 @@ namespace LOSA.TransaccionesMP
             this.colkg_entregados.OptionsColumn.AllowEdit = false;
             this.colkg_entregados.Visible = true;
             this.colkg_entregados.VisibleIndex = 5;
-            this.colkg_entregados.Width = 97;
+            this.colkg_entregados.Width = 95;
             // 
             // colexistencia_kg
             // 
@@ -215,7 +215,7 @@ namespace LOSA.TransaccionesMP
             this.colexistencia_kg.OptionsColumn.AllowEdit = false;
             this.colexistencia_kg.Visible = true;
             this.colexistencia_kg.VisibleIndex = 6;
-            this.colexistencia_kg.Width = 86;
+            this.colexistencia_kg.Width = 83;
             // 
             // colcodigo_barra
             // 
@@ -225,28 +225,7 @@ namespace LOSA.TransaccionesMP
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
             this.colcodigo_barra.VisibleIndex = 0;
-            this.colcodigo_barra.Width = 122;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(274, 16);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(296, 25);
-            this.labelControl2.TabIndex = 11;
-            this.labelControl2.Text = "Tarimas en Existencia Produccion";
-            // 
-            // reposSeleccionar
-            // 
-            this.reposSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.reposSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.reposSeleccionar.Name = "reposSeleccionar";
-            this.reposSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.reposSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposSeleccionar_ButtonClick);
+            this.colcodigo_barra.Width = 94;
             // 
             // gridColumn1
             // 
@@ -255,21 +234,44 @@ namespace LOSA.TransaccionesMP
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 7;
-            this.gridColumn1.Width = 98;
+            this.gridColumn1.Width = 109;
+            // 
+            // reposSeleccionar
+            // 
+            this.reposSeleccionar.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.reposSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposSeleccionar.Name = "reposSeleccionar";
+            this.reposSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposSeleccionar_ButtonClick);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(261, 16);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(296, 25);
+            this.labelControl2.TabIndex = 11;
+            this.labelControl2.Text = "Tarimas en Existencia Produccion";
             // 
             // frmSeleccionTarimaMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 442);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(809, 442);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.grdtarimas);
             this.Controls.Add(this.cmdHome);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSeleccionTarimaMP";
+            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.grdtarimas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdvtarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdvtarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposSeleccionar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

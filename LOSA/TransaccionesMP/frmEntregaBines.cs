@@ -29,6 +29,7 @@ namespace LOSA.TransaccionesMP
             InitializeComponent();
             GetsName();
             UsuarioLogeado = pUserLogin;
+            txtTarima.Focus();
 
         }
 
@@ -337,61 +338,61 @@ namespace LOSA.TransaccionesMP
                     }
                     dr.Close();
 
-                    bool Error = false;
-                    string mensaje = " ";
-                    switch (idEstadoTarima)
-                    {
-                        case 0:
-                        default:
-                            mensaje = "TARIMA NO ENCONTRADA";
-                            Error = true;
-                            break;
-                        case 1://Recepcionado
-                            mensaje = "Esta tarima aun no ha sido ingresada a bodega! Solo se genero el rotulo, es necesario activar y ubicar!.";
-                            Error = true;
-                            break;
-                        case 2://En Bodega
-                            break;
-                        case 3://Retenido
-                            mensaje = "Esta Tarima esta Retenida!";
-                            Error = true;
-                            break;
-                        case 4://Comprometido
-                            mensaje = "Esta tarima ya esta comprometida!";
-                            Error = true;
-                            break;
-                        case 5://En Produccion
-                            mensaje = "Esta tarima ya fue entrega a Producción";
-                            Error = true;
-                            break;
-                        case 6://Consumido
-                            mensaje = "Esta Tarima ya fue entregada y consumida por producción!";
-                            Error = true;
-                            break;
-                        case 8://Parcialmente Entregado
-                            break;
-                        case 9://Rechazado
-                            mensaje = "Esta tarima fue Rechazada!";
-                            Error = true;
-                            break;
-                        case 10://Ajuste de Inventario
-                            mensaje = "Esta tarima tuvo salida por ajuste de Inventario!";
-                            Error = true;
-                            break;
-                    }
+                    //bool Error = false;
+                    //string mensaje = " ";
+                    //switch (idEstadoTarima)
+                    //{
+                    //    case 0:
+                    //    default:
+                    //        mensaje = "TARIMA NO ENCONTRADA";
+                    //        Error = true;
+                    //        break;
+                    //    case 1://Recepcionado
+                    //        mensaje = "Esta tarima aun no ha sido ingresada a bodega! Solo se genero el rotulo, es necesario activar y ubicar!.";
+                    //        Error = true;
+                    //        break;
+                    //    case 2://En Bodega
+                    //        break;
+                    //    case 3://Retenido
+                    //        mensaje = "Esta Tarima esta Retenida!";
+                    //        Error = true;
+                    //        break;
+                    //    case 4://Comprometido
+                    //        mensaje = "Esta tarima ya esta comprometida!";
+                    //        Error = true;
+                    //        break;
+                    //    case 5://En Produccion
+                    //        mensaje = "Esta tarima ya fue entrega a Producción";
+                    //        Error = true;
+                    //        break;
+                    //    case 6://Consumido
+                    //        mensaje = "Esta Tarima ya fue entregada y consumida por producción!";
+                    //        Error = true;
+                    //        break;
+                    //    case 8://Parcialmente Entregado
+                    //        break;
+                    //    case 9://Rechazado
+                    //        mensaje = "Esta tarima fue Rechazada!";
+                    //        Error = true;
+                    //        break;
+                    //    case 10://Ajuste de Inventario
+                    //        mensaje = "Esta tarima tuvo salida por ajuste de Inventario!";
+                    //        Error = true;
+                    //        break;
+                    //}
 
-                    if (Error)
-                    {
-                        lblMensaje.Text = mensaje;
-                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                        frm.ShowDialog();
-                        panelNotificacion.BackColor = Color.FromArgb(255, 102, 102);
-                        timerLimpiarMensaje.Enabled = true;
-                        timerLimpiarMensaje.Start();
-                        tarimaEncontrada = new Tarima();
-                        tarimaEncontrada.RecuperarRegistro_v3(0, LocalBarcode);
-                        return;
-                    }
+                    //if (Error)
+                    //{
+                    //    lblMensaje.Text = mensaje;
+                    //    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                    //    frm.ShowDialog();
+                    //    panelNotificacion.BackColor = Color.FromArgb(255, 102, 102);
+                    //    timerLimpiarMensaje.Enabled = true;
+                    //    timerLimpiarMensaje.Start();
+                    //    tarimaEncontrada = new Tarima();
+                    //    tarimaEncontrada.RecuperarRegistro_v3(0, LocalBarcode);
+                    //    return;
+                    //}
 
                     cmd = new SqlCommand("sp_getTarimas_without_filters_v4", connection);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -416,6 +417,16 @@ namespace LOSA.TransaccionesMP
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void timerLimpiarMensaje_Tick(object sender, EventArgs e)
+        {
+            timerLimpiarMensaje.Stop();
+            timerLimpiarMensaje.Enabled = false;
+            panelNotificacion.BackColor = Color.White;
+            txtTarima.Text = "";
+            lblMensaje.Text = "";
+            txtTarima.Focus();
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
