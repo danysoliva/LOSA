@@ -197,12 +197,19 @@ namespace LOSA.TransaccionesMP
             }
             else
             {
-                if (ud_enviar < this.ExistenciaTarimaKg)
+                if (ud_enviar == ExistenciaTarimaUnidades)
                 {
-                    if (kg_enviar + entregado < Solicitado)
+                    //Si entra aqui, no puede subir mas por que no hay mas unidades en la tarima!
+                }
+                else
+                {
+                    if (ud_enviar < this.ExistenciaTarimaKg)
                     {
-                        ud_enviar++;
-                        txtPorEnviar.Text = string.Format("{0:###,##0}", (ud_enviar));
+                        if (kg_enviar + entregado < Solicitado)
+                        {
+                            ud_enviar++;
+                            txtPorEnviar.Text = string.Format("{0:###,##0}", (ud_enviar));
+                        }
                     }
                 }
             }
