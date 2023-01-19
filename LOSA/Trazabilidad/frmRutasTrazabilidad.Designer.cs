@@ -29,7 +29,6 @@ namespace LOSA.Trazabilidad
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
@@ -119,7 +118,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl83 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
-            this.despachadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.despachadoClientesBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView15 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn83 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -129,7 +128,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn87 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn88 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.direccionClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.direccionClientesBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView16 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn92 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn93 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -186,7 +185,7 @@ namespace LOSA.Trazabilidad
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
             this.grd_nir = new DevExpress.XtraGrid.GridControl();
-            this.dsMantenimientoCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsMantenimientoCBindingSource = new System.Windows.Forms.BindingSource();
             this.dsMantenimientoC = new LOSA.Calidad.dsMantenimientoC();
             this.grdv_nir = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -351,7 +350,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn69 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tb_inventario = new System.Windows.Forms.TabPage();
             this.gridControl8 = new DevExpress.XtraGrid.GridControl();
-            this.dsTarimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsTarimaBindingSource = new System.Windows.Forms.BindingSource();
             this.dsTarima = new LOSA.TransaccionesMP.dsTarima();
             this.gridView14 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -435,7 +434,7 @@ namespace LOSA.Trazabilidad
             this.colcode_sap3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gcClientesRecibieronLotePT = new DevExpress.XtraGrid.GridControl();
-            this.detalledestinosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.detalledestinosBindingSource = new System.Windows.Forms.BindingSource();
             this.gvClientesRecibieronLote = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDespacho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdDespachoId = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -463,7 +462,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl3 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.grd_trasacciones = new DevExpress.XtraGrid.GridControl();
-            this.dsInventarioPTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsInventarioPTBindingSource = new System.Windows.Forms.BindingSource();
             this.dsInventarioPT = new LOSA.Calidad.dsInventarioPT();
             this.grdv_trascciones = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colentrada = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -536,7 +535,7 @@ namespace LOSA.Trazabilidad
             this.colid_decision = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlNoConformidades = new DevExpress.XtraGrid.GridControl();
-            this.dsReportesTRZBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsReportesTRZBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -701,9 +700,13 @@ namespace LOSA.Trazabilidad
             this.acordionRuta2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acordionRuta3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acordionRuta4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
+            this.timerRuta4 = new System.Windows.Forms.Timer();
+            this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.npRuta2.SuspendLayout();
@@ -5010,10 +5013,9 @@ namespace LOSA.Trazabilidad
             // 
             // labelControl17
             // 
-            this.labelControl17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(1028, 134);
+            this.labelControl17.Location = new System.Drawing.Point(952, 134);
             this.labelControl17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(49, 17);
@@ -5035,8 +5037,7 @@ namespace LOSA.Trazabilidad
             // 
             // tggMuestras
             // 
-            this.tggMuestras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tggMuestras.Location = new System.Drawing.Point(1083, 129);
+            this.tggMuestras.Location = new System.Drawing.Point(1007, 130);
             this.tggMuestras.Name = "tggMuestras";
             this.tggMuestras.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tggMuestras.Properties.Appearance.Options.UseFont = true;
@@ -6645,7 +6646,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(355, 216);
+            this.labelControl14.Location = new System.Drawing.Point(315, 217);
             this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(53, 17);
@@ -6655,7 +6656,7 @@ namespace LOSA.Trazabilidad
             // txtCodigoPP
             // 
             this.txtCodigoPP.Enabled = false;
-            this.txtCodigoPP.Location = new System.Drawing.Point(436, 214);
+            this.txtCodigoPP.Location = new System.Drawing.Point(396, 215);
             this.txtCodigoPP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCodigoPP.Name = "txtCodigoPP";
             this.txtCodigoPP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -6667,7 +6668,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(355, 189);
+            this.labelControl15.Location = new System.Drawing.Point(315, 190);
             this.labelControl15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(69, 17);
@@ -6678,7 +6679,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtOrderNum.Enabled = false;
             this.txtOrderNum.EnterMoveNextControl = true;
-            this.txtOrderNum.Location = new System.Drawing.Point(436, 186);
+            this.txtOrderNum.Location = new System.Drawing.Point(396, 187);
             this.txtOrderNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtOrderNum.Name = "txtOrderNum";
             this.txtOrderNum.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -6694,7 +6695,7 @@ namespace LOSA.Trazabilidad
             this.txtCantidadBatch.Name = "txtCantidadBatch";
             this.txtCantidadBatch.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadBatch.Properties.Appearance.Options.UseFont = true;
-            this.txtCantidadBatch.Size = new System.Drawing.Size(225, 24);
+            this.txtCantidadBatch.Size = new System.Drawing.Size(191, 24);
             this.txtCantidadBatch.TabIndex = 103;
             // 
             // labelControl13
@@ -6711,23 +6712,21 @@ namespace LOSA.Trazabilidad
             // txtEficiencia
             // 
             this.txtEficiencia.AllowDrop = true;
-            this.txtEficiencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEficiencia.Enabled = false;
-            this.txtEficiencia.Location = new System.Drawing.Point(1148, 213);
+            this.txtEficiencia.Location = new System.Drawing.Point(1070, 215);
             this.txtEficiencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEficiencia.Name = "txtEficiencia";
-            this.txtEficiencia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
+            this.txtEficiencia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtEficiencia.Properties.Appearance.Options.UseFont = true;
             this.txtEficiencia.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtEficiencia.Size = new System.Drawing.Size(149, 26);
+            this.txtEficiencia.Size = new System.Drawing.Size(149, 24);
             this.txtEficiencia.TabIndex = 101;
             // 
             // labelControl10
             // 
-            this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(1030, 216);
+            this.labelControl10.Location = new System.Drawing.Point(952, 217);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(72, 17);
@@ -6736,10 +6735,9 @@ namespace LOSA.Trazabilidad
             // 
             // labelControl12
             // 
-            this.labelControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(1030, 175);
+            this.labelControl12.Location = new System.Drawing.Point(952, 189);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(112, 17);
@@ -6749,15 +6747,14 @@ namespace LOSA.Trazabilidad
             // txtTotalMP_Utilizada_kg
             // 
             this.txtTotalMP_Utilizada_kg.AllowDrop = true;
-            this.txtTotalMP_Utilizada_kg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotalMP_Utilizada_kg.Enabled = false;
-            this.txtTotalMP_Utilizada_kg.Location = new System.Drawing.Point(1148, 172);
+            this.txtTotalMP_Utilizada_kg.Location = new System.Drawing.Point(1070, 186);
             this.txtTotalMP_Utilizada_kg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTotalMP_Utilizada_kg.Name = "txtTotalMP_Utilizada_kg";
-            this.txtTotalMP_Utilizada_kg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
+            this.txtTotalMP_Utilizada_kg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtTotalMP_Utilizada_kg.Properties.Appearance.Options.UseFont = true;
             this.txtTotalMP_Utilizada_kg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotalMP_Utilizada_kg.Size = new System.Drawing.Size(149, 26);
+            this.txtTotalMP_Utilizada_kg.Size = new System.Drawing.Size(149, 24);
             this.txtTotalMP_Utilizada_kg.TabIndex = 98;
             // 
             // labelControl8
@@ -6780,29 +6777,27 @@ namespace LOSA.Trazabilidad
             this.txtPresentacion.Name = "txtPresentacion";
             this.txtPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPresentacion.Properties.Appearance.Options.UseFont = true;
-            this.txtPresentacion.Size = new System.Drawing.Size(225, 24);
+            this.txtPresentacion.Size = new System.Drawing.Size(191, 24);
             this.txtPresentacion.TabIndex = 96;
             // 
             // txtTotalProducido
             // 
             this.txtTotalProducido.AllowDrop = true;
-            this.txtTotalProducido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotalProducido.Enabled = false;
-            this.txtTotalProducido.Location = new System.Drawing.Point(870, 213);
+            this.txtTotalProducido.Location = new System.Drawing.Point(812, 210);
             this.txtTotalProducido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTotalProducido.Name = "txtTotalProducido";
-            this.txtTotalProducido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
+            this.txtTotalProducido.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtTotalProducido.Properties.Appearance.Options.UseFont = true;
             this.txtTotalProducido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotalProducido.Size = new System.Drawing.Size(149, 26);
+            this.txtTotalProducido.Size = new System.Drawing.Size(121, 24);
             this.txtTotalProducido.TabIndex = 95;
             // 
             // labelControl11
             // 
-            this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(671, 217);
+            this.labelControl11.Location = new System.Drawing.Point(631, 218);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(116, 17);
@@ -6811,10 +6806,9 @@ namespace LOSA.Trazabilidad
             // 
             // labelControl9
             // 
-            this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(671, 176);
+            this.labelControl9.Location = new System.Drawing.Point(631, 185);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(63, 17);
@@ -6824,36 +6818,33 @@ namespace LOSA.Trazabilidad
             // txtReprocesoKg
             // 
             this.txtReprocesoKg.AllowDrop = true;
-            this.txtReprocesoKg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtReprocesoKg.Enabled = false;
-            this.txtReprocesoKg.Location = new System.Drawing.Point(870, 172);
+            this.txtReprocesoKg.Location = new System.Drawing.Point(812, 182);
             this.txtReprocesoKg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtReprocesoKg.Name = "txtReprocesoKg";
-            this.txtReprocesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
+            this.txtReprocesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtReprocesoKg.Properties.Appearance.Options.UseFont = true;
             this.txtReprocesoKg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtReprocesoKg.Size = new System.Drawing.Size(149, 26);
+            this.txtReprocesoKg.Size = new System.Drawing.Size(121, 24);
             this.txtReprocesoKg.TabIndex = 92;
             // 
             // txtTotalKgSacosLiberados
             // 
-            this.txtTotalKgSacosLiberados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotalKgSacosLiberados.Enabled = false;
-            this.txtTotalKgSacosLiberados.Location = new System.Drawing.Point(870, 132);
+            this.txtTotalKgSacosLiberados.Location = new System.Drawing.Point(812, 131);
             this.txtTotalKgSacosLiberados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTotalKgSacosLiberados.Name = "txtTotalKgSacosLiberados";
-            this.txtTotalKgSacosLiberados.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
+            this.txtTotalKgSacosLiberados.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalKgSacosLiberados.Properties.Appearance.Options.UseFont = true;
             this.txtTotalKgSacosLiberados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotalKgSacosLiberados.Size = new System.Drawing.Size(149, 26);
+            this.txtTotalKgSacosLiberados.Size = new System.Drawing.Size(121, 24);
             this.txtTotalKgSacosLiberados.TabIndex = 91;
             // 
             // labelControl7
             // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(671, 136);
+            this.labelControl7.Location = new System.Drawing.Point(631, 135);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(58, 17);
@@ -6862,15 +6853,14 @@ namespace LOSA.Trazabilidad
             // 
             // txtSacosLiberados
             // 
-            this.txtSacosLiberados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSacosLiberados.Enabled = false;
-            this.txtSacosLiberados.Location = new System.Drawing.Point(735, 132);
+            this.txtSacosLiberados.Location = new System.Drawing.Point(695, 131);
             this.txtSacosLiberados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSacosLiberados.Name = "txtSacosLiberados";
-            this.txtSacosLiberados.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
+            this.txtSacosLiberados.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSacosLiberados.Properties.Appearance.Options.UseFont = true;
             this.txtSacosLiberados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSacosLiberados.Size = new System.Drawing.Size(132, 26);
+            this.txtSacosLiberados.Size = new System.Drawing.Size(111, 24);
             this.txtSacosLiberados.TabIndex = 89;
             // 
             // btnExcel
@@ -6905,14 +6895,14 @@ namespace LOSA.Trazabilidad
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodigo.Properties.Appearance.Options.UseFont = true;
-            this.txtcodigo.Size = new System.Drawing.Size(225, 24);
+            this.txtcodigo.Size = new System.Drawing.Size(191, 24);
             this.txtcodigo.TabIndex = 86;
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(355, 160);
+            this.labelControl5.Location = new System.Drawing.Point(315, 161);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(45, 17);
@@ -6922,7 +6912,7 @@ namespace LOSA.Trazabilidad
             // txtversion
             // 
             this.txtversion.Enabled = false;
-            this.txtversion.Location = new System.Drawing.Point(436, 158);
+            this.txtversion.Location = new System.Drawing.Point(396, 159);
             this.txtversion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtversion.Name = "txtversion";
             this.txtversion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -6934,7 +6924,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(355, 133);
+            this.labelControl4.Location = new System.Drawing.Point(315, 134);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(53, 17);
@@ -6945,7 +6935,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtformula.Enabled = false;
             this.txtformula.EnterMoveNextControl = true;
-            this.txtformula.Location = new System.Drawing.Point(436, 130);
+            this.txtformula.Location = new System.Drawing.Point(396, 131);
             this.txtformula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtformula.Name = "txtformula";
             this.txtformula.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -6972,7 +6962,7 @@ namespace LOSA.Trazabilidad
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProducto.Properties.Appearance.Options.UseFont = true;
-            this.txtProducto.Size = new System.Drawing.Size(225, 24);
+            this.txtProducto.Size = new System.Drawing.Size(191, 24);
             this.txtProducto.TabIndex = 80;
             // 
             // btnGenerar
@@ -6980,7 +6970,7 @@ namespace LOSA.Trazabilidad
             this.btnGenerar.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnGenerar.Appearance.Options.UseFont = true;
             this.btnGenerar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerar.ImageOptions.Image")));
-            this.btnGenerar.Location = new System.Drawing.Point(279, 67);
+            this.btnGenerar.Location = new System.Drawing.Point(280, 67);
             this.btnGenerar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(138, 48);
@@ -8266,9 +8256,13 @@ namespace LOSA.Trazabilidad
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.acordionRuta1,
+            this.accordionControlSeparator1,
             this.acordionRuta2,
+            this.accordionControlSeparator2,
             this.acordionRuta3,
-            this.acordionRuta4});
+            this.accordionControlSeparator3,
+            this.acordionRuta4,
+            this.accordionControlSeparator4});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Rutas de Trazabilidad";
@@ -8329,6 +8323,22 @@ namespace LOSA.Trazabilidad
             // 
             this.timerRuta4.Interval = 3000;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
+            // 
+            // accordionControlSeparator1
+            // 
+            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
+            // accordionControlSeparator3
+            // 
+            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
+            // 
+            // accordionControlSeparator4
+            // 
+            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
             // 
             // frmRutasTrazabilidad
             // 
@@ -9239,5 +9249,9 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdVerDetallePesajes;
         private System.Windows.Forms.Timer timerRuta4;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator1;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
+        private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;
     }
 }
