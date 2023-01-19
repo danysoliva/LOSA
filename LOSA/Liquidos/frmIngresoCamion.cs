@@ -284,10 +284,10 @@ namespace LOSA.Liquidos
             }
 
             if (string.IsNullOrEmpty(txtLote.Text))
-                {
-                    CajaDialogo.Error("Ingrese el lote");
-                    return;
-                }
+            {
+                CajaDialogo.Error("Ingrese el lote");
+                return;
+            }
 
 
             foreach (var item in dsLiquidos_.Camiones_IN)
@@ -335,6 +335,7 @@ namespace LOSA.Liquidos
 
             PuedeContinuar = false;
 
+
             SqlConnection cn;
             SqlCommand cmd;
 
@@ -349,6 +350,7 @@ namespace LOSA.Liquidos
                 string quer = @"sp_updata_numero_ingreso_tables_id";
                 cmd = new SqlCommand(quer, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Transaction = transaction;
                 cmd.ExecuteNonQuery();
             }
             else
