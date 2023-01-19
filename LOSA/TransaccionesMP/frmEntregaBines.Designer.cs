@@ -50,6 +50,7 @@ namespace LOSA.TransaccionesMP
             this.lblMensaje = new System.Windows.Forms.Label();
             this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.panelNotificacion = new System.Windows.Forms.Panel();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -253,6 +254,7 @@ namespace LOSA.TransaccionesMP
             // timerLimpiarMensaje
             // 
             this.timerLimpiarMensaje.Interval = 5500;
+            this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
             // 
             // panelNotificacion
             // 
@@ -265,11 +267,24 @@ namespace LOSA.TransaccionesMP
             this.panelNotificacion.Size = new System.Drawing.Size(758, 71);
             this.panelNotificacion.TabIndex = 127;
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(152, 16);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(409, 37);
+            this.labelControl6.TabIndex = 128;
+            this.labelControl6.Text = "Inventario en Bodega BG001";
+            // 
             // frmEntregaBines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 757);
+            this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.panelNotificacion);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
@@ -325,5 +340,6 @@ namespace LOSA.TransaccionesMP
         private System.Windows.Forms.Label lblMensaje;
         private System.Windows.Forms.Timer timerLimpiarMensaje;
         private System.Windows.Forms.Panel panelNotificacion;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }

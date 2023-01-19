@@ -180,6 +180,7 @@ namespace LOSA.TransaccionesMP
             //}
             #endregion
             int ud_enviar = dp.ValidateNumberInt32(txtPorEnviar.Text);
+            
             if (ud_enviar == 0)
             {
                 if (Solicitado > 0)
@@ -196,15 +197,27 @@ namespace LOSA.TransaccionesMP
             }
             else
             {
-                if (ud_enviar < this.ExistenciaTarimaKg)
+                if (ud_enviar == ExistenciaTarimaUnidades)
                 {
-                    if (kg_enviar + entregado < Solicitado)
+                    //Si entra aqui, no puede subir mas por que no hay mas unidades en la tarima!
+                }
+                else
+                {
+                    if (ud_enviar < this.ExistenciaTarimaKg)
                     {
-                        ud_enviar++;
-                        txtPorEnviar.Text = string.Format("{0:###,##0}", (ud_enviar));
+                        if (kg_enviar + entregado < Solicitado)
+                        {
+                            ud_enviar++;
+                            txtPorEnviar.Text = string.Format("{0:###,##0}", (ud_enviar));
+                        }
                     }
                 }
             }
+
+            //if (ud_enviar == Convert.ToInt32(lblTotalUd_en_tarima.Text))
+            //{
+            //    //SI lo enviado es igual a lo que existe en tarima! que no permita sumar mas
+            //}
 
             CalcularKg(ud_enviar);
             this.ud_enviar = ud_enviar;

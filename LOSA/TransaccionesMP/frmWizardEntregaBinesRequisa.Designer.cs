@@ -266,6 +266,7 @@ namespace LOSA.TransaccionesMP
             // timerLimpiarMensaje
             // 
             this.timerLimpiarMensaje.Interval = 5500;
+            this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
             // 
             // frmWizardEntregaBinesRequisa
             // 

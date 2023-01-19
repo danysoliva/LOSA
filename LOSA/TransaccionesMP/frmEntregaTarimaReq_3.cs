@@ -191,8 +191,32 @@ namespace LOSA.TransaccionesMP
         {
             if (e.KeyCode == Keys.Enter)
             {
-                EntregarTarima();
-                load_tarimas_scan_v2();
+                Tarima tar1 = new Tarima();
+                tar1.RecuperarRegistro_v3(0,txtTarima.Text);
+                
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_true_false_liquidos_especiales", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp", tar1.Id_materiaprima);
+                Boolean isLiquidoEspecial = Convert.ToBoolean(cmd.ExecuteScalar());
+                string mensaje2 = "Esta Materia Prima no se puede entregar por esta Ruta! Utilice la Opcion - Entrega de Bines a PRD";
+                if (isLiquidoEspecial)
+                {
+                    
+                    lblMensaje.Text = mensaje2;
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                    return;
+                    
+                }
+                else
+                {
+                    EntregarTarima();
+                    load_tarimas_scan_v2();
+                }
+                
             }
         }
         //private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion, string codigoSAP, string MP)

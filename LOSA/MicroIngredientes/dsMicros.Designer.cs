@@ -3211,6 +3211,8 @@ namespace LOSA.MicroIngredientes {
             
             private global::System.Data.DataColumn columnlot;
             
+            private global::System.Data.DataColumn columnpt_name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public plan_microsh_reportDataTable() {
@@ -3318,6 +3320,14 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pt_nameColumn {
+                get {
+                    return this.columnpt_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3353,7 +3363,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public plan_microsh_reportRow Addplan_microsh_reportRow(int id_orden_encabezado, decimal total_kg, System.DateTime fecha, int cant_batch, int AMI_ID, int order_id, string order_code, int id_turno, int lot) {
+            public plan_microsh_reportRow Addplan_microsh_reportRow(int id_orden_encabezado, decimal total_kg, System.DateTime fecha, int cant_batch, int AMI_ID, int order_id, string order_code, int id_turno, int lot, string pt_name) {
                 plan_microsh_reportRow rowplan_microsh_reportRow = ((plan_microsh_reportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_orden_encabezado,
@@ -3364,7 +3374,8 @@ namespace LOSA.MicroIngredientes {
                         order_id,
                         order_code,
                         id_turno,
-                        lot};
+                        lot,
+                        pt_name};
                 rowplan_microsh_reportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowplan_microsh_reportRow);
                 return rowplan_microsh_reportRow;
@@ -3396,6 +3407,7 @@ namespace LOSA.MicroIngredientes {
                 this.columnorder_code = base.Columns["order_code"];
                 this.columnid_turno = base.Columns["id_turno"];
                 this.columnlot = base.Columns["lot"];
+                this.columnpt_name = base.Columns["pt_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3419,6 +3431,8 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnid_turno);
                 this.columnlot = new global::System.Data.DataColumn("lot", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlot);
+                this.columnpt_name = new global::System.Data.DataColumn("pt_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpt_name);
                 this.columnlot.Caption = "Lote PT";
             }
             
@@ -5671,6 +5685,8 @@ namespace LOSA.MicroIngredientes {
             
             private global::System.Data.DataColumn columnlote_pt;
             
+            private global::System.Data.DataColumn columnpt_name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_pesajes_individuales_reprintDataTable() {
@@ -5794,6 +5810,14 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pt_nameColumn {
+                get {
+                    return this.columnpt_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5829,7 +5853,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public detalle_pesajes_individuales_reprintRow Adddetalle_pesajes_individuales_reprintRow(int id, int id_orden_encabezado, int id_rm, string Material, decimal pesoxbatch, int batch_plan, decimal Total, int batch_completados, decimal peso_real, int order_id, int lote_pt) {
+            public detalle_pesajes_individuales_reprintRow Adddetalle_pesajes_individuales_reprintRow(int id, int id_orden_encabezado, int id_rm, string Material, decimal pesoxbatch, int batch_plan, decimal Total, int batch_completados, decimal peso_real, int order_id, int lote_pt, string pt_name) {
                 detalle_pesajes_individuales_reprintRow rowdetalle_pesajes_individuales_reprintRow = ((detalle_pesajes_individuales_reprintRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -5842,7 +5866,8 @@ namespace LOSA.MicroIngredientes {
                         batch_completados,
                         peso_real,
                         order_id,
-                        lote_pt};
+                        lote_pt,
+                        pt_name};
                 rowdetalle_pesajes_individuales_reprintRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_pesajes_individuales_reprintRow);
                 return rowdetalle_pesajes_individuales_reprintRow;
@@ -5876,6 +5901,7 @@ namespace LOSA.MicroIngredientes {
                 this.columnpeso_real = base.Columns["peso_real"];
                 this.columnorder_id = base.Columns["order_id"];
                 this.columnlote_pt = base.Columns["lote_pt"];
+                this.columnpt_name = base.Columns["pt_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5903,6 +5929,8 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnorder_id);
                 this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlote_pt);
+                this.columnpt_name = new global::System.Data.DataColumn("pt_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpt_name);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7877,6 +7905,22 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string pt_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableplan_microsh_report.pt_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'pt_name\' de la tabla \'plan_microsh_report\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableplan_microsh_report.pt_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_orden_encabezadoNull() {
                 return this.IsNull(this.tableplan_microsh_report.id_orden_encabezadoColumn);
             }
@@ -7981,6 +8025,18 @@ namespace LOSA.MicroIngredientes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetlotNull() {
                 this[this.tableplan_microsh_report.lotColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispt_nameNull() {
+                return this.IsNull(this.tableplan_microsh_report.pt_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpt_nameNull() {
+                this[this.tableplan_microsh_report.pt_nameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9673,6 +9729,23 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string pt_name {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_pesajes_individuales_reprint.pt_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'pt_name\' de la tabla \'detalle_pesajes_individuales_reprin" +
+                                "t\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_pesajes_individuales_reprint.pt_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabledetalle_pesajes_individuales_reprint.idColumn);
             }
@@ -9801,6 +9874,18 @@ namespace LOSA.MicroIngredientes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setlote_ptNull() {
                 this[this.tabledetalle_pesajes_individuales_reprint.lote_ptColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ispt_nameNull() {
+                return this.IsNull(this.tabledetalle_pesajes_individuales_reprint.pt_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setpt_nameNull() {
+                this[this.tabledetalle_pesajes_individuales_reprint.pt_nameColumn] = global::System.Convert.DBNull;
             }
         }
         

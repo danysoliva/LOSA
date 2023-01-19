@@ -29,8 +29,9 @@ namespace LOSA.Calidad
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInspeccionCalidadPorIngresoLoteMP));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -91,22 +92,22 @@ namespace LOSA.Calidad
             this.hyfishsource = new DevExpress.XtraEditors.HyperLinkEdit();
             this.txtPLantaSenasa = new DevExpress.XtraEditors.TextEdit();
             this.grd_tipo = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource();
+            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_origen = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.paisesBindingSource = new System.Windows.Forms.BindingSource();
+            this.paisesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_pesca = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource();
+            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_origenespecie = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.origenespecieBindingSource = new System.Windows.Forms.BindingSource();
+            this.origenespecieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -234,7 +235,7 @@ namespace LOSA.Calidad
             this.colcproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog();
+            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog(this.components);
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.txtFacturas = new DevExpress.XtraEditors.TextEdit();
@@ -256,7 +257,7 @@ namespace LOSA.Calidad
             this.colNumID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNumOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colud_ingresadas = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombreMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnumtraslado.Properties)).BeginInit();
@@ -355,7 +356,8 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.txtFabricante.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Header_ingresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -1434,9 +1436,9 @@ namespace LOSA.Calidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.grd_logistica.DataMember = "logisticaInformacion";
             this.grd_logistica.DataSource = this.dsMantenimientoC;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.grd_logistica.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.grd_logistica.Location = new System.Drawing.Point(3, 6);
             this.grd_logistica.MainView = this.grdv_logistica;
             this.grd_logistica.Name = "grd_logistica";
@@ -2801,10 +2803,10 @@ namespace LOSA.Calidad
             this.grid_Header_ingresos.DataSource = this.dsMantenimientoC;
             this.grid_Header_ingresos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_Header_ingresos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.grid_Header_ingresos.Location = new System.Drawing.Point(3, 21);
+            this.grid_Header_ingresos.Location = new System.Drawing.Point(2, 20);
             this.grid_Header_ingresos.MainView = this.gridView7;
             this.grid_Header_ingresos.Name = "grid_Header_ingresos";
-            this.grid_Header_ingresos.Size = new System.Drawing.Size(633, 192);
+            this.grid_Header_ingresos.Size = new System.Drawing.Size(622, 188);
             this.grid_Header_ingresos.TabIndex = 54;
             this.grid_Header_ingresos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7});
@@ -2829,7 +2831,9 @@ namespace LOSA.Calidad
             this.colud_ingresadas});
             this.gridView7.GridControl = this.grid_Header_ingresos;
             this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsBehavior.Editable = false;
             this.gridView7.OptionsView.ShowGroupPanel = false;
+            this.gridView7.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView7_RowClick);
             // 
             // colfecha_produccion_materia_prima
             // 
@@ -2839,6 +2843,7 @@ namespace LOSA.Calidad
             this.colfecha_produccion_materia_prima.OptionsColumn.ReadOnly = true;
             this.colfecha_produccion_materia_prima.Visible = true;
             this.colfecha_produccion_materia_prima.VisibleIndex = 2;
+            this.colfecha_produccion_materia_prima.Width = 54;
             // 
             // colfecha_vencimiento
             // 
@@ -2848,6 +2853,7 @@ namespace LOSA.Calidad
             this.colfecha_vencimiento.OptionsColumn.ReadOnly = true;
             this.colfecha_vencimiento.Visible = true;
             this.colfecha_vencimiento.VisibleIndex = 3;
+            this.colfecha_vencimiento.Width = 54;
             // 
             // colfecha_ingreso1
             // 
@@ -2857,6 +2863,7 @@ namespace LOSA.Calidad
             this.colfecha_ingreso1.OptionsColumn.ReadOnly = true;
             this.colfecha_ingreso1.Visible = true;
             this.colfecha_ingreso1.VisibleIndex = 1;
+            this.colfecha_ingreso1.Width = 54;
             // 
             // colpor_vencer
             // 
@@ -2866,6 +2873,7 @@ namespace LOSA.Calidad
             this.colpor_vencer.OptionsColumn.ReadOnly = true;
             this.colpor_vencer.Visible = true;
             this.colpor_vencer.VisibleIndex = 4;
+            this.colpor_vencer.Width = 53;
             // 
             // colnumero_transaccion1
             // 
@@ -2875,6 +2883,7 @@ namespace LOSA.Calidad
             this.colnumero_transaccion1.OptionsColumn.ReadOnly = true;
             this.colnumero_transaccion1.Visible = true;
             this.colnumero_transaccion1.VisibleIndex = 0;
+            this.colnumero_transaccion1.Width = 51;
             // 
             // colCardName1
             // 
@@ -2882,6 +2891,7 @@ namespace LOSA.Calidad
             this.colCardName1.Name = "colCardName1";
             this.colCardName1.Visible = true;
             this.colCardName1.VisibleIndex = 5;
+            this.colCardName1.Width = 58;
             // 
             // colid_proveedor
             // 
@@ -2889,6 +2899,7 @@ namespace LOSA.Calidad
             this.colid_proveedor.Name = "colid_proveedor";
             this.colid_proveedor.Visible = true;
             this.colid_proveedor.VisibleIndex = 6;
+            this.colid_proveedor.Width = 53;
             // 
             // colkg_ingresadas
             // 
@@ -2896,6 +2907,7 @@ namespace LOSA.Calidad
             this.colkg_ingresadas.Name = "colkg_ingresadas";
             this.colkg_ingresadas.Visible = true;
             this.colkg_ingresadas.VisibleIndex = 9;
+            this.colkg_ingresadas.Width = 53;
             // 
             // colNumID1
             // 
@@ -2903,6 +2915,7 @@ namespace LOSA.Calidad
             this.colNumID1.Name = "colNumID1";
             this.colNumID1.Visible = true;
             this.colNumID1.VisibleIndex = 7;
+            this.colNumID1.Width = 53;
             // 
             // colNumOC
             // 
@@ -2910,6 +2923,7 @@ namespace LOSA.Calidad
             this.colNumOC.Name = "colNumOC";
             this.colNumOC.Visible = true;
             this.colNumOC.VisibleIndex = 8;
+            this.colNumOC.Width = 53;
             // 
             // colud_ingresadas
             // 
@@ -2917,16 +2931,16 @@ namespace LOSA.Calidad
             this.colud_ingresadas.Name = "colud_ingresadas";
             this.colud_ingresadas.Visible = true;
             this.colud_ingresadas.VisibleIndex = 10;
+            this.colud_ingresadas.Width = 83;
             // 
-            // groupBox1
+            // groupControl1
             // 
-            this.groupBox1.Controls.Add(this.grid_Header_ingresos);
-            this.groupBox1.Location = new System.Drawing.Point(6, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(639, 216);
-            this.groupBox1.TabIndex = 55;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupControl1.Controls.Add(this.grid_Header_ingresos);
+            this.groupControl1.Location = new System.Drawing.Point(6, 34);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(626, 210);
+            this.groupControl1.TabIndex = 55;
+            this.groupControl1.Text = "Ingresos Por Lote";
             // 
             // frmInspeccionCalidadPorIngresoLoteMP
             // 
@@ -2934,7 +2948,7 @@ namespace LOSA.Calidad
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 787);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.cmdSearchFabricantePrv);
             this.Controls.Add(this.txtFabricante);
@@ -3062,7 +3076,8 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.txtFabricante.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_Header_ingresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3295,6 +3310,6 @@ namespace LOSA.Calidad
         private DevExpress.XtraGrid.Columns.GridColumn colNumID1;
         private DevExpress.XtraGrid.Columns.GridColumn colNumOC;
         private DevExpress.XtraGrid.Columns.GridColumn colud_ingresadas;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

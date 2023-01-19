@@ -27,7 +27,6 @@ namespace LOSA.TransaccionesMP
         decimal cant_necesaria = 0;
 
 
-
         public frmWizardEntregaBinesRequisa(UserLogin pUserLogin, string pbarcode_requisa)
         {
             InitializeComponent();
@@ -81,7 +80,7 @@ namespace LOSA.TransaccionesMP
                 //return;
 
                 lblMensaje.Text = "Ya se entrego la Materia Prima en este Requisa!";
-                lblMensaje.BackColor = Color.White;
+                lblMensaje.BackColor = Color.Red;
                 panelNotificacion.BackColor = Color.Red;
                 timerLimpiarMensaje.Enabled = true;
                 timerLimpiarMensaje.Start();
@@ -89,7 +88,7 @@ namespace LOSA.TransaccionesMP
             else
             {
                 cant_necesaria = row.solicitada - row.entregada;
-
+                bool Guardar = false;
                 frmSeleccionTarimaMP frm = new frmSeleccionTarimaMP(row.id_materia_prima, cant_necesaria);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -108,16 +107,37 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@user_id", UsuarioLogeadol.Id);
                         cmd.Parameters.AddWithValue("@codigo_barra", frm.codigo_barra);
                         cmd.ExecuteNonQuery();
+                        conn.Close();
+                        Guardar = true;
+                        
                     }
                     catch (Exception ex)
                     {
                         CajaDialogo.Error(ex.Message);
                     }
+
+                    if (Guardar == true)
+                    {
+                        lblMensaje.Text = "Transaccion Completada!";
+                        lblMensaje.BackColor = Color.Green;
+                        panelNotificacion.BackColor = Color.Green;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                    }
+
                     Load_Detalle(id_requisa);
                 }
 
             }
 
+        }
+
+        private void timerLimpiarMensaje_Tick(object sender, EventArgs e)
+        {
+            timerLimpiarMensaje.Stop();
+            timerLimpiarMensaje.Enabled = false;
+            panelNotificacion.BackColor = Color.White;
+            lblMensaje.Text = "";
         }
     }
 }
