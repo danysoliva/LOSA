@@ -124,8 +124,8 @@ namespace LOSA.Reportes
                 txtplaca.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
                 txtransporte.Text = dr.IsDBNull(10) ? "" : dr.GetString(10).ToString();
                 txtconductor.Text = dr.IsDBNull(11) ? "" : dr.GetString(11);
-                txtoc.Text = dr.IsDBNull(12) ? "" : dr.GetInt32(12).ToString();
-                //txtsap.Text = dr.IsDBNull(12) ? "" : dr.GetString(12).ToString();
+                txtoc.Text = dr.IsDBNull(12) ? "" : dr.GetString(12).ToString();
+                txtsap.Text = dr.IsDBNull(12) ? "" : dr.GetString(12).ToString();
                 xrLabel5.Text = dr.IsDBNull(13) ? "" : dr.GetString(13).ToString();
             }
             dr.Close();

@@ -733,6 +733,7 @@ namespace LOSA.Liquidos
                 txtAltanque.Text = ParaEltanque.ToString();
                 txtEnTarimas.Text = ParaBines.ToString();
                 txtTotalIngreso.Text = SumaTotal.ToString();
+                txtDisponibleConIngresoActual.Text = Convert.ToString(Convert.ToDecimal(txtcapacidad.Text) - (Convert.ToDecimal(txtEspacioOcupado.Text) + Convert.ToDecimal(txtAltanque.Text)));
             }
 
             try
