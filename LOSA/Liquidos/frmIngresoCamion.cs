@@ -376,14 +376,14 @@ namespace LOSA.Liquidos
                 sumar_Kg = sumar_Kg + row.PesoProd;
 
             }
-            string query = @"[dbo].[sp_insert_ingreso_mp_h_liquidos]";
+            string query = @"[dbo].[sp_insert_ingreso_mp_h_liquidos_mp_lote]";
             if (Istrans)
             {
 
             }
             else
             {
-                query = "sp_insert_ingreso_mp_h_liquidos_v2";
+                query = "[sp_insert_ingreso_mp_h_liquidos_compra_lote]";
             }
 
             SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
@@ -401,6 +401,8 @@ namespace LOSA.Liquidos
             {
                 Comnd.Parameters.AddWithValue("@Id_Externo", id_lote_externo);
             }
+            Comnd.Parameters.AddWithValue("@fecha_produccion", dtFechaProduccion.EditValue);
+            Comnd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
 
             int Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
 
@@ -420,7 +422,7 @@ namespace LOSA.Liquidos
                     cmd2.Transaction = transaction;
 
                     cmd2.CommandType = CommandType.StoredProcedure;
-                    cmd2.Parameters.AddWithValue("@id_boleta", row.NBoleta);
+                    cmd2.Parameters.AddWithValue("@id_boleta", row.id);
                     cmd2.Parameters.AddWithValue("@entrada", row.PesoProd);
                     cmd2.Parameters.AddWithValue("@item_code", row.itemcode);
                     cmd2.Parameters.AddWithValue("@lote", txtLote.Text);

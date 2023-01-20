@@ -24,14 +24,17 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
-              <xs:element name="id_ingreso" msprop:Generator_ColumnVarNameInTable="columnid_ingreso" msprop:Generator_ColumnPropNameInRow="id_ingreso" msprop:Generator_ColumnPropNameInTable="id_ingresoColumn" msprop:Generator_UserColumnName="id_ingreso" type="xs:string" minOccurs="0" />
+              <xs:element name="id_ingreso" msprop:Generator_ColumnVarNameInTable="columnid_ingreso" msprop:Generator_ColumnPropNameInRow="id_ingreso" msprop:Generator_ColumnPropNameInTable="id_ingresoColumn" msprop:Generator_UserColumnName="id_ingreso" type="xs:int" minOccurs="0" />
               <xs:element name="kg" msprop:Generator_ColumnVarNameInTable="columnkg" msprop:Generator_ColumnPropNameInRow="kg" msprop:Generator_ColumnPropNameInTable="kgColumn" msprop:Generator_UserColumnName="kg" type="xs:decimal" minOccurs="0" />
-              <xs:element name="id_serie" msprop:Generator_ColumnVarNameInTable="columnid_serie" msprop:Generator_ColumnPropNameInRow="id_serie" msprop:Generator_ColumnPropNameInTable="id_serieColumn" msprop:Generator_UserColumnName="id_serie" type="xs:string" minOccurs="0" />
+              <xs:element name="id_serie" msprop:Generator_ColumnVarNameInTable="columnid_serie" msprop:Generator_ColumnPropNameInRow="id_serie" msprop:Generator_ColumnPropNameInTable="id_serieColumn" msprop:Generator_UserColumnName="id_serie" type="xs:int" minOccurs="0" />
               <xs:element name="proveedor" msprop:Generator_ColumnVarNameInTable="columnproveedor" msprop:Generator_ColumnPropNameInRow="proveedor" msprop:Generator_ColumnPropNameInTable="proveedorColumn" msprop:Generator_UserColumnName="proveedor" type="xs:string" minOccurs="0" />
               <xs:element name="codigo_prov" msprop:Generator_ColumnVarNameInTable="columncodigo_prov" msprop:Generator_ColumnPropNameInRow="codigo_prov" msprop:Generator_ColumnPropNameInTable="codigo_provColumn" msprop:Generator_UserColumnName="codigo_prov" type="xs:string" minOccurs="0" />
               <xs:element name="codigo_mp" msprop:Generator_ColumnVarNameInTable="columncodigo_mp" msprop:Generator_ColumnPropNameInRow="codigo_mp" msprop:Generator_ColumnPropNameInTable="codigo_mpColumn" msprop:Generator_UserColumnName="codigo_mp" type="xs:string" minOccurs="0" />
               <xs:element name="mp" msprop:Generator_ColumnVarNameInTable="columnmp" msprop:Generator_ColumnPropNameInRow="mp" msprop:Generator_ColumnPropNameInTable="mpColumn" msprop:Generator_UserColumnName="mp" type="xs:string" minOccurs="0" />
               <xs:element name="id_tanque" msprop:Generator_ColumnVarNameInTable="columnid_tanque" msprop:Generator_ColumnPropNameInRow="id_tanque" msprop:Generator_ColumnPropNameInTable="id_tanqueColumn" msprop:Generator_UserColumnName="id_tanque" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_ingreso" msprop:Generator_ColumnVarNameInTable="columnfecha_ingreso" msprop:Generator_ColumnPropNameInRow="fecha_ingreso" msprop:Generator_ColumnPropNameInTable="fecha_ingresoColumn" msprop:Generator_UserColumnName="fecha_ingreso" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -1,5 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -116,6 +118,24 @@ namespace LOSA.Liquidos
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             LoadIngresosLiquidos();
+        }
+
+        private void repostPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_boleta.FocusedView;
+                var row = (dsLiquidos_.LOSA_Ingreso_liquidosRow)gridview.GetFocusedDataRow();
+
+                Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id_ingreso, row.codigo_mp, 1, row.id_mp);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(report);
+                printReport.ShowPreview();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }
