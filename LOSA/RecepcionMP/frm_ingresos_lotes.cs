@@ -389,15 +389,15 @@ namespace LOSA.RecepcionMP
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
-            TimeSpan diasaprox = dp.Now() - row.fecha_ingreso;
+            //TimeSpan diasaprox = dp.Now() - row.fecha_ingreso;
 
-            int Dias = Convert.ToInt32(diasaprox.Days);
+            //int Dias = Convert.ToInt32(diasaprox.Days);
 
-            if (Dias > 3)//Si es mayor que 3, la tarima lleve mas de dos dias en la bodega.
-            {
-                CajaDialogo.Error("No puede editar tarimas que tengan mas de dos dias de ingreso.");
-                return;
-            }
+            //if (Dias > 3)//Si es mayor que 3, la tarima lleve mas de dos dias en la bodega.
+            //{
+            //    CajaDialogo.Error("No puede editar tarimas que tengan mas de dos dias de ingreso.");
+            //    return;
+            //}
 
             string mensaje = "";
             bool Error = false;

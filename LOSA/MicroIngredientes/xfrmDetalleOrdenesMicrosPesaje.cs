@@ -869,40 +869,60 @@ namespace LOSA.MicroIngredientes
 
         private void repost_reprint_direct_individual_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            try
-            {
-                string pesaje = " ";
-                var gridView = (GridView)grdPesajeIndAll.FocusedView;
-                var row = (dsMicros.detalle_pesajes_individuales_reprintRow)gridView.GetFocusedDataRow();
-                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.id_orden_encabezado, row.id_rm, row.batch_completados);
-                rpt.ShowPrintMarginsWarning = false;
-                rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                //rpt.ShowPreview();
-                rpt.Print();
-            }
-            catch (Exception ex)
-            {
+            var gridView = (GridView)grdPesajeIndAll.FocusedView;
+            var row = (dsMicros.detalle_pesajes_individuales_reprintRow)gridView.GetFocusedDataRow();
 
-                CajaDialogo.Error(ex.Message);
+            if (row.batch_completados >= row.batch_plan)
+            {
+                try
+                {
+                    string pesaje = " ";
+
+                    xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.id_orden_encabezado, row.id_rm, row.batch_completados);
+                    rpt.ShowPrintMarginsWarning = false;
+                    rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                    //rpt.ShowPreview();
+                    rpt.Print();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
+            else
+            {
+                CajaDialogo.Error("No se puede imprimir por que no se ha completado el pesaje de Batch");
+                return;
+            }
+
+           
         }
 
         private void repost_reprint_vista_previa_individual_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            try
-            {
-                string pesaje = " ";
-                var gridView = (GridView)grdPesajeIndAll.FocusedView;
-                var row = (dsMicros.detalle_pesajes_individuales_reprintRow)gridView.GetFocusedDataRow();
-                xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.id_orden_encabezado, row.id_rm, row.batch_completados);
-                rpt.ShowPrintMarginsWarning = false;
-                rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                rpt.ShowPreview();
-            }
-            catch (Exception ex)
-            {
+            var gridView = (GridView)grdPesajeIndAll.FocusedView;
+            var row = (dsMicros.detalle_pesajes_individuales_reprintRow)gridView.GetFocusedDataRow();
 
-                CajaDialogo.Error(ex.Message);
+            if (row.batch_completados >= row.batch_plan)
+            {
+                try
+                {
+                    string pesaje = " ";
+                    xrptAlimentacionMicros rpt = new xrptAlimentacionMicros(row.id_orden_encabezado, row.id_rm, row.batch_completados);
+                    rpt.ShowPrintMarginsWarning = false;
+                    rpt.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                    rpt.ShowPreview();
+                }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+            else
+            {
+                CajaDialogo.Error("No se puede imprimir por que no se ha completado el pesaje de Batch");
+                return;
             }
         }
     }
