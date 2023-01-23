@@ -452,7 +452,7 @@ namespace LOSA.MicroIngredientes
                 if (row != null)
                 {
 
-                    if (row.Batch_Completados==row.Batch_Plan)
+                    if (row.Batch_Completados >= row.Batch_Plan)
                     {
                         CajaDialogo.Error("YA HA COMPLETADO ESTE PLAN");
                         return;
