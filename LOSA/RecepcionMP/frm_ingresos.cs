@@ -276,11 +276,11 @@ namespace LOSA.RecepcionMP
                         Load_Info();
                     }
                 }
-                if (row.tipo_ingreso == 4)
-                {
-                    CajaDialogo.Error("Debe ir al modulo de Ingreso de Tanques para hacer modificaciones al registro de ingresos.");
-                    return;
-                }
+                //if (row.tipo_ingreso == 4)
+                //{
+                //    CajaDialogo.Error("Debe ir al modulo de Ingreso de Tanques para hacer modificaciones al registro de ingresos.");
+                //    return;
+                //}
                 else
                 {
                     CajaDialogo.Error("Debe ir al modulo de granel para hacer modificaciones al registro de ingresos.");

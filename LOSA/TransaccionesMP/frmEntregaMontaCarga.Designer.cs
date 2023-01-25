@@ -142,6 +142,7 @@
             this.btnEntregaBines.Size = new System.Drawing.Size(274, 67);
             this.btnEntregaBines.TabIndex = 23;
             this.btnEntregaBines.Text = "Entrega de Bines a PRD";
+            this.btnEntregaBines.Visible = false;
             this.btnEntregaBines.Click += new System.EventHandler(this.btnEntregaBines_Click);
             // 
             // frmEntregaMontaCarga

@@ -121,7 +121,7 @@ namespace LOSA.TransaccionesMP
             this.colid_lote.OptionsColumn.AllowEdit = false;
             this.colid_lote.Visible = true;
             this.colid_lote.VisibleIndex = 0;
-            this.colid_lote.Width = 130;
+            this.colid_lote.Width = 122;
             // 
             // collote
             // 
@@ -130,8 +130,8 @@ namespace LOSA.TransaccionesMP
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 1;
-            this.collote.Width = 144;
+            this.collote.VisibleIndex = 2;
+            this.collote.Width = 162;
             // 
             // colnumero_ingreso
             // 
@@ -139,7 +139,9 @@ namespace LOSA.TransaccionesMP
             this.colnumero_ingreso.FieldName = "numero_ingreso";
             this.colnumero_ingreso.Name = "colnumero_ingreso";
             this.colnumero_ingreso.OptionsColumn.AllowEdit = false;
-            this.colnumero_ingreso.Width = 144;
+            this.colnumero_ingreso.Visible = true;
+            this.colnumero_ingreso.VisibleIndex = 1;
+            this.colnumero_ingreso.Width = 134;
             // 
             // colid_unidadmedida
             // 
@@ -162,8 +164,8 @@ namespace LOSA.TransaccionesMP
             this.gridColumn1.ColumnEdit = this.btnSeleccionar;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 150;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 153;
             // 
             // btnSeleccionar
             // 
@@ -182,8 +184,8 @@ namespace LOSA.TransaccionesMP
             this.colunidad_medida.Name = "colunidad_medida";
             this.colunidad_medida.OptionsColumn.AllowEdit = false;
             this.colunidad_medida.Visible = true;
-            this.colunidad_medida.VisibleIndex = 2;
-            this.colunidad_medida.Width = 144;
+            this.colunidad_medida.VisibleIndex = 3;
+            this.colunidad_medida.Width = 141;
             // 
             // btnAtras
             // 
