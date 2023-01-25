@@ -749,6 +749,7 @@ namespace LOSA.Liquidos
             // chnuevoIngreso
             // 
             this.chnuevoIngreso.EditValue = true;
+            this.chnuevoIngreso.Enabled = false;
             this.chnuevoIngreso.Location = new System.Drawing.Point(626, 65);
             this.chnuevoIngreso.Name = "chnuevoIngreso";
             this.chnuevoIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

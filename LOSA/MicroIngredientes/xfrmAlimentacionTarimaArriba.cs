@@ -17,7 +17,7 @@ namespace LOSA.MicroIngredientes
     public partial class xfrmAlimentacionTarimaArriba : DevExpress.XtraEditors.XtraForm
     {
         long order_id;
-
+        long order_id_first_mix;
         public xfrmAlimentacionTarimaArriba()
         {
             InitializeComponent();
@@ -66,6 +66,7 @@ namespace LOSA.MicroIngredientes
                             txtProducto1.BackColor = Color.FromArgb(153, 255, 153);
 
                             order_id = dr.GetInt32(5);
+                            order_id_first_mix = dr.GetInt32(5);
                         }
 
                         if (dr.GetInt32(4) == 0 && dr.GetInt32(0) == 1)
@@ -141,7 +142,7 @@ namespace LOSA.MicroIngredientes
                     dsMicros.plan_microsh_report_AlimentacionTarima.Clear();
                     SqlDataAdapter da = new SqlDataAdapter("dbo.[sp_get_detalle_orden_pesaje_micros_interfacev2_Aliementacion_5toNivel]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id;
+                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id_first_mix;
                     da.Fill(dsMicros.plan_microsh_report_AlimentacionTarima);
                     cnx.Close();
 
@@ -164,7 +165,7 @@ namespace LOSA.MicroIngredientes
                     dsMicros.resumen_pesaje_individual_pendiente.Clear();
                     SqlDataAdapter da = new SqlDataAdapter("dbo.[sp_get_detalle_orden_pesaje_micros_individualV2]", cnx);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id;
+                    da.SelectCommand.Parameters.AddWithValue("@orden_id", SqlDbType.Int).Value = order_id_first_mix;
                     da.Fill(dsMicros.resumen_pesaje_individual_pendiente);
                     cnx.Close();
 
@@ -355,6 +356,11 @@ namespace LOSA.MicroIngredientes
                             CajaDialogo.Error("NO HAY UNA ORDEN ACTIVA");
                             return;
                         }
+                        //Validar si ya se adiciono todo!
+                        if (true)
+                        {
+
+                        }
 
                         //if (alimentacionTolva.RecuperaRegistro(Convert.ToInt32(teCodBarra.Text), order_id))
                         if(frm.ShowDialog() == DialogResult.OK)
@@ -363,17 +369,18 @@ namespace LOSA.MicroIngredientes
                             {
                                 cnx.Open();
 
-                                SqlCommand cmd = new SqlCommand("dbo.[sp_insert_adicionMezclado_acumularBatch_v2]", cnx);
+                                SqlCommand cmd = new SqlCommand("sp_insert_adicionMezclado_acumularBatch_v2", cnx);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@codigo_barra_pesaje_individual", alimentacionTolva.CodigoBarra);
 
                                 //batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
                                 tipo_pesaje = Convert.ToInt32(cmd.ExecuteScalar());
+                                //batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
                                 cnx.Close();
                             }
 
 
-                            
+
                             //if (batchCompletados == true)
                             //{
                             //    CajaDialogo.Error("NO SE PUEDE ADICIONAR MAS BATCH");

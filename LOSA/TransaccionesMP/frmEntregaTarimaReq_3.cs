@@ -952,21 +952,21 @@ namespace LOSA.TransaccionesMP
 
         private void btnEntregaBinesRequissa_Click(object sender, EventArgs e)
         {
-            if (txtRequisicion.Text != "")
-            {
-                if (txtRequisicion.Text.Length >= 12)
-                {
-                    string barcode_req = txtRequisicion.Text.Trim();
-                    frmWizardEntregaBinesRequisa frm = new frmWizardEntregaBinesRequisa(usuarioLogueado, barcode_req);
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-                        load_tarimas_scan();
-                        load_bines_disponibles();
-                        txtRequisicion.Text = "";
-                        txtRequisicion.Focus();
-                    }
-                }
-            }
+            //if (txtRequisicion.Text != "")
+            //{
+            //    if (txtRequisicion.Text.Length >= 12)
+            //    {
+            //        string barcode_req = txtRequisicion.Text.Trim();
+            //        frmWizardEntregaBinesRequisa frm = new frmWizardEntregaBinesRequisa(usuarioLogueado, barcode_req);
+            //        if (frm.ShowDialog() == DialogResult.OK)
+            //        {
+            //            load_tarimas_scan();
+            //            load_bines_disponibles();
+            //            txtRequisicion.Text = "";
+            //            txtRequisicion.Focus();
+            //        }
+            //    }
+            //}
         }
     }
 }

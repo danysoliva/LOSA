@@ -247,10 +247,10 @@
             // txt_barcode
             // 
             this.txt_barcode.AutoModule = true;
-            this.txt_barcode.LocationFloat = new DevExpress.Utils.PointFloat(1.999965F, 76.49537F);
+            this.txt_barcode.LocationFloat = new DevExpress.Utils.PointFloat(1.999919F, 76.49536F);
             this.txt_barcode.Name = "txt_barcode";
             this.txt_barcode.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.txt_barcode.SizeF = new System.Drawing.SizeF(250.1436F, 75.00001F);
+            this.txt_barcode.SizeF = new System.Drawing.SizeF(270.9769F, 93.66907F);
             this.txt_barcode.StylePriority.UseTextAlignment = false;
             this.txt_barcode.Symbology = code93Generator1;
             this.txt_barcode.Text = "PN-PI";
@@ -423,7 +423,7 @@
             // 
             this.txtproducto.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.txtproducto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtproducto.LocationFloat = new DevExpress.Utils.PointFloat(121.1665F, 159.4954F);
+            this.txtproducto.LocationFloat = new DevExpress.Utils.PointFloat(121.1665F, 170.1644F);
             this.txtproducto.Multiline = true;
             this.txtproducto.Name = "txtproducto";
             this.txtproducto.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -437,7 +437,7 @@
             // 
             this.xrLabel1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(1.999728F, 159.4954F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(1.999728F, 170.1644F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);

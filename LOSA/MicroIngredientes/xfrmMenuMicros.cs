@@ -17,6 +17,7 @@ namespace LOSA.MicroIngredientes
     public partial class xfrmMenuMicros : DevExpress.XtraEditors.XtraForm
     {
         UserLogin UsuarioLogeado;
+        
         public xfrmMenuMicros(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();

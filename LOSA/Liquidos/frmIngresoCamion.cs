@@ -376,14 +376,14 @@ namespace LOSA.Liquidos
                 sumar_Kg = sumar_Kg + row.PesoProd;
 
             }
-            string query = @"[dbo].[sp_insert_ingreso_mp_h_liquidos_mp_lote]";
+            string query = @"[dbo].[sp_insert_ingreso_mp_h_liquidos_mp_loteV2]";
             if (Istrans)
             {
 
             }
             else
             {
-                query = "[sp_insert_ingreso_mp_h_liquidos_compra_lote]";
+                query = "[sp_insert_ingreso_mp_h_liquidos_compra_loteV2]";
             }
 
             SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
@@ -396,6 +396,11 @@ namespace LOSA.Liquidos
             Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
             Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
             Comnd.Parameters.AddWithValue("@count_trailetas", dsLiquidos_.Camiones_IN.Count);
+            foreach (dsLiquidos_.Camiones_INRow item in dsLiquidos_.Camiones_IN.Rows)
+            {
+                Comnd.Parameters.AddWithValue("@cardcode", item.cardcode);
+                Comnd.Parameters.AddWithValue("@cardname", item.cardname);
+            }
 
             if (!Istrans)
             {
