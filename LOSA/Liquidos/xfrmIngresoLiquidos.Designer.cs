@@ -42,6 +42,9 @@ namespace LOSA.Liquidos
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -71,7 +74,7 @@ namespace LOSA.Liquidos
             this.btnTanque1.Appearance.Options.UseBackColor = true;
             this.btnTanque1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTanque1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTanque1.ImageOptions.SvgImage")));
-            this.btnTanque1.Location = new System.Drawing.Point(83, 115);
+            this.btnTanque1.Location = new System.Drawing.Point(83, 159);
             this.btnTanque1.Name = "btnTanque1";
             this.btnTanque1.Size = new System.Drawing.Size(144, 37);
             this.btnTanque1.TabIndex = 35;
@@ -86,7 +89,7 @@ namespace LOSA.Liquidos
             this.lblMP1.Appearance.Options.UseTextOptions = true;
             this.lblMP1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP1.Location = new System.Drawing.Point(83, 318);
+            this.lblMP1.Location = new System.Drawing.Point(83, 351);
             this.lblMP1.Name = "lblMP1";
             this.lblMP1.Size = new System.Drawing.Size(144, 23);
             this.lblMP1.TabIndex = 41;
@@ -100,7 +103,7 @@ namespace LOSA.Liquidos
             this.lblMP2.Appearance.Options.UseTextOptions = true;
             this.lblMP2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP2.Location = new System.Drawing.Point(294, 318);
+            this.lblMP2.Location = new System.Drawing.Point(294, 351);
             this.lblMP2.Name = "lblMP2";
             this.lblMP2.Size = new System.Drawing.Size(140, 23);
             this.lblMP2.TabIndex = 42;
@@ -114,7 +117,7 @@ namespace LOSA.Liquidos
             this.lblMP3.Appearance.Options.UseTextOptions = true;
             this.lblMP3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP3.Location = new System.Drawing.Point(505, 318);
+            this.lblMP3.Location = new System.Drawing.Point(505, 351);
             this.lblMP3.Name = "lblMP3";
             this.lblMP3.Size = new System.Drawing.Size(144, 23);
             this.lblMP3.TabIndex = 46;
@@ -127,7 +130,7 @@ namespace LOSA.Liquidos
             this.btnTanque3.Appearance.Options.UseBackColor = true;
             this.btnTanque3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTanque3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTanque3.ImageOptions.SvgImage")));
-            this.btnTanque3.Location = new System.Drawing.Point(505, 115);
+            this.btnTanque3.Location = new System.Drawing.Point(505, 159);
             this.btnTanque3.Name = "btnTanque3";
             this.btnTanque3.Size = new System.Drawing.Size(144, 37);
             this.btnTanque3.TabIndex = 50;
@@ -141,7 +144,7 @@ namespace LOSA.Liquidos
             this.btnTanque2.Appearance.Options.UseBackColor = true;
             this.btnTanque2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTanque2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTanque2.ImageOptions.SvgImage")));
-            this.btnTanque2.Location = new System.Drawing.Point(294, 115);
+            this.btnTanque2.Location = new System.Drawing.Point(294, 159);
             this.btnTanque2.Name = "btnTanque2";
             this.btnTanque2.Size = new System.Drawing.Size(144, 37);
             this.btnTanque2.TabIndex = 51;
@@ -179,7 +182,7 @@ namespace LOSA.Liquidos
             // pictureEdit6
             // 
             this.pictureEdit6.EditValue = global::LOSA.Properties.Resources.CCT_2000C_SQ_800x800;
-            this.pictureEdit6.Location = new System.Drawing.Point(505, 158);
+            this.pictureEdit6.Location = new System.Drawing.Point(505, 202);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit6.Properties.Appearance.Options.UseBackColor = true;
@@ -192,7 +195,7 @@ namespace LOSA.Liquidos
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = global::LOSA.Properties.Resources.CCT_2000C_SQ_800x800;
-            this.pictureEdit2.Location = new System.Drawing.Point(294, 158);
+            this.pictureEdit2.Location = new System.Drawing.Point(294, 202);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
@@ -205,7 +208,7 @@ namespace LOSA.Liquidos
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = global::LOSA.Properties.Resources.CCT_2000C_SQ_800x800;
-            this.pictureEdit1.Location = new System.Drawing.Point(83, 157);
+            this.pictureEdit1.Location = new System.Drawing.Point(83, 201);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
@@ -216,11 +219,44 @@ namespace LOSA.Liquidos
             this.pictureEdit1.Size = new System.Drawing.Size(144, 143);
             this.pictureEdit1.TabIndex = 29;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(105, 112);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(96, 25);
+            this.labelControl2.TabIndex = 99;
+            this.labelControl2.Text = "Tanque 1";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(319, 112);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(96, 25);
+            this.labelControl3.TabIndex = 100;
+            this.labelControl3.Text = "Tanque 2";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(531, 112);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(96, 25);
+            this.labelControl4.TabIndex = 101;
+            this.labelControl4.Text = "Tanque 3";
+            // 
             // xfrmIngresoLiquidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 494);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnTanque2);
@@ -260,5 +296,8 @@ namespace LOSA.Liquidos
         private DevExpress.XtraEditors.SimpleButton btnTanque2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
     }
 }

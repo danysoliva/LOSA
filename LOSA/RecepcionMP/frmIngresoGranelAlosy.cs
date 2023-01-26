@@ -365,7 +365,7 @@ namespace LOSA.RecepcionMP
                     if (Istraslado)
                     {
                         cmd = cnx.CreateCommand();
-                        cmd.CommandText = "sp_insert_ingreso_granel-v3";
+                        cmd.CommandText = "sp_insert_ingreso_granel-v4";
                         cmd.Connection = cnx;
                         cmd.Transaction = transaction;
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -376,13 +376,15 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
                         cmd.Parameters.AddWithValue("@id_traslado", id_externo_ingreso);
+                        cmd.Parameters.AddWithValue("@fecha_prod", dtFechaProduccion.EditValue);
+                        cmd.Parameters.AddWithValue("@fecha_venc", dtFechaVencimiento.EditValue);
 
                         Id_lote_ALOSY = Convert.ToInt32(cmd.ExecuteScalar());
                     }
                     else
                     {
                         cmd = cnx.CreateCommand();
-                        cmd.CommandText = "sp_insert_ingreso_granel";
+                        cmd.CommandText = "sp_insert_ingreso_granel_directo";
                         cmd.Connection = cnx;
                         cmd.Transaction = transaction;
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -392,6 +394,8 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                         cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+                        cmd.Parameters.AddWithValue("@fecha_prod", dtFechaProduccion.EditValue);
+                        cmd.Parameters.AddWithValue("@fecha_venc", dtFechaVencimiento.EditValue);
 
                         Id_lote_ALOSY = Convert.ToInt32(cmd.ExecuteScalar());
                     }
@@ -399,7 +403,7 @@ namespace LOSA.RecepcionMP
                 else//Ingreso existente
                 {
                     cmd = cnx.CreateCommand();
-                    cmd.CommandText = "sp_validar_si_ya_existe_este_ingreso";
+                    cmd.CommandText = "sp_validar_si_ya_existe_este_ingresoV2";
                     cmd.Connection = cnx;
                     cmd.Transaction = transaction;
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -409,6 +413,8 @@ namespace LOSA.RecepcionMP
                     cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                     cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
                     cmd.Parameters.AddWithValue("@count_trailetas", dsRecepcionMPx1.granel.Count);
+                    cmd.Parameters.AddWithValue("@fecha_prod", dtFechaProduccion.EditValue);
+                    cmd.Parameters.AddWithValue("@fecha_venc", dtFechaVencimiento.EditValue);
                     Id_lote_ALOSY = Convert.ToInt32(cmd.ExecuteScalar());
                 }
 
@@ -535,26 +541,26 @@ namespace LOSA.RecepcionMP
                     //cn = new SqlConnection(dp.ConnectionStringLOSA);
                     //cn.Open();
 
-                        //string SQL = @"sp_set_insert_tarimas_graneles_v4";
-                        cmd = cnx.CreateCommand();
-                        cmd.CommandText = "sp_set_insert_tarimas_graneles_v4";
-                        cmd.Connection = cnx;
-                        cmd.Transaction = transaction;
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
-                        cmd.Parameters.AddWithValue("@entrada", row.PesoProd);
-                        cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
-                        cmd.Parameters.AddWithValue("@lote", txtLote.Text);
-                        cmd.Parameters.AddWithValue("@id_lote", IdLoteSelected);
-                        cmd.Parameters.AddWithValue("@id", row.id);
-                        cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
-                        cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
-                        cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
-                        cmd.Parameters.AddWithValue("@id_lote_alosy", Id_lote_ALOSY);
+                    //string SQL = @"sp_set_insert_tarimas_graneles_v4";
+                    cmd = cnx.CreateCommand();
+                    cmd.CommandText = "sp_set_insert_tarimas_graneles_v4";
+                    cmd.Connection = cnx;
+                    cmd.Transaction = transaction;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
+                    cmd.Parameters.AddWithValue("@entrada", row.PesoProd);
+                    cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
+                    cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                    cmd.Parameters.AddWithValue("@id_lote", IdLoteSelected);
+                    cmd.Parameters.AddWithValue("@id", row.id);
+                    cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
+                    cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
+                    cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
+                    cmd.Parameters.AddWithValue("@id_lote_alosy", Id_lote_ALOSY);
 
-                        cmd.ExecuteNonQuery();
-                        Guardo = true;
-                        //cn.Close();
+                    cmd.ExecuteNonQuery();
+                    Guardo = true;
+                    //cn.Close();
                     
                 }
 

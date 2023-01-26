@@ -284,10 +284,10 @@ namespace LOSA.Liquidos
             }
 
             if (string.IsNullOrEmpty(txtLote.Text))
-                {
-                    CajaDialogo.Error("Ingrese el lote");
-                    return;
-                }
+            {
+                CajaDialogo.Error("Ingrese el lote");
+                return;
+            }
 
 
             foreach (var item in dsLiquidos_.Camiones_IN)
@@ -335,6 +335,7 @@ namespace LOSA.Liquidos
 
             PuedeContinuar = false;
 
+
             SqlConnection cn;
             SqlCommand cmd;
 
@@ -349,6 +350,7 @@ namespace LOSA.Liquidos
                 string quer = @"sp_updata_numero_ingreso_tables_id";
                 cmd = new SqlCommand(quer, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Transaction = transaction;
                 cmd.ExecuteNonQuery();
             }
             else
@@ -374,14 +376,14 @@ namespace LOSA.Liquidos
                 sumar_Kg = sumar_Kg + row.PesoProd;
 
             }
-            string query = @"[dbo].[sp_insert_ingreso_mp_h_liquidos]";
+            string query = @"[dbo].[sp_insert_ingreso_mp_h_liquidos_mp_loteV2]";
             if (Istrans)
             {
 
             }
             else
             {
-                query = "sp_insert_ingreso_mp_h_liquidos_v2";
+                query = "[sp_insert_ingreso_mp_h_liquidos_compra_loteV2]";
             }
 
             SqlCommand Comnd = new SqlCommand(query, transaction.Connection);
@@ -394,11 +396,18 @@ namespace LOSA.Liquidos
             Comnd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
             Comnd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
             Comnd.Parameters.AddWithValue("@count_trailetas", dsLiquidos_.Camiones_IN.Count);
+            foreach (dsLiquidos_.Camiones_INRow item in dsLiquidos_.Camiones_IN.Rows)
+            {
+                Comnd.Parameters.AddWithValue("@cardcode", item.cardcode);
+                Comnd.Parameters.AddWithValue("@cardname", item.cardname);
+            }
 
             if (!Istrans)
             {
                 Comnd.Parameters.AddWithValue("@Id_Externo", id_lote_externo);
             }
+            Comnd.Parameters.AddWithValue("@fecha_produccion", dtFechaProduccion.EditValue);
+            Comnd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
 
             int Id_lote_generado = Convert.ToInt32(Comnd.ExecuteScalar());
 
@@ -418,7 +427,7 @@ namespace LOSA.Liquidos
                     cmd2.Transaction = transaction;
 
                     cmd2.CommandType = CommandType.StoredProcedure;
-                    cmd2.Parameters.AddWithValue("@id_boleta", row.NBoleta);
+                    cmd2.Parameters.AddWithValue("@id_boleta", row.id);
                     cmd2.Parameters.AddWithValue("@entrada", row.PesoProd);
                     cmd2.Parameters.AddWithValue("@item_code", row.itemcode);
                     cmd2.Parameters.AddWithValue("@lote", txtLote.Text);
@@ -729,6 +738,7 @@ namespace LOSA.Liquidos
                 txtAltanque.Text = ParaEltanque.ToString();
                 txtEnTarimas.Text = ParaBines.ToString();
                 txtTotalIngreso.Text = SumaTotal.ToString();
+                txtDisponibleConIngresoActual.Text = Convert.ToString(Convert.ToDecimal(txtcapacidad.Text) - (Convert.ToDecimal(txtEspacioOcupado.Text) + Convert.ToDecimal(txtAltanque.Text)));
             }
 
             try

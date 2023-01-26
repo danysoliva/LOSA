@@ -191,31 +191,31 @@ namespace LOSA.TransaccionesMP
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Tarima tar1 = new Tarima();
-                tar1.RecuperarRegistro_v3(0,txtTarima.Text);
+                //Tarima tar1 = new Tarima();
+                //tar1.RecuperarRegistro_v3(0,txtTarima.Text);
                 
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_get_true_false_liquidos_especiales", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_mp", tar1.Id_materiaprima);
-                Boolean isLiquidoEspecial = Convert.ToBoolean(cmd.ExecuteScalar());
-                string mensaje2 = "Esta Materia Prima no se puede entregar por esta Ruta! Utilice la Opcion - Entrega de Bines a PRD";
-                if (isLiquidoEspecial)
-                {
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                //conn.Open();
+                //SqlCommand cmd = new SqlCommand("sp_get_true_false_liquidos_especiales", conn);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@id_mp", tar1.Id_materiaprima);
+                //Boolean isLiquidoEspecial = Convert.ToBoolean(cmd.ExecuteScalar());
+                //string mensaje2 = "Esta Materia Prima no se puede entregar por esta Ruta! Utilice la Opcion - Entrega de Bines a PRD";
+                //if (isLiquidoEspecial)
+                //{
                     
-                    lblMensaje.Text = mensaje2;
-                    panelNotificacion.BackColor = Color.Red;
-                    timerLimpiarMensaje.Enabled = true;
-                    timerLimpiarMensaje.Start();
-                    return;
+                //    lblMensaje.Text = mensaje2;
+                //    panelNotificacion.BackColor = Color.Red;
+                //    timerLimpiarMensaje.Enabled = true;
+                //    timerLimpiarMensaje.Start();
+                //    return;
                     
-                }
-                else
-                {
+                //}
+                //else
+                //{
                     EntregarTarima();
                     load_tarimas_scan_v2();
-                }
+                //}
                 
             }
         }
@@ -952,21 +952,21 @@ namespace LOSA.TransaccionesMP
 
         private void btnEntregaBinesRequissa_Click(object sender, EventArgs e)
         {
-            if (txtRequisicion.Text != "")
-            {
-                if (txtRequisicion.Text.Length >= 12)
-                {
-                    string barcode_req = txtRequisicion.Text.Trim();
-                    frmWizardEntregaBinesRequisa frm = new frmWizardEntregaBinesRequisa(usuarioLogueado, barcode_req);
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-                        load_tarimas_scan();
-                        load_bines_disponibles();
-                        txtRequisicion.Text = "";
-                        txtRequisicion.Focus();
-                    }
-                }
-            }
+            //if (txtRequisicion.Text != "")
+            //{
+            //    if (txtRequisicion.Text.Length >= 12)
+            //    {
+            //        string barcode_req = txtRequisicion.Text.Trim();
+            //        frmWizardEntregaBinesRequisa frm = new frmWizardEntregaBinesRequisa(usuarioLogueado, barcode_req);
+            //        if (frm.ShowDialog() == DialogResult.OK)
+            //        {
+            //            load_tarimas_scan();
+            //            load_bines_disponibles();
+            //            txtRequisicion.Text = "";
+            //            txtRequisicion.Focus();
+            //        }
+            //    }
+            //}
         }
     }
 }

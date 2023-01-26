@@ -132,22 +132,65 @@ namespace LOSA.RecepcionMP
                 var gridview = (GridView)grd_ingreso.FocusedView;
                 var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
 
-                if (row.tipo_ingreso == 1 || row.tipo_ingreso == 5)
+                switch (row.tipo_ingreso)
                 {
-                    frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado, row.bit_fin, row.id_traslado, row.itemcode);
-                    if (frmDetalle.ShowDialog() == DialogResult.OK)
-                    {
-                        Load_Info();
-                    }
+                    case 1:
+                        frm_ingresos_lotes frmDetalleT = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado, row.bit_fin, row.id_traslado, row.itemcode);
+                        if (frmDetalleT.ShowDialog() == DialogResult.OK)
+                        {
+                            Load_Info();
+                        }
+                        break;
+
+                    case 2:
+                        frm_detalle_granel frm = new frm_detalle_granel(row.Ningreso);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            Load_Info();
+                        }
+                        break;
+
+                    case 3:
+
+                        break;
+
+                    case 4:
+                        CajaDialogo.Information("En Consturccion!");
+                        return;
+
+                    case 5:
+                        frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado, row.bit_fin, row.id_traslado, row.itemcode);
+                        if (frmDetalle.ShowDialog() == DialogResult.OK)
+                        {
+                            Load_Info();
+                        }
+                        break;
+
+                    default:
+                        break;
                 }
-                else
-                {
-                    frm_detalle_granel frm = new frm_detalle_granel(row.Ningreso);
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-                        Load_Info();
-                    }
-                }
+
+                //if (row.tipo_ingreso == 1 || row.tipo_ingreso == 5)
+                //{
+                //    frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado, row.bit_fin, row.id_traslado, row.itemcode);
+                //    if (frmDetalle.ShowDialog() == DialogResult.OK)
+                //    {
+                //        Load_Info();
+                //    }
+                //}
+                //if (row.tipo_ingreso == 4)
+                //{
+                //    CajaDialogo.Error("En construccion..");
+                //    return;
+                //}
+                //else
+                //{
+                //    frm_detalle_granel frm = new frm_detalle_granel(row.Ningreso);
+                //    if (frm.ShowDialog() == DialogResult.OK)
+                //    {
+                //        Load_Info();
+                //    }
+                //}
 
             }
             catch (Exception ex)
@@ -158,46 +201,56 @@ namespace LOSA.RecepcionMP
 
         private void btnprint_Click(object sender, EventArgs e)
         {
-            try
+            
+            var gridview = (GridView)grd_ingreso.FocusedView;
+            var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
+
+            if (row.tipo_ingreso == 4) //Liquidos
             {
-                var gridview = (GridView)grd_ingreso.FocusedView;
-                var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
-                
-                    string query = @"sp_obtener_id_mps_from_ingreso";
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                    try
-                    {
-                        cn.Open();
-                        SqlCommand cmd = new SqlCommand(query, cn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id_ingreso", row.id);
-
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        dsRecepcionMPx.mp_lote.Clear();
-                        da.Fill(dsRecepcionMPx.mp_lote);
-                        cn.Close();
-                        foreach (dsRecepcionMPx.mp_loteRow registro in dsRecepcionMPx.mp_lote.Rows)
-                        {
-                            Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id, registro.mp);
-                            report.Parameters["id_ingreso"].Value = row.id;
-                            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                            ReportPrintTool printReport = new ReportPrintTool(report);
-                            printReport.ShowPreview();
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        CajaDialogo.Error(ex.Message);
-                    }
-                
-                
-
+                try
+                {
+                    MateriaPrima mp = new MateriaPrima();
+                    mp.RecuperarRegistroFromCode(row.itemcode);
+                    row.id_mp = mp.IdMP_ACS;
+                    Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.Ningreso, row.itemcode, 1, row.id_mp);
+                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(report);
+                    printReport.ShowPreview();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
+                string query = @"sp_obtener_id_mps_from_ingreso";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_ingreso", row.id);
 
-               
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    dsRecepcionMPx.mp_lote.Clear();
+                    da.Fill(dsRecepcionMPx.mp_lote);
+                    cn.Close();
+                    foreach (dsRecepcionMPx.mp_loteRow registro in dsRecepcionMPx.mp_lote.Rows)
+                    {
+                        Reportes.rptIngresoHoja report = new Reportes.rptIngresoHoja(row.id, registro.mp);
+                        report.Parameters["id_ingreso"].Value = row.id;
+                        report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                        ReportPrintTool printReport = new ReportPrintTool(report);
+                        printReport.ShowPreview();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
         }
 
@@ -223,6 +276,11 @@ namespace LOSA.RecepcionMP
                         Load_Info();
                     }
                 }
+                //if (row.tipo_ingreso == 4)
+                //{
+                //    CajaDialogo.Error("Debe ir al modulo de Ingreso de Tanques para hacer modificaciones al registro de ingresos.");
+                //    return;
+                //}
                 else
                 {
                     CajaDialogo.Error("Debe ir al modulo de granel para hacer modificaciones al registro de ingresos.");
@@ -280,6 +338,7 @@ namespace LOSA.RecepcionMP
                 {
 
                 }
+                
 
 
             }

@@ -241,12 +241,13 @@ namespace LOSA.TransaccionesMP
             //    return;
             //}
 
-            //if (Convert.ToDecimal(txtPesoKG.Text) <= 0)
-            if (Convert.ToDecimal(spinEditPesoKg.EditValue) <= 0)
-            {
-                CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
-                return;
-            }
+            
+            //HAY QUE DESCOMENTAR ESTO
+            //if (Convert.ToDecimal(spinEditPesoKg.EditValue) <= 0)
+            //{
+            //    CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
+            //    return;
+            //}
 
             if (Convert.ToDecimal(spinEditUnidades.Value) <= 0)
             {
@@ -314,8 +315,14 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@cant_salida", 0);
                         cmd.Parameters.AddWithValue("@ud_entrada", spinEditUnidades.EditValue);
                         cmd.Parameters.AddWithValue("@ud_salida", 0);
-                        cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
-                        cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
+                        if(Id_Lote_Alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_referencia_operacion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
+                        if (Id_Lote_Alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_mp", Id_MP);
                         cmd.Parameters.AddWithValue("@itemcode", ItemCode);
@@ -338,7 +345,10 @@ namespace LOSA.TransaccionesMP
                             cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
                         }
 
-                        cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                        if(Convert.ToInt32(gridLookUpEditPresentacion.EditValue) == 0)
+                            cmd.Parameters.AddWithValue("@id_presentacion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
                         cmd.Parameters.AddWithValue("@tipo_operacion", toggleSwTipoOperacion.IsOn);
                         cmd.ExecuteNonQuery();
                         conn.Close();
@@ -476,8 +486,14 @@ namespace LOSA.TransaccionesMP
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@cant_entrada", 0);
                         cmd.Parameters.AddWithValue("@cant_salida", spinEditPesoKg.EditValue);
-                        cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
-                        cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
+                        if(Id_Lote_Alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_referencia_operacion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_referencia_operacion", Id_Lote_Alosy);
+                        if (Id_Lote_Alosy == 0)
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_lote_alosy", Id_Lote_Alosy);
                         cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
                         cmd.Parameters.AddWithValue("@id_mp", Id_MP);
                         cmd.Parameters.AddWithValue("@itemcode", ItemCode);
@@ -495,7 +511,10 @@ namespace LOSA.TransaccionesMP
                         else
                             cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
 
-                        cmd.Parameters.AddWithValue("id_presentacion", gridLookUpEditPresentacion.EditValue);
+                        if(Convert.ToInt32(gridLookUpEditPresentacion.EditValue) == 0)
+                            cmd.Parameters.AddWithValue("id_presentacion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("id_presentacion", gridLookUpEditPresentacion.EditValue);
                         cmd.Parameters.AddWithValue("@tipo_operacion", 1);//Forzosamente debe ser ajuste
                         cmd.ExecuteNonQuery();
                         conn.Close();

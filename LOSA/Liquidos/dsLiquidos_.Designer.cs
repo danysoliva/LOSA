@@ -768,6 +768,18 @@ namespace LOSA.Liquidos {
             
             private global::System.Data.DataColumn columnid_tanque;
             
+            private global::System.Data.DataColumn columnfecha_ingreso;
+            
+            private global::System.Data.DataColumn columnlote;
+            
+            private global::System.Data.DataColumn columnid_mp;
+            
+            private global::System.Data.DataColumn columnfecha_produccion;
+            
+            private global::System.Data.DataColumn columnfecha_vencimiento;
+            
+            private global::System.Data.DataColumn columnexistencia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LOSA_Ingreso_liquidosDataTable() {
@@ -875,6 +887,54 @@ namespace LOSA.Liquidos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_ingresoColumn {
+                get {
+                    return this.columnfecha_ingreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn loteColumn {
+                get {
+                    return this.columnlote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_produccionColumn {
+                get {
+                    return this.columnfecha_produccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_vencimientoColumn {
+                get {
+                    return this.columnfecha_vencimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn existenciaColumn {
+                get {
+                    return this.columnexistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -910,7 +970,7 @@ namespace LOSA.Liquidos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LOSA_Ingreso_liquidosRow AddLOSA_Ingreso_liquidosRow(int id, string id_ingreso, decimal kg, string id_serie, string proveedor, string codigo_prov, string codigo_mp, string mp, int id_tanque) {
+            public LOSA_Ingreso_liquidosRow AddLOSA_Ingreso_liquidosRow(int id, int id_ingreso, decimal kg, int id_serie, string proveedor, string codigo_prov, string codigo_mp, string mp, int id_tanque, System.DateTime fecha_ingreso, string lote, int id_mp, System.DateTime fecha_produccion, System.DateTime fecha_vencimiento, decimal existencia) {
                 LOSA_Ingreso_liquidosRow rowLOSA_Ingreso_liquidosRow = ((LOSA_Ingreso_liquidosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -921,7 +981,13 @@ namespace LOSA.Liquidos {
                         codigo_prov,
                         codigo_mp,
                         mp,
-                        id_tanque};
+                        id_tanque,
+                        fecha_ingreso,
+                        lote,
+                        id_mp,
+                        fecha_produccion,
+                        fecha_vencimiento,
+                        existencia};
                 rowLOSA_Ingreso_liquidosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLOSA_Ingreso_liquidosRow);
                 return rowLOSA_Ingreso_liquidosRow;
@@ -953,6 +1019,12 @@ namespace LOSA.Liquidos {
                 this.columncodigo_mp = base.Columns["codigo_mp"];
                 this.columnmp = base.Columns["mp"];
                 this.columnid_tanque = base.Columns["id_tanque"];
+                this.columnfecha_ingreso = base.Columns["fecha_ingreso"];
+                this.columnlote = base.Columns["lote"];
+                this.columnid_mp = base.Columns["id_mp"];
+                this.columnfecha_produccion = base.Columns["fecha_produccion"];
+                this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
+                this.columnexistencia = base.Columns["existencia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -960,11 +1032,11 @@ namespace LOSA.Liquidos {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnid_ingreso = new global::System.Data.DataColumn("id_ingreso", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnid_ingreso = new global::System.Data.DataColumn("id_ingreso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_ingreso);
                 this.columnkg = new global::System.Data.DataColumn("kg", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnkg);
-                this.columnid_serie = new global::System.Data.DataColumn("id_serie", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnid_serie = new global::System.Data.DataColumn("id_serie", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_serie);
                 this.columnproveedor = new global::System.Data.DataColumn("proveedor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproveedor);
@@ -976,6 +1048,18 @@ namespace LOSA.Liquidos {
                 base.Columns.Add(this.columnmp);
                 this.columnid_tanque = new global::System.Data.DataColumn("id_tanque", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_tanque);
+                this.columnfecha_ingreso = new global::System.Data.DataColumn("fecha_ingreso", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_ingreso);
+                this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columnfecha_produccion = new global::System.Data.DataColumn("fecha_produccion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_produccion);
+                this.columnfecha_vencimiento = new global::System.Data.DataColumn("fecha_vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_vencimiento);
+                this.columnexistencia = new global::System.Data.DataColumn("existencia", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexistencia);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3031,10 +3115,10 @@ namespace LOSA.Liquidos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id_ingreso {
+            public int id_ingreso {
                 get {
                     try {
-                        return ((string)(this[this.tableLOSA_Ingreso_liquidos.id_ingresoColumn]));
+                        return ((int)(this[this.tableLOSA_Ingreso_liquidos.id_ingresoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'id_ingreso\' de la tabla \'LOSA_Ingreso_liquidos\' es DBNull" +
@@ -3064,10 +3148,10 @@ namespace LOSA.Liquidos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id_serie {
+            public int id_serie {
                 get {
                     try {
-                        return ((string)(this[this.tableLOSA_Ingreso_liquidos.id_serieColumn]));
+                        return ((int)(this[this.tableLOSA_Ingreso_liquidos.id_serieColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'id_serie\' de la tabla \'LOSA_Ingreso_liquidos\' es DBNull.", e);
@@ -3159,6 +3243,106 @@ namespace LOSA.Liquidos {
                 }
                 set {
                     this[this.tableLOSA_Ingreso_liquidos.id_tanqueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_ingreso {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableLOSA_Ingreso_liquidos.fecha_ingresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ingreso\' de la tabla \'LOSA_Ingreso_liquidos\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLOSA_Ingreso_liquidos.fecha_ingresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote {
+                get {
+                    try {
+                        return ((string)(this[this.tableLOSA_Ingreso_liquidos.loteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote\' de la tabla \'LOSA_Ingreso_liquidos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLOSA_Ingreso_liquidos.loteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tableLOSA_Ingreso_liquidos.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'LOSA_Ingreso_liquidos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLOSA_Ingreso_liquidos.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_produccion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableLOSA_Ingreso_liquidos.fecha_produccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_produccion\' de la tabla \'LOSA_Ingreso_liquidos\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLOSA_Ingreso_liquidos.fecha_produccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_vencimiento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableLOSA_Ingreso_liquidos.fecha_vencimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vencimiento\' de la tabla \'LOSA_Ingreso_liquidos\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLOSA_Ingreso_liquidos.fecha_vencimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal existencia {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableLOSA_Ingreso_liquidos.existenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'existencia\' de la tabla \'LOSA_Ingreso_liquidos\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableLOSA_Ingreso_liquidos.existenciaColumn] = value;
                 }
             }
             
@@ -3268,6 +3452,78 @@ namespace LOSA.Liquidos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_tanqueNull() {
                 this[this.tableLOSA_Ingreso_liquidos.id_tanqueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_ingresoNull() {
+                return this.IsNull(this.tableLOSA_Ingreso_liquidos.fecha_ingresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_ingresoNull() {
+                this[this.tableLOSA_Ingreso_liquidos.fecha_ingresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsloteNull() {
+                return this.IsNull(this.tableLOSA_Ingreso_liquidos.loteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetloteNull() {
+                this[this.tableLOSA_Ingreso_liquidos.loteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tableLOSA_Ingreso_liquidos.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tableLOSA_Ingreso_liquidos.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_produccionNull() {
+                return this.IsNull(this.tableLOSA_Ingreso_liquidos.fecha_produccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_produccionNull() {
+                this[this.tableLOSA_Ingreso_liquidos.fecha_produccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_vencimientoNull() {
+                return this.IsNull(this.tableLOSA_Ingreso_liquidos.fecha_vencimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_vencimientoNull() {
+                this[this.tableLOSA_Ingreso_liquidos.fecha_vencimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsexistenciaNull() {
+                return this.IsNull(this.tableLOSA_Ingreso_liquidos.existenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetexistenciaNull() {
+                this[this.tableLOSA_Ingreso_liquidos.existenciaColumn] = global::System.Convert.DBNull;
             }
         }
         
