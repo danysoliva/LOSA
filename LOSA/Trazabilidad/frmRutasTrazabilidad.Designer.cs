@@ -29,8 +29,10 @@ namespace LOSA.Trazabilidad
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -56,6 +58,18 @@ namespace LOSA.Trazabilidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.gridView21 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.GridRuta4_detalle_trz_lote_pt = new DevExpress.XtraGrid.GridControl();
+            this.dsMantoTrazabilidad = new LOSA.Trazabilidad.dsMantoTrazabilidad();
+            this.gridView20 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_mp3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemCode1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKg_por_Batch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_batch_plan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colkg_total_plan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_batch_real = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colkg_real_dosificado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.npRuta2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
@@ -118,7 +132,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl83 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
-            this.despachadoClientesBindingSource = new System.Windows.Forms.BindingSource();
+            this.despachadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView15 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn83 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -128,7 +142,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn87 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn88 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.direccionClientesBindingSource = new System.Windows.Forms.BindingSource();
+            this.direccionClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView16 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn92 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn93 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -185,7 +199,7 @@ namespace LOSA.Trazabilidad
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
             this.grd_nir = new DevExpress.XtraGrid.GridControl();
-            this.dsMantenimientoCBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsMantenimientoCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMantenimientoC = new LOSA.Calidad.dsMantenimientoC();
             this.grdv_nir = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -350,7 +364,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn69 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tb_inventario = new System.Windows.Forms.TabPage();
             this.gridControl8 = new DevExpress.XtraGrid.GridControl();
-            this.dsTarimaBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsTarimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsTarima = new LOSA.TransaccionesMP.dsTarima();
             this.gridView14 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -434,7 +448,7 @@ namespace LOSA.Trazabilidad
             this.colcode_sap3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gcClientesRecibieronLotePT = new DevExpress.XtraGrid.GridControl();
-            this.detalledestinosBindingSource = new System.Windows.Forms.BindingSource();
+            this.detalledestinosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvClientesRecibieronLote = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDespacho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdDespachoId = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -462,7 +476,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl3 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.grd_trasacciones = new DevExpress.XtraGrid.GridControl();
-            this.dsInventarioPTBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsInventarioPTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsInventarioPT = new LOSA.Calidad.dsInventarioPT();
             this.grdv_trascciones = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colentrada = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -535,7 +549,7 @@ namespace LOSA.Trazabilidad
             this.colid_decision = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlNoConformidades = new DevExpress.XtraGrid.GridControl();
-            this.dsReportesTRZBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsReportesTRZBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -585,7 +599,6 @@ namespace LOSA.Trazabilidad
             this.npRuta3MP = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.dsMantoTrazabilidad = new LOSA.Trazabilidad.dsMantoTrazabilidad();
             this.rowid = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowcodigo = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowmaterial = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -697,16 +710,28 @@ namespace LOSA.Trazabilidad
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acordionRuta1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.acordionRuta2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.acordionRuta3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.acordionRuta4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.timerRuta4 = new System.Windows.Forms.Timer();
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.acordionRuta2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator2 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.acordionRuta3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.acordionRuta4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
+            this.gridColumn104 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn105 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn106 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView22 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colContado1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_mp1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridRuta4_detalle_trz_lote_pt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.npRuta2.SuspendLayout();
@@ -919,7 +944,6 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             this.npRuta3MP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.linkTRZ_HaciaAdelante)).BeginInit();
@@ -942,7 +966,125 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gridView21
+            // 
+            this.gridView21.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn104,
+            this.gridColumn105,
+            this.gridColumn106});
+            this.gridView21.GridControl = this.GridRuta4_detalle_trz_lote_pt;
+            this.gridView21.Name = "gridView21";
+            this.gridView21.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView21.OptionsDetail.EnableMasterViewMode = false;
+            this.gridView21.OptionsLayout.Columns.StoreAppearance = true;
+            this.gridView21.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView21.OptionsMenu.ShowGroupSummaryEditorItem = true;
+            this.gridView21.OptionsView.ShowChildrenInGroupPanel = true;
+            this.gridView21.OptionsView.ShowFooter = true;
+            this.gridView21.OptionsView.ShowGroupPanel = false;
+            // 
+            // GridRuta4_detalle_trz_lote_pt
+            // 
+            this.GridRuta4_detalle_trz_lote_pt.DataMember = "Ruta4_H_trz_lote_pt";
+            this.GridRuta4_detalle_trz_lote_pt.DataSource = this.dsMantoTrazabilidad;
+            this.GridRuta4_detalle_trz_lote_pt.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.LevelTemplate = this.gridView22;
+            gridLevelNode1.RelationName = "Detalle de Lotes";
+            this.GridRuta4_detalle_trz_lote_pt.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.GridRuta4_detalle_trz_lote_pt.Location = new System.Drawing.Point(0, 0);
+            this.GridRuta4_detalle_trz_lote_pt.MainView = this.gridView20;
+            this.GridRuta4_detalle_trz_lote_pt.Name = "GridRuta4_detalle_trz_lote_pt";
+            this.GridRuta4_detalle_trz_lote_pt.Size = new System.Drawing.Size(1292, 578);
+            this.GridRuta4_detalle_trz_lote_pt.TabIndex = 40;
+            this.GridRuta4_detalle_trz_lote_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView20,
+            this.gridView21,
+            this.gridView22});
+            // 
+            // dsMantoTrazabilidad
+            // 
+            this.dsMantoTrazabilidad.DataSetName = "dsMantoTrazabilidad";
+            this.dsMantoTrazabilidad.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView20
+            // 
+            this.gridView20.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_mp3,
+            this.colItemName,
+            this.colItemCode1,
+            this.colKg_por_Batch,
+            this.colcant_batch_plan,
+            this.colkg_total_plan,
+            this.colcant_batch_real,
+            this.colkg_real_dosificado,
+            this.colid_mp4});
+            this.gridView20.GridControl = this.GridRuta4_detalle_trz_lote_pt;
+            this.gridView20.Name = "gridView20";
+            // 
+            // colid_mp3
+            // 
+            this.colid_mp3.FieldName = "id_mp";
+            this.colid_mp3.Name = "colid_mp3";
+            // 
+            // colItemName
+            // 
+            this.colItemName.FieldName = "ItemName";
+            this.colItemName.Name = "colItemName";
+            this.colItemName.OptionsColumn.ReadOnly = true;
+            this.colItemName.Visible = true;
+            this.colItemName.VisibleIndex = 0;
+            // 
+            // colItemCode1
+            // 
+            this.colItemCode1.FieldName = "ItemCode";
+            this.colItemCode1.Name = "colItemCode1";
+            this.colItemCode1.OptionsColumn.ReadOnly = true;
+            this.colItemCode1.Visible = true;
+            this.colItemCode1.VisibleIndex = 1;
+            // 
+            // colKg_por_Batch
+            // 
+            this.colKg_por_Batch.FieldName = "Kg_por_Batch";
+            this.colKg_por_Batch.Name = "colKg_por_Batch";
+            this.colKg_por_Batch.OptionsColumn.ReadOnly = true;
+            this.colKg_por_Batch.Visible = true;
+            this.colKg_por_Batch.VisibleIndex = 2;
+            // 
+            // colcant_batch_plan
+            // 
+            this.colcant_batch_plan.FieldName = "cant_batch_plan";
+            this.colcant_batch_plan.Name = "colcant_batch_plan";
+            this.colcant_batch_plan.OptionsColumn.ReadOnly = true;
+            this.colcant_batch_plan.Visible = true;
+            this.colcant_batch_plan.VisibleIndex = 3;
+            // 
+            // colkg_total_plan
+            // 
+            this.colkg_total_plan.FieldName = "kg_total_plan";
+            this.colkg_total_plan.Name = "colkg_total_plan";
+            this.colkg_total_plan.OptionsColumn.ReadOnly = true;
+            this.colkg_total_plan.Visible = true;
+            this.colkg_total_plan.VisibleIndex = 4;
+            // 
+            // colcant_batch_real
+            // 
+            this.colcant_batch_real.FieldName = "cant_batch_real";
+            this.colcant_batch_real.Name = "colcant_batch_real";
+            this.colcant_batch_real.OptionsColumn.ReadOnly = true;
+            this.colcant_batch_real.Visible = true;
+            this.colcant_batch_real.VisibleIndex = 5;
+            // 
+            // colkg_real_dosificado
+            // 
+            this.colkg_real_dosificado.FieldName = "kg_real_dosificado";
+            this.colkg_real_dosificado.Name = "colkg_real_dosificado";
+            this.colkg_real_dosificado.OptionsColumn.ReadOnly = true;
+            this.colkg_real_dosificado.Visible = true;
+            this.colkg_real_dosificado.VisibleIndex = 6;
             // 
             // navigationFrame1
             // 
@@ -3351,9 +3493,9 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.grd_logistica.DataMember = "logisticaInformacion";
             this.grd_logistica.DataSource = this.dsMantenimientoC;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.grd_logistica.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.grd_logistica.Location = new System.Drawing.Point(3, 6);
             this.grd_logistica.MainView = this.grdv_logistica;
             this.grd_logistica.Name = "grd_logistica";
@@ -5068,6 +5210,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage1.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage1.Controls.Add(this.GridRuta4_detalle_trz_lote_pt);
             this.xtraTabPage1.Controls.Add(this.gridSplitContainer1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1292, 578);
@@ -5075,13 +5218,12 @@ namespace LOSA.Trazabilidad
             // 
             // gridSplitContainer1
             // 
-            this.gridSplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSplitContainer1.Grid = this.grd_data;
             this.gridSplitContainer1.Location = new System.Drawing.Point(0, 0);
             this.gridSplitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridSplitContainer1.Name = "gridSplitContainer1";
             this.gridSplitContainer1.Panel1.Controls.Add(this.grd_data);
-            this.gridSplitContainer1.Size = new System.Drawing.Size(1292, 578);
+            this.gridSplitContainer1.Size = new System.Drawing.Size(802, 292);
             this.gridSplitContainer1.TabIndex = 39;
             // 
             // grd_data
@@ -5100,7 +5242,7 @@ namespace LOSA.Trazabilidad
             this.btnLinkMateriaPrima,
             this.btnTrazabilidadLoteMP,
             this.cmdVerDetallePesajes});
-            this.grd_data.Size = new System.Drawing.Size(1292, 578);
+            this.grd_data.Size = new System.Drawing.Size(802, 292);
             this.grd_data.TabIndex = 36;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -7097,11 +7239,6 @@ namespace LOSA.Trazabilidad
             this.vGridControl1.Size = new System.Drawing.Size(1269, 220);
             this.vGridControl1.TabIndex = 95;
             // 
-            // dsMantoTrazabilidad
-            // 
-            this.dsMantoTrazabilidad.DataSetName = "dsMantoTrazabilidad";
-            this.dsMantoTrazabilidad.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // rowid
             // 
             this.rowid.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -8278,6 +8415,10 @@ namespace LOSA.Trazabilidad
             this.acordionRuta1.Text = "MP > PT > Inventario Actual";
             this.acordionRuta1.Click += new System.EventHandler(this.acordionRuta1_Click);
             // 
+            // accordionControlSeparator1
+            // 
+            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            // 
             // acordionRuta2
             // 
             this.acordionRuta2.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -8288,6 +8429,10 @@ namespace LOSA.Trazabilidad
             this.acordionRuta2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.acordionRuta2.Text = "MP > PT > Clientes";
             this.acordionRuta2.Click += new System.EventHandler(this.acordionRuta2_Click);
+            // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
             // 
             // acordionRuta3
             // 
@@ -8300,6 +8445,10 @@ namespace LOSA.Trazabilidad
             this.acordionRuta3.Text = "Clientes > Lotes PT > MP";
             this.acordionRuta3.Click += new System.EventHandler(this.acordionRuta3_Click);
             // 
+            // accordionControlSeparator3
+            // 
+            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
+            // 
             // acordionRuta4
             // 
             this.acordionRuta4.Appearance.Hovered.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -8310,6 +8459,10 @@ namespace LOSA.Trazabilidad
             this.acordionRuta4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.acordionRuta4.Text = "Lote PT > Clientes que lo recibieron";
             this.acordionRuta4.Click += new System.EventHandler(this.acordionRuta4_Click);
+            // 
+            // accordionControlSeparator4
+            // 
+            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
             // 
             // errorProvider1
             // 
@@ -8324,21 +8477,70 @@ namespace LOSA.Trazabilidad
             this.timerRuta4.Interval = 3000;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
             // 
-            // accordionControlSeparator1
+            // gridColumn104
             // 
-            this.accordionControlSeparator1.Name = "accordionControlSeparator1";
+            this.gridColumn104.Caption = "Kg Consumidos";
+            this.gridColumn104.DisplayFormat.FormatString = "n2";
+            this.gridColumn104.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn104.FieldName = "Detalle de Lotes.Contado";
+            this.gridColumn104.Name = "gridColumn104";
+            this.gridColumn104.OptionsColumn.AllowEdit = false;
+            this.gridColumn104.OptionsColumn.ReadOnly = true;
+            this.gridColumn104.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Detalle de Lotes.Contado", "SUMA={0:#.##}")});
+            this.gridColumn104.Visible = true;
+            this.gridColumn104.VisibleIndex = 1;
+            this.gridColumn104.Width = 275;
             // 
-            // accordionControlSeparator2
+            // gridColumn105
             // 
-            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            this.gridColumn105.Caption = "Lote MP";
+            this.gridColumn105.FieldName = "Detalle de Lotes.lote_mp";
+            this.gridColumn105.Name = "gridColumn105";
+            this.gridColumn105.OptionsColumn.AllowEdit = false;
+            this.gridColumn105.OptionsColumn.ReadOnly = true;
+            this.gridColumn105.Visible = true;
+            this.gridColumn105.VisibleIndex = 0;
+            this.gridColumn105.Width = 999;
             // 
-            // accordionControlSeparator3
+            // gridColumn106
             // 
-            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
+            this.gridColumn106.Caption = "id_mp";
+            this.gridColumn106.FieldName = "Detalle de Lotes.id_mp";
+            this.gridColumn106.Name = "gridColumn106";
             // 
-            // accordionControlSeparator4
+            // colid_mp4
             // 
-            this.accordionControlSeparator4.Name = "accordionControlSeparator4";
+            this.colid_mp4.FieldName = "id_mp";
+            this.colid_mp4.Name = "colid_mp4";
+            // 
+            // gridView22
+            // 
+            this.gridView22.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colContado1,
+            this.collote_mp1,
+            this.colid_mp5});
+            this.gridView22.GridControl = this.GridRuta4_detalle_trz_lote_pt;
+            this.gridView22.Name = "gridView22";
+            // 
+            // colContado1
+            // 
+            this.colContado1.FieldName = "Contado";
+            this.colContado1.Name = "colContado1";
+            this.colContado1.Visible = true;
+            this.colContado1.VisibleIndex = 0;
+            // 
+            // collote_mp1
+            // 
+            this.collote_mp1.FieldName = "lote_mp";
+            this.collote_mp1.Name = "collote_mp1";
+            this.collote_mp1.Visible = true;
+            this.collote_mp1.VisibleIndex = 1;
+            // 
+            // colid_mp5
+            // 
+            this.colid_mp5.FieldName = "id_mp";
+            this.colid_mp5.Name = "colid_mp5";
             // 
             // frmRutasTrazabilidad
             // 
@@ -8349,6 +8551,10 @@ namespace LOSA.Trazabilidad
             this.Controls.Add(this.navigationFrame1);
             this.Name = "frmRutasTrazabilidad";
             this.ShowIcon = false;
+            ((System.ComponentModel.ISupportInitialize)(this.gridView21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridRuta4_detalle_trz_lote_pt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
             this.npRuta2.ResumeLayout(false);
@@ -8572,7 +8778,6 @@ namespace LOSA.Trazabilidad
             this.npRuta3MP.ResumeLayout(false);
             this.npRuta3MP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcLotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.linkTRZ_HaciaAdelante)).EndInit();
@@ -8596,6 +8801,7 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView22)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -9253,5 +9459,24 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator2;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator3;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator4;
+        private DevExpress.XtraGrid.GridControl GridRuta4_detalle_trz_lote_pt;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView20;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_mp3;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemName;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemCode1;
+        private DevExpress.XtraGrid.Columns.GridColumn colKg_por_Batch;
+        private DevExpress.XtraGrid.Columns.GridColumn colcant_batch_plan;
+        private DevExpress.XtraGrid.Columns.GridColumn colkg_total_plan;
+        private DevExpress.XtraGrid.Columns.GridColumn colcant_batch_real;
+        private DevExpress.XtraGrid.Columns.GridColumn colkg_real_dosificado;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView21;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn104;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn105;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn106;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_mp4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView22;
+        private DevExpress.XtraGrid.Columns.GridColumn colContado1;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_mp1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_mp5;
     }
 }
