@@ -8127,6 +8127,7 @@
     <None Include="Resources\formula_external_48.png" />
     <None Include="Resources\formula_local_32.png" />
     <None Include="Resources\formula_market_research.png" />
+    <None Include="Resources\inventory.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />

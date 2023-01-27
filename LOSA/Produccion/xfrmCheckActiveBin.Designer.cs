@@ -30,6 +30,7 @@ namespace LOSA.Produccion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmCheckActiveBin));
             this.pcTank1 = new DevExpress.XtraEditors.PanelControl();
             this.pcTank2 = new DevExpress.XtraEditors.PanelControl();
             this.pcTank3 = new DevExpress.XtraEditors.PanelControl();
@@ -294,10 +295,12 @@ namespace LOSA.Produccion
             // 
             // cmdCerrar
             // 
+            this.cmdCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdCerrar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCerrar.Appearance.Options.UseFont = true;
             this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdCerrar.Location = new System.Drawing.Point(1169, 25);
+            this.cmdCerrar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCerrar.ImageOptions.Image")));
+            this.cmdCerrar.Location = new System.Drawing.Point(1247, 25);
             this.cmdCerrar.Name = "cmdCerrar";
             this.cmdCerrar.Size = new System.Drawing.Size(199, 59);
             this.cmdCerrar.TabIndex = 14;
@@ -763,7 +766,7 @@ namespace LOSA.Produccion
             // lblKardex1
             // 
             this.lblKardex1.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblKardex1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKardex1.Appearance.Options.UseBorderColor = true;
             this.lblKardex1.Appearance.Options.UseFont = true;
             this.lblKardex1.Appearance.Options.UseTextOptions = true;
@@ -776,7 +779,7 @@ namespace LOSA.Produccion
             this.lblKardex1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex1.Name = "lblKardex1";
-            this.lblKardex1.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex1.Size = new System.Drawing.Size(115, 18);
             this.lblKardex1.TabIndex = 41;
             this.lblKardex1.Tag = "1";
             this.lblKardex1.Text = "0.00 Kg";
@@ -785,7 +788,7 @@ namespace LOSA.Produccion
             // lblKardex2
             // 
             this.lblKardex2.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblKardex2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex2.Appearance.Options.UseBorderColor = true;
             this.lblKardex2.Appearance.Options.UseFont = true;
             this.lblKardex2.Appearance.Options.UseTextOptions = true;
@@ -798,14 +801,14 @@ namespace LOSA.Produccion
             this.lblKardex2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex2.Name = "lblKardex2";
-            this.lblKardex2.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex2.Size = new System.Drawing.Size(115, 18);
             this.lblKardex2.TabIndex = 42;
             this.lblKardex2.Tag = "1";
             this.lblKardex2.Text = "0.00 Kg";
             // 
             // lblKardex3
             // 
-            this.lblKardex3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex3.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex3.Appearance.Options.UseFont = true;
             this.lblKardex3.Appearance.Options.UseTextOptions = true;
             this.lblKardex3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -817,7 +820,7 @@ namespace LOSA.Produccion
             this.lblKardex3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex3.Name = "lblKardex3";
-            this.lblKardex3.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex3.Size = new System.Drawing.Size(115, 18);
             this.lblKardex3.TabIndex = 43;
             this.lblKardex3.Tag = "1";
             this.lblKardex3.Text = "0.00 Kg";
@@ -900,7 +903,7 @@ namespace LOSA.Produccion
             // 
             // lblKardex4
             // 
-            this.lblKardex4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex4.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex4.Appearance.Options.UseFont = true;
             this.lblKardex4.Appearance.Options.UseTextOptions = true;
             this.lblKardex4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -912,7 +915,7 @@ namespace LOSA.Produccion
             this.lblKardex4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex4.Name = "lblKardex4";
-            this.lblKardex4.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex4.Size = new System.Drawing.Size(115, 18);
             this.lblKardex4.TabIndex = 47;
             this.lblKardex4.Tag = "1";
             this.lblKardex4.Text = "0.00 Kg";
@@ -938,7 +941,7 @@ namespace LOSA.Produccion
             // 
             // lblKardex5
             // 
-            this.lblKardex5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex5.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex5.Appearance.Options.UseFont = true;
             this.lblKardex5.Appearance.Options.UseTextOptions = true;
             this.lblKardex5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -950,7 +953,7 @@ namespace LOSA.Produccion
             this.lblKardex5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex5.Name = "lblKardex5";
-            this.lblKardex5.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex5.Size = new System.Drawing.Size(115, 18);
             this.lblKardex5.TabIndex = 49;
             this.lblKardex5.Tag = "1";
             this.lblKardex5.Text = "0.00 Kg";
@@ -976,7 +979,7 @@ namespace LOSA.Produccion
             // 
             // lblKardex6
             // 
-            this.lblKardex6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex6.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex6.Appearance.Options.UseFont = true;
             this.lblKardex6.Appearance.Options.UseTextOptions = true;
             this.lblKardex6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -988,7 +991,7 @@ namespace LOSA.Produccion
             this.lblKardex6.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex6.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex6.Name = "lblKardex6";
-            this.lblKardex6.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex6.Size = new System.Drawing.Size(115, 18);
             this.lblKardex6.TabIndex = 51;
             this.lblKardex6.Tag = "1";
             this.lblKardex6.Text = "0.00 Kg";
@@ -1014,7 +1017,7 @@ namespace LOSA.Produccion
             // 
             // lblKardex7
             // 
-            this.lblKardex7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex7.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex7.Appearance.Options.UseFont = true;
             this.lblKardex7.Appearance.Options.UseTextOptions = true;
             this.lblKardex7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1026,7 +1029,7 @@ namespace LOSA.Produccion
             this.lblKardex7.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex7.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex7.Name = "lblKardex7";
-            this.lblKardex7.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex7.Size = new System.Drawing.Size(115, 18);
             this.lblKardex7.TabIndex = 53;
             this.lblKardex7.Tag = "1";
             this.lblKardex7.Text = "0.00 Kg";
@@ -1052,7 +1055,7 @@ namespace LOSA.Produccion
             // 
             // lblKardex8
             // 
-            this.lblKardex8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex8.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex8.Appearance.Options.UseFont = true;
             this.lblKardex8.Appearance.Options.UseTextOptions = true;
             this.lblKardex8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1064,7 +1067,7 @@ namespace LOSA.Produccion
             this.lblKardex8.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex8.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex8.Name = "lblKardex8";
-            this.lblKardex8.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex8.Size = new System.Drawing.Size(115, 18);
             this.lblKardex8.TabIndex = 55;
             this.lblKardex8.Tag = "1";
             this.lblKardex8.Text = "0.00 Kg";
@@ -1090,7 +1093,7 @@ namespace LOSA.Produccion
             // 
             // lblKardex9
             // 
-            this.lblKardex9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex9.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex9.Appearance.Options.UseFont = true;
             this.lblKardex9.Appearance.Options.UseTextOptions = true;
             this.lblKardex9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1102,7 +1105,7 @@ namespace LOSA.Produccion
             this.lblKardex9.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex9.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex9.Name = "lblKardex9";
-            this.lblKardex9.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex9.Size = new System.Drawing.Size(115, 18);
             this.lblKardex9.TabIndex = 57;
             this.lblKardex9.Tag = "1";
             this.lblKardex9.Text = "0.00 Kg";
@@ -1128,7 +1131,7 @@ namespace LOSA.Produccion
             // 
             // lblKardex10
             // 
-            this.lblKardex10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex10.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex10.Appearance.Options.UseFont = true;
             this.lblKardex10.Appearance.Options.UseTextOptions = true;
             this.lblKardex10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1140,7 +1143,7 @@ namespace LOSA.Produccion
             this.lblKardex10.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex10.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex10.Name = "lblKardex10";
-            this.lblKardex10.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex10.Size = new System.Drawing.Size(115, 18);
             this.lblKardex10.TabIndex = 59;
             this.lblKardex10.Tag = "1";
             this.lblKardex10.Text = "0.00 Kg";
@@ -1166,7 +1169,7 @@ namespace LOSA.Produccion
             // 
             // lblKardex11
             // 
-            this.lblKardex11.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex11.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex11.Appearance.Options.UseFont = true;
             this.lblKardex11.Appearance.Options.UseTextOptions = true;
             this.lblKardex11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1178,7 +1181,7 @@ namespace LOSA.Produccion
             this.lblKardex11.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex11.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex11.Name = "lblKardex11";
-            this.lblKardex11.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex11.Size = new System.Drawing.Size(115, 18);
             this.lblKardex11.TabIndex = 61;
             this.lblKardex11.Tag = "1";
             this.lblKardex11.Text = "0.00 Kg";
@@ -1204,7 +1207,7 @@ namespace LOSA.Produccion
             // 
             // lblKardex12
             // 
-            this.lblKardex12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKardex12.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblKardex12.Appearance.Options.UseFont = true;
             this.lblKardex12.Appearance.Options.UseTextOptions = true;
             this.lblKardex12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1216,7 +1219,7 @@ namespace LOSA.Produccion
             this.lblKardex12.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblKardex12.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblKardex12.Name = "lblKardex12";
-            this.lblKardex12.Size = new System.Drawing.Size(108, 16);
+            this.lblKardex12.Size = new System.Drawing.Size(115, 18);
             this.lblKardex12.TabIndex = 63;
             this.lblKardex12.Tag = "1";
             this.lblKardex12.Text = "0.00 Kg";
