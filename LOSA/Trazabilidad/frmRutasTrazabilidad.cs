@@ -365,8 +365,41 @@ namespace LOSA.Trazabilidad
             if (!string.IsNullOrEmpty(txtlote.Text))
             {
                 //string query = @"[sp_load_report_trazabilitadad_lotev2_group_by_mp]";
-                string query = @"[sp_get_detalle_cruce_lote_trz_ruta4]";
-                dsCalidad.trazabilitad.Clear();
+                //string query = @"[sp_get_detalle_cruce_lote_trz_ruta4]";
+                //dsCalidad.trazabilitad.Clear();
+                //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                //try
+                //{
+                //    cn.Open();
+                //    SqlCommand cmd = new SqlCommand(query, cn);
+                //    cmd.CommandType = CommandType.StoredProcedure;
+                //    cmd.Parameters.AddWithValue("@lote_pt", txtlote.Text);
+                //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                //    da.Fill(dsCalidad.trazabilitad);
+                //    cn.Close();
+                //    if (dsCalidad.trazabilitad.Rows.Count == 0)
+                //    {
+                //        errorProvider1.SetError(txtlote, "Este lote aun no tiene materias primas utilizadas!");
+                //        dsCalidad.trazabilitadRow row1 = dsCalidad.trazabilitad.NewtrazabilitadRow();
+                //        row1.lote_mp = "Sin Resultados Encontrados!";
+                //        row1.Contado = 0;
+                //        row1.teorico = 0;
+                //        dsCalidad.trazabilitad.AddtrazabilitadRow(row1);
+                //        dsCalidad.AcceptChanges();
+                //    }
+                //    else
+                //    {
+                //        errorProvider1.Clear();
+                //    }
+                //}
+                //catch (Exception ex)
+                //{
+                //    CajaDialogo.Error(ex.Message);
+                //}
+
+                string query = @"sp_get_detalle_lote_pt_row_superior";
+                dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.Clear();
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 try
                 {
@@ -375,23 +408,32 @@ namespace LOSA.Trazabilidad
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@lote_pt", txtlote.Text);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    
-                    da.Fill(dsCalidad.trazabilitad);
-                    cn.Close();
-                    if (dsCalidad.trazabilitad.Rows.Count == 0)
+
+                    da.Fill(dsMantoTrazabilidad.Ruta4_H_trz_lote_pt);
+                    if (dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.Rows.Count == 0)
                     {
                         errorProvider1.SetError(txtlote, "Este lote aun no tiene materias primas utilizadas!");
-                        dsCalidad.trazabilitadRow row1 = dsCalidad.trazabilitad.NewtrazabilitadRow();
-                        row1.lote_mp = "Sin Resultados Encontrados!";
-                        row1.Contado = 0;
-                        row1.teorico = 0;
-                        dsCalidad.trazabilitad.AddtrazabilitadRow(row1);
-                        dsCalidad.AcceptChanges();
+                        dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow row1 = dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.NewRuta4_H_trz_lote_ptRow();
+                        row1.ItemName = "Sin Resultados Encontrados!";
+                        row1.kg_total_plan = 0;
+                        row1.kg_real_dosificado = 0;
+
+                        dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.AddRuta4_H_trz_lote_ptRow(row1);
+                        dsMantoTrazabilidad.AcceptChanges();
                     }
                     else
                     {
                         errorProvider1.Clear();
+                        query = "sp_get_detalle_cruce_lote_trz_ruta4_v2";
+                        cmd = new SqlCommand(query, cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@lote_pt", txtlote.Text);
+                        da = new SqlDataAdapter(cmd);
+                        
+                        dsMantoTrazabilidad.Ruta4_D_trz_lote.Clear();
+                        da.Fill(dsMantoTrazabilidad.Ruta4_D_trz_lote);
                     }
+                    cn.Close();
                 }
                 catch (Exception ex)
                 {
@@ -730,25 +772,28 @@ namespace LOSA.Trazabilidad
 
         private void LoadDatosDetalleDespacho()
         {
-            try
+            if (dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.Count > 1)
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_get_detalle_despacho_v3]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lote", LoteActual.LotePT_Num);
-                dsReportesTRZ.detalle_despachos.Clear();
-                dsReportesTRZ.detalle_despachos_home.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsReportesTRZ.detalle_despachos);
-                adat.Fill(dsReportesTRZ.detalle_despachos_home);
-                con.Close();
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
+                    SqlCommand cmd = new SqlCommand("[sp_get_detalle_despacho_v3]", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lote", LoteActual.LotePT_Num);
+                    dsReportesTRZ.detalle_despachos.Clear();
+                    dsReportesTRZ.detalle_despachos_home.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsReportesTRZ.detalle_despachos);
+                    adat.Fill(dsReportesTRZ.detalle_despachos_home);
+                    con.Close();
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
             }
         }
 

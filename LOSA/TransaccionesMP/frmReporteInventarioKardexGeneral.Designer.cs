@@ -168,6 +168,8 @@ namespace LOSA.TransaccionesMP
             this.repositoryAjuste = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tabNavigationPage6 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.tggMostrarTotasInv_por_mp_y_bodega = new DevExpress.XtraEditors.ToggleSwitch();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.grdMPBodega = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -192,8 +194,6 @@ namespace LOSA.TransaccionesMP
             this.btnAjustePorLote = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorkerPRD = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerResumenMP = new System.ComponentModel.BackgroundWorker();
-            this.tggMostrarTotasInv_por_mp_y_bodega = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -219,12 +219,12 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.repositoryAjuste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).BeginInit();
             this.tabNavigationPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdMPBodega)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAjuste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLogKardex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_Inv_Por_MPyBodega.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -1366,6 +1366,28 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage6.Name = "tabNavigationPage6";
             this.tabNavigationPage6.Size = new System.Drawing.Size(1362, 646);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(8, 21);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(87, 15);
+            this.labelControl1.TabIndex = 18;
+            this.labelControl1.Text = "Mostrar Toda(s)";
+            // 
+            // tggMostrarTotasInv_por_mp_y_bodega
+            // 
+            this.tggMostrarTotasInv_por_mp_y_bodega.Location = new System.Drawing.Point(101, 16);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Name = "tggMostrarTotasInv_por_mp_y_bodega";
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Options.UseFont = true;
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OffText = "No";
+            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OnText = "Si";
+            this.tggMostrarTotasInv_por_mp_y_bodega.Size = new System.Drawing.Size(109, 26);
+            this.tggMostrarTotasInv_por_mp_y_bodega.TabIndex = 17;
+            this.tggMostrarTotasInv_por_mp_y_bodega.Toggled += new System.EventHandler(this.tggMostrarTotasInv_por_mp_y_bodega_Toggled);
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1650,28 +1672,6 @@ namespace LOSA.TransaccionesMP
             this.backgroundWorkerResumenMP.WorkerSupportsCancellation = true;
             this.backgroundWorkerResumenMP.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerResumenMP_DoWork);
             // 
-            // tggMostrarTotasInv_por_mp_y_bodega
-            // 
-            this.tggMostrarTotasInv_por_mp_y_bodega.Location = new System.Drawing.Point(101, 16);
-            this.tggMostrarTotasInv_por_mp_y_bodega.Name = "tggMostrarTotasInv_por_mp_y_bodega";
-            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Options.UseFont = true;
-            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OffText = "No";
-            this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OnText = "Si";
-            this.tggMostrarTotasInv_por_mp_y_bodega.Size = new System.Drawing.Size(109, 26);
-            this.tggMostrarTotasInv_por_mp_y_bodega.TabIndex = 17;
-            this.tggMostrarTotasInv_por_mp_y_bodega.Toggled += new System.EventHandler(this.tggMostrarTotasInv_por_mp_y_bodega_Toggled);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(8, 21);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(87, 15);
-            this.labelControl1.TabIndex = 18;
-            this.labelControl1.Text = "Mostrar Toda(s)";
-            // 
             // frmReporteInventarioKardexGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1710,12 +1710,12 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).EndInit();
             this.tabNavigationPage6.ResumeLayout(false);
             this.tabNavigationPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdMPBodega)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAjuste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLogKardex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_Inv_Por_MPyBodega.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
