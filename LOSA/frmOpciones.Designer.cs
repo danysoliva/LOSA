@@ -233,6 +233,7 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1772,7 +1773,8 @@
             this.navBarItem16,
             this.navBarItem17,
             this.navBarItem19,
-            this.navBarItem2});
+            this.navBarItem2,
+            this.navBarItem9});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
@@ -2106,6 +2108,7 @@
             this.navBarGroup3.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup3.AppearancePressed.Options.UseFont = true;
             this.navBarGroup3.Caption = "Generales";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
@@ -2113,7 +2116,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarItem10
@@ -2217,7 +2221,6 @@
             this.navBarGroup4.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup4.AppearancePressed.Options.UseFont = true;
             this.navBarGroup4.Caption = "Inventario";
-            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrasladoAceiteExterno),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbSetMaterial),
@@ -3253,6 +3256,21 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // navBarItem9
+            // 
+            this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.Appearance.Options.UseFont = true;
+            this.navBarItem9.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItem9.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearancePressed.Options.UseFont = true;
+            this.navBarItem9.Caption = "MP por BIN";
+            this.navBarItem9.Name = "navBarItem9";
+            this.navBarItem9.Visible = false;
+            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3497,5 +3515,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
         private DevExpress.XtraEditors.SimpleButton simpleButton73;
         private DevExpress.XtraEditors.SimpleButton simpleButton72;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
     }
 }

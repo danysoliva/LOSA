@@ -3044,5 +3044,12 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void navBarItem9_LinkClicked_1(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            xfrmMP_Por_BIN frm = new xfrmMP_Por_BIN();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }
