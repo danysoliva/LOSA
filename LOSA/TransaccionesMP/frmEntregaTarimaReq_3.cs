@@ -855,7 +855,7 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsTransaccionesMP.viewTarimasRow)gridView.GetFocusedDataRow();
 
-            if(dp.ValidateNumberDecimal(row.cant_entregada_micros)>= dp.ValidateNumberDecimal(row.kg))
+            if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
             {
                 string mensaje = "La tarima ya fue entregada en Micro Ingredientes!";
                 lblMensaje.Text = mensaje;
