@@ -52,6 +52,12 @@ namespace LOSA.Trazabilidad {
         
         private OC_SAP_ViewDataTable tableOC_SAP_View;
         
+        private Ruta4_H_trz_lote_ptDataTable tableRuta4_H_trz_lote_pt;
+        
+        private Ruta4_D_trz_loteDataTable tableRuta4_D_trz_lote;
+        
+        private global::System.Data.DataRelation relationDetalle_de_Lotes;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -121,6 +127,12 @@ namespace LOSA.Trazabilidad {
                 }
                 if ((ds.Tables["OC_SAP_View"] != null)) {
                     base.Tables.Add(new OC_SAP_ViewDataTable(ds.Tables["OC_SAP_View"]));
+                }
+                if ((ds.Tables["Ruta4_H_trz_lote_pt"] != null)) {
+                    base.Tables.Add(new Ruta4_H_trz_lote_ptDataTable(ds.Tables["Ruta4_H_trz_lote_pt"]));
+                }
+                if ((ds.Tables["Ruta4_D_trz_lote"] != null)) {
+                    base.Tables.Add(new Ruta4_D_trz_loteDataTable(ds.Tables["Ruta4_D_trz_lote"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -282,6 +294,26 @@ namespace LOSA.Trazabilidad {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Ruta4_H_trz_lote_ptDataTable Ruta4_H_trz_lote_pt {
+            get {
+                return this.tableRuta4_H_trz_lote_pt;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Ruta4_D_trz_loteDataTable Ruta4_D_trz_lote {
+            get {
+                return this.tableRuta4_D_trz_lote;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -388,6 +420,12 @@ namespace LOSA.Trazabilidad {
                 }
                 if ((ds.Tables["OC_SAP_View"] != null)) {
                     base.Tables.Add(new OC_SAP_ViewDataTable(ds.Tables["OC_SAP_View"]));
+                }
+                if ((ds.Tables["Ruta4_H_trz_lote_pt"] != null)) {
+                    base.Tables.Add(new Ruta4_H_trz_lote_ptDataTable(ds.Tables["Ruta4_H_trz_lote_pt"]));
+                }
+                if ((ds.Tables["Ruta4_D_trz_lote"] != null)) {
+                    base.Tables.Add(new Ruta4_D_trz_loteDataTable(ds.Tables["Ruta4_D_trz_lote"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -506,6 +544,19 @@ namespace LOSA.Trazabilidad {
                     this.tableOC_SAP_View.InitVars();
                 }
             }
+            this.tableRuta4_H_trz_lote_pt = ((Ruta4_H_trz_lote_ptDataTable)(base.Tables["Ruta4_H_trz_lote_pt"]));
+            if ((initTable == true)) {
+                if ((this.tableRuta4_H_trz_lote_pt != null)) {
+                    this.tableRuta4_H_trz_lote_pt.InitVars();
+                }
+            }
+            this.tableRuta4_D_trz_lote = ((Ruta4_D_trz_loteDataTable)(base.Tables["Ruta4_D_trz_lote"]));
+            if ((initTable == true)) {
+                if ((this.tableRuta4_D_trz_lote != null)) {
+                    this.tableRuta4_D_trz_lote.InitVars();
+                }
+            }
+            this.relationDetalle_de_Lotes = this.Relations["Detalle de Lotes"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -544,6 +595,14 @@ namespace LOSA.Trazabilidad {
             base.Tables.Add(this.tablelista_lotes_mp);
             this.tableOC_SAP_View = new OC_SAP_ViewDataTable();
             base.Tables.Add(this.tableOC_SAP_View);
+            this.tableRuta4_H_trz_lote_pt = new Ruta4_H_trz_lote_ptDataTable();
+            base.Tables.Add(this.tableRuta4_H_trz_lote_pt);
+            this.tableRuta4_D_trz_lote = new Ruta4_D_trz_loteDataTable();
+            base.Tables.Add(this.tableRuta4_D_trz_lote);
+            this.relationDetalle_de_Lotes = new global::System.Data.DataRelation("Detalle de Lotes", new global::System.Data.DataColumn[] {
+                        this.tableRuta4_H_trz_lote_pt.id_mpColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRuta4_D_trz_lote.id_mpColumn}, false);
+            this.Relations.Add(this.relationDetalle_de_Lotes);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -627,6 +686,18 @@ namespace LOSA.Trazabilidad {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeOC_SAP_View() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeRuta4_H_trz_lote_pt() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeRuta4_D_trz_lote() {
             return false;
         }
         
@@ -726,6 +797,12 @@ namespace LOSA.Trazabilidad {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void OC_SAP_ViewRowChangeEventHandler(object sender, OC_SAP_ViewRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void Ruta4_H_trz_lote_ptRowChangeEventHandler(object sender, Ruta4_H_trz_lote_ptRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void Ruta4_D_trz_loteRowChangeEventHandler(object sender, Ruta4_D_trz_loteRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5221,6 +5298,636 @@ namespace LOSA.Trazabilidad {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Ruta4_H_trz_lote_ptDataTable : global::System.Data.TypedTableBase<Ruta4_H_trz_lote_ptRow> {
+            
+            private global::System.Data.DataColumn columnid_mp;
+            
+            private global::System.Data.DataColumn columnItemName;
+            
+            private global::System.Data.DataColumn columnItemCode;
+            
+            private global::System.Data.DataColumn columnKg_por_Batch;
+            
+            private global::System.Data.DataColumn columncant_batch_plan;
+            
+            private global::System.Data.DataColumn columnkg_total_plan;
+            
+            private global::System.Data.DataColumn columncant_batch_real;
+            
+            private global::System.Data.DataColumn columnkg_real_dosificado;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_H_trz_lote_ptDataTable() {
+                this.TableName = "Ruta4_H_trz_lote_pt";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Ruta4_H_trz_lote_ptDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected Ruta4_H_trz_lote_ptDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ItemNameColumn {
+                get {
+                    return this.columnItemName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ItemCodeColumn {
+                get {
+                    return this.columnItemCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Kg_por_BatchColumn {
+                get {
+                    return this.columnKg_por_Batch;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cant_batch_planColumn {
+                get {
+                    return this.columncant_batch_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn kg_total_planColumn {
+                get {
+                    return this.columnkg_total_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cant_batch_realColumn {
+                get {
+                    return this.columncant_batch_real;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn kg_real_dosificadoColumn {
+                get {
+                    return this.columnkg_real_dosificado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_H_trz_lote_ptRow this[int index] {
+                get {
+                    return ((Ruta4_H_trz_lote_ptRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ruta4_H_trz_lote_ptRowChangeEventHandler Ruta4_H_trz_lote_ptRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ruta4_H_trz_lote_ptRowChangeEventHandler Ruta4_H_trz_lote_ptRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ruta4_H_trz_lote_ptRowChangeEventHandler Ruta4_H_trz_lote_ptRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ruta4_H_trz_lote_ptRowChangeEventHandler Ruta4_H_trz_lote_ptRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddRuta4_H_trz_lote_ptRow(Ruta4_H_trz_lote_ptRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_H_trz_lote_ptRow AddRuta4_H_trz_lote_ptRow(int id_mp, string ItemName, string ItemCode, decimal Kg_por_Batch, int cant_batch_plan, decimal kg_total_plan, int cant_batch_real, decimal kg_real_dosificado) {
+                Ruta4_H_trz_lote_ptRow rowRuta4_H_trz_lote_ptRow = ((Ruta4_H_trz_lote_ptRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id_mp,
+                        ItemName,
+                        ItemCode,
+                        Kg_por_Batch,
+                        cant_batch_plan,
+                        kg_total_plan,
+                        cant_batch_real,
+                        kg_real_dosificado};
+                rowRuta4_H_trz_lote_ptRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRuta4_H_trz_lote_ptRow);
+                return rowRuta4_H_trz_lote_ptRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Ruta4_H_trz_lote_ptDataTable cln = ((Ruta4_H_trz_lote_ptDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Ruta4_H_trz_lote_ptDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnid_mp = base.Columns["id_mp"];
+                this.columnItemName = base.Columns["ItemName"];
+                this.columnItemCode = base.Columns["ItemCode"];
+                this.columnKg_por_Batch = base.Columns["Kg_por_Batch"];
+                this.columncant_batch_plan = base.Columns["cant_batch_plan"];
+                this.columnkg_total_plan = base.Columns["kg_total_plan"];
+                this.columncant_batch_real = base.Columns["cant_batch_real"];
+                this.columnkg_real_dosificado = base.Columns["kg_real_dosificado"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columnItemName = new global::System.Data.DataColumn("ItemName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemName);
+                this.columnItemCode = new global::System.Data.DataColumn("ItemCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemCode);
+                this.columnKg_por_Batch = new global::System.Data.DataColumn("Kg_por_Batch", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKg_por_Batch);
+                this.columncant_batch_plan = new global::System.Data.DataColumn("cant_batch_plan", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncant_batch_plan);
+                this.columnkg_total_plan = new global::System.Data.DataColumn("kg_total_plan", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkg_total_plan);
+                this.columncant_batch_real = new global::System.Data.DataColumn("cant_batch_real", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncant_batch_real);
+                this.columnkg_real_dosificado = new global::System.Data.DataColumn("kg_real_dosificado", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkg_real_dosificado);
+                this.columnKg_por_Batch.Caption = "Kg por Batch";
+                this.columncant_batch_plan.Caption = "Cant. Batch Plan";
+                this.columnkg_total_plan.Caption = "Total Kg Plan";
+                this.columncant_batch_real.Caption = "Cant. Batch Real";
+                this.columnkg_real_dosificado.Caption = "Total Kg Adicionado";
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_H_trz_lote_ptRow NewRuta4_H_trz_lote_ptRow() {
+                return ((Ruta4_H_trz_lote_ptRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Ruta4_H_trz_lote_ptRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Ruta4_H_trz_lote_ptRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Ruta4_H_trz_lote_ptRowChanged != null)) {
+                    this.Ruta4_H_trz_lote_ptRowChanged(this, new Ruta4_H_trz_lote_ptRowChangeEvent(((Ruta4_H_trz_lote_ptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Ruta4_H_trz_lote_ptRowChanging != null)) {
+                    this.Ruta4_H_trz_lote_ptRowChanging(this, new Ruta4_H_trz_lote_ptRowChangeEvent(((Ruta4_H_trz_lote_ptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Ruta4_H_trz_lote_ptRowDeleted != null)) {
+                    this.Ruta4_H_trz_lote_ptRowDeleted(this, new Ruta4_H_trz_lote_ptRowChangeEvent(((Ruta4_H_trz_lote_ptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Ruta4_H_trz_lote_ptRowDeleting != null)) {
+                    this.Ruta4_H_trz_lote_ptRowDeleting(this, new Ruta4_H_trz_lote_ptRowChangeEvent(((Ruta4_H_trz_lote_ptRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveRuta4_H_trz_lote_ptRow(Ruta4_H_trz_lote_ptRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMantoTrazabilidad ds = new dsMantoTrazabilidad();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Ruta4_H_trz_lote_ptDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Ruta4_D_trz_loteDataTable : global::System.Data.TypedTableBase<Ruta4_D_trz_loteRow> {
+            
+            private global::System.Data.DataColumn columnContado;
+            
+            private global::System.Data.DataColumn columnlote_mp;
+            
+            private global::System.Data.DataColumn columnid_mp;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_D_trz_loteDataTable() {
+                this.TableName = "Ruta4_D_trz_lote";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Ruta4_D_trz_loteDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected Ruta4_D_trz_loteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ContadoColumn {
+                get {
+                    return this.columnContado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_mpColumn {
+                get {
+                    return this.columnlote_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_D_trz_loteRow this[int index] {
+                get {
+                    return ((Ruta4_D_trz_loteRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ruta4_D_trz_loteRowChangeEventHandler Ruta4_D_trz_loteRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ruta4_D_trz_loteRowChangeEventHandler Ruta4_D_trz_loteRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ruta4_D_trz_loteRowChangeEventHandler Ruta4_D_trz_loteRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Ruta4_D_trz_loteRowChangeEventHandler Ruta4_D_trz_loteRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddRuta4_D_trz_loteRow(Ruta4_D_trz_loteRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_D_trz_loteRow AddRuta4_D_trz_loteRow(decimal Contado, string lote_mp, Ruta4_H_trz_lote_ptRow parentRuta4_H_trz_lote_ptRowByDetalle_de_Lotes) {
+                Ruta4_D_trz_loteRow rowRuta4_D_trz_loteRow = ((Ruta4_D_trz_loteRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Contado,
+                        lote_mp,
+                        null};
+                if ((parentRuta4_H_trz_lote_ptRowByDetalle_de_Lotes != null)) {
+                    columnValuesArray[2] = parentRuta4_H_trz_lote_ptRowByDetalle_de_Lotes[0];
+                }
+                rowRuta4_D_trz_loteRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRuta4_D_trz_loteRow);
+                return rowRuta4_D_trz_loteRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Ruta4_D_trz_loteDataTable cln = ((Ruta4_D_trz_loteDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Ruta4_D_trz_loteDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnContado = base.Columns["Contado"];
+                this.columnlote_mp = base.Columns["lote_mp"];
+                this.columnid_mp = base.Columns["id_mp"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnContado = new global::System.Data.DataColumn("Contado", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnContado);
+                this.columnlote_mp = new global::System.Data.DataColumn("lote_mp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_mp);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columnContado.Caption = "Cant. Kg";
+                this.columnlote_mp.Caption = "Lote MP";
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_D_trz_loteRow NewRuta4_D_trz_loteRow() {
+                return ((Ruta4_D_trz_loteRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Ruta4_D_trz_loteRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Ruta4_D_trz_loteRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Ruta4_D_trz_loteRowChanged != null)) {
+                    this.Ruta4_D_trz_loteRowChanged(this, new Ruta4_D_trz_loteRowChangeEvent(((Ruta4_D_trz_loteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Ruta4_D_trz_loteRowChanging != null)) {
+                    this.Ruta4_D_trz_loteRowChanging(this, new Ruta4_D_trz_loteRowChangeEvent(((Ruta4_D_trz_loteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Ruta4_D_trz_loteRowDeleted != null)) {
+                    this.Ruta4_D_trz_loteRowDeleted(this, new Ruta4_D_trz_loteRowChangeEvent(((Ruta4_D_trz_loteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Ruta4_D_trz_loteRowDeleting != null)) {
+                    this.Ruta4_D_trz_loteRowDeleting(this, new Ruta4_D_trz_loteRowChangeEvent(((Ruta4_D_trz_loteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveRuta4_D_trz_loteRow(Ruta4_D_trz_loteRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMantoTrazabilidad ds = new dsMantoTrazabilidad();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Ruta4_D_trz_loteDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class proveedores_masterRow : global::System.Data.DataRow {
@@ -7844,6 +8551,371 @@ namespace LOSA.Trazabilidad {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Ruta4_H_trz_lote_ptRow : global::System.Data.DataRow {
+            
+            private Ruta4_H_trz_lote_ptDataTable tableRuta4_H_trz_lote_pt;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Ruta4_H_trz_lote_ptRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableRuta4_H_trz_lote_pt = ((Ruta4_H_trz_lote_ptDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tableRuta4_H_trz_lote_pt.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'Ruta4_H_trz_lote_pt\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_H_trz_lote_pt.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ItemName {
+                get {
+                    try {
+                        return ((string)(this[this.tableRuta4_H_trz_lote_pt.ItemNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ItemName\' de la tabla \'Ruta4_H_trz_lote_pt\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_H_trz_lote_pt.ItemNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ItemCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableRuta4_H_trz_lote_pt.ItemCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ItemCode\' de la tabla \'Ruta4_H_trz_lote_pt\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_H_trz_lote_pt.ItemCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Kg_por_Batch {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRuta4_H_trz_lote_pt.Kg_por_BatchColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Kg_por_Batch\' de la tabla \'Ruta4_H_trz_lote_pt\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_H_trz_lote_pt.Kg_por_BatchColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cant_batch_plan {
+                get {
+                    try {
+                        return ((int)(this[this.tableRuta4_H_trz_lote_pt.cant_batch_planColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cant_batch_plan\' de la tabla \'Ruta4_H_trz_lote_pt\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_H_trz_lote_pt.cant_batch_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal kg_total_plan {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRuta4_H_trz_lote_pt.kg_total_planColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'kg_total_plan\' de la tabla \'Ruta4_H_trz_lote_pt\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_H_trz_lote_pt.kg_total_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cant_batch_real {
+                get {
+                    try {
+                        return ((int)(this[this.tableRuta4_H_trz_lote_pt.cant_batch_realColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cant_batch_real\' de la tabla \'Ruta4_H_trz_lote_pt\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_H_trz_lote_pt.cant_batch_realColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal kg_real_dosificado {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRuta4_H_trz_lote_pt.kg_real_dosificadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'kg_real_dosificado\' de la tabla \'Ruta4_H_trz_lote_pt\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_H_trz_lote_pt.kg_real_dosificadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tableRuta4_H_trz_lote_pt.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tableRuta4_H_trz_lote_pt.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsItemNameNull() {
+                return this.IsNull(this.tableRuta4_H_trz_lote_pt.ItemNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetItemNameNull() {
+                this[this.tableRuta4_H_trz_lote_pt.ItemNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsItemCodeNull() {
+                return this.IsNull(this.tableRuta4_H_trz_lote_pt.ItemCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetItemCodeNull() {
+                this[this.tableRuta4_H_trz_lote_pt.ItemCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsKg_por_BatchNull() {
+                return this.IsNull(this.tableRuta4_H_trz_lote_pt.Kg_por_BatchColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetKg_por_BatchNull() {
+                this[this.tableRuta4_H_trz_lote_pt.Kg_por_BatchColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscant_batch_planNull() {
+                return this.IsNull(this.tableRuta4_H_trz_lote_pt.cant_batch_planColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcant_batch_planNull() {
+                this[this.tableRuta4_H_trz_lote_pt.cant_batch_planColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iskg_total_planNull() {
+                return this.IsNull(this.tableRuta4_H_trz_lote_pt.kg_total_planColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setkg_total_planNull() {
+                this[this.tableRuta4_H_trz_lote_pt.kg_total_planColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscant_batch_realNull() {
+                return this.IsNull(this.tableRuta4_H_trz_lote_pt.cant_batch_realColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcant_batch_realNull() {
+                this[this.tableRuta4_H_trz_lote_pt.cant_batch_realColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iskg_real_dosificadoNull() {
+                return this.IsNull(this.tableRuta4_H_trz_lote_pt.kg_real_dosificadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setkg_real_dosificadoNull() {
+                this[this.tableRuta4_H_trz_lote_pt.kg_real_dosificadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_D_trz_loteRow[] GetRuta4_D_trz_loteRows() {
+                if ((this.Table.ChildRelations["Detalle de Lotes"] == null)) {
+                    return new Ruta4_D_trz_loteRow[0];
+                }
+                else {
+                    return ((Ruta4_D_trz_loteRow[])(base.GetChildRows(this.Table.ChildRelations["Detalle de Lotes"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Ruta4_D_trz_loteRow : global::System.Data.DataRow {
+            
+            private Ruta4_D_trz_loteDataTable tableRuta4_D_trz_lote;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Ruta4_D_trz_loteRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableRuta4_D_trz_lote = ((Ruta4_D_trz_loteDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Contado {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRuta4_D_trz_lote.ContadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Contado\' de la tabla \'Ruta4_D_trz_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_D_trz_lote.ContadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string lote_mp {
+                get {
+                    try {
+                        return ((string)(this[this.tableRuta4_D_trz_lote.lote_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_mp\' de la tabla \'Ruta4_D_trz_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_D_trz_lote.lote_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tableRuta4_D_trz_lote.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'Ruta4_D_trz_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_D_trz_lote.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_H_trz_lote_ptRow Ruta4_H_trz_lote_ptRow {
+                get {
+                    return ((Ruta4_H_trz_lote_ptRow)(this.GetParentRow(this.Table.ParentRelations["Detalle de Lotes"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Detalle de Lotes"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsContadoNull() {
+                return this.IsNull(this.tableRuta4_D_trz_lote.ContadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetContadoNull() {
+                this[this.tableRuta4_D_trz_lote.ContadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_mpNull() {
+                return this.IsNull(this.tableRuta4_D_trz_lote.lote_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_mpNull() {
+                this[this.tableRuta4_D_trz_lote.lote_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tableRuta4_D_trz_lote.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tableRuta4_D_trz_lote.id_mpColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -8305,6 +9377,74 @@ namespace LOSA.Trazabilidad {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public OC_SAP_ViewRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class Ruta4_H_trz_lote_ptRowChangeEvent : global::System.EventArgs {
+            
+            private Ruta4_H_trz_lote_ptRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_H_trz_lote_ptRowChangeEvent(Ruta4_H_trz_lote_ptRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_H_trz_lote_ptRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class Ruta4_D_trz_loteRowChangeEvent : global::System.EventArgs {
+            
+            private Ruta4_D_trz_loteRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_D_trz_loteRowChangeEvent(Ruta4_D_trz_loteRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Ruta4_D_trz_loteRow Row {
                 get {
                     return this.eventRow;
                 }
