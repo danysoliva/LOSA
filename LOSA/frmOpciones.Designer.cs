@@ -162,6 +162,7 @@
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbTrasladoAceiteExterno = new DevExpress.XtraNavBar.NavBarItem();
             this.nbSetMaterial = new DevExpress.XtraNavBar.NavBarItem();
@@ -233,7 +234,6 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1259,7 +1259,7 @@
             this.simpleButton67.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton67.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton67.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton67.ImageOptions.Image")));
-            this.simpleButton67.Location = new System.Drawing.Point(627, 24);
+            this.simpleButton67.Location = new System.Drawing.Point(9, 218);
             this.simpleButton67.Name = "simpleButton67";
             this.simpleButton67.Size = new System.Drawing.Size(199, 59);
             this.simpleButton67.TabIndex = 48;
@@ -1465,11 +1465,12 @@
             this.simpleButton16.Appearance.Options.UseFont = true;
             this.simpleButton16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton16.ImageOptions.SvgImage")));
-            this.simpleButton16.Location = new System.Drawing.Point(9, 218);
+            this.simpleButton16.Location = new System.Drawing.Point(627, 89);
             this.simpleButton16.Name = "simpleButton16";
             this.simpleButton16.Size = new System.Drawing.Size(199, 59);
             this.simpleButton16.TabIndex = 18;
             this.simpleButton16.Text = "Reportes de \r\nTrazabilidad";
+            this.simpleButton16.Visible = false;
             this.simpleButton16.Click += new System.EventHandler(this.simpleButton16_Click);
             // 
             // simpleButton11
@@ -2211,6 +2212,21 @@
             this.navBarItem2.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_consumr_48x48;
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
+            // 
+            // navBarItem9
+            // 
+            this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.Appearance.Options.UseFont = true;
+            this.navBarItem9.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItem9.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearancePressed.Options.UseFont = true;
+            this.navBarItem9.Caption = "MP por BIN";
+            this.navBarItem9.Name = "navBarItem9";
+            this.navBarItem9.Visible = false;
+            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
             // 
             // navBarGroup4
             // 
@@ -3255,21 +3271,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // navBarItem9
-            // 
-            this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.Appearance.Options.UseFont = true;
-            this.navBarItem9.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearanceDisabled.Options.UseFont = true;
-            this.navBarItem9.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearancePressed.Options.UseFont = true;
-            this.navBarItem9.Caption = "MP por BIN";
-            this.navBarItem9.Name = "navBarItem9";
-            this.navBarItem9.Visible = false;
-            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
             // 
             // frmOpciones
             // 

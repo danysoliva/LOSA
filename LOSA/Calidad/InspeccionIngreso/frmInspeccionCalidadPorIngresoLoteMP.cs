@@ -88,11 +88,7 @@ namespace LOSA.Calidad
             }
         }
 
-        public delegate void RowClickEventHandler(
         
-            object sender,
-            RowCellClickEventArgs e
-        );
 
         public frmInspeccionCalidadPorIngresoLoteMP(int pNumeroIngreso, int pIdMP, string pLote, UserLogin Puser)
         {
@@ -106,7 +102,13 @@ namespace LOSA.Calidad
             {
                 if (item.numero_transaccion == NumeroTransaccion)
                 {
-                    gridView7.GetFocusedDataRow();
+                    
+                    Id_ingreso = item.id_ingreso;
+                    Id_boleta = item.id_boleta;
+
+                    item.selected = true;
+                    
+
                 }
             }
             
@@ -2216,9 +2218,17 @@ namespace LOSA.Calidad
             var gridview = (GridView)grid_Header_ingresos.FocusedView;
             var row = (dsMantenimientoC.Ingresos_Lote_detalleRow)gridview.GetFocusedDataRow();
 
+            //gridView7.Appearance.FocusedRow.BackColor = Color.DarkSeaGreen;
             NumeroTransaccion = row.numero_transaccion;
             Id_ingreso = row.id_ingreso;
             Id_boleta = row.id_boleta;
+
+            foreach (dsMantenimientoC.Ingresos_Lote_detalleRow item in dsMantenimientoC.Ingresos_Lote_detalle.Rows)
+            {
+                item.selected = false;
+                item.AcceptChanges();
+            }
+            row.selected = true;
 
             try
             {

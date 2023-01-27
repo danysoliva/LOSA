@@ -46,6 +46,8 @@ namespace LOSA.Calidad
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCertificado = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdMateriasPrimas = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdProveedores = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // labelControl3
@@ -255,7 +257,7 @@ namespace LOSA.Calidad
             this.btnCertificado.Appearance.Options.UseTextOptions = true;
             this.btnCertificado.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnCertificado.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnCertificado.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton4.ImageOptions.SvgImage")));
+            this.btnCertificado.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCertificado.ImageOptions.SvgImage")));
             this.btnCertificado.Location = new System.Drawing.Point(249, 459);
             this.btnCertificado.Name = "btnCertificado";
             this.btnCertificado.Size = new System.Drawing.Size(231, 54);
@@ -263,11 +265,43 @@ namespace LOSA.Calidad
             this.btnCertificado.Text = "Certificado de Calidad";
             this.btnCertificado.Click += new System.EventHandler(this.btnCertificado_Click);
             // 
+            // cmdMateriasPrimas
+            // 
+            this.cmdMateriasPrimas.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdMateriasPrimas.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdMateriasPrimas.Appearance.Options.UseBackColor = true;
+            this.cmdMateriasPrimas.Appearance.Options.UseFont = true;
+            this.cmdMateriasPrimas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdMateriasPrimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.cmdMateriasPrimas.Location = new System.Drawing.Point(249, 519);
+            this.cmdMateriasPrimas.Name = "cmdMateriasPrimas";
+            this.cmdMateriasPrimas.Size = new System.Drawing.Size(231, 55);
+            this.cmdMateriasPrimas.TabIndex = 42;
+            this.cmdMateriasPrimas.Text = "Materia Prima";
+            this.cmdMateriasPrimas.Click += new System.EventHandler(this.cmdMateriasPrimas_Click);
+            // 
+            // cmdProveedores
+            // 
+            this.cmdProveedores.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdProveedores.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdProveedores.Appearance.Options.UseBackColor = true;
+            this.cmdProveedores.Appearance.Options.UseFont = true;
+            this.cmdProveedores.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdProveedores.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdProveedores.ImageOptions.SvgImage")));
+            this.cmdProveedores.Location = new System.Drawing.Point(12, 519);
+            this.cmdProveedores.Name = "cmdProveedores";
+            this.cmdProveedores.Size = new System.Drawing.Size(231, 55);
+            this.cmdProveedores.TabIndex = 41;
+            this.cmdProveedores.Text = "Proveedores";
+            this.cmdProveedores.Click += new System.EventHandler(this.cmdProveedores_Click);
+            // 
             // frm_mantenimiento_calidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 599);
+            this.Controls.Add(this.cmdMateriasPrimas);
+            this.Controls.Add(this.cmdProveedores);
             this.Controls.Add(this.btnCertificado);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
@@ -311,5 +345,7 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton btnCertificado;
+        private DevExpress.XtraEditors.SimpleButton cmdMateriasPrimas;
+        private DevExpress.XtraEditors.SimpleButton cmdProveedores;
     }
 }
