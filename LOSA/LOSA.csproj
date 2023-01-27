@@ -7117,6 +7117,7 @@
     <EmbeddedResource Include="Produccion\xfrmCheckActiveBin.resx">
       <DependentUpon>xfrmCheckActiveBin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -8185,6 +8186,8 @@
     <None Include="Resources\sigma_32X32.png" />
     <None Include="Resources\silo.png" />
     <None Include="Resources\tanque cono.jpg" />
+    <None Include="Resources\tank4.png" />
+    <None Include="Resources\tank5.png" />
     <Content Include="Resources\tap.png" />
     <None Include="Resources\trazabilidad.png" />
     <None Include="Resources\trucksss.png" />
