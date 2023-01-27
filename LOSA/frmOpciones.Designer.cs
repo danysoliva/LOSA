@@ -162,6 +162,7 @@
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbTrasladoAceiteExterno = new DevExpress.XtraNavBar.NavBarItem();
             this.nbSetMaterial = new DevExpress.XtraNavBar.NavBarItem();
@@ -233,7 +234,6 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2212,6 +2212,22 @@
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
             // 
+            // navBarItem9
+            // 
+            this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.Appearance.Options.UseFont = true;
+            this.navBarItem9.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItem9.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.AppearancePressed.Options.UseFont = true;
+            this.navBarItem9.Caption = "MP por BIN";
+            this.navBarItem9.ImageOptions.SmallImage = global::LOSA.Properties.Resources.inventory;
+            this.navBarItem9.Name = "navBarItem9";
+            this.navBarItem9.Visible = false;
+            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
+            // 
             // navBarGroup4
             // 
             this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
@@ -3255,21 +3271,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // navBarItem9
-            // 
-            this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.Appearance.Options.UseFont = true;
-            this.navBarItem9.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearanceDisabled.Options.UseFont = true;
-            this.navBarItem9.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem9.AppearancePressed.Options.UseFont = true;
-            this.navBarItem9.Caption = "MP por BIN";
-            this.navBarItem9.Name = "navBarItem9";
-            this.navBarItem9.Visible = false;
-            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
             // 
             // frmOpciones
             // 
