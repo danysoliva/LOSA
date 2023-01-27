@@ -183,7 +183,7 @@ namespace LOSA.Produccion
         private void xfrmCheckActiveBin_Load(object sender, EventArgs e)
         {
             timer1.Enabled=true;
-            //this.WindowState = FormWindowState.Normal;
+            this.WindowState = FormWindowState.Normal;
 
         }
 
