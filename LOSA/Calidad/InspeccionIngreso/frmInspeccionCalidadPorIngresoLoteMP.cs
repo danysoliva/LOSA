@@ -45,7 +45,7 @@ namespace LOSA.Calidad
         public int NumeroTransaccion;
         int IdMP;
         string Lote;
-        object sender;
+        
 
         DataOperations dp = new DataOperations();
         public frmInspeccionCalidadPorIngresoLoteMP(int id_ingreso_lote, UserLogin Puser)
@@ -88,6 +88,12 @@ namespace LOSA.Calidad
             }
         }
 
+        public delegate void RowClickEventHandler(
+        
+            object sender,
+            RowCellClickEventArgs e
+        );
+
         public frmInspeccionCalidadPorIngresoLoteMP(int pNumeroIngreso, int pIdMP, string pLote, UserLogin Puser)
         {
             InitializeComponent();
@@ -100,13 +106,7 @@ namespace LOSA.Calidad
             {
                 if (item.numero_transaccion == NumeroTransaccion)
                 {
-                    int[] selectedRows = gridView7.GetSelectedRows();
-                    foreach (int RowHandle in selectedRows)
-                    {
-
-                    }
-
-                    //gridView7_RowClick(sender, e);
+                    gridView7.GetFocusedDataRow();
                 }
             }
             
