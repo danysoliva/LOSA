@@ -118,6 +118,7 @@
             this.colid,
             this.colprint,
             this.collote});
+            this.grdv_ingreso.CustomizationFormBounds = new System.Drawing.Rectangle(-1329, 477, 260, 272);
             this.grdv_ingreso.GridControl = this.grd_ingreso;
             this.grdv_ingreso.Name = "grdv_ingreso";
             this.grdv_ingreso.OptionsView.ShowAutoFilterRow = true;

@@ -58,7 +58,10 @@ namespace LOSA.Trazabilidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.gridView21 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView22 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colContado1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_mp1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GridRuta4_detalle_trz_lote_pt = new DevExpress.XtraGrid.GridControl();
             this.dsMantoTrazabilidad = new LOSA.Trazabilidad.dsMantoTrazabilidad();
             this.gridView20 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -70,6 +73,11 @@ namespace LOSA.Trazabilidad
             this.colkg_total_plan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcant_batch_real = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colkg_real_dosificado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView21 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn104 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn105 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn106 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.npRuta2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
@@ -720,18 +728,11 @@ namespace LOSA.Trazabilidad
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
-            this.gridColumn104 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn105 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn106 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_mp4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView22 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colContado1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote_mp1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_mp5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridRuta4_detalle_trz_lote_pt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.npRuta2.SuspendLayout();
@@ -966,25 +967,40 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridView21
+            // gridView22
             // 
-            this.gridView21.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn104,
-            this.gridColumn105,
-            this.gridColumn106});
-            this.gridView21.GridControl = this.GridRuta4_detalle_trz_lote_pt;
-            this.gridView21.Name = "gridView21";
-            this.gridView21.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView21.OptionsDetail.EnableMasterViewMode = false;
-            this.gridView21.OptionsLayout.Columns.StoreAppearance = true;
-            this.gridView21.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView21.OptionsMenu.ShowGroupSummaryEditorItem = true;
-            this.gridView21.OptionsView.ShowChildrenInGroupPanel = true;
-            this.gridView21.OptionsView.ShowFooter = true;
-            this.gridView21.OptionsView.ShowGroupPanel = false;
+            this.gridView22.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colContado1,
+            this.collote_mp1,
+            this.colid_mp5});
+            this.gridView22.GridControl = this.GridRuta4_detalle_trz_lote_pt;
+            this.gridView22.Name = "gridView22";
+            this.gridView22.OptionsBehavior.ReadOnly = true;
+            this.gridView22.OptionsView.ShowFooter = true;
+            this.gridView22.OptionsView.ShowGroupPanel = false;
+            // 
+            // colContado1
+            // 
+            this.colContado1.FieldName = "Contado";
+            this.colContado1.Name = "colContado1";
+            this.colContado1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Contado", "SUMA={0:#.##}")});
+            this.colContado1.Visible = true;
+            this.colContado1.VisibleIndex = 0;
+            // 
+            // collote_mp1
+            // 
+            this.collote_mp1.FieldName = "lote_mp";
+            this.collote_mp1.Name = "collote_mp1";
+            this.collote_mp1.Visible = true;
+            this.collote_mp1.VisibleIndex = 1;
+            // 
+            // colid_mp5
+            // 
+            this.colid_mp5.FieldName = "id_mp";
+            this.colid_mp5.Name = "colid_mp5";
             // 
             // GridRuta4_detalle_trz_lote_pt
             // 
@@ -1085,6 +1101,60 @@ namespace LOSA.Trazabilidad
             this.colkg_real_dosificado.OptionsColumn.ReadOnly = true;
             this.colkg_real_dosificado.Visible = true;
             this.colkg_real_dosificado.VisibleIndex = 6;
+            // 
+            // colid_mp4
+            // 
+            this.colid_mp4.FieldName = "id_mp";
+            this.colid_mp4.Name = "colid_mp4";
+            // 
+            // gridView21
+            // 
+            this.gridView21.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn104,
+            this.gridColumn105,
+            this.gridColumn106});
+            this.gridView21.GridControl = this.GridRuta4_detalle_trz_lote_pt;
+            this.gridView21.Name = "gridView21";
+            this.gridView21.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView21.OptionsDetail.EnableMasterViewMode = false;
+            this.gridView21.OptionsLayout.Columns.StoreAppearance = true;
+            this.gridView21.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView21.OptionsMenu.ShowGroupSummaryEditorItem = true;
+            this.gridView21.OptionsView.ShowChildrenInGroupPanel = true;
+            this.gridView21.OptionsView.ShowFooter = true;
+            this.gridView21.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn104
+            // 
+            this.gridColumn104.Caption = "Kg Consumidos";
+            this.gridColumn104.DisplayFormat.FormatString = "n2";
+            this.gridColumn104.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn104.FieldName = "Detalle de Lotes.Contado";
+            this.gridColumn104.Name = "gridColumn104";
+            this.gridColumn104.OptionsColumn.AllowEdit = false;
+            this.gridColumn104.OptionsColumn.ReadOnly = true;
+            this.gridColumn104.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Detalle de Lotes.Contado", "SUMA={0:#.##}")});
+            this.gridColumn104.Visible = true;
+            this.gridColumn104.VisibleIndex = 1;
+            this.gridColumn104.Width = 275;
+            // 
+            // gridColumn105
+            // 
+            this.gridColumn105.Caption = "Lote MP";
+            this.gridColumn105.FieldName = "Detalle de Lotes.lote_mp";
+            this.gridColumn105.Name = "gridColumn105";
+            this.gridColumn105.OptionsColumn.AllowEdit = false;
+            this.gridColumn105.OptionsColumn.ReadOnly = true;
+            this.gridColumn105.Visible = true;
+            this.gridColumn105.VisibleIndex = 0;
+            this.gridColumn105.Width = 999;
+            // 
+            // gridColumn106
+            // 
+            this.gridColumn106.Caption = "id_mp";
+            this.gridColumn106.FieldName = "Detalle de Lotes.id_mp";
+            this.gridColumn106.Name = "gridColumn106";
             // 
             // navigationFrame1
             // 
@@ -8477,71 +8547,6 @@ namespace LOSA.Trazabilidad
             this.timerRuta4.Interval = 3000;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
             // 
-            // gridColumn104
-            // 
-            this.gridColumn104.Caption = "Kg Consumidos";
-            this.gridColumn104.DisplayFormat.FormatString = "n2";
-            this.gridColumn104.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn104.FieldName = "Detalle de Lotes.Contado";
-            this.gridColumn104.Name = "gridColumn104";
-            this.gridColumn104.OptionsColumn.AllowEdit = false;
-            this.gridColumn104.OptionsColumn.ReadOnly = true;
-            this.gridColumn104.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Detalle de Lotes.Contado", "SUMA={0:#.##}")});
-            this.gridColumn104.Visible = true;
-            this.gridColumn104.VisibleIndex = 1;
-            this.gridColumn104.Width = 275;
-            // 
-            // gridColumn105
-            // 
-            this.gridColumn105.Caption = "Lote MP";
-            this.gridColumn105.FieldName = "Detalle de Lotes.lote_mp";
-            this.gridColumn105.Name = "gridColumn105";
-            this.gridColumn105.OptionsColumn.AllowEdit = false;
-            this.gridColumn105.OptionsColumn.ReadOnly = true;
-            this.gridColumn105.Visible = true;
-            this.gridColumn105.VisibleIndex = 0;
-            this.gridColumn105.Width = 999;
-            // 
-            // gridColumn106
-            // 
-            this.gridColumn106.Caption = "id_mp";
-            this.gridColumn106.FieldName = "Detalle de Lotes.id_mp";
-            this.gridColumn106.Name = "gridColumn106";
-            // 
-            // colid_mp4
-            // 
-            this.colid_mp4.FieldName = "id_mp";
-            this.colid_mp4.Name = "colid_mp4";
-            // 
-            // gridView22
-            // 
-            this.gridView22.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colContado1,
-            this.collote_mp1,
-            this.colid_mp5});
-            this.gridView22.GridControl = this.GridRuta4_detalle_trz_lote_pt;
-            this.gridView22.Name = "gridView22";
-            // 
-            // colContado1
-            // 
-            this.colContado1.FieldName = "Contado";
-            this.colContado1.Name = "colContado1";
-            this.colContado1.Visible = true;
-            this.colContado1.VisibleIndex = 0;
-            // 
-            // collote_mp1
-            // 
-            this.collote_mp1.FieldName = "lote_mp";
-            this.collote_mp1.Name = "collote_mp1";
-            this.collote_mp1.Visible = true;
-            this.collote_mp1.VisibleIndex = 1;
-            // 
-            // colid_mp5
-            // 
-            this.colid_mp5.FieldName = "id_mp";
-            this.colid_mp5.Name = "colid_mp5";
-            // 
             // frmRutasTrazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -8551,10 +8556,11 @@ namespace LOSA.Trazabilidad
             this.Controls.Add(this.navigationFrame1);
             this.Name = "frmRutasTrazabilidad";
             this.ShowIcon = false;
-            ((System.ComponentModel.ISupportInitialize)(this.gridView21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridRuta4_detalle_trz_lote_pt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantoTrazabilidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
             this.npRuta2.ResumeLayout(false);
@@ -8801,7 +8807,6 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView22)).EndInit();
             this.ResumeLayout(false);
 
         }

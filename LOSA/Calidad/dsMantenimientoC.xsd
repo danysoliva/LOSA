@@ -290,6 +290,8 @@
               <xs:element name="NumOC" msprop:Generator_ColumnVarNameInTable="columnNumOC" msprop:Generator_ColumnPropNameInRow="NumOC" msprop:Generator_ColumnPropNameInTable="NumOCColumn" msprop:Generator_UserColumnName="NumOC" type="xs:string" minOccurs="0" />
               <xs:element name="kg_ingresadas" msdata:Caption="Kg Ingresadas" msprop:Generator_ColumnVarNameInTable="columnkg_ingresadas" msprop:Generator_ColumnPropNameInRow="kg_ingresadas" msprop:Generator_ColumnPropNameInTable="kg_ingresadasColumn" msprop:Generator_UserColumnName="kg_ingresadas" type="xs:decimal" minOccurs="0" />
               <xs:element name="ud_ingresadas" msdata:Caption="Ud Ingresadas" msprop:Generator_ColumnVarNameInTable="columnud_ingresadas" msprop:Generator_ColumnPropNameInRow="ud_ingresadas" msprop:Generator_ColumnPropNameInTable="ud_ingresadasColumn" msprop:Generator_UserColumnName="ud_ingresadas" type="xs:decimal" minOccurs="0" />
+              <xs:element name="id_ingreso" msprop:Generator_ColumnVarNameInTable="columnid_ingreso" msprop:Generator_ColumnPropNameInRow="id_ingreso" msprop:Generator_ColumnPropNameInTable="id_ingresoColumn" msprop:Generator_UserColumnName="id_ingreso" type="xs:int" minOccurs="0" />
+              <xs:element name="id_boleta" msprop:Generator_ColumnVarNameInTable="columnid_boleta" msprop:Generator_ColumnPropNameInRow="id_boleta" msprop:Generator_ColumnPropNameInTable="id_boletaColumn" msprop:Generator_UserColumnName="id_boleta" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
