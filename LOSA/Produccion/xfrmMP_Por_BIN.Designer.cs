@@ -113,8 +113,6 @@ namespace LOSA.Produccion
             this.colrm_acs_id.FieldName = "rm_acs_id";
             this.colrm_acs_id.Name = "colrm_acs_id";
             this.colrm_acs_id.OptionsColumn.AllowEdit = false;
-            this.colrm_acs_id.Visible = true;
-            this.colrm_acs_id.VisibleIndex = 2;
             // 
             // colnombre_comercial
             // 
@@ -123,7 +121,7 @@ namespace LOSA.Produccion
             this.colnombre_comercial.Name = "colnombre_comercial";
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
-            this.colnombre_comercial.VisibleIndex = 3;
+            this.colnombre_comercial.VisibleIndex = 2;
             // 
             // colstatus
             // 
@@ -131,8 +129,6 @@ namespace LOSA.Produccion
             this.colstatus.FieldName = "status";
             this.colstatus.Name = "colstatus";
             this.colstatus.OptionsColumn.AllowEdit = false;
-            this.colstatus.Visible = true;
-            this.colstatus.VisibleIndex = 4;
             // 
             // colexistencia_kg
             // 
@@ -143,7 +139,7 @@ namespace LOSA.Produccion
             this.colexistencia_kg.Name = "colexistencia_kg";
             this.colexistencia_kg.OptionsColumn.AllowEdit = false;
             this.colexistencia_kg.Visible = true;
-            this.colexistencia_kg.VisibleIndex = 5;
+            this.colexistencia_kg.VisibleIndex = 4;
             // 
             // cmdHome
             // 

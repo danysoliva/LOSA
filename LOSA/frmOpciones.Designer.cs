@@ -2109,7 +2109,6 @@
             this.navBarGroup3.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup3.AppearancePressed.Options.UseFont = true;
             this.navBarGroup3.Caption = "Generales";
-            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
@@ -2224,8 +2223,8 @@
             this.navBarItem9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem9.AppearancePressed.Options.UseFont = true;
             this.navBarItem9.Caption = "MP por BIN";
+            this.navBarItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem9.ImageOptions.SvgImage")));
             this.navBarItem9.Name = "navBarItem9";
-            this.navBarItem9.Visible = false;
             this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
             // 
             // navBarGroup4
