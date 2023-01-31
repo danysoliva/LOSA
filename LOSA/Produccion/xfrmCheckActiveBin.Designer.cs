@@ -126,7 +126,7 @@ namespace LOSA.Produccion
             // 
             // pcTank2
             // 
-            this.pcTank2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pcTank2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank2.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank2.Appearance.Options.UseBackColor = true;
             this.pcTank2.Location = new System.Drawing.Point(132, 206);
