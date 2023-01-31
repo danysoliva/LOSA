@@ -115,7 +115,7 @@ namespace LOSA.Produccion
             // 
             this.pcTank1.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank1.Appearance.Options.UseBackColor = true;
-            this.pcTank1.Location = new System.Drawing.Point(26, 206);
+            this.pcTank1.Location = new System.Drawing.Point(25, 206);
             this.pcTank1.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank1.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -126,10 +126,10 @@ namespace LOSA.Produccion
             // 
             // pcTank2
             // 
-            this.pcTank2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcTank2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pcTank2.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank2.Appearance.Options.UseBackColor = true;
-            this.pcTank2.Location = new System.Drawing.Point(134, 206);
+            this.pcTank2.Location = new System.Drawing.Point(132, 206);
             this.pcTank2.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank2.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -143,7 +143,7 @@ namespace LOSA.Produccion
             this.pcTank3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank3.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank3.Appearance.Options.UseBackColor = true;
-            this.pcTank3.Location = new System.Drawing.Point(243, 206);
+            this.pcTank3.Location = new System.Drawing.Point(240, 206);
             this.pcTank3.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank3.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -157,7 +157,7 @@ namespace LOSA.Produccion
             this.pcTank5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank5.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank5.Appearance.Options.UseBackColor = true;
-            this.pcTank5.Location = new System.Drawing.Point(464, 205);
+            this.pcTank5.Location = new System.Drawing.Point(457, 205);
             this.pcTank5.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank5.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -171,7 +171,7 @@ namespace LOSA.Produccion
             this.pcTank4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank4.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank4.Appearance.Options.UseBackColor = true;
-            this.pcTank4.Location = new System.Drawing.Point(353, 205);
+            this.pcTank4.Location = new System.Drawing.Point(349, 205);
             this.pcTank4.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank4.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -185,7 +185,7 @@ namespace LOSA.Produccion
             this.pcTank6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank6.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank6.Appearance.Options.UseBackColor = true;
-            this.pcTank6.Location = new System.Drawing.Point(572, 206);
+            this.pcTank6.Location = new System.Drawing.Point(563, 206);
             this.pcTank6.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank6.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank6.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -199,7 +199,7 @@ namespace LOSA.Produccion
             this.pcTank7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank7.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank7.Appearance.Options.UseBackColor = true;
-            this.pcTank7.Location = new System.Drawing.Point(678, 205);
+            this.pcTank7.Location = new System.Drawing.Point(668, 205);
             this.pcTank7.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank7.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank7.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -213,7 +213,7 @@ namespace LOSA.Produccion
             this.pcTank8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank8.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank8.Appearance.Options.UseBackColor = true;
-            this.pcTank8.Location = new System.Drawing.Point(789, 205);
+            this.pcTank8.Location = new System.Drawing.Point(778, 205);
             this.pcTank8.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank8.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank8.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -227,7 +227,7 @@ namespace LOSA.Produccion
             this.pcTank9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank9.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank9.Appearance.Options.UseBackColor = true;
-            this.pcTank9.Location = new System.Drawing.Point(899, 205);
+            this.pcTank9.Location = new System.Drawing.Point(887, 205);
             this.pcTank9.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank9.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank9.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -241,7 +241,7 @@ namespace LOSA.Produccion
             this.pcTank10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank10.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank10.Appearance.Options.UseBackColor = true;
-            this.pcTank10.Location = new System.Drawing.Point(1010, 205);
+            this.pcTank10.Location = new System.Drawing.Point(996, 205);
             this.pcTank10.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank10.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank10.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -255,7 +255,7 @@ namespace LOSA.Produccion
             this.pcTank11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank11.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank11.Appearance.Options.UseBackColor = true;
-            this.pcTank11.Location = new System.Drawing.Point(1118, 205);
+            this.pcTank11.Location = new System.Drawing.Point(1104, 205);
             this.pcTank11.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank11.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank11.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -269,7 +269,7 @@ namespace LOSA.Produccion
             this.pcTank12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcTank12.Appearance.BackColor = System.Drawing.Color.Silver;
             this.pcTank12.Appearance.Options.UseBackColor = true;
-            this.pcTank12.Location = new System.Drawing.Point(1230, 205);
+            this.pcTank12.Location = new System.Drawing.Point(1211, 205);
             this.pcTank12.LookAndFeel.SkinName = "DevExpress Dark Style";
             this.pcTank12.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.pcTank12.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -289,7 +289,7 @@ namespace LOSA.Produccion
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(-2, 59);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(1321, 25);
+            this.labelControl1.Size = new System.Drawing.Size(1303, 25);
             this.labelControl1.TabIndex = 13;
             this.labelControl1.Text = "BIN Activo";
             // 
@@ -300,7 +300,7 @@ namespace LOSA.Produccion
             this.cmdCerrar.Appearance.Options.UseFont = true;
             this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdCerrar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCerrar.ImageOptions.Image")));
-            this.cmdCerrar.Location = new System.Drawing.Point(1089, 25);
+            this.cmdCerrar.Location = new System.Drawing.Point(1071, 25);
             this.cmdCerrar.Name = "cmdCerrar";
             this.cmdCerrar.Size = new System.Drawing.Size(199, 59);
             this.cmdCerrar.TabIndex = 14;
@@ -310,7 +310,7 @@ namespace LOSA.Produccion
             // lblFD1
             // 
             this.lblFD1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD1.Appearance.Options.UseBackColor = true;
             this.lblFD1.Appearance.Options.UseFont = true;
             this.lblFD1.Location = new System.Drawing.Point(34, 254);
@@ -319,66 +319,66 @@ namespace LOSA.Produccion
             this.lblFD1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD1.Name = "lblFD1";
-            this.lblFD1.Size = new System.Drawing.Size(41, 25);
+            this.lblFD1.Size = new System.Drawing.Size(37, 23);
             this.lblFD1.TabIndex = 15;
             this.lblFD1.Text = "FD1";
             // 
             // lblFD7
             // 
             this.lblFD7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD7.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD7.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD7.Appearance.Options.UseBackColor = true;
             this.lblFD7.Appearance.Options.UseFont = true;
-            this.lblFD7.Location = new System.Drawing.Point(689, 254);
+            this.lblFD7.Location = new System.Drawing.Point(683, 254);
             this.lblFD7.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblFD7.LookAndFeel.SkinName = "Seven Classic";
             this.lblFD7.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD7.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD7.Name = "lblFD7";
-            this.lblFD7.Size = new System.Drawing.Size(41, 25);
+            this.lblFD7.Size = new System.Drawing.Size(37, 23);
             this.lblFD7.TabIndex = 16;
             this.lblFD7.Text = "FD7";
             // 
             // lblFD8
             // 
             this.lblFD8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD8.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD8.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD8.Appearance.Options.UseBackColor = true;
             this.lblFD8.Appearance.Options.UseFont = true;
-            this.lblFD8.Location = new System.Drawing.Point(797, 255);
+            this.lblFD8.Location = new System.Drawing.Point(787, 255);
             this.lblFD8.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblFD8.LookAndFeel.SkinName = "Seven Classic";
             this.lblFD8.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD8.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD8.Name = "lblFD8";
-            this.lblFD8.Size = new System.Drawing.Size(41, 25);
+            this.lblFD8.Size = new System.Drawing.Size(37, 23);
             this.lblFD8.TabIndex = 17;
             this.lblFD8.Text = "FD8";
             // 
             // lblFD9
             // 
             this.lblFD9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD9.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD9.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD9.Appearance.Options.UseBackColor = true;
             this.lblFD9.Appearance.Options.UseFont = true;
-            this.lblFD9.Location = new System.Drawing.Point(908, 255);
+            this.lblFD9.Location = new System.Drawing.Point(896, 255);
             this.lblFD9.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblFD9.LookAndFeel.SkinName = "Seven Classic";
             this.lblFD9.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD9.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD9.Name = "lblFD9";
-            this.lblFD9.Size = new System.Drawing.Size(41, 25);
+            this.lblFD9.Size = new System.Drawing.Size(37, 23);
             this.lblFD9.TabIndex = 18;
             this.lblFD9.Text = "FD9";
             // 
             // lblFD10
             // 
             this.lblFD10.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD10.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD10.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD10.Appearance.Options.UseBackColor = true;
             this.lblFD10.Appearance.Options.UseFont = true;
             this.lblFD10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblFD10.Location = new System.Drawing.Point(1013, 254);
+            this.lblFD10.Location = new System.Drawing.Point(998, 254);
             this.lblFD10.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblFD10.LookAndFeel.SkinName = "Seven Classic";
             this.lblFD10.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -391,87 +391,87 @@ namespace LOSA.Produccion
             // lblFD12
             // 
             this.lblFD12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD12.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD12.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD12.Appearance.Options.UseBackColor = true;
             this.lblFD12.Appearance.Options.UseFont = true;
-            this.lblFD12.Location = new System.Drawing.Point(1233, 255);
+            this.lblFD12.Location = new System.Drawing.Point(1214, 255);
             this.lblFD12.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblFD12.LookAndFeel.SkinName = "Seven Classic";
             this.lblFD12.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD12.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD12.Name = "lblFD12";
-            this.lblFD12.Size = new System.Drawing.Size(54, 25);
+            this.lblFD12.Size = new System.Drawing.Size(49, 23);
             this.lblFD12.TabIndex = 20;
             this.lblFD12.Text = "FD12";
             // 
             // lblFD11
             // 
             this.lblFD11.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD11.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD11.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD11.Appearance.Options.UseBackColor = true;
             this.lblFD11.Appearance.Options.UseFont = true;
-            this.lblFD11.Location = new System.Drawing.Point(1121, 254);
+            this.lblFD11.Location = new System.Drawing.Point(1108, 254);
             this.lblFD11.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblFD11.LookAndFeel.SkinName = "Seven Classic";
             this.lblFD11.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD11.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD11.Name = "lblFD11";
-            this.lblFD11.Size = new System.Drawing.Size(54, 25);
+            this.lblFD11.Size = new System.Drawing.Size(49, 23);
             this.lblFD11.TabIndex = 21;
             this.lblFD11.Text = "FD11";
             // 
             // lblFD6
             // 
             this.lblFD6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD6.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD6.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD6.Appearance.Options.UseBackColor = true;
             this.lblFD6.Appearance.Options.UseFont = true;
-            this.lblFD6.Location = new System.Drawing.Point(580, 254);
+            this.lblFD6.Location = new System.Drawing.Point(575, 254);
             this.lblFD6.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblFD6.LookAndFeel.SkinName = "Seven Classic";
             this.lblFD6.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD6.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD6.Name = "lblFD6";
-            this.lblFD6.Size = new System.Drawing.Size(41, 25);
+            this.lblFD6.Size = new System.Drawing.Size(37, 23);
             this.lblFD6.TabIndex = 22;
             this.lblFD6.Text = "FD6";
             // 
             // lblFD5
             // 
             this.lblFD5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD5.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD5.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD5.Appearance.Options.UseBackColor = true;
             this.lblFD5.Appearance.Options.UseFont = true;
-            this.lblFD5.Location = new System.Drawing.Point(474, 254);
+            this.lblFD5.Location = new System.Drawing.Point(468, 254);
             this.lblFD5.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblFD5.LookAndFeel.SkinName = "Seven Classic";
             this.lblFD5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD5.Name = "lblFD5";
-            this.lblFD5.Size = new System.Drawing.Size(41, 25);
+            this.lblFD5.Size = new System.Drawing.Size(37, 23);
             this.lblFD5.TabIndex = 23;
             this.lblFD5.Text = "FD5";
             // 
             // lblFD4
             // 
             this.lblFD4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD4.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD4.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD4.Appearance.Options.UseBackColor = true;
             this.lblFD4.Appearance.Options.UseFont = true;
-            this.lblFD4.Location = new System.Drawing.Point(365, 255);
+            this.lblFD4.Location = new System.Drawing.Point(360, 255);
             this.lblFD4.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblFD4.LookAndFeel.SkinName = "Seven Classic";
             this.lblFD4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD4.Name = "lblFD4";
-            this.lblFD4.Size = new System.Drawing.Size(41, 25);
+            this.lblFD4.Size = new System.Drawing.Size(37, 23);
             this.lblFD4.TabIndex = 24;
             this.lblFD4.Text = "FD4";
             // 
             // lblFD3
             // 
             this.lblFD3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD3.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD3.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD3.Appearance.Options.UseBackColor = true;
             this.lblFD3.Appearance.Options.UseFont = true;
             this.lblFD3.Location = new System.Drawing.Point(252, 254);
@@ -480,14 +480,14 @@ namespace LOSA.Produccion
             this.lblFD3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD3.Name = "lblFD3";
-            this.lblFD3.Size = new System.Drawing.Size(41, 25);
+            this.lblFD3.Size = new System.Drawing.Size(37, 23);
             this.lblFD3.TabIndex = 25;
             this.lblFD3.Text = "FD3";
             // 
             // lblFD2
             // 
             this.lblFD2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
-            this.lblFD2.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFD2.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFD2.Appearance.Options.UseBackColor = true;
             this.lblFD2.Appearance.Options.UseFont = true;
             this.lblFD2.Location = new System.Drawing.Point(144, 254);
@@ -496,7 +496,7 @@ namespace LOSA.Produccion
             this.lblFD2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblFD2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblFD2.Name = "lblFD2";
-            this.lblFD2.Size = new System.Drawing.Size(41, 25);
+            this.lblFD2.Size = new System.Drawing.Size(37, 23);
             this.lblFD2.TabIndex = 26;
             this.lblFD2.Text = "FD2";
             // 
@@ -504,241 +504,241 @@ namespace LOSA.Produccion
             // 
             this.lblBIN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBIN.Appearance.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBIN.Appearance.Font = new System.Drawing.Font("Tahoma", 44.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBIN.Appearance.Options.UseFont = true;
             this.lblBIN.Appearance.Options.UseTextOptions = true;
             this.lblBIN.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblBIN.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblBIN.Location = new System.Drawing.Point(5, 424);
             this.lblBIN.Name = "lblBIN";
-            this.lblBIN.Size = new System.Drawing.Size(1310, 78);
+            this.lblBIN.Size = new System.Drawing.Size(1292, 78);
             this.lblBIN.TabIndex = 27;
             this.lblBIN.Text = "FD";
             // 
             // lblMP1
             // 
-            this.lblMP1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP1.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP1.Appearance.Options.UseFont = true;
             this.lblMP1.Appearance.Options.UseTextOptions = true;
             this.lblMP1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP1.Location = new System.Drawing.Point(1, 309);
+            this.lblMP1.Location = new System.Drawing.Point(-2, 309);
             this.lblMP1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP1.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP1.Name = "lblMP1";
-            this.lblMP1.Size = new System.Drawing.Size(112, 19);
+            this.lblMP1.Size = new System.Drawing.Size(112, 18);
             this.lblMP1.TabIndex = 28;
             this.lblMP1.Tag = "1";
             this.lblMP1.Text = "FD1";
             // 
             // lblMP2
             // 
-            this.lblMP2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP2.Appearance.Options.UseFont = true;
             this.lblMP2.Appearance.Options.UseTextOptions = true;
             this.lblMP2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP2.Location = new System.Drawing.Point(110, 309);
+            this.lblMP2.Location = new System.Drawing.Point(105, 309);
             this.lblMP2.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP2.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP2.Name = "lblMP2";
-            this.lblMP2.Size = new System.Drawing.Size(112, 19);
+            this.lblMP2.Size = new System.Drawing.Size(112, 18);
             this.lblMP2.TabIndex = 29;
             this.lblMP2.Tag = "2";
             this.lblMP2.Text = "FD2";
             // 
             // lblMP10
             // 
-            this.lblMP10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP10.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP10.Appearance.Options.UseFont = true;
             this.lblMP10.Appearance.Options.UseTextOptions = true;
             this.lblMP10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP10.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP10.Location = new System.Drawing.Point(985, 309);
+            this.lblMP10.Location = new System.Drawing.Point(969, 309);
             this.lblMP10.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP10.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP10.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP10.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP10.Name = "lblMP10";
-            this.lblMP10.Size = new System.Drawing.Size(112, 19);
+            this.lblMP10.Size = new System.Drawing.Size(112, 18);
             this.lblMP10.TabIndex = 30;
             this.lblMP10.Tag = "10";
             this.lblMP10.Text = "FD10";
             // 
             // lblMP3
             // 
-            this.lblMP3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP3.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP3.Appearance.Options.UseFont = true;
             this.lblMP3.Appearance.Options.UseTextOptions = true;
             this.lblMP3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP3.Location = new System.Drawing.Point(218, 309);
+            this.lblMP3.Location = new System.Drawing.Point(213, 309);
             this.lblMP3.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP3.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP3.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP3.Name = "lblMP3";
-            this.lblMP3.Size = new System.Drawing.Size(112, 19);
+            this.lblMP3.Size = new System.Drawing.Size(112, 18);
             this.lblMP3.TabIndex = 31;
             this.lblMP3.Tag = "3";
             this.lblMP3.Text = "FD3";
             // 
             // lblMP4
             // 
-            this.lblMP4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP4.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP4.Appearance.Options.UseFont = true;
             this.lblMP4.Appearance.Options.UseTextOptions = true;
             this.lblMP4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP4.Location = new System.Drawing.Point(328, 309);
+            this.lblMP4.Location = new System.Drawing.Point(323, 309);
             this.lblMP4.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP4.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP4.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP4.Name = "lblMP4";
-            this.lblMP4.Size = new System.Drawing.Size(112, 19);
+            this.lblMP4.Size = new System.Drawing.Size(112, 18);
             this.lblMP4.TabIndex = 32;
             this.lblMP4.Tag = "4";
             this.lblMP4.Text = "FD4";
             // 
             // lblMP5
             // 
-            this.lblMP5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP5.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP5.Appearance.Options.UseFont = true;
             this.lblMP5.Appearance.Options.UseTextOptions = true;
             this.lblMP5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP5.Location = new System.Drawing.Point(435, 309);
+            this.lblMP5.Location = new System.Drawing.Point(431, 309);
             this.lblMP5.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP5.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP5.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP5.Name = "lblMP5";
-            this.lblMP5.Size = new System.Drawing.Size(112, 19);
+            this.lblMP5.Size = new System.Drawing.Size(112, 18);
             this.lblMP5.TabIndex = 33;
             this.lblMP5.Tag = "5";
             this.lblMP5.Text = "FD5";
             // 
             // lblMP6
             // 
-            this.lblMP6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP6.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP6.Appearance.Options.UseFont = true;
             this.lblMP6.Appearance.Options.UseTextOptions = true;
             this.lblMP6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP6.Location = new System.Drawing.Point(544, 309);
+            this.lblMP6.Location = new System.Drawing.Point(534, 309);
             this.lblMP6.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP6.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP6.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP6.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP6.Name = "lblMP6";
-            this.lblMP6.Size = new System.Drawing.Size(112, 19);
+            this.lblMP6.Size = new System.Drawing.Size(112, 18);
             this.lblMP6.TabIndex = 34;
             this.lblMP6.Tag = "6";
             this.lblMP6.Text = "FD6";
             // 
             // lblMP7
             // 
-            this.lblMP7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP7.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP7.Appearance.Options.UseFont = true;
             this.lblMP7.Appearance.Options.UseTextOptions = true;
             this.lblMP7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP7.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP7.Location = new System.Drawing.Point(654, 309);
+            this.lblMP7.Location = new System.Drawing.Point(643, 309);
             this.lblMP7.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP7.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP7.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP7.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP7.Name = "lblMP7";
-            this.lblMP7.Size = new System.Drawing.Size(112, 19);
+            this.lblMP7.Size = new System.Drawing.Size(112, 18);
             this.lblMP7.TabIndex = 35;
             this.lblMP7.Tag = "7";
             this.lblMP7.Text = "FD7";
             // 
             // lblMP8
             // 
-            this.lblMP8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP8.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP8.Appearance.Options.UseFont = true;
             this.lblMP8.Appearance.Options.UseTextOptions = true;
             this.lblMP8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP8.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP8.Location = new System.Drawing.Point(762, 309);
+            this.lblMP8.Location = new System.Drawing.Point(750, 309);
             this.lblMP8.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP8.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP8.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP8.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP8.Name = "lblMP8";
-            this.lblMP8.Size = new System.Drawing.Size(112, 19);
+            this.lblMP8.Size = new System.Drawing.Size(112, 18);
             this.lblMP8.TabIndex = 36;
             this.lblMP8.Tag = "8";
             this.lblMP8.Text = "FD8";
             // 
             // lblMP9
             // 
-            this.lblMP9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP9.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP9.Appearance.Options.UseFont = true;
             this.lblMP9.Appearance.Options.UseTextOptions = true;
             this.lblMP9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP9.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP9.Location = new System.Drawing.Point(871, 309);
+            this.lblMP9.Location = new System.Drawing.Point(857, 309);
             this.lblMP9.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP9.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP9.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP9.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP9.Name = "lblMP9";
-            this.lblMP9.Size = new System.Drawing.Size(112, 19);
+            this.lblMP9.Size = new System.Drawing.Size(112, 18);
             this.lblMP9.TabIndex = 37;
             this.lblMP9.Tag = "9";
             this.lblMP9.Text = "FD9";
             // 
             // lblMP11
             // 
-            this.lblMP11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP11.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP11.Appearance.Options.UseFont = true;
             this.lblMP11.Appearance.Options.UseTextOptions = true;
             this.lblMP11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP11.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP11.Location = new System.Drawing.Point(1091, 309);
+            this.lblMP11.Location = new System.Drawing.Point(1075, 309);
             this.lblMP11.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP11.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP11.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP11.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP11.Name = "lblMP11";
-            this.lblMP11.Size = new System.Drawing.Size(112, 19);
+            this.lblMP11.Size = new System.Drawing.Size(112, 18);
             this.lblMP11.TabIndex = 38;
             this.lblMP11.Tag = "11";
             this.lblMP11.Text = "FD11";
             // 
             // lblMP12
             // 
-            this.lblMP12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMP12.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMP12.Appearance.Options.UseFont = true;
             this.lblMP12.Appearance.Options.UseTextOptions = true;
             this.lblMP12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMP12.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblMP12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblMP12.Location = new System.Drawing.Point(1206, 309);
+            this.lblMP12.Location = new System.Drawing.Point(1187, 309);
             this.lblMP12.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblMP12.LookAndFeel.SkinName = "Seven Classic";
             this.lblMP12.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.lblMP12.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblMP12.Name = "lblMP12";
-            this.lblMP12.Size = new System.Drawing.Size(112, 19);
+            this.lblMP12.Size = new System.Drawing.Size(112, 18);
             this.lblMP12.TabIndex = 39;
             this.lblMP12.Tag = "12";
             this.lblMP12.Text = "FD12";
@@ -760,7 +760,7 @@ namespace LOSA.Produccion
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureEdit1.Size = new System.Drawing.Size(1307, 406);
+            this.pictureEdit1.Size = new System.Drawing.Size(1289, 406);
             this.pictureEdit1.TabIndex = 40;
             // 
             // lblKardex1
@@ -1004,7 +1004,7 @@ namespace LOSA.Produccion
             this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl11.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl11.Location = new System.Drawing.Point(652, 141);
+            this.labelControl11.Location = new System.Drawing.Point(643, 141);
             this.labelControl11.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.labelControl11.LookAndFeel.SkinName = "Seven Classic";
             this.labelControl11.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1023,7 +1023,7 @@ namespace LOSA.Produccion
             this.lblKardex7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblKardex7.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblKardex7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblKardex7.Location = new System.Drawing.Point(654, 158);
+            this.lblKardex7.Location = new System.Drawing.Point(650, 158);
             this.lblKardex7.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblKardex7.LookAndFeel.SkinName = "Seven Classic";
             this.lblKardex7.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1042,7 +1042,7 @@ namespace LOSA.Produccion
             this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl13.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl13.Location = new System.Drawing.Point(762, 141);
+            this.labelControl13.Location = new System.Drawing.Point(751, 141);
             this.labelControl13.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.labelControl13.LookAndFeel.SkinName = "Seven Classic";
             this.labelControl13.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1061,7 +1061,7 @@ namespace LOSA.Produccion
             this.lblKardex8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblKardex8.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblKardex8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblKardex8.Location = new System.Drawing.Point(762, 159);
+            this.lblKardex8.Location = new System.Drawing.Point(751, 159);
             this.lblKardex8.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblKardex8.LookAndFeel.SkinName = "Seven Classic";
             this.lblKardex8.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1080,7 +1080,7 @@ namespace LOSA.Produccion
             this.labelControl15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl15.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.labelControl15.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl15.Location = new System.Drawing.Point(871, 141);
+            this.labelControl15.Location = new System.Drawing.Point(859, 141);
             this.labelControl15.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.labelControl15.LookAndFeel.SkinName = "Seven Classic";
             this.labelControl15.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1099,7 +1099,7 @@ namespace LOSA.Produccion
             this.lblKardex9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblKardex9.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblKardex9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblKardex9.Location = new System.Drawing.Point(871, 159);
+            this.lblKardex9.Location = new System.Drawing.Point(859, 159);
             this.lblKardex9.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblKardex9.LookAndFeel.SkinName = "Seven Classic";
             this.lblKardex9.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1118,7 +1118,7 @@ namespace LOSA.Produccion
             this.labelControl17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl17.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl17.Location = new System.Drawing.Point(983, 141);
+            this.labelControl17.Location = new System.Drawing.Point(969, 141);
             this.labelControl17.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.labelControl17.LookAndFeel.SkinName = "Seven Classic";
             this.labelControl17.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1137,7 +1137,7 @@ namespace LOSA.Produccion
             this.lblKardex10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblKardex10.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblKardex10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblKardex10.Location = new System.Drawing.Point(982, 159);
+            this.lblKardex10.Location = new System.Drawing.Point(974, 159);
             this.lblKardex10.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblKardex10.LookAndFeel.SkinName = "Seven Classic";
             this.lblKardex10.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1156,7 +1156,7 @@ namespace LOSA.Produccion
             this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl19.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl19.Location = new System.Drawing.Point(1095, 142);
+            this.labelControl19.Location = new System.Drawing.Point(1077, 142);
             this.labelControl19.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.labelControl19.LookAndFeel.SkinName = "Seven Classic";
             this.labelControl19.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1175,7 +1175,7 @@ namespace LOSA.Produccion
             this.lblKardex11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblKardex11.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblKardex11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblKardex11.Location = new System.Drawing.Point(1097, 159);
+            this.lblKardex11.Location = new System.Drawing.Point(1074, 159);
             this.lblKardex11.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblKardex11.LookAndFeel.SkinName = "Seven Classic";
             this.lblKardex11.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1194,7 +1194,7 @@ namespace LOSA.Produccion
             this.labelControl21.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl21.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.labelControl21.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl21.Location = new System.Drawing.Point(1203, 142);
+            this.labelControl21.Location = new System.Drawing.Point(1180, 142);
             this.labelControl21.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.labelControl21.LookAndFeel.SkinName = "Seven Classic";
             this.labelControl21.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1213,7 +1213,7 @@ namespace LOSA.Produccion
             this.lblKardex12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblKardex12.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.lblKardex12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblKardex12.Location = new System.Drawing.Point(1203, 159);
+            this.lblKardex12.Location = new System.Drawing.Point(1177, 159);
             this.lblKardex12.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.lblKardex12.LookAndFeel.SkinName = "Seven Classic";
             this.lblKardex12.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
@@ -1228,7 +1228,7 @@ namespace LOSA.Produccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1320, 504);
+            this.ClientSize = new System.Drawing.Size(1302, 504);
             this.Controls.Add(this.labelControl21);
             this.Controls.Add(this.lblKardex12);
             this.Controls.Add(this.labelControl19);
