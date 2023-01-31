@@ -5320,6 +5320,8 @@ namespace LOSA.Trazabilidad {
             
             private global::System.Data.DataColumn columnkg_real_dosificado;
             
+            private global::System.Data.DataColumn columninclusion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Ruta4_H_trz_lote_ptDataTable() {
@@ -5419,6 +5421,14 @@ namespace LOSA.Trazabilidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn inclusionColumn {
+                get {
+                    return this.columninclusion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5454,7 +5464,7 @@ namespace LOSA.Trazabilidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Ruta4_H_trz_lote_ptRow AddRuta4_H_trz_lote_ptRow(int id_mp, string ItemName, string ItemCode, decimal Kg_por_Batch, int cant_batch_plan, decimal kg_total_plan, int cant_batch_real, decimal kg_real_dosificado) {
+            public Ruta4_H_trz_lote_ptRow AddRuta4_H_trz_lote_ptRow(int id_mp, string ItemName, string ItemCode, decimal Kg_por_Batch, int cant_batch_plan, decimal kg_total_plan, int cant_batch_real, decimal kg_real_dosificado, decimal inclusion) {
                 Ruta4_H_trz_lote_ptRow rowRuta4_H_trz_lote_ptRow = ((Ruta4_H_trz_lote_ptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_mp,
@@ -5464,7 +5474,8 @@ namespace LOSA.Trazabilidad {
                         cant_batch_plan,
                         kg_total_plan,
                         cant_batch_real,
-                        kg_real_dosificado};
+                        kg_real_dosificado,
+                        inclusion};
                 rowRuta4_H_trz_lote_ptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRuta4_H_trz_lote_ptRow);
                 return rowRuta4_H_trz_lote_ptRow;
@@ -5495,6 +5506,7 @@ namespace LOSA.Trazabilidad {
                 this.columnkg_total_plan = base.Columns["kg_total_plan"];
                 this.columncant_batch_real = base.Columns["cant_batch_real"];
                 this.columnkg_real_dosificado = base.Columns["kg_real_dosificado"];
+                this.columninclusion = base.Columns["inclusion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5516,11 +5528,14 @@ namespace LOSA.Trazabilidad {
                 base.Columns.Add(this.columncant_batch_real);
                 this.columnkg_real_dosificado = new global::System.Data.DataColumn("kg_real_dosificado", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnkg_real_dosificado);
+                this.columninclusion = new global::System.Data.DataColumn("inclusion", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninclusion);
                 this.columnKg_por_Batch.Caption = "Kg por Batch";
                 this.columncant_batch_plan.Caption = "Cant. Batch Plan";
                 this.columnkg_total_plan.Caption = "Total Kg Plan";
                 this.columncant_batch_real.Caption = "Cant. Batch Real";
                 this.columnkg_real_dosificado.Caption = "Total Kg Adicionado";
+                this.columninclusion.Caption = "% Inclusión";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8699,6 +8714,22 @@ namespace LOSA.Trazabilidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal inclusion {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRuta4_H_trz_lote_pt.inclusionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'inclusion\' de la tabla \'Ruta4_H_trz_lote_pt\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRuta4_H_trz_lote_pt.inclusionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_mpNull() {
                 return this.IsNull(this.tableRuta4_H_trz_lote_pt.id_mpColumn);
             }
@@ -8791,6 +8822,18 @@ namespace LOSA.Trazabilidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setkg_real_dosificadoNull() {
                 this[this.tableRuta4_H_trz_lote_pt.kg_real_dosificadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsinclusionNull() {
+                return this.IsNull(this.tableRuta4_H_trz_lote_pt.inclusionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetinclusionNull() {
+                this[this.tableRuta4_H_trz_lote_pt.inclusionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

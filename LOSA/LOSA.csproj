@@ -5539,6 +5539,9 @@
     <Compile Include="Trazabilidad\Despachos\frmDetalleDespacho.Designer.cs">
       <DependentUpon>frmDetalleDespacho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\dsMantoTrazabilidad.cs">
+      <DependentUpon>dsMantoTrazabilidad.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\dsMantoTrazabilidad.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

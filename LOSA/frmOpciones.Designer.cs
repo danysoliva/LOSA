@@ -114,7 +114,6 @@
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLotesCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
@@ -1242,7 +1241,6 @@
             this.TabCalidad.Controls.Add(this.simpleButton11);
             this.TabCalidad.Controls.Add(this.simpleButton9);
             this.TabCalidad.Controls.Add(this.simpleButton6);
-            this.TabCalidad.Controls.Add(this.simpleButton5);
             this.TabCalidad.Controls.Add(this.simpleButton4);
             this.TabCalidad.Controls.Add(this.cmdLotesCalidad);
             this.TabCalidad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabCalidad.ImageOptions.Image")));
@@ -1259,7 +1257,7 @@
             this.simpleButton67.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton67.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton67.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton67.ImageOptions.Image")));
-            this.simpleButton67.Location = new System.Drawing.Point(9, 218);
+            this.simpleButton67.Location = new System.Drawing.Point(9, 153);
             this.simpleButton67.Name = "simpleButton67";
             this.simpleButton67.Size = new System.Drawing.Size(199, 59);
             this.simpleButton67.TabIndex = 48;
@@ -1274,7 +1272,7 @@
             this.btnRutas.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnRutas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnRutas.ImageOptions.Image = global::LOSA.Properties.Resources.signpost24X24;
-            this.btnRutas.Location = new System.Drawing.Point(9, 413);
+            this.btnRutas.Location = new System.Drawing.Point(9, 348);
             this.btnRutas.Name = "btnRutas";
             this.btnRutas.Size = new System.Drawing.Size(199, 59);
             this.btnRutas.TabIndex = 47;
@@ -1289,7 +1287,7 @@
             this.cmdReporteProximosVencer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cmdReporteProximosVencer.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdReporteProximosVencer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdReporteProximosVencer.ImageOptions.Image")));
-            this.cmdReporteProximosVencer.Location = new System.Drawing.Point(214, 413);
+            this.cmdReporteProximosVencer.Location = new System.Drawing.Point(214, 348);
             this.cmdReporteProximosVencer.Name = "cmdReporteProximosVencer";
             this.cmdReporteProximosVencer.Size = new System.Drawing.Size(199, 59);
             this.cmdReporteProximosVencer.TabIndex = 46;
@@ -1334,7 +1332,7 @@
             this.btnClientesLote.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnClientesLote.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnClientesLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClientesLote.ImageOptions.Image")));
-            this.btnClientesLote.Location = new System.Drawing.Point(214, 348);
+            this.btnClientesLote.Location = new System.Drawing.Point(214, 283);
             this.btnClientesLote.Name = "btnClientesLote";
             this.btnClientesLote.Size = new System.Drawing.Size(199, 59);
             this.btnClientesLote.TabIndex = 33;
@@ -1347,7 +1345,7 @@
             this.simpleButton32.Appearance.Options.UseFont = true;
             this.simpleButton32.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton32.ImageOptions.Image")));
-            this.simpleButton32.Location = new System.Drawing.Point(9, 348);
+            this.simpleButton32.Location = new System.Drawing.Point(9, 283);
             this.simpleButton32.Name = "simpleButton32";
             this.simpleButton32.Size = new System.Drawing.Size(199, 59);
             this.simpleButton32.TabIndex = 32;
@@ -1373,7 +1371,7 @@
             this.simpleButton28.Appearance.Options.UseFont = true;
             this.simpleButton28.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton28.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton28.ImageOptions.Image")));
-            this.simpleButton28.Location = new System.Drawing.Point(214, 283);
+            this.simpleButton28.Location = new System.Drawing.Point(214, 218);
             this.simpleButton28.Name = "simpleButton28";
             this.simpleButton28.Size = new System.Drawing.Size(199, 59);
             this.simpleButton28.TabIndex = 30;
@@ -1386,7 +1384,7 @@
             this.simpleButton27.Appearance.Options.UseFont = true;
             this.simpleButton27.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton27.ImageOptions.Image")));
-            this.simpleButton27.Location = new System.Drawing.Point(9, 283);
+            this.simpleButton27.Location = new System.Drawing.Point(9, 218);
             this.simpleButton27.Name = "simpleButton27";
             this.simpleButton27.Size = new System.Drawing.Size(199, 59);
             this.simpleButton27.TabIndex = 29;
@@ -1452,7 +1450,7 @@
             this.ManteIngresos.Appearance.Options.UseFont = true;
             this.ManteIngresos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.ManteIngresos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ManteIngresos.ImageOptions.Image")));
-            this.ManteIngresos.Location = new System.Drawing.Point(214, 218);
+            this.ManteIngresos.Location = new System.Drawing.Point(214, 153);
             this.ManteIngresos.Name = "ManteIngresos";
             this.ManteIngresos.Size = new System.Drawing.Size(199, 59);
             this.ManteIngresos.TabIndex = 19;
@@ -1479,7 +1477,7 @@
             this.simpleButton11.Appearance.Options.UseFont = true;
             this.simpleButton11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(214, 153);
+            this.simpleButton11.Location = new System.Drawing.Point(627, 153);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(199, 59);
             this.simpleButton11.TabIndex = 17;
@@ -1512,19 +1510,6 @@
             this.simpleButton6.TabIndex = 15;
             this.simpleButton6.Text = "Reporte \r\nde Alimentacion";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(9, 153);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(199, 59);
-            this.simpleButton5.TabIndex = 14;
-            this.simpleButton5.Text = "Trazabilidad \r\nde lote PT";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
             // 
@@ -3350,7 +3335,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraEditors.SimpleButton btn_salidapt;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
