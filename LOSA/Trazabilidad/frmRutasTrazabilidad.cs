@@ -21,6 +21,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace LOSA.Trazabilidad
 {
@@ -280,6 +281,8 @@ namespace LOSA.Trazabilidad
             }
         }
 
+       
+
         private void btnVer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             try
@@ -436,6 +439,8 @@ namespace LOSA.Trazabilidad
                         dsMantoTrazabilidad.Ruta4_D_trz_lote.Clear();
                         da.Fill(dsMantoTrazabilidad.Ruta4_D_trz_lote);
                         txtRuta4LotePT_Trazado_.Text = txtlote.Text;
+
+                        RecursiveExpand(gridView20);//, dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.Rows.Count-1);
                     }
                     cn.Close();
                 }
@@ -443,6 +448,8 @@ namespace LOSA.Trazabilidad
                 {
                     CajaDialogo.Error(ex.Message);
                 }
+
+               
 
                 //Calcular el total MP utilizada
                 decimal TotalMP_kg = 0;
@@ -467,6 +474,27 @@ namespace LOSA.Trazabilidad
                     }
                 }
             }
+        }
+
+        public void RecursiveExpand(GridView masterView)//, int masterRowHandle)
+        {
+            try
+            {
+                //var relationCount = masterView.GetRelationCount(masterRowHandle);
+                for (var index = dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.Rows.Count - 1; index >= 0; index--)
+                {
+                    masterView.ExpandMasterRow(index, 0);
+                    //var childView = masterView.GetDetailView(masterRowHandle, index) as GridView;
+                    //if (childView != null)
+                    //{
+                    //    var childRowCount = childView.DataRowCount;
+                    //    for (var handle = 0; handle < childRowCount; handle++)
+                    //        RecursiveExpand(childView, handle);
+                    //}
+                }
+            }
+            catch (Exception ex) { }
+            finally { }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
