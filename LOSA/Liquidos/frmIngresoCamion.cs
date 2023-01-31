@@ -720,26 +720,34 @@ namespace LOSA.Liquidos
             decimal SumaTotal = SumarSeleccionado();
             decimal ParaEltanque = Default_value;
             decimal ParaBines = Default_value;
-            if (Tanque.TotalLleno + SumaTotal >= Tanque.MaximoCapacidad)
-            {
-                grupoTarima.Enabled = true;
-                pnTarimas.Enabled = true;
-                ParaBines = SumaTotal - Tanque.VacioCapacidad;
-                ParaEltanque = Tanque.VacioCapacidad;
-                txtAltanque.Text = ParaEltanque.ToString();
-                txtEnTarimas.Text = ParaBines.ToString();
-                txtTotalIngreso.Text = SumaTotal.ToString();
-                grd_presentaciones.EditValue = 8;
-            }
-            else
-            {
-                ParaEltanque = SumaTotal;
-                pnTarimas.Enabled = false;
-                txtAltanque.Text = ParaEltanque.ToString();
-                txtEnTarimas.Text = ParaBines.ToString();
-                txtTotalIngreso.Text = SumaTotal.ToString();
-                txtDisponibleConIngresoActual.Text = Convert.ToString(Convert.ToDecimal(txtcapacidad.Text) - (Convert.ToDecimal(txtEspacioOcupado.Text) + Convert.ToDecimal(txtAltanque.Text)));
-            }
+            //if (Tanque.TotalLleno + SumaTotal >= Tanque.MaximoCapacidad)
+            //{
+            //    grupoTarima.Enabled = true;
+            //    pnTarimas.Enabled = true;
+            //    ParaBines = SumaTotal - Tanque.VacioCapacidad;
+            //    ParaEltanque = Tanque.VacioCapacidad;
+            //    txtAltanque.Text = ParaEltanque.ToString();
+            //    txtEnTarimas.Text = ParaBines.ToString();
+            //    txtTotalIngreso.Text = SumaTotal.ToString();
+            //    grd_presentaciones.EditValue = 8;
+            //}
+            //else
+            //{
+            //    ParaEltanque = SumaTotal;
+            //    pnTarimas.Enabled = false;
+            //    txtAltanque.Text = ParaEltanque.ToString();
+            //    txtEnTarimas.Text = ParaBines.ToString();
+            //    txtTotalIngreso.Text = SumaTotal.ToString();
+            //    txtDisponibleConIngresoActual.Text = Convert.ToString(Convert.ToDecimal(txtcapacidad.Text) - (Convert.ToDecimal(txtEspacioOcupado.Text) + Convert.ToDecimal(txtAltanque.Text)));
+            //}
+
+            //Siempre dejaremos la opcion de agregar tarimas
+            ParaBines = SumaTotal - Tanque.VacioCapacidad;
+            ParaEltanque = Tanque.VacioCapacidad;
+            txtAltanque.Text = ParaEltanque.ToString();
+            txtEnTarimas.Text = ParaBines.ToString();
+            txtTotalIngreso.Text = SumaTotal.ToString();
+            grd_presentaciones.EditValue = 8;
 
             try
             {
@@ -871,6 +879,11 @@ namespace LOSA.Liquidos
                 dtFechaVencimiento.EditValue = frm.fvencimiento;
                 idSelectedLoteDetalle = frm.id_lote_externo;
             }
+        }
+
+        private void txtCantidaddeTarimas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Calcular_Ingreso();
         }
     }
 }
