@@ -2421,11 +2421,7 @@ namespace LOSA.Trazabilidad
 
         private void gvPT_Ruta1_RowClick(object sender, RowClickEventArgs e)
         {
-            var gridView = (GridView)gcPT_Ruta1.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzCamaronRow)gridView.GetFocusedDataRow();
-
-            if (row.Lote_PT > 0)
-                LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+           
         }
 
         private void LoadDetalleReproceso_lotePT_Ruta1(int pt_lote)
@@ -2477,11 +2473,7 @@ namespace LOSA.Trazabilidad
 
         private void gridView23_RowClick(object sender, RowClickEventArgs e)
         {
-            var gridView = (GridView)gridControl12.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
-
-            if (row.Lote_PT > 0)
-                LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+          
         }
 
         private void gridView24_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
@@ -2552,6 +2544,24 @@ namespace LOSA.Trazabilidad
             {
                 CajaDialogo.Error(ec.Message);
             }
+        }
+
+        private void gvPT_Ruta1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            var gridView = (GridView)gcPT_Ruta1.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzCamaronRow)gridView.GetFocusedDataRow();
+
+            if (row.Lote_PT > 0)
+                LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+        }
+
+        private void gridView23_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            var gridView = (GridView)gridControl12.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+
+            if (row.Lote_PT > 0)
+                LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
         }
     }
 }
