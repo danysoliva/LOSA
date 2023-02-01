@@ -45,6 +45,7 @@ namespace LOSA.Despachos
                     txtoc.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
                     txttotalUD.Text = dr.IsDBNull(8) ? 0.ToString() : dr.GetInt32(8).ToString();
                     txtunidades.Text = dr.IsDBNull(8) ? 0.ToString() : dr.GetInt32(8).ToString();
+                    txtCliente.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
                     //txtfactor.Text = dr.IsDBNull(9) ? 0.ToString() : dr.GetInt32(9).ToString();
                 }
                 dr.Close();
