@@ -972,6 +972,10 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             private global::System.Data.DataColumn columnunidades;
             
+            private global::System.Data.DataColumn columnFecha_despacho;
+            
+            private global::System.Data.DataColumn columnfecha_prd;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_destinosDataTable() {
@@ -1135,6 +1139,22 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Fecha_despachoColumn {
+                get {
+                    return this.columnFecha_despacho;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_prdColumn {
+                get {
+                    return this.columnfecha_prd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1186,7 +1206,9 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                         string cardname, 
                         string Fac_promix, 
                         int NumID, 
-                        int unidades) {
+                        int unidades, 
+                        System.DateTime Fecha_despacho, 
+                        System.DateTime fecha_prd) {
                 detalle_destinosRow rowdetalle_destinosRow = ((detalle_destinosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Despacho,
@@ -1204,7 +1226,9 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                         cardname,
                         Fac_promix,
                         NumID,
-                        unidades};
+                        unidades,
+                        Fecha_despacho,
+                        fecha_prd};
                 rowdetalle_destinosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_destinosRow);
                 return rowdetalle_destinosRow;
@@ -1243,6 +1267,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 this.columnFac_promix = base.Columns["Fac_promix"];
                 this.columnNumID = base.Columns["NumID"];
                 this.columnunidades = base.Columns["unidades"];
+                this.columnFecha_despacho = base.Columns["Fecha_despacho"];
+                this.columnfecha_prd = base.Columns["fecha_prd"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1280,6 +1306,10 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 base.Columns.Add(this.columnNumID);
                 this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades);
+                this.columnFecha_despacho = new global::System.Data.DataColumn("Fecha_despacho", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha_despacho);
+                this.columnfecha_prd = new global::System.Data.DataColumn("fecha_prd", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_prd);
                 this.columnunidades.Caption = "Unidades";
             }
             
@@ -5362,6 +5392,39 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Fecha_despacho {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledetalle_destinos.Fecha_despachoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_despacho\' de la tabla \'detalle_destinos\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_destinos.Fecha_despachoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_prd {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledetalle_destinos.fecha_prdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_prd\' de la tabla \'detalle_destinos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_destinos.fecha_prdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDespachoNull() {
                 return this.IsNull(this.tabledetalle_destinos.DespachoColumn);
             }
@@ -5550,6 +5613,30 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetunidadesNull() {
                 this[this.tabledetalle_destinos.unidadesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFecha_despachoNull() {
+                return this.IsNull(this.tabledetalle_destinos.Fecha_despachoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFecha_despachoNull() {
+                this[this.tabledetalle_destinos.Fecha_despachoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_prdNull() {
+                return this.IsNull(this.tabledetalle_destinos.fecha_prdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_prdNull() {
+                this[this.tabledetalle_destinos.fecha_prdColumn] = global::System.Convert.DBNull;
             }
         }
         

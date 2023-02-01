@@ -121,8 +121,7 @@ namespace LOSA.Trazabilidad
             //btnBack.Visible = true;
 
             //dsReportesTRZ.detalle_destinos.Clear();
-            lblMateriaPrimaName.Text = "";
-
+            
             navigationFrame1.SelectedPage = npRuta1;
         }
 
@@ -142,12 +141,12 @@ namespace LOSA.Trazabilidad
             acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
 
 
-            if (this.rutaActiva != 2)
-            {
-                //dsReportesTRZ.pt_list_trz.Clear();
-                //dsReportesTRZ.detalle_destinos.Clear();
-                lblMateriaPrimaName.Text = "";
-            }
+            //if (this.rutaActiva != 2)
+            //{
+            //    //dsReportesTRZ.pt_list_trz.Clear();
+            //    //dsReportesTRZ.detalle_destinos.Clear();
+            //    lblMateriaPrimaName.Text = "";
+            //}
 
             this.rutaActiva = 2;
 
@@ -970,6 +969,22 @@ namespace LOSA.Trazabilidad
                 cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
                 adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsReportesTRZ.pt_list_trz);
+
+                decimal var = 0;
+                decimal AcumuladoConsumo = 0;
+                foreach(dsReportesTRZ.pt_list_trzCamaronRow row in dsReportesTRZ.pt_list_trzCamaron)
+                {
+                    var += dp.ValidateNumberDecimal(row.cant_mp);
+                }
+
+                AcumuladoConsumo = var;
+                var = 0;
+                foreach (dsReportesTRZ.pt_list_trzRow row in dsReportesTRZ.pt_list_trz)
+                {
+                    var += dp.ValidateNumberDecimal(row.cant_mp);
+                }
+                AcumuladoConsumo += var;
+                txtTotalConsumidoRuta1.Text = string.Format("{0:#,###,##0.00 Kg}", AcumuladoConsumo);
 
                 con.Close();
             }
@@ -2567,8 +2582,11 @@ namespace LOSA.Trazabilidad
             var gridView = (GridView)gridControl12.FocusedView;
             var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
 
-            if (row.Lote_PT > 0)
-                LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+            if (row != null)
+            {
+                if (row.Lote_PT > 0)
+                    LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+            }
         }
 
         private void cmdLinkLoteMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
