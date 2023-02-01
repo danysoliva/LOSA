@@ -426,6 +426,7 @@ namespace LOSA.Trazabilidad
 
                         dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.AddRuta4_H_trz_lote_ptRow(row1);
                         dsMantoTrazabilidad.AcceptChanges();
+                        
                     }
                     else
                     {
@@ -443,6 +444,7 @@ namespace LOSA.Trazabilidad
                         RecursiveExpand(gridView20);
                     }
                     cn.Close();
+                   
                 }
                 catch (Exception ex)
                 {
@@ -1121,6 +1123,7 @@ namespace LOSA.Trazabilidad
                 //load_informacion_de_inventario();
                 //load_tarimas_rechazadas();
                 //load_MuestreoPT();
+               
             }
         }
 
