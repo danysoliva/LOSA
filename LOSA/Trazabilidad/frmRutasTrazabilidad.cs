@@ -440,7 +440,7 @@ namespace LOSA.Trazabilidad
                         da.Fill(dsMantoTrazabilidad.Ruta4_D_trz_lote);
                         txtRuta4LotePT_Trazado_.Text = txtlote.Text;
 
-                        RecursiveExpand(gridView20);//, dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.Rows.Count-1);
+                        RecursiveExpand(gridView20);
                     }
                     cn.Close();
                 }
@@ -927,12 +927,21 @@ namespace LOSA.Trazabilidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv3]", con);
+                //SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv3]", con);
+                SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv_camaron]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lotemp", txtLoteMPRuta1.Text);
                 cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
                 dsReportesTRZ.pt_list_trz.Clear();
+                dsReportesTRZ.pt_list_trzCamaron.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.pt_list_trzCamaron);
+
+                cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv_tilapia]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtLoteMPRuta1.Text);
+                cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsReportesTRZ.pt_list_trz);
 
                 con.Close();
@@ -2353,7 +2362,7 @@ namespace LOSA.Trazabilidad
         private void gvPT_Ruta1_RowClick(object sender, RowClickEventArgs e)
         {
             var gridView = (GridView)gcPT_Ruta1.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+            var row = (dsReportesTRZ.pt_list_trzCamaronRow)gridView.GetFocusedDataRow();
 
             if (row.Lote_PT > 0)
                 LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
@@ -2404,6 +2413,15 @@ namespace LOSA.Trazabilidad
             load_MuestreoPT();
             timerRuta4.Enabled = false;
             timerRuta4.Stop();
+        }
+
+        private void gridView23_RowClick(object sender, RowClickEventArgs e)
+        {
+            var gridView = (GridView)gridControl12.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+
+            if (row.Lote_PT > 0)
+                LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
         }
     }
 }
