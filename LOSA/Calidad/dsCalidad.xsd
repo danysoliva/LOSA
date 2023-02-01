@@ -321,11 +321,12 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="lote_producto_termiado" msprop:Generator_ColumnVarNameInTable="columnlote_producto_termiado" msprop:Generator_ColumnPropNameInRow="lote_producto_termiado" msprop:Generator_ColumnPropNameInTable="lote_producto_termiadoColumn" msprop:Generator_UserColumnName="lote_producto_termiado" type="xs:string" minOccurs="0" />
-              <xs:element name="CantidadDespachado" msprop:Generator_ColumnVarNameInTable="columnCantidadDespachado" msprop:Generator_ColumnPropNameInRow="CantidadDespachado" msprop:Generator_ColumnPropNameInTable="CantidadDespachadoColumn" msprop:Generator_UserColumnName="CantidadDespachado" type="xs:string" minOccurs="0" />
-              <xs:element name="kg" msprop:Generator_ColumnVarNameInTable="columnkg" msprop:Generator_ColumnPropNameInRow="kg" msprop:Generator_ColumnPropNameInTable="kgColumn" msprop:Generator_UserColumnName="kg" type="xs:string" minOccurs="0" />
+              <xs:element name="CantidadDespachado" msprop:Generator_ColumnVarNameInTable="columnCantidadDespachado" msprop:Generator_ColumnPropNameInRow="CantidadDespachado" msprop:Generator_ColumnPropNameInTable="CantidadDespachadoColumn" msprop:Generator_UserColumnName="CantidadDespachado" type="xs:decimal" minOccurs="0" />
+              <xs:element name="kg" msprop:Generator_ColumnVarNameInTable="columnkg" msprop:Generator_ColumnPropNameInRow="kg" msprop:Generator_ColumnPropNameInTable="kgColumn" msprop:Generator_UserColumnName="kg" type="xs:decimal" minOccurs="0" />
               <xs:element name="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_UserColumnName="code_sap" type="xs:string" minOccurs="0" />
               <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:string" minOccurs="0" />
               <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="Fecha_PRD" msprop:Generator_ColumnVarNameInTable="columnFecha_PRD" msprop:Generator_ColumnPropNameInRow="Fecha_PRD" msprop:Generator_ColumnPropNameInTable="Fecha_PRDColumn" msprop:Generator_UserColumnName="Fecha_PRD" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

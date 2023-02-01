@@ -66,7 +66,7 @@ namespace LOSA.Trazabilidad
             InitializeComponent();
             //LoadClientes();
             this.navigationFrame1.SelectedPage = npMain;
-            txtLoteRuta1.Text = "";
+            txtLoteMP_Ruta2.Text = "";
         }
 
         private void acordionRuta1_Click(object sender, EventArgs e)
@@ -896,8 +896,29 @@ namespace LOSA.Trazabilidad
 
         private void btnGenerarRuta1_Click(object sender, EventArgs e)
         {
+            //LoteMP LoteMP_ = new LoteMP();
+            //if (LoteMP_.RecuperarRegistro(txtLoteRuta1.Text))
+            //{
+            //    if (LoteMP_.CantidadMP > 1)
+            //    {
+            //        //Mostrar Ventana
+            //        frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+            //        if (frm.ShowDialog() == DialogResult.OK)
+            //        {
+            //            LoadLotesPT_Ruta2(frm.IdMP_Selected);
+            //            lblMateriaPrimaName.Text = frm.NameMaterialselected;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        LoadLotesPT_Ruta2(LoteMP_.IdMPSingle);
+            //        lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
+            //    }
+            //}
+
+
             LoteMP LoteMP_ = new LoteMP();
-            if (LoteMP_.RecuperarRegistro(txtLoteRuta1.Text))
+            if (LoteMP_.RecuperarRegistro(txtLoteMP_Ruta2.Text))
             {
                 if (LoteMP_.CantidadMP > 1)
                 {
@@ -915,6 +936,8 @@ namespace LOSA.Trazabilidad
                     lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
                 }
             }
+
+            
         }
 
 
@@ -956,19 +979,55 @@ namespace LOSA.Trazabilidad
         private void LoadLotesPT_Ruta2(object idMP_Selected)
         {
             //[sp_load_lotes_pt_trz_from_lote_mp] @lotemp
+            //try
+            //{
+            //    DataOperations dp = new DataOperations();
+            //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            //    con.Open();
+
+            //    SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv3]", con);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@lotemp", txtLoteRuta1.Text);
+            //    cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+            //    dsReportesTRZ.pt_list_trz.Clear();
+            //    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+            //    adat.Fill(dsReportesTRZ.pt_list_trz);
+
+            //    con.Close();
+            //}
+            //catch (Exception ec)
+            //{
+            //    CajaDialogo.Error(ec.Message);
+            //}
             try
             {
                 DataOperations dp = new DataOperations();
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv3]", con);
+                //SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv3]", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@lotemp", txtLoteRuta1.Text);
+                //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                //dsReportesTRZ.pt_list_trz.Clear();
+                //SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                //adat.Fill(dsReportesTRZ.pt_list_trz);
+
+                SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv_camaron]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lotemp", txtLoteRuta1.Text);
+                cmd.Parameters.AddWithValue("@lotemp", txtLoteMP_Ruta2.Text);
                 cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
-                dsReportesTRZ.pt_list_trz.Clear();
+                dsReportesTRZ.pt_list_trzCamaronRuta2.Clear();
+                dsReportesTRZ.pt_list_trzTilapiaRuta2.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsReportesTRZ.pt_list_trz);
+                adat.Fill(dsReportesTRZ.pt_list_trzCamaronRuta2);
+
+                cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv_tilapia]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtLoteMP_Ruta2.Text);
+                cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.pt_list_trzTilapiaRuta2);
 
                 con.Close();
             }
@@ -976,12 +1035,13 @@ namespace LOSA.Trazabilidad
             {
                 CajaDialogo.Error(ec.Message);
             }
+
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
-            txtLoteRuta1.Text = "";
-            txtLoteRuta1.Focus();
+            txtLoteMP_Ruta2.Text = "";
+            txtLoteMP_Ruta2.Focus();
         }
 
         private void textEdit1_KeyDown(object sender, KeyEventArgs e)
@@ -1009,34 +1069,34 @@ namespace LOSA.Trazabilidad
 
         private void gridView6_Click(object sender, EventArgs e)
         {
-            var gridView = (GridView)gcLotePT.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+            //var gridView = (GridView)gcLotePT.FocusedView;
+            //var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
 
-            try
-            {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            //try
+            //{
+            //    DataOperations dp = new DataOperations();
+            //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 
-                if (row!=null)
-                {
-                con.Open();
+            //    if (row!=null)
+            //    {
+            //    con.Open();
 
 
 
-                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
-                dsReportesTRZ.detalle_destinos.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsReportesTRZ.detalle_destinos);
+            //    SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
+            //    dsReportesTRZ.detalle_destinos.Clear();
+            //    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+            //    adat.Fill(dsReportesTRZ.detalle_destinos);
 
-                con.Close();
-                }
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
-            }
+            //    con.Close();
+            //    }
+            //}
+            //catch (Exception ec)
+            //{
+            //    CajaDialogo.Error(ec.Message);
+            //}
         }
 
         private void txtlote_KeyDown(object sender, KeyEventArgs e)
@@ -2422,6 +2482,76 @@ namespace LOSA.Trazabilidad
 
             if (row.Lote_PT > 0)
                 LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+        }
+
+        private void gridView24_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+           
+        }
+
+        private void gridView6_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void gridView24_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            var gridView = (GridView)gridPT_CamaronRuta2.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzCamaronRuta2Row)gridView.GetFocusedDataRow();
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+
+                if (row != null)
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
+                    dsReportesTRZ.detalle_destinos.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsReportesTRZ.detalle_destinos);
+
+                    con.Close();
+                }
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void gridView6_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            var gridView = (GridView)gridTilapia_lotes_ruta2.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzTilapiaRuta2Row)gridView.GetFocusedDataRow();
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+
+                if (row != null)
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
+                    dsReportesTRZ.detalle_destinos.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsReportesTRZ.detalle_destinos);
+
+                    con.Close();
+                }
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
     }
 }
