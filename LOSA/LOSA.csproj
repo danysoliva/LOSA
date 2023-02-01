@@ -8071,6 +8071,7 @@
     <None Include="Resources\cancel_24x24.png" />
     <Content Include="Resources\cargo.png" />
     <None Include="Resources\CCT-2000C-SQ-800x800.jpg" />
+    <None Include="Resources\Certificado_32px.png" />
     <Content Include="Resources\check-in.png" />
     <None Include="Resources\edit-table%281%29.png" />
     <None Include="Resources\Container-icon32px.png" />
