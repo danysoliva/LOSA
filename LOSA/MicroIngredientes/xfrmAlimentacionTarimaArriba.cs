@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LOSA.MicroIngredientes
 {
     public partial class xfrmAlimentacionTarimaArriba : DevExpress.XtraEditors.XtraForm
