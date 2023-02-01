@@ -1398,26 +1398,38 @@ namespace LOSA.Calidad
                 var row = (dsMantenimientoC.adjuntosRow)gridView.GetFocusedDataRow();
                 if (row.bit_subido)
                 {
-                    
-                        if (row.id_registro == 0)
-                        {
-                            Process proceso = new Process();
-                            proceso.StartInfo.FileName = row.path;
-                            proceso.Start();
-                        }
-                        else
-                        {
-                            if (xtraFolderBrowserDialog1.ShowDialog() == DialogResult.OK)
-                            {
-                                //DownloadFile(row.path_load, xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name);
-                                FTP_Class ftp1 = new FTP_Class();
-                                ftp1.DownloadFile(row.path_load, xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name, UsuarioLogeado);
-                                Process proceso = new Process();
-                                proceso.StartInfo.FileName = xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name;
-                                proceso.Start();
-                                //CajaDialogo.Information(xtraFolderBrowserDialog1.SelectedPath);
-                            }
-                        }
+
+                    //if (row.id_registro == 0)
+                    //{
+                    //    Process proceso = new Process();
+                    //    proceso.StartInfo.FileName = row.path;
+                    //    proceso.Start();
+                    //}
+                    //else
+                    //{
+                    //    if (xtraFolderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                    //    {
+                    //        //DownloadFile(row.path_load, xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name);
+                    //        FTP_Class ftp1 = new FTP_Class();
+                    //        ftp1.DownloadFile(row.path_load, xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name, UsuarioLogeado);
+                    //        Process proceso = new Process();
+                    //        proceso.StartInfo.FileName = xtraFolderBrowserDialog1.SelectedPath + @"\" + row.file_name;
+                    //        proceso.Start();
+                    //        //CajaDialogo.Information(xtraFolderBrowserDialog1.SelectedPath);
+                    //    }
+                    //}
+                    string dir = @"C:\alosy_temp";
+                    if (!Directory.Exists(dir))
+                    {
+                        Directory.CreateDirectory(dir);
+                    }
+
+                    DataOperations dp = new DataOperations();
+                    string PathCompleto = dp.FTP_Tickets_LOSA + row.path_load;
+
+                    OpenFile(PathCompleto, dir + @"\" + row.file_name);
+
+
                 }
                 else
                 {
@@ -1428,6 +1440,43 @@ namespace LOSA.Calidad
             catch (Exception ex)
             {
 
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void OpenFile(string pathSource, string pathDestination)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(pathSource);
+                string pass = "";
+                string puser = "";
+
+                if (string.IsNullOrEmpty(UsuarioLogeado.Password))
+                {
+                    puser = "operador";
+                    pass = "Tempo1234";
+                }
+                else
+                {
+                    puser = UsuarioLogeado.ADuser1;
+                    pass = UsuarioLogeado.Password;
+                }
+
+                request.Credentials = new NetworkCredential(puser, pass, "AQUAFEEDHN.COM");
+                request.Method = WebRequestMethods.Ftp.DownloadFile;
+
+                using (Stream ftpStream = request.GetResponse().GetResponseStream())
+                using (Stream fileStream = File.Create(pathDestination))
+                {
+                    ftpStream.CopyTo(fileStream);
+                    Process.Start(pathDestination);
+                }
+
+            }
+            catch (Exception ex)
+            {
                 CajaDialogo.Error(ex.Message);
             }
         }
@@ -1520,6 +1569,8 @@ namespace LOSA.Calidad
             }
             else
             {
+                
+
                 string Query = @"sp_delete_criterio_ingreso_respuestaV2";       //Elimna todas las respuestas guardadas.
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 try

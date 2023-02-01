@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -81,6 +82,48 @@ namespace LOSA.Clases
                 using (Stream fileStream = File.Create(pathDestination))
                 {
                     ftpStream.CopyTo(fileStream);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void OpenFile(string pathSource, string pathDestination, UserLogin pUsuarioLogeado)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(pathSource);
+                string password = "";
+                string puser = "";
+
+                if (string.IsNullOrEmpty(pUsuarioLogeado.Password))
+                {
+                    puser = "operador";
+                    password = "Tempo1234";
+                }
+                else
+                {
+                    puser = pUsuarioLogeado.AD_User;
+                    password = pUsuarioLogeado.Password;
+                }
+
+                request.Credentials = new NetworkCredential(puser, password, "AQUAFEEDHN.COM");
+                //request.Credentials = new NetworkCredential(UsuarioLogueado.AD_User, UsuarioLogueado.Password);
+                request.Method = WebRequestMethods.Ftp.DownloadFile;
+
+                using (Stream ftpStream = request.GetResponse().GetResponseStream())
+                using (Stream fileStream = File.Create(pathDestination))
+                {
+
+                    ftpStream.CopyTo(fileStream);
+
+                    Process.Start(pathDestination);
+
                 }
 
             }
