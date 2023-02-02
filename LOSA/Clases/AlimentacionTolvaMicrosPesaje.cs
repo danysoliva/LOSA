@@ -27,6 +27,7 @@ namespace LOSA.Clases
         public decimal KgPorBatch { get; set; }
         public string CodigoBarra { get; set; }
         public bool Recuperado { get; set; }
+        public int TipoPesaje { get; set; }
 
         public bool RecuperaRegistro(string pCodigoBarra)
         {
@@ -52,6 +53,7 @@ namespace LOSA.Clases
                         KgPorBatch = dr.GetDecimal(4);
                         if (!dr.IsDBNull(dr.GetOrdinal("lote")))
                             Lot = dr.GetInt32(7);
+                        TipoPesaje = dr.GetInt32(8);
                         CodigoBarra = pCodigoBarra;
                         Recuperado = true;
                     }

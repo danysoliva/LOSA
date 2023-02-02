@@ -240,12 +240,12 @@ namespace LOSA.MicroIngredientes
 
                     if (!string.IsNullOrEmpty(txtCodBarra.Text))
                     {
-                        //if (pesaje.MateriaPrimaID != tarima.Id_materiaprima)
-                        //{
-                        //    CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
-                        //    txtCodBarra.Text = "";
-                        //    return;
-                        //}
+                        if (pesaje.MateriaPrimaID != tarima.Id_materiaprima)
+                        {
+                            CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
+                            txtCodBarra.Text = "";
+                            return;
+                        }
 
                         timer1.Enabled = true;
                         indicePeso = 0;
