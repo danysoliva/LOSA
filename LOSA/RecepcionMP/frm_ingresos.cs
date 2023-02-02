@@ -155,8 +155,12 @@ namespace LOSA.RecepcionMP
                         break;
 
                     case 4:
-                        CajaDialogo.Information("En Consturccion!");
-                        return;
+                        frm_detalle_liquidos_tarima frmDetalleLiquidos = new frm_detalle_liquidos_tarima(row.Ningreso, UsuarioLogeado, row.itemcode);
+                        if (frmDetalleLiquidos.ShowDialog() == DialogResult.OK)
+                        {
+                            Load_Info();
+                        }
+                        break;
 
                     case 5:
                         frm_ingresos_lotes frmDetalle = new frm_ingresos_lotes(row.id, row.Ningreso, UsuarioLogeado, row.bit_fin, row.id_traslado, row.itemcode);
