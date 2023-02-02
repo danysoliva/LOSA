@@ -71,9 +71,6 @@
             this.xrLine3 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
-            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.detailBand1 = new DevExpress.XtraReports.UI.DetailBand();
-            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -616,24 +613,17 @@
             this.xrLine1.SizeF = new System.Drawing.SizeF(2F, 101.5232F);
             this.xrLine1.StylePriority.UseBorders = false;
             // 
-            // topMarginBand1
-            // 
-            this.topMarginBand1.Name = "topMarginBand1";
-            // 
-            // detailBand1
-            // 
-            this.detailBand1.Name = "detailBand1";
-            // 
-            // bottomMarginBand1
-            // 
-            this.bottomMarginBand1.Name = "bottomMarginBand1";
-            // 
             // rptLoteRotulo
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
-            this.topMarginBand1,
-            this.detailBand1,
-            this.bottomMarginBand1});
+            this.TopMargin,
+            this.BottomMargin,
+            this.Detail,
+            this.ReportHeader});
+            this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Margins = new System.Drawing.Printing.Margins(91, 57, 29, 55);
+            this.ScriptReferencesString = "DevExpress.XtraPrinting.v18.1.dll\r\nDevExpress.Utils.v18.1.dll";
+            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -683,8 +673,5 @@
         private DevExpress.XtraReports.UI.XRLine xrLine6;
         private DevExpress.XtraReports.UI.XRLabel txtproveedor;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
-        private DevExpress.XtraReports.UI.DetailBand detailBand1;
-        private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
     }
 }
