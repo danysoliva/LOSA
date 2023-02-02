@@ -96,7 +96,7 @@
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPanel1});
-            this.ReportHeader.HeightF = 842.0319F;
+            this.ReportHeader.HeightF = 831.7819F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrPanel1

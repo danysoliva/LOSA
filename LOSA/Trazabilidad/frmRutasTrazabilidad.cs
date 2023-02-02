@@ -541,9 +541,9 @@ namespace LOSA.Trazabilidad
                 SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz_v2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lotept", txtlote.Text);
-                dsReportesTRZ.detalle_destinos.Clear();
+                dsReportesTRZ.detalle_destinosRuta4.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsReportesTRZ.detalle_destinos);
+                adat.Fill(dsReportesTRZ.detalle_destinosRuta4);
 
                 con.Close();
             }
