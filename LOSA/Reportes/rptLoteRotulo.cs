@@ -20,7 +20,7 @@ namespace LOSA.Reportes
             isganel = false;
             Id_detalle = pId;
             load_data();
-
+            //Comentario
         }
 
         public rptLoteRotulo(int pnumero_transaccion, string plote)
