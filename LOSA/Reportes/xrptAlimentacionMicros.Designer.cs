@@ -491,7 +491,7 @@
             this.xrLabel18.StylePriority.UseBorders = false;
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.StylePriority.UsePadding = false;
-            this.xrLabel18.Text = "Title: CONTROL DE ALIMENTACION DE TOLVA DE MICROINGREDIENTES 5to NIVEL";
+            this.xrLabel18.Text = "Title: CONTROL DE ALIMENTACION DE TOLVA DE MICROINGREDIENTES 3er NIVEL";
             // 
             // xrLabel29
             // 

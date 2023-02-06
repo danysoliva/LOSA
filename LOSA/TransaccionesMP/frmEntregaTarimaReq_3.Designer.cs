@@ -61,6 +61,8 @@ namespace LOSA.TransaccionesMP
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposEntregaMicros = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colcant_entregada_micros = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -104,6 +106,8 @@ namespace LOSA.TransaccionesMP
             this.cmdSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnEntregaBinesRequissa = new DevExpress.XtraEditors.SimpleButton();
+            this.colid_detalle_requisicion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_requisicion_h = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -257,7 +261,11 @@ namespace LOSA.TransaccionesMP
             this.collote,
             this.colfecha,
             this.gridColumn1,
-            this.colcant_entregada_micros});
+            this.colcant_entregada_micros,
+            this.colid_tarima,
+            this.colid_mp,
+            this.colid_detalle_requisicion,
+            this.colid_requisicion_h});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -366,6 +374,16 @@ namespace LOSA.TransaccionesMP
             this.colcant_entregada_micros.OptionsColumn.AllowEdit = false;
             this.colcant_entregada_micros.Visible = true;
             this.colcant_entregada_micros.VisibleIndex = 7;
+            // 
+            // colid_tarima
+            // 
+            this.colid_tarima.FieldName = "id_tarima";
+            this.colid_tarima.Name = "colid_tarima";
+            // 
+            // colid_mp
+            // 
+            this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.Name = "colid_mp";
             // 
             // gcTarima
             // 
@@ -936,6 +954,16 @@ namespace LOSA.TransaccionesMP
             this.btnEntregaBinesRequissa.Visible = false;
             this.btnEntregaBinesRequissa.Click += new System.EventHandler(this.btnEntregaBinesRequissa_Click);
             // 
+            // colid_detalle_requisicion
+            // 
+            this.colid_detalle_requisicion.FieldName = "id_detalle_requisicion";
+            this.colid_detalle_requisicion.Name = "colid_detalle_requisicion";
+            // 
+            // colid_requisicion_h
+            // 
+            this.colid_requisicion_h.FieldName = "id_requisicion_h";
+            this.colid_requisicion_h.Name = "colid_requisicion_h";
+            // 
             // frmEntregaTarimaReq_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1045,5 +1073,9 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposEntregaMicros;
         private DevExpress.XtraGrid.Columns.GridColumn colcant_entregada_micros;
         private DevExpress.XtraEditors.SimpleButton btnEntregaBinesRequissa;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tarima;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_mp;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_detalle_requisicion;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_requisicion_h;
     }
 }

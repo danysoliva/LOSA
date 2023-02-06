@@ -850,12 +850,18 @@ namespace LOSA.TransaccionesMP
             }
         }
 
+
+
+
         private void reposEntregaMicros_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsTransaccionesMP.viewTarimasRow)gridView.GetFocusedDataRow();
 
-            if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
+            TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
+            //if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
+            decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
+            if (Kg_Entregados_Micros >= dp.ValidateNumberDecimal(row.kg))
             {
                 string mensaje = "La tarima ya fue entregada en Micro Ingredientes!";
                 lblMensaje.Text = mensaje;
@@ -877,7 +883,7 @@ namespace LOSA.TransaccionesMP
                     Tarima tar1 = new Tarima();
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima]", con);
+                    SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima_v2]", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     if(tar1.RecuperarRegistro(row.id_tarima))
                         cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
@@ -888,9 +894,7 @@ namespace LOSA.TransaccionesMP
                     cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
                     cmd.Parameters.AddWithValue("@cantidad_unidades", frmx.UdEnviar);
                     cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
-
-
-                    //cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
+                    cmd.Parameters.AddWithValue("@id_req_detalle", row.id_detalle_requisicion);//Id requisicion detalle
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
