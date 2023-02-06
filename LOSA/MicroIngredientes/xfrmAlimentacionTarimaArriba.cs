@@ -328,6 +328,9 @@ namespace LOSA.MicroIngredientes
         {
             if (e.KeyCode == Keys.Enter)
             {
+                
+
+
                 DataOperations dp = new DataOperations();
                 int LotePT = dp.ValidateNumberInt32(txtLotePT1.Text);
                 if (LotePT == 0)
@@ -335,6 +338,9 @@ namespace LOSA.MicroIngredientes
                     CajaDialogo.Error("No hay una orden activa en Consola en el mezclado 1!");
                     return;
                 }
+
+                
+
                 
                 AlimentacionTolvaMicrosPesaje alimentacionTolva = new AlimentacionTolvaMicrosPesaje();
                 if (alimentacionTolva.RecuperaRegistro(teCodBarra.Text))
@@ -348,7 +354,7 @@ namespace LOSA.MicroIngredientes
                     xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow(order_id, 0, teCodBarra.Text, alimentacionTolva.IdMP);
                     //xfrmMezclaMicroShow frm = new xfrmMezclaMicroShow( order_id,Convert.ToInt32(txtCodBarra.Text));
                     bool batchCompletados;
-                    int tipo_pesaje = 0;
+                    int tipo_pesaje = alimentacionTolva.TipoPesaje;
                     try
                     {
 
@@ -357,11 +363,7 @@ namespace LOSA.MicroIngredientes
                             CajaDialogo.Error("NO HAY UNA ORDEN ACTIVA");
                             return;
                         }
-                        //Validar si ya se adiciono todo!
-                        if (true)
-                        {
-
-                        }
+                        
 
                         //if (alimentacionTolva.RecuperaRegistro(Convert.ToInt32(teCodBarra.Text), order_id))
                         if(frm.ShowDialog() == DialogResult.OK)
@@ -370,38 +372,40 @@ namespace LOSA.MicroIngredientes
                             {
                                 cnx.Open();
 
-                                SqlCommand cmd = new SqlCommand("sp_insert_adicionMezclado_acumularBatch_v2", cnx);
+                                SqlCommand cmd = new SqlCommand("sp_insert_adicionMezclado_acumularBatch_v4", cnx);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@codigo_barra_pesaje_individual", alimentacionTolva.CodigoBarra);
 
-                                //batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
-                                tipo_pesaje = Convert.ToInt32(cmd.ExecuteScalar());
+                                batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
+                                //tipo_pesaje = Convert.ToInt32(cmd.ExecuteScalar());
                                 //batchCompletados = Convert.ToBoolean(cmd.ExecuteScalar());
                                 cnx.Close();
                             }
 
 
 
-                            //if (batchCompletados == true)
-                            //{
-                            //    CajaDialogo.Error("NO SE PUEDE ADICIONAR MAS BATCH");
-                            //    return;
-                            //}
-                            //else
-                            //    frm.ShowDialog();
-
-                            if (tipo_pesaje == 1)
+                            if (batchCompletados == true)
                             {
-                                //PESAJE DE NUCLEO
-                                xtraTabControl1.SelectedTabPage = xtraTabPage1;
-                                LoadData2();
+                                CajaDialogo.Error("NO SE PUEDE ADICIONAR MAS BATCH, YA SE COMPLETO");
+                                return;
                             }
                             else
                             {
-                                //PESAJE INDIVIDUAL
-                                xtraTabControl1.SelectedTabPage = xtraTabPage2;
-                                LoadDataIndividual();
+                                if (tipo_pesaje == 1)
+                                {
+                                    //PESAJE DE NUCLEO
+                                    xtraTabControl1.SelectedTabPage = xtraTabPage1;
+                                    LoadData2();
+                                }
+                                else
+                                {
+                                    //PESAJE INDIVIDUAL
+                                    xtraTabControl1.SelectedTabPage = xtraTabPage2;
+                                    LoadDataIndividual();
+                                }
                             }
+
+                            
 
                             teCodBarra.Text = "";
                             teCodBarra.Focus();
