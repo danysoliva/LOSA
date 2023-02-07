@@ -387,6 +387,8 @@ namespace LOSA.MicroIngredientes
                             if (batchCompletados == true)
                             {
                                 CajaDialogo.Error("NO SE PUEDE ADICIONAR MAS BATCH, YA SE COMPLETO");
+                                teCodBarra.Text = "";
+                                teCodBarra.Focus();
                                 return;
                             }
                             else
@@ -404,8 +406,6 @@ namespace LOSA.MicroIngredientes
                                     LoadDataIndividual();
                                 }
                             }
-
-                            
 
                             teCodBarra.Text = "";
                             teCodBarra.Focus();

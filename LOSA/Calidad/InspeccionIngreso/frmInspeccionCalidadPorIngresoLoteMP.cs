@@ -845,7 +845,7 @@ namespace LOSA.Calidad
         {
             try
             {
-                string query = @"sp_obtener_datos_logistica_to_show_calidad";
+                string query = @"sp_obtener_datos_logistica_to_show_calidadV2";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
