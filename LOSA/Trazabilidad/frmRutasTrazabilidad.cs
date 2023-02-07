@@ -2486,11 +2486,12 @@ namespace LOSA.Trazabilidad
             //load_header();
             //Load_Despachos();
             //LoadDatosDetalleDespacho();
+            timerRuta4.Stop();
             load_informacion_de_inventario();
             load_tarimas_rechazadas();
             load_MuestreoPT();
             timerRuta4.Enabled = false;
-            timerRuta4.Stop();
+            
         }
 
         private void gridView23_RowClick(object sender, RowClickEventArgs e)
@@ -2791,6 +2792,44 @@ namespace LOSA.Trazabilidad
 
             navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
             txtlote.Focus();
+        }
+
+        private void cmdCantidadDosificadaLoteLink_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta1.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+            acordionRuta1.Appearance.Normal.ForeColor = Color.White; 
+
+            this.rutaActiva = 1;
+            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+            var row = (dsMantoTrazabilidad.Ruta4_D_trz_loteRow)gridView.GetFocusedDataRow();
+
+            if (string.IsNullOrEmpty(row.lote_mp))
+            {
+                return;
+            }
+
+            
+
+            if (txtLoteMPRuta1.Text != row.lote_mp.ToString() || string.IsNullOrEmpty(txtLoteMPRuta1.Text))
+            {
+                txtLoteMPRuta1.Text = row.lote_mp;
+                btnGenerateRuta1_Click(sender, new EventArgs());
+            }
+            btnHome_Ruta1.Visible = false;
+            btnBack.Visible = true;
+
+            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npRuta1;
+            txtLoteMPRuta1.Focus();
+            //npRuta1
         }
     }
 }

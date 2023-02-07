@@ -158,6 +158,30 @@ namespace LOSA.Clases
             return Recuperado;
         }
 
+        public  decimal GetKgEntregadosA_Micros_from_tarima_ALOSY(int pIdTarimaOrigenALOSY, int pIdDetalleRequisicion)
+        {
+            decimal val = 0;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_kg_entregados_por_tarima_micros", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima_ALOSY", pIdTarimaOrigenALOSY);
+                cmd.Parameters.AddWithValue("@IdDetalleRequisicion", pIdDetalleRequisicion);
+                val = dp.ValidateNumberDecimal(cmd.ExecuteScalar());
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return val;
+        }
+
         public bool RecuperarRegistroPorCodBarra(string codBarra)
         {
             try

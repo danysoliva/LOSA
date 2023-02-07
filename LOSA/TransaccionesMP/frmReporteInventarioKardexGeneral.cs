@@ -22,6 +22,7 @@ namespace LOSA.TransaccionesMP
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
         MateriaPrima MateriaPrimaAllBodegas;
+        int IdMateriaPrimaTab_MP_por_Bodega;
         public frmReporteInventarioKardexGeneral(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -394,6 +395,7 @@ namespace LOSA.TransaccionesMP
                     LoadBodegaMP(frm.ItemSeleccionado.id);
                     txtTitulo_Inv_Por_MPyBodega.Text = frm.ItemSeleccionado.ItemCode + " " + frm.ItemSeleccionado.ItemName;
                     MateriaPrimaAllBodegas.RecuperarRegistroFromID_RM(frm.ItemSeleccionado.id);
+                    IdMateriaPrimaTab_MP_por_Bodega = frm.ItemSeleccionado.id;
                 }
             }
            
@@ -534,6 +536,8 @@ namespace LOSA.TransaccionesMP
             else//Mostrar solo MP Seleccionada
             {
                 btnSearchMP.Enabled = txtTitulo_Inv_Por_MPyBodega.Enabled = true;
+                if (IdMateriaPrimaTab_MP_por_Bodega > 0)
+                    LoadBodegaMP(IdMateriaPrimaTab_MP_por_Bodega);
             }
         }
 
