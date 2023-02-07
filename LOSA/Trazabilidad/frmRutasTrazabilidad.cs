@@ -835,8 +835,9 @@ namespace LOSA.Trazabilidad
         private void cmdDespachoId_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridView = (GridView)gcClientesRecibieronLotePT.FocusedView;
-            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
-
+            //var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+            var row = (dsReportesTRZ.detalle_destinosRuta4Row)gridView.GetFocusedDataRow();
+            
             navigationFrame1.SelectedPage = npRuta3DetalleDespacho;
 
             LoadDatosDetalleDespacho(row.Despacho);//Correcto filtramos despacho y lote
@@ -2203,7 +2204,8 @@ namespace LOSA.Trazabilidad
         private void btnLinkBoletaView_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridView = (GridView)gcClientesRecibieronLotePT.FocusedView;
-            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+            //var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+            var row = (dsReportesTRZ.detalle_destinosRuta4Row)gridView.GetFocusedDataRow();
 
             Boleta bol1 = new Boleta();
             if (bol1.RecuperarRegistroFromNumBoleta(row.NumID))
