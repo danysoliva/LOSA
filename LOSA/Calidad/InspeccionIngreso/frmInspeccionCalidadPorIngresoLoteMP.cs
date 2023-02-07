@@ -150,129 +150,129 @@ namespace LOSA.Calidad
                                   UserLogin Puser)
         {
             InitializeComponent();
-            Id_ingreso = 0;
-            UsuarioLogeado = Puser;
-            //tabControl1.TabPages[4]
-            load_data(pLoteMP);
-            load_data_ingreso(pLoteMP);
-            Load_cargas_nir(pLoteMP);
-            Inicializar_data_logistica(pLoteMP);
-            load_zonas();
-            load_especie();
-            load_tipo();
-            load_paises();
-            LoadLotesPT();
-            LoadInventarioKardex();
-            //Load_Despachos();
-            if (ChCalidad)
-            {
-                load_criterios_configurados(pLoteMP);
-                Inicalizar_Archivo_configurados(pLoteMP);
-                get_imagen(pLoteMP);
-                load_empaque_estado_Mp(pLoteMP);
-                load_trasporte_estado_transporte(pLoteMP);
-                load_criterios_adicionales(pLoteMP);
+            //Id_ingreso = 0;
+            //UsuarioLogeado = Puser;
+            ////tabControl1.TabPages[4]
+            //load_data(pLoteMP);
+            //load_data_ingreso(pLoteMP);
+            //Load_cargas_nir(pLoteMP);
+            //Inicializar_data_logistica(pLoteMP);
+            //load_zonas();
+            //load_especie();
+            //load_tipo();
+            //load_paises();
+            //LoadLotesPT();
+            //LoadInventarioKardex();
+            ////Load_Despachos();
+            //if (ChCalidad)
+            //{
+            //    load_criterios_configurados(pLoteMP);
+            //    Inicalizar_Archivo_configurados(pLoteMP);
+            //    get_imagen(pLoteMP);
+            //    load_empaque_estado_Mp(pLoteMP);
+            //    load_trasporte_estado_transporte(pLoteMP);
+            //    load_criterios_adicionales(pLoteMP);
 
-                if (full_pathImagen != "")
-                {
-                    pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
-                }
-            }
-            else
-            {
-                inicializar_criterios();
-                Inicalizar_Archivo();
-            }
+            //    if (full_pathImagen != "")
+            //    {
+            //        pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+            //    }
+            //}
+            //else
+            //{
+            //    inicializar_criterios();
+            //    Inicalizar_Archivo();
+            //}
         }
 
 
         public frmInspeccionCalidadPorIngresoLoteMP(int id_ingreso_lote, UserLogin Puser, int tipo_transaccion)
         {
             InitializeComponent();
-            Id_ingreso = id_ingreso_lote;
-            UsuarioLogeado = Puser;
+            //Id_ingreso = id_ingreso_lote;
+            //UsuarioLogeado = Puser;
 
-            tabPageLotesPT.Visible = false;
-            //tabControl1.TabPages[4]
-            load_data();
-            load_data_ingreso();
-            Load_cargas_nir();
-            Inicializar_data_logistica();
-            load_zonas();
-            load_especie();
-            load_tipo();
-            load_paises();
-            LoadLotesPT();
-            LoadInventarioKardex();
-            //Load_Despachos();
-            if (ChCalidad)
-            {
-                load_criterios_configurados();
-                Inicalizar_Archivo_configurados();
-                get_imagen();
-                load_empaque_estado_Mp();
-                load_trasporte_estado_transporte();
-                load_criterios_adicionales();
+            //tabPageLotesPT.Visible = false;
+            ////tabControl1.TabPages[4]
+            //load_data();
+            //load_data_ingreso();
+            //Load_cargas_nir();
+            //Inicializar_data_logistica();
+            //load_zonas();
+            //load_especie();
+            //load_tipo();
+            //load_paises();
+            //LoadLotesPT();
+            //LoadInventarioKardex();
+            ////Load_Despachos();
+            //if (ChCalidad)
+            //{
+            //    load_criterios_configurados();
+            //    Inicalizar_Archivo_configurados();
+            //    get_imagen();
+            //    load_empaque_estado_Mp();
+            //    load_trasporte_estado_transporte();
+            //    load_criterios_adicionales();
 
-                if (full_pathImagen != "")
-                {
-                    pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
-                }
-            }
-            else
-            {
-                inicializar_criterios();
-                Inicalizar_Archivo();
-            }
+            //    if (full_pathImagen != "")
+            //    {
+            //        pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+            //    }
+            //}
+            //else
+            //{
+            //    inicializar_criterios();
+            //    Inicalizar_Archivo();
+            //}
 
-            btnGuardar.Visible = false;
-            //cmdHome.Visible = false;
-            //btnRevisarBoleta.Enabled = false;
-            //btnOC.Enabled = false;
-            simpleButton1.Enabled = false;
-            ColSeleccionar.OptionsColumn.AllowEdit = false;
-            colbit_subido.OptionsColumn.AllowEdit = false;
-            colAdjuntar.OptionsColumn.AllowEdit = false;
-            //colabrir.OptionsColumn.AllowEdit = false;
-            grd_origenespecie.Enabled = false;
-            grd_pesca.Enabled = false;
-            grd_origen.Enabled = false;
-            Desadjuntar.OptionsColumn.AllowEdit = false;
-            grd_tipo.Enabled = false;
-            btnAdjuntarImagen.Enabled = false;
-            spsustentable.Enabled = false;
-            //labelControl5.Visible = false;
-            //txtboleta.Visible = false;
-            //btnRevisarBoleta.Visible = false;
-            //btnOC.Visible = false;
-            //txtproveedor.Visible = false;
-            //txtoc.Visible = false;
-            txtnumtraslado.Visible = false;
-            //labelControl4.Visible = false;
-            //labelControl6.Visible=false;
-            labelControl7.Visible = false;
-            //txtreferencia.Visible = false;
-            //dtproduccion.Visible = false;
-            //dtvencimiento.Visible = false;
-            //dt_f_ingreso.Visible = false;
-            //txtdiasvencimiento.Visible = false;
-            //txtingresada.Visible = false;
-            txtinventarioActual.Visible = false;
-            //txtingresadaUD.Visible = false;
-            txtFacturas.Visible = false;
-            //labelControl8.Visible = false;
-            //labelControl9.Visible = false;
-            //labelControl10.Visible = false;
-            //labelControl11.Visible = false;
-            //labelControl12.Visible = false;
-            labelControl13.Visible = false;
-            //labelControl44.Visible = false;
-            //labelControl32.Visible = false;
-            labelControl15.Visible = false;
-            btnRecientes.Visible = false;
+            //btnGuardar.Visible = false;
+            ////cmdHome.Visible = false;
+            ////btnRevisarBoleta.Enabled = false;
+            ////btnOC.Enabled = false;
+            //simpleButton1.Enabled = false;
+            //ColSeleccionar.OptionsColumn.AllowEdit = false;
+            //colbit_subido.OptionsColumn.AllowEdit = false;
+            //colAdjuntar.OptionsColumn.AllowEdit = false;
+            ////colabrir.OptionsColumn.AllowEdit = false;
+            //grd_origenespecie.Enabled = false;
+            //grd_pesca.Enabled = false;
+            //grd_origen.Enabled = false;
+            //Desadjuntar.OptionsColumn.AllowEdit = false;
+            //grd_tipo.Enabled = false;
+            //btnAdjuntarImagen.Enabled = false;
+            //spsustentable.Enabled = false;
+            ////labelControl5.Visible = false;
+            ////txtboleta.Visible = false;
+            ////btnRevisarBoleta.Visible = false;
+            ////btnOC.Visible = false;
+            ////txtproveedor.Visible = false;
+            ////txtoc.Visible = false;
+            //txtnumtraslado.Visible = false;
+            ////labelControl4.Visible = false;
+            ////labelControl6.Visible=false;
+            //labelControl7.Visible = false;
+            ////txtreferencia.Visible = false;
+            ////dtproduccion.Visible = false;
+            ////dtvencimiento.Visible = false;
+            ////dt_f_ingreso.Visible = false;
+            ////txtdiasvencimiento.Visible = false;
+            ////txtingresada.Visible = false;
+            //txtinventarioActual.Visible = false;
+            ////txtingresadaUD.Visible = false;
+            //txtFacturas.Visible = false;
+            ////labelControl8.Visible = false;
+            ////labelControl9.Visible = false;
+            ////labelControl10.Visible = false;
+            ////labelControl11.Visible = false;
+            ////labelControl12.Visible = false;
+            //labelControl13.Visible = false;
+            ////labelControl44.Visible = false;
+            ////labelControl32.Visible = false;
+            //labelControl15.Visible = false;
+            //btnRecientes.Visible = false;
 
-            labelControl14.Location = new Point(labelControl14.Location.X, 167);
-            tabControl1.Location = new Point(tabControl1.Location.X, 200);
+            //labelControl14.Location = new Point(labelControl14.Location.X, 167);
+            //tabControl1.Location = new Point(tabControl1.Location.X, 200);
 
         }
 
@@ -632,12 +632,13 @@ namespace LOSA.Calidad
             try
             {
                 //string query = @"sp_load_trz_documentos_ingreso";
-                string query = "[sp_load_trz_documentos_ingresov2]";
+                //string query = "[sp_load_trz_documentos_ingresov2]";
+                string query = "[sp_load_trz_documentos_ingresovV3]";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
+                //cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
                 cmd.Parameters.AddWithValue("@id_mp", IdMP);
                 cmd.Parameters.AddWithValue("@lote", Lote);
                 dsMantenimientoC.adjuntos.Clear();
@@ -1707,7 +1708,7 @@ namespace LOSA.Calidad
                             {
                                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                                 con.Open();
-                                SqlCommand cmd4 = new SqlCommand("sp_insert_archivo_adjunto_ingresoV2", con);
+                                SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingresoV3]", con);
                                 //cmd4.Transaction = transaction;
                                 cmd4.CommandType = CommandType.StoredProcedure;
 
@@ -1715,9 +1716,9 @@ namespace LOSA.Calidad
                                 cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = row.file_name;
                                 cmd4.Parameters.AddWithValue("@id_config", row.id_conf);
                                 cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                                cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                                //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                                 cmd4.Parameters.AddWithValue("@bit_pic", 0);
-                                cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                                //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
                                 cmd4.Parameters.AddWithValue("@id_mp", id_materiaPrima);
                                 cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                                 cmd4.ExecuteNonQuery();
@@ -1736,7 +1737,7 @@ namespace LOSA.Calidad
                                 {
                                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                                     con.Open();
-                                    SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingresoV2]", con);
+                                    SqlCommand cmd4 = new SqlCommand("sp_insert_archivo_adjunto_ingresoV3", con);
                                     //cmd4.Transaction = transaction;
                                     cmd4.CommandType = CommandType.StoredProcedure;
 
@@ -1744,9 +1745,9 @@ namespace LOSA.Calidad
                                     cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = row.file_name;
                                     cmd4.Parameters.AddWithValue("@id_config", row.id_conf);
                                     cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                                    cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                                    //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                                     cmd4.Parameters.AddWithValue("@bit_pic", 0);
-                                    cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                                    //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
                                     cmd4.Parameters.AddWithValue("@id_mp", id_materiaPrima);
                                     cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                                     cmd4.ExecuteNonQuery();
@@ -1770,7 +1771,7 @@ namespace LOSA.Calidad
                             {
                                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                                 con.Open();
-                                SqlCommand cmd4 = new SqlCommand("sp_insert_archivo_adjunto_ingresoV2", con);
+                                SqlCommand cmd4 = new SqlCommand("sp_insert_archivo_adjunto_ingresoV3", con);
                                 //cmd4.Transaction = transaction;
                                 cmd4.CommandType = CommandType.StoredProcedure;
 
@@ -1778,9 +1779,9 @@ namespace LOSA.Calidad
                                 cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
                                 cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
                                 cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                                cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                                //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                                 cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                                cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                                //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
                                 cmd4.Parameters.AddWithValue("@id_mp", id_materiaPrima);
                                 cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                                 cmd4.ExecuteNonQuery();
@@ -1792,7 +1793,7 @@ namespace LOSA.Calidad
 
                             SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                             con.Open();
-                            SqlCommand cmd4 = new SqlCommand("sp_insert_archivo_adjunto_ingresoV2", con);
+                            SqlCommand cmd4 = new SqlCommand("sp_insert_archivo_adjunto_ingresoV3", con);
                             //cmd4.Transaction = transaction;
                             cmd4.CommandType = CommandType.StoredProcedure;
 
@@ -1800,9 +1801,9 @@ namespace LOSA.Calidad
                             cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
                             cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
                             cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                            cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                            //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                             cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                            cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                            //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
                             cmd4.Parameters.AddWithValue("@id_mp", id_materiaPrima);
                             cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                             cmd4.ExecuteNonQuery();
