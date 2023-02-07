@@ -2486,11 +2486,12 @@ namespace LOSA.Trazabilidad
             //load_header();
             //Load_Despachos();
             //LoadDatosDetalleDespacho();
+            timerRuta4.Stop();
             load_informacion_de_inventario();
             load_tarimas_rechazadas();
             load_MuestreoPT();
             timerRuta4.Enabled = false;
-            timerRuta4.Stop();
+            
         }
 
         private void gridView23_RowClick(object sender, RowClickEventArgs e)
