@@ -51,8 +51,8 @@ namespace LOSA.Clases
         //}
         public int UserId
         {
-            get { return vUserid; }
-            set { vUserid = value; }
+            get { return id; }
+            set { id = value; }
         }
         public string Nombre
         {
