@@ -52,6 +52,11 @@ namespace LOSA.Calidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -279,10 +284,10 @@ namespace LOSA.Calidad
             this.colud_ingresadas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_boleta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colselected = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtboleta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.colselected = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombreMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnumtraslado.Properties)).BeginInit();
@@ -748,7 +753,7 @@ namespace LOSA.Calidad
             this.colrespuesta,
             this.colid_respuestas,
             this.ColSeleccionar});
-            this.grdv_parametros.CustomizationFormBounds = new System.Drawing.Rectangle(-804, 436, 260, 252);
+            this.grdv_parametros.CustomizationFormBounds = new System.Drawing.Rectangle(0, 436, 260, 252);
             this.grdv_parametros.GridControl = this.grd_parametros;
             this.grdv_parametros.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.grdv_parametros.Name = "grdv_parametros";
@@ -2342,6 +2347,7 @@ namespace LOSA.Calidad
             this.colDespacho.ColumnEdit = this.cmdDespachoId;
             this.colDespacho.FieldName = "Despacho";
             this.colDespacho.Name = "colDespacho";
+            this.colDespacho.OptionsColumn.ReadOnly = true;
             this.colDespacho.Visible = true;
             this.colDespacho.VisibleIndex = 0;
             this.colDespacho.Width = 55;
@@ -2349,8 +2355,9 @@ namespace LOSA.Calidad
             // cmdDespachoId
             // 
             this.cmdDespachoId.AutoHeight = false;
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.cmdDespachoId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDespachoId.Name = "cmdDespachoId";
             this.cmdDespachoId.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDespachoId_ButtonClick);
             // 
@@ -2977,6 +2984,15 @@ namespace LOSA.Calidad
             this.colid_boleta.FieldName = "id_boleta";
             this.colid_boleta.Name = "colid_boleta";
             // 
+            // colselected
+            // 
+            this.colselected.Caption = "Seleccionar";
+            this.colselected.FieldName = "selected";
+            this.colselected.Name = "colselected";
+            this.colselected.Visible = true;
+            this.colselected.VisibleIndex = 0;
+            this.colselected.Width = 61;
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.grid_Header_ingresos);
@@ -3009,15 +3025,6 @@ namespace LOSA.Calidad
             this.labelControl4.TabIndex = 56;
             this.labelControl4.Text = "Boleta:";
             this.labelControl4.Visible = false;
-            // 
-            // colselected
-            // 
-            this.colselected.Caption = "Seleccionar";
-            this.colselected.FieldName = "selected";
-            this.colselected.Name = "colselected";
-            this.colselected.Visible = true;
-            this.colselected.VisibleIndex = 0;
-            this.colselected.Width = 61;
             // 
             // frmInspeccionCalidadPorIngresoLoteMP
             // 

@@ -461,7 +461,6 @@ namespace LOSA.Nir
             this.Controls.Add(this.txtmp);
             this.Controls.Add(this.txtsap);
             this.Controls.Add(this.txtodoo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUnirLigaduras";
             this.Text = "Unir Lecturas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

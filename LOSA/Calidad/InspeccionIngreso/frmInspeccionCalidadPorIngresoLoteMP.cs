@@ -123,11 +123,15 @@ namespace LOSA.Calidad
             LoadLotesPT();
             LoadInventarioKardex();
             //Load_Despachos();
+
+            //Archivos Configurados
+            Inicalizar_Archivo_configurados();
+
             if (ChCalidad)
             {
                 load_criterios_configurados();
-                Inicalizar_Archivo_configurados();
                 get_imagen();
+                //Inicalizar_Archivo_configurados();
                 load_empaque_estado_Mp();
                 load_trasporte_estado_transporte();
                 load_criterios_adicionales();
@@ -140,7 +144,7 @@ namespace LOSA.Calidad
             else
             {
                 inicializar_criterios();
-                Inicalizar_Archivo();
+                //Inicalizar_Archivo();
             }
         }
 
@@ -398,30 +402,30 @@ namespace LOSA.Calidad
             dr.Close();
         }
 
-        public void load_criterios_adicionales(string plotemp)
-        {
-            string query = @"sp_load_trz_criterio_ingreso_calidad_adicionales_by_lotemp";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            cn.Open();
-            SqlCommand cmd = new SqlCommand(query, cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@_lotemp", plotemp);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                grd_origenespecie.EditValue = dr.IsDBNull(0) ? (object)DBNull.Value : dr.GetInt32(0);
-                grd_tipo.EditValue = dr.IsDBNull(1) ? (object)DBNull.Value : dr.GetInt32(1);
-                spTipoporcentaje.EditValue = dr.IsDBNull(2) ? (object)DBNull.Value : dr.GetDecimal(2);
-                grd_pesca.EditValue = dr.IsDBNull(3) ? (object)DBNull.Value : dr.GetInt32(3);
-                txtPLantaSenasa.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
-                spsustentable.EditValue = dr.IsDBNull(5) ? (object)DBNull.Value : dr.GetDecimal(5);
-                grd_origen.EditValue = dr.IsDBNull(6) ? (object)DBNull.Value : dr.GetInt32(6);
-                hyfishsource.EditValue = dr.IsDBNull(7) ? "" : dr.GetString(7);
-                hyIUCN.EditValue = dr.IsDBNull(8) ? "" : dr.GetString(8);
-                txtusercalidad.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
-            }
-            dr.Close();
-        }
+        //public void load_criterios_adicionales(string plotemp)
+        //{
+        //    string query = @"sp_load_trz_criterio_ingreso_calidad_adicionales_by_lotemp";
+        //    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+        //    cn.Open();
+        //    SqlCommand cmd = new SqlCommand(query, cn);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.AddWithValue("@_lotemp", plotemp);
+        //    SqlDataReader dr = cmd.ExecuteReader();
+        //    if (dr.Read())
+        //    {
+        //        grd_origenespecie.EditValue = dr.IsDBNull(0) ? (object)DBNull.Value : dr.GetInt32(0);
+        //        grd_tipo.EditValue = dr.IsDBNull(1) ? (object)DBNull.Value : dr.GetInt32(1);
+        //        spTipoporcentaje.EditValue = dr.IsDBNull(2) ? (object)DBNull.Value : dr.GetDecimal(2);
+        //        grd_pesca.EditValue = dr.IsDBNull(3) ? (object)DBNull.Value : dr.GetInt32(3);
+        //        txtPLantaSenasa.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
+        //        spsustentable.EditValue = dr.IsDBNull(5) ? (object)DBNull.Value : dr.GetDecimal(5);
+        //        grd_origen.EditValue = dr.IsDBNull(6) ? (object)DBNull.Value : dr.GetInt32(6);
+        //        hyfishsource.EditValue = dr.IsDBNull(7) ? "" : dr.GetString(7);
+        //        hyIUCN.EditValue = dr.IsDBNull(8) ? "" : dr.GetString(8);
+        //        txtusercalidad.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
+        //    }
+        //    dr.Close();
+        //}
 
         //public void load_empaque_estado_Mp()
         //{
@@ -468,27 +472,27 @@ namespace LOSA.Calidad
             dr.Close();
         }
 
-        public void load_empaque_estado_Mp(string lotemp)
-        {
-            string query = @"sp_load_trz_criterio_ingreso_empaque_by_lotemp";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            cn.Open();
-            SqlCommand cmd = new SqlCommand(query, cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@_lotemp", lotemp);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
+        //public void load_empaque_estado_Mp(string lotemp)
+        //{
+        //    //string query = @"sp_load_trz_criterio_ingreso_empaque_by_lotemp";
+        //    //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+        //    //cn.Open();
+        //    //SqlCommand cmd = new SqlCommand(query, cn);
+        //    //cmd.CommandType = CommandType.StoredProcedure;
+        //    //cmd.Parameters.AddWithValue("@_lotemp", lotemp);
+        //    //SqlDataReader dr = cmd.ExecuteReader();
+        //    //if (dr.Read())
+        //    //{
 
-                rdEmpaque1.EditValue = dr.IsDBNull(1) ? true : dr.GetBoolean(1);
-                rdEmpaque2.EditValue = dr.IsDBNull(2) ? true : dr.GetBoolean(2);
-                rdEmpaque3.EditValue = dr.IsDBNull(3) ? true : dr.GetBoolean(3);
-                rdEmpaque4.EditValue = dr.IsDBNull(4) ? true : dr.GetBoolean(4);
-                rdEstadomp.EditValue = dr.IsDBNull(6) ? true : dr.GetBoolean(6);
-                txtObseracionesMP.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
-            }
-            dr.Close();
-        }
+        //    //    rdEmpaque1.EditValue = dr.IsDBNull(1) ? true : dr.GetBoolean(1);
+        //    //    rdEmpaque2.EditValue = dr.IsDBNull(2) ? true : dr.GetBoolean(2);
+        //    //    rdEmpaque3.EditValue = dr.IsDBNull(3) ? true : dr.GetBoolean(3);
+        //    //    rdEmpaque4.EditValue = dr.IsDBNull(4) ? true : dr.GetBoolean(4);
+        //    //    rdEstadomp.EditValue = dr.IsDBNull(6) ? true : dr.GetBoolean(6);
+        //    //    txtObseracionesMP.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
+        //    //}
+        //    //dr.Close();
+        //}
 
 
         public void load_trasporte_estado_transporte()
@@ -533,44 +537,44 @@ namespace LOSA.Calidad
             dr.Close();
         }
 
-        public void load_trasporte_estado_transporte(string plotemp)
-        {
-            string query = @"sp_load_trz_criterio_ingreso_transporte_by_lotemp";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            cn.Open();
-            SqlCommand cmd = new SqlCommand(query, cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@_lotemp", plotemp);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                rdTranporte1.EditValue = dr.IsDBNull(0) ? true : dr.GetBoolean(0);
-                rdTranporte2.EditValue = dr.IsDBNull(1) ? true : dr.GetBoolean(1);
-                rdTranporte3.EditValue = dr.IsDBNull(2) ? true : dr.GetBoolean(2);
-                rdTranporte4.EditValue = dr.IsDBNull(3) ? true : dr.GetBoolean(3);
-                //txtmp1.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
-                //txtmp2.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
-                //txtmp3.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
+        //public void load_trasporte_estado_transporte(string plotemp)
+        //{
+        //    string query = @"sp_load_trz_criterio_ingreso_transporte_by_lotemp";
+        //    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+        //    cn.Open();
+        //    SqlCommand cmd = new SqlCommand(query, cn);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.AddWithValue("@_lotemp", plotemp);
+        //    SqlDataReader dr = cmd.ExecuteReader();
+        //    if (dr.Read())
+        //    {
+        //        rdTranporte1.EditValue = dr.IsDBNull(0) ? true : dr.GetBoolean(0);
+        //        rdTranporte2.EditValue = dr.IsDBNull(1) ? true : dr.GetBoolean(1);
+        //        rdTranporte3.EditValue = dr.IsDBNull(2) ? true : dr.GetBoolean(2);
+        //        rdTranporte4.EditValue = dr.IsDBNull(3) ? true : dr.GetBoolean(3);
+        //        //txtmp1.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
+        //        //txtmp2.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
+        //        //txtmp3.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
 
-                dsTarima.ultimas_cargasRow row1 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
-                row1.descripcion = dr.IsDBNull(4) ? "" : dr.GetString(4);
-                dsTarima1.ultimas_cargas.Addultimas_cargasRow(row1);
-                dsTarima1.AcceptChanges();
+        //        dsTarima.ultimas_cargasRow row1 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+        //        row1.descripcion = dr.IsDBNull(4) ? "" : dr.GetString(4);
+        //        dsTarima1.ultimas_cargas.Addultimas_cargasRow(row1);
+        //        dsTarima1.AcceptChanges();
 
-                dsTarima.ultimas_cargasRow row2 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
-                row2.descripcion = dr.IsDBNull(5) ? "" : dr.GetString(5);
-                dsTarima1.ultimas_cargas.Addultimas_cargasRow(row2);
-                dsTarima1.AcceptChanges();
+        //        dsTarima.ultimas_cargasRow row2 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+        //        row2.descripcion = dr.IsDBNull(5) ? "" : dr.GetString(5);
+        //        dsTarima1.ultimas_cargas.Addultimas_cargasRow(row2);
+        //        dsTarima1.AcceptChanges();
 
-                dsTarima.ultimas_cargasRow row3 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
-                row3.descripcion = dr.IsDBNull(6) ? "" : dr.GetString(6);
-                dsTarima1.ultimas_cargas.Addultimas_cargasRow(row3);
-                dsTarima1.AcceptChanges();
+        //        dsTarima.ultimas_cargasRow row3 = dsTarima1.ultimas_cargas.Newultimas_cargasRow();
+        //        row3.descripcion = dr.IsDBNull(6) ? "" : dr.GetString(6);
+        //        dsTarima1.ultimas_cargas.Addultimas_cargasRow(row3);
+        //        dsTarima1.AcceptChanges();
 
-                txtobservacionTras.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
-            }
-            dr.Close();
-        }
+        //        txtobservacionTras.Text = dr.IsDBNull(7) ? "" : dr.GetString(7);
+        //    }
+        //    dr.Close();
+        //}
 
 
         //public void get_imagen()
@@ -608,30 +612,50 @@ namespace LOSA.Calidad
             dr.Close();
         }
 
-        public void get_imagen(string _lotemp)
-        {
-            string query = @"sp_get_imagen_of_ingreso_calidad_by_lotemp";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            cn.Open();
-            SqlCommand cmd = new SqlCommand(query, cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@_lotemp", _lotemp);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                fileNameImagen = dr.GetString(0);
-                full_pathImagen = dr.GetString(1);
-            }
-            dr.Close();
-        }
+        //public void get_imagen(string _lotemp)
+        //{
+        //    string query = @"sp_get_imagen_of_ingreso_calidad_by_lotemp";
+        //    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+        //    cn.Open();
+        //    SqlCommand cmd = new SqlCommand(query, cn);
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.AddWithValue("@_lotemp", _lotemp);
+        //    SqlDataReader dr = cmd.ExecuteReader();
+        //    if (dr.Read())
+        //    {
+        //        fileNameImagen = dr.GetString(0);
+        //        full_pathImagen = dr.GetString(1);
+        //    }
+        //    dr.Close();
+        //}
 
         public void Inicalizar_Archivo_configurados()
         {
+            //try
+            //{
+            //    //string query = @"sp_load_trz_documentos_ingreso";
+            //    //string query = "[sp_load_trz_documentos_ingresov2]";
+            //    string query = "[sp_load_trz_documentos_ingresovV3]";
+            //    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            //    cn.Open();
+            //    SqlCommand cmd = new SqlCommand(query, cn);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    //cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
+            //    cmd.Parameters.AddWithValue("@id_mp", IdMP);
+            //    cmd.Parameters.AddWithValue("@lote", Lote);
+            //    dsMantenimientoC.adjuntos.Clear();
+            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //    da.Fill(dsMantenimientoC.adjuntos);
+            //    cn.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
+
             try
             {
-                //string query = @"sp_load_trz_documentos_ingreso";
-                //string query = "[sp_load_trz_documentos_ingresov2]";
-                string query = "[sp_load_trz_documentos_ingresovV3]";
+                string query = "sp_load_trz_documentos_ingreso_for_loteV4";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
@@ -646,6 +670,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
+
                 CajaDialogo.Error(ex.Message);
             }
         }
@@ -895,8 +920,6 @@ namespace LOSA.Calidad
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsMantenimientoC.adjuntos);
                 cn.Close();
-
-
             }
             catch (Exception ex)
             {
@@ -911,8 +934,8 @@ namespace LOSA.Calidad
 
         public void Load_cargas_nir()
         {
-            //string query = @"sp_load_validaciones_del_nir_to_show_calidad";
-            string query = @"[sp_load_validaciones_del_nir_to_show_calidad_by_lote_v2]";
+            string query = @"sp_load_validaciones_del_nir_to_show_calidad";
+            //string query = @"[sp_load_validaciones_del_nir_to_show_calidad_by_lote_v2]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -920,8 +943,8 @@ namespace LOSA.Calidad
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", IdMP);
-                cmd.Parameters.AddWithValue("@_lotemp", Lote);
-                //cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                //cmd.Parameters.AddWithValue("@_lotemp", Lote);
+                cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsMantenimientoC.show_nir.Clear();
                 da.Fill(dsMantenimientoC.show_nir);
@@ -2292,10 +2315,12 @@ namespace LOSA.Calidad
                 load_paises();
                 LoadLotesPT();
                 LoadInventarioKardex();
+                //Archivos Configurados
+                Inicalizar_Archivo_configurados();
                 if (ChCalidad)
                 {
                     load_criterios_configurados();
-                    Inicalizar_Archivo_configurados();
+                    //Inicalizar_Archivo_configurados();
                     get_imagen();
                     load_empaque_estado_Mp();
                     load_trasporte_estado_transporte();
@@ -2309,7 +2334,7 @@ namespace LOSA.Calidad
                 else
                 {
                     inicializar_criterios();
-                    Inicalizar_Archivo();
+                    //Inicalizar_Archivo();
                 }
             }
             catch (Exception ex) 
