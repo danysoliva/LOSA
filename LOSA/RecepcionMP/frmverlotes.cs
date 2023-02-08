@@ -113,7 +113,7 @@ namespace LOSA.RecepcionMP
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@id_lote", row.id);
                 cmd.Parameters.AddWithValue("@lote", row.lote);
-                cmd.Parameters.AddWithValue("@numero_transaccion");
+                cmd.Parameters.AddWithValue("@numero_transaccion", row.numero_transaccion);
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
 
                 cmd.ExecuteNonQuery();
