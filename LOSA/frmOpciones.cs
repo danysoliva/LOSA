@@ -2508,6 +2508,20 @@ namespace LOSA
                 default:
                     break;
             }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(81))
+                {
+                    AFC_ConsumoReal frm = new AFC_ConsumoReal();
+                    frm.MdiParent = this;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #81");
+                }
+            }
         }
 
         private void simpleButton46_Click(object sender, EventArgs e)

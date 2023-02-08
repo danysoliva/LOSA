@@ -29,6 +29,7 @@ namespace LOSA.Trazabilidad
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -170,7 +171,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl83 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
-            this.despachadoClientesBindingSource = new System.Windows.Forms.BindingSource();
+            this.despachadoClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView15 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn83 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -180,7 +181,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn87 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn88 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.direccionClientesBindingSource = new System.Windows.Forms.BindingSource();
+            this.direccionClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView16 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn92 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn93 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -238,7 +239,7 @@ namespace LOSA.Trazabilidad
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
             this.grd_nir = new DevExpress.XtraGrid.GridControl();
-            this.dsMantenimientoCBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsMantenimientoCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMantenimientoC = new LOSA.Calidad.dsMantenimientoC();
             this.grdv_nir = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -403,7 +404,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn69 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tb_inventario = new System.Windows.Forms.TabPage();
             this.gridControl8 = new DevExpress.XtraGrid.GridControl();
-            this.dsTarimaBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsTarimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsTarima = new LOSA.TransaccionesMP.dsTarima();
             this.gridView14 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colexistencia = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -525,7 +526,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl3 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.grd_trasacciones = new DevExpress.XtraGrid.GridControl();
-            this.dsInventarioPTBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsInventarioPTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsInventarioPT = new LOSA.Calidad.dsInventarioPT();
             this.grdv_trascciones = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colentrada = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -598,7 +599,7 @@ namespace LOSA.Trazabilidad
             this.colid_decision = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlNoConformidades = new DevExpress.XtraGrid.GridControl();
-            this.dsReportesTRZBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsReportesTRZBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -766,7 +767,7 @@ namespace LOSA.Trazabilidad
             this.txtLoteMPRuta1 = new DevExpress.XtraEditors.TextEdit();
             this.btnHome_Ruta1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl85 = new DevExpress.XtraEditors.LabelControl();
-            this.detalledestinosBindingSource = new System.Windows.Forms.BindingSource();
+            this.detalledestinosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acordionRuta1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -777,9 +778,9 @@ namespace LOSA.Trazabilidad
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.acordionRuta4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlSeparator4 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.timerRuta4 = new System.Windows.Forms.Timer();
+            this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdLinkLoteMP)).BeginInit();
@@ -9004,7 +9005,7 @@ namespace LOSA.Trazabilidad
             // 
             // timerRuta4
             // 
-            this.timerRuta4.Interval = 3000;
+            this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
             // 
             // frmRutasTrazabilidad
