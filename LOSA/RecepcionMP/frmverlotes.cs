@@ -117,13 +117,12 @@ namespace LOSA.RecepcionMP
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
 
                 cmd.ExecuteNonQuery();
-                CajaDialogo.Information("Ajuste Realizado");
+                CajaDialogo.Information("Eliminacion de Lote Realizada!");
                 CN.Close();
             }
             catch (Exception ex)
             {
-
-                throw;
+                CajaDialogo.Error(ex.Message);
             }
         }
 

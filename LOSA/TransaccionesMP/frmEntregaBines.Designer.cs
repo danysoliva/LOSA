@@ -43,7 +43,7 @@ namespace LOSA.TransaccionesMP
             this.lblMP3 = new DevExpress.XtraEditors.LabelControl();
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lblMp = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -202,15 +202,15 @@ namespace LOSA.TransaccionesMP
             this.labelControl2.TabIndex = 120;
             this.labelControl2.Text = "Tarima:";
             // 
-            // labelControl1
+            // lblMp
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(95, 130);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(565, 32);
-            this.labelControl1.TabIndex = 121;
-            this.labelControl1.Text = "Solo puede escanear Hacienda, Ronozyme y Rovabio";
+            this.lblMp.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMp.Appearance.Options.UseFont = true;
+            this.lblMp.Location = new System.Drawing.Point(95, 130);
+            this.lblMp.Name = "lblMp";
+            this.lblMp.Size = new System.Drawing.Size(565, 32);
+            this.lblMp.TabIndex = 121;
+            this.lblMp.Text = "Solo puede escanear Hacienda, Ronozyme y Rovabio";
             // 
             // labelControl3
             // 
@@ -277,7 +277,7 @@ namespace LOSA.TransaccionesMP
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(409, 37);
             this.labelControl6.TabIndex = 128;
-            this.labelControl6.Text = "Inventario en Bodega BG001";
+            this.labelControl6.Text = "Inventario en Bodega BG018";
             // 
             // frmEntregaBines
             // 
@@ -289,7 +289,7 @@ namespace LOSA.TransaccionesMP
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.lblMp);
             this.Controls.Add(this.txtTarima);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.lblMP3);
@@ -333,7 +333,7 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.LabelControl lblMP3;
         private DevExpress.XtraEditors.ButtonEdit txtTarima;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl lblMp;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;

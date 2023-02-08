@@ -27,18 +27,20 @@ namespace LOSA.TransaccionesMP
         public frmEntregaBines(UserLogin pUserLogin)
         {
             InitializeComponent();
+            txtTarima.Focus();
             GetsName();
             UsuarioLogeado = pUserLogin;
-            txtTarima.Focus();
+            
 
         }
 
         private void GetsName()
         {
-            id_mp1 = 1122;  //MP00063 Ronozyme Hipos GT
-            id_mp2 = 1096;  //MP00036 Hacienda 66
-            id_mp3 = 5;     //MP00033 Rovabio
-           
+            id_mp1 = 5;  //MP00033 Rovabio Max
+            id_mp2 = 10; //MP00034 Fylax Liquido
+            id_mp3 = 1209;  //MP00135 Colina Liquida
+
+            
 
             lblMP1.Text = LoadMPBG001(id_mp1);
             txtMP1.Text = Convert.ToString(load_existencia(id_mp1));
@@ -49,7 +51,7 @@ namespace LOSA.TransaccionesMP
             lblMP3.Text = LoadMPBG001(id_mp3);
             txtMP3.Text = Convert.ToString(load_existencia(id_mp3));
 
-            
+            lblMp.Text = "Solo se puede Escanear: "+lblMP1.Text+", "+lblMP2.Text+"y "+txtMP3.Text;
         }
 
         private void txtTarima_KeyDown(object sender, KeyEventArgs e)
@@ -265,6 +267,8 @@ namespace LOSA.TransaccionesMP
                             panelNotificacion.BackColor = Color.MediumSeaGreen;
                             timerLimpiarMensaje.Enabled = true;
                             timerLimpiarMensaje.Start();
+                            GetsName();
+                            this.DialogResult = DialogResult.OK;
                         }
                     }
                     else
