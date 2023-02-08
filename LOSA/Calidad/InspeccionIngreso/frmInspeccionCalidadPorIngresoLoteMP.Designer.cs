@@ -2875,6 +2875,8 @@ namespace LOSA.Calidad
             this.gridView7.Name = "gridView7";
             this.gridView7.OptionsBehavior.Editable = false;
             this.gridView7.OptionsView.ShowGroupPanel = false;
+            this.gridView7.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colnumero_transaccion1, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridView7.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView7_RowClick);
             // 
             // colfecha_produccion_materia_prima
