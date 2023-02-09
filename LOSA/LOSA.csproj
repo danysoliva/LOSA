@@ -3585,6 +3585,23 @@
     <Compile Include="Produccion\BannerTV\frmBannerMainTV_PRD.Designer.cs">
       <DependentUpon>frmBannerMainTV_PRD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\CierreLote\dsCierreLotesPT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCierreLotesPT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\CierreLote\frmCierreLoteMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\CierreLote\frmCierreLoteMain.Designer.cs">
+      <DependentUpon>frmCierreLoteMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\CierreLote\frmNewCierreLotePT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\CierreLote\frmNewCierreLotePT.Designer.cs">
+      <DependentUpon>frmNewCierreLotePT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\dsProduccion1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -4404,6 +4421,17 @@
       <DependentUpon>dsNir.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Produccion\CierreLote\dsCierreLotesPT.xsc">
+      <DependentUpon>dsCierreLotesPT.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\CierreLote\dsCierreLotesPT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCierreLotesPT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Produccion\CierreLote\dsCierreLotesPT.xss">
+      <DependentUpon>dsCierreLotesPT.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionMP\dsDevoluciones.Designer.cs">
@@ -7080,6 +7108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\BannerTV\frmBannerMainTV_PRD.resx">
       <DependentUpon>frmBannerMainTV_PRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\CierreLote\frmCierreLoteMain.resx">
+      <DependentUpon>frmCierreLoteMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\CierreLote\frmNewCierreLotePT.resx">
+      <DependentUpon>frmNewCierreLotePT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\ctl_keypadNumber.resx">
       <DependentUpon>ctl_keypadNumber.cs</DependentUpon>
