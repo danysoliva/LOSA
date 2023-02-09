@@ -577,9 +577,9 @@
             this.btnAjustesKardex.Appearance.Options.UseFont = true;
             this.btnAjustesKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAjustesKardex.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAjustesKardex.ImageOptions.Image")));
-            this.btnAjustesKardex.Location = new System.Drawing.Point(415, 205);
+            this.btnAjustesKardex.Location = new System.Drawing.Point(415, 206);
             this.btnAjustesKardex.Name = "btnAjustesKardex";
-            this.btnAjustesKardex.Size = new System.Drawing.Size(199, 42);
+            this.btnAjustesKardex.Size = new System.Drawing.Size(199, 41);
             this.btnAjustesKardex.TabIndex = 13;
             this.btnAjustesKardex.Text = "Agregar Tarima Manual MP";
             this.btnAjustesKardex.Visible = false;
@@ -745,7 +745,7 @@
             this.btnajuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnajuste.ImageOptions.Image")));
             this.btnajuste.Location = new System.Drawing.Point(416, 159);
             this.btnajuste.Name = "btnajuste";
-            this.btnajuste.Size = new System.Drawing.Size(199, 42);
+            this.btnajuste.Size = new System.Drawing.Size(199, 41);
             this.btnajuste.TabIndex = 31;
             this.btnajuste.Text = "Ajuste de Inventario \r\npor Tarima";
             this.btnajuste.Visible = false;

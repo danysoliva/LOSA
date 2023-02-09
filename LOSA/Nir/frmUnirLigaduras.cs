@@ -39,7 +39,7 @@ namespace LOSA.Nir
             Sap = pSap;
             odoo = podoo;
             MP = pMP;
-            id_lote = pid_lote;
+            id_lote = pid_lote;//Id_ingreso
             lote = plote;
             n_referencia = pn_referencia;
             txtingreso.Text = n_referencia.ToString();
@@ -59,7 +59,7 @@ namespace LOSA.Nir
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(Query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
+                cmd.Parameters.AddWithValue("@id_ingreso", id_lote);//Id_ingreso
                 dsNir.lecturas_ingreso.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsNir.lecturas_ingreso);

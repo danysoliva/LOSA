@@ -49,6 +49,7 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.AutoConsumirBoton = new DevExpress.XtraEditors.SimpleButton();
+            this.colfecha_entrega = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -104,7 +105,8 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.colid_tarima,
             this.colid_estado_tarima,
             this.collote_materia_prima,
-            this.colconsumir});
+            this.colconsumir,
+            this.colfecha_entrega});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -116,8 +118,8 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.colPendienteAsignacion.Name = "colPendienteAsignacion";
             this.colPendienteAsignacion.OptionsColumn.AllowEdit = false;
             this.colPendienteAsignacion.Visible = true;
-            this.colPendienteAsignacion.VisibleIndex = 3;
-            this.colPendienteAsignacion.Width = 171;
+            this.colPendienteAsignacion.VisibleIndex = 4;
+            this.colPendienteAsignacion.Width = 106;
             // 
             // colnombre_comercial
             // 
@@ -127,7 +129,7 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 1;
-            this.colnombre_comercial.Width = 130;
+            this.colnombre_comercial.Width = 114;
             // 
             // colcodigo_barra
             // 
@@ -137,7 +139,7 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
             this.colcodigo_barra.VisibleIndex = 0;
-            this.colcodigo_barra.Width = 130;
+            this.colcodigo_barra.Width = 120;
             // 
             // colid_tarima
             // 
@@ -156,8 +158,8 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 2;
-            this.collote_materia_prima.Width = 130;
+            this.collote_materia_prima.VisibleIndex = 3;
+            this.collote_materia_prima.Width = 107;
             // 
             // colconsumir
             // 
@@ -165,8 +167,8 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.colconsumir.ColumnEdit = this.btnConsumir;
             this.colconsumir.Name = "colconsumir";
             this.colconsumir.Visible = true;
-            this.colconsumir.VisibleIndex = 4;
-            this.colconsumir.Width = 92;
+            this.colconsumir.VisibleIndex = 5;
+            this.colconsumir.Width = 123;
             // 
             // btnConsumir
             // 
@@ -218,6 +220,16 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.AutoConsumirBoton.Text = "Consumir Pendientes";
             this.AutoConsumirBoton.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // colfecha_entrega
+            // 
+            this.colfecha_entrega.Caption = "Fecha Entrega";
+            this.colfecha_entrega.FieldName = "fecha_entrega";
+            this.colfecha_entrega.Name = "colfecha_entrega";
+            this.colfecha_entrega.OptionsColumn.AllowEdit = false;
+            this.colfecha_entrega.Visible = true;
+            this.colfecha_entrega.VisibleIndex = 2;
+            this.colfecha_entrega.Width = 83;
+            // 
             // frmBinesEnPRD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,5 +266,6 @@ namespace LOSA.TransaccionesMP.Liquidos
         private DevExpress.XtraGrid.Columns.GridColumn colconsumir;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnConsumir;
         private DevExpress.XtraEditors.SimpleButton AutoConsumirBoton;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_entrega;
     }
 }

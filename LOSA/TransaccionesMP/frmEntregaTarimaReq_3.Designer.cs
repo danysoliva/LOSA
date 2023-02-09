@@ -63,6 +63,8 @@ namespace LOSA.TransaccionesMP
             this.colcant_entregada_micros = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_tarima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_detalle_requisicion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_requisicion_h = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -106,8 +108,6 @@ namespace LOSA.TransaccionesMP
             this.cmdSeleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnEntregaBinesRequissa = new DevExpress.XtraEditors.SimpleButton();
-            this.colid_detalle_requisicion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_requisicion_h = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -384,6 +384,16 @@ namespace LOSA.TransaccionesMP
             // 
             this.colid_mp.FieldName = "id_mp";
             this.colid_mp.Name = "colid_mp";
+            // 
+            // colid_detalle_requisicion
+            // 
+            this.colid_detalle_requisicion.FieldName = "id_detalle_requisicion";
+            this.colid_detalle_requisicion.Name = "colid_detalle_requisicion";
+            // 
+            // colid_requisicion_h
+            // 
+            this.colid_requisicion_h.FieldName = "id_requisicion_h";
+            this.colid_requisicion_h.Name = "colid_requisicion_h";
             // 
             // gcTarima
             // 
@@ -819,7 +829,7 @@ namespace LOSA.TransaccionesMP
             this.colmp1.OptionsColumn.AllowEdit = false;
             this.colmp1.Visible = true;
             this.colmp1.VisibleIndex = 1;
-            this.colmp1.Width = 184;
+            this.colmp1.Width = 130;
             // 
             // colsolicitada
             // 
@@ -829,7 +839,7 @@ namespace LOSA.TransaccionesMP
             this.colsolicitada.OptionsColumn.AllowEdit = false;
             this.colsolicitada.Visible = true;
             this.colsolicitada.VisibleIndex = 2;
-            this.colsolicitada.Width = 112;
+            this.colsolicitada.Width = 79;
             // 
             // colentregada
             // 
@@ -839,7 +849,7 @@ namespace LOSA.TransaccionesMP
             this.colentregada.OptionsColumn.AllowEdit = false;
             this.colentregada.Visible = true;
             this.colentregada.VisibleIndex = 3;
-            this.colentregada.Width = 112;
+            this.colentregada.Width = 79;
             // 
             // colpendiente
             // 
@@ -849,7 +859,7 @@ namespace LOSA.TransaccionesMP
             this.colpendiente.OptionsColumn.AllowEdit = false;
             this.colpendiente.Visible = true;
             this.colpendiente.VisibleIndex = 4;
-            this.colpendiente.Width = 120;
+            this.colpendiente.Width = 84;
             // 
             // coldisponibles_prd
             // 
@@ -859,7 +869,7 @@ namespace LOSA.TransaccionesMP
             this.coldisponibles_prd.OptionsColumn.AllowEdit = false;
             this.coldisponibles_prd.Visible = true;
             this.coldisponibles_prd.VisibleIndex = 5;
-            this.coldisponibles_prd.Width = 201;
+            this.coldisponibles_prd.Width = 123;
             // 
             // colenable
             // 
@@ -899,7 +909,7 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap.OptionsColumn.AllowEdit = false;
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 93;
+            this.colcode_sap.Width = 65;
             // 
             // colasignado
             // 
@@ -914,6 +924,7 @@ namespace LOSA.TransaccionesMP
             this.ColSeleccionar.Name = "ColSeleccionar";
             this.ColSeleccionar.Visible = true;
             this.ColSeleccionar.VisibleIndex = 6;
+            this.ColSeleccionar.Width = 74;
             // 
             // cmdSeleccionar
             // 
@@ -953,16 +964,6 @@ namespace LOSA.TransaccionesMP
             this.btnEntregaBinesRequissa.Text = "Entrega Liquidos";
             this.btnEntregaBinesRequissa.Visible = false;
             this.btnEntregaBinesRequissa.Click += new System.EventHandler(this.btnEntregaBinesRequissa_Click);
-            // 
-            // colid_detalle_requisicion
-            // 
-            this.colid_detalle_requisicion.FieldName = "id_detalle_requisicion";
-            this.colid_detalle_requisicion.Name = "colid_detalle_requisicion";
-            // 
-            // colid_requisicion_h
-            // 
-            this.colid_requisicion_h.FieldName = "id_requisicion_h";
-            this.colid_requisicion_h.Name = "colid_requisicion_h";
             // 
             // frmEntregaTarimaReq_3
             // 

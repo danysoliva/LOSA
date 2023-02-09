@@ -5845,6 +5845,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columnid_mp;
             
+            private global::System.Data.DataColumn columnfecha_entrega;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bines_disponiblesDataTable() {
@@ -5936,6 +5938,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_entregaColumn {
+                get {
+                    return this.columnfecha_entrega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5971,7 +5981,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bines_disponiblesRow Addbines_disponiblesRow(decimal PendienteAsignacion, string nombre_comercial, string codigo_barra, int id_tarima, int id_estado_tarima, string lote_materia_prima, int id_mp) {
+            public bines_disponiblesRow Addbines_disponiblesRow(decimal PendienteAsignacion, string nombre_comercial, string codigo_barra, int id_tarima, int id_estado_tarima, string lote_materia_prima, int id_mp, System.DateTime fecha_entrega) {
                 bines_disponiblesRow rowbines_disponiblesRow = ((bines_disponiblesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PendienteAsignacion,
@@ -5980,7 +5990,8 @@ namespace LOSA.TransaccionesMP {
                         id_tarima,
                         id_estado_tarima,
                         lote_materia_prima,
-                        id_mp};
+                        id_mp,
+                        fecha_entrega};
                 rowbines_disponiblesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbines_disponiblesRow);
                 return rowbines_disponiblesRow;
@@ -6010,6 +6021,7 @@ namespace LOSA.TransaccionesMP {
                 this.columnid_estado_tarima = base.Columns["id_estado_tarima"];
                 this.columnlote_materia_prima = base.Columns["lote_materia_prima"];
                 this.columnid_mp = base.Columns["id_mp"];
+                this.columnfecha_entrega = base.Columns["fecha_entrega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6029,6 +6041,8 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnlote_materia_prima);
                 this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_mp);
+                this.columnfecha_entrega = new global::System.Data.DataColumn("fecha_entrega", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_entrega);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12221,6 +12235,23 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_entrega {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablebines_disponibles.fecha_entregaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_entrega\' de la tabla \'bines_disponibles\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablebines_disponibles.fecha_entregaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPendienteAsignacionNull() {
                 return this.IsNull(this.tablebines_disponibles.PendienteAsignacionColumn);
             }
@@ -12301,6 +12332,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_mpNull() {
                 this[this.tablebines_disponibles.id_mpColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_entregaNull() {
+                return this.IsNull(this.tablebines_disponibles.fecha_entregaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_entregaNull() {
+                this[this.tablebines_disponibles.fecha_entregaColumn] = global::System.Convert.DBNull;
             }
         }
         
