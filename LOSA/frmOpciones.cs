@@ -50,6 +50,7 @@ using LOSA.MigracionACS.Ttracer.ViewLogistica;
 using LOSA.Nir;
 using LOSA.PlanMPreque;
 using LOSA.Produccion;
+using LOSA.Produccion.CierreLote;
 using LOSA.RecepcionMP;
 using LOSA.RecuentoInventario;
 using LOSA.Reportes;
@@ -3064,6 +3065,46 @@ namespace LOSA
             xfrmMP_Por_BIN frm = new xfrmMP_Por_BIN();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void cmdCierreLotesPT_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmCierreLoteMain frm = new frmCierreLoteMain(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(84))
+                {
+                    frmCierreLoteMain frm = new frmCierreLoteMain(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #84");
+                }
+            }
+           
         }
     }
 }

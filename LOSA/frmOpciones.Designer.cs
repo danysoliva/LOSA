@@ -233,6 +233,7 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.cmdCierreLotesPT = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2449,6 +2450,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.cmdCierreLotesPT);
             this.txtProduccion.Controls.Add(this.btnRutas_traza_produccion);
             this.txtProduccion.Controls.Add(this.btnMP_BodsegaPRD);
             this.txtProduccion.Controls.Add(this.frmTmVirtuales);
@@ -3256,6 +3258,21 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // cmdCierreLotesPT
+            // 
+            this.cmdCierreLotesPT.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCierreLotesPT.Appearance.Options.UseFont = true;
+            this.cmdCierreLotesPT.Appearance.Options.UseTextOptions = true;
+            this.cmdCierreLotesPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdCierreLotesPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdCierreLotesPT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
+            this.cmdCierreLotesPT.Location = new System.Drawing.Point(248, 324);
+            this.cmdCierreLotesPT.Name = "cmdCierreLotesPT";
+            this.cmdCierreLotesPT.Size = new System.Drawing.Size(199, 69);
+            this.cmdCierreLotesPT.TabIndex = 50;
+            this.cmdCierreLotesPT.Text = "Cierre de Lote PT";
+            this.cmdCierreLotesPT.Click += new System.EventHandler(this.cmdCierreLotesPT_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3500,5 +3517,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton73;
         private DevExpress.XtraEditors.SimpleButton simpleButton72;
         private DevExpress.XtraNavBar.NavBarItem navBarItem9;
+        private DevExpress.XtraEditors.SimpleButton cmdCierreLotesPT;
     }
 }
