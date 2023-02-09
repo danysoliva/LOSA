@@ -119,6 +119,7 @@ namespace LOSA.RecepcionMP
                 cmd.ExecuteNonQuery();
                 CajaDialogo.Information("Eliminacion de Lote Realizada!");
                 CN.Close();
+                load_data();
             }
             catch (Exception ex)
             {
@@ -128,18 +129,18 @@ namespace LOSA.RecepcionMP
 
         private void btnver_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var gridview = (GridView)grd_data.FocusedView;
-                var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
-                frmShowOnlyLote frm = new frmShowOnlyLote(row.id,UsuarioLogeado);
-                frm.Show();
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    var gridview = (GridView)grd_data.FocusedView;
+            //    var row = (dsingresos.loteRow)gridview.GetFocusedDataRow();
+            //    frmShowOnlyLote frm = new frmShowOnlyLote(row.id,UsuarioLogeado);
+            //    frm.Show();
+            //}
+            //catch (Exception ex)
+            //{
 
-                CajaDialogo.Error(ex.Message);
-            }
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
 
         private void btn_imprimir_Click(object sender, EventArgs e)

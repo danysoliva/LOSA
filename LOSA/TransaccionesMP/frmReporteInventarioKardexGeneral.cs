@@ -398,8 +398,6 @@ namespace LOSA.TransaccionesMP
                     IdMateriaPrimaTab_MP_por_Bodega = frm.ItemSeleccionado.id;
                 }
             }
-           
-
         }
 
         private void LoadBodegaMP(int pidRM)

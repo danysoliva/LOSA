@@ -474,7 +474,7 @@ namespace LOSA.RecepcionMP
             }
             else
             {
-                frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
+                frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado, Id_traslado);
                 frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
             }

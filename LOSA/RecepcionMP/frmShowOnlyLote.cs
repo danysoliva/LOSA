@@ -177,12 +177,12 @@ namespace LOSA.RecepcionMP
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            var gridView = (GridView)gridControl1.FocusedView;
-            var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
+            //var gridView = (GridView)gridControl1.FocusedView;
+            //var row = (dsRecepcionMPx.lista_tarimasRow)gridView.GetFocusedDataRow();
 
-            frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            //frmEditTarima frm = new frmEditTarima(row.id, this.UsuarioLogeado);
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
         }
 
         private void btnEliminarTm_Click(object sender, EventArgs e)
