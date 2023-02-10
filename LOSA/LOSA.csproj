@@ -1122,6 +1122,7 @@
     <Compile Include="Clases\Proveedor.cs" />
     <Compile Include="Clases\ReporteProceso.cs" />
     <Compile Include="Clases\Requisicion.cs" />
+    <Compile Include="Clases\RequisicionesValidaciones.cs" />
     <Compile Include="Clases\SalidaPlanExterno.cs" />
     <Compile Include="Clases\SecOps.cs" />
     <Compile Include="Clases\Security.cs" />

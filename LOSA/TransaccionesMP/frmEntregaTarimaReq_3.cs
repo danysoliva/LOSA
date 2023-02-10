@@ -146,7 +146,7 @@ namespace LOSA.TransaccionesMP
                     {
                         if (RequisicionActual.Bit_finalizar)
                         {
-                            Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Esta Requisicion está cerrada!");
+                            Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Esta Requisición está cerrada!");
                             if (frm.ShowDialog() == DialogResult.Cancel)
                             {
                                 lblRequisicionEncontrada.BackColor = Color.Transparent;
@@ -156,18 +156,46 @@ namespace LOSA.TransaccionesMP
                         }
                         else
                         {
-                            lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion1.ToString() + 
-                                                            "    Estado: " + RequisicionActual.Descripcion_estado;
-                            lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
-                            load_tarimas_scan_v2();
-                            txtTarima.Focus();
-                            cmdLiquidosGranel.Visible = true; //Esto solo es Granel
-                            //btnEntregaBinesRequissa.Visible = true; //Esto solo es Liquidos Especiales
+                            switch(RequisicionActual.Id_estado)
+                            {
+                                case 1://Habilitada
+                                case 2://Seleccion de Lotes
+                                case 3://En Proceso
+                                    lblRequisicionEncontrada.Text = RequisicionActual.IdRequisicion1.ToString() +
+                                                                "    Estado: " + RequisicionActual.Descripcion_estado;
+                                    lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
+                                    load_tarimas_scan_v2();
+                                    txtTarima.Focus();
+                                    cmdLiquidosGranel.Visible = true; //Esto solo es Granel
+                                                                      //btnEntregaBinesRequissa.Visible = true; //Esto solo es Liquidos Especiales
+                                    break;
+                                case 4://Cerrada
+                                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "La Requisición esta cerrada!");
+                                    if (frm.ShowDialog() == DialogResult.Cancel)
+                                    {
+                                        lblRequisicionEncontrada.BackColor = Color.Transparent;
+                                        lblRequisicionEncontrada.ResetText();
+                                        txtRequisicion.Focus();
+                                    }
+                                    break;
+                                case 5://Nueva
+                                    Utileria.frmMensajeCalidad frm2 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error,
+                                                        "La Requisición NO esta habilitada o Disponible! Contacte a un supervisor de Logística.");
+                                    if (frm2.ShowDialog() == DialogResult.Cancel)
+                                    {
+                                        lblRequisicionEncontrada.BackColor = Color.Transparent;
+                                        lblRequisicionEncontrada.ResetText();
+                                        txtRequisicion.Focus();
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
                         }
                     }
                     else
                     {
-                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se encontró la requisa");
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se encontró la Requisición");
                         if (frm.ShowDialog() == DialogResult.Cancel)
                         {
                             lblRequisicionEncontrada.BackColor = Color.Transparent;
@@ -178,7 +206,7 @@ namespace LOSA.TransaccionesMP
                 }
                 else
                 {
-                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Debe de escanear el codigo de Requisa");
+                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Debe de escanear el codigo de Requisición");
                     if (frm.ShowDialog() == DialogResult.Cancel)
                     {
                         txtRequisicion.Focus();
