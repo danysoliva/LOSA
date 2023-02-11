@@ -19,17 +19,135 @@ namespace LOSA.TransaccionesMP
         UserLogin UsuarioLogeado;
         int IdRequisicionHeader;
         DataOperations dp;
+        int IdEstado;
         int LotePT;
-        public frmRequisicionesDetalle(UserLogin pUsuarioLogeado, int pIdReqH, int pLote)
+        public frmRequisicionesDetalle(UserLogin pUsuarioLogeado, int pIdReqH, int pLote, int pIdEstado)
         {
             InitializeComponent();
             LotePT = pLote;
+            IdEstado = pIdEstado;
+            lblRequisicionH_Num.Text = pIdReqH.ToString();
             txtLote.Text = pLote.ToString();
             UsuarioLogeado = pUsuarioLogeado;
             IdRequisicionHeader = pIdReqH;
 
              dp = new DataOperations();
             LoadDatos();
+
+
+            ValidarPermisosReqDetalle();
+            if (dsTransaccionesMP1.estados_requisicion_list.Count > 0)
+            {
+                try
+                {
+                    gridLookUpEdit_estados.EditValue = pIdEstado;
+                }
+                catch
+                {
+                }
+            }
+        }
+
+        private void ValidarPermisosReqDetalle()
+        {
+            bool CargaPrevia = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    LoadAllEstadosReq();
+                    CargaPrevia = true;
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!CargaPrevia)
+            {
+                ValidarPermisosFromId_permiso();
+            }
+
+           
+
+        }
+
+        private void ValidarPermisosFromId_permiso()
+        {
+            if (UsuarioLogeado.ValidarNivelPermisos(85))//Permiso limitado
+            {
+                if(IdEstado == 5) 
+                    LoadPermisos(85);//Cargamos los permisos de habilitar requisicion
+                else
+                    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;
+            }
+
+            if (dsTransaccionesMP1.estados_requisicion_list.Count == 0)//Verificamos si es un jefe
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(86))
+                {
+                    LoadPermisos(86);//Cargamos los permisos del jefe
+                }
+            }
+
+            if (dsTransaccionesMP1.estados_requisicion_list.Count == 0)
+            {
+                gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;//Significa que no tiene ningun privilegio para cambiar estado
+            }
+        }
+
+        private void LoadPermisos(int pIPermiso)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_all_estados_req_by_permiso", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_permiso", pIPermiso);
+                dsTransaccionesMP1.estados_requisicion_list.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTransaccionesMP1.estados_requisicion_list);
+
+                if(dsTransaccionesMP1.estados_requisicion_list.Count>0)
+                    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void LoadAllEstadosReq()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_all_estados_req", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsTransaccionesMP1.estados_requisicion_list.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTransaccionesMP1.estados_requisicion_list);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void LoadDatos()
@@ -201,6 +319,43 @@ namespace LOSA.TransaccionesMP
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void gridLookUpEdit_estados_EditValueChanged(object sender, EventArgs e)
+        {
+            int vIdEstadoSeleccionado = dp.ValidateNumberInt32(gridLookUpEdit_estados.EditValue);
+            if (vIdEstadoSeleccionado > 0)
+            {
+                DialogResult r = CajaDialogo.Pregunta("Esta seguro del cambio de estado en la requisición?");
+                if(r!= DialogResult.Yes)
+                {
+                    gridLookUpEdit_estados.EditValue = IdEstado;
+                    return;
+                }
+
+                if(vIdEstadoSeleccionado != IdEstado)
+                {
+                    //Update Estado Req
+                    try
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand("sp_set_update_requisicion_header_estado", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_req_h", IdRequisicionHeader);
+                        cmd.Parameters.AddWithValue("@id_estado", vIdEstadoSeleccionado);
+                        cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception ec)
+                    {
+                        CajaDialogo.Error(ec.Message);
+                    }
+                }
             }
         }
     }

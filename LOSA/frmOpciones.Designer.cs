@@ -179,6 +179,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdCierreLotesPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnRutas_traza_produccion = new DevExpress.XtraEditors.SimpleButton();
             this.btnMP_BodsegaPRD = new DevExpress.XtraEditors.SimpleButton();
             this.frmTmVirtuales = new DevExpress.XtraEditors.SimpleButton();
@@ -233,7 +234,6 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.cmdCierreLotesPT = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1777,6 +1777,7 @@
             this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup1.AppearancePressed.Options.UseFont = true;
             this.navBarGroup1.Caption = "Producción";
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrazabilidad),
@@ -2465,6 +2466,21 @@
             this.txtProduccion.PageVisible = false;
             this.txtProduccion.Size = new System.Drawing.Size(835, 502);
             this.txtProduccion.Text = "Produccion Administrativo";
+            // 
+            // cmdCierreLotesPT
+            // 
+            this.cmdCierreLotesPT.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCierreLotesPT.Appearance.Options.UseFont = true;
+            this.cmdCierreLotesPT.Appearance.Options.UseTextOptions = true;
+            this.cmdCierreLotesPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdCierreLotesPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdCierreLotesPT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdCierreLotesPT.ImageOptions.SvgImage")));
+            this.cmdCierreLotesPT.Location = new System.Drawing.Point(248, 324);
+            this.cmdCierreLotesPT.Name = "cmdCierreLotesPT";
+            this.cmdCierreLotesPT.Size = new System.Drawing.Size(199, 69);
+            this.cmdCierreLotesPT.TabIndex = 50;
+            this.cmdCierreLotesPT.Text = "Cierre de Lote PT";
+            this.cmdCierreLotesPT.Click += new System.EventHandler(this.cmdCierreLotesPT_Click);
             // 
             // btnRutas_traza_produccion
             // 
@@ -3257,21 +3273,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // cmdCierreLotesPT
-            // 
-            this.cmdCierreLotesPT.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCierreLotesPT.Appearance.Options.UseFont = true;
-            this.cmdCierreLotesPT.Appearance.Options.UseTextOptions = true;
-            this.cmdCierreLotesPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdCierreLotesPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdCierreLotesPT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
-            this.cmdCierreLotesPT.Location = new System.Drawing.Point(248, 324);
-            this.cmdCierreLotesPT.Name = "cmdCierreLotesPT";
-            this.cmdCierreLotesPT.Size = new System.Drawing.Size(199, 69);
-            this.cmdCierreLotesPT.TabIndex = 50;
-            this.cmdCierreLotesPT.Text = "Cierre de Lote PT";
-            this.cmdCierreLotesPT.Click += new System.EventHandler(this.cmdCierreLotesPT_Click);
             // 
             // frmOpciones
             // 
