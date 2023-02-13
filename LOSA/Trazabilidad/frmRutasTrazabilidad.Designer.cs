@@ -781,6 +781,7 @@ namespace LOSA.Trazabilidad
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
+            this.cmdVerCuadroLotesRuta4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdLinkLoteMP)).BeginInit();
@@ -5365,6 +5366,7 @@ namespace LOSA.Trazabilidad
             // 
             // npReporteTrazabilidad
             // 
+            this.npReporteTrazabilidad.Controls.Add(this.cmdVerCuadroLotesRuta4);
             this.npReporteTrazabilidad.Controls.Add(this.txtRuta4Fecha_produccion);
             this.npReporteTrazabilidad.Controls.Add(this.labelControl92);
             this.npReporteTrazabilidad.Controls.Add(this.txtRuta4Fecha_Vencimiento);
@@ -5420,7 +5422,7 @@ namespace LOSA.Trazabilidad
             // txtRuta4Fecha_produccion
             // 
             this.txtRuta4Fecha_produccion.AllowDrop = true;
-            this.txtRuta4Fecha_produccion.Location = new System.Drawing.Point(798, 106);
+            this.txtRuta4Fecha_produccion.Location = new System.Drawing.Point(828, 105);
             this.txtRuta4Fecha_produccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRuta4Fecha_produccion.Name = "txtRuta4Fecha_produccion";
             this.txtRuta4Fecha_produccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
@@ -5434,7 +5436,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl92.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.labelControl92.Appearance.Options.UseFont = true;
-            this.labelControl92.Location = new System.Drawing.Point(697, 109);
+            this.labelControl92.Location = new System.Drawing.Point(727, 108);
             this.labelControl92.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl92.Name = "labelControl92";
             this.labelControl92.Size = new System.Drawing.Size(95, 15);
@@ -5444,7 +5446,7 @@ namespace LOSA.Trazabilidad
             // txtRuta4Fecha_Vencimiento
             // 
             this.txtRuta4Fecha_Vencimiento.AllowDrop = true;
-            this.txtRuta4Fecha_Vencimiento.Location = new System.Drawing.Point(798, 131);
+            this.txtRuta4Fecha_Vencimiento.Location = new System.Drawing.Point(828, 130);
             this.txtRuta4Fecha_Vencimiento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRuta4Fecha_Vencimiento.Name = "txtRuta4Fecha_Vencimiento";
             this.txtRuta4Fecha_Vencimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
@@ -5458,7 +5460,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl91.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.labelControl91.Appearance.Options.UseFont = true;
-            this.labelControl91.Location = new System.Drawing.Point(697, 134);
+            this.labelControl91.Location = new System.Drawing.Point(727, 133);
             this.labelControl91.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl91.Name = "labelControl91";
             this.labelControl91.Size = new System.Drawing.Size(67, 15);
@@ -7261,7 +7263,7 @@ namespace LOSA.Trazabilidad
             // txtEficiencia
             // 
             this.txtEficiencia.AllowDrop = true;
-            this.txtEficiencia.Location = new System.Drawing.Point(798, 183);
+            this.txtEficiencia.Location = new System.Drawing.Point(828, 182);
             this.txtEficiencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEficiencia.Name = "txtEficiencia";
             this.txtEficiencia.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
@@ -7275,7 +7277,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(698, 187);
+            this.labelControl10.Location = new System.Drawing.Point(728, 186);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(66, 15);
@@ -7286,7 +7288,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(697, 160);
+            this.labelControl12.Location = new System.Drawing.Point(727, 159);
             this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(97, 15);
@@ -7296,7 +7298,7 @@ namespace LOSA.Trazabilidad
             // txtTotalMP_Utilizada_kg
             // 
             this.txtTotalMP_Utilizada_kg.AllowDrop = true;
-            this.txtTotalMP_Utilizada_kg.Location = new System.Drawing.Point(798, 157);
+            this.txtTotalMP_Utilizada_kg.Location = new System.Drawing.Point(828, 156);
             this.txtTotalMP_Utilizada_kg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTotalMP_Utilizada_kg.Name = "txtTotalMP_Utilizada_kg";
             this.txtTotalMP_Utilizada_kg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
@@ -9008,6 +9010,17 @@ namespace LOSA.Trazabilidad
             this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
             // 
+            // cmdVerCuadroLotesRuta4
+            // 
+            this.cmdVerCuadroLotesRuta4.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdVerCuadroLotesRuta4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton12.ImageOptions.Image")));
+            this.cmdVerCuadroLotesRuta4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.cmdVerCuadroLotesRuta4.Location = new System.Drawing.Point(693, 104);
+            this.cmdVerCuadroLotesRuta4.Name = "cmdVerCuadroLotesRuta4";
+            this.cmdVerCuadroLotesRuta4.Size = new System.Drawing.Size(29, 23);
+            this.cmdVerCuadroLotesRuta4.TabIndex = 122;
+            this.cmdVerCuadroLotesRuta4.Click += new System.EventHandler(this.cmdVerCuadroLotesRuta4_Click);
+            // 
             // frmRutasTrazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -9993,5 +10006,6 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraGrid.Columns.GridColumn colFac_promix;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_prd1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdCantidadDosificadaLoteLink;
+        private DevExpress.XtraEditors.SimpleButton cmdVerCuadroLotesRuta4;
     }
 }

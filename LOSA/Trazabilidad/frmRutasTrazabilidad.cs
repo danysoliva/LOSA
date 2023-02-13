@@ -22,6 +22,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Base;
+using LOSA.MigracionACS.Produccion.Produccion.DashBoard;
 
 namespace LOSA.Trazabilidad
 {
@@ -2832,6 +2833,17 @@ namespace LOSA.Trazabilidad
             navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npRuta1;
             txtLoteMPRuta1.Focus();
             //npRuta1
+        }
+
+        private void cmdVerCuadroLotesRuta4_Click(object sender, EventArgs e)
+        {
+            int LotePT_1 = dp.ValidateNumberInt32(txtRuta4LotePT_Trazado_.Text);
+            if (LotePT_1 > 0)
+            {
+                frmCuadroLotes frm = new frmCuadroLotes(LotePT_1);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
         }
     }
 }

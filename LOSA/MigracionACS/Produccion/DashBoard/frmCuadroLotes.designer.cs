@@ -35,8 +35,8 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
             this.dtDesde = new DevExpress.XtraEditors.DateEdit();
             this.cmdExportar = new DevExpress.XtraEditors.SimpleButton();
             this.CargarDatos = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lblFechaHasta = new DevExpress.XtraEditors.LabelControl();
+            this.lblFechaDesde = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsDashBoard1 = new LOSA.MigracionACS.Produccion.DashBoard.dsDashBoard();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -119,25 +119,25 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
             this.CargarDatos.Text = "Cargar Datos";
             this.CargarDatos.Click += new System.EventHandler(this.CargarDatos_Click);
             // 
-            // labelControl2
+            // lblFechaHasta
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(254, 30);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(73, 17);
-            this.labelControl2.TabIndex = 11;
-            this.labelControl2.Text = "Fecha Hasta:";
+            this.lblFechaHasta.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHasta.Appearance.Options.UseFont = true;
+            this.lblFechaHasta.Location = new System.Drawing.Point(254, 30);
+            this.lblFechaHasta.Name = "lblFechaHasta";
+            this.lblFechaHasta.Size = new System.Drawing.Size(73, 17);
+            this.lblFechaHasta.TabIndex = 11;
+            this.lblFechaHasta.Text = "Fecha Hasta:";
             // 
-            // labelControl1
+            // lblFechaDesde
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(17, 30);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(77, 17);
-            this.labelControl1.TabIndex = 10;
-            this.labelControl1.Text = "Fecha Desde:";
+            this.lblFechaDesde.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaDesde.Appearance.Options.UseFont = true;
+            this.lblFechaDesde.Location = new System.Drawing.Point(17, 30);
+            this.lblFechaDesde.Name = "lblFechaDesde";
+            this.lblFechaDesde.Size = new System.Drawing.Size(77, 17);
+            this.lblFechaDesde.TabIndex = 10;
+            this.lblFechaDesde.Text = "Fecha Desde:";
             // 
             // gridControl1
             // 
@@ -295,8 +295,8 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
             this.Controls.Add(this.dtDesde);
             this.Controls.Add(this.cmdExportar);
             this.Controls.Add(this.CargarDatos);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.lblFechaHasta);
+            this.Controls.Add(this.lblFechaDesde);
             this.Name = "frmCuadroLotes";
             this.Text = "Cuadro de Lotes";
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).EndInit();
@@ -317,8 +317,8 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
         private DevExpress.XtraEditors.DateEdit dtDesde;
         private DevExpress.XtraEditors.SimpleButton cmdExportar;
         private DevExpress.XtraEditors.SimpleButton CargarDatos;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl lblFechaHasta;
+        private DevExpress.XtraEditors.LabelControl lblFechaDesde;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private dsDashBoard dsDashBoard1;

@@ -29,6 +29,18 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
             LoadDetalle();
         }
 
+        public frmCuadroLotes(int pLotePT)
+        {
+            InitializeComponent();
+            //dtDesde.EditValue = FechaDesde = vFechaDesde;
+            //dtHasta.EditValue = FechaHasta = vFechaHasta;
+            //TurnoId = vTurnoId;
+            //LineaId = vLineaId;
+            dtDesde.Visible = dtHasta.Visible = lblFechaHasta.Visible = false;
+            lblFechaDesde.Text = "Lote PT: " + pLotePT.ToString();
+            LoadDetalle(pLotePT);
+        }
+
         private void CargarDatos_Click(object sender, EventArgs e)
         {
             LoadDetalle();
@@ -47,6 +59,28 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
                 cmd.Parameters.AddWithValue("@fechaf", dtHasta.EditValue);
                 //cmd.Parameters.AddWithValue("@filtro_maquina", LineaId);
                 //cmd.Parameters.AddWithValue("@id_turno", TurnoId);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsDashBoard1.cuadro_de_lotes.Clear();
+                adat.Fill(dsDashBoard1.cuadro_de_lotes);
+                cn.Close();
+
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void LoadDetalle(int pLotePT)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_cuadro_lotes_prd_by_lote_pt", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote_pt", pLotePT);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsDashBoard1.cuadro_de_lotes.Clear();
                 adat.Fill(dsDashBoard1.cuadro_de_lotes);
