@@ -1135,6 +1135,7 @@ namespace LOSA.Trazabilidad
             this.colinclusion});
             this.gridView20.GridControl = this.GridRuta4_detalle_trz_lote_pt;
             this.gridView20.Name = "gridView20";
+            this.gridView20.OptionsView.ShowAutoFilterRow = true;
             this.gridView20.OptionsView.ShowFooter = true;
             // 
             // colid_mp3
@@ -9019,6 +9020,7 @@ namespace LOSA.Trazabilidad
             this.cmdVerCuadroLotesRuta4.Name = "cmdVerCuadroLotesRuta4";
             this.cmdVerCuadroLotesRuta4.Size = new System.Drawing.Size(29, 23);
             this.cmdVerCuadroLotesRuta4.TabIndex = 122;
+            this.cmdVerCuadroLotesRuta4.ToolTip = "Ver cuadro de Lotes PT";
             this.cmdVerCuadroLotesRuta4.Click += new System.EventHandler(this.cmdVerCuadroLotesRuta4_Click);
             // 
             // frmRutasTrazabilidad
