@@ -5320,6 +5320,12 @@
     <Compile Include="TransaccionesMP\frmviewrequisas.Designer.cs">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisa_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisa_detalle.Designer.cs">
+      <DependentUpon>frmviewrequisa_detalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmWizardEntregaBinesRequisa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7571,6 +7577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmviewrequisas.resx">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmviewrequisa_detalle.resx">
+      <DependentUpon>frmviewrequisa_detalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmWizardEntregaBinesRequisa.resx">
       <DependentUpon>frmWizardEntregaBinesRequisa.cs</DependentUpon>

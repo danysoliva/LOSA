@@ -167,7 +167,7 @@ namespace LOSA.TransaccionesMP
                                     load_tarimas_scan_v2();
                                     txtTarima.Focus();
                                     cmdLiquidosGranel.Visible = true; //Esto solo es Granel
-                                                                      //btnEntregaBinesRequissa.Visible = true; //Esto solo es Liquidos Especiales
+                                    btnVerDetalleRequisa.Visible = true; 
                                     break;
                                 case 4://Cerrada
                                     Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "La Requisición esta cerrada!");
@@ -1011,6 +1011,30 @@ namespace LOSA.TransaccionesMP
             //{
             //    CajaDialogo.Error("No se Encontro la Requisa! Escanee Nuevamente la Requisa!");
             //}
+        }
+
+        private void btnVerDetalleRequisa_Click(object sender, EventArgs e)
+        {
+            if (txtRequisicion.Text != "")
+            {
+                if (txtRequisicion.Text.Length >= 12) //tamaño de el cod bar requisa
+                {
+                    string barcode_req = txtRequisicion.Text;
+                    Requisicion req1 = new Requisicion();
+                    req1.RecuperarRegistroFromBarcodeClass(barcode_req);
+                    frmviewrequisa_detalle frm = new frmviewrequisa_detalle(req1.IdRequisicion, usuarioLogueado, req1.Lote);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        load_tarimas_scan();
+                        load_bines_disponibles();
+                        txtTarima.Focus();
+                    }
+                }
+            }
+            else
+            {
+                CajaDialogo.Error("No se Encontro la Requisa! Escanee Nuevamente la Requisa!");
+            }
         }
     }
 }
