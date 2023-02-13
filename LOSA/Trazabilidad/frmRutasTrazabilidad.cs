@@ -842,6 +842,30 @@ namespace LOSA.Trazabilidad
             navigationFrame1.SelectedPage = npRuta3DetalleDespacho;
 
             LoadDatosDetalleDespacho(row.Despacho);//Correcto filtramos despacho y lote
+            LoadHeaderDespacho(row.Despacho);
+        }
+
+        private void LoadHeaderDespacho(int despacho)
+        {
+            
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("rpt_load_data_despacho_header", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_despacho", despacho);
+                dsMantoTrazabilidad.hedaer_despacho.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMantoTrazabilidad.hedaer_despacho);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void LoadDatosDetalleDespacho()

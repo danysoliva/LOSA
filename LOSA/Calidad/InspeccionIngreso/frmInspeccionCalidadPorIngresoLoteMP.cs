@@ -2286,6 +2286,23 @@ namespace LOSA.Calidad
 
         }
 
+        private void btnViewBoleta_Click(object sender, EventArgs e)
+        {
+
+            if (Id_ingreso == 0)
+            {
+                CajaDialogo.Error("Debe Seleccionar el Ingreso!");
+            }
+            else
+            {
+                frmViewBasculaBoleta frm = new frmViewBasculaBoleta(Id_boleta);
+                frm.Show();
+            }
+            
+            
+            
+        }
+
         private void gridView7_RowClick(object sender, RowClickEventArgs e)
         {
             var gridview = (GridView)grid_Header_ingresos.FocusedView;
