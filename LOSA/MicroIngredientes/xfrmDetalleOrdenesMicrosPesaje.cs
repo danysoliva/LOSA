@@ -440,7 +440,6 @@ namespace LOSA.MicroIngredientes
 
         private void cmdPesarInd_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-
             try
             {
 
