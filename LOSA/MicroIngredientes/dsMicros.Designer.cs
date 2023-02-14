@@ -1160,6 +1160,8 @@ namespace LOSA.MicroIngredientes {
             
             private global::System.Data.DataColumn columnid_RM;
             
+            private global::System.Data.DataColumn columnkg_real;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DetalleOrdenesMicroDataTable() {
@@ -1243,6 +1245,14 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn kg_realColumn {
+                get {
+                    return this.columnkg_real;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1278,7 +1288,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetalleOrdenesMicroRow AddDetalleOrdenesMicroRow(string Material, decimal Peso_por_Batch, int Batch_Plan, decimal Total, int Batch_Completados, int id_RM) {
+            public DetalleOrdenesMicroRow AddDetalleOrdenesMicroRow(string Material, decimal Peso_por_Batch, int Batch_Plan, decimal Total, int Batch_Completados, int id_RM, decimal kg_real) {
                 DetalleOrdenesMicroRow rowDetalleOrdenesMicroRow = ((DetalleOrdenesMicroRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Material,
@@ -1286,7 +1296,8 @@ namespace LOSA.MicroIngredientes {
                         Batch_Plan,
                         Total,
                         Batch_Completados,
-                        id_RM};
+                        id_RM,
+                        kg_real};
                 rowDetalleOrdenesMicroRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDetalleOrdenesMicroRow);
                 return rowDetalleOrdenesMicroRow;
@@ -1315,6 +1326,7 @@ namespace LOSA.MicroIngredientes {
                 this.columnTotal = base.Columns["Total"];
                 this.columnBatch_Completados = base.Columns["Batch Completados"];
                 this.columnid_RM = base.Columns["id_RM"];
+                this.columnkg_real = base.Columns["kg_real"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1332,6 +1344,8 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnBatch_Completados);
                 this.columnid_RM = new global::System.Data.DataColumn("id_RM", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_RM);
+                this.columnkg_real = new global::System.Data.DataColumn("kg_real", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkg_real);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6466,6 +6480,22 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal kg_real {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDetalleOrdenesMicro.kg_realColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'kg_real\' de la tabla \'DetalleOrdenesMicro\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetalleOrdenesMicro.kg_realColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsMaterialNull() {
                 return this.IsNull(this.tableDetalleOrdenesMicro.MaterialColumn);
             }
@@ -6534,6 +6564,18 @@ namespace LOSA.MicroIngredientes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_RMNull() {
                 this[this.tableDetalleOrdenesMicro.id_RMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iskg_realNull() {
+                return this.IsNull(this.tableDetalleOrdenesMicro.kg_realColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setkg_realNull() {
+                this[this.tableDetalleOrdenesMicro.kg_realColumn] = global::System.Convert.DBNull;
             }
         }
         

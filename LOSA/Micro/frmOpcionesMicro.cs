@@ -101,6 +101,30 @@ namespace LOSA.Micro
             var row = (dsMicro.sacoshRow)gridView.GetFocusedDataRow();
 
             LoadDetalle(row.id);
+            LoadDetallePesajeIndividual(row.id);
+        }
+
+        private void LoadDetallePesajeIndividual(int pIdh)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringAPMS);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_sacos_micros_rm_pesaje_individual", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idh", pIdh);
+                dsMicro1.sacos_detail.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMicro1.sacos_detail);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void LoadDetalle(int pIdh)
