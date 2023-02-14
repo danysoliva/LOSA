@@ -30,17 +30,20 @@ namespace LOSA.Micro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpcionesMicro));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale4 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale1 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale2 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnNavegacionLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabLotes = new DevExpress.XtraTab.XtraTabPage();
@@ -63,6 +66,8 @@ namespace LOSA.Micro
             this.colingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsalidas = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TabReporte = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPagePN = new DevExpress.XtraTab.XtraTabPage();
             this.gcDetalleSacos = new DevExpress.XtraGrid.GridControl();
             this.sacosdetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvDetalleSacos = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -73,6 +78,16 @@ namespace LOSA.Micro
             this.colpeso_real = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbascula = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabPagePI = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControlPI = new DevExpress.XtraGrid.GridControl();
+            this.gridViewPI = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.dtFechaHasta = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -113,9 +128,15 @@ namespace LOSA.Micro
             ((System.ComponentModel.ISupportInitialize)(this.dsMicro1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.TabReporte.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPagePN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalleSacos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sacosdetailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleSacos)).BeginInit();
+            this.xtraTabPagePI.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlPI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewPI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).BeginInit();
@@ -140,13 +161,25 @@ namespace LOSA.Micro
             this.gridColumn11.VisibleIndex = 7;
             this.gridColumn11.Width = 89;
             // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "% Avance";
+            this.gridColumn19.DisplayFormat.FormatString = "{0:N}%";
+            this.gridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn19.FieldName = "%avance";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.OptionsColumn.AllowEdit = false;
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 7;
+            this.gridColumn19.Width = 89;
+            // 
             // btnNavegacionLote
             // 
             this.btnNavegacionLote.AutoHeight = false;
-            editorButtonImageOptions1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnNavegacionLote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnNavegacionLote.Name = "btnNavegacionLote";
             this.btnNavegacionLote.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
@@ -219,9 +252,9 @@ namespace LOSA.Micro
             this.colcodigo,
             this.colingreso,
             this.colsalidas});
-            gridFormatRule1.Name = "Format0";
-            gridFormatRule1.Rule = formatConditionRule3ColorScale1;
-            this.gridView1.FormatRules.Add(gridFormatRule1);
+            gridFormatRule4.Name = "Format0";
+            gridFormatRule4.Rule = formatConditionRule3ColorScale4;
+            this.gridView1.FormatRules.Add(gridFormatRule4);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -359,7 +392,7 @@ namespace LOSA.Micro
             // 
             // TabReporte
             // 
-            this.TabReporte.Controls.Add(this.gcDetalleSacos);
+            this.TabReporte.Controls.Add(this.xtraTabControl1);
             this.TabReporte.Controls.Add(this.cmdRefresh);
             this.TabReporte.Controls.Add(this.dtFechaHasta);
             this.TabReporte.Controls.Add(this.labelControl9);
@@ -371,15 +404,37 @@ namespace LOSA.Micro
             this.TabReporte.Size = new System.Drawing.Size(1117, 502);
             this.TabReporte.Text = "Reporte";
             // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.xtraTabControl1.Location = new System.Drawing.Point(4, 270);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPagePN;
+            this.xtraTabControl1.Size = new System.Drawing.Size(1110, 229);
+            this.xtraTabControl1.TabIndex = 62;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPagePN,
+            this.xtraTabPagePI});
+            // 
+            // xtraTabPagePN
+            // 
+            this.xtraTabPagePN.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xtraTabPagePN.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPagePN.Controls.Add(this.gcDetalleSacos);
+            this.xtraTabPagePN.Name = "xtraTabPagePN";
+            this.xtraTabPagePN.Size = new System.Drawing.Size(1104, 198);
+            this.xtraTabPagePN.Text = "Pesaje de Nucleo";
+            // 
             // gcDetalleSacos
             // 
-            this.gcDetalleSacos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gcDetalleSacos.DataSource = this.sacosdetailBindingSource;
-            this.gcDetalleSacos.Location = new System.Drawing.Point(4, 270);
+            this.gcDetalleSacos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcDetalleSacos.Location = new System.Drawing.Point(0, 0);
             this.gcDetalleSacos.MainView = this.gvDetalleSacos;
             this.gcDetalleSacos.Name = "gcDetalleSacos";
-            this.gcDetalleSacos.Size = new System.Drawing.Size(1110, 269);
+            this.gcDetalleSacos.Size = new System.Drawing.Size(1104, 198);
             this.gcDetalleSacos.TabIndex = 61;
             this.gcDetalleSacos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetalleSacos});
@@ -410,23 +465,23 @@ namespace LOSA.Micro
             this.collote,
             this.colbascula,
             this.gridColumn11});
-            gridFormatRule2.Column = this.gridColumn11;
-            gridFormatRule2.Name = "Format0";
-            formatConditionRule3ColorScale2.Maximum = new decimal(new int[] {
+            gridFormatRule1.Column = this.gridColumn11;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRule3ColorScale1.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            formatConditionRule3ColorScale2.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale2.Middle = new decimal(new int[] {
+            formatConditionRule3ColorScale1.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale1.Middle = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            formatConditionRule3ColorScale2.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            gridFormatRule2.Rule = formatConditionRule3ColorScale2;
-            this.gvDetalleSacos.FormatRules.Add(gridFormatRule2);
+            formatConditionRule3ColorScale1.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale1.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            gridFormatRule1.Rule = formatConditionRule3ColorScale1;
+            this.gvDetalleSacos.FormatRules.Add(gridFormatRule1);
             this.gvDetalleSacos.GridControl = this.gcDetalleSacos;
             this.gvDetalleSacos.Name = "gvDetalleSacos";
             this.gvDetalleSacos.OptionsView.ShowFooter = true;
@@ -501,6 +556,141 @@ namespace LOSA.Micro
             this.colbascula.Visible = true;
             this.colbascula.VisibleIndex = 6;
             this.colbascula.Width = 70;
+            // 
+            // xtraTabPagePI
+            // 
+            this.xtraTabPagePI.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xtraTabPagePI.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPagePI.Controls.Add(this.gridControlPI);
+            this.xtraTabPagePI.Name = "xtraTabPagePI";
+            this.xtraTabPagePI.Size = new System.Drawing.Size(1104, 198);
+            this.xtraTabPagePI.Text = "Pesaje Individual";
+            // 
+            // gridControlPI
+            // 
+            this.gridControlPI.DataMember = "sacos_detail_p_individual";
+            this.gridControlPI.DataSource = this.dsMicro1;
+            this.gridControlPI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlPI.Location = new System.Drawing.Point(0, 0);
+            this.gridControlPI.MainView = this.gridViewPI;
+            this.gridControlPI.Name = "gridControlPI";
+            this.gridControlPI.Size = new System.Drawing.Size(1104, 198);
+            this.gridControlPI.TabIndex = 62;
+            this.gridControlPI.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewPI});
+            // 
+            // gridViewPI
+            // 
+            this.gridViewPI.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewPI.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridViewPI.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.gridViewPI.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewPI.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.Transparent;
+            this.gridViewPI.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gridViewPI.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewPI.Appearance.Row.Options.UseFont = true;
+            this.gridViewPI.Appearance.SelectedRow.BackColor = System.Drawing.Color.Transparent;
+            this.gridViewPI.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gridViewPI.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19});
+            gridFormatRule2.Column = this.gridColumn19;
+            gridFormatRule2.Name = "Format0";
+            formatConditionRule3ColorScale2.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            formatConditionRule3ColorScale2.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.Middle = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            formatConditionRule3ColorScale2.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            gridFormatRule2.Rule = formatConditionRule3ColorScale2;
+            this.gridViewPI.FormatRules.Add(gridFormatRule2);
+            this.gridViewPI.GridControl = this.gridControlPI;
+            this.gridViewPI.Name = "gridViewPI";
+            this.gridViewPI.OptionsView.ShowFooter = true;
+            this.gridViewPI.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Nombre";
+            this.gridColumn12.FieldName = "nombre";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.AllowEdit = false;
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 0;
+            this.gridColumn12.Width = 300;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Batch Plan";
+            this.gridColumn13.FieldName = "batch_plan";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowEdit = false;
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 1;
+            this.gridColumn13.Width = 95;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Batch Completados";
+            this.gridColumn14.FieldName = "batch_completados";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.AllowEdit = false;
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 2;
+            this.gridColumn14.Width = 165;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Total (Kg)";
+            this.gridColumn15.FieldName = "peso_total";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.OptionsColumn.AllowEdit = false;
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 3;
+            this.gridColumn15.Width = 103;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Real";
+            this.gridColumn16.FieldName = "peso_real";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.AllowEdit = false;
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 4;
+            this.gridColumn16.Width = 84;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Lote";
+            this.gridColumn17.FieldName = "lote";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.OptionsColumn.AllowEdit = false;
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 5;
+            this.gridColumn17.Width = 70;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Báscula";
+            this.gridColumn18.FieldName = "bascula";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.OptionsColumn.AllowEdit = false;
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 6;
+            this.gridColumn18.Width = 70;
             // 
             // cmdRefresh
             // 
@@ -886,9 +1076,15 @@ namespace LOSA.Micro
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.TabReporte.ResumeLayout(false);
             this.TabReporte.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPagePN.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcDetalleSacos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sacosdetailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDetalleSacos)).EndInit();
+            this.xtraTabPagePI.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlPI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewPI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHasta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesde.Properties.CalendarTimeProperties)).EndInit();
@@ -971,5 +1167,18 @@ namespace LOSA.Micro
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
         private DevExpress.XtraGrid.Columns.GridColumn colingreso;
         private DevExpress.XtraGrid.Columns.GridColumn colsalidas;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPagePN;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPagePI;
+        private DevExpress.XtraGrid.GridControl gridControlPI;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewPI;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
     }
 }

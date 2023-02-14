@@ -460,6 +460,7 @@ namespace LOSA.Trazabilidad
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.npReporteTrazabilidad = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.cmdVerCuadroLotesRuta4 = new DevExpress.XtraEditors.SimpleButton();
             this.txtRuta4Fecha_produccion = new DevExpress.XtraEditors.TextEdit();
             this.labelControl92 = new DevExpress.XtraEditors.LabelControl();
             this.txtRuta4Fecha_Vencimiento = new DevExpress.XtraEditors.TextEdit();
@@ -684,6 +685,7 @@ namespace LOSA.Trazabilidad
             this.colIdSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.npRuta3DetalleDespacho = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.vGridControl3 = new DevExpress.XtraVerticalGrid.VGridControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -781,7 +783,17 @@ namespace LOSA.Trazabilidad
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
-            this.cmdVerCuadroLotesRuta4 = new DevExpress.XtraEditors.SimpleButton();
+            this.rowcodigo1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowcliente = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowfecha_creacion = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowconductorin = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowidentidadin = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowvehiculo = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowfurgon = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowtrasn = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowdestino = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowOC = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowud = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdLinkLoteMP)).BeginInit();
@@ -1015,6 +1027,7 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.cmdScaleDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdViewOC)).BeginInit();
             this.npRuta3DetalleDespacho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.npBoletaView.SuspendLayout();
@@ -5420,6 +5433,18 @@ namespace LOSA.Trazabilidad
             this.npReporteTrazabilidad.Name = "npReporteTrazabilidad";
             this.npReporteTrazabilidad.Size = new System.Drawing.Size(1301, 856);
             // 
+            // cmdVerCuadroLotesRuta4
+            // 
+            this.cmdVerCuadroLotesRuta4.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.cmdVerCuadroLotesRuta4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdVerCuadroLotesRuta4.ImageOptions.Image")));
+            this.cmdVerCuadroLotesRuta4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.cmdVerCuadroLotesRuta4.Location = new System.Drawing.Point(693, 104);
+            this.cmdVerCuadroLotesRuta4.Name = "cmdVerCuadroLotesRuta4";
+            this.cmdVerCuadroLotesRuta4.Size = new System.Drawing.Size(29, 23);
+            this.cmdVerCuadroLotesRuta4.TabIndex = 122;
+            this.cmdVerCuadroLotesRuta4.ToolTip = "Ver cuadro de Lotes PT";
+            this.cmdVerCuadroLotesRuta4.Click += new System.EventHandler(this.cmdVerCuadroLotesRuta4_Click);
+            // 
             // txtRuta4Fecha_produccion
             // 
             this.txtRuta4Fecha_produccion.AllowDrop = true;
@@ -7987,11 +8012,38 @@ namespace LOSA.Trazabilidad
             // 
             // npRuta3DetalleDespacho
             // 
+            this.npRuta3DetalleDespacho.Controls.Add(this.vGridControl3);
             this.npRuta3DetalleDespacho.Controls.Add(this.simpleButton3);
             this.npRuta3DetalleDespacho.Controls.Add(this.simpleButton4);
             this.npRuta3DetalleDespacho.Controls.Add(this.gridControl1);
             this.npRuta3DetalleDespacho.Name = "npRuta3DetalleDespacho";
             this.npRuta3DetalleDespacho.Size = new System.Drawing.Size(1301, 856);
+            // 
+            // vGridControl3
+            // 
+            this.vGridControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.vGridControl3.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.vGridControl3.DataMember = "hedaer_despacho";
+            this.vGridControl3.DataSource = this.dsMantoTrazabilidad;
+            this.vGridControl3.Location = new System.Drawing.Point(3, 3);
+            this.vGridControl3.Name = "vGridControl3";
+            this.vGridControl3.OptionsBehavior.Editable = false;
+            this.vGridControl3.RecordWidth = 214;
+            this.vGridControl3.RowHeaderWidth = 185;
+            this.vGridControl3.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
+            this.rowcodigo1,
+            this.rowcliente,
+            this.rowfecha_creacion,
+            this.rowconductorin,
+            this.rowidentidadin,
+            this.rowvehiculo,
+            this.rowfurgon,
+            this.rowtrasn,
+            this.rowdestino,
+            this.rowOC,
+            this.rowud});
+            this.vGridControl3.Size = new System.Drawing.Size(504, 194);
+            this.vGridControl3.TabIndex = 52;
             // 
             // simpleButton3
             // 
@@ -8031,10 +8083,10 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "detalle_despachos";
             this.gridControl1.DataSource = this.dsReportesTRZ;
-            this.gridControl1.Location = new System.Drawing.Point(3, 86);
+            this.gridControl1.Location = new System.Drawing.Point(3, 203);
             this.gridControl1.MainView = this.gridView5;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1295, 767);
+            this.gridControl1.Size = new System.Drawing.Size(1295, 650);
             this.gridControl1.TabIndex = 49;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -9011,17 +9063,71 @@ namespace LOSA.Trazabilidad
             this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
             // 
-            // cmdVerCuadroLotesRuta4
+            // rowcodigo1
             // 
-            this.cmdVerCuadroLotesRuta4.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.cmdVerCuadroLotesRuta4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton12.ImageOptions.Image")));
-            this.cmdVerCuadroLotesRuta4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdVerCuadroLotesRuta4.Location = new System.Drawing.Point(693, 104);
-            this.cmdVerCuadroLotesRuta4.Name = "cmdVerCuadroLotesRuta4";
-            this.cmdVerCuadroLotesRuta4.Size = new System.Drawing.Size(29, 23);
-            this.cmdVerCuadroLotesRuta4.TabIndex = 122;
-            this.cmdVerCuadroLotesRuta4.ToolTip = "Ver cuadro de Lotes PT";
-            this.cmdVerCuadroLotesRuta4.Click += new System.EventHandler(this.cmdVerCuadroLotesRuta4_Click);
+            this.rowcodigo1.Name = "rowcodigo1";
+            this.rowcodigo1.Properties.Caption = "Cod Cliente:";
+            this.rowcodigo1.Properties.FieldName = "codigo";
+            // 
+            // rowcliente
+            // 
+            this.rowcliente.Name = "rowcliente";
+            this.rowcliente.Properties.Caption = "Cliente:";
+            this.rowcliente.Properties.FieldName = "cliente";
+            // 
+            // rowfecha_creacion
+            // 
+            this.rowfecha_creacion.Name = "rowfecha_creacion";
+            this.rowfecha_creacion.Properties.Caption = "Fecha:";
+            this.rowfecha_creacion.Properties.FieldName = "fecha_creacion";
+            // 
+            // rowconductorin
+            // 
+            this.rowconductorin.Name = "rowconductorin";
+            this.rowconductorin.Properties.Caption = "Motorista:";
+            this.rowconductorin.Properties.FieldName = "conductorin";
+            // 
+            // rowidentidadin
+            // 
+            this.rowidentidadin.Name = "rowidentidadin";
+            this.rowidentidadin.Properties.Caption = "ID Motorista:";
+            this.rowidentidadin.Properties.FieldName = "identidadin";
+            // 
+            // rowvehiculo
+            // 
+            this.rowvehiculo.Name = "rowvehiculo";
+            this.rowvehiculo.Properties.Caption = "Placa:";
+            this.rowvehiculo.Properties.FieldName = "vehiculo";
+            // 
+            // rowfurgon
+            // 
+            this.rowfurgon.Name = "rowfurgon";
+            this.rowfurgon.Properties.Caption = "No. Furgon:";
+            this.rowfurgon.Properties.FieldName = "furgon";
+            // 
+            // rowtrasn
+            // 
+            this.rowtrasn.Name = "rowtrasn";
+            this.rowtrasn.Properties.Caption = "Transporte:";
+            this.rowtrasn.Properties.FieldName = "trasn";
+            // 
+            // rowdestino
+            // 
+            this.rowdestino.Name = "rowdestino";
+            this.rowdestino.Properties.Caption = "Pais Destino:";
+            this.rowdestino.Properties.FieldName = "destino";
+            // 
+            // rowOC
+            // 
+            this.rowOC.Name = "rowOC";
+            this.rowOC.Properties.Caption = "O/C:";
+            this.rowOC.Properties.FieldName = "OC";
+            // 
+            // rowud
+            // 
+            this.rowud.Name = "rowud";
+            this.rowud.Properties.Caption = "Unidades Cargadas:";
+            this.rowud.Properties.FieldName = "ud";
             // 
             // frmRutasTrazabilidad
             // 
@@ -9276,6 +9382,7 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.cmdScaleDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdViewOC)).EndInit();
             this.npRuta3DetalleDespacho.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vGridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.npBoletaView.ResumeLayout(false);
@@ -10009,5 +10116,17 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_prd1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdCantidadDosificadaLoteLink;
         private DevExpress.XtraEditors.SimpleButton cmdVerCuadroLotesRuta4;
+        private DevExpress.XtraVerticalGrid.VGridControl vGridControl3;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowcodigo1;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowcliente;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfecha_creacion;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowconductorin;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowidentidadin;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowvehiculo;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfurgon;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowtrasn;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowdestino;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowOC;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowud;
     }
 }

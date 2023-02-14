@@ -412,5 +412,14 @@ namespace LOSA.RecepcionMP
             else
                 dtFechaHastaDisponibles.Enabled = dtFechaDesdeDisponibles.Enabled = true;
         }
+
+        private void reposAdjunto_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grd_ingreso.FocusedView;
+            var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
+
+            frmIngresoAdjuntos frm = new frmIngresoAdjuntos(row.id, UsuarioLogeado);
+            frm.Show();
+        }
     }
 }

@@ -4554,6 +4554,12 @@
     <Compile Include="RecepcionMP\frmGestionIngresosTarimas.Designer.cs">
       <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmIngresoAdjuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmIngresoAdjuntos.Designer.cs">
+      <DependentUpon>frmIngresoAdjuntos.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmIngresoGranelAlosy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -5319,6 +5325,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmviewrequisas.Designer.cs">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisa_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmviewrequisa_detalle.Designer.cs">
+      <DependentUpon>frmviewrequisa_detalle.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmWizardEntregaBinesRequisa.cs">
       <SubType>Form</SubType>
@@ -7226,6 +7238,9 @@
     <EmbeddedResource Include="RecepcionMP\frmGestionIngresosTarimas.resx">
       <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmIngresoAdjuntos.resx">
+      <DependentUpon>frmIngresoAdjuntos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmIngresoGranelAlosy.resx">
       <DependentUpon>frmIngresoGranelAlosy.cs</DependentUpon>
     </EmbeddedResource>
@@ -7571,6 +7586,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmviewrequisas.resx">
       <DependentUpon>frmviewrequisas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmviewrequisa_detalle.resx">
+      <DependentUpon>frmviewrequisa_detalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmWizardEntregaBinesRequisa.resx">
       <DependentUpon>frmWizardEntregaBinesRequisa.cs</DependentUpon>

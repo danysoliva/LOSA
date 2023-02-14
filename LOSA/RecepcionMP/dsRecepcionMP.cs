@@ -43,6 +43,10 @@ namespace LOSA.RecepcionMP
 
     public partial class dsRecepcionMPx
     {
+        partial class archivosDataTable
+        {
+        }
+
         partial class proveedoresDataTable
         {
         }

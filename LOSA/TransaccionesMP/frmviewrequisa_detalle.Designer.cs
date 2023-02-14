@@ -1,6 +1,7 @@
-﻿namespace LOSA.TransaccionesMP
+﻿
+namespace LOSA.TransaccionesMP
 {
-    partial class frmviewrequisadetallecs
+    partial class frmviewrequisa_detalle
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +29,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmviewrequisadetallecs));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmviewrequisa_detalle));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions11 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject41 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject42 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject43 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject44 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions12 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject45 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject46 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject47 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject48 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
+            this.txtLote = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grDetalleLote = new DevExpress.XtraGrid.GridControl();
-            this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             this.gvTarimas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,32 +73,30 @@
             this.verDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colconsumo_inv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colconsumo_without_inv = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtLote = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnconsumir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.verDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelControl3
+            // labelControl1
             // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseTextOptions = true;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(201, 69);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(228, 22);
-            this.labelControl3.TabIndex = 33;
-            this.labelControl3.Text = "Detalle de Requisición:";
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(206, 9);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(224, 42);
+            this.labelControl1.TabIndex = 37;
+            this.labelControl1.Text = "Detalle de requisa";
             // 
             // cmdHome
             // 
@@ -107,12 +107,33 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(445, 12);
+            this.cmdHome.Location = new System.Drawing.Point(514, 9);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(188, 49);
-            this.cmdHome.TabIndex = 34;
+            this.cmdHome.Size = new System.Drawing.Size(132, 43);
+            this.cmdHome.TabIndex = 38;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
+            // 
+            // txtLote
+            // 
+            this.txtLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLote.Appearance.Options.UseFont = true;
+            this.txtLote.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.txtLote.Location = new System.Drawing.Point(68, 60);
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(106, 20);
+            this.txtLote.TabIndex = 52;
+            this.txtLote.Text = "N/D";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(10, 60);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(52, 20);
+            this.labelControl2.TabIndex = 51;
+            this.labelControl2.Text = "Lote PT:";
             // 
             // grDetalleLote
             // 
@@ -121,22 +142,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grDetalleLote.DataMember = "requisiciones_d";
             this.grDetalleLote.DataSource = this.dsTransaccionesMP1;
-            this.grDetalleLote.Location = new System.Drawing.Point(3, 95);
+            this.grDetalleLote.Location = new System.Drawing.Point(1, 86);
             this.grDetalleLote.MainView = this.gvTarimas;
             this.grDetalleLote.Name = "grDetalleLote";
             this.grDetalleLote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEdit,
             this.btnconsumir,
             this.verDetalle});
-            this.grDetalleLote.Size = new System.Drawing.Size(632, 465);
-            this.grDetalleLote.TabIndex = 35;
+            this.grDetalleLote.Size = new System.Drawing.Size(655, 725);
+            this.grDetalleLote.TabIndex = 53;
             this.grDetalleLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
-            // 
-            // dsTransaccionesMP1
-            // 
-            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
-            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvTarimas
             // 
@@ -180,6 +196,7 @@
             this.col,
             this.colconsumo_inv,
             this.colconsumo_without_inv});
+            this.gvTarimas.CustomizationFormBounds = new System.Drawing.Rectangle(-1538, 647, 260, 302);
             this.gvTarimas.GridControl = this.grDetalleLote;
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
@@ -206,7 +223,7 @@
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.OptionsColumn.AllowShowHide = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 0;
+            this.colmp.VisibleIndex = 1;
             this.colmp.Width = 68;
             // 
             // colsolicitada
@@ -217,7 +234,7 @@
             this.colsolicitada.OptionsColumn.AllowEdit = false;
             this.colsolicitada.OptionsColumn.AllowShowHide = false;
             this.colsolicitada.Visible = true;
-            this.colsolicitada.VisibleIndex = 1;
+            this.colsolicitada.VisibleIndex = 2;
             this.colsolicitada.Width = 68;
             // 
             // colprogramada
@@ -232,7 +249,7 @@
             this.colentregada.Name = "colentregada";
             this.colentregada.OptionsColumn.AllowEdit = false;
             this.colentregada.Visible = true;
-            this.colentregada.VisibleIndex = 2;
+            this.colentregada.VisibleIndex = 3;
             this.colentregada.Width = 68;
             // 
             // colpendiente
@@ -242,7 +259,7 @@
             this.colpendiente.Name = "colpendiente";
             this.colpendiente.OptionsColumn.AllowEdit = false;
             this.colpendiente.Visible = true;
-            this.colpendiente.VisibleIndex = 3;
+            this.colpendiente.VisibleIndex = 4;
             this.colpendiente.Width = 68;
             // 
             // colenable
@@ -261,20 +278,18 @@
             this.colunidad.FieldName = "unidad";
             this.colunidad.Name = "colunidad";
             this.colunidad.OptionsColumn.AllowEdit = false;
-            this.colunidad.Visible = true;
-            this.colunidad.VisibleIndex = 4;
             this.colunidad.Width = 68;
             // 
             // colcode_sap
             // 
-            this.colcode_sap.Caption = "Cod. MP SAP";
+            this.colcode_sap.Caption = "Cod. SAP";
             this.colcode_sap.FieldName = "code_sap";
             this.colcode_sap.Name = "colcode_sap";
             this.colcode_sap.OptionsColumn.AllowEdit = false;
             this.colcode_sap.OptionsColumn.AllowShowHide = false;
             this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 5;
-            this.colcode_sap.Width = 67;
+            this.colcode_sap.VisibleIndex = 0;
+            this.colcode_sap.Width = 70;
             // 
             // gridColumn1
             // 
@@ -286,9 +301,9 @@
             // btnEdit
             // 
             this.btnEdit.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions10.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions10.Image")));
             this.btnEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -309,9 +324,9 @@
             // btnconsumir
             // 
             this.btnconsumir.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions11.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions11.Image")));
             this.btnconsumir.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions11, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject41, serializableAppearanceObject42, serializableAppearanceObject43, serializableAppearanceObject44, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnconsumir.Name = "btnconsumir";
             this.btnconsumir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -336,18 +351,15 @@
             this.col.Caption = "Ver Detalle";
             this.col.ColumnEdit = this.verDetalle;
             this.col.Name = "col";
-            this.col.Visible = true;
-            this.col.VisibleIndex = 8;
             // 
             // verDetalle
             // 
             this.verDetalle.AutoHeight = false;
-            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.production;
+            editorButtonImageOptions12.Image = global::LOSA.Properties.Resources.production;
             this.verDetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions12, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject45, serializableAppearanceObject46, serializableAppearanceObject47, serializableAppearanceObject48, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.verDetalle.Name = "verDetalle";
             this.verDetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.verDetalle.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.verDetalle_ButtonClick);
             // 
             // colconsumo_inv
             // 
@@ -357,8 +369,6 @@
             this.colconsumo_inv.FieldName = "consumo_inv";
             this.colconsumo_inv.Name = "colconsumo_inv";
             this.colconsumo_inv.OptionsColumn.AllowShowHide = false;
-            this.colconsumo_inv.Visible = true;
-            this.colconsumo_inv.VisibleIndex = 6;
             // 
             // colconsumo_without_inv
             // 
@@ -368,67 +378,29 @@
             this.colconsumo_without_inv.FieldName = "consumo_without_inv";
             this.colconsumo_without_inv.Name = "colconsumo_without_inv";
             this.colconsumo_without_inv.OptionsColumn.AllowShowHide = false;
-            this.colconsumo_without_inv.Visible = true;
-            this.colconsumo_without_inv.VisibleIndex = 7;
             // 
-            // labelControl1
+            // dsTransaccionesMP1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseTextOptions = true;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(3, 24);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(348, 22);
-            this.labelControl1.TabIndex = 36;
-            this.labelControl1.Text = "Detalle de requisa:";
+            this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
+            this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtLote
-            // 
-            this.txtLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLote.Appearance.Options.UseFont = true;
-            this.txtLote.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.txtLote.Location = new System.Drawing.Point(62, 69);
-            this.txtLote.Name = "txtLote";
-            this.txtLote.Size = new System.Drawing.Size(106, 20);
-            this.txtLote.TabIndex = 50;
-            this.txtLote.Text = "N/D";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(4, 69);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(52, 20);
-            this.labelControl2.TabIndex = 49;
-            this.labelControl2.Text = "Lote PT:";
-            // 
-            // frmviewrequisadetallecs
+            // frmviewrequisa_detalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 560);
+            this.ClientSize = new System.Drawing.Size(658, 814);
+            this.Controls.Add(this.grDetalleLote);
             this.Controls.Add(this.txtLote);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.grDetalleLote);
             this.Controls.Add(this.cmdHome);
-            this.Controls.Add(this.labelControl3);
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
-            this.Name = "frmviewrequisadetallecs";
-            this.ShowIcon = false;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Controls.Add(this.labelControl1);
+            this.Name = "frmviewrequisa_detalle";
             ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnconsumir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.verDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,8 +408,10 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton cmdHome;
+        private DevExpress.XtraEditors.LabelControl txtLote;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraGrid.GridControl grDetalleLote;
         private DevExpress.XtraGrid.Views.Grid.GridView gvTarimas;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
@@ -458,13 +432,10 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnconsumir;
         private DevExpress.XtraGrid.Columns.GridColumn coludenvidas;
         private DevExpress.XtraGrid.Columns.GridColumn colUdRestante;
-        private dsTransaccionesMP dsTransaccionesMP1;
         private DevExpress.XtraGrid.Columns.GridColumn col;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit verDetalle;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl txtLote;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraGrid.Columns.GridColumn colconsumo_inv;
         private DevExpress.XtraGrid.Columns.GridColumn colconsumo_without_inv;
+        private dsTransaccionesMP dsTransaccionesMP1;
     }
 }
