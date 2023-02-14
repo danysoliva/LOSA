@@ -4554,6 +4554,12 @@
     <Compile Include="RecepcionMP\frmGestionIngresosTarimas.Designer.cs">
       <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmIngresoAdjuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmIngresoAdjuntos.Designer.cs">
+      <DependentUpon>frmIngresoAdjuntos.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmIngresoGranelAlosy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7231,6 +7237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmGestionIngresosTarimas.resx">
       <DependentUpon>frmGestionIngresosTarimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmIngresoAdjuntos.resx">
+      <DependentUpon>frmIngresoAdjuntos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmIngresoGranelAlosy.resx">
       <DependentUpon>frmIngresoGranelAlosy.cs</DependentUpon>

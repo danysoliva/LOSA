@@ -108,6 +108,8 @@ namespace ACS.Classes
 
         internal string FTP_BannerTv_PRD = @"ftp://10.50.11.32/BannerTV_PRD/";
 
+        internal string FTP_ALOSY_LOGISTICA = @"ftp://10.50.11.32/ALOSY_LOG/";
+
         //       internal string ConnectionStringPRININ = @"Server=" + Globals.prinin_ServerAddress + @";
         //                                                   Database=" + Globals.prinin_ActiveDB + @";
         //                                                   User Id=" + Globals.prinin_DB_User + @";
