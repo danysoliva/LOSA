@@ -115,9 +115,9 @@ namespace LOSA.Micro
                 SqlCommand cmd = new SqlCommand("sp_get_detalle_sacos_micros_rm_pesaje_individual", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idh", pIdh);
-                dsMicro1.sacos_detail.Clear();
+                dsMicro1.sacos_detail_p_individual.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsMicro1.sacos_detail);
+                adat.Fill(dsMicro1.sacos_detail_p_individual);
 
                 con.Close();
             }

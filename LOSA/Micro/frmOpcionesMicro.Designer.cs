@@ -30,18 +30,18 @@ namespace LOSA.Micro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpcionesMicro));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale4 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale1 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale2 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale3 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnNavegacionLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -176,10 +176,10 @@ namespace LOSA.Micro
             // btnNavegacionLote
             // 
             this.btnNavegacionLote.AutoHeight = false;
-            editorButtonImageOptions1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnNavegacionLote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnNavegacionLote.Name = "btnNavegacionLote";
             this.btnNavegacionLote.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
@@ -252,9 +252,9 @@ namespace LOSA.Micro
             this.colcodigo,
             this.colingreso,
             this.colsalidas});
-            gridFormatRule1.Name = "Format0";
-            gridFormatRule1.Rule = formatConditionRule3ColorScale1;
-            this.gridView1.FormatRules.Add(gridFormatRule1);
+            gridFormatRule4.Name = "Format0";
+            gridFormatRule4.Rule = formatConditionRule3ColorScale4;
+            this.gridView1.FormatRules.Add(gridFormatRule4);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -406,6 +406,9 @@ namespace LOSA.Micro
             // 
             // xtraTabControl1
             // 
+            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControl1.Location = new System.Drawing.Point(4, 270);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPagePN;
@@ -462,23 +465,23 @@ namespace LOSA.Micro
             this.collote,
             this.colbascula,
             this.gridColumn11});
-            gridFormatRule2.Column = this.gridColumn11;
-            gridFormatRule2.Name = "Format0";
-            formatConditionRule3ColorScale2.Maximum = new decimal(new int[] {
+            gridFormatRule1.Column = this.gridColumn11;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRule3ColorScale1.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            formatConditionRule3ColorScale2.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale2.Middle = new decimal(new int[] {
+            formatConditionRule3ColorScale1.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale1.Middle = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            formatConditionRule3ColorScale2.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            gridFormatRule2.Rule = formatConditionRule3ColorScale2;
-            this.gvDetalleSacos.FormatRules.Add(gridFormatRule2);
+            formatConditionRule3ColorScale1.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale1.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            gridFormatRule1.Rule = formatConditionRule3ColorScale1;
+            this.gvDetalleSacos.FormatRules.Add(gridFormatRule1);
             this.gvDetalleSacos.GridControl = this.gcDetalleSacos;
             this.gvDetalleSacos.Name = "gvDetalleSacos";
             this.gvDetalleSacos.OptionsView.ShowFooter = true;
@@ -597,23 +600,23 @@ namespace LOSA.Micro
             this.gridColumn17,
             this.gridColumn18,
             this.gridColumn19});
-            gridFormatRule3.Column = this.gridColumn19;
-            gridFormatRule3.Name = "Format0";
-            formatConditionRule3ColorScale3.Maximum = new decimal(new int[] {
+            gridFormatRule2.Column = this.gridColumn19;
+            gridFormatRule2.Name = "Format0";
+            formatConditionRule3ColorScale2.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            formatConditionRule3ColorScale3.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale3.Middle = new decimal(new int[] {
+            formatConditionRule3ColorScale2.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.Middle = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            formatConditionRule3ColorScale3.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale3.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            gridFormatRule3.Rule = formatConditionRule3ColorScale3;
-            this.gridViewPI.FormatRules.Add(gridFormatRule3);
+            formatConditionRule3ColorScale2.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            gridFormatRule2.Rule = formatConditionRule3ColorScale2;
+            this.gridViewPI.FormatRules.Add(gridFormatRule2);
             this.gridViewPI.GridControl = this.gridControlPI;
             this.gridViewPI.Name = "gridViewPI";
             this.gridViewPI.OptionsView.ShowFooter = true;
