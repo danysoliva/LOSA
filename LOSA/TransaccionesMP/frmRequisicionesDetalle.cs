@@ -40,7 +40,12 @@ namespace LOSA.TransaccionesMP
             {
                 try
                 {
+                    //dateEditDesde.EditValueChanged -= new EventHandler(dateEditDesde_EditValueChanged);
+                    //dateEditDesde.EditValue = dr.GetDateTime(0);
+                    //dateEditDesde.EditValueChanged += new ndler(dateEditDesde_EditValueChanged);
+                    gridLookUpEdit_estados.EditValueChanged -= new EventHandler(gridLookUpEdit_estados_EditValueChanged);
                     gridLookUpEdit_estados.EditValue = pIdEstado;
+                    gridLookUpEdit_estados.EditValueChanged += new EventHandler(gridLookUpEdit_estados_EditValueChanged);
                 }
                 catch
                 {
@@ -327,11 +332,14 @@ namespace LOSA.TransaccionesMP
             int vIdEstadoSeleccionado = dp.ValidateNumberInt32(gridLookUpEdit_estados.EditValue);
             if (vIdEstadoSeleccionado > 0)
             {
-                DialogResult r = CajaDialogo.Pregunta("Esta seguro del cambio de estado en la requisición?");
-                if(r!= DialogResult.Yes)
+                if (vIdEstadoSeleccionado == 4)
                 {
-                    gridLookUpEdit_estados.EditValue = IdEstado;
-                    return;
+                    DialogResult r = CajaDialogo.Pregunta("Esta seguro del cambio de estado en la requisición?");
+                    if (r != DialogResult.Yes)
+                    {
+                        gridLookUpEdit_estados.EditValue = IdEstado;
+                        return;
+                    }
                 }
 
                 if(vIdEstadoSeleccionado != IdEstado)
