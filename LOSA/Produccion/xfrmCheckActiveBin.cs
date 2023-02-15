@@ -24,7 +24,7 @@ namespace LOSA.Produccion
         public xfrmCheckActiveBin()
         {
             InitializeComponent();
-             GetBinActivo();
+            GetBinActivo();
             RotularTanquesMP();
             //UpdateActiveBin();
         }
@@ -342,107 +342,176 @@ namespace LOSA.Produccion
 
                     SqlDataReader dr = cmd.ExecuteReader();
 
+                    //while (dr.Read())
+                    //{
+                    //    if ((contador+1)==1)
+                    //    {
+                    //        lblFD1.Text= dr.GetString(1);
+                    //        lblMP1.Text= dr.GetString(2);
+                    //        lblKardex1.Text= dr.GetDecimal(6).ToString("N2")+" Kg";
+                    //    }
+
+                    //    if ((contador + 1) == 2)
+                    //    {
+                    //        lblFD2.Text = dr.GetString(1);
+                    //        lblMP2.Text = dr.GetString(2);
+                    //        lblKardex2.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+
+                    //    }
+
+                    //    if ((contador + 1) == 3)
+                    //    {
+                    //        lblFD3.Text = dr.GetString(1);
+                    //        lblMP3.Text = dr.GetString(2);
+                    //        lblKardex3.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+
+                    //    }
+
+                    //    if ((contador + 1) == 4)
+                    //    {
+                    //        lblFD4.Text = dr.GetString(1);
+                    //        lblMP4.Text = dr.GetString(2);
+                    //        lblKardex4.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+
+                    //    }
+
+                    //    if ((contador + 1) == 5)
+                    //    {
+                    //        lblFD5.Text = dr.GetString(1);
+                    //        lblMP5.Text = dr.GetString(2);
+                    //        lblKardex5.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                    //    }
+
+                    //    if ((contador + 1) == 6)
+                    //    {
+                    //        lblFD6.Text = dr.GetString(1);
+                    //        lblMP6.Text = dr.GetString(2);
+                    //        lblKardex6.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+
+                    //    }
+
+                    //    if ((contador + 1) == 7)
+                    //    {
+                    //        lblFD7.Text = dr.GetString(1);
+                    //        lblMP7.Text = dr.GetString(2);
+                    //        lblKardex7.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                    //    }
+
+                    //    if ((contador + 1) == 8)
+                    //    {
+                    //        lblFD8.Text = dr.GetString(1);
+                    //        lblMP8.Text = dr.GetString(2);
+                    //        lblKardex8.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+
+                    //    }
+
+                    //    if ((contador + 1) == 9)
+                    //    {
+                    //        lblFD9.Text = dr.GetString(1);
+                    //        lblMP9.Text = dr.GetString(2);
+                    //        lblKardex9.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+
+                    //    }
+
+                    //    if ((contador + 1) == 10)
+                    //    {
+                    //        lblFD10.Text = dr.GetString(1);
+                    //        lblMP10.Text = dr.GetString(2);
+                    //        lblKardex10.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+
+                    //    }
+
+                    //    if ((contador + 1) == 11)
+                    //    {
+                    //        lblFD11.Text = dr.GetString(1);
+                    //        lblMP11.Text = dr.GetString(2);
+                    //        lblKardex11.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+
+                    //    }
+
+                    //    if ((contador + 1) == 12)
+                    //    {
+                    //        lblFD12.Text = dr.GetString(1);
+                    //        lblMP12.Text = dr.GetString(2);
+                    //        lblKardex12.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+
+                    //    }
+
+                    //    /* labelMP[contad*/
+                    //    //or].Text =  dr.GetString(2);
+                    //    contador++;
+                    //    //id_active_tank = Convert.ToInt32(dr.GetInt32(0));
+                    //    //label_tank = dr.GetString(1);
+                    //    //mp = dr.GetString(2);
+                    //}
+                    contador = 1;
                     while (dr.Read())
                     {
-                        if ((contador+1)==1)
+                        switch (contador)
                         {
-                            lblFD1.Text= dr.GetString(1);
-                            lblMP1.Text= dr.GetString(2);
-                            lblKardex1.Text= dr.GetDecimal(6).ToString("N2")+" Kg";
+                            case 1:
+                                lblFD1.Text = dr.GetString(1);
+                                lblMP1.Text = dr.GetString(2);
+                                lblKardex1.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 2:
+                                lblFD2.Text = dr.GetString(1);
+                                lblMP2.Text = dr.GetString(2);
+                                lblKardex2.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 3:
+                                lblFD3.Text = dr.GetString(1);
+                                lblMP3.Text = dr.GetString(2);
+                                lblKardex3.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 4:
+                                lblFD4.Text = dr.GetString(1);
+                                lblMP4.Text = dr.GetString(2);
+                                lblKardex4.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 5:
+                                lblFD5.Text = dr.GetString(1);
+                                lblMP5.Text = dr.GetString(2);
+                                lblKardex5.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 6:
+                                lblFD6.Text = dr.GetString(1);
+                                lblMP6.Text = dr.GetString(2);
+                                lblKardex6.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 7:
+                                lblFD7.Text = dr.GetString(1);
+                                lblMP7.Text = dr.GetString(2);
+                                lblKardex7.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 8:
+                                lblFD8.Text = dr.GetString(1);
+                                lblMP8.Text = dr.GetString(2);
+                                lblKardex8.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 9:
+                                lblFD9.Text = dr.GetString(1);
+                                lblMP9.Text = dr.GetString(2);
+                                lblKardex9.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 10:
+                                lblFD10.Text = dr.GetString(1);
+                                lblMP10.Text = dr.GetString(2);
+                                lblKardex10.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 11:
+                                lblFD11.Text = dr.GetString(1);
+                                lblMP11.Text = dr.GetString(2);
+                                lblKardex11.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
+                            case 12:
+                                lblFD12.Text = dr.GetString(1);
+                                lblMP12.Text = dr.GetString(2);
+                                lblKardex12.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
+                                break;
                         }
-
-                        if ((contador + 1) == 2)
-                        {
-                            lblFD2.Text = dr.GetString(1);
-                            lblMP2.Text = dr.GetString(2);
-                            lblKardex2.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-
-                        }
-
-                        if ((contador + 1) == 3)
-                        {
-                            lblFD3.Text = dr.GetString(1);
-                            lblMP3.Text = dr.GetString(2);
-                            lblKardex3.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-
-                        }
-
-                        if ((contador + 1) == 4)
-                        {
-                            lblFD4.Text = dr.GetString(1);
-                            lblMP4.Text = dr.GetString(2);
-                            lblKardex4.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-
-                        }
-
-                        if ((contador + 1) == 5)
-                        {
-                            lblFD5.Text = dr.GetString(1);
-                            lblMP5.Text = dr.GetString(2);
-                            lblKardex5.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-                        }
-
-                        if ((contador + 1) == 6)
-                        {
-                            lblFD6.Text = dr.GetString(1);
-                            lblMP6.Text = dr.GetString(2);
-                            lblKardex6.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-
-                        }
-
-                        if ((contador + 1) == 7)
-                        {
-                            lblFD7.Text = dr.GetString(1);
-                            lblMP7.Text = dr.GetString(2);
-                            lblKardex7.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-                        }
-
-                        if ((contador + 1) == 8)
-                        {
-                            lblFD8.Text = dr.GetString(1);
-                            lblMP8.Text = dr.GetString(2);
-                            lblKardex8.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-
-                        }
-
-                        if ((contador + 1) == 9)
-                        {
-                            lblFD9.Text = dr.GetString(1);
-                            lblMP9.Text = dr.GetString(2);
-                            lblKardex9.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-
-                        }
-
-                        if ((contador + 1) == 10)
-                        {
-                            lblFD10.Text = dr.GetString(1);
-                            lblMP10.Text = dr.GetString(2);
-                            lblKardex10.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-
-                        }
-
-                        if ((contador + 1) == 11)
-                        {
-                            lblFD11.Text = dr.GetString(1);
-                            lblMP11.Text = dr.GetString(2);
-                            lblKardex11.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-
-                        }
-
-                        if ((contador + 1) == 12)
-                        {
-                            lblFD12.Text = dr.GetString(1);
-                            lblMP12.Text = dr.GetString(2);
-                            lblKardex12.Text = dr.GetDecimal(6).ToString("N2") + " Kg";
-
-                        }
-
-                        /* labelMP[contad*/
-                        //or].Text =  dr.GetString(2);
+                       
                         contador++;
-                        //id_active_tank = Convert.ToInt32(dr.GetInt32(0));
-                        //label_tank = dr.GetString(1);
-                        //mp = dr.GetString(2);
                     }
 
 

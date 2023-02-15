@@ -686,6 +686,17 @@ namespace LOSA.Trazabilidad
             this.colSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.npRuta3DetalleDespacho = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.vGridControl3 = new DevExpress.XtraVerticalGrid.VGridControl();
+            this.rowcodigo1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowcliente = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowfecha_creacion = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowconductorin = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowidentidadin = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowvehiculo = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowfurgon = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowtrasn = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowdestino = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowOC = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowud = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -783,17 +794,6 @@ namespace LOSA.Trazabilidad
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
-            this.rowcodigo1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowcliente = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowfecha_creacion = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowconductorin = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowidentidadin = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowvehiculo = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowfurgon = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowtrasn = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowdestino = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowOC = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowud = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdLinkLoteMP)).BeginInit();
@@ -8045,6 +8045,72 @@ namespace LOSA.Trazabilidad
             this.vGridControl3.Size = new System.Drawing.Size(504, 194);
             this.vGridControl3.TabIndex = 52;
             // 
+            // rowcodigo1
+            // 
+            this.rowcodigo1.Name = "rowcodigo1";
+            this.rowcodigo1.Properties.Caption = "Cod Cliente:";
+            this.rowcodigo1.Properties.FieldName = "codigo";
+            // 
+            // rowcliente
+            // 
+            this.rowcliente.Name = "rowcliente";
+            this.rowcliente.Properties.Caption = "Cliente:";
+            this.rowcliente.Properties.FieldName = "cliente";
+            // 
+            // rowfecha_creacion
+            // 
+            this.rowfecha_creacion.Name = "rowfecha_creacion";
+            this.rowfecha_creacion.Properties.Caption = "Fecha:";
+            this.rowfecha_creacion.Properties.FieldName = "fecha_creacion";
+            // 
+            // rowconductorin
+            // 
+            this.rowconductorin.Name = "rowconductorin";
+            this.rowconductorin.Properties.Caption = "Motorista:";
+            this.rowconductorin.Properties.FieldName = "conductorin";
+            // 
+            // rowidentidadin
+            // 
+            this.rowidentidadin.Name = "rowidentidadin";
+            this.rowidentidadin.Properties.Caption = "ID Motorista:";
+            this.rowidentidadin.Properties.FieldName = "identidadin";
+            // 
+            // rowvehiculo
+            // 
+            this.rowvehiculo.Name = "rowvehiculo";
+            this.rowvehiculo.Properties.Caption = "Placa:";
+            this.rowvehiculo.Properties.FieldName = "vehiculo";
+            // 
+            // rowfurgon
+            // 
+            this.rowfurgon.Name = "rowfurgon";
+            this.rowfurgon.Properties.Caption = "No. Furgon:";
+            this.rowfurgon.Properties.FieldName = "furgon";
+            // 
+            // rowtrasn
+            // 
+            this.rowtrasn.Name = "rowtrasn";
+            this.rowtrasn.Properties.Caption = "Transporte:";
+            this.rowtrasn.Properties.FieldName = "trasn";
+            // 
+            // rowdestino
+            // 
+            this.rowdestino.Name = "rowdestino";
+            this.rowdestino.Properties.Caption = "Pais Destino:";
+            this.rowdestino.Properties.FieldName = "destino";
+            // 
+            // rowOC
+            // 
+            this.rowOC.Name = "rowOC";
+            this.rowOC.Properties.Caption = "O/C:";
+            this.rowOC.Properties.FieldName = "OC";
+            // 
+            // rowud
+            // 
+            this.rowud.Name = "rowud";
+            this.rowud.Properties.Caption = "Unidades Cargadas:";
+            this.rowud.Properties.FieldName = "ud";
+            // 
             // simpleButton3
             // 
             this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -9062,72 +9128,6 @@ namespace LOSA.Trazabilidad
             // 
             this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
-            // 
-            // rowcodigo1
-            // 
-            this.rowcodigo1.Name = "rowcodigo1";
-            this.rowcodigo1.Properties.Caption = "Cod Cliente:";
-            this.rowcodigo1.Properties.FieldName = "codigo";
-            // 
-            // rowcliente
-            // 
-            this.rowcliente.Name = "rowcliente";
-            this.rowcliente.Properties.Caption = "Cliente:";
-            this.rowcliente.Properties.FieldName = "cliente";
-            // 
-            // rowfecha_creacion
-            // 
-            this.rowfecha_creacion.Name = "rowfecha_creacion";
-            this.rowfecha_creacion.Properties.Caption = "Fecha:";
-            this.rowfecha_creacion.Properties.FieldName = "fecha_creacion";
-            // 
-            // rowconductorin
-            // 
-            this.rowconductorin.Name = "rowconductorin";
-            this.rowconductorin.Properties.Caption = "Motorista:";
-            this.rowconductorin.Properties.FieldName = "conductorin";
-            // 
-            // rowidentidadin
-            // 
-            this.rowidentidadin.Name = "rowidentidadin";
-            this.rowidentidadin.Properties.Caption = "ID Motorista:";
-            this.rowidentidadin.Properties.FieldName = "identidadin";
-            // 
-            // rowvehiculo
-            // 
-            this.rowvehiculo.Name = "rowvehiculo";
-            this.rowvehiculo.Properties.Caption = "Placa:";
-            this.rowvehiculo.Properties.FieldName = "vehiculo";
-            // 
-            // rowfurgon
-            // 
-            this.rowfurgon.Name = "rowfurgon";
-            this.rowfurgon.Properties.Caption = "No. Furgon:";
-            this.rowfurgon.Properties.FieldName = "furgon";
-            // 
-            // rowtrasn
-            // 
-            this.rowtrasn.Name = "rowtrasn";
-            this.rowtrasn.Properties.Caption = "Transporte:";
-            this.rowtrasn.Properties.FieldName = "trasn";
-            // 
-            // rowdestino
-            // 
-            this.rowdestino.Name = "rowdestino";
-            this.rowdestino.Properties.Caption = "Pais Destino:";
-            this.rowdestino.Properties.FieldName = "destino";
-            // 
-            // rowOC
-            // 
-            this.rowOC.Name = "rowOC";
-            this.rowOC.Properties.Caption = "O/C:";
-            this.rowOC.Properties.FieldName = "OC";
-            // 
-            // rowud
-            // 
-            this.rowud.Name = "rowud";
-            this.rowud.Properties.Caption = "Unidades Cargadas:";
-            this.rowud.Properties.FieldName = "ud";
             // 
             // frmRutasTrazabilidad
             // 
