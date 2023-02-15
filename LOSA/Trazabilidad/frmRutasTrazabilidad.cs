@@ -1091,23 +1091,26 @@ namespace LOSA.Trazabilidad
 
         private void textEdit1_KeyDown(object sender, KeyEventArgs e)
         {
-            LoteMP LoteMP_ = new LoteMP();
-            if (LoteMP_.RecuperarRegistro(txtlote.Text))
+            if (e.KeyCode == Keys.Enter)
             {
-                if (LoteMP_.CantidadMP > 1)
+                LoteMP LoteMP_ = new LoteMP();
+                if (LoteMP_.RecuperarRegistro(txtLoteMP_Ruta2.Text))
                 {
-                    //Mostrar Ventana
-                    frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
-                    if (frm.ShowDialog() == DialogResult.OK)
+                    if (LoteMP_.CantidadMP > 1)
                     {
-                        LoadLotesPT_Ruta2(frm.IdMP_Selected);
-                        lblMateriaPrimaName.Text = frm.NameMaterialselected;
+                        //Mostrar Ventana
+                        frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadLotesPT_Ruta2(frm.IdMP_Selected);
+                            lblMateriaPrimaName.Text = frm.NameMaterialselected;
+                        }
                     }
-                }
-                else
-                {
-                    LoadLotesPT_Ruta2(LoteMP_.IdMPSingle);
-                    lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
+                    else
+                    {
+                        LoadLotesPT_Ruta2(LoteMP_.IdMPSingle);
+                        lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
+                    }
                 }
             }
         }
@@ -2601,8 +2604,11 @@ namespace LOSA.Trazabilidad
             var gridView = (GridView)gcPT_Ruta1.FocusedView;
             var row = (dsReportesTRZ.pt_list_trzCamaronRow)gridView.GetFocusedDataRow();
 
-            if (row.Lote_PT > 0)
-                LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+            if (row != null)
+            {
+                if (row.Lote_PT > 0)
+                    LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+            }
         }
 
         private void gridView23_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
@@ -2867,6 +2873,72 @@ namespace LOSA.Trazabilidad
                 frmCuadroLotes frm = new frmCuadroLotes(LotePT_1);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
+            }
+        }
+
+        private void txtLoteMP_Ruta2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoteMP LoteMP_ = new LoteMP();
+                if (LoteMP_.RecuperarRegistro(txtLoteMP_Ruta2.Text))
+                {
+                    if (LoteMP_.CantidadMP > 1)
+                    {
+                        //Mostrar Ventana
+                        frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadLotesPT_Ruta2(frm.IdMP_Selected);
+                            lblMateriaPrimaName.Text = frm.NameMaterialselected;
+                        }
+                    }
+                    else
+                    {
+                        LoadLotesPT_Ruta2(LoteMP_.IdMPSingle);
+                        lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
+                    }
+                }
+            }
+        }
+
+        private void txtLoteMPRuta1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoteMP LoteMP_ = new LoteMP();
+
+                if (LoteMP_.RecuperarRegistro(txtLoteMPRuta1.Text))
+                {
+                    if (LoteMP_.CantidadMP > 1)
+                    {
+                        //Mostrar Ventana
+                        frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadLotesPT_Ruta1(frm.IdMP_Selected);
+                            lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                            LoadInventarioLotesRuta1();
+                            LoadRegistroIngresosLotesRuta1();
+                            lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
+                            errorProvider1.Clear();
+                        }
+                    }
+                    else
+                    {
+                        LoadLotesPT_Ruta1(LoteMP_.IdMPSingle);
+                        lblLoteNameRuta1.Text = LoteMP_.NombreComercialSingle;
+                        LoadInventarioLotesRuta1();
+                        LoadRegistroIngresosLotesRuta1();
+                        lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
+                        errorProvider1.Clear();
+                    }
+                }
+                else
+                {
+                    errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
+                    lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+                }
             }
         }
     }
