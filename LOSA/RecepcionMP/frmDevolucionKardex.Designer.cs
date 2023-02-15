@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDevolucionKardex));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -46,7 +47,7 @@
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.grd_requisa = new DevExpress.XtraGrid.GridControl();
-            this.mpBindingSource = new System.Windows.Forms.BindingSource();
+            this.mpBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsDevoluciones = new LOSA.RecepcionMP.dsDevoluciones();
             this.grdv_requisa = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colbarcode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,6 +60,7 @@
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colselected = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.beTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadT.Properties)).BeginInit();
@@ -427,7 +429,8 @@
             this.collote_materia_prima,
             this.colnombre_comercial,
             this.colcodigo_barra,
-            this.colselected});
+            this.colselected,
+            this.colfecha});
             this.grdv_requisa.GridControl = this.grd_requisa;
             this.grdv_requisa.Name = "grdv_requisa";
             this.grdv_requisa.OptionsView.ShowAutoFilterRow = true;
@@ -444,7 +447,7 @@
             this.colbarcode.OptionsColumn.AllowEdit = false;
             this.colbarcode.Visible = true;
             this.colbarcode.VisibleIndex = 0;
-            this.colbarcode.Width = 139;
+            this.colbarcode.Width = 122;
             // 
             // colcantidad_entregada
             // 
@@ -457,8 +460,8 @@
             this.colcantidad_entregada.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad_entregada", "{0:0.##.##} Kg.")});
             this.colcantidad_entregada.Visible = true;
-            this.colcantidad_entregada.VisibleIndex = 5;
-            this.colcantidad_entregada.Width = 86;
+            this.colcantidad_entregada.VisibleIndex = 6;
+            this.colcantidad_entregada.Width = 73;
             // 
             // colcantidad_unidades
             // 
@@ -471,8 +474,8 @@
             this.colcantidad_unidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad_unidades", "{0:0.##.##} Ud.")});
             this.colcantidad_unidades.Visible = true;
-            this.colcantidad_unidades.VisibleIndex = 4;
-            this.colcantidad_unidades.Width = 111;
+            this.colcantidad_unidades.VisibleIndex = 5;
+            this.colcantidad_unidades.Width = 96;
             // 
             // colCodigo
             // 
@@ -487,8 +490,8 @@
             this.colcode_sap.Name = "colcode_sap";
             this.colcode_sap.OptionsColumn.AllowEdit = false;
             this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 2;
-            this.colcode_sap.Width = 125;
+            this.colcode_sap.VisibleIndex = 3;
+            this.colcode_sap.Width = 107;
             // 
             // collote_materia_prima
             // 
@@ -497,8 +500,8 @@
             this.collote_materia_prima.Name = "collote_materia_prima";
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 3;
-            this.collote_materia_prima.Width = 173;
+            this.collote_materia_prima.VisibleIndex = 4;
+            this.collote_materia_prima.Width = 149;
             // 
             // colnombre_comercial
             // 
@@ -507,8 +510,8 @@
             this.colnombre_comercial.Name = "colnombre_comercial";
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
-            this.colnombre_comercial.VisibleIndex = 1;
-            this.colnombre_comercial.Width = 246;
+            this.colnombre_comercial.VisibleIndex = 2;
+            this.colnombre_comercial.Width = 214;
             // 
             // colcodigo_barra
             // 
@@ -524,8 +527,8 @@
             this.colselected.FieldName = "selected";
             this.colselected.Name = "colselected";
             this.colselected.Visible = true;
-            this.colselected.VisibleIndex = 6;
-            this.colselected.Width = 167;
+            this.colselected.VisibleIndex = 7;
+            this.colselected.Width = 162;
             // 
             // labelControl3
             // 
@@ -538,6 +541,16 @@
             this.labelControl3.Size = new System.Drawing.Size(160, 21);
             this.labelControl3.TabIndex = 84;
             this.labelControl3.Text = "Requisas entregadas:";
+            // 
+            // colfecha
+            // 
+            this.colfecha.Caption = "Fecha Entrega";
+            this.colfecha.FieldName = "fecha";
+            this.colfecha.Name = "colfecha";
+            this.colfecha.OptionsColumn.AllowEdit = false;
+            this.colfecha.Visible = true;
+            this.colfecha.VisibleIndex = 1;
+            this.colfecha.Width = 124;
             // 
             // frmDevolucionKardex
             // 
@@ -603,5 +616,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
         private DevExpress.XtraGrid.Columns.GridColumn colselected;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha;
     }
 }

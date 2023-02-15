@@ -30,18 +30,18 @@ namespace LOSA.Micro
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpcionesMicro));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale4 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale1 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale2 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRule3ColorScale formatConditionRule3ColorScale3 = new DevExpress.XtraEditors.FormatConditionRule3ColorScale();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnNavegacionLote = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -158,8 +158,8 @@ namespace LOSA.Micro
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 7;
-            this.gridColumn11.Width = 89;
+            this.gridColumn11.VisibleIndex = 6;
+            this.gridColumn11.Width = 136;
             // 
             // gridColumn19
             // 
@@ -176,10 +176,10 @@ namespace LOSA.Micro
             // btnNavegacionLote
             // 
             this.btnNavegacionLote.AutoHeight = false;
-            editorButtonImageOptions2.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnNavegacionLote.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnNavegacionLote.Name = "btnNavegacionLote";
             this.btnNavegacionLote.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
@@ -252,9 +252,9 @@ namespace LOSA.Micro
             this.colcodigo,
             this.colingreso,
             this.colsalidas});
-            gridFormatRule4.Name = "Format0";
-            gridFormatRule4.Rule = formatConditionRule3ColorScale4;
-            this.gridView1.FormatRules.Add(gridFormatRule4);
+            gridFormatRule1.Name = "Format0";
+            gridFormatRule1.Rule = formatConditionRule3ColorScale1;
+            this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -465,23 +465,23 @@ namespace LOSA.Micro
             this.collote,
             this.colbascula,
             this.gridColumn11});
-            gridFormatRule1.Column = this.gridColumn11;
-            gridFormatRule1.Name = "Format0";
-            formatConditionRule3ColorScale1.Maximum = new decimal(new int[] {
+            gridFormatRule2.Column = this.gridColumn11;
+            gridFormatRule2.Name = "Format0";
+            formatConditionRule3ColorScale2.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            formatConditionRule3ColorScale1.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale1.Middle = new decimal(new int[] {
+            formatConditionRule3ColorScale2.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.Middle = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            formatConditionRule3ColorScale1.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale1.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            gridFormatRule1.Rule = formatConditionRule3ColorScale1;
-            this.gvDetalleSacos.FormatRules.Add(gridFormatRule1);
+            formatConditionRule3ColorScale2.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            gridFormatRule2.Rule = formatConditionRule3ColorScale2;
+            this.gvDetalleSacos.FormatRules.Add(gridFormatRule2);
             this.gvDetalleSacos.GridControl = this.gcDetalleSacos;
             this.gvDetalleSacos.Name = "gvDetalleSacos";
             this.gvDetalleSacos.OptionsView.ShowFooter = true;
@@ -495,7 +495,7 @@ namespace LOSA.Micro
             this.colnombre.OptionsColumn.AllowEdit = false;
             this.colnombre.Visible = true;
             this.colnombre.VisibleIndex = 0;
-            this.colnombre.Width = 300;
+            this.colnombre.Width = 365;
             // 
             // colbatch_plan
             // 
@@ -505,7 +505,7 @@ namespace LOSA.Micro
             this.colbatch_plan.OptionsColumn.AllowEdit = false;
             this.colbatch_plan.Visible = true;
             this.colbatch_plan.VisibleIndex = 1;
-            this.colbatch_plan.Width = 95;
+            this.colbatch_plan.Width = 133;
             // 
             // colbacth_completados
             // 
@@ -513,8 +513,6 @@ namespace LOSA.Micro
             this.colbacth_completados.FieldName = "batch_completados";
             this.colbacth_completados.Name = "colbacth_completados";
             this.colbacth_completados.OptionsColumn.AllowEdit = false;
-            this.colbacth_completados.Visible = true;
-            this.colbacth_completados.VisibleIndex = 2;
             this.colbacth_completados.Width = 165;
             // 
             // colpeso_total
@@ -524,8 +522,8 @@ namespace LOSA.Micro
             this.colpeso_total.Name = "colpeso_total";
             this.colpeso_total.OptionsColumn.AllowEdit = false;
             this.colpeso_total.Visible = true;
-            this.colpeso_total.VisibleIndex = 3;
-            this.colpeso_total.Width = 103;
+            this.colpeso_total.VisibleIndex = 2;
+            this.colpeso_total.Width = 143;
             // 
             // colpeso_real
             // 
@@ -534,8 +532,8 @@ namespace LOSA.Micro
             this.colpeso_real.Name = "colpeso_real";
             this.colpeso_real.OptionsColumn.AllowEdit = false;
             this.colpeso_real.Visible = true;
-            this.colpeso_real.VisibleIndex = 4;
-            this.colpeso_real.Width = 84;
+            this.colpeso_real.VisibleIndex = 3;
+            this.colpeso_real.Width = 117;
             // 
             // collote
             // 
@@ -544,8 +542,8 @@ namespace LOSA.Micro
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 5;
-            this.collote.Width = 70;
+            this.collote.VisibleIndex = 4;
+            this.collote.Width = 96;
             // 
             // colbascula
             // 
@@ -554,8 +552,8 @@ namespace LOSA.Micro
             this.colbascula.Name = "colbascula";
             this.colbascula.OptionsColumn.AllowEdit = false;
             this.colbascula.Visible = true;
-            this.colbascula.VisibleIndex = 6;
-            this.colbascula.Width = 70;
+            this.colbascula.VisibleIndex = 5;
+            this.colbascula.Width = 96;
             // 
             // xtraTabPagePI
             // 
@@ -600,23 +598,24 @@ namespace LOSA.Micro
             this.gridColumn17,
             this.gridColumn18,
             this.gridColumn19});
-            gridFormatRule2.Column = this.gridColumn19;
-            gridFormatRule2.Name = "Format0";
-            formatConditionRule3ColorScale2.Maximum = new decimal(new int[] {
+            this.gridViewPI.CustomizationFormBounds = new System.Drawing.Rectangle(-1018, 431, 260, 292);
+            gridFormatRule3.Column = this.gridColumn19;
+            gridFormatRule3.Name = "Format0";
+            formatConditionRule3ColorScale3.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            formatConditionRule3ColorScale2.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale2.Middle = new decimal(new int[] {
+            formatConditionRule3ColorScale3.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale3.Middle = new decimal(new int[] {
             50,
             0,
             0,
             0});
-            formatConditionRule3ColorScale2.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            formatConditionRule3ColorScale2.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
-            gridFormatRule2.Rule = formatConditionRule3ColorScale2;
-            this.gridViewPI.FormatRules.Add(gridFormatRule2);
+            formatConditionRule3ColorScale3.MiddleType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            formatConditionRule3ColorScale3.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Number;
+            gridFormatRule3.Rule = formatConditionRule3ColorScale3;
+            this.gridViewPI.FormatRules.Add(gridFormatRule3);
             this.gridViewPI.GridControl = this.gridControlPI;
             this.gridViewPI.Name = "gridViewPI";
             this.gridViewPI.OptionsView.ShowFooter = true;
@@ -649,7 +648,7 @@ namespace LOSA.Micro
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 2;
+            this.gridColumn14.VisibleIndex = 3;
             this.gridColumn14.Width = 165;
             // 
             // gridColumn15
@@ -659,7 +658,7 @@ namespace LOSA.Micro
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 3;
+            this.gridColumn15.VisibleIndex = 2;
             this.gridColumn15.Width = 103;
             // 
             // gridColumn16
@@ -829,8 +828,6 @@ namespace LOSA.Micro
             this.colbatch_real.FieldName = "batch_real";
             this.colbatch_real.Name = "colbatch_real";
             this.colbatch_real.OptionsColumn.AllowEdit = false;
-            this.colbatch_real.Visible = true;
-            this.colbatch_real.VisibleIndex = 2;
             // 
             // collot
             // 
@@ -839,7 +836,7 @@ namespace LOSA.Micro
             this.collot.Name = "collot";
             this.collot.OptionsColumn.AllowEdit = false;
             this.collot.Visible = true;
-            this.collot.VisibleIndex = 3;
+            this.collot.VisibleIndex = 2;
             // 
             // colorder_id
             // 
@@ -854,7 +851,7 @@ namespace LOSA.Micro
             this.colorder_code.Name = "colorder_code";
             this.colorder_code.OptionsColumn.AllowEdit = false;
             this.colorder_code.Visible = true;
-            this.colorder_code.VisibleIndex = 4;
+            this.colorder_code.VisibleIndex = 3;
             // 
             // colstate
             // 
@@ -863,7 +860,7 @@ namespace LOSA.Micro
             this.colstate.Name = "colstate";
             this.colstate.OptionsColumn.AllowEdit = false;
             this.colstate.Visible = true;
-            this.colstate.VisibleIndex = 5;
+            this.colstate.VisibleIndex = 4;
             // 
             // TabSearchCodigo
             // 
