@@ -2514,8 +2514,8 @@ namespace LOSA
             {
                 if (UsuarioLogeado.ValidarNivelPermisos(81))
                 {
-                    AFC_ConsumoReal frm = new AFC_ConsumoReal();
-                    frm.MdiParent = this;
+                    frmLiquidacionesOP frm = new frmLiquidacionesOP(UsuarioLogeado);
+                    //frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
                 else

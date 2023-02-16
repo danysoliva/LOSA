@@ -54,7 +54,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.txtPuesto = new DevExpress.XtraEditors.TextEdit();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
             this.txtCodigo = new DevExpress.XtraEditors.TextEdit();
-            this.dsRRHH_1 = new MigracionACS.RRHH.dsRRHH_();
+            this.dsRRHH_1 = new LOSA.MigracionACS.RRHH.dsRRHH_();
             this.cmdImprimir = new DevExpress.XtraEditors.SimpleButton();
             this.cmdBuscarLiquidacioness = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
@@ -161,11 +161,11 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(13, 72);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(195, 17);
+            this.labelControl1.Size = new System.Drawing.Size(188, 15);
             this.labelControl1.TabIndex = 65;
             this.labelControl1.Text = "Empleado___________________________";
             // 
@@ -173,7 +173,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.cmdBuscarEmpleado.ImageOptions.Image = global::LOSA.Properties.Resources.search_32x32;
             this.cmdBuscarEmpleado.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdBuscarEmpleado.Location = new System.Drawing.Point(375, 61);
+            this.cmdBuscarEmpleado.Location = new System.Drawing.Point(343, 62);
             this.cmdBuscarEmpleado.Name = "cmdBuscarEmpleado";
             this.cmdBuscarEmpleado.Size = new System.Drawing.Size(47, 33);
             this.cmdBuscarEmpleado.TabIndex = 81;
@@ -185,7 +185,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(492, 72);
+            this.labelControl2.Location = new System.Drawing.Point(401, 66);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(198, 16);
             this.labelControl2.TabIndex = 82;
@@ -193,31 +193,31 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(13, 96);
+            this.labelControl3.Location = new System.Drawing.Point(13, 95);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(204, 17);
+            this.labelControl3.Size = new System.Drawing.Size(199, 15);
             this.labelControl3.TabIndex = 83;
             this.labelControl3.Text = "Código________________________________";
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(13, 121);
+            this.labelControl4.Location = new System.Drawing.Point(13, 119);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(186, 17);
+            this.labelControl4.Size = new System.Drawing.Size(174, 15);
             this.labelControl4.TabIndex = 84;
             this.labelControl4.Text = "Fecha de Ingreso_________________";
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(13, 146);
+            this.labelControl5.Location = new System.Drawing.Point(13, 143);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(188, 17);
+            this.labelControl5.Size = new System.Drawing.Size(175, 15);
             this.labelControl5.TabIndex = 88;
             this.labelControl5.Text = "Fecha de Egreso__________________";
             // 
@@ -225,7 +225,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(492, 98);
+            this.labelControl6.Location = new System.Drawing.Point(401, 92);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(204, 16);
             this.labelControl6.TabIndex = 90;
@@ -233,18 +233,18 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(13, 171);
+            this.labelControl7.Location = new System.Drawing.Point(13, 167);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(255, 17);
+            this.labelControl7.Size = new System.Drawing.Size(240, 15);
             this.labelControl7.TabIndex = 91;
             this.labelControl7.Text = "Salario Base Mensual__________________________";
             // 
             // dtEgreso
             // 
             this.dtEgreso.EditValue = null;
-            this.dtEgreso.Location = new System.Drawing.Point(180, 140);
+            this.dtEgreso.Location = new System.Drawing.Point(180, 137);
             this.dtEgreso.Name = "dtEgreso";
             this.dtEgreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtEgreso.Properties.Appearance.Options.UseFont = true;
@@ -254,7 +254,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtEgreso.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtEgreso.Size = new System.Drawing.Size(189, 22);
+            this.dtEgreso.Size = new System.Drawing.Size(160, 22);
             this.dtEgreso.TabIndex = 92;
             this.dtEgreso.EditValueChanged += new System.EventHandler(this.dtEgreso_EditValueChanged);
             // 
@@ -262,7 +262,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.dtIngreso.EditValue = null;
             this.dtIngreso.Enabled = false;
-            this.dtIngreso.Location = new System.Drawing.Point(180, 115);
+            this.dtIngreso.Location = new System.Drawing.Point(180, 113);
             this.dtIngreso.Name = "dtIngreso";
             this.dtIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtIngreso.Properties.Appearance.Options.UseFont = true;
@@ -272,43 +272,43 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtIngreso.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtIngreso.Size = new System.Drawing.Size(189, 22);
+            this.dtIngreso.Size = new System.Drawing.Size(160, 22);
             this.dtIngreso.TabIndex = 93;
             // 
             // labelControl8
             // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(13, 195);
+            this.labelControl8.Location = new System.Drawing.Point(13, 191);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(258, 17);
+            this.labelControl8.Size = new System.Drawing.Size(243, 15);
             this.labelControl8.TabIndex = 94;
             this.labelControl8.Text = "Promedio Base Diario__________________________";
             // 
             // labelControl9
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(13, 220);
+            this.labelControl9.Location = new System.Drawing.Point(13, 215);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(270, 17);
+            this.labelControl9.Size = new System.Drawing.Size(253, 15);
             this.labelControl9.TabIndex = 95;
             this.labelControl9.Text = "Salario Promedio Mensual_______________________";
             // 
             // labelControl10
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(12, 242);
+            this.labelControl10.Location = new System.Drawing.Point(12, 231);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(160, 17);
+            this.labelControl10.Size = new System.Drawing.Size(142, 15);
             this.labelControl10.TabIndex = 96;
             this.labelControl10.Text = "Promedio Diario Ordinario ";
             // 
             // txtSalarioMensual
             // 
             this.txtSalarioMensual.Enabled = false;
-            this.txtSalarioMensual.Location = new System.Drawing.Point(180, 165);
+            this.txtSalarioMensual.Location = new System.Drawing.Point(180, 161);
             this.txtSalarioMensual.Name = "txtSalarioMensual";
             this.txtSalarioMensual.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalarioMensual.Properties.Appearance.Options.UseFont = true;
@@ -318,13 +318,13 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.txtSalarioMensual.Properties.Mask.EditMask = "c";
             this.txtSalarioMensual.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtSalarioMensual.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSalarioMensual.Size = new System.Drawing.Size(189, 22);
+            this.txtSalarioMensual.Size = new System.Drawing.Size(160, 22);
             this.txtSalarioMensual.TabIndex = 98;
             // 
             // txtSalarioBaseDiario
             // 
             this.txtSalarioBaseDiario.Enabled = false;
-            this.txtSalarioBaseDiario.Location = new System.Drawing.Point(180, 189);
+            this.txtSalarioBaseDiario.Location = new System.Drawing.Point(180, 185);
             this.txtSalarioBaseDiario.Name = "txtSalarioBaseDiario";
             this.txtSalarioBaseDiario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalarioBaseDiario.Properties.Appearance.Options.UseFont = true;
@@ -334,13 +334,13 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.txtSalarioBaseDiario.Properties.Mask.EditMask = "c";
             this.txtSalarioBaseDiario.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtSalarioBaseDiario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSalarioBaseDiario.Size = new System.Drawing.Size(189, 22);
+            this.txtSalarioBaseDiario.Size = new System.Drawing.Size(160, 22);
             this.txtSalarioBaseDiario.TabIndex = 99;
             // 
             // txtSalarioPromedioMensual
             // 
             this.txtSalarioPromedioMensual.Enabled = false;
-            this.txtSalarioPromedioMensual.Location = new System.Drawing.Point(180, 214);
+            this.txtSalarioPromedioMensual.Location = new System.Drawing.Point(180, 209);
             this.txtSalarioPromedioMensual.Name = "txtSalarioPromedioMensual";
             this.txtSalarioPromedioMensual.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalarioPromedioMensual.Properties.Appearance.Options.UseFont = true;
@@ -350,13 +350,13 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.txtSalarioPromedioMensual.Properties.Mask.EditMask = "c";
             this.txtSalarioPromedioMensual.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtSalarioPromedioMensual.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSalarioPromedioMensual.Size = new System.Drawing.Size(189, 22);
+            this.txtSalarioPromedioMensual.Size = new System.Drawing.Size(160, 22);
             this.txtSalarioPromedioMensual.TabIndex = 100;
             // 
             // txtPromedioDiarioOrdinario
             // 
             this.txtPromedioDiarioOrdinario.Enabled = false;
-            this.txtPromedioDiarioOrdinario.Location = new System.Drawing.Point(178, 252);
+            this.txtPromedioDiarioOrdinario.Location = new System.Drawing.Point(178, 240);
             this.txtPromedioDiarioOrdinario.Name = "txtPromedioDiarioOrdinario";
             this.txtPromedioDiarioOrdinario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPromedioDiarioOrdinario.Properties.Appearance.Options.UseFont = true;
@@ -366,7 +366,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.txtPromedioDiarioOrdinario.Properties.Mask.EditMask = "c";
             this.txtPromedioDiarioOrdinario.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPromedioDiarioOrdinario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPromedioDiarioOrdinario.Size = new System.Drawing.Size(191, 22);
+            this.txtPromedioDiarioOrdinario.Size = new System.Drawing.Size(162, 22);
             this.txtPromedioDiarioOrdinario.TabIndex = 101;
             // 
             // cmdGuardar
@@ -397,23 +397,23 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // txtAntiguedad
             // 
             this.txtAntiguedad.Enabled = false;
-            this.txtAntiguedad.Location = new System.Drawing.Point(667, 91);
+            this.txtAntiguedad.Location = new System.Drawing.Point(494, 88);
             this.txtAntiguedad.Name = "txtAntiguedad";
             this.txtAntiguedad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAntiguedad.Properties.Appearance.Options.UseFont = true;
             this.txtAntiguedad.Properties.Mask.EditMask = "y";
-            this.txtAntiguedad.Size = new System.Drawing.Size(209, 22);
+            this.txtAntiguedad.Size = new System.Drawing.Size(188, 22);
             this.txtAntiguedad.TabIndex = 106;
             // 
             // txtPuesto
             // 
             this.txtPuesto.Enabled = false;
-            this.txtPuesto.Location = new System.Drawing.Point(667, 66);
+            this.txtPuesto.Location = new System.Drawing.Point(494, 62);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPuesto.Properties.Appearance.Options.UseFont = true;
             this.txtPuesto.Properties.Mask.EditMask = "d";
-            this.txtPuesto.Size = new System.Drawing.Size(209, 22);
+            this.txtPuesto.Size = new System.Drawing.Size(188, 22);
             this.txtPuesto.TabIndex = 107;
             // 
             // txtNombre
@@ -424,19 +424,19 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.txtNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Properties.Appearance.Options.UseFont = true;
             this.txtNombre.Properties.Mask.EditMask = "y";
-            this.txtNombre.Size = new System.Drawing.Size(189, 22);
+            this.txtNombre.Size = new System.Drawing.Size(160, 22);
             this.txtNombre.TabIndex = 108;
             // 
             // txtCodigo
             // 
             this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(180, 90);
+            this.txtCodigo.Location = new System.Drawing.Point(180, 89);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Properties.Appearance.Options.UseFont = true;
             this.txtCodigo.Properties.Mask.EditMask = "y";
             this.txtCodigo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCodigo.Size = new System.Drawing.Size(189, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(160, 22);
             this.txtCodigo.TabIndex = 109;
             // 
             // dsRRHH_1
@@ -447,7 +447,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // cmdImprimir
             // 
             this.cmdImprimir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdImprimir.ImageOptions.Image")));
-            this.cmdImprimir.Location = new System.Drawing.Point(153, 12);
+            this.cmdImprimir.Location = new System.Drawing.Point(135, 12);
             this.cmdImprimir.Name = "cmdImprimir";
             this.cmdImprimir.Size = new System.Drawing.Size(94, 43);
             this.cmdImprimir.TabIndex = 111;
@@ -458,7 +458,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // cmdBuscarLiquidacioness
             // 
             this.cmdBuscarLiquidacioness.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdBuscarLiquidacioness.ImageOptions.Image")));
-            this.cmdBuscarLiquidacioness.Location = new System.Drawing.Point(287, 11);
+            this.cmdBuscarLiquidacioness.Location = new System.Drawing.Point(262, 11);
             this.cmdBuscarLiquidacioness.Name = "cmdBuscarLiquidacioness";
             this.cmdBuscarLiquidacioness.Size = new System.Drawing.Size(111, 43);
             this.cmdBuscarLiquidacioness.TabIndex = 113;
@@ -469,11 +469,11 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             // labelControl15
             // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(13, 258);
+            this.labelControl15.Location = new System.Drawing.Point(13, 247);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(187, 17);
+            this.labelControl15.Size = new System.Drawing.Size(174, 15);
             this.labelControl15.TabIndex = 114;
             this.labelControl15.Text = "mas Extraordinario_______________";
             // 
@@ -492,7 +492,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // tsAplicaCesantia
             // 
             this.tsAplicaCesantia.EditValue = true;
-            this.tsAplicaCesantia.Location = new System.Drawing.Point(597, 124);
+            this.tsAplicaCesantia.Location = new System.Drawing.Point(514, 118);
             this.tsAplicaCesantia.Name = "tsAplicaCesantia";
             this.tsAplicaCesantia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.tsAplicaCesantia.Properties.Appearance.Options.UseFont = true;
@@ -506,7 +506,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(492, 131);
+            this.labelControl17.Location = new System.Drawing.Point(401, 125);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(99, 16);
             this.labelControl17.TabIndex = 118;
@@ -532,7 +532,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.gridPorcentaje.Location = new System.Drawing.Point(2, 23);
             this.gridPorcentaje.MainView = this.gridView5;
             this.gridPorcentaje.Name = "gridPorcentaje";
-            this.gridPorcentaje.Size = new System.Drawing.Size(427, 188);
+            this.gridPorcentaje.Size = new System.Drawing.Size(427, 176);
             this.gridPorcentaje.TabIndex = 120;
             this.gridPorcentaje.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -591,9 +591,9 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.groupControl4.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupControl4.AppearanceCaption.Options.UseFont = true;
             this.groupControl4.Controls.Add(this.gridPorcentaje);
-            this.groupControl4.Location = new System.Drawing.Point(940, 61);
+            this.groupControl4.Location = new System.Drawing.Point(725, 61);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(431, 213);
+            this.groupControl4.Size = new System.Drawing.Size(431, 201);
             this.groupControl4.TabIndex = 121;
             this.groupControl4.Text = "Porcentaje de Liquidacion";
             // 
@@ -605,7 +605,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(492, 165);
+            this.labelControl18.Location = new System.Drawing.Point(401, 159);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(99, 16);
             this.labelControl18.TabIndex = 123;
@@ -614,7 +614,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // tsAplicaPreaviso
             // 
             this.tsAplicaPreaviso.EditValue = true;
-            this.tsAplicaPreaviso.Location = new System.Drawing.Point(597, 158);
+            this.tsAplicaPreaviso.Location = new System.Drawing.Point(514, 152);
             this.tsAplicaPreaviso.Name = "tsAplicaPreaviso";
             this.tsAplicaPreaviso.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.tsAplicaPreaviso.Properties.Appearance.Options.UseFont = true;
@@ -634,7 +634,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.labelControl16);
             this.groupControl3.Controls.Add(this.gridControl3);
-            this.groupControl3.Location = new System.Drawing.Point(667, 280);
+            this.groupControl3.Location = new System.Drawing.Point(667, 266);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(721, 190);
             this.groupControl3.TabIndex = 132;
@@ -720,7 +720,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.xtraTabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraTabControl2.Location = new System.Drawing.Point(667, 476);
+            this.xtraTabControl2.Location = new System.Drawing.Point(667, 461);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabPage3;
             this.xtraTabControl2.Size = new System.Drawing.Size(716, 226);
@@ -857,7 +857,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(452, 750);
+            this.txtTotal.Location = new System.Drawing.Point(431, 690);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtTotal.Properties.Appearance.Options.UseFont = true;
@@ -875,9 +875,9 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.gridDeducciones);
-            this.groupControl2.Location = new System.Drawing.Point(17, 518);
+            this.groupControl2.Location = new System.Drawing.Point(16, 485);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(646, 179);
+            this.groupControl2.Size = new System.Drawing.Size(646, 152);
             this.groupControl2.TabIndex = 125;
             this.groupControl2.Text = "Deducciones";
             // 
@@ -889,7 +889,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.gridDeducciones.Location = new System.Drawing.Point(2, 23);
             this.gridDeducciones.MainView = this.gridView2;
             this.gridDeducciones.Name = "gridDeducciones";
-            this.gridDeducciones.Size = new System.Drawing.Size(642, 154);
+            this.gridDeducciones.Size = new System.Drawing.Size(642, 127);
             this.gridDeducciones.TabIndex = 0;
             this.gridDeducciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -963,7 +963,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(218, 756);
+            this.labelControl14.Location = new System.Drawing.Point(197, 696);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(226, 16);
             this.labelControl14.TabIndex = 130;
@@ -972,7 +972,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // txtTDeducciones
             // 
             this.txtTDeducciones.Enabled = false;
-            this.txtTDeducciones.Location = new System.Drawing.Point(452, 725);
+            this.txtTDeducciones.Location = new System.Drawing.Point(431, 665);
             this.txtTDeducciones.Name = "txtTDeducciones";
             this.txtTDeducciones.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtTDeducciones.Properties.Appearance.Options.UseFont = true;
@@ -987,7 +987,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(218, 731);
+            this.labelControl13.Location = new System.Drawing.Point(197, 671);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(229, 16);
             this.labelControl13.TabIndex = 128;
@@ -996,7 +996,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // txtTDerechos
             // 
             this.txtTDerechos.Enabled = false;
-            this.txtTDerechos.Location = new System.Drawing.Point(452, 701);
+            this.txtTDerechos.Location = new System.Drawing.Point(431, 641);
             this.txtTDerechos.Name = "txtTDerechos";
             this.txtTDerechos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtTDerechos.Properties.Appearance.Options.UseFont = true;
@@ -1011,7 +1011,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(218, 707);
+            this.labelControl12.Location = new System.Drawing.Point(197, 647);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(229, 16);
             this.labelControl12.TabIndex = 126;
@@ -1024,9 +1024,9 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.gridControl1);
-            this.groupControl1.Location = new System.Drawing.Point(15, 280);
+            this.groupControl1.Location = new System.Drawing.Point(14, 266);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(648, 232);
+            this.groupControl1.Size = new System.Drawing.Size(648, 215);
             this.groupControl1.TabIndex = 124;
             this.groupControl1.Text = "Derechos";
             // 
@@ -1038,7 +1038,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.gridControl1.Location = new System.Drawing.Point(2, 23);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(644, 207);
+            this.gridControl1.Size = new System.Drawing.Size(644, 190);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1141,7 +1141,6 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.cmdBuscarEmpleado);
             this.Controls.Add(this.labelControl1);
-            this.MaximizeBox = false;
             this.Name = "frmLiquidacionesOP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmLiquidacionesOP_Load);
