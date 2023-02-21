@@ -3106,5 +3106,12 @@ namespace LOSA
             }
            
         }
+
+        private void btnViewRequisasCalidad_Click(object sender, EventArgs e)
+        {
+            frmviewrequisas frm = new frmviewrequisas(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }
