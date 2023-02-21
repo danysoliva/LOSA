@@ -12,7 +12,7 @@ namespace LOSA.Clases
     public class Tarima
     {
         int _id;
-        String _MateriaPrimaName;
+        string _MateriaPrimaName;
         int _id_materiaprima;
         decimal _cantidad;
         decimal _peso;
@@ -182,9 +182,9 @@ namespace LOSA.Clases
                 if (dr.Read())
                 {
                     Id = dr.GetInt32(0);
-                    // IdUnidadMedida = dr.GetInt32(1);
-                    //Cantidad = 1;
+                    //if (!dr.IsDBNull(dr.GetOrdinal("nombreTarima")))
                     _MateriaPrimaName = dr.GetString(2);
+
                     TipoTarimaDescripcion = dr.GetString(3);
                     IdProveedor = dr.GetString(4);
                     LoteMP = dr.GetString(5);
@@ -216,6 +216,7 @@ namespace LOSA.Clases
             }
             catch (Exception ec)
             {
+                CajaDialogo.Error("Error en la clase tarima. Error MSJ:" + ec.Message);
             }
             return Recuperado;
         }
