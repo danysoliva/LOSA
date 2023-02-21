@@ -34,7 +34,7 @@ namespace LOSA.Trazabilidad
     }
     public partial class frmRutasTrazabilidad : DevExpress.XtraEditors.XtraForm
     {
-        UserLogin login = new UserLogin();
+        UserLogin UsuarioLogeado = new UserLogin();
        
         
         //Varibles de Ruta 3
@@ -66,6 +66,7 @@ namespace LOSA.Trazabilidad
         {
             InitializeComponent();
             //LoadClientes();
+            UsuarioLogeado = log;
             this.navigationFrame1.SelectedPage = npMain;
             txtLoteMP_Ruta2.Text = "";
         }
@@ -441,7 +442,10 @@ namespace LOSA.Trazabilidad
                         da.Fill(dsMantoTrazabilidad.Ruta4_D_trz_lote);
                         txtRuta4LotePT_Trazado_.Text = txtlote.Text;
 
-                        RecursiveExpand(gridView20);
+                        if (toggleSwitchExpandAll_Row.IsOn)
+                            RecursiveExpand(gridView20);
+                        else
+                            RecursiveCollapseRows(gridView20);
                     }
                     cn.Close();
                    
@@ -486,6 +490,27 @@ namespace LOSA.Trazabilidad
                 for (var index = dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.Rows.Count - 1; index >= 0; index--)
                 {
                     masterView.ExpandMasterRow(index, 0);
+                    //var childView = masterView.GetDetailView(masterRowHandle, index) as GridView;
+                    //if (childView != null)
+                    //{
+                    //    var childRowCount = childView.DataRowCount;
+                    //    for (var handle = 0; handle < childRowCount; handle++)
+                    //        RecursiveExpand(childView, handle);
+                    //}
+                }
+            }
+            catch (Exception ex) { }
+            finally { }
+        }
+
+        public void RecursiveCollapseRows(GridView masterView)//, int masterRowHandle)
+        {
+            try
+            {
+                //var relationCount = masterView.GetRelationCount(masterRowHandle);
+                for (var index = dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.Rows.Count - 1; index >= 0; index--)
+                {
+                    masterView.CollapseMasterRow(index, 0);
                     //var childView = masterView.GetDetailView(masterRowHandle, index) as GridView;
                     //if (childView != null)
                     //{
@@ -1251,7 +1276,7 @@ namespace LOSA.Trazabilidad
                     codigoRuta2 = dr.IsDBNull(9) ? "" : dr.GetString(9);
                     usercreadorIngreso = dr.IsDBNull(10) ? "" : dr.GetString(10);
                     txtuserlogistica.Text = usercreadorIngreso;
-                    txtusercalidad.Text = login.NombreUser;
+                    txtusercalidad.Text = UsuarioLogeado.NombreUser;
                     txttransporte.Text = dr.IsDBNull(11) ? "" : dr.GetString(11);
                     txttransportista.Text = dr.IsDBNull(12) ? "" : dr.GetString(12);
                     phone = dr.IsDBNull(13) ? "" : dr.GetString(13);
@@ -1690,7 +1715,7 @@ namespace LOSA.Trazabilidad
 
             WebClient ftpClient = new WebClient();
             //ftpClient.Credentials = new NetworkCredential(dp.User_FTP_Server, dp.Password_UserFTPServer);
-            ftpClient.Credentials = new NetworkCredential(login.ADuser1, login.Pass);
+            ftpClient.Credentials = new NetworkCredential(UsuarioLogeado.ADuser1, UsuarioLogeado.Pass);
 
             byte[] imageByte = ftpClient.DownloadData(ftpFilePath);
             return imageByte;
@@ -1793,7 +1818,7 @@ namespace LOSA.Trazabilidad
                     DataOperations dp = new DataOperations();
 
                     FtpWebRequest request = (FtpWebRequest)WebRequest.Create(pathFile);//crear el archivo en el server
-                    request.Credentials = new NetworkCredential(login.ADuser1, login.Pass);
+                    request.Credentials = new NetworkCredential(UsuarioLogeado.ADuser1, UsuarioLogeado.Pass);
                     //request.Credentials = new NetworkCredential(UsuarioLogeado.AD_User, UsuarioLogeado.Password);
                     request.Method = WebRequestMethods.Ftp.UploadFile;
 
@@ -1938,7 +1963,7 @@ namespace LOSA.Trazabilidad
                         cmd.Parameters.AddWithValue("@respuesta", row.respuesta);
                         cmd.Parameters.AddWithValue("@criterio", row.descripcion);
                         cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                        cmd.Parameters.AddWithValue("@user_register", login.Id);
+                        cmd.Parameters.AddWithValue("@user_register", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@fecha", DateTime.Now);
                         cmd.ExecuteNonQuery();
 
@@ -1958,7 +1983,7 @@ namespace LOSA.Trazabilidad
                 cmd.Parameters.AddWithValue("@fishsurse", hyfishsource.Text == "" ? (object)DBNull.Value : hyfishsource.Text);
                 cmd.Parameters.AddWithValue("@iucn", hyIUCN.Text == "" ? (object)DBNull.Value : hyIUCN.Text);
                 cmd.Parameters.AddWithValue("@tipo", grd_tipo.EditValue == null ? (object)DBNull.Value : grd_tipo.EditValue);
-                cmd.Parameters.AddWithValue("@user_register", login.Id);
+                cmd.Parameters.AddWithValue("@user_register", UsuarioLogeado.Id);
                 cmd.ExecuteNonQuery();
 
                 Query = @"sp_insert_trz_criterio_ingreso_empaque";
@@ -2043,7 +2068,7 @@ namespace LOSA.Trazabilidad
                             cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = row.path_load;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
                             cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = row.file_name;
                             cmd4.Parameters.AddWithValue("@id_config", row.id_conf);
-                            cmd4.Parameters.AddWithValue("@id_user", login.Id);
+                            cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                             cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                             cmd4.Parameters.AddWithValue("@bit_pic", 0);
                             cmd4.ExecuteNonQuery();
@@ -2065,7 +2090,7 @@ namespace LOSA.Trazabilidad
                                 cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = Path_;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
                                 cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = row.file_name;
                                 cmd4.Parameters.AddWithValue("@id_config", row.id_conf);
-                                cmd4.Parameters.AddWithValue("@id_user", login.Id);
+                                cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                                 cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                                 cmd4.Parameters.AddWithValue("@bit_pic", 0);
                                 cmd4.ExecuteNonQuery();
@@ -2093,7 +2118,7 @@ namespace LOSA.Trazabilidad
                             cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = Path_2;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
                             cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
                             cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
-                            cmd4.Parameters.AddWithValue("@id_user", login.Id);
+                            cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                             cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                             cmd4.Parameters.AddWithValue("@bit_pic", 1);
                             cmd4.ExecuteNonQuery();
@@ -2112,7 +2137,7 @@ namespace LOSA.Trazabilidad
                         cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = full_pathImagen;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
                         cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
                         cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
-                        cmd4.Parameters.AddWithValue("@id_user", login.Id);
+                        cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                         cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                         cmd4.Parameters.AddWithValue("@bit_pic", 1);
                         cmd4.ExecuteNonQuery();
@@ -2938,6 +2963,35 @@ namespace LOSA.Trazabilidad
                 {
                     errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
                     lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+                }
+            }
+        }
+
+        private void toggleSwitchExpandAll_Row_Toggled(object sender, EventArgs e)
+        {
+            if(toggleSwitchExpandAll_Row.IsOn)//Expand all rows
+            {
+                RecursiveExpand(gridView20);
+            }
+            else
+            {
+                RecursiveCollapseRows(gridView20);
+            }
+        }
+
+        private void cmdDetalleBatch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+            var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetFocusedDataRow();
+
+            if (row != null) 
+            {
+                if (row.cant_batch_real > 0)
+                {
+                    frmDetallePorBatchRutasTRZ frm = new frmDetallePorBatchRutasTRZ(this.UsuarioLogeado, LoteActual.LotePT_Num, row.id_mp);
+                    frm.MdiParent = this.MdiParent;
+                    frm.WindowState = FormWindowState.Normal;
+                    frm.Show();
                 }
             }
         }
