@@ -96,6 +96,7 @@
             this.txtNumDoc = new DevExpress.XtraEditors.TextEdit();
             this.txtNumBoleta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtconductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtplaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfurgon.Properties)).BeginInit();
@@ -312,7 +313,9 @@
             this.colproducto,
             this.colfilaUP,
             this.colfilaDown,
-            this.btneliminarLinea});
+            this.btneliminarLinea,
+            this.colpeso});
+            this.grdv_data.CustomizationFormBounds = new System.Drawing.Rectangle(-1252, 415, 260, 352);
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -671,6 +674,12 @@
             this.labelControl8.TabIndex = 54;
             this.labelControl8.Text = "Num. Boleta";
             // 
+            // colpeso
+            // 
+            this.colpeso.FieldName = "peso";
+            this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
+            // 
             // frm_view_entrega_despacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -776,5 +785,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltm_linea;
         private DevExpress.XtraGrid.Columns.GridColumn colKg_linea;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso;
     }
 }

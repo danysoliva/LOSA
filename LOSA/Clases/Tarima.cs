@@ -216,6 +216,7 @@ namespace LOSA.Clases
             }
             catch (Exception ec)
             {
+                CajaDialogo.Error(ec.Message);
             }
             return Recuperado;
         }

@@ -151,7 +151,6 @@ namespace LOSA.Despachos
            
             var gridView = (GridView)grd_data.FocusedView;
             var row = (ds_despachos.producto_cargaRow)gridView.GetFocusedDataRow();
-
             int contaBoleta = 0;
 
             try
@@ -181,13 +180,15 @@ namespace LOSA.Despachos
 
             try
             {
-                string query = @"sp_deshabilitar_row_of_despachos_tarimaV2";
+                string query = @"sp_deshabilitar_row_of_despachos_tarimaV3";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", row.id);
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                cmd.Parameters.AddWithValue("@CantidadUd", row.cantidad);
+                cmd.Parameters.AddWithValue("@pesoKg", row.peso);
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 load_filas();
