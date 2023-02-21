@@ -7135,6 +7135,8 @@ namespace LOSA.Despachos {
             
             private global::System.Data.DataColumn columncodigo_barra;
             
+            private global::System.Data.DataColumn columnpeso;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public producto_cargaDataTable() {
@@ -7226,6 +7228,14 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pesoColumn {
+                get {
+                    return this.columnpeso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7261,7 +7271,7 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public producto_cargaRow Addproducto_cargaRow(string id, decimal cantidad, string presentacion, int fila, string lote, string producto, string codigo_barra) {
+            public producto_cargaRow Addproducto_cargaRow(string id, decimal cantidad, string presentacion, int fila, string lote, string producto, string codigo_barra, decimal peso) {
                 producto_cargaRow rowproducto_cargaRow = ((producto_cargaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -7270,7 +7280,8 @@ namespace LOSA.Despachos {
                         fila,
                         lote,
                         producto,
-                        codigo_barra};
+                        codigo_barra,
+                        peso};
                 rowproducto_cargaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowproducto_cargaRow);
                 return rowproducto_cargaRow;
@@ -7300,6 +7311,7 @@ namespace LOSA.Despachos {
                 this.columnlote = base.Columns["lote"];
                 this.columnproducto = base.Columns["producto"];
                 this.columncodigo_barra = base.Columns["codigo_barra"];
+                this.columnpeso = base.Columns["peso"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7319,6 +7331,8 @@ namespace LOSA.Despachos {
                 base.Columns.Add(this.columnproducto);
                 this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo_barra);
+                this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpeso);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16910,6 +16924,22 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal peso {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableproducto_carga.pesoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'peso\' de la tabla \'producto_carga\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableproducto_carga.pesoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableproducto_carga.idColumn);
             }
@@ -16990,6 +17020,18 @@ namespace LOSA.Despachos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcodigo_barraNull() {
                 this[this.tableproducto_carga.codigo_barraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IspesoNull() {
+                return this.IsNull(this.tableproducto_carga.pesoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetpesoNull() {
+                this[this.tableproducto_carga.pesoColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -38,14 +38,14 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
         public void GetLoteParametros()
         {
             try
             {
-                string query = @"";
+                string query = @"sp_get__parametro_promedio_certificado_calidad_PT";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
@@ -58,7 +58,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
