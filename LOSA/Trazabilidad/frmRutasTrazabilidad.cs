@@ -598,14 +598,15 @@ namespace LOSA.Trazabilidad
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsInventarioPT.transacciones);
 
+                //*********************************
+                //Comentado porque se oculto el tab
 
-
-                cmd = new SqlCommand("sp_get_inventorio_habilitado", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lote", txtlote.Text);
-                dsInventarioPT.libres.Clear();
-                adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsInventarioPT.libres);
+                //cmd = new SqlCommand("sp_get_inventorio_habilitado", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@lote", txtlote.Text);
+                //dsInventarioPT.libres.Clear();
+                //adat = new SqlDataAdapter(cmd);
+                //adat.Fill(dsInventarioPT.libres);
 
                 cmd = new SqlCommand("sp_get_inventorio_observacion_retenido", con);
                 cmd.CommandType = CommandType.StoredProcedure;
