@@ -579,6 +579,10 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnResultaod;
             
+            private global::System.Data.DataColumn columnmin_plan;
+            
+            private global::System.Data.DataColumn columnmax_plan;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ParametrosLotesDataTable() {
@@ -630,6 +634,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn min_planColumn {
+                get {
+                    return this.columnmin_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn max_planColumn {
+                get {
+                    return this.columnmax_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -665,11 +685,13 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ParametrosLotesRow AddParametrosLotesRow(string Parametro, string Resultaod) {
+            public ParametrosLotesRow AddParametrosLotesRow(string Parametro, string Resultaod, decimal min_plan, decimal max_plan) {
                 ParametrosLotesRow rowParametrosLotesRow = ((ParametrosLotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Parametro,
-                        Resultaod};
+                        Resultaod,
+                        min_plan,
+                        max_plan};
                 rowParametrosLotesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowParametrosLotesRow);
                 return rowParametrosLotesRow;
@@ -694,6 +716,8 @@ namespace LOSA.Calidad {
             internal void InitVars() {
                 this.columnParametro = base.Columns["Parametro"];
                 this.columnResultaod = base.Columns["Resultaod"];
+                this.columnmin_plan = base.Columns["min_plan"];
+                this.columnmax_plan = base.Columns["max_plan"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -703,6 +727,10 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnParametro);
                 this.columnResultaod = new global::System.Data.DataColumn("Resultaod", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnResultaod);
+                this.columnmin_plan = new global::System.Data.DataColumn("min_plan", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmin_plan);
+                this.columnmax_plan = new global::System.Data.DataColumn("max_plan", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmax_plan);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -948,6 +976,38 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal min_plan {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableParametrosLotes.min_planColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'min_plan\' de la tabla \'ParametrosLotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableParametrosLotes.min_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal max_plan {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableParametrosLotes.max_planColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'max_plan\' de la tabla \'ParametrosLotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableParametrosLotes.max_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsParametroNull() {
                 return this.IsNull(this.tableParametrosLotes.ParametroColumn);
             }
@@ -968,6 +1028,30 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetResultaodNull() {
                 this[this.tableParametrosLotes.ResultaodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ismin_planNull() {
+                return this.IsNull(this.tableParametrosLotes.min_planColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setmin_planNull() {
+                this[this.tableParametrosLotes.min_planColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ismax_planNull() {
+                return this.IsNull(this.tableParametrosLotes.max_planColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setmax_planNull() {
+                this[this.tableParametrosLotes.max_planColumn] = global::System.Convert.DBNull;
             }
         }
         
