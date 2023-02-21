@@ -24,6 +24,7 @@ namespace LOSA.Clases
         public string NombreComercialSingle;
         public int IdPresentacion;
         public int IdMPSingle;
+        public string ItemCode;
 
 
         public bool RecuperarRegistro(int pIdLoteALOSY)
@@ -44,6 +45,58 @@ namespace LOSA.Clases
                     IdPresentacion = dr.GetInt32(0);
                     if (IdPresentacion > 0)
                         Recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
+
+        public int RecuperarCant_MP_porLote(string pLoteMP) 
+        {
+            int conta = 0;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_materias_primas_que_comparten_mismo_lote_mp", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote_mp", pLoteMP);
+                conta = Convert.ToInt32(cmd.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return conta;
+        }
+
+        public bool RecuperarMateriaPrimaFromLOTE_MP_and_ITEMCODE(string pLoteMP)
+        {
+            Recuperado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_materia_prima_from_lote_mp", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote_mp", pLoteMP);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IdMPSingle = dr.GetInt32(0);
+                    NombreComercialSingle = NombreMPSingle = dr.GetString(1);
+                    ItemCode = dr.GetString(2);
+                    Recuperado = true;
                 }
                 dr.Close();
                 con.Close();

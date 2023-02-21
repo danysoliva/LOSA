@@ -2438,10 +2438,51 @@ namespace LOSA.Trazabilidad
             }
             else
             {
-                errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
-                lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+                //Vamos a validar si hay ingresos e inventario del Lote MP
+                //Aunque este no se haya utilizado aun en un cruce de lote PT - MP
+                int ContaMP = LoteMP_.RecuperarCant_MP_porLote(txtLoteMPRuta1.Text);
+                if (ContaMP > 1)//Hay mas de un lote
+                {
+                    frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                        LoteMP_.IdMPSingle = Convert.ToInt32(frm.IdMP_Selected);
+                        LoteMP_.Recuperado = true;
+                    }
+                }
+                else 
+                {
+                    if (ContaMP == 1)//se encontro un solo lote
+                    {
+                        if (LoteMP_.RecuperarMateriaPrimaFromLOTE_MP_and_ITEMCODE(txtLoteMPRuta1.Text))
+                        {
+                            lblLoteNameRuta1.Text = LoteMP_.NombreComercialSingle;
+                        }
+                        else
+                        {
+                            //No se encontro el lote mp
+                            errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
+                            lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+                        }
+                        
+                    }
+                    else
+                    {
+                        //No se encontro el lote mp
+                        errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
+                        lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+                    }
+                }
+
+                if (LoteMP_.Recuperado)
+                {
+                    LoadInventarioLotesRuta1();
+                    LoadRegistroIngresosLotesRuta1();
+                    lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
+                }
+                
             }
-        }
 
 
         void LoadInventarioLotesRuta1()
@@ -2984,7 +3025,19 @@ namespace LOSA.Trazabilidad
                 }
                 else
                 {
-                    errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
+                    
+                    //Vamos a validar si hay ingresos e inventario del Lote MP
+                    //Aunque este no se haya utilizado aun en un cruce de lote PT - MP
+                    frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                        LoadInventarioLotesRuta1();
+                        LoadRegistroIngresosLotesRuta1();
+                        lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
+                    }
+
+                    errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun Lote de Producto Terminado que haya utilizado este lote!");
                     lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
                 }
             }
