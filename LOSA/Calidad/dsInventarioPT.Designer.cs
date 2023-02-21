@@ -433,6 +433,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnfecha;
             
+            private global::System.Data.DataColumn columncodigo_barra;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public transaccionesDataTable() {
@@ -524,6 +526,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigo_barraColumn {
+                get {
+                    return this.columncodigo_barra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -559,7 +569,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public transaccionesRow AddtransaccionesRow(decimal entrada, decimal salida, string pt, string codigo_pt, string lote, string turno, System.DateTime fecha) {
+            public transaccionesRow AddtransaccionesRow(decimal entrada, decimal salida, string pt, string codigo_pt, string lote, string turno, System.DateTime fecha, string codigo_barra) {
                 transaccionesRow rowtransaccionesRow = ((transaccionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         entrada,
@@ -568,7 +578,8 @@ namespace LOSA.Calidad {
                         codigo_pt,
                         lote,
                         turno,
-                        fecha};
+                        fecha,
+                        codigo_barra};
                 rowtransaccionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtransaccionesRow);
                 return rowtransaccionesRow;
@@ -598,6 +609,7 @@ namespace LOSA.Calidad {
                 this.columnlote = base.Columns["lote"];
                 this.columnturno = base.Columns["turno"];
                 this.columnfecha = base.Columns["fecha"];
+                this.columncodigo_barra = base.Columns["codigo_barra"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -617,6 +629,9 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnturno);
                 this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha);
+                this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo_barra);
+                this.columncodigo_barra.Caption = "Código Barra Tarima";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2125,6 +2140,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigo_barra {
+                get {
+                    try {
+                        return ((string)(this[this.tabletransacciones.codigo_barraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo_barra\' de la tabla \'transacciones\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletransacciones.codigo_barraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsentradaNull() {
                 return this.IsNull(this.tabletransacciones.entradaColumn);
             }
@@ -2205,6 +2236,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetfechaNull() {
                 this[this.tabletransacciones.fechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscodigo_barraNull() {
+                return this.IsNull(this.tabletransacciones.codigo_barraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcodigo_barraNull() {
+                this[this.tabletransacciones.codigo_barraColumn] = global::System.Convert.DBNull;
             }
         }
         

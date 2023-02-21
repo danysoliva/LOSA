@@ -132,18 +132,14 @@ namespace LOSA.TransaccionesPT
 
             if (tarimaEncontrada != null)
             {
-             
-
                 if (tarimaEncontrada.Recuperado)
                 {
-
                     if (tarimaEncontrada.id_estado_pt > 1)
                     {
 
                         error = true;
-                        mensaje = "Ya se ha activado la tarima seleccionada!";
+                        mensaje = "Ya se ha activado la tarima escaneada!";
                     }
-
                     txtCantidadT.Text = tarimaEncontrada.Cantidad.ToString();
                     txtPeso.Text = tarimaEncontrada.Peso.ToString();
                 }

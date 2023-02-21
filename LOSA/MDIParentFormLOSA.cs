@@ -19,7 +19,11 @@ namespace LOSA
         public MDIParentFormLOSA()
         {
             InitializeComponent();
-            lblServerName.Text = "Server Name: " + Globals.LOSA_ServerName + "  DB: " + Globals.LOSA_ActiveDB;
+            string DbName = Globals.LOSA_ActiveDB;
+            if (DbName == "LOSA")
+                DbName = "ALOSY";
+
+            lblServerName.Text = "Server Name: " + Globals.LOSA_ServerName + "  DB: " + DbName;
             frm = new frmMain();
             frm.MdiParent = this;
             frm.WindowState = FormWindowState.Normal;

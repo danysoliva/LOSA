@@ -5630,6 +5630,12 @@
     <Compile Include="Trazabilidad\frmDetalleIngresoTRZ.Designer.cs">
       <DependentUpon>frmDetalleIngresoTRZ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmDetallePorBatchRutasTRZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmDetallePorBatchRutasTRZ.Designer.cs">
+      <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmMateriaPrimaHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7721,6 +7727,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmDetalleIngresoTRZ.resx">
       <DependentUpon>frmDetalleIngresoTRZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmDetallePorBatchRutasTRZ.resx">
+      <DependentUpon>frmDetallePorBatchRutasTRZ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmMateriaPrimaHome.resx">
       <DependentUpon>frmMateriaPrimaHome.cs</DependentUpon>

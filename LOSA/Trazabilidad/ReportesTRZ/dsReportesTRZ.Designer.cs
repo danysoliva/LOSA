@@ -50,6 +50,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
         
         private detalle_destinosRuta4DataTable tabledetalle_destinosRuta4;
         
+        private detalle_batch_ruta_4DataTable tabledetalle_batch_ruta_4;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -116,6 +118,9 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 }
                 if ((ds.Tables["detalle_destinosRuta4"] != null)) {
                     base.Tables.Add(new detalle_destinosRuta4DataTable(ds.Tables["detalle_destinosRuta4"]));
+                }
+                if ((ds.Tables["detalle_batch_ruta_4"] != null)) {
+                    base.Tables.Add(new detalle_batch_ruta_4DataTable(ds.Tables["detalle_batch_ruta_4"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -267,6 +272,16 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public detalle_batch_ruta_4DataTable detalle_batch_ruta_4 {
+            get {
+                return this.tabledetalle_batch_ruta_4;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -370,6 +385,9 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                 }
                 if ((ds.Tables["detalle_destinosRuta4"] != null)) {
                     base.Tables.Add(new detalle_destinosRuta4DataTable(ds.Tables["detalle_destinosRuta4"]));
+                }
+                if ((ds.Tables["detalle_batch_ruta_4"] != null)) {
+                    base.Tables.Add(new detalle_batch_ruta_4DataTable(ds.Tables["detalle_batch_ruta_4"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -482,6 +500,12 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
                     this.tabledetalle_destinosRuta4.InitVars();
                 }
             }
+            this.tabledetalle_batch_ruta_4 = ((detalle_batch_ruta_4DataTable)(base.Tables["detalle_batch_ruta_4"]));
+            if ((initTable == true)) {
+                if ((this.tabledetalle_batch_ruta_4 != null)) {
+                    this.tabledetalle_batch_ruta_4.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -518,6 +542,8 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             base.Tables.Add(this.tablept_list_trzCamaronRuta2);
             this.tabledetalle_destinosRuta4 = new detalle_destinosRuta4DataTable();
             base.Tables.Add(this.tabledetalle_destinosRuta4);
+            this.tabledetalle_batch_ruta_4 = new detalle_batch_ruta_4DataTable();
+            base.Tables.Add(this.tabledetalle_batch_ruta_4);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -595,6 +621,12 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializedetalle_destinosRuta4() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializedetalle_batch_ruta_4() {
             return false;
         }
         
@@ -691,6 +723,9 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void detalle_destinosRuta4RowChangeEventHandler(object sender, detalle_destinosRuta4RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void detalle_batch_ruta_4RowChangeEventHandler(object sender, detalle_batch_ruta_4RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5559,6 +5594,365 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class detalle_batch_ruta_4DataTable : global::System.Data.TypedTableBase<detalle_batch_ruta_4Row> {
+            
+            private global::System.Data.DataColumn columnLote_PT;
+            
+            private global::System.Data.DataColumn columnLote_MP;
+            
+            private global::System.Data.DataColumn columnCódigo;
+            
+            private global::System.Data.DataColumn columnMaterial;
+            
+            private global::System.Data.DataColumn columnFecha_y_Hora;
+            
+            private global::System.Data.DataColumn columnPlan_Kg;
+            
+            private global::System.Data.DataColumn columnAplicado_Kg;
+            
+            private global::System.Data.DataColumn columnTolva_Código;
+            
+            private global::System.Data.DataColumn columnFuente;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_batch_ruta_4DataTable() {
+                this.TableName = "detalle_batch_ruta_4";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal detalle_batch_ruta_4DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected detalle_batch_ruta_4DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Lote_PTColumn {
+                get {
+                    return this.columnLote_PT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Lote_MPColumn {
+                get {
+                    return this.columnLote_MP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CódigoColumn {
+                get {
+                    return this.columnCódigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MaterialColumn {
+                get {
+                    return this.columnMaterial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Fecha_y_HoraColumn {
+                get {
+                    return this.columnFecha_y_Hora;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Plan_KgColumn {
+                get {
+                    return this.columnPlan_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Aplicado_KgColumn {
+                get {
+                    return this.columnAplicado_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Tolva_CódigoColumn {
+                get {
+                    return this.columnTolva_Código;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FuenteColumn {
+                get {
+                    return this.columnFuente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_batch_ruta_4Row this[int index] {
+                get {
+                    return ((detalle_batch_ruta_4Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalle_batch_ruta_4RowChangeEventHandler detalle_batch_ruta_4RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalle_batch_ruta_4RowChangeEventHandler detalle_batch_ruta_4RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalle_batch_ruta_4RowChangeEventHandler detalle_batch_ruta_4RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event detalle_batch_ruta_4RowChangeEventHandler detalle_batch_ruta_4RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Adddetalle_batch_ruta_4Row(detalle_batch_ruta_4Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_batch_ruta_4Row Adddetalle_batch_ruta_4Row(int Lote_PT, string Lote_MP, string Código, string Material, System.DateTime Fecha_y_Hora, decimal Plan_Kg, decimal Aplicado_Kg, string Tolva_Código, string Fuente) {
+                detalle_batch_ruta_4Row rowdetalle_batch_ruta_4Row = ((detalle_batch_ruta_4Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Lote_PT,
+                        Lote_MP,
+                        Código,
+                        Material,
+                        Fecha_y_Hora,
+                        Plan_Kg,
+                        Aplicado_Kg,
+                        Tolva_Código,
+                        Fuente};
+                rowdetalle_batch_ruta_4Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdetalle_batch_ruta_4Row);
+                return rowdetalle_batch_ruta_4Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                detalle_batch_ruta_4DataTable cln = ((detalle_batch_ruta_4DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new detalle_batch_ruta_4DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnLote_PT = base.Columns["Lote PT"];
+                this.columnLote_MP = base.Columns["Lote MP"];
+                this.columnCódigo = base.Columns["Código"];
+                this.columnMaterial = base.Columns["Material"];
+                this.columnFecha_y_Hora = base.Columns["Fecha y Hora"];
+                this.columnPlan_Kg = base.Columns["Plan Kg"];
+                this.columnAplicado_Kg = base.Columns["Aplicado Kg"];
+                this.columnTolva_Código = base.Columns["Tolva Código"];
+                this.columnFuente = base.Columns["Fuente"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnLote_PT = new global::System.Data.DataColumn("Lote PT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLote_PT);
+                this.columnLote_MP = new global::System.Data.DataColumn("Lote MP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLote_MP);
+                this.columnCódigo = new global::System.Data.DataColumn("Código", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCódigo);
+                this.columnMaterial = new global::System.Data.DataColumn("Material", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaterial);
+                this.columnFecha_y_Hora = new global::System.Data.DataColumn("Fecha y Hora", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha_y_Hora);
+                this.columnPlan_Kg = new global::System.Data.DataColumn("Plan Kg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlan_Kg);
+                this.columnAplicado_Kg = new global::System.Data.DataColumn("Aplicado Kg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAplicado_Kg);
+                this.columnTolva_Código = new global::System.Data.DataColumn("Tolva Código", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTolva_Código);
+                this.columnFuente = new global::System.Data.DataColumn("Fuente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFuente);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_batch_ruta_4Row Newdetalle_batch_ruta_4Row() {
+                return ((detalle_batch_ruta_4Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new detalle_batch_ruta_4Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(detalle_batch_ruta_4Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.detalle_batch_ruta_4RowChanged != null)) {
+                    this.detalle_batch_ruta_4RowChanged(this, new detalle_batch_ruta_4RowChangeEvent(((detalle_batch_ruta_4Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.detalle_batch_ruta_4RowChanging != null)) {
+                    this.detalle_batch_ruta_4RowChanging(this, new detalle_batch_ruta_4RowChangeEvent(((detalle_batch_ruta_4Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.detalle_batch_ruta_4RowDeleted != null)) {
+                    this.detalle_batch_ruta_4RowDeleted(this, new detalle_batch_ruta_4RowChangeEvent(((detalle_batch_ruta_4Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.detalle_batch_ruta_4RowDeleting != null)) {
+                    this.detalle_batch_ruta_4RowDeleting(this, new detalle_batch_ruta_4RowChangeEvent(((detalle_batch_ruta_4Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removedetalle_batch_ruta_4Row(detalle_batch_ruta_4Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsReportesTRZ ds = new dsReportesTRZ();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "detalle_batch_ruta_4DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class pt_list_trzRow : global::System.Data.DataRow {
@@ -9369,6 +9763,276 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class detalle_batch_ruta_4Row : global::System.Data.DataRow {
+            
+            private detalle_batch_ruta_4DataTable tabledetalle_batch_ruta_4;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal detalle_batch_ruta_4Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledetalle_batch_ruta_4 = ((detalle_batch_ruta_4DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Lote_PT {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalle_batch_ruta_4.Lote_PTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Lote PT\' de la tabla \'detalle_batch_ruta_4\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_batch_ruta_4.Lote_PTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Lote_MP {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_batch_ruta_4.Lote_MPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Lote MP\' de la tabla \'detalle_batch_ruta_4\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_batch_ruta_4.Lote_MPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Código {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_batch_ruta_4.CódigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Código\' de la tabla \'detalle_batch_ruta_4\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_batch_ruta_4.CódigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Material {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_batch_ruta_4.MaterialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Material\' de la tabla \'detalle_batch_ruta_4\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_batch_ruta_4.MaterialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Fecha_y_Hora {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledetalle_batch_ruta_4.Fecha_y_HoraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha y Hora\' de la tabla \'detalle_batch_ruta_4\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_batch_ruta_4.Fecha_y_HoraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Plan_Kg {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledetalle_batch_ruta_4.Plan_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Plan Kg\' de la tabla \'detalle_batch_ruta_4\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_batch_ruta_4.Plan_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Aplicado_Kg {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledetalle_batch_ruta_4.Aplicado_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Aplicado Kg\' de la tabla \'detalle_batch_ruta_4\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_batch_ruta_4.Aplicado_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Tolva_Código {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_batch_ruta_4.Tolva_CódigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Tolva Código\' de la tabla \'detalle_batch_ruta_4\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_batch_ruta_4.Tolva_CódigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Fuente {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_batch_ruta_4.FuenteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fuente\' de la tabla \'detalle_batch_ruta_4\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_batch_ruta_4.FuenteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLote_PTNull() {
+                return this.IsNull(this.tabledetalle_batch_ruta_4.Lote_PTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLote_PTNull() {
+                this[this.tabledetalle_batch_ruta_4.Lote_PTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLote_MPNull() {
+                return this.IsNull(this.tabledetalle_batch_ruta_4.Lote_MPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLote_MPNull() {
+                this[this.tabledetalle_batch_ruta_4.Lote_MPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCódigoNull() {
+                return this.IsNull(this.tabledetalle_batch_ruta_4.CódigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCódigoNull() {
+                this[this.tabledetalle_batch_ruta_4.CódigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMaterialNull() {
+                return this.IsNull(this.tabledetalle_batch_ruta_4.MaterialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMaterialNull() {
+                this[this.tabledetalle_batch_ruta_4.MaterialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFecha_y_HoraNull() {
+                return this.IsNull(this.tabledetalle_batch_ruta_4.Fecha_y_HoraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFecha_y_HoraNull() {
+                this[this.tabledetalle_batch_ruta_4.Fecha_y_HoraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPlan_KgNull() {
+                return this.IsNull(this.tabledetalle_batch_ruta_4.Plan_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPlan_KgNull() {
+                this[this.tabledetalle_batch_ruta_4.Plan_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAplicado_KgNull() {
+                return this.IsNull(this.tabledetalle_batch_ruta_4.Aplicado_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAplicado_KgNull() {
+                this[this.tabledetalle_batch_ruta_4.Aplicado_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTolva_CódigoNull() {
+                return this.IsNull(this.tabledetalle_batch_ruta_4.Tolva_CódigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTolva_CódigoNull() {
+                this[this.tabledetalle_batch_ruta_4.Tolva_CódigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFuenteNull() {
+                return this.IsNull(this.tabledetalle_batch_ruta_4.FuenteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFuenteNull() {
+                this[this.tabledetalle_batch_ruta_4.FuenteColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -9796,6 +10460,40 @@ namespace LOSA.Trazabilidad.ReportesTRZ {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public detalle_destinosRuta4Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class detalle_batch_ruta_4RowChangeEvent : global::System.EventArgs {
+            
+            private detalle_batch_ruta_4Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_batch_ruta_4RowChangeEvent(detalle_batch_ruta_4Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public detalle_batch_ruta_4Row Row {
                 get {
                     return this.eventRow;
                 }
