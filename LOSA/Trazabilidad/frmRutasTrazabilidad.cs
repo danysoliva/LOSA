@@ -35,13 +35,13 @@ namespace LOSA.Trazabilidad
     public partial class frmRutasTrazabilidad : DevExpress.XtraEditors.XtraForm
     {
         UserLogin UsuarioLogeado = new UserLogin();
-       
-        
+
+
         //Varibles de Ruta 3
         LotePT LoteActual;
         public int lote_fp;
         DataOperations dp = new DataOperations();
-        
+
 
         //Variables Ruta 2
         bool ChCalidad;
@@ -60,7 +60,7 @@ namespace LOSA.Trazabilidad
 
         int navigationPageSeleccionado;
 
-       
+
 
         public frmRutasTrazabilidad(UserLogin log)
         {
@@ -73,8 +73,8 @@ namespace LOSA.Trazabilidad
 
         private void acordionRuta1_Click(object sender, EventArgs e)
         {
-            acordionRuta1.Appearance.Normal.BackColor=   Color.FromName("DeepSkyBlue");
-            acordionRuta1.Appearance.Normal.ForeColor=   Color.White; //242,242,242
+            acordionRuta1.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+            acordionRuta1.Appearance.Normal.ForeColor = Color.White; //242,242,242
 
             acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
             acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
@@ -83,10 +83,10 @@ namespace LOSA.Trazabilidad
             acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
 
             acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80,80);
+            acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
 
 
-            if (this.rutaActiva!=1)
+            if (this.rutaActiva != 1)
             {
                 //dsReportesTRZ.pt_list_trz.Clear();
             }
@@ -123,7 +123,7 @@ namespace LOSA.Trazabilidad
             //btnBack.Visible = true;
 
             //dsReportesTRZ.detalle_destinos.Clear();
-            
+
             navigationFrame1.SelectedPage = npRuta1;
         }
 
@@ -282,20 +282,20 @@ namespace LOSA.Trazabilidad
             }
         }
 
-       
+
 
         private void btnVer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             try
             {
                 var row = (dsCalidad.DespachadoClientesRow)gvDespachado.GetFocusedDataRow();
-                              navigationFrame1.SelectedPage = npReporteTrazabilidad;
+                navigationFrame1.SelectedPage = npReporteTrazabilidad;
                 txtlote.Text = row.lote_producto_termiado;
 
                 this.btnBack.Visible = true;
 
                 load_header();
-                load_data(); 
+                load_data();
                 Load_Despachos();
                 load_informacion_de_inventario();
                 load_tarimas_rechazadas();
@@ -331,7 +331,7 @@ namespace LOSA.Trazabilidad
                         txtRuta4_codigo_unite.Text = ptProducido.CodigoUnite;
                         txtRuta4Fecha_Vencimiento.Text = string.Format("{0:dd/MM/yyyy}", ptProducido.FechaVence);
                         txtRuta4Fecha_produccion.Text = string.Format("{0:dd/MM/yyyy}", ptProducido.FechaProduccion);
-                        
+
                         //string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
                         string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lotev2]";
                         SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
@@ -380,7 +380,7 @@ namespace LOSA.Trazabilidad
                         txtTotalMP_Utilizada_kg.Text = txtEficiencia.Text = "";
                     }
 
-                    
+
                 }
             }
             catch (Exception ex)
@@ -449,7 +449,7 @@ namespace LOSA.Trazabilidad
 
                         dsMantoTrazabilidad.Ruta4_H_trz_lote_pt.AddRuta4_H_trz_lote_ptRow(row1);
                         dsMantoTrazabilidad.AcceptChanges();
-                        
+
                     }
                     else
                     {
@@ -459,7 +459,7 @@ namespace LOSA.Trazabilidad
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@lote_pt", txtlote.Text);
                         da = new SqlDataAdapter(cmd);
-                        
+
                         dsMantoTrazabilidad.Ruta4_D_trz_lote.Clear();
                         da.Fill(dsMantoTrazabilidad.Ruta4_D_trz_lote);
                         txtRuta4LotePT_Trazado_.Text = txtlote.Text;
@@ -470,14 +470,14 @@ namespace LOSA.Trazabilidad
                             RecursiveCollapseRows(gridView20);
                     }
                     cn.Close();
-                   
+
                 }
                 catch (Exception ex)
                 {
                     CajaDialogo.Error(ex.Message);
                 }
 
-               
+
 
                 //Calcular el total MP utilizada
                 decimal TotalMP_kg = 0;
@@ -548,9 +548,9 @@ namespace LOSA.Trazabilidad
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-           
 
-            if (rutaActiva==1 || rutaActiva == 4)
+
+            if (rutaActiva == 1 || rutaActiva == 4)
             {
                 this.navigationFrame1.SelectedPage = npMain;
             }
@@ -739,7 +739,7 @@ namespace LOSA.Trazabilidad
         private void BorrarHeaderRuta4()
         {
             lote_fp = 0;
-            
+
             dsCalidad.trazabilitad.Clear();
             txtversion.Text = "";
             txtformula.Text = "";
@@ -886,7 +886,7 @@ namespace LOSA.Trazabilidad
             var gridView = (GridView)gcClientesRecibieronLotePT.FocusedView;
             //var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
             var row = (dsReportesTRZ.detalle_destinosRuta4Row)gridView.GetFocusedDataRow();
-            
+
             navigationFrame1.SelectedPage = npRuta3DetalleDespacho;
 
             LoadDatosDetalleDespacho(row.Despacho);//Correcto filtramos despacho y lote
@@ -895,7 +895,7 @@ namespace LOSA.Trazabilidad
 
         private void LoadHeaderDespacho(int despacho)
         {
-            
+
             try
             {
                 DataOperations dp = new DataOperations();
@@ -1014,7 +1014,7 @@ namespace LOSA.Trazabilidad
                 }
             }
 
-            
+
         }
 
 
@@ -1046,7 +1046,7 @@ namespace LOSA.Trazabilidad
 
                 decimal var = 0;
                 decimal AcumuladoConsumo = 0;
-                foreach(dsReportesTRZ.pt_list_trzCamaronRow row in dsReportesTRZ.pt_list_trzCamaron)
+                foreach (dsReportesTRZ.pt_list_trzCamaronRow row in dsReportesTRZ.pt_list_trzCamaron)
                 {
                     var += dp.ValidateNumberDecimal(row.cant_mp);
                 }
@@ -1172,7 +1172,7 @@ namespace LOSA.Trazabilidad
             //{
             //    DataOperations dp = new DataOperations();
             //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                
+
             //    if (row!=null)
             //    {
             //    con.Open();
@@ -1215,7 +1215,7 @@ namespace LOSA.Trazabilidad
                 //load_informacion_de_inventario();
                 //load_tarimas_rechazadas();
                 //load_MuestreoPT();
-               
+
             }
         }
 
@@ -2379,9 +2379,9 @@ namespace LOSA.Trazabilidad
         private void cmdBuscarCliente__Click(object sender, EventArgs e)
         {
             frmBuscarCliente frm = new frmBuscarCliente();
-            if(frm.ShowDialog() == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                foreach(dsCalidad.Direccion_ClientesRow row in frm.dsCalidad1.Direccion_Clientes)
+                foreach (dsCalidad.Direccion_ClientesRow row in frm.dsCalidad1.Direccion_Clientes)
                 {
                     if (row.seleccionado)
                     {
@@ -2451,7 +2451,7 @@ namespace LOSA.Trazabilidad
                         LoteMP_.Recuperado = true;
                     }
                 }
-                else 
+                else
                 {
                     if (ContaMP == 1)//se encontro un solo lote
                     {
@@ -2465,7 +2465,7 @@ namespace LOSA.Trazabilidad
                             errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
                             lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
                         }
-                        
+
                     }
                     else
                     {
@@ -2481,515 +2481,516 @@ namespace LOSA.Trazabilidad
                     LoadRegistroIngresosLotesRuta1();
                     lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
                 }
-                
+
+            }
+        }
+
+
+            void LoadInventarioLotesRuta1()
+            {
+                //sp_get_kardex_by_lot_trz
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("[sp_get_kardex_by_lot_trz]", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lote", txtLoteMPRuta1.Text);
+                    //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                    dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsReportesTRZ.Inventario_mp_lote_ruta1);
+
+                    con.Close();
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+            void LoadRegistroIngresosLotesRuta1()
+            {
+                //sp_get_kardex_by_lot_trz
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("[sp_get_ingresos_lotes_mp_ruta_trz1]", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@lotemp", txtLoteMPRuta1.Text);
+                    //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                    dsReportesTRZ.ingresos_mp_lote_ruta1.Clear();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(dsReportesTRZ.ingresos_mp_lote_ruta1);
+
+                    con.Close();
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
             }
 
-
-        void LoadInventarioLotesRuta1()
-        {
-            //sp_get_kardex_by_lot_trz
-            try
+            private void btnHome_Ruta1_Click(object sender, EventArgs e)
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
+                this.navigationFrame1.SelectedPage = npMain;
+                //this.dsReportesTRZ.pt_list_trz.Clear();
+            }
 
-                SqlCommand cmd = new SqlCommand("[sp_get_kardex_by_lot_trz]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lote", txtLoteMPRuta1.Text);
-                //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+            private void btnBorrarRuta1_Click(object sender, EventArgs e)
+            {
+                txtLoteMPRuta1.Text = "";
+                txtLoteMPRuta1.Focus();
+                dsReportesTRZ.pt_list_trz.Clear();
                 dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsReportesTRZ.Inventario_mp_lote_ruta1);
-
-                con.Close();
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
-            }
-        }
-        void LoadRegistroIngresosLotesRuta1()
-        {
-            //sp_get_kardex_by_lot_trz
-            try
-            {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("[sp_get_ingresos_lotes_mp_ruta_trz1]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lotemp", txtLoteMPRuta1.Text);
-                //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
-                dsReportesTRZ.ingresos_mp_lote_ruta1.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsReportesTRZ.ingresos_mp_lote_ruta1);
-
-                con.Close();
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
-            }
-        }
-
-        private void btnHome_Ruta1_Click(object sender, EventArgs e)
-        {
-            this.navigationFrame1.SelectedPage = npMain;
-            //this.dsReportesTRZ.pt_list_trz.Clear();
-        }
-
-        private void btnBorrarRuta1_Click(object sender, EventArgs e)
-        {
-            txtLoteMPRuta1.Text = "";
-            txtLoteMPRuta1.Focus();
-            dsReportesTRZ.pt_list_trz.Clear();
-            dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
-            dsReportesTRZ.reproceso_lote_pt_ruta1.Clear();
-            dsReportesTRZ.ingresos_mp_lote_ruta1.Clear();
-        }
-
-        private void cmdExportExcelClientes_lotes_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
-            dialog.FilterIndex = 0;
-
-            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                grDetalle.ExportToXlsx(dialog.FileName);
-        }
-
-        private void gvPT_Ruta1_RowClick(object sender, RowClickEventArgs e)
-        {
-           
-        }
-
-        private void LoadDetalleReproceso_lotePT_Ruta1(int pt_lote)
-        {
-            try
-            {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("[sp_get_detalle_inv_reproces_trz_ruta1]", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@lote_pt", pt_lote);
-                //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
                 dsReportesTRZ.reproceso_lote_pt_ruta1.Clear();
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsReportesTRZ.reproceso_lote_pt_ruta1);
-
-                con.Close();
+                dsReportesTRZ.ingresos_mp_lote_ruta1.Clear();
             }
-            catch (Exception ec)
+
+            private void cmdExportExcelClientes_lotes_Click(object sender, EventArgs e)
             {
-                CajaDialogo.Error(ec.Message);
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    grDetalle.ExportToXlsx(dialog.FileName);
             }
-        }
 
-        private void npMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cmdVerDetallePesajes_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            //Version detalle de pesajes por materia prima, lote mp y lote pt
-
-        }
-
-        private void timerRuta4_Tick(object sender, EventArgs e)
-        {
-            //load_header();
-            //Load_Despachos();
-            //LoadDatosDetalleDespacho();
-            timerRuta4.Stop();
-            load_informacion_de_inventario();
-            load_tarimas_rechazadas();
-            load_MuestreoPT();
-            timerRuta4.Enabled = false;
-            
-        }
-
-        private void gridView23_RowClick(object sender, RowClickEventArgs e)
-        {
-          
-        }
-
-        private void gridView24_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-           
-        }
-
-        private void gridView6_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-            
-        }
-
-        private void gridView24_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-        {
-            var gridView = (GridView)gridPT_CamaronRuta2.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzCamaronRuta2Row)gridView.GetFocusedDataRow();
-
-            try
+            private void gvPT_Ruta1_RowClick(object sender, RowClickEventArgs e)
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
 
-                if (row != null)
+            }
+
+            private void LoadDetalleReproceso_lotePT_Ruta1(int pt_lote)
+            {
+                try
                 {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                    SqlCommand cmd = new SqlCommand("[sp_get_detalle_inv_reproces_trz_ruta1]", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
-                    dsReportesTRZ.detalle_destinos.Clear();
+                    cmd.Parameters.AddWithValue("@lote_pt", pt_lote);
+                    //cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                    dsReportesTRZ.reproceso_lote_pt_ruta1.Clear();
                     SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                    adat.Fill(dsReportesTRZ.detalle_destinos);
+                    adat.Fill(dsReportesTRZ.reproceso_lote_pt_ruta1);
 
                     con.Close();
                 }
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
-            }
-        }
-
-        private void gridView6_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-        {
-            var gridView = (GridView)gridTilapia_lotes_ruta2.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzTilapiaRuta2Row)gridView.GetFocusedDataRow();
-
-            try
-            {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-
-                if (row != null)
+                catch (Exception ec)
                 {
-                    con.Open();
-
-                    SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
-                    dsReportesTRZ.detalle_destinos.Clear();
-                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                    adat.Fill(dsReportesTRZ.detalle_destinos);
-
-                    con.Close();
+                    CajaDialogo.Error(ec.Message);
                 }
             }
-            catch (Exception ec)
+
+            private void npMain_Paint(object sender, PaintEventArgs e)
             {
-                CajaDialogo.Error(ec.Message);
-            }
-        }
 
-        private void gvPT_Ruta1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-        {
-            var gridView = (GridView)gcPT_Ruta1.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzCamaronRow)gridView.GetFocusedDataRow();
-
-            if (row != null)
-            {
-                if (row.Lote_PT > 0)
-                    LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
-            }
-        }
-
-        private void gridView23_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-        {
-            var gridView = (GridView)gridControl12.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
-
-            if (row != null)
-            {
-                if (row.Lote_PT > 0)
-                    LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
-            }
-        }
-
-        private void cmdLinkLoteMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
-            var row = (dsMantoTrazabilidad.Ruta4_D_trz_loteRow)gridView.GetFocusedDataRow();
-
-            if (string.IsNullOrEmpty(row.lote_mp))
-            {
-                return;
             }
 
-            navigationFrame1.SelectedPage = npInfoLote;
-            Id_ingreso = 0;
-            //UsuarioLogeado = Puser;
-            //tabControl1.TabPages[4]
-            load_dataRuta2(row.lote_mp);
-            load_data_ingresoRuta2(row.lote_mp);
-            Load_cargas_niRuta2(row.lote_mp);
-            Inicializar_data_logisticaRuta2(row.lote_mp);
-            load_zonasRuta2();
-            load_especieRuta2();
-            load_tipo();
-            load_paisesRuta2();
-            LoadLotesPT_Ruta2();
-            LoadInventarioKardexRuta2();
-            //Load_Despachos();
-            if (ChCalidad)
+            private void cmdVerDetallePesajes_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
             {
-                load_criterios_configuradosRuta2(row.lote_mp);
-                Inicalizar_Archivo_configuradosRuta2(row.lote_mp);
-                get_imagenRuta2(row.lote_mp);
-                load_empaque_estado_MpRuta2(row.lote_mp);
-                load_trasporte_estado_transporteRuta2(row.lote_mp);
-                load_criterios_adicionalesRuta2(row.lote_mp);
+                //Version detalle de pesajes por materia prima, lote mp y lote pt
 
-                if (full_pathImagen != "")
+            }
+
+            private void timerRuta4_Tick(object sender, EventArgs e)
+            {
+                //load_header();
+                //Load_Despachos();
+                //LoadDatosDetalleDespacho();
+                timerRuta4.Stop();
+                load_informacion_de_inventario();
+                load_tarimas_rechazadas();
+                load_MuestreoPT();
+                timerRuta4.Enabled = false;
+
+            }
+
+            private void gridView23_RowClick(object sender, RowClickEventArgs e)
+            {
+
+            }
+
+            private void gridView24_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+            {
+
+            }
+
+            private void gridView6_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+            {
+
+            }
+
+            private void gridView24_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+            {
+                var gridView = (GridView)gridPT_CamaronRuta2.FocusedView;
+                var row = (dsReportesTRZ.pt_list_trzCamaronRuta2Row)gridView.GetFocusedDataRow();
+
+                try
                 {
-                    pc_Mp.Image = ByteToImageRuta2(GetImgByteRuta2(full_pathImagen));
-                }
-            }
-            else
-            {
-                inicializar_criteriosRuta2();
-                Inicalizar_ArchivoRuta2();
-            }
-        }
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
 
-        private void cmdLinkButtonMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
-            var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetFocusedDataRow();
-            //frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.lote_mp, 0);
-            //if (this.MdiParent != null)
-            //    frm.MdiParent = this.MdiParent;
-            //frm.WindowState = FormWindowState.Maximized;
-            //frm.Show();
-            cargarDatosTarimas(row.ItemCode);
-            cargarMateriaPrima(row.ItemCode);
-            navigationFrame1.SelectedPage = npRuta3MP;
-        }
-
-        private void cmdButtonTrzLotePT_ruta4_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
-            acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
-
-            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            this.rutaActiva = 4;
-            var gridView = (GridView)gcPT_Ruta1.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzCamaronRow)gridView.GetFocusedDataRow();
-            //dsReportesTRZ.pt_list_trzCamaron
-
-            if(txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
-            {
-                txtlote.Text = row.Lote_PT.ToString();
-                //dsCalidad.trazabilitad.Clear();
-                load_header();
-                load_data();//Detalle de materias primas usadas en lote de PT
-                Load_Despachos();
-                LoadDatosDetalleDespacho();
-                timerRuta4.Enabled = true;
-                timerRuta4.Start();
-            }
-            btnBack.Visible = true;
-
-            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
-            txtlote.Focus();
-        }
-
-        private void cmdLink_PT_Ruta4_from_ruta1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
-            acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
-
-            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            this.rutaActiva = 4;
-            var gridView = (GridView)gridControl12.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
-            //dsReportesTRZ.pt_list_trzCamaron
-
-            if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
-            {
-                txtlote.Text = row.Lote_PT.ToString();
-                //dsCalidad.trazabilitad.Clear();
-                load_header();
-                load_data();//Detalle de materias primas usadas en lote de PT
-                Load_Despachos();
-                LoadDatosDetalleDespacho();
-                timerRuta4.Enabled = true;
-                timerRuta4.Start();
-            }
-            btnBack.Visible = true;
-
-            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
-            txtlote.Focus();
-        }
-
-        private void cmdLinkPT_From_ruta3_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
-            acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
-
-            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            this.rutaActiva = 4;
-            var gridView = (GridView)gridPT_CamaronRuta2.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzCamaronRuta2Row)gridView.GetFocusedDataRow();
-            //dsReportesTRZ.pt_list_trzCamaron
-
-            if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
-            {
-                txtlote.Text = row.Lote_PT.ToString();
-                //dsCalidad.trazabilitad.Clear();
-                load_header();
-                load_data();//Detalle de materias primas usadas en lote de PT
-                Load_Despachos();
-                LoadDatosDetalleDespacho();
-                timerRuta4.Enabled = true;
-                timerRuta4.Start();
-            }
-            btnBack.Visible = true;
-
-            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
-            txtlote.Focus();
-        }
-
-        private void cmdTrz_Lote_PT_from_ruta3Tilapia_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
-            acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
-
-            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            this.rutaActiva = 4;
-            var gridView = (GridView)gridTilapia_lotes_ruta2.FocusedView;
-            var row = (dsReportesTRZ.pt_list_trzTilapiaRuta2Row)gridView.GetFocusedDataRow();
-            //dsReportesTRZ.pt_list_trzCamaron
-
-            if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
-            {
-                txtlote.Text = row.Lote_PT.ToString();
-                //dsCalidad.trazabilitad.Clear();
-                load_header();
-                load_data();//Detalle de materias primas usadas en lote de PT
-                Load_Despachos();
-                LoadDatosDetalleDespacho();
-                timerRuta4.Enabled = true;
-                timerRuta4.Start();
-            }
-            btnBack.Visible = true;
-
-            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
-            txtlote.Focus();
-        }
-
-        private void cmdCantidadDosificadaLoteLink_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-            acordionRuta1.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
-            acordionRuta1.Appearance.Normal.ForeColor = Color.White; 
-
-            this.rutaActiva = 1;
-            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
-            var row = (dsMantoTrazabilidad.Ruta4_D_trz_loteRow)gridView.GetFocusedDataRow();
-
-            if (string.IsNullOrEmpty(row.lote_mp))
-            {
-                return;
-            }
-
-            
-
-            if (txtLoteMPRuta1.Text != row.lote_mp.ToString() || string.IsNullOrEmpty(txtLoteMPRuta1.Text))
-            {
-                txtLoteMPRuta1.Text = row.lote_mp;
-                btnGenerateRuta1_Click(sender, new EventArgs());
-            }
-            btnHome_Ruta1.Visible = false;
-            btnBack.Visible = true;
-
-            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npRuta1;
-            txtLoteMPRuta1.Focus();
-            //npRuta1
-        }
-
-        private void cmdVerCuadroLotesRuta4_Click(object sender, EventArgs e)
-        {
-            int LotePT_1 = dp.ValidateNumberInt32(txtRuta4LotePT_Trazado_.Text);
-            if (LotePT_1 > 0)
-            {
-                frmCuadroLotes frm = new frmCuadroLotes(LotePT_1);
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
-            }
-        }
-
-        private void txtLoteMP_Ruta2_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                LoteMP LoteMP_ = new LoteMP();
-                if (LoteMP_.RecuperarRegistro(txtLoteMP_Ruta2.Text))
-                {
-                    if (LoteMP_.CantidadMP > 1)
+                    if (row != null)
                     {
-                        //Mostrar Ventana
-                        frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
-                        if (frm.ShowDialog() == DialogResult.OK)
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
+                        dsReportesTRZ.detalle_destinos.Clear();
+                        SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                        adat.Fill(dsReportesTRZ.detalle_destinos);
+
+                        con.Close();
+                    }
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+
+            private void gridView6_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+            {
+                var gridView = (GridView)gridTilapia_lotes_ruta2.FocusedView;
+                var row = (dsReportesTRZ.pt_list_trzTilapiaRuta2Row)gridView.GetFocusedDataRow();
+
+                try
+                {
+                    DataOperations dp = new DataOperations();
+                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+
+                    if (row != null)
+                    {
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@lotept", row.Lote_PT);
+                        dsReportesTRZ.detalle_destinos.Clear();
+                        SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                        adat.Fill(dsReportesTRZ.detalle_destinos);
+
+                        con.Close();
+                    }
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+            }
+
+            private void gvPT_Ruta1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+            {
+                var gridView = (GridView)gcPT_Ruta1.FocusedView;
+                var row = (dsReportesTRZ.pt_list_trzCamaronRow)gridView.GetFocusedDataRow();
+
+                if (row != null)
+                {
+                    if (row.Lote_PT > 0)
+                        LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+                }
+            }
+
+            private void gridView23_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+            {
+                var gridView = (GridView)gridControl12.FocusedView;
+                var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+
+                if (row != null)
+                {
+                    if (row.Lote_PT > 0)
+                        LoadDetalleReproceso_lotePT_Ruta1(row.Lote_PT);
+                }
+            }
+
+            private void cmdLinkLoteMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+                var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+                var row = (dsMantoTrazabilidad.Ruta4_D_trz_loteRow)gridView.GetFocusedDataRow();
+
+                if (string.IsNullOrEmpty(row.lote_mp))
+                {
+                    return;
+                }
+
+                navigationFrame1.SelectedPage = npInfoLote;
+                Id_ingreso = 0;
+                //UsuarioLogeado = Puser;
+                //tabControl1.TabPages[4]
+                load_dataRuta2(row.lote_mp);
+                load_data_ingresoRuta2(row.lote_mp);
+                Load_cargas_niRuta2(row.lote_mp);
+                Inicializar_data_logisticaRuta2(row.lote_mp);
+                load_zonasRuta2();
+                load_especieRuta2();
+                load_tipo();
+                load_paisesRuta2();
+                LoadLotesPT_Ruta2();
+                LoadInventarioKardexRuta2();
+                //Load_Despachos();
+                if (ChCalidad)
+                {
+                    load_criterios_configuradosRuta2(row.lote_mp);
+                    Inicalizar_Archivo_configuradosRuta2(row.lote_mp);
+                    get_imagenRuta2(row.lote_mp);
+                    load_empaque_estado_MpRuta2(row.lote_mp);
+                    load_trasporte_estado_transporteRuta2(row.lote_mp);
+                    load_criterios_adicionalesRuta2(row.lote_mp);
+
+                    if (full_pathImagen != "")
+                    {
+                        pc_Mp.Image = ByteToImageRuta2(GetImgByteRuta2(full_pathImagen));
+                    }
+                }
+                else
+                {
+                    inicializar_criteriosRuta2();
+                    Inicalizar_ArchivoRuta2();
+                }
+            }
+
+            private void cmdLinkButtonMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+                var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+                var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetFocusedDataRow();
+                //frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.lote_mp, 0);
+                //if (this.MdiParent != null)
+                //    frm.MdiParent = this.MdiParent;
+                //frm.WindowState = FormWindowState.Maximized;
+                //frm.Show();
+                cargarDatosTarimas(row.ItemCode);
+                cargarMateriaPrima(row.ItemCode);
+                navigationFrame1.SelectedPage = npRuta3MP;
+            }
+
+            private void cmdButtonTrzLotePT_ruta4_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+                acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+                acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+                acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                this.rutaActiva = 4;
+                var gridView = (GridView)gcPT_Ruta1.FocusedView;
+                var row = (dsReportesTRZ.pt_list_trzCamaronRow)gridView.GetFocusedDataRow();
+                //dsReportesTRZ.pt_list_trzCamaron
+
+                if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
+                {
+                    txtlote.Text = row.Lote_PT.ToString();
+                    //dsCalidad.trazabilitad.Clear();
+                    load_header();
+                    load_data();//Detalle de materias primas usadas en lote de PT
+                    Load_Despachos();
+                    LoadDatosDetalleDespacho();
+                    timerRuta4.Enabled = true;
+                    timerRuta4.Start();
+                }
+                btnBack.Visible = true;
+
+                navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+                txtlote.Focus();
+            }
+
+            private void cmdLink_PT_Ruta4_from_ruta1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+                acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+                acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+                acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                this.rutaActiva = 4;
+                var gridView = (GridView)gridControl12.FocusedView;
+                var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+                //dsReportesTRZ.pt_list_trzCamaron
+
+                if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
+                {
+                    txtlote.Text = row.Lote_PT.ToString();
+                    //dsCalidad.trazabilitad.Clear();
+                    load_header();
+                    load_data();//Detalle de materias primas usadas en lote de PT
+                    Load_Despachos();
+                    LoadDatosDetalleDespacho();
+                    timerRuta4.Enabled = true;
+                    timerRuta4.Start();
+                }
+                btnBack.Visible = true;
+
+                navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+                txtlote.Focus();
+            }
+
+            private void cmdLinkPT_From_ruta3_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+                acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+                acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+                acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                this.rutaActiva = 4;
+                var gridView = (GridView)gridPT_CamaronRuta2.FocusedView;
+                var row = (dsReportesTRZ.pt_list_trzCamaronRuta2Row)gridView.GetFocusedDataRow();
+                //dsReportesTRZ.pt_list_trzCamaron
+
+                if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
+                {
+                    txtlote.Text = row.Lote_PT.ToString();
+                    //dsCalidad.trazabilitad.Clear();
+                    load_header();
+                    load_data();//Detalle de materias primas usadas en lote de PT
+                    Load_Despachos();
+                    LoadDatosDetalleDespacho();
+                    timerRuta4.Enabled = true;
+                    timerRuta4.Start();
+                }
+                btnBack.Visible = true;
+
+                navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+                txtlote.Focus();
+            }
+
+            private void cmdTrz_Lote_PT_from_ruta3Tilapia_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+                acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+                acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+                acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                this.rutaActiva = 4;
+                var gridView = (GridView)gridTilapia_lotes_ruta2.FocusedView;
+                var row = (dsReportesTRZ.pt_list_trzTilapiaRuta2Row)gridView.GetFocusedDataRow();
+                //dsReportesTRZ.pt_list_trzCamaron
+
+                if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
+                {
+                    txtlote.Text = row.Lote_PT.ToString();
+                    //dsCalidad.trazabilitad.Clear();
+                    load_header();
+                    load_data();//Detalle de materias primas usadas en lote de PT
+                    Load_Despachos();
+                    LoadDatosDetalleDespacho();
+                    timerRuta4.Enabled = true;
+                    timerRuta4.Start();
+                }
+                btnBack.Visible = true;
+
+                navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+                txtlote.Focus();
+            }
+
+            private void cmdCantidadDosificadaLoteLink_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+                acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta1.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+                acordionRuta1.Appearance.Normal.ForeColor = Color.White;
+
+                this.rutaActiva = 1;
+                var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+                var row = (dsMantoTrazabilidad.Ruta4_D_trz_loteRow)gridView.GetFocusedDataRow();
+
+                if (string.IsNullOrEmpty(row.lote_mp))
+                {
+                    return;
+                }
+
+
+
+                if (txtLoteMPRuta1.Text != row.lote_mp.ToString() || string.IsNullOrEmpty(txtLoteMPRuta1.Text))
+                {
+                    txtLoteMPRuta1.Text = row.lote_mp;
+                    btnGenerateRuta1_Click(sender, new EventArgs());
+                }
+                btnHome_Ruta1.Visible = false;
+                btnBack.Visible = true;
+
+                navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npRuta1;
+                txtLoteMPRuta1.Focus();
+                //npRuta1
+            }
+
+            private void cmdVerCuadroLotesRuta4_Click(object sender, EventArgs e)
+            {
+                int LotePT_1 = dp.ValidateNumberInt32(txtRuta4LotePT_Trazado_.Text);
+                if (LotePT_1 > 0)
+                {
+                    frmCuadroLotes frm = new frmCuadroLotes(LotePT_1);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+            }
+
+            private void txtLoteMP_Ruta2_KeyDown(object sender, KeyEventArgs e)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    LoteMP LoteMP_ = new LoteMP();
+                    if (LoteMP_.RecuperarRegistro(txtLoteMP_Ruta2.Text))
+                    {
+                        if (LoteMP_.CantidadMP > 1)
                         {
-                            LoadLotesPT_Ruta2(frm.IdMP_Selected);
-                            lblMateriaPrimaName.Text = frm.NameMaterialselected;
+                            //Mostrar Ventana
+                            frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+                                LoadLotesPT_Ruta2(frm.IdMP_Selected);
+                                lblMateriaPrimaName.Text = frm.NameMaterialselected;
+                            }
+                        }
+                        else
+                        {
+                            LoadLotesPT_Ruta2(LoteMP_.IdMPSingle);
+                            lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
                         }
                     }
-                    else
-                    {
-                        LoadLotesPT_Ruta2(LoteMP_.IdMPSingle);
-                        lblMateriaPrimaName.Text = LoteMP_.NombreComercialSingle;
-                    }
                 }
             }
-        }
 
         private void txtLoteMPRuta1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -3025,51 +3026,87 @@ namespace LOSA.Trazabilidad
                 }
                 else
                 {
-                    
+                    //errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun Lote de Producto Terminado que haya utilizado este lote!");
+                    //lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+
+
                     //Vamos a validar si hay ingresos e inventario del Lote MP
                     //Aunque este no se haya utilizado aun en un cruce de lote PT - MP
-                    frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
-                    if (frm.ShowDialog() == DialogResult.OK)
+                    int ContaMP = LoteMP_.RecuperarCant_MP_porLote(txtLoteMPRuta1.Text);
+                    if (ContaMP > 1)//Hay mas de un lote
                     {
-                        lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                        frmMP_WithSameLot frm = new frmMP_WithSameLot(LoteMP_);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            lblLoteNameRuta1.Text = frm.NameMaterialselected;
+                            LoteMP_.IdMPSingle = Convert.ToInt32(frm.IdMP_Selected);
+                            LoteMP_.Recuperado = true;
+                        }
+                    }
+                    else
+                    {
+                        if (ContaMP == 1)//se encontro un solo lote
+                        {
+                            if (LoteMP_.RecuperarMateriaPrimaFromLOTE_MP_and_ITEMCODE(txtLoteMPRuta1.Text))
+                            {
+                                lblLoteNameRuta1.Text = LoteMP_.NombreComercialSingle;
+                            }
+                            else
+                            {
+                                //No se encontro el lote mp
+                                errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
+                                lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+                            }
+
+                        }
+                        else
+                        {
+                            //No se encontro el lote mp
+                            errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun PT que haya utilizado este lote!");
+                            lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+                        }
+                    }
+
+                    if (LoteMP_.Recuperado)
+                    {
                         LoadInventarioLotesRuta1();
                         LoadRegistroIngresosLotesRuta1();
                         lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = true;
                     }
 
-                    errorProvider1.SetError(txtLoteMPRuta1, "No se encontro ningun Lote de Producto Terminado que haya utilizado este lote!");
-                    lblLoteNameRuta1_Rotulo.Visible = lblLoteNameRuta1.Visible = false;
+
+
                 }
             }
         }
 
-        private void toggleSwitchExpandAll_Row_Toggled(object sender, EventArgs e)
-        {
-            if(toggleSwitchExpandAll_Row.IsOn)//Expand all rows
+            private void toggleSwitchExpandAll_Row_Toggled(object sender, EventArgs e)
             {
-                RecursiveExpand(gridView20);
-            }
-            else
-            {
-                RecursiveCollapseRows(gridView20);
-            }
-        }
-
-        private void cmdDetalleBatch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
-            var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetFocusedDataRow();
-
-            if (row != null) 
-            {
-                if (row.cant_batch_real > 0)
+                if (toggleSwitchExpandAll_Row.IsOn)//Expand all rows
                 {
-                    frmDetallePorBatchRutasTRZ frm = new frmDetallePorBatchRutasTRZ(this.UsuarioLogeado, LoteActual.LotePT_Num, row.id_mp);
-                    frm.MdiParent = this.MdiParent;
-                    frm.WindowState = FormWindowState.Normal;
-                    frm.Show();
+                    RecursiveExpand(gridView20);
+                }
+                else
+                {
+                    RecursiveCollapseRows(gridView20);
+                }
+            }
+
+            private void cmdDetalleBatch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+            {
+                var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+                var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetFocusedDataRow();
+
+                if (row != null)
+                {
+                    if (row.cant_batch_real > 0)
+                    {
+                        frmDetallePorBatchRutasTRZ frm = new frmDetallePorBatchRutasTRZ(this.UsuarioLogeado, LoteActual.LotePT_Num, row.id_mp);
+                        frm.MdiParent = this.MdiParent;
+                        frm.WindowState = FormWindowState.Normal;
+                        frm.Show();
+                    }
                 }
             }
         }
     }
-}
