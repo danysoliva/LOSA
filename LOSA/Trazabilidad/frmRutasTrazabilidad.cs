@@ -331,34 +331,56 @@ namespace LOSA.Trazabilidad
                         txtRuta4_codigo_unite.Text = ptProducido.CodigoUnite;
                         txtRuta4Fecha_Vencimiento.Text = string.Format("{0:dd/MM/yyyy}", ptProducido.FechaVence);
                         txtRuta4Fecha_produccion.Text = string.Format("{0:dd/MM/yyyy}", ptProducido.FechaProduccion);
-                    }
+                        
+                        //string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
+                        string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lotev2]";
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
 
-                    //string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lote]";
-                    string sql_h = @"[dbo].[RPT_PRD_Trazabilidad_header_lotev2]";
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
-
-                    try
-                    {
-                        cn.Open();
-                        SqlCommand cmd_h = new SqlCommand(sql_h, cn);
-                        cmd_h.CommandType = CommandType.StoredProcedure;
-                        cmd_h.Parameters.AddWithValue("@num_lote", txtlote.Text);
-                        SqlDataReader dr_h = cmd_h.ExecuteReader();
-
-                        Int64 AcsId = 0;
-                        if (dr_h.Read())
+                        try
                         {
-                            txtcodigo.Text = dr_h.GetString(0);
-                            txtProducto.Text = dr_h.GetString(1);
-                            txtformula.Text = dr_h.GetString(2);
-                            txtversion.Text = dr_h.GetString(3);
+                            cn.Open();
+                            SqlCommand cmd_h = new SqlCommand(sql_h, cn);
+                            cmd_h.CommandType = CommandType.StoredProcedure;
+                            cmd_h.Parameters.AddWithValue("@num_lote", txtlote.Text);
+                            SqlDataReader dr_h = cmd_h.ExecuteReader();
+
+                            Int64 AcsId = 0;
+                            if (dr_h.Read())
+                            {
+                                txtcodigo.Text = dr_h.GetString(0);
+                                txtProducto.Text = dr_h.GetString(1);
+                                txtformula.Text = dr_h.GetString(2);
+                                txtversion.Text = dr_h.GetString(3);
+                            }
+                            dr_h.Close();
                         }
-                        dr_h.Close();
+                        catch (Exception EX)
+                        {
+                            CajaDialogo.Error(EX.Message);
+                        }
                     }
-                    catch (Exception EX)
+                    else
                     {
-                        CajaDialogo.Error(EX.Message);
+                        LoteActual = new LotePT();
+                        txtTotalKgSacosLiberados.Text = "";
+                        txtSacosLiberados.Text = "";
+                        txtReprocesoKg.Text = "";
+                        txtTotalProducido.Text = "";
+                        txtPresentacion.Text = "";
+                        txtCantidadBatch.Text = "";
+                        txtOrderNum.Text = "";
+                        txtCodigoPP.Text = "";
+                        txtRuta4_codigo_unite.Text = "";
+                        txtRuta4Fecha_Vencimiento.Text = "";
+                        txtRuta4Fecha_produccion.Text = "";
+                        txtcodigo.Text = "";
+                        txtProducto.Text = "";
+                        txtformula.Text = "";
+                        txtversion.Text = txtRuta4LotePT_Trazado_.Text = "";
+                        txtTotalMP_Utilizada_kg.Text = txtEficiencia.Text = "";
                     }
+
+                    
                 }
             }
             catch (Exception ex)
