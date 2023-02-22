@@ -3108,5 +3108,10 @@ namespace LOSA.Trazabilidad
                     }
                 }
             }
+
+        private void btnImprimirDetalleCarga_Click(object sender, EventArgs e)
+        {
+
         }
+    }
     }

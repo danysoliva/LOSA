@@ -59,8 +59,32 @@ namespace LOSA.Despachos
             LoadPresentaciones();
             load_informacion();
 
+            LoadPresentacionesHabilitadas();
+
+
             btn_guardar.Text = "Guardar Cambios";
         }
+
+        private void LoadPresentacionesHabilitadas()
+        {
+            try
+            {
+                string query = @"sp_get_grid_lista_destinos_config_despacho_pt_";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@cantidad", pcantidad_Ud_Despachos);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsProductos.destinos_empaques_pt.Clear();
+                adat.Fill(dsProductos.destinos_empaques_pt);
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         private void LoadPresentaciones()
         {
             try
