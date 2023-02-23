@@ -772,9 +772,9 @@
             // 
             this.txtInfoConFilas.Enabled = false;
             this.txtInfoConFilas.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.txtInfoConFilas.Location = new System.Drawing.Point(196, 310);
+            this.txtInfoConFilas.Location = new System.Drawing.Point(64, 310);
             this.txtInfoConFilas.Name = "txtInfoConFilas";
-            this.txtInfoConFilas.Size = new System.Drawing.Size(387, 29);
+            this.txtInfoConFilas.Size = new System.Drawing.Size(494, 29);
             this.txtInfoConFilas.TabIndex = 70;
             // 
             // frm_generar_despacho

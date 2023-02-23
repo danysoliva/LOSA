@@ -28,6 +28,9 @@ namespace LOSA.Despachos
         string codigo_selected;
         private int destino_id, id_presentacion, estiba_id;
         private decimal sacos_totales;
+        string DestinoTxt;
+        string TipoTxt;
+        decimal PresentacionTxt;
         public enum OpType
         {
             Update = 1,
@@ -62,6 +65,7 @@ namespace LOSA.Despachos
             LoadPresentaciones();
             LoadPresentacionesHabilitadas();
             load_informacion();
+            LoadPresentacionesHabilitadas();
             
             btn_guardar.Text = "Guardar Cambios";
         }
@@ -166,7 +170,34 @@ namespace LOSA.Despachos
                             {
                                 LoadPresentacionesGuardada(sacos_totales, estiba_id, id_presentacion, destino_id);
                                 grd_conf_filas.EditValue = destino_id;
-                                //grd_conf_filas_EditValueChanged(sender,e);
+
+                                try
+                                {
+                                    
+                                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                                    conn.Open();
+                                    SqlCommand cmd2 = new SqlCommand("sp_get_grid_lista_destinos_config_despacho_pt_clase", conn);
+                                    cmd2.CommandType = CommandType.StoredProcedure;
+                                    cmd2.Parameters.AddWithValue("@destino_id", destino_id);
+                                    cmd2.Parameters.AddWithValue("@estiba_id", estiba_id);
+                                    cmd2.Parameters.AddWithValue("@id_presentacion", id_presentacion);
+                                    SqlDataReader dr2 = cmd2.ExecuteReader();
+                                    if (dr2.Read())
+                                    {
+                                        TipoTxt = dr2.IsDBNull(2) ? "" : dr2.GetString(2).ToString();
+                                        DestinoTxt = dr2.IsDBNull(3) ? "" : dr2.GetString(3).ToString();
+                                        PresentacionTxt = dr2.IsDBNull(4) ? 0 : dr2.GetDecimal(4);
+                                    }
+
+                                    txtInfoConFilas.Text = "Destino: " + DestinoTxt + " - Tipo: " + TipoTxt + " - Presentacion: " + PresentacionTxt;
+
+                                    dr2.Close();
+                                    conn.Close();
+                                }
+                                catch (Exception ex)
+                                {
+                                    CajaDialogo.Error(ex.Message);
+                                }
                             }
                         }
                         dr.Close();
@@ -179,8 +210,6 @@ namespace LOSA.Despachos
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_h", Id_despacho);
 
-
-                       
                         break;
                     case OpType.Nuevo:
                         query = @"sp_get_data_of_orden_venta_detalle_por_crear";  
