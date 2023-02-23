@@ -85,15 +85,17 @@
             this.txtNumDespacho = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.grd_conf_filas = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dsProductos = new LOSA.TransaccionesPT.dsProductos();
             this.destinosempaquesptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsProductos = new LOSA.TransaccionesPT.dsProductos();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.coldestino_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSacosTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDestino = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPresentacion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colestiba_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_presentacion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtInfoConFilas = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -111,9 +113,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumDespacho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_conf_filas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesptBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnatras
@@ -260,6 +262,8 @@
             // 
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
+            this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUMA={0:#.##}")});
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 5;
             // 
@@ -269,7 +273,7 @@
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 6;
-            this.colpresentacion.Width = 150;
+            this.colpresentacion.Width = 131;
             // 
             // colid_presentacion
             // 
@@ -297,18 +301,22 @@
             this.colKg_linea.FieldName = "Kg_linea";
             this.colKg_linea.Name = "colKg_linea";
             this.colKg_linea.OptionsColumn.AllowEdit = false;
+            this.colKg_linea.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Kg_linea", "SUMA={0:#.##}")});
             this.colKg_linea.Visible = true;
             this.colKg_linea.VisibleIndex = 7;
-            this.colKg_linea.Width = 51;
+            this.colKg_linea.Width = 61;
             // 
             // coltm_linea
             // 
             this.coltm_linea.FieldName = "tm_linea";
             this.coltm_linea.Name = "coltm_linea";
             this.coltm_linea.OptionsColumn.AllowEdit = false;
+            this.coltm_linea.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "tm_linea", "SUMA={0:#.##}")});
             this.coltm_linea.Visible = true;
             this.coltm_linea.VisibleIndex = 8;
-            this.coltm_linea.Width = 51;
+            this.coltm_linea.Width = 60;
             // 
             // colDocEntry
             // 
@@ -652,7 +660,7 @@
             // 
             // grd_conf_filas
             // 
-            this.grd_conf_filas.Enabled = false;
+            this.grd_conf_filas.EditValue = "";
             this.grd_conf_filas.Location = new System.Drawing.Point(196, 276);
             this.grd_conf_filas.Name = "grd_conf_filas";
             this.grd_conf_filas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
@@ -665,6 +673,17 @@
             this.grd_conf_filas.Properties.ValueMember = "destino_id";
             this.grd_conf_filas.Size = new System.Drawing.Size(387, 28);
             this.grd_conf_filas.TabIndex = 69;
+            this.grd_conf_filas.EditValueChanged += new System.EventHandler(this.grd_conf_filas_EditValueChanged);
+            // 
+            // destinosempaquesptBindingSource
+            // 
+            this.destinosempaquesptBindingSource.DataMember = "destinos_empaques_pt";
+            this.destinosempaquesptBindingSource.DataSource = this.dsProductos;
+            // 
+            // dsProductos
+            // 
+            this.dsProductos.DataSetName = "dsProductos";
+            this.dsProductos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -685,81 +704,85 @@
             this.gridView1.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
             this.gridView1.Appearance.TopNewRow.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6});
+            this.coldestino_id,
+            this.colSacosTotal,
+            this.colTipo,
+            this.colDestino,
+            this.colPresentacion1,
+            this.colestiba_id,
+            this.colid_presentacion1});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
+            // coldestino_id
             // 
-            this.gridColumn1.FieldName = "id";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.coldestino_id.FieldName = "destino_id";
+            this.coldestino_id.Name = "coldestino_id";
             // 
-            // gridColumn2
+            // colSacosTotal
             // 
-            this.gridColumn2.Caption = "Codigo";
-            this.gridColumn2.FieldName = "codigo";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
+            this.colSacosTotal.Caption = "Sacos Totales";
+            this.colSacosTotal.FieldName = "SacosTotal";
+            this.colSacosTotal.Name = "colSacosTotal";
+            this.colSacosTotal.OptionsColumn.AllowEdit = false;
+            this.colSacosTotal.Visible = true;
+            this.colSacosTotal.VisibleIndex = 0;
             // 
-            // gridColumn3
+            // colTipo
             // 
-            this.gridColumn3.Caption = "Cliente";
-            this.gridColumn3.FieldName = "nombre";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
+            this.colTipo.Caption = "Tipo Estiba";
+            this.colTipo.FieldName = "Tipo";
+            this.colTipo.Name = "colTipo";
+            this.colTipo.OptionsColumn.AllowEdit = false;
+            this.colTipo.Visible = true;
+            this.colTipo.VisibleIndex = 1;
             // 
-            // gridColumn4
+            // colDestino
             // 
-            this.gridColumn4.FieldName = "direccion1";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.colDestino.Caption = "Destino";
+            this.colDestino.FieldName = "Destino";
+            this.colDestino.Name = "colDestino";
+            this.colDestino.OptionsColumn.AllowEdit = false;
+            this.colDestino.Visible = true;
+            this.colDestino.VisibleIndex = 2;
             // 
-            // gridColumn5
+            // colPresentacion1
             // 
-            this.gridColumn5.Caption = "Ciudad";
-            this.gridColumn5.FieldName = "ciudad";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
+            this.colPresentacion1.Caption = "Presentacion";
+            this.colPresentacion1.FieldName = "Presentacion";
+            this.colPresentacion1.Name = "colPresentacion1";
+            this.colPresentacion1.OptionsColumn.AllowEdit = false;
+            this.colPresentacion1.Visible = true;
+            this.colPresentacion1.VisibleIndex = 3;
             // 
-            // gridColumn6
+            // colestiba_id
             // 
-            this.gridColumn6.Caption = "País";
-            this.gridColumn6.FieldName = "pais";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
+            this.colestiba_id.FieldName = "estiba_id";
+            this.colestiba_id.Name = "colestiba_id";
             // 
-            // dsProductos
+            // colid_presentacion1
             // 
-            this.dsProductos.DataSetName = "dsProductos";
-            this.dsProductos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.colid_presentacion1.FieldName = "id_presentacion";
+            this.colid_presentacion1.Name = "colid_presentacion1";
             // 
-            // destinosempaquesptBindingSource
+            // txtInfoConFilas
             // 
-            this.destinosempaquesptBindingSource.DataMember = "destinos_empaques_pt";
-            this.destinosempaquesptBindingSource.DataSource = this.dsProductos;
+            this.txtInfoConFilas.Enabled = false;
+            this.txtInfoConFilas.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.txtInfoConFilas.Location = new System.Drawing.Point(196, 310);
+            this.txtInfoConFilas.Name = "txtInfoConFilas";
+            this.txtInfoConFilas.Size = new System.Drawing.Size(387, 29);
+            this.txtInfoConFilas.TabIndex = 70;
             // 
             // frm_generar_despacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 709);
+            this.Controls.Add(this.txtInfoConFilas);
             this.Controls.Add(this.grd_conf_filas);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.txtNumDespacho);
@@ -804,9 +827,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumDespacho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_conf_filas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesptBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -865,13 +888,15 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.GridLookUpEdit grd_conf_filas;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private System.Windows.Forms.BindingSource destinosempaquesptBindingSource;
         private TransaccionesPT.dsProductos dsProductos;
+        private DevExpress.XtraGrid.Columns.GridColumn coldestino_id;
+        private DevExpress.XtraGrid.Columns.GridColumn colSacosTotal;
+        private DevExpress.XtraGrid.Columns.GridColumn colTipo;
+        private DevExpress.XtraGrid.Columns.GridColumn colDestino;
+        private DevExpress.XtraGrid.Columns.GridColumn colPresentacion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colestiba_id;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion1;
+        private System.Windows.Forms.TextBox txtInfoConFilas;
     }
 }

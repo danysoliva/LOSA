@@ -228,10 +228,59 @@ namespace LOSA.TransaccionesPT
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
 
+            decimal sacos_totales = 0;
+            int estiba_id = 0;
+            int id_presentacion = 0;
+            int destino_id = 0;
+
             try
             {
-                frmdespacho_tipo_detalle_carga frm1 = new frmdespacho_tipo_detalle_carga(row.id);
-                frm1.Show();
+                //frmdespacho_tipo_detalle_carga frm1 = new frmdespacho_tipo_detalle_carga(row.id);
+                //frm1.Show();
+
+                //Vamos a Sacar la Informacion del Despacho, si es que tiene.
+                string query = @"sp_load_info_despacho_boleta_config";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_despacho", row.id);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    sacos_totales = dr.IsDBNull(8) ? 0 : dr.GetDecimal(8);
+                    estiba_id = dr.IsDBNull(9) ? 0 : dr.GetInt32(9);
+                    id_presentacion = dr.IsDBNull(10) ? 0 : dr.GetInt32(10);
+                    destino_id = dr.IsDBNull(11) ? 0 : dr.GetInt32(11);
+                }
+                dr.Close();
+                conn.Close();
+
+                if (id_presentacion == 0 || estiba_id == 0 || destino_id == 0)
+                {
+                    //CajaDialogo.Pregunta("No se a Configurado las Filas para Este Despachos, Desea Imprimir el Despacho sin Configuracion?");
+                    //if (DialogResult.OK == DialogResult.Yes)
+                    //{
+                    //    rpt_despacho frm = new rpt_despacho(row.id);
+                    //    frm.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    //    ReportPrintTool printReport = new ReportPrintTool(frm);
+                    //    printReport.ShowPreview();
+                    //}
+                    CajaDialogo.Error("No se a configurado las filas para este Despachos, debe editar el despacho y Configurar las Filas");
+                    
+
+                }
+                else
+                {
+                    //Reporte con Filas
+                    LOSA.Despachos.Reportes.frm_despacho_con_filas rpt =
+                        //new LOSA.Despachos.Reportes.frm_despacho_con_filas(id_despacho, estiba, Convert.ToInt32(grdDestinos.EditValue), Convert.ToInt32(grdPresentacion.EditValue));
+                        new LOSA.Despachos.Reportes.frm_despacho_con_filas(row.id, estiba_id, destino_id, id_presentacion);
+                    rpt.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(rpt);
+                    printReport.ShowPreview();
+                }
+
             }
             catch (Exception ex)
             {

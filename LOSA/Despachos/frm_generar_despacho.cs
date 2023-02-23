@@ -26,6 +26,8 @@ namespace LOSA.Despachos
         private int Id_despacho;
         UserLogin UsuarioLogeado;
         string codigo_selected;
+        private int destino_id, id_presentacion, estiba_id;
+        private decimal sacos_totales;
         public enum OpType
         {
             Update = 1,
@@ -41,7 +43,8 @@ namespace LOSA.Despachos
             this.LineNum = LineNum;
             UsuarioLogeado = Puser;
             LoadPresentaciones();
-            load_informacion();     
+            load_informacion();
+            LoadPresentacionesHabilitadas();
 
         }
 
@@ -57,12 +60,34 @@ namespace LOSA.Despachos
             this.Id_despacho = id_Despacho;
             grd_destino.Enabled = true;
             LoadPresentaciones();
-            load_informacion();
-
             LoadPresentacionesHabilitadas();
-
-
+            load_informacion();
+            
             btn_guardar.Text = "Guardar Cambios";
+        }
+
+        private void LoadPresentacionesGuardada(decimal psacos_totales , int pestiba_id, int pid_present,  int pDestinoID)
+        {
+            try
+            {
+                string query = @"sp_get_grid_lista_destinos_config_despacho_pt_guardada";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SacosTotal", psacos_totales);
+                cmd.Parameters.AddWithValue("@destino_id", destino_id);
+                cmd.Parameters.AddWithValue("@estiba_id", estiba_id);
+                cmd.Parameters.AddWithValue("@id_presentacion", id_presentacion);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsProductos.destinos_empaques_pt.Clear();
+                adat.Fill(dsProductos.destinos_empaques_pt);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void LoadPresentacionesHabilitadas()
@@ -78,6 +103,7 @@ namespace LOSA.Despachos
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsProductos.destinos_empaques_pt.Clear();
                 adat.Fill(dsProductos.destinos_empaques_pt);
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -131,7 +157,17 @@ namespace LOSA.Despachos
                             DocEntry = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
                             grd_destino.EditValue = dr.IsDBNull(6) ? 0 : dr.GetInt32(6);
                             codigo_selected = dr.IsDBNull(7) ? "" : dr.GetString(7);
+                            sacos_totales = dr.IsDBNull(8) ? 0 : dr.GetDecimal(8);
+                            estiba_id = dr.IsDBNull(9) ? 0 : dr.GetInt32(9);
+                            id_presentacion = dr.IsDBNull(10) ? 0 : dr.GetInt32(10);
+                            destino_id = dr.IsDBNull(11) ? 0 : dr.GetInt32(11);
                             load_destinos(codigo_selected);
+                            if (sacos_totales != 0)
+                            {
+                                LoadPresentacionesGuardada(sacos_totales, estiba_id, id_presentacion, destino_id);
+                                grd_conf_filas.EditValue = destino_id;
+                                //grd_conf_filas_EditValueChanged(sender,e);
+                            }
                         }
                         dr.Close();
                         cn.Close();
@@ -381,6 +417,24 @@ namespace LOSA.Despachos
             //}
         }
 
+        private void grd_conf_filas_EditValueChanged(object sender, EventArgs e)
+        {
+            GridLookUpEdit lookup = sender as GridLookUpEdit;
+            DataRowView datarowView = lookup.GetSelectedDataRow() as DataRowView;
+            
+
+            if (datarowView != null)
+            {
+                DataRow row = datarowView.Row;
+
+                destino_id =Convert.ToInt32(row[0]);
+                sacos_totales = Convert.ToDecimal(row.ItemArray[1]);
+                estiba_id = Convert.ToInt32(row.ItemArray[5]);
+                id_presentacion = Convert.ToInt32(row.ItemArray[6]);
+                txtInfoConFilas.Text = "Destino: " +row[3] +" - Tipo: "+ row[2] +" - Presentacion: "+row[4];
+            }
+        }
+
         private void btn_guardar_Click(object sender, EventArgs e)
         {
                 ds_despachos.detalle_despachosComplete.AcceptChanges();
@@ -424,7 +478,11 @@ namespace LOSA.Despachos
 
 
             // Aqui va la seleccion de lote.
-           
+            if (grd_conf_filas.Text == "")
+            {
+                CajaDialogo.Error("Debe seleccionar una configuracion de Filas y Destino!");
+            }
+
 
 
             int SeAsingna = 0;
@@ -436,9 +494,7 @@ namespace LOSA.Despachos
             {    
                 case OpType.Update:
 
-
-
-                    query = @"sp_update_despacho_header";//insert heades     
+                    query = @"sp_update_despacho_headerv2";//insert heades     
                     cmd = new SqlCommand(query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_despacho", Id_despacho);
@@ -453,6 +509,10 @@ namespace LOSA.Despachos
                         cmd.Parameters.AddWithValue("@boleta", txtboleta.Text);
                         SeAsingna = 1;
                     }
+                    cmd.Parameters.AddWithValue("@sacos_totales", sacos_totales);
+                    cmd.Parameters.AddWithValue("@estiba_id", estiba_id);
+                    cmd.Parameters.AddWithValue("@id_presentacion", id_presentacion);
+                    cmd.Parameters.AddWithValue("@destino_id",destino_id);
                     cmd.ExecuteNonQuery();
                     foreach (ds_despachos.detalle_despachosCompleteRow row in ds_despachos.detalle_despachosComplete.Rows)
                     {
@@ -475,7 +535,7 @@ namespace LOSA.Despachos
                         {
                             // Aqui hay que validar si ya se entrego algo y que cantidad se entrego.
                             query = @"sp_validar_detalla_de_despacho";
-                            cmd = new SqlCommand(query,cn);
+                            cmd = new SqlCommand(query, cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_detalle", row.id);
                             cmd.Parameters.AddWithValue("@pesoIn", row.Kg_linea);
