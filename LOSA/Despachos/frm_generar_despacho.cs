@@ -170,7 +170,7 @@ namespace LOSA.Despachos
                             {
                                 LoadPresentacionesGuardada(sacos_totales, estiba_id, id_presentacion, destino_id);
                                 grd_conf_filas.EditValue = destino_id;
-
+                                
                                 try
                                 {
                                     
@@ -448,8 +448,8 @@ namespace LOSA.Despachos
 
         private void grd_conf_filas_EditValueChanged(object sender, EventArgs e)
         {
-            GridLookUpEdit lookup = sender as GridLookUpEdit;
-            DataRowView datarowView = lookup.GetSelectedDataRow() as DataRowView;
+            //GridLookUpEdit lookup = sender as GridLookUpEdit;
+            DataRowView datarowView = grd_conf_filas.GetSelectedDataRow() as DataRowView;
             
 
             if (datarowView != null)
