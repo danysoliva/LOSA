@@ -8039,13 +8039,11 @@ namespace LOSA.Trazabilidad
             this.btnImprimirDetalleCarga.Size = new System.Drawing.Size(211, 52);
             this.btnImprimirDetalleCarga.TabIndex = 53;
             this.btnImprimirDetalleCarga.Text = "Imprimir Despacho";
-            this.btnImprimirDetalleCarga.Visible = false;
             this.btnImprimirDetalleCarga.Click += new System.EventHandler(this.btnImprimirDetalleCarga_Click);
             // 
             // vGridControl3
             // 
             this.vGridControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.vGridControl3.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.vGridControl3.DataMember = "hedaer_despacho";
             this.vGridControl3.DataSource = this.dsMantoTrazabilidad;
             this.vGridControl3.Location = new System.Drawing.Point(3, 3);
