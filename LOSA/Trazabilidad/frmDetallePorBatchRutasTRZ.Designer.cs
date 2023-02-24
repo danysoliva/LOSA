@@ -31,8 +31,8 @@ namespace LOSA.Trazabilidad
         {
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dsReportesTRZ1 = new LOSA.Trazabilidad.ReportesTRZ.dsReportesTRZ();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colLotePT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLoteMP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCódigo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,8 +44,8 @@ namespace LOSA.Trazabilidad
             this.colFuente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdExportToExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -79,6 +79,11 @@ namespace LOSA.Trazabilidad
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // dsReportesTRZ1
+            // 
+            this.dsReportesTRZ1.DataSetName = "dsReportesTRZ";
+            this.dsReportesTRZ1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridView1
             // 
             this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(210)))));
@@ -96,11 +101,6 @@ namespace LOSA.Trazabilidad
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowFooter = true;
-            // 
-            // dsReportesTRZ1
-            // 
-            this.dsReportesTRZ1.DataSetName = "dsReportesTRZ";
-            this.dsReportesTRZ1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // colLotePT
             // 
@@ -221,8 +221,8 @@ namespace LOSA.Trazabilidad
             this.ShowIcon = false;
             this.Text = "Detalle de Batch";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
