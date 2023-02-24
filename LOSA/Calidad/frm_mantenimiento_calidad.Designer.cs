@@ -272,7 +272,7 @@ namespace LOSA.Calidad
             this.cmdMateriasPrimas.Appearance.Options.UseBackColor = true;
             this.cmdMateriasPrimas.Appearance.Options.UseFont = true;
             this.cmdMateriasPrimas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdMateriasPrimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.cmdMateriasPrimas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdMateriasPrimas.ImageOptions.Image")));
             this.cmdMateriasPrimas.Location = new System.Drawing.Point(249, 519);
             this.cmdMateriasPrimas.Name = "cmdMateriasPrimas";
             this.cmdMateriasPrimas.Size = new System.Drawing.Size(231, 55);

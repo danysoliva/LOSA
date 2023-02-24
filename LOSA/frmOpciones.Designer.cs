@@ -95,6 +95,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.btnViewRequisasCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton67 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRutas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteProximosVencer = new DevExpress.XtraEditors.SimpleButton();
@@ -234,7 +235,6 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btnViewRequisasCalidad = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1251,6 +1251,19 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(835, 502);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // btnViewRequisasCalidad
+            // 
+            this.btnViewRequisasCalidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewRequisasCalidad.Appearance.Options.UseFont = true;
+            this.btnViewRequisasCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnViewRequisasCalidad.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnViewRequisasCalidad.ImageOptions.SvgImage")));
+            this.btnViewRequisasCalidad.Location = new System.Drawing.Point(419, 86);
+            this.btnViewRequisasCalidad.Name = "btnViewRequisasCalidad";
+            this.btnViewRequisasCalidad.Size = new System.Drawing.Size(199, 59);
+            this.btnViewRequisasCalidad.TabIndex = 49;
+            this.btnViewRequisasCalidad.Text = "Requisas";
+            this.btnViewRequisasCalidad.Click += new System.EventHandler(this.btnViewRequisasCalidad_Click);
             // 
             // simpleButton67
             // 
@@ -3275,19 +3288,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // btnViewRequisasCalidad
-            // 
-            this.btnViewRequisasCalidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewRequisasCalidad.Appearance.Options.UseFont = true;
-            this.btnViewRequisasCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnViewRequisasCalidad.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
-            this.btnViewRequisasCalidad.Location = new System.Drawing.Point(419, 86);
-            this.btnViewRequisasCalidad.Name = "btnViewRequisasCalidad";
-            this.btnViewRequisasCalidad.Size = new System.Drawing.Size(199, 59);
-            this.btnViewRequisasCalidad.TabIndex = 49;
-            this.btnViewRequisasCalidad.Text = "Requisas";
-            this.btnViewRequisasCalidad.Click += new System.EventHandler(this.btnViewRequisasCalidad_Click);
             // 
             // frmOpciones
             // 

@@ -644,6 +644,7 @@ namespace LOSA.Trazabilidad
             this.colIdSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.npRuta3DetalleDespacho = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.btnImprimirDetalleCarga = new DevExpress.XtraEditors.SimpleButton();
             this.vGridControl3 = new DevExpress.XtraVerticalGrid.VGridControl();
             this.rowcodigo1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowcliente = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -753,7 +754,6 @@ namespace LOSA.Trazabilidad
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
-            this.btnImprimirDetalleCarga = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdLinkLoteMP)).BeginInit();
@@ -8025,6 +8025,23 @@ namespace LOSA.Trazabilidad
             this.npRuta3DetalleDespacho.Name = "npRuta3DetalleDespacho";
             this.npRuta3DetalleDespacho.Size = new System.Drawing.Size(1301, 856);
             // 
+            // btnImprimirDetalleCarga
+            // 
+            this.btnImprimirDetalleCarga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirDetalleCarga.Appearance.BackColor = System.Drawing.Color.MintCream;
+            this.btnImprimirDetalleCarga.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
+            this.btnImprimirDetalleCarga.Appearance.Options.UseBackColor = true;
+            this.btnImprimirDetalleCarga.Appearance.Options.UseFont = true;
+            this.btnImprimirDetalleCarga.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnImprimirDetalleCarga.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImprimirDetalleCarga.ImageOptions.SvgImage")));
+            this.btnImprimirDetalleCarga.Location = new System.Drawing.Point(763, 12);
+            this.btnImprimirDetalleCarga.Name = "btnImprimirDetalleCarga";
+            this.btnImprimirDetalleCarga.Size = new System.Drawing.Size(211, 52);
+            this.btnImprimirDetalleCarga.TabIndex = 53;
+            this.btnImprimirDetalleCarga.Text = "Imprimir Despacho";
+            this.btnImprimirDetalleCarga.Visible = false;
+            this.btnImprimirDetalleCarga.Click += new System.EventHandler(this.btnImprimirDetalleCarga_Click);
+            // 
             // vGridControl3
             // 
             this.vGridControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -9133,23 +9150,6 @@ namespace LOSA.Trazabilidad
             // 
             this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
-            // 
-            // btnImprimirDetalleCarga
-            // 
-            this.btnImprimirDetalleCarga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimirDetalleCarga.Appearance.BackColor = System.Drawing.Color.MintCream;
-            this.btnImprimirDetalleCarga.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
-            this.btnImprimirDetalleCarga.Appearance.Options.UseBackColor = true;
-            this.btnImprimirDetalleCarga.Appearance.Options.UseFont = true;
-            this.btnImprimirDetalleCarga.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnImprimirDetalleCarga.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImprimirDetalleCarga.ImageOptions.SvgImage")));
-            this.btnImprimirDetalleCarga.Location = new System.Drawing.Point(763, 12);
-            this.btnImprimirDetalleCarga.Name = "btnImprimirDetalleCarga";
-            this.btnImprimirDetalleCarga.Size = new System.Drawing.Size(211, 52);
-            this.btnImprimirDetalleCarga.TabIndex = 53;
-            this.btnImprimirDetalleCarga.Text = "Imprimir Despacho";
-            this.btnImprimirDetalleCarga.Visible = false;
-            this.btnImprimirDetalleCarga.Click += new System.EventHandler(this.btnImprimirDetalleCarga_Click);
             // 
             // frmRutasTrazabilidad
             // 

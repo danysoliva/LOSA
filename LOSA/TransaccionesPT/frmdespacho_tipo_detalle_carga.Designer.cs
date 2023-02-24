@@ -167,6 +167,7 @@ namespace LOSA.TransaccionesPT
             // 
             // navigationSeleccionEmbalaje
             // 
+            this.navigationSeleccionEmbalaje.Caption = "navigationSeleccionEmbalaje";
             this.navigationSeleccionEmbalaje.Controls.Add(this.grid_lista_destinos);
             this.navigationSeleccionEmbalaje.Controls.Add(this.labelControl4);
             this.navigationSeleccionEmbalaje.Controls.Add(this.tsTipo);
