@@ -228,6 +228,10 @@ namespace LOSA.TransaccionesPT
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsPT.Load_despachosRow)gridView.GetFocusedDataRow();
 
+            //frmdespacho_tipo_detalle_carga frm1 = new frmdespacho_tipo_detalle_carga(row.id);
+            //frm1.Show();
+
+
             decimal sacos_totales = 0;
             int estiba_id = 0;
             int id_presentacion = 0;
@@ -235,8 +239,7 @@ namespace LOSA.TransaccionesPT
 
             try
             {
-                //frmdespacho_tipo_detalle_carga frm1 = new frmdespacho_tipo_detalle_carga(row.id);
-                //frm1.Show();
+
 
                 //Vamos a Sacar la Informacion del Despacho, si es que tiene.
                 string query = @"sp_load_info_despacho_boleta_config";
@@ -267,7 +270,7 @@ namespace LOSA.TransaccionesPT
                     //    printReport.ShowPreview();
                     //}
                     CajaDialogo.Error("No se a configurado las filas para este Despachos, debe editar el despacho y Configurar las Filas");
-                    
+
 
                 }
                 else
@@ -286,7 +289,7 @@ namespace LOSA.TransaccionesPT
             {
                 CajaDialogo.Error(ex.Message);
             }
-            
+
         }
 
         private void btnExcel_Click(object sender, EventArgs e)

@@ -72,7 +72,7 @@ namespace LOSA.Clases
             return Recuperado;
         }
 
-        public bool RecuperarRegistroIDConfDespacho(int pId)
+        public bool RecuperarRegistroIDConfDespacho(int pdestino_id, int pestiba_id, int pid_present)
         {
             Recuperado = false;
             try
@@ -81,9 +81,11 @@ namespace LOSA.Clases
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_get_lista_destinos_config_despacho_pt_CLASE]", con);
+                SqlCommand cmd = new SqlCommand("sp_get_ID_config_despacho_PT", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", pId);
+                cmd.Parameters.AddWithValue("@destino_id", pdestino_id);
+                cmd.Parameters.AddWithValue("@estiba_id", pestiba_id);
+                cmd.Parameters.AddWithValue("@id_presentacion", pid_present);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {

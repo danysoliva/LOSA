@@ -4,6 +4,10 @@
 
     partial class ds_despachos
     {
+        partial class destinos_empaquesDataTable
+        {
+        }
+
         partial class cliente_despachoDataTable
         {
         }

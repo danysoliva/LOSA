@@ -65,7 +65,7 @@ namespace LOSA.Despachos
             LoadPresentaciones();
             LoadPresentacionesHabilitadas();
             load_informacion();
-            LoadPresentacionesHabilitadas();
+            //LoadPresentacionesHabilitadas();
             
             btn_guardar.Text = "Guardar Cambios";
         }
@@ -84,8 +84,8 @@ namespace LOSA.Despachos
                 cmd.Parameters.AddWithValue("@estiba_id", pestiba_id);
                 cmd.Parameters.AddWithValue("@id_presentacion", pid_present);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsProductos.destinos_empaques_pt.Clear();
-                adat.Fill(dsProductos.destinos_empaques_pt);
+                ds_despachos.destinos_empaques.Clear();
+                adat.Fill(ds_despachos.destinos_empaques);
                 conn.Close();
             }
             catch (Exception ex)
@@ -105,8 +105,8 @@ namespace LOSA.Despachos
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@cantidad", pcantidad_Ud_Despachos);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsProductos.destinos_empaques_pt.Clear();
-                adat.Fill(dsProductos.destinos_empaques_pt);
+                ds_despachos.destinos_empaques.Clear();
+                adat.Fill(ds_despachos.destinos_empaques);
                 conn.Close();
             }
             catch (Exception ex)
@@ -166,12 +166,16 @@ namespace LOSA.Despachos
                             id_presentacion = dr.IsDBNull(10) ? 0 : dr.GetInt32(10);
                             destino_id = dr.IsDBNull(11) ? 0 : dr.GetInt32(11);
                             load_destinos(codigo_selected);
-                            if (sacos_totales != 0)
+                            if (id_presentacion != 0)
                             {
                                 Destinos_empaques destino_emp = new Destinos_empaques();
-                                
-                                LoadPresentacionesGuardada(sacos_totales, estiba_id, id_presentacion, destino_id);
-                                grd_conf_filas.EditValue = destino_id;
+                                destino_emp.RecuperarRegistroIDConfDespacho(destino_id, estiba_id, id_presentacion);
+                                //LoadPresentacionesGuardada(sacos_totales, estiba_id, id_presentacion, destino_id);
+                                grd_conf_filas.EditValue = destino_emp.Id;
+
+
+                                destino_emp.RecuperarRegistro(destino_emp.Id);
+                                txtInfoConFilas.Text = destino_emp.detalle_filas;
                                 
                                 //try
                                 //{

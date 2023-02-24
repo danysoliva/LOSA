@@ -96,6 +96,8 @@
             this.colestiba_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_presentacion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtInfoConFilas = new System.Windows.Forms.TextBox();
+            this.destinosempaquesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -116,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesptBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnatras
@@ -667,10 +670,10 @@
             this.grd_conf_filas.Properties.Appearance.Options.UseFont = true;
             this.grd_conf_filas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grd_conf_filas.Properties.DataSource = this.destinosempaquesptBindingSource;
+            this.grd_conf_filas.Properties.DataSource = this.destinosempaquesBindingSource;
             this.grd_conf_filas.Properties.DisplayMember = "Destino";
             this.grd_conf_filas.Properties.PopupView = this.gridView1;
-            this.grd_conf_filas.Properties.ValueMember = "destino_id";
+            this.grd_conf_filas.Properties.ValueMember = "id";
             this.grd_conf_filas.Size = new System.Drawing.Size(387, 28);
             this.grd_conf_filas.TabIndex = 69;
             this.grd_conf_filas.EditValueChanged += new System.EventHandler(this.grd_conf_filas_EditValueChanged);
@@ -710,7 +713,8 @@
             this.colDestino,
             this.colPresentacion1,
             this.colestiba_id,
-            this.colid_presentacion1});
+            this.colid_presentacion1,
+            this.colid2});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -773,6 +777,16 @@
             this.txtInfoConFilas.Size = new System.Drawing.Size(494, 29);
             this.txtInfoConFilas.TabIndex = 70;
             // 
+            // destinosempaquesBindingSource
+            // 
+            this.destinosempaquesBindingSource.DataMember = "destinos_empaques";
+            this.destinosempaquesBindingSource.DataSource = this.ds_despachos;
+            // 
+            // colid2
+            // 
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
+            // 
             // frm_generar_despacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -826,6 +840,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesptBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -894,5 +909,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion1;
         private System.Windows.Forms.TextBox txtInfoConFilas;
         private TransaccionesPT.dsProductos dsProductos;
+        private System.Windows.Forms.BindingSource destinosempaquesBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid2;
     }
 }
