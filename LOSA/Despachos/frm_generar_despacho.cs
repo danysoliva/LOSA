@@ -168,36 +168,38 @@ namespace LOSA.Despachos
                             load_destinos(codigo_selected);
                             if (sacos_totales != 0)
                             {
+                                Destinos_empaques destino_emp = new Destinos_empaques();
+                                
                                 LoadPresentacionesGuardada(sacos_totales, estiba_id, id_presentacion, destino_id);
                                 grd_conf_filas.EditValue = destino_id;
                                 
-                                try
-                                {
+                                //try
+                                //{
                                     
-                                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                                    conn.Open();
-                                    SqlCommand cmd2 = new SqlCommand("sp_get_grid_lista_destinos_config_despacho_pt_clase", conn);
-                                    cmd2.CommandType = CommandType.StoredProcedure;
-                                    cmd2.Parameters.AddWithValue("@destino_id", destino_id);
-                                    cmd2.Parameters.AddWithValue("@estiba_id", estiba_id);
-                                    cmd2.Parameters.AddWithValue("@id_presentacion", id_presentacion);
-                                    SqlDataReader dr2 = cmd2.ExecuteReader();
-                                    if (dr2.Read())
-                                    {
-                                        TipoTxt = dr2.IsDBNull(2) ? "" : dr2.GetString(2).ToString();
-                                        DestinoTxt = dr2.IsDBNull(3) ? "" : dr2.GetString(3).ToString();
-                                        PresentacionTxt = dr2.IsDBNull(4) ? 0 : dr2.GetDecimal(4);
-                                    }
+                                //    //SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                                //    //conn.Open();
+                                //    //SqlCommand cmd2 = new SqlCommand("sp_get_grid_lista_destinos_config_despacho_pt_clase", conn);
+                                //    //cmd2.CommandType = CommandType.StoredProcedure;
+                                //    //cmd2.Parameters.AddWithValue("@destino_id", destino_id);
+                                //    //cmd2.Parameters.AddWithValue("@estiba_id", estiba_id);
+                                //    //cmd2.Parameters.AddWithValue("@id_presentacion", id_presentacion);
+                                //    //SqlDataReader dr2 = cmd2.ExecuteReader();
+                                //    //if (dr2.Read())
+                                //    //{
+                                //    //    TipoTxt = dr2.IsDBNull(2) ? "" : dr2.GetString(2).ToString();
+                                //    //    DestinoTxt = dr2.IsDBNull(3) ? "" : dr2.GetString(3).ToString();
+                                //    //    PresentacionTxt = dr2.IsDBNull(4) ? 0 : dr2.GetDecimal(4);
+                                //    //}
 
-                                    txtInfoConFilas.Text = "Destino: " + DestinoTxt + " - Tipo: " + TipoTxt + " - Presentacion: " + PresentacionTxt;
+                                //    //txtInfoConFilas.Text = "Destino: " + DestinoTxt + " - Tipo: " + TipoTxt + " - Presentacion: " + PresentacionTxt;
 
-                                    dr2.Close();
-                                    conn.Close();
-                                }
-                                catch (Exception ex)
-                                {
-                                    CajaDialogo.Error(ex.Message);
-                                }
+                                //    dr2.Close();
+                                //    conn.Close();
+                                //}
+                                //catch (Exception ex)
+                                //{
+                                //    CajaDialogo.Error(ex.Message);
+                                //}
                             }
                         }
                         dr.Close();
@@ -448,19 +450,34 @@ namespace LOSA.Despachos
 
         private void grd_conf_filas_EditValueChanged(object sender, EventArgs e)
         {
-            //GridLookUpEdit lookup = sender as GridLookUpEdit;
-            DataRowView datarowView = grd_conf_filas.GetSelectedDataRow() as DataRowView;
-            
+            //DataRowView datarowView = grd_conf_filas.GetSelectedDataRow() as DataRowView;
 
-            if (datarowView != null)
+
+            //if (datarowView != null)
+            //{
+            //    DataRow row = datarowView.Row;
+
+            //    destino_id =Convert.ToInt32(row[0]);
+            //    sacos_totales = Convert.ToDecimal(row.ItemArray[1]);
+            //    estiba_id = Convert.ToInt32(row.ItemArray[5]);
+            //    id_presentacion = Convert.ToInt32(row.ItemArray[6]);
+            //    txtInfoConFilas.Text = "Destino: " +row[3] +" - Tipo: "+ row[2] +" - Presentacion: "+row[4];
+            //}
+            if (string.IsNullOrEmpty(grd_conf_filas.Text))
             {
-                DataRow row = datarowView.Row;
+                return;
+            }
 
-                destino_id =Convert.ToInt32(row[0]);
-                sacos_totales = Convert.ToDecimal(row.ItemArray[1]);
-                estiba_id = Convert.ToInt32(row.ItemArray[5]);
-                id_presentacion = Convert.ToInt32(row.ItemArray[6]);
-                txtInfoConFilas.Text = "Destino: " +row[3] +" - Tipo: "+ row[2] +" - Presentacion: "+row[4];
+            Destinos_empaques destino_em = new Destinos_empaques();
+            int id = dp.ValidateNumberInt32(grd_conf_filas.EditValue);
+
+            if (destino_em.RecuperarRegistro(id))
+            {
+                destino_id = destino_em.Destino_id;
+                sacos_totales = 0;
+                estiba_id = destino_em.Estiba_id;
+                id_presentacion = destino_em.Id_presentacion;
+                txtInfoConFilas.Text = destino_em.detalle_filas;
             }
         }
 

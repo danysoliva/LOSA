@@ -21,6 +21,7 @@ namespace LOSA.Clases
         private decimal presentacion;
         private bool enable;
         private bool recuperado;
+        public string detalle_filas;
 
         DataOperations dp = new DataOperations();
         public int Id { get => id; set => id = value; }
@@ -29,13 +30,13 @@ namespace LOSA.Clases
         public string Destino { get => destino; set => destino = value; }
         public string Estiba { get => estiba; set => estiba = value; }
         public int Id_presentacion { get => id_presentacion; set => id_presentacion = value; }
-        public string Presentacion { get => presentacion; set => presentacion = value; }
+        public decimal Presentacion { get => presentacion; set => presentacion = value; }
         public bool Enable { get => enable; set => enable = value; }
         public bool Recuperado { get => recuperado; set => recuperado = value; }
 
         //[sp_get_lista_destinos_config_despacho_pt_CLASE]
 
-        public bool RecuperarRegistro(string pId)
+        public bool RecuperarRegistro(int pId)
         {
             Recuperado = false;
             try
@@ -58,6 +59,7 @@ namespace LOSA.Clases
                     id_presentacion = dr.GetInt32(5);
                     estiba_id = dr.GetInt32(6);
                     enable = dr.GetBoolean(7);
+                    detalle_filas = dr.GetString(8);
                     Recuperado = true;
                 }
                 dr.Close();
@@ -69,5 +71,35 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
+
+        public bool RecuperarRegistroIDConfDespacho(int pId)
+        {
+            Recuperado = false;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_get_lista_destinos_config_despacho_pt_CLASE]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", pId);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    id = dr.GetInt32(0);
+                    
+                    Recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
+
     }
 }

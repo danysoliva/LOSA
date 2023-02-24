@@ -5389,9 +5389,7 @@
       <DependentUpon>dsProductos.xsd</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\dsProductos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsProductos.xsd</DependentUpon>
+      <DependentUpon>dsProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
@@ -8049,11 +8047,7 @@
     <None Include="TransaccionesPT\dsProductos.xsc">
       <DependentUpon>dsProductos.xsd</DependentUpon>
     </None>
-    <None Include="TransaccionesPT\dsProductos.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsProductos.Designer.cs</LastGenOutput>
-    </None>
+    <None Include="TransaccionesPT\dsProductos.xsd" />
     <None Include="TransaccionesPT\dsProductos.xss">
       <DependentUpon>dsProductos.xsd</DependentUpon>
     </None>
