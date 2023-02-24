@@ -80,9 +80,9 @@ namespace LOSA.Despachos
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@SacosTotal", psacos_totales);
-                cmd.Parameters.AddWithValue("@destino_id", destino_id);
-                cmd.Parameters.AddWithValue("@estiba_id", estiba_id);
-                cmd.Parameters.AddWithValue("@id_presentacion", id_presentacion);
+                cmd.Parameters.AddWithValue("@destino_id", pDestinoID);
+                cmd.Parameters.AddWithValue("@estiba_id", pestiba_id);
+                cmd.Parameters.AddWithValue("@id_presentacion", pid_present);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsProductos.destinos_empaques_pt.Clear();
                 adat.Fill(dsProductos.destinos_empaques_pt);
