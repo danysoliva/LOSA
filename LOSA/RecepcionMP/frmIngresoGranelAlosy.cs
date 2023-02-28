@@ -375,7 +375,7 @@ namespace LOSA.RecepcionMP
                         cmd.Transaction = transaction;
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@entrada", sumar_Kg);
-                        cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                        cmd.Parameters.AddWithValue("@lote", txtLote.Text.Trim());
                         cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
                         cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                         cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
@@ -394,7 +394,7 @@ namespace LOSA.RecepcionMP
                         cmd.Transaction = transaction;
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@entrada", sumar_Kg);
-                        cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                        cmd.Parameters.AddWithValue("@lote", txtLote.Text.Trim());
                         cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
                         cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                         cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
@@ -413,7 +413,7 @@ namespace LOSA.RecepcionMP
                     cmd.Transaction = transaction;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@entrada", sumar_Kg);
-                    cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                    cmd.Parameters.AddWithValue("@lote", txtLote.Text.Trim());
                     cmd.Parameters.AddWithValue("@id_ingreso", ingreso);
                     cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                     cmd.Parameters.AddWithValue("@id_user", this.UsuarioLogeado.Id);
@@ -525,7 +525,7 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
                         cmd.Parameters.AddWithValue("@entrada", row.PesoProd);
                         cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
-                        cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                        cmd.Parameters.AddWithValue("@lote", txtLote.Text.Trim());
                         cmd.Parameters.AddWithValue("@id_lote", IdLoteSelected);
                         cmd.Parameters.AddWithValue("@id", row.id);
                         cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);
@@ -583,7 +583,7 @@ namespace LOSA.RecepcionMP
                         cmd.Parameters.AddWithValue("@id_boleta", row.NBoleta);
                         cmd.Parameters.AddWithValue("@entrada", row.PesoProd);
                         cmd.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
-                        cmd.Parameters.AddWithValue("@lote", txtLote.Text);
+                        cmd.Parameters.AddWithValue("@lote", txtLote.Text.Trim());
                         cmd.Parameters.AddWithValue("@id_lote", IdLoteSelected);
                         cmd.Parameters.AddWithValue("@id", row.id);
                         cmd.Parameters.AddWithValue("@id_ubicacion", row.id_ubicacion);

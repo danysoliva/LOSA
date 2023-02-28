@@ -487,7 +487,7 @@ namespace LOSA.Despachos
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-                ds_despachos.detalle_despachosComplete.AcceptChanges();
+            ds_despachos.detalle_despachosComplete.AcceptChanges();
             if (txtboleta.Text == "")
             {
                 if (MessageBox.Show("Desea crear la orden de carga sin ligar una boleta? Se puede ligar en cualquier momento del proceso.", "Mensaje del sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)

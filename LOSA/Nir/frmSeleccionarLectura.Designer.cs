@@ -34,6 +34,7 @@ namespace LOSA.Nir
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionarLectura));
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsNir = new LOSA.Nir.dsNir();
@@ -57,11 +58,23 @@ namespace LOSA.Nir
             this.colselecionada = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSubirSeleccionada = new DevExpress.XtraEditors.SimpleButton();
             this.chTodas = new DevExpress.XtraEditors.CheckEdit();
+            this.dtDesde = new DevExpress.XtraEditors.DateEdit();
+            this.dtHasta = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.tsVerTodos = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chTodas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsVerTodos.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -73,9 +86,9 @@ namespace LOSA.Nir
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(571, 7);
+            this.cmdHome.Location = new System.Drawing.Point(1083, 12);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 54);
+            this.cmdHome.Size = new System.Drawing.Size(184, 49);
             this.cmdHome.TabIndex = 10;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -92,7 +105,7 @@ namespace LOSA.Nir
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnseleccionar});
-            this.grd_data.Size = new System.Drawing.Size(776, 483);
+            this.grd_data.Size = new System.Drawing.Size(1288, 670);
             this.grd_data.TabIndex = 11;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -282,7 +295,7 @@ namespace LOSA.Nir
             this.btnSubirSeleccionada.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubirSeleccionada.Appearance.Options.UseFont = true;
             this.btnSubirSeleccionada.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.btnSubirSeleccionada.Location = new System.Drawing.Point(12, 21);
+            this.btnSubirSeleccionada.Location = new System.Drawing.Point(853, 12);
             this.btnSubirSeleccionada.Name = "btnSubirSeleccionada";
             this.btnSubirSeleccionada.Size = new System.Drawing.Size(197, 49);
             this.btnSubirSeleccionada.TabIndex = 12;
@@ -291,20 +304,109 @@ namespace LOSA.Nir
             // 
             // chTodas
             // 
-            this.chTodas.Location = new System.Drawing.Point(231, 48);
+            this.chTodas.Location = new System.Drawing.Point(684, 58);
             this.chTodas.Name = "chTodas";
             this.chTodas.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.chTodas.Properties.Appearance.Options.UseFont = true;
             this.chTodas.Properties.Caption = "Seleccionar todas";
-            this.chTodas.Size = new System.Drawing.Size(252, 22);
+            this.chTodas.Size = new System.Drawing.Size(152, 22);
             this.chTodas.TabIndex = 13;
             this.chTodas.CheckedChanged += new System.EventHandler(this.chTodas_CheckedChanged);
+            // 
+            // dtDesde
+            // 
+            this.dtDesde.EditValue = null;
+            this.dtDesde.Location = new System.Drawing.Point(117, 10);
+            this.dtDesde.Name = "dtDesde";
+            this.dtDesde.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtDesde.Properties.Appearance.Options.UseFont = true;
+            this.dtDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtDesde.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtDesde.Size = new System.Drawing.Size(125, 28);
+            this.dtDesde.TabIndex = 14;
+            // 
+            // dtHasta
+            // 
+            this.dtHasta.EditValue = null;
+            this.dtHasta.Location = new System.Drawing.Point(117, 49);
+            this.dtHasta.Name = "dtHasta";
+            this.dtHasta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtHasta.Properties.Appearance.Options.UseFont = true;
+            this.dtHasta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtHasta.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtHasta.Size = new System.Drawing.Size(125, 28);
+            this.dtHasta.TabIndex = 15;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(12, 16);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(99, 21);
+            this.labelControl1.TabIndex = 16;
+            this.labelControl1.Text = "Fecha Desde:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(12, 54);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(95, 21);
+            this.labelControl2.TabIndex = 17;
+            this.labelControl2.Text = "Fecha Hasta:";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Appearance.Options.UseFont = true;
+            this.btnRefresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefresh.ImageOptions.SvgImage")));
+            this.btnRefresh.Location = new System.Drawing.Point(261, 6);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(111, 36);
+            this.btnRefresh.TabIndex = 18;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(261, 54);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(73, 21);
+            this.labelControl3.TabIndex = 19;
+            this.labelControl3.Text = "Ver Todos:";
+            // 
+            // tsVerTodos
+            // 
+            this.tsVerTodos.Location = new System.Drawing.Point(340, 48);
+            this.tsVerTodos.Name = "tsVerTodos";
+            this.tsVerTodos.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tsVerTodos.Properties.Appearance.Options.UseFont = true;
+            this.tsVerTodos.Properties.OffText = "No";
+            this.tsVerTodos.Properties.OnText = "Si";
+            this.tsVerTodos.Size = new System.Drawing.Size(136, 32);
+            this.tsVerTodos.TabIndex = 20;
+            this.tsVerTodos.Toggled += new System.EventHandler(this.tsVerTodos_Toggled);
             // 
             // frmSeleccionarLectura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 569);
+            this.ClientSize = new System.Drawing.Size(1289, 756);
+            this.Controls.Add(this.tsVerTodos);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.dtHasta);
+            this.Controls.Add(this.dtDesde);
             this.Controls.Add(this.chTodas);
             this.Controls.Add(this.btnSubirSeleccionada);
             this.Controls.Add(this.grd_data);
@@ -317,7 +419,13 @@ namespace LOSA.Nir
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chTodas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsVerTodos.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -346,5 +454,12 @@ namespace LOSA.Nir
         private DevExpress.XtraEditors.SimpleButton btnSubirSeleccionada;
         private DevExpress.XtraGrid.Columns.GridColumn colselecionada;
         private DevExpress.XtraEditors.CheckEdit chTodas;
+        private DevExpress.XtraEditors.DateEdit dtDesde;
+        private DevExpress.XtraEditors.DateEdit dtHasta;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.ToggleSwitch tsVerTodos;
     }
 }

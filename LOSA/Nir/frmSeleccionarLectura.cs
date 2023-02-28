@@ -25,6 +25,8 @@ namespace LOSA.Nir
         public frmSeleccionarLectura(UserLogin Puser, int pid_lote)
         {
             InitializeComponent();
+            dtDesde.EditValue = dp.Now().AddMonths(-1);
+            dtHasta.EditValue = dp.Now();
             UsuarioLogeado = Puser;
             id_lote = pid_lote;
             load_Data();
@@ -32,21 +34,51 @@ namespace LOSA.Nir
 
         public void load_Data() 
         {
-            string Query = @"sp_load_lecturas_to_pick";
-            try
+            if (tsVerTodos.IsOn)
             {
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(Query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                dsNir.seleccion_lectura.Clear();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsNir.seleccion_lectura);
-                cn.Close();
+                try
+                {
+                    string Query = @"sp_load_lecturas_to_pick";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    dsNir.seleccion_lectura.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsNir.seleccion_lectura);
+                    cn.Close();
+
+                    dtDesde.Enabled = false;
+                    dtHasta.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                CajaDialogo.Error(ex.Message);
+                string Query = @"sp_load_lecturas_to_pickV2";
+                try
+                {
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Desde", dtDesde.EditValue);
+                    cmd.Parameters.AddWithValue("@Hasta", dtHasta.EditValue);
+                    dsNir.seleccion_lectura.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsNir.seleccion_lectura);
+                    cn.Close();
+
+                    dtDesde.Enabled = true;
+                    dtHasta.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
 
         }
@@ -186,7 +218,7 @@ namespace LOSA.Nir
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -208,6 +240,16 @@ namespace LOSA.Nir
                     row.AcceptChanges();
                 }
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            load_Data();
+        }
+
+        private void tsVerTodos_Toggled(object sender, EventArgs e)
+        {
+            load_Data();
         }
     }
 }

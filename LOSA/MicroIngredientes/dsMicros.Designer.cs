@@ -5297,6 +5297,8 @@ namespace LOSA.MicroIngredientes {
             
             private global::System.Data.DataColumn columnbatch_pendientes;
             
+            private global::System.Data.DataColumn columnkg_por_batch;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public resumen_pesaje_individual_pendienteDataTable() {
@@ -5428,6 +5430,14 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn kg_por_batchColumn {
+                get {
+                    return this.columnkg_por_batch;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5463,7 +5473,7 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public resumen_pesaje_individual_pendienteRow Addresumen_pesaje_individual_pendienteRow(int id_orden, decimal total_kg, System.DateTime fecha, int cant_batch, int id_rm, string itemname, int order_id, string order_code, int id_turno, int lot, int acumulado, int batch_pendientes) {
+            public resumen_pesaje_individual_pendienteRow Addresumen_pesaje_individual_pendienteRow(int id_orden, decimal total_kg, System.DateTime fecha, int cant_batch, int id_rm, string itemname, int order_id, string order_code, int id_turno, int lot, int acumulado, int batch_pendientes, decimal kg_por_batch) {
                 resumen_pesaje_individual_pendienteRow rowresumen_pesaje_individual_pendienteRow = ((resumen_pesaje_individual_pendienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_orden,
@@ -5477,7 +5487,8 @@ namespace LOSA.MicroIngredientes {
                         id_turno,
                         lot,
                         acumulado,
-                        batch_pendientes};
+                        batch_pendientes,
+                        kg_por_batch};
                 rowresumen_pesaje_individual_pendienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowresumen_pesaje_individual_pendienteRow);
                 return rowresumen_pesaje_individual_pendienteRow;
@@ -5512,6 +5523,7 @@ namespace LOSA.MicroIngredientes {
                 this.columnlot = base.Columns["lot"];
                 this.columnacumulado = base.Columns["acumulado"];
                 this.columnbatch_pendientes = base.Columns["batch_pendientes"];
+                this.columnkg_por_batch = base.Columns["kg_por_batch"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5541,6 +5553,8 @@ namespace LOSA.MicroIngredientes {
                 base.Columns.Add(this.columnacumulado);
                 this.columnbatch_pendientes = new global::System.Data.DataColumn("batch_pendientes", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbatch_pendientes);
+                this.columnkg_por_batch = new global::System.Data.DataColumn("kg_por_batch", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkg_por_batch);
                 this.columnid_orden.Caption = "id_orden_encabezado";
                 this.columnid_rm.Caption = "AMI_ID";
                 this.columnlot.Caption = "Lote PT";
@@ -9425,6 +9439,23 @@ namespace LOSA.MicroIngredientes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal kg_por_batch {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableresumen_pesaje_individual_pendiente.kg_por_batchColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'kg_por_batch\' de la tabla \'resumen_pesaje_individual_pend" +
+                                "iente\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableresumen_pesaje_individual_pendiente.kg_por_batchColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_ordenNull() {
                 return this.IsNull(this.tableresumen_pesaje_individual_pendiente.id_ordenColumn);
             }
@@ -9565,6 +9596,18 @@ namespace LOSA.MicroIngredientes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setbatch_pendientesNull() {
                 this[this.tableresumen_pesaje_individual_pendiente.batch_pendientesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iskg_por_batchNull() {
+                return this.IsNull(this.tableresumen_pesaje_individual_pendiente.kg_por_batchColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setkg_por_batchNull() {
+                this[this.tableresumen_pesaje_individual_pendiente.kg_por_batchColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -52,6 +52,18 @@ namespace LOSA.MicroIngredientes
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_orden = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltotal_kg1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcant_batch1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_rm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorder_id1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colorder_code1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_turno1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collot1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colacumulado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colbatch_pendientes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtLotePT1 = new System.Windows.Forms.TextBox();
             this.txtProducto1 = new System.Windows.Forms.TextBox();
@@ -67,18 +79,7 @@ namespace LOSA.MicroIngredientes
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.teCodBarra = new DevExpress.XtraEditors.TextEdit();
-            this.colid_orden = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltotal_kg1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfecha1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcant_batch1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_rm = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colitemname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colorder_id1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colorder_code1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_turno1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collot1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colacumulado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colbatch_pendientes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colkg_por_batch = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
@@ -151,6 +152,7 @@ namespace LOSA.MicroIngredientes
             this.collot,
             this.gridColumn1,
             this.gridColumn2});
+            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(-839, 382, 260, 352);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -338,10 +340,119 @@ namespace LOSA.MicroIngredientes
             this.colid_turno1,
             this.collot1,
             this.colacumulado,
-            this.colbatch_pendientes});
+            this.colbatch_pendientes,
+            this.colkg_por_batch});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid_orden
+            // 
+            this.colid_orden.FieldName = "id_orden";
+            this.colid_orden.Name = "colid_orden";
+            this.colid_orden.OptionsColumn.AllowEdit = false;
+            this.colid_orden.Width = 127;
+            // 
+            // coltotal_kg1
+            // 
+            this.coltotal_kg1.Caption = "Total KG";
+            this.coltotal_kg1.FieldName = "total_kg";
+            this.coltotal_kg1.Name = "coltotal_kg1";
+            this.coltotal_kg1.OptionsColumn.AllowEdit = false;
+            this.coltotal_kg1.Visible = true;
+            this.coltotal_kg1.VisibleIndex = 6;
+            this.coltotal_kg1.Width = 103;
+            // 
+            // colfecha1
+            // 
+            this.colfecha1.Caption = "Fecha";
+            this.colfecha1.FieldName = "fecha";
+            this.colfecha1.Name = "colfecha1";
+            this.colfecha1.OptionsColumn.AllowEdit = false;
+            this.colfecha1.Visible = true;
+            this.colfecha1.VisibleIndex = 1;
+            this.colfecha1.Width = 113;
+            // 
+            // colcant_batch1
+            // 
+            this.colcant_batch1.Caption = "Cant. Batch Inicial";
+            this.colcant_batch1.FieldName = "cant_batch";
+            this.colcant_batch1.Name = "colcant_batch1";
+            this.colcant_batch1.OptionsColumn.AllowEdit = false;
+            this.colcant_batch1.Visible = true;
+            this.colcant_batch1.VisibleIndex = 7;
+            this.colcant_batch1.Width = 174;
+            // 
+            // colid_rm
+            // 
+            this.colid_rm.FieldName = "id_rm";
+            this.colid_rm.Name = "colid_rm";
+            this.colid_rm.OptionsColumn.AllowEdit = false;
+            // 
+            // colitemname
+            // 
+            this.colitemname.Caption = "MP";
+            this.colitemname.FieldName = "itemname";
+            this.colitemname.Name = "colitemname";
+            this.colitemname.OptionsColumn.AllowEdit = false;
+            this.colitemname.Visible = true;
+            this.colitemname.VisibleIndex = 0;
+            this.colitemname.Width = 125;
+            // 
+            // colorder_id1
+            // 
+            this.colorder_id1.Caption = "Order Id";
+            this.colorder_id1.FieldName = "order_id";
+            this.colorder_id1.Name = "colorder_id1";
+            this.colorder_id1.OptionsColumn.AllowEdit = false;
+            this.colorder_id1.Visible = true;
+            this.colorder_id1.VisibleIndex = 2;
+            this.colorder_id1.Width = 102;
+            // 
+            // colorder_code1
+            // 
+            this.colorder_code1.Caption = "Order Code";
+            this.colorder_code1.FieldName = "order_code";
+            this.colorder_code1.Name = "colorder_code1";
+            this.colorder_code1.OptionsColumn.AllowEdit = false;
+            this.colorder_code1.Visible = true;
+            this.colorder_code1.VisibleIndex = 3;
+            this.colorder_code1.Width = 152;
+            // 
+            // colid_turno1
+            // 
+            this.colid_turno1.FieldName = "id_turno";
+            this.colid_turno1.Name = "colid_turno1";
+            this.colid_turno1.OptionsColumn.AllowEdit = false;
+            // 
+            // collot1
+            // 
+            this.collot1.FieldName = "lot";
+            this.collot1.Name = "collot1";
+            this.collot1.OptionsColumn.AllowEdit = false;
+            this.collot1.Visible = true;
+            this.collot1.VisibleIndex = 4;
+            this.collot1.Width = 97;
+            // 
+            // colacumulado
+            // 
+            this.colacumulado.Caption = "Batch Adicionados";
+            this.colacumulado.FieldName = "acumulado";
+            this.colacumulado.Name = "colacumulado";
+            this.colacumulado.OptionsColumn.AllowEdit = false;
+            this.colacumulado.Visible = true;
+            this.colacumulado.VisibleIndex = 8;
+            this.colacumulado.Width = 119;
+            // 
+            // colbatch_pendientes
+            // 
+            this.colbatch_pendientes.Caption = "Batch Pendientes";
+            this.colbatch_pendientes.FieldName = "batch_pendientes";
+            this.colbatch_pendientes.Name = "colbatch_pendientes";
+            this.colbatch_pendientes.OptionsColumn.AllowEdit = false;
+            this.colbatch_pendientes.Visible = true;
+            this.colbatch_pendientes.VisibleIndex = 9;
+            this.colbatch_pendientes.Width = 155;
             // 
             // labelControl1
             // 
@@ -504,113 +615,15 @@ namespace LOSA.MicroIngredientes
             this.teCodBarra.TabIndex = 0;
             this.teCodBarra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.teCodBarra_KeyDown);
             // 
-            // colid_orden
+            // colkg_por_batch
             // 
-            this.colid_orden.FieldName = "id_orden";
-            this.colid_orden.Name = "colid_orden";
-            this.colid_orden.OptionsColumn.AllowEdit = false;
-            this.colid_orden.Width = 127;
-            // 
-            // coltotal_kg1
-            // 
-            this.coltotal_kg1.Caption = "Total KG";
-            this.coltotal_kg1.FieldName = "total_kg";
-            this.coltotal_kg1.Name = "coltotal_kg1";
-            this.coltotal_kg1.OptionsColumn.AllowEdit = false;
-            this.coltotal_kg1.Visible = true;
-            this.coltotal_kg1.VisibleIndex = 5;
-            this.coltotal_kg1.Width = 118;
-            // 
-            // colfecha1
-            // 
-            this.colfecha1.Caption = "Fecha";
-            this.colfecha1.FieldName = "fecha";
-            this.colfecha1.Name = "colfecha1";
-            this.colfecha1.OptionsColumn.AllowEdit = false;
-            this.colfecha1.Visible = true;
-            this.colfecha1.VisibleIndex = 1;
-            this.colfecha1.Width = 141;
-            // 
-            // colcant_batch1
-            // 
-            this.colcant_batch1.Caption = "Cant. Batch Inicial";
-            this.colcant_batch1.FieldName = "cant_batch";
-            this.colcant_batch1.Name = "colcant_batch1";
-            this.colcant_batch1.OptionsColumn.AllowEdit = false;
-            this.colcant_batch1.Visible = true;
-            this.colcant_batch1.VisibleIndex = 6;
-            this.colcant_batch1.Width = 196;
-            // 
-            // colid_rm
-            // 
-            this.colid_rm.FieldName = "id_rm";
-            this.colid_rm.Name = "colid_rm";
-            this.colid_rm.OptionsColumn.AllowEdit = false;
-            // 
-            // colitemname
-            // 
-            this.colitemname.Caption = "MP";
-            this.colitemname.FieldName = "itemname";
-            this.colitemname.Name = "colitemname";
-            this.colitemname.OptionsColumn.AllowEdit = false;
-            this.colitemname.Visible = true;
-            this.colitemname.VisibleIndex = 0;
-            this.colitemname.Width = 133;
-            // 
-            // colorder_id1
-            // 
-            this.colorder_id1.Caption = "Order Id";
-            this.colorder_id1.FieldName = "order_id";
-            this.colorder_id1.Name = "colorder_id1";
-            this.colorder_id1.OptionsColumn.AllowEdit = false;
-            this.colorder_id1.Visible = true;
-            this.colorder_id1.VisibleIndex = 2;
-            this.colorder_id1.Width = 133;
-            // 
-            // colorder_code1
-            // 
-            this.colorder_code1.Caption = "Order Code";
-            this.colorder_code1.FieldName = "order_code";
-            this.colorder_code1.Name = "colorder_code1";
-            this.colorder_code1.OptionsColumn.AllowEdit = false;
-            this.colorder_code1.Visible = true;
-            this.colorder_code1.VisibleIndex = 3;
-            this.colorder_code1.Width = 133;
-            // 
-            // colid_turno1
-            // 
-            this.colid_turno1.FieldName = "id_turno";
-            this.colid_turno1.Name = "colid_turno1";
-            this.colid_turno1.OptionsColumn.AllowEdit = false;
-            // 
-            // collot1
-            // 
-            this.collot1.FieldName = "lot";
-            this.collot1.Name = "collot1";
-            this.collot1.OptionsColumn.AllowEdit = false;
-            this.collot1.Visible = true;
-            this.collot1.VisibleIndex = 4;
-            this.collot1.Width = 133;
-            // 
-            // colacumulado
-            // 
-            this.colacumulado.Caption = "Batch Adicionados";
-            this.colacumulado.FieldName = "acumulado";
-            this.colacumulado.Name = "colacumulado";
-            this.colacumulado.OptionsColumn.AllowEdit = false;
-            this.colacumulado.Visible = true;
-            this.colacumulado.VisibleIndex = 7;
-            this.colacumulado.Width = 136;
-            // 
-            // colbatch_pendientes
-            // 
-            this.colbatch_pendientes.Caption = "Batch Pendientes";
-            this.colbatch_pendientes.FieldName = "batch_pendientes";
-            this.colbatch_pendientes.Name = "colbatch_pendientes";
-            this.colbatch_pendientes.OptionsColumn.AllowEdit = false;
-            this.colbatch_pendientes.Visible = true;
-            this.colbatch_pendientes.VisibleIndex = 8;
-            this.colbatch_pendientes.Width = 147;
+            this.colkg_por_batch.Caption = "KG Por Batch";
+            this.colkg_por_batch.FieldName = "kg_por_batch";
+            this.colkg_por_batch.Name = "colkg_por_batch";
+            this.colkg_por_batch.OptionsColumn.AllowEdit = false;
+            this.colkg_por_batch.Visible = true;
+            this.colkg_por_batch.VisibleIndex = 5;
+            this.colkg_por_batch.Width = 130;
             // 
             // xfrmAlimentacionTarimaArriba
             // 
@@ -702,5 +715,6 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraGrid.Columns.GridColumn collot1;
         private DevExpress.XtraGrid.Columns.GridColumn colacumulado;
         private DevExpress.XtraGrid.Columns.GridColumn colbatch_pendientes;
+        private DevExpress.XtraGrid.Columns.GridColumn colkg_por_batch;
     }
 }

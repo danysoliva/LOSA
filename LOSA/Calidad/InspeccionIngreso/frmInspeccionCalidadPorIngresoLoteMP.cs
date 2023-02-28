@@ -1100,7 +1100,8 @@ namespace LOSA.Calidad
         {
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
-            string query = @"sp_get_informacion_get_to_show_calidad_data_mp_v4";
+            //string query = @"sp_get_informacion_get_to_show_calidad_data_mp_v4";
+            string query = @"[sp_get_informacion_get_to_show_calidad_data_mp_all]";
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
             //cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
