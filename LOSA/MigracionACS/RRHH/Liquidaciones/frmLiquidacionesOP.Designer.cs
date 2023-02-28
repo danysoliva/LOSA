@@ -723,7 +723,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.xtraTabControl2.Location = new System.Drawing.Point(667, 461);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl2.Size = new System.Drawing.Size(716, 226);
+            this.xtraTabControl2.Size = new System.Drawing.Size(716, 246);
             this.xtraTabControl2.TabIndex = 133;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3});
@@ -734,7 +734,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.xtraTabPage3.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage3.Controls.Add(this.gridControl4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(710, 196);
+            this.xtraTabPage3.Size = new System.Drawing.Size(710, 216);
             this.xtraTabPage3.Text = "Ultimos 6 Meses de Salario";
             // 
             // gridControl4
@@ -745,7 +745,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.gridControl4.Location = new System.Drawing.Point(0, 0);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(710, 196);
+            this.gridControl4.Size = new System.Drawing.Size(710, 216);
             this.gridControl4.TabIndex = 0;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -857,7 +857,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(431, 690);
+            this.txtTotal.Location = new System.Drawing.Point(431, 685);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtTotal.Properties.Appearance.Options.UseFont = true;
@@ -963,7 +963,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(197, 696);
+            this.labelControl14.Location = new System.Drawing.Point(197, 691);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(226, 16);
             this.labelControl14.TabIndex = 130;
@@ -972,7 +972,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // txtTDeducciones
             // 
             this.txtTDeducciones.Enabled = false;
-            this.txtTDeducciones.Location = new System.Drawing.Point(431, 665);
+            this.txtTDeducciones.Location = new System.Drawing.Point(431, 662);
             this.txtTDeducciones.Name = "txtTDeducciones";
             this.txtTDeducciones.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtTDeducciones.Properties.Appearance.Options.UseFont = true;
@@ -987,7 +987,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(197, 671);
+            this.labelControl13.Location = new System.Drawing.Point(197, 668);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(229, 16);
             this.labelControl13.TabIndex = 128;
@@ -996,7 +996,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // txtTDerechos
             // 
             this.txtTDerechos.Enabled = false;
-            this.txtTDerechos.Location = new System.Drawing.Point(431, 641);
+            this.txtTDerechos.Location = new System.Drawing.Point(431, 639);
             this.txtTDerechos.Name = "txtTDerechos";
             this.txtTDerechos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtTDerechos.Properties.Appearance.Options.UseFont = true;
@@ -1011,7 +1011,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(197, 647);
+            this.labelControl12.Location = new System.Drawing.Point(197, 645);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(229, 16);
             this.labelControl12.TabIndex = 126;

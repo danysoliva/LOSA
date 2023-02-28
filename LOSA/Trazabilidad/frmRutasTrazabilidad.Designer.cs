@@ -30,14 +30,9 @@ namespace LOSA.Trazabilidad
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridView22 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colContado1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdCantidadDosificadaLoteLink = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -649,6 +644,7 @@ namespace LOSA.Trazabilidad
             this.colIdSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.npRuta3DetalleDespacho = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.btnImprimirDetalleCarga = new DevExpress.XtraEditors.SimpleButton();
             this.vGridControl3 = new DevExpress.XtraVerticalGrid.VGridControl();
             this.rowcodigo1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowcliente = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -1074,10 +1070,10 @@ namespace LOSA.Trazabilidad
             this.GridRuta4_detalle_trz_lote_pt.DataMember = "Ruta4_H_trz_lote_pt";
             this.GridRuta4_detalle_trz_lote_pt.DataSource = this.dsMantoTrazabilidad;
             this.GridRuta4_detalle_trz_lote_pt.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.LevelTemplate = this.gridView22;
-            gridLevelNode2.RelationName = "Detalle de Lotes";
+            gridLevelNode1.LevelTemplate = this.gridView22;
+            gridLevelNode1.RelationName = "Detalle de Lotes";
             this.GridRuta4_detalle_trz_lote_pt.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.GridRuta4_detalle_trz_lote_pt.Location = new System.Drawing.Point(0, 0);
             this.GridRuta4_detalle_trz_lote_pt.MainView = this.gridView20;
             this.GridRuta4_detalle_trz_lote_pt.Name = "GridRuta4_detalle_trz_lote_pt";
@@ -1192,9 +1188,8 @@ namespace LOSA.Trazabilidad
             // cmdDetalleBatch
             // 
             this.cmdDetalleBatch.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.cmdDetalleBatch.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.cmdDetalleBatch.Name = "cmdDetalleBatch";
             this.cmdDetalleBatch.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmdDetalleBatch.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDetalleBatch_ButtonClick);
@@ -3779,9 +3774,9 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.grd_logistica.DataMember = "logisticaInformacion";
             this.grd_logistica.DataSource = this.dsMantenimientoC;
-            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.grd_logistica.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode2});
             this.grd_logistica.Location = new System.Drawing.Point(3, 6);
             this.grd_logistica.MainView = this.grdv_logistica;
             this.grd_logistica.Name = "grd_logistica";
@@ -8022,6 +8017,7 @@ namespace LOSA.Trazabilidad
             // 
             // npRuta3DetalleDespacho
             // 
+            this.npRuta3DetalleDespacho.Controls.Add(this.btnImprimirDetalleCarga);
             this.npRuta3DetalleDespacho.Controls.Add(this.vGridControl3);
             this.npRuta3DetalleDespacho.Controls.Add(this.simpleButton3);
             this.npRuta3DetalleDespacho.Controls.Add(this.simpleButton4);
@@ -8029,10 +8025,25 @@ namespace LOSA.Trazabilidad
             this.npRuta3DetalleDespacho.Name = "npRuta3DetalleDespacho";
             this.npRuta3DetalleDespacho.Size = new System.Drawing.Size(1301, 856);
             // 
+            // btnImprimirDetalleCarga
+            // 
+            this.btnImprimirDetalleCarga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirDetalleCarga.Appearance.BackColor = System.Drawing.Color.MintCream;
+            this.btnImprimirDetalleCarga.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.75F);
+            this.btnImprimirDetalleCarga.Appearance.Options.UseBackColor = true;
+            this.btnImprimirDetalleCarga.Appearance.Options.UseFont = true;
+            this.btnImprimirDetalleCarga.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnImprimirDetalleCarga.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImprimirDetalleCarga.ImageOptions.SvgImage")));
+            this.btnImprimirDetalleCarga.Location = new System.Drawing.Point(763, 12);
+            this.btnImprimirDetalleCarga.Name = "btnImprimirDetalleCarga";
+            this.btnImprimirDetalleCarga.Size = new System.Drawing.Size(211, 52);
+            this.btnImprimirDetalleCarga.TabIndex = 53;
+            this.btnImprimirDetalleCarga.Text = "Imprimir Despacho";
+            this.btnImprimirDetalleCarga.Click += new System.EventHandler(this.btnImprimirDetalleCarga_Click);
+            // 
             // vGridControl3
             // 
             this.vGridControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.vGridControl3.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.vGridControl3.DataMember = "hedaer_despacho";
             this.vGridControl3.DataSource = this.dsMantoTrazabilidad;
             this.vGridControl3.Location = new System.Drawing.Point(3, 3);
@@ -10143,5 +10154,6 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.ToggleSwitch toggleSwitchExpandAll_Row;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDetalleBatch;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra3;
+        private DevExpress.XtraEditors.SimpleButton btnImprimirDetalleCarga;
     }
 }

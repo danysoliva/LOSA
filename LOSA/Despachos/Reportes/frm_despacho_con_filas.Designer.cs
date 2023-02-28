@@ -34,6 +34,8 @@ namespace LOSA.Despachos.Reportes
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.txtCodCliente = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel50 = new DevExpress.XtraReports.UI.XRLabel();
             this.txtCliente = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel47 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
@@ -108,8 +110,6 @@ namespace LOSA.Despachos.Reportes
             this.xrLabel32 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel40 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel41 = new DevExpress.XtraReports.UI.XRLabel();
-            this.txtCodCliente = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel50 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -168,6 +168,35 @@ namespace LOSA.Despachos.Reportes
             this.xrLabel39});
             this.ReportHeader.HeightF = 205.0384F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // txtCodCliente
+            // 
+            this.txtCodCliente.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.txtCodCliente.BorderWidth = 2F;
+            this.txtCodCliente.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodCliente.LocationFloat = new DevExpress.Utils.PointFloat(566.1829F, 146.4961F);
+            this.txtCodCliente.Multiline = true;
+            this.txtCodCliente.Name = "txtCodCliente";
+            this.txtCodCliente.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txtCodCliente.SizeF = new System.Drawing.SizeF(193.7337F, 14.04532F);
+            this.txtCodCliente.StylePriority.UseBorders = false;
+            this.txtCodCliente.StylePriority.UseBorderWidth = false;
+            this.txtCodCliente.StylePriority.UseFont = false;
+            // 
+            // xrLabel50
+            // 
+            this.xrLabel50.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel50.BorderWidth = 2F;
+            this.xrLabel50.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel50.LocationFloat = new DevExpress.Utils.PointFloat(496.1429F, 146.4961F);
+            this.xrLabel50.Multiline = true;
+            this.xrLabel50.Name = "xrLabel50";
+            this.xrLabel50.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel50.SizeF = new System.Drawing.SizeF(70.03989F, 14.04529F);
+            this.xrLabel50.StylePriority.UseBorders = false;
+            this.xrLabel50.StylePriority.UseBorderWidth = false;
+            this.xrLabel50.StylePriority.UseFont = false;
+            this.xrLabel50.Text = "Cod Cliente:\t";
             // 
             // txtCliente
             // 
@@ -699,11 +728,11 @@ namespace LOSA.Despachos.Reportes
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.txtunidades.BorderWidth = 2F;
             this.txtunidades.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtunidades.LocationFloat = new DevExpress.Utils.PointFloat(409.0846F, 0F);
+            this.txtunidades.LocationFloat = new DevExpress.Utils.PointFloat(409.0847F, 0F);
             this.txtunidades.Multiline = true;
             this.txtunidades.Name = "txtunidades";
             this.txtunidades.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtunidades.SizeF = new System.Drawing.SizeF(118.7719F, 23F);
+            this.txtunidades.SizeF = new System.Drawing.SizeF(132.744F, 23F);
             this.txtunidades.StylePriority.UseBorders = false;
             this.txtunidades.StylePriority.UseBorderWidth = false;
             this.txtunidades.StylePriority.UseFont = false;
@@ -1083,11 +1112,11 @@ namespace LOSA.Despachos.Reportes
             this.xrLabel44.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[total]")});
             this.xrLabel44.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold);
-            this.xrLabel44.LocationFloat = new DevExpress.Utils.PointFloat(409.0846F, 0F);
+            this.xrLabel44.LocationFloat = new DevExpress.Utils.PointFloat(409.0847F, 0F);
             this.xrLabel44.Multiline = true;
             this.xrLabel44.Name = "xrLabel44";
             this.xrLabel44.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel44.SizeF = new System.Drawing.SizeF(118.77F, 19F);
+            this.xrLabel44.SizeF = new System.Drawing.SizeF(132.744F, 19F);
             this.xrLabel44.StylePriority.UseBorders = false;
             this.xrLabel44.StylePriority.UseBorderWidth = false;
             this.xrLabel44.StylePriority.UseFont = false;
@@ -1250,46 +1279,17 @@ namespace LOSA.Despachos.Reportes
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel41.BorderWidth = 2F;
             this.xrLabel41.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel41.LocationFloat = new DevExpress.Utils.PointFloat(409.0846F, 95.05324F);
+            this.xrLabel41.LocationFloat = new DevExpress.Utils.PointFloat(409.0847F, 95.05323F);
             this.xrLabel41.Multiline = true;
             this.xrLabel41.Name = "xrLabel41";
             this.xrLabel41.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel41.SizeF = new System.Drawing.SizeF(118.7719F, 19.25362F);
+            this.xrLabel41.SizeF = new System.Drawing.SizeF(132.744F, 19.25362F);
             this.xrLabel41.StylePriority.UseBorders = false;
             this.xrLabel41.StylePriority.UseBorderWidth = false;
             this.xrLabel41.StylePriority.UseFont = false;
             this.xrLabel41.StylePriority.UseTextAlignment = false;
             this.xrLabel41.Text = "TOTAL SACOS POR LOTE";
             this.xrLabel41.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
-            // txtCodCliente
-            // 
-            this.txtCodCliente.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.txtCodCliente.BorderWidth = 2F;
-            this.txtCodCliente.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodCliente.LocationFloat = new DevExpress.Utils.PointFloat(566.1829F, 146.4961F);
-            this.txtCodCliente.Multiline = true;
-            this.txtCodCliente.Name = "txtCodCliente";
-            this.txtCodCliente.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtCodCliente.SizeF = new System.Drawing.SizeF(193.7337F, 14.04532F);
-            this.txtCodCliente.StylePriority.UseBorders = false;
-            this.txtCodCliente.StylePriority.UseBorderWidth = false;
-            this.txtCodCliente.StylePriority.UseFont = false;
-            // 
-            // xrLabel50
-            // 
-            this.xrLabel50.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel50.BorderWidth = 2F;
-            this.xrLabel50.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel50.LocationFloat = new DevExpress.Utils.PointFloat(496.1429F, 146.4961F);
-            this.xrLabel50.Multiline = true;
-            this.xrLabel50.Name = "xrLabel50";
-            this.xrLabel50.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel50.SizeF = new System.Drawing.SizeF(70.03989F, 14.04529F);
-            this.xrLabel50.StylePriority.UseBorders = false;
-            this.xrLabel50.StylePriority.UseBorderWidth = false;
-            this.xrLabel50.StylePriority.UseFont = false;
-            this.xrLabel50.Text = "Cod Cliente:\t";
             // 
             // frm_despacho_con_filas
             // 

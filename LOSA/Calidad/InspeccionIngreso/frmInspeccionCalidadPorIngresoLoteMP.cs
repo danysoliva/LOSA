@@ -1100,7 +1100,8 @@ namespace LOSA.Calidad
         {
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
-            string query = @"sp_get_informacion_get_to_show_calidad_data_mp_v4";
+            //string query = @"sp_get_informacion_get_to_show_calidad_data_mp_v4";
+            string query = @"[sp_get_informacion_get_to_show_calidad_data_mp_all]";
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
             //cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
@@ -1603,7 +1604,7 @@ namespace LOSA.Calidad
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                     cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                    cmd.Parameters.AddWithValue("@id_mp", IdMP);
                     cmd.Parameters.AddWithValue("@lote_mp", Lote);
                     cmd.ExecuteScalar();
 
@@ -1624,7 +1625,7 @@ namespace LOSA.Calidad
                             cmd.Parameters.AddWithValue("@user_register", UsuarioLogeado.Id);
                             cmd.Parameters.AddWithValue("@fecha", DateTime.Now);
                             cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                            cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                            cmd.Parameters.AddWithValue("@id_mp", IdMP);
                             cmd.Parameters.AddWithValue("@lote_mp", Lote);
                             cmd.ExecuteNonQuery();
 
@@ -1646,7 +1647,7 @@ namespace LOSA.Calidad
                     cmd.Parameters.AddWithValue("@tipo", grd_tipo.EditValue == null ? (object)DBNull.Value : grd_tipo.EditValue);
                     cmd.Parameters.AddWithValue("@user_register", UsuarioLogeado.Id);
                     cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                    cmd.Parameters.AddWithValue("@id_mp", IdMP);
                     cmd.Parameters.AddWithValue("@lote_mp", Lote);
                     cmd.ExecuteNonQuery();
 
@@ -1661,7 +1662,7 @@ namespace LOSA.Calidad
                     cmd.Parameters.AddWithValue("@aceptado", rdEstadomp.EditValue);
                     cmd.Parameters.AddWithValue("@observaciones_mp", txtObseracionesMP.Text);
                     cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                    cmd.Parameters.AddWithValue("@id_mp", IdMP);
                     cmd.Parameters.AddWithValue("@lote_mp", Lote);
                     cmd.ExecuteNonQuery();
 
@@ -1713,7 +1714,7 @@ namespace LOSA.Calidad
                         }
                     }
                     cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                    cmd.Parameters.AddWithValue("@id_mp", IdMP);
                     cmd.Parameters.AddWithValue("@lote_mp", Lote);
                     cmd.Parameters.AddWithValue("@observaciones", txtobservacionTras.Text);
                     cmd.ExecuteNonQuery();
@@ -1740,7 +1741,7 @@ namespace LOSA.Calidad
                                 //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                                 cmd4.Parameters.AddWithValue("@bit_pic", 0);
                                 //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                                cmd4.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                                cmd4.Parameters.AddWithValue("@id_mp", IdMP);
                                 cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                                 cmd4.ExecuteNonQuery();
                                 con.Close();
@@ -1769,7 +1770,7 @@ namespace LOSA.Calidad
                                     //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                                     cmd4.Parameters.AddWithValue("@bit_pic", 0);
                                     //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                                    cmd4.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                                    cmd4.Parameters.AddWithValue("@id_mp", IdMP);
                                     cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                                     cmd4.ExecuteNonQuery();
                                     con.Close();
@@ -1803,7 +1804,7 @@ namespace LOSA.Calidad
                                 //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                                 cmd4.Parameters.AddWithValue("@bit_pic", 1);
                                 //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                                cmd4.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                                cmd4.Parameters.AddWithValue("@id_mp", IdMP);
                                 cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                                 cmd4.ExecuteNonQuery();
                                 con.Close();
@@ -1825,7 +1826,7 @@ namespace LOSA.Calidad
                             //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                             cmd4.Parameters.AddWithValue("@bit_pic", 1);
                             //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                            cmd4.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                            cmd4.Parameters.AddWithValue("@id_mp", IdMP);
                             cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                             cmd4.ExecuteNonQuery();
                             con.Close();
@@ -1839,7 +1840,7 @@ namespace LOSA.Calidad
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                     cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                    cmd.Parameters.AddWithValue("@id_mp", IdMP);
                     cmd.Parameters.AddWithValue("@lote_mp", Lote);
                     cmd.ExecuteNonQuery();
 

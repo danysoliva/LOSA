@@ -74,6 +74,7 @@
             this.btnDown = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btneliminarLinea = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -96,7 +97,6 @@
             this.txtNumDoc = new DevExpress.XtraEditors.TextEdit();
             this.txtNumBoleta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtconductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtplaca.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfurgon.Properties)).BeginInit();
@@ -445,6 +445,12 @@
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // colpeso
+            // 
+            this.colpeso.FieldName = "peso";
+            this.colpeso.Name = "colpeso";
+            this.colpeso.OptionsColumn.AllowEdit = false;
+            // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -673,12 +679,6 @@
             this.labelControl8.Size = new System.Drawing.Size(85, 20);
             this.labelControl8.TabIndex = 54;
             this.labelControl8.Text = "Num. Boleta";
-            // 
-            // colpeso
-            // 
-            this.colpeso.FieldName = "peso";
-            this.colpeso.Name = "colpeso";
-            this.colpeso.OptionsColumn.AllowEdit = false;
             // 
             // frm_view_entrega_despacho
             // 

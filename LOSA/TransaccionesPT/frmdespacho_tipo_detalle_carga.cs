@@ -202,7 +202,6 @@ namespace LOSA.TransaccionesPT
             {
                 try
                 {
-
                     rpt_despacho frm = new rpt_despacho(id_despacho);
                     frm.PrintingSystem.Document.AutoFitToPagesWidth = 1;
                     ReportPrintTool printReport = new ReportPrintTool(frm);

@@ -59,6 +59,7 @@ namespace LOSA.Trazabilidad
         string NombreSAP_Proveedor;
 
         int navigationPageSeleccionado;
+        int id_despacho;
 
 
 
@@ -891,6 +892,7 @@ namespace LOSA.Trazabilidad
 
             LoadDatosDetalleDespacho(row.Despacho);//Correcto filtramos despacho y lote
             LoadHeaderDespacho(row.Despacho);
+            id_despacho = row.Despacho;
         }
 
         private void LoadHeaderDespacho(int despacho)
@@ -3108,5 +3110,27 @@ namespace LOSA.Trazabilidad
                     }
                 }
             }
+
+        private void btnImprimirDetalleCarga_Click(object sender, EventArgs e)
+        {
+            if (id_despacho > 0)
+            {
+                Despacho info_despacho = new Despacho();
+                info_despacho.RecuperarRegistroDespacho(id_despacho);
+
+                if (info_despacho.Destino_id != 0)
+                {
+                    //Reporte con Filas
+                    LOSA.Despachos.Reportes.frm_despacho_con_filas rpt = new LOSA.Despachos.Reportes.frm_despacho_con_filas(id_despacho, info_despacho.Estiba_id, info_despacho.Destino_id, info_despacho.Id_presentacion);
+                    rpt.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(rpt);
+                    printReport.ShowPreview();
+                }
+                else
+                {
+                    CajaDialogo.Error("El Detalle de Carga del Despacho: "+ id_despacho +" no ha sido configurado, Solicite a Logistica la configuracion!");
+                }
+            }
         }
+    }
     }

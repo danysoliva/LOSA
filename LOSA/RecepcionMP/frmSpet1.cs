@@ -77,7 +77,7 @@ namespace LOSA.RecepcionMP
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -101,8 +101,7 @@ namespace LOSA.RecepcionMP
 
             catch (Exception ex)
             {
-
-                
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -174,7 +173,7 @@ namespace LOSA.RecepcionMP
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
 
             if (Tipo_Ingreso_Selected == 0)
