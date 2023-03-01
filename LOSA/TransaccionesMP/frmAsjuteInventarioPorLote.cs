@@ -513,7 +513,7 @@ namespace LOSA.TransaccionesMP
             {
                 if (existencia_bodega_selected <= 0)
                 {
-                    CajaDialogo.Error("No puede dar salida al item "+ItemCode+" por que es 0 en la Bodega: "+ bodega_selected);
+                    CajaDialogo.Error("No puede dar salida al item " + ItemCode + " por que es 0 en la Bodega: " + bodega_selected);
                     return;
                 }
                 if (radioLoteExistente.Checked)
