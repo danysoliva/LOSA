@@ -369,7 +369,7 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)gridReproceso.FocusedView;
             var row = (dsTarima.kardex_by_ReprocesoRow)gridView.GetFocusedDataRow();
 
-            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote);
+            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote, row.id_bodega);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 Load_dataReprocesoPorLote();

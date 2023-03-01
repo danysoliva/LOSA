@@ -31,11 +31,11 @@ namespace LOSA.Calidad.Parametros
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmParametrosProducto));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtproducto = new DevExpress.XtraEditors.TextEdit();
@@ -54,8 +54,8 @@ namespace LOSA.Calidad.Parametros
             this.btnEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescipcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.colid_printed_cef = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtproducto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).BeginInit();
@@ -103,6 +103,9 @@ namespace LOSA.Calidad.Parametros
             // 
             // grd_data
             // 
+            this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "parametroProducto";
             this.grd_data.DataSource = this.dsParametros;
             this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -113,7 +116,7 @@ namespace LOSA.Calidad.Parametros
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEliminar,
             this.grd_grupos});
-            this.grd_data.Size = new System.Drawing.Size(740, 568);
+            this.grd_data.Size = new System.Drawing.Size(740, 655);
             this.grd_data.TabIndex = 4;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -254,9 +257,9 @@ namespace LOSA.Calidad.Parametros
             // btnEliminar
             // 
             this.btnEliminar.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -271,6 +274,15 @@ namespace LOSA.Calidad.Parametros
             this.coldescipcion.FieldName = "descipcion";
             this.coldescipcion.Name = "coldescipcion";
             // 
+            // colid_printed_cef
+            // 
+            this.colid_printed_cef.Caption = "Imprime en Certificado";
+            this.colid_printed_cef.FieldName = "id_printed_cef";
+            this.colid_printed_cef.Name = "colid_printed_cef";
+            this.colid_printed_cef.Visible = true;
+            this.colid_printed_cef.VisibleIndex = 4;
+            this.colid_printed_cef.Width = 157;
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,20 +296,11 @@ namespace LOSA.Calidad.Parametros
             this.simpleButton1.Text = "Nuevo Parametro";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // colid_printed_cef
-            // 
-            this.colid_printed_cef.Caption = "Imprime en Certificado";
-            this.colid_printed_cef.FieldName = "id_printed_cef";
-            this.colid_printed_cef.Name = "colid_printed_cef";
-            this.colid_printed_cef.Visible = true;
-            this.colid_printed_cef.VisibleIndex = 4;
-            this.colid_printed_cef.Width = 157;
-            // 
             // frmParametrosProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 695);
+            this.ClientSize = new System.Drawing.Size(741, 782);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.txtproducto);

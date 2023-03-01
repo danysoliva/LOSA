@@ -40,6 +40,47 @@ namespace LOSA.TransaccionesMP
             LoadPresentaciones();
         }
 
+        public frmAsjuteInventarioPorLote(UserLogin pUserLogin, int pIdMP, int id_lote_alosy, string pLote, int pid_bodega)
+        {
+            InitializeComponent();
+            //ESTO SOLO ES PARA REPROCESO
+            DataOperations dp1 = new DataOperations();
+            dtFechaDocumento.DateTime = dp1.Now();
+            MateriaPrimaActual = new MateriaPrima();
+            UsuarioLogueado = pUserLogin;
+            radioLoteExistente.Checked = true;
+            LoadPresentaciones();
+
+            if (MateriaPrimaActual.RecuperarRegistroFromID_RM(pIdMP))
+            {
+                Id_MP = pIdMP;
+                txtMP_Name.Text = MateriaPrimaActual.NameComercial;
+                radioLoteExistente.Checked = true;
+                radioLoteNuevo.Checked = false;
+                SearchLoteAuto(pIdMP, pLote);
+                ItemCode = MateriaPrimaActual.CodeMP_SAP;
+                LoadMaestrosBodegas();
+                tsTipoTransaccion.IsOn = false;
+                toggleSwTipoOperacion.Enabled = false;
+                txtNumLote.Text = pLote;
+                gridLookUpEditOrigen.EditValue = pid_bodega;
+
+                if (pid_bodega > 0)
+                {
+                    foreach (dsTarima.bodega_origenRow item in dsTarima1.bodega_origen.Rows)
+                    {
+                        if (item.id == pid_bodega)
+                        {
+                            existencia_bodega_selected = item.existencia;
+                            bodega_selected = item.descripcion;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin, int pIdMP, int id_lote_alosy, string pLote)
         {
             InitializeComponent();
@@ -75,13 +116,13 @@ namespace LOSA.TransaccionesMP
                 //    txtCantidadUnidades.Focus();
                 //}
             }
-            if (Id_MP == 1110 || Id_MP == 1101)
-            {
-                tsTipoTransaccion.IsOn = false;
-                txtNumLote.Text = pLote; 
-                gridLookUpEditDestino.EditValue = 2;
-                gridLookUpEditOrigen.EditValue = 10;
-            }
+            //if (Id_MP == 1110 || Id_MP == 1101)
+            //{
+            //    tsTipoTransaccion.IsOn = false;
+            //    txtNumLote.Text = pLote; 
+            //    gridLookUpEditDestino.EditValue = 2;
+            //    gridLookUpEditOrigen.EditValue = 10;
+            //}
         }
 
         private void LoadMaestrosBodegas()
@@ -203,30 +244,30 @@ namespace LOSA.TransaccionesMP
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
             //Reproceso de Tilapia
-            if (ItemCode == "MP00080")
-            {
-                if (tsTipoTransaccion.IsOn == true)
-                {
-                    if (radioLoteNuevo.Checked)
-                    {
-                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe ingresarlo Calidad");
-                        return;
-                    }
-                }
-            }
+            //if (ItemCode == "MP00080")
+            //{
+            //    if (tsTipoTransaccion.IsOn == true)
+            //    {
+            //        if (radioLoteNuevo.Checked)
+            //        {
+            //            CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe ingresarlo Calidad");
+            //            return;
+            //        }
+            //    }
+            //}
 
-            //Reproceso de Camaron
-            if (ItemCode == "MP00081")
-            {
-                if (tsTipoTransaccion.IsOn == true)
-                {
-                    if (radioLoteNuevo.Checked)
-                    {
-                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe Ingresarlo Calidad");
-                        return;
-                    }
-                }
-            }
+            ////Reproceso de Camaron
+            //if (ItemCode == "MP00081")
+            //{
+            //    if (tsTipoTransaccion.IsOn == true)
+            //    {
+            //        if (radioLoteNuevo.Checked)
+            //        {
+            //            CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe Ingresarlo Calidad");
+            //            return;
+            //        }
+            //    }
+            //}
 
 
             if (string.IsNullOrEmpty(txtMP_Name.Text))
@@ -511,7 +552,7 @@ namespace LOSA.TransaccionesMP
                         else
                             cmd.Parameters.AddWithValue("@bodega_destino", DBNull.Value);
 
-                        if(Convert.ToInt32(gridLookUpEditPresentacion.EditValue) == 0)
+                        if(string.IsNullOrEmpty(gridLookUpEditPresentacion.Text))
                             cmd.Parameters.AddWithValue("id_presentacion", DBNull.Value);
                         else
                             cmd.Parameters.AddWithValue("id_presentacion", gridLookUpEditPresentacion.EditValue);
@@ -691,15 +732,15 @@ namespace LOSA.TransaccionesMP
                 radioLoteNuevo.Checked = true;
                 radioLoteNuevo.Visible = true;
                 radioLoteExistente.Checked = true;
-                if (Id_MP == 1110 || Id_MP == 1101)
-                {
-                    gridLookUpEditDestino.EditValue = 10;
-                    gridLookUpEditOrigen.EditValue = 2;
-                }
+
 
                 ////Vamos a desbloquear el traslado si es Entrada
                 //toggleSwTipoOperacion.IsOn = true;
                 //toggleSwTipoOperacion.Enabled = false;
+                if (Id_MP == 1110 || Id_MP == 1101)
+                {
+                    radioLoteNuevo.Visible = false;
+                }
 
             }
             else
@@ -707,11 +748,7 @@ namespace LOSA.TransaccionesMP
                 radioLoteNuevo.Checked = false;
                 radioLoteNuevo.Visible = false;
                 radioLoteExistente.Checked = true;
-                if (Id_MP == 1110 || Id_MP == 1101)
-                {
-                    gridLookUpEditDestino.EditValue = 2;
-                    gridLookUpEditOrigen.EditValue = 10;
-                }
+                
 
                 ////Vamos a bloquear el traslado si es Salida
                 //toggleSwTipoOperacion.IsOn = true;
