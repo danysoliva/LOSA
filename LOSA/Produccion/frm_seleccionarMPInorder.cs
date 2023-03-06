@@ -54,7 +54,7 @@ namespace LOSA.Produccion
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)

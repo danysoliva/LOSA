@@ -84,7 +84,7 @@ namespace LOSA.Produccion
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(556, 8);
+            this.cmdHome.Location = new System.Drawing.Point(961, 8);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(199, 71);
             this.cmdHome.TabIndex = 7;
@@ -102,7 +102,7 @@ namespace LOSA.Produccion
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(111, 23);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(497, 39);
+            this.labelControl3.Size = new System.Drawing.Size(902, 39);
             this.labelControl3.TabIndex = 32;
             this.labelControl3.Text = "Requisas";
             // 
@@ -119,7 +119,7 @@ namespace LOSA.Produccion
             this.btn_reqmanual,
             this.btnImprimir,
             this.btnImprimirprevisualizacion});
-            this.grd_data.Size = new System.Drawing.Size(766, 474);
+            this.grd_data.Size = new System.Drawing.Size(1171, 474);
             this.grd_data.TabIndex = 33;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -303,7 +303,7 @@ namespace LOSA.Produccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 560);
+            this.ClientSize = new System.Drawing.Size(1168, 560);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
