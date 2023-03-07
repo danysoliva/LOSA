@@ -77,5 +77,10 @@ namespace LOSA.Accesos.GrupoLosa
             }
         }
         #endregion
+
+        private void botonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

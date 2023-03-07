@@ -74,5 +74,10 @@ namespace LOSA.Accesos.GestionSistemas
             }
         }
         #endregion
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
