@@ -5104,6 +5104,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columnbodega;
             
+            private global::System.Data.DataColumn columnid_bodega;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public kardex_by_ReprocesoDataTable() {
@@ -5243,6 +5245,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_bodegaColumn {
+                get {
+                    return this.columnid_bodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5278,7 +5288,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public kardex_by_ReprocesoRow Addkardex_by_ReprocesoRow(decimal existencia, string nombre_comercial, int id_mp, string lote, string code_sap, decimal ingreso, decimal salidas, int TipoId, string TipoName, string code_sap_pt, string descripcion_pt, int unidades_totales, string bodega) {
+            public kardex_by_ReprocesoRow Addkardex_by_ReprocesoRow(decimal existencia, string nombre_comercial, int id_mp, string lote, string code_sap, decimal ingreso, decimal salidas, int TipoId, string TipoName, string code_sap_pt, string descripcion_pt, int unidades_totales, string bodega, int id_bodega) {
                 kardex_by_ReprocesoRow rowkardex_by_ReprocesoRow = ((kardex_by_ReprocesoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         existencia,
@@ -5293,7 +5303,8 @@ namespace LOSA.TransaccionesMP {
                         code_sap_pt,
                         descripcion_pt,
                         unidades_totales,
-                        bodega};
+                        bodega,
+                        id_bodega};
                 rowkardex_by_ReprocesoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowkardex_by_ReprocesoRow);
                 return rowkardex_by_ReprocesoRow;
@@ -5329,6 +5340,7 @@ namespace LOSA.TransaccionesMP {
                 this.columndescripcion_pt = base.Columns["descripcion_pt"];
                 this.columnunidades_totales = base.Columns["unidades_totales"];
                 this.columnbodega = base.Columns["bodega"];
+                this.columnid_bodega = base.Columns["id_bodega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5360,6 +5372,8 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnunidades_totales);
                 this.columnbodega = new global::System.Data.DataColumn("bodega", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbodega);
+                this.columnid_bodega = new global::System.Data.DataColumn("id_bodega", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_bodega);
                 this.columnexistencia.Caption = "Existencia";
                 this.columnnombre_comercial.Caption = "Materia Prima";
                 this.columnlote.Caption = "Lote";
@@ -9295,6 +9309,22 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_bodega {
+                get {
+                    try {
+                        return ((int)(this[this.tablekardex_by_Reproceso.id_bodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_bodega\' de la tabla \'kardex_by_Reproceso\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablekardex_by_Reproceso.id_bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsexistenciaNull() {
                 return this.IsNull(this.tablekardex_by_Reproceso.existenciaColumn);
             }
@@ -9447,6 +9477,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetbodegaNull() {
                 this[this.tablekardex_by_Reproceso.bodegaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_bodegaNull() {
+                return this.IsNull(this.tablekardex_by_Reproceso.id_bodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_bodegaNull() {
+                this[this.tablekardex_by_Reproceso.id_bodegaColumn] = global::System.Convert.DBNull;
             }
         }
         

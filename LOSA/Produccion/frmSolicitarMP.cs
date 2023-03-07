@@ -20,6 +20,7 @@ namespace LOSA.Produccion
         public int id_mp;
         public string mpdes;
         public string itemcode;
+        public decimal cant_pendiente, tolerancia10porciento, cant_solicitado;
         UserLogin UsuarioLogeado;
         int id_requisa;
         DataOperations dp = new DataOperations();
@@ -28,6 +29,14 @@ namespace LOSA.Produccion
             InitializeComponent();
             id_requisa = Pid;
             UsuarioLogeado = Puser;
+        }
+
+        private void LimpiarVariables()
+        {
+            mpdes = "";
+            itemcode = "";
+            id_mp = 0;
+            txtMP.Text = "";
         }
 
         private void bn_Mp_Click(object sender, EventArgs e)
@@ -40,6 +49,50 @@ namespace LOSA.Produccion
                 id_mp = frm.id_mp;
                 txtMP.Text = mpdes;
             }
+
+            //Vamos a Validar si de Esta Requisa, ya se entrego todo!
+            if (id_mp > 0)
+            {
+                try
+                {
+                    string sql = "sp_get_mp_pendiente_por_id_requisa_y_mp";
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_requisa", id_requisa);
+                    cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        cant_pendiente = dr.GetDecimal(0);
+                        cant_solicitado = dr.GetDecimal(1);
+                    }
+                    dr.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+
+                //Requisicion req1 = new Requisicion();
+                //req1.RecuperarRegistroFromBarcodeClass();
+
+                tolerancia10porciento = cant_solicitado * 10 / 100; //Sacar el 10%
+
+                if (cant_pendiente < tolerancia10porciento)
+                {
+                    //Todo bien en el Porcentaje de Tolerencia!
+                }
+                else
+                {
+                    CajaDialogo.Error("No puede adicionar mas Materia Prima: "+ txtMP.Text+" por que no a completado la Requisa: "+ id_requisa +"\nPendiente en Requisa: " + cant_pendiente);
+                    LimpiarVariables();
+                }
+            }
+
+
         }
 
         private void cmdHome_Click(object sender, EventArgs e)
