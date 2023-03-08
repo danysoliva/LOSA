@@ -430,7 +430,10 @@ namespace LOSA.MicroIngredientes
             {
                 string total_= View.GetRowCellDisplayText(e.RowHandle, View.Columns["total"]);
                 string batch_real = View.GetRowCellDisplayText(e.RowHandle, View.Columns["batch_real"]);
-                if (total_ == batch_real)
+
+                decimal tota_plan = Convert.ToDecimal(total_);
+                decimal pesado_real = Convert.ToDecimal(batch_real);
+                if (pesado_real >= tota_plan)
                 {
                     e.Appearance.BackColor = Color.FromArgb(150, Color.DarkGreen);
                     //e.Appearance.BackColor2 = Color.White;
