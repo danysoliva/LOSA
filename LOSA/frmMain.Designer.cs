@@ -204,6 +204,7 @@ namespace LOSA
             this.cmdButtonSaltarLogin.Size = new System.Drawing.Size(199, 59);
             this.cmdButtonSaltarLogin.TabIndex = 11;
             this.cmdButtonSaltarLogin.Text = "Montacarga";
+            this.cmdButtonSaltarLogin.Visible = false;
             this.cmdButtonSaltarLogin.Click += new System.EventHandler(this.cmdButtonSaltarLogin_Click);
             // 
             // cmdMicros
