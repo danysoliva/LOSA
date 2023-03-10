@@ -208,12 +208,12 @@ namespace LOSA.MigracionACS.OIL
                 return;
             }
 
-            //if (Convert.ToInt32(txtCantidad.EditValue) == 0)
-            //{
-            //    CajaDialogo.Error("La Cantidad debe ser mayor que 0");
-            //    txtCantidad.Focus();
-            //    return;
-            //}
+            if (Convert.ToInt32(txtCantidad.EditValue) == 0)
+            {
+                CajaDialogo.Error("La Cantidad debe ser mayor que 0");
+                txtCantidad.Focus();
+                return;
+            }
 
 
             try 
@@ -423,7 +423,40 @@ namespace LOSA.MigracionACS.OIL
 
         private void btnSelectRequisa_Click(object sender, EventArgs e)
         {
-            frmSelectRequisa frm = new frmSelectRequisa();
+
+            if (xCheckBoxTQExt1.Value)
+            {
+                TanqueO = 88;
+                idRM = idRM_Ext1;
+            }
+            else
+            {
+                if (xCheckBoxTQExt2.Value)
+                {
+                    TanqueO = 90;
+                    idRM = idRM_Ext2;
+                }
+                else
+                {
+                    if (xCheckBoxTQExt3.Value)
+                    {
+                        TanqueO = 91;
+                        idRM = idRM_Ext3;
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("Debe Seleccionar un Bin de Destino!");
+                        return;
+                    }
+                }
+            }
+
+            //Vamos a Validar que la MP se solicite en la Requisa!
+            MateriaPrima mp_c = new MateriaPrima();
+            mp_c.RecuperarRegistro_MPACS_For_IDRM_APMS(idRM);
+            id_mp = mp_c.IdMP_ACS;
+
+            frmSelectRequisa frm = new frmSelectRequisa(id_mp);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 LotePT = frm.LotePT;

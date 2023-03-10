@@ -20,12 +20,12 @@ namespace LOSA.MigracionACS.OIL
     public partial class frmSelectRequisa : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        public int Id_Requisa, LotePT;
+        public int Id_Requisa, LotePT, id_mp;
 
-        public frmSelectRequisa()
+        public frmSelectRequisa(int pid_mp)
         {
             InitializeComponent();
-
+            id_mp = pid_mp;
             LoadDatos();
         }
 
@@ -44,10 +44,10 @@ namespace LOSA.MigracionACS.OIL
 
                 SqlCommand cmd = new SqlCommand("sp_get_requisiciones_pendientes_traslado_aceites", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@LastName", txtlastname.Text);
-                dsTransaccionesMP1.requisiciones_h.Clear();
+                cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                dsTransaccionesMP1.requisiciones_aceites.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTransaccionesMP1.requisiciones_h);
+                adat.Fill(dsTransaccionesMP1.requisiciones_aceites);
                 con.Close();
             }
             catch (Exception ec)
@@ -59,11 +59,11 @@ namespace LOSA.MigracionACS.OIL
         private void reposSelectRequ_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridview = (GridView)grdRequisas.FocusedView;
-            var row = (dsTransaccionesMP.requisiciones_hRow)gridview.GetFocusedDataRow();
+            var row = (dsTransaccionesMP.requisiciones_aceitesRow)gridview.GetFocusedDataRow();
 
-            if (row.id > 0)
+            if (row.id_requisa > 0)
             {
-                Id_Requisa = row.id;
+                Id_Requisa = row.id_requisa;
                 LotePT = row.Lote;
 
                 this.DialogResult = DialogResult.OK;
@@ -74,11 +74,11 @@ namespace LOSA.MigracionACS.OIL
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             var gridview = (GridView)grdRequisas.FocusedView;
-            var row = (dsTransaccionesMP.requisiciones_hRow)gridview.GetFocusedDataRow();
+            var row = (dsTransaccionesMP.requisiciones_aceitesRow)gridview.GetFocusedDataRow();
 
-            if (row.id > 0)
+            if (row.id_requisa > 0)
             {
-                Id_Requisa = row.id;
+                Id_Requisa = row.id_requisa;
                 LotePT = row.Lote;
 
                 this.DialogResult = DialogResult.OK;

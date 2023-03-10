@@ -395,7 +395,7 @@
             this.btnSelectRequisa.Appearance.Options.UseBackColor = true;
             this.btnSelectRequisa.Appearance.Options.UseFont = true;
             this.btnSelectRequisa.ImageOptions.Image = global::LOSA.Properties.Resources.checklist;
-            this.btnSelectRequisa.Location = new System.Drawing.Point(523, 337);
+            this.btnSelectRequisa.Location = new System.Drawing.Point(523, 336);
             this.btnSelectRequisa.Name = "btnSelectRequisa";
             this.btnSelectRequisa.Size = new System.Drawing.Size(146, 43);
             this.btnSelectRequisa.TabIndex = 43;
