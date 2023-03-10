@@ -502,6 +502,8 @@
             // 
             this.btnTransferenciaPendiente.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.btnTransferenciaPendiente.Appearance.Options.UseFont = true;
+            this.btnTransferenciaPendiente.Appearance.Options.UseTextOptions = true;
+            this.btnTransferenciaPendiente.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTransferenciaPendiente.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTransferenciaPendiente.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTransferenciaPendiente.ImageOptions.SvgImage")));
             this.btnTransferenciaPendiente.Location = new System.Drawing.Point(210, 306);
@@ -1803,7 +1805,6 @@
             this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup1.AppearancePressed.Options.UseFont = true;
             this.navBarGroup1.Caption = "Producción";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrazabilidad),
@@ -2249,6 +2250,7 @@
             this.navBarGroup4.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup4.AppearancePressed.Options.UseFont = true;
             this.navBarGroup4.Caption = "Inventario";
+            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrasladoAceiteExterno),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbSetMaterial),

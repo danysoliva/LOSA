@@ -56,6 +56,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTanqueExt2 = new DevExpress.XtraEditors.TextEdit();
             this.txtTanqueExt3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtIDRequisa = new DevExpress.XtraEditors.TextEdit();
+            this.btnSelectRequisa = new DevExpress.XtraEditors.SimpleButton();
             this.xCheckBoxTQInt1 = new LOSA.MigracionACS.Controles.xCheckBox();
             this.xCheckBoxTQInt3 = new LOSA.MigracionACS.Controles.xCheckBox();
             this.xCheckBoxTQInt2 = new LOSA.MigracionACS.Controles.xCheckBox();
@@ -72,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDRequisa.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,7 +124,7 @@
             // txtCantidad
             // 
             this.txtCantidad.EditValue = "0";
-            this.txtCantidad.Location = new System.Drawing.Point(324, 285);
+            this.txtCantidad.Location = new System.Drawing.Point(307, 299);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Properties.Appearance.Options.UseFont = true;
@@ -134,7 +137,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(491, 284);
+            this.label2.Location = new System.Drawing.Point(474, 298);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 30);
             this.label2.TabIndex = 14;
@@ -145,7 +148,7 @@
             // 
             this.lblTanqueInt3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTanqueInt3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblTanqueInt3.Location = new System.Drawing.Point(505, 562);
+            this.lblTanqueInt3.Location = new System.Drawing.Point(505, 651);
             this.lblTanqueInt3.Name = "lblTanqueInt3";
             this.lblTanqueInt3.Size = new System.Drawing.Size(222, 23);
             this.lblTanqueInt3.TabIndex = 24;
@@ -156,7 +159,7 @@
             // 
             this.lblTanqueInt2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTanqueInt2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblTanqueInt2.Location = new System.Drawing.Point(278, 562);
+            this.lblTanqueInt2.Location = new System.Drawing.Point(278, 651);
             this.lblTanqueInt2.Name = "lblTanqueInt2";
             this.lblTanqueInt2.Size = new System.Drawing.Size(227, 23);
             this.lblTanqueInt2.TabIndex = 23;
@@ -167,7 +170,7 @@
             // 
             this.lblTanqueInt1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTanqueInt1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblTanqueInt1.Location = new System.Drawing.Point(48, 562);
+            this.lblTanqueInt1.Location = new System.Drawing.Point(48, 651);
             this.lblTanqueInt1.Name = "lblTanqueInt1";
             this.lblTanqueInt1.Size = new System.Drawing.Size(224, 23);
             this.lblTanqueInt1.TabIndex = 22;
@@ -178,7 +181,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 306);
+            this.label6.Location = new System.Drawing.Point(12, 393);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(165, 25);
             this.label6.TabIndex = 18;
@@ -192,7 +195,7 @@
             this.cmdGuardar.Appearance.Options.UseBackColor = true;
             this.cmdGuardar.Appearance.Options.UseFont = true;
             this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
-            this.cmdGuardar.Location = new System.Drawing.Point(307, 599);
+            this.cmdGuardar.Location = new System.Drawing.Point(307, 688);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(193, 52);
             this.cmdGuardar.TabIndex = 30;
@@ -202,7 +205,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::LOSA.Properties.Resources.tanque_cono;
-            this.pictureBox5.Location = new System.Drawing.Point(534, 371);
+            this.pictureBox5.Location = new System.Drawing.Point(534, 460);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(193, 185);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -212,7 +215,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::LOSA.Properties.Resources.tanque_cono;
-            this.pictureBox4.Location = new System.Drawing.Point(307, 371);
+            this.pictureBox4.Location = new System.Drawing.Point(307, 460);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(193, 185);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -222,7 +225,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::LOSA.Properties.Resources.tanque_cono;
-            this.pictureBox6.Location = new System.Drawing.Point(79, 371);
+            this.pictureBox6.Location = new System.Drawing.Point(79, 460);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(193, 185);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -273,7 +276,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(100, 402);
+            this.labelControl7.Location = new System.Drawing.Point(100, 491);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(28, 65);
             this.labelControl7.TabIndex = 32;
@@ -293,7 +296,7 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(324, 402);
+            this.labelControl9.Location = new System.Drawing.Point(324, 491);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(28, 65);
             this.labelControl9.TabIndex = 34;
@@ -313,7 +316,7 @@
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(553, 402);
+            this.labelControl11.Location = new System.Drawing.Point(553, 491);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(28, 65);
             this.labelControl11.TabIndex = 36;
@@ -373,11 +376,37 @@
             this.txtTanqueExt3.Size = new System.Drawing.Size(87, 26);
             this.txtTanqueExt3.TabIndex = 41;
             // 
+            // txtIDRequisa
+            // 
+            this.txtIDRequisa.EditValue = "";
+            this.txtIDRequisa.Enabled = false;
+            this.txtIDRequisa.Location = new System.Drawing.Point(216, 345);
+            this.txtIDRequisa.Name = "txtIDRequisa";
+            this.txtIDRequisa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDRequisa.Properties.Appearance.Options.UseFont = true;
+            this.txtIDRequisa.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtIDRequisa.Size = new System.Drawing.Size(291, 32);
+            this.txtIDRequisa.TabIndex = 42;
+            // 
+            // btnSelectRequisa
+            // 
+            this.btnSelectRequisa.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSelectRequisa.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectRequisa.Appearance.Options.UseBackColor = true;
+            this.btnSelectRequisa.Appearance.Options.UseFont = true;
+            this.btnSelectRequisa.ImageOptions.Image = global::LOSA.Properties.Resources.checklist;
+            this.btnSelectRequisa.Location = new System.Drawing.Point(523, 337);
+            this.btnSelectRequisa.Name = "btnSelectRequisa";
+            this.btnSelectRequisa.Size = new System.Drawing.Size(146, 43);
+            this.btnSelectRequisa.TabIndex = 43;
+            this.btnSelectRequisa.Text = "Requisa";
+            this.btnSelectRequisa.Click += new System.EventHandler(this.btnSelectRequisa_Click);
+            // 
             // xCheckBoxTQInt1
             // 
             this.xCheckBoxTQInt1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQInt1.BackgroundImage")));
             this.xCheckBoxTQInt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xCheckBoxTQInt1.Location = new System.Drawing.Point(611, 334);
+            this.xCheckBoxTQInt1.Location = new System.Drawing.Point(611, 423);
             this.xCheckBoxTQInt1.Name = "xCheckBoxTQInt1";
             this.xCheckBoxTQInt1.Size = new System.Drawing.Size(35, 31);
             this.xCheckBoxTQInt1.TabIndex = 25;
@@ -388,7 +417,7 @@
             // 
             this.xCheckBoxTQInt3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQInt3.BackgroundImage")));
             this.xCheckBoxTQInt3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xCheckBoxTQInt3.Location = new System.Drawing.Point(388, 334);
+            this.xCheckBoxTQInt3.Location = new System.Drawing.Point(388, 423);
             this.xCheckBoxTQInt3.Name = "xCheckBoxTQInt3";
             this.xCheckBoxTQInt3.Size = new System.Drawing.Size(35, 31);
             this.xCheckBoxTQInt3.TabIndex = 27;
@@ -399,7 +428,7 @@
             // 
             this.xCheckBoxTQInt2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxTQInt2.BackgroundImage")));
             this.xCheckBoxTQInt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xCheckBoxTQInt2.Location = new System.Drawing.Point(161, 334);
+            this.xCheckBoxTQInt2.Location = new System.Drawing.Point(161, 423);
             this.xCheckBoxTQInt2.Name = "xCheckBoxTQInt2";
             this.xCheckBoxTQInt2.Size = new System.Drawing.Size(35, 31);
             this.xCheckBoxTQInt2.TabIndex = 26;
@@ -445,7 +474,9 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 655);
+            this.ClientSize = new System.Drawing.Size(796, 752);
+            this.Controls.Add(this.btnSelectRequisa);
+            this.Controls.Add(this.txtIDRequisa);
             this.Controls.Add(this.txtTanqueExt3);
             this.Controls.Add(this.txtTanqueExt2);
             this.Controls.Add(this.txtTanqueExt1);
@@ -492,6 +523,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanqueExt3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDRequisa.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,5 +564,7 @@
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.TextEdit txtTanqueExt2;
         private DevExpress.XtraEditors.TextEdit txtTanqueExt3;
+        private DevExpress.XtraEditors.TextEdit txtIDRequisa;
+        private DevExpress.XtraEditors.SimpleButton btnSelectRequisa;
     }
 }
