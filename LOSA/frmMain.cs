@@ -188,12 +188,14 @@ namespace LOSA
             if (HostName == "F3DYSQ2" /*Danys Oliva*/ || HostName == "9SSCBV2" || HostName == "9PG91W2" /*Ruben Garcia */ || HostName == "F9Q11Q2" /*PC Soporte La 50*/)
             {
                 SaltarLogin.Visible = simpleButton2 .Visible = SaltarLoginPRD.Visible= true;
+                cmdButtonSaltarLogin.Visible = true;
                 //this.Size = new Size(335, 497);//Grande
 
             }
             else
             {
                 SaltarLogin.Visible = simpleButton2.Visible = SaltarLoginPRD.Visible = false;
+                cmdButtonSaltarLogin.Visible = false;
                 //this.Size = new Size(335, 442);//Pequeño
             }
         }

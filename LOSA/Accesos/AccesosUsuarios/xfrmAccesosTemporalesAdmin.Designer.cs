@@ -29,6 +29,7 @@ namespace LOSA.Accesos.AccesosUsuarios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmAccesosTemporalesAdmin));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -36,7 +37,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsAccesosBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsAccesosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsAccesos = new LOSA.Accesos.dsAccesos();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_usuario = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,7 +54,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.cmdNew = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -237,7 +238,7 @@ namespace LOSA.Accesos.AccesosUsuarios
             this.cmdCancelar.Appearance.Options.UseForeColor = true;
             this.cmdCancelar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdCancelar.ImageOptions.Image")));
-            this.cmdCancelar.Location = new System.Drawing.Point(804, 21);
+            this.cmdCancelar.Location = new System.Drawing.Point(809, 21);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(103, 45);
             this.cmdCancelar.TabIndex = 2;

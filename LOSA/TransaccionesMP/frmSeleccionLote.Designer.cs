@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionLote));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.txtMP_Name = new DevExpress.XtraEditors.TextEdit();
@@ -59,6 +59,7 @@
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcants = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_entrega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnVerD = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.lblUnidad = new DevExpress.XtraEditors.LabelControl();
             this.chkAutoSelect = new System.Windows.Forms.CheckBox();
@@ -95,7 +96,7 @@
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(178, 13);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(877, 40);
+            this.labelControl1.Size = new System.Drawing.Size(1003, 40);
             this.labelControl1.TabIndex = 37;
             this.labelControl1.Text = "Gestión de Lotes";
             // 
@@ -109,7 +110,7 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(998, 6);
+            this.btnAtras.Location = new System.Drawing.Point(1124, 6);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(167, 47);
             this.btnAtras.TabIndex = 36;
@@ -185,7 +186,7 @@
             this.grRequisicoinesMP.Name = "grRequisicoinesMP";
             this.grRequisicoinesMP.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnVerD});
-            this.grRequisicoinesMP.Size = new System.Drawing.Size(1164, 379);
+            this.grRequisicoinesMP.Size = new System.Drawing.Size(1290, 379);
             this.grRequisicoinesMP.TabIndex = 43;
             this.grRequisicoinesMP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTarimas});
@@ -228,7 +229,8 @@
             this.colpeso_total,
             this.colseleccionado,
             this.colcants,
-            this.colcodigo});
+            this.colcodigo,
+            this.colfecha_entrega});
             this.gvTarimas.GridControl = this.grRequisicoinesMP;
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
@@ -263,6 +265,7 @@
             this.colNombre.OptionsColumn.AllowEdit = false;
             this.colNombre.Visible = true;
             this.colNombre.VisibleIndex = 1;
+            this.colNombre.Width = 127;
             // 
             // colingreso
             // 
@@ -271,7 +274,8 @@
             this.colingreso.Name = "colingreso";
             this.colingreso.OptionsColumn.AllowEdit = false;
             this.colingreso.Visible = true;
-            this.colingreso.VisibleIndex = 2;
+            this.colingreso.VisibleIndex = 3;
+            this.colingreso.Width = 122;
             // 
             // colvence
             // 
@@ -280,7 +284,8 @@
             this.colvence.Name = "colvence";
             this.colvence.OptionsColumn.AllowEdit = false;
             this.colvence.Visible = true;
-            this.colvence.VisibleIndex = 3;
+            this.colvence.VisibleIndex = 4;
+            this.colvence.Width = 122;
             // 
             // collote_mp
             // 
@@ -289,7 +294,8 @@
             this.collote_mp.Name = "collote_mp";
             this.collote_mp.OptionsColumn.AllowEdit = false;
             this.collote_mp.Visible = true;
-            this.collote_mp.VisibleIndex = 4;
+            this.collote_mp.VisibleIndex = 5;
+            this.collote_mp.Width = 122;
             // 
             // colpresentacion
             // 
@@ -298,7 +304,8 @@
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 5;
+            this.colpresentacion.VisibleIndex = 6;
+            this.colpresentacion.Width = 122;
             // 
             // colcantidad
             // 
@@ -307,7 +314,8 @@
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 6;
+            this.colcantidad.VisibleIndex = 7;
+            this.colcantidad.Width = 122;
             // 
             // colunidad
             // 
@@ -323,7 +331,8 @@
             this.colpeso_total.Name = "colpeso_total";
             this.colpeso_total.OptionsColumn.AllowEdit = false;
             this.colpeso_total.Visible = true;
-            this.colpeso_total.VisibleIndex = 7;
+            this.colpeso_total.VisibleIndex = 8;
+            this.colpeso_total.Width = 132;
             // 
             // colseleccionado
             // 
@@ -346,13 +355,26 @@
             this.colcodigo.OptionsColumn.AllowEdit = false;
             this.colcodigo.Visible = true;
             this.colcodigo.VisibleIndex = 0;
+            this.colcodigo.Width = 127;
+            // 
+            // colfecha_entrega
+            // 
+            this.colfecha_entrega.Caption = "Fecha Escaneado";
+            this.colfecha_entrega.DisplayFormat.FormatString = "g";
+            this.colfecha_entrega.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colfecha_entrega.FieldName = "fecha_entrega";
+            this.colfecha_entrega.Name = "colfecha_entrega";
+            this.colfecha_entrega.OptionsColumn.AllowEdit = false;
+            this.colfecha_entrega.Visible = true;
+            this.colfecha_entrega.VisibleIndex = 2;
+            this.colfecha_entrega.Width = 150;
             // 
             // btnVerD
             // 
             this.btnVerD.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnVerD.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnVerD.Name = "btnVerD";
             this.btnVerD.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -474,7 +496,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1167, 583);
+            this.ClientSize = new System.Drawing.Size(1293, 583);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.txtSolicitada);
@@ -549,5 +571,6 @@
         public DevExpress.XtraEditors.SimpleButton cmdGuardar;
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_entrega;
     }
 }

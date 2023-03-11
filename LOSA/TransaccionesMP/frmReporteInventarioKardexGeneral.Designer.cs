@@ -166,6 +166,7 @@ namespace LOSA.TransaccionesMP
             this.colunidades_totales = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryAjuste = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tabNavigationPage6 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -194,7 +195,6 @@ namespace LOSA.TransaccionesMP
             this.btnAjustePorLote = new DevExpress.XtraEditors.SimpleButton();
             this.backgroundWorkerPRD = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorkerResumenMP = new System.ComponentModel.BackgroundWorker();
-            this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -1346,6 +1346,16 @@ namespace LOSA.TransaccionesMP
             this.repositoryAjuste.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryAjuste.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryAjuste_ButtonClick);
             // 
+            // colbodega
+            // 
+            this.colbodega.Caption = "Bodega";
+            this.colbodega.FieldName = "bodega";
+            this.colbodega.Name = "colbodega";
+            this.colbodega.OptionsColumn.AllowEdit = false;
+            this.colbodega.Visible = true;
+            this.colbodega.VisibleIndex = 5;
+            this.colbodega.Width = 83;
+            // 
             // repositoryItemButtonEdit3
             // 
             this.repositoryItemButtonEdit3.AutoHeight = false;
@@ -1673,16 +1683,6 @@ namespace LOSA.TransaccionesMP
             // 
             this.backgroundWorkerResumenMP.WorkerSupportsCancellation = true;
             this.backgroundWorkerResumenMP.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerResumenMP_DoWork);
-            // 
-            // colbodega
-            // 
-            this.colbodega.Caption = "Bodega";
-            this.colbodega.FieldName = "bodega";
-            this.colbodega.Name = "colbodega";
-            this.colbodega.OptionsColumn.AllowEdit = false;
-            this.colbodega.Visible = true;
-            this.colbodega.VisibleIndex = 5;
-            this.colbodega.Width = 83;
             // 
             // frmReporteInventarioKardexGeneral
             // 

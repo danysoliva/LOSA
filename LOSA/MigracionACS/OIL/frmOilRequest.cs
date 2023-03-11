@@ -81,23 +81,27 @@ namespace LOSA.MigracionACS.OIL
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmTipoReq frm = new frmTipoReq();
-            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                switch (frm.tipo)
-                {
-                    case 0:
-                        break;
-                    case 1:
-                        frmOilSingle frmx = new frmOilSingle(this.UsuarioLogeado);
-                        if(frmx.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                            CargarRequisiciones();
-                        break;
-                    case 2:
-                        MessageBox.Show("No se han definido los porcentajes de inclusion para un producto Mix.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                }
-            }
+            frmOilSingle frmx = new frmOilSingle(this.UsuarioLogeado);
+            if (frmx.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                CargarRequisiciones();
+
+            //frmTipoReq frm = new frmTipoReq();
+            //if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    switch (frm.tipo)
+            //    {
+            //        case 0:
+            //            break;
+            //        case 1:
+            //            frmOilSingle frmx = new frmOilSingle(this.UsuarioLogeado);
+            //            if(frmx.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //                CargarRequisiciones();
+            //            break;
+            //        case 2:
+            //            MessageBox.Show("No se han definido los porcentajes de inclusion para un producto Mix.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            break;
+            //    }
+            //}
         }
 
         private void CargarRequisiciones()

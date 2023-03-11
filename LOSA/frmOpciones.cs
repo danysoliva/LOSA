@@ -185,9 +185,10 @@ namespace LOSA
                             tabOpciones.TabPages[0].PageVisible = true;
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[2].PageVisible = true;
-                            tabOpciones.TabPages[3].PageVisible = true;
+                            //tabOpciones.TabPages[3].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[5].PageVisible = true;
+                            tabOpciones.TabPages[10].PageVisible = true;
                            
                             break;
                         case 5://Depth Without Delta
