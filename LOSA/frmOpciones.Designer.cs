@@ -42,6 +42,7 @@
             this.TabLogistica = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabMP_Sacos = new DevExpress.XtraTab.XtraTabPage();
+            this.btnValidacionTarimas = new DevExpress.XtraEditors.SimpleButton();
             this.btnrutas_traz_logistica = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransferenciaPendiente = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteInventarioPorFecha = new DevExpress.XtraEditors.SimpleButton();
@@ -460,6 +461,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.btnValidacionTarimas);
             this.TabMP_Sacos.Controls.Add(this.btnrutas_traz_logistica);
             this.TabMP_Sacos.Controls.Add(this.btnTransferenciaPendiente);
             this.TabMP_Sacos.Controls.Add(this.cmdReporteInventarioPorFecha);
@@ -483,6 +485,20 @@
             this.TabMP_Sacos.Size = new System.Drawing.Size(829, 470);
             this.TabMP_Sacos.Text = "MP en Sacos";
             // 
+            // btnValidacionTarimas
+            // 
+            this.btnValidacionTarimas.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.btnValidacionTarimas.Appearance.Options.UseFont = true;
+            this.btnValidacionTarimas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnValidacionTarimas.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnValidacionTarimas.ImageOptions.SvgImage")));
+            this.btnValidacionTarimas.Location = new System.Drawing.Point(416, 158);
+            this.btnValidacionTarimas.Name = "btnValidacionTarimas";
+            this.btnValidacionTarimas.Size = new System.Drawing.Size(198, 42);
+            this.btnValidacionTarimas.TabIndex = 51;
+            this.btnValidacionTarimas.Text = "Validacion de Tarimas";
+            this.btnValidacionTarimas.Visible = false;
+            this.btnValidacionTarimas.Click += new System.EventHandler(this.btnValidacionTarimas_Click);
+            // 
             // btnrutas_traz_logistica
             // 
             this.btnrutas_traz_logistica.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -493,7 +509,7 @@
             this.btnrutas_traz_logistica.ImageOptions.Image = global::LOSA.Properties.Resources.signpost24X24;
             this.btnrutas_traz_logistica.Location = new System.Drawing.Point(207, 254);
             this.btnrutas_traz_logistica.Name = "btnrutas_traz_logistica";
-            this.btnrutas_traz_logistica.Size = new System.Drawing.Size(199, 42);
+            this.btnrutas_traz_logistica.Size = new System.Drawing.Size(202, 42);
             this.btnrutas_traz_logistica.TabIndex = 50;
             this.btnrutas_traz_logistica.Text = "Rutas de Trazabilidad";
             this.btnrutas_traz_logistica.Click += new System.EventHandler(this.btnrutas_traz_logistica_Click);
@@ -508,7 +524,7 @@
             this.btnTransferenciaPendiente.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTransferenciaPendiente.ImageOptions.SvgImage")));
             this.btnTransferenciaPendiente.Location = new System.Drawing.Point(210, 306);
             this.btnTransferenciaPendiente.Name = "btnTransferenciaPendiente";
-            this.btnTransferenciaPendiente.Size = new System.Drawing.Size(259, 42);
+            this.btnTransferenciaPendiente.Size = new System.Drawing.Size(199, 42);
             this.btnTransferenciaPendiente.TabIndex = 48;
             this.btnTransferenciaPendiente.Text = "Pendiente de Transferir a Planta";
             this.btnTransferenciaPendiente.Visible = false;
@@ -581,9 +597,9 @@
             this.btnAjustesKardex.Appearance.Options.UseFont = true;
             this.btnAjustesKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAjustesKardex.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAjustesKardex.ImageOptions.Image")));
-            this.btnAjustesKardex.Location = new System.Drawing.Point(415, 206);
+            this.btnAjustesKardex.Location = new System.Drawing.Point(416, 254);
             this.btnAjustesKardex.Name = "btnAjustesKardex";
-            this.btnAjustesKardex.Size = new System.Drawing.Size(199, 41);
+            this.btnAjustesKardex.Size = new System.Drawing.Size(199, 42);
             this.btnAjustesKardex.TabIndex = 13;
             this.btnAjustesKardex.Text = "Agregar Tarima Manual MP";
             this.btnAjustesKardex.Visible = false;
@@ -747,9 +763,9 @@
             this.btnajuste.Appearance.Options.UseFont = true;
             this.btnajuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnajuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnajuste.ImageOptions.Image")));
-            this.btnajuste.Location = new System.Drawing.Point(416, 159);
+            this.btnajuste.Location = new System.Drawing.Point(415, 206);
             this.btnajuste.Name = "btnajuste";
-            this.btnajuste.Size = new System.Drawing.Size(199, 41);
+            this.btnajuste.Size = new System.Drawing.Size(199, 42);
             this.btnajuste.TabIndex = 31;
             this.btnajuste.Text = "Ajuste de Inventario \r\npor Tarima";
             this.btnajuste.Visible = false;
@@ -3548,5 +3564,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem9;
         private DevExpress.XtraEditors.SimpleButton cmdCierreLotesPT;
         private DevExpress.XtraEditors.SimpleButton btnViewRequisasCalidad;
+        private DevExpress.XtraEditors.SimpleButton btnValidacionTarimas;
     }
 }

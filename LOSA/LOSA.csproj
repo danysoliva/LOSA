@@ -1507,6 +1507,12 @@
     <Compile Include="Logistica\frmTrazabilidadLote.Designer.cs">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistica\frmValidacionTarimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmValidacionTarimas.Designer.cs">
+      <DependentUpon>frmValidacionTarimas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\frm_nuevaSemanaPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -6236,6 +6242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmValidacionTarimas.resx">
+      <DependentUpon>frmValidacionTarimas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frm_nuevaSemanaPlan.resx">
       <DependentUpon>frm_nuevaSemanaPlan.cs</DependentUpon>

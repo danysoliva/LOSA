@@ -4408,6 +4408,8 @@ namespace LOSA.Micro {
             
             private global::System.Data.DataColumn columnenable_name;
             
+            private global::System.Data.DataColumn columnlote_pt;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tarimas_microDataTable() {
@@ -4619,6 +4621,14 @@ namespace LOSA.Micro {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_ptColumn {
+                get {
+                    return this.columnlote_pt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4676,7 +4686,8 @@ namespace LOSA.Micro {
                         string itemcode, 
                         int id_tarima_origen, 
                         decimal cantidad_kg, 
-                        string enable_name) {
+                        string enable_name, 
+                        int lote_pt) {
                 tarimas_microRow rowtarimas_microRow = ((tarimas_microRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -4700,7 +4711,8 @@ namespace LOSA.Micro {
                         itemcode,
                         id_tarima_origen,
                         cantidad_kg,
-                        enable_name};
+                        enable_name,
+                        lote_pt};
                 rowtarimas_microRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_microRow);
                 return rowtarimas_microRow;
@@ -4745,6 +4757,7 @@ namespace LOSA.Micro {
                 this.columnid_tarima_origen = base.Columns["id_tarima_origen"];
                 this.columncantidad_kg = base.Columns["cantidad_kg"];
                 this.columnenable_name = base.Columns["enable_name"];
+                this.columnlote_pt = base.Columns["lote_pt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4794,6 +4807,8 @@ namespace LOSA.Micro {
                 base.Columns.Add(this.columncantidad_kg);
                 this.columnenable_name = new global::System.Data.DataColumn("enable_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnenable_name);
+                this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_pt);
                 this.columnnombre_comercial.Caption = "Nombre MP";
                 this.columnfecha_creada.Caption = "Fecha Creada";
                 this.columnfecha_ingreso.Caption = "Fecha Ingreso";
@@ -8983,6 +8998,22 @@ namespace LOSA.Micro {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int lote_pt {
+                get {
+                    try {
+                        return ((int)(this[this.tabletarimas_micro.lote_ptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_pt\' de la tabla \'tarimas_micro\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_micro.lote_ptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_micro.idColumn);
             }
@@ -9243,6 +9274,18 @@ namespace LOSA.Micro {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setenable_nameNull() {
                 this[this.tabletarimas_micro.enable_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_ptNull() {
+                return this.IsNull(this.tabletarimas_micro.lote_ptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_ptNull() {
+                this[this.tabletarimas_micro.lote_ptColumn] = global::System.Convert.DBNull;
             }
         }
         

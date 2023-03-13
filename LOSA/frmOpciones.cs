@@ -3114,5 +3114,11 @@ namespace LOSA
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnValidacionTarimas_Click(object sender, EventArgs e)
+        {
+            frmValidacionTarimas frm = new frmValidacionTarimas(UsuarioLogeado);
+            frm.Show();
+        }
     }
 }
