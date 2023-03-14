@@ -78,6 +78,7 @@ namespace LOSA.Logistica
             this.rowid_estado_tarima = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowdescripcion = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowfactor_activo = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso.Properties)).BeginInit();
@@ -168,7 +169,7 @@ namespace LOSA.Logistica
             this.grdPresentacion.Properties.ValueMember = "id";
             this.grdPresentacion.Size = new System.Drawing.Size(233, 30);
             this.grdPresentacion.TabIndex = 116;
-            this.grdPresentacion.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.grdPresentacion_EditValueChanging);
+            this.grdPresentacion.EditValueChanged += new System.EventHandler(this.grdPresentacion_EditValueChanged);
             // 
             // presentacionesBindingSource
             // 
@@ -298,6 +299,7 @@ namespace LOSA.Logistica
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Appearance.Options.UseBackColor = true;
             this.btnGuardar.Appearance.Options.UseFont = true;
+            this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
             this.btnGuardar.Location = new System.Drawing.Point(268, 555);
             this.btnGuardar.Name = "btnGuardar";
@@ -310,6 +312,7 @@ namespace LOSA.Logistica
             // 
             this.cmdClose.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdClose.Appearance.Options.UseFont = true;
+            this.cmdClose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdClose.ImageOptions.Image")));
             this.cmdClose.Location = new System.Drawing.Point(268, 632);
             this.cmdClose.Name = "cmdClose";
@@ -345,10 +348,11 @@ namespace LOSA.Logistica
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtUnidades.Size = new System.Drawing.Size(150, 30);
             this.txtUnidades.TabIndex = 127;
+            this.txtUnidades.TextChanged += new System.EventHandler(this.txtUnidades_TextChanged);
             // 
             // vGridDatosTarima
             // 
-            this.vGridDatosTarima.Cursor = System.Windows.Forms.Cursors.SizeWE;
+            this.vGridDatosTarima.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.vGridDatosTarima.DataMember = "validacion_tarimas";
             this.vGridDatosTarima.DataSource = this.dsLogistica21;
             this.vGridDatosTarima.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -532,6 +536,11 @@ namespace LOSA.Logistica
             this.rowfactor_activo.Properties.FieldName = "factor_activo";
             this.rowfactor_activo.Visible = false;
             // 
+            // timerLimpiarMensaje
+            // 
+            this.timerLimpiarMensaje.Interval = 5500;
+            this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
+            // 
             // frmValidacionTarimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,5 +629,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn colfactor;
+        private System.Windows.Forms.Timer timerLimpiarMensaje;
     }
 }

@@ -496,7 +496,6 @@
             this.btnValidacionTarimas.Size = new System.Drawing.Size(198, 42);
             this.btnValidacionTarimas.TabIndex = 51;
             this.btnValidacionTarimas.Text = "Validacion de Tarimas";
-            this.btnValidacionTarimas.Visible = false;
             this.btnValidacionTarimas.Click += new System.EventHandler(this.btnValidacionTarimas_Click);
             // 
             // btnrutas_traz_logistica

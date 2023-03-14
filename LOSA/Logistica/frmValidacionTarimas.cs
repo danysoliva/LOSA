@@ -30,7 +30,7 @@ namespace LOSA.Logistica
             UsuarioLogeado = pUserLogin;
             LoadPresentaciones();
             LimpiarControles();
-
+            DeshabilitarControles();
         }
 
         private void InfoMensaje(string pMensaje, int ptipo)
@@ -38,10 +38,17 @@ namespace LOSA.Logistica
             if (ptipo == 1) //Error
             {
                 lblMensaje.Text = pMensaje;
+                panelNotificacion.BackColor = Color.Red;
+                timerLimpiarMensaje.Enabled = true;
+                timerLimpiarMensaje.Start();
+
             }
-            else //Info
+            else //Guardado
             {
                 lblMensaje.Text = pMensaje;
+                panelNotificacion.BackColor = Color.MediumSeaGreen;
+                timerLimpiarMensaje.Enabled = true;
+                timerLimpiarMensaje.Start();
             }
             
         
@@ -52,19 +59,19 @@ namespace LOSA.Logistica
             if (e.KeyCode == Keys.Enter)
             {
                 Tarima tm = new Tarima();
-                tm.RecuperarTarimaPorCodBarra(txtTarima.Text.Trim());
+                tm.RecuperarRegistro_v3(0,txtTarima.Text.Trim());
                 id_tarima = tm.Id;
                 id_estado_original_tarima = tm.Id_estado_tarima;
-                if (id_estado_original_tarima == 11) //Retenida por Logistica
-                {
-                    LoadDatosTarima(id_tarima);
-                }
-                else
-                {
-                    Mensaje = "Esta Tarima no se encuentra en Estado: Retenida por Logistica";                  
-                    InfoMensaje(Mensaje, 1);
-                }
-                
+                //if (id_estado_original_tarima == 11) //Retenida por Logistica
+                //{
+                //    LoadDatosTarima(id_tarima);
+                //}
+                //else
+                //{
+                //    Mensaje = "Esta Tarima no se encuentra en Estado: Retenida por Logistica";                  
+                //    InfoMensaje(Mensaje, 1);
+                //}
+                LoadDatosTarima(id_tarima);
             }
         }
 
@@ -157,34 +164,101 @@ namespace LOSA.Logistica
             else
             {
                 LimpiarControles();
+                DeshabilitarControles();
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DialogResult r = CajaDialogo.Pregunta("Desea guardar y activar la Tarima");
+            DialogResult r = CajaDialogo.Pregunta("Desea guardar y activar la Tarima?");
             if (r != System.Windows.Forms.DialogResult.Yes)
                 return;
 
-            if (tsEditarTarima.IsOn)
+            if (string.IsNullOrEmpty(txtTarima.Text))
             {
-                if (string.IsNullOrEmpty(txtLoteMP.Text))
-                {
-                    Mensaje = "No puede dejar vacio el Campo de Lote";
-                    
-                    InfoMensaje(Mensaje, 1);
-                }
-                if (true)
-                {
-
-                }
-
-
-                //Vamos a Guardar con los Cambios, en tarima, vamos a guardar un log y vamos a insertar Kardex
+                Mensaje = "Escanee una Tarima";
+                InfoMensaje(Mensaje, 1);
             }
             else
             {
-                //Vamos solo a Activar la Tarima
+                bool Guardar;
+
+                if (tsEditarTarima.IsOn)//Vamos a Actualizar la Tarima, Validemos los Campos
+                {
+                    if (string.IsNullOrEmpty(txtLoteMP.Text))
+                    {
+                        Mensaje = "No puede dejar vacio el Campo de Lote";
+
+                        InfoMensaje(Mensaje, 1);
+                    }
+                    if (string.IsNullOrEmpty(grdPresentacion.Text))
+                    {
+                        Mensaje = "Debe seleccionar una Presentacion.";
+                        InfoMensaje(Mensaje, 1);
+                    }
+                    if (Convert.ToInt32(txtPeso.EditValue) <= 0)
+                    {
+                        Mensaje = "El Peso no puede ser (0)";
+                        InfoMensaje(Mensaje, 1);
+                    }
+                    if (Convert.ToInt32(txtUnidades.EditValue) <= 0)
+                    {
+                        Mensaje = "Las Unidadres no pueden ser menor o igual que (0)";
+                        InfoMensaje(Mensaje, 1);
+                    }
+
+                    //Vamos a Guardar con los Cambios en tarima, vamos a guardar un log y vamos a insertar Kardex
+
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_update_tarima_and_insert_kardex", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_tarima", id_tarima);
+                        cmd.Parameters.AddWithValue("@loteMP", txtLoteMP.Text.Trim());
+                        cmd.Parameters.AddWithValue("@id_presentacion", Convert.ToInt32(grdPresentacion.EditValue));
+                        cmd.Parameters.AddWithValue("@unidades", txtUnidades.EditValue);
+                        cmd.Parameters.AddWithValue("@peso", txtPeso.EditValue);
+                        cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                        //cmd.ExecuteNonQuery();
+                        Guardar = true;
+                    }
+                    catch (Exception ec)
+                    {
+                        Guardar = false;
+                        CajaDialogo.Error(ec.Message);
+                    }
+
+                }
+                else
+                {
+                    //Vamos solo a Activar la Tarima
+
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_update_tarima_and_insert_kardex_activacion", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_tarima", id_tarima);
+                        cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                        //cmd.ExecuteNonQuery();
+                        Guardar = true;
+                    }
+                    catch (Exception ec)
+                    {
+                        Guardar = false;
+                        CajaDialogo.Error(ec.Message);
+                    }
+
+                }
+
+                if (Guardar)
+                {
+                    Mensaje = "Tarima Activada!";
+                    InfoMensaje(Mensaje, 2);
+                }
             }
         }
 
@@ -198,7 +272,42 @@ namespace LOSA.Logistica
             //vGridDatosTarima.DataBindings();
         }
 
-        private void grdPresentacion_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+
+        private void CalculoPeso()
+        {
+            PresentacionX pres1 = new PresentacionX();
+
+            pres1.RecuperarRegistro(Convert.ToInt32(grdPresentacion.EditValue));
+            int Unidades = Convert.ToInt32(txtUnidades.EditValue);
+
+            txtPeso.EditValue = Unidades * pres1.Factor;
+
+        }
+
+        private void txtUnidades_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(grdPresentacion.Text))
+            {
+                //nada.. hasta que seleccione una presentacion.
+            }
+            else
+            {
+                CalculoPeso();
+            }
+        }
+
+        private void timerLimpiarMensaje_Tick(object sender, EventArgs e)
+        {
+            timerLimpiarMensaje.Stop();
+            timerLimpiarMensaje.Enabled = false;
+            panelNotificacion.BackColor = Color.White;
+            txtTarima.Text = "";
+            vGridDatosTarima.DataSource = null;
+            lblMensaje.Text = "";
+            txtTarima.Focus();
+        }
+
+        private void grdPresentacion_EditValueChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(grdPresentacion.Text))
             {
@@ -206,17 +315,10 @@ namespace LOSA.Logistica
             }
             else
             {
-                
+
                 if (grdPresentacion.Text != "")
                 {
-                    PresentacionX pres1 = new PresentacionX();
-
-                    pres1.RecuperarRegistro(Convert.ToInt32(grdPresentacion.EditValue));
-                    int Unidades = Convert.ToInt32(txtUnidades.EditValue);
-                    decimal Peso = Convert.ToDecimal(txtPeso.EditValue);
-                    
-
-
+                    CalculoPeso();
                 }
             }
         }
