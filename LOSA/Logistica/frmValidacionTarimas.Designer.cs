@@ -55,8 +55,11 @@ namespace LOSA.Logistica
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.txtUnidades = new DevExpress.XtraEditors.SpinEdit();
             this.vGridDatosTarima = new DevExpress.XtraVerticalGrid.VGridControl();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.rowid = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowid_materia_prima = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowcodigo_barra = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowitemcode = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowmp = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowid_proveedor = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowproveedor = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -69,16 +72,13 @@ namespace LOSA.Logistica
             this.rowpresentacion = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowid_usuario = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowid_boleta = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowcodigo_barra = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowcantidad = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowpeso = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowitemcode = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowid_estado_calidad = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowid_ingreso = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowid_estado_tarima = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowdescripcion = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowfactor_activo = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso.Properties)).BeginInit();
@@ -94,8 +94,6 @@ namespace LOSA.Logistica
             // txtTarima
             // 
             this.txtTarima.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
-            this.txtTarima.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTarima.EditValue = "";
             this.txtTarima.Location = new System.Drawing.Point(237, 12);
             this.txtTarima.Name = "txtTarima";
@@ -128,7 +126,7 @@ namespace LOSA.Logistica
             this.panelNotificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelNotificacion.Controls.Add(this.lblMensaje);
             this.panelNotificacion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNotificacion.Location = new System.Drawing.Point(0, 686);
+            this.panelNotificacion.Location = new System.Drawing.Point(0, 770);
             this.panelNotificacion.Name = "panelNotificacion";
             this.panelNotificacion.Size = new System.Drawing.Size(673, 71);
             this.panelNotificacion.TabIndex = 112;
@@ -147,7 +145,7 @@ namespace LOSA.Logistica
             // txtPeso
             // 
             this.txtPeso.Enabled = false;
-            this.txtPeso.Location = new System.Drawing.Point(277, 495);
+            this.txtPeso.Location = new System.Drawing.Point(277, 517);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtPeso.Properties.Appearance.Options.UseFont = true;
@@ -157,7 +155,7 @@ namespace LOSA.Logistica
             // grdPresentacion
             // 
             this.grdPresentacion.Enabled = false;
-            this.grdPresentacion.Location = new System.Drawing.Point(278, 404);
+            this.grdPresentacion.Location = new System.Drawing.Point(278, 426);
             this.grdPresentacion.Name = "grdPresentacion";
             this.grdPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.grdPresentacion.Properties.Appearance.Options.UseFont = true;
@@ -183,6 +181,10 @@ namespace LOSA.Logistica
             // 
             // gridLookUpEdit1View
             // 
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.Row.Options.UseFont = true;
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
             this.coldescripcion,
@@ -216,7 +218,7 @@ namespace LOSA.Logistica
             // 
             this.txtLoteMP.Enabled = false;
             this.txtLoteMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtLoteMP.Location = new System.Drawing.Point(277, 362);
+            this.txtLoteMP.Location = new System.Drawing.Point(277, 384);
             this.txtLoteMP.Name = "txtLoteMP";
             this.txtLoteMP.Size = new System.Drawing.Size(234, 29);
             this.txtLoteMP.TabIndex = 117;
@@ -227,7 +229,7 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(187, 450);
+            this.labelControl1.Location = new System.Drawing.Point(187, 472);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(85, 24);
             this.labelControl1.TabIndex = 118;
@@ -239,7 +241,7 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(224, 501);
+            this.labelControl3.Location = new System.Drawing.Point(224, 523);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 24);
             this.labelControl3.TabIndex = 119;
@@ -251,7 +253,7 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(196, 367);
+            this.labelControl4.Location = new System.Drawing.Point(196, 389);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(74, 24);
             this.labelControl4.TabIndex = 120;
@@ -263,7 +265,7 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(157, 410);
+            this.labelControl5.Location = new System.Drawing.Point(157, 432);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(115, 24);
             this.labelControl5.TabIndex = 121;
@@ -271,7 +273,7 @@ namespace LOSA.Logistica
             // 
             // tsEditarTarima
             // 
-            this.tsEditarTarima.Location = new System.Drawing.Point(293, 314);
+            this.tsEditarTarima.Location = new System.Drawing.Point(293, 336);
             this.tsEditarTarima.Name = "tsEditarTarima";
             this.tsEditarTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.tsEditarTarima.Properties.Appearance.Options.UseFont = true;
@@ -287,7 +289,7 @@ namespace LOSA.Logistica
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(234, 318);
+            this.labelControl6.Location = new System.Drawing.Point(234, 340);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(53, 24);
             this.labelControl6.TabIndex = 123;
@@ -301,7 +303,7 @@ namespace LOSA.Logistica
             this.btnGuardar.Appearance.Options.UseFont = true;
             this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnGuardar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGuardar.ImageOptions.SvgImage")));
-            this.btnGuardar.Location = new System.Drawing.Point(268, 555);
+            this.btnGuardar.Location = new System.Drawing.Point(268, 577);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(160, 48);
             this.btnGuardar.TabIndex = 124;
@@ -314,11 +316,12 @@ namespace LOSA.Logistica
             this.cmdClose.Appearance.Options.UseFont = true;
             this.cmdClose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdClose.ImageOptions.Image")));
-            this.cmdClose.Location = new System.Drawing.Point(268, 632);
+            this.cmdClose.Location = new System.Drawing.Point(268, 654);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(160, 48);
             this.cmdClose.TabIndex = 125;
             this.cmdClose.Text = "Cerrar";
+            this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
             // 
             // btnClear
             // 
@@ -340,7 +343,7 @@ namespace LOSA.Logistica
             0,
             0,
             0});
-            this.txtUnidades.Location = new System.Drawing.Point(278, 447);
+            this.txtUnidades.Location = new System.Drawing.Point(278, 469);
             this.txtUnidades.Name = "txtUnidades";
             this.txtUnidades.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtUnidades.Properties.Appearance.Options.UseFont = true;
@@ -352,17 +355,21 @@ namespace LOSA.Logistica
             // 
             // vGridDatosTarima
             // 
-            this.vGridDatosTarima.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.vGridDatosTarima.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.vGridDatosTarima.CustomizationFormBounds = new System.Drawing.Rectangle(1493, 461, 210, 254);
             this.vGridDatosTarima.DataMember = "validacion_tarimas";
             this.vGridDatosTarima.DataSource = this.dsLogistica21;
             this.vGridDatosTarima.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vGridDatosTarima.Location = new System.Drawing.Point(8, 62);
             this.vGridDatosTarima.Name = "vGridDatosTarima";
+            this.vGridDatosTarima.OptionsBehavior.Editable = false;
             this.vGridDatosTarima.RecordWidth = 250;
             this.vGridDatosTarima.RowHeaderWidth = 250;
             this.vGridDatosTarima.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
             this.rowid,
             this.rowid_materia_prima,
+            this.rowcodigo_barra,
+            this.rowitemcode,
             this.rowmp,
             this.rowid_proveedor,
             this.rowproveedor,
@@ -375,10 +382,8 @@ namespace LOSA.Logistica
             this.rowpresentacion,
             this.rowid_usuario,
             this.rowid_boleta,
-            this.rowcodigo_barra,
             this.rowcantidad,
             this.rowpeso,
-            this.rowitemcode,
             this.rowid_estado_calidad,
             this.rowid_ingreso,
             this.rowid_estado_tarima,
@@ -386,6 +391,11 @@ namespace LOSA.Logistica
             this.rowfactor_activo});
             this.vGridDatosTarima.Size = new System.Drawing.Size(661, 246);
             this.vGridDatosTarima.TabIndex = 113;
+            // 
+            // timerLimpiarMensaje
+            // 
+            this.timerLimpiarMensaje.Interval = 5500;
+            this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
             // 
             // rowid
             // 
@@ -401,8 +411,22 @@ namespace LOSA.Logistica
             this.rowid_materia_prima.Properties.FieldName = "id_materia_prima";
             this.rowid_materia_prima.Visible = false;
             // 
+            // rowcodigo_barra
+            // 
+            this.rowcodigo_barra.Name = "rowcodigo_barra";
+            this.rowcodigo_barra.Properties.Caption = "Codigo de Barra";
+            this.rowcodigo_barra.Properties.FieldName = "codigo_barra";
+            // 
+            // rowitemcode
+            // 
+            this.rowitemcode.Height = 16;
+            this.rowitemcode.Name = "rowitemcode";
+            this.rowitemcode.Properties.Caption = "Item Code";
+            this.rowitemcode.Properties.FieldName = "itemcode";
+            // 
             // rowmp
             // 
+            this.rowmp.Height = 16;
             this.rowmp.Name = "rowmp";
             this.rowmp.Properties.Caption = "Materia Prima";
             this.rowmp.Properties.FieldName = "mp";
@@ -434,6 +458,7 @@ namespace LOSA.Logistica
             // 
             // rowfecha_vencimiento
             // 
+            this.rowfecha_vencimiento.Height = 16;
             this.rowfecha_vencimiento.Name = "rowfecha_vencimiento";
             this.rowfecha_vencimiento.Properties.Caption = "F. Vencimiento";
             this.rowfecha_vencimiento.Properties.FieldName = "fecha_vencimiento";
@@ -446,6 +471,7 @@ namespace LOSA.Logistica
             // 
             // rowlote_materia_prima
             // 
+            this.rowlote_materia_prima.Height = 16;
             this.rowlote_materia_prima.Name = "rowlote_materia_prima";
             this.rowlote_materia_prima.Properties.Caption = "Lote";
             this.rowlote_materia_prima.Properties.FieldName = "lote_materia_prima";
@@ -459,6 +485,7 @@ namespace LOSA.Logistica
             // 
             // rowpresentacion
             // 
+            this.rowpresentacion.Height = 16;
             this.rowpresentacion.Name = "rowpresentacion";
             this.rowpresentacion.Properties.Caption = "Presentacion";
             this.rowpresentacion.Properties.FieldName = "presentacion";
@@ -477,29 +504,17 @@ namespace LOSA.Logistica
             this.rowid_boleta.Properties.FieldName = "id_boleta";
             this.rowid_boleta.Visible = false;
             // 
-            // rowcodigo_barra
-            // 
-            this.rowcodigo_barra.Name = "rowcodigo_barra";
-            this.rowcodigo_barra.Properties.Caption = "Codigo de Barra";
-            this.rowcodigo_barra.Properties.FieldName = "codigo_barra";
-            // 
             // rowcantidad
             // 
             this.rowcantidad.Name = "rowcantidad";
-            this.rowcantidad.Properties.Caption = "Unidades";
+            this.rowcantidad.Properties.Caption = "Unidades Existentes";
             this.rowcantidad.Properties.FieldName = "cantidad";
             // 
             // rowpeso
             // 
             this.rowpeso.Name = "rowpeso";
-            this.rowpeso.Properties.Caption = "Peso Tarima";
+            this.rowpeso.Properties.Caption = "Peso Tarima Existente";
             this.rowpeso.Properties.FieldName = "peso";
-            // 
-            // rowitemcode
-            // 
-            this.rowitemcode.Name = "rowitemcode";
-            this.rowitemcode.Properties.Caption = "Item Code";
-            this.rowitemcode.Properties.FieldName = "itemcode";
             // 
             // rowid_estado_calidad
             // 
@@ -536,16 +551,11 @@ namespace LOSA.Logistica
             this.rowfactor_activo.Properties.FieldName = "factor_activo";
             this.rowfactor_activo.Visible = false;
             // 
-            // timerLimpiarMensaje
-            // 
-            this.timerLimpiarMensaje.Interval = 5500;
-            this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
-            // 
             // frmValidacionTarimas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 757);
+            this.ClientSize = new System.Drawing.Size(673, 841);
             this.Controls.Add(this.txtUnidades);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.cmdClose);
@@ -588,29 +598,6 @@ namespace LOSA.Logistica
         private System.Windows.Forms.Label lblMensaje;
         private DevExpress.XtraVerticalGrid.VGridControl vGridDatosTarima;
         private dsLogistica2 dsLogistica21;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_materia_prima;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowmp;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_proveedor;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowproveedor;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfecha_ingreso;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rownumero_transaccion;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfecha_vencimiento;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfecha_produccion_materia_prima;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowlote_materia_prima;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_presentacion;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowpresentacion;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_usuario;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_boleta;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowcodigo_barra;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowcantidad;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowpeso;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowitemcode;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_estado_calidad;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_ingreso;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_estado_tarima;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowdescripcion;
-        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfactor_activo;
         private DevExpress.XtraEditors.TextEdit txtPeso;
         private DevExpress.XtraEditors.GridLookUpEdit grdPresentacion;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
@@ -630,5 +617,28 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn colfactor;
         private System.Windows.Forms.Timer timerLimpiarMensaje;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_materia_prima;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowcodigo_barra;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowitemcode;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowmp;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_proveedor;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowproveedor;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfecha_ingreso;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rownumero_transaccion;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfecha_vencimiento;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfecha_produccion_materia_prima;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowlote_materia_prima;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_presentacion;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowpresentacion;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_usuario;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_boleta;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowcantidad;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowpeso;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_estado_calidad;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_ingreso;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowid_estado_tarima;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowdescripcion;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowfactor_activo;
     }
 }

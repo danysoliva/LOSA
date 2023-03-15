@@ -265,7 +265,7 @@
             this.colNombre.OptionsColumn.AllowEdit = false;
             this.colNombre.Visible = true;
             this.colNombre.VisibleIndex = 1;
-            this.colNombre.Width = 127;
+            this.colNombre.Width = 140;
             // 
             // colingreso
             // 
@@ -275,7 +275,7 @@
             this.colingreso.OptionsColumn.AllowEdit = false;
             this.colingreso.Visible = true;
             this.colingreso.VisibleIndex = 3;
-            this.colingreso.Width = 122;
+            this.colingreso.Width = 132;
             // 
             // colvence
             // 
@@ -285,7 +285,7 @@
             this.colvence.OptionsColumn.AllowEdit = false;
             this.colvence.Visible = true;
             this.colvence.VisibleIndex = 4;
-            this.colvence.Width = 122;
+            this.colvence.Width = 132;
             // 
             // collote_mp
             // 
@@ -295,7 +295,7 @@
             this.collote_mp.OptionsColumn.AllowEdit = false;
             this.collote_mp.Visible = true;
             this.collote_mp.VisibleIndex = 5;
-            this.collote_mp.Width = 122;
+            this.collote_mp.Width = 132;
             // 
             // colpresentacion
             // 
@@ -305,7 +305,7 @@
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 6;
-            this.colpresentacion.Width = 122;
+            this.colpresentacion.Width = 132;
             // 
             // colcantidad
             // 
@@ -315,7 +315,7 @@
             this.colcantidad.OptionsColumn.AllowEdit = false;
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 7;
-            this.colcantidad.Width = 122;
+            this.colcantidad.Width = 132;
             // 
             // colunidad
             // 
@@ -332,7 +332,7 @@
             this.colpeso_total.OptionsColumn.AllowEdit = false;
             this.colpeso_total.Visible = true;
             this.colpeso_total.VisibleIndex = 8;
-            this.colpeso_total.Width = 132;
+            this.colpeso_total.Width = 161;
             // 
             // colseleccionado
             // 
@@ -355,11 +355,11 @@
             this.colcodigo.OptionsColumn.AllowEdit = false;
             this.colcodigo.Visible = true;
             this.colcodigo.VisibleIndex = 0;
-            this.colcodigo.Width = 127;
+            this.colcodigo.Width = 140;
             // 
             // colfecha_entrega
             // 
-            this.colfecha_entrega.Caption = "Fecha Escaneado";
+            this.colfecha_entrega.Caption = "F. Entregado a PRD";
             this.colfecha_entrega.DisplayFormat.FormatString = "g";
             this.colfecha_entrega.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha_entrega.FieldName = "fecha_entrega";
@@ -367,7 +367,7 @@
             this.colfecha_entrega.OptionsColumn.AllowEdit = false;
             this.colfecha_entrega.Visible = true;
             this.colfecha_entrega.VisibleIndex = 2;
-            this.colfecha_entrega.Width = 150;
+            this.colfecha_entrega.Width = 171;
             // 
             // btnVerD
             // 

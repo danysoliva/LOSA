@@ -62,16 +62,56 @@ namespace LOSA.Logistica
                 tm.RecuperarRegistro_v3(0,txtTarima.Text.Trim());
                 id_tarima = tm.Id;
                 id_estado_original_tarima = tm.Id_estado_tarima;
-                //if (id_estado_original_tarima == 11) //Retenida por Logistica
-                //{
-                //    LoadDatosTarima(id_tarima);
-                //}
-                //else
-                //{
-                //    Mensaje = "Esta Tarima no se encuentra en Estado: Retenida por Logistica";                  
-                //    InfoMensaje(Mensaje, 1);
-                //}
-                LoadDatosTarima(id_tarima);
+
+                switch (id_estado_original_tarima)
+                {
+                    case 1: //Recepcionado
+                        Mensaje = "Esta Tarima no a sido Activada por parte del Monta Carguista, Estado Tarima: Recepcionada";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                    case 2: //En Bodega
+                        Mensaje = "Estado de Tarima: En Bodega, Tarima Activada!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                    case 4: //Comprometido
+                        Mensaje = "Estado de Tarima: Comprometida";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                    case 5://En Produccion
+                        Mensaje = "Tarima Duplicada, Esta Tarima ya fue Entregada a Produccion!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                    case 6: //Consumido por el depto de Produccion
+                        Mensaje = "Tarima Consumida por el Depto. de Produccion!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                    case 8: //Parcialmente Entregado
+                        Mensaje = "Estado de Tarima: Parcialmente Entregado, Tarima Activada!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                    case 9: //Rechazado
+                        Mensaje = "Estado Tarima: Rechazada!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                    case 11: //Retenida por Logistica
+                        LoadDatosTarima(id_tarima);
+                        break;
+
+                    default:
+                        Mensaje = "La Tarima no tiene ninguno estado configurado, Contactar al Dpto de IT";
+                        InfoMensaje(Mensaje, 1);
+
+                        break;
+                }
+
+
             }
         }
 
@@ -321,6 +361,11 @@ namespace LOSA.Logistica
                     CalculoPeso();
                 }
             }
+        }
+
+        private void cmdClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
