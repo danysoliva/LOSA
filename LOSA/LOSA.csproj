@@ -802,6 +802,12 @@
     <Compile Include="Calidad\frmSeguimientoDespachos.Designer.cs">
       <DependentUpon>frmSeguimientoDespachos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmSelecFechasAlimentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmSelecFechasAlimentacion.Designer.cs">
+      <DependentUpon>frmSelecFechasAlimentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmTexturaMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1024,6 +1030,12 @@
     </Compile>
     <Compile Include="Calidad\Revision_Sanidad\XtraUserControl1.Designer.cs">
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\rptReporteAlimentacionTarimasMP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\rptReporteAlimentacionTarimasMP.Designer.cs">
+      <DependentUpon>rptReporteAlimentacionTarimasMP.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\rpt_certificado_calidad.cs">
       <SubType>Component</SubType>
@@ -5962,6 +5974,9 @@
     <EmbeddedResource Include="Calidad\frmSeguimientoDespachos.resx">
       <DependentUpon>frmSeguimientoDespachos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmSelecFechasAlimentacion.resx">
+      <DependentUpon>frmSelecFechasAlimentacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmTexturaMantenimiento.resx">
       <DependentUpon>frmTexturaMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -6054,6 +6069,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmWizardRevisionanidadFirstStep.resx">
       <DependentUpon>xfrmWizardRevisionanidadFirstStep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\rptReporteAlimentacionTarimasMP.resx">
+      <DependentUpon>rptReporteAlimentacionTarimasMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\rpt_certificado_calidad.resx">
       <DependentUpon>rpt_certificado_calidad.cs</DependentUpon>
@@ -7206,7 +7224,6 @@
     <EmbeddedResource Include="Produccion\xfrmMP_Por_BIN.resx">
       <DependentUpon>xfrmMP_Por_BIN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

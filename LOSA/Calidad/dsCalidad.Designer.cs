@@ -6581,6 +6581,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnlote;
             
+            private global::System.Data.DataColumn columnfecha_entrega;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ConsumidoDataTable() {
@@ -6680,6 +6682,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_entregaColumn {
+                get {
+                    return this.columnfecha_entrega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6715,7 +6725,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ConsumidoRow AddConsumidoRow(int id, string descripcion, System.DateTime fecha, decimal peso, decimal cantidad, string codigo, string tarima_codigo, string lote) {
+            public ConsumidoRow AddConsumidoRow(int id, string descripcion, System.DateTime fecha, decimal peso, decimal cantidad, string codigo, string tarima_codigo, string lote, System.DateTime fecha_entrega) {
                 ConsumidoRow rowConsumidoRow = ((ConsumidoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -6725,7 +6735,8 @@ namespace LOSA.Calidad {
                         cantidad,
                         codigo,
                         tarima_codigo,
-                        lote};
+                        lote,
+                        fecha_entrega};
                 rowConsumidoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowConsumidoRow);
                 return rowConsumidoRow;
@@ -6756,6 +6767,7 @@ namespace LOSA.Calidad {
                 this.columncodigo = base.Columns["codigo"];
                 this.columntarima_codigo = base.Columns["tarima_codigo"];
                 this.columnlote = base.Columns["lote"];
+                this.columnfecha_entrega = base.Columns["fecha_entrega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6777,6 +6789,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columntarima_codigo);
                 this.columnlote = new global::System.Data.DataColumn("lote", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlote);
+                this.columnfecha_entrega = new global::System.Data.DataColumn("fecha_entrega", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_entrega);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13698,6 +13712,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_entrega {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableConsumido.fecha_entregaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_entrega\' de la tabla \'Consumido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConsumido.fecha_entregaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableConsumido.idColumn);
             }
@@ -13790,6 +13820,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetloteNull() {
                 this[this.tableConsumido.loteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_entregaNull() {
+                return this.IsNull(this.tableConsumido.fecha_entregaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_entregaNull() {
+                this[this.tableConsumido.fecha_entregaColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -22,7 +22,7 @@
     <Shape ID="DesignTable:trazabilitad" ZOrder="16" X="750" Y="444" Height="239" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
     <Shape ID="DesignTable:producto_pt" ZOrder="14" X="521" Y="306" Height="220" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:alimentacion" ZOrder="9" X="334" Y="320" Height="163" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:Consumido" ZOrder="8" X="227" Y="466" Height="163" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:Consumido" ZOrder="8" X="227" Y="466" Height="201" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:ViewCola" ZOrder="10" X="1172" Y="137" Height="144" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:despachoView" ZOrder="7" X="1222" Y="372" Height="239" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
     <Shape ID="DesignTable:tarimas_rechazadas" ZOrder="6" X="28" Y="479" Height="239" Width="178" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
