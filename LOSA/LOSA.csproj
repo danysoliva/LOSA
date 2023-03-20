@@ -5419,11 +5419,6 @@
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TransaccionesPT\dsPT.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsPT.xsd</DependentUpon>
-    </Compile>
     <Compile Include="TransaccionesPT\dsPT1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
