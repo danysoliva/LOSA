@@ -243,11 +243,12 @@ namespace LOSA.Calidad
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(5, 28);
+            this.simpleButton1.Location = new System.Drawing.Point(177, 28);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(143, 55);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Seguimiento \r\ncola de lotes";
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // timertick
@@ -260,7 +261,7 @@ namespace LOSA.Calidad
             this.btn_Refresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.Appearance.Options.UseFont = true;
             this.btn_Refresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.ImageOptions.Image")));
-            this.btn_Refresh.Location = new System.Drawing.Point(154, 28);
+            this.btn_Refresh.Location = new System.Drawing.Point(12, 28);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(138, 55);
             this.btn_Refresh.TabIndex = 4;
@@ -471,14 +472,12 @@ namespace LOSA.Calidad
             this.btnImprimirRPT.Appearance.Options.UseFont = true;
             this.btnImprimirRPT.Appearance.Options.UseTextOptions = true;
             this.btnImprimirRPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnImprimirRPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnImprimirRPT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImprimirRPT.ImageOptions.SvgImage")));
-            this.btnImprimirRPT.Location = new System.Drawing.Point(1009, 5);
+            this.btnImprimirRPT.Location = new System.Drawing.Point(1028, 5);
             this.btnImprimirRPT.Name = "btnImprimirRPT";
             this.btnImprimirRPT.Size = new System.Drawing.Size(114, 55);
             this.btnImprimirRPT.TabIndex = 5;
             this.btnImprimirRPT.Text = "Imprimir Reporte";
-            this.btnImprimirRPT.Visible = false;
             this.btnImprimirRPT.Click += new System.EventHandler(this.btnImprimirRPT_Click);
             // 
             // frmSeguimientoAlimentacion

@@ -18,7 +18,7 @@ namespace LOSA.Calidad
 
             dtDesde = pdtDesde;
             dtHasta = pdthasta;
-
+            lblFecha.Text = Convert.ToString(dtDesde +" a "+ dtHasta); 
             LoadDataAliemntacionTarima(dtDesde, dtHasta);
         }
 

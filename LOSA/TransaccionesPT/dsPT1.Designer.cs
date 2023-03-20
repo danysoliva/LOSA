@@ -7526,6 +7526,8 @@ namespace LOSA.TransaccionesPT {
             
             private global::System.Data.DataColumn columnpeso;
             
+            private global::System.Data.DataColumn columnfecha_activacion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public loadtmlDataTable() {
@@ -7649,6 +7651,14 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_activacionColumn {
+                get {
+                    return this.columnfecha_activacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7684,7 +7694,7 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public loadtmlRow AddloadtmlRow(int id, string codigobarra, int lote, System.DateTime dateprod, string turno, string producto, string codigop, int loteagrupador, System.DateTime f_vencimiento, decimal cantidad, decimal peso) {
+            public loadtmlRow AddloadtmlRow(int id, string codigobarra, int lote, System.DateTime dateprod, string turno, string producto, string codigop, int loteagrupador, System.DateTime f_vencimiento, decimal cantidad, decimal peso, System.DateTime fecha_activacion) {
                 loadtmlRow rowloadtmlRow = ((loadtmlRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -7697,7 +7707,8 @@ namespace LOSA.TransaccionesPT {
                         loteagrupador,
                         f_vencimiento,
                         cantidad,
-                        peso};
+                        peso,
+                        fecha_activacion};
                 rowloadtmlRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowloadtmlRow);
                 return rowloadtmlRow;
@@ -7731,6 +7742,7 @@ namespace LOSA.TransaccionesPT {
                 this.columnf_vencimiento = base.Columns["f_vencimiento"];
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnpeso = base.Columns["peso"];
+                this.columnfecha_activacion = base.Columns["fecha_activacion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7758,6 +7770,8 @@ namespace LOSA.TransaccionesPT {
                 base.Columns.Add(this.columncantidad);
                 this.columnpeso = new global::System.Data.DataColumn("peso", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpeso);
+                this.columnfecha_activacion = new global::System.Data.DataColumn("fecha_activacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_activacion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14270,6 +14284,22 @@ namespace LOSA.TransaccionesPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_activacion {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableloadtml.fecha_activacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_activacion\' de la tabla \'loadtml\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableloadtml.fecha_activacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableloadtml.idColumn);
             }
@@ -14398,6 +14428,18 @@ namespace LOSA.TransaccionesPT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetpesoNull() {
                 this[this.tableloadtml.pesoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_activacionNull() {
+                return this.IsNull(this.tableloadtml.fecha_activacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_activacionNull() {
+                this[this.tableloadtml.fecha_activacionColumn] = global::System.Convert.DBNull;
             }
         }
         

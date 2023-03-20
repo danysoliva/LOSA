@@ -147,8 +147,8 @@ namespace LOSA.Calidad
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmIntarioColaLote frm = new frmIntarioColaLote(UsuarioLogeado);
-            frm.Show();
+            //frmIntarioColaLote frm = new frmIntarioColaLote(UsuarioLogeado);
+            //frm.Show();
         }
 
         private void btn_Refresh_Click(object sender, EventArgs e)

@@ -32,8 +32,7 @@ namespace LOSA.TransaccionesPT
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRevisionDeActivaciondeTm));
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.loadtmlBindingSource = new System.Windows.Forms.BindingSource();
-            this.dsPT = new LOSA.TransaccionesPT.dsPT();
+            this.dsPT1 = new LOSA.TransaccionesPT.dsPT();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigobarra = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,6 +45,7 @@ namespace LOSA.TransaccionesPT
             this.colf_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dsPT = new LOSA.TransaccionesPT.dsPT();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -67,9 +67,9 @@ namespace LOSA.TransaccionesPT
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loadtmlBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -88,7 +88,7 @@ namespace LOSA.TransaccionesPT
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(589, 3);
+            this.cmdHome.Location = new System.Drawing.Point(1096, 3);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(199, 52);
             this.cmdHome.TabIndex = 8;
@@ -97,25 +97,21 @@ namespace LOSA.TransaccionesPT
             // 
             // grd_data
             // 
-            this.grd_data.DataSource = this.loadtmlBindingSource;
+            this.grd_data.DataMember = "loadtml";
+            this.grd_data.DataSource = this.dsPT1;
             this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_data.Location = new System.Drawing.Point(0, 0);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(777, 393);
+            this.grd_data.Size = new System.Drawing.Size(1284, 605);
             this.grd_data.TabIndex = 9;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
             // 
-            // loadtmlBindingSource
+            // dsPT1
             // 
-            this.loadtmlBindingSource.DataMember = "loadtml";
-            this.loadtmlBindingSource.DataSource = this.dsPT;
-            // 
-            // dsPT
-            // 
-            this.dsPT.DataSetName = "dsPT";
-            this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsPT1.DataSetName = "dsPT";
+            this.dsPT1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -152,7 +148,6 @@ namespace LOSA.TransaccionesPT
             this.colcantidad,
             this.colpeso});
             this.grdv_data.GridControl = this.grd_data;
-            this.grdv_data.GroupCount = 1;
             this.grdv_data.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", null, "")});
             this.grdv_data.Name = "grdv_data";
@@ -161,108 +156,88 @@ namespace LOSA.TransaccionesPT
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
-            this.grdv_data.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colloteagrupador, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // colid
             // 
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
-            this.colid.OptionsColumn.AllowEdit = false;
+            this.colid.Visible = true;
+            this.colid.VisibleIndex = 0;
             // 
             // colcodigobarra
             // 
-            this.colcodigobarra.Caption = "Codigo";
             this.colcodigobarra.FieldName = "codigobarra";
             this.colcodigobarra.Name = "colcodigobarra";
-            this.colcodigobarra.OptionsColumn.AllowEdit = false;
             this.colcodigobarra.Visible = true;
-            this.colcodigobarra.VisibleIndex = 0;
+            this.colcodigobarra.VisibleIndex = 1;
             // 
             // collote
             // 
-            this.collote.Caption = "Lote";
             this.collote.FieldName = "lote";
             this.collote.Name = "collote";
-            this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 1;
+            this.collote.VisibleIndex = 2;
             // 
             // coldateprod
             // 
-            this.coldateprod.Caption = "F. Produccion";
             this.coldateprod.FieldName = "dateprod";
             this.coldateprod.Name = "coldateprod";
-            this.coldateprod.OptionsColumn.AllowEdit = false;
             this.coldateprod.Visible = true;
-            this.coldateprod.VisibleIndex = 2;
+            this.coldateprod.VisibleIndex = 3;
             // 
             // colturno
             // 
-            this.colturno.Caption = "Turno";
             this.colturno.FieldName = "turno";
             this.colturno.Name = "colturno";
-            this.colturno.OptionsColumn.AllowEdit = false;
             this.colturno.Visible = true;
-            this.colturno.VisibleIndex = 3;
+            this.colturno.VisibleIndex = 4;
             // 
             // colproducto
             // 
-            this.colproducto.Caption = "Producto";
             this.colproducto.FieldName = "producto";
             this.colproducto.Name = "colproducto";
-            this.colproducto.OptionsColumn.AllowEdit = false;
             this.colproducto.Visible = true;
-            this.colproducto.VisibleIndex = 4;
+            this.colproducto.VisibleIndex = 5;
             // 
             // colcodigop
             // 
-            this.colcodigop.Caption = "C. Producto";
             this.colcodigop.FieldName = "codigop";
             this.colcodigop.Name = "colcodigop";
-            this.colcodigop.OptionsColumn.AllowEdit = false;
             this.colcodigop.Visible = true;
-            this.colcodigop.VisibleIndex = 5;
+            this.colcodigop.VisibleIndex = 6;
             // 
             // colloteagrupador
             // 
-            this.colloteagrupador.Caption = "Lote";
             this.colloteagrupador.FieldName = "loteagrupador";
             this.colloteagrupador.Name = "colloteagrupador";
-            this.colloteagrupador.OptionsColumn.AllowEdit = false;
             this.colloteagrupador.Visible = true;
-            this.colloteagrupador.VisibleIndex = 6;
+            this.colloteagrupador.VisibleIndex = 7;
             // 
             // colf_vencimiento
             // 
-            this.colf_vencimiento.Caption = "F. Vencimiento";
             this.colf_vencimiento.FieldName = "f_vencimiento";
             this.colf_vencimiento.Name = "colf_vencimiento";
-            this.colf_vencimiento.OptionsColumn.AllowEdit = false;
             this.colf_vencimiento.Visible = true;
-            this.colf_vencimiento.VisibleIndex = 6;
+            this.colf_vencimiento.VisibleIndex = 8;
             // 
             // colcantidad
             // 
-            this.colcantidad.Caption = "Unidades";
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
-            this.colcantidad.OptionsColumn.AllowEdit = false;
-            this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUM={0:0.##}")});
             this.colcantidad.Visible = true;
-            this.colcantidad.VisibleIndex = 7;
+            this.colcantidad.VisibleIndex = 9;
             // 
             // colpeso
             // 
-            this.colpeso.Caption = "Peso Kg.";
             this.colpeso.FieldName = "peso";
             this.colpeso.Name = "colpeso";
-            this.colpeso.OptionsColumn.AllowEdit = false;
-            this.colpeso.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso", "SUM={0:0.##}")});
             this.colpeso.Visible = true;
-            this.colpeso.VisibleIndex = 8;
+            this.colpeso.VisibleIndex = 10;
+            // 
+            // dsPT
+            // 
+            this.dsPT.DataSetName = "dsPT";
+            this.dsPT.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelControl3
             // 
@@ -275,7 +250,7 @@ namespace LOSA.TransaccionesPT
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(5, 16);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(578, 39);
+            this.labelControl3.Size = new System.Drawing.Size(1085, 39);
             this.labelControl3.TabIndex = 32;
             this.labelControl3.Text = "Activación de Tarimas";
             this.labelControl3.Click += new System.EventHandler(this.labelControl3_Click);
@@ -283,7 +258,7 @@ namespace LOSA.TransaccionesPT
             // spinEdit1
             // 
             this.spinEdit1.EditValue = new decimal(new int[] {
-            50,
+            200,
             0,
             0,
             0});
@@ -331,7 +306,7 @@ namespace LOSA.TransaccionesPT
             this.xtraTabControl1.Location = new System.Drawing.Point(5, 110);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(783, 421);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1290, 633);
             this.xtraTabControl1.TabIndex = 36;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -341,24 +316,25 @@ namespace LOSA.TransaccionesPT
             // 
             this.xtraTabPage1.Controls.Add(this.grd_data);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(777, 393);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1284, 605);
             this.xtraTabPage1.Text = "Tarimas Activadas";
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.gridNoActivadas);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(777, 393);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1284, 605);
             this.xtraTabPage2.Text = "Tarimas NO Activadas";
             // 
             // gridNoActivadas
             // 
-            this.gridNoActivadas.DataSource = this.loadtmlBindingSource;
+            this.gridNoActivadas.DataMember = "loadtml_no_activadas";
+            this.gridNoActivadas.DataSource = this.dsPT1;
             this.gridNoActivadas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridNoActivadas.Location = new System.Drawing.Point(0, 0);
             this.gridNoActivadas.MainView = this.gridView1;
             this.gridNoActivadas.Name = "gridNoActivadas";
-            this.gridNoActivadas.Size = new System.Drawing.Size(777, 393);
+            this.gridNoActivadas.Size = new System.Drawing.Size(1284, 605);
             this.gridNoActivadas.TabIndex = 10;
             this.gridNoActivadas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -514,7 +490,7 @@ namespace LOSA.TransaccionesPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 532);
+            this.ClientSize = new System.Drawing.Size(1297, 745);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.labelControl1);
@@ -526,9 +502,9 @@ namespace LOSA.TransaccionesPT
             this.Text = "frmRevisionDeActivaciondeTm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loadtmlBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
@@ -547,19 +523,7 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.GridControl grd_data;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private System.Windows.Forms.BindingSource loadtmlBindingSource;
         private dsPT dsPT;
-        private DevExpress.XtraGrid.Columns.GridColumn colid;
-        private DevExpress.XtraGrid.Columns.GridColumn colcodigobarra;
-        private DevExpress.XtraGrid.Columns.GridColumn collote;
-        private DevExpress.XtraGrid.Columns.GridColumn coldateprod;
-        private DevExpress.XtraGrid.Columns.GridColumn colturno;
-        private DevExpress.XtraGrid.Columns.GridColumn colproducto;
-        private DevExpress.XtraGrid.Columns.GridColumn colcodigop;
-        private DevExpress.XtraGrid.Columns.GridColumn colloteagrupador;
-        private DevExpress.XtraGrid.Columns.GridColumn colf_vencimiento;
-        private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
-        private DevExpress.XtraGrid.Columns.GridColumn colpeso;
         private DevExpress.XtraEditors.SpinEdit spinEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
@@ -579,5 +543,17 @@ namespace LOSA.TransaccionesPT
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private dsPT dsPT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigobarra;
+        private DevExpress.XtraGrid.Columns.GridColumn collote;
+        private DevExpress.XtraGrid.Columns.GridColumn coldateprod;
+        private DevExpress.XtraGrid.Columns.GridColumn colturno;
+        private DevExpress.XtraGrid.Columns.GridColumn colproducto;
+        private DevExpress.XtraGrid.Columns.GridColumn colcodigop;
+        private DevExpress.XtraGrid.Columns.GridColumn colloteagrupador;
+        private DevExpress.XtraGrid.Columns.GridColumn colf_vencimiento;
+        private DevExpress.XtraGrid.Columns.GridColumn colcantidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colpeso;
     }
 }

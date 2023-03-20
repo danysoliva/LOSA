@@ -1242,10 +1242,14 @@ namespace LOSA
 
         private void simpleButton35_Click(object sender, EventArgs e)
         {
-            frmrptMpEntregadaaProduccion frm = new frmrptMpEntregadaaProduccion();
-            if (this.MdiParent != null)
-                frm.MdiParent = this.MdiParent;
+            //frmrptMpEntregadaaProduccion frm = new frmrptMpEntregadaaProduccion();
+            //if (this.MdiParent != null)
+            //    frm.MdiParent = this.MdiParent;
 
+            //frm.Show();
+
+            frmSeguimientoAlimentacion frm = new frmSeguimientoAlimentacion(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
             //
         }

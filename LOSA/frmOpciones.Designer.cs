@@ -521,7 +521,7 @@
             this.btnTransferenciaPendiente.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTransferenciaPendiente.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTransferenciaPendiente.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTransferenciaPendiente.ImageOptions.SvgImage")));
-            this.btnTransferenciaPendiente.Location = new System.Drawing.Point(210, 306);
+            this.btnTransferenciaPendiente.Location = new System.Drawing.Point(210, 305);
             this.btnTransferenciaPendiente.Name = "btnTransferenciaPendiente";
             this.btnTransferenciaPendiente.Size = new System.Drawing.Size(199, 42);
             this.btnTransferenciaPendiente.TabIndex = 48;
@@ -706,7 +706,7 @@
             this.cmdGestionIngresos.Appearance.Options.UseFont = true;
             this.cmdGestionIngresos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdGestionIngresos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGestionIngresos.ImageOptions.Image")));
-            this.cmdGestionIngresos.Location = new System.Drawing.Point(2, 306);
+            this.cmdGestionIngresos.Location = new System.Drawing.Point(2, 305);
             this.cmdGestionIngresos.Name = "cmdGestionIngresos";
             this.cmdGestionIngresos.Size = new System.Drawing.Size(199, 42);
             this.cmdGestionIngresos.TabIndex = 27;
@@ -2588,6 +2588,7 @@
             this.simpleButton35.Appearance.Options.UseTextOptions = true;
             this.simpleButton35.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton35.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton35.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton35.ImageOptions.Image")));
             this.simpleButton35.Location = new System.Drawing.Point(248, 20);
             this.simpleButton35.Name = "simpleButton35";
             this.simpleButton35.Size = new System.Drawing.Size(199, 71);
