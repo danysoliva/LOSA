@@ -21,7 +21,7 @@ namespace LOSA.TransaccionesMP
         DataOperations dp;
         int IdEstado;
         int LotePT;
-        public frmRequisicionesDetalle(UserLogin pUsuarioLogeado, int pIdReqH, int pLote, int pIdEstado)
+        public frmRequisicionesDetalle(UserLogin pUsuarioLogeado, int pIdReqH, int pLote, int pIdEstado, string pNombre_pt)
         {
             InitializeComponent();
             LotePT = pLote;
@@ -30,6 +30,7 @@ namespace LOSA.TransaccionesMP
             txtLote.Text = pLote.ToString();
             UsuarioLogeado = pUsuarioLogeado;
             IdRequisicionHeader = pIdReqH;
+            lblnombre_pt.Text = pNombre_pt;
 
              dp = new DataOperations();
             LoadDatos();
