@@ -2261,6 +2261,7 @@ namespace LOSA.Trazabilidad
                 //    frm.MdiParent = this.MdiParent;
                 //frm.WindowState = FormWindowState.Normal;
                 //frm.Show();
+                rutaActiva = 2;
             }
         }
 
@@ -2292,7 +2293,12 @@ namespace LOSA.Trazabilidad
 
         private void btnBackRuta1_Click(object sender, EventArgs e)
         {
+            if (rutaActiva==2)
             navigationFrame1.SelectedPage = npRuta2;
+
+            if (rutaActiva==4)
+            navigationFrame1.SelectedPage = npRuta4_V2;
+
         }
         #endregion
 
@@ -2765,7 +2771,12 @@ namespace LOSA.Trazabilidad
             Load_cargas_nir_Ruta4(row.id_mp);
             Inicalizar_Archivo_Ruta4();
             Inicializar_data_logistica_Ruta4(row.NIngreso);
-
+            load_especie_Ruta4();
+            load_zonas_Ruta4();
+            load_tipo_Ruta4();
+            load_paises_Ruta4();
+            LoadLotesPT_Ruta4(row.id_mp,row.lote_mp);
+            LoadInventarioKardex_Ruta4(row.lote_mp);
 
             if (ChCalidad_Ruta4)
             {
@@ -2773,7 +2784,8 @@ namespace LOSA.Trazabilidad
                 get_imagen_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
                 load_empaque_estado_Mp_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
                 load_trasporte_estado_transporte_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                load_criterios_adicionales_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                load_criterios_adicionales_Ruta4(row.id_mp, row.lote_mp,row.NIngreso);
+                Inicalizar_Archivo_configurados_Ruta4(row.id_mp, row.lote_mp);
 
                 if (full_pathImagen != "")
                 {
@@ -3230,8 +3242,8 @@ namespace LOSA.Trazabilidad
                     txttransportista_Ruta4.Text = dr.IsDBNull(12) ? "" : dr.GetString(12);
                     phone_Ruta4 = dr.IsDBNull(13) ? "" : dr.GetString(13);
                     Direccion_Ruta4 = dr.IsDBNull(14) ? "" : dr.GetString(14);
-                    txtTelefono_Ruta4.Text = phone;
-                    txtDireccion_Ruta4.Text = Direccion;
+                    txtTelefono_Ruta4.Text = phone_Ruta4;
+                    txtDireccion_Ruta4.Text = Direccion_Ruta4;
                     txtNFactura_Ruta4.Text = dr.IsDBNull(15) ? "" : dr.GetString(15);
                     CodeSAP_Proveedor_Ruta4 = dr.IsDBNull(16) ? "" : dr.GetString(16);
                     //NombreSAP_Proveedor = txtproveedor.Text;
@@ -3579,34 +3591,6 @@ namespace LOSA.Trazabilidad
             dr.Close();
         }
 
-        public void load_criterios_adicionales_Ruta4(int pNumeroTransaccion, int pIDMP, string pLote)
-        {
-            //string query = @"sp_load_trz_criterio_ingreso_calidad_adicionales";
-            string query = @"[sp_load_trz_criterio_ingreso_calidad_adicionales_by_lotempv2]";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            cn.Open();
-            SqlCommand cmd = new SqlCommand(query, cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@numero_transaccion", pNumeroTransaccion);
-            cmd.Parameters.AddWithValue("@_lotemp", pLote);
-            cmd.Parameters.AddWithValue("@idmp", pIDMP);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                grd_origenespecie.EditValue = dr.IsDBNull(0) ? (object)DBNull.Value : dr.GetInt32(0);
-                grd_tipo.EditValue = dr.IsDBNull(1) ? (object)DBNull.Value : dr.GetInt32(1);
-                spTipoporcentaje.EditValue = dr.IsDBNull(2) ? (object)DBNull.Value : dr.GetDecimal(2);
-                grd_pesca.EditValue = dr.IsDBNull(3) ? (object)DBNull.Value : dr.GetInt32(3);
-                txtPLantaSenasa.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
-                spsustentable.EditValue = dr.IsDBNull(5) ? (object)DBNull.Value : dr.GetDecimal(5);
-                grd_origen.EditValue = dr.IsDBNull(6) ? (object)DBNull.Value : dr.GetInt32(6);
-                hyfishsource.EditValue = dr.IsDBNull(7) ? "" : dr.GetString(7);
-                hyIUCN.EditValue = dr.IsDBNull(8) ? "" : dr.GetString(8);
-                txtusercalidad.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
-            }
-            dr.Close();
-        }
-
         public void inicializar_criterios_Ruta4(int pIDMP)
         {
             string query = @"sp_load_inicializacion_de_criterios_calidad";
@@ -3690,11 +3674,281 @@ namespace LOSA.Trazabilidad
 
             }
         }
-        #endregion
+
+        public void load_criterios_adicionales_Ruta4(int ID_MP, string pLote, int pNumeroTransaccion)
+        {
+            string query = @"[sp_load_trz_criterio_ingreso_calidad_adicionales_by_lotempv2]";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@numero_transaccion", pNumeroTransaccion);
+            cmd.Parameters.AddWithValue("@_lotemp", pLote);
+            cmd.Parameters.AddWithValue("@idmp", ID_MP);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                grd_origenespecie_Ruta4.EditValue = dr.IsDBNull(0) ? (object)DBNull.Value : dr.GetInt32(0);
+                grd_tipo_Ruta4.EditValue = dr.IsDBNull(1) ? (object)DBNull.Value : dr.GetInt32(1);
+                spTipoporcentaje_Ruta4.EditValue = dr.IsDBNull(2) ? (object)DBNull.Value : dr.GetDecimal(2);
+                grd_pesca_Ruta4.EditValue = dr.IsDBNull(3) ? (object)DBNull.Value : dr.GetInt32(3);
+                txtPLantaSenasa_Ruta4.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
+                spsustentable_Ruta4.EditValue = dr.IsDBNull(5) ? (object)DBNull.Value : dr.GetDecimal(5);
+                grd_origen_Ruta4.EditValue = dr.IsDBNull(6) ? (object)DBNull.Value : dr.GetInt32(6);
+                hyfishsource_Ruta4.EditValue = dr.IsDBNull(7) ? "" : dr.GetString(7);
+                hyIUCN_Ruta4.EditValue = dr.IsDBNull(8) ? "" : dr.GetString(8);
+                txtusercalidad_Ruta4.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
+            }
+            dr.Close();
+        }
+
+        public void Inicalizar_Archivo_configurados_Ruta4(int IDMP, string pLote)
+        {
+
+            try
+            {
+                string query = "sp_load_trz_documentos_ingreso_for_loteV4";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp", IDMP);
+                cmd.Parameters.AddWithValue("@lote", pLote);
+                dsMantenimientoC.adjuntos.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.adjuntos);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void load_especie_Ruta4()
+        {
+            string query = @"sp_select_especies_origen";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsMantenimientoC.origen_especie.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.origen_especie);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void load_zonas_Ruta4()
+        {
+            string query = @"sp_load_zona_pesca_calidad";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsMantenimientoC.zonaPesca.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.zonaPesca);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+        public void load_tipo_Ruta4()
+        {
+            string query = @"sp_load_tipo_ingreso_calidad";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsMantenimientoC.tipoingreso.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.tipoingreso);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void load_paises_Ruta4()
+        {
+            string query = @"sp_load_paises_de_origen_calidad_ingreso";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsMantenimientoC.paises.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.paises);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void LoadLotesPT_Ruta4(int idMP_ ,string pLote)
+        {
+            //[sp_load_lotes_pt_trz_from_lote_mp] @lotemp
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_load_lotes_pt_trz_from_lote_mpv2]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", pLote);
+                cmd.Parameters.AddWithValue("@idrm", idMP_);
+                dsReportesTRZ.pt_list_trz.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.pt_list_trz);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void Load_Despachos_Ruta4(int plote)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_destinos_lote_pt_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotept", plote);
+                dsReportesTRZ.detalle_destinos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.detalle_destinos);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
 
         private void simpleButton15_Click(object sender, EventArgs e)
         {
              navigationFrame1.SelectedPage = npMain;
+        }
+
+        private void gvLotePT_Ruta4_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            var gridView = (GridView)gcLotePT_Ruta4.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gvLotePT_Ruta4.GetFocusedDataRow();
+            Load_Despachos_Ruta4(row.Lote_PT);
+        }
+
+        private void cmdDespachoId_Ruta4_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl18.FocusedView;
+            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+
+
+            LoadDatosDespacho_Ruta4(row.Despacho);
+            navigationFrame1.SelectedPage = npDetalleDespacho_Ruta4;
+
+            //frmDetalleDespacho frm = new frmDetalleDespacho(row.Despacho);
+            //if (this.MdiParent != null)
+            //    frm.MdiParent = this.MdiParent;
+            //frm.WindowState = FormWindowState.Normal;
+            //frm.Show();
+        }
+
+
+        private void LoadDatosDespacho_Ruta4(int pNumID)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_detalle_despacho", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@numid", pNumID);
+                dsReportesTRZ.detalle_despachos.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsReportesTRZ.detalle_despachos);
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+    
+
+
+        #endregion
+
+        private void cmdBoleta_Ruta4_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridControl18.FocusedView;
+            var row = (dsReportesTRZ.detalle_destinosRow)gridView.GetFocusedDataRow();
+
+            Boleta bol1 = new Boleta();
+            if (bol1.RecuperarRegistroFromNumBoleta(row.NumID))
+            {
+                LoadLines(bol1.Id);
+                navigationFrame1.SelectedPage = npBoletaView;
+                rutaActiva = 4;
+            }
+        }
+
+        private void cmdDespacho_Ruta4_Click(object sender, EventArgs e)
+        {
+            //if(rutaActiva==4)
+                navigationFrame1.SelectedPage = npRuta4_V2;
+
+        }
+
+        private void simpleButton13_Click(object sender, EventArgs e)
+        {
+            frmRecientes frm = new frmRecientes();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                foreach (dsMantenimientoC.adjuntosRow rw in dsMantenimientoC.adjuntos.Rows)
+                {
+                    if (rw.id_conf == frm.id)
+                    {
+                        rw.bit_subido = true;
+                        rw.path_load = frm.path;
+                        rw.file_name = frm.file_name;
+                    }
+                }
+            }
         }
     }
 }
