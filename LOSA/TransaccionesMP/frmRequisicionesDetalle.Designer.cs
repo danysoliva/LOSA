@@ -65,6 +65,7 @@
             this.colUdRestante = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colconsumo_inv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colconsumo_without_inv = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.chkAutoSelect = new System.Windows.Forms.CheckBox();
             this.txtLote = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -181,8 +182,11 @@
             this.coludenvidas,
             this.colUdRestante,
             this.colconsumo_inv,
-            this.colconsumo_without_inv});
+            this.colconsumo_without_inv,
+            this.gridColumn3});
             this.gvTarimas.GridControl = this.grDetalleLote;
+            this.gvTarimas.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Custom, "", null, "")});
             this.gvTarimas.Name = "gvTarimas";
             this.gvTarimas.OptionsCustomization.AllowFilter = false;
             this.gvTarimas.OptionsView.ShowAutoFilterRow = true;
@@ -210,7 +214,7 @@
             this.colmp.OptionsColumn.AllowShowHide = false;
             this.colmp.Visible = true;
             this.colmp.VisibleIndex = 1;
-            this.colmp.Width = 116;
+            this.colmp.Width = 109;
             // 
             // colsolicitada
             // 
@@ -221,7 +225,7 @@
             this.colsolicitada.OptionsColumn.AllowShowHide = false;
             this.colsolicitada.Visible = true;
             this.colsolicitada.VisibleIndex = 3;
-            this.colsolicitada.Width = 124;
+            this.colsolicitada.Width = 116;
             // 
             // colprogramada
             // 
@@ -236,7 +240,7 @@
             this.colentregada.OptionsColumn.AllowEdit = false;
             this.colentregada.Visible = true;
             this.colentregada.VisibleIndex = 4;
-            this.colentregada.Width = 124;
+            this.colentregada.Width = 116;
             // 
             // colpendiente
             // 
@@ -246,7 +250,7 @@
             this.colpendiente.OptionsColumn.AllowEdit = false;
             this.colpendiente.Visible = true;
             this.colpendiente.VisibleIndex = 5;
-            this.colpendiente.Width = 124;
+            this.colpendiente.Width = 116;
             // 
             // colenable
             // 
@@ -265,8 +269,8 @@
             this.colunidad.Name = "colunidad";
             this.colunidad.OptionsColumn.AllowEdit = false;
             this.colunidad.Visible = true;
-            this.colunidad.VisibleIndex = 6;
-            this.colunidad.Width = 130;
+            this.colunidad.VisibleIndex = 7;
+            this.colunidad.Width = 109;
             // 
             // colcode_sap
             // 
@@ -277,7 +281,7 @@
             this.colcode_sap.OptionsColumn.AllowShowHide = false;
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 114;
+            this.colcode_sap.Width = 107;
             // 
             // gridColumn1
             // 
@@ -286,7 +290,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 2;
-            this.gridColumn1.Width = 89;
+            this.gridColumn1.Width = 83;
             // 
             // btnEdit
             // 
@@ -329,8 +333,8 @@
             this.coludenvidas.Name = "coludenvidas";
             this.coludenvidas.OptionsColumn.AllowEdit = false;
             this.coludenvidas.Visible = true;
-            this.coludenvidas.VisibleIndex = 7;
-            this.coludenvidas.Width = 110;
+            this.coludenvidas.VisibleIndex = 8;
+            this.coludenvidas.Width = 92;
             // 
             // colUdRestante
             // 
@@ -350,8 +354,8 @@
             this.colconsumo_inv.OptionsColumn.AllowEdit = false;
             this.colconsumo_inv.OptionsColumn.AllowShowHide = false;
             this.colconsumo_inv.Visible = true;
-            this.colconsumo_inv.VisibleIndex = 8;
-            this.colconsumo_inv.Width = 133;
+            this.colconsumo_inv.VisibleIndex = 9;
+            this.colconsumo_inv.Width = 112;
             // 
             // colconsumo_without_inv
             // 
@@ -363,8 +367,20 @@
             this.colconsumo_without_inv.OptionsColumn.AllowEdit = false;
             this.colconsumo_without_inv.OptionsColumn.AllowShowHide = false;
             this.colconsumo_without_inv.Visible = true;
-            this.colconsumo_without_inv.VisibleIndex = 9;
-            this.colconsumo_without_inv.Width = 141;
+            this.colconsumo_without_inv.VisibleIndex = 10;
+            this.colconsumo_without_inv.Width = 126;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "% Entregado";
+            this.gridColumn3.DisplayFormat.FormatString = "{0:N}%";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn3.FieldName = "%avance";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 6;
+            this.gridColumn3.Width = 119;
             // 
             // chkAutoSelect
             // 
@@ -571,5 +587,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl lblnombre_pt;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

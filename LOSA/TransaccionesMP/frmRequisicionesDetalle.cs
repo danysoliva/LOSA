@@ -241,22 +241,32 @@ namespace LOSA.TransaccionesMP
                 var row = (dsTransaccionesMP.requisiciones_dRow)gridView.GetDataRow(e.RowHandle);
                 if (row != null)
                 {
-                    if (row.solicitada == row.asignado)
+                    if (row.__avance >= 95)
                     {
                         e.Appearance.BackColor = Color.FromArgb(113, 220, 200);
                     }
                     else
                     {
-                        if (row.asignado > 0)
-                        {
-                            //
-                            e.Appearance.BackColor = Color.FromArgb(255, 255, 192);
-                        }
-                        else
-                        {
-                            e.Appearance.BackColor = Color.FromArgb(255, 255, 255);
-                        }
+                        e.Appearance.BackColor = Color.Red;
                     }
+
+
+                    //if (row.solicitada == row.asignado)
+                    //{
+                    //    e.Appearance.BackColor = Color.FromArgb(113, 220, 200);
+                    //}
+                    //else
+                    //{
+                    //    if (row.asignado > 0)
+                    //    {
+                    //        //
+                    //        e.Appearance.BackColor = Color.FromArgb(255, 255, 192);
+                    //    }
+                    //    else
+                    //    {
+                    //        e.Appearance.BackColor = Color.FromArgb(255, 255, 255);
+                    //    }
+                    //}
                 }
             }
         }

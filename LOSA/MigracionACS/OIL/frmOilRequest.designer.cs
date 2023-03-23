@@ -52,6 +52,7 @@
             this.cmdDetalles_column = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colEliminar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ButtonEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.collote_pt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -98,9 +99,11 @@
             this.colCant,
             this.colusuario,
             this.cmdDetalles,
-            this.colEliminar});
+            this.colEliminar,
+            this.collote_pt});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colid
@@ -111,7 +114,7 @@
             this.colid.OptionsColumn.AllowEdit = false;
             this.colid.Visible = true;
             this.colid.VisibleIndex = 0;
-            this.colid.Width = 68;
+            this.colid.Width = 78;
             // 
             // colfecha_p
             // 
@@ -121,7 +124,7 @@
             this.colfecha_p.OptionsColumn.AllowEdit = false;
             this.colfecha_p.Visible = true;
             this.colfecha_p.VisibleIndex = 1;
-            this.colfecha_p.Width = 127;
+            this.colfecha_p.Width = 146;
             // 
             // colestado
             // 
@@ -131,7 +134,7 @@
             this.colestado.OptionsColumn.AllowEdit = false;
             this.colestado.Visible = true;
             this.colestado.VisibleIndex = 3;
-            this.colestado.Width = 90;
+            this.colestado.Width = 103;
             // 
             // colmaterial
             // 
@@ -141,7 +144,7 @@
             this.colmaterial.OptionsColumn.AllowEdit = false;
             this.colmaterial.Visible = true;
             this.colmaterial.VisibleIndex = 4;
-            this.colmaterial.Width = 126;
+            this.colmaterial.Width = 145;
             // 
             // colCant
             // 
@@ -151,7 +154,7 @@
             this.colCant.OptionsColumn.AllowEdit = false;
             this.colCant.Visible = true;
             this.colCant.VisibleIndex = 5;
-            this.colCant.Width = 135;
+            this.colCant.Width = 134;
             // 
             // colusuario
             // 
@@ -161,7 +164,7 @@
             this.colusuario.OptionsColumn.AllowEdit = false;
             this.colusuario.Visible = true;
             this.colusuario.VisibleIndex = 2;
-            this.colusuario.Width = 166;
+            this.colusuario.Width = 191;
             // 
             // cmdDetalles
             // 
@@ -169,7 +172,8 @@
             this.cmdDetalles.ColumnEdit = this.cmdDetalles_column;
             this.cmdDetalles.Name = "cmdDetalles";
             this.cmdDetalles.Visible = true;
-            this.cmdDetalles.VisibleIndex = 6;
+            this.cmdDetalles.VisibleIndex = 7;
+            this.cmdDetalles.Width = 92;
             // 
             // cmdDetalles_column
             // 
@@ -188,7 +192,8 @@
             this.colEliminar.FieldName = "colEliminar";
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 7;
+            this.colEliminar.VisibleIndex = 8;
+            this.colEliminar.Width = 101;
             // 
             // ButtonEliminar
             // 
@@ -199,6 +204,16 @@
             this.ButtonEliminar.Name = "ButtonEliminar";
             this.ButtonEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ButtonEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonEliminar_ButtonClick);
+            // 
+            // collote_pt
+            // 
+            this.collote_pt.Caption = "Lote PT";
+            this.collote_pt.FieldName = "lote_pt";
+            this.collote_pt.Name = "collote_pt";
+            this.collote_pt.OptionsColumn.AllowEdit = false;
+            this.collote_pt.Visible = true;
+            this.collote_pt.VisibleIndex = 6;
+            this.collote_pt.Width = 92;
             // 
             // simpleButton1
             // 
@@ -265,5 +280,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDetalles_column;
         private DevExpress.XtraGrid.Columns.GridColumn colEliminar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonEliminar;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_pt;
     }
 }

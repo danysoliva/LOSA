@@ -2130,6 +2130,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columnconsumo_without_inv;
             
+            private global::System.Data.DataColumn _column_avance;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public requisiciones_dDataTable() {
@@ -2293,6 +2295,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn @__avanceColumn {
+                get {
+                    return this._column_avance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2344,7 +2354,8 @@ namespace LOSA.TransaccionesMP {
                         int udenvidas, 
                         int UdRestante, 
                         decimal consumo_inv, 
-                        decimal consumo_without_inv) {
+                        decimal consumo_without_inv, 
+                        decimal @__avance) {
                 requisiciones_dRow rowrequisiciones_dRow = ((requisiciones_dRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2362,7 +2373,8 @@ namespace LOSA.TransaccionesMP {
                         udenvidas,
                         UdRestante,
                         consumo_inv,
-                        consumo_without_inv};
+                        consumo_without_inv,
+                        @__avance};
                 rowrequisiciones_dRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrequisiciones_dRow);
                 return rowrequisiciones_dRow;
@@ -2401,6 +2413,7 @@ namespace LOSA.TransaccionesMP {
                 this.columnUdRestante = base.Columns["UdRestante"];
                 this.columnconsumo_inv = base.Columns["consumo_inv"];
                 this.columnconsumo_without_inv = base.Columns["consumo_without_inv"];
+                this._column_avance = base.Columns["%avance"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2438,6 +2451,10 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnconsumo_inv);
                 this.columnconsumo_without_inv = new global::System.Data.DataColumn("consumo_without_inv", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnconsumo_without_inv);
+                this._column_avance = new global::System.Data.DataColumn("%avance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this._column_avance.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_avance");
+                this._column_avance.ExtendedProperties.Add("Generator_UserColumnName", "%avance");
+                base.Columns.Add(this._column_avance);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10049,6 +10066,22 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal @__avance {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablerequisiciones_d.@__avanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'%avance\' de la tabla \'requisiciones_d\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerequisiciones_d.@__avanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerequisiciones_d.idColumn);
             }
@@ -10237,6 +10270,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setconsumo_without_invNull() {
                 this[this.tablerequisiciones_d.consumo_without_invColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is__avanceNull() {
+                return this.IsNull(this.tablerequisiciones_d.@__avanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set__avanceNull() {
+                this[this.tablerequisiciones_d.@__avanceColumn] = global::System.Convert.DBNull;
             }
         }
         
