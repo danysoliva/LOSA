@@ -148,6 +148,7 @@ namespace LOSA
                             tabOpciones.TabPages[6].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
 
@@ -162,7 +163,7 @@ namespace LOSA
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     break;
-                case GrupoUser.GrupoUsuario.ProduccionV2:
+                case GrupoUser.GrupoUsuario.ProduccionV2://Administrativos
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -188,7 +189,7 @@ namespace LOSA
                             tabOpciones.TabPages[3].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[5].PageVisible = true;
-                           
+                            
                             break;
                         case 5://Depth Without Delta
 
