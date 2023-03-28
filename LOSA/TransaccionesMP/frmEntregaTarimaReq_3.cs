@@ -722,34 +722,27 @@ namespace LOSA.TransaccionesMP
                         {
                             try
                             {
-                                //MateriaPrima mp1 = new MateriaPrima();
-                                //mp1.PermitirEntregaParcialKG(tarimaEncontrada.Id_materiaprima);
-                                //if (mp1.Permitir)
-                                //{
+                                DataOperations dp = new DataOperations();
+                                
+                                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                                con.Open();
 
-                                //}
-                                //else
-                                //{
-                                    DataOperations dp = new DataOperations();
-                                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                                    con.Open();
-
-                                    //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                                    SqlCommand cmd = new SqlCommand("sp_insert_tarima_requisa_entrega_v9", con);
-                                    cmd.CommandType = CommandType.StoredProcedure;
-                                    cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
-                                    cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
-                                    cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
-                                    cmd.Parameters.AddWithValue("@cantidad", frms.ud_enviar);
-                                    cmd.Parameters.AddWithValue("@peso", frms.pesoKg);
-                                    SqlDataReader dr = cmd.ExecuteReader();
-                                    if (dr.Read())
-                                    {
-                                        Guardo = dr.GetInt32(4) == 1 ? true : false;
-                                    }
-                                    dr.Close();
-                                    con.Close();
-                                //}
+                                //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
+                                SqlCommand cmd = new SqlCommand("sp_insert_tarima_requisa_entrega_v9", con);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
+                                cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                                cmd.Parameters.AddWithValue("@id_req", RequisicionActual.IdRequisicion);
+                                cmd.Parameters.AddWithValue("@cantidad", frms.ud_enviar);
+                                cmd.Parameters.AddWithValue("@peso", frms.pesoKg);
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                if (dr.Read())
+                                {
+                                    Guardo = dr.GetInt32(4) == 1 ? true : false;
+                                }
+                                dr.Close();
+                                con.Close();
+                                
 
                             }
                             catch (Exception ec)

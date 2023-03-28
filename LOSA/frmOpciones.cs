@@ -236,6 +236,10 @@ namespace LOSA
                         case 1://Basic View
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel3;
+                            tabOpciones.SelectedTabPageIndex = 6;//RRHH
+                            tabOpciones.TabPages[6].PageVisible = true;
+                            tabOpciones.TabPages[2].PageVisible = false;
+                            tabOpciones.TabPages[1].PageVisible = false;
                             break;
                         case 2://Basic No Autorization
 
