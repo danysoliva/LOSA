@@ -62,6 +62,38 @@ namespace LOSA.Clases
             return Result;
         }
 
+        public Boolean ExisteRemanenteMPSacos(int pIdMP)
+        {
+            bool Result = false;
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_disponible_prd_mp_sacos_remanente", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idmp", pIdMP);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    if (!dr.IsDBNull(dr.GetOrdinal("kg_pendientes")))
+                        CantidadPendiente = dr.GetDecimal(0);
+                    else
+                        CantidadPendiente = 0;
+                }
+                dr.Close();
+                connection.Close();
+
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return Result;
+        
+        }
+
 
     }
 }

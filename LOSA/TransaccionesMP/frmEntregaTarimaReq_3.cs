@@ -249,6 +249,8 @@ namespace LOSA.TransaccionesMP
                 //}
                 //else
                 //{
+                    
+
                     EntregarTarima();
                     load_tarimas_scan_v2();
                 //}
@@ -643,6 +645,29 @@ namespace LOSA.TransaccionesMP
                     //Si no se ha generado ninguna validacion previa de bloqueo el programa permitira seguir ejecutando.
                     if (!error)
                     {
+                        //Vamos a Validar si queda Remanente de la MP
+                        RequisicionesValidaciones req_val = new RequisicionesValidaciones();
+                        req_val.ExisteRemanenteMPSacos(tarimaEncontrada.Id_materiaprima);
+
+                        if (req_val.CantidadPendiente > 0) //Existe un Remanente, Deben Entregarlo para continuar.
+                        {
+                            mensaje = "Existe MP Pendiente de Entrega: "+ tarimaEncontrada.MateriaPrima +
+                                      "\nRemanente Pendiente: "+ req_val.CantidadPendiente+" Kg."+
+                                      "\nEntrege la MP pendiente, Materia Prima en PRD!";
+                            //lblMensaje.Text = mensaje;
+                            lblMensaje.BackColor = Color.Red;
+                            Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                            frm.ShowDialog();
+
+                            panelNotificacion.BackColor = Color.Red;
+                            timerLimpiarMensaje.Enabled = true;
+                            timerLimpiarMensaje.Start();
+
+                            txtTarima.Text = "";
+                            xtraTabControl1.SelectedTabPageIndex = 2;
+                            return;
+                        }
+
                         //Validar la disponibilidad de la tarima para poder efectuar la entrega
                         try
                         {
@@ -723,7 +748,7 @@ namespace LOSA.TransaccionesMP
                             try
                             {
                                 DataOperations dp = new DataOperations();
-                                
+
                                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                                 con.Open();
 
@@ -742,7 +767,7 @@ namespace LOSA.TransaccionesMP
                                 }
                                 dr.Close();
                                 con.Close();
-                                
+
 
                             }
                             catch (Exception ec)
@@ -875,20 +900,71 @@ namespace LOSA.TransaccionesMP
 
         private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
-            if (xtraTabControl1.SelectedTabPageIndex == 1)
+            //if (xtraTabControl1.SelectedTabPageIndex == 1)
+            //{
+            //    if (RequisicionActual != null)
+            //    {
+            //        if (RequisicionActual.Recuperado)
+            //        {
+            //            load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
+            //        }
+            //    }
+            //}
+
+            switch (xtraTabControl1.SelectedTabPageIndex)
             {
-                if (RequisicionActual != null)
-                {
-                    if (RequisicionActual.Recuperado)
+                case 1:
+
+                    if (RequisicionActual != null)
                     {
-                        load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
+                        if (RequisicionActual.Recuperado)
+                        {
+                            load_bines_disponiblesByReq(RequisicionActual.IdRequisicion);
+                        }
                     }
-                }
+
+                    break;
+
+                case 2:
+
+                    if (RequisicionActual != null)
+                    {
+                        if (RequisicionActual.Recuperado)
+                        {
+                            load_mp_sacos_en_prd(RequisicionActual.IdRequisicion);
+                        }
+                    }
+
+                    break;
+
+                default:
+                    break;
             }
+
         }
 
+        private void load_mp_sacos_en_prd(int pIdRequisicion)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
 
+                SqlCommand cmd = new SqlCommand("[sp_get_sacos_mp_disponible_produccion]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_requisicion", pIdRequisicion);
+                dsTransaccionesMP.mp_sacos_dispo_prd.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsTransaccionesMP.mp_sacos_dispo_prd);
 
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
 
         private void reposEntregaMicros_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
@@ -1035,6 +1111,41 @@ namespace LOSA.TransaccionesMP
             else
             {
                 CajaDialogo.Error("No se Encontro la Requisa! Escanee Nuevamente la Requisa!");
+            }
+        }
+
+        private void cmdEntregaMPSacosPrd_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)grdmp_sacos_prd.FocusedView;
+                var row = (dsTransaccionesMP.mp_sacos_dispo_prdRow)gridView.GetFocusedDataRow();
+
+                
+                if (row.solicitada <= row.entregada)
+                {
+                    CajaDialogo.Error("Ya se ha entregado toda la materia prima de este producto.");
+                    return;
+                }
+                if (row.disponibles_prd == 0)
+                {
+                    CajaDialogo.Error("No hay bines pendientes que consumir en produccion.");
+                    return;
+                }
+
+
+                frmBinesEnPRD frm = new frmBinesEnPRD(RequisicionActual.IdRequisicion, row.id_materia_prima);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+
+                    load_tarimas_scan_v2();
+                    load_mp_sacos_en_prd(RequisicionActual.IdRequisicion);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
             }
         }
     }
