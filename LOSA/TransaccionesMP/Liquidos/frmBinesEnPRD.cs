@@ -96,7 +96,7 @@ namespace LOSA.TransaccionesMP.Liquidos
 
                 if (id_req_detalle == Default_Value)
                 {
-                    CajaDialogo.Error("Error en la opeacion, por favor revisar el procedimiento 'sp_obtener_pendiente_rq' ");
+                    CajaDialogo.Error("Error en la operacion, por favor revisar el procedimiento 'sp_obtener_pendiente_rq' ");
                     return;
                 }
             }

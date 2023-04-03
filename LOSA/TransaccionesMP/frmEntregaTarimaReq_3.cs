@@ -1129,7 +1129,7 @@ namespace LOSA.TransaccionesMP
                 }
                 if (row.disponibles_prd == 0)
                 {
-                    CajaDialogo.Error("No hay bines pendientes que consumir en produccion.");
+                    CajaDialogo.Error("No hay MP pendientes que consumir en produccion.");
                     return;
                 }
 

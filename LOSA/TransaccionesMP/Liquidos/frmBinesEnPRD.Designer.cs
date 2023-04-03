@@ -46,10 +46,10 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.collote_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colconsumir = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnConsumir = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colfecha_entrega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.AutoConsumirBoton = new DevExpress.XtraEditors.SimpleButton();
-            this.colfecha_entrega = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -180,6 +180,16 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.btnConsumir.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnConsumir.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnConsumir_ButtonClick);
             // 
+            // colfecha_entrega
+            // 
+            this.colfecha_entrega.Caption = "Fecha Entrega";
+            this.colfecha_entrega.FieldName = "fecha_entrega";
+            this.colfecha_entrega.Name = "colfecha_entrega";
+            this.colfecha_entrega.OptionsColumn.AllowEdit = false;
+            this.colfecha_entrega.Visible = true;
+            this.colfecha_entrega.VisibleIndex = 2;
+            this.colfecha_entrega.Width = 83;
+            // 
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -188,9 +198,9 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(2, 31);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(338, 29);
+            this.labelControl3.Size = new System.Drawing.Size(313, 29);
             this.labelControl3.TabIndex = 103;
-            this.labelControl3.Text = "Detalle de Bines en Producción";
+            this.labelControl3.Text = "Detalle de MP en Producción";
             // 
             // cmdHome
             // 
@@ -219,16 +229,6 @@ namespace LOSA.TransaccionesMP.Liquidos
             this.AutoConsumirBoton.TabIndex = 105;
             this.AutoConsumirBoton.Text = "Consumir Pendientes";
             this.AutoConsumirBoton.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // colfecha_entrega
-            // 
-            this.colfecha_entrega.Caption = "Fecha Entrega";
-            this.colfecha_entrega.FieldName = "fecha_entrega";
-            this.colfecha_entrega.Name = "colfecha_entrega";
-            this.colfecha_entrega.OptionsColumn.AllowEdit = false;
-            this.colfecha_entrega.Visible = true;
-            this.colfecha_entrega.VisibleIndex = 2;
-            this.colfecha_entrega.Width = 83;
             // 
             // frmBinesEnPRD
             // 

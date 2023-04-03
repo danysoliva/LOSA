@@ -261,7 +261,7 @@ namespace LOSA.Logistica
                         cmd.Parameters.AddWithValue("@unidades", txtUnidades.EditValue);
                         cmd.Parameters.AddWithValue("@peso", txtPeso.EditValue);
                         cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                        //cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
                         Guardar = true;
                     }
                     catch (Exception ec)
@@ -283,7 +283,7 @@ namespace LOSA.Logistica
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_tarima", id_tarima);
                         cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                        //cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
                         Guardar = true;
                     }
                     catch (Exception ec)
