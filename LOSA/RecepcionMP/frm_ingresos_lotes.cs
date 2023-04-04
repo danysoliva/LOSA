@@ -142,7 +142,7 @@ namespace LOSA.RecepcionMP
                         mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
                         break;
                     case 11:///Ret Logistica
-                        Error = true;
+                        Error = false;
                         break;
                 }
 
@@ -655,6 +655,9 @@ namespace LOSA.RecepcionMP
                         case 10://Ajuste de Inventario
                             Error = true;
                             mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
+                            break;
+                        case 11: //Retenido Log
+                            Error = false;
                             break;
                     }
 

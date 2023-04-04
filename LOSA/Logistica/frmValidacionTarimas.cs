@@ -137,7 +137,7 @@ namespace LOSA.Logistica
 
         }
 
-        private void LoadDatosTarima(int id_tarima)
+        private void LoadDatosTarima(int pid_tarima)
         {
            
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -146,7 +146,7 @@ namespace LOSA.Logistica
                 cn.Open();
                 SqlCommand cmd = new SqlCommand("sp_get_load_data_tarima_mp_validacion", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_tarima", id_tarima);
+                cmd.Parameters.AddWithValue("@id_tarima", pid_tarima);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsLogistica21.validacion_tarimas.Clear();
                 da.Fill(dsLogistica21.validacion_tarimas);
@@ -210,9 +210,9 @@ namespace LOSA.Logistica
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DialogResult r = CajaDialogo.Pregunta("Desea guardar y activar la Tarima?");
-            if (r != System.Windows.Forms.DialogResult.Yes)
-                return;
+            //DialogResult r = CajaDialogo.Pregunta("Desea guardar y activar la Tarima?");
+            //if (r != System.Windows.Forms.DialogResult.Yes)
+            //    return;
 
             if (string.IsNullOrEmpty(txtTarima.Text))
             {
@@ -305,8 +305,9 @@ namespace LOSA.Logistica
                 {
                     Mensaje = "Tarima Activada!";
                     InfoMensaje(Mensaje, 2);
-                    LimpiarControles();
-                    DeshabilitarControles();
+                    vGridDatosTarima.DataSource = null;
+                    txtTarima.Text = "";
+                    txtTarima.Focus();
                 }
             }
         }
