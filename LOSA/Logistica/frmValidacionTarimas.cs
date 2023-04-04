@@ -277,14 +277,21 @@ namespace LOSA.Logistica
 
                     try
                     {
-                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                        conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_update_tarima_and_insert_kardex_activacion", conn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id_tarima", id_tarima);
-                        cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                        cmd.ExecuteNonQuery();
+                        foreach (dsLogistica2.validacion_tarimasRow item in dsLogistica21.validacion_tarimas.Rows)
+                        {
+                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand("sp_update_tarima_and_insert_kardex_activacion", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_tarima", id_tarima);
+                            cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
+                            cmd.Parameters.AddWithValue("@peso", item.peso);
+                            cmd.Parameters.AddWithValue("@unidades", item.cantidad);
+                            cmd.ExecuteNonQuery();
+                            
+                        }
                         Guardar = true;
+
                     }
                     catch (Exception ec)
                     {
@@ -298,6 +305,8 @@ namespace LOSA.Logistica
                 {
                     Mensaje = "Tarima Activada!";
                     InfoMensaje(Mensaje, 2);
+                    LimpiarControles();
+                    DeshabilitarControles();
                 }
             }
         }

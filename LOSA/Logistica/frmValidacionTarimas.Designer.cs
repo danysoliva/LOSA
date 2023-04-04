@@ -55,7 +55,6 @@ namespace LOSA.Logistica
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.txtUnidades = new DevExpress.XtraEditors.SpinEdit();
             this.vGridDatosTarima = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.rowid = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowid_materia_prima = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowcodigo_barra = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -79,6 +78,7 @@ namespace LOSA.Logistica
             this.rowid_estado_tarima = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowdescripcion = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowfactor_activo = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtTarima.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeso.Properties)).BeginInit();
@@ -273,6 +273,7 @@ namespace LOSA.Logistica
             // 
             // tsEditarTarima
             // 
+            this.tsEditarTarima.Enabled = false;
             this.tsEditarTarima.Location = new System.Drawing.Point(293, 336);
             this.tsEditarTarima.Name = "tsEditarTarima";
             this.tsEditarTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -391,11 +392,6 @@ namespace LOSA.Logistica
             this.rowfactor_activo});
             this.vGridDatosTarima.Size = new System.Drawing.Size(661, 246);
             this.vGridDatosTarima.TabIndex = 113;
-            // 
-            // timerLimpiarMensaje
-            // 
-            this.timerLimpiarMensaje.Interval = 5500;
-            this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
             // 
             // rowid
             // 
@@ -550,6 +546,11 @@ namespace LOSA.Logistica
             this.rowfactor_activo.Properties.Caption = "factor_activo";
             this.rowfactor_activo.Properties.FieldName = "factor_activo";
             this.rowfactor_activo.Visible = false;
+            // 
+            // timerLimpiarMensaje
+            // 
+            this.timerLimpiarMensaje.Interval = 2000;
+            this.timerLimpiarMensaje.Tick += new System.EventHandler(this.timerLimpiarMensaje_Tick);
             // 
             // frmValidacionTarimas
             // 
