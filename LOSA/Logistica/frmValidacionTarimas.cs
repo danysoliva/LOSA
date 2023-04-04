@@ -12,18 +12,21 @@ using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using LOSA.Logistica;
+using LOSA.Utileria;
 
 namespace LOSA.Logistica
 {
     public partial class frmValidacionTarimas : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        int id_tarima;
+        private int id_tarima;
         string codigo_barra;
+        Tarima tarimaEncontrada;
         int id_estado_original_tarima;
         UserLogin UsuarioLogeado;
         string Mensaje = "";
-        
+        DataTable DT_Tarima;
+
         public frmValidacionTarimas(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -49,6 +52,7 @@ namespace LOSA.Logistica
                 panelNotificacion.BackColor = Color.MediumSeaGreen;
                 timerLimpiarMensaje.Enabled = true;
                 timerLimpiarMensaje.Start();
+
             }
             
         
@@ -58,8 +62,22 @@ namespace LOSA.Logistica
         {
             if (e.KeyCode == Keys.Enter)
             {
+                //SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                //datosTarimaPorCodBarra(cn);
+
+                //if (tarimaEncontrada != null)
+                //{
+                //    if (tarimaEncontrada.Recuperado)
+                //    {
+                        
+                //    }
+                //}
+
+
+
+
                 Tarima tm = new Tarima();
-                tm.RecuperarRegistro_v3(0,txtTarima.Text.Trim());
+                tm.RecuperarRegistro_v3(0, txtTarima.Text.Trim());
                 id_tarima = tm.Id;
                 id_estado_original_tarima = tm.Id_estado_tarima;
 
@@ -112,6 +130,106 @@ namespace LOSA.Logistica
                 }
 
 
+            }
+        }
+
+        private void datosTarimaPorCodBarra(SqlConnection cn)
+        {
+            Tarima InfoTarima = new Tarima();
+            try
+            {
+                using (cn)
+                {
+                    if (cn.State != ConnectionState.Open)
+                        cn.Open();
+
+                    string LocalBarcode = txtTarima.Text;
+
+                    //Get id Estado Tarima
+                    SqlCommand cmd = new SqlCommand("sp_getTarimas_without_filters_v4", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@codigo_barra", txtTarima.Text);
+                    cmd.Parameters.AddWithValue("@tipo_query", 1);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    int idEstadoTarima = 0;
+                    if (dr.Read())
+                    {
+                        idEstadoTarima = dp.ValidateNumberInt32(dr.GetValue(0));
+                    }
+                    dr.Close();
+
+                    switch (id_estado_original_tarima)
+                    {
+                        case 1: //Recepcionado
+                            Mensaje = "Esta Tarima no a sido Activada por parte del Monta Carguista, Estado Tarima: Recepcionada";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                        case 2: //En Bodega
+                            Mensaje = "Estado de Tarima: En Bodega, Tarima Activada!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                        case 4: //Comprometido
+                            Mensaje = "Estado de Tarima: Comprometida";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                        case 5://En Produccion
+                            Mensaje = "Tarima Duplicada, Esta Tarima ya fue Entregada a Produccion!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                        case 6: //Consumido por el depto de Produccion
+                            Mensaje = "Tarima Consumida por el Depto. de Produccion!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                        case 8: //Parcialmente Entregado
+                            Mensaje = "Estado de Tarima: Parcialmente Entregado, Tarima Activada!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                        case 9: //Rechazado
+                            Mensaje = "Estado Tarima: Rechazada!";
+                        InfoMensaje(Mensaje, 1);
+                        break;
+
+                        case 11: //Retenida por Logistica
+                            LoadDatosTarima(id_tarima);
+                        break;
+
+                        default:
+                            Mensaje = "La Tarima no tiene ninguno estado configurado, Contactar al Dpto de IT";
+                        InfoMensaje(Mensaje, 1);
+
+                        break;
+                    }
+
+                    cmd = new SqlCommand("sp_getTarimas_without_filters_v4", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@codigo_barra", txtTarima.Text);
+                    cmd.Parameters.AddWithValue("@tipo_query", 2);//Get Data de la tarima
+                    DT_Tarima = new DataTable();
+                    SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    adat.Fill(DT_Tarima);
+                    //Sacamos el id de la tarima
+                    foreach (DataRow row in DT_Tarima.Rows)
+                    {
+                        id_tarima = dp.ValidateNumberInt32(row[0]);
+                        break;
+                    }
+
+                    tarimaEncontrada = new Tarima();
+                    tarimaEncontrada.RecuperarRegistro_v3(id_tarima, "");
+
+                }
+
+
+            }
+            catch (Exception error)
+            {
+                CajaDialogo.Error(error.Message);
             }
         }
 
@@ -288,7 +406,7 @@ namespace LOSA.Logistica
                             cmd.Parameters.AddWithValue("@peso", item.peso);
                             cmd.Parameters.AddWithValue("@unidades", item.cantidad);
                             cmd.ExecuteNonQuery();
-                            
+
                         }
                         Guardar = true;
 
@@ -304,11 +422,23 @@ namespace LOSA.Logistica
                 if (Guardar)
                 {
                     Mensaje = "Tarima Activada!";
-                    InfoMensaje(Mensaje, 2);
-                    vGridDatosTarima.DataSource = null;
-                    txtTarima.Text = "";
-                    txtTarima.Focus();
+                    //InfoMensaje(Mensaje, 2);
+
+                    frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.info, Mensaje);
+                    if (frm.ShowDialog() == DialogResult.Cancel)
+                    {
+                        //this.DialogResult = DialogResult.Cancel;
+                        //this.Close();
+                        LimpiarControles();
+                        DeshabilitarControles();
+                        txtTarima.Text = "";
+                        txtTarima.Focus();
+                    }
+
+
                 }
+
+
             }
         }
 
