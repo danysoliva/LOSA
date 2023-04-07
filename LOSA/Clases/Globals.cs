@@ -23,39 +23,39 @@ namespace ACS.Classes
         #region Credenciales Producción
 
         //WINCC
-        public static string CMS_ServerPellet = "AQFSVR003";
-        public static string CMS_ServerExtruder = "AQFSVR003";
-        public static string CMS_DB_User = "sa";
+        public static string CMS_ServerPellet = "AQFSVR010\\AQFSVR010";
+        public static string CMS_ServerExtruder = "AQFSVR010\\AQFSVR010";
+        public static string CMS_DB_User = "losa_user_db";
         public static string CMS_DB_Pass = "";
         public static string CMS_ActiveDB = "process_data";
 
         //Ttrace
-        public static string ServerAddress = "AQFSVR003";
+        public static string ServerAddress = "AQFSVR010\\AQFSVR010";
         public static string ServerName = "Servidor Productivo";
         public static string ActiveDB = "ACS";
-        public static string DB_User = "sa";
+        public static string DB_User = "losa_user_db";
         public static string DB_Pass = "AquaF33dHN2014";
 
         //ACS(Costos)
-        public static string CTS_ServerAddress = "AQFSVR003";
+        public static string CTS_ServerAddress = "AQFSVR010\\AQFSVR010";
         public static string CTS_ServerName = "Servidor Productivo";
         public static string CTS_ActiveDB = "ACS";
-        public static string CTS_DB_User = "sa";
+        public static string CTS_DB_User = "losa_user_db";
         public static string CTS_DB_Pass = "AquaF33dHN2014";
 
         ////Bascula nueva version (desarrollo)
-        public static string Bas_ServerAddress = "AQFSVR003";
+        public static string Bas_ServerAddress = "AQFSVR010\\AQFSVR010";
         public static string Bas_ServerName = "Servidor Desarrollo";
         public static string Bas_ActiveDB = "BASCULA";
-        public static string Bas_DB_User = "sa";
+        public static string Bas_DB_User = "losa_user_db";
         public static string Bas_DB_Pass = "AquaF33dHN2014";
 
         //LOSA
-        public static string LOSA_ServerAddress = "AQFSVR003";
-        public static string LOSA_ServerName = "AQFSVR003";
+        public static string LOSA_ServerAddress = "AQFSVR010\\AQFSVR010";
+        public static string LOSA_ServerName = "AQFSVR010\\AQFSVR010";
         public static string LOSA_ActiveDB = "LOSA"; //BASE PRODUCTIVA
         //public static string LOSA_ActiveDB = "LOSA2"; //BASE DE PRUEBAS
-        public static string LOSA_DB_User = "sa";
+        public static string LOSA_DB_User = "losa_user_db";
         public static string LOSA_DB_Pass = " AquaF33dHN2014";
 
         //LOSA Servidor Produccion AQFSVR010
