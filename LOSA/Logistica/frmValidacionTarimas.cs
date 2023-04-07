@@ -31,6 +31,7 @@ namespace LOSA.Logistica
         {
             InitializeComponent();
             UsuarioLogeado = pUserLogin;
+            id_tarima = 0;
             LoadPresentaciones();
             LimpiarControles();
             DeshabilitarControles();
@@ -69,13 +70,13 @@ namespace LOSA.Logistica
                 //{
                 //    if (tarimaEncontrada.Recuperado)
                 //    {
-                        
+
                 //    }
                 //}
 
 
 
-
+                id_tarima = 0;
                 Tarima tm = new Tarima();
                 tm.RecuperarRegistro_v3(0, txtTarima.Text.Trim());
                 id_tarima = tm.Id;
