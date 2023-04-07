@@ -50,47 +50,56 @@ namespace LOSA.Produccion
                 txtMP.Text = mpdes;
             }
 
-            //Vamos a Validar si de Esta Requisa, ya se entrego todo!
-            if (id_mp > 0)
+            if (id_mp == 1101 || id_mp == 1110)
             {
-                try
+                //ES REPROCESO! No va en Formula
+            }
+            else
+            {
+                //Vamos a Validar si de Esta Requisa, ya se entrego todo!
+                if (id_mp > 0)
                 {
-                    string sql = "sp_get_mp_pendiente_por_id_requisa_y_mp";
-                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_requisa", id_requisa);
-                    cmd.Parameters.AddWithValue("@id_mp", id_mp);
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read())
+                    try
                     {
-                        cant_pendiente = dr.GetDecimal(0);
-                        cant_solicitado = dr.GetDecimal(1);
+                        string sql = "sp_get_mp_pendiente_por_id_requisa_y_mp";
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand(sql, conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_requisa", id_requisa);
+                        cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            cant_pendiente = dr.GetDecimal(0);
+                            cant_solicitado = dr.GetDecimal(1);
+                        }
+                        dr.Close();
+
                     }
-                    dr.Close();
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
 
-                }
-                catch (Exception ex)
-                {
-                    CajaDialogo.Error(ex.Message);
-                }
+                    //Requisicion req1 = new Requisicion();
+                    //req1.RecuperarRegistroFromBarcodeClass();
 
-                //Requisicion req1 = new Requisicion();
-                //req1.RecuperarRegistroFromBarcodeClass();
+                    tolerancia10porciento = cant_solicitado * 10 / 100; //Sacar el 10%
 
-                tolerancia10porciento = cant_solicitado * 10 / 100; //Sacar el 10%
-
-                if (cant_pendiente < tolerancia10porciento)
-                {
-                    //Todo bien en el Porcentaje de Tolerencia!
-                }
-                else
-                {
-                    CajaDialogo.Error("No puede adicionar mas Materia Prima: "+ txtMP.Text+" por que no a completado la Requisa: "+ id_requisa +"\nPendiente en Requisa: " + cant_pendiente);
-                    LimpiarVariables();
+                    if (cant_pendiente < tolerancia10porciento)
+                    {
+                        //Todo bien en el Porcentaje de Tolerencia!
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("No puede adicionar mas Materia Prima: " + txtMP.Text + " por que no a completado la Requisa: " + id_requisa + "\nPendiente en Requisa: " + cant_pendiente);
+                        LimpiarVariables();
+                    }
                 }
             }
+
+           
 
 
         }

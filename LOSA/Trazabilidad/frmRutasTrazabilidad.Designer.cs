@@ -30,15 +30,52 @@ namespace LOSA.Trazabilidad
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridView22 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colContado1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdCantidadDosificadaLoteLink = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.collote_mp1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdLinkLoteMP = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid_mp5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn183 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GridRuta4_detalle_trz_lote_pt = new DevExpress.XtraGrid.GridControl();
             this.dsMantoTrazabilidad = new LOSA.Trazabilidad.dsMantoTrazabilidad();
             this.gridView20 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -740,6 +777,256 @@ namespace LOSA.Trazabilidad
             this.txtLoteMPRuta1 = new DevExpress.XtraEditors.TextEdit();
             this.btnHome_Ruta1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl85 = new DevExpress.XtraEditors.LabelControl();
+            this.npRuta4_V2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl12 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
+            this.grd_nir_Ruta4 = new DevExpress.XtraGrid.GridControl();
+            this.gvNIR_Ruta4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn116 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn117 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn118 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn119 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn120 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn121 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn122 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.gcDocumentosAdjuntos_Ruta4 = new DevExpress.XtraGrid.GridControl();
+            this.gvDocumentosAdjuntos_Ruta4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn123 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn124 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn125 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn126 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn127 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn128 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn129 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdArbirAdjunto_Ruta4 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn130 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn131 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn132 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit7 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridControl15 = new DevExpress.XtraGrid.GridControl();
+            this.gridView28 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn133 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn134 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn135 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn136 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn137 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn138 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn139 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit8 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
+            this.spsustentable_Ruta4 = new DevExpress.XtraEditors.SpinEdit();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.hyIUCN_Ruta4 = new DevExpress.XtraEditors.HyperLinkEdit();
+            this.hyfishsource_Ruta4 = new DevExpress.XtraEditors.HyperLinkEdit();
+            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtPLantaSenasa_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.grd_tipo_Ruta4 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView29 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn140 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn141 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grd_origen_Ruta4 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.paisesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView30 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn142 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn143 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grd_pesca_Ruta4 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView31 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn144 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn145 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grd_origenespecie_Ruta4 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.origenespecieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView32 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn146 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn147 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn148 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn149 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl104 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl105 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl106 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl107 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl108 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl109 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl110 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl111 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl112 = new DevExpress.XtraEditors.LabelControl();
+            this.spTipoporcentaje_Ruta4 = new DevExpress.XtraEditors.SpinEdit();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.panelControl15 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl16 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl113 = new DevExpress.XtraEditors.LabelControl();
+            this.rdEmpaque4_Ruta4 = new DevExpress.XtraEditors.RadioGroup();
+            this.labelControl114 = new DevExpress.XtraEditors.LabelControl();
+            this.rdEmpaque3_Ruta4 = new DevExpress.XtraEditors.RadioGroup();
+            this.rdEmpaque1_Ruta4 = new DevExpress.XtraEditors.RadioGroup();
+            this.gridControl16 = new DevExpress.XtraGrid.GridControl();
+            this.gridView33 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn150 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn151 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rdEmpaque2_Ruta4 = new DevExpress.XtraEditors.RadioGroup();
+            this.labelControl115 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl116 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl117 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl17 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl18 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl19 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl20 = new DevExpress.XtraEditors.PanelControl();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.panelControl26 = new DevExpress.XtraEditors.PanelControl();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtObservacionesTrans_Ruta4 = new DevExpress.XtraEditors.MemoEdit();
+            this.gcCarga_Ruta4 = new DevExpress.XtraGrid.GridControl();
+            this.dsTarimaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gvCarga_Ruta4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn152 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rdTransporte3_Ruta4 = new DevExpress.XtraEditors.RadioGroup();
+            this.rdTransporte2_Ruta4 = new DevExpress.XtraEditors.RadioGroup();
+            this.rdTransporte1_Ruta4 = new DevExpress.XtraEditors.RadioGroup();
+            this.rdEstadomp_Ruta4 = new DevExpress.XtraEditors.RadioGroup();
+            this.labelControl118 = new DevExpress.XtraEditors.LabelControl();
+            this.rdTransporte4_Ruta4 = new DevExpress.XtraEditors.RadioGroup();
+            this.labelControl119 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl120 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDireccion_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl121 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl122 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl123 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl124 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl125 = new DevExpress.XtraEditors.LabelControl();
+            this.txttransporte_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl126 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl127 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl128 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl129 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
+            this.txtTelefono_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.memoEdit2 = new DevExpress.XtraEditors.MemoEdit();
+            this.textEdit14 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl130 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl131 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl132 = new DevExpress.XtraEditors.LabelControl();
+            this.radioGroup11 = new DevExpress.XtraEditors.RadioGroup();
+            this.txttransportista_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl133 = new DevExpress.XtraEditors.LabelControl();
+            this.txtuserlogistica_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit17 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl134 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton18 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl135 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl136 = new DevExpress.XtraEditors.LabelControl();
+            this.txtusercalidad_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.labelControl137 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl18 = new DevExpress.XtraGrid.GridControl();
+            this.detalledestinosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView35 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn153 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdDespachoId_Ruta4 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn154 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn155 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn156 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn157 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn158 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn159 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn160 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn161 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn162 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn163 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn164 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn165 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn166 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn167 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdBoleta_Ruta4 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn168 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl138 = new DevExpress.XtraEditors.LabelControl();
+            this.gcLotePT_Ruta4 = new DevExpress.XtraGrid.GridControl();
+            this.ptlisttrzBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gvLotePT_Ruta4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn169 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn170 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn171 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.gridControl20 = new DevExpress.XtraGrid.GridControl();
+            this.informacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView37 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn172 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn173 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn174 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn175 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn176 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn177 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn178 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn179 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn180 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn181 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn182 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnViewBoleta = new DevExpress.XtraEditors.SimpleButton();
+            this.txtBoleta_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl95 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.grid_Header_ingresos = new DevExpress.XtraGrid.GridControl();
+            this.gvIngresoLote_Ruta4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colfecha_produccion_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpor_vencer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnumero_transaccion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCardName1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colkg_ingresadas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumID1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn114 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colud_ingresadas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn115 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colselected = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtFabricante_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl96 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtNFactura_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl97 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton14 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl98 = new DevExpress.XtraEditors.LabelControl();
+            this.txtInventarioActual_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtProcedencia_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNombreMP_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtLoteMP_Ruta4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl99 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl100 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl101 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl102 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl103 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton15 = new DevExpress.XtraEditors.SimpleButton();
+            this.npDetalleDespacho_Ruta4 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.cmdDespacho_Ruta4 = new DevExpress.XtraEditors.SimpleButton();
+            this.gcDetalleDespacho_Ruta4 = new DevExpress.XtraGrid.GridControl();
+            this.detalledespachosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gvDetalleDespacho_Ruta4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn184 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn185 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn186 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn187 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn188 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn189 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn190 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn191 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn192 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn193 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn194 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paisBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detalledestinosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -1009,6 +1296,115 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.gvPT_Ruta1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdButtonTrzLotePT_ruta4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).BeginInit();
+            this.npRuta4_V2.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
+            this.panelControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_nir_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNIR_Ruta4)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDocumentosAdjuntos_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDocumentosAdjuntos_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdArbirAdjunto_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
+            this.panelControl14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spsustentable_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyIUCN_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyfishsource_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPLantaSenasa_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_tipo_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoingresoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_origen_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_pesca_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zonaPescaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_origenespecie_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.origenespecieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spTipoporcentaje_Ruta4.Properties)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).BeginInit();
+            this.panelControl15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).BeginInit();
+            this.panelControl16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque4_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque3_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque1_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque2_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl26)).BeginInit();
+            this.panelControl26.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservacionesTrans_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCarga_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarimaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCarga_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdTransporte3_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdTransporte2_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdTransporte1_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEstadomp_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdTransporte4_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDireccion_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txttransporte_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTelefono_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txttransportista_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtuserlogistica_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtusercalidad_Ruta4.Properties)).BeginInit();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalledestinosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdDespachoId_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdBoleta_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcLotePT_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptlisttrzBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvLotePT_Ruta4)).BeginInit();
+            this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView37)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoleta_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_Header_ingresos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvIngresoLote_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFabricante_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNFactura_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInventarioActual_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProcedencia_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreMP_Ruta4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLoteMP_Ruta4.Properties)).BeginInit();
+            this.npDetalleDespacho_Ruta4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcDetalleDespacho_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalledespachosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDetalleDespacho_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalledestinosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -1019,7 +1415,8 @@ namespace LOSA.Trazabilidad
             this.gridView22.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colContado1,
             this.collote_mp1,
-            this.colid_mp5});
+            this.colid_mp5,
+            this.gridColumn183});
             this.gridView22.GridControl = this.GridRuta4_detalle_trz_lote_pt;
             this.gridView22.Name = "gridView22";
             this.gridView22.OptionsBehavior.ReadOnly = true;
@@ -1055,8 +1452,9 @@ namespace LOSA.Trazabilidad
             // cmdLinkLoteMP
             // 
             this.cmdLinkLoteMP.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.cmdLinkLoteMP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdLinkLoteMP.Name = "cmdLinkLoteMP";
             this.cmdLinkLoteMP.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdLinkLoteMP_ButtonClick);
             // 
@@ -1065,11 +1463,19 @@ namespace LOSA.Trazabilidad
             this.colid_mp5.FieldName = "id_mp";
             this.colid_mp5.Name = "colid_mp5";
             // 
+            // gridColumn183
+            // 
+            this.gridColumn183.Caption = "# Ingreso";
+            this.gridColumn183.FieldName = "NIngreso";
+            this.gridColumn183.Name = "gridColumn183";
+            // 
             // GridRuta4_detalle_trz_lote_pt
             // 
+            this.GridRuta4_detalle_trz_lote_pt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GridRuta4_detalle_trz_lote_pt.DataMember = "Ruta4_H_trz_lote_pt";
             this.GridRuta4_detalle_trz_lote_pt.DataSource = this.dsMantoTrazabilidad;
-            this.GridRuta4_detalle_trz_lote_pt.Dock = System.Windows.Forms.DockStyle.Fill;
             gridLevelNode1.LevelTemplate = this.gridView22;
             gridLevelNode1.RelationName = "Detalle de Lotes";
             this.GridRuta4_detalle_trz_lote_pt.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
@@ -1082,7 +1488,7 @@ namespace LOSA.Trazabilidad
             this.cmdLinkButtonMP,
             this.cmdCantidadDosificadaLoteLink,
             this.cmdDetalleBatch});
-            this.GridRuta4_detalle_trz_lote_pt.Size = new System.Drawing.Size(1292, 578);
+            this.GridRuta4_detalle_trz_lote_pt.Size = new System.Drawing.Size(1342, 578);
             this.GridRuta4_detalle_trz_lote_pt.TabIndex = 40;
             this.GridRuta4_detalle_trz_lote_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView20,
@@ -1273,6 +1679,8 @@ namespace LOSA.Trazabilidad
             this.navigationFrame1.Controls.Add(this.npRuta3DetalleDespacho);
             this.navigationFrame1.Controls.Add(this.npBoletaView);
             this.navigationFrame1.Controls.Add(this.npRuta1);
+            this.navigationFrame1.Controls.Add(this.npRuta4_V2);
+            this.navigationFrame1.Controls.Add(this.npDetalleDespacho_Ruta4);
             this.navigationFrame1.Location = new System.Drawing.Point(266, 0);
             this.navigationFrame1.Name = "navigationFrame1";
             this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
@@ -1284,9 +1692,11 @@ namespace LOSA.Trazabilidad
             this.npRuta3MP,
             this.npRuta3DetalleDespacho,
             this.npBoletaView,
-            this.npRuta1});
+            this.npRuta1,
+            this.npRuta4_V2,
+            this.npDetalleDespacho_Ruta4});
             this.navigationFrame1.SelectedPage = this.npMain;
-            this.navigationFrame1.Size = new System.Drawing.Size(1301, 856);
+            this.navigationFrame1.Size = new System.Drawing.Size(1373, 856);
             this.navigationFrame1.TabIndex = 0;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
@@ -1305,7 +1715,7 @@ namespace LOSA.Trazabilidad
             this.npRuta2.Controls.Add(this.simpleButton5);
             this.npRuta2.Controls.Add(this.labelControl22);
             this.npRuta2.Name = "npRuta2";
-            this.npRuta2.Size = new System.Drawing.Size(1301, 856);
+            this.npRuta2.Size = new System.Drawing.Size(1373, 856);
             // 
             // gridTilapia_lotes_ruta2
             // 
@@ -1464,7 +1874,7 @@ namespace LOSA.Trazabilidad
             this.labelControl25.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl25.Location = new System.Drawing.Point(373, 135);
             this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(916, 24);
+            this.labelControl25.Size = new System.Drawing.Size(988, 24);
             this.labelControl25.TabIndex = 57;
             this.labelControl25.Text = "Clientes que recibieron el Producto ";
             // 
@@ -1481,7 +1891,7 @@ namespace LOSA.Trazabilidad
             this.gcDespachoRuta2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnLinkBoletaView_,
             this.cmdDespachoIdRuta});
-            this.gcDespachoRuta2.Size = new System.Drawing.Size(925, 688);
+            this.gcDespachoRuta2.Size = new System.Drawing.Size(997, 688);
             this.gcDespachoRuta2.TabIndex = 56;
             this.gcDespachoRuta2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDespacho});
@@ -1738,7 +2148,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton5.Appearance.Options.UseBackColor = true;
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton5.Location = new System.Drawing.Point(1117, 27);
+            this.simpleButton5.Location = new System.Drawing.Point(1189, 27);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(156, 52);
             this.simpleButton5.TabIndex = 47;
@@ -1756,7 +2166,7 @@ namespace LOSA.Trazabilidad
             this.labelControl22.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl22.Location = new System.Drawing.Point(3, 43);
             this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(1295, 39);
+            this.labelControl22.Size = new System.Drawing.Size(1367, 39);
             this.labelControl22.TabIndex = 40;
             this.labelControl22.Text = "Trazabilidad de lote Materia Prima";
             // 
@@ -1766,7 +2176,7 @@ namespace LOSA.Trazabilidad
             this.npMain.Controls.Add(this.labelControl80);
             this.npMain.Controls.Add(this.labelControl79);
             this.npMain.Name = "npMain";
-            this.npMain.Size = new System.Drawing.Size(1301, 856);
+            this.npMain.Size = new System.Drawing.Size(1373, 856);
             this.npMain.Paint += new System.Windows.Forms.PaintEventHandler(this.npMain_Paint);
             // 
             // btnSalir
@@ -1777,7 +2187,7 @@ namespace LOSA.Trazabilidad
             this.btnSalir.Appearance.Options.UseBackColor = true;
             this.btnSalir.Appearance.Options.UseFont = true;
             this.btnSalir.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnSalir.Location = new System.Drawing.Point(1103, 28);
+            this.btnSalir.Location = new System.Drawing.Point(1175, 28);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(144, 41);
             this.btnSalir.TabIndex = 95;
@@ -1795,7 +2205,7 @@ namespace LOSA.Trazabilidad
             this.labelControl80.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl80.Location = new System.Drawing.Point(168, 112);
             this.labelControl80.Name = "labelControl80";
-            this.labelControl80.Size = new System.Drawing.Size(965, 225);
+            this.labelControl80.Size = new System.Drawing.Size(1037, 225);
             this.labelControl80.TabIndex = 1;
             this.labelControl80.Text = resources.GetString("labelControl80.Text");
             // 
@@ -1810,7 +2220,7 @@ namespace LOSA.Trazabilidad
             this.labelControl79.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl79.Location = new System.Drawing.Point(9, 46);
             this.labelControl79.Name = "labelControl79";
-            this.labelControl79.Size = new System.Drawing.Size(1286, 23);
+            this.labelControl79.Size = new System.Drawing.Size(1358, 23);
             this.labelControl79.TabIndex = 0;
             this.labelControl79.Text = "Rutas de Trazabilidad";
             // 
@@ -1826,7 +2236,7 @@ namespace LOSA.Trazabilidad
             this.navigationPage3.Controls.Add(this.slueCliente);
             this.navigationPage3.Controls.Add(this.labelControl6);
             this.navigationPage3.Name = "navigationPage3";
-            this.navigationPage3.Size = new System.Drawing.Size(1301, 856);
+            this.navigationPage3.Size = new System.Drawing.Size(1373, 856);
             // 
             // cmdExportExcelClientes_lotes
             // 
@@ -1837,7 +2247,7 @@ namespace LOSA.Trazabilidad
             this.cmdExportExcelClientes_lotes.Appearance.Options.UseFont = true;
             this.cmdExportExcelClientes_lotes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdExportExcelClientes_lotes.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
-            this.cmdExportExcelClientes_lotes.Location = new System.Drawing.Point(1134, 58);
+            this.cmdExportExcelClientes_lotes.Location = new System.Drawing.Point(1206, 58);
             this.cmdExportExcelClientes_lotes.Name = "cmdExportExcelClientes_lotes";
             this.cmdExportExcelClientes_lotes.Size = new System.Drawing.Size(144, 41);
             this.cmdExportExcelClientes_lotes.TabIndex = 101;
@@ -2401,7 +2811,7 @@ namespace LOSA.Trazabilidad
             this.btnRuta3Home.Appearance.Options.UseBackColor = true;
             this.btnRuta3Home.Appearance.Options.UseFont = true;
             this.btnRuta3Home.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnRuta3Home.Location = new System.Drawing.Point(1134, 12);
+            this.btnRuta3Home.Location = new System.Drawing.Point(1206, 12);
             this.btnRuta3Home.Name = "btnRuta3Home";
             this.btnRuta3Home.Size = new System.Drawing.Size(144, 41);
             this.btnRuta3Home.TabIndex = 96;
@@ -2419,7 +2829,7 @@ namespace LOSA.Trazabilidad
             this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl20.Location = new System.Drawing.Point(3, 12);
             this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(1286, 25);
+            this.labelControl20.Size = new System.Drawing.Size(1358, 25);
             this.labelControl20.TabIndex = 85;
             this.labelControl20.Text = "Trazabilidad Clientes - Lotes";
             // 
@@ -2434,7 +2844,7 @@ namespace LOSA.Trazabilidad
             this.grDetalle.Name = "grDetalle";
             this.grDetalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnVer});
-            this.grDetalle.Size = new System.Drawing.Size(1295, 688);
+            this.grDetalle.Size = new System.Drawing.Size(1367, 688);
             this.grDetalle.TabIndex = 84;
             this.grDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDespachado});
@@ -2564,7 +2974,7 @@ namespace LOSA.Trazabilidad
             this.slueCliente.Properties.NullText = "";
             this.slueCliente.Properties.PopupView = this.gridView1;
             this.slueCliente.Properties.ValueMember = "id";
-            this.slueCliente.Size = new System.Drawing.Size(95, 28);
+            this.slueCliente.Size = new System.Drawing.Size(167, 28);
             this.slueCliente.TabIndex = 83;
             this.slueCliente.Visible = false;
             this.slueCliente.EditValueChanged += new System.EventHandler(this.slueCliente_EditValueChanged);
@@ -2710,7 +3120,7 @@ namespace LOSA.Trazabilidad
             this.npInfoLote.Controls.Add(this.labelControl26);
             this.npInfoLote.Controls.Add(this.simpleButton7);
             this.npInfoLote.Name = "npInfoLote";
-            this.npInfoLote.Size = new System.Drawing.Size(1301, 856);
+            this.npInfoLote.Size = new System.Drawing.Size(1373, 856);
             // 
             // tabControl1
             // 
@@ -2727,7 +3137,7 @@ namespace LOSA.Trazabilidad
             this.tabControl1.Location = new System.Drawing.Point(3, 316);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1298, 540);
+            this.tabControl1.Size = new System.Drawing.Size(1370, 540);
             this.tabControl1.TabIndex = 92;
             // 
             // tabPage1
@@ -2737,7 +3147,7 @@ namespace LOSA.Trazabilidad
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1290, 506);
+            this.tabPage1.Size = new System.Drawing.Size(1362, 506);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NIR";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -2756,7 +3166,7 @@ namespace LOSA.Trazabilidad
             this.PnNir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnNir.Location = new System.Drawing.Point(3, 3);
             this.PnNir.Name = "PnNir";
-            this.PnNir.Size = new System.Drawing.Size(1284, 500);
+            this.PnNir.Size = new System.Drawing.Size(1356, 500);
             this.PnNir.TabIndex = 1;
             // 
             // simpleButton9
@@ -2786,7 +3196,7 @@ namespace LOSA.Trazabilidad
             this.panelControl2.Appearance.Options.UseBackColor = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl2.Location = new System.Drawing.Point(1273, 10);
+            this.panelControl2.Location = new System.Drawing.Point(1345, 10);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(11, 480);
             this.panelControl2.TabIndex = 19;
@@ -2799,7 +3209,7 @@ namespace LOSA.Trazabilidad
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(0, 490);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1284, 10);
+            this.panelControl3.Size = new System.Drawing.Size(1356, 10);
             this.panelControl3.TabIndex = 18;
             // 
             // panelControl8
@@ -2810,7 +3220,7 @@ namespace LOSA.Trazabilidad
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl8.Location = new System.Drawing.Point(0, 0);
             this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(1284, 10);
+            this.panelControl8.Size = new System.Drawing.Size(1356, 10);
             this.panelControl8.TabIndex = 17;
             // 
             // grd_nir
@@ -2823,7 +3233,7 @@ namespace LOSA.Trazabilidad
             this.grd_nir.Location = new System.Drawing.Point(14, 69);
             this.grd_nir.MainView = this.grdv_nir;
             this.grd_nir.Name = "grd_nir";
-            this.grd_nir.Size = new System.Drawing.Size(1255, 417);
+            this.grd_nir.Size = new System.Drawing.Size(1327, 417);
             this.grd_nir.TabIndex = 1;
             this.grd_nir.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_nir});
@@ -2942,7 +3352,7 @@ namespace LOSA.Trazabilidad
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1290, 506);
+            this.tabPage3.Size = new System.Drawing.Size(1362, 506);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Datos y Adjuntos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -3115,7 +3525,7 @@ namespace LOSA.Trazabilidad
             this.grd_parametros.Name = "grd_parametros";
             this.grd_parametros.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnseleccionar});
-            this.grd_parametros.Size = new System.Drawing.Size(674, 217);
+            this.grd_parametros.Size = new System.Drawing.Size(746, 217);
             this.grd_parametros.TabIndex = 0;
             this.grd_parametros.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_parametros});
@@ -3247,7 +3657,7 @@ namespace LOSA.Trazabilidad
             this.panelControl4.Controls.Add(this.spTipoporcentaje);
             this.panelControl4.Location = new System.Drawing.Point(3, 237);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(677, 237);
+            this.panelControl4.Size = new System.Drawing.Size(749, 237);
             this.panelControl4.TabIndex = 49;
             // 
             // spsustentable
@@ -3670,7 +4080,7 @@ namespace LOSA.Trazabilidad
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1290, 506);
+            this.tabPage4.Size = new System.Drawing.Size(1362, 506);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Logistica";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -3688,7 +4098,7 @@ namespace LOSA.Trazabilidad
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(3, 3);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1284, 500);
+            this.panelControl6.Size = new System.Drawing.Size(1356, 500);
             this.panelControl6.TabIndex = 51;
             // 
             // panelControl25
@@ -3706,7 +4116,7 @@ namespace LOSA.Trazabilidad
             this.panelControl25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl25.Location = new System.Drawing.Point(11, 11);
             this.panelControl25.Name = "panelControl25";
-            this.panelControl25.Size = new System.Drawing.Size(1262, 479);
+            this.panelControl25.Size = new System.Drawing.Size(1334, 479);
             this.panelControl25.TabIndex = 64;
             // 
             // labelControl52
@@ -3886,7 +4296,7 @@ namespace LOSA.Trazabilidad
             this.panelControl24.Appearance.Options.UseBackColor = true;
             this.panelControl24.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl24.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl24.Location = new System.Drawing.Point(1273, 11);
+            this.panelControl24.Location = new System.Drawing.Point(1345, 11);
             this.panelControl24.Name = "panelControl24";
             this.panelControl24.Size = new System.Drawing.Size(11, 479);
             this.panelControl24.TabIndex = 61;
@@ -3899,7 +4309,7 @@ namespace LOSA.Trazabilidad
             this.panelControl23.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl23.Location = new System.Drawing.Point(11, 490);
             this.panelControl23.Name = "panelControl23";
-            this.panelControl23.Size = new System.Drawing.Size(1273, 10);
+            this.panelControl23.Size = new System.Drawing.Size(1345, 10);
             this.panelControl23.TabIndex = 60;
             // 
             // panelControl22
@@ -3921,7 +4331,7 @@ namespace LOSA.Trazabilidad
             this.panelControl21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl21.Location = new System.Drawing.Point(0, 0);
             this.panelControl21.Name = "panelControl21";
-            this.panelControl21.Size = new System.Drawing.Size(1284, 11);
+            this.panelControl21.Size = new System.Drawing.Size(1356, 11);
             this.panelControl21.TabIndex = 58;
             // 
             // tabPage2
@@ -3931,7 +4341,7 @@ namespace LOSA.Trazabilidad
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1290, 506);
+            this.tabPage2.Size = new System.Drawing.Size(1362, 506);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Estado de Materia prima y transporte";
             // 
@@ -3982,7 +4392,7 @@ namespace LOSA.Trazabilidad
             this.panelControl5.Controls.Add(this.txtusercalidad);
             this.panelControl5.Location = new System.Drawing.Point(3, 0);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1279, 503);
+            this.panelControl5.Size = new System.Drawing.Size(1351, 503);
             this.panelControl5.TabIndex = 84;
             // 
             // cmdSelectUltimasCargas
@@ -4279,7 +4689,7 @@ namespace LOSA.Trazabilidad
             this.txtObseracionesMP.Name = "txtObseracionesMP";
             this.txtObseracionesMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtObseracionesMP.Properties.Appearance.Options.UseFont = true;
-            this.txtObseracionesMP.Size = new System.Drawing.Size(1262, 65);
+            this.txtObseracionesMP.Size = new System.Drawing.Size(1334, 65);
             this.txtObseracionesMP.TabIndex = 28;
             // 
             // txtmp1
@@ -4427,7 +4837,7 @@ namespace LOSA.Trazabilidad
             this.tabPageLotesPT.Controls.Add(this.gridControl7);
             this.tabPageLotesPT.Location = new System.Drawing.Point(4, 30);
             this.tabPageLotesPT.Name = "tabPageLotesPT";
-            this.tabPageLotesPT.Size = new System.Drawing.Size(1290, 506);
+            this.tabPageLotesPT.Size = new System.Drawing.Size(1362, 506);
             this.tabPageLotesPT.TabIndex = 4;
             this.tabPageLotesPT.Text = "Lotes PT";
             this.tabPageLotesPT.UseVisualStyleBackColor = true;
@@ -4454,7 +4864,7 @@ namespace LOSA.Trazabilidad
             this.gridControl6.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit4,
             this.repositoryItemButtonEdit3});
-            this.gridControl6.Size = new System.Drawing.Size(920, 426);
+            this.gridControl6.Size = new System.Drawing.Size(992, 426);
             this.gridControl6.TabIndex = 46;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView12});
@@ -4703,7 +5113,7 @@ namespace LOSA.Trazabilidad
             this.tb_inventario.Location = new System.Drawing.Point(4, 30);
             this.tb_inventario.Name = "tb_inventario";
             this.tb_inventario.Padding = new System.Windows.Forms.Padding(3);
-            this.tb_inventario.Size = new System.Drawing.Size(1290, 506);
+            this.tb_inventario.Size = new System.Drawing.Size(1362, 506);
             this.tb_inventario.TabIndex = 5;
             this.tb_inventario.Text = "Inventario de lote";
             this.tb_inventario.UseVisualStyleBackColor = true;
@@ -4716,7 +5126,7 @@ namespace LOSA.Trazabilidad
             this.gridControl8.Location = new System.Drawing.Point(3, 3);
             this.gridControl8.MainView = this.gridView14;
             this.gridControl8.Name = "gridControl8";
-            this.gridControl8.Size = new System.Drawing.Size(1284, 500);
+            this.gridControl8.Size = new System.Drawing.Size(1356, 500);
             this.gridControl8.TabIndex = 1;
             this.gridControl8.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView14});
@@ -5314,7 +5724,7 @@ namespace LOSA.Trazabilidad
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Appearance.Options.UseFont = true;
             this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnGuardar.Location = new System.Drawing.Point(1116, 20);
+            this.btnGuardar.Location = new System.Drawing.Point(1188, 20);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(126, 44);
             this.btnGuardar.TabIndex = 44;
@@ -5341,7 +5751,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton7.Appearance.Options.UseBackColor = true;
             this.simpleButton7.Appearance.Options.UseFont = true;
             this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton7.Location = new System.Drawing.Point(984, 21);
+            this.simpleButton7.Location = new System.Drawing.Point(1056, 21);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(126, 42);
             this.simpleButton7.TabIndex = 42;
@@ -5403,7 +5813,7 @@ namespace LOSA.Trazabilidad
             this.npReporteTrazabilidad.Controls.Add(this.cmdHome);
             this.npReporteTrazabilidad.Controls.Add(this.labelControl18);
             this.npReporteTrazabilidad.Name = "npReporteTrazabilidad";
-            this.npReporteTrazabilidad.Size = new System.Drawing.Size(1301, 856);
+            this.npReporteTrazabilidad.Size = new System.Drawing.Size(1373, 856);
             // 
             // labelControl94
             // 
@@ -5552,7 +5962,7 @@ namespace LOSA.Trazabilidad
             this.btnBack.Appearance.Options.UseBackColor = true;
             this.btnBack.Appearance.Options.UseFont = true;
             this.btnBack.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBack.Location = new System.Drawing.Point(1113, 5);
+            this.btnBack.Location = new System.Drawing.Point(1185, 5);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(182, 59);
@@ -5572,7 +5982,7 @@ namespace LOSA.Trazabilidad
             this.labelControl19.Location = new System.Drawing.Point(144, 5);
             this.labelControl19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(963, 32);
+            this.labelControl19.Size = new System.Drawing.Size(1035, 32);
             this.labelControl19.TabIndex = 111;
             this.labelControl19.Text = "Trazabilidad de lote PT";
             // 
@@ -5621,7 +6031,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl1.Location = new System.Drawing.Point(3, 246);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1298, 610);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1370, 610);
             this.xtraTabControl1.TabIndex = 108;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -5636,7 +6046,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage1.Controls.Add(this.GridRuta4_detalle_trz_lote_pt);
             this.xtraTabPage1.Controls.Add(this.gridSplitContainer1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1292, 578);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1364, 578);
             this.xtraTabPage1.Text = "Detalle MP";
             // 
             // gridSplitContainer1
@@ -5874,7 +6284,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage2.Controls.Add(this.gcClientesRecibieronLotePT);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1292, 578);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1364, 578);
             this.xtraTabPage2.Text = "Clientes que Recibieron el Lote PT";
             // 
             // gcClientesRecibieronLotePT
@@ -5889,7 +6299,7 @@ namespace LOSA.Trazabilidad
             this.btnLinkBoletaView,
             this.cmdDespachoId,
             this.btnTrazabilidadClientes});
-            this.gcClientesRecibieronLotePT.Size = new System.Drawing.Size(1292, 578);
+            this.gcClientesRecibieronLotePT.Size = new System.Drawing.Size(1364, 578);
             this.gcClientesRecibieronLotePT.TabIndex = 45;
             this.gcClientesRecibieronLotePT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvClientesRecibieronLote});
@@ -6121,7 +6531,7 @@ namespace LOSA.Trazabilidad
             this.PageInventario.Appearance.Header.Options.UseFont = true;
             this.PageInventario.Controls.Add(this.panelControl1);
             this.PageInventario.Name = "PageInventario";
-            this.PageInventario.Size = new System.Drawing.Size(1292, 578);
+            this.PageInventario.Size = new System.Drawing.Size(1364, 578);
             this.PageInventario.Text = "Inventario PT";
             // 
             // panelControl1
@@ -6131,7 +6541,7 @@ namespace LOSA.Trazabilidad
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1292, 578);
+            this.panelControl1.Size = new System.Drawing.Size(1364, 578);
             this.panelControl1.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -6146,7 +6556,7 @@ namespace LOSA.Trazabilidad
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.grd_resumen);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1285, 544);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1357, 544);
             this.splitContainerControl2.SplitterPosition = 394;
             this.splitContainerControl2.TabIndex = 37;
             // 
@@ -6159,7 +6569,7 @@ namespace LOSA.Trazabilidad
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.xtraTabControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1285, 394);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1357, 394);
             this.splitContainerControl1.SplitterPosition = 886;
             this.splitContainerControl1.TabIndex = 39;
             // 
@@ -6522,7 +6932,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl2.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabLiberado;
-            this.xtraTabControl2.Size = new System.Drawing.Size(394, 394);
+            this.xtraTabControl2.Size = new System.Drawing.Size(466, 394);
             this.xtraTabControl2.TabIndex = 39;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabLiberado,
@@ -6534,7 +6944,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabLiberado.Controls.Add(this.grd_liberado);
             this.xtraTabLiberado.Name = "xtraTabLiberado";
             this.xtraTabLiberado.PageVisible = false;
-            this.xtraTabLiberado.Size = new System.Drawing.Size(388, 362);
+            this.xtraTabLiberado.Size = new System.Drawing.Size(460, 362);
             this.xtraTabLiberado.Text = "Liberado";
             // 
             // grd_liberado
@@ -6545,7 +6955,7 @@ namespace LOSA.Trazabilidad
             this.grd_liberado.Location = new System.Drawing.Point(0, 0);
             this.grd_liberado.MainView = this.grdv_liberado;
             this.grd_liberado.Name = "grd_liberado";
-            this.grd_liberado.Size = new System.Drawing.Size(388, 362);
+            this.grd_liberado.Size = new System.Drawing.Size(460, 362);
             this.grd_liberado.TabIndex = 37;
             this.grd_liberado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_liberado});
@@ -6665,7 +7075,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage4.Controls.Add(this.grd_retenido);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(388, 362);
+            this.xtraTabPage4.Size = new System.Drawing.Size(460, 362);
             this.xtraTabPage4.Text = "Retenido";
             // 
             // grd_retenido
@@ -6676,7 +7086,7 @@ namespace LOSA.Trazabilidad
             this.grd_retenido.Location = new System.Drawing.Point(0, 0);
             this.grd_retenido.MainView = this.grdv_retenido;
             this.grd_retenido.Name = "grd_retenido";
-            this.grd_retenido.Size = new System.Drawing.Size(388, 362);
+            this.grd_retenido.Size = new System.Drawing.Size(460, 362);
             this.grd_retenido.TabIndex = 38;
             this.grd_retenido.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_retenido});
@@ -6796,7 +7206,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(388, 362);
+            this.xtraTabPage5.Size = new System.Drawing.Size(460, 362);
             this.xtraTabPage5.Text = "No conforme";
             // 
             // grd_resumen
@@ -6807,7 +7217,7 @@ namespace LOSA.Trazabilidad
             this.grd_resumen.Location = new System.Drawing.Point(0, 0);
             this.grd_resumen.MainView = this.grdv_resumen;
             this.grd_resumen.Name = "grd_resumen";
-            this.grd_resumen.Size = new System.Drawing.Size(1285, 145);
+            this.grd_resumen.Size = new System.Drawing.Size(1357, 145);
             this.grd_resumen.TabIndex = 38;
             this.grd_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_resumen});
@@ -6895,7 +7305,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage8.Controls.Add(this.gridControlMuestreoPorLote);
             this.xtraTabPage8.Controls.Add(this.gridControlNoConformidades);
             this.xtraTabPage8.Name = "xtraTabPage8";
-            this.xtraTabPage8.Size = new System.Drawing.Size(1292, 578);
+            this.xtraTabPage8.Size = new System.Drawing.Size(1364, 578);
             this.xtraTabPage8.Text = "Monitoreos del Proceso";
             // 
             // gridControlMuestreoPorLote
@@ -6908,7 +7318,7 @@ namespace LOSA.Trazabilidad
             this.gridControlMuestreoPorLote.Location = new System.Drawing.Point(1, 210);
             this.gridControlMuestreoPorLote.MainView = this.gridView3;
             this.gridControlMuestreoPorLote.Name = "gridControlMuestreoPorLote";
-            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(1291, 368);
+            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(1363, 368);
             this.gridControlMuestreoPorLote.TabIndex = 1;
             this.gridControlMuestreoPorLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -7099,7 +7509,7 @@ namespace LOSA.Trazabilidad
             this.gridControlNoConformidades.Location = new System.Drawing.Point(0, 0);
             this.gridControlNoConformidades.MainView = this.gridView4;
             this.gridControlNoConformidades.Name = "gridControlNoConformidades";
-            this.gridControlNoConformidades.Size = new System.Drawing.Size(1291, 204);
+            this.gridControlNoConformidades.Size = new System.Drawing.Size(1363, 204);
             this.gridControlNoConformidades.TabIndex = 0;
             this.gridControlNoConformidades.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -7603,7 +8013,7 @@ namespace LOSA.Trazabilidad
             this.cmdHome.Appearance.Options.UseBackColor = true;
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdHome.Location = new System.Drawing.Point(1363, -91);
+            this.cmdHome.Location = new System.Drawing.Point(1435, -91);
             this.cmdHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(182, 68);
@@ -7622,7 +8032,7 @@ namespace LOSA.Trazabilidad
             this.labelControl18.Location = new System.Drawing.Point(-81, -83);
             this.labelControl18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(1437, 51);
+            this.labelControl18.Size = new System.Drawing.Size(1509, 51);
             this.labelControl18.TabIndex = 74;
             this.labelControl18.Text = "Trazabilidad de lote PT";
             // 
@@ -7633,7 +8043,7 @@ namespace LOSA.Trazabilidad
             this.npRuta3MP.Controls.Add(this.simpleButton2);
             this.npRuta3MP.Controls.Add(this.gcLotes);
             this.npRuta3MP.Name = "npRuta3MP";
-            this.npRuta3MP.Size = new System.Drawing.Size(1301, 856);
+            this.npRuta3MP.Size = new System.Drawing.Size(1373, 856);
             // 
             // labelControl21
             // 
@@ -7673,7 +8083,7 @@ namespace LOSA.Trazabilidad
             this.rowFecha_Creación,
             this.rowCreado_por,
             this.rowTipo_Alimentación});
-            this.vGridControl1.Size = new System.Drawing.Size(1269, 220);
+            this.vGridControl1.Size = new System.Drawing.Size(1341, 220);
             this.vGridControl1.TabIndex = 95;
             // 
             // rowid
@@ -7774,7 +8184,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(1123, 12);
+            this.simpleButton2.Location = new System.Drawing.Point(1195, 12);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(144, 41);
             this.simpleButton2.TabIndex = 94;
@@ -7795,7 +8205,7 @@ namespace LOSA.Trazabilidad
             this.cmdViewOC,
             this.cmdScaleDetails,
             this.linkTRZ_HaciaAdelante});
-            this.gcLotes.Size = new System.Drawing.Size(1295, 569);
+            this.gcLotes.Size = new System.Drawing.Size(1367, 569);
             this.gcLotes.TabIndex = 93;
             this.gcLotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLotes});
@@ -8023,7 +8433,7 @@ namespace LOSA.Trazabilidad
             this.npRuta3DetalleDespacho.Controls.Add(this.simpleButton4);
             this.npRuta3DetalleDespacho.Controls.Add(this.gridControl1);
             this.npRuta3DetalleDespacho.Name = "npRuta3DetalleDespacho";
-            this.npRuta3DetalleDespacho.Size = new System.Drawing.Size(1301, 856);
+            this.npRuta3DetalleDespacho.Size = new System.Drawing.Size(1373, 856);
             // 
             // btnImprimirDetalleCarga
             // 
@@ -8034,7 +8444,7 @@ namespace LOSA.Trazabilidad
             this.btnImprimirDetalleCarga.Appearance.Options.UseFont = true;
             this.btnImprimirDetalleCarga.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnImprimirDetalleCarga.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImprimirDetalleCarga.ImageOptions.SvgImage")));
-            this.btnImprimirDetalleCarga.Location = new System.Drawing.Point(763, 12);
+            this.btnImprimirDetalleCarga.Location = new System.Drawing.Point(835, 12);
             this.btnImprimirDetalleCarga.Name = "btnImprimirDetalleCarga";
             this.btnImprimirDetalleCarga.Size = new System.Drawing.Size(211, 52);
             this.btnImprimirDetalleCarga.TabIndex = 53;
@@ -8141,7 +8551,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
-            this.simpleButton3.Location = new System.Drawing.Point(980, 12);
+            this.simpleButton3.Location = new System.Drawing.Point(1052, 12);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(156, 52);
             this.simpleButton3.TabIndex = 51;
@@ -8156,7 +8566,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton4.Appearance.Options.UseBackColor = true;
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton4.Location = new System.Drawing.Point(1142, 12);
+            this.simpleButton4.Location = new System.Drawing.Point(1214, 12);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(156, 52);
             this.simpleButton4.TabIndex = 50;
@@ -8173,7 +8583,7 @@ namespace LOSA.Trazabilidad
             this.gridControl1.Location = new System.Drawing.Point(3, 203);
             this.gridControl1.MainView = this.gridView5;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1295, 650);
+            this.gridControl1.Size = new System.Drawing.Size(1367, 650);
             this.gridControl1.TabIndex = 49;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -8306,7 +8716,7 @@ namespace LOSA.Trazabilidad
             this.npBoletaView.Controls.Add(this.btnBackRuta1);
             this.npBoletaView.Controls.Add(this.vGridControl2);
             this.npBoletaView.Name = "npBoletaView";
-            this.npBoletaView.Size = new System.Drawing.Size(1301, 856);
+            this.npBoletaView.Size = new System.Drawing.Size(1373, 856);
             // 
             // btnBackRuta1
             // 
@@ -8316,7 +8726,7 @@ namespace LOSA.Trazabilidad
             this.btnBackRuta1.Appearance.Options.UseBackColor = true;
             this.btnBackRuta1.Appearance.Options.UseFont = true;
             this.btnBackRuta1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBackRuta1.Location = new System.Drawing.Point(1117, 12);
+            this.btnBackRuta1.Location = new System.Drawing.Point(1189, 12);
             this.btnBackRuta1.Name = "btnBackRuta1";
             this.btnBackRuta1.Size = new System.Drawing.Size(156, 52);
             this.btnBackRuta1.TabIndex = 51;
@@ -8334,7 +8744,7 @@ namespace LOSA.Trazabilidad
             this.vGridControl2.OptionsView.AutoScaleBands = true;
             this.vGridControl2.RecordWidth = 200;
             this.vGridControl2.RowHeaderWidth = 200;
-            this.vGridControl2.Size = new System.Drawing.Size(1293, 775);
+            this.vGridControl2.Size = new System.Drawing.Size(1365, 775);
             this.vGridControl2.TabIndex = 1;
             // 
             // npRuta1
@@ -8359,7 +8769,7 @@ namespace LOSA.Trazabilidad
             this.npRuta1.Controls.Add(this.btnHome_Ruta1);
             this.npRuta1.Controls.Add(this.labelControl85);
             this.npRuta1.Name = "npRuta1";
-            this.npRuta1.Size = new System.Drawing.Size(1301, 856);
+            this.npRuta1.Size = new System.Drawing.Size(1373, 856);
             // 
             // labelControl93
             // 
@@ -8506,7 +8916,7 @@ namespace LOSA.Trazabilidad
             this.gridControl11.Location = new System.Drawing.Point(822, 133);
             this.gridControl11.MainView = this.gridView19;
             this.gridControl11.Name = "gridControl11";
-            this.gridControl11.Size = new System.Drawing.Size(475, 357);
+            this.gridControl11.Size = new System.Drawing.Size(547, 357);
             this.gridControl11.TabIndex = 103;
             this.gridControl11.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView19});
@@ -8641,7 +9051,7 @@ namespace LOSA.Trazabilidad
             this.labelControl87.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl87.Location = new System.Drawing.Point(603, 501);
             this.labelControl87.Name = "labelControl87";
-            this.labelControl87.Size = new System.Drawing.Size(444, 24);
+            this.labelControl87.Size = new System.Drawing.Size(516, 24);
             this.labelControl87.TabIndex = 70;
             this.labelControl87.Text = "Registro de Ingresos";
             // 
@@ -8655,7 +9065,7 @@ namespace LOSA.Trazabilidad
             this.gridControl10.Location = new System.Drawing.Point(373, 526);
             this.gridControl10.MainView = this.gridView18;
             this.gridControl10.Name = "gridControl10";
-            this.gridControl10.Size = new System.Drawing.Size(924, 327);
+            this.gridControl10.Size = new System.Drawing.Size(996, 327);
             this.gridControl10.TabIndex = 71;
             this.gridControl10.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView18});
@@ -9021,7 +9431,7 @@ namespace LOSA.Trazabilidad
             this.btnHome_Ruta1.Appearance.Options.UseBackColor = true;
             this.btnHome_Ruta1.Appearance.Options.UseFont = true;
             this.btnHome_Ruta1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnHome_Ruta1.Location = new System.Drawing.Point(1142, 5);
+            this.btnHome_Ruta1.Location = new System.Drawing.Point(1214, 5);
             this.btnHome_Ruta1.Name = "btnHome_Ruta1";
             this.btnHome_Ruta1.Size = new System.Drawing.Size(156, 52);
             this.btnHome_Ruta1.TabIndex = 59;
@@ -9039,9 +9449,2837 @@ namespace LOSA.Trazabilidad
             this.labelControl85.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl85.Location = new System.Drawing.Point(2, 9);
             this.labelControl85.Name = "labelControl85";
-            this.labelControl85.Size = new System.Drawing.Size(1295, 39);
+            this.labelControl85.Size = new System.Drawing.Size(1367, 39);
             this.labelControl85.TabIndex = 58;
             this.labelControl85.Text = "Trazabilidad de lote MP hacia Inventario Actual";
+            // 
+            // npRuta4_V2
+            // 
+            this.npRuta4_V2.Controls.Add(this.tabControl2);
+            this.npRuta4_V2.Controls.Add(this.btnViewBoleta);
+            this.npRuta4_V2.Controls.Add(this.txtBoleta_Ruta4);
+            this.npRuta4_V2.Controls.Add(this.labelControl95);
+            this.npRuta4_V2.Controls.Add(this.groupControl1);
+            this.npRuta4_V2.Controls.Add(this.simpleButton12);
+            this.npRuta4_V2.Controls.Add(this.button1);
+            this.npRuta4_V2.Controls.Add(this.txtFabricante_Ruta4);
+            this.npRuta4_V2.Controls.Add(this.labelControl96);
+            this.npRuta4_V2.Controls.Add(this.simpleButton13);
+            this.npRuta4_V2.Controls.Add(this.txtNFactura_Ruta4);
+            this.npRuta4_V2.Controls.Add(this.labelControl97);
+            this.npRuta4_V2.Controls.Add(this.simpleButton14);
+            this.npRuta4_V2.Controls.Add(this.labelControl98);
+            this.npRuta4_V2.Controls.Add(this.txtInventarioActual_Ruta4);
+            this.npRuta4_V2.Controls.Add(this.txtProcedencia_Ruta4);
+            this.npRuta4_V2.Controls.Add(this.txtNombreMP_Ruta4);
+            this.npRuta4_V2.Controls.Add(this.txtLoteMP_Ruta4);
+            this.npRuta4_V2.Controls.Add(this.labelControl99);
+            this.npRuta4_V2.Controls.Add(this.labelControl100);
+            this.npRuta4_V2.Controls.Add(this.labelControl101);
+            this.npRuta4_V2.Controls.Add(this.labelControl102);
+            this.npRuta4_V2.Controls.Add(this.labelControl103);
+            this.npRuta4_V2.Controls.Add(this.simpleButton15);
+            this.npRuta4_V2.Name = "npRuta4_V2";
+            this.npRuta4_V2.Size = new System.Drawing.Size(1373, 856);
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Controls.Add(this.tabPage7);
+            this.tabControl2.Controls.Add(this.tabPage8);
+            this.tabControl2.Controls.Add(this.tabPage9);
+            this.tabControl2.Controls.Add(this.tabPage10);
+            this.tabControl2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl2.Location = new System.Drawing.Point(3, 317);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1367, 536);
+            this.tabControl2.TabIndex = 82;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.panelControl7);
+            this.tabPage5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage5.Location = new System.Drawing.Point(4, 30);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1359, 502);
+            this.tabPage5.TabIndex = 0;
+            this.tabPage5.Text = "NIR";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // panelControl7
+            // 
+            this.panelControl7.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelControl7.Appearance.Options.UseBackColor = true;
+            this.panelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl7.Controls.Add(this.simpleButton16);
+            this.panelControl7.Controls.Add(this.panelControl10);
+            this.panelControl7.Controls.Add(this.panelControl11);
+            this.panelControl7.Controls.Add(this.panelControl12);
+            this.panelControl7.Controls.Add(this.panelControl13);
+            this.panelControl7.Controls.Add(this.grd_nir_Ruta4);
+            this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl7.Location = new System.Drawing.Point(3, 3);
+            this.panelControl7.Name = "panelControl7";
+            this.panelControl7.Size = new System.Drawing.Size(1353, 496);
+            this.panelControl7.TabIndex = 1;
+            // 
+            // simpleButton16
+            // 
+            this.simpleButton16.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton16.Appearance.Options.UseFont = true;
+            this.simpleButton16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton16.ImageOptions.Image")));
+            this.simpleButton16.Location = new System.Drawing.Point(19, 19);
+            this.simpleButton16.Name = "simpleButton16";
+            this.simpleButton16.Size = new System.Drawing.Size(240, 39);
+            this.simpleButton16.TabIndex = 21;
+            this.simpleButton16.Text = "Lecturas de NIR";
+            this.simpleButton16.Visible = false;
+            // 
+            // panelControl10
+            // 
+            this.panelControl10.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl10.Appearance.Options.UseBackColor = true;
+            this.panelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl10.Location = new System.Drawing.Point(0, 10);
+            this.panelControl10.Name = "panelControl10";
+            this.panelControl10.Size = new System.Drawing.Size(11, 476);
+            this.panelControl10.TabIndex = 20;
+            // 
+            // panelControl11
+            // 
+            this.panelControl11.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl11.Appearance.Options.UseBackColor = true;
+            this.panelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelControl11.Location = new System.Drawing.Point(1342, 10);
+            this.panelControl11.Name = "panelControl11";
+            this.panelControl11.Size = new System.Drawing.Size(11, 476);
+            this.panelControl11.TabIndex = 19;
+            // 
+            // panelControl12
+            // 
+            this.panelControl12.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl12.Appearance.Options.UseBackColor = true;
+            this.panelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl12.Location = new System.Drawing.Point(0, 486);
+            this.panelControl12.Name = "panelControl12";
+            this.panelControl12.Size = new System.Drawing.Size(1353, 10);
+            this.panelControl12.TabIndex = 18;
+            // 
+            // panelControl13
+            // 
+            this.panelControl13.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl13.Appearance.Options.UseBackColor = true;
+            this.panelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl13.Location = new System.Drawing.Point(0, 0);
+            this.panelControl13.Name = "panelControl13";
+            this.panelControl13.Size = new System.Drawing.Size(1353, 10);
+            this.panelControl13.TabIndex = 17;
+            // 
+            // grd_nir_Ruta4
+            // 
+            this.grd_nir_Ruta4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grd_nir_Ruta4.DataMember = "show_nir";
+            this.grd_nir_Ruta4.DataSource = this.dsMantenimientoC;
+            this.grd_nir_Ruta4.Location = new System.Drawing.Point(14, 69);
+            this.grd_nir_Ruta4.MainView = this.gvNIR_Ruta4;
+            this.grd_nir_Ruta4.Name = "grd_nir_Ruta4";
+            this.grd_nir_Ruta4.Size = new System.Drawing.Size(1324, 413);
+            this.grd_nir_Ruta4.TabIndex = 1;
+            this.grd_nir_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvNIR_Ruta4});
+            // 
+            // gvNIR_Ruta4
+            // 
+            this.gvNIR_Ruta4.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvNIR_Ruta4.Appearance.FilterPanel.Options.UseFont = true;
+            this.gvNIR_Ruta4.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvNIR_Ruta4.Appearance.FooterPanel.Options.UseFont = true;
+            this.gvNIR_Ruta4.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvNIR_Ruta4.Appearance.GroupFooter.Options.UseFont = true;
+            this.gvNIR_Ruta4.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvNIR_Ruta4.Appearance.GroupPanel.Options.UseFont = true;
+            this.gvNIR_Ruta4.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvNIR_Ruta4.Appearance.GroupRow.Options.UseFont = true;
+            this.gvNIR_Ruta4.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNIR_Ruta4.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvNIR_Ruta4.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvNIR_Ruta4.Appearance.Preview.Options.UseFont = true;
+            this.gvNIR_Ruta4.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNIR_Ruta4.Appearance.Row.Options.UseFont = true;
+            this.gvNIR_Ruta4.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvNIR_Ruta4.Appearance.TopNewRow.Options.UseFont = true;
+            this.gvNIR_Ruta4.Appearance.ViewCaption.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvNIR_Ruta4.Appearance.ViewCaption.Options.UseFont = true;
+            this.gvNIR_Ruta4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn116,
+            this.gridColumn117,
+            this.gridColumn118,
+            this.gridColumn119,
+            this.gridColumn120,
+            this.gridColumn121,
+            this.gridColumn122});
+            this.gvNIR_Ruta4.GridControl = this.grd_nir_Ruta4;
+            this.gvNIR_Ruta4.Name = "gvNIR_Ruta4";
+            this.gvNIR_Ruta4.OptionsView.ShowAutoFilterRow = true;
+            this.gvNIR_Ruta4.OptionsView.ShowGroupPanel = false;
+            this.gvNIR_Ruta4.OptionsView.ShowViewCaption = true;
+            this.gvNIR_Ruta4.ViewCaption = "BROMATOLOGIA";
+            this.gvNIR_Ruta4.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvNIR_Ruta4_RowStyle);
+            // 
+            // gridColumn116
+            // 
+            this.gridColumn116.FieldName = "id";
+            this.gridColumn116.Name = "gridColumn116";
+            // 
+            // gridColumn117
+            // 
+            this.gridColumn117.Caption = "BROMATOLOGIA";
+            this.gridColumn117.FieldName = "id_bromatologia";
+            this.gridColumn117.Name = "gridColumn117";
+            this.gridColumn117.OptionsColumn.AllowEdit = false;
+            this.gridColumn117.Visible = true;
+            this.gridColumn117.VisibleIndex = 0;
+            // 
+            // gridColumn118
+            // 
+            this.gridColumn118.DisplayFormat.FormatString = "{0:#.##} %";
+            this.gridColumn118.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn118.FieldName = "Minimo";
+            this.gridColumn118.Name = "gridColumn118";
+            this.gridColumn118.OptionsColumn.AllowEdit = false;
+            this.gridColumn118.Visible = true;
+            this.gridColumn118.VisibleIndex = 1;
+            // 
+            // gridColumn119
+            // 
+            this.gridColumn119.DisplayFormat.FormatString = "{0:#.##} %";
+            this.gridColumn119.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn119.FieldName = "Maximo";
+            this.gridColumn119.Name = "gridColumn119";
+            this.gridColumn119.OptionsColumn.AllowEdit = false;
+            this.gridColumn119.Visible = true;
+            this.gridColumn119.VisibleIndex = 2;
+            // 
+            // gridColumn120
+            // 
+            this.gridColumn120.Caption = "Resultado Promedio";
+            this.gridColumn120.DisplayFormat.FormatString = "{0:#.##} %";
+            this.gridColumn120.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn120.FieldName = "porcentaje";
+            this.gridColumn120.Name = "gridColumn120";
+            this.gridColumn120.OptionsColumn.AllowEdit = false;
+            this.gridColumn120.Visible = true;
+            this.gridColumn120.VisibleIndex = 3;
+            // 
+            // gridColumn121
+            // 
+            this.gridColumn121.Caption = "Decisión";
+            this.gridColumn121.FieldName = "validacion";
+            this.gridColumn121.Name = "gridColumn121";
+            this.gridColumn121.OptionsColumn.AllowEdit = false;
+            this.gridColumn121.Visible = true;
+            this.gridColumn121.VisibleIndex = 4;
+            // 
+            // gridColumn122
+            // 
+            this.gridColumn122.FieldName = "bit_validacion";
+            this.gridColumn122.Name = "gridColumn122";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.gcDocumentosAdjuntos_Ruta4);
+            this.tabPage6.Controls.Add(this.gridControl15);
+            this.tabPage6.Controls.Add(this.panelControl14);
+            this.tabPage6.Location = new System.Drawing.Point(4, 30);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1359, 502);
+            this.tabPage6.TabIndex = 2;
+            this.tabPage6.Text = "Datos y Adjuntos";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // gcDocumentosAdjuntos_Ruta4
+            // 
+            this.gcDocumentosAdjuntos_Ruta4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gcDocumentosAdjuntos_Ruta4.DataMember = "adjuntos";
+            this.gcDocumentosAdjuntos_Ruta4.DataSource = this.dsMantenimientoC;
+            this.gcDocumentosAdjuntos_Ruta4.Location = new System.Drawing.Point(735, 6);
+            this.gcDocumentosAdjuntos_Ruta4.MainView = this.gvDocumentosAdjuntos_Ruta4;
+            this.gcDocumentosAdjuntos_Ruta4.Name = "gcDocumentosAdjuntos_Ruta4";
+            this.gcDocumentosAdjuntos_Ruta4.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit5,
+            this.cmdArbirAdjunto_Ruta4,
+            this.repositoryItemButtonEdit7});
+            this.gcDocumentosAdjuntos_Ruta4.Size = new System.Drawing.Size(595, 495);
+            this.gcDocumentosAdjuntos_Ruta4.TabIndex = 38;
+            this.gcDocumentosAdjuntos_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDocumentosAdjuntos_Ruta4});
+            // 
+            // gvDocumentosAdjuntos_Ruta4
+            // 
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.FilterPanel.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.FooterPanel.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.GroupFooter.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.GroupPanel.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.GroupRow.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.Preview.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.Row.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.TopNewRow.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.ViewCaption.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.gvDocumentosAdjuntos_Ruta4.Appearance.ViewCaption.Options.UseFont = true;
+            this.gvDocumentosAdjuntos_Ruta4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn123,
+            this.gridColumn124,
+            this.gridColumn125,
+            this.gridColumn126,
+            this.gridColumn127,
+            this.gridColumn128,
+            this.gridColumn129,
+            this.gridColumn130,
+            this.gridColumn131,
+            this.gridColumn132});
+            this.gvDocumentosAdjuntos_Ruta4.GridControl = this.gcDocumentosAdjuntos_Ruta4;
+            this.gvDocumentosAdjuntos_Ruta4.Name = "gvDocumentosAdjuntos_Ruta4";
+            this.gvDocumentosAdjuntos_Ruta4.OptionsView.ShowAutoFilterRow = true;
+            this.gvDocumentosAdjuntos_Ruta4.OptionsView.ShowGroupPanel = false;
+            this.gvDocumentosAdjuntos_Ruta4.OptionsView.ShowViewCaption = true;
+            this.gvDocumentosAdjuntos_Ruta4.ViewCaption = "Documentos Adjuntos";
+            // 
+            // gridColumn123
+            // 
+            this.gridColumn123.Caption = "Documento";
+            this.gridColumn123.FieldName = "Adjunto";
+            this.gridColumn123.Name = "gridColumn123";
+            this.gridColumn123.OptionsColumn.AllowEdit = false;
+            this.gridColumn123.Visible = true;
+            this.gridColumn123.VisibleIndex = 0;
+            this.gridColumn123.Width = 207;
+            // 
+            // gridColumn124
+            // 
+            this.gridColumn124.FieldName = "path";
+            this.gridColumn124.Name = "gridColumn124";
+            this.gridColumn124.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn125
+            // 
+            this.gridColumn125.Caption = "Cargado";
+            this.gridColumn125.FieldName = "bit_subido";
+            this.gridColumn125.Name = "gridColumn125";
+            this.gridColumn125.OptionsColumn.AllowEdit = false;
+            this.gridColumn125.Visible = true;
+            this.gridColumn125.VisibleIndex = 1;
+            this.gridColumn125.Width = 106;
+            // 
+            // gridColumn126
+            // 
+            this.gridColumn126.FieldName = "path_load";
+            this.gridColumn126.Name = "gridColumn126";
+            this.gridColumn126.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn127
+            // 
+            this.gridColumn127.FieldName = "id_registro";
+            this.gridColumn127.Name = "gridColumn127";
+            this.gridColumn127.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn128
+            // 
+            this.gridColumn128.Caption = "Adjuntar";
+            this.gridColumn128.ColumnEdit = this.repositoryItemButtonEdit5;
+            this.gridColumn128.Name = "gridColumn128";
+            this.gridColumn128.Width = 99;
+            // 
+            // repositoryItemButtonEdit5
+            // 
+            this.repositoryItemButtonEdit5.AutoHeight = false;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.Upload_32x32;
+            this.repositoryItemButtonEdit5.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit5.Name = "repositoryItemButtonEdit5";
+            this.repositoryItemButtonEdit5.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // gridColumn129
+            // 
+            this.gridColumn129.Caption = "Abrir";
+            this.gridColumn129.ColumnEdit = this.cmdArbirAdjunto_Ruta4;
+            this.gridColumn129.Name = "gridColumn129";
+            this.gridColumn129.Visible = true;
+            this.gridColumn129.VisibleIndex = 2;
+            this.gridColumn129.Width = 78;
+            // 
+            // cmdArbirAdjunto_Ruta4
+            // 
+            this.cmdArbirAdjunto_Ruta4.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.cmdArbirAdjunto_Ruta4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdArbirAdjunto_Ruta4.Name = "cmdArbirAdjunto_Ruta4";
+            this.cmdArbirAdjunto_Ruta4.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdArbirAdjunto_Ruta4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdArbirAdjunto_Ruta4_ButtonClick);
+            // 
+            // gridColumn130
+            // 
+            this.gridColumn130.FieldName = "id_conf";
+            this.gridColumn130.Name = "gridColumn130";
+            // 
+            // gridColumn131
+            // 
+            this.gridColumn131.FieldName = "file_name";
+            this.gridColumn131.Name = "gridColumn131";
+            // 
+            // gridColumn132
+            // 
+            this.gridColumn132.Caption = "Desadjuntar";
+            this.gridColumn132.ColumnEdit = this.repositoryItemButtonEdit7;
+            this.gridColumn132.Name = "gridColumn132";
+            this.gridColumn132.Width = 87;
+            // 
+            // repositoryItemButtonEdit7
+            // 
+            this.repositoryItemButtonEdit7.AutoHeight = false;
+            editorButtonImageOptions4.Image = global::LOSA.Properties.Resources.po_delete_24;
+            this.repositoryItemButtonEdit7.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit7.Name = "repositoryItemButtonEdit7";
+            this.repositoryItemButtonEdit7.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // gridControl15
+            // 
+            this.gridControl15.DataMember = "parametros";
+            this.gridControl15.DataSource = this.dsMantenimientoC;
+            this.gridControl15.Location = new System.Drawing.Point(6, 5);
+            this.gridControl15.MainView = this.gridView28;
+            this.gridControl15.Name = "gridControl15";
+            this.gridControl15.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit8});
+            this.gridControl15.Size = new System.Drawing.Size(723, 217);
+            this.gridControl15.TabIndex = 0;
+            this.gridControl15.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView28});
+            // 
+            // gridView28
+            // 
+            this.gridView28.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView28.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridView28.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView28.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView28.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView28.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView28.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gridView28.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView28.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gridView28.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView28.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView28.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView28.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView28.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView28.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView28.Appearance.Row.Options.UseFont = true;
+            this.gridView28.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView28.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView28.Appearance.ViewCaption.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.gridView28.Appearance.ViewCaption.Options.UseFont = true;
+            this.gridView28.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn133,
+            this.gridColumn134,
+            this.gridColumn135,
+            this.gridColumn136,
+            this.gridColumn137,
+            this.gridColumn138,
+            this.gridColumn139});
+            this.gridView28.CustomizationFormBounds = new System.Drawing.Rectangle(0, 436, 260, 252);
+            this.gridView28.GridControl = this.gridControl15;
+            this.gridView28.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gridView28.Name = "gridView28";
+            this.gridView28.OptionsView.ShowAutoFilterRow = true;
+            this.gridView28.OptionsView.ShowGroupPanel = false;
+            this.gridView28.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView28_RowStyle);
+            // 
+            // gridColumn133
+            // 
+            this.gridColumn133.FieldName = "id";
+            this.gridColumn133.Name = "gridColumn133";
+            // 
+            // gridColumn134
+            // 
+            this.gridColumn134.Caption = "Parametro";
+            this.gridColumn134.FieldName = "definicion";
+            this.gridColumn134.Name = "gridColumn134";
+            this.gridColumn134.OptionsColumn.AllowEdit = false;
+            this.gridColumn134.Visible = true;
+            this.gridColumn134.VisibleIndex = 0;
+            this.gridColumn134.Width = 140;
+            // 
+            // gridColumn135
+            // 
+            this.gridColumn135.Caption = "Especificacion";
+            this.gridColumn135.FieldName = "descripcion";
+            this.gridColumn135.Name = "gridColumn135";
+            this.gridColumn135.OptionsColumn.AllowEdit = false;
+            this.gridColumn135.Visible = true;
+            this.gridColumn135.VisibleIndex = 1;
+            this.gridColumn135.Width = 140;
+            // 
+            // gridColumn136
+            // 
+            this.gridColumn136.FieldName = "id_criterio";
+            this.gridColumn136.Name = "gridColumn136";
+            // 
+            // gridColumn137
+            // 
+            this.gridColumn137.Caption = "Resultado";
+            this.gridColumn137.FieldName = "respuesta";
+            this.gridColumn137.Name = "gridColumn137";
+            this.gridColumn137.OptionsColumn.AllowEdit = false;
+            this.gridColumn137.Visible = true;
+            this.gridColumn137.VisibleIndex = 2;
+            this.gridColumn137.Width = 169;
+            // 
+            // gridColumn138
+            // 
+            this.gridColumn138.FieldName = "id_respuestas";
+            this.gridColumn138.Name = "gridColumn138";
+            // 
+            // gridColumn139
+            // 
+            this.gridColumn139.Caption = "Responder";
+            this.gridColumn139.ColumnEdit = this.repositoryItemButtonEdit8;
+            this.gridColumn139.Name = "gridColumn139";
+            this.gridColumn139.Width = 113;
+            // 
+            // repositoryItemButtonEdit8
+            // 
+            this.repositoryItemButtonEdit8.AutoHeight = false;
+            editorButtonImageOptions5.Image = global::LOSA.Properties.Resources._click_24X24;
+            this.repositoryItemButtonEdit8.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit8.Name = "repositoryItemButtonEdit8";
+            this.repositoryItemButtonEdit8.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // panelControl14
+            // 
+            this.panelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl14.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelControl14.Appearance.Options.UseBackColor = true;
+            this.panelControl14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl14.Controls.Add(this.spsustentable_Ruta4);
+            this.panelControl14.Controls.Add(this.pictureEdit1);
+            this.panelControl14.Controls.Add(this.hyIUCN_Ruta4);
+            this.panelControl14.Controls.Add(this.hyfishsource_Ruta4);
+            this.panelControl14.Controls.Add(this.simpleButton17);
+            this.panelControl14.Controls.Add(this.txtPLantaSenasa_Ruta4);
+            this.panelControl14.Controls.Add(this.grd_tipo_Ruta4);
+            this.panelControl14.Controls.Add(this.grd_origen_Ruta4);
+            this.panelControl14.Controls.Add(this.grd_pesca_Ruta4);
+            this.panelControl14.Controls.Add(this.grd_origenespecie_Ruta4);
+            this.panelControl14.Controls.Add(this.labelControl104);
+            this.panelControl14.Controls.Add(this.labelControl105);
+            this.panelControl14.Controls.Add(this.labelControl106);
+            this.panelControl14.Controls.Add(this.labelControl107);
+            this.panelControl14.Controls.Add(this.labelControl108);
+            this.panelControl14.Controls.Add(this.labelControl109);
+            this.panelControl14.Controls.Add(this.labelControl110);
+            this.panelControl14.Controls.Add(this.labelControl111);
+            this.panelControl14.Controls.Add(this.labelControl112);
+            this.panelControl14.Controls.Add(this.spTipoporcentaje_Ruta4);
+            this.panelControl14.Location = new System.Drawing.Point(3, 223);
+            this.panelControl14.Name = "panelControl14";
+            this.panelControl14.Size = new System.Drawing.Size(746, 237);
+            this.panelControl14.TabIndex = 49;
+            // 
+            // spsustentable_Ruta4
+            // 
+            this.spsustentable_Ruta4.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spsustentable_Ruta4.Location = new System.Drawing.Point(301, 122);
+            this.spsustentable_Ruta4.Name = "spsustentable_Ruta4";
+            this.spsustentable_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.spsustentable_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.spsustentable_Ruta4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spsustentable_Ruta4.Size = new System.Drawing.Size(160, 22);
+            this.spsustentable_Ruta4.TabIndex = 66;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(510, 60);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.pictureEdit1.Size = new System.Drawing.Size(205, 127);
+            this.pictureEdit1.TabIndex = 1;
+            // 
+            // hyIUCN_Ruta4
+            // 
+            this.hyIUCN_Ruta4.Location = new System.Drawing.Point(301, 205);
+            this.hyIUCN_Ruta4.Name = "hyIUCN_Ruta4";
+            this.hyIUCN_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.hyIUCN_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.hyIUCN_Ruta4.Size = new System.Drawing.Size(160, 22);
+            this.hyIUCN_Ruta4.TabIndex = 64;
+            // 
+            // hyfishsource_Ruta4
+            // 
+            this.hyfishsource_Ruta4.Location = new System.Drawing.Point(301, 178);
+            this.hyfishsource_Ruta4.Name = "hyfishsource_Ruta4";
+            this.hyfishsource_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.hyfishsource_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.hyfishsource_Ruta4.Size = new System.Drawing.Size(160, 22);
+            this.hyfishsource_Ruta4.TabIndex = 63;
+            // 
+            // simpleButton17
+            // 
+            this.simpleButton17.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton17.Appearance.Options.UseFont = true;
+            this.simpleButton17.Enabled = false;
+            this.simpleButton17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
+            this.simpleButton17.Location = new System.Drawing.Point(510, 191);
+            this.simpleButton17.Name = "simpleButton17";
+            this.simpleButton17.Size = new System.Drawing.Size(205, 41);
+            this.simpleButton17.TabIndex = 2;
+            this.simpleButton17.Text = "Adjuntar Imagen";
+            // 
+            // txtPLantaSenasa_Ruta4
+            // 
+            this.txtPLantaSenasa_Ruta4.Location = new System.Drawing.Point(301, 93);
+            this.txtPLantaSenasa_Ruta4.Name = "txtPLantaSenasa_Ruta4";
+            this.txtPLantaSenasa_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtPLantaSenasa_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.txtPLantaSenasa_Ruta4.Size = new System.Drawing.Size(160, 22);
+            this.txtPLantaSenasa_Ruta4.TabIndex = 56;
+            // 
+            // grd_tipo_Ruta4
+            // 
+            this.grd_tipo_Ruta4.Location = new System.Drawing.Point(510, 3);
+            this.grd_tipo_Ruta4.Name = "grd_tipo_Ruta4";
+            this.grd_tipo_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.grd_tipo_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.grd_tipo_Ruta4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_tipo_Ruta4.Properties.DataSource = this.tipoingresoBindingSource;
+            this.grd_tipo_Ruta4.Properties.DisplayMember = "descripcion";
+            this.grd_tipo_Ruta4.Properties.PopupView = this.gridView29;
+            this.grd_tipo_Ruta4.Properties.ValueMember = "id";
+            this.grd_tipo_Ruta4.Size = new System.Drawing.Size(205, 22);
+            this.grd_tipo_Ruta4.TabIndex = 53;
+            // 
+            // tipoingresoBindingSource
+            // 
+            this.tipoingresoBindingSource.DataMember = "tipoingreso";
+            this.tipoingresoBindingSource.DataSource = this.dsMantenimientoCBindingSource;
+            // 
+            // gridView29
+            // 
+            this.gridView29.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView29.Appearance.Empty.Options.UseFont = true;
+            this.gridView29.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView29.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridView29.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView29.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView29.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView29.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView29.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView29.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView29.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView29.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView29.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView29.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView29.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView29.Appearance.Preview.Options.UseFont = true;
+            this.gridView29.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView29.Appearance.Row.Options.UseFont = true;
+            this.gridView29.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView29.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView29.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn140,
+            this.gridColumn141});
+            this.gridView29.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView29.Name = "gridView29";
+            this.gridView29.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView29.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn140
+            // 
+            this.gridColumn140.FieldName = "id";
+            this.gridColumn140.Name = "gridColumn140";
+            // 
+            // gridColumn141
+            // 
+            this.gridColumn141.Caption = "Tipo";
+            this.gridColumn141.FieldName = "descripcion";
+            this.gridColumn141.Name = "gridColumn141";
+            this.gridColumn141.Visible = true;
+            this.gridColumn141.VisibleIndex = 0;
+            // 
+            // grd_origen_Ruta4
+            // 
+            this.grd_origen_Ruta4.Location = new System.Drawing.Point(301, 150);
+            this.grd_origen_Ruta4.Name = "grd_origen_Ruta4";
+            this.grd_origen_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.grd_origen_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.grd_origen_Ruta4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_origen_Ruta4.Properties.DataSource = this.paisesBindingSource;
+            this.grd_origen_Ruta4.Properties.DisplayMember = "descripcion";
+            this.grd_origen_Ruta4.Properties.PopupView = this.gridView30;
+            this.grd_origen_Ruta4.Properties.ValueMember = "id";
+            this.grd_origen_Ruta4.Size = new System.Drawing.Size(160, 22);
+            this.grd_origen_Ruta4.TabIndex = 52;
+            // 
+            // paisesBindingSource
+            // 
+            this.paisesBindingSource.DataMember = "paises";
+            this.paisesBindingSource.DataSource = this.dsMantenimientoCBindingSource;
+            // 
+            // gridView30
+            // 
+            this.gridView30.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView30.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridView30.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView30.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView30.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView30.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView30.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView30.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView30.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView30.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView30.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView30.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView30.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView30.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView30.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView30.Appearance.Preview.Options.UseFont = true;
+            this.gridView30.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView30.Appearance.Row.Options.UseFont = true;
+            this.gridView30.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView30.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView30.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn142,
+            this.gridColumn143});
+            this.gridView30.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView30.Name = "gridView30";
+            this.gridView30.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView30.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn142
+            // 
+            this.gridColumn142.FieldName = "id";
+            this.gridColumn142.Name = "gridColumn142";
+            // 
+            // gridColumn143
+            // 
+            this.gridColumn143.Caption = "Origen";
+            this.gridColumn143.FieldName = "descripcion";
+            this.gridColumn143.Name = "gridColumn143";
+            this.gridColumn143.Visible = true;
+            this.gridColumn143.VisibleIndex = 0;
+            // 
+            // grd_pesca_Ruta4
+            // 
+            this.grd_pesca_Ruta4.Location = new System.Drawing.Point(301, 50);
+            this.grd_pesca_Ruta4.Name = "grd_pesca_Ruta4";
+            this.grd_pesca_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.grd_pesca_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.grd_pesca_Ruta4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_pesca_Ruta4.Properties.DataSource = this.zonaPescaBindingSource;
+            this.grd_pesca_Ruta4.Properties.DisplayMember = "descripcion";
+            this.grd_pesca_Ruta4.Properties.PopupView = this.gridView31;
+            this.grd_pesca_Ruta4.Properties.ValueMember = "id";
+            this.grd_pesca_Ruta4.Size = new System.Drawing.Size(160, 22);
+            this.grd_pesca_Ruta4.TabIndex = 51;
+            // 
+            // zonaPescaBindingSource
+            // 
+            this.zonaPescaBindingSource.DataMember = "zonaPesca";
+            this.zonaPescaBindingSource.DataSource = this.dsMantenimientoCBindingSource;
+            // 
+            // gridView31
+            // 
+            this.gridView31.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView31.Appearance.Empty.Options.UseFont = true;
+            this.gridView31.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView31.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridView31.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView31.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView31.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView31.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView31.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView31.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView31.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView31.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView31.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView31.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView31.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView31.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView31.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView31.Appearance.Preview.Options.UseFont = true;
+            this.gridView31.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView31.Appearance.Row.Options.UseFont = true;
+            this.gridView31.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView31.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView31.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn144,
+            this.gridColumn145});
+            this.gridView31.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView31.Name = "gridView31";
+            this.gridView31.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView31.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn144
+            // 
+            this.gridColumn144.FieldName = "id";
+            this.gridColumn144.Name = "gridColumn144";
+            // 
+            // gridColumn145
+            // 
+            this.gridColumn145.Caption = "Zona";
+            this.gridColumn145.FieldName = "descripcion";
+            this.gridColumn145.Name = "gridColumn145";
+            this.gridColumn145.OptionsColumn.AllowEdit = false;
+            this.gridColumn145.Visible = true;
+            this.gridColumn145.VisibleIndex = 0;
+            // 
+            // grd_origenespecie_Ruta4
+            // 
+            this.grd_origenespecie_Ruta4.Location = new System.Drawing.Point(301, 22);
+            this.grd_origenespecie_Ruta4.Name = "grd_origenespecie_Ruta4";
+            this.grd_origenespecie_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grd_origenespecie_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.grd_origenespecie_Ruta4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.grd_origenespecie_Ruta4.Properties.DataSource = this.origenespecieBindingSource;
+            this.grd_origenespecie_Ruta4.Properties.DisplayMember = "nombre";
+            this.grd_origenespecie_Ruta4.Properties.PopupView = this.gridView32;
+            this.grd_origenespecie_Ruta4.Properties.ValueMember = "id";
+            this.grd_origenespecie_Ruta4.Size = new System.Drawing.Size(160, 24);
+            this.grd_origenespecie_Ruta4.TabIndex = 50;
+            // 
+            // origenespecieBindingSource
+            // 
+            this.origenespecieBindingSource.DataMember = "origen_especie";
+            this.origenespecieBindingSource.DataSource = this.dsMantenimientoCBindingSource;
+            // 
+            // gridView32
+            // 
+            this.gridView32.Appearance.Empty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView32.Appearance.Empty.Options.UseFont = true;
+            this.gridView32.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView32.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridView32.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView32.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView32.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView32.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView32.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView32.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView32.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView32.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView32.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView32.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView32.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView32.Appearance.Preview.Options.UseFont = true;
+            this.gridView32.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView32.Appearance.Row.Options.UseFont = true;
+            this.gridView32.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gridView32.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView32.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn146,
+            this.gridColumn147,
+            this.gridColumn148,
+            this.gridColumn149});
+            this.gridView32.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView32.Name = "gridView32";
+            this.gridView32.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView32.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn146
+            // 
+            this.gridColumn146.FieldName = "id";
+            this.gridColumn146.Name = "gridColumn146";
+            // 
+            // gridColumn147
+            // 
+            this.gridColumn147.Caption = "Especie";
+            this.gridColumn147.FieldName = "nombre";
+            this.gridColumn147.Name = "gridColumn147";
+            this.gridColumn147.Visible = true;
+            this.gridColumn147.VisibleIndex = 0;
+            // 
+            // gridColumn148
+            // 
+            this.gridColumn148.FieldName = "iucn";
+            this.gridColumn148.Name = "gridColumn148";
+            // 
+            // gridColumn149
+            // 
+            this.gridColumn149.FieldName = "fishsource";
+            this.gridColumn149.Name = "gridColumn149";
+            // 
+            // labelControl104
+            // 
+            this.labelControl104.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl104.Appearance.Options.UseFont = true;
+            this.labelControl104.Location = new System.Drawing.Point(202, 208);
+            this.labelControl104.Name = "labelControl104";
+            this.labelControl104.Size = new System.Drawing.Size(81, 15);
+            this.labelControl104.TabIndex = 49;
+            this.labelControl104.Text = "Lista roja IUCN:";
+            // 
+            // labelControl105
+            // 
+            this.labelControl105.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl105.Appearance.Options.UseFont = true;
+            this.labelControl105.Location = new System.Drawing.Point(174, 182);
+            this.labelControl105.Name = "labelControl105";
+            this.labelControl105.Size = new System.Drawing.Size(109, 15);
+            this.labelControl105.TabIndex = 48;
+            this.labelControl105.Text = "Fishsource indicator:";
+            // 
+            // labelControl106
+            // 
+            this.labelControl106.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl106.Appearance.Options.UseFont = true;
+            this.labelControl106.Location = new System.Drawing.Point(469, 35);
+            this.labelControl106.Name = "labelControl106";
+            this.labelControl106.Size = new System.Drawing.Size(38, 13);
+            this.labelControl106.TabIndex = 47;
+            this.labelControl106.Text = "% Tipo:";
+            // 
+            // labelControl107
+            // 
+            this.labelControl107.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl107.Appearance.Options.UseFont = true;
+            this.labelControl107.Location = new System.Drawing.Point(481, 7);
+            this.labelControl107.Name = "labelControl107";
+            this.labelControl107.Size = new System.Drawing.Size(26, 13);
+            this.labelControl107.TabIndex = 46;
+            this.labelControl107.Text = "Tipo:";
+            // 
+            // labelControl108
+            // 
+            this.labelControl108.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl108.Appearance.Options.UseFont = true;
+            this.labelControl108.Location = new System.Drawing.Point(192, 151);
+            this.labelControl108.Name = "labelControl108";
+            this.labelControl108.Size = new System.Drawing.Size(89, 17);
+            this.labelControl108.TabIndex = 45;
+            this.labelControl108.Text = "Pais de Origen:";
+            // 
+            // labelControl109
+            // 
+            this.labelControl109.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl109.Appearance.Options.UseFont = true;
+            this.labelControl109.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl109.Location = new System.Drawing.Point(68, 121);
+            this.labelControl109.Name = "labelControl109";
+            this.labelControl109.Size = new System.Drawing.Size(227, 20);
+            this.labelControl109.TabIndex = 44;
+            this.labelControl109.Text = "% obtenido de fuentes sustentables:";
+            // 
+            // labelControl110
+            // 
+            this.labelControl110.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl110.Appearance.Options.UseFont = true;
+            this.labelControl110.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl110.Location = new System.Drawing.Point(14, 81);
+            this.labelControl110.Name = "labelControl110";
+            this.labelControl110.Size = new System.Drawing.Size(289, 34);
+            this.labelControl110.TabIndex = 43;
+            this.labelControl110.Text = "Planta autorizada por SENASA para importar:";
+            // 
+            // labelControl111
+            // 
+            this.labelControl111.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl111.Appearance.Options.UseFont = true;
+            this.labelControl111.Location = new System.Drawing.Point(164, 51);
+            this.labelControl111.Name = "labelControl111";
+            this.labelControl111.Size = new System.Drawing.Size(116, 17);
+            this.labelControl111.TabIndex = 42;
+            this.labelControl111.Text = "Zona de Pesca FAO:";
+            // 
+            // labelControl112
+            // 
+            this.labelControl112.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl112.Appearance.Options.UseFont = true;
+            this.labelControl112.Location = new System.Drawing.Point(189, 25);
+            this.labelControl112.Name = "labelControl112";
+            this.labelControl112.Size = new System.Drawing.Size(91, 17);
+            this.labelControl112.TabIndex = 41;
+            this.labelControl112.Text = "Origen especie:";
+            // 
+            // spTipoporcentaje_Ruta4
+            // 
+            this.spTipoporcentaje_Ruta4.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spTipoporcentaje_Ruta4.Location = new System.Drawing.Point(510, 31);
+            this.spTipoporcentaje_Ruta4.Name = "spTipoporcentaje_Ruta4";
+            this.spTipoporcentaje_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.spTipoporcentaje_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.spTipoporcentaje_Ruta4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spTipoporcentaje_Ruta4.Size = new System.Drawing.Size(205, 22);
+            this.spTipoporcentaje_Ruta4.TabIndex = 65;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.panelControl15);
+            this.tabPage7.Location = new System.Drawing.Point(4, 30);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1359, 502);
+            this.tabPage7.TabIndex = 3;
+            this.tabPage7.Text = "Logistica";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // panelControl15
+            // 
+            this.panelControl15.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelControl15.Appearance.Options.UseBackColor = true;
+            this.panelControl15.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl15.Controls.Add(this.panelControl16);
+            this.panelControl15.Controls.Add(this.panelControl17);
+            this.panelControl15.Controls.Add(this.panelControl18);
+            this.panelControl15.Controls.Add(this.panelControl19);
+            this.panelControl15.Controls.Add(this.panelControl20);
+            this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl15.Location = new System.Drawing.Point(3, 3);
+            this.panelControl15.Name = "panelControl15";
+            this.panelControl15.Size = new System.Drawing.Size(1353, 496);
+            this.panelControl15.TabIndex = 51;
+            // 
+            // panelControl16
+            // 
+            this.panelControl16.Controls.Add(this.labelControl113);
+            this.panelControl16.Controls.Add(this.rdEmpaque4_Ruta4);
+            this.panelControl16.Controls.Add(this.labelControl114);
+            this.panelControl16.Controls.Add(this.rdEmpaque3_Ruta4);
+            this.panelControl16.Controls.Add(this.rdEmpaque1_Ruta4);
+            this.panelControl16.Controls.Add(this.gridControl16);
+            this.panelControl16.Controls.Add(this.rdEmpaque2_Ruta4);
+            this.panelControl16.Controls.Add(this.labelControl115);
+            this.panelControl16.Controls.Add(this.labelControl116);
+            this.panelControl16.Controls.Add(this.labelControl117);
+            this.panelControl16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl16.Location = new System.Drawing.Point(11, 11);
+            this.panelControl16.Name = "panelControl16";
+            this.panelControl16.Size = new System.Drawing.Size(1331, 475);
+            this.panelControl16.TabIndex = 64;
+            // 
+            // labelControl113
+            // 
+            this.labelControl113.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl113.Appearance.Options.UseFont = true;
+            this.labelControl113.Location = new System.Drawing.Point(664, 6);
+            this.labelControl113.Name = "labelControl113";
+            this.labelControl113.Size = new System.Drawing.Size(252, 19);
+            this.labelControl113.TabIndex = 49;
+            this.labelControl113.Text = "INSPECCION DEL EMPAQUE/ETIQUETA:";
+            // 
+            // rdEmpaque4_Ruta4
+            // 
+            this.rdEmpaque4_Ruta4.EditValue = true;
+            this.rdEmpaque4_Ruta4.Location = new System.Drawing.Point(1132, 137);
+            this.rdEmpaque4_Ruta4.Name = "rdEmpaque4_Ruta4";
+            this.rdEmpaque4_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.rdEmpaque4_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.rdEmpaque4_Ruta4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "SI"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
+            this.rdEmpaque4_Ruta4.Size = new System.Drawing.Size(154, 23);
+            this.rdEmpaque4_Ruta4.TabIndex = 63;
+            // 
+            // labelControl114
+            // 
+            this.labelControl114.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl114.Appearance.Options.UseFont = true;
+            this.labelControl114.Location = new System.Drawing.Point(712, 32);
+            this.labelControl114.Name = "labelControl114";
+            this.labelControl114.Size = new System.Drawing.Size(414, 15);
+            this.labelControl114.TabIndex = 50;
+            this.labelControl114.Text = "¿Esta Identificado el producto con fecha de producción y fecha de caducidad?.";
+            // 
+            // rdEmpaque3_Ruta4
+            // 
+            this.rdEmpaque3_Ruta4.EditValue = true;
+            this.rdEmpaque3_Ruta4.Location = new System.Drawing.Point(1132, 90);
+            this.rdEmpaque3_Ruta4.Name = "rdEmpaque3_Ruta4";
+            this.rdEmpaque3_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.rdEmpaque3_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.rdEmpaque3_Ruta4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "SI"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
+            this.rdEmpaque3_Ruta4.Size = new System.Drawing.Size(154, 23);
+            this.rdEmpaque3_Ruta4.TabIndex = 62;
+            // 
+            // rdEmpaque1_Ruta4
+            // 
+            this.rdEmpaque1_Ruta4.EditValue = true;
+            this.rdEmpaque1_Ruta4.Location = new System.Drawing.Point(1132, 28);
+            this.rdEmpaque1_Ruta4.Name = "rdEmpaque1_Ruta4";
+            this.rdEmpaque1_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.rdEmpaque1_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.rdEmpaque1_Ruta4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "SI"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
+            this.rdEmpaque1_Ruta4.Size = new System.Drawing.Size(154, 23);
+            this.rdEmpaque1_Ruta4.TabIndex = 51;
+            // 
+            // gridControl16
+            // 
+            this.gridControl16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gridControl16.DataMember = "logisticaInformacion";
+            this.gridControl16.DataSource = this.dsMantenimientoC;
+            gridLevelNode3.RelationName = "Level1";
+            this.gridControl16.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode3});
+            this.gridControl16.Location = new System.Drawing.Point(3, 6);
+            this.gridControl16.MainView = this.gridView33;
+            this.gridControl16.Name = "gridControl16";
+            this.gridControl16.Size = new System.Drawing.Size(633, 463);
+            this.gridControl16.TabIndex = 39;
+            this.gridControl16.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView33});
+            // 
+            // gridView33
+            // 
+            this.gridView33.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gridView33.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridView33.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gridView33.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView33.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gridView33.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView33.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gridView33.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView33.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gridView33.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView33.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.gridView33.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView33.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gridView33.Appearance.Preview.Options.UseFont = true;
+            this.gridView33.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gridView33.Appearance.Row.Options.UseFont = true;
+            this.gridView33.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gridView33.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView33.Appearance.ViewCaption.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.gridView33.Appearance.ViewCaption.Options.UseFont = true;
+            this.gridView33.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn150,
+            this.gridColumn151});
+            this.gridView33.GridControl = this.gridControl16;
+            this.gridView33.Name = "gridView33";
+            this.gridView33.OptionsView.ShowAutoFilterRow = true;
+            this.gridView33.OptionsView.ShowGroupPanel = false;
+            this.gridView33.OptionsView.ShowViewCaption = true;
+            this.gridView33.ViewCaption = "Logistica";
+            // 
+            // gridColumn150
+            // 
+            this.gridColumn150.Caption = "Informacion";
+            this.gridColumn150.FieldName = "resp";
+            this.gridColumn150.Name = "gridColumn150";
+            this.gridColumn150.OptionsColumn.AllowEdit = false;
+            this.gridColumn150.Visible = true;
+            this.gridColumn150.VisibleIndex = 1;
+            // 
+            // gridColumn151
+            // 
+            this.gridColumn151.Caption = "Criterio";
+            this.gridColumn151.FieldName = "Descripcion";
+            this.gridColumn151.Name = "gridColumn151";
+            this.gridColumn151.OptionsColumn.AllowEdit = false;
+            this.gridColumn151.Visible = true;
+            this.gridColumn151.VisibleIndex = 0;
+            // 
+            // rdEmpaque2_Ruta4
+            // 
+            this.rdEmpaque2_Ruta4.EditValue = true;
+            this.rdEmpaque2_Ruta4.Location = new System.Drawing.Point(1132, 58);
+            this.rdEmpaque2_Ruta4.Name = "rdEmpaque2_Ruta4";
+            this.rdEmpaque2_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.rdEmpaque2_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.rdEmpaque2_Ruta4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "SI"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
+            this.rdEmpaque2_Ruta4.Size = new System.Drawing.Size(154, 23);
+            this.rdEmpaque2_Ruta4.TabIndex = 52;
+            // 
+            // labelControl115
+            // 
+            this.labelControl115.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl115.Appearance.Options.UseFont = true;
+            this.labelControl115.Location = new System.Drawing.Point(712, 58);
+            this.labelControl115.Name = "labelControl115";
+            this.labelControl115.Size = new System.Drawing.Size(286, 30);
+            this.labelControl115.TabIndex = 52;
+            this.labelControl115.Text = "¿Se Encuentran empaques Rotos, Sucios o Manchados \r\nde sustancias contaminantes?";
+            // 
+            // labelControl116
+            // 
+            this.labelControl116.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl116.Appearance.Options.UseFont = true;
+            this.labelControl116.Location = new System.Drawing.Point(712, 94);
+            this.labelControl116.Name = "labelControl116";
+            this.labelControl116.Size = new System.Drawing.Size(353, 30);
+            this.labelControl116.TabIndex = 54;
+            this.labelControl116.Text = "¿Viene La carga separada y/o Identificada cuando trae varios LOTES \r\nde producció" +
+    "n?";
+            // 
+            // labelControl117
+            // 
+            this.labelControl117.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.labelControl117.Appearance.Options.UseFont = true;
+            this.labelControl117.Location = new System.Drawing.Point(712, 130);
+            this.labelControl117.Name = "labelControl117";
+            this.labelControl117.Size = new System.Drawing.Size(272, 30);
+            this.labelControl117.TabIndex = 56;
+            this.labelControl117.Text = " Etiqueta en empaque no enlista medicamentos y/o\r\n aditivos diferentes a los de l" +
+    "a ficha técnica?";
+            // 
+            // panelControl17
+            // 
+            this.panelControl17.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl17.Appearance.Options.UseBackColor = true;
+            this.panelControl17.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl17.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelControl17.Location = new System.Drawing.Point(1342, 11);
+            this.panelControl17.Name = "panelControl17";
+            this.panelControl17.Size = new System.Drawing.Size(11, 475);
+            this.panelControl17.TabIndex = 61;
+            // 
+            // panelControl18
+            // 
+            this.panelControl18.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl18.Appearance.Options.UseBackColor = true;
+            this.panelControl18.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl18.Location = new System.Drawing.Point(11, 486);
+            this.panelControl18.Name = "panelControl18";
+            this.panelControl18.Size = new System.Drawing.Size(1342, 10);
+            this.panelControl18.TabIndex = 60;
+            // 
+            // panelControl19
+            // 
+            this.panelControl19.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl19.Appearance.Options.UseBackColor = true;
+            this.panelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl19.Location = new System.Drawing.Point(0, 11);
+            this.panelControl19.Name = "panelControl19";
+            this.panelControl19.Size = new System.Drawing.Size(11, 485);
+            this.panelControl19.TabIndex = 59;
+            // 
+            // panelControl20
+            // 
+            this.panelControl20.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelControl20.Appearance.Options.UseBackColor = true;
+            this.panelControl20.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl20.Location = new System.Drawing.Point(0, 0);
+            this.panelControl20.Name = "panelControl20";
+            this.panelControl20.Size = new System.Drawing.Size(1353, 11);
+            this.panelControl20.TabIndex = 58;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.tabPage8.Controls.Add(this.panelControl26);
+            this.tabPage8.Location = new System.Drawing.Point(4, 30);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1359, 502);
+            this.tabPage8.TabIndex = 1;
+            this.tabPage8.Text = "Estado de Materia prima y transporte";
+            // 
+            // panelControl26
+            // 
+            this.panelControl26.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl26.Controls.Add(this.button2);
+            this.panelControl26.Controls.Add(this.txtObservacionesTrans_Ruta4);
+            this.panelControl26.Controls.Add(this.gcCarga_Ruta4);
+            this.panelControl26.Controls.Add(this.rdTransporte3_Ruta4);
+            this.panelControl26.Controls.Add(this.rdTransporte2_Ruta4);
+            this.panelControl26.Controls.Add(this.rdTransporte1_Ruta4);
+            this.panelControl26.Controls.Add(this.rdEstadomp_Ruta4);
+            this.panelControl26.Controls.Add(this.labelControl118);
+            this.panelControl26.Controls.Add(this.rdTransporte4_Ruta4);
+            this.panelControl26.Controls.Add(this.labelControl119);
+            this.panelControl26.Controls.Add(this.labelControl120);
+            this.panelControl26.Controls.Add(this.txtDireccion_Ruta4);
+            this.panelControl26.Controls.Add(this.labelControl121);
+            this.panelControl26.Controls.Add(this.labelControl122);
+            this.panelControl26.Controls.Add(this.labelControl123);
+            this.panelControl26.Controls.Add(this.labelControl124);
+            this.panelControl26.Controls.Add(this.labelControl125);
+            this.panelControl26.Controls.Add(this.txttransporte_Ruta4);
+            this.panelControl26.Controls.Add(this.labelControl126);
+            this.panelControl26.Controls.Add(this.textEdit11);
+            this.panelControl26.Controls.Add(this.labelControl127);
+            this.panelControl26.Controls.Add(this.labelControl128);
+            this.panelControl26.Controls.Add(this.labelControl129);
+            this.panelControl26.Controls.Add(this.textEdit12);
+            this.panelControl26.Controls.Add(this.txtTelefono_Ruta4);
+            this.panelControl26.Controls.Add(this.memoEdit2);
+            this.panelControl26.Controls.Add(this.textEdit14);
+            this.panelControl26.Controls.Add(this.labelControl130);
+            this.panelControl26.Controls.Add(this.labelControl131);
+            this.panelControl26.Controls.Add(this.labelControl132);
+            this.panelControl26.Controls.Add(this.radioGroup11);
+            this.panelControl26.Controls.Add(this.txttransportista_Ruta4);
+            this.panelControl26.Controls.Add(this.labelControl133);
+            this.panelControl26.Controls.Add(this.txtuserlogistica_Ruta4);
+            this.panelControl26.Controls.Add(this.textEdit17);
+            this.panelControl26.Controls.Add(this.labelControl134);
+            this.panelControl26.Controls.Add(this.simpleButton18);
+            this.panelControl26.Controls.Add(this.labelControl135);
+            this.panelControl26.Controls.Add(this.labelControl136);
+            this.panelControl26.Controls.Add(this.txtusercalidad_Ruta4);
+            this.panelControl26.Location = new System.Drawing.Point(3, 0);
+            this.panelControl26.Name = "panelControl26";
+            this.panelControl26.Size = new System.Drawing.Size(1348, 499);
+            this.panelControl26.TabIndex = 84;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(1152, 327);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(53, 32);
+            this.button2.TabIndex = 54;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // txtObservacionesTrans_Ruta4
+            // 
+            this.txtObservacionesTrans_Ruta4.EditValue = "";
+            this.txtObservacionesTrans_Ruta4.Location = new System.Drawing.Point(8, 399);
+            this.txtObservacionesTrans_Ruta4.Name = "txtObservacionesTrans_Ruta4";
+            this.txtObservacionesTrans_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservacionesTrans_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.txtObservacionesTrans_Ruta4.Size = new System.Drawing.Size(721, 56);
+            this.txtObservacionesTrans_Ruta4.TabIndex = 83;
+            // 
+            // gcCarga_Ruta4
+            // 
+            this.gcCarga_Ruta4.DataMember = "ultimas_cargas";
+            this.gcCarga_Ruta4.DataSource = this.dsTarimaBindingSource1;
+            this.gcCarga_Ruta4.Location = new System.Drawing.Point(796, 326);
+            this.gcCarga_Ruta4.MainView = this.gvCarga_Ruta4;
+            this.gcCarga_Ruta4.Name = "gcCarga_Ruta4";
+            this.gcCarga_Ruta4.Size = new System.Drawing.Size(350, 141);
+            this.gcCarga_Ruta4.TabIndex = 88;
+            this.gcCarga_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvCarga_Ruta4});
+            // 
+            // dsTarimaBindingSource1
+            // 
+            this.dsTarimaBindingSource1.DataSource = this.dsTarima;
+            this.dsTarimaBindingSource1.Position = 0;
+            // 
+            // gvCarga_Ruta4
+            // 
+            this.gvCarga_Ruta4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn152});
+            this.gvCarga_Ruta4.GridControl = this.gcCarga_Ruta4;
+            this.gvCarga_Ruta4.Name = "gvCarga_Ruta4";
+            this.gvCarga_Ruta4.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn152
+            // 
+            this.gridColumn152.Caption = "Descripción";
+            this.gridColumn152.FieldName = "descripcion";
+            this.gridColumn152.Name = "gridColumn152";
+            this.gridColumn152.OptionsColumn.AllowEdit = false;
+            this.gridColumn152.Visible = true;
+            this.gridColumn152.VisibleIndex = 0;
+            // 
+            // rdTransporte3_Ruta4
+            // 
+            this.rdTransporte3_Ruta4.EditValue = true;
+            this.rdTransporte3_Ruta4.Location = new System.Drawing.Point(575, 283);
+            this.rdTransporte3_Ruta4.Name = "rdTransporte3_Ruta4";
+            this.rdTransporte3_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdTransporte3_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.rdTransporte3_Ruta4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "SI"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
+            this.rdTransporte3_Ruta4.Size = new System.Drawing.Size(154, 22);
+            this.rdTransporte3_Ruta4.TabIndex = 87;
+            // 
+            // rdTransporte2_Ruta4
+            // 
+            this.rdTransporte2_Ruta4.EditValue = true;
+            this.rdTransporte2_Ruta4.Location = new System.Drawing.Point(575, 262);
+            this.rdTransporte2_Ruta4.Name = "rdTransporte2_Ruta4";
+            this.rdTransporte2_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdTransporte2_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.rdTransporte2_Ruta4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "SI"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
+            this.rdTransporte2_Ruta4.Size = new System.Drawing.Size(154, 22);
+            this.rdTransporte2_Ruta4.TabIndex = 86;
+            // 
+            // rdTransporte1_Ruta4
+            // 
+            this.rdTransporte1_Ruta4.EditValue = true;
+            this.rdTransporte1_Ruta4.Location = new System.Drawing.Point(575, 241);
+            this.rdTransporte1_Ruta4.Name = "rdTransporte1_Ruta4";
+            this.rdTransporte1_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdTransporte1_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.rdTransporte1_Ruta4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "SI"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "NO")});
+            this.rdTransporte1_Ruta4.Size = new System.Drawing.Size(154, 22);
+            this.rdTransporte1_Ruta4.TabIndex = 85;
+            // 
+            // rdEstadomp_Ruta4
+            // 
+            this.rdEstadomp_Ruta4.EditValue = true;
+            this.rdEstadomp_Ruta4.Location = new System.Drawing.Point(5, 23);
+            this.rdEstadomp_Ruta4.Name = "rdEstadomp_Ruta4";
+            this.rdEstadomp_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdEstadomp_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.rdEstadomp_Ruta4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Aceptado"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Rechazado")});
+            this.rdEstadomp_Ruta4.Size = new System.Drawing.Size(178, 27);
+            this.rdEstadomp_Ruta4.TabIndex = 84;
+            // 
+            // labelControl118
+            // 
+            this.labelControl118.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl118.Appearance.Options.UseFont = true;
+            this.labelControl118.Location = new System.Drawing.Point(5, 5);
+            this.labelControl118.Name = "labelControl118";
+            this.labelControl118.Size = new System.Drawing.Size(178, 17);
+            this.labelControl118.TabIndex = 10;
+            this.labelControl118.Text = "ESTADO DE MATERIA PRIMA";
+            // 
+            // rdTransporte4_Ruta4
+            // 
+            this.rdTransporte4_Ruta4.EditValue = true;
+            this.rdTransporte4_Ruta4.Location = new System.Drawing.Point(827, 249);
+            this.rdTransporte4_Ruta4.Name = "rdTransporte4_Ruta4";
+            this.rdTransporte4_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdTransporte4_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.rdTransporte4_Ruta4.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "ACEPTADO"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "RECHAZADO")});
+            this.rdTransporte4_Ruta4.Size = new System.Drawing.Size(261, 22);
+            this.rdTransporte4_Ruta4.TabIndex = 82;
+            // 
+            // labelControl119
+            // 
+            this.labelControl119.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl119.Appearance.Options.UseFont = true;
+            this.labelControl119.Location = new System.Drawing.Point(3, 225);
+            this.labelControl119.Name = "labelControl119";
+            this.labelControl119.Size = new System.Drawing.Size(227, 21);
+            this.labelControl119.TabIndex = 29;
+            this.labelControl119.Text = "INSPECCIÓN DE TRANSPORTE";
+            // 
+            // labelControl120
+            // 
+            this.labelControl120.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl120.Appearance.Options.UseFont = true;
+            this.labelControl120.Location = new System.Drawing.Point(8, 246);
+            this.labelControl120.Name = "labelControl120";
+            this.labelControl120.Size = new System.Drawing.Size(554, 17);
+            this.labelControl120.TabIndex = 30;
+            this.labelControl120.Text = "1- ¿El Cajón o contenedor presenta grietas o clavos salientes que puedan dañar el" +
+    " producto?. ";
+            // 
+            // txtDireccion_Ruta4
+            // 
+            this.txtDireccion_Ruta4.Enabled = false;
+            this.txtDireccion_Ruta4.Location = new System.Drawing.Point(493, 199);
+            this.txtDireccion_Ruta4.Name = "txtDireccion_Ruta4";
+            this.txtDireccion_Ruta4.Size = new System.Drawing.Size(212, 20);
+            this.txtDireccion_Ruta4.TabIndex = 74;
+            // 
+            // labelControl121
+            // 
+            this.labelControl121.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl121.Appearance.Options.UseFont = true;
+            this.labelControl121.Location = new System.Drawing.Point(8, 313);
+            this.labelControl121.Name = "labelControl121";
+            this.labelControl121.Size = new System.Drawing.Size(427, 85);
+            this.labelControl121.TabIndex = 81;
+            this.labelControl121.Text = resources.GetString("labelControl121.Text");
+            // 
+            // labelControl122
+            // 
+            this.labelControl122.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl122.Appearance.Options.UseFont = true;
+            this.labelControl122.Location = new System.Drawing.Point(416, 199);
+            this.labelControl122.Name = "labelControl122";
+            this.labelControl122.Size = new System.Drawing.Size(57, 17);
+            this.labelControl122.TabIndex = 73;
+            this.labelControl122.Text = "Dirección:";
+            // 
+            // labelControl123
+            // 
+            this.labelControl123.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl123.Appearance.Options.UseFont = true;
+            this.labelControl123.Location = new System.Drawing.Point(10, 267);
+            this.labelControl123.Name = "labelControl123";
+            this.labelControl123.Size = new System.Drawing.Size(535, 17);
+            this.labelControl123.TabIndex = 44;
+            this.labelControl123.Text = "2.- ¿Carpa/Lona o cubierta del Camión, se encuentran en buen estado, sin fisuras " +
+    "y limpias?";
+            // 
+            // labelControl124
+            // 
+            this.labelControl124.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl124.Appearance.Options.UseFont = true;
+            this.labelControl124.Location = new System.Drawing.Point(404, 5);
+            this.labelControl124.Name = "labelControl124";
+            this.labelControl124.Size = new System.Drawing.Size(284, 17);
+            this.labelControl124.TabIndex = 25;
+            this.labelControl124.Text = "            **TODOS LOS DATOS DEBEN CUMPLIR**";
+            // 
+            // labelControl125
+            // 
+            this.labelControl125.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl125.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.labelControl125.Appearance.Options.UseFont = true;
+            this.labelControl125.Location = new System.Drawing.Point(771, 303);
+            this.labelControl125.Name = "labelControl125";
+            this.labelControl125.Size = new System.Drawing.Size(326, 17);
+            this.labelControl125.TabIndex = 80;
+            this.labelControl125.Text = "4- ¿Las tres cargas anteriores de Materia Prima fueron?";
+            // 
+            // txttransporte_Ruta4
+            // 
+            this.txttransporte_Ruta4.Enabled = false;
+            this.txttransporte_Ruta4.Location = new System.Drawing.Point(147, 199);
+            this.txttransporte_Ruta4.Name = "txttransporte_Ruta4";
+            this.txttransporte_Ruta4.Size = new System.Drawing.Size(212, 20);
+            this.txttransporte_Ruta4.TabIndex = 72;
+            // 
+            // labelControl126
+            // 
+            this.labelControl126.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl126.Appearance.Options.UseFont = true;
+            this.labelControl126.Location = new System.Drawing.Point(392, 28);
+            this.labelControl126.Name = "labelControl126";
+            this.labelControl126.Size = new System.Drawing.Size(337, 34);
+            this.labelControl126.TabIndex = 26;
+            this.labelControl126.Text = "  **REGISTRAR CAUSAS DE ACEPTADO CON CONDICIÓN, \r\nADJUNTAR EVIDENCIA DE LAS ACCIO" +
+    "NES CORRECTIVAS**";
+            // 
+            // textEdit11
+            // 
+            this.textEdit11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.textEdit11.Location = new System.Drawing.Point(829, 383);
+            this.textEdit11.Name = "textEdit11";
+            this.textEdit11.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textEdit11.Properties.Appearance.Options.UseFont = true;
+            this.textEdit11.Size = new System.Drawing.Size(294, 22);
+            this.textEdit11.TabIndex = 79;
+            this.textEdit11.Visible = false;
+            // 
+            // labelControl127
+            // 
+            this.labelControl127.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl127.Appearance.Options.UseFont = true;
+            this.labelControl127.Location = new System.Drawing.Point(74, 199);
+            this.labelControl127.Name = "labelControl127";
+            this.labelControl127.Size = new System.Drawing.Size(67, 17);
+            this.labelControl127.TabIndex = 71;
+            this.labelControl127.Text = "Transporte:";
+            // 
+            // labelControl128
+            // 
+            this.labelControl128.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl128.Appearance.Options.UseFont = true;
+            this.labelControl128.Location = new System.Drawing.Point(10, 288);
+            this.labelControl128.Name = "labelControl128";
+            this.labelControl128.Size = new System.Drawing.Size(492, 17);
+            this.labelControl128.TabIndex = 46;
+            this.labelControl128.Text = "3.- ¿El transporte presenta algún tipo de contaminantes físico, químico o biológi" +
+    "co?.";
+            // 
+            // labelControl129
+            // 
+            this.labelControl129.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl129.Appearance.Options.UseFont = true;
+            this.labelControl129.Location = new System.Drawing.Point(5, 68);
+            this.labelControl129.Name = "labelControl129";
+            this.labelControl129.Size = new System.Drawing.Size(89, 17);
+            this.labelControl129.TabIndex = 27;
+            this.labelControl129.Text = "Observaciones:";
+            // 
+            // textEdit12
+            // 
+            this.textEdit12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.textEdit12.Location = new System.Drawing.Point(829, 354);
+            this.textEdit12.Name = "textEdit12";
+            this.textEdit12.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textEdit12.Properties.Appearance.Options.UseFont = true;
+            this.textEdit12.Size = new System.Drawing.Size(294, 22);
+            this.textEdit12.TabIndex = 78;
+            this.textEdit12.Visible = false;
+            // 
+            // txtTelefono_Ruta4
+            // 
+            this.txtTelefono_Ruta4.Enabled = false;
+            this.txtTelefono_Ruta4.Location = new System.Drawing.Point(493, 177);
+            this.txtTelefono_Ruta4.Name = "txtTelefono_Ruta4";
+            this.txtTelefono_Ruta4.Size = new System.Drawing.Size(212, 20);
+            this.txtTelefono_Ruta4.TabIndex = 70;
+            // 
+            // memoEdit2
+            // 
+            this.memoEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.memoEdit2.Location = new System.Drawing.Point(0, 85);
+            this.memoEdit2.Name = "memoEdit2";
+            this.memoEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.memoEdit2.Properties.Appearance.Options.UseFont = true;
+            this.memoEdit2.Size = new System.Drawing.Size(1331, 65);
+            this.memoEdit2.TabIndex = 28;
+            // 
+            // textEdit14
+            // 
+            this.textEdit14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.textEdit14.Location = new System.Drawing.Point(828, 326);
+            this.textEdit14.Name = "textEdit14";
+            this.textEdit14.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit14.Properties.Appearance.Options.UseFont = true;
+            this.textEdit14.Size = new System.Drawing.Size(294, 22);
+            this.textEdit14.TabIndex = 77;
+            this.textEdit14.Visible = false;
+            // 
+            // labelControl130
+            // 
+            this.labelControl130.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl130.Appearance.Options.UseFont = true;
+            this.labelControl130.Location = new System.Drawing.Point(416, 177);
+            this.labelControl130.Name = "labelControl130";
+            this.labelControl130.Size = new System.Drawing.Size(62, 17);
+            this.labelControl130.TabIndex = 69;
+            this.labelControl130.Text = "#Teléfono:";
+            // 
+            // labelControl131
+            // 
+            this.labelControl131.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl131.Appearance.Options.UseFont = true;
+            this.labelControl131.Location = new System.Drawing.Point(849, 228);
+            this.labelControl131.Name = "labelControl131";
+            this.labelControl131.Size = new System.Drawing.Size(201, 21);
+            this.labelControl131.TabIndex = 75;
+            this.labelControl131.Text = "ESTADO DEL TRANSPORTE";
+            // 
+            // labelControl132
+            // 
+            this.labelControl132.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl132.Appearance.Options.UseFont = true;
+            this.labelControl132.Location = new System.Drawing.Point(8, 155);
+            this.labelControl132.Name = "labelControl132";
+            this.labelControl132.Size = new System.Drawing.Size(133, 17);
+            this.labelControl132.TabIndex = 48;
+            this.labelControl132.Text = "Recibido Por Logística:";
+            // 
+            // radioGroup11
+            // 
+            this.radioGroup11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.radioGroup11.Location = new System.Drawing.Point(937, 516);
+            this.radioGroup11.Name = "radioGroup11";
+            this.radioGroup11.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "ACEPTADO"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "RECHAZADO")});
+            this.radioGroup11.Size = new System.Drawing.Size(274, 24);
+            this.radioGroup11.TabIndex = 76;
+            // 
+            // txttransportista_Ruta4
+            // 
+            this.txttransportista_Ruta4.Enabled = false;
+            this.txttransportista_Ruta4.Location = new System.Drawing.Point(147, 177);
+            this.txttransportista_Ruta4.Name = "txttransportista_Ruta4";
+            this.txttransportista_Ruta4.Size = new System.Drawing.Size(212, 20);
+            this.txttransportista_Ruta4.TabIndex = 68;
+            // 
+            // labelControl133
+            // 
+            this.labelControl133.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl133.Appearance.Options.UseFont = true;
+            this.labelControl133.Location = new System.Drawing.Point(765, 14);
+            this.labelControl133.Name = "labelControl133";
+            this.labelControl133.Size = new System.Drawing.Size(100, 17);
+            this.labelControl133.TabIndex = 63;
+            this.labelControl133.Text = "No conformidad:";
+            // 
+            // txtuserlogistica_Ruta4
+            // 
+            this.txtuserlogistica_Ruta4.Enabled = false;
+            this.txtuserlogistica_Ruta4.Location = new System.Drawing.Point(147, 155);
+            this.txtuserlogistica_Ruta4.Name = "txtuserlogistica_Ruta4";
+            this.txtuserlogistica_Ruta4.Size = new System.Drawing.Size(212, 20);
+            this.txtuserlogistica_Ruta4.TabIndex = 58;
+            // 
+            // textEdit17
+            // 
+            this.textEdit17.Enabled = false;
+            this.textEdit17.Location = new System.Drawing.Point(922, 199);
+            this.textEdit17.Name = "textEdit17";
+            this.textEdit17.Size = new System.Drawing.Size(212, 20);
+            this.textEdit17.TabIndex = 62;
+            // 
+            // labelControl134
+            // 
+            this.labelControl134.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl134.Appearance.Options.UseFont = true;
+            this.labelControl134.Location = new System.Drawing.Point(61, 177);
+            this.labelControl134.Name = "labelControl134";
+            this.labelControl134.Size = new System.Drawing.Size(80, 17);
+            this.labelControl134.TabIndex = 67;
+            this.labelControl134.Text = "Transportista:";
+            // 
+            // simpleButton18
+            // 
+            this.simpleButton18.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.simpleButton18.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton18.Appearance.Options.UseBackColor = true;
+            this.simpleButton18.Appearance.Options.UseFont = true;
+            this.simpleButton18.Location = new System.Drawing.Point(873, 3);
+            this.simpleButton18.Name = "simpleButton18";
+            this.simpleButton18.Size = new System.Drawing.Size(136, 39);
+            this.simpleButton18.TabIndex = 64;
+            this.simpleButton18.Text = "Ver pantalla";
+            // 
+            // labelControl135
+            // 
+            this.labelControl135.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl135.Appearance.Options.UseFont = true;
+            this.labelControl135.Location = new System.Drawing.Point(416, 155);
+            this.labelControl135.Name = "labelControl135";
+            this.labelControl135.Size = new System.Drawing.Size(71, 17);
+            this.labelControl135.TabIndex = 59;
+            this.labelControl135.Text = "Por Calidad:";
+            // 
+            // labelControl136
+            // 
+            this.labelControl136.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl136.Appearance.Options.UseFont = true;
+            this.labelControl136.Location = new System.Drawing.Point(771, 199);
+            this.labelControl136.Name = "labelControl136";
+            this.labelControl136.Size = new System.Drawing.Size(145, 17);
+            this.labelControl136.TabIndex = 61;
+            this.labelControl136.Text = "Coordinador de Calidad:";
+            // 
+            // txtusercalidad_Ruta4
+            // 
+            this.txtusercalidad_Ruta4.Enabled = false;
+            this.txtusercalidad_Ruta4.Location = new System.Drawing.Point(493, 155);
+            this.txtusercalidad_Ruta4.Name = "txtusercalidad_Ruta4";
+            this.txtusercalidad_Ruta4.Size = new System.Drawing.Size(212, 20);
+            this.txtusercalidad_Ruta4.TabIndex = 60;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.labelControl137);
+            this.tabPage9.Controls.Add(this.gridControl18);
+            this.tabPage9.Controls.Add(this.labelControl138);
+            this.tabPage9.Controls.Add(this.gcLotePT_Ruta4);
+            this.tabPage9.Location = new System.Drawing.Point(4, 30);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(1359, 502);
+            this.tabPage9.TabIndex = 4;
+            this.tabPage9.Text = "Lotes PT";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // labelControl137
+            // 
+            this.labelControl137.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl137.Appearance.Options.UseFont = true;
+            this.labelControl137.Location = new System.Drawing.Point(367, 22);
+            this.labelControl137.Name = "labelControl137";
+            this.labelControl137.Size = new System.Drawing.Size(245, 21);
+            this.labelControl137.TabIndex = 47;
+            this.labelControl137.Text = "Clientes que recibieron el Lote PT";
+            // 
+            // gridControl18
+            // 
+            this.gridControl18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl18.DataSource = this.detalledestinosBindingSource1;
+            this.gridControl18.Location = new System.Drawing.Point(367, 49);
+            this.gridControl18.MainView = this.gridView35;
+            this.gridControl18.Name = "gridControl18";
+            this.gridControl18.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmdBoleta_Ruta4,
+            this.cmdDespachoId_Ruta4});
+            this.gridControl18.Size = new System.Drawing.Size(989, 450);
+            this.gridControl18.TabIndex = 46;
+            this.gridControl18.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView35});
+            // 
+            // detalledestinosBindingSource1
+            // 
+            this.detalledestinosBindingSource1.DataMember = "detalle_destinos";
+            this.detalledestinosBindingSource1.DataSource = this.dsReportesTRZBindingSource;
+            // 
+            // gridView35
+            // 
+            this.gridView35.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn153,
+            this.gridColumn154,
+            this.gridColumn155,
+            this.gridColumn156,
+            this.gridColumn157,
+            this.gridColumn158,
+            this.gridColumn159,
+            this.gridColumn160,
+            this.gridColumn161,
+            this.gridColumn162,
+            this.gridColumn163,
+            this.gridColumn164,
+            this.gridColumn165,
+            this.gridColumn166,
+            this.gridColumn167,
+            this.gridColumn168});
+            this.gridView35.GridControl = this.gridControl18;
+            this.gridView35.Name = "gridView35";
+            // 
+            // gridColumn153
+            // 
+            this.gridColumn153.ColumnEdit = this.cmdDespachoId_Ruta4;
+            this.gridColumn153.FieldName = "Despacho";
+            this.gridColumn153.Name = "gridColumn153";
+            this.gridColumn153.OptionsColumn.ReadOnly = true;
+            this.gridColumn153.Visible = true;
+            this.gridColumn153.VisibleIndex = 0;
+            this.gridColumn153.Width = 55;
+            // 
+            // cmdDespachoId_Ruta4
+            // 
+            this.cmdDespachoId_Ruta4.AutoHeight = false;
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            this.cmdDespachoId_Ruta4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdDespachoId_Ruta4.Name = "cmdDespachoId_Ruta4";
+            this.cmdDespachoId_Ruta4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDespachoId_Ruta4_ButtonClick);
+            // 
+            // gridColumn154
+            // 
+            this.gridColumn154.FieldName = "cliente";
+            this.gridColumn154.Name = "gridColumn154";
+            this.gridColumn154.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn155
+            // 
+            this.gridColumn155.Caption = "Id Boleta";
+            this.gridColumn155.FieldName = "KeyBoleta";
+            this.gridColumn155.Name = "gridColumn155";
+            this.gridColumn155.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn156
+            // 
+            this.gridColumn156.FieldName = "Id Cliente";
+            this.gridColumn156.Name = "gridColumn156";
+            this.gridColumn156.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn157
+            // 
+            this.gridColumn157.FieldName = "Nombre Cliente";
+            this.gridColumn157.Name = "gridColumn157";
+            this.gridColumn157.OptionsColumn.AllowEdit = false;
+            this.gridColumn157.Visible = true;
+            this.gridColumn157.VisibleIndex = 2;
+            this.gridColumn157.Width = 108;
+            // 
+            // gridColumn158
+            // 
+            this.gridColumn158.Caption = "Cantidad";
+            this.gridColumn158.DisplayFormat.FormatString = "###,##0 Sacos";
+            this.gridColumn158.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn158.FieldName = "unidades";
+            this.gridColumn158.Name = "gridColumn158";
+            this.gridColumn158.OptionsColumn.AllowEdit = false;
+            this.gridColumn158.Visible = true;
+            this.gridColumn158.VisibleIndex = 3;
+            this.gridColumn158.Width = 68;
+            // 
+            // gridColumn159
+            // 
+            this.gridColumn159.FieldName = "codigo_pais";
+            this.gridColumn159.Name = "gridColumn159";
+            this.gridColumn159.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn160
+            // 
+            this.gridColumn160.Caption = "País";
+            this.gridColumn160.FieldName = "pais";
+            this.gridColumn160.Name = "gridColumn160";
+            this.gridColumn160.OptionsColumn.AllowEdit = false;
+            this.gridColumn160.Visible = true;
+            this.gridColumn160.VisibleIndex = 7;
+            this.gridColumn160.Width = 50;
+            // 
+            // gridColumn161
+            // 
+            this.gridColumn161.Caption = "Dirección 1";
+            this.gridColumn161.FieldName = "direccion1";
+            this.gridColumn161.Name = "gridColumn161";
+            this.gridColumn161.OptionsColumn.AllowEdit = false;
+            this.gridColumn161.Visible = true;
+            this.gridColumn161.VisibleIndex = 8;
+            this.gridColumn161.Width = 50;
+            // 
+            // gridColumn162
+            // 
+            this.gridColumn162.Caption = "Dirección 2";
+            this.gridColumn162.FieldName = "direccion2";
+            this.gridColumn162.Name = "gridColumn162";
+            this.gridColumn162.OptionsColumn.AllowEdit = false;
+            this.gridColumn162.Visible = true;
+            this.gridColumn162.VisibleIndex = 9;
+            this.gridColumn162.Width = 50;
+            // 
+            // gridColumn163
+            // 
+            this.gridColumn163.Caption = "Ciudad";
+            this.gridColumn163.FieldName = "ciudad";
+            this.gridColumn163.Name = "gridColumn163";
+            this.gridColumn163.OptionsColumn.AllowEdit = false;
+            this.gridColumn163.Visible = true;
+            this.gridColumn163.VisibleIndex = 10;
+            this.gridColumn163.Width = 78;
+            // 
+            // gridColumn164
+            // 
+            this.gridColumn164.Caption = "Cod. Cliente Aqua";
+            this.gridColumn164.FieldName = "cliente_aqua";
+            this.gridColumn164.Name = "gridColumn164";
+            this.gridColumn164.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn165
+            // 
+            this.gridColumn165.Caption = "Factura Aquafeed";
+            this.gridColumn165.FieldName = "numero_factura";
+            this.gridColumn165.Name = "gridColumn165";
+            this.gridColumn165.OptionsColumn.AllowEdit = false;
+            this.gridColumn165.Visible = true;
+            this.gridColumn165.VisibleIndex = 4;
+            this.gridColumn165.Width = 87;
+            // 
+            // gridColumn166
+            // 
+            this.gridColumn166.Caption = "Socio";
+            this.gridColumn166.FieldName = "cardname";
+            this.gridColumn166.Name = "gridColumn166";
+            this.gridColumn166.OptionsColumn.AllowEdit = false;
+            this.gridColumn166.Visible = true;
+            this.gridColumn166.VisibleIndex = 5;
+            this.gridColumn166.Width = 62;
+            // 
+            // gridColumn167
+            // 
+            this.gridColumn167.Caption = "N. Boleta";
+            this.gridColumn167.ColumnEdit = this.cmdBoleta_Ruta4;
+            this.gridColumn167.FieldName = "NumID";
+            this.gridColumn167.Name = "gridColumn167";
+            this.gridColumn167.Visible = true;
+            this.gridColumn167.VisibleIndex = 1;
+            this.gridColumn167.Width = 47;
+            // 
+            // cmdBoleta_Ruta4
+            // 
+            this.cmdBoleta_Ruta4.AutoHeight = false;
+            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
+            this.cmdBoleta_Ruta4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdBoleta_Ruta4.Name = "cmdBoleta_Ruta4";
+            this.cmdBoleta_Ruta4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdBoleta_Ruta4_ButtonClick);
+            // 
+            // gridColumn168
+            // 
+            this.gridColumn168.Caption = "Fact. PROMIX";
+            this.gridColumn168.FieldName = "Fac_promix";
+            this.gridColumn168.Name = "gridColumn168";
+            this.gridColumn168.OptionsColumn.AllowEdit = false;
+            this.gridColumn168.Visible = true;
+            this.gridColumn168.VisibleIndex = 6;
+            this.gridColumn168.Width = 87;
+            // 
+            // labelControl138
+            // 
+            this.labelControl138.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl138.Appearance.Options.UseFont = true;
+            this.labelControl138.Location = new System.Drawing.Point(8, 22);
+            this.labelControl138.Name = "labelControl138";
+            this.labelControl138.Size = new System.Drawing.Size(184, 21);
+            this.labelControl138.TabIndex = 42;
+            this.labelControl138.Text = "Lotes PT en que se utilizó";
+            // 
+            // gcLotePT_Ruta4
+            // 
+            this.gcLotePT_Ruta4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gcLotePT_Ruta4.DataSource = this.ptlisttrzBindingSource;
+            this.gcLotePT_Ruta4.Location = new System.Drawing.Point(8, 49);
+            this.gcLotePT_Ruta4.MainView = this.gvLotePT_Ruta4;
+            this.gcLotePT_Ruta4.Name = "gcLotePT_Ruta4";
+            this.gcLotePT_Ruta4.Size = new System.Drawing.Size(353, 450);
+            this.gcLotePT_Ruta4.TabIndex = 1;
+            this.gcLotePT_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvLotePT_Ruta4});
+            // 
+            // ptlisttrzBindingSource
+            // 
+            this.ptlisttrzBindingSource.DataMember = "pt_list_trz";
+            this.ptlisttrzBindingSource.DataSource = this.dsReportesTRZ;
+            // 
+            // gvLotePT_Ruta4
+            // 
+            this.gvLotePT_Ruta4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn169,
+            this.gridColumn170,
+            this.gridColumn171});
+            this.gvLotePT_Ruta4.GridControl = this.gcLotePT_Ruta4;
+            this.gvLotePT_Ruta4.Name = "gvLotePT_Ruta4";
+            this.gvLotePT_Ruta4.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvLotePT_Ruta4_RowCellClick);
+            // 
+            // gridColumn169
+            // 
+            this.gridColumn169.FieldName = "Lote PT";
+            this.gridColumn169.Name = "gridColumn169";
+            this.gridColumn169.OptionsColumn.AllowEdit = false;
+            this.gridColumn169.Visible = true;
+            this.gridColumn169.VisibleIndex = 0;
+            this.gridColumn169.Width = 67;
+            // 
+            // gridColumn170
+            // 
+            this.gridColumn170.FieldName = "Producto";
+            this.gridColumn170.Name = "gridColumn170";
+            this.gridColumn170.OptionsColumn.AllowEdit = false;
+            this.gridColumn170.Visible = true;
+            this.gridColumn170.VisibleIndex = 1;
+            this.gridColumn170.Width = 174;
+            // 
+            // gridColumn171
+            // 
+            this.gridColumn171.Caption = "Cant. MP Utilizada";
+            this.gridColumn171.DisplayFormat.FormatString = "{0:N2} Kg";
+            this.gridColumn171.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn171.FieldName = "cant_mp";
+            this.gridColumn171.Name = "gridColumn171";
+            this.gridColumn171.Visible = true;
+            this.gridColumn171.VisibleIndex = 2;
+            this.gridColumn171.Width = 94;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.gridControl20);
+            this.tabPage10.Location = new System.Drawing.Point(4, 30);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(1359, 502);
+            this.tabPage10.TabIndex = 5;
+            this.tabPage10.Text = "Inventario de lote";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // gridControl20
+            // 
+            this.gridControl20.DataSource = this.informacionBindingSource;
+            this.gridControl20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl20.Location = new System.Drawing.Point(3, 3);
+            this.gridControl20.MainView = this.gridView37;
+            this.gridControl20.Name = "gridControl20";
+            this.gridControl20.Size = new System.Drawing.Size(1353, 496);
+            this.gridControl20.TabIndex = 1;
+            this.gridControl20.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView37});
+            // 
+            // informacionBindingSource
+            // 
+            this.informacionBindingSource.DataMember = "informacion";
+            this.informacionBindingSource.DataSource = this.dsTarimaBindingSource1;
+            // 
+            // gridView37
+            // 
+            this.gridView37.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView37.Appearance.FilterPanel.Options.UseFont = true;
+            this.gridView37.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView37.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView37.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView37.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView37.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView37.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView37.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView37.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView37.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView37.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView37.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView37.Appearance.Preview.Options.UseFont = true;
+            this.gridView37.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView37.Appearance.Row.Options.UseFont = true;
+            this.gridView37.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView37.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView37.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn172,
+            this.gridColumn173,
+            this.gridColumn174,
+            this.gridColumn175,
+            this.gridColumn176,
+            this.gridColumn177,
+            this.gridColumn178,
+            this.gridColumn179,
+            this.gridColumn180,
+            this.gridColumn181,
+            this.gridColumn182});
+            this.gridView37.GridControl = this.gridControl20;
+            this.gridView37.Name = "gridView37";
+            this.gridView37.OptionsView.ShowAutoFilterRow = true;
+            this.gridView37.OptionsView.ShowFooter = true;
+            this.gridView37.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn172
+            // 
+            this.gridColumn172.Caption = "Existencia";
+            this.gridColumn172.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
+            this.gridColumn172.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn172.FieldName = "existencia";
+            this.gridColumn172.Name = "gridColumn172";
+            this.gridColumn172.OptionsColumn.AllowEdit = false;
+            this.gridColumn172.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "{0:0.##.##} Kg.")});
+            this.gridColumn172.Visible = true;
+            this.gridColumn172.VisibleIndex = 8;
+            this.gridColumn172.Width = 152;
+            // 
+            // gridColumn173
+            // 
+            this.gridColumn173.Caption = "Materia Prima";
+            this.gridColumn173.FieldName = "nombre_comercial";
+            this.gridColumn173.Name = "gridColumn173";
+            this.gridColumn173.OptionsColumn.AllowEdit = false;
+            this.gridColumn173.Visible = true;
+            this.gridColumn173.VisibleIndex = 0;
+            this.gridColumn173.Width = 235;
+            // 
+            // gridColumn174
+            // 
+            this.gridColumn174.Caption = "F. Vencimiento";
+            this.gridColumn174.FieldName = "fecha_vence";
+            this.gridColumn174.Name = "gridColumn174";
+            this.gridColumn174.OptionsColumn.AllowEdit = false;
+            this.gridColumn174.Visible = true;
+            this.gridColumn174.VisibleIndex = 6;
+            this.gridColumn174.Width = 141;
+            // 
+            // gridColumn175
+            // 
+            this.gridColumn175.Caption = "F. Produccion";
+            this.gridColumn175.FieldName = "fecha_produccion";
+            this.gridColumn175.Name = "gridColumn175";
+            this.gridColumn175.OptionsColumn.AllowEdit = false;
+            this.gridColumn175.Visible = true;
+            this.gridColumn175.VisibleIndex = 5;
+            this.gridColumn175.Width = 141;
+            // 
+            // gridColumn176
+            // 
+            this.gridColumn176.FieldName = "id_mp";
+            this.gridColumn176.Name = "gridColumn176";
+            this.gridColumn176.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn177
+            // 
+            this.gridColumn177.Caption = "Lote";
+            this.gridColumn177.FieldName = "lote";
+            this.gridColumn177.Name = "gridColumn177";
+            this.gridColumn177.OptionsColumn.AllowEdit = false;
+            this.gridColumn177.Visible = true;
+            this.gridColumn177.VisibleIndex = 4;
+            this.gridColumn177.Width = 141;
+            // 
+            // gridColumn178
+            // 
+            this.gridColumn178.Caption = "Días";
+            this.gridColumn178.FieldName = "dias";
+            this.gridColumn178.Name = "gridColumn178";
+            this.gridColumn178.OptionsColumn.AllowEdit = false;
+            this.gridColumn178.Visible = true;
+            this.gridColumn178.VisibleIndex = 7;
+            this.gridColumn178.Width = 141;
+            // 
+            // gridColumn179
+            // 
+            this.gridColumn179.Caption = "F Ingreso";
+            this.gridColumn179.FieldName = "fecha_ingreso";
+            this.gridColumn179.Name = "gridColumn179";
+            this.gridColumn179.OptionsColumn.AllowEdit = false;
+            this.gridColumn179.Visible = true;
+            this.gridColumn179.VisibleIndex = 1;
+            this.gridColumn179.Width = 64;
+            // 
+            // gridColumn180
+            // 
+            this.gridColumn180.Caption = "N Ingreso";
+            this.gridColumn180.FieldName = "numero_transaccion";
+            this.gridColumn180.Name = "gridColumn180";
+            this.gridColumn180.OptionsColumn.AllowEdit = false;
+            this.gridColumn180.Visible = true;
+            this.gridColumn180.VisibleIndex = 3;
+            this.gridColumn180.Width = 120;
+            // 
+            // gridColumn181
+            // 
+            this.gridColumn181.FieldName = "cproveedor";
+            this.gridColumn181.Name = "gridColumn181";
+            this.gridColumn181.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn182
+            // 
+            this.gridColumn182.Caption = "Proveedor";
+            this.gridColumn182.FieldName = "proveedor";
+            this.gridColumn182.Name = "gridColumn182";
+            this.gridColumn182.OptionsColumn.AllowEdit = false;
+            this.gridColumn182.Visible = true;
+            this.gridColumn182.VisibleIndex = 2;
+            this.gridColumn182.Width = 209;
+            // 
+            // btnViewBoleta
+            // 
+            this.btnViewBoleta.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.btnViewBoleta.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnViewBoleta.ImageOptions.SvgImage")));
+            this.btnViewBoleta.Location = new System.Drawing.Point(1230, 193);
+            this.btnViewBoleta.Name = "btnViewBoleta";
+            this.btnViewBoleta.Size = new System.Drawing.Size(54, 30);
+            this.btnViewBoleta.TabIndex = 81;
+            this.btnViewBoleta.Visible = false;
+            // 
+            // txtBoleta_Ruta4
+            // 
+            this.txtBoleta_Ruta4.Enabled = false;
+            this.txtBoleta_Ruta4.Location = new System.Drawing.Point(904, 197);
+            this.txtBoleta_Ruta4.Name = "txtBoleta_Ruta4";
+            this.txtBoleta_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtBoleta_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtBoleta_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.txtBoleta_Ruta4.Properties.Appearance.Options.UseForeColor = true;
+            this.txtBoleta_Ruta4.Size = new System.Drawing.Size(315, 24);
+            this.txtBoleta_Ruta4.TabIndex = 80;
+            // 
+            // labelControl95
+            // 
+            this.labelControl95.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl95.Appearance.Options.UseFont = true;
+            this.labelControl95.Location = new System.Drawing.Point(754, 204);
+            this.labelControl95.Name = "labelControl95";
+            this.labelControl95.Size = new System.Drawing.Size(39, 17);
+            this.labelControl95.TabIndex = 79;
+            this.labelControl95.Text = "Boleta:";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.grid_Header_ingresos);
+            this.groupControl1.Location = new System.Drawing.Point(18, 60);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(726, 224);
+            this.groupControl1.TabIndex = 78;
+            this.groupControl1.Text = "Ingresos Por Lote";
+            // 
+            // grid_Header_ingresos
+            // 
+            this.grid_Header_ingresos.DataMember = "Ingresos_Lote_detalle";
+            this.grid_Header_ingresos.DataSource = this.dsMantenimientoC;
+            this.grid_Header_ingresos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid_Header_ingresos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.grid_Header_ingresos.Location = new System.Drawing.Point(2, 20);
+            this.grid_Header_ingresos.MainView = this.gvIngresoLote_Ruta4;
+            this.grid_Header_ingresos.Name = "grid_Header_ingresos";
+            this.grid_Header_ingresos.Size = new System.Drawing.Size(722, 202);
+            this.grid_Header_ingresos.TabIndex = 54;
+            this.grid_Header_ingresos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvIngresoLote_Ruta4});
+            // 
+            // gvIngresoLote_Ruta4
+            // 
+            this.gvIngresoLote_Ruta4.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 7.25F);
+            this.gvIngresoLote_Ruta4.Appearance.FocusedRow.Options.UseFont = true;
+            this.gvIngresoLote_Ruta4.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 7.25F);
+            this.gvIngresoLote_Ruta4.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvIngresoLote_Ruta4.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvIngresoLote_Ruta4.Appearance.Row.Options.UseFont = true;
+            this.gvIngresoLote_Ruta4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colfecha_produccion_materia_prima,
+            this.colfecha_vencimiento,
+            this.colfecha_ingreso1,
+            this.colpor_vencer,
+            this.colnumero_transaccion1,
+            this.colCardName1,
+            this.colid_proveedor,
+            this.colkg_ingresadas,
+            this.colNumID1,
+            this.gridColumn114,
+            this.colud_ingresadas,
+            this.colid_ingreso,
+            this.gridColumn115,
+            this.colselected});
+            this.gvIngresoLote_Ruta4.GridControl = this.grid_Header_ingresos;
+            this.gvIngresoLote_Ruta4.Name = "gvIngresoLote_Ruta4";
+            this.gvIngresoLote_Ruta4.OptionsBehavior.Editable = false;
+            this.gvIngresoLote_Ruta4.OptionsView.ShowGroupPanel = false;
+            this.gvIngresoLote_Ruta4.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colnumero_transaccion1, DevExpress.Data.ColumnSortOrder.Descending)});
+            // 
+            // colfecha_produccion_materia_prima
+            // 
+            this.colfecha_produccion_materia_prima.FieldName = "fecha_produccion_materia_prima";
+            this.colfecha_produccion_materia_prima.Name = "colfecha_produccion_materia_prima";
+            this.colfecha_produccion_materia_prima.OptionsColumn.AllowShowHide = false;
+            this.colfecha_produccion_materia_prima.OptionsColumn.ReadOnly = true;
+            this.colfecha_produccion_materia_prima.Visible = true;
+            this.colfecha_produccion_materia_prima.VisibleIndex = 3;
+            // 
+            // colfecha_vencimiento
+            // 
+            this.colfecha_vencimiento.FieldName = "fecha_vencimiento";
+            this.colfecha_vencimiento.Name = "colfecha_vencimiento";
+            this.colfecha_vencimiento.OptionsColumn.AllowShowHide = false;
+            this.colfecha_vencimiento.OptionsColumn.ReadOnly = true;
+            this.colfecha_vencimiento.Visible = true;
+            this.colfecha_vencimiento.VisibleIndex = 4;
+            this.colfecha_vencimiento.Width = 64;
+            // 
+            // colfecha_ingreso1
+            // 
+            this.colfecha_ingreso1.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso1.Name = "colfecha_ingreso1";
+            this.colfecha_ingreso1.OptionsColumn.AllowShowHide = false;
+            this.colfecha_ingreso1.OptionsColumn.ReadOnly = true;
+            this.colfecha_ingreso1.Visible = true;
+            this.colfecha_ingreso1.VisibleIndex = 2;
+            this.colfecha_ingreso1.Width = 84;
+            // 
+            // colpor_vencer
+            // 
+            this.colpor_vencer.FieldName = "por_vencer";
+            this.colpor_vencer.Name = "colpor_vencer";
+            this.colpor_vencer.OptionsColumn.AllowShowHide = false;
+            this.colpor_vencer.OptionsColumn.ReadOnly = true;
+            this.colpor_vencer.Visible = true;
+            this.colpor_vencer.VisibleIndex = 5;
+            this.colpor_vencer.Width = 66;
+            // 
+            // colnumero_transaccion1
+            // 
+            this.colnumero_transaccion1.FieldName = "numero_transaccion";
+            this.colnumero_transaccion1.Name = "colnumero_transaccion1";
+            this.colnumero_transaccion1.OptionsColumn.AllowShowHide = false;
+            this.colnumero_transaccion1.OptionsColumn.ReadOnly = true;
+            this.colnumero_transaccion1.Visible = true;
+            this.colnumero_transaccion1.VisibleIndex = 1;
+            this.colnumero_transaccion1.Width = 50;
+            // 
+            // colCardName1
+            // 
+            this.colCardName1.FieldName = "CardName";
+            this.colCardName1.Name = "colCardName1";
+            this.colCardName1.Visible = true;
+            this.colCardName1.VisibleIndex = 7;
+            this.colCardName1.Width = 47;
+            // 
+            // colid_proveedor
+            // 
+            this.colid_proveedor.FieldName = "id_proveedor";
+            this.colid_proveedor.Name = "colid_proveedor";
+            this.colid_proveedor.Visible = true;
+            this.colid_proveedor.VisibleIndex = 6;
+            this.colid_proveedor.Width = 49;
+            // 
+            // colkg_ingresadas
+            // 
+            this.colkg_ingresadas.FieldName = "kg_ingresadas";
+            this.colkg_ingresadas.Name = "colkg_ingresadas";
+            this.colkg_ingresadas.Visible = true;
+            this.colkg_ingresadas.VisibleIndex = 10;
+            this.colkg_ingresadas.Width = 56;
+            // 
+            // colNumID1
+            // 
+            this.colNumID1.Caption = "NumID";
+            this.colNumID1.FieldName = "NumID";
+            this.colNumID1.Name = "colNumID1";
+            this.colNumID1.Visible = true;
+            this.colNumID1.VisibleIndex = 8;
+            this.colNumID1.Width = 41;
+            // 
+            // gridColumn114
+            // 
+            this.gridColumn114.FieldName = "NumOC";
+            this.gridColumn114.Name = "gridColumn114";
+            this.gridColumn114.Visible = true;
+            this.gridColumn114.VisibleIndex = 9;
+            this.gridColumn114.Width = 43;
+            // 
+            // colud_ingresadas
+            // 
+            this.colud_ingresadas.FieldName = "ud_ingresadas";
+            this.colud_ingresadas.Name = "colud_ingresadas";
+            this.colud_ingresadas.Visible = true;
+            this.colud_ingresadas.VisibleIndex = 11;
+            this.colud_ingresadas.Width = 70;
+            // 
+            // colid_ingreso
+            // 
+            this.colid_ingreso.FieldName = "id_ingreso";
+            this.colid_ingreso.Name = "colid_ingreso";
+            // 
+            // gridColumn115
+            // 
+            this.gridColumn115.FieldName = "id_boleta";
+            this.gridColumn115.Name = "gridColumn115";
+            // 
+            // colselected
+            // 
+            this.colselected.Caption = "Seleccionar";
+            this.colselected.FieldName = "selected";
+            this.colselected.Name = "colselected";
+            this.colselected.Visible = true;
+            this.colselected.VisibleIndex = 0;
+            this.colselected.Width = 61;
+            // 
+            // simpleButton12
+            // 
+            this.simpleButton12.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.simpleButton12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton12.ImageOptions.SvgImage")));
+            this.simpleButton12.Location = new System.Drawing.Point(1230, 161);
+            this.simpleButton12.Name = "simpleButton12";
+            this.simpleButton12.Size = new System.Drawing.Size(54, 30);
+            this.simpleButton12.TabIndex = 77;
+            this.simpleButton12.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::LOSA.Properties.Resources.edit_table_1_;
+            this.button1.Location = new System.Drawing.Point(1299, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 32);
+            this.button1.TabIndex = 76;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            // 
+            // txtFabricante_Ruta4
+            // 
+            this.txtFabricante_Ruta4.Enabled = false;
+            this.txtFabricante_Ruta4.Location = new System.Drawing.Point(904, 167);
+            this.txtFabricante_Ruta4.Name = "txtFabricante_Ruta4";
+            this.txtFabricante_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtFabricante_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtFabricante_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.txtFabricante_Ruta4.Properties.Appearance.Options.UseForeColor = true;
+            this.txtFabricante_Ruta4.Properties.ReadOnly = true;
+            this.txtFabricante_Ruta4.Size = new System.Drawing.Size(315, 24);
+            this.txtFabricante_Ruta4.TabIndex = 75;
+            // 
+            // labelControl96
+            // 
+            this.labelControl96.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl96.Appearance.Options.UseFont = true;
+            this.labelControl96.Location = new System.Drawing.Point(754, 170);
+            this.labelControl96.Name = "labelControl96";
+            this.labelControl96.Size = new System.Drawing.Size(63, 17);
+            this.labelControl96.TabIndex = 74;
+            this.labelControl96.Text = "Fabricante:";
+            // 
+            // simpleButton13
+            // 
+            this.simpleButton13.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.simpleButton13.Appearance.Options.UseFont = true;
+            this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
+            this.simpleButton13.Location = new System.Drawing.Point(1094, 254);
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(264, 35);
+            this.simpleButton13.TabIndex = 73;
+            this.simpleButton13.Text = "Documentos Recientes";
+            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
+            // 
+            // txtNFactura_Ruta4
+            // 
+            this.txtNFactura_Ruta4.Enabled = false;
+            this.txtNFactura_Ruta4.Location = new System.Drawing.Point(1027, 110);
+            this.txtNFactura_Ruta4.Name = "txtNFactura_Ruta4";
+            this.txtNFactura_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtNFactura_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtNFactura_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.txtNFactura_Ruta4.Properties.Appearance.Options.UseForeColor = true;
+            this.txtNFactura_Ruta4.Size = new System.Drawing.Size(260, 24);
+            this.txtNFactura_Ruta4.TabIndex = 72;
+            // 
+            // labelControl97
+            // 
+            this.labelControl97.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl97.Appearance.Options.UseFont = true;
+            this.labelControl97.Location = new System.Drawing.Point(967, 113);
+            this.labelControl97.Name = "labelControl97";
+            this.labelControl97.Size = new System.Drawing.Size(59, 17);
+            this.labelControl97.TabIndex = 71;
+            this.labelControl97.Text = "N Factura:";
+            // 
+            // simpleButton14
+            // 
+            this.simpleButton14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton14.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton14.Appearance.Options.UseFont = true;
+            this.simpleButton14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
+            this.simpleButton14.Location = new System.Drawing.Point(1094, 11);
+            this.simpleButton14.Name = "simpleButton14";
+            this.simpleButton14.Size = new System.Drawing.Size(126, 44);
+            this.simpleButton14.TabIndex = 70;
+            this.simpleButton14.Text = "Guardar";
+            this.simpleButton14.Visible = false;
+            // 
+            // labelControl98
+            // 
+            this.labelControl98.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl98.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl98.Appearance.Options.UseFont = true;
+            this.labelControl98.Location = new System.Drawing.Point(342, 286);
+            this.labelControl98.Name = "labelControl98";
+            this.labelControl98.Size = new System.Drawing.Size(624, 25);
+            this.labelControl98.TabIndex = 69;
+            this.labelControl98.Text = "Registro de Control de Calidad / Recepción y Análisis de Materia Prima";
+            // 
+            // txtInventarioActual_Ruta4
+            // 
+            this.txtInventarioActual_Ruta4.Enabled = false;
+            this.txtInventarioActual_Ruta4.Location = new System.Drawing.Point(904, 110);
+            this.txtInventarioActual_Ruta4.Name = "txtInventarioActual_Ruta4";
+            this.txtInventarioActual_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtInventarioActual_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtInventarioActual_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.txtInventarioActual_Ruta4.Properties.Appearance.Options.UseForeColor = true;
+            this.txtInventarioActual_Ruta4.Size = new System.Drawing.Size(62, 24);
+            this.txtInventarioActual_Ruta4.TabIndex = 68;
+            // 
+            // txtProcedencia_Ruta4
+            // 
+            this.txtProcedencia_Ruta4.Enabled = false;
+            this.txtProcedencia_Ruta4.Location = new System.Drawing.Point(904, 136);
+            this.txtProcedencia_Ruta4.Name = "txtProcedencia_Ruta4";
+            this.txtProcedencia_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtProcedencia_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtProcedencia_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.txtProcedencia_Ruta4.Properties.Appearance.Options.UseForeColor = true;
+            this.txtProcedencia_Ruta4.Size = new System.Drawing.Size(383, 24);
+            this.txtProcedencia_Ruta4.TabIndex = 67;
+            // 
+            // txtNombreMP_Ruta4
+            // 
+            this.txtNombreMP_Ruta4.Enabled = false;
+            this.txtNombreMP_Ruta4.Location = new System.Drawing.Point(904, 83);
+            this.txtNombreMP_Ruta4.Name = "txtNombreMP_Ruta4";
+            this.txtNombreMP_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtNombreMP_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtNombreMP_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.txtNombreMP_Ruta4.Properties.Appearance.Options.UseForeColor = true;
+            this.txtNombreMP_Ruta4.Size = new System.Drawing.Size(383, 24);
+            this.txtNombreMP_Ruta4.TabIndex = 66;
+            // 
+            // txtLoteMP_Ruta4
+            // 
+            this.txtLoteMP_Ruta4.Enabled = false;
+            this.txtLoteMP_Ruta4.Location = new System.Drawing.Point(904, 57);
+            this.txtLoteMP_Ruta4.Name = "txtLoteMP_Ruta4";
+            this.txtLoteMP_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtLoteMP_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtLoteMP_Ruta4.Properties.Appearance.Options.UseFont = true;
+            this.txtLoteMP_Ruta4.Properties.Appearance.Options.UseForeColor = true;
+            this.txtLoteMP_Ruta4.Size = new System.Drawing.Size(383, 24);
+            this.txtLoteMP_Ruta4.TabIndex = 65;
+            // 
+            // labelControl99
+            // 
+            this.labelControl99.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl99.Appearance.Options.UseFont = true;
+            this.labelControl99.Location = new System.Drawing.Point(754, 113);
+            this.labelControl99.Name = "labelControl99";
+            this.labelControl99.Size = new System.Drawing.Size(99, 17);
+            this.labelControl99.TabIndex = 64;
+            this.labelControl99.Text = "Inventario Actual:";
+            // 
+            // labelControl100
+            // 
+            this.labelControl100.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl100.Appearance.Options.UseFont = true;
+            this.labelControl100.Location = new System.Drawing.Point(754, 139);
+            this.labelControl100.Name = "labelControl100";
+            this.labelControl100.Size = new System.Drawing.Size(130, 17);
+            this.labelControl100.TabIndex = 63;
+            this.labelControl100.Text = "Procedencia/Traslado:";
+            // 
+            // labelControl101
+            // 
+            this.labelControl101.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl101.Appearance.Options.UseFont = true;
+            this.labelControl101.Location = new System.Drawing.Point(754, 90);
+            this.labelControl101.Name = "labelControl101";
+            this.labelControl101.Size = new System.Drawing.Size(108, 17);
+            this.labelControl101.TabIndex = 62;
+            this.labelControl101.Text = "Nombre de la MP:";
+            // 
+            // labelControl102
+            // 
+            this.labelControl102.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl102.Appearance.Options.UseFont = true;
+            this.labelControl102.Location = new System.Drawing.Point(754, 64);
+            this.labelControl102.Name = "labelControl102";
+            this.labelControl102.Size = new System.Drawing.Size(67, 17);
+            this.labelControl102.TabIndex = 61;
+            this.labelControl102.Text = "Lote de MP";
+            // 
+            // labelControl103
+            // 
+            this.labelControl103.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl103.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl103.Appearance.Options.UseFont = true;
+            this.labelControl103.Location = new System.Drawing.Point(671, 11);
+            this.labelControl103.Name = "labelControl103";
+            this.labelControl103.Size = new System.Drawing.Size(213, 30);
+            this.labelControl103.TabIndex = 60;
+            this.labelControl103.Text = "Información del LOTE";
+            // 
+            // simpleButton15
+            // 
+            this.simpleButton15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton15.Appearance.BackColor = System.Drawing.Color.White;
+            this.simpleButton15.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.simpleButton15.Appearance.Options.UseBackColor = true;
+            this.simpleButton15.Appearance.Options.UseFont = true;
+            this.simpleButton15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton15.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
+            this.simpleButton15.Location = new System.Drawing.Point(1226, 12);
+            this.simpleButton15.Name = "simpleButton15";
+            this.simpleButton15.Size = new System.Drawing.Size(126, 42);
+            this.simpleButton15.TabIndex = 59;
+            this.simpleButton15.Text = "Cerrar";
+            this.simpleButton15.Click += new System.EventHandler(this.simpleButton15_Click);
+            // 
+            // npDetalleDespacho_Ruta4
+            // 
+            this.npDetalleDespacho_Ruta4.Controls.Add(this.cmdDespacho_Ruta4);
+            this.npDetalleDespacho_Ruta4.Controls.Add(this.gcDetalleDespacho_Ruta4);
+            this.npDetalleDespacho_Ruta4.Name = "npDetalleDespacho_Ruta4";
+            this.npDetalleDespacho_Ruta4.Size = new System.Drawing.Size(1373, 856);
+            // 
+            // cmdDespacho_Ruta4
+            // 
+            this.cmdDespacho_Ruta4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdDespacho_Ruta4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmdDespacho_Ruta4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdDespacho_Ruta4.Appearance.Options.UseBackColor = true;
+            this.cmdDespacho_Ruta4.Appearance.Options.UseFont = true;
+            this.cmdDespacho_Ruta4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdDespacho_Ruta4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdDespacho_Ruta4.ImageOptions.Image")));
+            this.cmdDespacho_Ruta4.Location = new System.Drawing.Point(1163, 12);
+            this.cmdDespacho_Ruta4.Name = "cmdDespacho_Ruta4";
+            this.cmdDespacho_Ruta4.Size = new System.Drawing.Size(125, 52);
+            this.cmdDespacho_Ruta4.TabIndex = 52;
+            this.cmdDespacho_Ruta4.Text = "Atrás";
+            this.cmdDespacho_Ruta4.Click += new System.EventHandler(this.cmdDespacho_Ruta4_Click);
+            // 
+            // gcDetalleDespacho_Ruta4
+            // 
+            this.gcDetalleDespacho_Ruta4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcDetalleDespacho_Ruta4.DataSource = this.detalledespachosBindingSource;
+            this.gcDetalleDespacho_Ruta4.Location = new System.Drawing.Point(3, 87);
+            this.gcDetalleDespacho_Ruta4.MainView = this.gvDetalleDespacho_Ruta4;
+            this.gcDetalleDespacho_Ruta4.Name = "gcDetalleDespacho_Ruta4";
+            this.gcDetalleDespacho_Ruta4.Size = new System.Drawing.Size(1340, 769);
+            this.gcDetalleDespacho_Ruta4.TabIndex = 1;
+            this.gcDetalleDespacho_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDetalleDespacho_Ruta4});
+            // 
+            // detalledespachosBindingSource
+            // 
+            this.detalledespachosBindingSource.DataMember = "detalle_despachos";
+            this.detalledespachosBindingSource.DataSource = this.dsReportesTRZBindingSource;
+            // 
+            // gvDetalleDespacho_Ruta4
+            // 
+            this.gvDetalleDespacho_Ruta4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn184,
+            this.gridColumn185,
+            this.gridColumn186,
+            this.gridColumn187,
+            this.gridColumn188,
+            this.gridColumn189,
+            this.gridColumn190,
+            this.gridColumn191,
+            this.gridColumn192,
+            this.gridColumn193,
+            this.gridColumn194});
+            this.gvDetalleDespacho_Ruta4.GridControl = this.gcDetalleDespacho_Ruta4;
+            this.gvDetalleDespacho_Ruta4.Name = "gvDetalleDespacho_Ruta4";
+            this.gvDetalleDespacho_Ruta4.OptionsView.ShowAutoFilterRow = true;
+            this.gvDetalleDespacho_Ruta4.OptionsView.ShowFooter = true;
+            // 
+            // gridColumn184
+            // 
+            this.gridColumn184.FieldName = "Cod. Despacho";
+            this.gridColumn184.Name = "gridColumn184";
+            this.gridColumn184.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn185
+            // 
+            this.gridColumn185.FieldName = "Fila";
+            this.gridColumn185.Name = "gridColumn185";
+            this.gridColumn185.OptionsColumn.AllowEdit = false;
+            this.gridColumn185.Visible = true;
+            this.gridColumn185.VisibleIndex = 0;
+            this.gridColumn185.Width = 30;
+            // 
+            // gridColumn186
+            // 
+            this.gridColumn186.FieldName = "Lote";
+            this.gridColumn186.Name = "gridColumn186";
+            this.gridColumn186.OptionsColumn.AllowEdit = false;
+            this.gridColumn186.Visible = true;
+            this.gridColumn186.VisibleIndex = 1;
+            this.gridColumn186.Width = 55;
+            // 
+            // gridColumn187
+            // 
+            this.gridColumn187.DisplayFormat.FormatString = "#,###,##0 Sacos";
+            this.gridColumn187.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn187.FieldName = "Cantidad";
+            this.gridColumn187.Name = "gridColumn187";
+            this.gridColumn187.OptionsColumn.AllowEdit = false;
+            this.gridColumn187.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Cantidad", "SUM={0:#,###,##0.00}")});
+            this.gridColumn187.Visible = true;
+            this.gridColumn187.VisibleIndex = 2;
+            this.gridColumn187.Width = 68;
+            // 
+            // gridColumn188
+            // 
+            this.gridColumn188.FieldName = "Peso";
+            this.gridColumn188.Name = "gridColumn188";
+            this.gridColumn188.OptionsColumn.AllowEdit = false;
+            this.gridColumn188.Visible = true;
+            this.gridColumn188.VisibleIndex = 3;
+            this.gridColumn188.Width = 54;
+            // 
+            // gridColumn189
+            // 
+            this.gridColumn189.DisplayFormat.FormatString = "#,###,##0.00 Kg";
+            this.gridColumn189.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn189.FieldName = "Kg";
+            this.gridColumn189.Name = "gridColumn189";
+            this.gridColumn189.OptionsColumn.AllowEdit = false;
+            this.gridColumn189.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Kg", "SUM={0:#,###,##0.00}")});
+            this.gridColumn189.Visible = true;
+            this.gridColumn189.VisibleIndex = 4;
+            this.gridColumn189.Width = 77;
+            // 
+            // gridColumn190
+            // 
+            this.gridColumn190.FieldName = "Producto";
+            this.gridColumn190.Name = "gridColumn190";
+            this.gridColumn190.OptionsColumn.AllowEdit = false;
+            this.gridColumn190.Visible = true;
+            this.gridColumn190.VisibleIndex = 5;
+            this.gridColumn190.Width = 216;
+            // 
+            // gridColumn191
+            // 
+            this.gridColumn191.FieldName = "Code";
+            this.gridColumn191.Name = "gridColumn191";
+            this.gridColumn191.OptionsColumn.AllowEdit = false;
+            this.gridColumn191.Visible = true;
+            this.gridColumn191.VisibleIndex = 6;
+            this.gridColumn191.Width = 63;
+            // 
+            // gridColumn192
+            // 
+            this.gridColumn192.Caption = "Codigo Barra";
+            this.gridColumn192.FieldName = "codigo_barra";
+            this.gridColumn192.Name = "gridColumn192";
+            this.gridColumn192.OptionsColumn.AllowEdit = false;
+            this.gridColumn192.Visible = true;
+            this.gridColumn192.VisibleIndex = 9;
+            this.gridColumn192.Width = 76;
+            // 
+            // gridColumn193
+            // 
+            this.gridColumn193.Caption = "Num. Saco Desde:";
+            this.gridColumn193.FieldName = "saco_desde";
+            this.gridColumn193.Name = "gridColumn193";
+            this.gridColumn193.OptionsColumn.AllowEdit = false;
+            this.gridColumn193.Visible = true;
+            this.gridColumn193.VisibleIndex = 7;
+            // 
+            // gridColumn194
+            // 
+            this.gridColumn194.Caption = "Num. Saco Hasta:";
+            this.gridColumn194.FieldName = "saco_hasta";
+            this.gridColumn194.Name = "gridColumn194";
+            this.gridColumn194.OptionsColumn.AllowEdit = false;
+            this.gridColumn194.Visible = true;
+            this.gridColumn194.VisibleIndex = 8;
+            this.gridColumn194.Width = 71;
+            // 
+            // tipoBindingSource
+            // 
+            this.tipoBindingSource.DataMember = "Tipo";
+            this.tipoBindingSource.DataSource = this.dsMantenimientoCBindingSource;
+            // 
+            // paisBindingSource
+            // 
+            this.paisBindingSource.DataMember = "pais";
+            this.paisBindingSource.DataSource = this.dsMantenimientoCBindingSource;
             // 
             // detalledestinosBindingSource
             // 
@@ -9153,7 +12391,7 @@ namespace LOSA.Trazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1567, 856);
+            this.ClientSize = new System.Drawing.Size(1610, 856);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.navigationFrame1);
             this.Name = "frmRutasTrazabilidad";
@@ -9425,6 +12663,120 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.gvPT_Ruta1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdButtonTrzLotePT_ruta4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).EndInit();
+            this.npRuta4_V2.ResumeLayout(false);
+            this.npRuta4_V2.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
+            this.panelControl7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_nir_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNIR_Ruta4)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcDocumentosAdjuntos_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDocumentosAdjuntos_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdArbirAdjunto_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).EndInit();
+            this.panelControl14.ResumeLayout(false);
+            this.panelControl14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spsustentable_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyIUCN_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyfishsource_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPLantaSenasa_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_tipo_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoingresoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_origen_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_pesca_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zonaPescaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_origenespecie_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.origenespecieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spTipoporcentaje_Ruta4.Properties)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).EndInit();
+            this.panelControl15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).EndInit();
+            this.panelControl16.ResumeLayout(false);
+            this.panelControl16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque4_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque3_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque1_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEmpaque2_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl26)).EndInit();
+            this.panelControl26.ResumeLayout(false);
+            this.panelControl26.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservacionesTrans_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCarga_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarimaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCarga_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdTransporte3_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdTransporte2_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdTransporte1_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdEstadomp_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdTransporte4_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDireccion_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txttransporte_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTelefono_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txttransportista_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtuserlogistica_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit17.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtusercalidad_Ruta4.Properties)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalledestinosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdDespachoId_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdBoleta_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcLotePT_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptlisttrzBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvLotePT_Ruta4)).EndInit();
+            this.tabPage10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView37)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBoleta_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_Header_ingresos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvIngresoLote_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFabricante_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNFactura_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInventarioActual_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProcedencia_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreMP_Ruta4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLoteMP_Ruta4.Properties)).EndInit();
+            this.npDetalleDespacho_Ruta4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcDetalleDespacho_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalledespachosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDetalleDespacho_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalledestinosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -10155,5 +13507,256 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDetalleBatch;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra3;
         private DevExpress.XtraEditors.SimpleButton btnImprimirDetalleCarga;
+        private DevExpress.XtraBars.Navigation.NavigationPage npRuta4_V2;
+        private DevExpress.XtraEditors.SimpleButton btnViewBoleta;
+        private DevExpress.XtraEditors.TextEdit txtBoleta_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl95;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraGrid.GridControl grid_Header_ingresos;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvIngresoLote_Ruta4;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_produccion_materia_prima;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_vencimiento;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_ingreso1;
+        private DevExpress.XtraGrid.Columns.GridColumn colpor_vencer;
+        private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCardName1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_proveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn colkg_ingresadas;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumID1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn114;
+        private DevExpress.XtraGrid.Columns.GridColumn colud_ingresadas;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_ingreso;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn115;
+        private DevExpress.XtraGrid.Columns.GridColumn colselected;
+        private DevExpress.XtraEditors.SimpleButton simpleButton12;
+        private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.TextEdit txtFabricante_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl96;
+        private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private DevExpress.XtraEditors.TextEdit txtNFactura_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl97;
+        private DevExpress.XtraEditors.SimpleButton simpleButton14;
+        private DevExpress.XtraEditors.LabelControl labelControl98;
+        private DevExpress.XtraEditors.TextEdit txtInventarioActual_Ruta4;
+        private DevExpress.XtraEditors.TextEdit txtProcedencia_Ruta4;
+        private DevExpress.XtraEditors.TextEdit txtNombreMP_Ruta4;
+        private DevExpress.XtraEditors.TextEdit txtLoteMP_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl99;
+        private DevExpress.XtraEditors.LabelControl labelControl100;
+        private DevExpress.XtraEditors.LabelControl labelControl101;
+        private DevExpress.XtraEditors.LabelControl labelControl102;
+        private DevExpress.XtraEditors.LabelControl labelControl103;
+        private DevExpress.XtraEditors.SimpleButton simpleButton15;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage5;
+        private DevExpress.XtraEditors.PanelControl panelControl7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton16;
+        private DevExpress.XtraEditors.PanelControl panelControl10;
+        private DevExpress.XtraEditors.PanelControl panelControl11;
+        private DevExpress.XtraEditors.PanelControl panelControl12;
+        private DevExpress.XtraEditors.PanelControl panelControl13;
+        private DevExpress.XtraGrid.GridControl grd_nir_Ruta4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvNIR_Ruta4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn116;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn117;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn118;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn119;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn120;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn121;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn122;
+        private System.Windows.Forms.TabPage tabPage6;
+        private DevExpress.XtraGrid.GridControl gcDocumentosAdjuntos_Ruta4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDocumentosAdjuntos_Ruta4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn123;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn124;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn125;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn126;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn127;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn128;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn129;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdArbirAdjunto_Ruta4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn130;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn131;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn132;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit7;
+        private DevExpress.XtraGrid.GridControl gridControl15;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView28;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn133;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn134;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn135;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn136;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn137;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn138;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn139;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit8;
+        private DevExpress.XtraEditors.PanelControl panelControl14;
+        private DevExpress.XtraEditors.SpinEdit spsustentable_Ruta4;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.HyperLinkEdit hyIUCN_Ruta4;
+        private DevExpress.XtraEditors.HyperLinkEdit hyfishsource_Ruta4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton17;
+        private DevExpress.XtraEditors.TextEdit txtPLantaSenasa_Ruta4;
+        private DevExpress.XtraEditors.GridLookUpEdit grd_tipo_Ruta4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView29;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn140;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn141;
+        private DevExpress.XtraEditors.GridLookUpEdit grd_origen_Ruta4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView30;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn142;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn143;
+        private DevExpress.XtraEditors.GridLookUpEdit grd_pesca_Ruta4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView31;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn144;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn145;
+        private DevExpress.XtraEditors.GridLookUpEdit grd_origenespecie_Ruta4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView32;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn146;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn147;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn148;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn149;
+        private DevExpress.XtraEditors.LabelControl labelControl104;
+        private DevExpress.XtraEditors.LabelControl labelControl105;
+        private DevExpress.XtraEditors.LabelControl labelControl106;
+        private DevExpress.XtraEditors.LabelControl labelControl107;
+        private DevExpress.XtraEditors.LabelControl labelControl108;
+        private DevExpress.XtraEditors.LabelControl labelControl109;
+        private DevExpress.XtraEditors.LabelControl labelControl110;
+        private DevExpress.XtraEditors.LabelControl labelControl111;
+        private DevExpress.XtraEditors.LabelControl labelControl112;
+        private DevExpress.XtraEditors.SpinEdit spTipoporcentaje_Ruta4;
+        private System.Windows.Forms.TabPage tabPage7;
+        private DevExpress.XtraEditors.PanelControl panelControl15;
+        private DevExpress.XtraEditors.PanelControl panelControl16;
+        private DevExpress.XtraEditors.LabelControl labelControl113;
+        private DevExpress.XtraEditors.RadioGroup rdEmpaque4_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl114;
+        private DevExpress.XtraEditors.RadioGroup rdEmpaque3_Ruta4;
+        private DevExpress.XtraEditors.RadioGroup rdEmpaque1_Ruta4;
+        private DevExpress.XtraGrid.GridControl gridControl16;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView33;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn150;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn151;
+        private DevExpress.XtraEditors.RadioGroup rdEmpaque2_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl115;
+        private DevExpress.XtraEditors.LabelControl labelControl116;
+        private DevExpress.XtraEditors.LabelControl labelControl117;
+        private DevExpress.XtraEditors.PanelControl panelControl17;
+        private DevExpress.XtraEditors.PanelControl panelControl18;
+        private DevExpress.XtraEditors.PanelControl panelControl19;
+        private DevExpress.XtraEditors.PanelControl panelControl20;
+        private System.Windows.Forms.TabPage tabPage8;
+        private DevExpress.XtraEditors.PanelControl panelControl26;
+        private System.Windows.Forms.Button button2;
+        private DevExpress.XtraEditors.MemoEdit txtObservacionesTrans_Ruta4;
+        private DevExpress.XtraGrid.GridControl gcCarga_Ruta4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvCarga_Ruta4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn152;
+        private DevExpress.XtraEditors.RadioGroup rdTransporte3_Ruta4;
+        private DevExpress.XtraEditors.RadioGroup rdTransporte2_Ruta4;
+        private DevExpress.XtraEditors.RadioGroup rdTransporte1_Ruta4;
+        private DevExpress.XtraEditors.RadioGroup rdEstadomp_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl118;
+        private DevExpress.XtraEditors.RadioGroup rdTransporte4_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl119;
+        private DevExpress.XtraEditors.LabelControl labelControl120;
+        private DevExpress.XtraEditors.TextEdit txtDireccion_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl121;
+        private DevExpress.XtraEditors.LabelControl labelControl122;
+        private DevExpress.XtraEditors.LabelControl labelControl123;
+        private DevExpress.XtraEditors.LabelControl labelControl124;
+        private DevExpress.XtraEditors.LabelControl labelControl125;
+        private DevExpress.XtraEditors.TextEdit txttransporte_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl126;
+        private DevExpress.XtraEditors.TextEdit textEdit11;
+        private DevExpress.XtraEditors.LabelControl labelControl127;
+        private DevExpress.XtraEditors.LabelControl labelControl128;
+        private DevExpress.XtraEditors.LabelControl labelControl129;
+        private DevExpress.XtraEditors.TextEdit textEdit12;
+        private DevExpress.XtraEditors.TextEdit txtTelefono_Ruta4;
+        private DevExpress.XtraEditors.MemoEdit memoEdit2;
+        private DevExpress.XtraEditors.TextEdit textEdit14;
+        private DevExpress.XtraEditors.LabelControl labelControl130;
+        private DevExpress.XtraEditors.LabelControl labelControl131;
+        private DevExpress.XtraEditors.LabelControl labelControl132;
+        private DevExpress.XtraEditors.RadioGroup radioGroup11;
+        private DevExpress.XtraEditors.TextEdit txttransportista_Ruta4;
+        private DevExpress.XtraEditors.LabelControl labelControl133;
+        private DevExpress.XtraEditors.TextEdit txtuserlogistica_Ruta4;
+        private DevExpress.XtraEditors.TextEdit textEdit17;
+        private DevExpress.XtraEditors.LabelControl labelControl134;
+        private DevExpress.XtraEditors.SimpleButton simpleButton18;
+        private DevExpress.XtraEditors.LabelControl labelControl135;
+        private DevExpress.XtraEditors.LabelControl labelControl136;
+        private DevExpress.XtraEditors.TextEdit txtusercalidad_Ruta4;
+        private System.Windows.Forms.TabPage tabPage9;
+        private DevExpress.XtraEditors.LabelControl labelControl137;
+        private DevExpress.XtraGrid.GridControl gridControl18;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView35;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn153;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDespachoId_Ruta4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn154;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn155;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn156;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn157;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn158;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn159;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn160;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn161;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn162;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn163;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn164;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn165;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn166;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn167;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdBoleta_Ruta4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn168;
+        private DevExpress.XtraEditors.LabelControl labelControl138;
+        private DevExpress.XtraGrid.GridControl gcLotePT_Ruta4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvLotePT_Ruta4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn169;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn170;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn171;
+        private System.Windows.Forms.TabPage tabPage10;
+        private DevExpress.XtraGrid.GridControl gridControl20;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView37;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn172;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn173;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn174;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn175;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn176;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn177;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn178;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn179;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn180;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn181;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn182;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn183;
+        private System.Windows.Forms.BindingSource dsTarimaBindingSource1;
+        private System.Windows.Forms.BindingSource zonaPescaBindingSource;
+        private System.Windows.Forms.BindingSource origenespecieBindingSource;
+        private System.Windows.Forms.BindingSource tipoBindingSource;
+        private System.Windows.Forms.BindingSource paisBindingSource;
+        private System.Windows.Forms.BindingSource tipoingresoBindingSource;
+        private System.Windows.Forms.BindingSource paisesBindingSource;
+        private System.Windows.Forms.BindingSource ptlisttrzBindingSource;
+        private System.Windows.Forms.BindingSource detalledestinosBindingSource1;
+        private DevExpress.XtraBars.Navigation.NavigationPage npDetalleDespacho_Ruta4;
+        private DevExpress.XtraGrid.GridControl gcDetalleDespacho_Ruta4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDetalleDespacho_Ruta4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn184;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn185;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn186;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn187;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn188;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn189;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn190;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn191;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn192;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn193;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn194;
+        private System.Windows.Forms.BindingSource detalledespachosBindingSource;
+        private DevExpress.XtraEditors.SimpleButton cmdDespacho_Ruta4;
+        private System.Windows.Forms.BindingSource informacionBindingSource;
     }
 }

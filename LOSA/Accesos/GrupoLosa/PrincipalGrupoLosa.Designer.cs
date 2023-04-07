@@ -38,6 +38,7 @@ namespace LOSA.Accesos.GrupoLosa
             this.Grupo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Habilitado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.botonCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
@@ -131,6 +132,7 @@ namespace LOSA.Accesos.GrupoLosa
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.botonCancelar);
             this.panel2.Controls.Add(this.simpleButton2);
             this.panel2.Controls.Add(this.simpleButton1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -139,20 +141,35 @@ namespace LOSA.Accesos.GrupoLosa
             this.panel2.Size = new System.Drawing.Size(777, 71);
             this.panel2.TabIndex = 1;
             // 
+            // botonCancelar
+            // 
+            this.botonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.botonCancelar.Appearance.BackColor = System.Drawing.Color.Red;
+            this.botonCancelar.Appearance.Options.UseBackColor = true;
+            this.botonCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("botonCancelar.ImageOptions.Image")));
+            this.botonCancelar.Location = new System.Drawing.Point(671, 3);
+            this.botonCancelar.Name = "botonCancelar";
+            this.botonCancelar.Size = new System.Drawing.Size(103, 45);
+            this.botonCancelar.TabIndex = 5;
+            this.botonCancelar.Text = "Cancelar";
+            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
+            // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(84, 45);
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(126, 3);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.Size = new System.Drawing.Size(103, 45);
             this.simpleButton2.TabIndex = 4;
             this.simpleButton2.Text = "Editar";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(3, 45);
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(3, 3);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(103, 45);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Crear";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -186,6 +203,7 @@ namespace LOSA.Accesos.GrupoLosa
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton botonCancelar;
     }
 }
 

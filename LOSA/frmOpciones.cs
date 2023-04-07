@@ -148,7 +148,6 @@ namespace LOSA
                             tabOpciones.TabPages[6].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
-                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
 
@@ -163,7 +162,7 @@ namespace LOSA
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     break;
-                case GrupoUser.GrupoUsuario.ProduccionV2://Administrativos
+                case GrupoUser.GrupoUsuario.ProduccionV2:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -186,10 +185,11 @@ namespace LOSA
                             tabOpciones.TabPages[0].PageVisible = true;
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[2].PageVisible = true;
-                            tabOpciones.TabPages[3].PageVisible = true;
+                            //tabOpciones.TabPages[3].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[5].PageVisible = true;
-                            
+                            tabOpciones.TabPages[10].PageVisible = true;
+                           
                             break;
                         case 5://Depth Without Delta
 
@@ -236,6 +236,10 @@ namespace LOSA
                         case 1://Basic View
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel3;
+                            tabOpciones.SelectedTabPageIndex = 6;//RRHH
+                            tabOpciones.TabPages[6].PageVisible = true;
+                            tabOpciones.TabPages[2].PageVisible = false;
+                            tabOpciones.TabPages[1].PageVisible = false;
                             break;
                         case 2://Basic No Autorization
 
@@ -1242,10 +1246,14 @@ namespace LOSA
 
         private void simpleButton35_Click(object sender, EventArgs e)
         {
-            frmrptMpEntregadaaProduccion frm = new frmrptMpEntregadaaProduccion();
-            if (this.MdiParent != null)
-                frm.MdiParent = this.MdiParent;
+            //frmrptMpEntregadaaProduccion frm = new frmrptMpEntregadaaProduccion();
+            //if (this.MdiParent != null)
+            //    frm.MdiParent = this.MdiParent;
 
+            //frm.Show();
+
+            frmSeguimientoAlimentacion frm = new frmSeguimientoAlimentacion(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
             frm.Show();
             //
         }
@@ -3113,6 +3121,51 @@ namespace LOSA
             frmviewrequisas frm = new frmviewrequisas(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void btnValidacionTarimas_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7); //7 = ALOSY
+            
+            switch (idNivel)
+            {
+                case 1://BasicView
+                    break;
+
+                case 2: //Basic No Autorization
+                    break;
+
+                case 3://Medium Autorization
+                    break;
+
+                case 4://Depth With Delta
+                    break;
+
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmValidacionTarimas frm = new frmValidacionTarimas(UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                default:
+                    break;
+
+            }
+
+            //if (!accesoprevio)
+            //{
+            //    if (UsuarioLogeado.ValidarNivelPermisos())
+            //    {
+            //        frmValidacionTarimas frm = new frmValidacionTarimas(UsuarioLogeado);
+            //        frm.Show();
+            //    }
+            //    else
+            //    {
+            //        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #");
+            //    }
+            //}
+           
         }
     }
 }

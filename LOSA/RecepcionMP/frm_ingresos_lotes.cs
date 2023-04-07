@@ -108,7 +108,7 @@ namespace LOSA.RecepcionMP
                         break;
                     case 2://En Bodega
                         Error = false;
-                        //mensaje = "Calidad tiene En Observación ésta tarima.!";
+                        mensaje = "Calidad tiene En Observación ésta tarima.!";
                         break;
                     case 3://Retenido
                         Error = false;
@@ -125,13 +125,13 @@ namespace LOSA.RecepcionMP
                         Error = true;
                         mensaje = "Esta tarima no se puede imprimir por que ya fue entregada y consumida por producción!";
                         break;
-                    //case 7://
-                    //    error = true;
-                    //    mensaje = "Calidad tiene Retenida ésta tarima.!";
-                    //    break;
+                    case 7://Retenido por Calidad
+                        Error = true;
+                        mensaje = "Calidad tiene Retenida ésta tarima.!";
+                        break;
                     case 8://Parcialmente Entregado
                         Error = false;
-                        //mensaje = "Calidad ha Rechazado ésta tarima.!";
+                        mensaje = "Calidad ha Rechazado ésta tarima.!";
                         break;
                     case 9://Rechazado
                         Error = true;
@@ -140,6 +140,9 @@ namespace LOSA.RecepcionMP
                     case 10://Ajuste de Inventario
                         Error = true;
                         mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
+                        break;
+                    case 11:///Ret Logistica
+                        Error = false;
                         break;
                 }
 
@@ -652,6 +655,9 @@ namespace LOSA.RecepcionMP
                         case 10://Ajuste de Inventario
                             Error = true;
                             mensaje = "Esta tarima no se puede imprimir por que ya se le dio salida por ajuste de inventario!";
+                            break;
+                        case 11: //Retenido Log
+                            Error = false;
                             break;
                     }
 

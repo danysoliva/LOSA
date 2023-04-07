@@ -127,40 +127,12 @@ namespace LOSA.TransaccionesPT
             bool Guardo = false;
             bool error = false;
             bool disponible = false;
-            string mensaje = "";        
+            string mensaje = "";
 
 
-            if (tarimaEncontrada != null)
+            switch (tarimaEncontrada.id_estado_pt)
             {
-                if (tarimaEncontrada.Recuperado)
-                {
-                    if (tarimaEncontrada.id_estado_pt > 1)
-                    {
-
-                        error = true;
-                        mensaje = "Ya se ha activado la tarima escaneada!";
-                    }
-                    txtCantidadT.Text = tarimaEncontrada.Cantidad.ToString();
-                    txtPeso.Text = tarimaEncontrada.Peso.ToString();
-                }
-                else
-                {
-                    error = true;
-                    mensaje = "La Tarima ya esta activa o no se ha podido encontrar!";
-                }
-
-                if (error)
-                {
-                    lblMensaje.Text = mensaje;
-                    panelNotificacion.BackColor = Color.Red;
-                    timerLimpiarMensaje.Enabled = true;
-                    timerLimpiarMensaje.Start();
-                    return;
-                }
-
-                try
-                {
-
+                case 1: //Virtual --Proceder
 
                     DataOperations dp = new DataOperations();
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
@@ -186,43 +158,175 @@ namespace LOSA.TransaccionesPT
                     {
                         cmd.Parameters.AddWithValue("@id_usuario", DBNull.Value);
                     }
-                    
+
                     Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
                     con.Close();
-                }
-                catch (Exception ec)
-                {
-                    //CajaDialogo.Error(ec.Message);
-                    lblMensaje.Text = ec.Message;
+
+                    if (Guardo)
+                    {
+                        idTarima = tarimaEncontrada.Id;
+                        //Mensaje de transaccion exitosa
+                        lblMensaje.Text = "Tarima Activada";
+                        //panelNotificacion.BackColor = Color.MediumSeaGreen;
+                        //timerLimpiarMensaje.Enabled = true;
+                        //timerLimpiarMensaje.Start();
+                        InProgress = 1;
+                        beNuevaUbicacion.Focus();
+                    }
+
+                    break;
+
+                case 2: //Recepcion
+
+                    lblMensaje.Text = "La tarima ya fue activada!";
                     panelNotificacion.BackColor = Color.Red;
                     timerLimpiarMensaje.Enabled = true;
                     timerLimpiarMensaje.Start();
-                }
 
-                if (Guardo)
-                {
-                    idTarima = tarimaEncontrada.Id;
-                    //Mensaje de transaccion exitosa
-                    lblMensaje.Text = "Tarima Activada";
-                    //panelNotificacion.BackColor = Color.MediumSeaGreen;
-                    //timerLimpiarMensaje.Enabled = true;
-                    //timerLimpiarMensaje.Start();
-                    InProgress = 1;
-                    beNuevaUbicacion.Focus();
-                }
+                    break;
+
+                case 5: //En Bodega
+
+                    lblMensaje.Text = "La tarima ya fue activada!";
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                    
+                    break;
+
+                case 3: //Desactivada
+
+                    lblMensaje.Text = "La tarima esta Desactivada";
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+
+                    break;
+
+                case 4: //Entregada
+
+                    lblMensaje.Text = "La tarima ya fue Entregada";
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+
+                    break;
+
+                case 6: //Entregada
+
+                    lblMensaje.Text = "La tarima ya paso a Reproceso!";
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+
+                    break;
+
+
+                default:
+
+                    lblMensaje.Text = "No se encontro el registro de la tarima!";
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                    InProgress = 0;
+
+                    break;
+            }
+
+
+
+            //if (tarimaEncontrada != null)
+            //{
+            //    if (tarimaEncontrada.Recuperado)
+            //    {
+            //        if (tarimaEncontrada.id_estado_pt > 1)
+            //        {
+
+            //            error = true;
+            //            mensaje = "Ya se ha activado la tarima escaneada!";
+            //        }
+            //        txtCantidadT.Text = tarimaEncontrada.Cantidad.ToString();
+            //        txtPeso.Text = tarimaEncontrada.Peso.ToString();
+            //    }
+            //    else
+            //    {
+            //        error = true;
+            //        mensaje = "La Tarima ya esta activa o no se ha podido encontrar!";
+            //    }
+
+            //    if (error)
+            //    {
+            //        lblMensaje.Text = mensaje;
+            //        panelNotificacion.BackColor = Color.Red;
+            //        timerLimpiarMensaje.Enabled = true;
+            //        timerLimpiarMensaje.Start();
+            //        return;
+            //    }
+
+            //    try
+            //    {
+            //        DataOperations dp = new DataOperations();
+            //        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+            //        con.Open();
+
+            //        //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
+            //        SqlCommand cmd = new SqlCommand("[sp_activar_tarima_producto_terminado_v2]", con);  // Update de Data
+            //        cmd.CommandType = CommandType.StoredProcedure;
+            //        cmd.Parameters.AddWithValue("@id_selected", tarimaEncontrada.Id);
+            //        cmd.Parameters.AddWithValue("@codigo_barra", tarimaEncontrada.CodigoBarra);
+            //        if (usuarioLogueado != null)
+            //        {
+            //            if (usuarioLogueado.Id > 0)
+            //            {
+            //                cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+            //            }
+            //            else
+            //            {
+            //                cmd.Parameters.AddWithValue("@id_usuario", DBNull.Value);
+            //            }
+            //        }
+            //        else
+            //        {
+            //            cmd.Parameters.AddWithValue("@id_usuario", DBNull.Value);
+            //        }
+
+            //        Guardo = Convert.ToBoolean(cmd.ExecuteScalar());
+            //        con.Close();
+
+            //    }
+            //    catch (Exception ec)
+            //    {
+            //        //CajaDialogo.Error(ec.Message);
+            //        lblMensaje.Text = ec.Message;
+            //        panelNotificacion.BackColor = Color.Red;
+            //        timerLimpiarMensaje.Enabled = true;
+            //        timerLimpiarMensaje.Start();
+            //    }
+
+            //    if (Guardo)
+            //    {
+            //        idTarima = tarimaEncontrada.Id;
+            //        //Mensaje de transaccion exitosa
+            //        lblMensaje.Text = "Tarima Activada";
+            //        //panelNotificacion.BackColor = Color.MediumSeaGreen;
+            //        //timerLimpiarMensaje.Enabled = true;
+            //        //timerLimpiarMensaje.Start();
+            //        InProgress = 1;
+            //        beNuevaUbicacion.Focus();
+            //    }
 
                 
 
 
-            }
-            else
-            {
-                lblMensaje.Text = "No se encontro el registro de la tarima!";
-                panelNotificacion.BackColor = Color.Red;
-                timerLimpiarMensaje.Enabled = true;
-                timerLimpiarMensaje.Start();
-                InProgress = 0;
-            }
+            //}
+            //else
+            //{
+            //    lblMensaje.Text = "No se encontro el registro de la tarima!";
+            //    panelNotificacion.BackColor = Color.Red;
+            //    timerLimpiarMensaje.Enabled = true;
+            //    timerLimpiarMensaje.Start();
+            //    InProgress = 0;
+            //}
 
 
 

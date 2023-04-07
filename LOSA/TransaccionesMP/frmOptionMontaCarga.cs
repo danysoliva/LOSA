@@ -1,5 +1,6 @@
 ﻿using LOSA.Calidad;
 using LOSA.Clases;
+using LOSA.Logistica;
 using LOSA.RecepcionMP;
 using LOSA.TransaccionesPT;
 using System;
@@ -55,6 +56,9 @@ namespace LOSA.TransaccionesMP
         {
             //frmMantenimiento frm = new frmMantenimiento();
             //frm.Show();
+            frmValidacionTarimas frm = new frmValidacionTarimas(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
 
         private void cmdHome_Click(object sender, EventArgs e)

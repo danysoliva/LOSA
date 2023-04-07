@@ -12,12 +12,14 @@ using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
+using System.Threading;
 
 namespace LOSA.Calidad
 {
     public partial class frmSeguimientoAlimentacion : DevExpress.XtraEditors.XtraForm
     {
-
+        DateTime dtDesde, dtHasta;
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
         public frmSeguimientoAlimentacion(UserLogin Puser)
@@ -27,6 +29,7 @@ namespace LOSA.Calidad
             UsuarioLogeado = Puser;
             load_data();
             load_data_v2();
+
         }
 
         public void load_data()
@@ -144,8 +147,8 @@ namespace LOSA.Calidad
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmIntarioColaLote frm = new frmIntarioColaLote(UsuarioLogeado);
-            frm.Show();
+            //frmIntarioColaLote frm = new frmIntarioColaLote(UsuarioLogeado);
+            //frm.Show();
         }
 
         private void btn_Refresh_Click(object sender, EventArgs e)
@@ -154,8 +157,42 @@ namespace LOSA.Calidad
             load_data_v2();
         }
 
-        private void grd_consumido_Click(object sender, EventArgs e)
+
+        private void btnPrint_Click(object sender, EventArgs e)
         {
+
+        }
+
+    
+
+        private void btnImprimirRPT_Click(object sender, EventArgs e)
+        {
+            frmSelecFechasAlimentacion frm = new frmSelecFechasAlimentacion();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                dtDesde = frm.dtDesde;
+                dtHasta = frm.dtHasta;
+            }
+
+            try
+            {
+                rptReporteAlimentacionTarimasMP rpt = new rptReporteAlimentacionTarimasMP(dtDesde, dtHasta);
+                rpt.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(rpt);
+                printReport.ShowPreview();
+
+
+                //rptReporteAlimentacionTarimasMP rpt = new rptReporteAlimentacionTarimasMP(dtDesde, dtHasta);
+                //using (ReportPrintTool printTool = new ReportPrintTool(rpt))
+                //{
+                //    printTool.ShowPreview();
+                //}
+
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
 
         }
     }

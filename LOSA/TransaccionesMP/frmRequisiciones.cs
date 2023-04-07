@@ -74,7 +74,7 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)grRequisicoinesMP.FocusedView;
             var row = (dsTransaccionesMP.requisiciones_hRow)gridView.GetFocusedDataRow();
 
-            frmRequisicionesDetalle frm = new frmRequisicionesDetalle(UsuarioLogeado, row.id, row.Lote, row.id_estado);
+            frmRequisicionesDetalle frm = new frmRequisicionesDetalle(UsuarioLogeado, row.id, row.Lote, row.id_estado, row.nombre_comercial);
             frm.WindowState = FormWindowState.Maximized;
             if(frm.ShowDialog()== DialogResult.OK)
             {

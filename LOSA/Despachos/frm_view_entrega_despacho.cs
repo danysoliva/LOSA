@@ -316,5 +316,28 @@ namespace LOSA.Despachos
             ReportPrintTool printReport = new ReportPrintTool(cp);
             printReport.ShowPreview();
         }
+
+        private void btnImpresion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Pid > 0)
+                {
+                    rpt_despacho frm = new rpt_despacho(Pid);
+                    frm.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                    ReportPrintTool printReport = new ReportPrintTool(frm);
+                    printReport.ShowPreview();
+                }
+                else
+                {
+                    CajaDialogo.Error("Error al imprimir, Contacte al Dpto de IT");
+                }
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
+        }
     }
 }

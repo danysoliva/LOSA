@@ -193,7 +193,7 @@ namespace LOSA.Micro
             this.tabOpciones.Location = new System.Drawing.Point(0, 52);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabLotes;
-            this.tabOpciones.Size = new System.Drawing.Size(1123, 549);
+            this.tabOpciones.Size = new System.Drawing.Size(1091, 553);
             this.tabOpciones.TabIndex = 9;
             this.tabOpciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabLotes,
@@ -401,7 +401,7 @@ namespace LOSA.Micro
             this.TabReporte.Controls.Add(this.gridControl2);
             this.TabReporte.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("TabReporte.ImageOptions.SvgImage")));
             this.TabReporte.Name = "TabReporte";
-            this.TabReporte.Size = new System.Drawing.Size(1117, 502);
+            this.TabReporte.Size = new System.Drawing.Size(1085, 506);
             this.TabReporte.Text = "Reporte";
             // 
             // xtraTabControl1
@@ -412,7 +412,7 @@ namespace LOSA.Micro
             this.xtraTabControl1.Location = new System.Drawing.Point(4, 270);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPagePN;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1110, 229);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1078, 233);
             this.xtraTabControl1.TabIndex = 62;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPagePN,
@@ -424,7 +424,7 @@ namespace LOSA.Micro
             this.xtraTabPagePN.Appearance.Header.Options.UseFont = true;
             this.xtraTabPagePN.Controls.Add(this.gcDetalleSacos);
             this.xtraTabPagePN.Name = "xtraTabPagePN";
-            this.xtraTabPagePN.Size = new System.Drawing.Size(1104, 198);
+            this.xtraTabPagePN.Size = new System.Drawing.Size(1072, 202);
             this.xtraTabPagePN.Text = "Pesaje de Nucleo";
             // 
             // gcDetalleSacos
@@ -434,7 +434,7 @@ namespace LOSA.Micro
             this.gcDetalleSacos.Location = new System.Drawing.Point(0, 0);
             this.gcDetalleSacos.MainView = this.gvDetalleSacos;
             this.gcDetalleSacos.Name = "gcDetalleSacos";
-            this.gcDetalleSacos.Size = new System.Drawing.Size(1104, 198);
+            this.gcDetalleSacos.Size = new System.Drawing.Size(1072, 202);
             this.gcDetalleSacos.TabIndex = 61;
             this.gcDetalleSacos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetalleSacos});
@@ -561,7 +561,7 @@ namespace LOSA.Micro
             this.xtraTabPagePI.Appearance.Header.Options.UseFont = true;
             this.xtraTabPagePI.Controls.Add(this.gridControlPI);
             this.xtraTabPagePI.Name = "xtraTabPagePI";
-            this.xtraTabPagePI.Size = new System.Drawing.Size(1104, 198);
+            this.xtraTabPagePI.Size = new System.Drawing.Size(1072, 202);
             this.xtraTabPagePI.Text = "Pesaje Individual";
             // 
             // gridControlPI
@@ -769,7 +769,7 @@ namespace LOSA.Micro
             this.gridControl2.Location = new System.Drawing.Point(3, 47);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1111, 217);
+            this.gridControl2.Size = new System.Drawing.Size(1079, 221);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1047,7 +1047,7 @@ namespace LOSA.Micro
             this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdClose.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.cmdClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.cmdClose.Location = new System.Drawing.Point(1043, 7);
+            this.cmdClose.Location = new System.Drawing.Point(1011, 7);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(75, 39);
             this.cmdClose.TabIndex = 10;
@@ -1057,7 +1057,7 @@ namespace LOSA.Micro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 599);
+            this.ClientSize = new System.Drawing.Size(1089, 603);
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.tabOpciones);
             this.Name = "frmOpcionesMicro";

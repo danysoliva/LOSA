@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
-    <ApplicationRevision>488</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
+    <ApplicationRevision>501</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -802,6 +802,12 @@
     <Compile Include="Calidad\frmSeguimientoDespachos.Designer.cs">
       <DependentUpon>frmSeguimientoDespachos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\frmSelecFechasAlimentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\frmSelecFechasAlimentacion.Designer.cs">
+      <DependentUpon>frmSelecFechasAlimentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\frmTexturaMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1024,6 +1030,12 @@
     </Compile>
     <Compile Include="Calidad\Revision_Sanidad\XtraUserControl1.Designer.cs">
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\rptReporteAlimentacionTarimasMP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\rptReporteAlimentacionTarimasMP.Designer.cs">
+      <DependentUpon>rptReporteAlimentacionTarimasMP.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\rpt_certificado_calidad.cs">
       <SubType>Component</SubType>
@@ -1506,6 +1518,12 @@
     </Compile>
     <Compile Include="Logistica\frmTrazabilidadLote.Designer.cs">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\frmValidacionTarimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\frmValidacionTarimas.Designer.cs">
+      <DependentUpon>frmValidacionTarimas.cs</DependentUpon>
     </Compile>
     <Compile Include="Logistica\frm_nuevaSemanaPlan.cs">
       <SubType>Form</SubType>
@@ -2329,6 +2347,12 @@
     </Compile>
     <Compile Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.designer.cs">
       <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmSelectRequisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\OIL\frmSelectRequisa.Designer.cs">
+      <DependentUpon>frmSelectRequisa.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.cs">
       <SubType>Form</SubType>
@@ -5395,7 +5419,7 @@
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TransaccionesPT\dsPT.Designer.cs">
+    <Compile Include="TransaccionesPT\dsPT1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPT.xsd</DependentUpon>
@@ -5950,6 +5974,9 @@
     <EmbeddedResource Include="Calidad\frmSeguimientoDespachos.resx">
       <DependentUpon>frmSeguimientoDespachos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\frmSelecFechasAlimentacion.resx">
+      <DependentUpon>frmSelecFechasAlimentacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\frmTexturaMantenimiento.resx">
       <DependentUpon>frmTexturaMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -6042,6 +6069,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Revision_Sanidad\xfrmWizardRevisionanidadFirstStep.resx">
       <DependentUpon>xfrmWizardRevisionanidadFirstStep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\rptReporteAlimentacionTarimasMP.resx">
+      <DependentUpon>rptReporteAlimentacionTarimasMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\rpt_certificado_calidad.resx">
       <DependentUpon>rpt_certificado_calidad.cs</DependentUpon>
@@ -6230,6 +6260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frmTrazabilidadLote.resx">
       <DependentUpon>frmTrazabilidadLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\frmValidacionTarimas.resx">
+      <DependentUpon>frmValidacionTarimas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frm_nuevaSemanaPlan.resx">
       <DependentUpon>frm_nuevaSemanaPlan.cs</DependentUpon>
@@ -6572,6 +6605,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\OIL\frmReporteTrasladosArribaByOrden.resx">
       <DependentUpon>frmReporteTrasladosArribaByOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\OIL\frmSelectRequisa.resx">
+      <DependentUpon>frmSelectRequisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\OIL\frmSetRM_Tantques_Ext.resx">
       <DependentUpon>frmSetRM_Tantques_Ext.cs</DependentUpon>
@@ -7188,7 +7224,6 @@
     <EmbeddedResource Include="Produccion\xfrmMP_Por_BIN.resx">
       <DependentUpon>xfrmMP_Por_BIN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

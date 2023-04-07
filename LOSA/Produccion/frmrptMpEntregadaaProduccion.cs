@@ -11,7 +11,9 @@ using System.Windows.Forms;
 using LOSA.Clases;
 using ACS.Classes;
 using System.Data.SqlClient;
-
+using LOSA.Calidad;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraEditors;
 
 namespace LOSA.Produccion
 {
@@ -19,8 +21,8 @@ namespace LOSA.Produccion
     {
 
         DataOperations dp = new DataOperations();
-        DateTime Inicial;
-        DateTime Final;
+        DateTime FInicial;
+        DateTime FFinal;
         public frmrptMpEntregadaaProduccion()
         {
             InitializeComponent();
@@ -84,6 +86,45 @@ namespace LOSA.Produccion
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 grd_data.ExportToXlsx(dialog.FileName);
+            }
+        }
+
+        private void btnImprimirRPT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (dtdesde.EditValue == DBNull.Value)
+                {
+                    MessageBox.Show("La fecha de inicio no puede estar vacia");
+                    dtdesde.Focus();
+                    return;
+                }
+                if (dthasta.EditValue == DBNull.Value)
+                {
+                    MessageBox.Show("Le fecha final no puede estar vacia");
+                    dthasta.Focus();
+                    return;
+                }
+
+                FInicial = Convert.ToDateTime(dtdesde.EditValue);
+                FFinal = Convert.ToDateTime(dthasta.EditValue);
+                rptReporteAlimentacionTarimasMP rpt = new rptReporteAlimentacionTarimasMP(FInicial, FFinal);
+                rpt.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(rpt);
+                printReport.ShowPreview();
+
+
+                //rptReporteAlimentacionTarimasMP rpt = new rptReporteAlimentacionTarimasMP(dtDesde, dtHasta);
+                //using (ReportPrintTool printTool = new ReportPrintTool(rpt))
+                //{
+                //    printTool.ShowPreview();
+                //}
+
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
             }
         }
     }

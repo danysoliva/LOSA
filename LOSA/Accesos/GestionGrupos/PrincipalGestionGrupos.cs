@@ -84,5 +84,10 @@ namespace LOSA.Accesos.GestionGrupos
             crearGrupo.FormClosed += CrearGrupo_FormClosed;
             crearGrupo.ShowDialog(this);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

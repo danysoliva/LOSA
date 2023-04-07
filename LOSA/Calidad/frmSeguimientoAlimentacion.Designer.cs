@@ -48,7 +48,7 @@ namespace LOSA.Calidad
             this.timertick = new System.Windows.Forms.Timer(this.components);
             this.btn_Refresh = new DevExpress.XtraEditors.SimpleButton();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnPrint = new DevExpress.XtraEditors.GroupControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.grd_consumo = new DevExpress.XtraGrid.GridControl();
             this.grdv_consumo = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -60,14 +60,16 @@ namespace LOSA.Calidad
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_entrega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnImprimirRPT = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
+            this.btnPrint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_consumo)).BeginInit();
@@ -241,11 +243,12 @@ namespace LOSA.Calidad
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(5, 28);
+            this.simpleButton1.Location = new System.Drawing.Point(177, 28);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(143, 55);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Seguimiento \r\ncola de lotes";
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // timertick
@@ -258,7 +261,7 @@ namespace LOSA.Calidad
             this.btn_Refresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.Appearance.Options.UseFont = true;
             this.btn_Refresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.ImageOptions.Image")));
-            this.btn_Refresh.Location = new System.Drawing.Point(154, 28);
+            this.btn_Refresh.Location = new System.Drawing.Point(12, 28);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(138, 55);
             this.btn_Refresh.TabIndex = 4;
@@ -273,7 +276,7 @@ namespace LOSA.Calidad
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 89);
             this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.groupControl2);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnPrint);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
@@ -281,17 +284,18 @@ namespace LOSA.Calidad
             this.splitContainerControl1.SplitterPosition = 272;
             this.splitContainerControl1.TabIndex = 6;
             // 
-            // groupControl2
+            // btnPrint
             // 
-            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupControl2.AppearanceCaption.Options.UseFont = true;
-            this.groupControl2.Controls.Add(this.grd_data);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(0, 0);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1280, 272);
-            this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "Tarimas pendientes por consumir en el sistema";
+            this.btnPrint.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.AppearanceCaption.Options.UseFont = true;
+            this.btnPrint.Controls.Add(this.grd_data);
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrint.Location = new System.Drawing.Point(0, 0);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(1280, 272);
+            this.btnPrint.TabIndex = 2;
+            this.btnPrint.Text = "Tarimas pendientes por consumir en el sistema";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // groupControl1
             // 
@@ -352,7 +356,8 @@ namespace LOSA.Calidad
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
-            this.collote1});
+            this.collote1,
+            this.colfecha_entrega});
             this.grdv_consumo.GridControl = this.grd_consumo;
             this.grdv_consumo.Name = "grdv_consumo";
             this.grdv_consumo.OptionsView.ShowAutoFilterRow = true;
@@ -371,19 +376,19 @@ namespace LOSA.Calidad
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 3;
-            this.gridColumn2.Width = 272;
+            this.gridColumn2.Width = 176;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Fecha de consumo";
+            this.gridColumn3.Caption = "Fecha de Consumo";
             this.gridColumn3.DisplayFormat.FormatString = "g";
             this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn3.FieldName = "fecha";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
-            this.gridColumn3.Width = 185;
+            this.gridColumn3.VisibleIndex = 5;
+            this.gridColumn3.Width = 171;
             // 
             // gridColumn4
             // 
@@ -392,8 +397,8 @@ namespace LOSA.Calidad
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 5;
-            this.gridColumn4.Width = 157;
+            this.gridColumn4.VisibleIndex = 6;
+            this.gridColumn4.Width = 145;
             // 
             // gridColumn5
             // 
@@ -402,8 +407,8 @@ namespace LOSA.Calidad
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 6;
-            this.gridColumn5.Width = 198;
+            this.gridColumn5.VisibleIndex = 7;
+            this.gridColumn5.Width = 195;
             // 
             // gridColumn6
             // 
@@ -413,7 +418,7 @@ namespace LOSA.Calidad
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 1;
-            this.gridColumn6.Width = 148;
+            this.gridColumn6.Width = 139;
             // 
             // gridColumn7
             // 
@@ -423,19 +428,33 @@ namespace LOSA.Calidad
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
-            this.gridColumn7.Width = 87;
+            this.gridColumn7.Width = 82;
             // 
             // collote1
             // 
+            this.collote1.Caption = "Lote MP";
             this.collote1.FieldName = "lote";
             this.collote1.Name = "collote1";
             this.collote1.OptionsColumn.AllowEdit = false;
             this.collote1.Visible = true;
             this.collote1.VisibleIndex = 2;
-            this.collote1.Width = 213;
+            this.collote1.Width = 201;
+            // 
+            // colfecha_entrega
+            // 
+            this.colfecha_entrega.Caption = "Fecha Entrega";
+            this.colfecha_entrega.DisplayFormat.FormatString = "g";
+            this.colfecha_entrega.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colfecha_entrega.FieldName = "fecha_entrega";
+            this.colfecha_entrega.Name = "colfecha_entrega";
+            this.colfecha_entrega.OptionsColumn.AllowEdit = false;
+            this.colfecha_entrega.Visible = true;
+            this.colfecha_entrega.VisibleIndex = 4;
+            this.colfecha_entrega.Width = 151;
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnImprimirRPT);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Controls.Add(this.btn_cerrar);
@@ -445,6 +464,21 @@ namespace LOSA.Calidad
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1280, 91);
             this.panelControl1.TabIndex = 7;
+            // 
+            // btnImprimirRPT
+            // 
+            this.btnImprimirRPT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirRPT.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnImprimirRPT.Appearance.Options.UseFont = true;
+            this.btnImprimirRPT.Appearance.Options.UseTextOptions = true;
+            this.btnImprimirRPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnImprimirRPT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImprimirRPT.ImageOptions.SvgImage")));
+            this.btnImprimirRPT.Location = new System.Drawing.Point(1028, 5);
+            this.btnImprimirRPT.Name = "btnImprimirRPT";
+            this.btnImprimirRPT.Size = new System.Drawing.Size(114, 55);
+            this.btnImprimirRPT.TabIndex = 5;
+            this.btnImprimirRPT.Text = "Imprimir Reporte";
+            this.btnImprimirRPT.Click += new System.EventHandler(this.btnImprimirRPT_Click);
             // 
             // frmSeguimientoAlimentacion
             // 
@@ -462,8 +496,8 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
+            this.btnPrint.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_consumo)).EndInit();
@@ -493,7 +527,7 @@ namespace LOSA.Calidad
         private System.Windows.Forms.Timer timertick;
         private DevExpress.XtraEditors.SimpleButton btn_Refresh;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.GroupControl btnPrint;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraGrid.GridControl grd_consumo;
@@ -507,5 +541,7 @@ namespace LOSA.Calidad
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
         private DevExpress.XtraGrid.Columns.GridColumn collote1;
+        private DevExpress.XtraEditors.SimpleButton btnImprimirRPT;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_entrega;
     }
 }

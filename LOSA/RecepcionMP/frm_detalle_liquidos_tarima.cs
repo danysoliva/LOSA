@@ -194,5 +194,22 @@ namespace LOSA.RecepcionMP
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void reportPrinCartilla_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var gridview = (GridView)grd_data.FocusedView;
+                var row = (dsingresos.ingresoRow)gridview.GetFocusedDataRow();
+                rpt_cartilla report = new rpt_cartilla(row.ingreso, row.lote);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool printReport = new ReportPrintTool(report);
+                printReport.ShowPreview();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
     }
 }

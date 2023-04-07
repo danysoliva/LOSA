@@ -27,7 +27,8 @@ namespace LOSA.Clases
         bool _enable;
         string _NameComercial;
         bool _Recuperado;
-
+        int _idRM;
+        bool _permitir;
 
         public int IdMP_ACS { get => _IdMP_ACS; set => _IdMP_ACS = value; }
         public string CodeMP_SAP { get => _CodeMP_SAP; set => _CodeMP_SAP = value; }
@@ -36,6 +37,8 @@ namespace LOSA.Clases
         public string NameComercial { get => _NameComercial; set => _NameComercial = value; }
         public bool Recuperado { get => _Recuperado; set => _Recuperado = value; }
         public bool Enable { get => _enable; set => _enable = value; }
+        public int IdRM { get => _idRM; set => _idRM = value; }
+        public bool Permitir { get => _permitir; set => _permitir = value; }
 
         private void LoadMasterDataList()
         {
@@ -108,6 +111,41 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
+
+        public bool RecuperarRegistro_MPACS_For_IDRM_APMS(int pIdRM)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_clase_raw_material_for_id_RM", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idRM",pIdRM);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IdRM = dr.GetInt32(0);
+                    IdMP_ACS = dr.GetInt32(1);
+                    Name = dr.GetString(2);
+                    NameComercial = dr.GetString(3);
+                    CodeMP_SAP = dr.GetString(4);
+                }
+                dr.Close();
+                Recuperado = true;
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Recuperado = false;
+                CajaDialogo.Error(ex.Message);
+            }
+            return Recuperado;
+        }
+
+
         //
         public bool Get_if_mp_is_granel(int pIdRM)
         {
@@ -263,11 +301,34 @@ namespace LOSA.Clases
             return Recuperado;
         }
 
+        public bool PermitirEntregaParcialKG(int pid_mp)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
 
-
-
-
-
+                SqlCommand cmd = new SqlCommand("sp_permite_entrega_parcial_de_kg_requisa", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idmp", pid_mp);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Permitir = dr.GetBoolean(0);
+                }
+                dr.Close();
+                Recuperado = true;
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                Recuperado = false;
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        
+        }
 
 
     }

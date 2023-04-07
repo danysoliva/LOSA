@@ -49,6 +49,7 @@ namespace LOSA.Produccion
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDocEntry = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImprimirRPT = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dthasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dthasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtdesde.Properties.CalendarTimeProperties)).BeginInit();
@@ -253,7 +254,7 @@ namespace LOSA.Produccion
             this.colcantidad_entregada.Name = "colcantidad_entregada";
             this.colcantidad_entregada.OptionsColumn.AllowEdit = false;
             this.colcantidad_entregada.Visible = true;
-            this.colcantidad_entregada.VisibleIndex = 7;
+            this.colcantidad_entregada.VisibleIndex = 6;
             this.colcantidad_entregada.Width = 170;
             // 
             // colcantidad_unidades
@@ -265,12 +266,14 @@ namespace LOSA.Produccion
             this.colcantidad_unidades.Name = "colcantidad_unidades";
             this.colcantidad_unidades.OptionsColumn.AllowEdit = false;
             this.colcantidad_unidades.Visible = true;
-            this.colcantidad_unidades.VisibleIndex = 8;
+            this.colcantidad_unidades.VisibleIndex = 7;
             this.colcantidad_unidades.Width = 158;
             // 
             // colfecha
             // 
             this.colfecha.Caption = "Fecha Entrega";
+            this.colfecha.DisplayFormat.FormatString = "g";
+            this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfecha.FieldName = "fecha";
             this.colfecha.Name = "colfecha";
             this.colfecha.OptionsColumn.AllowEdit = false;
@@ -285,7 +288,7 @@ namespace LOSA.Produccion
             this.colcodigo_barra.Name = "colcodigo_barra";
             this.colcodigo_barra.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra.Visible = true;
-            this.colcodigo_barra.VisibleIndex = 6;
+            this.colcodigo_barra.VisibleIndex = 5;
             this.colcodigo_barra.Width = 123;
             // 
             // colDocEntry
@@ -294,8 +297,6 @@ namespace LOSA.Produccion
             this.colDocEntry.FieldName = "DocEntry";
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
-            this.colDocEntry.Visible = true;
-            this.colDocEntry.VisibleIndex = 5;
             this.colDocEntry.Width = 134;
             // 
             // simpleButton1
@@ -303,18 +304,33 @@ namespace LOSA.Produccion
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(553, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(566, 12);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(167, 51);
             this.simpleButton1.TabIndex = 14;
             this.simpleButton1.Text = "Exportar Excel";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
+            // btnImprimirRPT
+            // 
+            this.btnImprimirRPT.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnImprimirRPT.Appearance.Options.UseFont = true;
+            this.btnImprimirRPT.Appearance.Options.UseTextOptions = true;
+            this.btnImprimirRPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnImprimirRPT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImprimirRPT.ImageOptions.SvgImage")));
+            this.btnImprimirRPT.Location = new System.Drawing.Point(749, 12);
+            this.btnImprimirRPT.Name = "btnImprimirRPT";
+            this.btnImprimirRPT.Size = new System.Drawing.Size(166, 51);
+            this.btnImprimirRPT.TabIndex = 15;
+            this.btnImprimirRPT.Text = "Imprimir Reporte";
+            this.btnImprimirRPT.Click += new System.EventHandler(this.btnImprimirRPT_Click);
+            // 
             // frmrptMpEntregadaaProduccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1292, 726);
+            this.Controls.Add(this.btnImprimirRPT);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.btnGenerar);
@@ -360,5 +376,6 @@ namespace LOSA.Produccion
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra;
         private DevExpress.XtraGrid.Columns.GridColumn colDocEntry;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnImprimirRPT;
     }
 }

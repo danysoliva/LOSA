@@ -23,12 +23,15 @@ namespace LOSA.MigracionACS.OIL
         int idRM_Ext1;
         int idRM_Ext2;
         int idRM_Ext3;
+        int id_requisa_alosy;
+        int LotePT;
 
         decimal existencia_tanques_externos;
 
         int TanqueO;
         int TanqueD;
-        int idRM;
+        int idRM, id_mp;
+        string mp;
 
         UserLogin UsuarioLogueado;
 
@@ -38,7 +41,13 @@ namespace LOSA.MigracionACS.OIL
             dp = new DataOperations();
             GetNamesBins();
             UsuarioLogueado = pUser;
+            
+
         }
+
+        
+
+
 
         private void GetNamesBins()
         {
@@ -192,6 +201,21 @@ namespace LOSA.MigracionACS.OIL
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
             int val = 0;
+
+            if (string.IsNullOrEmpty(txtIDRequisa.Text))
+            {
+                CajaDialogo.Error("Debe Seleccionar una Requisa!");
+                return;
+            }
+
+            if (Convert.ToInt32(txtCantidad.EditValue) == 0)
+            {
+                CajaDialogo.Error("La Cantidad debe ser mayor que 0");
+                txtCantidad.Focus();
+                return;
+            }
+
+
             try 
 	        {	        
 		        val = Convert.ToInt32(txtCantidad.Text);
@@ -257,67 +281,188 @@ namespace LOSA.MigracionACS.OIL
                     }
                 }
             }
-            
 
-            bool exito = false;
+            //Vamos a Validar que la MP se solicite en la Requisa!
+            MateriaPrima mp_c = new MateriaPrima();
+            mp_c.RecuperarRegistro_MPACS_For_IDRM_APMS(idRM);
+            id_mp = mp_c.IdMP_ACS;
+            mp = mp_c.NameComercial;
+
+            bool continuar = false;
+            string msj = "";
+
             try
             {
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+                //Vamos a Validar que la M
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-
-                string sql = @"INSERT INTO [dbo].[oil_req_h]
-                                               ([id_usuario]
-                                               ,[motivo]
-                                               ,[tipo])
-                                         VALUES
-                                               ("+ UsuarioLogueado.UserId.ToString() +
-                                               ",' ',1); SELECT SCOPE_IDENTITY();";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                int idReq = Convert.ToInt32(cmd.ExecuteScalar());
-
-                string sql2 = @"INSERT INTO [dbo].[oil_req_d]
-                                                               ([id_requisicion]
-                                                               ,[id_rm]
-                                                               ,[id_tanq_o]
-                                                               ,[id_tanq_d]
-                                                               ,[cant]
-                                                               ,[complete]
-                                                               ,[inclusion]
-                                                               ,[process])
-                                                         VALUES
-                                                               (" + idReq.ToString()+
-                                                                "," + idRM.ToString() +
-                                                                "," + TanqueO.ToString()+
-                                                                "," + TanqueD.ToString()+
-                                                                "," + Convert.ToInt32(txtCantidad.Text).ToString() +
-                                                                ", 0" + 
-                                                                ", 100"+
-                                                                ", 0)";
-                SqlCommand cmd2 = new SqlCommand(sql2, conn);
-                cmd2.ExecuteScalar();
-
+                SqlCommand cmd = new SqlCommand("sp_validar_requisa_for_id_mp_aceites", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                cmd.Parameters.AddWithValue("@id_requisa_h", id_requisa_alosy);
+                cmd.Parameters.AddWithValue("@cantidad_solicitad_prd", Convert.ToInt32(txtCantidad.Text));
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    continuar = dr.GetBoolean(0);
+                    msj = dr.GetString(1);
+                }
+                dr.Close();
                 conn.Close();
-                CajaDialogo.Information("Transacción Exitosa!");
-                exito = true;
             }
-            catch (Exception ec)
+            catch (Exception ex)
             {
-                CajaDialogo.Error(ec.Message);
+                CajaDialogo.Error(ex.Message);
             }
 
-            if (exito)
+            if (continuar == true)
             {
-                xCheckBoxTQExt1.Value = xCheckBoxTQExt2.Value = xCheckBoxTQExt3.Value = false;
-                xCheckBoxTQInt1.Value = xCheckBoxTQInt2.Value = xCheckBoxTQInt3.Value = false;
-            
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.Close();
+                bool exito = false;
+
+                try
+                {
+                    //Vamos a Crear la Requisa!
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("sp_insert_requisa_aceites_traslado", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
+                    cmd.Parameters.AddWithValue("@id_rm", idRM);
+                    cmd.Parameters.AddWithValue("@tanqueO", TanqueO.ToString());
+                    cmd.Parameters.AddWithValue("@tanqueD", TanqueD.ToString());
+                    cmd.Parameters.AddWithValue("@cantidad_kg", dp.ValidateNumberInt32(txtCantidad.EditValue));
+                    cmd.Parameters.AddWithValue("@lote_pt", LotePT);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    exito = true;
+
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+
+                if (exito)
+                {
+                    xCheckBoxTQExt1.Value = xCheckBoxTQExt2.Value = xCheckBoxTQExt3.Value = false;
+                    xCheckBoxTQInt1.Value = xCheckBoxTQInt2.Value = xCheckBoxTQInt3.Value = false;
+
+                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    this.Close();
+                }
+
             }
+            else
+            {
+                CajaDialogo.Error(msj);
+            }
+
+
+            //bool exito = false;
+            //try
+            //{
+            //    //SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+            //    //conn.Open();
+
+            //    //string sql = @"INSERT INTO [dbo].[oil_req_h]
+            //    //                               ([id_usuario]
+            //    //                               ,[motivo]
+            //    //                               ,[tipo])
+            //    //                         VALUES
+            //    //                               ("+ UsuarioLogueado.UserId.ToString() +
+            //    //                               ",' ',1); SELECT SCOPE_IDENTITY();";
+            //    //SqlCommand cmd = new SqlCommand(sql, conn);
+            //    //int idReq = Convert.ToInt32(cmd.ExecuteScalar());
+
+            //string sql2 = @"INSERT INTO [dbo].[oil_req_d]
+            //                                               ([id_requisicion]
+            //                                               ,[id_rm]
+            //                                               ,[id_tanq_o]
+            //                                               ,[id_tanq_d]
+            //                                               ,[cant]
+            //                                               ,[complete]
+            //                                               ,[inclusion]
+            //                                               ,[process])
+            //                                         VALUES
+            //                                               (" + idReq.ToString() +
+            //                                                "," + idRM.ToString() +
+            //                                                "," + TanqueO.ToString() +
+            //                                                "," + TanqueD.ToString() +
+            //                                                "," + Convert.ToInt32(txtCantidad.Text).ToString() +
+            //                                                ", 0" +
+            //                                                ", 100" +
+            //                                                ", 0)";
+            //    //SqlCommand cmd2 = new SqlCommand(sql2, conn);
+            //    //cmd2.ExecuteScalar();
+
+            //    //conn.Close();
+            //    //CajaDialogo.Information("Transacción Exitosa!");
+            //    //exito = true;
+            //}
+            //catch (Exception ec)
+            //{
+            //    CajaDialogo.Error(ec.Message);
+            //}
+
+            //if (exito)
+            //{
+            //    xCheckBoxTQExt1.Value = xCheckBoxTQExt2.Value = xCheckBoxTQExt3.Value = false;
+            //    xCheckBoxTQInt1.Value = xCheckBoxTQInt2.Value = xCheckBoxTQInt3.Value = false;
+
+            //    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            //    this.Close();
+            //}
         }
 
         private void textEdit1_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSelectRequisa_Click(object sender, EventArgs e)
+        {
+
+            if (xCheckBoxTQExt1.Value)
+            {
+                TanqueO = 88;
+                idRM = idRM_Ext1;
+            }
+            else
+            {
+                if (xCheckBoxTQExt2.Value)
+                {
+                    TanqueO = 90;
+                    idRM = idRM_Ext2;
+                }
+                else
+                {
+                    if (xCheckBoxTQExt3.Value)
+                    {
+                        TanqueO = 91;
+                        idRM = idRM_Ext3;
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("Debe Seleccionar un Bin de Destino!");
+                        return;
+                    }
+                }
+            }
+
+            //Vamos a Validar que la MP se solicite en la Requisa!
+            MateriaPrima mp_c = new MateriaPrima();
+            mp_c.RecuperarRegistro_MPACS_For_IDRM_APMS(idRM);
+            id_mp = mp_c.IdMP_ACS;
+
+            frmSelectRequisa frm = new frmSelectRequisa(id_mp);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LotePT = frm.LotePT;
+                id_requisa_alosy = frm.Id_Requisa;
+                txtIDRequisa.Text = " Requisa #: "+id_requisa_alosy+" - Lote PT: "+LotePT;
+            }
         }
     }
 }
