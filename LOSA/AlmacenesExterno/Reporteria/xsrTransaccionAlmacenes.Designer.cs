@@ -473,7 +473,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "localhost_LOSA_Connection 2";
+            this.sqlDataSource1.ConnectionName = "localhost_LOSA_Connection_aqfsvr010";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "rpt_transacciones_traslado_almacen_v2";
             queryParameter1.Name = "@id_h";
