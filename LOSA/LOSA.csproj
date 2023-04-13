@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>504</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <ApplicationRevision>506</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -7224,7 +7224,6 @@
     <EmbeddedResource Include="Produccion\xfrmMP_Por_BIN.resx">
       <DependentUpon>xfrmMP_Por_BIN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

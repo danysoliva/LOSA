@@ -123,7 +123,7 @@
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdHome.ImageOptions.Image")));
-            this.cmdHome.Location = new System.Drawing.Point(1002, 43);
+            this.cmdHome.Location = new System.Drawing.Point(1099, 43);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(152, 45);
             this.cmdHome.TabIndex = 37;
@@ -141,7 +141,7 @@
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(130, 20);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(900, 39);
+            this.labelControl3.Size = new System.Drawing.Size(997, 39);
             this.labelControl3.TabIndex = 38;
             this.labelControl3.Text = "Planificacion de Despachos";
             // 
@@ -163,7 +163,7 @@
             this.btnver,
             this.btn_ligar_oc,
             this.cmdImprimirPlanDespachoPreliminar});
-            this.grd_data.Size = new System.Drawing.Size(1162, 429);
+            this.grd_data.Size = new System.Drawing.Size(1259, 571);
             this.grd_data.TabIndex = 39;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -525,7 +525,7 @@
             this.btnExport.Appearance.Options.UseFont = true;
             this.btnExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnExport.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
-            this.btnExport.Location = new System.Drawing.Point(833, 43);
+            this.btnExport.Location = new System.Drawing.Point(930, 43);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(152, 45);
             this.btnExport.TabIndex = 42;
@@ -536,7 +536,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 560);
+            this.ClientSize = new System.Drawing.Size(1263, 702);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.tggOpen);
             this.Controls.Add(this.cmdHome);

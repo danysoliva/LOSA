@@ -260,6 +260,9 @@
             // 
             // grd_data
             // 
+            this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataSource = this.productocargaBindingSource;
             this.grd_data.Location = new System.Drawing.Point(0, 42);
             this.grd_data.MainView = this.grdv_data;

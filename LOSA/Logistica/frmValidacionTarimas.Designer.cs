@@ -273,7 +273,6 @@ namespace LOSA.Logistica
             // 
             // tsEditarTarima
             // 
-            this.tsEditarTarima.Enabled = false;
             this.tsEditarTarima.Location = new System.Drawing.Point(293, 336);
             this.tsEditarTarima.Name = "tsEditarTarima";
             this.tsEditarTarima.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
