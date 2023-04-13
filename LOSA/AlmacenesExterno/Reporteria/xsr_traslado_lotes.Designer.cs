@@ -455,7 +455,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             // dsTrasladoLotes
             // 
-            this.dsTrasladoLotes.ConnectionName = "localhost_LOSA_Connection 2";
+            this.dsTrasladoLotes.ConnectionName = "localhost_LOSA_Connection_aqfsvr010";
             this.dsTrasladoLotes.Name = "dsTrasladoLotes";
             storedProcQuery1.Name = "rpt_traslado_almacen_v2";
             queryParameter1.Name = "@id_h";
