@@ -35,6 +35,7 @@
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblCodeSAP = new DevExpress.XtraReports.UI.XRLabel();
             this.BarCode2 = new DevExpress.XtraReports.UI.XRBarCode();
             this.BarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
@@ -81,7 +82,6 @@
             this.xrPanel3 = new DevExpress.XtraReports.UI.XRPanel();
             this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -93,7 +93,7 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 30.04166F;
+            this.TopMargin.HeightF = 19.625F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -134,8 +134,26 @@
             this.xrLabel2,
             this.lblNombreProducto,
             this.xrLabel1});
-            this.PageHeader.HeightF = 814.5833F;
+            this.PageHeader.HeightF = 788.4167F;
             this.PageHeader.Name = "PageHeader";
+            // 
+            // xrLabel28
+            // 
+            this.xrLabel28.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrLabel28.BorderWidth = 2F;
+            this.xrLabel28.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 265.2708F);
+            this.xrLabel28.Name = "xrLabel28";
+            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel28.SizeF = new System.Drawing.SizeF(136.4583F, 53.41998F);
+            this.xrLabel28.StylePriority.UseBorders = false;
+            this.xrLabel28.StylePriority.UseBorderWidth = false;
+            this.xrLabel28.StylePriority.UseFont = false;
+            this.xrLabel28.StylePriority.UseTextAlignment = false;
+            this.xrLabel28.Text = "Cod SAP";
+            this.xrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // lblCodeSAP
             // 
@@ -158,7 +176,7 @@
             // BarCode2
             // 
             this.BarCode2.AutoModule = true;
-            this.BarCode2.LocationFloat = new DevExpress.Utils.PointFloat(207.3127F, 699.4167F);
+            this.BarCode2.LocationFloat = new DevExpress.Utils.PointFloat(207.3128F, 674.4167F);
             this.BarCode2.Name = "BarCode2";
             this.BarCode2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.BarCode2.SizeF = new System.Drawing.SizeF(374.4166F, 114F);
@@ -885,24 +903,6 @@
             this.xrLabel13.Text = "Elaborado Por:";
             this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel28
-            // 
-            this.xrLabel28.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel28.BorderWidth = 2F;
-            this.xrLabel28.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 265.2708F);
-            this.xrLabel28.Name = "xrLabel28";
-            this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel28.SizeF = new System.Drawing.SizeF(136.4583F, 53.41998F);
-            this.xrLabel28.StylePriority.UseBorders = false;
-            this.xrLabel28.StylePriority.UseBorderWidth = false;
-            this.xrLabel28.StylePriority.UseFont = false;
-            this.xrLabel28.StylePriority.UseTextAlignment = false;
-            this.xrLabel28.Text = "Cod SAP";
-            this.xrLabel28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
             // rptReporteTarimaPT
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -911,7 +911,7 @@
             this.BottomMargin,
             this.PageHeader,
             this.ReportHeader});
-            this.Margins = new System.Drawing.Printing.Margins(36, 38, 30, 11);
+            this.Margins = new System.Drawing.Printing.Margins(36, 38, 20, 11);
             this.ShowPrintMarginsWarning = false;
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

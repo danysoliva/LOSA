@@ -52,10 +52,12 @@ namespace ACS.Classes
 
         //LOSA
         public static string LOSA_ServerAddress = "AQFSVR010\\AQFSVR010";
+        //public static string LOSA_ServerAddress = "AQFSVR003";
         public static string LOSA_ServerName = "AQFSVR010\\AQFSVR010";
+        //public static string LOSA_ServerName = "AQFSVR003";
         public static string LOSA_ActiveDB = "LOSA"; //BASE PRODUCTIVA
-        //public static string LOSA_ActiveDB = "LOSA2"; //BASE DE PRUEBAS
         public static string LOSA_DB_User = "losa_user_db";
+        //public static string LOSA_DB_User = "sa";
         public static string LOSA_DB_Pass = " AquaF33dHN2014";
 
         //LOSA Servidor Produccion AQFSVR010
