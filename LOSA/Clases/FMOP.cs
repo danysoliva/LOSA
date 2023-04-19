@@ -1122,7 +1122,7 @@ namespace LOSA.Clases
                 cmd.Parameters["@plan_line"].Value = plan_line;
                 cmd.Parameters["@created_by"].Value = created_by;
                 cmd.Parameters["@created_date"].Value = created_date;
-                cmd.Parameters["@loaded_by"].Value = loaded_by;
+                cmd.Parameters["@loaded_by"].Value = created_by;
                 //cmd.Parameters["@loaded_date"].Value = loaded_date;
                 //cmd.Parameters["@start_prod_by"].Value = start_prod_by;
                 //cmd.Parameters["@start_prod_date"].Value = start_prod_date;
@@ -1132,11 +1132,12 @@ namespace LOSA.Clases
                 //cmd.Parameters["@netx_batch_close"].Value = netx_batch_close;
                 cmd.Parameters["@comment_cancel"].Value = comment_cancel;
                 cmd.Parameters["@comment_operator"].Value = comment_operator;
-
-                return dp.APMS_Exec_SP_GetID("OP_Production_Orders_Insert_Main", cmd, param);
+                int valor_return = dp.APMS_Exec_SP_GetID("OP_Production_Orders_Insert_Main", cmd, param);
+                return valor_return;
             }
             catch (Exception ex) 
             {
+                CajaDialogo.Error(ex.Message);
                 return -1;
             }
         }

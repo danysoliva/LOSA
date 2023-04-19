@@ -359,7 +359,24 @@ namespace LOSA.Produccion
                     cmd.Parameters.AddWithValue("@hasta", hasta);
 
                     int Id_tm = Convert.ToInt32(cmd.ExecuteScalar());
-                    ListaTarimas.Add(Id_tm);
+                    if (ListaTarimas.Count == 0)
+                    {
+                        ListaTarimas.Add(Id_tm);
+                    }
+                    else
+                    {
+                        int conteo = 0;
+                        foreach (int id_tarima_in_list in ListaTarimas)
+                        {
+                            if (id_tarima_in_list == Id_tm)
+                                conteo++;
+                        }
+
+                        if(conteo == 0)
+                            ListaTarimas.Add(Id_tm);
+                    }
+                    
+                    
                     cn.Close();
                     //tipoprinte = 0;
 
@@ -383,31 +400,32 @@ namespace LOSA.Produccion
             if (ListaTarimas.Count >= 1)
             {
                 int contador_print = 0;
-                foreach (int Id_tm in ListaTarimas)
+                foreach (int vId_tm in ListaTarimas)
                 {
                     //report1 = new rptReporteTarimaPT(Id_tm);
 
-                    if (Id_tm > 0)
+                    if (vId_tm > 0)
                     {
                         Tarima tar1 = new Tarima();
-                        if (tar1.RecuperarRegistro(Id_tm))
+                        if (tar1.RecuperarRegistro(vId_tm))
                         {
                             if (contador_print == 0)
                             {
-                                report1 = new rptReporteTarimaPT(Id_tm);
+                                report1 = new rptReporteTarimaPT(vId_tm);
                                 report1.CreateDocument();
-                                contador_print++;
                             }
                             else
                             {
-                                rptReporteTarimaPT report2 = new rptReporteTarimaPT(Id_tm);
+                                rptReporteTarimaPT report2 = new rptReporteTarimaPT(vId_tm);
                                 report2.CreateDocument();
 
                                 if (report1 != null)
                                 {
-                                    report1.ModifyDocument(x => { x.AddPages(report2.Pages); });
+                                    //report1.ModifyDocument(x => { x.AddPages(report2.Pages); });
+                                    report1.ModifyDocument(x => { x.InsertPage(0,report2.Pages.First); });
                                 }
                             }
+                            contador_print++;
                         }
                     }
                 }//end foreach
@@ -421,6 +439,7 @@ namespace LOSA.Produccion
                     {
                         report1.ShowPreviewMarginLines = false;
                         prinTool.Print();
+                        //prinTool.ShowPreview();
                     }
                 }
             }
