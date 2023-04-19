@@ -7224,6 +7224,7 @@
     <EmbeddedResource Include="Produccion\xfrmMP_Por_BIN.resx">
       <DependentUpon>xfrmMP_Por_BIN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
