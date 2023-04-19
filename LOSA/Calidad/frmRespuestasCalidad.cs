@@ -123,30 +123,30 @@ namespace LOSA.Calidad
 
         private void grd_seleccion_EditValueChanged(object sender, EventArgs e)
         {
-            if (checkEdit1.Checked)
-            {      //Si es manual
-                if (txtmanual.Text == "")
-                {
-                    CajaDialogo.Error("Debe definer la informacion manual para poder guardar.");
-                    txtmanual.Focus();
-                    return;
-                }
-                id_respuesta = 0;
-                Respuesta = txtmanual.Text;
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                if (grd_seleccion.EditValue == null)
-                {
-                    CajaDialogo.Error("Debe definer la informacion manual para poder guardar.");
-                    grd_seleccion.ShowPopup();
-                    return;
-                }
-                id_respuesta = Convert.ToInt32(grd_seleccion.EditValue);
-                Respuesta = grd_seleccion.Text;
-                this.DialogResult = DialogResult.OK;
-            }
+            //if (checkEdit1.Checked)
+            //{      //Si es manual
+            //    if (txtmanual.Text == "")
+            //    {
+            //        CajaDialogo.Error("Debe definer la informacion manual para poder guardar.");
+            //        txtmanual.Focus();
+            //        return;
+            //    }
+            //    id_respuesta = 0;
+            //    Respuesta = txtmanual.Text;
+            //    this.DialogResult = DialogResult.OK;
+            //}
+            //else
+            //{
+            //    if (grd_seleccion.EditValue == null)
+            //    {
+            //        CajaDialogo.Error("Debe definer la informacion manual para poder guardar.");
+            //        grd_seleccion.ShowPopup();
+            //        return;
+            //    }
+            //    id_respuesta = Convert.ToInt32(grd_seleccion.EditValue);
+            //    Respuesta = grd_seleccion.Text;
+            //    this.DialogResult = DialogResult.OK;
+            //}
         }
 
         private void txtmanual_KeyDown(object sender, KeyEventArgs e)
