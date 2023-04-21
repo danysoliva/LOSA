@@ -438,7 +438,7 @@ namespace LOSA.Produccion
                     using (ReportPrintTool prinTool = new ReportPrintTool(report1))
                     {
                         report1.ShowPreviewMarginLines = false;
-                        prinTool.Print();
+                        prinTool.ShowPreview();
                         //prinTool.ShowPreview();
                     }
                 }
