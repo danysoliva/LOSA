@@ -1001,27 +1001,53 @@ namespace LOSA.Produccion
 
         private void chSeleccionarTodas_CheckedChanged(object sender, EventArgs e)
         {
-            try
+            //Selecciona lo filtrado en el Grid
+            var gridView = (GridView)grd_data.FocusedView;
+            int conta = dsProduccion.listaTmPrinted.Count;
+
+            for (int i = 0; i < conta; i++)
             {
-                if (chSeleccionarTodas.Checked)
+                dsProduccion.listaTmPrintedRow row = (dsProduccion.listaTmPrintedRow)gridView.GetDataRow(i);
+                int r = gridView.GetVisibleRowHandle(i);
+                if (r >= 0)
                 {
-                    foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+                    if (row != null)
                     {
-                        row.selectedd = true;
+                        row.selectedd = chSeleccionarTodas.Checked;
                     }
                 }
                 else
                 {
-                    foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+                    if (row != null)
                     {
                         row.selectedd = false;
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
+
+
+            //Selecciona todo
+            //try
+            //{
+            //    if (chSeleccionarTodas.Checked)
+            //    {
+            //        foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+            //        {
+            //            row.selectedd = true;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+            //        {
+            //            row.selectedd = false;
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
 
         private void gridv_data_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

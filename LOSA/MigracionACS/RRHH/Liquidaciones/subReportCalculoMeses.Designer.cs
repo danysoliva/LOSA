@@ -33,6 +33,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(subReportCalculoMeses));
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
@@ -199,7 +200,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "localhost_LOSA_Connection_aqfsvr010";
+            this.sqlDataSource1.ConnectionName = "localhost_ACS_ConnectionAQFSVR010";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "sp_get_vacaciones_liquidacion";
             queryParameter1.Name = "@years";
@@ -213,6 +214,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             storedProcQuery1.StoredProcName = "sp_get_vacaciones_liquidacion";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // p_anios
             // 

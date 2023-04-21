@@ -120,6 +120,9 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 134</value>
   </metadata>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InNwX2dldF92YWNhY2lvbmVzX2xpcXVpZGFjaW9uIj48RmllbGQgTmFtZT0iaWQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJkaWFzIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iZGVzY3JpcGNpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0ieWVhcl8iIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJvcmRlcl8iIFR5cGU9IkludDMyIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
   <metadata name="dsRRHH_2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 95</value>
   </metadata>
