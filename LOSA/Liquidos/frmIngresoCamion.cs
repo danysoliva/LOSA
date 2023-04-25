@@ -52,6 +52,7 @@ namespace LOSA.Liquidos
             //IdLoteSelected = pItem.IdLote;
             //LoadBarcos();
             LoadUbicaciones();
+            grdUbicaciones.EditValue = id_tanque;
             obtener_ingreso();
 
 

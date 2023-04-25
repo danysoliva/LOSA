@@ -51,10 +51,13 @@ namespace LOSA.Liquidos
                 string code_mp="";
                 MateriaPrima mp = new MateriaPrima();
 
-                foreach (var item in dsLiquidos_.LOSA_Ingreso_liquidos)
-                {
-                    code_mp = item.codigo_mp;
-                }
+                //foreach (var item in dsLiquidos_.LOSA_Ingreso_liquidos)
+                //{
+                //    code_mp = item.codigo_mp;
+                //}
+
+                Tanque tanqu1 = new Tanque(id_taque);
+                code_mp = tanqu1.Itemcode;
 
                 //if (grdv_boleta.RowCount==0)
                 //{

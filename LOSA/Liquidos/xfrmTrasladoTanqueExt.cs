@@ -81,13 +81,13 @@ namespace LOSA.Liquidos
                 return;
             }
 
-            
 
-            //if (Convert.ToDecimal(txtCantidaSalida.EditValue) + Convert.ToDecimal(txtCantidadEntrada.EditValue) > Capacidad_tanque_entrada)
-            //{
-            //    CajaDialogo.Error("El Traslado excede la maxima Capacidad del Tanque");
-            //    return;
-            //}
+
+            if (Convert.ToDecimal(txtCantidaSalida.EditValue) + Convert.ToDecimal(txtCantidadEntrada.EditValue) > Capacidad_tanque_entrada)
+            {
+                CajaDialogo.Error("El Traslado excede la maxima Capacidad del Tanque");
+                return;
+            }
 
 
 
@@ -108,6 +108,10 @@ namespace LOSA.Liquidos
                 cmd.Parameters.AddWithValue("@id_tanque_salida", grdTanqueSalida.EditValue);
                 cmd.Parameters.AddWithValue("@id_tanque_entrada", grdTanqueEntrada.EditValue);
                 cmd.ExecuteNonQuery();
+
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ec)
             {
