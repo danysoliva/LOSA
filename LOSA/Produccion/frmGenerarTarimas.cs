@@ -438,7 +438,7 @@ namespace LOSA.Produccion
                     using (ReportPrintTool prinTool = new ReportPrintTool(report1))
                     {
                         report1.ShowPreviewMarginLines = false;
-                        prinTool.Print();
+                        prinTool.ShowPreviewDialog();
                         //prinTool.ShowPreview();
                     }
                 }
@@ -872,6 +872,54 @@ namespace LOSA.Produccion
 
         private void simpleButton6_Click(object sender, EventArgs e)
         {
+            var gridView = (GridView)grd_data.FocusedView;
+            
+            int contador_print = 0;
+
+            rptReporteTarimaPT reportResumen = null;
+
+            for (int i = 0; i < gridView.RowCount; i++)
+            {
+                var row = (dsProduccion.listaTmPrintedRow)gridView.GetDataRow(i);
+                if (row.selectedd == true)
+                {
+                    if (row.id > 0)
+                    {
+                        Tarima tar1 = new Tarima();
+                        if (tar1.RecuperarRegistro(row.id))
+                        {
+                            if (contador_print == 0)
+                            {
+                                reportResumen = new rptReporteTarimaPT(row.id);
+                                reportResumen.CreateDocument();
+                                contador_print++;
+                            }
+                            else
+                            {
+                                rptReporteTarimaPT report2 = new rptReporteTarimaPT(row.id);
+                                report2.CreateDocument();
+
+                                if (reportResumen != null)
+                                {
+                                    reportResumen.ModifyDocument(x => { x.AddPages(report2.Pages); });
+                                }
+
+                            }
+                        
+                        }
+                    }//row.id > 0)
+                }//(row.selectedd == true)
+            }//For
+            if (reportResumen != null)
+            {
+                reportResumen.ShowPrintMarginsWarning = false;
+                using (ReportPrintTool printTool = new ReportPrintTool(reportResumen))
+                {
+                    printTool.ShowPreviewDialog();
+                }
+            }
+
+            
             //try
             //{
             //    int count_selected = 0;
@@ -894,86 +942,112 @@ namespace LOSA.Produccion
 
             //}
 
-            ArrayList ListaTarimas = new ArrayList();
+            //ArrayList ListaTarimas = new ArrayList();
 
-            foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
-            {
-                if (row.selectedd)
-                {
-                    ListaTarimas.Add(row.id);
-                }//end if (row.selectedd)
+            //foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+            //{
+            //    if (row.selectedd)
+            //    {
+            //        ListaTarimas.Add(row.id);
+            //    }//end if (row.selectedd)
 
-            }//end foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+            //}//end foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
 
-            if (ListaTarimas.Count >= 1)
-            {
-                int contador_print = 0;
-                rptReporteTarimaPT report1 = null;
-                foreach (int Id_tm in ListaTarimas)
-                {
-                    report1 = new rptReporteTarimaPT(Id_tm);
+            //if (ListaTarimas.Count >= 1)
+            //{
+            //    int contador_print = 0;
+            //    rptReporteTarimaPT report1 = null;
+            //    foreach (int Id_tm in ListaTarimas)
+            //    {
+            //        report1 = new rptReporteTarimaPT(Id_tm);
 
-                    if (Id_tm > 0)
-                    {
-                        Tarima tar1 = new Tarima();
-                        if (tar1.RecuperarRegistro(Id_tm))
-                        {
-                            if (contador_print == 0)
-                            {
-                                report1 = new rptReporteTarimaPT(Id_tm);
-                                report1.CreateDocument();
-                                contador_print++;
-                            }
-                            else
-                            {
-                                rptReporteTarimaPT report2 = new rptReporteTarimaPT(Id_tm);
-                                report2.CreateDocument();
+            //        if (Id_tm > 0)
+            //        {
+            //            Tarima tar1 = new Tarima();
+            //            if (tar1.RecuperarRegistro(Id_tm))
+            //            {
+            //                if (contador_print == 0)
+            //                {
+            //                    report1 = new rptReporteTarimaPT(Id_tm);
+            //                    report1.CreateDocument();
+            //                    contador_print++;
+            //                }
+            //                else
+            //                {
+            //                    rptReporteTarimaPT report2 = new rptReporteTarimaPT(Id_tm);
+            //                    report2.CreateDocument();
 
-                                if (report1 != null)
-                                {
-                                    report1.ModifyDocument(x => { x.AddPages(report2.Pages); });
-                                }
-                            }
-                        }
-                    }
-                }//end foreach
+            //                    if (report1 != null)
+            //                    {
+            //                        report1.ModifyDocument(x => { x.AddPages(report2.Pages); });
+            //                    }
+            //                }
+            //            }
+            //        }
+            //    }//end foreach
 
-                //Impresión de un solo objeto Reporte
-                if (report1 != null)
-                {
-                    using (ReportPrintTool prinTool = new ReportPrintTool(report1))
-                    {
-                        prinTool.ShowPreviewDialog();
-                    }
+            //    //Impresión de un solo objeto Reporte
+            //    if (report1 != null)
+            //    {
+            //        using (ReportPrintTool prinTool = new ReportPrintTool(report1))
+            //        {
+            //            prinTool.ShowPreviewDialog();
+            //        }
 
-                }
+            //    }
 
-            }
+            //}
         }
 
         private void chSeleccionarTodas_CheckedChanged(object sender, EventArgs e)
         {
-            try
+            //Selecciona lo filtrado en el Grid
+            var gridView = (GridView)grd_data.FocusedView;
+            int conta = dsProduccion.listaTmPrinted.Count;
+
+            for (int i = 0; i < conta; i++)
             {
-                if (chSeleccionarTodas.Checked)
+                dsProduccion.listaTmPrintedRow row = (dsProduccion.listaTmPrintedRow)gridView.GetDataRow(i);
+                int r = gridView.GetVisibleRowHandle(i);
+                if (r >= 0)
                 {
-                    foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+                    if (row != null)
                     {
-                        row.selectedd = true;
+                        row.selectedd = chSeleccionarTodas.Checked;
                     }
                 }
                 else
                 {
-                    foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+                    if (row != null)
                     {
                         row.selectedd = false;
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
+
+
+            //Selecciona todo
+            //try
+            //{
+            //    if (chSeleccionarTodas.Checked)
+            //    {
+            //        foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+            //        {
+            //            row.selectedd = true;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        foreach (dsProduccion.listaTmPrintedRow row in dsProduccion.listaTmPrinted.Rows)
+            //        {
+            //            row.selectedd = false;
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
 
         private void gridv_data_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

@@ -200,7 +200,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "Productive_Server_CS";
+            this.sqlDataSource1.ConnectionName = "localhost_ACS_ConnectionAQFSVR010";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "sp_get_vacaciones_liquidacion";
             queryParameter1.Name = "@years";
