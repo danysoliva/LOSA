@@ -96,10 +96,12 @@ namespace LOSA.MigracionACS.Produccion.Reports
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add(new SqlParameter("@fecha_desde", SqlDbType.DateTime));
-                    cmd.Parameters.Add(new SqlParameter("@fecha_hasta", SqlDbType.DateTime));
-                    cmd.Parameters["@fecha_desde"].Value = string.Format("{0:dd/MM/yyyy HH:mm}", dt_desde.EditValue);// Convert.ToDateTime(dt_desde.EditValue);
-                    cmd.Parameters["@fecha_hasta"].Value = string.Format("{0:dd/MM/yyyy HH:mm}", dt_hasta.EditValue); //Convert.ToDateTime(dt_hasta.EditValue);
+                    //cmd.Parameters.Add(new SqlParameter("@fecha_desde", SqlDbType.DateTime));
+                    //cmd.Parameters.Add(new SqlParameter("@fecha_hasta", SqlDbType.DateTime));
+                    //cmd.Parameters["@fecha_desde"].Value = string.Format("{0:dd/MM/yyyy HH:mm}", dt_desde.EditValue);// Convert.ToDateTime(dt_desde.EditValue);
+                    //cmd.Parameters["@fecha_hasta"].Value = string.Format("{0:dd/MM/yyyy HH:mm}", dt_hasta.EditValue); //Convert.ToDateTime(dt_hasta.EditValue);
+                    cmd.Parameters.AddWithValue("@fecha_desde", dt_desde.EditValue);
+                    cmd.Parameters.AddWithValue("@fecha_hasta", dt_hasta.EditValue);
                     #endregion
 
                     if (grp_tipoReporte.SelectedIndex == 0)
