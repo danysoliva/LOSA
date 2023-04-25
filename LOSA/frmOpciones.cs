@@ -2589,7 +2589,7 @@ namespace LOSA
         private void simpleButton52_Click(object sender, EventArgs e)
         {
             bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
             switch (idNivel)
             {
                 case 1://Basic View

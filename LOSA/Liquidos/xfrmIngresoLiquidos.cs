@@ -20,9 +20,12 @@ namespace LOSA.Liquidos
         UserLogin usuarioLogueado = new UserLogin();
         bool Istrastado;
         int id_lote_ext;
-
-        LabelControl[] labels = new LabelControl[6];
-
+        int idRM_Ext1;
+        int idRM_Ext2;
+        int idRM_Ext3;
+        //LabelControl[] labels = new LabelControl[6];
+        DataOperations dp = new DataOperations();
+        int IngresoNuevo = 0;
         public xfrmIngresoLiquidos(UserLogin userLogged)
         {
             InitializeComponent();
@@ -58,7 +61,11 @@ namespace LOSA.Liquidos
             }
             else
             {
-                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque1.Tag), usuarioLogueado);
+                if (lblExistencia1.Text == "0 Kg")
+                    IngresoNuevo = 1;
+                else
+                    IngresoNuevo = 0;
+                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque1.Tag), usuarioLogueado, IngresoNuevo);
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -80,7 +87,11 @@ namespace LOSA.Liquidos
             }
             else
             {
-                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque2.Tag), usuarioLogueado);
+                if (lblExistencia2.Text == "0 Kg")
+                    IngresoNuevo = 1;
+                else
+                    IngresoNuevo = 0;
+                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque2.Tag), usuarioLogueado, IngresoNuevo);
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -106,7 +117,11 @@ namespace LOSA.Liquidos
             }
             else
             {
-                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque3.Tag), usuarioLogueado);
+                if (lblExistencia3.Text == "0 Kg")
+                    IngresoNuevo = 1;
+                else
+                    IngresoNuevo = 0;
+                xfrmLotesPorTanque frm = new xfrmLotesPorTanque(Convert.ToInt32(btnTanque3.Tag), usuarioLogueado, IngresoNuevo);
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -122,13 +137,82 @@ namespace LOSA.Liquidos
 
         private void xfrmIngresoLiquidos_Load(object sender, EventArgs e)
         {
-            labels[0] = lblMP1;
-            labels[1] = lblMP2;
-            labels[2] = lblMP3;
+            //labels[0] = lblMP1;
+            //labels[1] = lblMP2;
+            //labels[2] = lblMP3;
 
 
-            loadMPTanques();
+            Tanque tanq1 = new Tanque(1);
+            lblMP1.Text = tanq1.NombreMateriaP;
+            idRM_Ext1 = tanq1.KeyMateriaPrima;
+            lblExistencia1.Text = Convert.ToString(tanq1.TotalLleno)+ " Kg";
 
+            Tanque tanq2 = new Tanque(2);
+            lblMP2.Text = tanq2.NombreMateriaP;
+            idRM_Ext2 = tanq2.KeyMateriaPrima;
+            lblExistencia2.Text = Convert.ToString(tanq2.TotalLleno) + " Kg";
+
+            Tanque tanq3 = new Tanque(3);
+            lblMP3.Text = tanq3.NombreMateriaP;
+            idRM_Ext3 = tanq3.KeyMateriaPrima;
+            lblExistencia3.Text = Convert.ToString(tanq3.TotalLleno) + " Kg";
+
+
+            //idRM_Ext1 = GetMaterialIdBin(88);
+            //idRM_Ext2 = GetMaterialIdBin(90);
+            //idRM_Ext3 = GetMaterialIdBin(91);
+
+            //lblMP1.Text = GetMaterialName(idRM_Ext1);
+            //lblMP2.Text = GetMaterialName(idRM_Ext2);
+            //lblMP3.Text = GetMaterialName(idRM_Ext3);
+
+
+
+
+            //loadMPTanques();
+
+        }
+
+        public int GetMaterialIdBin(int pIdBin)
+        {
+            int idRM = 0;
+            try
+            {
+                string sql = @"SELECT [set_rm_id]
+                               FROM [dbo].[MD_Bins]
+                               where id = " + pIdBin;
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                idRM = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Detalle del Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return idRM;
+        }
+
+        public string GetMaterialName(int pIdRM)
+        {
+            string RM = "";
+            try
+            {
+                string sql = @"SELECT short_name
+                               FROM [dbo].[MD_Raw_Material]
+                               where id = " + pIdRM;
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                RM = cmd.ExecuteScalar().ToString();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Detalle del Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return RM;
         }
 
 
@@ -205,6 +289,17 @@ namespace LOSA.Liquidos
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             loadMPTanques();
+        }
+
+        private void btnTraslado_Click(object sender, EventArgs e)
+        {
+            //Esto debe llevar nivel de validacion de Permiso!
+
+            xfrmTrasladoTanqueExt frm = new xfrmTrasladoTanqueExt(usuarioLogueado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                xfrmIngresoLiquidos_Load(sender, e);
+            }
         }
     }
 }

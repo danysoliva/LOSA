@@ -27,6 +27,8 @@ namespace LOSA.Clases
         decimal maximoCapacidad;
         decimal totalLleno;
         decimal vacioCapacidad;
+        int id_tanque_prd;
+
         DataOperations dp = new DataOperations();
 
 
@@ -37,6 +39,7 @@ namespace LOSA.Clases
         public decimal MaximoCapacidad { get => maximoCapacidad; set => maximoCapacidad = value; }
         public decimal TotalLleno { get => totalLleno; set => totalLleno = value; }
         public decimal VacioCapacidad { get => vacioCapacidad; set => vacioCapacidad = value; }
+        public int Id_tanque_prd { get => id_tanque_prd; set => id_tanque_prd = value; }
 
         int Default_value = 0;
 
@@ -64,6 +67,8 @@ namespace LOSA.Clases
                     MaximoCapacidad = dr.IsDBNull(2) ? Default_value : dr.GetDecimal(2);
                     TotalLleno = dr.IsDBNull(3) ? Default_value : dr.GetDecimal(3);
                     VacioCapacidad = dr.IsDBNull(4) ? Default_value : dr.GetDecimal(4);
+                    numerodeTanque = dr.IsDBNull(7) ? Default_value : dr.GetInt32(7);
+                    Id_tanque_prd = dr.IsDBNull(8) ? Default_value : dr.GetInt32(8);
                 }
             }
             catch (Exception ex)

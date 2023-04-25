@@ -1431,6 +1431,12 @@
     <Compile Include="Liquidos\xfrmTanqueCRUD.Designer.cs">
       <DependentUpon>xfrmTanqueCRUD.cs</DependentUpon>
     </Compile>
+    <Compile Include="Liquidos\xfrmTrasladoTanqueExt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\xfrmTrasladoTanqueExt.Designer.cs">
+      <DependentUpon>xfrmTrasladoTanqueExt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Liquidos\xfrm_select_camiones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -6224,6 +6230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\xfrmTanqueCRUD.resx">
       <DependentUpon>xfrmTanqueCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\xfrmTrasladoTanqueExt.resx">
+      <DependentUpon>xfrmTrasladoTanqueExt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\xfrm_select_camiones.resx">
       <DependentUpon>xfrm_select_camiones.cs</DependentUpon>
