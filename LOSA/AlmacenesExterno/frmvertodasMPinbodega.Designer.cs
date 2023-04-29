@@ -50,8 +50,10 @@ namespace LOSA.AlmacenesExterno
             this.colcodigoMp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproducCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaproduccion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtBodega.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtbodegaName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -166,7 +168,9 @@ namespace LOSA.AlmacenesExterno
             this.colcodigoMp,
             this.colproducCodigo,
             this.colfechaproduccion,
-            this.colpresentacion});
+            this.colpresentacion,
+            this.gridColumn2,
+            this.gridColumn1});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -181,7 +185,7 @@ namespace LOSA.AlmacenesExterno
             this.coloc1.OptionsColumn.AllowEdit = false;
             this.coloc1.Visible = true;
             this.coloc1.VisibleIndex = 1;
-            this.coloc1.Width = 44;
+            this.coloc1.Width = 41;
             // 
             // colfactura
             // 
@@ -191,7 +195,7 @@ namespace LOSA.AlmacenesExterno
             this.colfactura.OptionsColumn.AllowEdit = false;
             this.colfactura.Visible = true;
             this.colfactura.VisibleIndex = 2;
-            this.colfactura.Width = 60;
+            this.colfactura.Width = 56;
             // 
             // colfingreso
             // 
@@ -201,7 +205,7 @@ namespace LOSA.AlmacenesExterno
             this.colfingreso.OptionsColumn.AllowEdit = false;
             this.colfingreso.Visible = true;
             this.colfingreso.VisibleIndex = 0;
-            this.colfingreso.Width = 105;
+            this.colfingreso.Width = 99;
             // 
             // collote
             // 
@@ -210,8 +214,8 @@ namespace LOSA.AlmacenesExterno
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
-            this.collote.VisibleIndex = 5;
-            this.collote.Width = 228;
+            this.collote.VisibleIndex = 6;
+            this.collote.Width = 195;
             // 
             // coltotalkg2
             // 
@@ -224,8 +228,8 @@ namespace LOSA.AlmacenesExterno
             this.coltotalkg2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "totalkg", "{0:0.##.##} Kg.")});
             this.coltotalkg2.Visible = true;
-            this.coltotalkg2.VisibleIndex = 11;
-            this.coltotalkg2.Width = 70;
+            this.coltotalkg2.VisibleIndex = 12;
+            this.coltotalkg2.Width = 60;
             // 
             // coludtotal2
             // 
@@ -238,8 +242,8 @@ namespace LOSA.AlmacenesExterno
             this.coludtotal2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "udtotal", "{0:0.##.##} Ud.")});
             this.coludtotal2.Visible = true;
-            this.coludtotal2.VisibleIndex = 9;
-            this.coludtotal2.Width = 73;
+            this.coludtotal2.VisibleIndex = 10;
+            this.coludtotal2.Width = 62;
             // 
             // colfvencimiento
             // 
@@ -248,8 +252,8 @@ namespace LOSA.AlmacenesExterno
             this.colfvencimiento.Name = "colfvencimiento";
             this.colfvencimiento.OptionsColumn.AllowEdit = false;
             this.colfvencimiento.Visible = true;
-            this.colfvencimiento.VisibleIndex = 7;
-            this.colfvencimiento.Width = 79;
+            this.colfvencimiento.VisibleIndex = 8;
+            this.colfvencimiento.Width = 67;
             // 
             // coldiastovencimiento
             // 
@@ -258,8 +262,8 @@ namespace LOSA.AlmacenesExterno
             this.coldiastovencimiento.Name = "coldiastovencimiento";
             this.coldiastovencimiento.OptionsColumn.AllowEdit = false;
             this.coldiastovencimiento.Visible = true;
-            this.coldiastovencimiento.VisibleIndex = 8;
-            this.coldiastovencimiento.Width = 107;
+            this.coldiastovencimiento.VisibleIndex = 9;
+            this.coldiastovencimiento.Width = 91;
             // 
             // coldiasalmacenado
             // 
@@ -268,8 +272,8 @@ namespace LOSA.AlmacenesExterno
             this.coldiasalmacenado.Name = "coldiasalmacenado";
             this.coldiasalmacenado.OptionsColumn.AllowEdit = false;
             this.coldiasalmacenado.Visible = true;
-            this.coldiasalmacenado.VisibleIndex = 12;
-            this.coldiasalmacenado.Width = 97;
+            this.coldiasalmacenado.VisibleIndex = 13;
+            this.coldiasalmacenado.Width = 96;
             // 
             // colmpNombre
             // 
@@ -279,7 +283,7 @@ namespace LOSA.AlmacenesExterno
             this.colmpNombre.OptionsColumn.AllowEdit = false;
             this.colmpNombre.Visible = true;
             this.colmpNombre.VisibleIndex = 4;
-            this.colmpNombre.Width = 233;
+            this.colmpNombre.Width = 220;
             // 
             // colcodigoMp
             // 
@@ -289,7 +293,7 @@ namespace LOSA.AlmacenesExterno
             this.colcodigoMp.OptionsColumn.AllowEdit = false;
             this.colcodigoMp.Visible = true;
             this.colcodigoMp.VisibleIndex = 3;
-            this.colcodigoMp.Width = 59;
+            this.colcodigoMp.Width = 55;
             // 
             // colproducCodigo
             // 
@@ -306,8 +310,18 @@ namespace LOSA.AlmacenesExterno
             this.colfechaproduccion.Name = "colfechaproduccion";
             this.colfechaproduccion.OptionsColumn.AllowEdit = false;
             this.colfechaproduccion.Visible = true;
-            this.colfechaproduccion.VisibleIndex = 6;
-            this.colfechaproduccion.Width = 85;
+            this.colfechaproduccion.VisibleIndex = 7;
+            this.colfechaproduccion.Width = 72;
+            // 
+            // colpresentacion
+            // 
+            this.colpresentacion.Caption = "Presentacion";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.OptionsColumn.AllowEdit = false;
+            this.colpresentacion.Visible = true;
+            this.colpresentacion.VisibleIndex = 11;
+            this.colpresentacion.Width = 66;
             // 
             // simpleButton1
             // 
@@ -322,15 +336,22 @@ namespace LOSA.AlmacenesExterno
             this.simpleButton1.Text = "Excel";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // colpresentacion
+            // gridColumn1
             // 
-            this.colpresentacion.Caption = "Presentacion";
-            this.colpresentacion.FieldName = "presentacion";
-            this.colpresentacion.Name = "colpresentacion";
-            this.colpresentacion.OptionsColumn.AllowEdit = false;
-            this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 10;
-            this.colpresentacion.Width = 78;
+            this.gridColumn1.Caption = "Cod Proveedor";
+            this.gridColumn1.FieldName = "cardcode";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Proveedor";
+            this.gridColumn2.FieldName = "proveedor";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 5;
+            this.gridColumn2.Width = 138;
             // 
             // frmvertodasMPinbodega
             // 
@@ -380,5 +401,7 @@ namespace LOSA.AlmacenesExterno
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private dsReporteAlmacenExterno dsReporteAlmacenExterno;
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

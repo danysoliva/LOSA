@@ -214,6 +214,7 @@
             this.col_kindN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_itemocde = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_cod_oddo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_toExcel = new DevExpress.XtraGrid.GridControl();
             this.grdv_toExcel = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.btEneroCompras)).BeginInit();
@@ -1066,7 +1067,8 @@
             this.col_nov,
             this.col_dic,
             this.col_total,
-            this.col_itemocde});
+            this.col_itemocde,
+            this.col_cod_oddo});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.DarkRed;
             styleFormatCondition1.Appearance.BackColor2 = System.Drawing.Color.Firebrick;
             styleFormatCondition1.Appearance.BorderColor = System.Drawing.Color.Red;
@@ -1737,6 +1739,15 @@
             this.col_itemocde.VisibleIndex = 0;
             this.col_itemocde.Width = 77;
             // 
+            // col_cod_oddo
+            // 
+            this.col_cod_oddo.Caption = "Cod Oddo";
+            this.col_cod_oddo.FieldName = "cod_oddo";
+            this.col_cod_oddo.Name = "col_cod_oddo";
+            this.col_cod_oddo.OptionsColumn.AllowEdit = false;
+            this.col_cod_oddo.Visible = true;
+            this.col_cod_oddo.VisibleIndex = 15;
+            // 
             // grd_toExcel
             // 
             this.grd_toExcel.Location = new System.Drawing.Point(62, 260);
@@ -1893,5 +1904,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnFebCompras;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btEneroCompras;
         private DevExpress.XtraGrid.Columns.GridColumn col_itemocde;
+        private DevExpress.XtraGrid.Columns.GridColumn col_cod_oddo;
     }
 }

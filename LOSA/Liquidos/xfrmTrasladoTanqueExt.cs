@@ -24,6 +24,7 @@ namespace LOSA.Liquidos
         int id_mp_salida = 0;
         int id_mp_entrada = 0;
         int id_tanque_prd = 0;
+        string lote_mp = "";
         public xfrmTrasladoTanqueExt(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -107,6 +108,7 @@ namespace LOSA.Liquidos
                 cmd.Parameters.AddWithValue("@user_name", UsuarioLogeado.ADuser1);
                 cmd.Parameters.AddWithValue("@id_tanque_salida", grdTanqueSalida.EditValue);
                 cmd.Parameters.AddWithValue("@id_tanque_entrada", grdTanqueEntrada.EditValue);
+                cmd.Parameters.AddWithValue("@lote_mp", lote_mp);
                 cmd.ExecuteNonQuery();
 
 
@@ -133,6 +135,8 @@ namespace LOSA.Liquidos
                     lblSalida.Text = "Tanque "+tanq1.NumerodeTanque+ ": "+ tanq1.NombreMateriaP;
                     id_mp_salida = tanq1.KeyMateriaPrima;
                     id_tanque_prd = tanq1.Id_tanque_prd;
+                    tanq1.ObtenerLoteMPTraslado(id_tanque_salida);
+                    lote_mp = tanq1.Lote_mp;    
                 }
 
             }

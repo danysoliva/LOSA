@@ -30,11 +30,11 @@ namespace LOSA.Liquidos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrm_select_camiones));
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.camionesINBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -91,7 +91,7 @@ namespace LOSA.Liquidos
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar,
             this.ceSeleccionar});
-            this.grd_data.Size = new System.Drawing.Size(1402, 313);
+            this.grd_data.Size = new System.Drawing.Size(1551, 313);
             this.grd_data.TabIndex = 1;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -204,8 +204,6 @@ namespace LOSA.Liquidos
             this.colshipid.FieldName = "shipid";
             this.colshipid.Name = "colshipid";
             this.colshipid.OptionsColumn.AllowEdit = false;
-            this.colshipid.Visible = true;
-            this.colshipid.VisibleIndex = 4;
             this.colshipid.Width = 68;
             // 
             // colbarco
@@ -236,7 +234,7 @@ namespace LOSA.Liquidos
             this.coloperador.Name = "coloperador";
             this.coloperador.OptionsColumn.AllowEdit = false;
             this.coloperador.Visible = true;
-            this.coloperador.VisibleIndex = 5;
+            this.coloperador.VisibleIndex = 4;
             this.coloperador.Width = 87;
             // 
             // colpesoBruto
@@ -245,7 +243,7 @@ namespace LOSA.Liquidos
             this.colpesoBruto.Name = "colpesoBruto";
             this.colpesoBruto.OptionsColumn.AllowEdit = false;
             this.colpesoBruto.Visible = true;
-            this.colpesoBruto.VisibleIndex = 6;
+            this.colpesoBruto.VisibleIndex = 5;
             this.colpesoBruto.Width = 105;
             // 
             // colpesonetoIn
@@ -254,7 +252,7 @@ namespace LOSA.Liquidos
             this.colpesonetoIn.Name = "colpesonetoIn";
             this.colpesonetoIn.OptionsColumn.AllowEdit = false;
             this.colpesonetoIn.Visible = true;
-            this.colpesonetoIn.VisibleIndex = 7;
+            this.colpesonetoIn.VisibleIndex = 6;
             this.colpesonetoIn.Width = 98;
             // 
             // colpresoProd
@@ -263,7 +261,7 @@ namespace LOSA.Liquidos
             this.colpresoProd.Name = "colpresoProd";
             this.colpresoProd.OptionsColumn.AllowEdit = false;
             this.colpresoProd.Visible = true;
-            this.colpresoProd.VisibleIndex = 8;
+            this.colpresoProd.VisibleIndex = 7;
             this.colpresoProd.Width = 100;
             // 
             // colpesoSalida
@@ -273,7 +271,7 @@ namespace LOSA.Liquidos
             this.colpesoSalida.Name = "colpesoSalida";
             this.colpesoSalida.OptionsColumn.AllowEdit = false;
             this.colpesoSalida.Visible = true;
-            this.colpesoSalida.VisibleIndex = 9;
+            this.colpesoSalida.VisibleIndex = 8;
             this.colpesoSalida.Width = 88;
             // 
             // colpeso_factura
@@ -288,7 +286,7 @@ namespace LOSA.Liquidos
             this.colconductorin.Name = "colconductorin";
             this.colconductorin.OptionsColumn.AllowEdit = false;
             this.colconductorin.Visible = true;
-            this.colconductorin.VisibleIndex = 10;
+            this.colconductorin.VisibleIndex = 9;
             this.colconductorin.Width = 102;
             // 
             // colvehiculo
@@ -297,7 +295,7 @@ namespace LOSA.Liquidos
             this.colvehiculo.Name = "colvehiculo";
             this.colvehiculo.OptionsColumn.AllowEdit = false;
             this.colvehiculo.Visible = true;
-            this.colvehiculo.VisibleIndex = 11;
+            this.colvehiculo.VisibleIndex = 10;
             this.colvehiculo.Width = 67;
             // 
             // colfurgon
@@ -307,7 +305,7 @@ namespace LOSA.Liquidos
             this.colfurgon.Name = "colfurgon";
             this.colfurgon.OptionsColumn.AllowEdit = false;
             this.colfurgon.Visible = true;
-            this.colfurgon.VisibleIndex = 12;
+            this.colfurgon.VisibleIndex = 11;
             this.colfurgon.Width = 77;
             // 
             // colTipoBoleta
@@ -328,7 +326,7 @@ namespace LOSA.Liquidos
             this.colSNegocio.Name = "colSNegocio";
             this.colSNegocio.OptionsColumn.AllowEdit = false;
             this.colSNegocio.Visible = true;
-            this.colSNegocio.VisibleIndex = 13;
+            this.colSNegocio.VisibleIndex = 12;
             this.colSNegocio.Width = 110;
             // 
             // colProducto
@@ -352,7 +350,7 @@ namespace LOSA.Liquidos
             this.gridColumn1.FieldName = "seleccionar";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 14;
+            this.gridColumn1.VisibleIndex = 13;
             this.gridColumn1.Width = 73;
             // 
             // gridColumn2
@@ -368,9 +366,9 @@ namespace LOSA.Liquidos
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -389,7 +387,7 @@ namespace LOSA.Liquidos
             this.cmdConfirm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdConfirm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdConfirm.ImageOptions.Image")));
             this.cmdConfirm.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdConfirm.Location = new System.Drawing.Point(1091, 43);
+            this.cmdConfirm.Location = new System.Drawing.Point(1240, 43);
             this.cmdConfirm.Name = "cmdConfirm";
             this.cmdConfirm.Size = new System.Drawing.Size(135, 56);
             this.cmdConfirm.TabIndex = 97;
@@ -406,7 +404,7 @@ namespace LOSA.Liquidos
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(1247, 43);
+            this.simpleButton1.Location = new System.Drawing.Point(1396, 43);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(135, 56);
             this.simpleButton1.TabIndex = 98;
@@ -424,7 +422,7 @@ namespace LOSA.Liquidos
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.Location = new System.Drawing.Point(2, 43);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(1402, 25);
+            this.labelControl1.Size = new System.Drawing.Size(1551, 25);
             this.labelControl1.TabIndex = 99;
             this.labelControl1.Text = "Boletas Líquidos";
             // 
@@ -432,7 +430,7 @@ namespace LOSA.Liquidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1405, 426);
+            this.ClientSize = new System.Drawing.Size(1554, 426);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.cmdConfirm);
             this.Controls.Add(this.grd_data);
