@@ -773,6 +773,20 @@ namespace LOSA.Liquidos
                 txtAltanque.Text = Default_value.ToString();
                 grd_presentaciones.EditValue = 11;
             }
+            else
+            {
+                txtcapacidad.Text = Tanque.MaximoCapacidad.ToString();
+                txtEspacioOcupado.Text = Tanque.TotalLleno.ToString();
+
+                txtDisponible.Text = (Tanque.MaximoCapacidad - Tanque.TotalLleno).ToString();
+
+                txtAltanque.Text = SumaTotal.ToString();
+
+                txtDisponibleConIngresoActual.Text = ((Tanque.MaximoCapacidad - Tanque.TotalLleno) - SumaTotal).ToString();
+
+                txtTotalIngreso.Text = (Convert.ToDecimal(txtEnTarimas.Text) + Convert.ToDecimal(txtAltanque.Text)).ToString();
+
+            }
 
 
             //Siempre dejaremos la opcion de agregar tarimas
