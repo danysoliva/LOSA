@@ -2023,16 +2023,6 @@ namespace LOSA
 
         private void nbTemperatura_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            //try
-            //{
-            //    xfrmMenuTemperatura frm = new xfrmMenuTemperatura();
-            //    frm.MdiParent = this.MdiParent;
-            //    frm.Show();
-            //}
-            //catch (Exception ex)
-            //{
-            //    CajaDialogo.Error(ex.Message);
-            //}
             try
             {
                 xfrmMenuTemperatura frm = new xfrmMenuTemperatura(this.UsuarioLogeado);
@@ -2051,49 +2041,6 @@ namespace LOSA
 
         private void nbForeCastPRD_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            //try
-            //{
-            //    bool accesoprevio = false;
-            //    int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
-            //    switch (idNivel)
-            //    {
-            //        case 1://Basic View
-            //            break;
-            //        case 2://Basic No Autorization
-            //            break;
-            //        case 3://Medium Autorization
-            //            break;
-            //        case 4://Depth With Delta
-            //            accesoprevio = true;
-            //            frmFCT_produccion frm = new frmFCT_produccion(this.UsuarioLogeado);
-            //            frm.MdiParent = this.MdiParent;
-            //            frm.Show();
-            //            break;
-            //        case 5://Depth Without Delta
-            //            break;
-            //        default:
-            //            break;
-            //    }
-
-            //    if (!accesoprevio)
-            //    {
-            //        if (UsuarioLogeado.ValidarNivelPermisos(71))
-            //        {
-            //            //frmMantoPhotosTV frm = new frmMantoPhotosTV(UsuarioLogeado);
-            //            frmFCT_produccion frm = new frmFCT_produccion(this.UsuarioLogeado);
-            //            frm.MdiParent = this.MdiParent;
-            //            frm.Show();
-            //        }
-            //        else
-            //        {
-            //            CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #71");
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    CajaDialogo.Error(ex.Message);
-            //}
             try
             {
                 frmFCT_produccion frm = new frmFCT_produccion(this.UsuarioLogeado);

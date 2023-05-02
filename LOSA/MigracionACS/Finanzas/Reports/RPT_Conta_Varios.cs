@@ -81,9 +81,7 @@ namespace LOSA.MigracionACS.Finanzas.Reports
         }
 
         private void btn_GenReport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-            
+        {   
             #region Validando Datos Ingresados en Pantalla
             String msg = "";
             #region (Sub tipo de reporte)
@@ -1254,11 +1252,37 @@ namespace LOSA.MigracionACS.Finanzas.Reports
             else if (cmb_reports.SelectedIndex == 5) // Reporte Formula Teorico-Costo
             {
                 //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                //if (UsuarioLogeado.ValidarNivelPermisos(87))
+                //{
+                //    pnl_fechas.Visible = true; // Rango de Fechas
+                //}
+                //else
+                //{
+                //    btn_GenReport.Enabled = false;
+                //    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                //}
+
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true; // Rango de Fechas
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true; // Rango de Fechas  
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
