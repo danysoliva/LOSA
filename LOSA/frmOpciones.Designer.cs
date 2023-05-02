@@ -191,7 +191,7 @@
             this.simpleButton15 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.TabRRHH = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton46 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton45 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton44 = new DevExpress.XtraEditors.SimpleButton();
@@ -201,7 +201,7 @@
             this.simpleButton40 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton39 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton38 = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.TabForecasting = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton52 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton53 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton54 = new DevExpress.XtraEditors.SimpleButton();
@@ -212,7 +212,7 @@
             this.simpleButton49 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton48 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton47 = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.TabContabilidad = new DevExpress.XtraTab.XtraTabPage();
             this.btnAprobaTarimasConta = new DevExpress.XtraEditors.SimpleButton();
             this.btn_rutas_traza_contabilidad = new DevExpress.XtraEditors.SimpleButton();
             this.btn_mp_bodega_prd_finanzas = new DevExpress.XtraEditors.SimpleButton();
@@ -226,12 +226,12 @@
             this.simpleButton59 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton58 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton57 = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.TabBascula = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton71 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton70 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton69 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton68 = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.TabFormulacion = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton73 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -253,11 +253,11 @@
             this.tabProduccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.txtProduccion.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
-            this.xtraTabPage2.SuspendLayout();
-            this.xtraTabPage3.SuspendLayout();
-            this.xtraTabPage4.SuspendLayout();
-            this.xtraTabPage5.SuspendLayout();
+            this.TabRRHH.SuspendLayout();
+            this.TabForecasting.SuspendLayout();
+            this.TabContabilidad.SuspendLayout();
+            this.TabBascula.SuspendLayout();
+            this.TabFormulacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -296,11 +296,11 @@
             this.TabAdmin,
             this.tabProduccion,
             this.txtProduccion,
-            this.xtraTabPage1,
-            this.xtraTabPage2,
-            this.xtraTabPage3,
-            this.xtraTabPage4,
-            this.xtraTabPage5});
+            this.TabRRHH,
+            this.TabForecasting,
+            this.TabContabilidad,
+            this.TabBascula,
+            this.TabFormulacion});
             // 
             // TabMontacarga
             // 
@@ -781,7 +781,7 @@
             this.tabMP_Granel.Controls.Add(this.simpleButton14);
             this.tabMP_Granel.Name = "tabMP_Granel";
             this.tabMP_Granel.Size = new System.Drawing.Size(829, 470);
-            this.tabMP_Granel.Text = "MP Granel";
+            this.tabMP_Granel.Text = "MP Granel / Liquidos";
             // 
             // cmdLoteActivoGranel
             // 
@@ -821,7 +821,7 @@
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(3, 14);
+            this.simpleButton2.Location = new System.Drawing.Point(208, 60);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(199, 42);
             this.simpleButton2.TabIndex = 26;
@@ -837,7 +837,7 @@
             this.btnLiquidos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnLiquidos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnLiquidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLiquidos.ImageOptions.Image")));
-            this.btnLiquidos.Location = new System.Drawing.Point(3, 61);
+            this.btnLiquidos.Location = new System.Drawing.Point(4, 14);
             this.btnLiquidos.Margin = new System.Windows.Forms.Padding(2);
             this.btnLiquidos.Name = "btnLiquidos";
             this.btnLiquidos.Size = new System.Drawing.Size(199, 42);
@@ -853,7 +853,7 @@
             this.simpleButton14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
-            this.simpleButton14.Location = new System.Drawing.Point(3, 108);
+            this.simpleButton14.Location = new System.Drawing.Point(4, 60);
             this.simpleButton14.Name = "simpleButton14";
             this.simpleButton14.Size = new System.Drawing.Size(199, 42);
             this.simpleButton14.TabIndex = 36;
@@ -2266,6 +2266,7 @@
             this.navBarGroup4.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup4.AppearancePressed.Options.UseFont = true;
             this.navBarGroup4.Caption = "Inventario";
+            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrasladoAceiteExterno),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbSetMaterial),
@@ -2650,22 +2651,22 @@
             this.btnRequisasManuales.Text = "Requisas Manuales";
             this.btnRequisasManuales.Click += new System.EventHandler(this.btnRequisasManuales_Click);
             // 
-            // xtraTabPage1
+            // TabRRHH
             // 
-            this.xtraTabPage1.Controls.Add(this.simpleButton46);
-            this.xtraTabPage1.Controls.Add(this.simpleButton45);
-            this.xtraTabPage1.Controls.Add(this.simpleButton44);
-            this.xtraTabPage1.Controls.Add(this.simpleButton43);
-            this.xtraTabPage1.Controls.Add(this.simpleButton42);
-            this.xtraTabPage1.Controls.Add(this.simpleButton41);
-            this.xtraTabPage1.Controls.Add(this.simpleButton40);
-            this.xtraTabPage1.Controls.Add(this.simpleButton39);
-            this.xtraTabPage1.Controls.Add(this.simpleButton38);
-            this.xtraTabPage1.ImageOptions.Image = global::LOSA.Properties.Resources.rrhh_24X24;
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.PageVisible = false;
-            this.xtraTabPage1.Size = new System.Drawing.Size(835, 502);
-            this.xtraTabPage1.Text = "RRHH";
+            this.TabRRHH.Controls.Add(this.simpleButton46);
+            this.TabRRHH.Controls.Add(this.simpleButton45);
+            this.TabRRHH.Controls.Add(this.simpleButton44);
+            this.TabRRHH.Controls.Add(this.simpleButton43);
+            this.TabRRHH.Controls.Add(this.simpleButton42);
+            this.TabRRHH.Controls.Add(this.simpleButton41);
+            this.TabRRHH.Controls.Add(this.simpleButton40);
+            this.TabRRHH.Controls.Add(this.simpleButton39);
+            this.TabRRHH.Controls.Add(this.simpleButton38);
+            this.TabRRHH.ImageOptions.Image = global::LOSA.Properties.Resources.rrhh_24X24;
+            this.TabRRHH.Name = "TabRRHH";
+            this.TabRRHH.PageVisible = false;
+            this.TabRRHH.Size = new System.Drawing.Size(835, 502);
+            this.TabRRHH.Text = "RRHH";
             // 
             // simpleButton46
             // 
@@ -2802,23 +2803,23 @@
             this.simpleButton38.Text = "Mantenimiento Empleado";
             this.simpleButton38.Click += new System.EventHandler(this.simpleButton38_Click);
             // 
-            // xtraTabPage2
+            // TabForecasting
             // 
-            this.xtraTabPage2.Controls.Add(this.simpleButton52);
-            this.xtraTabPage2.Controls.Add(this.simpleButton53);
-            this.xtraTabPage2.Controls.Add(this.simpleButton54);
-            this.xtraTabPage2.Controls.Add(this.simpleButton55);
-            this.xtraTabPage2.Controls.Add(this.simpleButton56);
-            this.xtraTabPage2.Controls.Add(this.simpleButton51);
-            this.xtraTabPage2.Controls.Add(this.simpleButton50);
-            this.xtraTabPage2.Controls.Add(this.simpleButton49);
-            this.xtraTabPage2.Controls.Add(this.simpleButton48);
-            this.xtraTabPage2.Controls.Add(this.simpleButton47);
-            this.xtraTabPage2.ImageOptions.Image = global::LOSA.Properties.Resources.graph_32X32;
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.PageVisible = false;
-            this.xtraTabPage2.Size = new System.Drawing.Size(835, 502);
-            this.xtraTabPage2.Text = "Forecasting";
+            this.TabForecasting.Controls.Add(this.simpleButton52);
+            this.TabForecasting.Controls.Add(this.simpleButton53);
+            this.TabForecasting.Controls.Add(this.simpleButton54);
+            this.TabForecasting.Controls.Add(this.simpleButton55);
+            this.TabForecasting.Controls.Add(this.simpleButton56);
+            this.TabForecasting.Controls.Add(this.simpleButton51);
+            this.TabForecasting.Controls.Add(this.simpleButton50);
+            this.TabForecasting.Controls.Add(this.simpleButton49);
+            this.TabForecasting.Controls.Add(this.simpleButton48);
+            this.TabForecasting.Controls.Add(this.simpleButton47);
+            this.TabForecasting.ImageOptions.Image = global::LOSA.Properties.Resources.graph_32X32;
+            this.TabForecasting.Name = "TabForecasting";
+            this.TabForecasting.PageVisible = false;
+            this.TabForecasting.Size = new System.Drawing.Size(835, 502);
+            this.TabForecasting.Text = "Forecasting";
             // 
             // simpleButton52
             // 
@@ -2970,26 +2971,26 @@
             this.simpleButton47.Text = "Proyecciones de Ventas";
             this.simpleButton47.Click += new System.EventHandler(this.simpleButton47_Click);
             // 
-            // xtraTabPage3
+            // TabContabilidad
             // 
-            this.xtraTabPage3.Controls.Add(this.btnAprobaTarimasConta);
-            this.xtraTabPage3.Controls.Add(this.btn_rutas_traza_contabilidad);
-            this.xtraTabPage3.Controls.Add(this.btn_mp_bodega_prd_finanzas);
-            this.xtraTabPage3.Controls.Add(this.simpleButton65);
-            this.xtraTabPage3.Controls.Add(this.simpleButton66);
-            this.xtraTabPage3.Controls.Add(this.simpleButton64);
-            this.xtraTabPage3.Controls.Add(this.simpleButton63);
-            this.xtraTabPage3.Controls.Add(this.simpleButton60);
-            this.xtraTabPage3.Controls.Add(this.simpleButton61);
-            this.xtraTabPage3.Controls.Add(this.simpleButton62);
-            this.xtraTabPage3.Controls.Add(this.simpleButton59);
-            this.xtraTabPage3.Controls.Add(this.simpleButton58);
-            this.xtraTabPage3.Controls.Add(this.simpleButton57);
-            this.xtraTabPage3.ImageOptions.Image = global::LOSA.Properties.Resources.calculo;
-            this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.PageVisible = false;
-            this.xtraTabPage3.Size = new System.Drawing.Size(835, 502);
-            this.xtraTabPage3.Text = "Contabilidad";
+            this.TabContabilidad.Controls.Add(this.btnAprobaTarimasConta);
+            this.TabContabilidad.Controls.Add(this.btn_rutas_traza_contabilidad);
+            this.TabContabilidad.Controls.Add(this.btn_mp_bodega_prd_finanzas);
+            this.TabContabilidad.Controls.Add(this.simpleButton65);
+            this.TabContabilidad.Controls.Add(this.simpleButton66);
+            this.TabContabilidad.Controls.Add(this.simpleButton64);
+            this.TabContabilidad.Controls.Add(this.simpleButton63);
+            this.TabContabilidad.Controls.Add(this.simpleButton60);
+            this.TabContabilidad.Controls.Add(this.simpleButton61);
+            this.TabContabilidad.Controls.Add(this.simpleButton62);
+            this.TabContabilidad.Controls.Add(this.simpleButton59);
+            this.TabContabilidad.Controls.Add(this.simpleButton58);
+            this.TabContabilidad.Controls.Add(this.simpleButton57);
+            this.TabContabilidad.ImageOptions.Image = global::LOSA.Properties.Resources.calculo;
+            this.TabContabilidad.Name = "TabContabilidad";
+            this.TabContabilidad.PageVisible = false;
+            this.TabContabilidad.Size = new System.Drawing.Size(835, 502);
+            this.TabContabilidad.Text = "Contabilidad";
             // 
             // btnAprobaTarimasConta
             // 
@@ -3028,7 +3029,7 @@
             this.btn_mp_bodega_prd_finanzas.Appearance.Options.UseFont = true;
             this.btn_mp_bodega_prd_finanzas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_mp_bodega_prd_finanzas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_mp_bodega_prd_finanzas.ImageOptions.Image")));
-            this.btn_mp_bodega_prd_finanzas.Location = new System.Drawing.Point(302, 384);
+            this.btn_mp_bodega_prd_finanzas.Location = new System.Drawing.Point(545, 212);
             this.btn_mp_bodega_prd_finanzas.Name = "btn_mp_bodega_prd_finanzas";
             this.btn_mp_bodega_prd_finanzas.Size = new System.Drawing.Size(223, 71);
             this.btn_mp_bodega_prd_finanzas.TabIndex = 49;
@@ -3118,7 +3119,7 @@
             this.simpleButton61.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton61.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton61.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton61.ImageOptions.Image")));
-            this.simpleButton61.Location = new System.Drawing.Point(60, 384);
+            this.simpleButton61.Location = new System.Drawing.Point(60, 125);
             this.simpleButton61.Name = "simpleButton61";
             this.simpleButton61.Size = new System.Drawing.Size(223, 71);
             this.simpleButton61.TabIndex = 16;
@@ -3148,11 +3149,12 @@
             this.simpleButton59.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton59.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton59.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton59.ImageOptions.SvgImage")));
-            this.simpleButton59.Location = new System.Drawing.Point(60, 127);
+            this.simpleButton59.Location = new System.Drawing.Point(302, 384);
             this.simpleButton59.Name = "simpleButton59";
             this.simpleButton59.Size = new System.Drawing.Size(223, 71);
             this.simpleButton59.TabIndex = 14;
             this.simpleButton59.Text = "Reporte Uso Formula  Costo";
+            this.simpleButton59.Visible = false;
             this.simpleButton59.Click += new System.EventHandler(this.simpleButton59_Click);
             // 
             // simpleButton58
@@ -3186,17 +3188,17 @@
             this.simpleButton57.Visible = false;
             this.simpleButton57.Click += new System.EventHandler(this.simpleButton57_Click);
             // 
-            // xtraTabPage4
+            // TabBascula
             // 
-            this.xtraTabPage4.Controls.Add(this.simpleButton71);
-            this.xtraTabPage4.Controls.Add(this.simpleButton70);
-            this.xtraTabPage4.Controls.Add(this.simpleButton69);
-            this.xtraTabPage4.Controls.Add(this.simpleButton68);
-            this.xtraTabPage4.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
-            this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.PageVisible = false;
-            this.xtraTabPage4.Size = new System.Drawing.Size(835, 502);
-            this.xtraTabPage4.Text = "Báscula";
+            this.TabBascula.Controls.Add(this.simpleButton71);
+            this.TabBascula.Controls.Add(this.simpleButton70);
+            this.TabBascula.Controls.Add(this.simpleButton69);
+            this.TabBascula.Controls.Add(this.simpleButton68);
+            this.TabBascula.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
+            this.TabBascula.Name = "TabBascula";
+            this.TabBascula.PageVisible = false;
+            this.TabBascula.Size = new System.Drawing.Size(835, 502);
+            this.TabBascula.Text = "Báscula";
             // 
             // simpleButton71
             // 
@@ -3258,15 +3260,15 @@
             this.simpleButton68.Text = "Plan de Arribos";
             this.simpleButton68.Click += new System.EventHandler(this.simpleButton68_Click);
             // 
-            // xtraTabPage5
+            // TabFormulacion
             // 
-            this.xtraTabPage5.Controls.Add(this.simpleButton73);
-            this.xtraTabPage5.Controls.Add(this.simpleButton72);
-            this.xtraTabPage5.ImageOptions.Image = global::LOSA.Properties.Resources.formula_market_research;
-            this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(835, 502);
-            this.xtraTabPage5.Text = "Formulación";
+            this.TabFormulacion.Controls.Add(this.simpleButton73);
+            this.TabFormulacion.Controls.Add(this.simpleButton72);
+            this.TabFormulacion.ImageOptions.Image = global::LOSA.Properties.Resources.formula_market_research;
+            this.TabFormulacion.Name = "TabFormulacion";
+            this.TabFormulacion.PageVisible = false;
+            this.TabFormulacion.Size = new System.Drawing.Size(835, 502);
+            this.TabFormulacion.Text = "Formulación";
             // 
             // simpleButton73
             // 
@@ -3348,11 +3350,11 @@
             this.tabProduccion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.txtProduccion.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
-            this.xtraTabPage2.ResumeLayout(false);
-            this.xtraTabPage3.ResumeLayout(false);
-            this.xtraTabPage4.ResumeLayout(false);
-            this.xtraTabPage5.ResumeLayout(false);
+            this.TabRRHH.ResumeLayout(false);
+            this.TabForecasting.ResumeLayout(false);
+            this.TabContabilidad.ResumeLayout(false);
+            this.TabBascula.ResumeLayout(false);
+            this.TabFormulacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
             this.ResumeLayout(false);
 
@@ -3511,7 +3513,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem16;
         private DevExpress.XtraNavBar.NavBarItem navBarItem17;
         private DevExpress.XtraNavBar.NavBarItem navBarItem19;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage TabRRHH;
         private DevExpress.XtraEditors.SimpleButton simpleButton38;
         private DevExpress.XtraEditors.SimpleButton simpleButton46;
         private DevExpress.XtraEditors.SimpleButton simpleButton45;
@@ -3521,7 +3523,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton41;
         private DevExpress.XtraEditors.SimpleButton simpleButton40;
         private DevExpress.XtraEditors.SimpleButton simpleButton39;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraTab.XtraTabPage TabForecasting;
         private DevExpress.XtraEditors.SimpleButton simpleButton52;
         private DevExpress.XtraEditors.SimpleButton simpleButton53;
         private DevExpress.XtraEditors.SimpleButton simpleButton54;
@@ -3532,7 +3534,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton49;
         private DevExpress.XtraEditors.SimpleButton simpleButton48;
         private DevExpress.XtraEditors.SimpleButton simpleButton47;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraTab.XtraTabPage TabContabilidad;
         private DevExpress.XtraEditors.SimpleButton simpleButton66;
         private DevExpress.XtraEditors.SimpleButton simpleButton64;
         private DevExpress.XtraEditors.SimpleButton simpleButton63;
@@ -3553,12 +3555,12 @@
         private DevExpress.XtraEditors.SimpleButton btn_add_tarimas_pt;
         private DevExpress.XtraEditors.SimpleButton simpleButton67;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
+        private DevExpress.XtraTab.XtraTabPage TabBascula;
         private DevExpress.XtraEditors.SimpleButton simpleButton71;
         private DevExpress.XtraEditors.SimpleButton simpleButton70;
         private DevExpress.XtraEditors.SimpleButton simpleButton69;
         private DevExpress.XtraEditors.SimpleButton simpleButton68;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
+        private DevExpress.XtraTab.XtraTabPage TabFormulacion;
         private DevExpress.XtraEditors.SimpleButton simpleButton73;
         private DevExpress.XtraEditors.SimpleButton simpleButton72;
         private DevExpress.XtraNavBar.NavBarItem navBarItem9;

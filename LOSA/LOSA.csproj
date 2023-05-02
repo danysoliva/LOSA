@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,9 +23,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>510</ApplicationRevision>
-    <ApplicationVersion>1.0.0.510</ApplicationVersion>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <ApplicationRevision>513</ApplicationRevision>
+    <ApplicationVersion>1.0.0.513</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -1430,6 +1430,12 @@
     </Compile>
     <Compile Include="Liquidos\xfrmTanqueCRUD.Designer.cs">
       <DependentUpon>xfrmTanqueCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidos\xfrmTrasladoTanqueExt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liquidos\xfrmTrasladoTanqueExt.Designer.cs">
+      <DependentUpon>xfrmTrasladoTanqueExt.cs</DependentUpon>
     </Compile>
     <Compile Include="Liquidos\xfrm_select_camiones.cs">
       <SubType>Form</SubType>
@@ -6224,6 +6230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\xfrmTanqueCRUD.resx">
       <DependentUpon>xfrmTanqueCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liquidos\xfrmTrasladoTanqueExt.resx">
+      <DependentUpon>xfrmTrasladoTanqueExt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Liquidos\xfrm_select_camiones.resx">
       <DependentUpon>xfrm_select_camiones.cs</DependentUpon>

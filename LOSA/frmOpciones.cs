@@ -93,9 +93,32 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Logistica:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
-                    break;
-                case GrupoUser.GrupoUsuario.Calidad:
                     int idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+                    switch (idNivel)
+                    {
+                        case 1://Basic View
+                            break;
+                        case 2://Basic No Autorization
+
+                            break;
+                        case 3://Medium Autorization
+
+                            break;
+                        case 4://Depth With Delta
+                            tabOpciones.TabPages[9].PageVisible = true;
+                            break;
+                        case 5://Depth Without Delta
+
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                            tabOpciones.TabPages[i].PageVisible = true;
+                            break;
+                    }
+                    break;
+                    
+                case GrupoUser.GrupoUsuario.Calidad:
+                    idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
                     {
                         case 1://Basic View
@@ -242,16 +265,20 @@ namespace LOSA
                             tabOpciones.TabPages[1].PageVisible = false;
                             break;
                         case 2://Basic No Autorization
-
+                            tabOpciones.SelectedTabPageIndex = 6;//RRHH
+                            tabOpciones.TabPages[6].PageVisible = true;
                             break;
                         case 3://Medium Autorization
-
+                            tabOpciones.SelectedTabPageIndex = 6;//RRHH
+                            tabOpciones.TabPages[6].PageVisible = true;
                             break;
                         case 4://Depth With Delta
-
+                            tabOpciones.SelectedTabPageIndex = 6;//RRHH
+                            tabOpciones.TabPages[6].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
-
+                            tabOpciones.SelectedTabPageIndex = 6;//RRHH
+                            tabOpciones.TabPages[6].PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = 6;//RRHH
@@ -276,13 +303,17 @@ namespace LOSA
 
                             break;
                         case 4://Depth With Delta
-
+                            BasicView();
+                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
+                            tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
 
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
+                            tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             break;
                     }
@@ -353,7 +384,7 @@ namespace LOSA
 
         public void BasicView()
         {
-            TabCalidad.PageVisible = TabLogistica.PageVisible = true;
+            TabCalidad.PageVisible = TabLogistica.PageVisible = TabContabilidad.PageVisible = true;
             cmdRegistroLote.Enabled =
             cmdGestionIngresos.Enabled =
             btnAjustesKardex.Enabled =
@@ -2589,7 +2620,7 @@ namespace LOSA
         private void simpleButton52_Click(object sender, EventArgs e)
         {
             bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
             switch (idNivel)
             {
                 case 1://Basic View

@@ -1018,6 +1018,10 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnpresentacion;
             
+            private global::System.Data.DataColumn columncardcode;
+            
+            private global::System.Data.DataColumn columnproveedor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public controlBodegaExternaDataTable() {
@@ -1221,6 +1225,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cardcodeColumn {
+                get {
+                    return this.columncardcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn proveedorColumn {
+                get {
+                    return this.columnproveedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1277,7 +1297,9 @@ namespace LOSA.AlmacenesExterno {
                         string bodega_in, 
                         int id_detalle, 
                         bool seleccion, 
-                        string presentacion) {
+                        string presentacion, 
+                        string cardcode, 
+                        string proveedor) {
                 controlBodegaExternaRow rowcontrolBodegaExternaRow = ((controlBodegaExternaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         oc,
@@ -1300,7 +1322,9 @@ namespace LOSA.AlmacenesExterno {
                         bodega_in,
                         id_detalle,
                         seleccion,
-                        presentacion};
+                        presentacion,
+                        cardcode,
+                        proveedor};
                 rowcontrolBodegaExternaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcontrolBodegaExternaRow);
                 return rowcontrolBodegaExternaRow;
@@ -1344,6 +1368,8 @@ namespace LOSA.AlmacenesExterno {
                 this.columnid_detalle = base.Columns["id_detalle"];
                 this.columnseleccion = base.Columns["seleccion"];
                 this.columnpresentacion = base.Columns["presentacion"];
+                this.columncardcode = base.Columns["cardcode"];
+                this.columnproveedor = base.Columns["proveedor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1391,6 +1417,10 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnseleccion);
                 this.columnpresentacion = new global::System.Data.DataColumn("presentacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpresentacion);
+                this.columncardcode = new global::System.Data.DataColumn("cardcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncardcode);
+                this.columnproveedor = new global::System.Data.DataColumn("proveedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproveedor);
                 this.columnseleccion.Caption = "Selección";
             }
             
@@ -2549,6 +2579,38 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cardcode {
+                get {
+                    try {
+                        return ((string)(this[this.tablecontrolBodegaExterna.cardcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cardcode\' de la tabla \'controlBodegaExterna\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecontrolBodegaExterna.cardcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string proveedor {
+                get {
+                    try {
+                        return ((string)(this[this.tablecontrolBodegaExterna.proveedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'proveedor\' de la tabla \'controlBodegaExterna\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecontrolBodegaExterna.proveedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsocNull() {
                 return this.IsNull(this.tablecontrolBodegaExterna.ocColumn);
             }
@@ -2797,6 +2859,30 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetpresentacionNull() {
                 this[this.tablecontrolBodegaExterna.presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscardcodeNull() {
+                return this.IsNull(this.tablecontrolBodegaExterna.cardcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcardcodeNull() {
+                this[this.tablecontrolBodegaExterna.cardcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsproveedorNull() {
+                return this.IsNull(this.tablecontrolBodegaExterna.proveedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetproveedorNull() {
+                this[this.tablecontrolBodegaExterna.proveedorColumn] = global::System.Convert.DBNull;
             }
         }
         

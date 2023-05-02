@@ -52,6 +52,7 @@ namespace LOSA.Liquidos
             //IdLoteSelected = pItem.IdLote;
             //LoadBarcos();
             LoadUbicaciones();
+            grdUbicaciones.EditValue = id_tanque;
             obtener_ingreso();
 
 
@@ -130,12 +131,13 @@ namespace LOSA.Liquidos
             id_tanque = pId_Tanque;
             UsuarioLogeado = pUsuarioLogeado;
             Tanque = new Tanque(pId_Tanque);
-            grdUbicaciones.EditValue = pId_Tanque;
+            
             Inicializar_Informacion();
             //txtLote.Text = pItem.Lote;
             //IdLoteSelected = pItem.IdLote;
             //LoadBarcos();
             LoadUbicaciones();
+            grdUbicaciones.EditValue = pId_Tanque;
             obtener_ingreso();
 
             simpleButton1.Visible = false;
@@ -171,7 +173,16 @@ namespace LOSA.Liquidos
         {
             txtcapacidad.Text = Tanque.MaximoCapacidad.ToString();
             txtEspacioOcupado.Text = Tanque.TotalLleno.ToString();
-            txtDisponible.Text = Tanque.VacioCapacidad.ToString();
+
+            if (Tanque.VacioCapacidad < 0)
+            {
+                txtDisponible.Text = "0";
+            }
+            else
+            {
+                txtDisponible.Text = Tanque.VacioCapacidad.ToString();
+            }
+            
 
         }
 
@@ -461,86 +472,90 @@ namespace LOSA.Liquidos
                 cmd2.Transaction = transaction;
                 cmd2.CommandType = CommandType.StoredProcedure;
                 cmd2.Parameters.AddWithValue("@id_lote_ingreso", Id_lote_generado);
-                cmd2.Parameters.AddWithValue("@entrada", txtAltanque.Text);
+                cmd2.Parameters.AddWithValue("@entrada", Convert.ToDecimal(txtTotalIngreso.Text));
                 cmd2.Parameters.AddWithValue("@id_tanque", id_tanque);
                 cmd2.Parameters.AddWithValue("@salida", 0);
                 cmd2.Parameters.AddWithValue("@id_tarima", DBNull.Value);
                 cmd2.Parameters.AddWithValue("@date_ingreso", dp.Now());
-                cmd2.Parameters.AddWithValue("@lote", txtLote.Text);
+                cmd2.Parameters.AddWithValue("@lote", txtLote.Text.Trim());
                 cmd2.Parameters.AddWithValue("@item_code", txtCodigoMP.Text);
                 cmd2.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                 cmd2.ExecuteNonQuery();
 
-                int vid_tarima = Default_value;
-                ArrayList List = new ArrayList();
-                if (Convert.ToInt32(txtCantidaddeTarimas.Text) != 0)
-                {
-                    for (int i = 1; i <= Convert.ToInt32(txtCantidaddeTarimas.Text); i++)
-                    {
-                        
-                            DataOperations dp = new DataOperations();
+                #region Este codigo es para creacion de tarimas
+                //int vid_tarima = Default_value;
+                //ArrayList List = new ArrayList();
+                //if (Convert.ToInt32(txtCantidaddeTarimas.Text) != 0)
+                //{
+                //    for (int i = 1; i <= Convert.ToInt32(txtCantidaddeTarimas.Text); i++)
+                //    {
 
-                            SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", transaction.Connection);
-                            cmm.CommandType = CommandType.StoredProcedure;
-                            cmm.Parameters.AddWithValue("@id", 1);
-                            string barcode = cmm.ExecuteScalar().ToString();
+                //            DataOperations dp = new DataOperations();
 
-                            cmd = new SqlCommand("sp_insert_new_tarima_for__liqud", transaction.Connection);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@itemcode", txtCodigoMP.Text);
-                            cmd.Parameters.AddWithValue("@id_proveedor", CodigoProveedor);
-                            cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
-                            cmd.Parameters.AddWithValue("@numero_transaccion", ingreso);
-                            cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
-                            cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
-                            cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
-                            cmd.Parameters.AddWithValue("@id_presentacion", grd_presentaciones.EditValue);
-                            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                            cmd.Parameters.AddWithValue("@id_boleta", DBNull.Value);
-                            cmd.Parameters.AddWithValue("@codigo_barra", barcode);
-                            cmd.Parameters.AddWithValue("@cant", txtUdporTarima.Text);
-                            cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
-                            cmd.Parameters.AddWithValue("@idlotes", Id_lote_generado);
-                            cmd.Parameters.AddWithValue("@factor", factor);
-                            cmd.Parameters.AddWithValue("@bit_promedio",  0);
-                             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
+                //            SqlCommand cmm = new SqlCommand("sp_generar_codigo_from_tables_id", transaction.Connection);
+                //            cmm.CommandType = CommandType.StoredProcedure;
+                //            cmm.Parameters.AddWithValue("@id", 1);
+                //            string barcode = cmm.ExecuteScalar().ToString();
 
-                            SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", transaction.Connection);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
-                            cmdx.CommandType = CommandType.StoredProcedure;
-                            cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
-                            cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                            cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
-                            cmdx.Parameters.AddWithValue("@id_ubicacion", 131); //bodega c500 predeterminada
-                            cmdx.ExecuteNonQuery();
+                //            cmd = new SqlCommand("sp_insert_new_tarima_for__liqud", transaction.Connection);
+                //            cmd.CommandType = CommandType.StoredProcedure;
+                //            cmd.Parameters.AddWithValue("@itemcode", txtCodigoMP.Text);
+                //            cmd.Parameters.AddWithValue("@id_proveedor", CodigoProveedor);
+                //            cmd.Parameters.AddWithValue("@fecha_ingreso", dtFechaIngreso.EditValue);
+                //            cmd.Parameters.AddWithValue("@numero_transaccion", ingreso);
+                //            cmd.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.EditValue);
+                //            cmd.Parameters.AddWithValue("@fecha_produccion_materia_prima", dtFechaProduccion.EditValue);
+                //            cmd.Parameters.AddWithValue("@lote_materia_prima", txtLote.Text);
+                //            cmd.Parameters.AddWithValue("@id_presentacion", grd_presentaciones.EditValue);
+                //            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                //            cmd.Parameters.AddWithValue("@id_boleta", DBNull.Value);
+                //            cmd.Parameters.AddWithValue("@codigo_barra", barcode);
+                //            cmd.Parameters.AddWithValue("@cant", txtUdporTarima.Text);
+                //            cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPesoKg.Text));
+                //            cmd.Parameters.AddWithValue("@idlotes", Id_lote_generado);
+                //            cmd.Parameters.AddWithValue("@factor", factor);
+                //            cmd.Parameters.AddWithValue("@bit_promedio",  0);
+                //             vid_tarima = Convert.ToInt32(cmd.ExecuteScalar());
 
-                            List.Add(vid_tarima);
+                //            SqlCommand cmdx = new SqlCommand("sp_insert_ubicacion_default", transaction.Connection);// ahora recibe el parametro de ubicacion para poder guardarlo automatico en todas las tarimas
+                //            cmdx.CommandType = CommandType.StoredProcedure;
+                //            cmdx.Parameters.AddWithValue("@id_tarima", vid_tarima);
+                //            cmdx.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                //            cmdx.Parameters.AddWithValue("@codigo_barra", barcode);
+                //            cmdx.Parameters.AddWithValue("@id_ubicacion", 131); //bodega c500 predeterminada
+                //            cmdx.ExecuteNonQuery();
 
-                            Guardo = true;
-                       
-                         
-                    }
-                    Guardo = true;
-                    if (CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?") == DialogResult.Yes)
-                    {
-                        for (int i = 0; i <= (List.Count - 1); i++)
-                        {
-                            int id_tarimax = Convert.ToInt32(List[i]);
-                            rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
-                            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                            report.ShowPrintMarginsWarning = false;
-                            report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                            report.Print();
+                //            List.Add(vid_tarima);
+
+                //            Guardo = true;
 
 
-                        }
-                    }
-                    rptLoteRotulo boleta = new rptLoteRotulo(Id_lote_generado);
-                    boleta.ShowPrintMarginsWarning = false;
-                    boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-                    boleta.Print();
-                    //CajaDialogo.InformationAuto();
+                //    }
+                //    Guardo = true;
+                //    if (CajaDialogo.Pregunta("Desea Imprimir la(s) Hoja(s) de Ingreso?") == DialogResult.Yes)
+                //    {
+                //        for (int i = 0; i <= (List.Count - 1); i++)
+                //        {
+                //            int id_tarimax = Convert.ToInt32(List[i]);
+                //            rptReporteIngresoTarima report = new rptReporteIngresoTarima(id_tarimax);
+                //            report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                //            report.ShowPrintMarginsWarning = false;
+                //            report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                //            report.Print();
 
-                }
+
+                //        }
+                //    }
+
+                //    //CajaDialogo.InformationAuto();
+
+                //}
+                #endregion
+
+                rptLoteRotulo boleta = new rptLoteRotulo(Id_lote_generado);
+                boleta.ShowPrintMarginsWarning = false;
+                boleta.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
+                boleta.Print();
             }
             catch (Exception ex)
             {
@@ -720,6 +735,7 @@ namespace LOSA.Liquidos
             decimal SumaTotal = SumarSeleccionado();
             decimal ParaEltanque = Default_value;
             decimal ParaBines = Default_value;
+
             //if (Tanque.TotalLleno + SumaTotal >= Tanque.MaximoCapacidad)
             //{
             //    grupoTarima.Enabled = true;
@@ -741,13 +757,46 @@ namespace LOSA.Liquidos
             //    txtDisponibleConIngresoActual.Text = Convert.ToString(Convert.ToDecimal(txtcapacidad.Text) - (Convert.ToDecimal(txtEspacioOcupado.Text) + Convert.ToDecimal(txtAltanque.Text)));
             //}
 
+
+            if (Tanque.TotalLleno + SumaTotal >= Tanque.MaximoCapacidad)
+            {
+                txtcapacidad.Text = Tanque.MaximoCapacidad.ToString();
+                txtEspacioOcupado.Text = Tanque.TotalLleno.ToString();
+
+                txtDisponible.Text = Default_value.ToString();
+                
+                //Seguro va en Tarimas
+                grupoTarima.Enabled = true;
+                ParaBines = SumaTotal;
+                txtEnTarimas.Text = ParaBines.ToString();
+                txtTotalIngreso.Text = SumaTotal.ToString();
+                txtAltanque.Text = Default_value.ToString();
+                grd_presentaciones.EditValue = 11;
+            }
+            else
+            {
+                txtcapacidad.Text = Tanque.MaximoCapacidad.ToString();
+                txtEspacioOcupado.Text = Tanque.TotalLleno.ToString();
+
+                txtDisponible.Text = (Tanque.MaximoCapacidad - Tanque.TotalLleno).ToString();
+
+                txtAltanque.Text = SumaTotal.ToString();
+
+                txtDisponibleConIngresoActual.Text = ((Tanque.MaximoCapacidad - Tanque.TotalLleno) - SumaTotal).ToString();
+
+                txtTotalIngreso.Text = (Convert.ToDecimal(txtEnTarimas.Text) + Convert.ToDecimal(txtAltanque.Text)).ToString();
+
+            }
+
+
             //Siempre dejaremos la opcion de agregar tarimas
-            ParaBines = SumaTotal - Tanque.VacioCapacidad;
+            //ParaBines = SumaTotal;// - Tanque.VacioCapacidad;
             ParaEltanque = Tanque.VacioCapacidad;
-            txtAltanque.Text = ParaEltanque.ToString();
-            txtEnTarimas.Text = ParaBines.ToString();
-            txtTotalIngreso.Text = SumaTotal.ToString();
-            grd_presentaciones.EditValue = 8;
+            ////txtAltanque.Text = ParaEltanque.ToString();
+            //txtAltanque.Text = SumaTotal.ToString();
+            //txtEnTarimas.Text = ParaBines.ToString();
+            //txtTotalIngreso.Text = SumaTotal.ToString();
+            //grd_presentaciones.EditValue = 8;
 
             try
             {

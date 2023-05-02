@@ -1409,6 +1409,7 @@
             this.grdv_mrp.OptionsCustomization.AllowSort = false;
             this.grdv_mrp.OptionsMenu.EnableColumnMenu = false;
             this.grdv_mrp.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Office2003;
+            this.grdv_mrp.OptionsView.ShowGroupPanel = false;
             this.grdv_mrp.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_tipo, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_material, DevExpress.Data.ColumnSortOrder.Ascending)});

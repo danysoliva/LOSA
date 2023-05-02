@@ -33,12 +33,12 @@ namespace LOSA.Liquidos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngresoCamion));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dtFechaIngreso = new DevExpress.XtraEditors.DateEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtMP_Name = new DevExpress.XtraEditors.TextEdit();
@@ -136,6 +136,7 @@ namespace LOSA.Liquidos
             this.txtUdporTarima = new DevExpress.XtraEditors.TextEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.txtDisponibleConIngresoActual = new DevExpress.XtraEditors.TextEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaVencimiento = new DevExpress.XtraEditors.DateEdit();
@@ -186,6 +187,7 @@ namespace LOSA.Liquidos
             ((System.ComponentModel.ISupportInitialize)(this.txtUdporTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDisponibleConIngresoActual.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties)).BeginInit();
@@ -650,9 +652,9 @@ namespace LOSA.Liquidos
             // btnEliminar
             // 
             this.btnEliminar.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -951,7 +953,7 @@ namespace LOSA.Liquidos
             this.txtEspacioOcupado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEspacioOcupado.EditValue = "0";
             this.txtEspacioOcupado.Enabled = false;
-            this.txtEspacioOcupado.Location = new System.Drawing.Point(312, 66);
+            this.txtEspacioOcupado.Location = new System.Drawing.Point(312, 69);
             this.txtEspacioOcupado.Name = "txtEspacioOcupado";
             this.txtEspacioOcupado.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.txtEspacioOcupado.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -969,7 +971,7 @@ namespace LOSA.Liquidos
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(24, 68);
+            this.labelControl11.Location = new System.Drawing.Point(24, 70);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(256, 25);
             this.labelControl11.TabIndex = 116;
@@ -998,7 +1000,7 @@ namespace LOSA.Liquidos
             this.labelControl12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(24, 38);
+            this.labelControl12.Location = new System.Drawing.Point(24, 36);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(199, 25);
             this.labelControl12.TabIndex = 118;
@@ -1010,6 +1012,7 @@ namespace LOSA.Liquidos
             this.grupoTarima.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grupoTarima.AppearanceCaption.Options.UseFont = true;
             this.grupoTarima.Controls.Add(this.pnTarimas);
+            this.grupoTarima.Enabled = false;
             this.grupoTarima.Location = new System.Drawing.Point(3, 591);
             this.grupoTarima.Name = "grupoTarima";
             this.grupoTarima.Size = new System.Drawing.Size(720, 271);
@@ -1194,18 +1197,19 @@ namespace LOSA.Liquidos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.labelControl11);
+            this.groupControl2.Controls.Add(this.txtEspacioOcupado);
+            this.groupControl2.Controls.Add(this.txtDisponible);
+            this.groupControl2.Controls.Add(this.separatorControl1);
             this.groupControl2.Controls.Add(this.txtDisponibleConIngresoActual);
             this.groupControl2.Controls.Add(this.labelControl15);
             this.groupControl2.Controls.Add(this.txtcapacidad);
             this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Controls.Add(this.labelControl12);
             this.groupControl2.Controls.Add(this.labelControl8);
-            this.groupControl2.Controls.Add(this.txtEspacioOcupado);
             this.groupControl2.Controls.Add(this.labelControl9);
-            this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.txtTotalIngreso);
-            this.groupControl2.Controls.Add(this.txtDisponible);
             this.groupControl2.Controls.Add(this.txtEnTarimas);
             this.groupControl2.Controls.Add(this.txtAltanque);
             this.groupControl2.Location = new System.Drawing.Point(729, 591);
@@ -1213,6 +1217,16 @@ namespace LOSA.Liquidos
             this.groupControl2.Size = new System.Drawing.Size(578, 271);
             this.groupControl2.TabIndex = 121;
             this.groupControl2.Text = "Resumen";
+            // 
+            // separatorControl1
+            // 
+            this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.separatorControl1.AutoSizeMode = true;
+            this.separatorControl1.LineColor = System.Drawing.SystemColors.ActiveBorder;
+            this.separatorControl1.Location = new System.Drawing.Point(5, 89);
+            this.separatorControl1.Name = "separatorControl1";
+            this.separatorControl1.Size = new System.Drawing.Size(530, 20);
+            this.separatorControl1.TabIndex = 129;
             // 
             // txtDisponibleConIngresoActual
             // 
@@ -1403,6 +1417,7 @@ namespace LOSA.Liquidos
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDisponibleConIngresoActual.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties)).EndInit();
@@ -1520,5 +1535,6 @@ namespace LOSA.Liquidos
         private SimpleButton simpleButton1;
         private TextEdit txtDisponibleConIngresoActual;
         private LabelControl labelControl15;
+        private SeparatorControl separatorControl1;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using Core.Clases.Herramientas;
 using DevExpress.XtraReports.UI;
+using LOSA.Calidad.LoteConfConsumo;
 using LOSA.Clases;
 using System;
 using System.Collections;
@@ -450,13 +451,20 @@ namespace LOSA.RecepcionMP
 
         private void btnMP_Click(object sender, EventArgs e)
         {
-            frmSelectMP frm = new frmSelectMP();
+            //frmSelectMP frm = new frmSelectMP();
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    txtCodigoMP.Text = frm.ItemCode;
+            //    txtMP_Name.Text = frm.ItemName;
+            //}
+
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                txtCodigoMP.Text = frm.ItemCode;
-                txtMP_Name.Text = frm.ItemName;
+                txtCodigoMP.Text = frm.ItemSeleccionado.ItemCode;
+                txtMP_Name.Text = frm.ItemSeleccionado.ItemName;
             }
-        
+
         }
 
         public void CalculodelPromedio()

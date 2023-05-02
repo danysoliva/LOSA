@@ -54,7 +54,15 @@ namespace LOSA.MigracionACS.Finanzas.Reports
             this.ActiveADUser   = ActiveADUser;
             this.UserGroups = UserGroups;
             this.UsuarioLogeado = pUser;
-            if (user_has_access("app_acs_rpt_finance"))
+            //if (user_has_access("app_acs_rpt_finance"))
+            //{
+            //    btnteoric.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            //}
+            //else
+            //{
+            //    btnteoric.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            //}
+            if (UsuarioLogeado.ValidarNivelPermisos(87))
             {
                 btnteoric.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             }
@@ -1061,6 +1069,10 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                         has_access = true;
                         break;
                     }
+                    else
+                    {
+                        CajaDialogo.Error("No tiene el acceso: access_rpt_finance");
+                    }
                 }
 
                 return has_access;
@@ -1159,7 +1171,8 @@ namespace LOSA.MigracionACS.Finanzas.Reports
             #region Habilitando Parametros Segun Tipo-Reporte
             if (cmb_reports.SelectedIndex == 0) // Reporte Activos Fijos
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     radGrupo.Visible = true; //Datos: Año y Mes
                 }
@@ -1167,11 +1180,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 1)   // Reporte Inventarios MP
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     chkContabilizado.Visible = cmb_Period.Visible = lbl_periodo.Visible = true; // Datos: Periodo
                 }
@@ -1179,11 +1194,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 2)  // Reporte Consumo MP
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     pnl_fechas.Visible = true;  // Rango de Fechas
                 }
@@ -1191,11 +1208,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 3)  // Reporte Producto Terminado
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     // Producto terminado no pide parametros
                 }
@@ -1203,11 +1222,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 4 || cmb_reports.SelectedIndex == 10) //Reporte de Compra Materia Prima & Reporte Compra Materia Prima con detalle de gastos.
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     pnl_periodo_fecha.Visible = true;
 
@@ -1227,11 +1248,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 5) // Reporte Formula Teorico-Costo
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     pnl_fechas.Visible = true; // Rango de Fechas
                 }
@@ -1239,11 +1262,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 6)  // Declaración Mensual Compras
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     pnl_fechas.Visible = true;  // Rango de Fechas
                     dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
@@ -1253,11 +1278,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 7)  // Reporte por No. Orden (TextBox)
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     #region Por Ordene de Produccion
                     pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
@@ -1273,11 +1300,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 8 || cmb_reports.SelectedIndex == 9)   // "Compras DMC - CAI" o "Compras DMC - Otros"
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     pnl_fechas.Visible = true; // Rango de Fechas
                 }
@@ -1285,11 +1314,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 11)  // Reporte CxP Antiguedad de saldos (facturas abiertas) **  Sin parametros ***
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     //Reporte no pide parametros
                 }
@@ -1297,11 +1328,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 12)  // Reporte CxP Antiguedad de saldos (facturas abiertas) Historico
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     pnl_fechas.Visible = true;
                 }
@@ -1309,11 +1342,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 13)  // Rep Pólizas de Contables
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     pnl_fechas.Visible = true;
                 }
@@ -1321,11 +1356,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 14)    // Reporte Consolidado x CeCo Nomina (Odoo)
             {
-                if (user_has_access("app_acs_rpt_hr"))
+                //if (user_has_access("app_acs_rpt_hr"))
+                if (UsuarioLogeado.ValidarNivelPermisos(5))
                 {
                     #region Reporte Consolidado x CeCo Nomina (Odoo)
                     pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
@@ -1355,12 +1392,14 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                     {
                         btn_GenReport.Enabled = false;
                         txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 5");
                     }
                 }
             }
             else if (cmb_reports.SelectedIndex == 15)  // Reporte Información Empleados
             {
-                if (user_has_access("app_acs_rpt_hr"))
+                //if (user_has_access("app_acs_rpt_hr"))
+                if (UsuarioLogeado.ValidarNivelPermisos(5))
                 {
                     // Este reporte no requiere parametros
                 }
@@ -1368,11 +1407,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 5");
                 }
             }
             else if (cmb_reports.SelectedIndex == 16)    // Reporte Consolidado x Empleado Nomina (Odoo)
             {
-                if (user_has_access("app_acs_rpt_hr"))
+                //if (user_has_access("app_acs_rpt_hr"))
+                if (UsuarioLogeado.ValidarNivelPermisos(5))
                 {
                     #region Reporte Consolidado x CeCo Nomina (Odoo)
                     pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
@@ -1387,11 +1428,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 5");
                 }
             }
             else if (cmb_reports.SelectedIndex == 17)// Reporte Acumulado de Compras por Rubros (Odoo)
             {
-                if (user_has_access("app_acs_rpt_procurement"))
+                //if (user_has_access("app_acs_rpt_procurement"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     pnl_fechas.Visible = true;  // Rango de Fechas
                     dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
@@ -1405,7 +1448,8 @@ namespace LOSA.MigracionACS.Finanzas.Reports
             }
             else if (cmb_reports.SelectedIndex == 18)// Reporte Acumulado de Compras por Rubros (Odoo)
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     pnl_fechas.Visible = true;  // Rango de Fechas
                     dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
@@ -1415,11 +1459,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 19) // Reporte Activos Fijos Fiscales
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     radGrupo.Visible = true; //Datos: Año y Mes
                 }
@@ -1427,6 +1473,7 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 20) //Consumos teoricos MP
@@ -1441,11 +1488,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     pnl_fechas.Visible = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 18");
                 }
             }
             else if (cmb_reports.SelectedIndex == 21) // Reporte Activos Fijos Fiscales
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     radGrupo.Visible = true; //Datos: Año y Mes
                 }
@@ -1453,11 +1502,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 22) // Reporte Activos Fijos Fiscales
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     Formulas.FML_Costeo_Formulas cf = new Formulas.FML_Costeo_Formulas();
                     cf.Show();
@@ -1466,11 +1517,13 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 23) // Reporte Activos Fijos Fiscales
             {
-                if (user_has_access("app_acs_rpt_finance"))
+                //if (user_has_access("app_acs_rpt_finance"))
+                if (UsuarioLogeado.ValidarNivelPermisos(87))
                 {
                     //radGrupo.Visible = true; //Datos: Año y Mes
                 }
@@ -1478,6 +1531,7 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     btn_GenReport.Enabled = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
                 }
             }
             else if (cmb_reports.SelectedIndex == 24) // Reporte Activos Fijos Fiscales
@@ -1490,6 +1544,7 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 {
                     pnl_fechas.Visible = false;
                     txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 21");
                 }
             }
             else if (cmb_reports.SelectedIndex == 25)
@@ -1509,7 +1564,8 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                 }
                 else
                 {
-                    MessageBox.Show("Sin permisos");
+                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 24");
                 }
 
                 #endregion

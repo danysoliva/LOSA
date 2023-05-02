@@ -213,6 +213,8 @@
             this.col_kind = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_kindN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_total = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_itemocde = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_cod_oddo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_toExcel = new DevExpress.XtraGrid.GridControl();
             this.grdv_toExcel = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.btEneroCompras)).BeginInit();
@@ -263,8 +265,8 @@
             this.col_ene.FieldName = "ene";
             this.col_ene.Name = "col_ene";
             this.col_ene.Visible = true;
-            this.col_ene.VisibleIndex = 1;
-            this.col_ene.Width = 47;
+            this.col_ene.VisibleIndex = 2;
+            this.col_ene.Width = 69;
             // 
             // btEneroCompras
             // 
@@ -286,8 +288,8 @@
             this.col_feb.FieldName = "feb";
             this.col_feb.Name = "col_feb";
             this.col_feb.Visible = true;
-            this.col_feb.VisibleIndex = 2;
-            this.col_feb.Width = 47;
+            this.col_feb.VisibleIndex = 3;
+            this.col_feb.Width = 69;
             // 
             // btnFebCompras
             // 
@@ -309,8 +311,8 @@
             this.col_mar.FieldName = "mar";
             this.col_mar.Name = "col_mar";
             this.col_mar.Visible = true;
-            this.col_mar.VisibleIndex = 3;
-            this.col_mar.Width = 47;
+            this.col_mar.VisibleIndex = 4;
+            this.col_mar.Width = 69;
             // 
             // btnMarzoCompras
             // 
@@ -332,8 +334,8 @@
             this.col_abr.FieldName = "abr";
             this.col_abr.Name = "col_abr";
             this.col_abr.Visible = true;
-            this.col_abr.VisibleIndex = 4;
-            this.col_abr.Width = 47;
+            this.col_abr.VisibleIndex = 5;
+            this.col_abr.Width = 69;
             // 
             // btnAbrilCompras
             // 
@@ -355,8 +357,8 @@
             this.col_may.FieldName = "may";
             this.col_may.Name = "col_may";
             this.col_may.Visible = true;
-            this.col_may.VisibleIndex = 5;
-            this.col_may.Width = 47;
+            this.col_may.VisibleIndex = 6;
+            this.col_may.Width = 69;
             // 
             // btnMayoCompras
             // 
@@ -378,8 +380,8 @@
             this.col_jun.FieldName = "jun";
             this.col_jun.Name = "col_jun";
             this.col_jun.Visible = true;
-            this.col_jun.VisibleIndex = 6;
-            this.col_jun.Width = 47;
+            this.col_jun.VisibleIndex = 7;
+            this.col_jun.Width = 69;
             // 
             // btJunioCompras
             // 
@@ -401,8 +403,8 @@
             this.col_jul.FieldName = "jul";
             this.col_jul.Name = "col_jul";
             this.col_jul.Visible = true;
-            this.col_jul.VisibleIndex = 7;
-            this.col_jul.Width = 47;
+            this.col_jul.VisibleIndex = 8;
+            this.col_jul.Width = 69;
             // 
             // btnJulCompras
             // 
@@ -424,8 +426,8 @@
             this.col_ago.FieldName = "ago";
             this.col_ago.Name = "col_ago";
             this.col_ago.Visible = true;
-            this.col_ago.VisibleIndex = 8;
-            this.col_ago.Width = 47;
+            this.col_ago.VisibleIndex = 9;
+            this.col_ago.Width = 69;
             // 
             // btAgoCompras
             // 
@@ -447,8 +449,8 @@
             this.col_sep.FieldName = "sep";
             this.col_sep.Name = "col_sep";
             this.col_sep.Visible = true;
-            this.col_sep.VisibleIndex = 9;
-            this.col_sep.Width = 47;
+            this.col_sep.VisibleIndex = 10;
+            this.col_sep.Width = 69;
             // 
             // btnSeptCompras
             // 
@@ -470,8 +472,8 @@
             this.col_oct.FieldName = "oct";
             this.col_oct.Name = "col_oct";
             this.col_oct.Visible = true;
-            this.col_oct.VisibleIndex = 10;
-            this.col_oct.Width = 47;
+            this.col_oct.VisibleIndex = 11;
+            this.col_oct.Width = 69;
             // 
             // btnOctubreCompras
             // 
@@ -493,8 +495,8 @@
             this.col_nov.FieldName = "nov";
             this.col_nov.Name = "col_nov";
             this.col_nov.Visible = true;
-            this.col_nov.VisibleIndex = 11;
-            this.col_nov.Width = 47;
+            this.col_nov.VisibleIndex = 12;
+            this.col_nov.Width = 69;
             // 
             // btnComprasNov
             // 
@@ -516,8 +518,8 @@
             this.col_dic.FieldName = "dic";
             this.col_dic.Name = "col_dic";
             this.col_dic.Visible = true;
-            this.col_dic.VisibleIndex = 12;
-            this.col_dic.Width = 47;
+            this.col_dic.VisibleIndex = 13;
+            this.col_dic.Width = 69;
             // 
             // btnViewDetailsDiciembre
             // 
@@ -1064,7 +1066,9 @@
             this.col_oct,
             this.col_nov,
             this.col_dic,
-            this.col_total});
+            this.col_total,
+            this.col_itemocde,
+            this.col_cod_oddo});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.DarkRed;
             styleFormatCondition1.Appearance.BackColor2 = System.Drawing.Color.Firebrick;
             styleFormatCondition1.Appearance.BorderColor = System.Drawing.Color.Red;
@@ -1651,6 +1655,7 @@
             this.grdv_mrp.OptionsBehavior.AutoExpandAllGroups = true;
             this.grdv_mrp.OptionsCustomization.AllowSort = false;
             this.grdv_mrp.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Office2003;
+            this.grdv_mrp.OptionsView.ShowGroupPanel = false;
             this.grdv_mrp.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_tipo, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_material, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -1689,7 +1694,7 @@
             this.col_tipo.OptionsColumn.AllowEdit = false;
             this.col_tipo.OptionsColumn.AllowFocus = false;
             this.col_tipo.Visible = true;
-            this.col_tipo.VisibleIndex = 2;
+            this.col_tipo.VisibleIndex = 3;
             this.col_tipo.Width = 52;
             // 
             // col_kind
@@ -1706,8 +1711,8 @@
             this.col_kindN.OptionsColumn.AllowEdit = false;
             this.col_kindN.OptionsColumn.AllowFocus = false;
             this.col_kindN.Visible = true;
-            this.col_kindN.VisibleIndex = 0;
-            this.col_kindN.Width = 105;
+            this.col_kindN.VisibleIndex = 1;
+            this.col_kindN.Width = 156;
             // 
             // col_total
             // 
@@ -1721,8 +1726,27 @@
             this.col_total.OptionsColumn.AllowEdit = false;
             this.col_total.OptionsColumn.AllowFocus = false;
             this.col_total.Visible = true;
-            this.col_total.VisibleIndex = 13;
-            this.col_total.Width = 93;
+            this.col_total.VisibleIndex = 14;
+            this.col_total.Width = 163;
+            // 
+            // col_itemocde
+            // 
+            this.col_itemocde.Caption = "Itemocde";
+            this.col_itemocde.FieldName = "itemocde";
+            this.col_itemocde.Name = "col_itemocde";
+            this.col_itemocde.OptionsColumn.AllowEdit = false;
+            this.col_itemocde.Visible = true;
+            this.col_itemocde.VisibleIndex = 0;
+            this.col_itemocde.Width = 77;
+            // 
+            // col_cod_oddo
+            // 
+            this.col_cod_oddo.Caption = "Cod Oddo";
+            this.col_cod_oddo.FieldName = "cod_oddo";
+            this.col_cod_oddo.Name = "col_cod_oddo";
+            this.col_cod_oddo.OptionsColumn.AllowEdit = false;
+            this.col_cod_oddo.Visible = true;
+            this.col_cod_oddo.VisibleIndex = 15;
             // 
             // grd_toExcel
             // 
@@ -1879,5 +1903,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnMarzoCompras;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnFebCompras;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btEneroCompras;
+        private DevExpress.XtraGrid.Columns.GridColumn col_itemocde;
+        private DevExpress.XtraGrid.Columns.GridColumn col_cod_oddo;
     }
 }
