@@ -552,8 +552,9 @@ namespace LOSA.TransaccionesMP
             }
         }
 
-
-
-
+        private void btnActReproceso_Click(object sender, EventArgs e)
+        {
+            Load_dataReprocesoPorLote();
+        }
     }
 }
