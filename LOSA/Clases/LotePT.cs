@@ -118,6 +118,7 @@ namespace LOSA.Clases
                     Unidades = dr.GetDecimal(10);
                     CantidadBatch = dr.GetInt32(11);
                     OrderId_prd = dr.GetInt64(12);
+
                     Recuperado = true;
                 }
                 dr.Close();

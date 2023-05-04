@@ -389,6 +389,7 @@ namespace ACS.Forecast
                                                       FROM [dbo].[FCT_MRP_D]
                                                      WHERE [id_mrp] = " + cmb_MRPs.EditValue.ToString() + "");
 
+                #region CodigoViejo
                 //DataSet IniStructure = dp.ACS_GetSelectData(@"  SELECT A.[id]
                 //                                                  ,A.[id_mp]
                 //                                               ,CONCAT(B.[material],' - Costo Actual: $ ', D.[valor_tm]) AS material
@@ -475,6 +476,8 @@ namespace ACS.Forecast
                 //                                                    WHERE [id_mrp] = " + cmb_MRPs.EditValue.ToString() + @") as tableConsumoReal
 
                 //                                                 )as megaRMP order by 4,2 asc");
+                #endregion
+
                 DataSet IniStructure = new DataSet();
                 try
                 {
@@ -516,7 +519,7 @@ namespace ACS.Forecast
                 string mes;
                 string InvIniRowID = "x";
 
-
+                #region CodigoViejo
                 //foreach (DataRow rowMP in RawMat.Tables[0].Rows) 
                 //{
                 //    foreach (DataRow rowMPR in IniStructure.Tables[0].Rows) 
@@ -717,6 +720,9 @@ namespace ACS.Forecast
                 //}
 
                 //grd_mrp.DataSource = ReportData.Tables[0];
+
+                #endregion 
+
                 grd_mrp.DataSource = IniStructure.Tables[0];
                 CheckGroupStatus();
 

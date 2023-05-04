@@ -162,6 +162,7 @@ namespace LOSA
 
                             break;
                         case 4://Depth With Delta
+                        case 5://Depth Without Delta
                             tabOpciones.TabPages[0].PageVisible = true;
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[2].PageVisible = true;
@@ -171,9 +172,6 @@ namespace LOSA
                             tabOpciones.TabPages[6].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
-                            break;
-                        case 5://Depth Without Delta
-
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);

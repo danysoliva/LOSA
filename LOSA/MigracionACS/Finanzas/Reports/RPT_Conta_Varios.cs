@@ -1169,85 +1169,213 @@ namespace LOSA.MigracionACS.Finanzas.Reports
             #region Habilitando Parametros Segun Tipo-Reporte
             if (cmb_reports.SelectedIndex == 0) // Reporte Activos Fijos
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    radGrupo.Visible = true; //Datos: Año y Mes
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        radGrupo.Visible = true; //Datos: Año y Mes
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        radGrupo.Visible = true; //Datos: Año y Mes
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 1)   // Reporte Inventarios MP
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    chkContabilizado.Visible = cmb_Period.Visible = lbl_periodo.Visible = true; // Datos: Periodo
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        chkContabilizado.Visible = cmb_Period.Visible = lbl_periodo.Visible = true; // Datos: Periodo
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        chkContabilizado.Visible = cmb_Period.Visible = lbl_periodo.Visible = true; // Datos: Periodo
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 2)  // Reporte Consumo MP
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;  // Rango de Fechas
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;  // Rango de Fechas
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        pnl_fechas.Visible = true;  // Rango de Fechas
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+
+                
             }
             else if (cmb_reports.SelectedIndex == 3)  // Reporte Producto Terminado
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    // Producto terminado no pide parametros
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        // Producto terminado no pide parametros
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        // Producto terminado no pide parametros
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+               
             }
             else if (cmb_reports.SelectedIndex == 4 || cmb_reports.SelectedIndex == 10) //Reporte de Compra Materia Prima & Reporte Compra Materia Prima con detalle de gastos.
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
-                {
-                    pnl_periodo_fecha.Visible = true;
 
-                    #region Compra Materia Prima
-                    if (!btn_periodo_fecha.IsOn)
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        #region Compra Materia Prima
+                        if (!btn_periodo_fecha.IsOn)
+                        {
+                            #region porPeriodo
+                            chkContabilizado.Visible = cmb_Period.Visible = lbl_periodo.Visible = true;                          // Datos: Periodo
+                            chkContabilizado.Text = "Todo";
+                            chkContabilizado.ToolTip = "Contabilizado y No contabilizado.";
+                            cargarPeriodos_acs();
+                            #endregion
+                        }
+                        #endregion
+                        break;
+                    default:
+                        break;
+                }
+
+                if (!accesoprevio)
+                {
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
                     {
-                        #region porPeriodo
-                        chkContabilizado.Visible = cmb_Period.Visible = lbl_periodo.Visible = true;                          // Datos: Periodo
-                        chkContabilizado.Text = "Todo";
-                        chkContabilizado.ToolTip = "Contabilizado y No contabilizado.";
-                        cargarPeriodos_acs();
+                        pnl_periodo_fecha.Visible = true;
+
+                        #region Compra Materia Prima
+                        if (!btn_periodo_fecha.IsOn)
+                        {
+                            #region porPeriodo
+                            chkContabilizado.Visible = cmb_Period.Visible = lbl_periodo.Visible = true;                          // Datos: Periodo
+                            chkContabilizado.Text = "Todo";
+                            chkContabilizado.ToolTip = "Contabilizado y No contabilizado.";
+                            cargarPeriodos_acs();
+                            #endregion
+                        }
                         #endregion
                     }
-                    #endregion
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
-                else
-                {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
-                }
+
             }
             else if (cmb_reports.SelectedIndex == 5) // Reporte Formula Teorico-Costo
             {
@@ -1284,107 +1412,291 @@ namespace LOSA.MigracionACS.Finanzas.Reports
 
                 if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        //accesoprevio = true;
+                        pnl_fechas.Visible = true; // Rango de Fechas 
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
+                    
                 }
             }
             else if (cmb_reports.SelectedIndex == 6)  // Declaración Mensual Compras
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;  // Rango de Fechas
-                    dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
-                    dt_hasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;  // Rango de Fechas
+                        dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                        dt_hasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                        break;
+                    default:
+                        break;
                 }
-                else
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        pnl_fechas.Visible = true;  // Rango de Fechas
+                        dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                        dt_hasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+                    
+                 
             }
             else if (cmb_reports.SelectedIndex == 7)  // Reporte por No. Orden (TextBox)
             {
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        #region Por Ordene de Produccion
+                        pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
+                        lbl_Textbox.Text = "Orden de Producción:";                                          // Por Orden de Produccion
+                        txt_Textbox.Properties.Mask.EditMask = "0000000";
+                        txt_Textbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+                        txt_Textbox.ReadOnly = false;
+                        //txt_Textbox.Properties.Mask.EditMask = "PP-0000000";
+                        //txt_Textbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx; // .Numeric; // MaskType.Numeric;
+                        #endregion
+                        break;
+                    default:
+                        break;
+                }
+
+                if (!accesoprevio)
+                {
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        #region Por Ordene de Produccion
+                        pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
+                        lbl_Textbox.Text = "Orden de Producción:";                                          // Por Orden de Produccion
+                        txt_Textbox.Properties.Mask.EditMask = "0000000";
+                        txt_Textbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+                        txt_Textbox.ReadOnly = false;
+                        //txt_Textbox.Properties.Mask.EditMask = "PP-0000000";
+                        //txt_Textbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx; // .Numeric; // MaskType.Numeric;
+                        #endregion
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
+                }
+
                 //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
-                {
-                    #region Por Ordene de Produccion
-                    pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
-                    lbl_Textbox.Text = "Orden de Producción:";                                          // Por Orden de Produccion
-                    txt_Textbox.Properties.Mask.EditMask = "0000000";
-                    txt_Textbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-                    txt_Textbox.ReadOnly = false;
-                    //txt_Textbox.Properties.Mask.EditMask = "PP-0000000";
-                    //txt_Textbox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx; // .Numeric; // MaskType.Numeric;
-                    #endregion
-                }
-                else
-                {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
-                }
+                
             }
             else if (cmb_reports.SelectedIndex == 8 || cmb_reports.SelectedIndex == 9)   // "Compras DMC - CAI" o "Compras DMC - Otros"
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true; // Rango de Fechas
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true; // Rango de Fechas
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        pnl_fechas.Visible = true; // Rango de Fechas
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+
+                
             }
             else if (cmb_reports.SelectedIndex == 11)  // Reporte CxP Antiguedad de saldos (facturas abiertas) **  Sin parametros ***
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    //Reporte no pide parametros
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        //Reporte no pide parametros
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        //Reporte no pide parametros
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
             }
             else if (cmb_reports.SelectedIndex == 12)  // Reporte CxP Antiguedad de saldos (facturas abiertas) Historico
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;
+                        break;
+                    default:
+                        break;
                 }
-                else
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        pnl_fechas.Visible = true;
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 13)  // Rep Pólizas de Contables
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        pnl_fechas.Visible = true;
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 14)    // Reporte Consolidado x CeCo Nomina (Odoo)
             {
+
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        #region Reporte Consolidado x CeCo Nomina (Odoo)
+                        pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
+                        lbl_Textbox.Text = "Seleccione Nomina:";
+                        txt_Textbox.Text = "";
+                        txt_Textbox.ReadOnly = true;
+
+                        btn_Seleccionar.Visible = true;
+                        #endregion
+                        break;
+                    default:
+                        break;
+                }
+
                 //if (user_has_access("app_acs_rpt_hr"))
                 if (UsuarioLogeado.ValidarNivelPermisos(5))
                 {
@@ -1422,161 +1734,411 @@ namespace LOSA.MigracionACS.Finanzas.Reports
             }
             else if (cmb_reports.SelectedIndex == 15)  // Reporte Información Empleados
             {
-                //if (user_has_access("app_acs_rpt_hr"))
-                if (UsuarioLogeado.ValidarNivelPermisos(5))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    // Este reporte no requiere parametros
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        // Este reporte no requiere parametros
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 5");
+                    //if (user_has_access("app_acs_rpt_hr"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(5))
+                    {
+                        // Este reporte no requiere parametros
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 5");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 16)    // Reporte Consolidado x Empleado Nomina (Odoo)
             {
-                //if (user_has_access("app_acs_rpt_hr"))
-                if (UsuarioLogeado.ValidarNivelPermisos(5))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    #region Reporte Consolidado x CeCo Nomina (Odoo)
-                    pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
-                    lbl_Textbox.Text = "Seleccione Nomina:";
-                    txt_Textbox.Text = "";
-                    txt_Textbox.ReadOnly = true;
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        #region Reporte Consolidado x CeCo Nomina (Odoo)
+                        pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
+                        lbl_Textbox.Text = "Seleccione Nomina:";
+                        txt_Textbox.Text = "";
+                        txt_Textbox.ReadOnly = true;
 
-                    txt_Textbox.Visible = lbl_Textbox.Visible = btn_Seleccionar.Visible = true;
-                    #endregion
+                        txt_Textbox.Visible = lbl_Textbox.Visible = btn_Seleccionar.Visible = true;
+                        #endregion
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 5");
+                    //if (user_has_access("app_acs_rpt_hr"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(5))
+                    {
+                        #region Reporte Consolidado x CeCo Nomina (Odoo)
+                        pnl_Textbox.Visible = true; pnl_Textbox.Dock = DockStyle.Fill;
+                        lbl_Textbox.Text = "Seleccione Nomina:";
+                        txt_Textbox.Text = "";
+                        txt_Textbox.ReadOnly = true;
+
+                        txt_Textbox.Visible = lbl_Textbox.Visible = btn_Seleccionar.Visible = true;
+                        #endregion
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 5");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 17)// Reporte Acumulado de Compras por Rubros (Odoo)
             {
-                //if (user_has_access("app_acs_rpt_procurement"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;  // Rango de Fechas
-                    dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
-                    dt_hasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;  // Rango de Fechas
+                        dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                        dt_hasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    //if (user_has_access("app_acs_rpt_procurement"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        pnl_fechas.Visible = true;  // Rango de Fechas
+                        dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                        dt_hasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 18)// Reporte Acumulado de Compras por Rubros (Odoo)
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;  // Rango de Fechas
-                    dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
-                    dt_hasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;  // Rango de Fechas
+                        dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                        dt_hasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        pnl_fechas.Visible = true;  // Rango de Fechas
+                        dt_desde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                        dt_hasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;    // Ocultando la hora..
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
             }
             else if (cmb_reports.SelectedIndex == 19) // Reporte Activos Fijos Fiscales
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    radGrupo.Visible = true; //Datos: Año y Mes
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        radGrupo.Visible = true; //Datos: Año y Mes
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        radGrupo.Visible = true; //Datos: Año y Mes
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 20) //Consumos teoricos MP
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(18))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    /*radGrupo.Visible = true*//*; *///Datos: Año y Mes
-                    pnl_fechas.Visible = true;
-
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    pnl_fechas.Visible = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 18");
+                    if (UsuarioLogeado.ValidarNivelPermisos(18))
+                    {
+                        /*radGrupo.Visible = true*//*; *///Datos: Año y Mes
+                        pnl_fechas.Visible = true;
+
+                    }
+                    else
+                    {
+                        pnl_fechas.Visible = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 18");
+                    }
                 }
             }
             else if (cmb_reports.SelectedIndex == 21) // Reporte Activos Fijos Fiscales
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    radGrupo.Visible = true; //Datos: Año y Mes
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        radGrupo.Visible = true; //Datos: Año y Mes
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        radGrupo.Visible = true; //Datos: Año y Mes
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 22) // Reporte Activos Fijos Fiscales
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    Formulas.FML_Costeo_Formulas cf = new Formulas.FML_Costeo_Formulas();
-                    cf.Show();
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        Formulas.FML_Costeo_Formulas cf = new Formulas.FML_Costeo_Formulas();
+                        cf.Show();
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        Formulas.FML_Costeo_Formulas cf = new Formulas.FML_Costeo_Formulas();
+                        cf.Show();
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 23) // Reporte Activos Fijos Fiscales
             {
-                //if (user_has_access("app_acs_rpt_finance"))
-                if (UsuarioLogeado.ValidarNivelPermisos(87))
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    //radGrupo.Visible = true; //Datos: Año y Mes
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        //radGrupo.Visible = true; //Datos: Año y Mes
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    btn_GenReport.Enabled = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    //if (user_has_access("app_acs_rpt_finance"))
+                    if (UsuarioLogeado.ValidarNivelPermisos(87))
+                    {
+                        //radGrupo.Visible = true; //Datos: Año y Mes
+                    }
+                    else
+                    {
+                        btn_GenReport.Enabled = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 87");
+                    }
                 }
+                
             }
             else if (cmb_reports.SelectedIndex == 24) // Reporte Activos Fijos Fiscales
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(21) || UsuarioLogeado.IsSuperUser)
+
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    pnl_fechas.Visible = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 21");
+                    if (UsuarioLogeado.ValidarNivelPermisos(21) || UsuarioLogeado.IsSuperUser)
+                    {
+                        pnl_fechas.Visible = true;
+                    }
+                    else
+                    {
+                        pnl_fechas.Visible = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 21");
+                    }
                 }
+
             }
             else if (cmb_reports.SelectedIndex == 25)
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(24) || UsuarioLogeado.IsSuperUser)
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    if (cmb_reports.SelectedIndex == 25)
-                    {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
                         RPT_seleccion SEL = new RPT_seleccion();
                         if (SEL.ShowDialog() == DialogResult.OK)
                         {
@@ -1584,12 +2146,31 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                             Hasta = SEL.PHasta;
 
                         }
-                    }
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 24");
+                    if (UsuarioLogeado.ValidarNivelPermisos(24) || UsuarioLogeado.IsSuperUser)
+                    {
+                        if (cmb_reports.SelectedIndex == 25)
+                        {
+                            RPT_seleccion SEL = new RPT_seleccion();
+                            if (SEL.ShowDialog() == DialogResult.OK)
+                            {
+                                Desde = SEL.PDesde;
+                                Hasta = SEL.PHasta;
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 24");
+                    }
                 }
 
                 #endregion
@@ -1597,58 +2178,153 @@ namespace LOSA.MigracionACS.Finanzas.Reports
             }
             else if (cmb_reports.SelectedIndex == 26)
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(59) || UsuarioLogeado.IsSuperUser)
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    pnl_fechas.Visible = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 59");
+
+                    if (UsuarioLogeado.ValidarNivelPermisos(59) || UsuarioLogeado.IsSuperUser)
+                    {
+                        pnl_fechas.Visible = true;
+                    }
+                    else
+                    {
+                        pnl_fechas.Visible = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 59");
+                    }
                 }
+
                 inicializar_grid();
             }
             else if (cmb_reports.SelectedIndex == 27)
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(59) || UsuarioLogeado.IsSuperUser)
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    pnl_fechas.Visible = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 59");
+                    if (UsuarioLogeado.ValidarNivelPermisos(59) || UsuarioLogeado.IsSuperUser)
+                    {
+                        pnl_fechas.Visible = true;
+                    }
+                    else
+                    {
+                        pnl_fechas.Visible = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 59");
+                    }
                 }
+
                 inicializar_grid();
             }
             else if(cmb_reports.SelectedIndex == 28)
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(62) || UsuarioLogeado.IsSuperUser)
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    pnl_fechas.Visible = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 59");
+                    if (UsuarioLogeado.ValidarNivelPermisos(62) || UsuarioLogeado.IsSuperUser)
+                    {
+                        pnl_fechas.Visible = true;
+                    }
+                    else
+                    {
+                        pnl_fechas.Visible = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 59");
+                    }
                 }
+
+                
                 inicializar_grid();
             }
             else if (cmb_reports.SelectedIndex == 29)
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(63) || UsuarioLogeado.IsSuperUser)
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+                switch (idNivel)
                 {
-                    pnl_fechas.Visible = true;
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        pnl_fechas.Visible = true;
+                        break;
+                    default:
+                        break;
                 }
-                else
+
+                if (!accesoprevio)
                 {
-                    pnl_fechas.Visible = false;
-                    txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 63");
+                    if (UsuarioLogeado.ValidarNivelPermisos(63) || UsuarioLogeado.IsSuperUser)
+                    {
+                        pnl_fechas.Visible = true;
+                    }
+                    else
+                    {
+                        pnl_fechas.Visible = false;
+                        txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 63");
+                    }
                 }
+
+                
                 inicializar_grid();
             }
             else if (cmb_reports.SelectedIndex == 30)
