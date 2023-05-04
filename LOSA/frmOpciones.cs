@@ -21,6 +21,7 @@ using LOSA.Liquidos;
 using LOSA.Logistica;
 using LOSA.Mantenimientos;
 using LOSA.MigracionACS.AquaForecast;
+using LOSA.MigracionACS.Finanzas.ODOO;
 using LOSA.MigracionACS.Finanzas.Reports;
 using LOSA.MigracionACS.Forecast;
 using LOSA.MigracionACS.Formulas;
@@ -3144,6 +3145,49 @@ namespace LOSA
             //    }
             //}
            
+        }
+
+        private void cmdReporteBancosPlanilla_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7); //7 = ALOSY
+
+            switch (idNivel)
+            {
+                case 1://BasicView
+                    break;
+
+                case 2: //Basic No Autorization
+                    break;
+
+                case 3://Medium Autorization
+                    break;
+
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmReporteBancosODOO frm = new frmReporteBancosODOO(UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                default:
+                    break;
+
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(88))
+                {
+                    frmReporteBancosODOO frm = new frmReporteBancosODOO(UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #88");
+                }
+            }
         }
     }
 }

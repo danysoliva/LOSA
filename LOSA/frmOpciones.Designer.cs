@@ -236,6 +236,7 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.cmdReporteBancosPlanilla = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2973,6 +2974,7 @@
             // 
             // TabContabilidad
             // 
+            this.TabContabilidad.Controls.Add(this.cmdReporteBancosPlanilla);
             this.TabContabilidad.Controls.Add(this.btnAprobaTarimasConta);
             this.TabContabilidad.Controls.Add(this.btn_rutas_traza_contabilidad);
             this.TabContabilidad.Controls.Add(this.btn_mp_bodega_prd_finanzas);
@@ -3180,7 +3182,7 @@
             this.simpleButton57.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton57.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton57.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton57.ImageOptions.SvgImage")));
-            this.simpleButton57.Location = new System.Drawing.Point(603, 429);
+            this.simpleButton57.Location = new System.Drawing.Point(545, 297);
             this.simpleButton57.Name = "simpleButton57";
             this.simpleButton57.Size = new System.Drawing.Size(223, 71);
             this.simpleButton57.TabIndex = 12;
@@ -3319,6 +3321,21 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
+            // 
+            // cmdReporteBancosPlanilla
+            // 
+            this.cmdReporteBancosPlanilla.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdReporteBancosPlanilla.Appearance.Options.UseFont = true;
+            this.cmdReporteBancosPlanilla.Appearance.Options.UseTextOptions = true;
+            this.cmdReporteBancosPlanilla.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdReporteBancosPlanilla.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteBancosPlanilla.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
+            this.cmdReporteBancosPlanilla.Location = new System.Drawing.Point(60, 384);
+            this.cmdReporteBancosPlanilla.Name = "cmdReporteBancosPlanilla";
+            this.cmdReporteBancosPlanilla.Size = new System.Drawing.Size(223, 71);
+            this.cmdReporteBancosPlanilla.TabIndex = 52;
+            this.cmdReporteBancosPlanilla.Text = "Reporte Bancos Planilla";
+            this.cmdReporteBancosPlanilla.Click += new System.EventHandler(this.cmdReporteBancosPlanilla_Click);
             // 
             // frmOpciones
             // 
@@ -3567,5 +3584,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdCierreLotesPT;
         private DevExpress.XtraEditors.SimpleButton btnViewRequisasCalidad;
         private DevExpress.XtraEditors.SimpleButton btnValidacionTarimas;
+        private DevExpress.XtraEditors.SimpleButton cmdReporteBancosPlanilla;
     }
 }

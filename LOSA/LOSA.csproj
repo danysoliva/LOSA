@@ -1968,6 +1968,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dSRPT.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Finanzas\ODOO\drReportesODOO_RRHH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>drReportesODOO_RRHH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\ODOO\frmReporteBancosODOO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\ODOO\frmReporteBancosODOO.Designer.cs">
+      <DependentUpon>frmReporteBancosODOO.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaReal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4089,6 +4100,17 @@
     </None>
     <None Include="MigracionACS\Finanzas\dSRPT.xss">
       <DependentUpon>dSRPT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\ODOO\drReportesODOO_RRHH.xsc">
+      <DependentUpon>drReportesODOO_RRHH.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Finanzas\ODOO\drReportesODOO_RRHH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>drReportesODOO_RRHH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Finanzas\ODOO\drReportesODOO_RRHH.xss">
+      <DependentUpon>drReportesODOO_RRHH.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Finanzas\Reports\datarpt.xsc">
       <DependentUpon>datarpt.xsd</DependentUpon>
@@ -6434,6 +6456,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Controles\xxSeleccionLookupEdit.resx">
       <DependentUpon>xxSeleccionLookupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\ODOO\frmReporteBancosODOO.resx">
+      <DependentUpon>frmReporteBancosODOO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Finanzas\Reports\frmConsumoConsolaReal.resx">
       <DependentUpon>frmConsumoConsolaReal.cs</DependentUpon>
