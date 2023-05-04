@@ -42,7 +42,7 @@ namespace LOSA.MigracionACS.Finanzas.ODOO
                 PgSqlCommand cmd = new PgSqlCommand("select * from public.ft_get_tabla_deduccion_por_banco_rrhh (:p_fecha_i, :p_fecha_f);", con);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("p_fecha_i", dtDesde.EditValue);
-                cmd.Parameters.AddWithValue("p_fecha_f", dtDesde.EditValue);
+                cmd.Parameters.AddWithValue("p_fecha_f", dtHasta.EditValue);
                 drReportesODOO_RRHH1.detalle_bancos.Clear();
                 PgSqlDataAdapter adat = new PgSqlDataAdapter(cmd);
                 adat.Fill(drReportesODOO_RRHH1.detalle_bancos);
