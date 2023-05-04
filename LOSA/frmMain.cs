@@ -188,14 +188,14 @@ namespace LOSA
             if (HostName == "F3DYSQ2" /*Danys Oliva*/ || HostName == "9SSCBV2" || HostName == "9PG91W2" /*Ruben Garcia */ || HostName == "F9Q11Q2" /*PC Soporte La 50*/)
             {
                 SaltarLogin.Visible = simpleButton2 .Visible = SaltarLoginPRD.Visible= true;
-                cmdButtonSaltarLogin.Visible = true;
+                cmdIngresarAdmin.Visible = cmdButtonSaltarLogin.Visible = true;
                 //this.Size = new Size(335, 497);//Grande
 
             }
             else
             {
                 SaltarLogin.Visible = simpleButton2.Visible = SaltarLoginPRD.Visible = false;
-                cmdButtonSaltarLogin.Visible = false;
+                cmdIngresarAdmin.Visible = cmdButtonSaltarLogin.Visible = false;
                 //this.Size = new Size(335, 442);//Pequeño
             }
         }
@@ -349,6 +349,26 @@ namespace LOSA
         private void cmdAbrirTeclado_Click(object sender, EventArgs e)
         {
             Teclado.abrirTeclado();
+        }
+
+        private void simpleButton3_Click_1(object sender, EventArgs e)
+        {
+            Teclado.cerrarTeclado();
+            UserLogin Log1 = new UserLogin();
+            if (Log1.RecuperarRegistro(1035))
+            {
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)1;
+                Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Administradores;
+            }
+            else
+            {
+                //Log1.Id = 1069;
+                //Log1.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad;
+            }
+            frmOpciones frm = new frmOpciones(Log1);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }
