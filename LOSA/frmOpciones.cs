@@ -108,7 +108,7 @@ namespace LOSA
                             tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
-
+                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -203,9 +203,9 @@ namespace LOSA
 
                             break;
                         case 4://Depth With Delta
-                            tabOpciones.TabPages[0].PageVisible = true;
-                            tabOpciones.TabPages[1].PageVisible = true;
-                            tabOpciones.TabPages[2].PageVisible = true;
+                            //tabOpciones.TabPages[0].PageVisible = true;
+                            //tabOpciones.TabPages[1].PageVisible = true;
+                            //tabOpciones.TabPages[2].PageVisible = true;
                             //tabOpciones.TabPages[3].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.TabPages[5].PageVisible = true;

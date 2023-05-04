@@ -6895,6 +6895,8 @@ namespace LOSA.Reportes {
             
             private global::System.Data.DataColumn columncodigo;
             
+            private global::System.Data.DataColumn columnLote;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public rpt_requisiciones_manualesDataTable() {
@@ -7058,6 +7060,14 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LoteColumn {
+                get {
+                    return this.columnLote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7109,7 +7119,8 @@ namespace LOSA.Reportes {
                         string comentario, 
                         string barcode, 
                         int id_requisa, 
-                        string codigo) {
+                        string codigo, 
+                        int Lote) {
                 rpt_requisiciones_manualesRow rowrpt_requisiciones_manualesRow = ((rpt_requisiciones_manualesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -7127,7 +7138,8 @@ namespace LOSA.Reportes {
                         comentario,
                         barcode,
                         id_requisa,
-                        codigo};
+                        codigo,
+                        Lote};
                 rowrpt_requisiciones_manualesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrpt_requisiciones_manualesRow);
                 return rowrpt_requisiciones_manualesRow;
@@ -7166,6 +7178,7 @@ namespace LOSA.Reportes {
                 this.columnbarcode = base.Columns["barcode"];
                 this.columnid_requisa = base.Columns["id_requisa"];
                 this.columncodigo = base.Columns["codigo"];
+                this.columnLote = base.Columns["Lote"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7203,6 +7216,8 @@ namespace LOSA.Reportes {
                 base.Columns.Add(this.columnid_requisa);
                 this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo);
+                this.columnLote = new global::System.Data.DataColumn("Lote", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLote);
                 this.columnid.Caption = "# Requisa Manual";
                 this.columnusuario_s.Caption = "Usuario Solicita";
                 this.columncantidad_solicitada.Caption = "Cantidad Solicitada";
@@ -13733,6 +13748,23 @@ namespace LOSA.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Lote {
+                get {
+                    try {
+                        return ((int)(this[this.tablerpt_requisiciones_manuales.LoteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Lote\' de la tabla \'rpt_requisiciones_manuales\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablerpt_requisiciones_manuales.LoteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerpt_requisiciones_manuales.idColumn);
             }
@@ -13921,6 +13953,18 @@ namespace LOSA.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcodigoNull() {
                 this[this.tablerpt_requisiciones_manuales.codigoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLoteNull() {
+                return this.IsNull(this.tablerpt_requisiciones_manuales.LoteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLoteNull() {
+                this[this.tablerpt_requisiciones_manuales.LoteColumn] = global::System.Convert.DBNull;
             }
         }
         
