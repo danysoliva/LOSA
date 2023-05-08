@@ -213,6 +213,7 @@
             this.simpleButton48 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton47 = new DevExpress.XtraEditors.SimpleButton();
             this.TabContabilidad = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdReporteBancosPlanilla = new DevExpress.XtraEditors.SimpleButton();
             this.btnAprobaTarimasConta = new DevExpress.XtraEditors.SimpleButton();
             this.btn_rutas_traza_contabilidad = new DevExpress.XtraEditors.SimpleButton();
             this.btn_mp_bodega_prd_finanzas = new DevExpress.XtraEditors.SimpleButton();
@@ -236,7 +237,6 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.cmdReporteBancosPlanilla = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2992,6 +2992,21 @@
             this.TabContabilidad.Size = new System.Drawing.Size(835, 502);
             this.TabContabilidad.Text = "Contabilidad";
             // 
+            // cmdReporteBancosPlanilla
+            // 
+            this.cmdReporteBancosPlanilla.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdReporteBancosPlanilla.Appearance.Options.UseFont = true;
+            this.cmdReporteBancosPlanilla.Appearance.Options.UseTextOptions = true;
+            this.cmdReporteBancosPlanilla.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdReporteBancosPlanilla.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteBancosPlanilla.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdReporteBancosPlanilla.ImageOptions.SvgImage")));
+            this.cmdReporteBancosPlanilla.Location = new System.Drawing.Point(60, 384);
+            this.cmdReporteBancosPlanilla.Name = "cmdReporteBancosPlanilla";
+            this.cmdReporteBancosPlanilla.Size = new System.Drawing.Size(223, 71);
+            this.cmdReporteBancosPlanilla.TabIndex = 52;
+            this.cmdReporteBancosPlanilla.Text = "Reporte Bancos Planilla";
+            this.cmdReporteBancosPlanilla.Click += new System.EventHandler(this.cmdReporteBancosPlanilla_Click);
+            // 
             // btnAprobaTarimasConta
             // 
             this.btnAprobaTarimasConta.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3319,21 +3334,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // cmdReporteBancosPlanilla
-            // 
-            this.cmdReporteBancosPlanilla.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdReporteBancosPlanilla.Appearance.Options.UseFont = true;
-            this.cmdReporteBancosPlanilla.Appearance.Options.UseTextOptions = true;
-            this.cmdReporteBancosPlanilla.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdReporteBancosPlanilla.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdReporteBancosPlanilla.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
-            this.cmdReporteBancosPlanilla.Location = new System.Drawing.Point(60, 384);
-            this.cmdReporteBancosPlanilla.Name = "cmdReporteBancosPlanilla";
-            this.cmdReporteBancosPlanilla.Size = new System.Drawing.Size(223, 71);
-            this.cmdReporteBancosPlanilla.TabIndex = 52;
-            this.cmdReporteBancosPlanilla.Text = "Reporte Bancos Planilla";
-            this.cmdReporteBancosPlanilla.Click += new System.EventHandler(this.cmdReporteBancosPlanilla_Click);
             // 
             // frmOpciones
             // 

@@ -166,7 +166,7 @@ namespace LOSA.TransaccionesMP
                                     lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
                                     load_tarimas_scan_v2();
                                     txtTarima.Focus();
-                                    cmdLiquidosGranel.Visible = true; //Esto solo es Granel
+                                    //cmdLiquidosGranel.Visible = true; //Esto solo es Granel
                                     btnVerDetalleRequisa.Visible = true; 
                                     break;
                                 case 4://Cerrada
@@ -1044,28 +1044,7 @@ namespace LOSA.TransaccionesMP
             }
         }
 
-        private void cmdLiquidosGranel_Click(object sender, EventArgs e)
-        {
-            if (txtRequisicion.Text != "")
-            {
-                if (txtRequisicion.Text.Length >= 12) //tamaño de el cod bar requisa
-                {
-                    string barcode_req = txtRequisicion.Text;
-                    frmWizardSelectGranel_Liqu frm = new frmWizardSelectGranel_Liqu(usuarioLogueado, barcode_req);
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-                        load_tarimas_scan();
-                        load_bines_disponibles();
-                        txtRequisicion.Text = "";
-                        txtRequisicion.Focus();
-                    }
-                }
-            }
-            else
-            {
-                CajaDialogo.Error("No se Encontro la Requisa! Escanee Nuevamente la Requisa!");
-            }
-        }
+
 
         private void btnEntregaBinesRequissa_Click(object sender, EventArgs e)
         {

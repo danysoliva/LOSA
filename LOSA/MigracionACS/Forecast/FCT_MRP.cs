@@ -126,24 +126,25 @@ namespace LOSA.MigracionACS.Forecast
             try
             {
                 OutputData = dp.ACS_GetSelectData(@"  SELECT 0 AS id
-                                                        ,A.[id] AS id_mp
-                                                        ,CONCAT(A.[material],' - Costo Actual: $ ', D.[valor_tm]) AS material
-                                                        ,CONCAT(B.[orden], ' - ', B.[tipo]) AS tipo
-                                                        ,3 AS kind
-                                                        ,'Consumos Proyectados' AS kindN
-	                                                    ,0.00000000 AS ene
-	                                                    ,0.00000000 AS feb
-	                                                    ,0.00000000 AS mar
-	                                                    ,0.00000000 AS abr
-	                                                    ,0.00000000 AS may
-	                                                    ,0.00000000 AS jun
-	                                                    ,0.00000000 AS jul
-	                                                    ,0.00000000 AS ago
-	                                                    ,0.00000000 AS sep
-	                                                    ,0.00000000 AS oct
-	                                                    ,0.00000000 AS nov
-	                                                    ,0.00000000 AS dic
-	                                                    ,0.00000000 AS total
+                                                            ,A.[id] AS id_mp
+                                                            ,CONCAT(A.[material],' - Costo Actual: $ ', D.[valor_tm]) AS material
+                                                            ,CONCAT(B.[orden], ' - ', B.[tipo]) AS tipo
+                                                            ,3 AS kind
+                                                            ,'Consumos Proyectados' AS kindN
+	                                                        ,0.00000000 AS ene
+	                                                        ,0.00000000 AS feb
+	                                                        ,0.00000000 AS mar
+	                                                        ,0.00000000 AS abr
+	                                                        ,0.00000000 AS may
+	                                                        ,0.00000000 AS jun
+	                                                        ,0.00000000 AS jul
+	                                                        ,0.00000000 AS ago
+	                                                        ,0.00000000 AS sep
+	                                                        ,0.00000000 AS oct
+	                                                        ,0.00000000 AS nov
+	                                                        ,0.00000000 AS dic
+	                                                        ,0.00000000 AS total
+                                                            
                                                     FROM [dbo].[MP_MateriasPrimas] A
                                             INNER JOIN [dbo].[MP_TipoFMateriaPrima] B ON A.[tipof] = B.[id]
                                             INNER JOIN [dbo].[MP_UltimoCosto] D ON A.[id] = D.[idMP]
@@ -385,6 +386,7 @@ namespace LOSA.MigracionACS.Forecast
                                                                   ,A.[nov]
                                                                   ,A.[dic]
                                                                   ,0.00000 AS total
+                                                        
                                                               FROM [dbo].[FCT_MRP_D] A
                                                               INNER JOIN [dbo].[MP_MateriasPrimas] B ON A.[id_mp] = B.[id]
                                                               INNER JOIN [dbo].[MP_TipoFMateriaPrima] C ON B.[tipof] = C.[id]

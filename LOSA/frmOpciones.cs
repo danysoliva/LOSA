@@ -103,7 +103,7 @@ namespace LOSA
 
                             break;
                         case 3://Medium Autorization
-
+                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         case 4://Depth With Delta
                             tabOpciones.TabPages[9].PageVisible = true;
@@ -2544,7 +2544,7 @@ namespace LOSA
         private void simpleButton50_Click(object sender, EventArgs e)
         {
             FCT_MRP mrp = new FCT_MRP(this.UsuarioLogeado);
-            //mrp.MdiParent = this;
+            mrp.MdiParent = this.MdiParent;
             mrp.ActiveUserCode = ActiveUserCode;
             mrp.ShowDialog();
         }
@@ -2582,6 +2582,10 @@ namespace LOSA
                     frm.Show();
                     break;
                 case 5://Depth Without Delta
+                    accesoprevio = true;
+                    FCT_MRP_Complete frm1 = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm1.MdiParent = this.MdiParent;
+                    frm1.Show();
                     break;
                 default:
                     break;
@@ -2604,10 +2608,14 @@ namespace LOSA
                 case 4://Depth With Delta
                     accesoprevio = true;
                     AFC_ProyeccionVentas frm = new AFC_ProyeccionVentas(UsuarioLogeado);
-                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     break;
                 case 5://Depth Without Delta
+                    accesoprevio = true;
+                    AFC_ProyeccionVentas frm1 = new AFC_ProyeccionVentas(UsuarioLogeado);
+                    frm1.WindowState = FormWindowState.Maximized;
+                    frm1.Show();
                     break;
                 default:
                     break;
@@ -2629,10 +2637,14 @@ namespace LOSA
                 case 4://Depth With Delta
                     accesoprevio = true;
                     frmFCT_produccion frm = new frmFCT_produccion(this.UsuarioLogeado);
-                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                     break;
                 case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmFCT_produccion frm1 = new frmFCT_produccion(this.UsuarioLogeado);
+                    frm1.WindowState = FormWindowState.Maximized;
+                    frm1.Show();
                     break;
                 default:
                     break;
@@ -2644,7 +2656,7 @@ namespace LOSA
                 {
                     //frmMantoPhotosTV frm = new frmMantoPhotosTV(UsuarioLogeado);
                     frmFCT_produccion frm = new frmFCT_produccion(this.UsuarioLogeado);
-                    frm.MdiParent = this;
+                    frm.WindowState = FormWindowState.Maximized;
                     frm.Show();
                 }
                 else
@@ -2674,6 +2686,10 @@ namespace LOSA
                     frm.Show();
                     break;
                 case 5://Depth Without Delta
+                    accesoprevio = true;
+                    AFC_ConsumoReal frm1 = new AFC_ConsumoReal();
+                    frm1.MdiParent = this;
+                    frm1.Show();
                     break;
                 default:
                     break;

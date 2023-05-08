@@ -206,6 +206,7 @@
             this.pet_logo = new DevExpress.XtraEditors.PictureEdit();
             this.grd_mrp = new DevExpress.XtraGrid.GridControl();
             this.grdv_mrp = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.col_cod_oddo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_id_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_material = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -214,7 +215,6 @@
             this.col_kindN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_itemocde = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col_cod_oddo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_toExcel = new DevExpress.XtraGrid.GridControl();
             this.grdv_toExcel = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.btEneroCompras)).BeginInit();
@@ -1663,6 +1663,15 @@
             this.grdv_mrp.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.grdv_mrp_ShowingEditor);
             this.grdv_mrp.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_mrp_FocusedRowChanged);
             // 
+            // col_cod_oddo
+            // 
+            this.col_cod_oddo.Caption = "Cod Oddo";
+            this.col_cod_oddo.FieldName = "cod_oddo";
+            this.col_cod_oddo.Name = "col_cod_oddo";
+            this.col_cod_oddo.OptionsColumn.AllowEdit = false;
+            this.col_cod_oddo.Visible = true;
+            this.col_cod_oddo.VisibleIndex = 0;
+            // 
             // col_id
             // 
             this.col_id.Caption = "id";
@@ -1738,15 +1747,6 @@
             this.col_itemocde.Visible = true;
             this.col_itemocde.VisibleIndex = 1;
             this.col_itemocde.Width = 77;
-            // 
-            // col_cod_oddo
-            // 
-            this.col_cod_oddo.Caption = "Cod Oddo";
-            this.col_cod_oddo.FieldName = "cod_oddo";
-            this.col_cod_oddo.Name = "col_cod_oddo";
-            this.col_cod_oddo.OptionsColumn.AllowEdit = false;
-            this.col_cod_oddo.Visible = true;
-            this.col_cod_oddo.VisibleIndex = 0;
             // 
             // grd_toExcel
             // 
