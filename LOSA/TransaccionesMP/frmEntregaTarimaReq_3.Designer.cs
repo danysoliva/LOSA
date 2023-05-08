@@ -761,6 +761,7 @@ namespace LOSA.TransaccionesMP
             this.cmdLiquidosGranel.TabIndex = 111;
             this.cmdLiquidosGranel.Text = "Entrega Granel";
             this.cmdLiquidosGranel.Visible = false;
+            this.cmdLiquidosGranel.Click += new System.EventHandler(this.cmdLiquidosGranel_Click);
             // 
             // xtraTabControl1
             // 
