@@ -13,7 +13,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 
-namespace LOSA.MigracionACS.Ordenes_Combustible-
+namespace LOSA.MigracionACS.Ordenes_Combustible
 {
     public partial class OC_PreVisualizacionesOrdenes : DevExpress.XtraEditors.XtraForm
     {

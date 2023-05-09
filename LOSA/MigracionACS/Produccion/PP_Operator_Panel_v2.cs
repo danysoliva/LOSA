@@ -966,8 +966,7 @@ namespace LOSA.MigracionACS.Produccion
             }
             catch (Exception ex)
             {
-                if (ex.Message != "Object reference not set to an instance of an object.")
-                    MessageBox.Show("Caso X: Algo resulto mal, contacta al departamento de sistemas Detalle:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CajaDialogo.Error(ex.Message);
             }
         }
 
