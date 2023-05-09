@@ -1686,12 +1686,13 @@ namespace LOSA.TransaccionesMP
             this.btnTrasladoKardex.Appearance.Options.UseFont = true;
             this.btnTrasladoKardex.Appearance.Options.UseTextOptions = true;
             this.btnTrasladoKardex.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnTrasladoKardex.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnTrasladoKardex.Location = new System.Drawing.Point(882, 6);
+            this.btnTrasladoKardex.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTrasladoKardex.ImageOptions.Image")));
+            this.btnTrasladoKardex.Location = new System.Drawing.Point(942, 6);
             this.btnTrasladoKardex.Name = "btnTrasladoKardex";
             this.btnTrasladoKardex.Size = new System.Drawing.Size(158, 56);
             this.btnTrasladoKardex.TabIndex = 4;
             this.btnTrasladoKardex.Text = "Traslado Entre Bodegas";
+            this.btnTrasladoKardex.Visible = false;
             this.btnTrasladoKardex.Click += new System.EventHandler(this.btnTrasladoKardex_Click);
             // 
             // frmReporteInventarioKardexGeneral
