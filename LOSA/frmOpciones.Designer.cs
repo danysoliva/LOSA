@@ -797,7 +797,6 @@
             this.cmdLoteActivoGranel.Size = new System.Drawing.Size(199, 42);
             this.cmdLoteActivoGranel.TabIndex = 43;
             this.cmdLoteActivoGranel.Text = "Lote Activo V2";
-            this.cmdLoteActivoGranel.Visible = false;
             this.cmdLoteActivoGranel.Click += new System.EventHandler(this.cmdLoteActivoGranel_Click);
             // 
             // btnLoteActivoGranel
@@ -813,7 +812,6 @@
             this.btnLoteActivoGranel.Size = new System.Drawing.Size(199, 42);
             this.btnLoteActivoGranel.TabIndex = 42;
             this.btnLoteActivoGranel.Text = "Lote Activo";
-            this.btnLoteActivoGranel.Visible = false;
             this.btnLoteActivoGranel.Click += new System.EventHandler(this.btnLoteActivoGranel_Click);
             // 
             // simpleButton2
@@ -1821,6 +1819,7 @@
             this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup1.AppearancePressed.Options.UseFont = true;
             this.navBarGroup1.Caption = "Producción";
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrazabilidad),

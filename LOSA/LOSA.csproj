@@ -24,8 +24,8 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>515</ApplicationRevision>
-    <ApplicationVersion>1.0.0.515</ApplicationVersion>
+    <ApplicationRevision>516</ApplicationRevision>
+    <ApplicationVersion>1.0.0.516</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -5362,6 +5362,12 @@
     <Compile Include="TransaccionesMP\frmTarimaManual.Designer.cs">
       <DependentUpon>frmTarimaManual.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexMP.Designer.cs">
+      <DependentUpon>frmTrasladoKardexMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmUbicacionLotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7653,6 +7659,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmTarimaManual.resx">
       <DependentUpon>frmTarimaManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmTrasladoKardexMP.resx">
+      <DependentUpon>frmTrasladoKardexMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmUbicacionLotes.resx">
       <DependentUpon>frmUbicacionLotes.cs</DependentUpon>

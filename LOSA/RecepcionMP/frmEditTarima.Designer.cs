@@ -476,7 +476,6 @@
             // 
             // txtMP_Name
             // 
-            this.txtMP_Name.Enabled = false;
             this.txtMP_Name.Location = new System.Drawing.Point(182, 162);
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);

@@ -556,5 +556,17 @@ namespace LOSA.TransaccionesMP
         {
             Load_dataReprocesoPorLote();
         }
+
+        private void btnTrasladoKardex_Click(object sender, EventArgs e)
+        {
+            //Aqui ira un Permiso
+
+            frmTrasladoKardexMP frm = new frmTrasladoKardexMP(UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_dataPorLotes();
+            }
+            
+        }
     }
 }

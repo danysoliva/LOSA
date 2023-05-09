@@ -626,6 +626,7 @@ namespace LOSA.MigracionACS.PT
             // 
             this.xCheckBoxACS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("xCheckBoxACS.BackgroundImage")));
             this.xCheckBoxACS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.xCheckBoxACS.Enabled = false;
             this.xCheckBoxACS.Location = new System.Drawing.Point(288, 467);
             this.xCheckBoxACS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xCheckBoxACS.Name = "xCheckBoxACS";
