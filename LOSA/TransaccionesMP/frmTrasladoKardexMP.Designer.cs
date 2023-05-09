@@ -31,27 +31,30 @@ namespace LOSA.TransaccionesMP
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrasladoKardexMP));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.txtMP_Name = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditDestino = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bodegadestinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridLookUpEditOrigen = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bodegaorigenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,44 +66,35 @@ namespace LOSA.TransaccionesMP
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtNumLote = new DevExpress.XtraEditors.ButtonEdit();
-            this.txtCantidadTarimas = new DevExpress.XtraEditors.TextEdit();
-            this.txtUnidadsPorTarima = new DevExpress.XtraEditors.TextEdit();
             this.spinEditUnidades = new DevExpress.XtraEditors.SpinEdit();
             this.spinEditPesoKg = new DevExpress.XtraEditors.SpinEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
-            this.dsTarima1 = new LOSA.TransaccionesMP.dsTarima();
-            this.bodegaorigenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bodegadestinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvLookUpEditPresentacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFactor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDestino.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegadestinoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegaorigenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumLote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUnidadsPorTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditPesoKg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegaorigenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegadestinoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvLookUpEditPresentacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvLookUpEditPresentacion)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdGuardar
@@ -133,6 +127,7 @@ namespace LOSA.TransaccionesMP
             this.btnAtras.Size = new System.Drawing.Size(167, 49);
             this.btnAtras.TabIndex = 83;
             this.btnAtras.Text = "Atras";
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // txtMP_Name
             // 
@@ -140,17 +135,17 @@ namespace LOSA.TransaccionesMP
             this.txtMP_Name.Name = "txtMP_Name";
             this.txtMP_Name.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.txtMP_Name.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject1.Options.UseBackColor = true;
-            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject2.Options.UseBackColor = true;
-            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject3.Options.UseBackColor = true;
-            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject4.Options.UseBackColor = true;
+            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject9.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject9.Options.UseBackColor = true;
+            serializableAppearanceObject10.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject10.Options.UseBackColor = true;
+            serializableAppearanceObject11.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject11.Options.UseBackColor = true;
+            serializableAppearanceObject12.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject12.Options.UseBackColor = true;
             this.txtMP_Name.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtMP_Name.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtMP_Name.Properties.ReadOnly = true;
             this.txtMP_Name.Size = new System.Drawing.Size(355, 32);
@@ -181,6 +176,16 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditDestino.Properties.ValueMember = "id";
             this.gridLookUpEditDestino.Size = new System.Drawing.Size(355, 26);
             this.gridLookUpEditDestino.TabIndex = 123;
+            // 
+            // bodegadestinoBindingSource
+            // 
+            this.bodegadestinoBindingSource.DataMember = "bodega_destino";
+            this.bodegadestinoBindingSource.DataSource = this.dsTarima1;
+            // 
+            // dsTarima1
+            // 
+            this.dsTarima1.DataSetName = "dsTarima";
+            this.dsTarima1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -245,6 +250,11 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditOrigen.Properties.ValueMember = "id";
             this.gridLookUpEditOrigen.Size = new System.Drawing.Size(355, 26);
             this.gridLookUpEditOrigen.TabIndex = 122;
+            // 
+            // bodegaorigenBindingSource
+            // 
+            this.bodegaorigenBindingSource.DataMember = "bodega_origen";
+            this.bodegaorigenBindingSource.DataSource = this.dsTarima1;
             // 
             // gridLookUpEdit1View
             // 
@@ -358,52 +368,22 @@ namespace LOSA.TransaccionesMP
             this.txtNumLote.Name = "txtNumLote";
             this.txtNumLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.txtNumLote.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.wheat;
-            serializableAppearanceObject5.BackColor = System.Drawing.Color.Transparent;
-            serializableAppearanceObject5.Options.UseBackColor = true;
-            serializableAppearanceObject6.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject6.Options.UseBackColor = true;
-            serializableAppearanceObject7.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject7.Options.UseBackColor = true;
-            serializableAppearanceObject8.BackColor = System.Drawing.Color.LightBlue;
-            serializableAppearanceObject8.Options.UseBackColor = true;
+            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.wheat;
+            serializableAppearanceObject1.BackColor = System.Drawing.Color.Transparent;
+            serializableAppearanceObject1.Options.UseBackColor = true;
+            serializableAppearanceObject2.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject2.Options.UseBackColor = true;
+            serializableAppearanceObject3.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject3.Options.UseBackColor = true;
+            serializableAppearanceObject4.BackColor = System.Drawing.Color.LightBlue;
+            serializableAppearanceObject4.Options.UseBackColor = true;
             this.txtNumLote.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtNumLote.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.txtNumLote.Properties.ReadOnly = true;
             this.txtNumLote.Size = new System.Drawing.Size(355, 30);
             this.txtNumLote.TabIndex = 127;
             this.txtNumLote.Click += new System.EventHandler(this.txtNumLote_Click);
-            // 
-            // txtCantidadTarimas
-            // 
-            this.txtCantidadTarimas.EditValue = "0";
-            this.txtCantidadTarimas.Enabled = false;
-            this.txtCantidadTarimas.Location = new System.Drawing.Point(261, 474);
-            this.txtCantidadTarimas.Name = "txtCantidadTarimas";
-            this.txtCantidadTarimas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadTarimas.Properties.Appearance.Options.UseFont = true;
-            this.txtCantidadTarimas.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCantidadTarimas.Properties.Mask.EditMask = "n2";
-            this.txtCantidadTarimas.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtCantidadTarimas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCantidadTarimas.Size = new System.Drawing.Size(355, 32);
-            this.txtCantidadTarimas.TabIndex = 132;
-            // 
-            // txtUnidadsPorTarima
-            // 
-            this.txtUnidadsPorTarima.EditValue = "0";
-            this.txtUnidadsPorTarima.Enabled = false;
-            this.txtUnidadsPorTarima.Location = new System.Drawing.Point(260, 434);
-            this.txtUnidadsPorTarima.Name = "txtUnidadsPorTarima";
-            this.txtUnidadsPorTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnidadsPorTarima.Properties.Appearance.Options.UseFont = true;
-            this.txtUnidadsPorTarima.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUnidadsPorTarima.Properties.Mask.EditMask = "n2";
-            this.txtUnidadsPorTarima.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtUnidadsPorTarima.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtUnidadsPorTarima.Size = new System.Drawing.Size(355, 32);
-            this.txtUnidadsPorTarima.TabIndex = 130;
             // 
             // spinEditUnidades
             // 
@@ -431,7 +411,7 @@ namespace LOSA.TransaccionesMP
             0,
             0,
             0});
-            this.spinEditPesoKg.Location = new System.Drawing.Point(261, 513);
+            this.spinEditPesoKg.Location = new System.Drawing.Point(261, 439);
             this.spinEditPesoKg.Name = "spinEditPesoKg";
             this.spinEditPesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.spinEditPesoKg.Properties.Appearance.Options.UseFont = true;
@@ -439,26 +419,6 @@ namespace LOSA.TransaccionesMP
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spinEditPesoKg.Size = new System.Drawing.Size(355, 32);
             this.spinEditPesoKg.TabIndex = 134;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(57, 482);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(254, 24);
-            this.labelControl8.TabIndex = 133;
-            this.labelControl8.Text = "Cantidades de Tarimas______";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(57, 442);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(268, 24);
-            this.labelControl6.TabIndex = 131;
-            this.labelControl6.Text = "Unidades Por Tarima_________";
             // 
             // labelControl1
             // 
@@ -474,7 +434,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(57, 521);
+            this.labelControl7.Location = new System.Drawing.Point(57, 447);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(244, 24);
             this.labelControl7.TabIndex = 128;
@@ -484,21 +444,6 @@ namespace LOSA.TransaccionesMP
             // 
             this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
             this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dsTarima1
-            // 
-            this.dsTarima1.DataSetName = "dsTarima";
-            this.dsTarima1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bodegaorigenBindingSource
-            // 
-            this.bodegaorigenBindingSource.DataMember = "bodega_origen";
-            this.bodegaorigenBindingSource.DataSource = this.dsTarima1;
-            // 
-            // bodegadestinoBindingSource
-            // 
-            this.bodegadestinoBindingSource.DataMember = "bodega_destino";
-            this.bodegadestinoBindingSource.DataSource = this.dsTarima1;
             // 
             // gridLookUpEditPresentacion
             // 
@@ -516,6 +461,11 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(355, 32);
             this.gridLookUpEditPresentacion.TabIndex = 136;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
+            // 
+            // presentacionesBindingSource
+            // 
+            this.presentacionesBindingSource.DataMember = "presentaciones";
+            this.presentacionesBindingSource.DataSource = this.dsRecepcionMPx1;
             // 
             // gvLookUpEditPresentacion
             // 
@@ -554,30 +504,21 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(51, 362);
+            this.labelControl11.Location = new System.Drawing.Point(57, 362);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(231, 24);
             this.labelControl11.TabIndex = 137;
             this.labelControl11.Text = "Presentación____________";
             // 
-            // presentacionesBindingSource
-            // 
-            this.presentacionesBindingSource.DataMember = "presentaciones";
-            this.presentacionesBindingSource.DataSource = this.dsRecepcionMPx1;
-            // 
             // frmTrasladoKardexMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 561);
+            this.ClientSize = new System.Drawing.Size(682, 502);
             this.Controls.Add(this.gridLookUpEditPresentacion);
             this.Controls.Add(this.labelControl11);
-            this.Controls.Add(this.txtCantidadTarimas);
-            this.Controls.Add(this.txtUnidadsPorTarima);
             this.Controls.Add(this.spinEditUnidades);
             this.Controls.Add(this.spinEditPesoKg);
-            this.Controls.Add(this.labelControl8);
-            this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txtNumLote);
@@ -592,27 +533,27 @@ namespace LOSA.TransaccionesMP
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.cmdGuardar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTrasladoKardexMP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Traslado de Materia Prima Entre Bodegas";
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditDestino.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegadestinoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegaorigenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumLote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUnidadsPorTarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditUnidades.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditPesoKg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTarima1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegaorigenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegadestinoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvLookUpEditPresentacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvLookUpEditPresentacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,12 +583,8 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.ButtonEdit txtNumLote;
-        private DevExpress.XtraEditors.TextEdit txtCantidadTarimas;
-        private DevExpress.XtraEditors.TextEdit txtUnidadsPorTarima;
         private DevExpress.XtraEditors.SpinEdit spinEditUnidades;
         private DevExpress.XtraEditors.SpinEdit spinEditPesoKg;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private RecepcionMP.dsRecepcionMPx dsRecepcionMPx1;

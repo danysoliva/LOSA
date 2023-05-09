@@ -62,14 +62,12 @@ namespace LOSA.TransaccionesMP
 
         private void txtNumLote_Click(object sender, EventArgs e)
         {
-            bool lotes_kardex = true;
-            frmLotePorMP frm = new frmLotePorMP(Id_MP, lotes_kardex);
+            
+            frmTrasladoKardexLotesExistencia frm = new frmTrasladoKardexLotesExistencia(Id_MP);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtNumLote.Text = frm.Lote;
-                Id_Lote_Alosy = frm.Id_Lote;
                 gridLookUpEditPresentacion.EditValue = frm.Id_UnidadMedida;
-                Numero_transaccion = frm.Num_ingreso;
                 FactorUnidades = frm.Factor;
 
                 spinEditUnidades.Focus();
@@ -84,7 +82,10 @@ namespace LOSA.TransaccionesMP
             }
             else
             {
-                this.factorValue = Convert.ToDecimal(gvLookUpEditPresentacion.GetFocusedRowCellValue(gvLookUpEditPresentacion.Columns[2]).ToString());
+                PresentacionX pres1 = new PresentacionX();
+                pres1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue));
+
+                this.factorValue = pres1.Factor;
             }
 
             decimal cantidad_ = 0;
@@ -110,15 +111,36 @@ namespace LOSA.TransaccionesMP
                 {
                     CajaDialogo.Error(ex.Message);
                 }
-                
-                spinEditPesoKg.EditValue = (FactorUnidades * cantidad_).ToString();
+                PresentacionX pres1 = new PresentacionX();
+                pres1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue));
+                spinEditPesoKg.EditValue = (pres1.Factor * cantidad_).ToString();
                     
             }
         }
 
         private void spinEditUnidades_EditValueChanged(object sender, EventArgs e)
         {
+            
+            decimal cantidad_ = 0;
+            try
+            {
+                cantidad_ = Convert.ToDecimal(spinEditUnidades.EditValue);
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
 
+            PresentacionX pres1 = new PresentacionX();
+            pres1.RecuperarRegistro(Convert.ToInt32(gridLookUpEditPresentacion.EditValue));
+            spinEditPesoKg.EditValue = (pres1.Factor * cantidad_).ToString();
+
+
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void txtMP_Name_Click(object sender, EventArgs e)

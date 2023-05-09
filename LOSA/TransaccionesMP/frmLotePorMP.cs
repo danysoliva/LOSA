@@ -24,26 +24,12 @@ namespace LOSA.TransaccionesMP
         public int Id_TipoIngreso;
         public int Num_ingreso;
         public decimal Factor;
-        bool solo_lotes_en_kardex;
         public frmLotePorMP(int pid_mp)
         {
             InitializeComponent();
             Id_MP = pid_mp;
+            gcLotePorMP.Visible = true;
             cargarlotespormp();
-        }
-
-        public frmLotePorMP(int pid_mp, bool plote_kardex)
-        {
-            Id_MP = pid_mp;
-            solo_lotes_en_kardex = plote_kardex;
-            cargarlotespormp_kardex();
-        }
-
-
-        private void cargarlotespormp_kardex()
-        {
-        
-            
         }
 
         private void cargarlotespormp()
@@ -52,15 +38,7 @@ namespace LOSA.TransaccionesMP
             {
                 DataOperations dp = new DataOperations();
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                string query = "";
-                if (solo_lotes_en_kardex)
-                {
-                    query = "sp_get_lotes_for_mp_in_kardex";
-                }
-                else
-                {
-                    query = "sp_get_lotes_for_mp";  
-                }
+                string query = "sp_get_lotes_for_mp"; ;            
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", Id_MP);

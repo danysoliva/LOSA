@@ -1667,7 +1667,7 @@ namespace LOSA.TransaccionesMP
             this.btnAjustePorLote.Name = "btnAjustePorLote";
             this.btnAjustePorLote.Size = new System.Drawing.Size(185, 56);
             this.btnAjustePorLote.TabIndex = 3;
-            this.btnAjustePorLote.Text = "Agregar Ajuste";
+            this.btnAjustePorLote.Text = "Ajuste de Bodega";
             this.btnAjustePorLote.Click += new System.EventHandler(this.btnAjustePorLote_Click);
             // 
             // backgroundWorkerPRD
@@ -1682,6 +1682,7 @@ namespace LOSA.TransaccionesMP
             // 
             // btnTrasladoKardex
             // 
+            this.btnTrasladoKardex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTrasladoKardex.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnTrasladoKardex.Appearance.Options.UseFont = true;
             this.btnTrasladoKardex.Appearance.Options.UseTextOptions = true;
@@ -1692,7 +1693,6 @@ namespace LOSA.TransaccionesMP
             this.btnTrasladoKardex.Size = new System.Drawing.Size(158, 56);
             this.btnTrasladoKardex.TabIndex = 4;
             this.btnTrasladoKardex.Text = "Traslado Entre Bodegas";
-            this.btnTrasladoKardex.Visible = false;
             this.btnTrasladoKardex.Click += new System.EventHandler(this.btnTrasladoKardex_Click);
             // 
             // frmReporteInventarioKardexGeneral
