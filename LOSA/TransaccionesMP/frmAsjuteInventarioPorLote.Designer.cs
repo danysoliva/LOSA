@@ -703,6 +703,7 @@ namespace LOSA.TransaccionesMP
             // toggleSwTipoOperacion
             // 
             this.toggleSwTipoOperacion.EditValue = true;
+            this.toggleSwTipoOperacion.Enabled = false;
             this.toggleSwTipoOperacion.Location = new System.Drawing.Point(228, 105);
             this.toggleSwTipoOperacion.Name = "toggleSwTipoOperacion";
             this.toggleSwTipoOperacion.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -727,7 +728,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 699);
+            this.ClientSize = new System.Drawing.Size(688, 705);
             this.ControlBox = false;
             this.Controls.Add(this.txtCantidadTarimas);
             this.Controls.Add(this.txtUnidadsPorTarima);

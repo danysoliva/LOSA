@@ -3693,6 +3693,12 @@
     <Compile Include="Produccion\frmRequisasManuales.Designer.cs">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmRequisasMaterialEmpaque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmRequisasMaterialEmpaque.Designer.cs">
+      <DependentUpon>frmRequisasMaterialEmpaque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmrptMpEntregadaaProduccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7239,6 +7245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmRequisasManuales.resx">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmRequisasMaterialEmpaque.resx">
+      <DependentUpon>frmRequisasMaterialEmpaque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmrptMpEntregadaaProduccion.resx">
       <DependentUpon>frmrptMpEntregadaaProduccion.cs</DependentUpon>

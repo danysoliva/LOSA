@@ -20,10 +20,9 @@ namespace LOSA.TransaccionesMP
     public partial class frmTrasladoKardexMP : DevExpress.XtraEditors.XtraForm
     {
         private string ItemCode;//Codigo MP de SAP
+        DataOperations dp = new DataOperations();
         private decimal factorValue;
-        private int Id_MP, Id_Lote_Alosy, Id_Presentacion;
-        private int Numero_transaccion; // Numero de Ingresp
-        private string cardcode; //Codigo de Proveedor
+        private int Id_MP;
         UserLogin UsuarioLogueado;
         private decimal FactorUnidades;
         MateriaPrima MateriaPrimaActual;
@@ -34,7 +33,7 @@ namespace LOSA.TransaccionesMP
         {
             InitializeComponent();
             UsuarioLogueado = PuserLog;
-            DataOperations dp = new DataOperations();
+            
             dtFechaDocumento.EditValue = dp.Now();
             LoadPresentaciones();
         }
@@ -141,6 +140,84 @@ namespace LOSA.TransaccionesMP
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            if (Id_MP < 0)
+            {
+                CajaDialogo.Error("Debe seleccionar una Materia Prima!");
+                return;
+            }
+
+            if (dp.ValidateNumberInt32(gridLookUpEditOrigen.EditValue) <= 0)
+            {
+                CajaDialogo.Error("Es necesario seleccionar una bodega de Origen correcta! Esta efectuando un traslado...");
+                return;
+            }
+
+            if (dp.ValidateNumberInt32(gridLookUpEditDestino.EditValue) <= 0)
+            {
+                CajaDialogo.Error("Es necesario seleccionar una bodega de destino correcta! Esta efectuando un traslado...");
+                return;
+            }
+
+            if (gridLookUpEditOrigen.EditValue == gridLookUpEditDestino.EditValue)
+            {
+                CajaDialogo.Error("No puede seleccionar la misma Bodega!");
+                return;
+            }
+
+            if (Convert.ToDecimal(spinEditUnidades.Value) <= 0)
+            {
+                CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
+                return;
+            }
+
+            if (Convert.ToDecimal(spinEditPesoKg.Value) <= 0)
+            {
+                CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
+                return;
+            }
+
+
+            //Aqui Guardaremos el Traslado
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v4", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
+                cmd.Parameters.AddWithValue("@cant_salida", 0);
+                cmd.Parameters.AddWithValue("@ud_entrada", spinEditUnidades.EditValue);
+                cmd.Parameters.AddWithValue("@ud_salida", 0);
+                cmd.Parameters.AddWithValue("@id_referencia_operacion", DBNull.Value);
+                cmd.Parameters.AddWithValue("@id_lote_alosy", DBNull.Value);
+                cmd.Parameters.AddWithValue("@lote", txtNumLote.Text);
+                cmd.Parameters.AddWithValue("@id_mp", Id_MP);
+                cmd.Parameters.AddWithValue("@itemcode", ItemCode);
+                cmd.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
+                cmd.Parameters.AddWithValue("@fechaDocumento", dtFechaDocumento.DateTime);
+                cmd.Parameters.AddWithValue("@bodega_origen", gridLookUpEditOrigen.EditValue);
+                cmd.Parameters.AddWithValue("@bodega_destino", gridLookUpEditDestino.EditValue);
+                if (Convert.ToInt32(gridLookUpEditPresentacion.EditValue) == 0)
+                    cmd.Parameters.AddWithValue("@id_presentacion", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                cmd.Parameters.AddWithValue("@tipo_operacion", 0); //En el SP 0: Traslado.
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                CajaDialogo.Information("Transaccion Exitosa!");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void txtMP_Name_Click(object sender, EventArgs e)
