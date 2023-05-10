@@ -14,6 +14,7 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
+using LOSA.Produccion;
 
 namespace LOSA.Produccion
 {
@@ -53,6 +54,17 @@ namespace LOSA.Produccion
         private void cmdCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void reposPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview1 = (GridView)grd_data.FocusedView;
+            var row = (dsMaterialEmpaque.requisas_hRow)grdv_data.GetFocusedDataRow();
+
+            //xrlblNumRequisa reportRequisa = new xrlblNumRequisa(row.id);
+            //reportRequisa.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            //ReportPrintTool printOrden = new DevExpress.XtraReports.UI.ReportPrintTool(reportRequisa);
+            //printOrden.ShowPreview();
         }
     }
 }

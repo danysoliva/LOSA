@@ -3646,6 +3646,11 @@
     <Compile Include="Produccion\CierreLote\frmNewCierreLotePT.Designer.cs">
       <DependentUpon>frmNewCierreLotePT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\dsMaterialEmpaque.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\dsProduccion1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -4492,6 +4497,17 @@
     </None>
     <None Include="Produccion\CierreLote\dsCierreLotesPT.xss">
       <DependentUpon>dsCierreLotesPT.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsMaterialEmpaque.xsc">
+      <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsMaterialEmpaque.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMaterialEmpaque.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Produccion\dsMaterialEmpaque.xss">
+      <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
     </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\AssemblyInfo.cs" />
