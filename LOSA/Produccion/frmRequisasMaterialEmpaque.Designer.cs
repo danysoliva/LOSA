@@ -29,20 +29,20 @@ namespace LOSA.Produccion
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRequisasMaterialEmpaque));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.tsVerTodas = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
-            this.btnNewRequisa = new DevExpress.XtraEditors.SimpleButton();
             this.dsMaterialEmpaque1 = new LOSA.Produccion.dsMaterialEmpaque();
+            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsolicitante_prd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldate_solicitud = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,35 +51,48 @@ namespace LOSA.Produccion
             this.colcodigo_barra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluser_cre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.reposPrint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposPrint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposVerDetalle = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemButtonEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.tsVerTodas = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnNewRequisa = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsVerTodas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMaterialEmpaque1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposPrint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposVerDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsVerTodas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grd_data
             // 
+            this.grd_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "requisas_h";
             this.grd_data.DataSource = this.dsMaterialEmpaque1;
-            this.grd_data.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grd_data.Location = new System.Drawing.Point(0, 91);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.reposPrint,
-            this.repositoryItemButtonEdit2,
+            this.reposVerDetalle,
             this.repositoryItemButtonEdit3});
             this.grd_data.Size = new System.Drawing.Size(1305, 533);
             this.grd_data.TabIndex = 34;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            // 
+            // dsMaterialEmpaque1
+            // 
+            this.dsMaterialEmpaque1.DataSetName = "dsMaterialEmpaque";
+            this.dsMaterialEmpaque1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -112,16 +125,137 @@ namespace LOSA.Produccion
             this.colcodigo_barra,
             this.colturno,
             this.coluser_cre,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.gridColumn2});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            // 
+            // colsolicitante_prd
+            // 
+            this.colsolicitante_prd.Caption = "Solicitado por:";
+            this.colsolicitante_prd.FieldName = "solicitante_prd";
+            this.colsolicitante_prd.Name = "colsolicitante_prd";
+            this.colsolicitante_prd.OptionsColumn.AllowEdit = false;
+            this.colsolicitante_prd.Visible = true;
+            this.colsolicitante_prd.VisibleIndex = 2;
+            this.colsolicitante_prd.Width = 167;
+            // 
+            // coldate_solicitud
+            // 
+            this.coldate_solicitud.Caption = "Fecha";
+            this.coldate_solicitud.FieldName = "date_solicitud";
+            this.coldate_solicitud.Name = "coldate_solicitud";
+            this.coldate_solicitud.OptionsColumn.AllowEdit = false;
+            this.coldate_solicitud.Visible = true;
+            this.coldate_solicitud.VisibleIndex = 3;
+            this.coldate_solicitud.Width = 167;
+            // 
+            // colabierta
+            // 
+            this.colabierta.Caption = "Req Abierta";
+            this.colabierta.FieldName = "abierta";
+            this.colabierta.Name = "colabierta";
+            this.colabierta.OptionsColumn.AllowEdit = false;
+            this.colabierta.Visible = true;
+            this.colabierta.VisibleIndex = 4;
+            this.colabierta.Width = 98;
+            // 
+            // colcomentario
+            // 
+            this.colcomentario.Caption = "Comentario";
+            this.colcomentario.FieldName = "comentario";
+            this.colcomentario.Name = "colcomentario";
+            this.colcomentario.OptionsColumn.AllowEdit = false;
+            this.colcomentario.Visible = true;
+            this.colcomentario.VisibleIndex = 6;
+            this.colcomentario.Width = 248;
+            // 
+            // colcodigo_barra
+            // 
+            this.colcodigo_barra.Caption = "BarCode";
+            this.colcodigo_barra.FieldName = "codigo_barra";
+            this.colcodigo_barra.Name = "colcodigo_barra";
+            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
+            this.colcodigo_barra.Visible = true;
+            this.colcodigo_barra.VisibleIndex = 0;
+            this.colcodigo_barra.Width = 162;
+            // 
+            // colturno
+            // 
+            this.colturno.Caption = "Turno";
+            this.colturno.FieldName = "turno";
+            this.colturno.Name = "colturno";
+            this.colturno.OptionsColumn.AllowEdit = false;
+            this.colturno.Visible = true;
+            this.colturno.VisibleIndex = 5;
+            this.colturno.Width = 120;
+            // 
+            // coluser_cre
+            // 
+            this.coluser_cre.Caption = "Creado Por:";
+            this.coluser_cre.FieldName = "user_cre";
+            this.coluser_cre.Name = "coluser_cre";
+            this.coluser_cre.OptionsColumn.AllowEdit = false;
+            this.coluser_cre.Visible = true;
+            this.coluser_cre.VisibleIndex = 1;
+            this.coluser_cre.Width = 139;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Imprimir";
+            this.gridColumn1.ColumnEdit = this.reposPrint;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 8;
+            this.gridColumn1.Width = 84;
+            // 
+            // reposPrint
+            // 
+            this.reposPrint.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.reposPrint.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposPrint.Name = "reposPrint";
+            this.reposPrint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposPrint_ButtonClick);
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Ver Detalle";
+            this.gridColumn2.ColumnEdit = this.reposVerDetalle;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 7;
+            this.gridColumn2.Width = 102;
+            // 
+            // reposVerDetalle
+            // 
+            this.reposVerDetalle.AutoHeight = false;
+            editorButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions4.SvgImage")));
+            this.reposVerDetalle.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposVerDetalle.Name = "reposVerDetalle";
+            this.reposVerDetalle.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposVerDetalle.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposVerDetalle_ButtonClick);
+            // 
+            // repositoryItemButtonEdit3
+            // 
+            this.repositoryItemButtonEdit3.AutoHeight = false;
+            this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
+            // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl1.Appearance.Options.UseFont = true;
@@ -134,8 +268,7 @@ namespace LOSA.Produccion
             // 
             // tsVerTodas
             // 
-            this.tsVerTodas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tsVerTodas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tsVerTodas.EditValue = true;
             this.tsVerTodas.Location = new System.Drawing.Point(620, 51);
             this.tsVerTodas.Name = "tsVerTodas";
@@ -147,11 +280,11 @@ namespace LOSA.Produccion
             this.tsVerTodas.Properties.OnText = "Si";
             this.tsVerTodas.Size = new System.Drawing.Size(180, 30);
             this.tsVerTodas.TabIndex = 35;
+            this.tsVerTodas.Toggled += new System.EventHandler(this.tsVerTodas_Toggled);
             // 
             // labelControl3
             // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl3.Appearance.Options.UseFont = true;
@@ -191,119 +324,7 @@ namespace LOSA.Produccion
             this.btnNewRequisa.Size = new System.Drawing.Size(130, 39);
             this.btnNewRequisa.TabIndex = 67;
             this.btnNewRequisa.Text = "Crear Requisa";
-            // 
-            // dsMaterialEmpaque1
-            // 
-            this.dsMaterialEmpaque1.DataSetName = "dsMaterialEmpaque";
-            this.dsMaterialEmpaque1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // colid
-            // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
-            this.colid.OptionsColumn.AllowEdit = false;
-            // 
-            // colsolicitante_prd
-            // 
-            this.colsolicitante_prd.Caption = "Solicitado por:";
-            this.colsolicitante_prd.FieldName = "solicitante_prd";
-            this.colsolicitante_prd.Name = "colsolicitante_prd";
-            this.colsolicitante_prd.OptionsColumn.AllowEdit = false;
-            this.colsolicitante_prd.Visible = true;
-            this.colsolicitante_prd.VisibleIndex = 2;
-            this.colsolicitante_prd.Width = 188;
-            // 
-            // coldate_solicitud
-            // 
-            this.coldate_solicitud.Caption = "Fecha";
-            this.coldate_solicitud.FieldName = "date_solicitud";
-            this.coldate_solicitud.Name = "coldate_solicitud";
-            this.coldate_solicitud.OptionsColumn.AllowEdit = false;
-            this.coldate_solicitud.Visible = true;
-            this.coldate_solicitud.VisibleIndex = 3;
-            this.coldate_solicitud.Width = 188;
-            // 
-            // colabierta
-            // 
-            this.colabierta.Caption = "Req Abierta";
-            this.colabierta.FieldName = "abierta";
-            this.colabierta.Name = "colabierta";
-            this.colabierta.OptionsColumn.AllowEdit = false;
-            this.colabierta.Visible = true;
-            this.colabierta.VisibleIndex = 4;
-            this.colabierta.Width = 111;
-            // 
-            // colcomentario
-            // 
-            this.colcomentario.Caption = "Comentario";
-            this.colcomentario.FieldName = "comentario";
-            this.colcomentario.Name = "colcomentario";
-            this.colcomentario.OptionsColumn.AllowEdit = false;
-            this.colcomentario.Visible = true;
-            this.colcomentario.VisibleIndex = 6;
-            this.colcomentario.Width = 325;
-            // 
-            // colcodigo_barra
-            // 
-            this.colcodigo_barra.Caption = "BarCode";
-            this.colcodigo_barra.FieldName = "codigo_barra";
-            this.colcodigo_barra.Name = "colcodigo_barra";
-            this.colcodigo_barra.OptionsColumn.AllowEdit = false;
-            this.colcodigo_barra.Visible = true;
-            this.colcodigo_barra.VisibleIndex = 0;
-            this.colcodigo_barra.Width = 183;
-            // 
-            // colturno
-            // 
-            this.colturno.Caption = "Turno";
-            this.colturno.FieldName = "turno";
-            this.colturno.Name = "colturno";
-            this.colturno.OptionsColumn.AllowEdit = false;
-            this.colturno.Visible = true;
-            this.colturno.VisibleIndex = 5;
-            this.colturno.Width = 135;
-            // 
-            // coluser_cre
-            // 
-            this.coluser_cre.Caption = "Creado Por:";
-            this.coluser_cre.FieldName = "user_cre";
-            this.coluser_cre.Name = "coluser_cre";
-            this.coluser_cre.OptionsColumn.AllowEdit = false;
-            this.coluser_cre.Visible = true;
-            this.coluser_cre.VisibleIndex = 1;
-            this.coluser_cre.Width = 157;
-            // 
-            // reposPrint
-            // 
-            this.reposPrint.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.reposPrint.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.reposPrint.Name = "reposPrint";
-            this.reposPrint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.reposPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposPrint_ButtonClick);
-            // 
-            // repositoryItemButtonEdit2
-            // 
-            this.repositoryItemButtonEdit2.AutoHeight = false;
-            this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
-            // 
-            // repositoryItemButtonEdit3
-            // 
-            this.repositoryItemButtonEdit3.AutoHeight = false;
-            this.repositoryItemButtonEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryItemButtonEdit3.Name = "repositoryItemButtonEdit3";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Imprimir";
-            this.gridColumn1.ColumnEdit = this.reposPrint;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 7;
+            this.btnNewRequisa.Click += new System.EventHandler(this.btnNewRequisa_Click);
             // 
             // frmRequisasMaterialEmpaque
             // 
@@ -319,12 +340,12 @@ namespace LOSA.Produccion
             this.Name = "frmRequisasMaterialEmpaque";
             this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsVerTodas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMaterialEmpaque1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposPrint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposVerDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsVerTodas.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,7 +371,8 @@ namespace LOSA.Produccion
         private DevExpress.XtraGrid.Columns.GridColumn coluser_cre;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposPrint;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposVerDetalle;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

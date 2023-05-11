@@ -20,15 +20,18 @@ namespace LOSA.Produccion
         public string itemcode;
         public int id_mp;
         public string mpdes;
+        public int id_requisa_manual;
         UserLogin UsuarioLogeado;
         DataOperations dp = new DataOperations();
-        public frm_requisaManual(int Pid, UserLogin Puser)
+        public frm_requisaManual(int Pid, UserLogin Puser, int Pid_req_manual)
         {
             InitializeComponent();
             id_requisa = Pid;
+            id_requisa_manual = Pid_req_manual;
             UsuarioLogeado = Puser;
             load_requisa_manual();
         }
+
         public void load_requisa_manual() 
         {
             string query = @"sp_obtener_materia_prima_solicitada_manual";
@@ -61,7 +64,7 @@ namespace LOSA.Produccion
         {
             try
             {
-                frmSolicitarMP frm = new frmSolicitarMP(id_requisa, UsuarioLogeado);
+                frmSolicitarMP frm = new frmSolicitarMP(id_requisa, UsuarioLogeado, id_requisa_manual);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     load_requisa_manual();

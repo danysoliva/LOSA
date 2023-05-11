@@ -61,10 +61,33 @@ namespace LOSA.Produccion
             var gridview1 = (GridView)grd_data.FocusedView;
             var row = (dsMaterialEmpaque.requisas_hRow)grdv_data.GetFocusedDataRow();
 
-            //xrlblNumRequisa reportRequisa = new xrlblNumRequisa(row.id);
-            //reportRequisa.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-            //ReportPrintTool printOrden = new DevExpress.XtraReports.UI.ReportPrintTool(reportRequisa);
-            //printOrden.ShowPreview();
+            rptRequisaMaterialEmpaque reportRequisa = new rptRequisaMaterialEmpaque(row.id);
+            reportRequisa.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+            ReportPrintTool printOrden = new DevExpress.XtraReports.UI.ReportPrintTool(reportRequisa);
+            printOrden.ShowPreview();
+        }
+
+        private void tsVerTodas_Toggled(object sender, EventArgs e)
+        {
+            cargarData();
+        }
+
+        private void reposVerDetalle_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview1 = (GridView)grd_data.FocusedView;
+            var row = (dsMaterialEmpaque.requisas_hRow)grdv_data.GetFocusedDataRow();
+
+            frmDetalleEntregadoRequisa frm = new frmDetalleEntregadoRequisa(row.id);
+            frm.Show();
+        }
+
+        private void btnNewRequisa_Click(object sender, EventArgs e)
+        {
+            frmCrearRequisa frm = new frmCrearRequisa(UsuarioLogeado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                cargarData();
+            }
         }
     }
 }

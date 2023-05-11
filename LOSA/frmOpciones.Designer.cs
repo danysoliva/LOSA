@@ -181,6 +181,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.btnReqMEmpaque = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCierreLotesPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnRutas_traza_produccion = new DevExpress.XtraEditors.SimpleButton();
             this.btnMP_BodsegaPRD = new DevExpress.XtraEditors.SimpleButton();
@@ -237,7 +238,6 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btnReqMEmpaque = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -798,6 +798,7 @@
             this.cmdLoteActivoGranel.Size = new System.Drawing.Size(199, 42);
             this.cmdLoteActivoGranel.TabIndex = 43;
             this.cmdLoteActivoGranel.Text = "Lote Activo V2";
+            this.cmdLoteActivoGranel.Visible = false;
             this.cmdLoteActivoGranel.Click += new System.EventHandler(this.cmdLoteActivoGranel_Click);
             // 
             // btnLoteActivoGranel
@@ -813,6 +814,7 @@
             this.btnLoteActivoGranel.Size = new System.Drawing.Size(199, 42);
             this.btnLoteActivoGranel.TabIndex = 42;
             this.btnLoteActivoGranel.Text = "Lote Activo";
+            this.btnLoteActivoGranel.Visible = false;
             this.btnLoteActivoGranel.Click += new System.EventHandler(this.btnLoteActivoGranel_Click);
             // 
             // simpleButton2
@@ -2511,6 +2513,21 @@
             this.txtProduccion.Size = new System.Drawing.Size(835, 502);
             this.txtProduccion.Text = "Produccion Administrativo";
             // 
+            // btnReqMEmpaque
+            // 
+            this.btnReqMEmpaque.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReqMEmpaque.Appearance.Options.UseFont = true;
+            this.btnReqMEmpaque.Appearance.Options.UseTextOptions = true;
+            this.btnReqMEmpaque.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnReqMEmpaque.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnReqMEmpaque.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReqMEmpaque.ImageOptions.Image")));
+            this.btnReqMEmpaque.Location = new System.Drawing.Point(471, 20);
+            this.btnReqMEmpaque.Name = "btnReqMEmpaque";
+            this.btnReqMEmpaque.Size = new System.Drawing.Size(199, 71);
+            this.btnReqMEmpaque.TabIndex = 51;
+            this.btnReqMEmpaque.Text = "Requisas Material Empaque";
+            this.btnReqMEmpaque.Click += new System.EventHandler(this.btnReqMEmpaque_Click);
+            // 
             // cmdCierreLotesPT
             // 
             this.cmdCierreLotesPT.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3335,21 +3352,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // btnReqMEmpaque
-            // 
-            this.btnReqMEmpaque.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReqMEmpaque.Appearance.Options.UseFont = true;
-            this.btnReqMEmpaque.Appearance.Options.UseTextOptions = true;
-            this.btnReqMEmpaque.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnReqMEmpaque.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnReqMEmpaque.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.btnReqMEmpaque.Location = new System.Drawing.Point(471, 20);
-            this.btnReqMEmpaque.Name = "btnReqMEmpaque";
-            this.btnReqMEmpaque.Size = new System.Drawing.Size(199, 71);
-            this.btnReqMEmpaque.TabIndex = 51;
-            this.btnReqMEmpaque.Text = "Requisas Material Empaque";
-            this.btnReqMEmpaque.Click += new System.EventHandler(this.btnReqMEmpaque_Click);
             // 
             // frmOpciones
             // 
