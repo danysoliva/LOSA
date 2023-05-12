@@ -2526,7 +2526,6 @@
             this.btnReqMEmpaque.Size = new System.Drawing.Size(199, 71);
             this.btnReqMEmpaque.TabIndex = 51;
             this.btnReqMEmpaque.Text = "Requisas Material Empaque";
-            this.btnReqMEmpaque.Visible = false;
             this.btnReqMEmpaque.Click += new System.EventHandler(this.btnReqMEmpaque_Click);
             // 
             // cmdCierreLotesPT

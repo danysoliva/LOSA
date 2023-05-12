@@ -61,8 +61,8 @@ namespace LOSA.Produccion
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_usuario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
             this.colrow_num = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.btnedit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_reimprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposAdjuntar)).BeginInit();
@@ -233,6 +233,16 @@ namespace LOSA.Produccion
             this.colusuario.OptionsColumn.AllowEdit = false;
             this.colusuario.Width = 104;
             // 
+            // colrow_num
+            // 
+            this.colrow_num.Caption = "#";
+            this.colrow_num.FieldName = "row_num";
+            this.colrow_num.Name = "colrow_num";
+            this.colrow_num.OptionsColumn.AllowEdit = false;
+            this.colrow_num.Visible = true;
+            this.colrow_num.VisibleIndex = 0;
+            this.colrow_num.Width = 55;
+            // 
             // cmdCerrar
             // 
             this.cmdCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -247,16 +257,7 @@ namespace LOSA.Produccion
             this.cmdCerrar.Size = new System.Drawing.Size(116, 39);
             this.cmdCerrar.TabIndex = 67;
             this.cmdCerrar.Text = "Cerrar";
-            // 
-            // colrow_num
-            // 
-            this.colrow_num.Caption = "#";
-            this.colrow_num.FieldName = "row_num";
-            this.colrow_num.Name = "colrow_num";
-            this.colrow_num.OptionsColumn.AllowEdit = false;
-            this.colrow_num.Visible = true;
-            this.colrow_num.VisibleIndex = 0;
-            this.colrow_num.Width = 55;
+            this.cmdCerrar.Click += new System.EventHandler(this.cmdCerrar_Click);
             // 
             // frmDetalleEntregadoRequisa
             // 

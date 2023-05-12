@@ -3217,12 +3217,11 @@ namespace LOSA
                 case 3://Medium Autorization
                     break;
                 case 4://Depth With Delta
+                case 5://Depth Without Delta
                     accesoprevio = true;
                     frmRequisasMaterialEmpaque frm = new frmRequisasMaterialEmpaque(this.UsuarioLogeado);
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
-                    break;
-                case 5://Depth Without Delta
                     break;
                 default:
                     break;
