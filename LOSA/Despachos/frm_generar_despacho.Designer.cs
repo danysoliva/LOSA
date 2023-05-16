@@ -85,8 +85,7 @@
             this.txtNumDespacho = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.grd_conf_filas = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.destinosempaquesptBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsProductos = new LOSA.TransaccionesPT.dsProductos();
+            this.destinosempaquesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coldestino_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSacosTotal = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -95,9 +94,10 @@
             this.colPresentacion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colestiba_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_presentacion1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtInfoConFilas = new System.Windows.Forms.TextBox();
-            this.destinosempaquesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.destinosempaquesptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsProductos = new LOSA.TransaccionesPT.dsProductos();
+            this.txtInfoConFilas = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -115,10 +115,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumDespacho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_conf_filas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesptBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnatras
@@ -678,15 +678,10 @@
             this.grd_conf_filas.TabIndex = 69;
             this.grd_conf_filas.EditValueChanged += new System.EventHandler(this.grd_conf_filas_EditValueChanged);
             // 
-            // destinosempaquesptBindingSource
+            // destinosempaquesBindingSource
             // 
-            this.destinosempaquesptBindingSource.DataMember = "destinos_empaques_pt";
-            this.destinosempaquesptBindingSource.DataSource = this.dsProductos;
-            // 
-            // dsProductos
-            // 
-            this.dsProductos.DataSetName = "dsProductos";
-            this.dsProductos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.destinosempaquesBindingSource.DataMember = "destinos_empaques";
+            this.destinosempaquesBindingSource.DataSource = this.ds_despachos;
             // 
             // gridView1
             // 
@@ -768,6 +763,21 @@
             this.colid_presentacion1.FieldName = "id_presentacion";
             this.colid_presentacion1.Name = "colid_presentacion1";
             // 
+            // colid2
+            // 
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
+            // 
+            // destinosempaquesptBindingSource
+            // 
+            this.destinosempaquesptBindingSource.DataMember = "destinos_empaques_pt";
+            this.destinosempaquesptBindingSource.DataSource = this.dsProductos;
+            // 
+            // dsProductos
+            // 
+            this.dsProductos.DataSetName = "dsProductos";
+            this.dsProductos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtInfoConFilas
             // 
             this.txtInfoConFilas.Enabled = false;
@@ -776,16 +786,6 @@
             this.txtInfoConFilas.Name = "txtInfoConFilas";
             this.txtInfoConFilas.Size = new System.Drawing.Size(494, 29);
             this.txtInfoConFilas.TabIndex = 70;
-            // 
-            // destinosempaquesBindingSource
-            // 
-            this.destinosempaquesBindingSource.DataMember = "destinos_empaques";
-            this.destinosempaquesBindingSource.DataSource = this.ds_despachos;
-            // 
-            // colid2
-            // 
-            this.colid2.FieldName = "id";
-            this.colid2.Name = "colid2";
             // 
             // frm_generar_despacho
             // 
@@ -837,10 +837,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumDespacho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_conf_filas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesptBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.destinosempaquesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
