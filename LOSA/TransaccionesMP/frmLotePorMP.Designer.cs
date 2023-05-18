@@ -209,8 +209,8 @@ namespace LOSA.TransaccionesMP
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 571);
-            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.gcLotePorMP);
+            this.Controls.Add(this.btnAtras);
             this.Name = "frmLotePorMP";
             this.Text = "Lotes por Materia Prima";
             ((System.ComponentModel.ISupportInitialize)(this.gcLotePorMP)).EndInit();

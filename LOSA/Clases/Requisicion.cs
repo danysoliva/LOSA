@@ -146,5 +146,69 @@ namespace LOSA.Clases
             return Recuperado;
         }
 
+        public bool RecuperarRegistroFromIdRequisaClass(int id_requisa_h)
+        {
+            try
+            {
+                Recuperado = false;
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("[sp_get_datos_requisicion_from_id_requisa_class]", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_requisa_h", id_requisa_h);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IdRequisicion = _idRequisicion = dr.GetInt32(0);
+                    _id_usuario = dr.GetInt32(1);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("id_orden")))
+                        _id_orden = dr.GetInt32(2);
+
+                    _fecha_solicitada = dr.GetDateTime(3);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("fecha_a_producir")))
+                        _fecha_a_producir = dr.GetDateTime(4);
+
+                    _id_estado = dr.GetInt32(5);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("DocEntry")))
+                        _DocEntry = dr.GetInt32(6);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("comentario")))
+                        _comentario = dr.GetString(7);
+
+                    _barcode = dr.GetString(8);
+                    _bit_finalizar = dr.GetBoolean(9);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("id_requisa")))
+                        _id_requisa = dr.GetInt32(10);
+
+                    _bit_manual = dr.GetBoolean(11);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("user_end")))
+                        _user_end = dr.GetInt32(12);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("Lote")))
+                        _Lote = dr.GetInt32(13);
+
+                    if (!dr.IsDBNull(dr.GetOrdinal("descripcion_estado")))
+                        Descripcion_estado = dr.GetString(14);
+
+                    Recuperado = true;
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+
+            return Recuperado;
+        }
+
     }
 }

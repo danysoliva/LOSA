@@ -533,6 +533,7 @@ namespace LOSA.Trazabilidad
             this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcodigo_barra3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coloperacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage7 = new DevExpress.XtraTab.XtraTabPage();
             this.grd_despachos = new DevExpress.XtraGrid.GridControl();
             this.grdv_despachos = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -6649,7 +6650,8 @@ namespace LOSA.Trazabilidad
             this.collote,
             this.colturno,
             this.colfecha,
-            this.colcodigo_barra3});
+            this.colcodigo_barra3,
+            this.coloperacion});
             this.grdv_trascciones.GridControl = this.grd_trasacciones;
             this.grdv_trascciones.Name = "grdv_trascciones";
             this.grdv_trascciones.OptionsView.ShowAutoFilterRow = true;
@@ -6668,7 +6670,7 @@ namespace LOSA.Trazabilidad
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "entrada", "{0:0.##.##} Ud.")});
             this.colentrada.Visible = true;
             this.colentrada.VisibleIndex = 5;
-            this.colentrada.Width = 130;
+            this.colentrada.Width = 94;
             // 
             // colsalida
             // 
@@ -6682,7 +6684,7 @@ namespace LOSA.Trazabilidad
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "salida", "{0:0.##.##} Ud.")});
             this.colsalida.Visible = true;
             this.colsalida.VisibleIndex = 6;
-            this.colsalida.Width = 137;
+            this.colsalida.Width = 82;
             // 
             // colpt
             // 
@@ -6692,7 +6694,7 @@ namespace LOSA.Trazabilidad
             this.colpt.OptionsColumn.AllowEdit = false;
             this.colpt.Visible = true;
             this.colpt.VisibleIndex = 1;
-            this.colpt.Width = 155;
+            this.colpt.Width = 150;
             // 
             // colcodigo_pt
             // 
@@ -6702,7 +6704,7 @@ namespace LOSA.Trazabilidad
             this.colcodigo_pt.OptionsColumn.AllowEdit = false;
             this.colcodigo_pt.Visible = true;
             this.colcodigo_pt.VisibleIndex = 0;
-            this.colcodigo_pt.Width = 99;
+            this.colcodigo_pt.Width = 91;
             // 
             // collote
             // 
@@ -6712,7 +6714,7 @@ namespace LOSA.Trazabilidad
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 3;
-            this.collote.Width = 82;
+            this.collote.Width = 66;
             // 
             // colturno
             // 
@@ -6732,7 +6734,7 @@ namespace LOSA.Trazabilidad
             this.colfecha.OptionsColumn.AllowEdit = false;
             this.colfecha.Visible = true;
             this.colfecha.VisibleIndex = 4;
-            this.colfecha.Width = 164;
+            this.colfecha.Width = 119;
             // 
             // colcodigo_barra3
             // 
@@ -6741,7 +6743,17 @@ namespace LOSA.Trazabilidad
             this.colcodigo_barra3.OptionsColumn.AllowEdit = false;
             this.colcodigo_barra3.Visible = true;
             this.colcodigo_barra3.VisibleIndex = 2;
-            this.colcodigo_barra3.Width = 95;
+            this.colcodigo_barra3.Width = 130;
+            // 
+            // coloperacion
+            // 
+            this.coloperacion.Caption = "Tipo Operacion";
+            this.coloperacion.FieldName = "operacion";
+            this.coloperacion.Name = "coloperacion";
+            this.coloperacion.OptionsColumn.AllowEdit = false;
+            this.coloperacion.Visible = true;
+            this.coloperacion.VisibleIndex = 7;
+            this.coloperacion.Width = 130;
             // 
             // xtraTabPage7
             // 
@@ -13758,5 +13770,6 @@ namespace LOSA.Trazabilidad
         private System.Windows.Forms.BindingSource detalledespachosBindingSource;
         private DevExpress.XtraEditors.SimpleButton cmdDespacho_Ruta4;
         private System.Windows.Forms.BindingSource informacionBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn coloperacion;
     }
 }

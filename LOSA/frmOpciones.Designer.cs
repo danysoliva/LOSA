@@ -181,6 +181,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.btnReqMEmpaque = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCierreLotesPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnRutas_traza_produccion = new DevExpress.XtraEditors.SimpleButton();
             this.btnMP_BodsegaPRD = new DevExpress.XtraEditors.SimpleButton();
@@ -2495,6 +2496,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.btnReqMEmpaque);
             this.txtProduccion.Controls.Add(this.cmdCierreLotesPT);
             this.txtProduccion.Controls.Add(this.btnRutas_traza_produccion);
             this.txtProduccion.Controls.Add(this.btnMP_BodsegaPRD);
@@ -2510,6 +2512,21 @@
             this.txtProduccion.PageVisible = false;
             this.txtProduccion.Size = new System.Drawing.Size(835, 502);
             this.txtProduccion.Text = "Produccion Administrativo";
+            // 
+            // btnReqMEmpaque
+            // 
+            this.btnReqMEmpaque.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReqMEmpaque.Appearance.Options.UseFont = true;
+            this.btnReqMEmpaque.Appearance.Options.UseTextOptions = true;
+            this.btnReqMEmpaque.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnReqMEmpaque.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnReqMEmpaque.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReqMEmpaque.ImageOptions.Image")));
+            this.btnReqMEmpaque.Location = new System.Drawing.Point(471, 20);
+            this.btnReqMEmpaque.Name = "btnReqMEmpaque";
+            this.btnReqMEmpaque.Size = new System.Drawing.Size(199, 71);
+            this.btnReqMEmpaque.TabIndex = 51;
+            this.btnReqMEmpaque.Text = "Requisas Material Empaque";
+            this.btnReqMEmpaque.Click += new System.EventHandler(this.btnReqMEmpaque_Click);
             // 
             // cmdCierreLotesPT
             // 
@@ -3584,5 +3601,6 @@
         private DevExpress.XtraEditors.SimpleButton btnViewRequisasCalidad;
         private DevExpress.XtraEditors.SimpleButton btnValidacionTarimas;
         private DevExpress.XtraEditors.SimpleButton cmdReporteBancosPlanilla;
+        private DevExpress.XtraEditors.SimpleButton btnReqMEmpaque;
     }
 }

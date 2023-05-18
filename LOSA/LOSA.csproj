@@ -24,8 +24,8 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>515</ApplicationRevision>
-    <ApplicationVersion>1.0.0.515</ApplicationVersion>
+    <ApplicationRevision>519</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -1123,6 +1123,7 @@
     <Compile Include="Clases\LoteMP.cs" />
     <Compile Include="Clases\LoteMP_ProximoVencer.cs" />
     <Compile Include="Clases\LotePT.cs" />
+    <Compile Include="Clases\MaterialEmpaque.cs" />
     <Compile Include="Clases\MateriaPrima.cs" />
     <Compile Include="Clases\MicroIngrediente.cs" />
     <Compile Include="Clases\NotificacionesGenerales.cs" />
@@ -3646,6 +3647,11 @@
     <Compile Include="Produccion\CierreLote\frmNewCierreLotePT.Designer.cs">
       <DependentUpon>frmNewCierreLotePT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\dsMaterialEmpaque.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\dsProduccion1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3675,6 +3681,18 @@
     <Compile Include="Produccion\frmAlimentacionPanel.Designer.cs">
       <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmCrearRequisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmCrearRequisa.Designer.cs">
+      <DependentUpon>frmCrearRequisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmDetalleEntregadoRequisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmDetalleEntregadoRequisa.Designer.cs">
+      <DependentUpon>frmDetalleEntregadoRequisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmGenerarTarimas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3692,6 +3710,12 @@
     </Compile>
     <Compile Include="Produccion\frmRequisasManuales.Designer.cs">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmRequisasMaterialEmpaque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmRequisasMaterialEmpaque.Designer.cs">
+      <DependentUpon>frmRequisasMaterialEmpaque.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmrptMpEntregadaaProduccion.cs">
       <SubType>Form</SubType>
@@ -3758,6 +3782,12 @@
     </Compile>
     <Compile Include="Produccion\xfrmMP_Por_BIN.Designer.cs">
       <DependentUpon>xfrmMP_Por_BIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\xtraReportRequisa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Produccion\xtraReportRequisa.Designer.cs">
+      <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <None Include="Accesos\dsAccesos.xsc">
@@ -4486,6 +4516,17 @@
     </None>
     <None Include="Produccion\CierreLote\dsCierreLotesPT.xss">
       <DependentUpon>dsCierreLotesPT.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsMaterialEmpaque.xsc">
+      <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\dsMaterialEmpaque.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMaterialEmpaque.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Produccion\dsMaterialEmpaque.xss">
+      <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
     </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\AssemblyInfo.cs" />
@@ -5361,6 +5402,18 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmTarimaManual.Designer.cs">
       <DependentUpon>frmTarimaManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexLotesExistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexLotesExistencia.Designer.cs">
+      <DependentUpon>frmTrasladoKardexLotesExistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmTrasladoKardexMP.Designer.cs">
+      <DependentUpon>frmTrasladoKardexMP.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmUbicacionLotes.cs">
       <SubType>Form</SubType>
@@ -7230,6 +7283,12 @@
     <EmbeddedResource Include="Produccion\frmAlimentacionPanel.resx">
       <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmCrearRequisa.resx">
+      <DependentUpon>frmCrearRequisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmDetalleEntregadoRequisa.resx">
+      <DependentUpon>frmDetalleEntregadoRequisa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmGenerarTarimas.resx">
       <DependentUpon>frmGenerarTarimas.cs</DependentUpon>
     </EmbeddedResource>
@@ -7238,6 +7297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmRequisasManuales.resx">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmRequisasMaterialEmpaque.resx">
+      <DependentUpon>frmRequisasMaterialEmpaque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmrptMpEntregadaaProduccion.resx">
       <DependentUpon>frmrptMpEntregadaaProduccion.cs</DependentUpon>
@@ -7268,6 +7330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\xfrmMP_Por_BIN.resx">
       <DependentUpon>xfrmMP_Por_BIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
+      <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -7664,6 +7729,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmTarimaManual.resx">
       <DependentUpon>frmTarimaManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmTrasladoKardexLotesExistencia.resx">
+      <DependentUpon>frmTrasladoKardexLotesExistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmTrasladoKardexMP.resx">
+      <DependentUpon>frmTrasladoKardexMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmUbicacionLotes.resx">
       <DependentUpon>frmUbicacionLotes.cs</DependentUpon>

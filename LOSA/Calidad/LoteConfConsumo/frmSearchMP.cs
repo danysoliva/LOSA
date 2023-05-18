@@ -18,6 +18,7 @@ namespace LOSA.Calidad.LoteConfConsumo
     public partial class frmSearchMP : DevExpress.XtraEditors.XtraForm
     {
         //public MateriaPrima MateriaPrimaSelected;
+        DataOperations dp = new DataOperations();
         public ItemBusqueda ItemSeleccionado;
         DataView dv;// = new DataView(dsConfigLoteConsumo1.search_mp);
         public enum TipoBusqueda
@@ -26,7 +27,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             ProductoTerminado = 2,
             Empleados = 3,
             PresentacionEmpaqueALOSY = 4,
-            BodegasALOSY = 5
+            BodegasALOSY = 5,
+            MaterialEmpaque = 6
         }
 
         TipoBusqueda TipoBusquedaActual;
@@ -38,15 +40,54 @@ namespace LOSA.Calidad.LoteConfConsumo
             StoreProcedureConfigActual = "sp_get_lista_materias_primas";
 
             //MateriaPrimaSelected = new MateriaPrima();
+            switch (TipoBusquedaActual)
+            {
+                case TipoBusqueda.MateriaPrima:
+                    LoadData();
+                    break;
+                case TipoBusqueda.ProductoTerminado:
+                    break;
+                case TipoBusqueda.Empleados:
+                    break;
+                case TipoBusqueda.PresentacionEmpaqueALOSY:
+                    break;
+                case TipoBusqueda.BodegasALOSY:
+                    break;
+                case TipoBusqueda.MaterialEmpaque:
+                    load_data_material_empaque();
+                    break;
+                default:
+                    break;
+            }
             ItemSeleccionado = new ItemBusqueda();
-            LoadData();
+            
+        }
+
+        private void load_data_material_empaque()
+        {
+            string sql = @"sp_load_items_sap_material_empaqueV2ALosy";
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringAMS);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsConfigLoteConsumo1.search_mp.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsConfigLoteConsumo1.search_mp);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void LoadData()
         {
             try
             {
-                DataOperations dp = new DataOperations();
+                
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
