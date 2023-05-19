@@ -182,6 +182,29 @@ namespace LOSA.Clases
             return val;
         }
 
+        public decimal GetKgExistenciaEnMicros(int pIdTarima)
+        {
+            decimal val = 0;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_kg_existencia_for_tarima_micro", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima_micro", pIdTarima);
+                val = dp.ValidateNumberDecimal(cmd.ExecuteScalar());
+
+                conn.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return val;
+        }
+
         public bool RecuperarRegistroPorCodBarra(string codBarra)
         {
             try

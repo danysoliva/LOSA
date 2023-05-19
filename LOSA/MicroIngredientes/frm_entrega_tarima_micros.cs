@@ -81,14 +81,30 @@ namespace LOSA.MicroIngredientes
             //    if (PresentacionActual.RecuperarRegistro(lot1.IdPresentacion))
             //        lblPresentacion.Text = PresentacionActual.Descripcion;
             //}
-            if (tar1.RecuperarRegistro(pIdTarima))
-            {
-                if (PresentacionActual.RecuperarRegistro(tar1.IdPresentacion))
-                    lblPresentacion.Text = PresentacionActual.Descripcion;
-            }
             IdMP = pidMP;
             LoteMP = pLote;
-            LoadDataSinTarima();
+
+            if (Ud_MaximoA_Enviar == 0)
+            {
+                txtPorEnviar.EditValue = 0;
+                txtKgEnviar.EditValue = MaximoA_Enviar;
+                btnUP.Enabled = false;
+                btnDown.Enabled = false;
+            }
+            else
+            {
+                tar1.RecuperarRegistro(pIdTarima);
+                if (PresentacionActual.RecuperarRegistro(tar1.IdPresentacion))
+                    lblPresentacion.Text = PresentacionActual.Descripcion;
+
+                LoadDataSinTarima();
+            }
+            //if (tar1.RecuperarRegistro(pIdTarima))
+            //{
+            //    if (PresentacionActual.RecuperarRegistro(tar1.IdPresentacion))
+            //        lblPresentacion.Text = PresentacionActual.Descripcion;
+            //}
+            
         }
 
         private void LoadData()

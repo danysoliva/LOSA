@@ -83,7 +83,7 @@ namespace LOSA.MigracionACS.Produccion
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dSProductos1 = new MigracionACS.DataSetx.DSProductos();
+            this.dSProductos1 = new LOSA.MigracionACS.DataSetx.DSProductos();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
