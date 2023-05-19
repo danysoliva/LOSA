@@ -117,6 +117,8 @@ namespace LOSA.MigracionACS.Produccion
 
         private void LoadClasesAdicional()
         {
+            if (dp == null)
+                dp = new DataOperations();
             try
             {
                 string Qry = @"select 1 as id,
@@ -189,7 +191,7 @@ namespace LOSA.MigracionACS.Produccion
 
         private void barButtonItem3_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var Question = MessageBox.Show("Estas seguro de concluir el pedido", "Se inhabilitara el pedido", MessageBoxButtons.YesNo);
+            var Question = MessageBox.Show("Esta seguro de concluir el pedido", "Se inhabilitara el pedido", MessageBoxButtons.YesNo);
             if (Question == System.Windows.Forms.DialogResult.Yes)
             {
                 string Query;
@@ -1730,6 +1732,7 @@ namespace LOSA.MigracionACS.Produccion
 
         private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
         {
+            //Validar si tiene lote para saber si se permite editar el pedido.
             var GridView = (GridView)gridControl1.FocusedView;
             var row = (DSProductos.PedidoDetalleRow)GridView.GetFocusedDataRow();
 
