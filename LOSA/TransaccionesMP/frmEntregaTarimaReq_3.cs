@@ -996,7 +996,7 @@ namespace LOSA.TransaccionesMP
                     Tarima tar1 = new Tarima();
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima_v2]", con);
+                    SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima_v3]", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     if(tar1.RecuperarRegistro(row.id_tarima))
                         cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
@@ -1008,6 +1008,7 @@ namespace LOSA.TransaccionesMP
                     cmd.Parameters.AddWithValue("@cantidad_unidades", frmx.UdEnviar);
                     cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
                     cmd.Parameters.AddWithValue("@id_req_detalle", row.id_detalle_requisicion);//Id requisicion detalle
+                    cmd.Parameters.AddWithValue("@id_alimentacion", row.id_alimentacion);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {

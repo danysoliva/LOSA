@@ -274,6 +274,14 @@ namespace LOSA.MicroIngredientes
                             return;
                         }
 
+                        TarimaMicroingrediente tar1 = new TarimaMicroingrediente();
+                        decimal existencia_kg_micros = tar1.GetKgExistenciaEnMicros(Convert.ToInt32(tarima.Id));
+                        if (existencia_kg_micros == 0)
+                        {
+                            CajaDialogo.Error("ERROR: Tarima de Micro Ingrediente consumida en su Totalidad");
+                            return;
+                        }
+
 
                         timer1.Enabled = true;
                         indicePeso = 0;
