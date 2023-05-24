@@ -301,7 +301,7 @@ namespace LOSA.Clases
             return Recuperado;
         }
 
-        public bool PermitirEntregaParcialKG(int pid_mp)
+        public bool ValidarMPIsMicroIngrediente(int pid_mp)
         {
             try
             {
@@ -309,7 +309,7 @@ namespace LOSA.Clases
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_permite_entrega_parcial_de_kg_requisa", conn);
+                SqlCommand cmd = new SqlCommand("[sp_valdiacion_mp_is_micros]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idmp", pid_mp);
                 SqlDataReader dr = cmd.ExecuteReader();
