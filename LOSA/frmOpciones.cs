@@ -582,7 +582,7 @@ namespace LOSA
         {
             //frmAlimentacionManual frm = new frmAlimentacionManual(UsuarioLogeado);
             //frm.Show();
-            frmAlimentacionPanel frm = new frmAlimentacionPanel();
+            frmAlimentacionPanel frm = new frmAlimentacionPanel(UsuarioLogeado);
             frm.Show();
         }
 
@@ -1121,9 +1121,10 @@ namespace LOSA
 
         private void simpleButton24_Click(object sender, EventArgs e)
         {
-            frmCierreMensual frm = new frmCierreMensual(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            CajaDialogo.Error("En Construccion..");
+            //frmCierreMensual frm = new frmCierreMensual(UsuarioLogeado);
+            //frm.MdiParent = this.MdiParent;
+            //frm.Show();
         }
 
         private void simpleButton25_Click(object sender, EventArgs e)
@@ -1434,7 +1435,7 @@ namespace LOSA
         {
             //frmAlimentacionManual frm = new frmAlimentacionManual(UsuarioLogeado);
             //frm.Show();
-            frmAlimentacionPanel frm = new frmAlimentacionPanel();
+            frmAlimentacionPanel frm = new frmAlimentacionPanel(UsuarioLogeado);
             frm.Show();
         }
 

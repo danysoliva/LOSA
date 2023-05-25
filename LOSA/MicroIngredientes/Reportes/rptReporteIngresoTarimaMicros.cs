@@ -29,13 +29,13 @@ namespace LOSA.MicroIngredientes.Reportes
                     lblProveedor.Text = tar1.CardCode + " - " + prv.Nombre;
                 else
                     lblProveedor.Text = tar1.CardCode;
-                lblLote.Text = tar1.LoteMP;
+                lblLote.Text = "Lote MP:" + tar1.LoteMP;
                 lblCantidad.Text = tar1.Cantidad.ToString();
                 //MateriaPrima mp = new MateriaPrima();
                 //if (mp.RecuperarRegistroFromID_RM(tar1.Id_materiaprima))
                 //    lblNombreProducto.Text = mp.NameComercial;
                 lblNombreProducto.Text = tar1.MateriaPrima;
-                
+                xrLotePT.Text = Convert.ToString(tar1.Lotept);
                 
                 lblFechaIngreso.Text = string.Format("{0:dd/MM/yyyy}", tar1.FechaIngreso);
                 lblNumeroIngreso.Text = tar1.NumeroTransaccion.ToString();

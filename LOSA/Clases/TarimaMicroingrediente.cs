@@ -37,6 +37,7 @@ namespace LOSA.Clases
         string _MateriaPrima;
         int _idTarimaOrigen;
         int _idRM;
+        int _lotept;
 
 
 
@@ -62,6 +63,7 @@ namespace LOSA.Clases
         public string MateriaPrima { get => _MateriaPrima; set => _MateriaPrima = value; }
         public int IdTarimaOrigen { get => _idTarimaOrigen; set => _idTarimaOrigen = value; }
         public int IdRM { get => _idRM; set => _idRM = value; }
+        public int Lotept { get => _lotept; set => _lotept = value; }
 
         public TarimaMicroingrediente()
         {
@@ -145,6 +147,10 @@ namespace LOSA.Clases
                     else
                         _idRM = 0;
 
+                    if (!dr.IsDBNull(dr.GetOrdinal("lote_pt")))
+                        Lotept = dr.GetInt32(18);
+                    else
+                        Lotept = 0;
                      Recuperado = true;
                 }
                 dr.Close();

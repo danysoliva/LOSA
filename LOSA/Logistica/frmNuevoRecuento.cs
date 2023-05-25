@@ -40,7 +40,17 @@ namespace LOSA.Logistica
             get_years();
             get_bodegas();
             grdBodegas.EditValue = 2; //Bodega Produccion
+            
+
             Inicializar_productos(Convert.ToInt32(grdBodegas.EditValue));
+            foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+            {
+                if (item.whs_equivalente == "N/D")
+                {
+                    item.id_bodega = Convert.ToInt32(grdBodegas.EditValue);
+                }
+            }
+
             dateEdit1.EditValue = dp.Now();
 
             grd_years.Text = Convert.ToString(dateEdit1.DateTime.Year);
@@ -378,7 +388,7 @@ namespace LOSA.Logistica
             }
 
             int id_bodega = Convert.ToInt32(grdBodegas.EditValue);
-            Boolean permitir;
+            Boolean existe_recuento = false;
             try
             {
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -392,7 +402,7 @@ namespace LOSA.Logistica
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    permitir = dr.GetBoolean(0);
+                    existe_recuento = dr.GetBoolean(0);
                 }
             }
             catch (Exception ex)
@@ -400,7 +410,13 @@ namespace LOSA.Logistica
                 CajaDialogo.Error(ex.Message);
             }
 
-            
+            if (existe_recuento)
+            {
+                Bodegas bod = new Bodegas();
+                bod.RecuperarRegistro(id_bodega);
+                CajaDialogo.Error("Ya Existe un Recuento ligado a la Bodega: "+bod.whs_equivalente);
+                return;
+            }
 
 
             var list = dsCierreMes1.Recuento_mp.AsEnumerable();
@@ -720,6 +736,14 @@ namespace LOSA.Logistica
         private void grdBodegas_EditValueChanged(object sender, EventArgs e)
         {
             Inicializar_productos(Convert.ToInt32(grdBodegas.EditValue));
+
+            foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+            {
+                if (item.whs_equivalente == "N/D")
+                {
+                    item.id_bodega = Convert.ToInt32(grdBodegas.EditValue);
+                }
+            }
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
