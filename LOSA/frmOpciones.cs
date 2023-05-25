@@ -100,16 +100,18 @@ namespace LOSA
                         case 1://Basic View
                             break;
                         case 2://Basic No Autorization
-
+                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         case 3://Medium Autorization
                             tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         case 4://Depth With Delta
                             tabOpciones.TabPages[9].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.TabPages[9].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);

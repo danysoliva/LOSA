@@ -31,12 +31,14 @@ namespace LOSA.RecuentoInventario
         bool contabilizado;
         int id_detalle_recuento;
         bool IsContabilizacion;
+        int Id_bodega = 0;
 
-        public frmDetalleRecuento(DataTable pdata, UserLogin puserLogin,int pidyear,int pidmes, DateTime pfecha_recuento)
+        public frmDetalleRecuento(DataTable pdata, UserLogin puserLogin,int pidyear,int pidmes, DateTime pfecha_recuento, int pid_bodega)
         {
             //Guardar/Editar Recuento
             InitializeComponent();
             UsuarioLogeado = puserLogin;
+            Id_bodega = pid_bodega;
             
             btnConfirmar.Visible = true;
             //pidyear = Convert.ToInt32(grd_years.EditValue);
@@ -204,30 +206,51 @@ namespace LOSA.RecuentoInventario
                     command.Parameters.AddWithValue("@year", grd_years.EditValue);
                     command.Parameters.AddWithValue("@fecha_conteo", fecha_rec);
                     command.Parameters.AddWithValue("@comentario", txtComentario.Text);
+                    command.Parameters.AddWithValue("@id_bodega", Id_bodega);
                     int id_header_recuento = Convert.ToInt32(command.ExecuteScalar());
 
+                    //Vamos a validar que de esta Bodega ya se Realizo un Recuento
 
-                    ////Insert en Detalle de Recuento Final MATERIA PRIMA
-                    for (int i = 0; i < gridViewMP.DataRowCount; i++)
-                    {
-                        DataRow row = gridViewMP.GetDataRow(i);
-                        
-                        command.Parameters.Clear();
-                        command.CommandText = "sp_insert_inventario_final_detalle";
-                        command.Parameters.AddWithValue("@id_header", id_header_recuento);
-                        command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
-                        command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
-                        //command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
-                        //command.Parameters.AddWithValue("@id_lote_alosy",);
-                        command.Parameters.AddWithValue("@peso", Convert.ToDecimal(row["peso"])); //nueva existencia
-                        command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
-                        command.Parameters.AddWithValue("@existencia_aprox", Convert.ToDecimal(row["ExistenciaAprox"]));
-                        command.Parameters.AddWithValue("@existencia_fisica", Convert.ToDecimal(row["peso"]));
-                        command.Parameters.AddWithValue("@tipo_producto", 1); //Es Tipo de Producto: Materia Prima
-                        command.ExecuteNonQuery();
-                    }
-                    
+                    //command.CommandText = "sp_validar_recuento_por_bodega";
+                    //command.Parameters.AddWithValue("@id_bodega", Id_bodega);
+                    //command.Parameters.AddWithValue("@id_header_recuento", id_header_recuento);
+                    //bool existe_detalle = Convert.ToBoolean(command.ExecuteScalar()); 
 
+                    //if (existe_detalle)
+                    //{
+                    //    transaction.Rollback();
+                    //    CajaDialogo.Error("Ya existe un Detalle de Recuento de Esta Bodega!");
+                    //}
+                    //else
+                    //{
+                        ////Insert en Detalle de Recuento Final MATERIA PRIMA
+                        for (int i = 0; i < gridViewMP.DataRowCount; i++)
+                        {
+                            DataRow row = gridViewMP.GetDataRow(i);
+
+                            command.Parameters.Clear();
+                            command.CommandText = "sp_insert_inventario_final_detalle";
+                            command.Parameters.AddWithValue("@id_header", id_header_recuento);
+                            command.Parameters.AddWithValue("@id_mp", Convert.ToInt32(row["id_mp"]));
+                            command.Parameters.AddWithValue("@id_bodega", Convert.ToInt32(row["id_bodega"]));
+                            //command.Parameters.AddWithValue("@lote", Convert.ToString(row["lote"]));
+                            //command.Parameters.AddWithValue("@id_lote_alosy",);
+                            command.Parameters.AddWithValue("@peso", Convert.ToDecimal(row["peso"])); //nueva existencia
+                            command.Parameters.AddWithValue("@diferencia_peso", Convert.ToDecimal(row["diferencia"]));
+                            command.Parameters.AddWithValue("@existencia_aprox", Convert.ToDecimal(row["ExistenciaAprox"]));
+                            command.Parameters.AddWithValue("@existencia_fisica", Convert.ToDecimal(row["peso"]));
+                            command.Parameters.AddWithValue("@tipo_producto", 1); //Es Tipo de Producto: Materia Prima
+                            command.ExecuteNonQuery();
+                        }
+                        transaction.Commit();
+                        connection.Close();
+
+                        CajaDialogo.Information("Recuento Guardado con Exito!");
+                        this.DialogResult = this.DialogResult;
+                        this.Close();
+                    //}
+
+                    #region PT Algun Dia
                     ////Insert en Detalle de Recuento Final PRODUCTO TERMINADO
                     ///
                     //for (int i = 0; i < grdv_mps.SelectedRowsCount; i++)
@@ -248,15 +271,8 @@ namespace LOSA.RecuentoInventario
                     //    command.Parameters.AddWithValue("@tipo_producto", 2); //Es Tipo de Producto: Producto Terminado
                     //    command.ExecuteNonQuery();
                     //}
+                    #endregion
 
-                    ////Insert en Detalle de Recuento Final REPROCESO
-
-                    transaction.Commit();
-                    connection.Close();
-
-                    CajaDialogo.Information("Recuento Guardado con Exito!");
-                    this.DialogResult = this.DialogResult;
-                    this.Close();
                 }
                 catch (Exception ex)
                 {

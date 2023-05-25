@@ -1972,6 +1972,8 @@ namespace LOSA.AlmacenesExterno {
             
             private global::System.Data.DataColumn columnpresentacion;
             
+            private global::System.Data.DataColumn columnfecha_ingreso;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LoteDataTable() {
@@ -2127,6 +2129,14 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_ingresoColumn {
+                get {
+                    return this.columnfecha_ingreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2162,7 +2172,23 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LoteRow AddLoteRow(int id, decimal cantidad_disponible, decimal unidades_disponibles, int id_detalle, string lote, decimal CantSeleccionada, bool Seleccionar, int num_line, int row_, System.DateTime fecha_vencimiento, System.DateTime fecha_produccion, decimal unidade_seleccionadas, int id_ingreso_h, int id_presentacion, string presentacion) {
+            public LoteRow AddLoteRow(
+                        int id, 
+                        decimal cantidad_disponible, 
+                        decimal unidades_disponibles, 
+                        int id_detalle, 
+                        string lote, 
+                        decimal CantSeleccionada, 
+                        bool Seleccionar, 
+                        int num_line, 
+                        int row_, 
+                        System.DateTime fecha_vencimiento, 
+                        System.DateTime fecha_produccion, 
+                        decimal unidade_seleccionadas, 
+                        int id_ingreso_h, 
+                        int id_presentacion, 
+                        string presentacion, 
+                        System.DateTime fecha_ingreso) {
                 LoteRow rowLoteRow = ((LoteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2179,7 +2205,8 @@ namespace LOSA.AlmacenesExterno {
                         unidade_seleccionadas,
                         id_ingreso_h,
                         id_presentacion,
-                        presentacion};
+                        presentacion,
+                        fecha_ingreso};
                 rowLoteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLoteRow);
                 return rowLoteRow;
@@ -2217,6 +2244,7 @@ namespace LOSA.AlmacenesExterno {
                 this.columnid_ingreso_h = base.Columns["id_ingreso_h"];
                 this.columnid_presentacion = base.Columns["id_presentacion"];
                 this.columnpresentacion = base.Columns["presentacion"];
+                this.columnfecha_ingreso = base.Columns["fecha_ingreso"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2252,6 +2280,8 @@ namespace LOSA.AlmacenesExterno {
                 base.Columns.Add(this.columnid_presentacion);
                 this.columnpresentacion = new global::System.Data.DataColumn("presentacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpresentacion);
+                this.columnfecha_ingreso = new global::System.Data.DataColumn("fecha_ingreso", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_ingreso);
                 this.columnCantSeleccionada.DefaultValue = ((decimal)(0m));
                 this.columnnum_line.DefaultValue = ((int)(-1));
                 this.columnrow_.DefaultValue = ((int)(0));
@@ -6994,6 +7024,22 @@ namespace LOSA.AlmacenesExterno {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_ingreso {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableLote.fecha_ingresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_ingreso\' de la tabla \'Lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLote.fecha_ingresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableLote.idColumn);
             }
@@ -7170,6 +7216,18 @@ namespace LOSA.AlmacenesExterno {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetpresentacionNull() {
                 this[this.tableLote.presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_ingresoNull() {
+                return this.IsNull(this.tableLote.fecha_ingresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_ingresoNull() {
+                this[this.tableLote.fecha_ingresoColumn] = global::System.Convert.DBNull;
             }
         }
         

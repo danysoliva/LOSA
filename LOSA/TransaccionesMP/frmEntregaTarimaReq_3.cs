@@ -971,77 +971,94 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsTransaccionesMP.viewTarimasRow)gridView.GetFocusedDataRow();
 
-            TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
-            //if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
-            decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
-            if (Kg_Entregados_Micros >= dp.ValidateNumberDecimal(row.kg))
-            {
-                string mensaje = "La tarima ya fue entregada en Micro Ingredientes!";
-                lblMensaje.Text = mensaje;
-                Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                frm.ShowDialog();
-                panelNotificacion.BackColor = Color.Red;
-                timerLimpiarMensaje.Enabled = true;
-                timerLimpiarMensaje.Start();
-                return;
-            }
+            //Vamos a Validar si la MP esta considerada como Micros
+            MateriaPrima mp = new MateriaPrima();
+            mp.ValidarMPIsMicroIngrediente(row.id_mp);
 
-            frm_entrega_tarima_micros frmx = new frm_entrega_tarima_micros(row.id_mp, row.id_tarima, row.lote, row.kg,dp.ValidateNumberInt32( row.cantidad));
-            //(int pidMP, int pIdTarima, string pLote,bool pMicros )
-            bool Guardo = false;
-            if (frmx.ShowDialog() == DialogResult.OK)
+            if (mp.Permitir)
             {
-                try
+                TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
+                //if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
+                decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
+                if (Kg_Entregados_Micros >= dp.ValidateNumberDecimal(row.kg))
                 {
-                    Tarima tar1 = new Tarima();
-                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima_v2]", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    if(tar1.RecuperarRegistro(row.id_tarima))
-                        cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
-                    else
-                        cmd.Parameters.AddWithValue("@numero_transaccion", 0);
-                    cmd.Parameters.AddWithValue("@id_materia_prima", row.id_mp);
-                    cmd.Parameters.AddWithValue("@lotemp", row.lote);
-                    cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
-                    cmd.Parameters.AddWithValue("@cantidad_unidades", frmx.UdEnviar);
-                    cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
-                    cmd.Parameters.AddWithValue("@id_req_detalle", row.id_detalle_requisicion);//Id requisicion detalle
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        Guardo = dr.GetInt32(0) == 1 ? true : false;
-                    }
-                    dr.Close();
-                    con.Close();
-
-                }
-                catch (Exception ec)
-                {
-                    //CajaDialogo.Error(ec.Message);
-                    lblMensaje.Text = ec.Message;
+                    string mensaje = "La tarima ya fue entregada en Micro Ingredientes!";
+                    lblMensaje.Text = mensaje;
+                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                    frm.ShowDialog();
                     panelNotificacion.BackColor = Color.Red;
                     timerLimpiarMensaje.Enabled = true;
                     timerLimpiarMensaje.Start();
+                    return;
                 }
 
+                frm_entrega_tarima_micros frmx = new frm_entrega_tarima_micros(row.id_mp, row.id_tarima, row.lote, row.kg, dp.ValidateNumberInt32(row.cantidad));
+                //(int pidMP, int pIdTarima, string pLote,bool pMicros )
+                bool Guardo = false;
+                if (frmx.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        Tarima tar1 = new Tarima();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima_v3]", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        if (tar1.RecuperarRegistro(row.id_tarima))
+                            cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
+                        else
+                            cmd.Parameters.AddWithValue("@numero_transaccion", 0);
+                        cmd.Parameters.AddWithValue("@id_materia_prima", row.id_mp);
+                        cmd.Parameters.AddWithValue("@lotemp", row.lote);
+                        cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                        cmd.Parameters.AddWithValue("@cantidad_unidades", frmx.UdEnviar);
+                        cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
+                        cmd.Parameters.AddWithValue("@id_req_detalle", row.id_detalle_requisicion);//Id requisicion detalle
+                        cmd.Parameters.AddWithValue("@id_alimentacion", row.id_alimentacion);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            Guardo = dr.GetInt32(0) == 1 ? true : false;
+                        }
+                        dr.Close();
+                        con.Close();
+
+                    }
+                    catch (Exception ec)
+                    {
+                        //CajaDialogo.Error(ec.Message);
+                        lblMensaje.Text = ec.Message;
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                    }
+
+                }
+                else
+                {
+                    txtTarima.Text = "";
+                    txtTarima.Focus();
+                }
+                if (Guardo)
+                {
+                    //Mensaje de transaccion exitosa
+                    lblMensaje.Text = "Transacción Exitosa!";
+                    panelNotificacion.BackColor = Color.MediumSeaGreen;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                    load_tarimas_scan();
+                    //LoadDataMicros();
+                }
             }
             else
             {
-                txtTarima.Text = "";
-                txtTarima.Focus();
-            }
-            if (Guardo)
-            {
-                //Mensaje de transaccion exitosa
-                lblMensaje.Text = "Transacción Exitosa!";
-                panelNotificacion.BackColor = Color.MediumSeaGreen;
+                lblMensaje.Text = "La MP: "+ row.mp +" no es un Micro Ingrediente!";
+                panelNotificacion.BackColor = Color.Red;
                 timerLimpiarMensaje.Enabled = true;
                 timerLimpiarMensaje.Start();
-                load_tarimas_scan();
-                //LoadDataMicros();
             }
+
+            
         }
 
 

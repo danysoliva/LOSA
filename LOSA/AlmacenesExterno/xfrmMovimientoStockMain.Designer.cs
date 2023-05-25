@@ -67,9 +67,9 @@ namespace LOSA.AlmacenesExterno
             this.colDocNum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrintIngresoPlanta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdPrintIngresado = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colfactura = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnTransferencia = new DevExpress.XtraEditors.SimpleButton();
-            this.colfactura = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcTransferencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSalidasAlmacenesExternos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTransferencia)).BeginInit();
@@ -311,6 +311,16 @@ namespace LOSA.AlmacenesExterno
             this.cmdPrintIngresado.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdPrintIngresado.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdPrintIngresado_ButtonClick);
             // 
+            // colfactura
+            // 
+            this.colfactura.Caption = "Factura";
+            this.colfactura.FieldName = "factura";
+            this.colfactura.Name = "colfactura";
+            this.colfactura.OptionsColumn.AllowEdit = false;
+            this.colfactura.Visible = true;
+            this.colfactura.VisibleIndex = 7;
+            this.colfactura.Width = 94;
+            // 
             // btnAtras
             // 
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -343,16 +353,6 @@ namespace LOSA.AlmacenesExterno
             this.btnTransferencia.TabIndex = 45;
             this.btnTransferencia.Text = "Transf. de Almacénes";
             this.btnTransferencia.Click += new System.EventHandler(this.btnTransferencia_Click);
-            // 
-            // colfactura
-            // 
-            this.colfactura.Caption = "Factura";
-            this.colfactura.FieldName = "factura";
-            this.colfactura.Name = "colfactura";
-            this.colfactura.OptionsColumn.AllowEdit = false;
-            this.colfactura.Visible = true;
-            this.colfactura.VisibleIndex = 7;
-            this.colfactura.Width = 94;
             // 
             // xfrmMovimientoStockMain
             // 

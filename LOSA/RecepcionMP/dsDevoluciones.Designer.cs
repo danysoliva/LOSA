@@ -303,6 +303,8 @@ namespace LOSA.RecepcionMP {
             
             private global::System.Data.DataColumn columnid_requisa_header;
             
+            private global::System.Data.DataColumn columnconsumido;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public mpDataTable() {
@@ -434,6 +436,14 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn consumidoColumn {
+                get {
+                    return this.columnconsumido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -469,7 +479,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public mpRow AddmpRow(string barcode, double cantidad_entregada, double cantidad_unidades, string Codigo, string code_sap, string lote_materia_prima, string nombre_comercial, string codigo_barra, bool selected, int id, System.DateTime fecha, int id_requisa_header) {
+            public mpRow AddmpRow(string barcode, double cantidad_entregada, double cantidad_unidades, string Codigo, string code_sap, string lote_materia_prima, string nombre_comercial, string codigo_barra, bool selected, int id, System.DateTime fecha, int id_requisa_header, bool consumido) {
                 mpRow rowmpRow = ((mpRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         barcode,
@@ -483,7 +493,8 @@ namespace LOSA.RecepcionMP {
                         selected,
                         id,
                         fecha,
-                        id_requisa_header};
+                        id_requisa_header,
+                        consumido};
                 rowmpRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmpRow);
                 return rowmpRow;
@@ -518,6 +529,7 @@ namespace LOSA.RecepcionMP {
                 this.columnid = base.Columns["id"];
                 this.columnfecha = base.Columns["fecha"];
                 this.columnid_requisa_header = base.Columns["id_requisa_header"];
+                this.columnconsumido = base.Columns["consumido"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -547,6 +559,9 @@ namespace LOSA.RecepcionMP {
                 base.Columns.Add(this.columnfecha);
                 this.columnid_requisa_header = new global::System.Data.DataColumn("id_requisa_header", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_requisa_header);
+                this.columnconsumido = new global::System.Data.DataColumn("consumido", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconsumido);
+                this.columnconsumido.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -881,6 +896,22 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool consumido {
+                get {
+                    try {
+                        return ((bool)(this[this.tablemp.consumidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'consumido\' de la tabla \'mp\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemp.consumidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsbarcodeNull() {
                 return this.IsNull(this.tablemp.barcodeColumn);
             }
@@ -1021,6 +1052,18 @@ namespace LOSA.RecepcionMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_requisa_headerNull() {
                 this[this.tablemp.id_requisa_headerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsconsumidoNull() {
+                return this.IsNull(this.tablemp.consumidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetconsumidoNull() {
+                this[this.tablemp.consumidoColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -29,9 +29,10 @@ namespace LOSA.MicroIngredientes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeIndividual));
             this.lueBascula = new DevExpress.XtraEditors.LookUpEdit();
-            this.pesajeBasculaBindingSource = new System.Windows.Forms.BindingSource();
+            this.pesajeBasculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMicros = new LOSA.MicroIngredientes.dsMicros();
             this.label1 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();

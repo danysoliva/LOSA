@@ -356,7 +356,7 @@ namespace LOSA.MicroIngredientes
                 //    LoadDataIndividual();
                 //    CargarDetalleMezcla();
                 //}
-                xfrmPesajeNucleoV2 frm = new xfrmPesajeNucleoV2(row.batch_real, row.total, row.namerm);
+                xfrmPesajeNucleoV2 frm = new xfrmPesajeNucleoV2(row.batch_real, row.total, row.namerm, pesaje);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     //LoadDataIndividual();

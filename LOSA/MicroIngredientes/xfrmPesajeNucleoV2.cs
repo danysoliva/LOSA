@@ -38,10 +38,11 @@ namespace LOSA.MicroIngredientes
             Ambas=3
         }
 
-        public xfrmPesajeNucleoV2(decimal pActualAcumuladoKg, decimal max_kg, string pMP)
+        public xfrmPesajeNucleoV2(decimal pActualAcumuladoKg, decimal max_kg, string pMP, PesajeBasculaInfo ppesaje)
         {
             //PESAJE INDIVIDUAL
             InitializeComponent();
+            pesaje = ppesaje;
             ListaPesajes = new ArrayList();
             TarimaEscaneada = new TarimaMicroingrediente();
             ActualAcumuladoKg = pActualAcumuladoKg;
@@ -237,13 +238,26 @@ namespace LOSA.MicroIngredientes
                 try
                 {
                     TarimaMicroingrediente tarima = new TarimaMicroingrediente();
+                    tarima.RecuperarRegistroPorCodBarra(txtCodBarra.Text);
+
+                    MateriaPrima mp = new MateriaPrima();
+                    mp.RecuperarRegistro_MPACS_For_IDRM_APMS(pesaje.MateriaPrimaID);
+
 
                     if (!string.IsNullOrEmpty(txtCodBarra.Text))
                     {
-                        if (pesaje.MateriaPrimaID != tarima.Id_materiaprima)
+                        if (mp.IdMP_ACS != tarima.Id_materiaprima)
                         {
                             CajaDialogo.Error("La materia prima escaneada no coincide con la que se está pesando");
                             txtCodBarra.Text = "";
+                            return;
+                        }
+
+                        TarimaMicroingrediente tar1 = new TarimaMicroingrediente();
+                        decimal existencia_kg_micros = tar1.GetKgExistenciaEnMicros(Convert.ToInt32(tarima.Id));
+                        if (existencia_kg_micros == 0)
+                        {
+                            CajaDialogo.Error("Tarima de Micro Ingrediente consumida en su Totalidad");
                             return;
                         }
 
