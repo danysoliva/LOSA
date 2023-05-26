@@ -4027,6 +4027,10 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnid_presentacion;
             
+            private global::System.Data.DataColumn columnfecha_vencimiento;
+            
+            private global::System.Data.DataColumn columnitemcode;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SeleccionLoteDataTable() {
@@ -4166,6 +4170,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fecha_vencimientoColumn {
+                get {
+                    return this.columnfecha_vencimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn itemcodeColumn {
+                get {
+                    return this.columnitemcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4201,7 +4221,7 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SeleccionLoteRow AddSeleccionLoteRow(int id_mp, string descripcion, decimal ExistenciaAprox, string lote, bool seleccionar, decimal utilizado, int id_lote_alosy, int OC, string factura, int id_ingreso_lote, string bodega_in, int id_detalle, int id_presentacion) {
+            public SeleccionLoteRow AddSeleccionLoteRow(int id_mp, string descripcion, decimal ExistenciaAprox, string lote, bool seleccionar, decimal utilizado, int id_lote_alosy, int OC, string factura, int id_ingreso_lote, string bodega_in, int id_detalle, int id_presentacion, System.DateTime fecha_vencimiento, string itemcode) {
                 SeleccionLoteRow rowSeleccionLoteRow = ((SeleccionLoteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_mp,
@@ -4216,7 +4236,9 @@ namespace LOSA.Logistica {
                         id_ingreso_lote,
                         bodega_in,
                         id_detalle,
-                        id_presentacion};
+                        id_presentacion,
+                        fecha_vencimiento,
+                        itemcode};
                 rowSeleccionLoteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSeleccionLoteRow);
                 return rowSeleccionLoteRow;
@@ -4252,6 +4274,8 @@ namespace LOSA.Logistica {
                 this.columnbodega_in = base.Columns["bodega_in"];
                 this.columnid_detalle = base.Columns["id_detalle"];
                 this.columnid_presentacion = base.Columns["id_presentacion"];
+                this.columnfecha_vencimiento = base.Columns["fecha_vencimiento"];
+                this.columnitemcode = base.Columns["itemcode"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4283,6 +4307,10 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnid_detalle);
                 this.columnid_presentacion = new global::System.Data.DataColumn("id_presentacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_presentacion);
+                this.columnfecha_vencimiento = new global::System.Data.DataColumn("fecha_vencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha_vencimiento);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
                 this.columnseleccionar.DefaultValue = ((bool)(false));
             }
             
@@ -8976,6 +9004,39 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime fecha_vencimiento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSeleccionLote.fecha_vencimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vencimiento\' de la tabla \'SeleccionLote\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSeleccionLote.fecha_vencimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string itemcode {
+                get {
+                    try {
+                        return ((string)(this[this.tableSeleccionLote.itemcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'SeleccionLote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSeleccionLote.itemcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_mpNull() {
                 return this.IsNull(this.tableSeleccionLote.id_mpColumn);
             }
@@ -9128,6 +9189,30 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_presentacionNull() {
                 this[this.tableSeleccionLote.id_presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isfecha_vencimientoNull() {
+                return this.IsNull(this.tableSeleccionLote.fecha_vencimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setfecha_vencimientoNull() {
+                this[this.tableSeleccionLote.fecha_vencimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tableSeleccionLote.itemcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetitemcodeNull() {
+                this[this.tableSeleccionLote.itemcodeColumn] = global::System.Convert.DBNull;
             }
         }
         

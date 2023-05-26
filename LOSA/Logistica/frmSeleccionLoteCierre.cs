@@ -32,6 +32,7 @@ namespace LOSA.Logistica
         int id_detalle_recuento;
         decimal acumulado;
         bool IsExterno;
+        bool IsEntrada;
 
         public frmSeleccionLoteCierre(UserLogin puserLogin, DataTable pdata, int pid_detalle_recuento)
         {
@@ -41,6 +42,7 @@ namespace LOSA.Logistica
             get_bodegas();
             //enumerar_rows();
             grd_mps.DataSource = pdata;
+
 
             btnConfirmar.Enabled = false;
             CalculoAcumuladoPendiente();
@@ -61,11 +63,13 @@ namespace LOSA.Logistica
                     {
                         acumulado = (existencia_sistema - existencia_fisica);
                         lblAjuste.Text = "Pendiente de Ajustar en Salida";
+                        IsEntrada = false;
                     }
                     else
                     {
                         acumulado = (existencia_fisica - existencia_sistema);
                         lblAjuste.Text = "Pendiente de Ajustar en Entrada";
+                        IsEntrada = true;
                     }
                 }
                 txtPendiente.EditValue = acumulado;
@@ -282,10 +286,13 @@ namespace LOSA.Logistica
             {
                 if (item.seleccionar == true)
                 {
-                    if (item.utilizado > item.ExistenciaAprox)
+                    if (IsEntrada == false)
                     {
-                        CajaDialogo.Error("A un Lote seleccionado se le esta asignando una cantidad mayor a lo que contiene en existencia!");
-                        return;
+                        if (item.utilizado > item.ExistenciaAprox)
+                        {
+                            CajaDialogo.Error("A un Lote seleccionado se le esta asignando una cantidad mayor a lo que contiene en existencia!");
+                            return;
+                        }
                     }
                 }
             }

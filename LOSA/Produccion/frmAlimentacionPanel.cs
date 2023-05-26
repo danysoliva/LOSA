@@ -12,17 +12,19 @@ using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.TransaccionesMP;
 
 namespace LOSA.Produccion
 {
     public partial class frmAlimentacionPanel : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-
-        public frmAlimentacionPanel()
+        UserLogin UsuarioLogeado;
+        public frmAlimentacionPanel(UserLogin pUserLogin)
         {
             InitializeComponent();
             timertick.Enabled = true;
+            UsuarioLogeado = pUserLogin;
             Load_data();
         }
          public void Load_data()
@@ -109,6 +111,13 @@ namespace LOSA.Produccion
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
             Load_data();
+        }
+
+        private void btnRequisas_Click(object sender, EventArgs e)
+        {
+            frmviewrequisas frm = new frmviewrequisas(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

@@ -152,6 +152,7 @@ namespace LOSA.TransaccionesMP
                                 lblRequisicionEncontrada.BackColor = Color.Transparent;
                                 lblRequisicionEncontrada.ResetText();
                                 txtRequisicion.Focus();
+                                txtRequisicion.Text = "";
                             }
                         }
                         else
@@ -176,6 +177,7 @@ namespace LOSA.TransaccionesMP
                                         lblRequisicionEncontrada.BackColor = Color.Transparent;
                                         lblRequisicionEncontrada.ResetText();
                                         txtRequisicion.Focus();
+                                        txtRequisicion.Text = "";
                                     }
                                     break;
                                 case 5://Nueva
@@ -186,6 +188,7 @@ namespace LOSA.TransaccionesMP
                                         lblRequisicionEncontrada.BackColor = Color.Transparent;
                                         lblRequisicionEncontrada.ResetText();
                                         txtRequisicion.Focus();
+                                        txtRequisicion.Text = "";
                                     }
                                     break;
                                 default:
@@ -201,6 +204,7 @@ namespace LOSA.TransaccionesMP
                             lblRequisicionEncontrada.BackColor = Color.Transparent;
                             lblRequisicionEncontrada.ResetText();
                             txtRequisicion.Focus();
+                            txtRequisicion.Text = "";
                         }
                     }
                 }
@@ -249,10 +253,29 @@ namespace LOSA.TransaccionesMP
                 //}
                 //else
                 //{
-                    
 
-                    EntregarTarima();
-                    load_tarimas_scan_v2();
+                if (!string.IsNullOrEmpty(txtRequisicion.Text)) 
+                {
+                    if (RequisicionActual.Bit_finalizar == false)
+                    {
+                        EntregarTarima();
+                        load_tarimas_scan_v2();
+                    }
+                }
+                else
+                {
+                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "El campo Requisicion esta vacio, Escanee nuevamente");
+                    if (frm.ShowDialog() == DialogResult.Cancel)
+                    {
+                        lblRequisicionEncontrada.BackColor = Color.Transparent;
+                        lblRequisicionEncontrada.ResetText();
+                        txtRequisicion.Text = "";
+                        txtTarima.ResetText();
+                        txtRequisicion.Focus();
+                    }
+                }
+
+
                 //}
 
             }
