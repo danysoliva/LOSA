@@ -347,6 +347,7 @@ namespace LOSA.Logistica
                     dr["bodega_in"] = recorrido.bodega_in;
                     dr["id_detalle"] = recorrido.id_detalle;
                     dr["id_presentacion"] = recorrido.id_presentacion;
+                    dr["util_unidades"] = recorrido.util_unidades;
 
                     dsCierreMes.Aceptado_lote.Rows.Add(dr);
                     DataRow drw = dsCierreMes.memory_config.NewRow();
@@ -365,6 +366,7 @@ namespace LOSA.Logistica
                     drw["bodega_in"] = recorrido.bodega_in;
                     drw["id_detalle"] = recorrido.id_detalle;
                     drw["id_presentacion"] = recorrido.id_presentacion;
+                    drw["util_unidades"] = recorrido.util_unidades;
                     dsCierreMes.memory_config.Rows.Add(drw);
                     btnDerecha.Enabled = false;
                     // +
@@ -392,6 +394,7 @@ namespace LOSA.Logistica
 
                     dr["id_bodega"] = bodega;
                     dr["id_lote_count"] = id_count_selected;
+                    dr["util_unidades"] = recorrido.util_unidades;
           
                     dsCierreMes.Aceptado_lote.Rows.Add(dr);
                     DataRow drw = dsCierreMes.memory_config.NewRow();
@@ -404,7 +407,8 @@ namespace LOSA.Logistica
                     dr["id_lote_alosy"] = 0;
                     //drw["id_lote_alosy"] = recorrido.id_lote_alosy;
                     drw["id_bodega"] = bodega;
-                    drw["id_lote_count"] = id_count_selected;             
+                    drw["id_lote_count"] = id_count_selected;
+                    drw["util_unidades"] = recorrido.util_unidades;
                     dsCierreMes.memory_config.Rows.Add(drw);
                     btnDerecha.Enabled = false;
                     // +
@@ -417,10 +421,21 @@ namespace LOSA.Logistica
         {
             try
             {
+                var gridView = (GridView)grd_existencia_lote.FocusedView;
+                var row = (dsCierreMes.SeleccionLoteRow)gridView.GetFocusedDataRow();
+
                 if (e.Column.FieldName == "utilizado")
                 {
-                    var gridView = (GridView)grd_existencia_lote.FocusedView;
-                    var row = (dsCierreMes.SeleccionLoteRow)gridView.GetFocusedDataRow();
+                    if (row.id_presentacion > 0)
+                    {
+                        PresentacionX pre = new PresentacionX();
+                        pre.RecuperarRegistro(row.id_presentacion);
+
+                        row.util_unidades = Convert.ToInt32(row.utilizado / pre.Factor);
+                    }
+
+
+
                     if ((sum + row.utilizado) > NuevaCantidad)
                     {
                         CajaDialogo.Error("La cantidad configurada en los lotes es mayor a la nueva cantidad.");
@@ -503,8 +518,8 @@ namespace LOSA.Logistica
                 //id_mp = Convert.ToInt32(row2["id_mp"]);
                 id_bodegaMP = Convert.ToInt32(row2["id_bodega"]);
                 existencia_anterior = Convert.ToDecimal(row2["ExistenciaAprox"]);//Existencia en Bodega al momento del Recuento-Contabilizado
-                existencia_nueva = Convert.ToDecimal(row2["toma_fisica"]);//Nueva Cantidad - Toma Fisica
-                diferenciaMP = Convert.ToDecimal(row2["diferencia"]);//Diferencia = Existencia - Toma Fisica
+                existencia_nueva = Convert.ToDecimal(row2["toma_fisica"]);//Nueva Cantidad = Toma Fisica
+                diferenciaMP = Convert.ToDecimal(row2["diferencia"]);//Diferencia = (Existencia En Bodega - Toma Fisica)
             }
             try
             {

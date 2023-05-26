@@ -270,7 +270,7 @@ namespace LOSA.TransaccionesMP
                         lblRequisicionEncontrada.BackColor = Color.Transparent;
                         lblRequisicionEncontrada.ResetText();
                         txtRequisicion.Text = "";
-                        txtTarima.ResetText();
+                        txtTarima.Text = "";
                         txtRequisicion.Focus();
                     }
                 }
@@ -556,6 +556,8 @@ namespace LOSA.TransaccionesMP
                     //    timerLimpiarMensaje.Start();
                     //    return;
                     //}
+
+                    
 
                     //Validar Estaso de Tarima
                     switch (tarimaEncontrada.Id_estado_tarima)
@@ -1069,7 +1071,7 @@ namespace LOSA.TransaccionesMP
                     panelNotificacion.BackColor = Color.MediumSeaGreen;
                     timerLimpiarMensaje.Enabled = true;
                     timerLimpiarMensaje.Start();
-                    load_tarimas_scan();
+                    load_tarimas_scan_v2();
                     //LoadDataMicros();
                 }
             }

@@ -31,11 +31,11 @@ namespace LOSA.Logistica
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionLoteCierre));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -54,6 +54,10 @@ namespace LOSA.Logistica
             this.colseleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colutilizado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_vencimiento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colunidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colutil_unidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.txtPendiente = new DevExpress.XtraEditors.TextEdit();
@@ -70,6 +74,7 @@ namespace LOSA.Logistica
             this.colid_lote_count = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositorybtnDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colutil_unidades1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.btnIzquierda = new DevExpress.XtraEditors.SimpleButton();
             this.btnDerecha = new DevExpress.XtraEditors.SimpleButton();
@@ -89,8 +94,9 @@ namespace LOSA.Logistica
             this.colPendienteAjustar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.count_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnConfirmar = new DevExpress.XtraEditors.SimpleButton();
-            this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -142,7 +148,7 @@ namespace LOSA.Logistica
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(1205, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(1492, 6);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(97, 50);
             this.simpleButton1.TabIndex = 2;
@@ -158,7 +164,7 @@ namespace LOSA.Logistica
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Location = new System.Drawing.Point(2, 65);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1300, 682);
+            this.panelControl1.Size = new System.Drawing.Size(1587, 703);
             this.panelControl1.TabIndex = 3;
             // 
             // panelControl3
@@ -167,7 +173,7 @@ namespace LOSA.Logistica
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(2, 243);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1296, 437);
+            this.panelControl3.Size = new System.Drawing.Size(1583, 458);
             this.panelControl3.TabIndex = 2;
             // 
             // splitContainerControl1
@@ -180,8 +186,8 @@ namespace LOSA.Logistica
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl5);
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl4);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1292, 433);
-            this.splitContainerControl1.SplitterPosition = 589;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1579, 454);
+            this.splitContainerControl1.SplitterPosition = 746;
             this.splitContainerControl1.TabIndex = 0;
             // 
             // panelControl6
@@ -190,7 +196,7 @@ namespace LOSA.Logistica
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(0, 0);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(589, 433);
+            this.panelControl6.Size = new System.Drawing.Size(746, 454);
             this.panelControl6.TabIndex = 2;
             // 
             // groupControl2
@@ -202,7 +208,7 @@ namespace LOSA.Logistica
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(2, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(585, 429);
+            this.groupControl2.Size = new System.Drawing.Size(742, 450);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Existencia de lotes";
             // 
@@ -224,7 +230,7 @@ namespace LOSA.Logistica
             this.grd_existencia_lote.Location = new System.Drawing.Point(6, 70);
             this.grd_existencia_lote.MainView = this.grdv_existencia_lote;
             this.grd_existencia_lote.Name = "grd_existencia_lote";
-            this.grd_existencia_lote.Size = new System.Drawing.Size(581, 354);
+            this.grd_existencia_lote.Size = new System.Drawing.Size(738, 375);
             this.grd_existencia_lote.TabIndex = 0;
             this.grd_existencia_lote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_existencia_lote});
@@ -266,7 +272,11 @@ namespace LOSA.Logistica
             this.colseleccionar,
             this.colutilizado,
             this.colfecha_vencimiento,
-            this.colitemcode});
+            this.colitemcode,
+            this.colunidades,
+            this.colutil_unidades,
+            this.colid_presentacion,
+            this.colpresentacion});
             this.grdv_existencia_lote.CustomizationFormBounds = new System.Drawing.Rectangle(-1535, 604, 260, 272);
             this.grdv_existencia_lote.GridControl = this.grd_existencia_lote;
             this.grdv_existencia_lote.Name = "grdv_existencia_lote";
@@ -299,10 +309,10 @@ namespace LOSA.Logistica
             this.colExistenciaAprox.Name = "colExistenciaAprox";
             this.colExistenciaAprox.OptionsColumn.AllowEdit = false;
             this.colExistenciaAprox.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ExistenciaAprox", "{0:#.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ExistenciaAprox", "{0:#,###,##0.00} Kg")});
             this.colExistenciaAprox.Visible = true;
-            this.colExistenciaAprox.VisibleIndex = 3;
-            this.colExistenciaAprox.Width = 77;
+            this.colExistenciaAprox.VisibleIndex = 4;
+            this.colExistenciaAprox.Width = 73;
             // 
             // collote
             // 
@@ -312,7 +322,7 @@ namespace LOSA.Logistica
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 1;
-            this.collote.Width = 154;
+            this.collote.Width = 164;
             // 
             // colseleccionar
             // 
@@ -320,21 +330,21 @@ namespace LOSA.Logistica
             this.colseleccionar.FieldName = "seleccionar";
             this.colseleccionar.Name = "colseleccionar";
             this.colseleccionar.Visible = true;
-            this.colseleccionar.VisibleIndex = 5;
-            this.colseleccionar.Width = 96;
+            this.colseleccionar.VisibleIndex = 7;
+            this.colseleccionar.Width = 83;
             // 
             // colutilizado
             // 
-            this.colutilizado.Caption = "Utilizado";
+            this.colutilizado.Caption = "Kg Utilizados";
             this.colutilizado.DisplayFormat.FormatString = "n2";
             this.colutilizado.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colutilizado.FieldName = "utilizado";
             this.colutilizado.Name = "colutilizado";
             this.colutilizado.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "utilizado", "{0:#.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "utilizado", "{0:#,###,##0.00} Kg")});
             this.colutilizado.Visible = true;
-            this.colutilizado.VisibleIndex = 4;
-            this.colutilizado.Width = 61;
+            this.colutilizado.VisibleIndex = 6;
+            this.colutilizado.Width = 86;
             // 
             // colfecha_vencimiento
             // 
@@ -344,15 +354,54 @@ namespace LOSA.Logistica
             this.colfecha_vencimiento.OptionsColumn.AllowEdit = false;
             this.colfecha_vencimiento.Visible = true;
             this.colfecha_vencimiento.VisibleIndex = 2;
-            this.colfecha_vencimiento.Width = 105;
+            this.colfecha_vencimiento.Width = 87;
+            // 
+            // colitemcode
+            // 
+            this.colitemcode.Caption = "Code Sap";
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            this.colitemcode.OptionsColumn.AllowEdit = false;
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 0;
+            this.colitemcode.Width = 72;
+            // 
+            // colunidades
+            // 
+            this.colunidades.Caption = "Unidades";
+            this.colunidades.FieldName = "unidades";
+            this.colunidades.Name = "colunidades";
+            this.colunidades.OptionsColumn.AllowEdit = false;
+            this.colunidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades", "{0:#.##} Ud")});
+            this.colunidades.Visible = true;
+            this.colunidades.VisibleIndex = 3;
+            this.colunidades.Width = 74;
+            // 
+            // colutil_unidades
+            // 
+            this.colutil_unidades.Caption = "Ud Utilizados";
+            this.colutil_unidades.FieldName = "util_unidades";
+            this.colutil_unidades.Name = "colutil_unidades";
+            this.colutil_unidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "util_unidades", "{0:#.##} Ud")});
+            this.colutil_unidades.Visible = true;
+            this.colutil_unidades.VisibleIndex = 5;
+            this.colutil_unidades.Width = 81;
+            // 
+            // colid_presentacion
+            // 
+            this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.Name = "colid_presentacion";
+            this.colid_presentacion.OptionsColumn.AllowEdit = false;
             // 
             // panelControl5
             // 
             this.panelControl5.Controls.Add(this.groupControl3);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(146, 0);
+            this.panelControl5.Location = new System.Drawing.Point(129, 0);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(552, 433);
+            this.panelControl5.Size = new System.Drawing.Size(699, 454);
             this.panelControl5.TabIndex = 1;
             // 
             // groupControl3
@@ -365,7 +414,7 @@ namespace LOSA.Logistica
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(2, 2);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(548, 429);
+            this.groupControl3.Size = new System.Drawing.Size(695, 450);
             this.groupControl3.TabIndex = 3;
             this.groupControl3.Text = "Configuracion Efectiva";
             // 
@@ -402,7 +451,7 @@ namespace LOSA.Logistica
             this.grd_efectiva.Name = "grd_efectiva";
             this.grd_efectiva.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositorybtnDelete});
-            this.grd_efectiva.Size = new System.Drawing.Size(544, 356);
+            this.grd_efectiva.Size = new System.Drawing.Size(691, 377);
             this.grd_efectiva.TabIndex = 2;
             this.grd_efectiva.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_efectiva});
@@ -440,7 +489,8 @@ namespace LOSA.Logistica
             this.colutilizado1,
             this.colid_bodega,
             this.colid_lote_count,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.colutil_unidades1});
             this.grdv_efectiva.GridControl = this.grd_efectiva;
             this.grdv_efectiva.Name = "grdv_efectiva";
             this.grdv_efectiva.OptionsView.ShowAutoFilterRow = true;
@@ -461,7 +511,7 @@ namespace LOSA.Logistica
             this.coldescripcion1.OptionsColumn.AllowEdit = false;
             this.coldescripcion1.Visible = true;
             this.coldescripcion1.VisibleIndex = 0;
-            this.coldescripcion1.Width = 125;
+            this.coldescripcion1.Width = 142;
             // 
             // colExistenciaAprox1
             // 
@@ -478,7 +528,7 @@ namespace LOSA.Logistica
             this.collote1.OptionsColumn.AllowEdit = false;
             this.collote1.Visible = true;
             this.collote1.VisibleIndex = 1;
-            this.collote1.Width = 142;
+            this.collote1.Width = 161;
             // 
             // colseleccionar1
             // 
@@ -496,8 +546,8 @@ namespace LOSA.Logistica
             this.colutilizado1.Name = "colutilizado1";
             this.colutilizado1.OptionsColumn.AllowEdit = false;
             this.colutilizado1.Visible = true;
-            this.colutilizado1.VisibleIndex = 2;
-            this.colutilizado1.Width = 155;
+            this.colutilizado1.VisibleIndex = 3;
+            this.colutilizado1.Width = 149;
             // 
             // colid_bodega
             // 
@@ -519,18 +569,28 @@ namespace LOSA.Logistica
             this.gridColumn1.ColumnEdit = this.repositorybtnDelete;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 104;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 136;
             // 
             // repositorybtnDelete
             // 
             this.repositorybtnDelete.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repositorybtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositorybtnDelete.Name = "repositorybtnDelete";
             this.repositorybtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositorybtnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositorybtnDelete_ButtonClick);
+            // 
+            // colutil_unidades1
+            // 
+            this.colutil_unidades1.Caption = "Unidades";
+            this.colutil_unidades1.FieldName = "util_unidades";
+            this.colutil_unidades1.Name = "colutil_unidades1";
+            this.colutil_unidades1.OptionsColumn.AllowEdit = false;
+            this.colutil_unidades1.Visible = true;
+            this.colutil_unidades1.VisibleIndex = 2;
+            this.colutil_unidades1.Width = 96;
             // 
             // panelControl4
             // 
@@ -539,7 +599,7 @@ namespace LOSA.Logistica
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl4.Location = new System.Drawing.Point(0, 0);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(146, 433);
+            this.panelControl4.Size = new System.Drawing.Size(129, 454);
             this.panelControl4.TabIndex = 0;
             // 
             // btnIzquierda
@@ -547,9 +607,9 @@ namespace LOSA.Logistica
             this.btnIzquierda.Enabled = false;
             this.btnIzquierda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIzquierda.ImageOptions.Image")));
             this.btnIzquierda.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnIzquierda.Location = new System.Drawing.Point(15, 201);
+            this.btnIzquierda.Location = new System.Drawing.Point(17, 195);
             this.btnIzquierda.Name = "btnIzquierda";
-            this.btnIzquierda.Size = new System.Drawing.Size(113, 46);
+            this.btnIzquierda.Size = new System.Drawing.Size(90, 46);
             this.btnIzquierda.TabIndex = 1;
             this.btnIzquierda.Visible = false;
             this.btnIzquierda.Click += new System.EventHandler(this.btnIzquierda_Click);
@@ -559,9 +619,9 @@ namespace LOSA.Logistica
             this.btnDerecha.Enabled = false;
             this.btnDerecha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDerecha.ImageOptions.Image")));
             this.btnDerecha.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnDerecha.Location = new System.Drawing.Point(15, 124);
+            this.btnDerecha.Location = new System.Drawing.Point(17, 124);
             this.btnDerecha.Name = "btnDerecha";
-            this.btnDerecha.Size = new System.Drawing.Size(113, 46);
+            this.btnDerecha.Size = new System.Drawing.Size(90, 46);
             this.btnDerecha.TabIndex = 0;
             this.btnDerecha.Click += new System.EventHandler(this.btnDerecha_Click);
             // 
@@ -571,7 +631,7 @@ namespace LOSA.Logistica
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(2, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1296, 241);
+            this.panelControl2.Size = new System.Drawing.Size(1583, 241);
             this.panelControl2.TabIndex = 1;
             // 
             // groupControl1
@@ -582,7 +642,7 @@ namespace LOSA.Logistica
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1292, 237);
+            this.groupControl1.Size = new System.Drawing.Size(1579, 237);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Materias Primas a Configurar";
             // 
@@ -594,7 +654,7 @@ namespace LOSA.Logistica
             this.grd_mps.Name = "grd_mps";
             this.grd_mps.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.grd_bodega});
-            this.grd_mps.Size = new System.Drawing.Size(1288, 211);
+            this.grd_mps.Size = new System.Drawing.Size(1575, 211);
             this.grd_mps.TabIndex = 0;
             this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_mps});
@@ -630,7 +690,8 @@ namespace LOSA.Logistica
             this.colExistenciaAnterior,
             this.colPendienteAjustar,
             this.colSeleccionado,
-            this.count_id});
+            this.count_id,
+            this.colcode_sap});
             this.grdv_mps.GridControl = this.grd_mps;
             this.grdv_mps.Name = "grdv_mps";
             this.grdv_mps.OptionsView.ShowAutoFilterRow = true;
@@ -644,7 +705,8 @@ namespace LOSA.Logistica
             this.colMP.Name = "colMP";
             this.colMP.OptionsColumn.AllowEdit = false;
             this.colMP.Visible = true;
-            this.colMP.VisibleIndex = 0;
+            this.colMP.VisibleIndex = 1;
+            this.colMP.Width = 227;
             // 
             // id_mp
             // 
@@ -661,7 +723,8 @@ namespace LOSA.Logistica
             this.id_bodega.Name = "id_bodega";
             this.id_bodega.OptionsColumn.AllowEdit = false;
             this.id_bodega.Visible = true;
-            this.id_bodega.VisibleIndex = 1;
+            this.id_bodega.VisibleIndex = 2;
+            this.id_bodega.Width = 227;
             // 
             // grd_bodega
             // 
@@ -695,25 +758,27 @@ namespace LOSA.Logistica
             // 
             // colExistencia
             // 
-            this.colExistencia.Caption = "Nueva Existencia";
+            this.colExistencia.Caption = "Nueva Existencia(Toma Fisica)";
             this.colExistencia.DisplayFormat.FormatString = "n2";
             this.colExistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colExistencia.FieldName = "toma_fisica";
             this.colExistencia.Name = "colExistencia";
             this.colExistencia.OptionsColumn.AllowEdit = false;
             this.colExistencia.Visible = true;
-            this.colExistencia.VisibleIndex = 3;
+            this.colExistencia.VisibleIndex = 4;
+            this.colExistencia.Width = 227;
             // 
             // colExistenciaAnterior
             // 
-            this.colExistenciaAnterior.Caption = "Existencia Anterior";
+            this.colExistenciaAnterior.Caption = "Existencia Anterior(Sistema)";
             this.colExistenciaAnterior.DisplayFormat.FormatString = "n2";
             this.colExistenciaAnterior.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colExistenciaAnterior.FieldName = "ExistenciaAprox";
             this.colExistenciaAnterior.Name = "colExistenciaAnterior";
             this.colExistenciaAnterior.OptionsColumn.AllowEdit = false;
             this.colExistenciaAnterior.Visible = true;
-            this.colExistenciaAnterior.VisibleIndex = 2;
+            this.colExistenciaAnterior.VisibleIndex = 3;
+            this.colExistenciaAnterior.Width = 227;
             // 
             // colPendienteAjustar
             // 
@@ -726,7 +791,8 @@ namespace LOSA.Logistica
             this.colPendienteAjustar.UnboundExpression = "[peso] - [seleccionado]";
             this.colPendienteAjustar.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colPendienteAjustar.Visible = true;
-            this.colPendienteAjustar.VisibleIndex = 4;
+            this.colPendienteAjustar.VisibleIndex = 5;
+            this.colPendienteAjustar.Width = 232;
             // 
             // colSeleccionado
             // 
@@ -743,34 +809,40 @@ namespace LOSA.Logistica
             this.count_id.Name = "count_id";
             this.count_id.OptionsColumn.AllowEdit = false;
             // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "Cod Sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.AllowEdit = false;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 0;
+            this.colcode_sap.Width = 200;
+            // 
             // btnConfirmar
             // 
             this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConfirmar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.Appearance.Options.UseFont = true;
             this.btnConfirmar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.ImageOptions.Image")));
-            this.btnConfirmar.Location = new System.Drawing.Point(1088, 6);
+            this.btnConfirmar.Location = new System.Drawing.Point(1375, 6);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(111, 50);
             this.btnConfirmar.TabIndex = 4;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // colitemcode
+            // colpresentacion
             // 
-            this.colitemcode.Caption = "Code Sap";
-            this.colitemcode.FieldName = "itemcode";
-            this.colitemcode.Name = "colitemcode";
-            this.colitemcode.OptionsColumn.AllowEdit = false;
-            this.colitemcode.Visible = true;
-            this.colitemcode.VisibleIndex = 0;
-            this.colitemcode.Width = 70;
+            this.colpresentacion.Caption = "Presentacion";
+            this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.Name = "colpresentacion";
+            this.colpresentacion.OptionsColumn.AllowEdit = false;
             // 
             // frmSeleccionLoteCierre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 750);
+            this.ClientSize = new System.Drawing.Size(1594, 771);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.simpleButton1);
@@ -873,5 +945,11 @@ namespace LOSA.Logistica
         private DevExpress.XtraEditors.LabelControl lblAjuste;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_vencimiento;
         private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colunidades;
+        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
+        private DevExpress.XtraGrid.Columns.GridColumn colutil_unidades;
+        private DevExpress.XtraGrid.Columns.GridColumn colutil_unidades1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
     }
 }

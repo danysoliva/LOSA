@@ -51,6 +51,7 @@ namespace LOSA.Clases
         int _id_tarima_reproceso;
         string _productoTerminadoName_Detalle;
         string turno;
+        int _tipo_tarima;
         public Tarima()
         {
 
@@ -105,6 +106,7 @@ namespace LOSA.Clases
         public string Turno { get => turno; set => turno = value; }
         public int Id_ingresoH { get => _id_ingresoH; set => _id_ingresoH = value; }
         public int Id_lote_externo { get => _id_lote_externo; set => _id_lote_externo = value; }
+        public int Tipo_tarima { get => _tipo_tarima; set => _tipo_tarima = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -324,7 +326,7 @@ namespace LOSA.Clases
                     ProductoTerminadoName = dr.GetString(27);
                     if (!dr.IsDBNull(dr.GetOrdinal("id_presentacion")))
                         IdPresentacion = dr.GetInt32(28);
-
+                    Tipo_tarima = dr.GetInt32(29);
                     Recuperado = true;
                 }
                 dr.Close();

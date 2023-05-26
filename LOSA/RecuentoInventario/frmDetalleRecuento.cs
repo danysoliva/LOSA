@@ -312,7 +312,9 @@ namespace LOSA.RecuentoInventario
                             row1.ExistenciaAprox = Convert.ToDecimal(grdv_mps.GetFocusedRowCellValue(colExistenciaAnterior));
                             row1.toma_fisica = Convert.ToDecimal(grdv_mps.GetFocusedRowCellValue(colExistencia));
                             row1.diferencia = Convert.ToDecimal(grdv_mps.GetFocusedRowCellValue(coldiferencia));
+                            row1.code_sap = Convert.ToString(grdv_mps.GetFocusedRowCellValue(colcode_sap));
                             id_detalle_recuento = Convert.ToInt32(grdv_mps.GetFocusedRowCellValue(count_id));
+
 
                             tableOps.AddRecuento_mpRow(row1);
                             tableOps.AcceptChanges();
