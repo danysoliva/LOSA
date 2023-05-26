@@ -64,7 +64,6 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
-                
             }
         }
 
