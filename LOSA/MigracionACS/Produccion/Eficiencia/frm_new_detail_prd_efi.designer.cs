@@ -157,6 +157,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.txtNombreLinea = new DevExpress.XtraEditors.TextEdit();
             this.txtTotalHorasMotor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAddReproceso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlReproceso)).BeginInit();
@@ -444,7 +445,8 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.gridColumn1,
             this.gridColumn2,
             this.coldado_name,
-            this.colid_dado});
+            this.colid_dado,
+            this.gridColumn3});
             this.gridView6.GridControl = this.gridControlLotes;
             this.gridView6.Name = "gridView6";
             this.gridView6.OptionsView.ShowFooter = true;
@@ -491,7 +493,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.colDelete1.ColumnEdit = this.cmdDelete1;
             this.colDelete1.Name = "colDelete1";
             this.colDelete1.Visible = true;
-            this.colDelete1.VisibleIndex = 9;
+            this.colDelete1.VisibleIndex = 10;
             this.colDelete1.Width = 58;
             // 
             // cmdDelete1
@@ -950,6 +952,14 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.labelControl1.TabIndex = 67;
             this.labelControl1.Text = "Horas Trabajadas_______";
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.FieldName = "Eficiencia TM/h";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.ReadOnly = true;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 9;
+            // 
             // frm_new_detail_prd_efi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1093,5 +1103,6 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn coldado_name;
         private DevExpress.XtraGrid.Columns.GridColumn colid_dado;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }
