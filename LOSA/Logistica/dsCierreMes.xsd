@@ -172,7 +172,6 @@
               <xs:element name="bodega_in" msprop:Generator_ColumnVarNameInTable="columnbodega_in" msprop:Generator_ColumnPropNameInRow="bodega_in" msprop:Generator_ColumnPropNameInTable="bodega_inColumn" msprop:Generator_UserColumnName="bodega_in" type="xs:string" minOccurs="0" />
               <xs:element name="id_detalle" msprop:Generator_ColumnVarNameInTable="columnid_detalle" msprop:Generator_ColumnPropNameInRow="id_detalle" msprop:Generator_ColumnPropNameInTable="id_detalleColumn" msprop:Generator_UserColumnName="id_detalle" type="xs:int" minOccurs="0" />
               <xs:element name="id_presentacion" msprop:Generator_ColumnVarNameInTable="columnid_presentacion" msprop:Generator_ColumnPropNameInRow="id_presentacion" msprop:Generator_ColumnPropNameInTable="id_presentacionColumn" msprop:Generator_UserColumnName="id_presentacion" type="xs:int" minOccurs="0" />
-              <xs:element name="unidades" msprop:Generator_ColumnVarNameInTable="columnunidades" msprop:Generator_ColumnPropNameInRow="unidades" msprop:Generator_ColumnPropNameInTable="unidadesColumn" msprop:Generator_UserColumnName="unidades" type="xs:int" minOccurs="0" />
               <xs:element name="util_unidades" msprop:Generator_ColumnVarNameInTable="columnutil_unidades" msprop:Generator_ColumnPropNameInRow="util_unidades" msprop:Generator_ColumnPropNameInTable="util_unidadesColumn" msprop:Generator_UserColumnName="util_unidades" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -195,6 +194,7 @@
               <xs:element name="bodega_in" msprop:Generator_ColumnVarNameInTable="columnbodega_in" msprop:Generator_ColumnPropNameInRow="bodega_in" msprop:Generator_ColumnPropNameInTable="bodega_inColumn" msprop:Generator_UserColumnName="bodega_in" type="xs:string" minOccurs="0" />
               <xs:element name="id_detalle" msprop:Generator_ColumnVarNameInTable="columnid_detalle" msprop:Generator_ColumnPropNameInRow="id_detalle" msprop:Generator_ColumnPropNameInTable="id_detalleColumn" msprop:Generator_UserColumnName="id_detalle" type="xs:int" minOccurs="0" />
               <xs:element name="id_presentacion" msprop:Generator_ColumnVarNameInTable="columnid_presentacion" msprop:Generator_ColumnPropNameInRow="id_presentacion" msprop:Generator_ColumnPropNameInTable="id_presentacionColumn" msprop:Generator_UserColumnName="id_presentacion" type="xs:int" minOccurs="0" />
+              <xs:element name="util_unidades" msprop:Generator_ColumnVarNameInTable="columnutil_unidades" msprop:Generator_ColumnPropNameInRow="util_unidades" msprop:Generator_ColumnPropNameInTable="util_unidadesColumn" msprop:Generator_UserColumnName="util_unidades" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -17,7 +17,7 @@
     <Shape ID="DesignTable:lote_Seleccion" ZOrder="9" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:lote_all_data" ZOrder="8" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:SeleccionLote" ZOrder="7" X="1062" Y="448" Height="391" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="387" />
-    <Shape ID="DesignTable:Aceptado_lote" ZOrder="5" X="1227" Y="450" Height="391" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="387" />
+    <Shape ID="DesignTable:Aceptado_lote" ZOrder="5" X="1227" Y="450" Height="333" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="387" />
     <Shape ID="DesignTable:memory_config" ZOrder="6" X="890" Y="486" Height="334" Width="156" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="330" />
     <Shape ID="DesignTable:recuentos_d" ZOrder="4" X="87" Y="353" Height="296" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="292" />
     <Shape ID="DesignTable:Recuento_mpV2" ZOrder="3" X="448" Y="410" Height="277" Width="160" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="273" />

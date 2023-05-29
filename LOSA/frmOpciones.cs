@@ -1121,10 +1121,59 @@ namespace LOSA
 
         private void simpleButton24_Click(object sender, EventArgs e)
         {
-            CajaDialogo.Error("En Construccion..");
+            //CajaDialogo.Error("En Construccion..");
             //frmCierreMensual frm = new frmCierreMensual(UsuarioLogeado);
             //frm.MdiParent = this.MdiParent;
             //frm.Show();
+
+
+            try
+            {
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                        accesoprevio = true;
+                        //frmCierreMensual frm = new frmCierreMensual(UsuarioLogeado);
+                        //frm.MdiParent = this.MdiParent;
+                        //frm.Show();
+                        break;
+                    case 5://Depth Without Delta
+                        frmCierreMensual frm2 = new frmCierreMensual(UsuarioLogeado);
+                        frm2.MdiParent = this.MdiParent;
+                        frm2.Show();
+                        break;
+                    default:
+                        break;
+                }
+
+                if (!accesoprevio)
+                {
+                    //if (UsuarioLogeado.ValidarNivelPermisos(80))
+                    //{
+                    //    xfrmMainConfiguracion frm = new xfrmMainConfiguracion();
+                    //    frm.MdiParent = this.MdiParent;
+                    //    frm.Show();
+                    //}
+                    //else
+                    //{
+                        CajaDialogo.Error("No tiene privilegios para esta función!");
+                    //}
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+
         }
 
         private void simpleButton25_Click(object sender, EventArgs e)

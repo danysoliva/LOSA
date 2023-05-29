@@ -59,7 +59,7 @@ namespace LOSA.RecuentoInventario
             0,
             0});
             this.spinExistenciaSistema.Enabled = false;
-            this.spinExistenciaSistema.Location = new System.Drawing.Point(208, 137);
+            this.spinExistenciaSistema.Location = new System.Drawing.Point(196, 137);
             this.spinExistenciaSistema.Name = "spinExistenciaSistema";
             this.spinExistenciaSistema.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.spinExistenciaSistema.Properties.Appearance.Options.UseFont = true;
@@ -77,7 +77,7 @@ namespace LOSA.RecuentoInventario
             0,
             0,
             0});
-            this.spinExistenciaFisica.Location = new System.Drawing.Point(208, 175);
+            this.spinExistenciaFisica.Location = new System.Drawing.Point(196, 175);
             this.spinExistenciaFisica.Name = "spinExistenciaFisica";
             this.spinExistenciaFisica.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.spinExistenciaFisica.Properties.Appearance.Options.UseFont = true;
@@ -102,7 +102,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 144);
+            this.label2.Location = new System.Drawing.Point(32, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 21);
             this.label2.TabIndex = 3;
@@ -112,7 +112,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 182);
+            this.label3.Location = new System.Drawing.Point(32, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 21);
             this.label3.TabIndex = 4;
@@ -122,7 +122,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(109, 223);
+            this.label4.Location = new System.Drawing.Point(32, 223);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 21);
             this.label4.TabIndex = 5;
@@ -132,7 +132,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(71, 264);
+            this.label5.Location = new System.Drawing.Point(32, 265);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 21);
             this.label5.TabIndex = 6;
@@ -146,7 +146,7 @@ namespace LOSA.RecuentoInventario
             0,
             0});
             this.spinNuevaCantidad.Enabled = false;
-            this.spinNuevaCantidad.Location = new System.Drawing.Point(208, 260);
+            this.spinNuevaCantidad.Location = new System.Drawing.Point(196, 260);
             this.spinNuevaCantidad.Name = "spinNuevaCantidad";
             this.spinNuevaCantidad.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.spinNuevaCantidad.Properties.Appearance.Options.UseFont = true;
@@ -163,7 +163,7 @@ namespace LOSA.RecuentoInventario
             0,
             0});
             this.spinDiferencia.Enabled = false;
-            this.spinDiferencia.Location = new System.Drawing.Point(208, 218);
+            this.spinDiferencia.Location = new System.Drawing.Point(196, 218);
             this.spinDiferencia.Name = "spinDiferencia";
             this.spinDiferencia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.spinDiferencia.Properties.Appearance.Options.UseFont = true;
@@ -178,7 +178,7 @@ namespace LOSA.RecuentoInventario
             this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(94, 316);
+            this.btnSave.Location = new System.Drawing.Point(133, 316);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(99, 47);
             this.btnSave.TabIndex = 9;
@@ -191,7 +191,7 @@ namespace LOSA.RecuentoInventario
             this.btnClose.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(228, 316);
+            this.btnClose.Location = new System.Drawing.Point(267, 316);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 47);
             this.btnClose.TabIndex = 10;
@@ -202,25 +202,25 @@ namespace LOSA.RecuentoInventario
             // 
             this.txtMatriaPr.Enabled = false;
             this.txtMatriaPr.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtMatriaPr.Location = new System.Drawing.Point(206, 65);
+            this.txtMatriaPr.Location = new System.Drawing.Point(196, 65);
             this.txtMatriaPr.Name = "txtMatriaPr";
-            this.txtMatriaPr.Size = new System.Drawing.Size(159, 29);
+            this.txtMatriaPr.Size = new System.Drawing.Size(203, 29);
             this.txtMatriaPr.TabIndex = 11;
             // 
             // txtBodega
             // 
             this.txtBodega.Enabled = false;
             this.txtBodega.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtBodega.Location = new System.Drawing.Point(206, 97);
+            this.txtBodega.Location = new System.Drawing.Point(196, 100);
             this.txtBodega.Name = "txtBodega";
-            this.txtBodega.Size = new System.Drawing.Size(159, 29);
+            this.txtBodega.Size = new System.Drawing.Size(145, 29);
             this.txtBodega.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(82, 65);
+            this.label6.Location = new System.Drawing.Point(32, 65);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 21);
             this.label6.TabIndex = 13;
@@ -230,7 +230,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(82, 97);
+            this.label7.Location = new System.Drawing.Point(32, 97);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 21);
             this.label7.TabIndex = 14;
@@ -240,7 +240,7 @@ namespace LOSA.RecuentoInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 387);
+            this.ClientSize = new System.Drawing.Size(474, 387);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBodega);

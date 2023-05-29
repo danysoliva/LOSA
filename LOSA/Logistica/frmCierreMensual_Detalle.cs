@@ -82,7 +82,7 @@ namespace LOSA.Logistica
 
             if (row.contabilizado)
             {
-                CajaDialogo.Error("No se puede editar este Recuento ya que fue contabilizado!");
+                CajaDialogo.Error("No se puede editar este detalle de recuento, ya fue contabilizado!");
             }
             else
             {

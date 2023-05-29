@@ -51,12 +51,61 @@ namespace LOSA.RecuentoInventario
             get_years();
             grd_mps.DataSource = pdata;
             fecha_rec = pfecha_recuento;
-
+            
             grd_years.EditValue = id_year;
             grd_meses_disponibles.EditValue = id_mes;
+            FuncionComentario(id_year, id_mes);
             //mes = Convert.ToInt32(grd_meses_disponibles.EditValue);
             IsContabilizacion = false;
             btnFinContabilziacion.Visible = false;
+        }
+
+        private void FuncionComentario(int year_, int mes_)
+        {
+            string Mes_nombre = "";
+            switch (mes_)
+            {
+                case 1:
+                    Mes_nombre = "Enero";
+                    break;
+                case 2:
+                    Mes_nombre = "Febrero";
+                    break;
+                case 3:
+                    Mes_nombre = "Marzo";
+                    break;
+                case 4:
+                    Mes_nombre = "Abril";
+                    break;
+                case 5:
+                    Mes_nombre = "Mayo";
+                    break;
+                case 6:
+                    Mes_nombre = "Junio";
+                    break;
+                case 7:
+                    Mes_nombre = "Julio";
+                    break;
+                case 8:
+                    Mes_nombre = "Agosto";
+                    break;
+                case 9:
+                    Mes_nombre = "Septiembre";
+                    break;
+                case 10:
+                    Mes_nombre = "Octubre";
+                    break;
+                case 11:
+                    Mes_nombre = "Noviembre";
+                    break;
+                case 12:
+                    Mes_nombre = "Diciembre";
+                    break;
+                default:
+                    break;
+            }
+            txtComentario.Text = "Recuento de Inventario Mes de: " + Mes_nombre + " del Año: " + year_;
+
         }
 
         public frmDetalleRecuento(UserLogin puserLogin, int pid_recuento, bool pcontabilizado, int pyear, int pmes, string pcomentario)
@@ -174,11 +223,11 @@ namespace LOSA.RecuentoInventario
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtComentario.Text))
-            {
-                CajaDialogo.Error("Debe agregar un comentario de referencia");
-                return;
-            }
+            //if (string.IsNullOrEmpty(txtComentario.Text))
+            //{
+            //    CajaDialogo.Error("Debe agregar un comentario de referencia");
+            //    return;
+            //}
 
             using (SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA))
             {
@@ -409,7 +458,9 @@ namespace LOSA.RecuentoInventario
                                 row1.ExistenciaAprox = Convert.ToDecimal(gridViewMP.GetFocusedRowCellValue(colExistenciaAnterior));
                                 row1.toma_fisica = Convert.ToDecimal(gridViewMP.GetFocusedRowCellValue(colExistencia));
                                 row1.diferencia = Convert.ToDecimal(gridViewMP.GetFocusedRowCellValue(coldiferencia));
+                                row1.code_sap = Convert.ToString(gridViewMP.GetFocusedRowCellValue(colcode_sap));
                                 id_detalle_recuento = Convert.ToInt32(gridViewMP.GetFocusedRowCellValue(count_id));
+
 
                                 tableOps.AddRecuento_mpRow(row1);
                                 tableOps.AcceptChanges();

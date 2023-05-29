@@ -4537,8 +4537,6 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnid_presentacion;
             
-            private global::System.Data.DataColumn columnunidades;
-            
             private global::System.Data.DataColumn columnutil_unidades;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4696,14 +4694,6 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn unidadesColumn {
-                get {
-                    return this.columnunidades;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn util_unidadesColumn {
                 get {
                     return this.columnutil_unidades;
@@ -4763,7 +4753,6 @@ namespace LOSA.Logistica {
                         string bodega_in, 
                         int id_detalle, 
                         int id_presentacion, 
-                        int unidades, 
                         int util_unidades) {
                 Aceptado_loteRow rowAceptado_loteRow = ((Aceptado_loteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -4782,7 +4771,6 @@ namespace LOSA.Logistica {
                         bodega_in,
                         id_detalle,
                         id_presentacion,
-                        unidades,
                         util_unidades};
                 rowAceptado_loteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAceptado_loteRow);
@@ -4821,7 +4809,6 @@ namespace LOSA.Logistica {
                 this.columnbodega_in = base.Columns["bodega_in"];
                 this.columnid_detalle = base.Columns["id_detalle"];
                 this.columnid_presentacion = base.Columns["id_presentacion"];
-                this.columnunidades = base.Columns["unidades"];
                 this.columnutil_unidades = base.Columns["util_unidades"];
             }
             
@@ -4858,8 +4845,6 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnid_detalle);
                 this.columnid_presentacion = new global::System.Data.DataColumn("id_presentacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_presentacion);
-                this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnunidades);
                 this.columnutil_unidades = new global::System.Data.DataColumn("util_unidades", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnutil_unidades);
                 this.columnseleccionar.DefaultValue = ((bool)(false));
@@ -5026,6 +5011,8 @@ namespace LOSA.Logistica {
             
             private global::System.Data.DataColumn columnid_presentacion;
             
+            private global::System.Data.DataColumn columnutil_unidades;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public memory_configDataTable() {
@@ -5181,6 +5168,14 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn util_unidadesColumn {
+                get {
+                    return this.columnutil_unidades;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5216,7 +5211,23 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public memory_configRow Addmemory_configRow(int id_mp, string descripcion, decimal ExistenciaAprox, string lote, bool seleccionar, decimal utilizado, int id_lote_alosy, int id_bodega, int id_lote_count, int OC, string factura, int id_ingreso_lote, string bodega_in, int id_detalle, int id_presentacion) {
+            public memory_configRow Addmemory_configRow(
+                        int id_mp, 
+                        string descripcion, 
+                        decimal ExistenciaAprox, 
+                        string lote, 
+                        bool seleccionar, 
+                        decimal utilizado, 
+                        int id_lote_alosy, 
+                        int id_bodega, 
+                        int id_lote_count, 
+                        int OC, 
+                        string factura, 
+                        int id_ingreso_lote, 
+                        string bodega_in, 
+                        int id_detalle, 
+                        int id_presentacion, 
+                        int util_unidades) {
                 memory_configRow rowmemory_configRow = ((memory_configRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_mp,
@@ -5233,7 +5244,8 @@ namespace LOSA.Logistica {
                         id_ingreso_lote,
                         bodega_in,
                         id_detalle,
-                        id_presentacion};
+                        id_presentacion,
+                        util_unidades};
                 rowmemory_configRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmemory_configRow);
                 return rowmemory_configRow;
@@ -5271,6 +5283,7 @@ namespace LOSA.Logistica {
                 this.columnbodega_in = base.Columns["bodega_in"];
                 this.columnid_detalle = base.Columns["id_detalle"];
                 this.columnid_presentacion = base.Columns["id_presentacion"];
+                this.columnutil_unidades = base.Columns["util_unidades"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5306,6 +5319,8 @@ namespace LOSA.Logistica {
                 base.Columns.Add(this.columnid_detalle);
                 this.columnid_presentacion = new global::System.Data.DataColumn("id_presentacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_presentacion);
+                this.columnutil_unidades = new global::System.Data.DataColumn("util_unidades", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnutil_unidades);
                 this.columnseleccionar.DefaultValue = ((bool)(false));
             }
             
@@ -9663,22 +9678,6 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int unidades {
-                get {
-                    try {
-                        return ((int)(this[this.tableAceptado_lote.unidadesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidades\' de la tabla \'Aceptado_lote\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAceptado_lote.unidadesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int util_unidades {
                 get {
                     try {
@@ -9871,18 +9870,6 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_presentacionNull() {
                 this[this.tableAceptado_lote.id_presentacionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsunidadesNull() {
-                return this.IsNull(this.tableAceptado_lote.unidadesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetunidadesNull() {
-                this[this.tableAceptado_lote.unidadesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10154,6 +10141,22 @@ namespace LOSA.Logistica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int util_unidades {
+                get {
+                    try {
+                        return ((int)(this[this.tablememory_config.util_unidadesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'util_unidades\' de la tabla \'memory_config\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablememory_config.util_unidadesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_mpNull() {
                 return this.IsNull(this.tablememory_config.id_mpColumn);
             }
@@ -10330,6 +10333,18 @@ namespace LOSA.Logistica {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_presentacionNull() {
                 this[this.tablememory_config.id_presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isutil_unidadesNull() {
+                return this.IsNull(this.tablememory_config.util_unidadesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setutil_unidadesNull() {
+                this[this.tablememory_config.util_unidadesColumn] = global::System.Convert.DBNull;
             }
         }
         

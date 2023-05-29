@@ -376,11 +376,11 @@ namespace LOSA.Logistica
 
         private void cmdVerDetalle_Click(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(grd_years.Text))
-            //{
-            //    CajaDialogo.Error("Debe seleccionar el año!");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(grd_years.Text))
+            {
+                CajaDialogo.Error("Debe seleccionar el año!");
+                return;
+            }
             if (string.IsNullOrEmpty(grd_meses_disponibles.Text))
             {
                 CajaDialogo.Error("Debe seleccionar el mes!");
