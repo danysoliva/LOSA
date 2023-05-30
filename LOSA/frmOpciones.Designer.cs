@@ -2525,7 +2525,7 @@
             this.btnReqMEmpaque.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnReqMEmpaque.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnReqMEmpaque.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReqMEmpaque.ImageOptions.Image")));
-            this.btnReqMEmpaque.Location = new System.Drawing.Point(471, 20);
+            this.btnReqMEmpaque.Location = new System.Drawing.Point(468, 20);
             this.btnReqMEmpaque.Name = "btnReqMEmpaque";
             this.btnReqMEmpaque.Size = new System.Drawing.Size(199, 71);
             this.btnReqMEmpaque.TabIndex = 51;
