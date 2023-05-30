@@ -1146,6 +1146,7 @@ namespace LOSA
                         //frm.Show();
                         break;
                     case 5://Depth Without Delta
+                        accesoprevio = true;
                         frmCierreMensual frm2 = new frmCierreMensual(UsuarioLogeado);
                         frm2.MdiParent = this.MdiParent;
                         frm2.Show();
@@ -1154,19 +1155,19 @@ namespace LOSA
                         break;
                 }
 
-                if (!accesoprevio)
-                {
-                    //if (UsuarioLogeado.ValidarNivelPermisos(80))
-                    //{
-                    //    xfrmMainConfiguracion frm = new xfrmMainConfiguracion();
-                    //    frm.MdiParent = this.MdiParent;
-                    //    frm.Show();
-                    //}
-                    //else
-                    //{
-                        CajaDialogo.Error("No tiene privilegios para esta función!");
-                    //}
-                }
+                //if (!accesoprevio)
+                //{
+                //    if (UsuarioLogeado.ValidarNivelPermisos(80))
+                //    {
+                //        xfrmMainConfiguracion frm = new xfrmMainConfiguracion();
+                //        frm.MdiParent = this.MdiParent;
+                //        frm.Show();
+                //    }
+                //    else
+                //    {
+                //        CajaDialogo.Error("No tiene privilegios para esta función!");
+                //    }
+                //}
             }
             catch (Exception ex)
             {
