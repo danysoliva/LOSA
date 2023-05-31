@@ -76,6 +76,7 @@
             this.cmdRequisiciones_ = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanrequisas = new DevExpress.XtraEditors.SimpleButton();
             this.tabPT = new DevExpress.XtraTab.XtraTabPage();
+            this.btnMaterialEmpaquePT = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add_tarimas_pt = new DevExpress.XtraEditors.SimpleButton();
             this.btnHistorialPT = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton31 = new DevExpress.XtraEditors.SimpleButton();
@@ -96,6 +97,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.btnCalidadMaterialEmpaque = new DevExpress.XtraEditors.SimpleButton();
             this.btnViewRequisasCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton67 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRutas = new DevExpress.XtraEditors.SimpleButton();
@@ -238,8 +240,7 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btnMaterialEmpaquePT = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCalidadMaterialEmpaque = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPrioridadLotePT = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -980,6 +981,21 @@
             this.tabPT.Text = "Producto Terminado";
             this.tabPT.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPT_Paint);
             // 
+            // btnMaterialEmpaquePT
+            // 
+            this.btnMaterialEmpaquePT.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnMaterialEmpaquePT.Appearance.Options.UseFont = true;
+            this.btnMaterialEmpaquePT.Appearance.Options.UseTextOptions = true;
+            this.btnMaterialEmpaquePT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMaterialEmpaquePT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnMaterialEmpaquePT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMaterialEmpaquePT.ImageOptions.Image")));
+            this.btnMaterialEmpaquePT.Location = new System.Drawing.Point(2, 248);
+            this.btnMaterialEmpaquePT.Name = "btnMaterialEmpaquePT";
+            this.btnMaterialEmpaquePT.Size = new System.Drawing.Size(199, 54);
+            this.btnMaterialEmpaquePT.TabIndex = 52;
+            this.btnMaterialEmpaquePT.Text = "Requisas Material Empaque";
+            this.btnMaterialEmpaquePT.Click += new System.EventHandler(this.btnMaterialEmpaquePT_Click);
+            // 
             // btn_add_tarimas_pt
             // 
             this.btn_add_tarimas_pt.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
@@ -1274,6 +1290,21 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(835, 502);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // btnCalidadMaterialEmpaque
+            // 
+            this.btnCalidadMaterialEmpaque.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnCalidadMaterialEmpaque.Appearance.Options.UseFont = true;
+            this.btnCalidadMaterialEmpaque.Appearance.Options.UseTextOptions = true;
+            this.btnCalidadMaterialEmpaque.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnCalidadMaterialEmpaque.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnCalidadMaterialEmpaque.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCalidadMaterialEmpaque.ImageOptions.Image")));
+            this.btnCalidadMaterialEmpaque.Location = new System.Drawing.Point(9, 413);
+            this.btnCalidadMaterialEmpaque.Name = "btnCalidadMaterialEmpaque";
+            this.btnCalidadMaterialEmpaque.Size = new System.Drawing.Size(199, 59);
+            this.btnCalidadMaterialEmpaque.TabIndex = 53;
+            this.btnCalidadMaterialEmpaque.Text = "Requisas Material Empaque";
+            this.btnCalidadMaterialEmpaque.Click += new System.EventHandler(this.btnCalidadMaterialEmpaque_Click);
             // 
             // btnViewRequisasCalidad
             // 
@@ -1826,7 +1857,6 @@
             this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup1.AppearancePressed.Options.UseFont = true;
             this.navBarGroup1.Caption = "Producción";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrazabilidad),
@@ -2500,6 +2530,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.btnPrioridadLotePT);
             this.txtProduccion.Controls.Add(this.btnReqMEmpaque);
             this.txtProduccion.Controls.Add(this.cmdCierreLotesPT);
             this.txtProduccion.Controls.Add(this.btnRutas_traza_produccion);
@@ -3357,35 +3388,21 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // btnMaterialEmpaquePT
+            // btnPrioridadLotePT
             // 
-            this.btnMaterialEmpaquePT.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnMaterialEmpaquePT.Appearance.Options.UseFont = true;
-            this.btnMaterialEmpaquePT.Appearance.Options.UseTextOptions = true;
-            this.btnMaterialEmpaquePT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnMaterialEmpaquePT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnMaterialEmpaquePT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.btnMaterialEmpaquePT.Location = new System.Drawing.Point(2, 248);
-            this.btnMaterialEmpaquePT.Name = "btnMaterialEmpaquePT";
-            this.btnMaterialEmpaquePT.Size = new System.Drawing.Size(199, 54);
-            this.btnMaterialEmpaquePT.TabIndex = 52;
-            this.btnMaterialEmpaquePT.Text = "Requisas Material Empaque";
-            this.btnMaterialEmpaquePT.Click += new System.EventHandler(this.btnMaterialEmpaquePT_Click);
-            // 
-            // btnCalidadMaterialEmpaque
-            // 
-            this.btnCalidadMaterialEmpaque.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnCalidadMaterialEmpaque.Appearance.Options.UseFont = true;
-            this.btnCalidadMaterialEmpaque.Appearance.Options.UseTextOptions = true;
-            this.btnCalidadMaterialEmpaque.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnCalidadMaterialEmpaque.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnCalidadMaterialEmpaque.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image1")));
-            this.btnCalidadMaterialEmpaque.Location = new System.Drawing.Point(9, 413);
-            this.btnCalidadMaterialEmpaque.Name = "btnCalidadMaterialEmpaque";
-            this.btnCalidadMaterialEmpaque.Size = new System.Drawing.Size(199, 59);
-            this.btnCalidadMaterialEmpaque.TabIndex = 53;
-            this.btnCalidadMaterialEmpaque.Text = "Requisas Material Empaque";
-            this.btnCalidadMaterialEmpaque.Click += new System.EventHandler(this.btnCalidadMaterialEmpaque_Click);
+            this.btnPrioridadLotePT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrioridadLotePT.Appearance.Options.UseFont = true;
+            this.btnPrioridadLotePT.Appearance.Options.UseTextOptions = true;
+            this.btnPrioridadLotePT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnPrioridadLotePT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnPrioridadLotePT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btnPrioridadLotePT.Location = new System.Drawing.Point(468, 97);
+            this.btnPrioridadLotePT.Name = "btnPrioridadLotePT";
+            this.btnPrioridadLotePT.Size = new System.Drawing.Size(199, 71);
+            this.btnPrioridadLotePT.TabIndex = 52;
+            this.btnPrioridadLotePT.Text = "Requisa Activa Prioridad";
+            this.btnPrioridadLotePT.Visible = false;
+            this.btnPrioridadLotePT.Click += new System.EventHandler(this.btnPrioridadLotePT_Click);
             // 
             // frmOpciones
             // 
@@ -3638,5 +3655,6 @@
         private DevExpress.XtraEditors.SimpleButton btnReqMEmpaque;
         private DevExpress.XtraEditors.SimpleButton btnMaterialEmpaquePT;
         private DevExpress.XtraEditors.SimpleButton btnCalidadMaterialEmpaque;
+        private DevExpress.XtraEditors.SimpleButton btnPrioridadLotePT;
     }
 }

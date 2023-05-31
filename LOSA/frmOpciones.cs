@@ -3366,5 +3366,10 @@ namespace LOSA
                 }
             }
         }
+
+        private void btnPrioridadLotePT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

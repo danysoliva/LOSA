@@ -193,7 +193,7 @@ namespace LOSA.RecepcionMP
                 {
                     if (item.consumido)
                     {
-                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se puede devolver este Regsitro de Entrega por que ya fue Consumido!");
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se puede devolver este Registro de Entrega por que ya fue Consumido!");
                         if (frm.ShowDialog() == DialogResult.Cancel)
                         {
                             beTarima.Text = "";
@@ -203,141 +203,142 @@ namespace LOSA.RecepcionMP
                             txtCantidadT.EditValue = 0;
                             txtPeso.EditValue = 0;
                             beTarima.Focus();
+                            return;
                         }
                     }
                 }
             }
 
-            //try
-            //{
+            try
+            {
 
-            //    //int CantBack = 0;
-            //    foreach (dsDevoluciones.mpRow item in dsDevoluciones.mp.Rows)
-            //    {
-            //        if (item.selected)
-            //        {
-            //            DataOperations dp = new DataOperations();
-            //            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-            //            con.Open();
+                //int CantBack = 0;
+                foreach (dsDevoluciones.mpRow item in dsDevoluciones.mp.Rows)
+                {
+                    if (item.selected)
+                    {
+                        DataOperations dp = new DataOperations();
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
 
-            //            //SqlCommand cmd = new SqlCommand("sp_set_devolucion_of_requisa", con);
-            //            //cmd.CommandType = CommandType.StoredProcedure;
-            //            //cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
-            //            //cmd.Parameters.AddWithValue("@id_entrega", item.id);
-            //            //cmd.Parameters.AddWithValue("@CantUd", item.cantidad_unidades);
-            //            //cmd.Parameters.AddWithValue("@CantKg", item.cantidad_entregada);
-            //            //CantBack = Convert.ToInt32(cmd.ExecuteScalar());
+                        //SqlCommand cmd = new SqlCommand("sp_set_devolucion_of_requisa", con);
+                        //cmd.CommandType = CommandType.StoredProcedure;
+                        //cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
+                        //cmd.Parameters.AddWithValue("@id_entrega", item.id);
+                        //cmd.Parameters.AddWithValue("@CantUd", item.cantidad_unidades);
+                        //cmd.Parameters.AddWithValue("@CantKg", item.cantidad_entregada);
+                        //CantBack = Convert.ToInt32(cmd.ExecuteScalar());
 
-            //            //if (CantBack != 1)
-            //            //{
-            //            //    CajaDialogo.Error("No se puede devolver las unidades de la requisa " + item.barcode + " por que ya fueron consumidas.");
+                        //if (CantBack != 1)
+                        //{
+                        //    CajaDialogo.Error("No se puede devolver las unidades de la requisa " + item.barcode + " por que ya fueron consumidas.");
 
-            //            //}
-            //            //else
-            //            //{
-            //            SqlCommand cmd = new SqlCommand("sp_insert_kardex_from_devoluciones_formv2", con);
-            //            cmd.CommandType = CommandType.StoredProcedure;
-            //            cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
-            //            cmd.Parameters.AddWithValue("@id_entrega", item.id);
-            //            cmd.Parameters.AddWithValue("@tipo_transaccion", 1);
-            //            cmd.Parameters.AddWithValue("@cantidad", Convert.ToDecimal(item.cantidad_unidades));
-            //            cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
-            //            //cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
-            //            cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(item.cantidad_entregada));
-            //            validacion_bloqueo = Convert.ToInt32(cmd.ExecuteScalar());
+                        //}
+                        //else
+                        //{
+                        SqlCommand cmd = new SqlCommand("sp_insert_kardex_from_devoluciones_formv2", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_tarima", this.idTarima);
+                        cmd.Parameters.AddWithValue("@id_entrega", item.id);
+                        cmd.Parameters.AddWithValue("@tipo_transaccion", 1);
+                        cmd.Parameters.AddWithValue("@cantidad", Convert.ToDecimal(item.cantidad_unidades));
+                        cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                        //cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(txtPeso.Text));
+                        cmd.Parameters.AddWithValue("@peso", Convert.ToDecimal(item.cantidad_entregada));
+                        validacion_bloqueo = Convert.ToInt32(cmd.ExecuteScalar());
 
-            //            switch (validacion_bloqueo)
-            //            {
-            //                case 1:
+                        switch (validacion_bloqueo)
+                        {
+                            case 1:
 
-            //                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se puede devolver la tarima por que la requisa " + item.barcode + " esta Cerrada! "); 
-            //                    if (frm.ShowDialog() == DialogResult.Cancel)
-            //                    {
-            //                        beTarima.Text = "";
-            //                        gcTarima.DataSource = null;
-            //                        //dsDevoluciones.mp.Clear();
-            //                        txtCantidadT.EditValue = 0;
-            //                        txtPeso.EditValue = 0;
-            //                        beTarima.Focus();
-            //                    }
-                                
-            //                    break;
+                                Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No se puede devolver la tarima por que la requisa " + item.barcode + " esta Cerrada! ");
+                                if (frm.ShowDialog() == DialogResult.Cancel)
+                                {
+                                    beTarima.Text = "";
+                                    gcTarima.DataSource = null;
+                                    //dsDevoluciones.mp.Clear();
+                                    txtCantidadT.EditValue = 0;
+                                    txtPeso.EditValue = 0;
+                                    beTarima.Focus();
+                                }
 
-            //                case 2:
-            //                    Guardado = true;
-            //                    break;
+                                break;
 
-            //                case 3:
+                            case 2:
+                                Guardado = true;
+                                break;
 
-            //                    Utileria.frmMensajeCalidad frm1 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No existe Inventario en B018 del lote " + item.lote_materia_prima + ", para realizar esta devolucion.");
-            //                    if (frm1.ShowDialog() == DialogResult.Cancel)
-            //                    {
-            //                        beTarima.Text = "";
-            //                        gcTarima.DataSource = null;
-            //                        //dsDevoluciones.mp.Clear();
-            //                        txtCantidadT.EditValue = 0;
-            //                        txtPeso.EditValue = 0;
-            //                        beTarima.Focus();
-            //                    }
-            //                    break;
+                            case 3:
 
-            //                default:
-            //                    break;
-            //            }
+                                Utileria.frmMensajeCalidad frm1 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "No existe Inventario en B018 del lote " + item.lote_materia_prima + ", para realizar esta devolucion.");
+                                if (frm1.ShowDialog() == DialogResult.Cancel)
+                                {
+                                    beTarima.Text = "";
+                                    gcTarima.DataSource = null;
+                                    //dsDevoluciones.mp.Clear();
+                                    txtCantidadT.EditValue = 0;
+                                    txtPeso.EditValue = 0;
+                                    beTarima.Focus();
+                                }
+                                break;
 
-
-            //            //if (validacion_bloqueo == 1)
-            //            //{
-            //            //    CajaDialogo.Error("No se puede devolver la tarima por que la requisa " +item.barcode + " esta Cerrada!");
-            //            //    beTarima.Text = "";
-            //            //    gcTarima.DataSource = null;
-            //            //    grd_requisa.DataSource = null;
-            //            //    txtCantidadT.EditValue = 0;
-            //            //    txtPeso.EditValue = 0;
-
-            //            //    beTarima.Focus();
-            //            //}
-            //            //if (validacion_bloqueo == 3)
-            //            //{
-            //            //    CajaDialogo.Error("No existe Inventario en B018 del lote "+ item.lote_materia_prima +", para realizar esta devolucion.");
-            //            //    beTarima.Text = "";
-            //            //    gcTarima.DataSource = null;
-            //            //    grd_requisa.DataSource = null;
-            //            //    txtCantidadT.EditValue = 0;
-            //            //    txtPeso.EditValue = 0;
-
-            //            //    beTarima.Focus();
-            //            //}
-            //            //else
-            //            //{
-            //            //    Guardado = true;
-            //            //}
-            //            //}
+                            default:
+                                break;
+                        }
 
 
-            //            con.Close();
-            //        }
+                        if (validacion_bloqueo == 1)
+                        {
+                            CajaDialogo.Error("No se puede devolver la tarima por que la requisa " + item.barcode + " esta Cerrada!");
+                            beTarima.Text = "";
+                            gcTarima.DataSource = null;
+                            grd_requisa.DataSource = null;
+                            txtCantidadT.EditValue = 0;
+                            txtPeso.EditValue = 0;
 
-            //    }
+                            beTarima.Focus();
+                        }
+                        if (validacion_bloqueo == 3)
+                        {
+                            CajaDialogo.Error("No existe Inventario en B018 del lote " + item.lote_materia_prima + ", para realizar esta devolucion.");
+                            beTarima.Text = "";
+                            gcTarima.DataSource = null;
+                            grd_requisa.DataSource = null;
+                            txtCantidadT.EditValue = 0;
+                            txtPeso.EditValue = 0;
 
-                
+                            beTarima.Focus();
+                        }
+                        else
+                        {
+                            Guardado = true;
+                        }
+                        //}
+
+
+                        con.Close();
+                    }
+
+                }
 
 
 
-            //    //CajaDialogo.InformationAuto();
-            //}
-            //catch (Exception ec)
-            //{
-            //    Guardado = false;
-            //    CajaDialogo.Error(ec.Message);
-            //}
 
 
-            //if (Guardado == true)
-            //{
-            //    CajaDialogo.Information("Datos guardados exitosamente!");
-            //    this.Close();
-            //}
+                //CajaDialogo.InformationAuto();
+            }
+            catch (Exception ec)
+            {
+                Guardado = false;
+                CajaDialogo.Error(ec.Message);
+            }
+
+
+            if (Guardado == true)
+            {
+                CajaDialogo.Information("Datos guardados exitosamente!");
+                this.Close();
+            }
         }
 
         private void BeTarima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
