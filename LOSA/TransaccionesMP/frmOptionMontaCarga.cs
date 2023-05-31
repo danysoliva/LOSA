@@ -128,7 +128,7 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            LOSA.Reportes.frmreporteUbicacion frm = new Reportes.frmreporteUbicacion();
+            LOSA.Reportes.frmreporteUbicacion frm = new LOSA.Reportes.frmreporteUbicacion();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
