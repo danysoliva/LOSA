@@ -14,6 +14,7 @@ using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Threading;
 using LOSA.Calidad.LoteConfConsumo;
+using LOSA.TransaccionesMP.Reportes;
 
 namespace LOSA.TransaccionesMP
 {
@@ -260,11 +261,24 @@ namespace LOSA.TransaccionesMP
 
         private void btnAjustePorLote_Click(object sender, EventArgs e)
         {
-            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado);
-            if (frm.ShowDialog() == DialogResult.OK)
+            Funciones fn1 = new Funciones();
+            if(fn1.GetRutaAjustesInventario() == 1)
             {
-                load_dataPorLotes();
+                frmAsjuteInventarioPorLoteWithAutorization frm = new frmAsjuteInventarioPorLoteWithAutorization(UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    load_dataPorLotes();
+                }
             }
+            else
+            {
+                frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    load_dataPorLotes();
+                }
+            }
+            
         }
 
         private void buttonEdit_AjusteINV_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -567,6 +581,12 @@ namespace LOSA.TransaccionesMP
                 load_dataPorLotes();
             }
             
+        }
+
+        private void cmdVerBorradorDeAjustes_Click(object sender, EventArgs e)
+        {
+            frmVerAjustesBorradorAproved frm = new frmVerAjustesBorradorAproved(UsuarioLogeado);
+            frm.Show();
         }
     }
 }

@@ -123,6 +123,34 @@ namespace LOSA.Clases
             }
             return valor;
         }
+        public int GetRutaAjustesInventario()
+        {
+           int valor = 0;
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_ruta_para_ajuste_inventario_alosy", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idh", pidH);
+                //cmd.Parameters.AddWithValue("@idlinea", pLinea);
+                valor = Convert.ToInt32(cmd.ExecuteScalar());
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+            return valor;
+        }
+
+
+
+
+
+
 
 
 

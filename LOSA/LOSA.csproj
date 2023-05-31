@@ -5199,6 +5199,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsLotesProxVencer.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\DataSet\dsRecepcionMP_AjusteLote.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRecepcionMP_AjusteLote.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\dsGranelLoteactivo.cs">
       <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
     </Compile>
@@ -5228,6 +5233,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\frmAjusteLotes.Designer.cs">
       <DependentUpon>frmAjusteLotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmAsjuteInventarioPorLoteWithAutorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\frmAsjuteInventarioPorLoteWithAutorization.Designer.cs">
+      <DependentUpon>frmAsjuteInventarioPorLoteWithAutorization.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\frmAsjuteInventarioPorLote.cs">
       <SubType>Form</SubType>
@@ -5479,6 +5490,12 @@
     </Compile>
     <Compile Include="TransaccionesMP\Reportes\frmReporteKardexGeneralVencimiento.Designer.cs">
       <DependentUpon>frmReporteKardexGeneralVencimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaccionesMP\Reportes\frmVerAjustesBorradorAproved.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Reportes\frmVerAjustesBorradorAproved.Designer.cs">
+      <DependentUpon>frmVerAjustesBorradorAproved.cs</DependentUpon>
     </Compile>
     <Compile Include="TransaccionesMP\TrzMP_fromLote\dsMP_Lotes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -7643,6 +7660,9 @@
     <EmbeddedResource Include="TransaccionesMP\frmAjusteLotes.resx">
       <DependentUpon>frmAjusteLotes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\frmAsjuteInventarioPorLoteWithAutorization.resx">
+      <DependentUpon>frmAsjuteInventarioPorLoteWithAutorization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmAsjuteInventarioPorLote.resx">
       <DependentUpon>frmAsjuteInventarioPorLote.cs</DependentUpon>
     </EmbeddedResource>
@@ -7762,6 +7782,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\Reportes\frmReporteKardexGeneralVencimiento.resx">
       <DependentUpon>frmReporteKardexGeneralVencimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\Reportes\frmVerAjustesBorradorAproved.resx">
+      <DependentUpon>frmVerAjustesBorradorAproved.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\TrzMP_fromLote\frmMP_WithSameLot.resx">
       <DependentUpon>frmMP_WithSameLot.cs</DependentUpon>
@@ -8142,6 +8165,17 @@
     <None Include="TransaccionesMP\DataSet\dsLotesProxVencer.xss">
       <DependentUpon>dsLotesProxVencer.xsd</DependentUpon>
     </None>
+    <None Include="TransaccionesMP\DataSet\dsRecepcionMP_AjusteLote.xsc">
+      <DependentUpon>dsRecepcionMP_AjusteLote.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\DataSet\dsRecepcionMP_AjusteLote.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRecepcionMP_AjusteLote.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesMP\DataSet\dsRecepcionMP_AjusteLote.xss">
+      <DependentUpon>dsRecepcionMP_AjusteLote.xsd</DependentUpon>
+    </None>
     <None Include="TransaccionesMP\dsGranelLoteactivo.xsc">
       <DependentUpon>dsGranelLoteactivo.xsd</DependentUpon>
     </None>
@@ -8327,6 +8361,7 @@
     <None Include="Resources\code_24.png" />
     <None Include="Resources\code2_24.png" />
     <Content Include="Resources\devoluciones.png" />
+    <None Include="Resources\document_aproved_32px.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\hapag-4-icon.png" />
     <None Include="Resources\Forklift-icon.png" />
