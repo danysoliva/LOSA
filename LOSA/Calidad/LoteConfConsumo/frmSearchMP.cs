@@ -28,7 +28,8 @@ namespace LOSA.Calidad.LoteConfConsumo
             Empleados = 3,
             PresentacionEmpaqueALOSY = 4,
             BodegasALOSY = 5,
-            MaterialEmpaque = 6
+            MaterialEmpaque = 6,
+            Reproceso = 7
         }
 
         TipoBusqueda TipoBusquedaActual;
@@ -55,6 +56,9 @@ namespace LOSA.Calidad.LoteConfConsumo
                     break;
                 case TipoBusqueda.MaterialEmpaque:
                     load_data_material_empaque();
+                    break;
+                case TipoBusqueda.Reproceso:
+                    LoadData();
                     break;
                 default:
                     break;

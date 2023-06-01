@@ -29,6 +29,14 @@ namespace LOSA.TransaccionesMP
         bool MostrarExterno;
         private decimal existencia_bodega_selected;
         private string bodega_selected;
+
+        public enum Comportamiento
+        {
+            Reproceso = 1
+        }
+
+        public Comportamiento ComportamientoActual;
+
         public frmAsjuteInventarioPorLote(UserLogin pUserLogin)
         {
             InitializeComponent();
@@ -40,7 +48,7 @@ namespace LOSA.TransaccionesMP
             LoadPresentaciones();
         }
 
-        public frmAsjuteInventarioPorLote(UserLogin pUserLogin, int pIdMP, int id_lote_alosy, string pLote, int pid_bodega)
+        public frmAsjuteInventarioPorLote(UserLogin pUserLogin, int pIdMP, int id_lote_alosy, string pLote, int pid_bodega, Comportamiento pComportamientoActual)
         {
             InitializeComponent();
             //ESTO SOLO ES PARA REPROCESO
@@ -48,6 +56,7 @@ namespace LOSA.TransaccionesMP
             dtFechaDocumento.DateTime = dp1.Now();
             MateriaPrimaActual = new MateriaPrima();
             UsuarioLogueado = pUserLogin;
+            ComportamientoActual = pComportamientoActual;
             radioLoteExistente.Checked = true;
             LoadPresentaciones();
 
@@ -577,7 +586,7 @@ namespace LOSA.TransaccionesMP
         private void txtMP_Name_Click(object sender, EventArgs e)
         {
             //frmMP frm = new frmMP();
-            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.MateriaPrima);
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.Reproceso);
             if (this.MdiParent != null)
             {
                 //frm.MdiParent = this.MdiParent;
