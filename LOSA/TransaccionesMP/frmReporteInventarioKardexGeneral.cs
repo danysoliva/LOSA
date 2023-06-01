@@ -588,5 +588,17 @@ namespace LOSA.TransaccionesMP
             frmVerAjustesBorradorAproved frm = new frmVerAjustesBorradorAproved(UsuarioLogeado);
             frm.Show();
         }
+
+        private void reposReproceso_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)gridReproceso.FocusedView;
+            var row = (dsTarima.kardex_by_ReprocesoRow)gridView.GetFocusedDataRow();
+
+            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote, row.id_bodega);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                Load_dataReprocesoPorLote();
+            }
+        }
     }
 }
