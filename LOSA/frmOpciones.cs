@@ -3371,5 +3371,10 @@ namespace LOSA
         {
 
         }
+
+        private void cmdAprobarAjustesInvALOSY_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

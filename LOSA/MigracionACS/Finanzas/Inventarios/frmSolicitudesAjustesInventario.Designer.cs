@@ -1,7 +1,7 @@
 ﻿
-namespace LOSA.TransaccionesMP.Reportes
+namespace LOSA.MigracionACS.Finanzas.Inventarios
 {
-    partial class frmVerAjustesBorradorAproved
+    partial class frmSolicitudesAjustesInventario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,21 @@ namespace LOSA.TransaccionesMP.Reportes
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVerAjustesBorradorAproved));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitudesAjustesInventario));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.toggleSwitchVerTodos = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsRecepcionMP_AjusteLote1 = new LOSA.TransaccionesMP.DataSet.dsRecepcionMP_AjusteLote();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_operacion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,16 +76,49 @@ namespace LOSA.TransaccionesMP.Reportes
             this.colFechaAprobado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coles_nuevo_lote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coleliminar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitchVerTodos = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.dsRecepcionMP_AjusteLote1 = new LOSA.TransaccionesMP.DataSet.dsRecepcionMP_AjusteLote();
+            this.colAprobar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmdAprobar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAprobar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(12, 13);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(61, 17);
+            this.labelControl2.TabIndex = 7;
+            this.labelControl2.Text = "Ver Todos";
+            // 
+            // toggleSwitchVerTodos
+            // 
+            this.toggleSwitchVerTodos.Location = new System.Drawing.Point(79, 10);
+            this.toggleSwitchVerTodos.Name = "toggleSwitchVerTodos";
+            this.toggleSwitchVerTodos.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleSwitchVerTodos.Properties.Appearance.Options.UseFont = true;
+            this.toggleSwitchVerTodos.Properties.OffText = "No";
+            this.toggleSwitchVerTodos.Properties.OnText = "Si";
+            this.toggleSwitchVerTodos.Size = new System.Drawing.Size(105, 26);
+            this.toggleSwitchVerTodos.TabIndex = 6;
+            this.toggleSwitchVerTodos.Toggled += new System.EventHandler(this.toggleSwitchVerTodos_Toggled);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(12, 45);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(303, 30);
+            this.labelControl1.TabIndex = 5;
+            this.labelControl1.Text = "Detalle de Ajustes de Inventario";
             // 
             // gridControl1
             // 
@@ -86,22 +126,17 @@ namespace LOSA.TransaccionesMP.Reportes
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "borradores_select";
-            this.gridControl1.DataSource = this.dsRecepcionMP_AjusteLote1;
             this.gridControl1.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.gridControl1.Location = new System.Drawing.Point(2, 80);
+            this.gridControl1.Location = new System.Drawing.Point(2, 81);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.cmdEliminar});
-            this.gridControl1.Size = new System.Drawing.Size(1085, 459);
-            this.gridControl1.TabIndex = 0;
+            this.cmdAprobar,
+            this.btnEliminar});
+            this.gridControl1.Size = new System.Drawing.Size(1189, 426);
+            this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // dsRecepcionMP_AjusteLote1
-            // 
-            this.dsRecepcionMP_AjusteLote1.DataSetName = "dsRecepcionMP_AjusteLote";
-            this.dsRecepcionMP_AjusteLote1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -136,7 +171,8 @@ namespace LOSA.TransaccionesMP.Reportes
             this.colUsuarioAprobó,
             this.colFechaAprobado,
             this.coles_nuevo_lote,
-            this.coleliminar});
+            this.coleliminar,
+            this.colAprobar});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -372,71 +408,64 @@ namespace LOSA.TransaccionesMP.Reportes
             // 
             // coleliminar
             // 
-            this.coleliminar.ColumnEdit = this.cmdEliminar;
+            this.coleliminar.Caption = "Eliminar";
+            this.coleliminar.ColumnEdit = this.btnEliminar;
             this.coleliminar.FieldName = "eliminar";
             this.coleliminar.Name = "coleliminar";
             this.coleliminar.Visible = true;
             this.coleliminar.VisibleIndex = 14;
             this.coleliminar.Width = 55;
             // 
-            // labelControl1
+            // dsRecepcionMP_AjusteLote1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 44);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(303, 30);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Detalle de Ajustes de Inventario";
+            this.dsRecepcionMP_AjusteLote1.DataSetName = "dsRecepcionMP_AjusteLote";
+            this.dsRecepcionMP_AjusteLote1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // toggleSwitchVerTodos
+            // colAprobar
             // 
-            this.toggleSwitchVerTodos.Location = new System.Drawing.Point(79, 9);
-            this.toggleSwitchVerTodos.Name = "toggleSwitchVerTodos";
-            this.toggleSwitchVerTodos.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toggleSwitchVerTodos.Properties.Appearance.Options.UseFont = true;
-            this.toggleSwitchVerTodos.Properties.OffText = "No";
-            this.toggleSwitchVerTodos.Properties.OnText = "Si";
-            this.toggleSwitchVerTodos.Size = new System.Drawing.Size(105, 26);
-            this.toggleSwitchVerTodos.TabIndex = 2;
-            this.toggleSwitchVerTodos.Toggled += new System.EventHandler(this.toggleSwitchVerTodos_Toggled);
+            this.colAprobar.Caption = "Aprobar";
+            this.colAprobar.ColumnEdit = this.cmdAprobar;
+            this.colAprobar.Name = "colAprobar";
+            this.colAprobar.Visible = true;
+            this.colAprobar.VisibleIndex = 15;
             // 
-            // labelControl2
+            // cmdAprobar
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(12, 12);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(61, 17);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Ver Todos";
+            this.cmdAprobar.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.cmdAprobar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmdAprobar.Name = "cmdAprobar";
+            this.cmdAprobar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmdAprobar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdAprobar_ButtonClick);
             // 
-            // cmdEliminar
+            // btnEliminar
             // 
-            this.cmdEliminar.AutoHeight = false;
+            this.btnEliminar.AutoHeight = false;
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.cmdEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmdEliminar.Name = "cmdEliminar";
-            this.cmdEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEliminar_ButtonClick);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEliminar_ButtonClick);
             // 
-            // frmVerAjustesBorradorAproved
+            // frmSolicitudesAjustesInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 540);
+            this.ClientSize = new System.Drawing.Size(1193, 509);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.toggleSwitchVerTodos);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gridControl1);
-            this.Name = "frmVerAjustesBorradorAproved";
-            this.Text = "Detalle Ajustes de Inventario";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.Name = "frmSolicitudesAjustesInventario";
+            this.Text = "Solicitudes Ajustes Inventario";
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAprobar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,10 +473,11 @@ namespace LOSA.TransaccionesMP.Reportes
 
         #endregion
 
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.ToggleSwitch toggleSwitchVerTodos;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DataSet.dsRecepcionMP_AjusteLote dsRecepcionMP_AjusteLote1;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colid_operacion;
         private DevExpress.XtraGrid.Columns.GridColumn colTipoOperación;
@@ -479,8 +509,9 @@ namespace LOSA.TransaccionesMP.Reportes
         private DevExpress.XtraGrid.Columns.GridColumn colFechaAprobado;
         private DevExpress.XtraGrid.Columns.GridColumn coles_nuevo_lote;
         private DevExpress.XtraGrid.Columns.GridColumn coleliminar;
-        private DevExpress.XtraEditors.ToggleSwitch toggleSwitchVerTodos;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEliminar;
+        private TransaccionesMP.DataSet.dsRecepcionMP_AjusteLote dsRecepcionMP_AjusteLote1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEliminar;
+        private DevExpress.XtraGrid.Columns.GridColumn colAprobar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdAprobar;
     }
 }

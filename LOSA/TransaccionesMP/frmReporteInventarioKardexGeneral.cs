@@ -287,7 +287,8 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsTarima.kardex_by_lotRow)gridView.GetFocusedDataRow();
 
-            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote);
+            //frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote);
+            frmAsjuteInventarioPorLoteWithAutorization frm = new frmAsjuteInventarioPorLoteWithAutorization(UsuarioLogeado, row.id_mp, 0, row.lote);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_dataPorLotes();
@@ -383,11 +384,11 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)gridReproceso.FocusedView;
             var row = (dsTarima.kardex_by_ReprocesoRow)gridView.GetFocusedDataRow();
 
-            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote, row.id_bodega);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                Load_dataReprocesoPorLote();
-            }
+            //frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote, row.id_bodega, frmAsjuteInventarioPorLote.Comportamiento.);
+            //if (frm.ShowDialog() == DialogResult.OK)
+            //{
+            //    Load_dataReprocesoPorLote();
+            //}
         }
 
         private void btnSearchMP_Click(object sender, EventArgs e)
@@ -589,12 +590,12 @@ namespace LOSA.TransaccionesMP
             frm.Show();
         }
 
-        private void reposReproceso_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void cmAjusteReproceso_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridView = (GridView)gridReproceso.FocusedView;
             var row = (dsTarima.kardex_by_ReprocesoRow)gridView.GetFocusedDataRow();
 
-            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote, row.id_bodega);
+            frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado, row.id_mp, 0, row.lote, row.id_bodega, frmAsjuteInventarioPorLote.Comportamiento.Reproceso);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 Load_dataReprocesoPorLote();

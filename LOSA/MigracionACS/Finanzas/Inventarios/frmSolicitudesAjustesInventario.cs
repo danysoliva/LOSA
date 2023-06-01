@@ -1,7 +1,6 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
-using LOSA.Clases;
 using LOSA.TransaccionesMP.DataSet;
 using System;
 using System.Collections.Generic;
@@ -14,15 +13,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LOSA.TransaccionesMP.Reportes
+namespace LOSA.MigracionACS.Finanzas.Inventarios
 {
-    public partial class frmVerAjustesBorradorAproved : DevExpress.XtraEditors.XtraForm
+    public partial class frmSolicitudesAjustesInventario : DevExpress.XtraEditors.XtraForm
     {
-        UserLogin UsuarioLogeado;
-        public frmVerAjustesBorradorAproved(UserLogin pUser)
+        public frmSolicitudesAjustesInventario()
         {
             InitializeComponent();
-            UsuarioLogeado = pUser;
             LoadDatos();
         }
 
@@ -54,21 +51,21 @@ namespace LOSA.TransaccionesMP.Reportes
             LoadDatos();
         }
 
-        private void cmdEliminar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void btnEliminar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRecepcionMP_AjusteLote.borradores_selectRow)gridView.GetFocusedDataRow();
 
-            if(row.id_estado_borrador > 1)
+            if (row.id_estado_borrador > 1)
             {
                 CajaDialogo.Error("Solo se permite eliminar ajustes en estado: Pendiente!");
                 return;
             }
 
             DialogResult r = CajaDialogo.Error("Esta seguro de cancelar este ajuste?");
-            if(r != DialogResult.Yes)
+            if (r != DialogResult.Yes)
                 return;
-            
+
             try
             {
                 DataOperations dp = new DataOperations();
@@ -94,6 +91,10 @@ namespace LOSA.TransaccionesMP.Reportes
             {
                 //CajaDialogo.Error(ec.Message);
             }
+        }
+
+        private void cmdAprobar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
 
         }
     }

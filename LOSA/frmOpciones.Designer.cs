@@ -183,6 +183,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.btnPrioridadLotePT = new DevExpress.XtraEditors.SimpleButton();
             this.btnReqMEmpaque = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCierreLotesPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnRutas_traza_produccion = new DevExpress.XtraEditors.SimpleButton();
@@ -240,7 +241,7 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btnPrioridadLotePT = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdAprobarAjustesInvALOSY = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2548,6 +2549,22 @@
             this.txtProduccion.Size = new System.Drawing.Size(835, 502);
             this.txtProduccion.Text = "Produccion Administrativo";
             // 
+            // btnPrioridadLotePT
+            // 
+            this.btnPrioridadLotePT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrioridadLotePT.Appearance.Options.UseFont = true;
+            this.btnPrioridadLotePT.Appearance.Options.UseTextOptions = true;
+            this.btnPrioridadLotePT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnPrioridadLotePT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnPrioridadLotePT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrioridadLotePT.ImageOptions.Image")));
+            this.btnPrioridadLotePT.Location = new System.Drawing.Point(468, 97);
+            this.btnPrioridadLotePT.Name = "btnPrioridadLotePT";
+            this.btnPrioridadLotePT.Size = new System.Drawing.Size(199, 71);
+            this.btnPrioridadLotePT.TabIndex = 52;
+            this.btnPrioridadLotePT.Text = "Requisa Activa Prioridad";
+            this.btnPrioridadLotePT.Visible = false;
+            this.btnPrioridadLotePT.Click += new System.EventHandler(this.btnPrioridadLotePT_Click);
+            // 
             // btnReqMEmpaque
             // 
             this.btnReqMEmpaque.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3025,6 +3042,7 @@
             // 
             // TabContabilidad
             // 
+            this.TabContabilidad.Controls.Add(this.cmdAprobarAjustesInvALOSY);
             this.TabContabilidad.Controls.Add(this.cmdReporteBancosPlanilla);
             this.TabContabilidad.Controls.Add(this.btnAprobaTarimasConta);
             this.TabContabilidad.Controls.Add(this.btn_rutas_traza_contabilidad);
@@ -3388,21 +3406,20 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // btnPrioridadLotePT
+            // cmdAprobarAjustesInvALOSY
             // 
-            this.btnPrioridadLotePT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrioridadLotePT.Appearance.Options.UseFont = true;
-            this.btnPrioridadLotePT.Appearance.Options.UseTextOptions = true;
-            this.btnPrioridadLotePT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnPrioridadLotePT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnPrioridadLotePT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.btnPrioridadLotePT.Location = new System.Drawing.Point(468, 97);
-            this.btnPrioridadLotePT.Name = "btnPrioridadLotePT";
-            this.btnPrioridadLotePT.Size = new System.Drawing.Size(199, 71);
-            this.btnPrioridadLotePT.TabIndex = 52;
-            this.btnPrioridadLotePT.Text = "Requisa Activa Prioridad";
-            this.btnPrioridadLotePT.Visible = false;
-            this.btnPrioridadLotePT.Click += new System.EventHandler(this.btnPrioridadLotePT_Click);
+            this.cmdAprobarAjustesInvALOSY.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.cmdAprobarAjustesInvALOSY.Appearance.Options.UseFont = true;
+            this.cmdAprobarAjustesInvALOSY.Appearance.Options.UseTextOptions = true;
+            this.cmdAprobarAjustesInvALOSY.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdAprobarAjustesInvALOSY.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdAprobarAjustesInvALOSY.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
+            this.cmdAprobarAjustesInvALOSY.Location = new System.Drawing.Point(545, 384);
+            this.cmdAprobarAjustesInvALOSY.Name = "cmdAprobarAjustesInvALOSY";
+            this.cmdAprobarAjustesInvALOSY.Size = new System.Drawing.Size(223, 71);
+            this.cmdAprobarAjustesInvALOSY.TabIndex = 53;
+            this.cmdAprobarAjustesInvALOSY.Text = "Ajustes de Inventario Solicitudes";
+            this.cmdAprobarAjustesInvALOSY.Click += new System.EventHandler(this.cmdAprobarAjustesInvALOSY_Click);
             // 
             // frmOpciones
             // 
@@ -3656,5 +3673,6 @@
         private DevExpress.XtraEditors.SimpleButton btnMaterialEmpaquePT;
         private DevExpress.XtraEditors.SimpleButton btnCalidadMaterialEmpaque;
         private DevExpress.XtraEditors.SimpleButton btnPrioridadLotePT;
+        private DevExpress.XtraEditors.SimpleButton cmdAprobarAjustesInvALOSY;
     }
 }

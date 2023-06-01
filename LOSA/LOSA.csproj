@@ -1969,6 +1969,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dSRPT.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Finanzas\Inventarios\frmSolicitudesAjustesInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Finanzas\Inventarios\frmSolicitudesAjustesInventario.Designer.cs">
+      <DependentUpon>frmSolicitudesAjustesInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Finanzas\ODOO\drReportesODOO_RRHH.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -6537,6 +6543,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Controles\xxSeleccionLookupEdit.resx">
       <DependentUpon>xxSeleccionLookupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Finanzas\Inventarios\frmSolicitudesAjustesInventario.resx">
+      <DependentUpon>frmSolicitudesAjustesInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Finanzas\ODOO\frmReporteBancosODOO.resx">
       <DependentUpon>frmReporteBancosODOO.cs</DependentUpon>

@@ -1914,7 +1914,7 @@ namespace LOSA.TransaccionesMP.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public borradores_selectRow Addborradores_selectRow(
-                        int id, 
+                        long id, 
                         int id_operacion, 
                         string Tipo_Operación, 
                         decimal entrada, 
@@ -2036,7 +2036,7 @@ namespace LOSA.TransaccionesMP.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
                 this.columnid_operacion = new global::System.Data.DataColumn("id_operacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_operacion);
@@ -2676,10 +2676,10 @@ namespace LOSA.TransaccionesMP.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id {
+            public long id {
                 get {
                     try {
-                        return ((int)(this[this.tableborradores_select.idColumn]));
+                        return ((long)(this[this.tableborradores_select.idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'id\' de la tabla \'borradores_select\' es DBNull.", e);
