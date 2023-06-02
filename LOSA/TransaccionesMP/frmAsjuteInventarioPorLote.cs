@@ -253,30 +253,30 @@ namespace LOSA.TransaccionesMP
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
             //Reproceso de Tilapia
-            //if (ItemCode == "MP00080")
-            //{
-            //    if (tsTipoTransaccion.IsOn == true)
-            //    {
-            //        if (radioLoteNuevo.Checked)
-            //        {
-            //            CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe ingresarlo Calidad");
-            //            return;
-            //        }
-            //    }
-            //}
+            if (ItemCode == "MP00080")
+            {
+                if (tsTipoTransaccion.IsOn == true)
+                {
+                    if (radioLoteNuevo.Checked)
+                    {
+                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe ingresarlo Calidad");
+                        return;
+                    }
+                }
+            }
 
             ////Reproceso de Camaron
-            //if (ItemCode == "MP00081")
-            //{
-            //    if (tsTipoTransaccion.IsOn == true)
-            //    {
-            //        if (radioLoteNuevo.Checked)
-            //        {
-            //            CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe Ingresarlo Calidad");
-            //            return;
-            //        }
-            //    }
-            //}
+            if (ItemCode == "MP00081")
+            {
+                if (tsTipoTransaccion.IsOn == true)
+                {
+                    if (radioLoteNuevo.Checked)
+                    {
+                        CajaDialogo.Error("No puede realizar una entrada de Reproceso de un Lote Nuevo! Debe Ingresarlo Calidad");
+                        return;
+                    }
+                }
+            }
 
 
             if (string.IsNullOrEmpty(txtMP_Name.Text))
@@ -291,13 +291,13 @@ namespace LOSA.TransaccionesMP
             //    return;
             //}
 
-            
+
             //HAY QUE DESCOMENTAR ESTO
-            //if (Convert.ToDecimal(spinEditPesoKg.EditValue) <= 0)
-            //{
-            //    CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
-            //    return;
-            //}
+            if (Convert.ToDecimal(spinEditPesoKg.EditValue) <= 0)
+            {
+                CajaDialogo.Error("No se puede registrar una cantidad de materia en cero (0)!");
+                return;
+            }
 
             if (Convert.ToDecimal(spinEditUnidades.Value) <= 0)
             {
