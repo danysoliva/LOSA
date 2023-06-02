@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 using LOSA.TransaccionesMP.DataSet;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,11 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
 {
     public partial class frmSolicitudesAjustesInventario : DevExpress.XtraEditors.XtraForm
     {
-        public frmSolicitudesAjustesInventario()
+        UserLogin UsuarioLogeado;
+        public frmSolicitudesAjustesInventario(UserLogin pUser)
         {
             InitializeComponent();
+            UsuarioLogeado = pUser;
             LoadDatos();
         }
 
@@ -62,7 +65,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
                 return;
             }
 
-            DialogResult r = CajaDialogo.Error("Esta seguro de cancelar este ajuste?");
+            DialogResult r = CajaDialogo.Pregunta("Esta seguro de cancelar este ajuste?");
             if (r != DialogResult.Yes)
                 return;
 
@@ -104,7 +107,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
                 return;
             }
 
-            DialogResult r = CajaDialogo.Error("Esta seguro de aprobar este ajuste?");
+            DialogResult r = CajaDialogo.Pregunta("Esta seguro de aprobar este ajuste?");
             if (r != DialogResult.Yes)
                 return;
 
@@ -160,32 +163,40 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
 
 
                     //REALIZAMOS EL INSERT DEL MOVIMIENTO EN KARDEX
-                    SqlCommand cmd3 = new SqlCommand("sp_ajuste_kardex_por_lote_v5", transaction.Connection);
+                    //SqlCommand cmd3 = new SqlCommand("sp_ajuste_kardex_por_lote_v5", transaction.Connection);
+                    //cmd3.Transaction = transaction;
+                    //cmd3.CommandType = CommandType.StoredProcedure;
+                    //cmd3.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
+                    //cmd3.Parameters.AddWithValue("@cant_salida", 0);
+                    //cmd3.Parameters.AddWithValue("@ud_entrada", spinEditUnidades.EditValue);
+                    //cmd3.Parameters.AddWithValue("@ud_salida", 0);
+                    //cmd3.Parameters.AddWithValue("@fechaDocumento", dtFechaDocumento.EditValue);
+
+                    //cmd3.Parameters.AddWithValue("@bodega_origen", gridLookUpEditOrigen.EditValue);
+
+                    ////Ponemos el mismo valor, esto es por que es un ajuste a una sola bodega, entrada o salida
+                    //cmd3.Parameters.AddWithValue("@bodega_destino", gridLookUpEditOrigen.EditValue);
+
+                    //cmd3.Parameters.AddWithValue("@id_referencia_operacion", DBNull.Value);
+                    //cmd3.Parameters.AddWithValue("id_lote_alosy", DBNull.Value);
+                    //cmd3.Parameters.AddWithValue("@lote", txtLoteNuevo.Text);
+                    //cmd3.Parameters.AddWithValue("@id_mp", Id_MP);
+                    //cmd3.Parameters.AddWithValue("@itemcode", ItemCode);
+                    //cmd3.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
+                    //cmd3.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
+                    //cmd3.Parameters.AddWithValue("@tipo_operacion", 1);
+                    //cmd3.Parameters.AddWithValue("@justificacion", txtJustificacion.Text);
+                    //cmd3.Parameters.AddWithValue("@es_nuevo_lote", 1);
+                    //cmd3.ExecuteNonQuery();
+                    //Attempt to commit the transaction.
+
+                    SqlCommand cmd3 = new SqlCommand("sp_insert_mp_lote_h_for_kardex_ajuste_aprobado", transaction.Connection);
                     cmd3.Transaction = transaction;
                     cmd3.CommandType = CommandType.StoredProcedure;
-                    cmd3.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
-                    cmd3.Parameters.AddWithValue("@cant_salida", 0);
-                    cmd3.Parameters.AddWithValue("@ud_entrada", spinEditUnidades.EditValue);
-                    cmd3.Parameters.AddWithValue("@ud_salida", 0);
-                    cmd3.Parameters.AddWithValue("@fechaDocumento", dtFechaDocumento.EditValue);
-
-                    cmd3.Parameters.AddWithValue("@bodega_origen", gridLookUpEditOrigen.EditValue);
-
-                    //Ponemos el mismo valor, esto es por que es un ajuste a una sola bodega, entrada o salida
-                    cmd3.Parameters.AddWithValue("@bodega_destino", gridLookUpEditOrigen.EditValue);
-
-                    cmd3.Parameters.AddWithValue("@id_referencia_operacion", DBNull.Value);
-                    cmd3.Parameters.AddWithValue("id_lote_alosy", DBNull.Value);
-                    cmd3.Parameters.AddWithValue("@lote", txtLoteNuevo.Text);
-                    cmd3.Parameters.AddWithValue("@id_mp", Id_MP);
-                    cmd3.Parameters.AddWithValue("@itemcode", ItemCode);
-                    cmd3.Parameters.AddWithValue("@id_usercreate", UsuarioLogueado.Id);
-                    cmd3.Parameters.AddWithValue("@id_presentacion", gridLookUpEditPresentacion.EditValue);
-                    cmd3.Parameters.AddWithValue("@tipo_operacion", 1);
-                    cmd3.Parameters.AddWithValue("@justificacion", txtJustificacion.Text);
-                    cmd3.Parameters.AddWithValue("@es_nuevo_lote", 1);
+                    cmd3.Parameters.AddWithValue("@id_borrador", row.id);
+                    cmd3.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                    
                     cmd3.ExecuteNonQuery();
-                    //Attempt to commit the transaction.
 
                     transaction.Commit();
                     conn.Close();

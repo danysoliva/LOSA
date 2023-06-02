@@ -54,6 +54,8 @@ namespace LOSA.TransaccionesMP
             this.txtMP_Name = new DevExpress.XtraEditors.ButtonEdit();
             this.txtNumLote = new DevExpress.XtraEditors.ButtonEdit();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRecepcionMP_AjusteLote1 = new LOSA.TransaccionesMP.DataSet.dsRecepcionMP_AjusteLote();
             this.gvLookUpEditPresentacion = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,6 +71,7 @@ namespace LOSA.TransaccionesMP
             this.spinEditPesoKg = new DevExpress.XtraEditors.SpinEdit();
             this.lblBodegaOrigen = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditOrigen = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bindingSourceBodOrigen = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -85,20 +88,20 @@ namespace LOSA.TransaccionesMP
             this.txtJustificacion = new DevExpress.XtraEditors.MemoEdit();
             this.txtUnidadsPorTarima = new DevExpress.XtraEditors.SpinEdit();
             this.txtCantidadTarimas = new DevExpress.XtraEditors.SpinEdit();
-            this.bindingSourceBodOrigen = new System.Windows.Forms.BindingSource(this.components);
-            this.dsRecepcionMP_AjusteLote1 = new LOSA.TransaccionesMP.DataSet.dsRecepcionMP_AjusteLote();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceBodDestino = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tsTipoTransaccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumLote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLookUpEditPresentacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteNuevo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditPesoKg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).BeginInit();
@@ -107,9 +110,6 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.txtJustificacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnidadsPorTarima.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodDestino)).BeginInit();
             this.SuspendLayout();
@@ -118,7 +118,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(17, 299);
+            this.labelControl5.Location = new System.Drawing.Point(17, 259);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(241, 22);
             this.labelControl5.TabIndex = 85;
@@ -141,7 +141,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(17, 532);
+            this.labelControl7.Location = new System.Drawing.Point(17, 492);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(241, 22);
             this.labelControl7.TabIndex = 88;
@@ -151,7 +151,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(17, 415);
+            this.labelControl1.Location = new System.Drawing.Point(17, 375);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(227, 22);
             this.labelControl1.TabIndex = 90;
@@ -192,7 +192,7 @@ namespace LOSA.TransaccionesMP
             // 
             // txtNumLote
             // 
-            this.txtNumLote.Location = new System.Drawing.Point(228, 289);
+            this.txtNumLote.Location = new System.Drawing.Point(228, 249);
             this.txtNumLote.Name = "txtNumLote";
             this.txtNumLote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.txtNumLote.Properties.Appearance.Options.UseFont = true;
@@ -217,7 +217,7 @@ namespace LOSA.TransaccionesMP
             // gridLookUpEditPresentacion
             // 
             this.gridLookUpEditPresentacion.EditValue = "";
-            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(228, 367);
+            this.gridLookUpEditPresentacion.Location = new System.Drawing.Point(228, 327);
             this.gridLookUpEditPresentacion.Name = "gridLookUpEditPresentacion";
             this.gridLookUpEditPresentacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.gridLookUpEditPresentacion.Properties.Appearance.Options.UseFont = true;
@@ -230,6 +230,16 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditPresentacion.Size = new System.Drawing.Size(354, 32);
             this.gridLookUpEditPresentacion.TabIndex = 10;
             this.gridLookUpEditPresentacion.EditValueChanged += new System.EventHandler(this.gridLookUpEditPresentacion_EditValueChanged);
+            // 
+            // presentacionesBindingSource
+            // 
+            this.presentacionesBindingSource.DataMember = "presentaciones";
+            this.presentacionesBindingSource.DataSource = this.dsRecepcionMP_AjusteLote1;
+            // 
+            // dsRecepcionMP_AjusteLote1
+            // 
+            this.dsRecepcionMP_AjusteLote1.DataSetName = "dsRecepcionMP_AjusteLote";
+            this.dsRecepcionMP_AjusteLote1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gvLookUpEditPresentacion
             // 
@@ -268,7 +278,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(18, 377);
+            this.labelControl11.Location = new System.Drawing.Point(18, 337);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(226, 22);
             this.labelControl11.TabIndex = 101;
@@ -320,32 +330,34 @@ namespace LOSA.TransaccionesMP
             // radioLoteExistente
             // 
             this.radioLoteExistente.AutoSize = true;
+            this.radioLoteExistente.Checked = true;
             this.radioLoteExistente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.radioLoteExistente.Location = new System.Drawing.Point(229, 178);
+            this.radioLoteExistente.Location = new System.Drawing.Point(228, 2);
             this.radioLoteExistente.Name = "radioLoteExistente";
             this.radioLoteExistente.Size = new System.Drawing.Size(146, 28);
             this.radioLoteExistente.TabIndex = 3;
             this.radioLoteExistente.TabStop = true;
             this.radioLoteExistente.Text = "Lote Existente";
             this.radioLoteExistente.UseVisualStyleBackColor = true;
+            this.radioLoteExistente.Visible = false;
             this.radioLoteExistente.CheckedChanged += new System.EventHandler(this.radioLoteExistente_CheckedChanged);
             // 
             // radioLoteNuevo
             // 
             this.radioLoteNuevo.AutoSize = true;
             this.radioLoteNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.radioLoteNuevo.Location = new System.Drawing.Point(414, 178);
+            this.radioLoteNuevo.Location = new System.Drawing.Point(229, 36);
             this.radioLoteNuevo.Name = "radioLoteNuevo";
             this.radioLoteNuevo.Size = new System.Drawing.Size(125, 28);
             this.radioLoteNuevo.TabIndex = 106;
-            this.radioLoteNuevo.TabStop = true;
             this.radioLoteNuevo.Text = "Lote Nuevo";
             this.radioLoteNuevo.UseVisualStyleBackColor = true;
+            this.radioLoteNuevo.Visible = false;
             this.radioLoteNuevo.CheckedChanged += new System.EventHandler(this.radioLoteNuevo_CheckedChanged);
             // 
             // txtLoteNuevo
             // 
-            this.txtLoteNuevo.Location = new System.Drawing.Point(228, 289);
+            this.txtLoteNuevo.Location = new System.Drawing.Point(228, 249);
             this.txtLoteNuevo.Name = "txtLoteNuevo";
             this.txtLoteNuevo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.txtLoteNuevo.Properties.Appearance.Options.UseFont = true;
@@ -364,7 +376,7 @@ namespace LOSA.TransaccionesMP
             0,
             0,
             0});
-            this.spinEditPesoKg.Location = new System.Drawing.Point(228, 522);
+            this.spinEditPesoKg.Location = new System.Drawing.Point(228, 482);
             this.spinEditPesoKg.Name = "spinEditPesoKg";
             this.spinEditPesoKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.spinEditPesoKg.Properties.Appearance.Options.UseFont = true;
@@ -377,7 +389,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.lblBodegaOrigen.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.lblBodegaOrigen.Appearance.Options.UseFont = true;
-            this.lblBodegaOrigen.Location = new System.Drawing.Point(17, 222);
+            this.lblBodegaOrigen.Location = new System.Drawing.Point(17, 182);
             this.lblBodegaOrigen.Name = "lblBodegaOrigen";
             this.lblBodegaOrigen.Size = new System.Drawing.Size(263, 22);
             this.lblBodegaOrigen.TabIndex = 116;
@@ -385,7 +397,7 @@ namespace LOSA.TransaccionesMP
             // 
             // gridLookUpEditOrigen
             // 
-            this.gridLookUpEditOrigen.Location = new System.Drawing.Point(229, 217);
+            this.gridLookUpEditOrigen.Location = new System.Drawing.Point(229, 177);
             this.gridLookUpEditOrigen.Name = "gridLookUpEditOrigen";
             this.gridLookUpEditOrigen.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridLookUpEditOrigen.Properties.Appearance.Options.UseFont = true;
@@ -397,6 +409,11 @@ namespace LOSA.TransaccionesMP
             this.gridLookUpEditOrigen.Properties.ValueMember = "id";
             this.gridLookUpEditOrigen.Size = new System.Drawing.Size(355, 26);
             this.gridLookUpEditOrigen.TabIndex = 118;
+            // 
+            // bindingSourceBodOrigen
+            // 
+            this.bindingSourceBodOrigen.DataMember = "bodega_origen";
+            this.bindingSourceBodOrigen.DataSource = this.dsRecepcionMP_AjusteLote1;
             // 
             // gridLookUpEdit1View
             // 
@@ -452,7 +469,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(17, 259);
+            this.labelControl12.Location = new System.Drawing.Point(17, 219);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(257, 22);
             this.labelControl12.TabIndex = 120;
@@ -461,7 +478,7 @@ namespace LOSA.TransaccionesMP
             // dtFechaDocumento
             // 
             this.dtFechaDocumento.EditValue = null;
-            this.dtFechaDocumento.Location = new System.Drawing.Point(228, 255);
+            this.dtFechaDocumento.Location = new System.Drawing.Point(228, 215);
             this.dtFechaDocumento.Name = "dtFechaDocumento";
             this.dtFechaDocumento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.dtFechaDocumento.Properties.Appearance.Options.UseFont = true;
@@ -481,7 +498,7 @@ namespace LOSA.TransaccionesMP
             0,
             0,
             0});
-            this.spinEditUnidades.Location = new System.Drawing.Point(228, 405);
+            this.spinEditUnidades.Location = new System.Drawing.Point(228, 365);
             this.spinEditUnidades.Name = "spinEditUnidades";
             this.spinEditUnidades.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.spinEditUnidades.Properties.Appearance.Options.UseFont = true;
@@ -497,7 +514,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(17, 339);
+            this.labelControl4.Location = new System.Drawing.Point(17, 299);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(234, 22);
             this.labelControl4.TabIndex = 110;
@@ -505,7 +522,7 @@ namespace LOSA.TransaccionesMP
             // 
             // buttonProveedores
             // 
-            this.buttonProveedores.Location = new System.Drawing.Point(228, 329);
+            this.buttonProveedores.Location = new System.Drawing.Point(228, 289);
             this.buttonProveedores.Name = "buttonProveedores";
             this.buttonProveedores.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.buttonProveedores.Properties.Appearance.Options.UseFont = true;
@@ -530,7 +547,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(17, 455);
+            this.labelControl6.Location = new System.Drawing.Point(17, 415);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(261, 22);
             this.labelControl6.TabIndex = 112;
@@ -540,7 +557,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(17, 494);
+            this.labelControl8.Location = new System.Drawing.Point(17, 454);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(247, 22);
             this.labelControl8.TabIndex = 114;
@@ -550,7 +567,7 @@ namespace LOSA.TransaccionesMP
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(18, 680);
+            this.labelControl3.Location = new System.Drawing.Point(18, 640);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(249, 22);
             this.labelControl3.TabIndex = 123;
@@ -558,7 +575,7 @@ namespace LOSA.TransaccionesMP
             // 
             // txtJustificacion
             // 
-            this.txtJustificacion.Location = new System.Drawing.Point(228, 565);
+            this.txtJustificacion.Location = new System.Drawing.Point(228, 525);
             this.txtJustificacion.Name = "txtJustificacion";
             this.txtJustificacion.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.txtJustificacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
@@ -574,7 +591,7 @@ namespace LOSA.TransaccionesMP
             0,
             0,
             0});
-            this.txtUnidadsPorTarima.Location = new System.Drawing.Point(228, 445);
+            this.txtUnidadsPorTarima.Location = new System.Drawing.Point(228, 405);
             this.txtUnidadsPorTarima.Name = "txtUnidadsPorTarima";
             this.txtUnidadsPorTarima.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.txtUnidadsPorTarima.Properties.Appearance.Options.UseFont = true;
@@ -591,7 +608,7 @@ namespace LOSA.TransaccionesMP
             0,
             0,
             0});
-            this.txtCantidadTarimas.Location = new System.Drawing.Point(228, 484);
+            this.txtCantidadTarimas.Location = new System.Drawing.Point(228, 444);
             this.txtCantidadTarimas.Name = "txtCantidadTarimas";
             this.txtCantidadTarimas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.txtCantidadTarimas.Properties.Appearance.Options.UseFont = true;
@@ -600,21 +617,6 @@ namespace LOSA.TransaccionesMP
             this.txtCantidadTarimas.Properties.Mask.EditMask = "n4";
             this.txtCantidadTarimas.Size = new System.Drawing.Size(354, 32);
             this.txtCantidadTarimas.TabIndex = 127;
-            // 
-            // bindingSourceBodOrigen
-            // 
-            this.bindingSourceBodOrigen.DataMember = "bodega_origen";
-            this.bindingSourceBodOrigen.DataSource = this.dsRecepcionMP_AjusteLote1;
-            // 
-            // dsRecepcionMP_AjusteLote1
-            // 
-            this.dsRecepcionMP_AjusteLote1.DataSetName = "dsRecepcionMP_AjusteLote";
-            this.dsRecepcionMP_AjusteLote1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // presentacionesBindingSource
-            // 
-            this.presentacionesBindingSource.DataMember = "presentaciones";
-            this.presentacionesBindingSource.DataSource = this.dsRecepcionMP_AjusteLote1;
             // 
             // proveedoresBindingSource
             // 
@@ -632,7 +634,7 @@ namespace LOSA.TransaccionesMP
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 711);
+            this.ClientSize = new System.Drawing.Size(634, 717);
             this.ControlBox = false;
             this.Controls.Add(this.txtCantidadTarimas);
             this.Controls.Add(this.txtUnidadsPorTarima);
@@ -670,11 +672,14 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumLote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditPresentacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLookUpEditPresentacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteNuevo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditPesoKg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEditOrigen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDocumento.Properties)).EndInit();
@@ -683,9 +688,6 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.txtJustificacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnidadsPorTarima.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodOrigen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presentacionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceBodDestino)).EndInit();
             this.ResumeLayout(false);
