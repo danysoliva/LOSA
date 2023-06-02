@@ -281,7 +281,7 @@ namespace LOSA.TransaccionesMP
                         
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v5", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v6", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         //cmd.Parameters.AddWithValue("@cant_entrada", txtPesoKG.Text);
                         cmd.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
@@ -316,6 +316,8 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@tipo_operacion", 1);//1=Ajuste,   0=Traslado
                         cmd.Parameters.AddWithValue("@justificacion", txtJustificacion.Text); 
                         cmd.Parameters.AddWithValue("@es_nuevo_lote", 0);
+                        cmd.Parameters.AddWithValue("@cant_tarimas", txtCantidadTarimas.Value);
+                        cmd.Parameters.AddWithValue("@cant_por_tarima", txtUnidadsPorTarima.Value);
                         cmd.ExecuteNonQuery();
                         conn.Close();
 
@@ -379,7 +381,7 @@ namespace LOSA.TransaccionesMP
 
 
                         //REALIZAMOS EL INSERT DEL MOVIMIENTO EN KARDEX
-                        SqlCommand cmd3 = new SqlCommand("sp_ajuste_kardex_por_lote_v5", transaction.Connection);
+                        SqlCommand cmd3 = new SqlCommand("sp_ajuste_kardex_por_lote_v6", transaction.Connection);
                         cmd3.Transaction = transaction;
                         cmd3.CommandType = CommandType.StoredProcedure;
                         cmd3.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
@@ -403,6 +405,8 @@ namespace LOSA.TransaccionesMP
                         cmd3.Parameters.AddWithValue("@tipo_operacion", 1);
                         cmd3.Parameters.AddWithValue("@justificacion", txtJustificacion.Text);
                         cmd3.Parameters.AddWithValue("@es_nuevo_lote", 1);
+                        cmd3.Parameters.AddWithValue("@cant_tarimas", txtCantidadTarimas.Value);
+                        cmd3.Parameters.AddWithValue("@cant_por_tarima", txtUnidadsPorTarima.Value);
                         cmd3.ExecuteNonQuery();
                         //Attempt to commit the transaction.
 
@@ -436,7 +440,7 @@ namespace LOSA.TransaccionesMP
                         //DataOperations dp = new DataOperations();
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v5", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v6", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@cant_entrada", 0);
                         cmd.Parameters.AddWithValue("@cant_salida", spinEditPesoKg.EditValue);
@@ -466,6 +470,9 @@ namespace LOSA.TransaccionesMP
 
                         cmd.Parameters.AddWithValue("@tipo_operacion", 1);//1=Ajuste,   0=Traslado
                         cmd.Parameters.AddWithValue("@justificacion", txtJustificacion.Text);
+                        cmd.Parameters.AddWithValue("@es_nuevo_lote", 0);
+                        cmd.Parameters.AddWithValue("@cant_tarimas", txtCantidadTarimas.Value);
+                        cmd.Parameters.AddWithValue("@cant_por_tarima", txtUnidadsPorTarima.Value);
                         cmd.ExecuteNonQuery();
                         conn.Close();
 

@@ -125,6 +125,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldado_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_dado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemGridLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -157,7 +158,6 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.txtNombreLinea = new DevExpress.XtraEditors.TextEdit();
             this.txtTotalHorasMotor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAddReproceso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlReproceso)).BeginInit();
@@ -638,6 +638,14 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.colid_dado.FieldName = "id_dado";
             this.colid_dado.Name = "colid_dado";
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.FieldName = "Eficiencia TM/h";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.ReadOnly = true;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 9;
+            // 
             // repositoryItemGridLookUpEdit1
             // 
             this.repositoryItemGridLookUpEdit1.AutoHeight = false;
@@ -951,14 +959,6 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.labelControl1.Size = new System.Drawing.Size(174, 18);
             this.labelControl1.TabIndex = 67;
             this.labelControl1.Text = "Horas Trabajadas_______";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.FieldName = "Eficiencia TM/h";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.ReadOnly = true;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 9;
             // 
             // frm_new_detail_prd_efi
             // 
