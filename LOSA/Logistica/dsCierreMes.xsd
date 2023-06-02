@@ -274,6 +274,17 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="lotes_recuento" msprop:Generator_TableClassName="lotes_recuentoDataTable" msprop:Generator_TableVarName="tablelotes_recuento" msprop:Generator_RowChangedName="lotes_recuentoRowChanged" msprop:Generator_TablePropName="lotes_recuento" msprop:Generator_RowDeletingName="lotes_recuentoRowDeleting" msprop:Generator_RowChangingName="lotes_recuentoRowChanging" msprop:Generator_RowEvHandlerName="lotes_recuentoRowChangeEventHandler" msprop:Generator_RowDeletedName="lotes_recuentoRowDeleted" msprop:Generator_RowClassName="lotes_recuentoRow" msprop:Generator_UserTableName="lotes_recuento" msprop:Generator_RowEvArgName="lotes_recuentoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="id_unidadmedida" msprop:Generator_ColumnVarNameInTable="columnid_unidadmedida" msprop:Generator_ColumnPropNameInRow="id_unidadmedida" msprop:Generator_ColumnPropNameInTable="id_unidadmedidaColumn" msprop:Generator_UserColumnName="id_unidadmedida" type="xs:int" minOccurs="0" />
+              <xs:element name="presentacion" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:string" minOccurs="0" />
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_vencimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

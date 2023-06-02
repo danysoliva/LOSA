@@ -217,6 +217,7 @@
             this.simpleButton48 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton47 = new DevExpress.XtraEditors.SimpleButton();
             this.TabContabilidad = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdAprobarAjustesInvALOSY = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteBancosPlanilla = new DevExpress.XtraEditors.SimpleButton();
             this.btnAprobaTarimasConta = new DevExpress.XtraEditors.SimpleButton();
             this.btn_rutas_traza_contabilidad = new DevExpress.XtraEditors.SimpleButton();
@@ -241,7 +242,6 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.cmdAprobarAjustesInvALOSY = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1858,6 +1858,7 @@
             this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup1.AppearancePressed.Options.UseFont = true;
             this.navBarGroup1.Caption = "Producción";
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrazabilidad),
@@ -3063,6 +3064,21 @@
             this.TabContabilidad.Size = new System.Drawing.Size(835, 502);
             this.TabContabilidad.Text = "Contabilidad";
             // 
+            // cmdAprobarAjustesInvALOSY
+            // 
+            this.cmdAprobarAjustesInvALOSY.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.cmdAprobarAjustesInvALOSY.Appearance.Options.UseFont = true;
+            this.cmdAprobarAjustesInvALOSY.Appearance.Options.UseTextOptions = true;
+            this.cmdAprobarAjustesInvALOSY.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdAprobarAjustesInvALOSY.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdAprobarAjustesInvALOSY.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
+            this.cmdAprobarAjustesInvALOSY.Location = new System.Drawing.Point(545, 384);
+            this.cmdAprobarAjustesInvALOSY.Name = "cmdAprobarAjustesInvALOSY";
+            this.cmdAprobarAjustesInvALOSY.Size = new System.Drawing.Size(223, 71);
+            this.cmdAprobarAjustesInvALOSY.TabIndex = 53;
+            this.cmdAprobarAjustesInvALOSY.Text = "Ajustes de Inventario Solicitudes";
+            this.cmdAprobarAjustesInvALOSY.Click += new System.EventHandler(this.cmdAprobarAjustesInvALOSY_Click);
+            // 
             // cmdReporteBancosPlanilla
             // 
             this.cmdReporteBancosPlanilla.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3405,21 +3421,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // cmdAprobarAjustesInvALOSY
-            // 
-            this.cmdAprobarAjustesInvALOSY.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            this.cmdAprobarAjustesInvALOSY.Appearance.Options.UseFont = true;
-            this.cmdAprobarAjustesInvALOSY.Appearance.Options.UseTextOptions = true;
-            this.cmdAprobarAjustesInvALOSY.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdAprobarAjustesInvALOSY.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdAprobarAjustesInvALOSY.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
-            this.cmdAprobarAjustesInvALOSY.Location = new System.Drawing.Point(545, 384);
-            this.cmdAprobarAjustesInvALOSY.Name = "cmdAprobarAjustesInvALOSY";
-            this.cmdAprobarAjustesInvALOSY.Size = new System.Drawing.Size(223, 71);
-            this.cmdAprobarAjustesInvALOSY.TabIndex = 53;
-            this.cmdAprobarAjustesInvALOSY.Text = "Ajustes de Inventario Solicitudes";
-            this.cmdAprobarAjustesInvALOSY.Click += new System.EventHandler(this.cmdAprobarAjustesInvALOSY_Click);
             // 
             // frmOpciones
             // 

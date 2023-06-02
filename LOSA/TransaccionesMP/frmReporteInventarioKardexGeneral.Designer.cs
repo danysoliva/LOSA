@@ -55,6 +55,11 @@ namespace LOSA.TransaccionesMP
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -65,11 +70,6 @@ namespace LOSA.TransaccionesMP
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryAjuste = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
@@ -167,6 +167,7 @@ namespace LOSA.TransaccionesMP
             this.coldescripcion_pt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colunidades_totales = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmAjusteReproceso = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage6 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -197,7 +198,6 @@ namespace LOSA.TransaccionesMP
             this.backgroundWorkerResumenMP = new System.ComponentModel.BackgroundWorker();
             this.btnTrasladoKardex = new DevExpress.XtraEditors.SimpleButton();
             this.cmdVerBorradorDeAjustes = new DevExpress.XtraEditors.SimpleButton();
-            this.cmAjusteReproceso = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryAjuste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
@@ -221,6 +221,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridReproceso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmAjusteReproceso)).BeginInit();
             this.tabNavigationPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdMPBodega)).BeginInit();
@@ -228,7 +229,6 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAjuste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLogKardex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_Inv_Por_MPyBodega.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmAjusteReproceso)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryAjuste
@@ -1361,6 +1361,16 @@ namespace LOSA.TransaccionesMP
             this.gridColumn23.VisibleIndex = 10;
             this.gridColumn23.Width = 119;
             // 
+            // cmAjusteReproceso
+            // 
+            this.cmAjusteReproceso.AutoHeight = false;
+            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.edit24px;
+            this.cmAjusteReproceso.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmAjusteReproceso.Name = "cmAjusteReproceso";
+            this.cmAjusteReproceso.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.cmAjusteReproceso.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmAjusteReproceso_ButtonClick);
+            // 
             // colbodega
             // 
             this.colbodega.Caption = "Bodega";
@@ -1717,16 +1727,6 @@ namespace LOSA.TransaccionesMP
             this.cmdVerBorradorDeAjustes.Text = "Ver Ajustes";
             this.cmdVerBorradorDeAjustes.Click += new System.EventHandler(this.cmdVerBorradorDeAjustes_Click);
             // 
-            // cmAjusteReproceso
-            // 
-            this.cmAjusteReproceso.AutoHeight = false;
-            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.edit24px;
-            this.cmAjusteReproceso.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmAjusteReproceso.Name = "cmAjusteReproceso";
-            this.cmAjusteReproceso.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmAjusteReproceso.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmAjusteReproceso_ButtonClick);
-            // 
             // frmReporteInventarioKardexGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1764,6 +1764,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridReproceso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmAjusteReproceso)).EndInit();
             this.tabNavigationPage6.ResumeLayout(false);
             this.tabNavigationPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tggMostrarTotasInv_por_mp_y_bodega.Properties)).EndInit();
@@ -1772,7 +1773,6 @@ namespace LOSA.TransaccionesMP
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAjuste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLogKardex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo_Inv_Por_MPyBodega.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmAjusteReproceso)).EndInit();
             this.ResumeLayout(false);
 
         }

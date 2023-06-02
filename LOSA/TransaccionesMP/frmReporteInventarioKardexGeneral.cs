@@ -261,23 +261,38 @@ namespace LOSA.TransaccionesMP
 
         private void btnAjustePorLote_Click(object sender, EventArgs e)
         {
-            Funciones fn1 = new Funciones();
-            if(fn1.GetRutaAjustesInventario() == 1)
+            switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
             {
-                frmAsjuteInventarioPorLoteWithAutorization frm = new frmAsjuteInventarioPorLoteWithAutorization(UsuarioLogeado);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    load_dataPorLotes();
-                }
+              
+                case GrupoUser.GrupoUsuario.Administradores:
+                    frmAsjuteInventarioPorLote frm1 = new frmAsjuteInventarioPorLote(UsuarioLogeado);
+                    if (frm1.ShowDialog() == DialogResult.OK)
+                    {
+                        load_dataPorLotes();
+                    }
+                    break;
+
+                default:
+                    Funciones fn1 = new Funciones();
+                    if (fn1.GetRutaAjustesInventario() == 1)
+                    {
+                        frmAsjuteInventarioPorLoteWithAutorization frm = new frmAsjuteInventarioPorLoteWithAutorization(UsuarioLogeado);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            load_dataPorLotes();
+                        }
+                    }
+                    else
+                    {
+                        frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado);
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            load_dataPorLotes();
+                        }
+                    }
+                    break;
             }
-            else
-            {
-                frmAsjuteInventarioPorLote frm = new frmAsjuteInventarioPorLote(UsuarioLogeado);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    load_dataPorLotes();
-                }
-            }
+           
             
         }
 

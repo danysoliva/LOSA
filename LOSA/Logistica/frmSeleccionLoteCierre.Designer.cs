@@ -31,11 +31,11 @@ namespace LOSA.Logistica
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionLoteCierre));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -43,6 +43,7 @@ namespace LOSA.Logistica
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnAddLote = new DevExpress.XtraEditors.SimpleButton();
             this.chauto = new DevExpress.XtraEditors.CheckEdit();
             this.grd_existencia_lote = new DevExpress.XtraGrid.GridControl();
             this.dsCierreMes = new LOSA.Logistica.dsCierreMes();
@@ -203,6 +204,7 @@ namespace LOSA.Logistica
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.btnAddLote);
             this.groupControl2.Controls.Add(this.chauto);
             this.groupControl2.Controls.Add(this.grd_existencia_lote);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -212,9 +214,22 @@ namespace LOSA.Logistica
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Existencia de lotes";
             // 
+            // btnAddLote
+            // 
+            this.btnAddLote.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddLote.Appearance.Options.UseFont = true;
+            this.btnAddLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddLote.ImageOptions.Image")));
+            this.btnAddLote.Location = new System.Drawing.Point(8, 27);
+            this.btnAddLote.Name = "btnAddLote";
+            this.btnAddLote.Size = new System.Drawing.Size(78, 40);
+            this.btnAddLote.TabIndex = 1;
+            this.btnAddLote.Text = "Lote";
+            this.btnAddLote.Visible = false;
+            this.btnAddLote.Click += new System.EventHandler(this.btnAddLote_Click);
+            // 
             // chauto
             // 
-            this.chauto.Location = new System.Drawing.Point(6, 28);
+            this.chauto.Location = new System.Drawing.Point(88, 42);
             this.chauto.Name = "chauto";
             this.chauto.Size = new System.Drawing.Size(75, 19);
             this.chauto.TabIndex = 0;
@@ -584,9 +599,9 @@ namespace LOSA.Logistica
             // repositorybtnDelete
             // 
             this.repositorybtnDelete.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repositorybtnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositorybtnDelete.Name = "repositorybtnDelete";
             this.repositorybtnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositorybtnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositorybtnDelete_ButtonClick);
@@ -955,5 +970,6 @@ namespace LOSA.Logistica
         private DevExpress.XtraGrid.Columns.GridColumn colid_presentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colutil_unidades1;
+        private DevExpress.XtraEditors.SimpleButton btnAddLote;
     }
 }

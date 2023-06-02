@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.RecuentoInventario;
 
 namespace LOSA.Logistica
 {
@@ -236,6 +237,11 @@ namespace LOSA.Logistica
                 {
                     get_lotes(IdMpSelected, bodega);
                 }
+
+                if (grdv_existencia_lote.RowCount == 0)
+                {
+                    btnAddLote.Visible = true;
+                }
                 
             }
             catch (Exception ex)
@@ -441,11 +447,16 @@ namespace LOSA.Logistica
                     if ((sum + row.utilizado) > NuevaCantidad)
                     {
                         CajaDialogo.Error("La cantidad configurada en los lotes es mayor a la nueva cantidad.");
+                        row.seleccionar = false;
                         return;
                     }
                     var list = dsCierreMes.SeleccionLote.AsEnumerable();
                     sum = list.Sum(x => x.utilizado);
                 }
+
+                row.seleccionar = true;
+                btnDerecha.Enabled = true;
+
             }
             catch (Exception ex)
             {
@@ -725,6 +736,37 @@ namespace LOSA.Logistica
             }
         }
 
-      
+        private void btnAddLote_Click(object sender, EventArgs e)
+        {
+            frmAddLote frm = new frmAddLote(IdMpSelected, bodega);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                DataRow dr = dsCierreMes.SeleccionLote.NewRow();
+                dr["id_mp"] = IdMpSelected;
+                MateriaPrima mp = new MateriaPrima();
+                mp.RecuperarRegistroFromID_RM(IdMpSelected);
+                dr["descripcion"] = mp.NameComercial;
+                dr["ExistenciaAprox"] = 0;
+                dr["lote"] = frm.lote;
+                dr["seleccionar"] = false;
+                dr["utilizado"] = 0;
+                dr["id_lote_alosy"] = 0;
+                dr["OC"] = 0;
+                dr["factura"] = "";
+                dr["id_ingreso_lote"] = 0;
+                dr["bodega_in"] = bodega; 
+                dr["id_detalle"] = 0; 
+                dr["id_presentacion"] = frm.id_presentacion; 
+                dr["fecha_vencimiento"] = frm.fecha_venc;
+                dr["itemcode"] = mp.CodeMP_SAP;
+                dr["unidades"] = 0;
+                dr["util_unidades"] = 0;
+                dr["presentacion"] = frm.presentacion;
+
+                dsCierreMes.SeleccionLote.Rows.Add(dr);
+                dsCierreMes.SeleccionLote.AcceptChanges();
+
+            }
+        }
     }
 }
