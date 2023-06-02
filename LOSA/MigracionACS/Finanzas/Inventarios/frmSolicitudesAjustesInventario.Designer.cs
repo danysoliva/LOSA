@@ -29,17 +29,17 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitudesAjustesInventario));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.toggleSwitchVerTodos = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -76,16 +76,16 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.colFechaAprobado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coles_nuevo_lote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coleliminar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dsRecepcionMP_AjusteLote1 = new LOSA.TransaccionesMP.DataSet.dsRecepcionMP_AjusteLote();
+            this.btnEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colAprobar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdAprobar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btnEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.dsRecepcionMP_AjusteLote1 = new LOSA.TransaccionesMP.DataSet.dsRecepcionMP_AjusteLote();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdAprobar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAprobar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
@@ -126,6 +126,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "borradores_select";
+            this.gridControl1.DataSource = this.dsRecepcionMP_AjusteLote1;
             this.gridControl1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.gridControl1.Location = new System.Drawing.Point(2, 81);
             this.gridControl1.MainView = this.gridView1;
@@ -416,10 +417,15 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.coleliminar.VisibleIndex = 14;
             this.coleliminar.Width = 55;
             // 
-            // dsRecepcionMP_AjusteLote1
+            // btnEliminar
             // 
-            this.dsRecepcionMP_AjusteLote1.DataSetName = "dsRecepcionMP_AjusteLote";
-            this.dsRecepcionMP_AjusteLote1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.btnEliminar.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEliminar_ButtonClick);
             // 
             // colAprobar
             // 
@@ -439,15 +445,10 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.cmdAprobar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdAprobar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdAprobar_ButtonClick);
             // 
-            // btnEliminar
+            // dsRecepcionMP_AjusteLote1
             // 
-            this.btnEliminar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btnEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnEliminar_ButtonClick);
+            this.dsRecepcionMP_AjusteLote1.DataSetName = "dsRecepcionMP_AjusteLote";
+            this.dsRecepcionMP_AjusteLote1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmSolicitudesAjustesInventario
             // 
@@ -463,9 +464,9 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmdAprobar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmdAprobar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

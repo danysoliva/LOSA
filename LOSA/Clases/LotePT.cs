@@ -83,7 +83,16 @@ namespace LOSA.Clases
             }
             catch (Exception ec)
             {
-                CajaDialogo.Error(ec.Message);
+                if(FechaVence.Year == 1)
+                {
+                    throw new Exception("No se ha registrado Producto Terminado valido con este numero de Lote. No se pudo recuperar el dato de fecha de vencimiento. " +
+                                        "Esto será posible hasta hacer la recepcion de producto terminado!");
+                }
+                else
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
+                
             }
             return Recuperado;
         }

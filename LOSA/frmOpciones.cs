@@ -21,6 +21,7 @@ using LOSA.Liquidos;
 using LOSA.Logistica;
 using LOSA.Mantenimientos;
 using LOSA.MigracionACS.AquaForecast;
+using LOSA.MigracionACS.Finanzas.Inventarios;
 using LOSA.MigracionACS.Finanzas.ODOO;
 using LOSA.MigracionACS.Finanzas.Reports;
 using LOSA.MigracionACS.Forecast;
@@ -3374,7 +3375,39 @@ namespace LOSA
 
         private void cmdAprobarAjustesInvALOSY_Click(object sender, EventArgs e)
         {
+            //frmSolicitudesAjustesInventario
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                case 3://Medium Autorization
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmSolicitudesAjustesInventario frm = new frmSolicitudesAjustesInventario(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                default:
+                    break;
+            }
 
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(91))
+                {
+                    frmSolicitudesAjustesInventario frm = new frmSolicitudesAjustesInventario(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #91");
+                }
+            }
         }
     }
 }
