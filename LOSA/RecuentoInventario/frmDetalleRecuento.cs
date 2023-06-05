@@ -530,27 +530,20 @@ namespace LOSA.RecuentoInventario
             if (r != System.Windows.Forms.DialogResult.Yes)
                 return;
 
-            string query = @"sp_update_cerrar_contabilizacion";
-            try
+
+            foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_h_recuento", Id_header);
-                cmd.ExecuteNonQuery();
-                con.Close();
-
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                if (item.contabilizado == false)
+                {
+                    CajaDialogo.Error("No se realizado la contabilizacion completamente!");
+                    return;
+                }
             }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
-            }
+
+            
+            
+
+            
         }
 
         private void gridViewMP_RowStyle(object sender, RowStyleEventArgs e)
