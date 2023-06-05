@@ -5486,6 +5486,13 @@
     <Compile Include="TransaccionesMP\frm_reporte_alimentacion.Designer.cs">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.Designer.cs" />
+    <Compile Include="TransaccionesMP\Gestion_Granel\frmGestionLoteGranel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\Gestion_Granel\frmGestionLoteGranel.Designer.cs">
+      <DependentUpon>frmGestionLoteGranel.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\Granel_Planta_Consumo\dsGranelConsumoPlanta.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -7804,6 +7811,9 @@
     <EmbeddedResource Include="TransaccionesMP\frm_reporte_alimentacion.resx">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\Gestion_Granel\frmGestionLoteGranel.resx">
+      <DependentUpon>frmGestionLoteGranel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\Liquidos\frmBinesEnPRD.resx">
       <DependentUpon>frmBinesEnPRD.cs</DependentUpon>
     </EmbeddedResource>
@@ -8235,6 +8245,17 @@
     </None>
     <None Include="TransaccionesMP\dsTransaccionesMP.xss">
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.xsc">
+      <DependentUpon>dsGestionGranel.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGestionGranel1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.xss">
+      <DependentUpon>dsGestionGranel.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesMP\Granel_Planta_Consumo\dsGranelConsumoPlanta.xsc">
       <DependentUpon>dsGranelConsumoPlanta.xsd</DependentUpon>
