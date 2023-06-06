@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.TransaccionesMP.Gestion_Granel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,30 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
         public frmGestionLoteGranel()
         {
             InitializeComponent();
+            LoadLotesTrigo();
+        }
+
+        private void LoadLotesTrigo()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@idbodega", idBodega);
+                //dsPresupuesto1.estados.Clear();
+                //SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                //adat.Fill(dsPresupuesto1.estados);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
 
         private void cmdCerrar_Click(object sender, EventArgs e)
@@ -36,6 +61,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
 
             var gridView1 = (GridView)gridControl1.FocusedView;
             var row = (dsGestionGranel.Trigo_LotesRow)gridView1.GetFocusedDataRow();
+            int value_res = 0;
 
             try
             {
@@ -50,10 +76,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
                 //1     Habilitado     
                 //2     En Consumo      
                 //3     Desactivado     
-
-                //dsPresupuesto1.estados.Clear();
-                //SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                //adat.Fill(dsPresupuesto1.estados);
+                value_res = Convert.ToInt32(cmd.ExecuteScalar());
 
                 con.Close();
             }
@@ -62,13 +85,16 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
                 CajaDialogo.Error(ec.Message);
             }
 
-            try
+            if (value_res == 1)
             {
-                gridView1.DeleteRow(gridView1.FocusedRowHandle);
-            }
-            catch (Exception ec)
-            {
-                CajaDialogo.Error(ec.Message);
+                try
+                {
+                    gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                }
+                catch (Exception ec)
+                {
+                    CajaDialogo.Error(ec.Message);
+                }
             }
         }
     }
