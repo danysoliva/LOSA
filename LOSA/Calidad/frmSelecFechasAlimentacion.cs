@@ -23,7 +23,7 @@ namespace LOSA.Calidad
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

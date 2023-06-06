@@ -185,8 +185,7 @@ namespace LOSA
         {
             lblVersion.Text = AssemblyVersion;
             string HostName = Dns.GetHostName();
-            if (HostName == "F3DYSQ2" /*Danys Oliva*/ || HostName == "9SSCBV2" 
-                || HostName == "9PG91W2" /*Ruben Garcia */ || HostName == "F9Q11Q2" /*PC Soporte La 50*/)
+            if (HostName == "7L12TV3" /*Danys Oliva*/ || HostName == "9SSCBV2" /*Ever Erazo*/|| HostName == "9PG91W2" /*Ruben Garcia */ || HostName == "F9Q11Q2" /*PC Soporte La 50*/)
             {
                 SaltarLogin.Visible = simpleButton2 .Visible = SaltarLoginPRD.Visible= true;
                 cmdIngresarAdmin.Visible = cmdButtonSaltarLogin.Visible = true;
