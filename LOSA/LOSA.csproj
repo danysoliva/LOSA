@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
-    <ApplicationRevision>532</ApplicationRevision>
+    <ApplicationRevision>536</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -3711,6 +3711,12 @@
     <Compile Include="Produccion\frmHomeEnsacado.Designer.cs">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmPrioridadRequisas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmPrioridadRequisas.Designer.cs">
+      <DependentUpon>frmPrioridadRequisas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmRequisasManuales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7337,6 +7343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmHomeEnsacado.resx">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmPrioridadRequisas.resx">
+      <DependentUpon>frmPrioridadRequisas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmRequisasManuales.resx">
       <DependentUpon>frmRequisasManuales.cs</DependentUpon>

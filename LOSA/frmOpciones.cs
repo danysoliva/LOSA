@@ -99,6 +99,7 @@ namespace LOSA
                     switch (idNivel)
                     {
                         case 1://Basic View
+                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         case 2://Basic No Autorization
                             tabOpciones.TabPages[9].PageVisible = true;
@@ -1141,11 +1142,6 @@ namespace LOSA
                     case 3://Medium Autorization
                         break;
                     case 4://Depth With Delta
-                        accesoprevio = true;
-                        //frmCierreMensual frm = new frmCierreMensual(UsuarioLogeado);
-                        //frm.MdiParent = this.MdiParent;
-                        //frm.Show();
-                        break;
                     case 5://Depth Without Delta
                         accesoprevio = true;
                         frmCierreMensual frm2 = new frmCierreMensual(UsuarioLogeado);
@@ -3265,17 +3261,20 @@ namespace LOSA
             switch (idNivel)
             {
                 case 1://Basic View
-                    break;
-                case 2://Basic No Autorization
-                case 3://Medium Autorization
-                case 4://Depth With Delta
-                case 5://Depth Without Delta
                     accesoprevio = true;
                     frmRequisasMaterialEmpaque frm = new frmRequisasMaterialEmpaque(this.UsuarioLogeado);
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                     break;
+                case 2://Basic No Autorization                 
+                case 3://Medium Autorization
+                case 4://Depth With Delta
+                case 5://Depth Without Delta                 
                 default:
+                    accesoprevio = true;
+                    frmRequisasMaterialEmpaque frm0 = new frmRequisasMaterialEmpaque(this.UsuarioLogeado);
+                    frm0.MdiParent = this.MdiParent;
+                    frm0.Show();
                     break;
             }
 

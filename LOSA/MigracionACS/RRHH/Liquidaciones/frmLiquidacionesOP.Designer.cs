@@ -29,7 +29,6 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLiquidacionesOP));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdBuscarEmpleado = new DevExpress.XtraEditors.SimpleButton();
@@ -69,7 +68,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.colporcentaje = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.tsAplicaPreaviso = new DevExpress.XtraEditors.ToggleSwitch();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -679,7 +678,6 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView3_ShowingEditor_1);
             this.gridView3.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged_1);
-            this.gridView3.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanging);
             // 
             // colid
             // 

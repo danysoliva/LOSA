@@ -103,7 +103,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             tsAplicaPreaviso.Toggled += new EventHandler(tsAplicaPreaviso_Toggled);
             cmdBuscarEmpleadoFN();
             CargarLiquidacionHeader(idEmpleado);
-            CalcularEdad();
+            //CalcularEdad();
             CargarDetalleSalarios();
             CalculoDeDerechos();
             if (Id_liquidacion_ == 0)
@@ -178,19 +178,21 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                                 rowi.seleccionado = false;
 
                         }
-
+                        
                         decimal diaspendiente = 0;
                         //Set dias tomados
                         foreach (dsRRHH_.liquidacion_vacRow rowi in dsRRHH_1.liquidacion_vac)
                         {
-                            if (rowi.id == -2)
-                                rowi.dias = Liq1.DiasTomados;
-
                             if (rowi.id == -1)
                                 diaspendiente = rowi.dias;
 
+                            if (rowi.id == -2)
+                                rowi.dias = Liq1.DiasTomados;
+
                             if (rowi.id == -3)
                                 rowi.dias = diaspendiente - Liq1.DiasTomados;
+
+                            
                         }
 
                         //Recalculamos Cesantia
@@ -234,7 +236,11 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                         //LGetDeduccionesForId_Liqu();
                     }
                 }
-
+                else
+                {
+                    Id_liquidacion_ = 0;
+                }
+                
                
                 //TotalDeducciones = Convert.ToDecimal(txtTDeducciones.Text);
 
@@ -347,6 +353,16 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 dsRRHH_1.derechos_calculo_liq.Clear();
                 adat.Fill(dsRRHH_1.derechos_calculo_liq);
                 conn.Close();
+
+                foreach (dsRRHH_.derechos_calculo_liqRow item in dsRRHH_1.derechos_calculo_liq.Rows)
+                {
+                    if (item.id == 4)
+                    {
+                        item.dias = DiasVacaciones_A_pagar_en_liquidacion;
+                        item.total = decimal.Round(DiasVacaciones_A_pagar_en_liquidacion * SueldoBasePromedioDiarioMasExtraOrdinario, 2, MidpointRounding.AwayFromZero);
+                    }
+                }
+
             }
             catch (Exception ec)
             {
@@ -1193,6 +1209,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                         Id_Liquidacion = dr1.GetInt32(0);
                     }
                     dr1.Close();
+                    Id_liquidacion_ = Id_Liquidacion;
 
                     if (Id_Liquidacion > 0)
                     {
@@ -1233,6 +1250,9 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             {
                 CajaDialogo.Information("Guardado con exito!");
                 //LimpiarControles();
+                //CargarLiquidacionHeader(idEmpleado);
+                
+                CargarDeducciones(Id_liquidacion_);
             }
         }
 

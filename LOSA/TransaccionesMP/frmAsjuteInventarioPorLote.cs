@@ -358,7 +358,7 @@ namespace LOSA.TransaccionesMP
                         
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v4", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v7", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         //cmd.Parameters.AddWithValue("@cant_entrada", txtPesoKG.Text);
                         cmd.Parameters.AddWithValue("@cant_entrada", spinEditPesoKg.EditValue);
@@ -532,7 +532,7 @@ namespace LOSA.TransaccionesMP
                         //DataOperations dp = new DataOperations();
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v4", conn);
+                        SqlCommand cmd = new SqlCommand("sp_ajuste_kardex_por_lote_v7", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@cant_entrada", 0);
                         cmd.Parameters.AddWithValue("@cant_salida", spinEditPesoKg.EditValue);
