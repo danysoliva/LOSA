@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel {
+namespace LOSA.TransaccionesMP.Gestion_Granel {
     
     
     /// <summary>

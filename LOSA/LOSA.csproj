@@ -5480,7 +5480,11 @@
     <Compile Include="TransaccionesMP\frm_reporte_alimentacion.Designer.cs">
       <DependentUpon>frm_reporte_alimentacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.Designer.cs" />
+    <Compile Include="TransaccionesMP\Gestion_Granel\dsGestionGranel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGestionGranel.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\Gestion_Granel\frmGestionLoteGranel.cs">
       <SubType>Form</SubType>
     </Compile>
