@@ -99,6 +99,7 @@ namespace LOSA
                     switch (idNivel)
                     {
                         case 1://Basic View
+                            tabOpciones.TabPages[9].PageVisible = true;
                             break;
                         case 2://Basic No Autorization
                             tabOpciones.TabPages[9].PageVisible = true;
