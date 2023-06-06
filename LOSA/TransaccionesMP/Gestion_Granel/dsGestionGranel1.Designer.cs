@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace LOSA.ACS.RRHH {
+namespace LOSA.TransaccionesMP.Gestion_Granel {
     
     
     /// <summary>
@@ -20,19 +20,19 @@ namespace LOSA.ACS.RRHH {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsRRHH_reportes")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsGestionGranel")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsRRHH_reportes : global::System.Data.DataSet {
+    public partial class dsGestionGranel : global::System.Data.DataSet {
         
-        private resumen_asistenciaDataTable tableresumen_asistencia;
+        private Trigo_LotesDataTable tableTrigo_Lotes;
         
-        private resumen_asistenciaEntradasDataTable tableresumen_asistenciaEntradas;
+        private Soya_LotesDataTable tableSoya_Lotes;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public dsRRHH_reportes() {
+        public dsGestionGranel() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +43,7 @@ namespace LOSA.ACS.RRHH {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected dsRRHH_reportes(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsGestionGranel(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -56,11 +56,11 @@ namespace LOSA.ACS.RRHH {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["resumen_asistencia"] != null)) {
-                    base.Tables.Add(new resumen_asistenciaDataTable(ds.Tables["resumen_asistencia"]));
+                if ((ds.Tables["Trigo_Lotes"] != null)) {
+                    base.Tables.Add(new Trigo_LotesDataTable(ds.Tables["Trigo_Lotes"]));
                 }
-                if ((ds.Tables["resumen_asistenciaEntradas"] != null)) {
-                    base.Tables.Add(new resumen_asistenciaEntradasDataTable(ds.Tables["resumen_asistenciaEntradas"]));
+                if ((ds.Tables["Soya_Lotes"] != null)) {
+                    base.Tables.Add(new Soya_LotesDataTable(ds.Tables["Soya_Lotes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,9 +84,9 @@ namespace LOSA.ACS.RRHH {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public resumen_asistenciaDataTable resumen_asistencia {
+        public Trigo_LotesDataTable Trigo_Lotes {
             get {
-                return this.tableresumen_asistencia;
+                return this.tableTrigo_Lotes;
             }
         }
         
@@ -94,9 +94,9 @@ namespace LOSA.ACS.RRHH {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public resumen_asistenciaEntradasDataTable resumen_asistenciaEntradas {
+        public Soya_LotesDataTable Soya_Lotes {
             get {
-                return this.tableresumen_asistenciaEntradas;
+                return this.tableSoya_Lotes;
             }
         }
         
@@ -142,7 +142,7 @@ namespace LOSA.ACS.RRHH {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsRRHH_reportes cln = ((dsRRHH_reportes)(base.Clone()));
+            dsGestionGranel cln = ((dsGestionGranel)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -167,11 +167,11 @@ namespace LOSA.ACS.RRHH {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["resumen_asistencia"] != null)) {
-                    base.Tables.Add(new resumen_asistenciaDataTable(ds.Tables["resumen_asistencia"]));
+                if ((ds.Tables["Trigo_Lotes"] != null)) {
+                    base.Tables.Add(new Trigo_LotesDataTable(ds.Tables["Trigo_Lotes"]));
                 }
-                if ((ds.Tables["resumen_asistenciaEntradas"] != null)) {
-                    base.Tables.Add(new resumen_asistenciaEntradasDataTable(ds.Tables["resumen_asistenciaEntradas"]));
+                if ((ds.Tables["Soya_Lotes"] != null)) {
+                    base.Tables.Add(new Soya_LotesDataTable(ds.Tables["Soya_Lotes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +206,16 @@ namespace LOSA.ACS.RRHH {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableresumen_asistencia = ((resumen_asistenciaDataTable)(base.Tables["resumen_asistencia"]));
+            this.tableTrigo_Lotes = ((Trigo_LotesDataTable)(base.Tables["Trigo_Lotes"]));
             if ((initTable == true)) {
-                if ((this.tableresumen_asistencia != null)) {
-                    this.tableresumen_asistencia.InitVars();
+                if ((this.tableTrigo_Lotes != null)) {
+                    this.tableTrigo_Lotes.InitVars();
                 }
             }
-            this.tableresumen_asistenciaEntradas = ((resumen_asistenciaEntradasDataTable)(base.Tables["resumen_asistenciaEntradas"]));
+            this.tableSoya_Lotes = ((Soya_LotesDataTable)(base.Tables["Soya_Lotes"]));
             if ((initTable == true)) {
-                if ((this.tableresumen_asistenciaEntradas != null)) {
-                    this.tableresumen_asistenciaEntradas.InitVars();
+                if ((this.tableSoya_Lotes != null)) {
+                    this.tableSoya_Lotes.InitVars();
                 }
             }
         }
@@ -223,26 +223,26 @@ namespace LOSA.ACS.RRHH {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsRRHH_reportes";
+            this.DataSetName = "dsGestionGranel";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsRRHH_reportes.xsd";
+            this.Namespace = "http://tempuri.org/dsGestionGranel.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableresumen_asistencia = new resumen_asistenciaDataTable();
-            base.Tables.Add(this.tableresumen_asistencia);
-            this.tableresumen_asistenciaEntradas = new resumen_asistenciaEntradasDataTable();
-            base.Tables.Add(this.tableresumen_asistenciaEntradas);
+            this.tableTrigo_Lotes = new Trigo_LotesDataTable();
+            base.Tables.Add(this.tableTrigo_Lotes);
+            this.tableSoya_Lotes = new Soya_LotesDataTable();
+            base.Tables.Add(this.tableSoya_Lotes);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeresumen_asistencia() {
+        private bool ShouldSerializeTrigo_Lotes() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeresumen_asistenciaEntradas() {
+        private bool ShouldSerializeSoya_Lotes() {
             return false;
         }
         
@@ -257,7 +257,7 @@ namespace LOSA.ACS.RRHH {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsRRHH_reportes ds = new dsRRHH_reportes();
+            dsGestionGranel ds = new dsGestionGranel();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -302,68 +302,58 @@ namespace LOSA.ACS.RRHH {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void resumen_asistenciaRowChangeEventHandler(object sender, resumen_asistenciaRowChangeEvent e);
+        public delegate void Trigo_LotesRowChangeEventHandler(object sender, Trigo_LotesRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void resumen_asistenciaEntradasRowChangeEventHandler(object sender, resumen_asistenciaEntradasRowChangeEvent e);
+        public delegate void Soya_LotesRowChangeEventHandler(object sender, Soya_LotesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class resumen_asistenciaDataTable : global::System.Data.TypedTableBase<resumen_asistenciaRow> {
+        public partial class Trigo_LotesDataTable : global::System.Data.TypedTableBase<Trigo_LotesRow> {
             
-            private global::System.Data.DataColumn columnid_emp;
+            private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columncodigo;
+            private global::System.Data.DataColumn columnid_mp;
             
-            private global::System.Data.DataColumn columnnombre;
+            private global::System.Data.DataColumn columnlot;
             
-            private global::System.Data.DataColumn columnturno_id;
+            private global::System.Data.DataColumn columnenable;
             
-            private global::System.Data.DataColumn columnturno_name;
+            private global::System.Data.DataColumn columnpriority;
             
-            private global::System.Data.DataColumn columnsemana;
+            private global::System.Data.DataColumn columnid_state;
             
-            private global::System.Data.DataColumn columnentrada_1;
+            private global::System.Data.DataColumn columnid_user_created;
             
-            private global::System.Data.DataColumn columnsalida_1;
+            private global::System.Data.DataColumn columndate_row;
             
-            private global::System.Data.DataColumn columnentrada_martes;
+            private global::System.Data.DataColumn columnid_last_user_update;
             
-            private global::System.Data.DataColumn columnsalida_martes;
+            private global::System.Data.DataColumn columnid_type;
             
-            private global::System.Data.DataColumn columnentrada_miercoles;
+            private global::System.Data.DataColumn columndate_last_modification;
             
-            private global::System.Data.DataColumn columnsalida_miercoles;
+            private global::System.Data.DataColumn columnuser_name_created;
             
-            private global::System.Data.DataColumn columnentrada_jueves;
+            private global::System.Data.DataColumn columnstate_name;
             
-            private global::System.Data.DataColumn columnsalida_jueves;
+            private global::System.Data.DataColumn columntype_name;
             
-            private global::System.Data.DataColumn columnentrada_viernes;
+            private global::System.Data.DataColumn columnuser_last_updated;
             
-            private global::System.Data.DataColumn columnsalida_viernes;
+            private global::System.Data.DataColumn columnitemcode;
             
-            private global::System.Data.DataColumn columnentrada_sabado;
+            private global::System.Data.DataColumn columnitemname;
             
-            private global::System.Data.DataColumn columnsalida_sabado;
-            
-            private global::System.Data.DataColumn columnentrada_domingo;
-            
-            private global::System.Data.DataColumn columnsalida_domingo;
-            
-            private global::System.Data.DataColumn columnStartOfWeek;
-            
-            private global::System.Data.DataColumn columnEndOfWeek;
-            
-            private global::System.Data.DataColumn columndepartamento;
+            private global::System.Data.DataColumn columnLinea;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaDataTable() {
-                this.TableName = "resumen_asistencia";
+            public Trigo_LotesDataTable() {
+                this.TableName = "Trigo_Lotes";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -371,7 +361,7 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal resumen_asistenciaDataTable(global::System.Data.DataTable table) {
+            internal Trigo_LotesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -388,192 +378,152 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected resumen_asistenciaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Trigo_LotesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn id_empColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnid_emp;
+                    return this.columnid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn codigoColumn {
+            public global::System.Data.DataColumn id_mpColumn {
                 get {
-                    return this.columncodigo;
+                    return this.columnid_mp;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn nombreColumn {
+            public global::System.Data.DataColumn lotColumn {
                 get {
-                    return this.columnnombre;
+                    return this.columnlot;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn turno_idColumn {
+            public global::System.Data.DataColumn enableColumn {
                 get {
-                    return this.columnturno_id;
+                    return this.columnenable;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn turno_nameColumn {
+            public global::System.Data.DataColumn priorityColumn {
                 get {
-                    return this.columnturno_name;
+                    return this.columnpriority;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn semanaColumn {
+            public global::System.Data.DataColumn id_stateColumn {
                 get {
-                    return this.columnsemana;
+                    return this.columnid_state;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn entrada_1Column {
+            public global::System.Data.DataColumn id_user_createdColumn {
                 get {
-                    return this.columnentrada_1;
+                    return this.columnid_user_created;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn salida_1Column {
+            public global::System.Data.DataColumn date_rowColumn {
                 get {
-                    return this.columnsalida_1;
+                    return this.columndate_row;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn entrada_martesColumn {
+            public global::System.Data.DataColumn id_last_user_updateColumn {
                 get {
-                    return this.columnentrada_martes;
+                    return this.columnid_last_user_update;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn salida_martesColumn {
+            public global::System.Data.DataColumn id_typeColumn {
                 get {
-                    return this.columnsalida_martes;
+                    return this.columnid_type;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn entrada_miercolesColumn {
+            public global::System.Data.DataColumn date_last_modificationColumn {
                 get {
-                    return this.columnentrada_miercoles;
+                    return this.columndate_last_modification;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn salida_miercolesColumn {
+            public global::System.Data.DataColumn user_name_createdColumn {
                 get {
-                    return this.columnsalida_miercoles;
+                    return this.columnuser_name_created;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn entrada_juevesColumn {
+            public global::System.Data.DataColumn state_nameColumn {
                 get {
-                    return this.columnentrada_jueves;
+                    return this.columnstate_name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn salida_juevesColumn {
+            public global::System.Data.DataColumn type_nameColumn {
                 get {
-                    return this.columnsalida_jueves;
+                    return this.columntype_name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn entrada_viernesColumn {
+            public global::System.Data.DataColumn user_last_updatedColumn {
                 get {
-                    return this.columnentrada_viernes;
+                    return this.columnuser_last_updated;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn salida_viernesColumn {
+            public global::System.Data.DataColumn itemcodeColumn {
                 get {
-                    return this.columnsalida_viernes;
+                    return this.columnitemcode;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn entrada_sabadoColumn {
+            public global::System.Data.DataColumn itemnameColumn {
                 get {
-                    return this.columnentrada_sabado;
+                    return this.columnitemname;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn salida_sabadoColumn {
+            public global::System.Data.DataColumn LineaColumn {
                 get {
-                    return this.columnsalida_sabado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn entrada_domingoColumn {
-                get {
-                    return this.columnentrada_domingo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn salida_domingoColumn {
-                get {
-                    return this.columnsalida_domingo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn StartOfWeekColumn {
-                get {
-                    return this.columnStartOfWeek;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EndOfWeekColumn {
-                get {
-                    return this.columnEndOfWeek;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn departamentoColumn {
-                get {
-                    return this.columndepartamento;
+                    return this.columnLinea;
                 }
             }
             
@@ -588,90 +538,80 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaRow this[int index] {
+            public Trigo_LotesRow this[int index] {
                 get {
-                    return ((resumen_asistenciaRow)(this.Rows[index]));
+                    return ((Trigo_LotesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event resumen_asistenciaRowChangeEventHandler resumen_asistenciaRowChanging;
+            public event Trigo_LotesRowChangeEventHandler Trigo_LotesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event resumen_asistenciaRowChangeEventHandler resumen_asistenciaRowChanged;
+            public event Trigo_LotesRowChangeEventHandler Trigo_LotesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event resumen_asistenciaRowChangeEventHandler resumen_asistenciaRowDeleting;
+            public event Trigo_LotesRowChangeEventHandler Trigo_LotesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event resumen_asistenciaRowChangeEventHandler resumen_asistenciaRowDeleted;
+            public event Trigo_LotesRowChangeEventHandler Trigo_LotesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Addresumen_asistenciaRow(resumen_asistenciaRow row) {
+            public void AddTrigo_LotesRow(Trigo_LotesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaRow Addresumen_asistenciaRow(
-                        int id_emp, 
-                        string codigo, 
-                        string nombre, 
-                        int turno_id, 
-                        string turno_name, 
-                        int semana, 
-                        string entrada_1, 
-                        string salida_1, 
-                        string entrada_martes, 
-                        string salida_martes, 
-                        string entrada_miercoles, 
-                        string salida_miercoles, 
-                        string entrada_jueves, 
-                        string salida_jueves, 
-                        string entrada_viernes, 
-                        string salida_viernes, 
-                        string entrada_sabado, 
-                        string salida_sabado, 
-                        string entrada_domingo, 
-                        string salida_domingo, 
-                        System.DateTime StartOfWeek, 
-                        System.DateTime EndOfWeek, 
-                        string departamento) {
-                resumen_asistenciaRow rowresumen_asistenciaRow = ((resumen_asistenciaRow)(this.NewRow()));
+            public Trigo_LotesRow AddTrigo_LotesRow(
+                        long id, 
+                        int id_mp, 
+                        string lot, 
+                        bool enable, 
+                        string priority, 
+                        int id_state, 
+                        int id_user_created, 
+                        System.DateTime date_row, 
+                        int id_last_user_update, 
+                        int id_type, 
+                        System.DateTime date_last_modification, 
+                        string user_name_created, 
+                        string state_name, 
+                        string type_name, 
+                        string user_last_updated, 
+                        string itemcode, 
+                        string itemname, 
+                        int Linea) {
+                Trigo_LotesRow rowTrigo_LotesRow = ((Trigo_LotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_emp,
-                        codigo,
-                        nombre,
-                        turno_id,
-                        turno_name,
-                        semana,
-                        entrada_1,
-                        salida_1,
-                        entrada_martes,
-                        salida_martes,
-                        entrada_miercoles,
-                        salida_miercoles,
-                        entrada_jueves,
-                        salida_jueves,
-                        entrada_viernes,
-                        salida_viernes,
-                        entrada_sabado,
-                        salida_sabado,
-                        entrada_domingo,
-                        salida_domingo,
-                        StartOfWeek,
-                        EndOfWeek,
-                        departamento};
-                rowresumen_asistenciaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowresumen_asistenciaRow);
-                return rowresumen_asistenciaRow;
+                        id,
+                        id_mp,
+                        lot,
+                        enable,
+                        priority,
+                        id_state,
+                        id_user_created,
+                        date_row,
+                        id_last_user_update,
+                        id_type,
+                        date_last_modification,
+                        user_name_created,
+                        state_name,
+                        type_name,
+                        user_last_updated,
+                        itemcode,
+                        itemname,
+                        Linea};
+                rowTrigo_LotesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTrigo_LotesRow);
+                return rowTrigo_LotesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                resumen_asistenciaDataTable cln = ((resumen_asistenciaDataTable)(base.Clone()));
+                Trigo_LotesDataTable cln = ((Trigo_LotesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -679,132 +619,107 @@ namespace LOSA.ACS.RRHH {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new resumen_asistenciaDataTable();
+                return new Trigo_LotesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnid_emp = base.Columns["id_emp"];
-                this.columncodigo = base.Columns["codigo"];
-                this.columnnombre = base.Columns["nombre"];
-                this.columnturno_id = base.Columns["turno_id"];
-                this.columnturno_name = base.Columns["turno_name"];
-                this.columnsemana = base.Columns["semana"];
-                this.columnentrada_1 = base.Columns["entrada_1"];
-                this.columnsalida_1 = base.Columns["salida_1"];
-                this.columnentrada_martes = base.Columns["entrada_martes"];
-                this.columnsalida_martes = base.Columns["salida_martes"];
-                this.columnentrada_miercoles = base.Columns["entrada_miercoles"];
-                this.columnsalida_miercoles = base.Columns["salida_miercoles"];
-                this.columnentrada_jueves = base.Columns["entrada_jueves"];
-                this.columnsalida_jueves = base.Columns["salida_jueves"];
-                this.columnentrada_viernes = base.Columns["entrada_viernes"];
-                this.columnsalida_viernes = base.Columns["salida_viernes"];
-                this.columnentrada_sabado = base.Columns["entrada_sabado"];
-                this.columnsalida_sabado = base.Columns["salida_sabado"];
-                this.columnentrada_domingo = base.Columns["entrada_domingo"];
-                this.columnsalida_domingo = base.Columns["salida_domingo"];
-                this.columnStartOfWeek = base.Columns["StartOfWeek"];
-                this.columnEndOfWeek = base.Columns["EndOfWeek"];
-                this.columndepartamento = base.Columns["departamento"];
+                this.columnid = base.Columns["id"];
+                this.columnid_mp = base.Columns["id_mp"];
+                this.columnlot = base.Columns["lot"];
+                this.columnenable = base.Columns["enable"];
+                this.columnpriority = base.Columns["priority"];
+                this.columnid_state = base.Columns["id_state"];
+                this.columnid_user_created = base.Columns["id_user_created"];
+                this.columndate_row = base.Columns["date_row"];
+                this.columnid_last_user_update = base.Columns["id_last_user_update"];
+                this.columnid_type = base.Columns["id_type"];
+                this.columndate_last_modification = base.Columns["date_last_modification"];
+                this.columnuser_name_created = base.Columns["user_name_created"];
+                this.columnstate_name = base.Columns["state_name"];
+                this.columntype_name = base.Columns["type_name"];
+                this.columnuser_last_updated = base.Columns["user_last_updated"];
+                this.columnitemcode = base.Columns["itemcode"];
+                this.columnitemname = base.Columns["itemname"];
+                this.columnLinea = base.Columns["Linea"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnid_emp = new global::System.Data.DataColumn("id_emp", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_emp);
-                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncodigo);
-                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre);
-                this.columnturno_id = new global::System.Data.DataColumn("turno_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnturno_id);
-                this.columnturno_name = new global::System.Data.DataColumn("turno_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnturno_name);
-                this.columnsemana = new global::System.Data.DataColumn("semana", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsemana);
-                this.columnentrada_1 = new global::System.Data.DataColumn("entrada_1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentrada_1);
-                this.columnsalida_1 = new global::System.Data.DataColumn("salida_1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsalida_1);
-                this.columnentrada_martes = new global::System.Data.DataColumn("entrada_martes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentrada_martes);
-                this.columnsalida_martes = new global::System.Data.DataColumn("salida_martes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsalida_martes);
-                this.columnentrada_miercoles = new global::System.Data.DataColumn("entrada_miercoles", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentrada_miercoles);
-                this.columnsalida_miercoles = new global::System.Data.DataColumn("salida_miercoles", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsalida_miercoles);
-                this.columnentrada_jueves = new global::System.Data.DataColumn("entrada_jueves", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentrada_jueves);
-                this.columnsalida_jueves = new global::System.Data.DataColumn("salida_jueves", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsalida_jueves);
-                this.columnentrada_viernes = new global::System.Data.DataColumn("entrada_viernes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentrada_viernes);
-                this.columnsalida_viernes = new global::System.Data.DataColumn("salida_viernes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsalida_viernes);
-                this.columnentrada_sabado = new global::System.Data.DataColumn("entrada_sabado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentrada_sabado);
-                this.columnsalida_sabado = new global::System.Data.DataColumn("salida_sabado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsalida_sabado);
-                this.columnentrada_domingo = new global::System.Data.DataColumn("entrada_domingo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnentrada_domingo);
-                this.columnsalida_domingo = new global::System.Data.DataColumn("salida_domingo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsalida_domingo);
-                this.columnStartOfWeek = new global::System.Data.DataColumn("StartOfWeek", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStartOfWeek);
-                this.columnEndOfWeek = new global::System.Data.DataColumn("EndOfWeek", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEndOfWeek);
-                this.columndepartamento = new global::System.Data.DataColumn("departamento", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndepartamento);
-                this.columncodigo.Caption = "Código";
-                this.columnnombre.Caption = "Nombre";
-                this.columnturno_name.Caption = "Turno";
-                this.columnsemana.Caption = "Semana";
-                this.columnentrada_1.Caption = "E2";
-                this.columnsalida_1.Caption = "S2";
-                this.columnentrada_martes.Caption = "E3";
-                this.columnsalida_martes.Caption = "S3";
-                this.columnentrada_miercoles.Caption = "E4";
-                this.columnsalida_miercoles.Caption = "S4";
-                this.columnentrada_jueves.Caption = "E5";
-                this.columnsalida_jueves.Caption = "S5";
-                this.columnentrada_viernes.Caption = "E6";
-                this.columnsalida_viernes.Caption = "S6";
-                this.columnentrada_sabado.Caption = "E7";
-                this.columnsalida_sabado.Caption = "S7";
-                this.columnentrada_domingo.Caption = "E1";
-                this.columnsalida_domingo.Caption = "S1";
-                this.columnStartOfWeek.Caption = "Fecha Desde";
-                this.columnEndOfWeek.Caption = "Fecha Hasta";
+                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columnlot = new global::System.Data.DataColumn("lot", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlot);
+                this.columnenable = new global::System.Data.DataColumn("enable", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnenable);
+                this.columnpriority = new global::System.Data.DataColumn("priority", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpriority);
+                this.columnid_state = new global::System.Data.DataColumn("id_state", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_state);
+                this.columnid_user_created = new global::System.Data.DataColumn("id_user_created", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_user_created);
+                this.columndate_row = new global::System.Data.DataColumn("date_row", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_row);
+                this.columnid_last_user_update = new global::System.Data.DataColumn("id_last_user_update", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_last_user_update);
+                this.columnid_type = new global::System.Data.DataColumn("id_type", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_type);
+                this.columndate_last_modification = new global::System.Data.DataColumn("date_last_modification", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_last_modification);
+                this.columnuser_name_created = new global::System.Data.DataColumn("user_name_created", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_name_created);
+                this.columnstate_name = new global::System.Data.DataColumn("state_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstate_name);
+                this.columntype_name = new global::System.Data.DataColumn("type_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntype_name);
+                this.columnuser_last_updated = new global::System.Data.DataColumn("user_last_updated", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_last_updated);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
+                this.columnitemname = new global::System.Data.DataColumn("itemname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemname);
+                this.columnLinea = new global::System.Data.DataColumn("Linea", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLinea);
+                this.columnlot.Caption = "Lote";
+                this.columnpriority.Caption = "Prioridad";
+                this.columndate_row.Caption = "Fecha Registro";
+                this.columndate_last_modification.Caption = "Fecha Ultima Modificación";
+                this.columnuser_name_created.Caption = "Usuario Creación";
+                this.columnstate_name.Caption = "Estado";
+                this.columntype_name.Caption = "Tipo";
+                this.columnuser_last_updated.Caption = "Usuario Ultima Modificación";
+                this.columnitemcode.Caption = "Item Code";
+                this.columnitemname.Caption = "Item Name";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaRow Newresumen_asistenciaRow() {
-                return ((resumen_asistenciaRow)(this.NewRow()));
+            public Trigo_LotesRow NewTrigo_LotesRow() {
+                return ((Trigo_LotesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new resumen_asistenciaRow(builder);
+                return new Trigo_LotesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(resumen_asistenciaRow);
+                return typeof(Trigo_LotesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.resumen_asistenciaRowChanged != null)) {
-                    this.resumen_asistenciaRowChanged(this, new resumen_asistenciaRowChangeEvent(((resumen_asistenciaRow)(e.Row)), e.Action));
+                if ((this.Trigo_LotesRowChanged != null)) {
+                    this.Trigo_LotesRowChanged(this, new Trigo_LotesRowChangeEvent(((Trigo_LotesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -812,8 +727,8 @@ namespace LOSA.ACS.RRHH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.resumen_asistenciaRowChanging != null)) {
-                    this.resumen_asistenciaRowChanging(this, new resumen_asistenciaRowChangeEvent(((resumen_asistenciaRow)(e.Row)), e.Action));
+                if ((this.Trigo_LotesRowChanging != null)) {
+                    this.Trigo_LotesRowChanging(this, new Trigo_LotesRowChangeEvent(((Trigo_LotesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -821,8 +736,8 @@ namespace LOSA.ACS.RRHH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.resumen_asistenciaRowDeleted != null)) {
-                    this.resumen_asistenciaRowDeleted(this, new resumen_asistenciaRowChangeEvent(((resumen_asistenciaRow)(e.Row)), e.Action));
+                if ((this.Trigo_LotesRowDeleted != null)) {
+                    this.Trigo_LotesRowDeleted(this, new Trigo_LotesRowChangeEvent(((Trigo_LotesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -830,14 +745,14 @@ namespace LOSA.ACS.RRHH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.resumen_asistenciaRowDeleting != null)) {
-                    this.resumen_asistenciaRowDeleting(this, new resumen_asistenciaRowChangeEvent(((resumen_asistenciaRow)(e.Row)), e.Action));
+                if ((this.Trigo_LotesRowDeleting != null)) {
+                    this.Trigo_LotesRowDeleting(this, new Trigo_LotesRowChangeEvent(((Trigo_LotesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Removeresumen_asistenciaRow(resumen_asistenciaRow row) {
+            public void RemoveTrigo_LotesRow(Trigo_LotesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -846,7 +761,7 @@ namespace LOSA.ACS.RRHH {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsRRHH_reportes ds = new dsRRHH_reportes();
+                dsGestionGranel ds = new dsGestionGranel();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -864,7 +779,7 @@ namespace LOSA.ACS.RRHH {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "resumen_asistenciaDataTable";
+                attribute2.FixedValue = "Trigo_LotesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -910,40 +825,48 @@ namespace LOSA.ACS.RRHH {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class resumen_asistenciaEntradasDataTable : global::System.Data.TypedTableBase<resumen_asistenciaEntradasRow> {
+        public partial class Soya_LotesDataTable : global::System.Data.TypedTableBase<Soya_LotesRow> {
             
-            private global::System.Data.DataColumn columnid_emp;
+            private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columncodigo;
+            private global::System.Data.DataColumn columnid_mp;
             
-            private global::System.Data.DataColumn columnnombre;
+            private global::System.Data.DataColumn columnlot;
             
-            private global::System.Data.DataColumn columnsemana;
+            private global::System.Data.DataColumn columnenable;
             
-            private global::System.Data.DataColumn columnDomingo;
+            private global::System.Data.DataColumn columnpriority;
             
-            private global::System.Data.DataColumn columnLunes;
+            private global::System.Data.DataColumn columnid_state;
             
-            private global::System.Data.DataColumn columnMartes;
+            private global::System.Data.DataColumn columnid_user_created;
             
-            private global::System.Data.DataColumn columnMiercoles;
+            private global::System.Data.DataColumn columndate_row;
             
-            private global::System.Data.DataColumn columnJueves;
+            private global::System.Data.DataColumn columnid_last_user_update;
             
-            private global::System.Data.DataColumn columnViernes;
+            private global::System.Data.DataColumn columnid_type;
             
-            private global::System.Data.DataColumn columnSabado;
+            private global::System.Data.DataColumn columndate_last_modification;
             
-            private global::System.Data.DataColumn columnStartOfWeek;
+            private global::System.Data.DataColumn columnuser_name_created;
             
-            private global::System.Data.DataColumn columnEndOfWeek;
+            private global::System.Data.DataColumn columnstate_name;
             
-            private global::System.Data.DataColumn columndepartamento;
+            private global::System.Data.DataColumn columntype_name;
+            
+            private global::System.Data.DataColumn columnuser_last_updated;
+            
+            private global::System.Data.DataColumn columnitemcode;
+            
+            private global::System.Data.DataColumn columnitemname;
+            
+            private global::System.Data.DataColumn columnLinea;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaEntradasDataTable() {
-                this.TableName = "resumen_asistenciaEntradas";
+            public Soya_LotesDataTable() {
+                this.TableName = "Soya_Lotes";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -951,7 +874,7 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal resumen_asistenciaEntradasDataTable(global::System.Data.DataTable table) {
+            internal Soya_LotesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -968,120 +891,152 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected resumen_asistenciaEntradasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Soya_LotesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn id_empColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnid_emp;
+                    return this.columnid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn codigoColumn {
+            public global::System.Data.DataColumn id_mpColumn {
                 get {
-                    return this.columncodigo;
+                    return this.columnid_mp;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn nombreColumn {
+            public global::System.Data.DataColumn lotColumn {
                 get {
-                    return this.columnnombre;
+                    return this.columnlot;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn semanaColumn {
+            public global::System.Data.DataColumn enableColumn {
                 get {
-                    return this.columnsemana;
+                    return this.columnenable;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DomingoColumn {
+            public global::System.Data.DataColumn priorityColumn {
                 get {
-                    return this.columnDomingo;
+                    return this.columnpriority;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn LunesColumn {
+            public global::System.Data.DataColumn id_stateColumn {
                 get {
-                    return this.columnLunes;
+                    return this.columnid_state;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MartesColumn {
+            public global::System.Data.DataColumn id_user_createdColumn {
                 get {
-                    return this.columnMartes;
+                    return this.columnid_user_created;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MiercolesColumn {
+            public global::System.Data.DataColumn date_rowColumn {
                 get {
-                    return this.columnMiercoles;
+                    return this.columndate_row;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn JuevesColumn {
+            public global::System.Data.DataColumn id_last_user_updateColumn {
                 get {
-                    return this.columnJueves;
+                    return this.columnid_last_user_update;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ViernesColumn {
+            public global::System.Data.DataColumn id_typeColumn {
                 get {
-                    return this.columnViernes;
+                    return this.columnid_type;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SabadoColumn {
+            public global::System.Data.DataColumn date_last_modificationColumn {
                 get {
-                    return this.columnSabado;
+                    return this.columndate_last_modification;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn StartOfWeekColumn {
+            public global::System.Data.DataColumn user_name_createdColumn {
                 get {
-                    return this.columnStartOfWeek;
+                    return this.columnuser_name_created;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EndOfWeekColumn {
+            public global::System.Data.DataColumn state_nameColumn {
                 get {
-                    return this.columnEndOfWeek;
+                    return this.columnstate_name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn departamentoColumn {
+            public global::System.Data.DataColumn type_nameColumn {
                 get {
-                    return this.columndepartamento;
+                    return this.columntype_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn user_last_updatedColumn {
+                get {
+                    return this.columnuser_last_updated;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn itemcodeColumn {
+                get {
+                    return this.columnitemcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn itemnameColumn {
+                get {
+                    return this.columnitemname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn LineaColumn {
+                get {
+                    return this.columnLinea;
                 }
             }
             
@@ -1096,58 +1051,80 @@ namespace LOSA.ACS.RRHH {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaEntradasRow this[int index] {
+            public Soya_LotesRow this[int index] {
                 get {
-                    return ((resumen_asistenciaEntradasRow)(this.Rows[index]));
+                    return ((Soya_LotesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event resumen_asistenciaEntradasRowChangeEventHandler resumen_asistenciaEntradasRowChanging;
+            public event Soya_LotesRowChangeEventHandler Soya_LotesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event resumen_asistenciaEntradasRowChangeEventHandler resumen_asistenciaEntradasRowChanged;
+            public event Soya_LotesRowChangeEventHandler Soya_LotesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event resumen_asistenciaEntradasRowChangeEventHandler resumen_asistenciaEntradasRowDeleting;
+            public event Soya_LotesRowChangeEventHandler Soya_LotesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event resumen_asistenciaEntradasRowChangeEventHandler resumen_asistenciaEntradasRowDeleted;
+            public event Soya_LotesRowChangeEventHandler Soya_LotesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Addresumen_asistenciaEntradasRow(resumen_asistenciaEntradasRow row) {
+            public void AddSoya_LotesRow(Soya_LotesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaEntradasRow Addresumen_asistenciaEntradasRow(int id_emp, string codigo, string nombre, int semana, string Domingo, string Lunes, string Martes, string Miercoles, string Jueves, string Viernes, string Sabado, System.DateTime StartOfWeek, System.DateTime EndOfWeek, string departamento) {
-                resumen_asistenciaEntradasRow rowresumen_asistenciaEntradasRow = ((resumen_asistenciaEntradasRow)(this.NewRow()));
+            public Soya_LotesRow AddSoya_LotesRow(
+                        long id, 
+                        int id_mp, 
+                        string lot, 
+                        bool enable, 
+                        string priority, 
+                        int id_state, 
+                        int id_user_created, 
+                        System.DateTime date_row, 
+                        int id_last_user_update, 
+                        int id_type, 
+                        System.DateTime date_last_modification, 
+                        string user_name_created, 
+                        string state_name, 
+                        string type_name, 
+                        string user_last_updated, 
+                        string itemcode, 
+                        string itemname, 
+                        int Linea) {
+                Soya_LotesRow rowSoya_LotesRow = ((Soya_LotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_emp,
-                        codigo,
-                        nombre,
-                        semana,
-                        Domingo,
-                        Lunes,
-                        Martes,
-                        Miercoles,
-                        Jueves,
-                        Viernes,
-                        Sabado,
-                        StartOfWeek,
-                        EndOfWeek,
-                        departamento};
-                rowresumen_asistenciaEntradasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowresumen_asistenciaEntradasRow);
-                return rowresumen_asistenciaEntradasRow;
+                        id,
+                        id_mp,
+                        lot,
+                        enable,
+                        priority,
+                        id_state,
+                        id_user_created,
+                        date_row,
+                        id_last_user_update,
+                        id_type,
+                        date_last_modification,
+                        user_name_created,
+                        state_name,
+                        type_name,
+                        user_last_updated,
+                        itemcode,
+                        itemname,
+                        Linea};
+                rowSoya_LotesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSoya_LotesRow);
+                return rowSoya_LotesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                resumen_asistenciaEntradasDataTable cln = ((resumen_asistenciaEntradasDataTable)(base.Clone()));
+                Soya_LotesDataTable cln = ((Soya_LotesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1155,92 +1132,107 @@ namespace LOSA.ACS.RRHH {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new resumen_asistenciaEntradasDataTable();
+                return new Soya_LotesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnid_emp = base.Columns["id_emp"];
-                this.columncodigo = base.Columns["codigo"];
-                this.columnnombre = base.Columns["nombre"];
-                this.columnsemana = base.Columns["semana"];
-                this.columnDomingo = base.Columns["Domingo"];
-                this.columnLunes = base.Columns["Lunes"];
-                this.columnMartes = base.Columns["Martes"];
-                this.columnMiercoles = base.Columns["Miercoles"];
-                this.columnJueves = base.Columns["Jueves"];
-                this.columnViernes = base.Columns["Viernes"];
-                this.columnSabado = base.Columns["Sabado"];
-                this.columnStartOfWeek = base.Columns["StartOfWeek"];
-                this.columnEndOfWeek = base.Columns["EndOfWeek"];
-                this.columndepartamento = base.Columns["departamento"];
+                this.columnid = base.Columns["id"];
+                this.columnid_mp = base.Columns["id_mp"];
+                this.columnlot = base.Columns["lot"];
+                this.columnenable = base.Columns["enable"];
+                this.columnpriority = base.Columns["priority"];
+                this.columnid_state = base.Columns["id_state"];
+                this.columnid_user_created = base.Columns["id_user_created"];
+                this.columndate_row = base.Columns["date_row"];
+                this.columnid_last_user_update = base.Columns["id_last_user_update"];
+                this.columnid_type = base.Columns["id_type"];
+                this.columndate_last_modification = base.Columns["date_last_modification"];
+                this.columnuser_name_created = base.Columns["user_name_created"];
+                this.columnstate_name = base.Columns["state_name"];
+                this.columntype_name = base.Columns["type_name"];
+                this.columnuser_last_updated = base.Columns["user_last_updated"];
+                this.columnitemcode = base.Columns["itemcode"];
+                this.columnitemname = base.Columns["itemname"];
+                this.columnLinea = base.Columns["Linea"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnid_emp = new global::System.Data.DataColumn("id_emp", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_emp);
-                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncodigo);
-                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre);
-                this.columnsemana = new global::System.Data.DataColumn("semana", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsemana);
-                this.columnDomingo = new global::System.Data.DataColumn("Domingo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDomingo);
-                this.columnLunes = new global::System.Data.DataColumn("Lunes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLunes);
-                this.columnMartes = new global::System.Data.DataColumn("Martes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMartes);
-                this.columnMiercoles = new global::System.Data.DataColumn("Miercoles", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMiercoles);
-                this.columnJueves = new global::System.Data.DataColumn("Jueves", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnJueves);
-                this.columnViernes = new global::System.Data.DataColumn("Viernes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnViernes);
-                this.columnSabado = new global::System.Data.DataColumn("Sabado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSabado);
-                this.columnStartOfWeek = new global::System.Data.DataColumn("StartOfWeek", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStartOfWeek);
-                this.columnEndOfWeek = new global::System.Data.DataColumn("EndOfWeek", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEndOfWeek);
-                this.columndepartamento = new global::System.Data.DataColumn("departamento", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndepartamento);
-                this.columncodigo.Caption = "Código";
-                this.columnnombre.Caption = "Nombre";
-                this.columnsemana.Caption = "Semana";
-                this.columnMiercoles.Caption = "Miércoles";
-                this.columnSabado.Caption = "Sábado";
-                this.columnStartOfWeek.Caption = "Fecha Desde";
-                this.columnEndOfWeek.Caption = "Fecha Hasta";
+                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
+                this.columnlot = new global::System.Data.DataColumn("lot", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlot);
+                this.columnenable = new global::System.Data.DataColumn("enable", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnenable);
+                this.columnpriority = new global::System.Data.DataColumn("priority", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpriority);
+                this.columnid_state = new global::System.Data.DataColumn("id_state", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_state);
+                this.columnid_user_created = new global::System.Data.DataColumn("id_user_created", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_user_created);
+                this.columndate_row = new global::System.Data.DataColumn("date_row", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_row);
+                this.columnid_last_user_update = new global::System.Data.DataColumn("id_last_user_update", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_last_user_update);
+                this.columnid_type = new global::System.Data.DataColumn("id_type", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_type);
+                this.columndate_last_modification = new global::System.Data.DataColumn("date_last_modification", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_last_modification);
+                this.columnuser_name_created = new global::System.Data.DataColumn("user_name_created", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_name_created);
+                this.columnstate_name = new global::System.Data.DataColumn("state_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstate_name);
+                this.columntype_name = new global::System.Data.DataColumn("type_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntype_name);
+                this.columnuser_last_updated = new global::System.Data.DataColumn("user_last_updated", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_last_updated);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
+                this.columnitemname = new global::System.Data.DataColumn("itemname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemname);
+                this.columnLinea = new global::System.Data.DataColumn("Linea", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLinea);
+                this.columnlot.Caption = "Lote";
+                this.columnpriority.Caption = "Prioridad";
+                this.columndate_row.Caption = "Fecha Registro";
+                this.columndate_last_modification.Caption = "Fecha Ultima Modificación";
+                this.columnuser_name_created.Caption = "Usuario Creación";
+                this.columnstate_name.Caption = "Estado";
+                this.columntype_name.Caption = "Tipo";
+                this.columnuser_last_updated.Caption = "Usuario Ultima Modificación";
+                this.columnitemcode.Caption = "Item Code";
+                this.columnitemname.Caption = "Item Name";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaEntradasRow Newresumen_asistenciaEntradasRow() {
-                return ((resumen_asistenciaEntradasRow)(this.NewRow()));
+            public Soya_LotesRow NewSoya_LotesRow() {
+                return ((Soya_LotesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new resumen_asistenciaEntradasRow(builder);
+                return new Soya_LotesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(resumen_asistenciaEntradasRow);
+                return typeof(Soya_LotesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.resumen_asistenciaEntradasRowChanged != null)) {
-                    this.resumen_asistenciaEntradasRowChanged(this, new resumen_asistenciaEntradasRowChangeEvent(((resumen_asistenciaEntradasRow)(e.Row)), e.Action));
+                if ((this.Soya_LotesRowChanged != null)) {
+                    this.Soya_LotesRowChanged(this, new Soya_LotesRowChangeEvent(((Soya_LotesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1248,8 +1240,8 @@ namespace LOSA.ACS.RRHH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.resumen_asistenciaEntradasRowChanging != null)) {
-                    this.resumen_asistenciaEntradasRowChanging(this, new resumen_asistenciaEntradasRowChangeEvent(((resumen_asistenciaEntradasRow)(e.Row)), e.Action));
+                if ((this.Soya_LotesRowChanging != null)) {
+                    this.Soya_LotesRowChanging(this, new Soya_LotesRowChangeEvent(((Soya_LotesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1257,8 +1249,8 @@ namespace LOSA.ACS.RRHH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.resumen_asistenciaEntradasRowDeleted != null)) {
-                    this.resumen_asistenciaEntradasRowDeleted(this, new resumen_asistenciaEntradasRowChangeEvent(((resumen_asistenciaEntradasRow)(e.Row)), e.Action));
+                if ((this.Soya_LotesRowDeleted != null)) {
+                    this.Soya_LotesRowDeleted(this, new Soya_LotesRowChangeEvent(((Soya_LotesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1266,14 +1258,14 @@ namespace LOSA.ACS.RRHH {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.resumen_asistenciaEntradasRowDeleting != null)) {
-                    this.resumen_asistenciaEntradasRowDeleting(this, new resumen_asistenciaEntradasRowChangeEvent(((resumen_asistenciaEntradasRow)(e.Row)), e.Action));
+                if ((this.Soya_LotesRowDeleting != null)) {
+                    this.Soya_LotesRowDeleting(this, new Soya_LotesRowChangeEvent(((Soya_LotesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Removeresumen_asistenciaEntradasRow(resumen_asistenciaEntradasRow row) {
+            public void RemoveSoya_LotesRow(Soya_LotesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1282,7 +1274,7 @@ namespace LOSA.ACS.RRHH {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsRRHH_reportes ds = new dsRRHH_reportes();
+                dsGestionGranel ds = new dsGestionGranel();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1300,7 +1292,7 @@ namespace LOSA.ACS.RRHH {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "resumen_asistenciaEntradasDataTable";
+                attribute2.FixedValue = "Soya_LotesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1344,1093 +1336,1041 @@ namespace LOSA.ACS.RRHH {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class resumen_asistenciaRow : global::System.Data.DataRow {
+        public partial class Trigo_LotesRow : global::System.Data.DataRow {
             
-            private resumen_asistenciaDataTable tableresumen_asistencia;
+            private Trigo_LotesDataTable tableTrigo_Lotes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal resumen_asistenciaRow(global::System.Data.DataRowBuilder rb) : 
+            internal Trigo_LotesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableresumen_asistencia = ((resumen_asistenciaDataTable)(this.Table));
+                this.tableTrigo_Lotes = ((Trigo_LotesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int id_emp {
+            public long id {
                 get {
                     try {
-                        return ((int)(this[this.tableresumen_asistencia.id_empColumn]));
+                        return ((long)(this[this.tableTrigo_Lotes.idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_emp\' de la tabla \'resumen_asistencia\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.id_empColumn] = value;
+                    this[this.tableTrigo_Lotes.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string codigo {
+            public int id_mp {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistencia.codigoColumn]));
+                        return ((int)(this[this.tableTrigo_Lotes.id_mpColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo\' de la tabla \'resumen_asistencia\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.codigoColumn] = value;
+                    this[this.tableTrigo_Lotes.id_mpColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string nombre {
+            public string lot {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistencia.nombreColumn]));
+                        return ((string)(this[this.tableTrigo_Lotes.lotColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'resumen_asistencia\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lot\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.nombreColumn] = value;
+                    this[this.tableTrigo_Lotes.lotColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int turno_id {
+            public bool enable {
                 get {
                     try {
-                        return ((int)(this[this.tableresumen_asistencia.turno_idColumn]));
+                        return ((bool)(this[this.tableTrigo_Lotes.enableColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'turno_id\' de la tabla \'resumen_asistencia\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'enable\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.turno_idColumn] = value;
+                    this[this.tableTrigo_Lotes.enableColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string turno_name {
+            public string priority {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistencia.turno_nameColumn]));
+                        return ((string)(this[this.tableTrigo_Lotes.priorityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'turno_name\' de la tabla \'resumen_asistencia\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'priority\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.turno_nameColumn] = value;
+                    this[this.tableTrigo_Lotes.priorityColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int semana {
+            public int id_state {
                 get {
                     try {
-                        return ((int)(this[this.tableresumen_asistencia.semanaColumn]));
+                        return ((int)(this[this.tableTrigo_Lotes.id_stateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'semana\' de la tabla \'resumen_asistencia\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_state\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.semanaColumn] = value;
+                    this[this.tableTrigo_Lotes.id_stateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string entrada_1 {
+            public int id_user_created {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistencia.entrada_1Column]));
+                        return ((int)(this[this.tableTrigo_Lotes.id_user_createdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_1\' de la tabla \'resumen_asistencia\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_user_created\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.entrada_1Column] = value;
+                    this[this.tableTrigo_Lotes.id_user_createdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string salida_1 {
+            public System.DateTime date_row {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistencia.salida_1Column]));
+                        return ((global::System.DateTime)(this[this.tableTrigo_Lotes.date_rowColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_1\' de la tabla \'resumen_asistencia\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'date_row\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.salida_1Column] = value;
+                    this[this.tableTrigo_Lotes.date_rowColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string entrada_martes {
+            public int id_last_user_update {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistencia.entrada_martesColumn]));
+                        return ((int)(this[this.tableTrigo_Lotes.id_last_user_updateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_martes\' de la tabla \'resumen_asistencia\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.entrada_martesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string salida_martes {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.salida_martesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_martes\' de la tabla \'resumen_asistencia\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.salida_martesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string entrada_miercoles {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.entrada_miercolesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_miercoles\' de la tabla \'resumen_asistencia\' es DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.entrada_miercolesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string salida_miercoles {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.salida_miercolesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_miercoles\' de la tabla \'resumen_asistencia\' es DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.salida_miercolesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string entrada_jueves {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.entrada_juevesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_jueves\' de la tabla \'resumen_asistencia\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.entrada_juevesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string salida_jueves {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.salida_juevesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_jueves\' de la tabla \'resumen_asistencia\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.salida_juevesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string entrada_viernes {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.entrada_viernesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_viernes\' de la tabla \'resumen_asistencia\' es DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.entrada_viernesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string salida_viernes {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.salida_viernesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_viernes\' de la tabla \'resumen_asistencia\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.salida_viernesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string entrada_sabado {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.entrada_sabadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_sabado\' de la tabla \'resumen_asistencia\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.entrada_sabadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string salida_sabado {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.salida_sabadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_sabado\' de la tabla \'resumen_asistencia\' es DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.salida_sabadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string entrada_domingo {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.entrada_domingoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entrada_domingo\' de la tabla \'resumen_asistencia\' es DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.entrada_domingoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string salida_domingo {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.salida_domingoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida_domingo\' de la tabla \'resumen_asistencia\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.salida_domingoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime StartOfWeek {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.StartOfWeekColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'StartOfWeek\' de la tabla \'resumen_asistencia\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.StartOfWeekColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime EndOfWeek {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistencia.EndOfWeekColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'EndOfWeek\' de la tabla \'resumen_asistencia\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistencia.EndOfWeekColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string departamento {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistencia.departamentoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'departamento\' de la tabla \'resumen_asistencia\' es DBNull." +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_last_user_update\' de la tabla \'Trigo_Lotes\' es DBNull." +
                                 "", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistencia.departamentoColumn] = value;
+                    this[this.tableTrigo_Lotes.id_last_user_updateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isid_empNull() {
-                return this.IsNull(this.tableresumen_asistencia.id_empColumn);
+            public int id_type {
+                get {
+                    try {
+                        return ((int)(this[this.tableTrigo_Lotes.id_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_type\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.id_typeColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setid_empNull() {
-                this[this.tableresumen_asistencia.id_empColumn] = global::System.Convert.DBNull;
+            public System.DateTime date_last_modification {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTrigo_Lotes.date_last_modificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'date_last_modification\' de la tabla \'Trigo_Lotes\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.date_last_modificationColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IscodigoNull() {
-                return this.IsNull(this.tableresumen_asistencia.codigoColumn);
+            public string user_name_created {
+                get {
+                    try {
+                        return ((string)(this[this.tableTrigo_Lotes.user_name_createdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'user_name_created\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.user_name_createdColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetcodigoNull() {
-                this[this.tableresumen_asistencia.codigoColumn] = global::System.Convert.DBNull;
+            public string state_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableTrigo_Lotes.state_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'state_name\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.state_nameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsnombreNull() {
-                return this.IsNull(this.tableresumen_asistencia.nombreColumn);
+            public string type_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableTrigo_Lotes.type_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'type_name\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.type_nameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetnombreNull() {
-                this[this.tableresumen_asistencia.nombreColumn] = global::System.Convert.DBNull;
+            public string user_last_updated {
+                get {
+                    try {
+                        return ((string)(this[this.tableTrigo_Lotes.user_last_updatedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'user_last_updated\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.user_last_updatedColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isturno_idNull() {
-                return this.IsNull(this.tableresumen_asistencia.turno_idColumn);
+            public string itemcode {
+                get {
+                    try {
+                        return ((string)(this[this.tableTrigo_Lotes.itemcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.itemcodeColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setturno_idNull() {
-                this[this.tableresumen_asistencia.turno_idColumn] = global::System.Convert.DBNull;
+            public string itemname {
+                get {
+                    try {
+                        return ((string)(this[this.tableTrigo_Lotes.itemnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemname\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.itemnameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isturno_nameNull() {
-                return this.IsNull(this.tableresumen_asistencia.turno_nameColumn);
+            public int Linea {
+                get {
+                    try {
+                        return ((int)(this[this.tableTrigo_Lotes.LineaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Linea\' de la tabla \'Trigo_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.LineaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setturno_nameNull() {
-                this[this.tableresumen_asistencia.turno_nameColumn] = global::System.Convert.DBNull;
+            public bool IsidNull() {
+                return this.IsNull(this.tableTrigo_Lotes.idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IssemanaNull() {
-                return this.IsNull(this.tableresumen_asistencia.semanaColumn);
+            public void SetidNull() {
+                this[this.tableTrigo_Lotes.idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetsemanaNull() {
-                this[this.tableresumen_asistencia.semanaColumn] = global::System.Convert.DBNull;
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tableTrigo_Lotes.id_mpColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isentrada_1Null() {
-                return this.IsNull(this.tableresumen_asistencia.entrada_1Column);
+            public void Setid_mpNull() {
+                this[this.tableTrigo_Lotes.id_mpColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setentrada_1Null() {
-                this[this.tableresumen_asistencia.entrada_1Column] = global::System.Convert.DBNull;
+            public bool IslotNull() {
+                return this.IsNull(this.tableTrigo_Lotes.lotColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Issalida_1Null() {
-                return this.IsNull(this.tableresumen_asistencia.salida_1Column);
+            public void SetlotNull() {
+                this[this.tableTrigo_Lotes.lotColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setsalida_1Null() {
-                this[this.tableresumen_asistencia.salida_1Column] = global::System.Convert.DBNull;
+            public bool IsenableNull() {
+                return this.IsNull(this.tableTrigo_Lotes.enableColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isentrada_martesNull() {
-                return this.IsNull(this.tableresumen_asistencia.entrada_martesColumn);
+            public void SetenableNull() {
+                this[this.tableTrigo_Lotes.enableColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setentrada_martesNull() {
-                this[this.tableresumen_asistencia.entrada_martesColumn] = global::System.Convert.DBNull;
+            public bool IspriorityNull() {
+                return this.IsNull(this.tableTrigo_Lotes.priorityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Issalida_martesNull() {
-                return this.IsNull(this.tableresumen_asistencia.salida_martesColumn);
+            public void SetpriorityNull() {
+                this[this.tableTrigo_Lotes.priorityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setsalida_martesNull() {
-                this[this.tableresumen_asistencia.salida_martesColumn] = global::System.Convert.DBNull;
+            public bool Isid_stateNull() {
+                return this.IsNull(this.tableTrigo_Lotes.id_stateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isentrada_miercolesNull() {
-                return this.IsNull(this.tableresumen_asistencia.entrada_miercolesColumn);
+            public void Setid_stateNull() {
+                this[this.tableTrigo_Lotes.id_stateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setentrada_miercolesNull() {
-                this[this.tableresumen_asistencia.entrada_miercolesColumn] = global::System.Convert.DBNull;
+            public bool Isid_user_createdNull() {
+                return this.IsNull(this.tableTrigo_Lotes.id_user_createdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Issalida_miercolesNull() {
-                return this.IsNull(this.tableresumen_asistencia.salida_miercolesColumn);
+            public void Setid_user_createdNull() {
+                this[this.tableTrigo_Lotes.id_user_createdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setsalida_miercolesNull() {
-                this[this.tableresumen_asistencia.salida_miercolesColumn] = global::System.Convert.DBNull;
+            public bool Isdate_rowNull() {
+                return this.IsNull(this.tableTrigo_Lotes.date_rowColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isentrada_juevesNull() {
-                return this.IsNull(this.tableresumen_asistencia.entrada_juevesColumn);
+            public void Setdate_rowNull() {
+                this[this.tableTrigo_Lotes.date_rowColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setentrada_juevesNull() {
-                this[this.tableresumen_asistencia.entrada_juevesColumn] = global::System.Convert.DBNull;
+            public bool Isid_last_user_updateNull() {
+                return this.IsNull(this.tableTrigo_Lotes.id_last_user_updateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Issalida_juevesNull() {
-                return this.IsNull(this.tableresumen_asistencia.salida_juevesColumn);
+            public void Setid_last_user_updateNull() {
+                this[this.tableTrigo_Lotes.id_last_user_updateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setsalida_juevesNull() {
-                this[this.tableresumen_asistencia.salida_juevesColumn] = global::System.Convert.DBNull;
+            public bool Isid_typeNull() {
+                return this.IsNull(this.tableTrigo_Lotes.id_typeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isentrada_viernesNull() {
-                return this.IsNull(this.tableresumen_asistencia.entrada_viernesColumn);
+            public void Setid_typeNull() {
+                this[this.tableTrigo_Lotes.id_typeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setentrada_viernesNull() {
-                this[this.tableresumen_asistencia.entrada_viernesColumn] = global::System.Convert.DBNull;
+            public bool Isdate_last_modificationNull() {
+                return this.IsNull(this.tableTrigo_Lotes.date_last_modificationColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Issalida_viernesNull() {
-                return this.IsNull(this.tableresumen_asistencia.salida_viernesColumn);
+            public void Setdate_last_modificationNull() {
+                this[this.tableTrigo_Lotes.date_last_modificationColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setsalida_viernesNull() {
-                this[this.tableresumen_asistencia.salida_viernesColumn] = global::System.Convert.DBNull;
+            public bool Isuser_name_createdNull() {
+                return this.IsNull(this.tableTrigo_Lotes.user_name_createdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isentrada_sabadoNull() {
-                return this.IsNull(this.tableresumen_asistencia.entrada_sabadoColumn);
+            public void Setuser_name_createdNull() {
+                this[this.tableTrigo_Lotes.user_name_createdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setentrada_sabadoNull() {
-                this[this.tableresumen_asistencia.entrada_sabadoColumn] = global::System.Convert.DBNull;
+            public bool Isstate_nameNull() {
+                return this.IsNull(this.tableTrigo_Lotes.state_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Issalida_sabadoNull() {
-                return this.IsNull(this.tableresumen_asistencia.salida_sabadoColumn);
+            public void Setstate_nameNull() {
+                this[this.tableTrigo_Lotes.state_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setsalida_sabadoNull() {
-                this[this.tableresumen_asistencia.salida_sabadoColumn] = global::System.Convert.DBNull;
+            public bool Istype_nameNull() {
+                return this.IsNull(this.tableTrigo_Lotes.type_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isentrada_domingoNull() {
-                return this.IsNull(this.tableresumen_asistencia.entrada_domingoColumn);
+            public void Settype_nameNull() {
+                this[this.tableTrigo_Lotes.type_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setentrada_domingoNull() {
-                this[this.tableresumen_asistencia.entrada_domingoColumn] = global::System.Convert.DBNull;
+            public bool Isuser_last_updatedNull() {
+                return this.IsNull(this.tableTrigo_Lotes.user_last_updatedColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Issalida_domingoNull() {
-                return this.IsNull(this.tableresumen_asistencia.salida_domingoColumn);
+            public void Setuser_last_updatedNull() {
+                this[this.tableTrigo_Lotes.user_last_updatedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setsalida_domingoNull() {
-                this[this.tableresumen_asistencia.salida_domingoColumn] = global::System.Convert.DBNull;
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tableTrigo_Lotes.itemcodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStartOfWeekNull() {
-                return this.IsNull(this.tableresumen_asistencia.StartOfWeekColumn);
+            public void SetitemcodeNull() {
+                this[this.tableTrigo_Lotes.itemcodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStartOfWeekNull() {
-                this[this.tableresumen_asistencia.StartOfWeekColumn] = global::System.Convert.DBNull;
+            public bool IsitemnameNull() {
+                return this.IsNull(this.tableTrigo_Lotes.itemnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEndOfWeekNull() {
-                return this.IsNull(this.tableresumen_asistencia.EndOfWeekColumn);
+            public void SetitemnameNull() {
+                this[this.tableTrigo_Lotes.itemnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEndOfWeekNull() {
-                this[this.tableresumen_asistencia.EndOfWeekColumn] = global::System.Convert.DBNull;
+            public bool IsLineaNull() {
+                return this.IsNull(this.tableTrigo_Lotes.LineaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsdepartamentoNull() {
-                return this.IsNull(this.tableresumen_asistencia.departamentoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetdepartamentoNull() {
-                this[this.tableresumen_asistencia.departamentoColumn] = global::System.Convert.DBNull;
+            public void SetLineaNull() {
+                this[this.tableTrigo_Lotes.LineaColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class resumen_asistenciaEntradasRow : global::System.Data.DataRow {
+        public partial class Soya_LotesRow : global::System.Data.DataRow {
             
-            private resumen_asistenciaEntradasDataTable tableresumen_asistenciaEntradas;
+            private Soya_LotesDataTable tableSoya_Lotes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal resumen_asistenciaEntradasRow(global::System.Data.DataRowBuilder rb) : 
+            internal Soya_LotesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableresumen_asistenciaEntradas = ((resumen_asistenciaEntradasDataTable)(this.Table));
+                this.tableSoya_Lotes = ((Soya_LotesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int id_emp {
+            public long id {
                 get {
                     try {
-                        return ((int)(this[this.tableresumen_asistenciaEntradas.id_empColumn]));
+                        return ((long)(this[this.tableSoya_Lotes.idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_emp\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tableSoya_Lotes.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string lot {
+                get {
+                    try {
+                        return ((string)(this[this.tableSoya_Lotes.lotColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lot\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.lotColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool enable {
+                get {
+                    try {
+                        return ((bool)(this[this.tableSoya_Lotes.enableColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'enable\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.enableColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string priority {
+                get {
+                    try {
+                        return ((string)(this[this.tableSoya_Lotes.priorityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'priority\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.priorityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int id_state {
+                get {
+                    try {
+                        return ((int)(this[this.tableSoya_Lotes.id_stateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_state\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.id_stateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int id_user_created {
+                get {
+                    try {
+                        return ((int)(this[this.tableSoya_Lotes.id_user_createdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_user_created\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.id_user_createdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime date_row {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSoya_Lotes.date_rowColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'date_row\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.date_rowColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int id_last_user_update {
+                get {
+                    try {
+                        return ((int)(this[this.tableSoya_Lotes.id_last_user_updateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_last_user_update\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.id_last_user_updateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int id_type {
+                get {
+                    try {
+                        return ((int)(this[this.tableSoya_Lotes.id_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_type\' de la tabla \'Soya_Lotes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.id_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime date_last_modification {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSoya_Lotes.date_last_modificationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'date_last_modification\' de la tabla \'Soya_Lotes\' es DBNul" +
                                 "l.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistenciaEntradas.id_empColumn] = value;
+                    this[this.tableSoya_Lotes.date_last_modificationColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string codigo {
+            public string user_name_created {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.codigoColumn]));
+                        return ((string)(this[this.tableSoya_Lotes.user_name_createdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'user_name_created\' de la tabla \'Soya_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistenciaEntradas.codigoColumn] = value;
+                    this[this.tableSoya_Lotes.user_name_createdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string nombre {
+            public string state_name {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.nombreColumn]));
+                        return ((string)(this[this.tableSoya_Lotes.state_nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'state_name\' de la tabla \'Soya_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistenciaEntradas.nombreColumn] = value;
+                    this[this.tableSoya_Lotes.state_nameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int semana {
+            public string type_name {
                 get {
                     try {
-                        return ((int)(this[this.tableresumen_asistenciaEntradas.semanaColumn]));
+                        return ((string)(this[this.tableSoya_Lotes.type_nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'semana\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'type_name\' de la tabla \'Soya_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistenciaEntradas.semanaColumn] = value;
+                    this[this.tableSoya_Lotes.type_nameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Domingo {
+            public string user_last_updated {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.DomingoColumn]));
+                        return ((string)(this[this.tableSoya_Lotes.user_last_updatedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Domingo\' de la tabla \'resumen_asistenciaEntradas\' es DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'user_last_updated\' de la tabla \'Soya_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistenciaEntradas.DomingoColumn] = value;
+                    this[this.tableSoya_Lotes.user_last_updatedColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Lunes {
+            public string itemcode {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.LunesColumn]));
+                        return ((string)(this[this.tableSoya_Lotes.itemcodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Lunes\' de la tabla \'resumen_asistenciaEntradas\' es DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'Soya_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistenciaEntradas.LunesColumn] = value;
+                    this[this.tableSoya_Lotes.itemcodeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Martes {
+            public string itemname {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.MartesColumn]));
+                        return ((string)(this[this.tableSoya_Lotes.itemnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Martes\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemname\' de la tabla \'Soya_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistenciaEntradas.MartesColumn] = value;
+                    this[this.tableSoya_Lotes.itemnameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Miercoles {
+            public int Linea {
                 get {
                     try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.MiercolesColumn]));
+                        return ((int)(this[this.tableSoya_Lotes.LineaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Miercoles\' de la tabla \'resumen_asistenciaEntradas\' es DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Linea\' de la tabla \'Soya_Lotes\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableresumen_asistenciaEntradas.MiercolesColumn] = value;
+                    this[this.tableSoya_Lotes.LineaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Jueves {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.JuevesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Jueves\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistenciaEntradas.JuevesColumn] = value;
-                }
+            public bool IsidNull() {
+                return this.IsNull(this.tableSoya_Lotes.idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Viernes {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.ViernesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Viernes\' de la tabla \'resumen_asistenciaEntradas\' es DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistenciaEntradas.ViernesColumn] = value;
-                }
+            public void SetidNull() {
+                this[this.tableSoya_Lotes.idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Sabado {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.SabadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Sabado\' de la tabla \'resumen_asistenciaEntradas\' es DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistenciaEntradas.SabadoColumn] = value;
-                }
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tableSoya_Lotes.id_mpColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime StartOfWeek {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistenciaEntradas.StartOfWeekColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'StartOfWeek\' de la tabla \'resumen_asistenciaEntradas\' es " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistenciaEntradas.StartOfWeekColumn] = value;
-                }
+            public void Setid_mpNull() {
+                this[this.tableSoya_Lotes.id_mpColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime EndOfWeek {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableresumen_asistenciaEntradas.EndOfWeekColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'EndOfWeek\' de la tabla \'resumen_asistenciaEntradas\' es DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistenciaEntradas.EndOfWeekColumn] = value;
-                }
+            public bool IslotNull() {
+                return this.IsNull(this.tableSoya_Lotes.lotColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string departamento {
-                get {
-                    try {
-                        return ((string)(this[this.tableresumen_asistenciaEntradas.departamentoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'departamento\' de la tabla \'resumen_asistenciaEntradas\' es" +
-                                " DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableresumen_asistenciaEntradas.departamentoColumn] = value;
-                }
+            public void SetlotNull() {
+                this[this.tableSoya_Lotes.lotColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isid_empNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.id_empColumn);
+            public bool IsenableNull() {
+                return this.IsNull(this.tableSoya_Lotes.enableColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setid_empNull() {
-                this[this.tableresumen_asistenciaEntradas.id_empColumn] = global::System.Convert.DBNull;
+            public void SetenableNull() {
+                this[this.tableSoya_Lotes.enableColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IscodigoNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.codigoColumn);
+            public bool IspriorityNull() {
+                return this.IsNull(this.tableSoya_Lotes.priorityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetcodigoNull() {
-                this[this.tableresumen_asistenciaEntradas.codigoColumn] = global::System.Convert.DBNull;
+            public void SetpriorityNull() {
+                this[this.tableSoya_Lotes.priorityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsnombreNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.nombreColumn);
+            public bool Isid_stateNull() {
+                return this.IsNull(this.tableSoya_Lotes.id_stateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetnombreNull() {
-                this[this.tableresumen_asistenciaEntradas.nombreColumn] = global::System.Convert.DBNull;
+            public void Setid_stateNull() {
+                this[this.tableSoya_Lotes.id_stateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IssemanaNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.semanaColumn);
+            public bool Isid_user_createdNull() {
+                return this.IsNull(this.tableSoya_Lotes.id_user_createdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetsemanaNull() {
-                this[this.tableresumen_asistenciaEntradas.semanaColumn] = global::System.Convert.DBNull;
+            public void Setid_user_createdNull() {
+                this[this.tableSoya_Lotes.id_user_createdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDomingoNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.DomingoColumn);
+            public bool Isdate_rowNull() {
+                return this.IsNull(this.tableSoya_Lotes.date_rowColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDomingoNull() {
-                this[this.tableresumen_asistenciaEntradas.DomingoColumn] = global::System.Convert.DBNull;
+            public void Setdate_rowNull() {
+                this[this.tableSoya_Lotes.date_rowColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsLunesNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.LunesColumn);
+            public bool Isid_last_user_updateNull() {
+                return this.IsNull(this.tableSoya_Lotes.id_last_user_updateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetLunesNull() {
-                this[this.tableresumen_asistenciaEntradas.LunesColumn] = global::System.Convert.DBNull;
+            public void Setid_last_user_updateNull() {
+                this[this.tableSoya_Lotes.id_last_user_updateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMartesNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.MartesColumn);
+            public bool Isid_typeNull() {
+                return this.IsNull(this.tableSoya_Lotes.id_typeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMartesNull() {
-                this[this.tableresumen_asistenciaEntradas.MartesColumn] = global::System.Convert.DBNull;
+            public void Setid_typeNull() {
+                this[this.tableSoya_Lotes.id_typeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMiercolesNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.MiercolesColumn);
+            public bool Isdate_last_modificationNull() {
+                return this.IsNull(this.tableSoya_Lotes.date_last_modificationColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMiercolesNull() {
-                this[this.tableresumen_asistenciaEntradas.MiercolesColumn] = global::System.Convert.DBNull;
+            public void Setdate_last_modificationNull() {
+                this[this.tableSoya_Lotes.date_last_modificationColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsJuevesNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.JuevesColumn);
+            public bool Isuser_name_createdNull() {
+                return this.IsNull(this.tableSoya_Lotes.user_name_createdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetJuevesNull() {
-                this[this.tableresumen_asistenciaEntradas.JuevesColumn] = global::System.Convert.DBNull;
+            public void Setuser_name_createdNull() {
+                this[this.tableSoya_Lotes.user_name_createdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsViernesNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.ViernesColumn);
+            public bool Isstate_nameNull() {
+                return this.IsNull(this.tableSoya_Lotes.state_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetViernesNull() {
-                this[this.tableresumen_asistenciaEntradas.ViernesColumn] = global::System.Convert.DBNull;
+            public void Setstate_nameNull() {
+                this[this.tableSoya_Lotes.state_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSabadoNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.SabadoColumn);
+            public bool Istype_nameNull() {
+                return this.IsNull(this.tableSoya_Lotes.type_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSabadoNull() {
-                this[this.tableresumen_asistenciaEntradas.SabadoColumn] = global::System.Convert.DBNull;
+            public void Settype_nameNull() {
+                this[this.tableSoya_Lotes.type_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStartOfWeekNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.StartOfWeekColumn);
+            public bool Isuser_last_updatedNull() {
+                return this.IsNull(this.tableSoya_Lotes.user_last_updatedColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStartOfWeekNull() {
-                this[this.tableresumen_asistenciaEntradas.StartOfWeekColumn] = global::System.Convert.DBNull;
+            public void Setuser_last_updatedNull() {
+                this[this.tableSoya_Lotes.user_last_updatedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEndOfWeekNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.EndOfWeekColumn);
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tableSoya_Lotes.itemcodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEndOfWeekNull() {
-                this[this.tableresumen_asistenciaEntradas.EndOfWeekColumn] = global::System.Convert.DBNull;
+            public void SetitemcodeNull() {
+                this[this.tableSoya_Lotes.itemcodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsdepartamentoNull() {
-                return this.IsNull(this.tableresumen_asistenciaEntradas.departamentoColumn);
+            public bool IsitemnameNull() {
+                return this.IsNull(this.tableSoya_Lotes.itemnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetdepartamentoNull() {
-                this[this.tableresumen_asistenciaEntradas.departamentoColumn] = global::System.Convert.DBNull;
+            public void SetitemnameNull() {
+                this[this.tableSoya_Lotes.itemnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsLineaNull() {
+                return this.IsNull(this.tableSoya_Lotes.LineaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetLineaNull() {
+                this[this.tableSoya_Lotes.LineaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2438,22 +2378,22 @@ namespace LOSA.ACS.RRHH {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class resumen_asistenciaRowChangeEvent : global::System.EventArgs {
+        public class Trigo_LotesRowChangeEvent : global::System.EventArgs {
             
-            private resumen_asistenciaRow eventRow;
+            private Trigo_LotesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaRowChangeEvent(resumen_asistenciaRow row, global::System.Data.DataRowAction action) {
+            public Trigo_LotesRowChangeEvent(Trigo_LotesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaRow Row {
+            public Trigo_LotesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2472,22 +2412,22 @@ namespace LOSA.ACS.RRHH {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class resumen_asistenciaEntradasRowChangeEvent : global::System.EventArgs {
+        public class Soya_LotesRowChangeEvent : global::System.EventArgs {
             
-            private resumen_asistenciaEntradasRow eventRow;
+            private Soya_LotesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaEntradasRowChangeEvent(resumen_asistenciaEntradasRow row, global::System.Data.DataRowAction action) {
+            public Soya_LotesRowChangeEvent(Soya_LotesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public resumen_asistenciaEntradasRow Row {
+            public Soya_LotesRow Row {
                 get {
                     return this.eventRow;
                 }
