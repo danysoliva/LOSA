@@ -1,4 +1,6 @@
 ﻿
+using LOSA.TransaccionesMP.Gestion_Granel;
+
 namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
 {
     partial class frmGestionLoteGranel
@@ -46,7 +48,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.dsGestionGranel1 = new JAGUAR_APP.TransaccionesMP.Gestion_Granel.dsGestionGranel();
+            this.dsGestionGranel1 = new dsGestionGranel();// JAGUAR_APP.TransaccionesMP.Gestion_Granel.dsGestionGranel();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
