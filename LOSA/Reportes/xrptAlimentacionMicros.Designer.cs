@@ -1010,11 +1010,11 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.batchpesados.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.batchpesados.LocationFloat = new DevExpress.Utils.PointFloat(123.3333F, 9.999998F);
+            this.batchpesados.LocationFloat = new DevExpress.Utils.PointFloat(123.3334F, 9.999974F);
             this.batchpesados.Multiline = true;
             this.batchpesados.Name = "batchpesados";
             this.batchpesados.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.batchpesados.SizeF = new System.Drawing.SizeF(79.881F, 64.31625F);
+            this.batchpesados.SizeF = new System.Drawing.SizeF(118.6028F, 64.31625F);
             this.batchpesados.StylePriority.UseBorders = false;
             this.batchpesados.StylePriority.UseFont = false;
             this.batchpesados.StylePriority.UseTextAlignment = false;

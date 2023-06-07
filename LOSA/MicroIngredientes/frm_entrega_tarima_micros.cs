@@ -84,7 +84,7 @@ namespace LOSA.MicroIngredientes
             IdMP = pidMP;
             LoteMP = pLote;
 
-            if (Ud_MaximoA_Enviar == 0)
+            if (Ud_MaximoA_Enviar == 0) //Va ser una Tarima de Micros Sin Unidades
             {
                 txtPorEnviar.EditValue = 0;
                 txtKgEnviar.EditValue = MaximoA_Enviar;
@@ -243,14 +243,29 @@ namespace LOSA.MicroIngredientes
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if(UdEnviar == 0)
+            
+            if (UdEnviar == 0)
             {
-                CajaDialogo.Error("Debe enviar al menos una unidad!");
-                return;
-            }
+                if (Ud_MaximoA_Enviar == 0)
+                {
+                    UdEnviar = Convert.ToInt32(txtKgEnviar.Text);
+                    KgEnviar = Convert.ToDecimal(txtKgEnviar.Text);
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    CajaDialogo.Error("Debe enviar al menos una unidad!");
+                    return;
+                }
+                
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }

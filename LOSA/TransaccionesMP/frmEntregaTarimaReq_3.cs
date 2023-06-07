@@ -87,28 +87,44 @@ namespace LOSA.TransaccionesMP
 
         public void load_tarimas_scan()
         {
-            string query = @"sp_load_tarimas_escaneadas";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            SqlCommand cmd = new SqlCommand(query,cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            dsTransaccionesMP.viewTarimas.Clear();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dsTransaccionesMP.viewTarimas);
-            cn.Close();
+            try
+            {
+                string query = @"sp_load_tarimas_escaneadas";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsTransaccionesMP.viewTarimas.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsTransaccionesMP.viewTarimas);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            
 
             
         }
         public void load_tarimas_scan_v2()
         {
-            string query = @"sp_load_tarimas_escaneadas_v2";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            SqlCommand cmd = new SqlCommand(query, cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id_requisa", RequisicionActual.IdRequisicion);
-            dsTransaccionesMP.viewTarimas.Clear();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dsTransaccionesMP.viewTarimas);
-            cn.Close();
+            try
+            {
+                string query = @"sp_load_tarimas_escaneadas_v2";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_requisa", RequisicionActual.IdRequisicion);
+                dsTransaccionesMP.viewTarimas.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsTransaccionesMP.viewTarimas);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            
 
         }
         private void cmdHome_Click(object sender, EventArgs e)
