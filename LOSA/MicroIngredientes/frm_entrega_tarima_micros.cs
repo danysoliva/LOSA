@@ -86,27 +86,32 @@ namespace LOSA.MicroIngredientes
             IdMP = pidMP;
             LoteMP = pLote;
 
-            if (Ud_MaximoA_Enviar == 0) //Va ser una Tarima de Micros Sin Unidades
-            {
-                txtPorEnviar.EditValue = 0;
-                txtKgEnviar.EditValue = MaximoA_Enviar;
-                btnUP.Enabled = false;
-                btnDown.Enabled = false;
-            }
-            else
-            {
-                tar1.RecuperarRegistro(pIdTarima);
-                if (PresentacionActual.RecuperarRegistro(tar1.IdPresentacion))
-                    lblPresentacion.Text = PresentacionActual.Descripcion;
+            tar1.RecuperarRegistro(pIdTarima);
+            if (PresentacionActual.RecuperarRegistro(tar1.IdPresentacion))
+                lblPresentacion.Text = PresentacionActual.Descripcion;
 
-                LoadDataSinTarima();
-            }
-            //if (tar1.RecuperarRegistro(pIdTarima))
+            LoadDataSinTarima();
+
+            txtPorEnviar.Text = Ud_MaximoA_Enviar.ToString();
+            txtKgEnviar.Text = KgMaximo_Enviar_Requisa.ToString();
+
+            //if (Ud_MaximoA_Enviar == 0) //Va ser una Tarima de Micros Sin Unidades
             //{
+            //    txtPorEnviar.EditValue = 0;
+            //    txtKgEnviar.EditValue = MaximoA_Enviar;
+            //    btnUP.Enabled = false;
+            //    btnDown.Enabled = false;
+            //}
+            //else
+            //{
+            //    tar1.RecuperarRegistro(pIdTarima);
             //    if (PresentacionActual.RecuperarRegistro(tar1.IdPresentacion))
             //        lblPresentacion.Text = PresentacionActual.Descripcion;
+
+            //    LoadDataSinTarima();
             //}
-            
+
+
         }
 
         private void LoadData()
@@ -254,29 +259,40 @@ namespace LOSA.MicroIngredientes
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            
-            if (UdEnviar == 0)
-            {
-                if (Ud_MaximoA_Enviar == 0)
-                {
-                    UdEnviar = Convert.ToInt32(txtKgEnviar.Text);
-                    KgEnviar = Convert.ToDecimal(txtKgEnviar.Text);
 
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    CajaDialogo.Error("Debe enviar al menos una unidad!");
-                    return;
-                }
-                
-            }
-            else
+            if (Convert.ToDecimal(txtKgEnviar.Text) != 0)
             {
+                UdEnviar = Convert.ToInt32(txtPorEnviar.Text);
+                KgEnviar = Convert.ToDecimal(txtKgEnviar.Text);
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+
+
+            //asi funcionaba antes
+            //if (UdEnviar == 0)
+            //{
+            //    if (Ud_MaximoA_Enviar == 0)
+            //    {
+            //        UdEnviar = Convert.ToInt32(txtKgEnviar.Text);
+            //        KgEnviar = Convert.ToDecimal(txtKgEnviar.Text);
+
+            //        this.DialogResult = DialogResult.OK;
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        CajaDialogo.Error("Debe enviar al menos una unidad!");
+            //        return;
+            //    }
+                
+            //}
+            //else
+            //{
+            //    this.DialogResult = DialogResult.OK;
+            //    this.Close();
+            //}
         }
     }
 }

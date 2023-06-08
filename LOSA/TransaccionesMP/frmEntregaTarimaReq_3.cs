@@ -1058,6 +1058,7 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
                         cmd.Parameters.AddWithValue("@id_req_detalle", row.id_detalle_requisicion);//Id requisicion detalle
                         cmd.Parameters.AddWithValue("@id_alimentacion", row.id_alimentacion);
+                        cmd.Parameters.AddWithValue("@id_mp_entrega",row.id);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
                         {
