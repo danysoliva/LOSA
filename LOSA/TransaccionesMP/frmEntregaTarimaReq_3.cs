@@ -1018,10 +1018,12 @@ namespace LOSA.TransaccionesMP
 
             if (mp.Permitir)
             {
-                TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
+                //DESCOMENTE NO LO OLVIDES
+                //TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
                 //if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
-                decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
-                if (Kg_Entregados_Micros >= dp.ValidateNumberDecimal(row.kg))
+                //decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
+                //if (Kg_Entregados_Micros >= dp.ValidateNumberDecimal(row.kg))
+                if(row.entregado_micros == true)
                 {
                     string mensaje = "La tarima ya fue entregada en Micro Ingredientes!";
                     lblMensaje.Text = mensaje;

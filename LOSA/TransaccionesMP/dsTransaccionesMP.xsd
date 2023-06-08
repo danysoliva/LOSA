@@ -225,6 +225,7 @@
               <xs:element name="id_detalle_requisicion" msprop:Generator_ColumnVarNameInTable="columnid_detalle_requisicion" msprop:Generator_ColumnPropNameInRow="id_detalle_requisicion" msprop:Generator_ColumnPropNameInTable="id_detalle_requisicionColumn" msprop:Generator_UserColumnName="id_detalle_requisicion" type="xs:int" minOccurs="0" />
               <xs:element name="id_requisicion_h" msprop:Generator_ColumnVarNameInTable="columnid_requisicion_h" msprop:Generator_ColumnPropNameInRow="id_requisicion_h" msprop:Generator_ColumnPropNameInTable="id_requisicion_hColumn" msprop:Generator_UserColumnName="id_requisicion_h" type="xs:int" minOccurs="0" />
               <xs:element name="id_alimentacion" msprop:Generator_ColumnVarNameInTable="columnid_alimentacion" msprop:Generator_ColumnPropNameInRow="id_alimentacion" msprop:Generator_ColumnPropNameInTable="id_alimentacionColumn" msprop:Generator_UserColumnName="id_alimentacion" type="xs:string" minOccurs="0" />
+              <xs:element name="entregado_micros" msprop:Generator_ColumnVarNameInTable="columnentregado_micros" msprop:Generator_ColumnPropNameInRow="entregado_micros" msprop:Generator_ColumnPropNameInTable="entregado_microsColumn" msprop:Generator_UserColumnName="entregado_micros" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

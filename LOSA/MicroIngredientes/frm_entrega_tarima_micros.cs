@@ -22,6 +22,7 @@ namespace LOSA.MicroIngredientes
         public decimal UdEnviar;
         public decimal KgEnviar;
         decimal MaximoA_Enviar;
+        decimal KgMaximo_Enviar_Requisa;
         int Ud_MaximoA_Enviar;
 
         int IdMP;
@@ -75,6 +76,7 @@ namespace LOSA.MicroIngredientes
             PresentacionActual = new PresentacionX();
             MaximoA_Enviar = pCantidadMaxima;
             Ud_MaximoA_Enviar = pUdMaxEnviar;
+            KgMaximo_Enviar_Requisa = pCantidadMaxima;
             Tarima tar1 = new Tarima();
             //if (lot1.RecuperarRegistro(pIdLoteALOSY))
             //{
@@ -189,6 +191,7 @@ namespace LOSA.MicroIngredientes
             {
                 UdEnviar = dp.ValidateNumberInt32(txtPorEnviar.Text);
                 //CalcularKg(UdEnviar);
+                
                 if (UdEnviar < Ud_MaximoA_Enviar)
                 {
                     UdEnviar += 1;
@@ -226,7 +229,15 @@ namespace LOSA.MicroIngredientes
 
         private void CalcularKg(decimal udEnviar)
         {
-            KgEnviar = UdEnviar * PresentacionActual.Factor;
+            if (udEnviar == Ud_MaximoA_Enviar)
+            {
+                KgEnviar = KgMaximo_Enviar_Requisa;
+            }
+            else
+            {
+                KgEnviar = UdEnviar * PresentacionActual.Factor;
+            }
+            
         }
 
         private void PlaceNewNumber(decimal pudEnviar)
