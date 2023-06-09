@@ -103,7 +103,7 @@
             // 
             this.xrLabel2.AutoWidth = true;
             this.xrLabel2.CanShrink = true;
-            this.xrLabel2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 42F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 188.7085F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -118,7 +118,7 @@
             // 
             this.lblRack.AutoWidth = true;
             this.lblRack.CanShrink = true;
-            this.lblRack.Font = new System.Drawing.Font("Arial Rounded MT Bold", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRack.Font = new DevExpress.Drawing.DXFont("Arial Rounded MT Bold", 45F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblRack.LocationFloat = new DevExpress.Utils.PointFloat(0F, 247.125F);
             this.lblRack.Multiline = true;
             this.lblRack.Name = "lblRack";
@@ -137,7 +137,7 @@
             this.BottomMargin,
             this.ReportHeader,
             this.PageHeader});
-            this.Margins = new System.Drawing.Printing.Margins(23, 498, 27, 10);
+            this.Margins = new DevExpress.Drawing.DXMargins(23, 498, 27, 10);
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

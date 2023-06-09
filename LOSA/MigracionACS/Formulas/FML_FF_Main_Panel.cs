@@ -216,6 +216,8 @@ namespace LOSA.MigracionACS.Formulas
         {
             try
             {
+                //UserGroups = secure.Get_User_Groups("AQUAFEEDHN", txt_user.Text.ToString());
+               
                 foreach (DataRow row in UserGroups.Rows) 
                 {
                     if (row["GroupName"].ToString() == "app_acs_fml") 
@@ -223,17 +225,13 @@ namespace LOSA.MigracionACS.Formulas
                         load_data();
                         chk_descontinuadas.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btn_addComment.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
                         btnc_viewDeprecated.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                     }
                     if (row["GroupName"].ToString() == "app_acs_fml_loader")
                     {
                         btn_LoadFormula.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
                         btnc_LoadNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
                         btn_Export.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
                         btnc_GeneralReport.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                     }
                     if (row["GroupName"].ToString() == "app_acs_fml_planner")
@@ -241,7 +239,6 @@ namespace LOSA.MigracionACS.Formulas
                         btn_RequestApproval.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btn_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btn_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
                         btnc_RequestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btnc_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btnc_Habilitar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
@@ -251,26 +248,16 @@ namespace LOSA.MigracionACS.Formulas
                     {
                         btn_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btn_reject.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
                         btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btnc_reject.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
                         btn_Export.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                     }
                     if (row["GroupName"].ToString() == "app_acs_fml_approver_prd")
                     {
                         btn_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btn_reject.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //btn_RequestApproval.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //btn_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //btn_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
                         btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btnc_reject.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //btnc_RequestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //btnc_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //btnc_Delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
                         btn_Export.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                     }
                     if (row["GroupName"].ToString() == "app_acs_it_admin")
@@ -310,6 +297,8 @@ namespace LOSA.MigracionACS.Formulas
                 MessageBox.Show("Algo resulto mal, contacta al departamento de sistemas Detalle:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void grdv_main_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {

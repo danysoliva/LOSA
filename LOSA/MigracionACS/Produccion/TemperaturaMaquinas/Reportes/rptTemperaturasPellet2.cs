@@ -14,7 +14,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             lblEquipoName.Text = PName;
         }
 
-        private void xrLabel9_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrLabel9_BeforePrint(object sender, CancelEventArgs e)
         {
 
         }

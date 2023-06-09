@@ -82,7 +82,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.xrTable1});
             this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
-            this.Detail.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.Detail_BeforePrint);
+            this.Detail.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.Detail_BeforePrint);
             // 
             // xrTable1
             // 
@@ -118,7 +118,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.xrTableCell1.TextFormatString = "{0:L.00}";
             this.xrTableCell1.Weight = 0.82439994812011719D;
             this.xrTableCell1.EvaluateBinding += new DevExpress.XtraReports.UI.BindingEventHandler(this.xrTableCell1_EvaluateBinding);
-            this.xrTableCell1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrTableCell1_BeforePrint);
+            this.xrTableCell1.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.xrTableCell1_BeforePrint);
             // 
             // xrTableCell2
             // 
@@ -207,7 +207,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.xrTable4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable4.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(37.5F, 87.5F);
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -389,7 +389,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.lblSalarioPrMensual.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblSalarioPrMensual.Font = new System.Drawing.Font("Arial", 9F);
+            this.lblSalarioPrMensual.Font = new DevExpress.Drawing.DXFont("Arial", 9F);
             this.lblSalarioPrMensual.LocationFloat = new DevExpress.Utils.PointFloat(532.1399F, 0F);
             this.lblSalarioPrMensual.Name = "lblSalarioPrMensual";
             this.lblSalarioPrMensual.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -405,7 +405,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.xrLabel4.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel4.Font = new System.Drawing.Font("Arial", 9F);
+            this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Arial", 9F);
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(37.5F, 0F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -438,8 +438,8 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.dsRRHH_1});
             this.DataMember = "Empleados";
             this.DataSource = this.dsRRHH_1;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(101, 100, 4, 25);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(101, 100, 4, 25);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pp_anios,
             this.pp_dias_tomados});

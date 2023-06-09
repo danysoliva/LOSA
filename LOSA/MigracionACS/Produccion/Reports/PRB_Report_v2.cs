@@ -98,7 +98,7 @@ namespace LOSA.MigracionACS.Produccion.Reports
             }
         }
 
-        private void xrTable2_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrTable2_BeforePrint(object sender, CancelEventArgs e)
         {
                     }
     }

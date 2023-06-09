@@ -10,6 +10,7 @@ using LOSA.Accesos.GestionSistemas;
 using LOSA.Accesos.GrupoLosa;
 using LOSA.Accesos.NivelAccesoSistema;
 using LOSA.ACS.RRHH;
+using LOSA.ACS.RRHH.Informes;
 using LOSA.AlmacenesExterno;
 using LOSA.AlmacenesExterno.Salida_Almacen;
 using LOSA.Calidad;
@@ -177,6 +178,8 @@ namespace LOSA
                             tabOpciones.TabPages[6].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[9].PageVisible = true;
+                            tabOpciones.TabPages[10].PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -193,7 +196,8 @@ namespace LOSA
                     tabOpciones.TabPages[i].PageVisible = true;
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i - 1].PageVisible = true;
-
+                    
+                    
                     idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
                     {
@@ -225,6 +229,10 @@ namespace LOSA
                             tabOpciones.TabPages[i].PageVisible = true;
                             break;
                     }
+
+                    if (pUser.ValidarNivelPermisos(92))
+                        tabOpciones.TabPages[10].PageVisible = true;
+
                     break;
                 case GrupoUser.GrupoUsuario.Contabilidad:
                     int idNivel2 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
@@ -3405,6 +3413,44 @@ namespace LOSA
                 else
                 {
                     CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #91");
+                }
+            }
+        }
+
+        private void cmdImprimirVouchers_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmHomePlanillaCatorceavo frm = new frmHomePlanillaCatorceavo(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(81))
+                {
+                    frmHomePlanillaCatorceavo frm = new frmHomePlanillaCatorceavo(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #81");
                 }
             }
         }
