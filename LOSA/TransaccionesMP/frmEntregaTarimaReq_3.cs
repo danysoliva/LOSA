@@ -87,28 +87,44 @@ namespace LOSA.TransaccionesMP
 
         public void load_tarimas_scan()
         {
-            string query = @"sp_load_tarimas_escaneadas";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            SqlCommand cmd = new SqlCommand(query,cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            dsTransaccionesMP.viewTarimas.Clear();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dsTransaccionesMP.viewTarimas);
-            cn.Close();
+            try
+            {
+                string query = @"sp_load_tarimas_escaneadas";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsTransaccionesMP.viewTarimas.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsTransaccionesMP.viewTarimas);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            
 
             
         }
         public void load_tarimas_scan_v2()
         {
-            string query = @"sp_load_tarimas_escaneadas_v2";
-            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            SqlCommand cmd = new SqlCommand(query, cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id_requisa", RequisicionActual.IdRequisicion);
-            dsTransaccionesMP.viewTarimas.Clear();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dsTransaccionesMP.viewTarimas);
-            cn.Close();
+            try
+            {
+                string query = @"sp_load_tarimas_escaneadas_v2";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_requisa", RequisicionActual.IdRequisicion);
+                dsTransaccionesMP.viewTarimas.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsTransaccionesMP.viewTarimas);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+            
 
         }
         private void cmdHome_Click(object sender, EventArgs e)
@@ -1002,10 +1018,12 @@ namespace LOSA.TransaccionesMP
 
             if (mp.Permitir)
             {
-                TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
+                //DESCOMENTE NO LO OLVIDES
+                //TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
                 //if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
-                decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
-                if (Kg_Entregados_Micros >= dp.ValidateNumberDecimal(row.kg))
+                //decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
+                //if (Kg_Entregados_Micros >= dp.ValidateNumberDecimal(row.kg))
+                if(row.entregado_micros == true)
                 {
                     string mensaje = "La tarima ya fue entregada en Micro Ingredientes!";
                     lblMensaje.Text = mensaje;
@@ -1040,6 +1058,7 @@ namespace LOSA.TransaccionesMP
                         cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
                         cmd.Parameters.AddWithValue("@id_req_detalle", row.id_detalle_requisicion);//Id requisicion detalle
                         cmd.Parameters.AddWithValue("@id_alimentacion", row.id_alimentacion);
+                        cmd.Parameters.AddWithValue("@id_mp_entrega",row.id);
                         SqlDataReader dr = cmd.ExecuteReader();
                         if (dr.Read())
                         {

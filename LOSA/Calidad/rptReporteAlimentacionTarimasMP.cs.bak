@@ -39,9 +39,9 @@ namespace LOSA.Calidad
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@dtDesde", pdtDesde);
                 cmd.Parameters.AddWithValue("@dtHasta", pdtHasta);
-                dsCalidad1.Consumido.Clear();
+                dsCalidad1.entregado_prd.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsCalidad1.Consumido);
+                adat.Fill(dsCalidad1.entregado_prd);
 
                 con.Close();
             }

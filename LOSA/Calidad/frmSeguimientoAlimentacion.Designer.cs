@@ -473,7 +473,7 @@ namespace LOSA.Calidad
             this.btnImprimirRPT.Appearance.Options.UseTextOptions = true;
             this.btnImprimirRPT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnImprimirRPT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImprimirRPT.ImageOptions.SvgImage")));
-            this.btnImprimirRPT.Location = new System.Drawing.Point(1028, 5);
+            this.btnImprimirRPT.Location = new System.Drawing.Point(1035, 5);
             this.btnImprimirRPT.Name = "btnImprimirRPT";
             this.btnImprimirRPT.Size = new System.Drawing.Size(114, 55);
             this.btnImprimirRPT.TabIndex = 5;

@@ -5593,6 +5593,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columnid_alimentacion;
             
+            private global::System.Data.DataColumn columnentregado_micros;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public viewTarimasDataTable() {
@@ -5740,6 +5742,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn entregado_microsColumn {
+                get {
+                    return this.columnentregado_micros;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5775,7 +5785,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public viewTarimasRow AddviewTarimasRow(int id, string req, string mp, decimal cantidad, decimal kg, string tm, string lote, System.DateTime fecha, int id_mp, int id_tarima, decimal cant_entregada_micros, int id_detalle_requisicion, int id_requisicion_h, string id_alimentacion) {
+            public viewTarimasRow AddviewTarimasRow(int id, string req, string mp, decimal cantidad, decimal kg, string tm, string lote, System.DateTime fecha, int id_mp, int id_tarima, decimal cant_entregada_micros, int id_detalle_requisicion, int id_requisicion_h, string id_alimentacion, bool entregado_micros) {
                 viewTarimasRow rowviewTarimasRow = ((viewTarimasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -5791,7 +5801,8 @@ namespace LOSA.TransaccionesMP {
                         cant_entregada_micros,
                         id_detalle_requisicion,
                         id_requisicion_h,
-                        id_alimentacion};
+                        id_alimentacion,
+                        entregado_micros};
                 rowviewTarimasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowviewTarimasRow);
                 return rowviewTarimasRow;
@@ -5828,6 +5839,7 @@ namespace LOSA.TransaccionesMP {
                 this.columnid_detalle_requisicion = base.Columns["id_detalle_requisicion"];
                 this.columnid_requisicion_h = base.Columns["id_requisicion_h"];
                 this.columnid_alimentacion = base.Columns["id_alimentacion"];
+                this.columnentregado_micros = base.Columns["entregado_micros"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5861,6 +5873,8 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnid_requisicion_h);
                 this.columnid_alimentacion = new global::System.Data.DataColumn("id_alimentacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_alimentacion);
+                this.columnentregado_micros = new global::System.Data.DataColumn("entregado_micros", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnentregado_micros);
                 this.columncant_entregada_micros.Caption = "Micros Cant. Entregada";
             }
             
@@ -13294,6 +13308,22 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool entregado_micros {
+                get {
+                    try {
+                        return ((bool)(this[this.tableviewTarimas.entregado_microsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'entregado_micros\' de la tabla \'viewTarimas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableviewTarimas.entregado_microsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableviewTarimas.idColumn);
             }
@@ -13458,6 +13488,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_alimentacionNull() {
                 this[this.tableviewTarimas.id_alimentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isentregado_microsNull() {
+                return this.IsNull(this.tableviewTarimas.entregado_microsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setentregado_microsNull() {
+                this[this.tableviewTarimas.entregado_microsColumn] = global::System.Convert.DBNull;
             }
         }
         

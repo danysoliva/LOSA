@@ -22,6 +22,8 @@ namespace LOSA.Reportes
             Pid = idm;
             Pencabezado = id_encabezado;
             id_mp = 0;
+            xrLabel18.Text = "Title: CONTROL DE ALIMENTACION DE TOLVA DE MICROINGREDIENTES 5TO NIVEL";
+            xrLabel9.Text = "Pesaje Nucleo de Micro Ingrediente";
             Load_detalle();
             load_Encabezado();
             load_cantidades();
@@ -36,6 +38,7 @@ namespace LOSA.Reportes
             Pencabezado = pid_encabezado;
             xrLabel8.Visible = false;
             txtnumero.Visible = false;
+            xrLabel18.Text = "Title: CONTROL DE ALIMENTACION DE TOLVA DE MICROINGREDIENTES 3ER NIVEL";
             xrLabel9.Text = "Pesaje Individual de Micro Ingrediente";
             batchpesados.Text = Convert.ToString(pbatch_completados);
             Load_detalle();

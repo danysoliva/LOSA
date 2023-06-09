@@ -103,7 +103,6 @@ namespace LOSA.MicroIngredientes
             this.lblValorBascula1.Size = new System.Drawing.Size(367, 30);
             this.lblValorBascula1.TabIndex = 21;
             this.lblValorBascula1.Text = "Valor en Báscula: 0.00 Kg";
-            this.lblValorBascula1.Click += new System.EventHandler(this.lblValorBascula1_Click);
             // 
             // btnGuardar
             // 

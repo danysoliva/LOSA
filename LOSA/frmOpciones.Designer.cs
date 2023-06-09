@@ -2655,7 +2655,7 @@
             // 
             // btnPrioridadLotePT
             // 
-            this.btnPrioridadLotePT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrioridadLotePT.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnPrioridadLotePT.Appearance.Options.UseFont = true;
             this.btnPrioridadLotePT.Appearance.Options.UseTextOptions = true;
             this.btnPrioridadLotePT.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -2672,7 +2672,7 @@
             // 
             // btnReqMEmpaque
             // 
-            this.btnReqMEmpaque.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReqMEmpaque.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnReqMEmpaque.Appearance.Options.UseFont = true;
             this.btnReqMEmpaque.Appearance.Options.UseTextOptions = true;
             this.btnReqMEmpaque.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;

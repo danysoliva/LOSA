@@ -29,6 +29,7 @@ namespace LOSA.TransaccionesMP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -69,6 +70,7 @@ namespace LOSA.TransaccionesMP
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_detalle_requisicion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_requisicion_h = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_alimentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcTarima = new DevExpress.XtraGrid.GridControl();
             this.gvTarima = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -87,7 +89,7 @@ namespace LOSA.TransaccionesMP
             this.txtTarima = new DevExpress.XtraEditors.ButtonEdit();
             this.cmdSelectTarima = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.timerLimpiarMensaje = new System.Windows.Forms.Timer();
+            this.timerLimpiarMensaje = new System.Windows.Forms.Timer(this.components);
             this.cmdLiquidosGranel = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -131,7 +133,7 @@ namespace LOSA.TransaccionesMP
             this.cmdEntregaMPSacosPrd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnVerDetalleRequisa = new DevExpress.XtraEditors.SimpleButton();
-            this.colid_alimentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colentregado_micros = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -294,7 +296,8 @@ namespace LOSA.TransaccionesMP
             this.colid_mp,
             this.colid_detalle_requisicion,
             this.colid_requisicion_h,
-            this.colid_alimentacion});
+            this.colid_alimentacion,
+            this.colentregado_micros});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -423,6 +426,12 @@ namespace LOSA.TransaccionesMP
             // 
             this.colid_requisicion_h.FieldName = "id_requisicion_h";
             this.colid_requisicion_h.Name = "colid_requisicion_h";
+            // 
+            // colid_alimentacion
+            // 
+            this.colid_alimentacion.FieldName = "id_alimentacion";
+            this.colid_alimentacion.Name = "colid_alimentacion";
+            this.colid_alimentacion.OptionsColumn.AllowEdit = false;
             // 
             // gcTarima
             // 
@@ -1172,12 +1181,11 @@ namespace LOSA.TransaccionesMP
             this.btnVerDetalleRequisa.Visible = false;
             this.btnVerDetalleRequisa.Click += new System.EventHandler(this.btnVerDetalleRequisa_Click);
             // 
-            // colid_alimentacion
+            // colentregado_micros
             // 
-            this.colid_alimentacion.FieldName = "id_alimentacion";
-            this.colid_alimentacion.Name = "colid_alimentacion";
-            this.colid_alimentacion.Visible = true;
-            this.colid_alimentacion.VisibleIndex = 9;
+            this.colentregado_micros.FieldName = "entregado_micros";
+            this.colentregado_micros.Name = "colentregado_micros";
+            this.colentregado_micros.OptionsColumn.AllowEdit = false;
             // 
             // frmEntregaTarimaReq_3
             // 
@@ -1316,5 +1324,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEntregaMPSacosPrd;
         private DevExpress.XtraGrid.Columns.GridColumn colid_alimentacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colentregado_micros;
     }
 }
