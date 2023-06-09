@@ -27,6 +27,7 @@ namespace LOSA.MicroIngredientes
         public int BasculaId;
         public DateTime fecha;
         public long id_tarima_micros;
+        decimal existencia_kg_micros = 0;
 
         enum Basculas
         {
@@ -275,7 +276,7 @@ namespace LOSA.MicroIngredientes
                         }
 
                         TarimaMicroingrediente tar1 = new TarimaMicroingrediente();
-                        decimal existencia_kg_micros = tar1.GetKgExistenciaEnMicros(Convert.ToInt32(tarima.Id));
+                        existencia_kg_micros = tar1.GetKgExistenciaEnMicros(Convert.ToInt32(tarima.Id));
                         if (existencia_kg_micros <= 0)
                         {
                             CajaDialogo.Error("ERROR: Tarima de Micro Ingrediente consumida en su Totalidad");

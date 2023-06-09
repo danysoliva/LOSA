@@ -1018,7 +1018,7 @@ namespace LOSA.TransaccionesMP
 
             if (mp.Permitir)
             {
-                //DESCOMENTE NO LO OLVIDES
+                
                 //TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
                 //if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
                 //decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
