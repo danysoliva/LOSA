@@ -36,6 +36,7 @@ namespace LOSA.TransaccionesMP
             load_bines_disponibles();
             txtRequisicion.Focus();
             txtTarima.Text = "";
+
         }
 
         private void load_bines_disponibles()
