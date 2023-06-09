@@ -464,7 +464,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell1.Font = new DevExpress.Drawing.DXFont("Arial", 14F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBorders = false;
@@ -475,7 +475,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell3
             // 
             this.xrTableCell3.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell3.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell3.Font = new DevExpress.Drawing.DXFont("Arial", 11F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseBorders = false;
@@ -487,7 +487,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrCorrelativo.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrCorrelativo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.xrCorrelativo.Font = new DevExpress.Drawing.DXFont("Arial", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrCorrelativo.Multiline = true;
             this.xrCorrelativo.Name = "xrCorrelativo";
             this.xrCorrelativo.StylePriority.UseBorders = false;
@@ -511,7 +511,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell6
             // 
-            this.xrTableCell6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell6.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseFont = false;
@@ -529,7 +529,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell7
             // 
-            this.xrTableCell7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell7.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.RowSpan = 2;
@@ -541,7 +541,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell9.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell9.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBorders = false;
@@ -577,7 +577,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell12.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell12.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseBorders = false;
@@ -631,7 +631,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell8.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorders = false;
@@ -649,7 +649,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell11
             // 
-            this.xrTableCell11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell11.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.StylePriority.UseFont = false;
@@ -676,7 +676,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell13.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell13.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.StylePriority.UseBorders = false;
@@ -696,7 +696,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell14
             // 
-            this.xrTableCell14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell14.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.StylePriority.UseFont = false;
@@ -732,7 +732,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell16.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell16.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";
             this.xrTableCell16.StylePriority.UseBorders = false;
@@ -754,7 +754,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell17.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell17.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
             this.xrTableCell17.StylePriority.UseBorders = false;
@@ -768,7 +768,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrNContenedor.CanGrow = false;
             this.xrNContenedor.CanShrink = true;
-            this.xrNContenedor.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrNContenedor.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.xrNContenedor.Multiline = true;
             this.xrNContenedor.Name = "xrNContenedor";
             this.xrNContenedor.StylePriority.UseBorders = false;
@@ -778,7 +778,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell18
             // 
-            this.xrTableCell18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell18.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseFont = false;
@@ -789,7 +789,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrProveedorTransporte.CanGrow = false;
             this.xrProveedorTransporte.CanShrink = true;
-            this.xrProveedorTransporte.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrProveedorTransporte.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrProveedorTransporte.Multiline = true;
             this.xrProveedorTransporte.Name = "xrProveedorTransporte";
             this.xrProveedorTransporte.StylePriority.UseFont = false;
@@ -810,7 +810,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell19.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell19.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell19.Multiline = true;
             this.xrTableCell19.Name = "xrTableCell19";
             this.xrTableCell19.StylePriority.UseBorders = false;
@@ -822,7 +822,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrPlaca.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrPlaca.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrPlaca.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.xrPlaca.Multiline = true;
             this.xrPlaca.Name = "xrPlaca";
             this.xrPlaca.StylePriority.UseBorders = false;
@@ -834,7 +834,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell20.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell20.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell20.Multiline = true;
             this.xrTableCell20.Name = "xrTableCell20";
             this.xrTableCell20.StylePriority.UseBorders = false;
@@ -846,7 +846,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrSectorCliente.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrSectorCliente.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrSectorCliente.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.xrSectorCliente.Multiline = true;
             this.xrSectorCliente.Name = "xrSectorCliente";
             this.xrSectorCliente.StylePriority.UseBorders = false;
@@ -856,7 +856,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell21
             // 
-            this.xrTableCell21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell21.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell21.Multiline = true;
             this.xrTableCell21.Name = "xrTableCell21";
             this.xrTableCell21.StylePriority.UseFont = false;
@@ -879,7 +879,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell22.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell22.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell22.Multiline = true;
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.StylePriority.UseBorders = false;
@@ -902,7 +902,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell28.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell28.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseBorders = false;
@@ -925,7 +925,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell23.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell23.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell23.Multiline = true;
             this.xrTableCell23.Name = "xrTableCell23";
             this.xrTableCell23.StylePriority.UseBorders = false;
@@ -959,7 +959,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell25.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell25.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell25.Multiline = true;
             this.xrTableCell25.Name = "xrTableCell25";
             this.xrTableCell25.StylePriority.UseBorders = false;
@@ -981,7 +981,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell29.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell29.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell29.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell29.Multiline = true;
             this.xrTableCell29.Name = "xrTableCell29";
             this.xrTableCell29.StylePriority.UseBorders = false;
@@ -1003,7 +1003,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             this.xrTableCell26.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell26.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell26.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell26.Multiline = true;
             this.xrTableCell26.Name = "xrTableCell26";
             this.xrTableCell26.StylePriority.UseBorders = false;
@@ -1034,7 +1034,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // 
             // xrTableCell24
             // 
-            this.xrTableCell24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell24.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell24.Multiline = true;
             this.xrTableCell24.Name = "xrTableCell24";
             this.xrTableCell24.StylePriority.UseFont = false;
@@ -1052,7 +1052,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell149
             // 
             this.xrTableCell149.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell149.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell149.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell149.Multiline = true;
             this.xrTableCell149.Name = "xrTableCell149";
             this.xrTableCell149.StylePriority.UseBorders = false;
@@ -1065,7 +1065,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell151
             // 
             this.xrTableCell151.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell151.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell151.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell151.Multiline = true;
             this.xrTableCell151.Name = "xrTableCell151";
             this.xrTableCell151.StylePriority.UseBorders = false;
@@ -1078,7 +1078,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell150
             // 
             this.xrTableCell150.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell150.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell150.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell150.Multiline = true;
             this.xrTableCell150.Name = "xrTableCell150";
             this.xrTableCell150.StylePriority.UseBorders = false;
@@ -1125,7 +1125,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell33
             // 
             this.xrTableCell33.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.xrTableCell33.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell33.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell33.Multiline = true;
             this.xrTableCell33.Name = "xrTableCell33";
             this.xrTableCell33.StylePriority.UseBorders = false;
@@ -1136,7 +1136,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell32
             // 
             this.xrTableCell32.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.xrTableCell32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell32.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell32.Multiline = true;
             this.xrTableCell32.Name = "xrTableCell32";
             this.xrTableCell32.StylePriority.UseBorders = false;
@@ -1163,7 +1163,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell153
             // 
             this.xrTableCell153.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell153.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell153.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell153.Multiline = true;
             this.xrTableCell153.Name = "xrTableCell153";
             this.xrTableCell153.StylePriority.UseBorders = false;
@@ -1176,7 +1176,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell157
             // 
             this.xrTableCell157.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell157.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell157.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell157.Multiline = true;
             this.xrTableCell157.Name = "xrTableCell157";
             this.xrTableCell157.StylePriority.UseBorders = false;
@@ -1189,7 +1189,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell156
             // 
             this.xrTableCell156.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell156.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell156.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell156.Multiline = true;
             this.xrTableCell156.Name = "xrTableCell156";
             this.xrTableCell156.StylePriority.UseBorders = false;
@@ -1202,7 +1202,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell155
             // 
             this.xrTableCell155.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell155.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell155.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell155.Multiline = true;
             this.xrTableCell155.Name = "xrTableCell155";
             this.xrTableCell155.StylePriority.UseBorders = false;
@@ -1215,7 +1215,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell154
             // 
             this.xrTableCell154.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell154.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell154.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell154.Multiline = true;
             this.xrTableCell154.Name = "xrTableCell154";
             this.xrTableCell154.StylePriority.UseBorders = false;
@@ -1228,7 +1228,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell158
             // 
             this.xrTableCell158.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell158.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell158.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell158.Multiline = true;
             this.xrTableCell158.Name = "xrTableCell158";
             this.xrTableCell158.StylePriority.UseBorders = false;
@@ -1276,7 +1276,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_1_1
             // 
             this.xrInspeccionSeguridad_1_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_1_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_1_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_1_1.Multiline = true;
             this.xrInspeccionSeguridad_1_1.Name = "xrInspeccionSeguridad_1_1";
             this.xrInspeccionSeguridad_1_1.StylePriority.UseBorders = false;
@@ -1289,7 +1289,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_1_2
             // 
             this.xrInspeccionSeguridad_1_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_1_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_1_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_1_2.Multiline = true;
             this.xrInspeccionSeguridad_1_2.Name = "xrInspeccionSeguridad_1_2";
             this.xrInspeccionSeguridad_1_2.StylePriority.UseBorders = false;
@@ -1321,7 +1321,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_1_1
             // 
             this.xrSanidad_1_1_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_1_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_1_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_1_1.Multiline = true;
             this.xrSanidad_1_1_1.Name = "xrSanidad_1_1_1";
             this.xrSanidad_1_1_1.StylePriority.UseBorders = false;
@@ -1334,7 +1334,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_1_2
             // 
             this.xrSanidad_1_1_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_1_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_1_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_1_2.Multiline = true;
             this.xrSanidad_1_1_2.Name = "xrSanidad_1_1_2";
             this.xrSanidad_1_1_2.StylePriority.UseBorders = false;
@@ -1347,7 +1347,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_1_1
             // 
             this.xrSanidad_2_1_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_1_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_1_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_1_1.Multiline = true;
             this.xrSanidad_2_1_1.Name = "xrSanidad_2_1_1";
             this.xrSanidad_2_1_1.StylePriority.UseBorders = false;
@@ -1360,7 +1360,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_1_2
             // 
             this.xrSanidad_2_1_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_1_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_1_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_1_2.Multiline = true;
             this.xrSanidad_2_1_2.Name = "xrSanidad_2_1_2";
             this.xrSanidad_2_1_2.StylePriority.UseBorders = false;
@@ -1373,7 +1373,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_1_1
             // 
             this.xrSanidad_3_1_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_1_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_1_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_1_1.Multiline = true;
             this.xrSanidad_3_1_1.Name = "xrSanidad_3_1_1";
             this.xrSanidad_3_1_1.StylePriority.UseBorders = false;
@@ -1386,7 +1386,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_1_2
             // 
             this.xrSanidad_3_1_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_1_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_1_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_1_2.Multiline = true;
             this.xrSanidad_3_1_2.Name = "xrSanidad_3_1_2";
             this.xrSanidad_3_1_2.StylePriority.UseBorders = false;
@@ -1436,7 +1436,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_2_1
             // 
             this.xrInspeccionSeguridad_2_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_2_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_2_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_2_1.Multiline = true;
             this.xrInspeccionSeguridad_2_1.Name = "xrInspeccionSeguridad_2_1";
             this.xrInspeccionSeguridad_2_1.StylePriority.UseBorders = false;
@@ -1449,7 +1449,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_2_2
             // 
             this.xrInspeccionSeguridad_2_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_2_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_2_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_2_2.Multiline = true;
             this.xrInspeccionSeguridad_2_2.Name = "xrInspeccionSeguridad_2_2";
             this.xrInspeccionSeguridad_2_2.StylePriority.UseBorders = false;
@@ -1479,7 +1479,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_2_1
             // 
             this.xrSanidad_1_2_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_2_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_2_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_2_1.Multiline = true;
             this.xrSanidad_1_2_1.Name = "xrSanidad_1_2_1";
             this.xrSanidad_1_2_1.StylePriority.UseBorders = false;
@@ -1492,7 +1492,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_2_2
             // 
             this.xrSanidad_1_2_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_2_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_2_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_2_2.Multiline = true;
             this.xrSanidad_1_2_2.Name = "xrSanidad_1_2_2";
             this.xrSanidad_1_2_2.StylePriority.UseBorders = false;
@@ -1505,7 +1505,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_2_1
             // 
             this.xrSanidad_2_2_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_2_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_2_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_2_1.Multiline = true;
             this.xrSanidad_2_2_1.Name = "xrSanidad_2_2_1";
             this.xrSanidad_2_2_1.StylePriority.UseBorders = false;
@@ -1518,7 +1518,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_2_2
             // 
             this.xrSanidad_2_2_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_2_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_2_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_2_2.Multiline = true;
             this.xrSanidad_2_2_2.Name = "xrSanidad_2_2_2";
             this.xrSanidad_2_2_2.StylePriority.UseBorders = false;
@@ -1531,7 +1531,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_2_1
             // 
             this.xrSanidad_3_2_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_2_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_2_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_2_1.Multiline = true;
             this.xrSanidad_3_2_1.Name = "xrSanidad_3_2_1";
             this.xrSanidad_3_2_1.StylePriority.UseBorders = false;
@@ -1544,7 +1544,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_2_2
             // 
             this.xrSanidad_3_2_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_2_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_2_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_2_2.Multiline = true;
             this.xrSanidad_3_2_2.Name = "xrSanidad_3_2_2";
             this.xrSanidad_3_2_2.StylePriority.UseBorders = false;
@@ -1592,7 +1592,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_3_1
             // 
             this.xrInspeccionSeguridad_3_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_3_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_3_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_3_1.Multiline = true;
             this.xrInspeccionSeguridad_3_1.Name = "xrInspeccionSeguridad_3_1";
             this.xrInspeccionSeguridad_3_1.StylePriority.UseBorders = false;
@@ -1605,7 +1605,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_3_2
             // 
             this.xrInspeccionSeguridad_3_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_3_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_3_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_3_2.Multiline = true;
             this.xrInspeccionSeguridad_3_2.Name = "xrInspeccionSeguridad_3_2";
             this.xrInspeccionSeguridad_3_2.StylePriority.UseBorders = false;
@@ -1635,7 +1635,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_3_1
             // 
             this.xrSanidad_1_3_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_3_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_3_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_3_1.Multiline = true;
             this.xrSanidad_1_3_1.Name = "xrSanidad_1_3_1";
             this.xrSanidad_1_3_1.StylePriority.UseBorders = false;
@@ -1648,7 +1648,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_3_2
             // 
             this.xrSanidad_1_3_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_3_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_3_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_3_2.Multiline = true;
             this.xrSanidad_1_3_2.Name = "xrSanidad_1_3_2";
             this.xrSanidad_1_3_2.StylePriority.UseBorders = false;
@@ -1661,7 +1661,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_3_1
             // 
             this.xrSanidad_2_3_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_3_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_3_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_3_1.Multiline = true;
             this.xrSanidad_2_3_1.Name = "xrSanidad_2_3_1";
             this.xrSanidad_2_3_1.StylePriority.UseBorders = false;
@@ -1674,7 +1674,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_3_2
             // 
             this.xrSanidad_2_3_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_3_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_3_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_3_2.Multiline = true;
             this.xrSanidad_2_3_2.Name = "xrSanidad_2_3_2";
             this.xrSanidad_2_3_2.StylePriority.UseBorders = false;
@@ -1687,7 +1687,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_3_1
             // 
             this.xrSanidad_3_3_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_3_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_3_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_3_1.Multiline = true;
             this.xrSanidad_3_3_1.Name = "xrSanidad_3_3_1";
             this.xrSanidad_3_3_1.StylePriority.UseBorders = false;
@@ -1700,7 +1700,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_3_2
             // 
             this.xrSanidad_3_3_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_3_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_3_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_3_2.Multiline = true;
             this.xrSanidad_3_3_2.Name = "xrSanidad_3_3_2";
             this.xrSanidad_3_3_2.StylePriority.UseBorders = false;
@@ -1748,7 +1748,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_4_1
             // 
             this.xrInspeccionSeguridad_4_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_4_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_4_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_4_1.Multiline = true;
             this.xrInspeccionSeguridad_4_1.Name = "xrInspeccionSeguridad_4_1";
             this.xrInspeccionSeguridad_4_1.StylePriority.UseBorders = false;
@@ -1761,7 +1761,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_4_2
             // 
             this.xrInspeccionSeguridad_4_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_4_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_4_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_4_2.Multiline = true;
             this.xrInspeccionSeguridad_4_2.Name = "xrInspeccionSeguridad_4_2";
             this.xrInspeccionSeguridad_4_2.StylePriority.UseBorders = false;
@@ -1793,7 +1793,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_4_1
             // 
             this.xrSanidad_1_4_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_4_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_4_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_4_1.Multiline = true;
             this.xrSanidad_1_4_1.Name = "xrSanidad_1_4_1";
             this.xrSanidad_1_4_1.StylePriority.UseBorders = false;
@@ -1806,7 +1806,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_4_2
             // 
             this.xrSanidad_1_4_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_4_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_4_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_4_2.Multiline = true;
             this.xrSanidad_1_4_2.Name = "xrSanidad_1_4_2";
             this.xrSanidad_1_4_2.StylePriority.UseBorders = false;
@@ -1819,7 +1819,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_4_1
             // 
             this.xrSanidad_2_4_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_4_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_4_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_4_1.Multiline = true;
             this.xrSanidad_2_4_1.Name = "xrSanidad_2_4_1";
             this.xrSanidad_2_4_1.StylePriority.UseBorders = false;
@@ -1832,7 +1832,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_4_2
             // 
             this.xrSanidad_2_4_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_4_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_4_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_4_2.Multiline = true;
             this.xrSanidad_2_4_2.Name = "xrSanidad_2_4_2";
             this.xrSanidad_2_4_2.StylePriority.UseBorders = false;
@@ -1845,7 +1845,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_4_1
             // 
             this.xrSanidad_3_4_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_4_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_4_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_4_1.Multiline = true;
             this.xrSanidad_3_4_1.Name = "xrSanidad_3_4_1";
             this.xrSanidad_3_4_1.StylePriority.UseBorders = false;
@@ -1858,7 +1858,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_4_2
             // 
             this.xrSanidad_3_4_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_4_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_4_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_4_2.Multiline = true;
             this.xrSanidad_3_4_2.Name = "xrSanidad_3_4_2";
             this.xrSanidad_3_4_2.StylePriority.UseBorders = false;
@@ -1908,7 +1908,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_5_1
             // 
             this.xrInspeccionSeguridad_5_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_5_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_5_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_5_1.Multiline = true;
             this.xrInspeccionSeguridad_5_1.Name = "xrInspeccionSeguridad_5_1";
             this.xrInspeccionSeguridad_5_1.StylePriority.UseBorders = false;
@@ -1921,7 +1921,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_5_2
             // 
             this.xrInspeccionSeguridad_5_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_5_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_5_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_5_2.Multiline = true;
             this.xrInspeccionSeguridad_5_2.Name = "xrInspeccionSeguridad_5_2";
             this.xrInspeccionSeguridad_5_2.StylePriority.UseBorders = false;
@@ -1953,7 +1953,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_5_1
             // 
             this.xrSanidad_1_5_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_5_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_5_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_5_1.Multiline = true;
             this.xrSanidad_1_5_1.Name = "xrSanidad_1_5_1";
             this.xrSanidad_1_5_1.StylePriority.UseBorders = false;
@@ -1966,7 +1966,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_5_2
             // 
             this.xrSanidad_1_5_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_5_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_5_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_5_2.Multiline = true;
             this.xrSanidad_1_5_2.Name = "xrSanidad_1_5_2";
             this.xrSanidad_1_5_2.StylePriority.UseBorders = false;
@@ -1979,7 +1979,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_5_1
             // 
             this.xrSanidad_2_5_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_5_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_5_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_5_1.Multiline = true;
             this.xrSanidad_2_5_1.Name = "xrSanidad_2_5_1";
             this.xrSanidad_2_5_1.StylePriority.UseBorders = false;
@@ -1992,7 +1992,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_5_2
             // 
             this.xrSanidad_2_5_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_5_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_5_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_5_2.Multiline = true;
             this.xrSanidad_2_5_2.Name = "xrSanidad_2_5_2";
             this.xrSanidad_2_5_2.StylePriority.UseBorders = false;
@@ -2005,7 +2005,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_5_1
             // 
             this.xrSanidad_3_5_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_5_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_5_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_5_1.Multiline = true;
             this.xrSanidad_3_5_1.Name = "xrSanidad_3_5_1";
             this.xrSanidad_3_5_1.StylePriority.UseBorders = false;
@@ -2018,7 +2018,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_5_2
             // 
             this.xrSanidad_3_5_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_5_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_5_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_5_2.Multiline = true;
             this.xrSanidad_3_5_2.Name = "xrSanidad_3_5_2";
             this.xrSanidad_3_5_2.StylePriority.UseBorders = false;
@@ -2068,7 +2068,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_6_1
             // 
             this.xrInspeccionSeguridad_6_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_6_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_6_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_6_1.Multiline = true;
             this.xrInspeccionSeguridad_6_1.Name = "xrInspeccionSeguridad_6_1";
             this.xrInspeccionSeguridad_6_1.StylePriority.UseBorders = false;
@@ -2081,7 +2081,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_6_2
             // 
             this.xrInspeccionSeguridad_6_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_6_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_6_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_6_2.Multiline = true;
             this.xrInspeccionSeguridad_6_2.Name = "xrInspeccionSeguridad_6_2";
             this.xrInspeccionSeguridad_6_2.StylePriority.UseBorders = false;
@@ -2114,7 +2114,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_6_1
             // 
             this.xrSanidad_1_6_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_6_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_6_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_6_1.Multiline = true;
             this.xrSanidad_1_6_1.Name = "xrSanidad_1_6_1";
             this.xrSanidad_1_6_1.StylePriority.UseBorders = false;
@@ -2127,7 +2127,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_6_2
             // 
             this.xrSanidad_1_6_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_6_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_6_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_6_2.Multiline = true;
             this.xrSanidad_1_6_2.Name = "xrSanidad_1_6_2";
             this.xrSanidad_1_6_2.StylePriority.UseBorders = false;
@@ -2140,7 +2140,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_6_1
             // 
             this.xrSanidad_2_6_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_6_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_6_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_6_1.Multiline = true;
             this.xrSanidad_2_6_1.Name = "xrSanidad_2_6_1";
             this.xrSanidad_2_6_1.StylePriority.UseBorders = false;
@@ -2153,7 +2153,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_6_2
             // 
             this.xrSanidad_2_6_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_6_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_6_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_6_2.Multiline = true;
             this.xrSanidad_2_6_2.Name = "xrSanidad_2_6_2";
             this.xrSanidad_2_6_2.StylePriority.UseBorders = false;
@@ -2166,7 +2166,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_6_1
             // 
             this.xrSanidad_3_6_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_6_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_6_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_6_1.Multiline = true;
             this.xrSanidad_3_6_1.Name = "xrSanidad_3_6_1";
             this.xrSanidad_3_6_1.StylePriority.UseBorders = false;
@@ -2179,7 +2179,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_6_2
             // 
             this.xrSanidad_3_6_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_6_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_6_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_6_2.Multiline = true;
             this.xrSanidad_3_6_2.Name = "xrSanidad_3_6_2";
             this.xrSanidad_3_6_2.StylePriority.UseBorders = false;
@@ -2229,7 +2229,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_7_1
             // 
             this.xrInspeccionSeguridad_7_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_7_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_7_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_7_1.Multiline = true;
             this.xrInspeccionSeguridad_7_1.Name = "xrInspeccionSeguridad_7_1";
             this.xrInspeccionSeguridad_7_1.StylePriority.UseBorders = false;
@@ -2242,7 +2242,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_7_2
             // 
             this.xrInspeccionSeguridad_7_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_7_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_7_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_7_2.Multiline = true;
             this.xrInspeccionSeguridad_7_2.Name = "xrInspeccionSeguridad_7_2";
             this.xrInspeccionSeguridad_7_2.StylePriority.UseBorders = false;
@@ -2274,7 +2274,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_7_1
             // 
             this.xrSanidad_1_7_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_7_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_7_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_7_1.Multiline = true;
             this.xrSanidad_1_7_1.Name = "xrSanidad_1_7_1";
             this.xrSanidad_1_7_1.StylePriority.UseBorders = false;
@@ -2287,7 +2287,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_7_2
             // 
             this.xrSanidad_1_7_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_7_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_7_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_7_2.Multiline = true;
             this.xrSanidad_1_7_2.Name = "xrSanidad_1_7_2";
             this.xrSanidad_1_7_2.StylePriority.UseBorders = false;
@@ -2300,7 +2300,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_7_1
             // 
             this.xrSanidad_2_7_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_7_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_7_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_7_1.Multiline = true;
             this.xrSanidad_2_7_1.Name = "xrSanidad_2_7_1";
             this.xrSanidad_2_7_1.StylePriority.UseBorders = false;
@@ -2313,7 +2313,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_7_2
             // 
             this.xrSanidad_2_7_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_7_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_7_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_7_2.Multiline = true;
             this.xrSanidad_2_7_2.Name = "xrSanidad_2_7_2";
             this.xrSanidad_2_7_2.StylePriority.UseBorders = false;
@@ -2326,7 +2326,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_7_1
             // 
             this.xrSanidad_3_7_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_7_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_7_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_7_1.Multiline = true;
             this.xrSanidad_3_7_1.Name = "xrSanidad_3_7_1";
             this.xrSanidad_3_7_1.StylePriority.UseBorders = false;
@@ -2339,7 +2339,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_7_2
             // 
             this.xrSanidad_3_7_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_7_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_7_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_7_2.Multiline = true;
             this.xrSanidad_3_7_2.Name = "xrSanidad_3_7_2";
             this.xrSanidad_3_7_2.StylePriority.UseBorders = false;
@@ -2388,7 +2388,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell136
             // 
             this.xrTableCell136.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell136.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell136.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell136.Multiline = true;
             this.xrTableCell136.Name = "xrTableCell136";
             this.xrTableCell136.StylePriority.UseBorders = false;
@@ -2401,7 +2401,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell137
             // 
             this.xrTableCell137.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell137.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell137.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell137.Multiline = true;
             this.xrTableCell137.Name = "xrTableCell137";
             this.xrTableCell137.StylePriority.UseBorders = false;
@@ -2414,7 +2414,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell138
             // 
             this.xrTableCell138.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.xrTableCell138.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell138.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell138.Multiline = true;
             this.xrTableCell138.Name = "xrTableCell138";
             this.xrTableCell138.StylePriority.UseBorders = false;
@@ -2438,7 +2438,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_8_1
             // 
             this.xrSanidad_1_8_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_8_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_8_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_8_1.Multiline = true;
             this.xrSanidad_1_8_1.Name = "xrSanidad_1_8_1";
             this.xrSanidad_1_8_1.StylePriority.UseBorders = false;
@@ -2451,7 +2451,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_8_2
             // 
             this.xrSanidad_1_8_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_8_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_8_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_8_2.Multiline = true;
             this.xrSanidad_1_8_2.Name = "xrSanidad_1_8_2";
             this.xrSanidad_1_8_2.StylePriority.UseBorders = false;
@@ -2464,7 +2464,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_8_1
             // 
             this.xrSanidad_2_8_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_8_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_8_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_8_1.Multiline = true;
             this.xrSanidad_2_8_1.Name = "xrSanidad_2_8_1";
             this.xrSanidad_2_8_1.StylePriority.UseBorders = false;
@@ -2477,7 +2477,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_8_2
             // 
             this.xrSanidad_2_8_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_8_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_8_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_8_2.Multiline = true;
             this.xrSanidad_2_8_2.Name = "xrSanidad_2_8_2";
             this.xrSanidad_2_8_2.StylePriority.UseBorders = false;
@@ -2490,7 +2490,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_8_1
             // 
             this.xrSanidad_3_8_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_8_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_8_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_8_1.Multiline = true;
             this.xrSanidad_3_8_1.Name = "xrSanidad_3_8_1";
             this.xrSanidad_3_8_1.StylePriority.UseBorders = false;
@@ -2503,7 +2503,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_8_2
             // 
             this.xrSanidad_3_8_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_8_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_8_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_8_2.Multiline = true;
             this.xrSanidad_3_8_2.Name = "xrSanidad_3_8_2";
             this.xrSanidad_3_8_2.StylePriority.UseBorders = false;
@@ -2553,7 +2553,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_8_1
             // 
             this.xrInspeccionSeguridad_8_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_8_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_8_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_8_1.Multiline = true;
             this.xrInspeccionSeguridad_8_1.Name = "xrInspeccionSeguridad_8_1";
             this.xrInspeccionSeguridad_8_1.StylePriority.UseBorders = false;
@@ -2566,7 +2566,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_8_2
             // 
             this.xrInspeccionSeguridad_8_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_8_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_8_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_8_2.Multiline = true;
             this.xrInspeccionSeguridad_8_2.Name = "xrInspeccionSeguridad_8_2";
             this.xrInspeccionSeguridad_8_2.StylePriority.UseBorders = false;
@@ -2579,7 +2579,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_8_3
             // 
             this.xrInspeccionSeguridad_8_3.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.xrInspeccionSeguridad_8_3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_8_3.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_8_3.Multiline = true;
             this.xrInspeccionSeguridad_8_3.Name = "xrInspeccionSeguridad_8_3";
             this.xrInspeccionSeguridad_8_3.StylePriority.UseBorders = false;
@@ -2603,7 +2603,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_9_1
             // 
             this.xrSanidad_1_9_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_9_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_9_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_9_1.Multiline = true;
             this.xrSanidad_1_9_1.Name = "xrSanidad_1_9_1";
             this.xrSanidad_1_9_1.StylePriority.UseBorders = false;
@@ -2616,7 +2616,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_9_2
             // 
             this.xrSanidad_1_9_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_1_9_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_9_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_9_2.Multiline = true;
             this.xrSanidad_1_9_2.Name = "xrSanidad_1_9_2";
             this.xrSanidad_1_9_2.StylePriority.UseBorders = false;
@@ -2629,7 +2629,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_9_1
             // 
             this.xrSanidad_2_9_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_9_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_9_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_9_1.Multiline = true;
             this.xrSanidad_2_9_1.Name = "xrSanidad_2_9_1";
             this.xrSanidad_2_9_1.StylePriority.UseBorders = false;
@@ -2642,7 +2642,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_9_2
             // 
             this.xrSanidad_2_9_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_2_9_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_9_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_9_2.Multiline = true;
             this.xrSanidad_2_9_2.Name = "xrSanidad_2_9_2";
             this.xrSanidad_2_9_2.StylePriority.UseBorders = false;
@@ -2655,7 +2655,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_9_1
             // 
             this.xrSanidad_3_9_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_9_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_9_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_9_1.Multiline = true;
             this.xrSanidad_3_9_1.Name = "xrSanidad_3_9_1";
             this.xrSanidad_3_9_1.StylePriority.UseBorders = false;
@@ -2668,7 +2668,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_9_2
             // 
             this.xrSanidad_3_9_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrSanidad_3_9_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_9_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_9_2.Multiline = true;
             this.xrSanidad_3_9_2.Name = "xrSanidad_3_9_2";
             this.xrSanidad_3_9_2.StylePriority.UseBorders = false;
@@ -2717,7 +2717,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell141
             // 
             this.xrTableCell141.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell141.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell141.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell141.Multiline = true;
             this.xrTableCell141.Name = "xrTableCell141";
             this.xrTableCell141.StylePriority.UseBorders = false;
@@ -2730,7 +2730,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell142
             // 
             this.xrTableCell142.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell142.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell142.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell142.Multiline = true;
             this.xrTableCell142.Name = "xrTableCell142";
             this.xrTableCell142.StylePriority.UseBorders = false;
@@ -2762,7 +2762,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_10_1
             // 
             this.xrSanidad_1_10_1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrSanidad_1_10_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_10_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_10_1.Multiline = true;
             this.xrSanidad_1_10_1.Name = "xrSanidad_1_10_1";
             this.xrSanidad_1_10_1.StylePriority.UseBorders = false;
@@ -2775,7 +2775,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_1_10_2
             // 
             this.xrSanidad_1_10_2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrSanidad_1_10_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_1_10_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_1_10_2.Multiline = true;
             this.xrSanidad_1_10_2.Name = "xrSanidad_1_10_2";
             this.xrSanidad_1_10_2.StylePriority.UseBorders = false;
@@ -2788,7 +2788,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_10_1
             // 
             this.xrSanidad_2_10_1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrSanidad_2_10_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_10_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_10_1.Multiline = true;
             this.xrSanidad_2_10_1.Name = "xrSanidad_2_10_1";
             this.xrSanidad_2_10_1.StylePriority.UseBorders = false;
@@ -2801,7 +2801,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_2_10_2
             // 
             this.xrSanidad_2_10_2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrSanidad_2_10_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_2_10_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_2_10_2.Multiline = true;
             this.xrSanidad_2_10_2.Name = "xrSanidad_2_10_2";
             this.xrSanidad_2_10_2.StylePriority.UseBorders = false;
@@ -2814,7 +2814,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_10_1
             // 
             this.xrSanidad_3_10_1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrSanidad_3_10_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_10_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_10_1.Multiline = true;
             this.xrSanidad_3_10_1.Name = "xrSanidad_3_10_1";
             this.xrSanidad_3_10_1.StylePriority.UseBorders = false;
@@ -2827,7 +2827,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrSanidad_3_10_2
             // 
             this.xrSanidad_3_10_2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrSanidad_3_10_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrSanidad_3_10_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrSanidad_3_10_2.Multiline = true;
             this.xrSanidad_3_10_2.Name = "xrSanidad_3_10_2";
             this.xrSanidad_3_10_2.StylePriority.UseBorders = false;
@@ -2871,7 +2871,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_9_1
             // 
             this.xrInspeccionSeguridad_9_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_9_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_9_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_9_1.Multiline = true;
             this.xrInspeccionSeguridad_9_1.Name = "xrInspeccionSeguridad_9_1";
             this.xrInspeccionSeguridad_9_1.StylePriority.UseBorders = false;
@@ -2884,7 +2884,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_9_2
             // 
             this.xrInspeccionSeguridad_9_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_9_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_9_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_9_2.Multiline = true;
             this.xrInspeccionSeguridad_9_2.Name = "xrInspeccionSeguridad_9_2";
             this.xrInspeccionSeguridad_9_2.StylePriority.UseBorders = false;
@@ -2907,7 +2907,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableCell79.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell79.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell79.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell79.Multiline = true;
             this.xrTableCell79.Name = "xrTableCell79";
             this.xrTableCell79.StylePriority.UseBorders = false;
@@ -2922,7 +2922,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.xrTableCell230.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell230.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell230.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell230.Multiline = true;
             this.xrTableCell230.Name = "xrTableCell230";
             this.xrTableCell230.StylePriority.UseBorders = false;
@@ -2961,7 +2961,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_10_1
             // 
             this.xrInspeccionSeguridad_10_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_10_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_10_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_10_1.Multiline = true;
             this.xrInspeccionSeguridad_10_1.Name = "xrInspeccionSeguridad_10_1";
             this.xrInspeccionSeguridad_10_1.StylePriority.UseBorders = false;
@@ -2974,7 +2974,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_10_2
             // 
             this.xrInspeccionSeguridad_10_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_10_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_10_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_10_2.Multiline = true;
             this.xrInspeccionSeguridad_10_2.Name = "xrInspeccionSeguridad_10_2";
             this.xrInspeccionSeguridad_10_2.StylePriority.UseBorders = false;
@@ -3005,7 +3005,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell237
             // 
             this.xrTableCell237.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell237.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell237.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell237.Multiline = true;
             this.xrTableCell237.Name = "xrTableCell237";
             this.xrTableCell237.StylePriority.UseBorders = false;
@@ -3018,7 +3018,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell238
             // 
             this.xrTableCell238.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.xrTableCell238.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell238.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell238.Multiline = true;
             this.xrTableCell238.Name = "xrTableCell238";
             this.xrTableCell238.StylePriority.UseBorders = false;
@@ -3031,7 +3031,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell231
             // 
             this.xrTableCell231.Borders = DevExpress.XtraPrinting.BorderSide.Left;
-            this.xrTableCell231.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell231.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell231.Multiline = true;
             this.xrTableCell231.Name = "xrTableCell231";
             this.xrTableCell231.StylePriority.UseBorders = false;
@@ -3042,7 +3042,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell249
             // 
             this.xrTableCell249.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell249.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell249.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell249.Multiline = true;
             this.xrTableCell249.Name = "xrTableCell249";
             this.xrTableCell249.StylePriority.UseBorders = false;
@@ -3055,7 +3055,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell248
             // 
             this.xrTableCell248.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrTableCell248.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell248.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell248.Multiline = true;
             this.xrTableCell248.Name = "xrTableCell248";
             this.xrTableCell248.StylePriority.UseBorders = false;
@@ -3068,7 +3068,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell247
             // 
             this.xrTableCell247.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.xrTableCell247.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell247.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell247.Multiline = true;
             this.xrTableCell247.Name = "xrTableCell247";
             this.xrTableCell247.StylePriority.UseBorders = false;
@@ -3107,7 +3107,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_11_1
             // 
             this.xrInspeccionSeguridad_11_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_11_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_11_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_11_1.Multiline = true;
             this.xrInspeccionSeguridad_11_1.Name = "xrInspeccionSeguridad_11_1";
             this.xrInspeccionSeguridad_11_1.StylePriority.UseBorders = false;
@@ -3120,7 +3120,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_11_2
             // 
             this.xrInspeccionSeguridad_11_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_11_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_11_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_11_2.Multiline = true;
             this.xrInspeccionSeguridad_11_2.Name = "xrInspeccionSeguridad_11_2";
             this.xrInspeccionSeguridad_11_2.StylePriority.UseBorders = false;
@@ -3150,7 +3150,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrConductor_1_1
             // 
             this.xrConductor_1_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrConductor_1_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrConductor_1_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrConductor_1_1.Multiline = true;
             this.xrConductor_1_1.Name = "xrConductor_1_1";
             this.xrConductor_1_1.StylePriority.UseBorders = false;
@@ -3163,7 +3163,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrConductor_1_2
             // 
             this.xrConductor_1_2.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.xrConductor_1_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrConductor_1_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrConductor_1_2.Multiline = true;
             this.xrConductor_1_2.Name = "xrConductor_1_2";
             this.xrConductor_1_2.StylePriority.UseBorders = false;
@@ -3187,7 +3187,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrRevision1_1
             // 
             this.xrRevision1_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrRevision1_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrRevision1_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrRevision1_1.Multiline = true;
             this.xrRevision1_1.Name = "xrRevision1_1";
             this.xrRevision1_1.StylePriority.UseBorders = false;
@@ -3200,7 +3200,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrRevision1_2
             // 
             this.xrRevision1_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrRevision1_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrRevision1_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrRevision1_2.Multiline = true;
             this.xrRevision1_2.Name = "xrRevision1_2";
             this.xrRevision1_2.StylePriority.UseBorders = false;
@@ -3248,7 +3248,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_12_1
             // 
             this.xrInspeccionSeguridad_12_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_12_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_12_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_12_1.Multiline = true;
             this.xrInspeccionSeguridad_12_1.Name = "xrInspeccionSeguridad_12_1";
             this.xrInspeccionSeguridad_12_1.StylePriority.UseBorders = false;
@@ -3261,7 +3261,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_12_2
             // 
             this.xrInspeccionSeguridad_12_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_12_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_12_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_12_2.Multiline = true;
             this.xrInspeccionSeguridad_12_2.Name = "xrInspeccionSeguridad_12_2";
             this.xrInspeccionSeguridad_12_2.StylePriority.UseBorders = false;
@@ -3291,7 +3291,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrConductor_2_1
             // 
             this.xrConductor_2_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrConductor_2_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrConductor_2_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrConductor_2_1.Multiline = true;
             this.xrConductor_2_1.Name = "xrConductor_2_1";
             this.xrConductor_2_1.StylePriority.UseBorders = false;
@@ -3304,7 +3304,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrConductor_2_2
             // 
             this.xrConductor_2_2.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.xrConductor_2_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrConductor_2_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrConductor_2_2.Multiline = true;
             this.xrConductor_2_2.Name = "xrConductor_2_2";
             this.xrConductor_2_2.StylePriority.UseBorders = false;
@@ -3328,7 +3328,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrRevision2_1
             // 
             this.xrRevision2_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrRevision2_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrRevision2_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrRevision2_1.Multiline = true;
             this.xrRevision2_1.Name = "xrRevision2_1";
             this.xrRevision2_1.StylePriority.UseBorders = false;
@@ -3341,7 +3341,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrRevision2_2
             // 
             this.xrRevision2_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrRevision2_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrRevision2_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrRevision2_2.Multiline = true;
             this.xrRevision2_2.Name = "xrRevision2_2";
             this.xrRevision2_2.StylePriority.UseBorders = false;
@@ -3389,7 +3389,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_13_1
             // 
             this.xrInspeccionSeguridad_13_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_13_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_13_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_13_1.Multiline = true;
             this.xrInspeccionSeguridad_13_1.Name = "xrInspeccionSeguridad_13_1";
             this.xrInspeccionSeguridad_13_1.StylePriority.UseBorders = false;
@@ -3402,7 +3402,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_13_2
             // 
             this.xrInspeccionSeguridad_13_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_13_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_13_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_13_2.Multiline = true;
             this.xrInspeccionSeguridad_13_2.Name = "xrInspeccionSeguridad_13_2";
             this.xrInspeccionSeguridad_13_2.StylePriority.UseBorders = false;
@@ -3432,7 +3432,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrConductor_3_1
             // 
             this.xrConductor_3_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrConductor_3_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrConductor_3_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrConductor_3_1.Multiline = true;
             this.xrConductor_3_1.Name = "xrConductor_3_1";
             this.xrConductor_3_1.StylePriority.UseBorders = false;
@@ -3445,7 +3445,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrConductor_3_2
             // 
             this.xrConductor_3_2.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.xrConductor_3_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrConductor_3_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrConductor_3_2.Multiline = true;
             this.xrConductor_3_2.Name = "xrConductor_3_2";
             this.xrConductor_3_2.StylePriority.UseBorders = false;
@@ -3469,7 +3469,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrRevision3_1
             // 
             this.xrRevision3_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrRevision3_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrRevision3_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrRevision3_1.Multiline = true;
             this.xrRevision3_1.Name = "xrRevision3_1";
             this.xrRevision3_1.StylePriority.UseBorders = false;
@@ -3482,7 +3482,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrRevision3_2
             // 
             this.xrRevision3_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrRevision3_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrRevision3_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrRevision3_2.Multiline = true;
             this.xrRevision3_2.Name = "xrRevision3_2";
             this.xrRevision3_2.StylePriority.UseBorders = false;
@@ -3527,7 +3527,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_14_1
             // 
             this.xrInspeccionSeguridad_14_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_14_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_14_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_14_1.Multiline = true;
             this.xrInspeccionSeguridad_14_1.Name = "xrInspeccionSeguridad_14_1";
             this.xrInspeccionSeguridad_14_1.StylePriority.UseBorders = false;
@@ -3540,7 +3540,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_14_2
             // 
             this.xrInspeccionSeguridad_14_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_14_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_14_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_14_2.Multiline = true;
             this.xrInspeccionSeguridad_14_2.Name = "xrInspeccionSeguridad_14_2";
             this.xrInspeccionSeguridad_14_2.StylePriority.UseBorders = false;
@@ -3570,7 +3570,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrConductor_4_1
             // 
             this.xrConductor_4_1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrConductor_4_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrConductor_4_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrConductor_4_1.Multiline = true;
             this.xrConductor_4_1.Name = "xrConductor_4_1";
             this.xrConductor_4_1.StylePriority.UseBorders = false;
@@ -3583,7 +3583,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrConductor_4_2
             // 
             this.xrConductor_4_2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrConductor_4_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrConductor_4_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrConductor_4_2.Multiline = true;
             this.xrConductor_4_2.Name = "xrConductor_4_2";
             this.xrConductor_4_2.StylePriority.UseBorders = false;
@@ -3624,7 +3624,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_15_1
             // 
             this.xrInspeccionSeguridad_15_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_15_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_15_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_15_1.Multiline = true;
             this.xrInspeccionSeguridad_15_1.Name = "xrInspeccionSeguridad_15_1";
             this.xrInspeccionSeguridad_15_1.StylePriority.UseBorders = false;
@@ -3637,7 +3637,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_15_2
             // 
             this.xrInspeccionSeguridad_15_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_15_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_15_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_15_2.Multiline = true;
             this.xrInspeccionSeguridad_15_2.Name = "xrInspeccionSeguridad_15_2";
             this.xrInspeccionSeguridad_15_2.StylePriority.UseBorders = false;
@@ -3688,7 +3688,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_16_1
             // 
             this.xrInspeccionSeguridad_16_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_16_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_16_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_16_1.Multiline = true;
             this.xrInspeccionSeguridad_16_1.Name = "xrInspeccionSeguridad_16_1";
             this.xrInspeccionSeguridad_16_1.StylePriority.UseBorders = false;
@@ -3701,7 +3701,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_16_2
             // 
             this.xrInspeccionSeguridad_16_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_16_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_16_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_16_2.Multiline = true;
             this.xrInspeccionSeguridad_16_2.Name = "xrInspeccionSeguridad_16_2";
             this.xrInspeccionSeguridad_16_2.StylePriority.UseBorders = false;
@@ -3751,7 +3751,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_17_1
             // 
             this.xrInspeccionSeguridad_17_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_17_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_17_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_17_1.Multiline = true;
             this.xrInspeccionSeguridad_17_1.Name = "xrInspeccionSeguridad_17_1";
             this.xrInspeccionSeguridad_17_1.StylePriority.UseBorders = false;
@@ -3764,7 +3764,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_17_2
             // 
             this.xrInspeccionSeguridad_17_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_17_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_17_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_17_2.Multiline = true;
             this.xrInspeccionSeguridad_17_2.Name = "xrInspeccionSeguridad_17_2";
             this.xrInspeccionSeguridad_17_2.StylePriority.UseBorders = false;
@@ -3785,7 +3785,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell119
             // 
             this.xrTableCell119.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell119.Font = new System.Drawing.Font("Arial", 8F);
+            this.xrTableCell119.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.xrTableCell119.Multiline = true;
             this.xrTableCell119.Name = "xrTableCell119";
             this.xrTableCell119.StylePriority.UseBorders = false;
@@ -3818,7 +3818,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_18_1
             // 
             this.xrInspeccionSeguridad_18_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_18_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_18_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_18_1.Multiline = true;
             this.xrInspeccionSeguridad_18_1.Name = "xrInspeccionSeguridad_18_1";
             this.xrInspeccionSeguridad_18_1.StylePriority.UseBorders = false;
@@ -3831,7 +3831,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_18_2
             // 
             this.xrInspeccionSeguridad_18_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_18_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_18_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_18_2.Multiline = true;
             this.xrInspeccionSeguridad_18_2.Name = "xrInspeccionSeguridad_18_2";
             this.xrInspeccionSeguridad_18_2.StylePriority.UseBorders = false;
@@ -3900,7 +3900,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_19_1
             // 
             this.xrInspeccionSeguridad_19_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_19_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_19_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_19_1.Multiline = true;
             this.xrInspeccionSeguridad_19_1.Name = "xrInspeccionSeguridad_19_1";
             this.xrInspeccionSeguridad_19_1.StylePriority.UseBorders = false;
@@ -3913,7 +3913,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_19_2
             // 
             this.xrInspeccionSeguridad_19_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_19_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_19_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_19_2.Multiline = true;
             this.xrInspeccionSeguridad_19_2.Name = "xrInspeccionSeguridad_19_2";
             this.xrInspeccionSeguridad_19_2.StylePriority.UseBorders = false;
@@ -3982,7 +3982,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_20_1
             // 
             this.xrInspeccionSeguridad_20_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_20_1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_20_1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_20_1.Multiline = true;
             this.xrInspeccionSeguridad_20_1.Name = "xrInspeccionSeguridad_20_1";
             this.xrInspeccionSeguridad_20_1.StylePriority.UseBorders = false;
@@ -3995,7 +3995,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrInspeccionSeguridad_20_2
             // 
             this.xrInspeccionSeguridad_20_2.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrInspeccionSeguridad_20_2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrInspeccionSeguridad_20_2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrInspeccionSeguridad_20_2.Multiline = true;
             this.xrInspeccionSeguridad_20_2.Name = "xrInspeccionSeguridad_20_2";
             this.xrInspeccionSeguridad_20_2.StylePriority.UseBorders = false;
@@ -4168,7 +4168,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             // xrTableCell275
             // 
             this.xrTableCell275.Borders = DevExpress.XtraPrinting.BorderSide.Left;
-            this.xrTableCell275.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell275.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell275.Multiline = true;
             this.xrTableCell275.Name = "xrTableCell275";
             this.xrTableCell275.StylePriority.UseBorders = false;
@@ -4195,7 +4195,7 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell36.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrPictureBox1});
-            this.xrTableCell36.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell36.Font = new DevExpress.Drawing.DXFont("Arial", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell36.Multiline = true;
             this.xrTableCell36.Name = "xrTableCell36";
             this.xrTableCell36.StylePriority.UseBorders = false;
@@ -4213,9 +4213,9 @@ namespace LOSA.Calidad.Revision_Sanidad.RPT
             this.dsSanidad1});
             this.DataMember = "info_vehiculo";
             this.DataSource = this.dsSanidad1;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(0, 0, 10, 10);
+            this.Margins = new DevExpress.Drawing.DXMargins(0, 0, 10, 10);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Version = "18.2";

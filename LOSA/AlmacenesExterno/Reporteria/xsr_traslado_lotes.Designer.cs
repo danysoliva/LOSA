@@ -270,7 +270,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrLabel13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[numero_transaccion]")});
-            this.xrLabel13.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel13.Font = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(395F, 146.8334F);
             this.xrLabel13.Multiline = true;
             this.xrLabel13.Name = "xrLabel13";
@@ -285,7 +285,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrLabel12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DocNum]")});
-            this.xrLabel12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Tahoma", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(540.8361F, 72.287F);
             this.xrLabel12.Multiline = true;
             this.xrLabel12.Name = "xrLabel12";
@@ -298,7 +298,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             // xrLabel11
             // 
-            this.xrLabel11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Tahoma", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(401.0561F, 72.28701F);
             this.xrLabel11.Multiline = true;
             this.xrLabel11.Name = "xrLabel11";
@@ -311,7 +311,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             // xrLabel10
             // 
-            this.xrLabel10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(267.8752F, 146.8334F);
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
@@ -326,7 +326,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrLabel9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[Factura]")});
-            this.xrLabel9.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Tahoma", 9.75F);
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(540.8366F, 52.28701F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
@@ -337,7 +337,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             // xrLabel8
             // 
-            this.xrLabel8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Tahoma", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(461.6636F, 52.28701F);
             this.xrLabel8.Multiline = true;
             this.xrLabel8.Name = "xrLabel8";
@@ -352,7 +352,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[CardName]")});
-            this.xrLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(37.70831F, 12.28701F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -365,7 +365,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[rpt_traslado_almacen_v2].[Address]")});
-            this.xrLabel2.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Tahoma", 9.75F);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(37.70828F, 40.00001F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -376,7 +376,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Tahoma", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(461.6666F, 12.28701F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -413,7 +413,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             // xrLabel6
             // 
-            this.xrLabel6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Tahoma", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(461.6636F, 32.28701F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
@@ -426,7 +426,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             // xrLabel7
             // 
-            this.xrLabel7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel7.Font = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(5.5631E-05F, 99.83334F);
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
@@ -442,7 +442,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrlID.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Concat(\'Transferencia de stock \',PadLeft([rpt_traslado_almacen_v2].[id_h],5,\'0\' )" +
                     " )")});
-            this.xrlID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.xrlID.Font = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlID.LocationFloat = new DevExpress.Utils.PointFloat(0.0001430511F, 123.8334F);
             this.xrlID.Multiline = true;
             this.xrlID.Name = "xrlID";
@@ -495,7 +495,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable2.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.xrTable2.Font = new DevExpress.Drawing.DXFont("Tahoma", 9F);
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 10.34724F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -567,7 +567,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             // xrTable3
             // 
-            this.xrTable3.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.xrTable3.Font = new DevExpress.Drawing.DXFont("Tahoma", 9.75F);
             this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 35.34724F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -758,7 +758,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell24.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell24.Font = new System.Drawing.Font("Arial", 7.75F);
+            this.xrTableCell24.Font = new DevExpress.Drawing.DXFont("Arial", 7.75F);
             this.xrTableCell24.Multiline = true;
             this.xrTableCell24.Name = "xrTableCell24";
             this.xrTableCell24.StylePriority.UseBorders = false;
@@ -770,7 +770,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             // 
             this.xrTableCell25.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell25.Font = new System.Drawing.Font("Arial", 7.75F);
+            this.xrTableCell25.Font = new DevExpress.Drawing.DXFont("Arial", 7.75F);
             this.xrTableCell25.Multiline = true;
             this.xrTableCell25.Name = "xrTableCell25";
             this.xrTableCell25.StylePriority.UseBorders = false;
@@ -818,8 +818,8 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.DataMember = "rpt_traslado_almacen_v2";
             this.DataSource = this.dsTrasladoLotes;
             this.FilterString = "[id_h] = ?ID_H";
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(0, 4, 0, 0);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(0, 4, 0, 0);
             this.PageWidth = 753;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {

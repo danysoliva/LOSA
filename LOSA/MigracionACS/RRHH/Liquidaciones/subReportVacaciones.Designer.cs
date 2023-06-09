@@ -107,7 +107,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[LiquiUltimosMeses].[mes_name]")});
-            this.xrTableCell1.Font = new System.Drawing.Font("Arial", 9F);
+            this.xrTableCell1.Font = new DevExpress.Drawing.DXFont("Arial", 9F);
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseFont = false;
@@ -118,7 +118,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[LiquiUltimosMeses].[sueldo_recibido]")});
-            this.xrTableCell2.Font = new System.Drawing.Font("Arial", 9F);
+            this.xrTableCell2.Font = new DevExpress.Drawing.DXFont("Arial", 9F);
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseFont = false;
@@ -129,7 +129,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.xrTableCell3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[LiquiUltimosMeses].[comisiones]")});
-            this.xrTableCell3.Font = new System.Drawing.Font("Arial", 9F);
+            this.xrTableCell3.Font = new DevExpress.Drawing.DXFont("Arial", 9F);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseFont = false;
@@ -140,7 +140,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.xrTableCell4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[LiquiUltimosMeses].[bono]")});
-            this.xrTableCell4.Font = new System.Drawing.Font("Arial", 9F);
+            this.xrTableCell4.Font = new DevExpress.Drawing.DXFont("Arial", 9F);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseFont = false;
@@ -151,7 +151,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.xrTableCell5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[LiquiUltimosMeses].[incentivo]")});
-            this.xrTableCell5.Font = new System.Drawing.Font("Arial", 9F);
+            this.xrTableCell5.Font = new DevExpress.Drawing.DXFont("Arial", 9F);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseFont = false;
@@ -162,7 +162,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[LiquiUltimosMeses].[horas_extra]")});
-            this.xrTableCell6.Font = new System.Drawing.Font("Arial", 9F);
+            this.xrTableCell6.Font = new DevExpress.Drawing.DXFont("Arial", 9F);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseFont = false;
@@ -173,7 +173,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             // 
             this.xrTableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[LiquiUltimosMeses].[total]")});
-            this.xrTableCell7.Font = new System.Drawing.Font("Arial", 9F);
+            this.xrTableCell7.Font = new DevExpress.Drawing.DXFont("Arial", 9F);
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseFont = false;
@@ -192,7 +192,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.xrTable4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)
             | DevExpress.XtraPrinting.BorderSide.Right)
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable4.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(113.44F, 80.45856F);
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -368,8 +368,8 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.dsRRHH_1});
             this.DataMember = "Empleados";
             this.DataSource = this.dsRRHH_1;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(19, 19, 25, 100);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(19, 19, 25, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.years});
             this.Version = "18.2";

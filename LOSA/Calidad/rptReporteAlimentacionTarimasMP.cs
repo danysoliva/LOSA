@@ -22,7 +22,7 @@ namespace LOSA.Calidad
             LoadDataAliemntacionTarima(dtDesde, dtHasta);
         }
 
-        private void xrPanel6_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrPanel6_BeforePrint(object sender, CancelEventArgs e)
         {
 
         }

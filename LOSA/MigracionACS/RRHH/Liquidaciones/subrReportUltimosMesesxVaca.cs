@@ -16,12 +16,12 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
         int Id_Empleado, anio;
         decimal diasTomados;
 
-        private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void Detail_BeforePrint(object sender, CancelEventArgs e)
         {
             
         }
 
-        private void xrTableCell1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrTableCell1_BeforePrint(object sender, CancelEventArgs e)
         {
 
         }
