@@ -96,7 +96,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "Trigo_Lotes";
-            this.gridControl1.DataSource = this.dsGestionGranel1;
+            this.gridControl1.DataSource = dsGestionGranel1;// this.dsGestionGranel1;
             this.gridControl1.Location = new System.Drawing.Point(3, 26);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";

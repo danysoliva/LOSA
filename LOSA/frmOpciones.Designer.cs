@@ -196,6 +196,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.TabRRHH = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdImprimirVouchers = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton46 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton45 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton44 = new DevExpress.XtraEditors.SimpleButton();
@@ -242,7 +243,7 @@
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.cmdImprimirVouchers = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdGestionLotesGranel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -479,6 +480,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.cmdGestionLotesGranel);
             this.TabMP_Sacos.Controls.Add(this.btnValidacionTarimas);
             this.TabMP_Sacos.Controls.Add(this.btnrutas_traz_logistica);
             this.TabMP_Sacos.Controls.Add(this.btnTransferenciaPendiente);
@@ -619,7 +621,7 @@
             this.btnAjustesKardex.Appearance.Options.UseFont = true;
             this.btnAjustesKardex.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAjustesKardex.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAjustesKardex.ImageOptions.Image")));
-            this.btnAjustesKardex.Location = new System.Drawing.Point(832, 488);
+            this.btnAjustesKardex.Location = new System.Drawing.Point(832, 587);
             this.btnAjustesKardex.Margin = new System.Windows.Forms.Padding(6);
             this.btnAjustesKardex.Name = "btnAjustesKardex";
             this.btnAjustesKardex.Size = new System.Drawing.Size(398, 81);
@@ -2855,6 +2857,22 @@
             this.TabRRHH.Size = new System.Drawing.Size(1678, 1015);
             this.TabRRHH.Text = "RRHH";
             // 
+            // cmdImprimirVouchers
+            // 
+            this.cmdImprimirVouchers.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdImprimirVouchers.Appearance.Options.UseFont = true;
+            this.cmdImprimirVouchers.Appearance.Options.UseTextOptions = true;
+            this.cmdImprimirVouchers.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdImprimirVouchers.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdImprimirVouchers.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdImprimirVouchers.ImageOptions.SvgImage")));
+            this.cmdImprimirVouchers.Location = new System.Drawing.Point(514, 719);
+            this.cmdImprimirVouchers.Margin = new System.Windows.Forms.Padding(6);
+            this.cmdImprimirVouchers.Name = "cmdImprimirVouchers";
+            this.cmdImprimirVouchers.Size = new System.Drawing.Size(398, 137);
+            this.cmdImprimirVouchers.TabIndex = 19;
+            this.cmdImprimirVouchers.Text = "Imprimir Voucher(s)";
+            this.cmdImprimirVouchers.Click += new System.EventHandler(this.cmdImprimirVouchers_Click);
+            // 
             // simpleButton46
             // 
             this.simpleButton46.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3584,21 +3602,19 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // cmdImprimirVouchers
+            // cmdGestionLotesGranel
             // 
-            this.cmdImprimirVouchers.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdImprimirVouchers.Appearance.Options.UseFont = true;
-            this.cmdImprimirVouchers.Appearance.Options.UseTextOptions = true;
-            this.cmdImprimirVouchers.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdImprimirVouchers.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdImprimirVouchers.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
-            this.cmdImprimirVouchers.Location = new System.Drawing.Point(514, 719);
-            this.cmdImprimirVouchers.Margin = new System.Windows.Forms.Padding(6);
-            this.cmdImprimirVouchers.Name = "cmdImprimirVouchers";
-            this.cmdImprimirVouchers.Size = new System.Drawing.Size(398, 137);
-            this.cmdImprimirVouchers.TabIndex = 19;
-            this.cmdImprimirVouchers.Text = "Imprimir Voucher(s)";
-            this.cmdImprimirVouchers.Click += new System.EventHandler(this.cmdImprimirVouchers_Click);
+            this.cmdGestionLotesGranel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.cmdGestionLotesGranel.Appearance.Options.UseFont = true;
+            this.cmdGestionLotesGranel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGestionLotesGranel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.cmdGestionLotesGranel.Location = new System.Drawing.Point(832, 488);
+            this.cmdGestionLotesGranel.Margin = new System.Windows.Forms.Padding(6);
+            this.cmdGestionLotesGranel.Name = "cmdGestionLotesGranel";
+            this.cmdGestionLotesGranel.Size = new System.Drawing.Size(398, 81);
+            this.cmdGestionLotesGranel.TabIndex = 52;
+            this.cmdGestionLotesGranel.Text = "Gestión de Lotes Granel";
+            this.cmdGestionLotesGranel.Click += new System.EventHandler(this.cmdGestionLotesGranel_Click);
             // 
             // frmOpciones
             // 
@@ -3855,5 +3871,6 @@
         private DevExpress.XtraEditors.SimpleButton btnPrioridadLotePT;
         private DevExpress.XtraEditors.SimpleButton cmdAprobarAjustesInvALOSY;
         private DevExpress.XtraEditors.SimpleButton cmdImprimirVouchers;
+        private DevExpress.XtraEditors.SimpleButton cmdGestionLotesGranel;
     }
 }

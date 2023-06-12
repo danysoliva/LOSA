@@ -3,6 +3,7 @@ using ACS.Classes;
 using ACS.Forecast;
 using ACS.Produccion;
 using ACS.RRHH.HorasExtra;
+using JAGUAR_APP.TransaccionesMP.Gestion_Granel;
 using LOSA.Accesos;
 using LOSA.Accesos.AccesosUsuarios;
 using LOSA.Accesos.GestionGrupos;
@@ -3445,6 +3446,45 @@ namespace LOSA
                 if (UsuarioLogeado.ValidarNivelPermisos(81))
                 {
                     frmHomePlanillaCatorceavo frm = new frmHomePlanillaCatorceavo(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #81");
+                }
+            }
+        }
+
+        private void cmdGestionLotesGranel_Click(object sender, EventArgs e)
+        {
+            //frmGestionLoteGranel
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmGestionLoteGranel frm = new frmGestionLoteGranel(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(81))
+                {
+                    frmGestionLoteGranel frm = new frmGestionLoteGranel(this.UsuarioLogeado);
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
