@@ -67,8 +67,8 @@ namespace LOSA.TransaccionesMP
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsTarima.kardex_by_Reproceso.Clear();
-                da.Fill(dsTarima.kardex_by_Reproceso);
+                dsTarima1.kardex_by_Reproceso.Clear();
+                da.Fill(dsTarima1.kardex_by_Reproceso);
                 cn.Close();
             }
             catch (Exception ex)
@@ -89,10 +89,10 @@ namespace LOSA.TransaccionesMP
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                //dsTarima.informacion.Clear();
-                //da.Fill(dsTarima.informacion);
-                dsTarima.kardex_by_lot.Clear();
-                da.Fill(dsTarima.kardex_by_lot);
+                //dsTarima1.informacion.Clear();
+                //da.Fill(dsTarima1.informacion);
+                dsTarima1.kardex_by_lot.Clear();
+                da.Fill(dsTarima1.kardex_by_lot);
                 cn.Close();
             }
             catch (Exception ex)
@@ -115,8 +115,8 @@ namespace LOSA.TransaccionesMP
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsTarima.informacionPRD.Clear();
-                da.Fill(dsTarima.informacionPRD);
+                dsTarima1.informacionPRD.Clear();
+                da.Fill(dsTarima1.informacionPRD);
                 cn.Close();
             }
             catch (Exception ex)
@@ -139,8 +139,8 @@ namespace LOSA.TransaccionesMP
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsTarima.totales_bodegav2.Clear();
-                da.Fill(dsTarima.totales_bodegav2);
+                dsTarima1.totales_bodegav2.Clear();
+                da.Fill(dsTarima1.totales_bodegav2);
                 cn.Close();
                 //gridControl2.au
                 //gridControl2.Views[0].
@@ -166,8 +166,8 @@ namespace LOSA.TransaccionesMP
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsTarima.totales.Clear();
-                da.Fill(dsTarima.totales);
+                dsTarima1.totales.Clear();
+                da.Fill(dsTarima1.totales);
                 cn.Close();
             }
             catch (Exception ex)
@@ -375,19 +375,19 @@ namespace LOSA.TransaccionesMP
             switch (e.Page.Caption)
             {
                 case "Resumen por materia prima":
-                    if (dsTarima.totales.Count == 0)
+                    if (dsTarima1.totales.Count == 0)
                         load_data_totales();
                     break;
                 case "En Bodega PRD":
-                    if(dsTarima.informacionPRD.Count==0)
+                    if(dsTarima1.informacionPRD.Count==0)
                         load_dataPRD();
                     break;
                 case "Resumen por lote":
-                    if (dsTarima.informacion.Count == 0)
+                    if (dsTarima1.informacion.Count == 0)
                         load_dataPorLotes();
                     break;
                 case "Resumen por MP y Bodega":
-                    if (dsTarima.totales_bodega.Count == 0)
+                    if (dsTarima1.totales_bodega.Count == 0)
                         load_dataResumenMP_por_bodega();
                     break;
             }
@@ -441,10 +441,10 @@ namespace LOSA.TransaccionesMP
                 SqlCommand cmd = new SqlCommand("[sp_obtener_inventario_general_por_bodega_for_MP_v2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", pidRM);
-                dsTarima.mp_bodega_lote.Clear();
+                dsTarima1.mp_bodega_lote.Clear();
                 //dsPresupuesto1.estados.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTarima.mp_bodega_lote);
+                adat.Fill(dsTarima1.mp_bodega_lote);
 
                 con.Close();
             }
