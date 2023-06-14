@@ -522,6 +522,9 @@ namespace LOSA.MigracionACS.Produccion
                                 
                                 string CodigoOrden = Get_Prod_Orden_Code();
 
+                                command.CommandText = "PP_Plan_Ordenes_Insertv_4";
+                                command.Parameters.Clear();
+
                                 command.Parameters.AddWithValue("@id_plan", idPlan);
                                 command.Parameters.AddWithValue("@pp_code", CodigoOrden);// Get_Prod_Orden_Code());
                                 //command.Parameters.AddWithValue("@id_pt", Recuperar_Id_pt(row["Codigo"].ToString()));
