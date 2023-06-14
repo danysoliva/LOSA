@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 using LOSA.TransaccionesMP.Gestion_Granel;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,11 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
 {
     public partial class frmGestionLoteGranel : DevExpress.XtraEditors.XtraForm
     {
-        public frmGestionLoteGranel()
+        UserLogin UsuarioLogeado;
+        public frmGestionLoteGranel(UserLogin pUsuarioLogeado)
         {
             InitializeComponent();
+            UsuarioLogeado = pUsuarioLogeado;
             LoadLotesTrigo();
         }
 
