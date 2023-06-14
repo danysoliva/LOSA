@@ -31,11 +31,11 @@ namespace LOSA.MicroIngredientes
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmPesajeNucleoV2));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.lblBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.lblValorBascula1 = new DevExpress.XtraEditors.LabelControl();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
@@ -69,6 +69,7 @@ namespace LOSA.MicroIngredientes
             this.btnBasc2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnBascAmbas = new DevExpress.XtraEditors.SimpleButton();
             this.lblLoteName = new DevExpress.XtraEditors.LabelControl();
+            this.colid_tarima_micro = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMicros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodBarra.Properties)).BeginInit();
@@ -355,7 +356,8 @@ namespace LOSA.MicroIngredientes
             this.colid_tarima_origen,
             this.colpeso,
             this.colid_mp,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.colid_tarima_micro});
             this.gvPesaje.GridControl = this.gridControl1;
             this.gvPesaje.Name = "gvPesaje";
             this.gvPesaje.OptionsView.ShowFooter = true;
@@ -420,9 +422,9 @@ namespace LOSA.MicroIngredientes
             // btnDelete
             // 
             this.btnDelete.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnDelete_ButtonClick);
@@ -483,6 +485,12 @@ namespace LOSA.MicroIngredientes
             this.lblLoteName.Size = new System.Drawing.Size(757, 32);
             this.lblLoteName.TabIndex = 44;
             // 
+            // colid_tarima_micro
+            // 
+            this.colid_tarima_micro.FieldName = "id_tarima_micro";
+            this.colid_tarima_micro.Name = "colid_tarima_micro";
+            this.colid_tarima_micro.OptionsColumn.AllowEdit = false;
+            // 
             // xfrmPesajeNucleoV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,8 +518,8 @@ namespace LOSA.MicroIngredientes
             this.Controls.Add(this.lblCompletados);
             this.Controls.Add(this.lblRequerido);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            this.IconOptions.ShowIcon = false;
             this.Name = "xfrmPesajeNucleoV2";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.xfrmPesajeIndividualBatch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -559,5 +567,6 @@ namespace LOSA.MicroIngredientes
         private DevExpress.XtraEditors.SimpleButton btnBasc2;
         private DevExpress.XtraEditors.SimpleButton btnBascAmbas;
         private DevExpress.XtraEditors.LabelControl lblLoteName;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tarima_micro;
     }
 }

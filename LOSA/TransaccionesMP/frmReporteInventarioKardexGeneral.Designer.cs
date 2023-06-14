@@ -584,7 +584,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage2.Controls.Add(this.btnRefreshRptMP);
             this.tabNavigationPage2.Controls.Add(this.grd_data_resumen);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 647);
             // 
             // btnRefreshRptMP
             // 
@@ -968,7 +968,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4.Controls.Add(this.btnRptMPyBod);
             this.tabNavigationPage4.Controls.Add(this.gridControl2);
             this.tabNavigationPage4.Name = "tabNavigationPage4";
-            this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 647);
             // 
             // btnRptMPyBod
             // 
@@ -993,7 +993,7 @@ namespace LOSA.TransaccionesMP
             this.gridControl2.Location = new System.Drawing.Point(8, 49);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1351, 605);
+            this.gridControl2.Size = new System.Drawing.Size(1351, 606);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1166,7 +1166,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage5.Controls.Add(this.btnActReproceso);
             this.tabNavigationPage5.Controls.Add(this.gridReproceso);
             this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage5.Size = new System.Drawing.Size(1362, 647);
             // 
             // btnActReproceso
             // 
@@ -1193,7 +1193,7 @@ namespace LOSA.TransaccionesMP
             this.gridReproceso.Name = "gridReproceso";
             this.gridReproceso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmAjusteReproceso});
-            this.gridReproceso.Size = new System.Drawing.Size(1356, 593);
+            this.gridReproceso.Size = new System.Drawing.Size(1356, 594);
             this.gridReproceso.TabIndex = 1;
             this.gridReproceso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1392,7 +1392,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage6.Controls.Add(this.txtTitulo_Inv_Por_MPyBodega);
             this.tabNavigationPage6.Controls.Add(this.lblTitulo_Inv_Por_MPyBodega);
             this.tabNavigationPage6.Name = "tabNavigationPage6";
-            this.tabNavigationPage6.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage6.Size = new System.Drawing.Size(1362, 647);
             // 
             // labelControl1
             // 
@@ -1412,7 +1412,7 @@ namespace LOSA.TransaccionesMP
             this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Options.UseFont = true;
             this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OffText = "No";
             this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OnText = "Si";
-            this.tggMostrarTotasInv_por_mp_y_bodega.Size = new System.Drawing.Size(109, 26);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Size = new System.Drawing.Size(109, 20);
             this.tggMostrarTotasInv_por_mp_y_bodega.TabIndex = 17;
             this.tggMostrarTotasInv_por_mp_y_bodega.Toggled += new System.EventHandler(this.tggMostrarTotasInv_por_mp_y_bodega_Toggled);
             // 
@@ -1442,7 +1442,7 @@ namespace LOSA.TransaccionesMP
             this.grdMPBodega.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemAjuste,
             this.repositoryItemLogKardex});
-            this.grdMPBodega.Size = new System.Drawing.Size(1351, 596);
+            this.grdMPBodega.Size = new System.Drawing.Size(1351, 597);
             this.grdMPBodega.TabIndex = 15;
             this.grdMPBodega.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
