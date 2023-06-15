@@ -92,9 +92,6 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdAdd = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -121,6 +118,11 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.cmdBajar_Soya = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdDesactivar_Soya = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cmdAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.colExistenciaKg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExistenciaKg1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsGestionGranel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -187,7 +189,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colLinea,
             this.colSubir,
             this.colBajar,
-            this.colDesactivar});
+            this.colDesactivar,
+            this.colExistenciaKg});
             this.gridView1.DetailHeight = 673;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -297,7 +300,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colstate_name.Name = "colstate_name";
             this.colstate_name.OptionsColumn.ReadOnly = true;
             this.colstate_name.Visible = true;
-            this.colstate_name.VisibleIndex = 4;
+            this.colstate_name.VisibleIndex = 5;
             this.colstate_name.Width = 150;
             // 
             // coltype_name
@@ -353,7 +356,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colSubir.MinWidth = 40;
             this.colSubir.Name = "colSubir";
             this.colSubir.Visible = true;
-            this.colSubir.VisibleIndex = 5;
+            this.colSubir.VisibleIndex = 6;
             this.colSubir.Width = 150;
             // 
             // cmdSubir
@@ -373,7 +376,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colBajar.MinWidth = 40;
             this.colBajar.Name = "colBajar";
             this.colBajar.Visible = true;
-            this.colBajar.VisibleIndex = 6;
+            this.colBajar.VisibleIndex = 7;
             this.colBajar.Width = 150;
             // 
             // cmdBajar
@@ -393,7 +396,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colDesactivar.MinWidth = 40;
             this.colDesactivar.Name = "colDesactivar";
             this.colDesactivar.Visible = true;
-            this.colDesactivar.VisibleIndex = 7;
+            this.colDesactivar.VisibleIndex = 8;
             this.colDesactivar.Width = 150;
             // 
             // cmdDesactivar
@@ -436,47 +439,6 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(1998, 863);
             this.xtraTabPage2.Text = "Soya";
-            // 
-            // cmdCerrar
-            // 
-            this.cmdCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdCerrar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCerrar.Appearance.Options.UseFont = true;
-            this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdCerrar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdCerrar.ImageOptions.SvgImage")));
-            this.cmdCerrar.Location = new System.Drawing.Point(1708, 65);
-            this.cmdCerrar.Margin = new System.Windows.Forms.Padding(6);
-            this.cmdCerrar.Name = "cmdCerrar";
-            this.cmdCerrar.Size = new System.Drawing.Size(290, 88);
-            this.cmdCerrar.TabIndex = 2;
-            this.cmdCerrar.Text = "Cerrar";
-            this.cmdCerrar.Click += new System.EventHandler(this.cmdCerrar_Click);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(8, 46);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(229, 45);
-            this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "Gestión de Lote";
-            // 
-            // cmdAdd
-            // 
-            this.cmdAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdAdd.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdAdd.Appearance.Options.UseFont = true;
-            this.cmdAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdAdd.ImageOptions.SvgImage")));
-            this.cmdAdd.Location = new System.Drawing.Point(1406, 65);
-            this.cmdAdd.Margin = new System.Windows.Forms.Padding(6);
-            this.cmdAdd.Name = "cmdAdd";
-            this.cmdAdd.Size = new System.Drawing.Size(290, 88);
-            this.cmdAdd.TabIndex = 4;
-            this.cmdAdd.Text = "Adicionar Lote";
-            this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
             // 
             // gridControl2
             // 
@@ -522,7 +484,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn18,
             this.gridColumn19,
             this.gridColumn20,
-            this.gridColumn21});
+            this.gridColumn21,
+            this.colExistenciaKg1});
             this.gridView2.DetailHeight = 673;
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
@@ -741,6 +704,71 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.cmdDesactivar_Soya.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdDesactivar_Soya.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDesactivar_Soya_ButtonClick);
             // 
+            // cmdCerrar
+            // 
+            this.cmdCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdCerrar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCerrar.Appearance.Options.UseFont = true;
+            this.cmdCerrar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdCerrar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdCerrar.ImageOptions.SvgImage")));
+            this.cmdCerrar.Location = new System.Drawing.Point(1708, 65);
+            this.cmdCerrar.Margin = new System.Windows.Forms.Padding(6);
+            this.cmdCerrar.Name = "cmdCerrar";
+            this.cmdCerrar.Size = new System.Drawing.Size(290, 88);
+            this.cmdCerrar.TabIndex = 2;
+            this.cmdCerrar.Text = "Cerrar";
+            this.cmdCerrar.Click += new System.EventHandler(this.cmdCerrar_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(8, 46);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(229, 45);
+            this.labelControl1.TabIndex = 3;
+            this.labelControl1.Text = "Gestión de Lote";
+            // 
+            // cmdAdd
+            // 
+            this.cmdAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdAdd.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAdd.Appearance.Options.UseFont = true;
+            this.cmdAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdAdd.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdAdd.ImageOptions.SvgImage")));
+            this.cmdAdd.Location = new System.Drawing.Point(1406, 65);
+            this.cmdAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.cmdAdd.Name = "cmdAdd";
+            this.cmdAdd.Size = new System.Drawing.Size(290, 88);
+            this.cmdAdd.TabIndex = 4;
+            this.cmdAdd.Text = "Adicionar Lote";
+            this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
+            // 
+            // colExistenciaKg
+            // 
+            this.colExistenciaKg.DisplayFormat.FormatString = "n2";
+            this.colExistenciaKg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colExistenciaKg.FieldName = "Existencia Kg";
+            this.colExistenciaKg.MinWidth = 40;
+            this.colExistenciaKg.Name = "colExistenciaKg";
+            this.colExistenciaKg.OptionsColumn.ReadOnly = true;
+            this.colExistenciaKg.Visible = true;
+            this.colExistenciaKg.VisibleIndex = 4;
+            this.colExistenciaKg.Width = 150;
+            // 
+            // colExistenciaKg1
+            // 
+            this.colExistenciaKg1.DisplayFormat.FormatString = "n2";
+            this.colExistenciaKg1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colExistenciaKg1.FieldName = "Existencia Kg";
+            this.colExistenciaKg1.MinWidth = 40;
+            this.colExistenciaKg1.Name = "colExistenciaKg1";
+            this.colExistenciaKg1.OptionsColumn.ReadOnly = true;
+            this.colExistenciaKg1.Visible = true;
+            this.colExistenciaKg1.VisibleIndex = 8;
+            this.colExistenciaKg1.Width = 150;
+            // 
             // frmGestionLoteGranel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -834,5 +862,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdBajar_Soya;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDesactivar_Soya;
+        private DevExpress.XtraGrid.Columns.GridColumn colExistenciaKg;
+        private DevExpress.XtraGrid.Columns.GridColumn colExistenciaKg1;
     }
 }
