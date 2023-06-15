@@ -179,87 +179,88 @@ namespace LOSA.MicroIngredientes
                 ///******Por Validar**********
                 switch (tipoPesaje)
                 {
-                    case (int)TipoPesaje.PesajeNucleo:
+                    #region Pesaje Nucleo
+                    //case (int)TipoPesaje.PesajeNucleo:
 
-                        for (int i = 1; i <= pesaje.CantBatch; i++)
-                        {
-                            string batch_completados2 = i + " de " + pesaje.CantBatch;
-                            xfrmPesajeIndividualBatchV3 frm2 = new xfrmPesajeIndividualBatchV3(batch_completados2, "Báscula: " + lueBascula.Text, pesaje);
-                            int id_orden_pesaje_manual_transaccion;
+                    //    for (int i = 1; i <= pesaje.CantBatch; i++)
+                    //    {
+                    //        string batch_completados2 = i + " de " + pesaje.CantBatch;
+                    //        xfrmPesajeIndividualBatchV3 frm2 = new xfrmPesajeIndividualBatchV3(batch_completados2, "Báscula: " + lueBascula.Text, pesaje);
+                    //        int id_orden_pesaje_manual_transaccion;
 
-                            if (frm2.ShowDialog() == DialogResult.OK)
-                            {
-                                TarimaMicroingrediente tmmicro = new TarimaMicroingrediente();
-                                tmmicro.RecuperarRegistroTarimaMicros(frm2.id_tarima_micros, " ");
+                    //        if (frm2.ShowDialog() == DialogResult.OK)
+                    //        {
+                    //            TarimaMicroingrediente tmmicro = new TarimaMicroingrediente();
+                    //            tmmicro.RecuperarRegistroTarimaMicros(frm2.id_tarima_micros, " ");
 
-                                using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
-                                {
-                                    cnx.Open();
+                    //            using (SqlConnection cnx = new SqlConnection(dp.ConnectionStringAPMS))
+                    //            {
+                    //                cnx.Open();
 
-                                    //transaction = cnx.BeginTransaction("SampleTransaction");
-                                    
-                                    SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccionV2", cnx);
-                                    cmd.CommandType = CommandType.StoredProcedure;
-                                    //cmd.Transaction = transaction;
-                                    
-                                    cmd.Parameters.Add("@id_orden_encabezado", SqlDbType.Int).Value = pesaje.id_orden_pesaje_header;
-                                    cmd.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesaje.Total;
-                                    cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = dp.Now();
-                                    cmd.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = frm2.peso_bascula_finish;
-                                    cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;// IdMP;
-                                    cmd.Parameters.Add("@bascula", SqlDbType.VarChar).Value = bascula[frm2.BasculaId-1];
-                                    cmd.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value =  1;
-                                    cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = tmmicro.LoteMP; //??
-                                    cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm2.id_tarima_micros; //??
-                                    cmd.Parameters.Add("@cant_batch", SqlDbType.Int).Value = pesaje.CantBatch;
-                                    cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;//??
-                                    cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = DBNull.Value;//??
-                                    cmd.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesaje.AMI_ID;
-                                    cmd.Parameters.Add("@fecha_vence", SqlDbType.Date).Value = tmmicro.FechaVencimiento;
-                                    cmd.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = tmmicro.NumeroTransaccion;
+                    //                //transaction = cnx.BeginTransaction("SampleTransaction");
 
-                                    id_orden_pesaje_manual_transaccion = (int)cmd.ExecuteScalar();
+                    //                SqlCommand cmd = new SqlCommand("sp_insert_OP_Orden_pesaje_manual_transaccionV2", cnx);
+                    //                cmd.CommandType = CommandType.StoredProcedure;
+                    //                //cmd.Transaction = transaction;
 
+                    //                cmd.Parameters.Add("@id_orden_encabezado", SqlDbType.Int).Value = pesaje.id_orden_pesaje_header;
+                    //                cmd.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesaje.Total;
+                    //                cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = dp.Now();
+                    //                cmd.Parameters.Add("@batch_real", SqlDbType.Decimal).Value = frm2.peso_bascula_finish;
+                    //                cmd.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;// IdMP;
+                    //                cmd.Parameters.Add("@bascula", SqlDbType.VarChar).Value = bascula[frm2.BasculaId-1];
+                    //                cmd.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value =  1;
+                    //                cmd.Parameters.Add("@lote", SqlDbType.VarChar).Value = tmmicro.LoteMP; //??
+                    //                cmd.Parameters.Add("@id_tarima", SqlDbType.VarChar).Value = frm2.id_tarima_micros; //??
+                    //                cmd.Parameters.Add("@cant_batch", SqlDbType.Int).Value = pesaje.CantBatch;
+                    //                cmd.Parameters.Add("@id_pesaje_manual_plan", SqlDbType.Int).Value = DBNull.Value;//??
+                    //                cmd.Parameters.Add("@cant_sacos", SqlDbType.Decimal).Value = DBNull.Value;//??
+                    //                cmd.Parameters.Add("@ami_id", SqlDbType.Int).Value = pesaje.AMI_ID;
+                    //                cmd.Parameters.Add("@fecha_vence", SqlDbType.Date).Value = tmmicro.FechaVencimiento;
+                    //                cmd.Parameters.Add("@numero_transaccion", SqlDbType.Int).Value = tmmicro.NumeroTransaccion;
 
-                                    foreach (var item in frm2.PesajeAcumulado)
-                                    {
-                                        using (SqlConnection cnx2 = new SqlConnection(dp.ConnectionStringLOSA))
-                                        {
-                                            cnx2.Open();
-                                            SqlCommand cmd2 = new SqlCommand("[dbo].[sp_LOSA_insert_detallePesajeBascula_Micros]", cnx2);
-                                            cmd2.CommandType = CommandType.StoredProcedure;
-                                            //cmd2.Transaction = transaction;
-
-                                            cmd2.Parameters.Add("@id_orden_h", SqlDbType.Int).Value = id_orden_pesaje_manual_transaccion;
-                                            cmd2.Parameters.Add("@id_tarima_micros", SqlDbType.Int).Value = item.TarimaMicroId;
-                                            cmd2.Parameters.Add("@id_tarima_origen", SqlDbType.Int).Value = item.TarimaOrigeId;
-                                            cmd2.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.MateriaPrimaId;
-                                            cmd2.Parameters.Add("@lote", SqlDbType.VarChar).Value = item.Lote;
-                                            cmd2.Parameters.Add("@peso", SqlDbType.Decimal).Value = item.Peso;
-
-                                            cmd2.ExecuteNonQuery();
-                                            cnx2.Close();
-                                        }
-
-                                    }
-
-                                    //transaction.Commit();
+                    //                id_orden_pesaje_manual_transaccion = (int)cmd.ExecuteScalar();
 
 
-                                    cnx.Close();
+                    //                foreach (var item in frm2.PesajeAcumulado)
+                    //                {
+                    //                    using (SqlConnection cnx2 = new SqlConnection(dp.ConnectionStringLOSA))
+                    //                    {
+                    //                        cnx2.Open();
+                    //                        SqlCommand cmd2 = new SqlCommand("[dbo].[sp_LOSA_insert_detallePesajeBascula_Micros]", cnx2);
+                    //                        cmd2.CommandType = CommandType.StoredProcedure;
+                    //                        //cmd2.Transaction = transaction;
 
-                                }
-                            }
-                            else
-                            {
-                                return;
-                            }
-                                this.DialogResult = DialogResult.OK;
+                    //                        cmd2.Parameters.Add("@id_orden_h", SqlDbType.Int).Value = id_orden_pesaje_manual_transaccion;
+                    //                        cmd2.Parameters.Add("@id_tarima_micros", SqlDbType.Int).Value = item.TarimaMicroId;
+                    //                        cmd2.Parameters.Add("@id_tarima_origen", SqlDbType.Int).Value = item.TarimaOrigeId;
+                    //                        cmd2.Parameters.Add("@id_mp", SqlDbType.Int).Value = item.MateriaPrimaId;
+                    //                        cmd2.Parameters.Add("@lote", SqlDbType.VarChar).Value = item.Lote;
+                    //                        cmd2.Parameters.Add("@peso", SqlDbType.Decimal).Value = item.Peso;
 
-                        }
+                    //                        cmd2.ExecuteNonQuery();
+                    //                        cnx2.Close();
+                    //                    }
 
-                        break;
+                    //                }
 
+                    //                //transaction.Commit();
+
+
+                    //                cnx.Close();
+
+                    //            }
+                    //        }
+                    //        else
+                    //        {
+                    //            return;
+                    //        }
+                    //            this.DialogResult = DialogResult.OK;
+
+                    //    }
+
+                    //    break;
+                    #endregion
 
                     case (int)TipoPesaje.PesajeIndividual:
                         for (int i = 1; i <= Convert.ToInt32(seBatch.EditValue); i++)
@@ -295,7 +296,7 @@ namespace LOSA.MicroIngredientes
                                 SqlCommand cmdBar = new SqlCommand("sp_get_contar_cant_batch_pesaje_individual", cnx3);
                                 cmdBar.CommandType = CommandType.StoredProcedure;
                                 cmdBar.Parameters.AddWithValue("@id_orden_encabezado", pesaje.id_orden_pesaje_header);
-                                cmdBar.Parameters.AddWithValue("@id_rm", pesaje.MateriaPrimaID);
+                                cmdBar.Parameters.AddWithValue("@id_rm", pesaje.MateriaPrimaID); //pesaje.MateriaPrimeID = id.MD_RawMaterial
                                 int contador = Convert.ToInt32(cmdBar.ExecuteScalar());
 
                                 if (contador == 0)
@@ -315,7 +316,7 @@ namespace LOSA.MicroIngredientes
                                 cmd4.Parameters.Add("@batch_plan", SqlDbType.Int).Value = pesaje.Batch_Plan;
                                 cmd4.Parameters.Add("@date", SqlDbType.DateTime).Value = dp.Now();
                                 cmd4.Parameters.Add("@batch_real", SqlDbType.Decimal).Value =frm.peso_bascula_finish;//?
-                                cmd4.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;// IdMP;
+                                cmd4.Parameters.Add("@id_rm", SqlDbType.Int).Value = pesaje.MateriaPrimaID;// ID_RM;
                                 cmd4.Parameters.Add("@bascula", SqlDbType.VarChar).Value = bascula[frm.BasculaId-1];
                                 cmd4.Parameters.Add("@id_tipo_pesaje", SqlDbType.Int).Value = 2;
                                 cmd4.Parameters.Add("@lote", SqlDbType.VarChar).Value = tmmicro.LoteMP;//Dejar este parametro con espacios

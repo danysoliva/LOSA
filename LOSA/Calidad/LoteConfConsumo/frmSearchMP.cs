@@ -55,7 +55,7 @@ namespace LOSA.Calidad.LoteConfConsumo
                 case TipoBusqueda.BodegasALOSY:
                     break;
                 case TipoBusqueda.MaterialEmpaque:
-                    load_data_material_empaque();
+                    LoadData();
                     break;
                 case TipoBusqueda.Reproceso:
                     LoadData();
@@ -69,16 +69,19 @@ namespace LOSA.Calidad.LoteConfConsumo
 
         private void load_data_material_empaque()
         {
-            string sql = @"sp_load_items_sap_material_empaqueV2ALosy";
+            string sql = @"sp_get_lista_materias_primas";
             try
             {
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringAMS);
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@parametro_busqueda", Convert.ToInt32(TipoBusquedaActual));
+
                 dsConfigLoteConsumo1.search_mp.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsConfigLoteConsumo1.search_mp);
+                dv = new DataView(dsConfigLoteConsumo1.search_mp);
                 cn.Close();
             }
             catch (Exception ex)

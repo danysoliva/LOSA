@@ -261,18 +261,18 @@ namespace LOSA.TransaccionesMP
 
         private void btnAjustePorLote_Click(object sender, EventArgs e)
         {
-            switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
-            {
+            //switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+            //{
               
-                case GrupoUser.GrupoUsuario.Administradores:
-                    frmAsjuteInventarioPorLote frm1 = new frmAsjuteInventarioPorLote(UsuarioLogeado);
-                    if (frm1.ShowDialog() == DialogResult.OK)
-                    {
-                        load_dataPorLotes();
-                    }
-                    break;
+            //    case GrupoUser.GrupoUsuario.Administradores:
+            //        frmAsjuteInventarioPorLote frm1 = new frmAsjuteInventarioPorLote(UsuarioLogeado);
+            //        if (frm1.ShowDialog() == DialogResult.OK)
+            //        {
+            //            load_dataPorLotes();
+            //        }
+            //        break;
 
-                default:
+            //    default:
                     Funciones fn1 = new Funciones();
                     if (fn1.GetRutaAjustesInventario() == 1)
                     {
@@ -290,8 +290,8 @@ namespace LOSA.TransaccionesMP
                             load_dataPorLotes();
                         }
                     }
-                    break;
-            }
+                    //break;
+            //}
            
             
         }
