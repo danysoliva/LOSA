@@ -29,6 +29,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLiquidacionesOP));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdBuscarEmpleado = new DevExpress.XtraEditors.SimpleButton();
@@ -68,7 +69,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.colporcentaje = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colseleccionado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.tsAplicaPreaviso = new DevExpress.XtraEditors.ToggleSwitch();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -116,10 +117,11 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldias1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltotal1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dtEgreso.Properties.CalendarTimeProperties)).BeginInit();
+            this.AddDeduccion = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtEgreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtIngreso.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEgreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtIngreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSalarioMensual.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSalarioBaseDiario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSalarioPromedioMensual.Properties)).BeginInit();
@@ -497,7 +499,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.tsAplicaCesantia.Properties.Appearance.Options.UseFont = true;
             this.tsAplicaCesantia.Properties.OffText = "No";
             this.tsAplicaCesantia.Properties.OnText = "Si";
-            this.tsAplicaCesantia.Size = new System.Drawing.Size(99, 26);
+            this.tsAplicaCesantia.Size = new System.Drawing.Size(99, 20);
             this.tsAplicaCesantia.TabIndex = 117;
             this.tsAplicaCesantia.Toggled += new System.EventHandler(this.tsAplicaCesantia_Toggled);
             // 
@@ -619,7 +621,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.tsAplicaPreaviso.Properties.Appearance.Options.UseFont = true;
             this.tsAplicaPreaviso.Properties.OffText = "No";
             this.tsAplicaPreaviso.Properties.OnText = "Si";
-            this.tsAplicaPreaviso.Size = new System.Drawing.Size(99, 26);
+            this.tsAplicaPreaviso.Size = new System.Drawing.Size(99, 20);
             this.tsAplicaPreaviso.TabIndex = 122;
             this.tsAplicaPreaviso.Toggled += new System.EventHandler(this.tsAplicaPreaviso_Toggled_1);
             // 
@@ -732,7 +734,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.xtraTabPage3.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage3.Controls.Add(this.gridControl4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(710, 216);
+            this.xtraTabPage3.Size = new System.Drawing.Size(714, 219);
             this.xtraTabPage3.Text = "Ultimos 6 Meses de Salario";
             // 
             // gridControl4
@@ -743,7 +745,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.gridControl4.Location = new System.Drawing.Point(0, 0);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(710, 216);
+            this.gridControl4.Size = new System.Drawing.Size(714, 219);
             this.gridControl4.TabIndex = 0;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -872,6 +874,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.groupControl2.Appearance.Options.UseFont = true;
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.AddDeduccion);
             this.groupControl2.Controls.Add(this.gridDeducciones);
             this.groupControl2.Location = new System.Drawing.Point(16, 485);
             this.groupControl2.Name = "groupControl2";
@@ -1091,6 +1094,19 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.coltotal1.VisibleIndex = 2;
             this.coltotal1.Width = 160;
             // 
+            // AddDeduccion
+            // 
+            this.AddDeduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.AddDeduccion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.AddDeduccion.Location = new System.Drawing.Point(95, 1);
+            this.AddDeduccion.Name = "AddDeduccion";
+            this.AddDeduccion.Size = new System.Drawing.Size(29, 21);
+            this.AddDeduccion.TabIndex = 134;
+            this.AddDeduccion.Tag = "Agregar Item o Servicio";
+            this.AddDeduccion.ToolTip = "Guardar";
+            this.AddDeduccion.Visible = false;
+            this.AddDeduccion.Click += new System.EventHandler(this.AddDeduccion_Click);
+            // 
             // frmLiquidacionesOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1277,5 +1293,6 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
         private DevExpress.XtraGrid.Columns.GridColumn coldias1;
         private DevExpress.XtraGrid.Columns.GridColumn coltotal1;
+        public DevExpress.XtraEditors.SimpleButton AddDeduccion;
     }
 }
