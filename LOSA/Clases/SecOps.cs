@@ -583,5 +583,75 @@ namespace LOSA.Clases
 				</li>
             </ul>";
         }
+
+        public void SendEmailTicketFollowUP(EmailTicketParams emailTicketParams)
+        {
+            MailMessage message = new MailMessage();
+            SmtpClient smtp = new SmtpClient();
+
+            message.From = new MailAddress("apps@aquafeedhn.net", "Aquafeed Apps");
+            message.To.Add(new MailAddress(emailTicketParams.Destinatario));
+
+            foreach (var item in emailTicketParams.CorreosCC)
+            {
+                if (string.IsNullOrEmpty(item))
+                {
+
+                }
+                else
+                    message.CC.Add(new MailAddress(item));
+
+            }
+
+            message.Subject = emailTicketParams.Subject;
+
+            if (emailTicketParams.IsHTML == true)
+            {
+                message.Body = ParseTicketHTMLFormatBodyFollowUp(emailTicketParams.Nombre
+                                                                , emailTicketParams.Body
+                                                                , emailTicketParams.TicketID.ToString().PadLeft(9, '0')
+                                                                , emailTicketParams.Estado
+                                                                , emailTicketParams.UsuarioAsignado
+                                                                , emailTicketParams.PrioridadTicket
+                                                                , emailTicketParams.Subject
+                                                                , emailTicketParams.RequerInicial);
+
+            }
+            else
+            {
+                message.Body = emailTicketParams.Body;
+            }
+            message.IsBodyHtml = emailTicketParams.IsHTML;
+
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.Host = "outlook.office365.com";
+            smtp.Credentials = new NetworkCredential("apps@aquafeedhn.net", "$Applications1620&$");
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            try
+            {
+                smtp.Send(message);
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public string ParseTicketHTMLFormatBodyFollowUp(string Nombre, string body, string ticket, string estado, string usuario_asignado, string prioridad, string titulo, string reque_descripcion)
+        {
+            return @"<p>Hola " + Nombre + @",</p>
+            <p> Al ticket [#" + ticket + @"] se le a dado seguimiento.</p>
+            <ul>
+                <li> <b>Requerimiento:</b> " + titulo + @"</li>
+                <li> <b>Descripcion Requerimiento:</b> " + reque_descripcion + @"</li>
+                <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
+                <li> <b>Estado: </b>" + estado + @"</li>
+                <li> <b>Prioridad:</b> " + prioridad + @" </li>
+                <li> <b>Seguimiento:</b> " + body + @" </li>
+            </ul>
+            <p> El Ticket sigue en proceso de realizacion. Se le informara al momento de su conclusion.</p>
+            <p> IT DEPARTMENT 2023. </p>";
+        }
     }
 }

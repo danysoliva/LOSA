@@ -1600,5 +1600,14 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 }
             }
         }
+
+        private void AddDeduccion_Click(object sender, EventArgs e)
+        {
+            if (Id_liquidacion_ > 0)
+            {
+
+            }
+
+        }
     }
 }

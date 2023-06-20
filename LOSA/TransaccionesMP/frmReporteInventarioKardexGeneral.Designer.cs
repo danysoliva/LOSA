@@ -246,10 +246,9 @@ namespace LOSA.TransaccionesMP
             this.btnClose.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(2504, 12);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnClose.Location = new System.Drawing.Point(1252, 6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(228, 108);
+            this.btnClose.Size = new System.Drawing.Size(114, 56);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Cerrar";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -271,8 +270,7 @@ namespace LOSA.TransaccionesMP
             this.tabPane1.Controls.Add(this.tabNavigationPage4);
             this.tabPane1.Controls.Add(this.tabNavigationPage5);
             this.tabPane1.Controls.Add(this.tabNavigationPage6);
-            this.tabPane1.Location = new System.Drawing.Point(8, 144);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPane1.Location = new System.Drawing.Point(4, 75);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
@@ -281,9 +279,9 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4,
             this.tabNavigationPage5,
             this.tabNavigationPage6});
-            this.tabPane1.RegularSize = new System.Drawing.Size(2724, 1308);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1362, 478);
             this.tabPane1.SelectedPage = this.tabNavigationPage2;
-            this.tabPane1.Size = new System.Drawing.Size(2724, 1308);
+            this.tabPane1.Size = new System.Drawing.Size(1362, 478);
             this.tabPane1.TabIndex = 1;
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane1_SelectedPageChanged);
             // 
@@ -292,9 +290,8 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage1.Caption = "Resumen por lote";
             this.tabNavigationPage1.Controls.Add(this.cmdActualizarResumenPorLote);
             this.tabNavigationPage1.Controls.Add(this.grd_data);
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(2724, 1242);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1362, 445);
             // 
             // cmdActualizarResumenPorLote
             // 
@@ -302,10 +299,9 @@ namespace LOSA.TransaccionesMP
             this.cmdActualizarResumenPorLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.cmdActualizarResumenPorLote.Appearance.Options.UseFont = true;
             this.cmdActualizarResumenPorLote.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdActualizarResumenPorLote.ImageOptions.SvgImage")));
-            this.cmdActualizarResumenPorLote.Location = new System.Drawing.Point(2442, 12);
-            this.cmdActualizarResumenPorLote.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdActualizarResumenPorLote.Location = new System.Drawing.Point(1221, 6);
             this.cmdActualizarResumenPorLote.Name = "cmdActualizarResumenPorLote";
-            this.cmdActualizarResumenPorLote.Size = new System.Drawing.Size(228, 75);
+            this.cmdActualizarResumenPorLote.Size = new System.Drawing.Size(114, 39);
             this.cmdActualizarResumenPorLote.TabIndex = 3;
             this.cmdActualizarResumenPorLote.Text = "Actualizar";
             this.cmdActualizarResumenPorLote.Click += new System.EventHandler(this.cmdActualizarResumenPorLote_Click);
@@ -317,15 +313,13 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "kardex_by_lot";
             this.grd_data.DataSource = this.dsTarima1;
-            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grd_data.Location = new System.Drawing.Point(0, 92);
+            this.grd_data.Location = new System.Drawing.Point(0, 48);
             this.grd_data.MainView = this.grdv_data;
-            this.grd_data.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_logmovimiento,
             this.buttonEdit_AjusteINV});
-            this.grd_data.Size = new System.Drawing.Size(2724, 1150);
+            this.grd_data.Size = new System.Drawing.Size(1362, 397);
             this.grd_data.TabIndex = 0;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -376,7 +370,6 @@ namespace LOSA.TransaccionesMP
             this.col_ajuste,
             this.colentrada,
             this.colTIpoName});
-            this.grdv_data.DetailHeight = 673;
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.LevelIndent = 0;
             this.grdv_data.Name = "grdv_data";
@@ -391,115 +384,101 @@ namespace LOSA.TransaccionesMP
             this.colexistencia.DisplayFormat.FormatString = "n2";
             this.colexistencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia.FieldName = "existencia";
-            this.colexistencia.MinWidth = 40;
             this.colexistencia.Name = "colexistencia";
             this.colexistencia.OptionsColumn.AllowEdit = false;
             this.colexistencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.colexistencia.Visible = true;
             this.colexistencia.VisibleIndex = 6;
-            this.colexistencia.Width = 332;
+            this.colexistencia.Width = 166;
             // 
             // colnombre_comercial
             // 
             this.colnombre_comercial.Caption = "Materia Prima";
             this.colnombre_comercial.FieldName = "nombre_comercial";
-            this.colnombre_comercial.MinWidth = 40;
             this.colnombre_comercial.Name = "colnombre_comercial";
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 1;
-            this.colnombre_comercial.Width = 534;
+            this.colnombre_comercial.Width = 267;
             // 
             // colfecha_vence
             // 
             this.colfecha_vence.Caption = "F. Vencimiento";
             this.colfecha_vence.FieldName = "fecha_vence";
-            this.colfecha_vence.MinWidth = 40;
             this.colfecha_vence.Name = "colfecha_vence";
             this.colfecha_vence.OptionsColumn.AllowEdit = false;
-            this.colfecha_vence.Width = 196;
+            this.colfecha_vence.Width = 98;
             // 
             // colfecha_produccion
             // 
             this.colfecha_produccion.Caption = "F. Produccion";
             this.colfecha_produccion.FieldName = "fecha_produccion";
-            this.colfecha_produccion.MinWidth = 40;
             this.colfecha_produccion.Name = "colfecha_produccion";
             this.colfecha_produccion.OptionsColumn.AllowEdit = false;
-            this.colfecha_produccion.Width = 196;
+            this.colfecha_produccion.Width = 98;
             // 
             // colid_mp
             // 
             this.colid_mp.FieldName = "id_mp";
-            this.colid_mp.MinWidth = 40;
             this.colid_mp.Name = "colid_mp";
             this.colid_mp.OptionsColumn.AllowEdit = false;
-            this.colid_mp.Width = 150;
             // 
             // collote
             // 
             this.collote.Caption = "Lote";
             this.collote.FieldName = "lote";
-            this.collote.MinWidth = 40;
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 3;
-            this.collote.Width = 308;
+            this.collote.Width = 154;
             // 
             // coldias
             // 
             this.coldias.Caption = "Días";
             this.coldias.FieldName = "dias";
-            this.coldias.MinWidth = 40;
             this.coldias.Name = "coldias";
             this.coldias.OptionsColumn.AllowEdit = false;
-            this.coldias.Width = 112;
+            this.coldias.Width = 56;
             // 
             // colfecha_ingreso
             // 
             this.colfecha_ingreso.Caption = "F Ingreso";
             this.colfecha_ingreso.FieldName = "fecha_ingreso";
-            this.colfecha_ingreso.MinWidth = 40;
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
-            this.colfecha_ingreso.Width = 158;
+            this.colfecha_ingreso.Width = 79;
             // 
             // colnumero_transaccion
             // 
             this.colnumero_transaccion.Caption = "N Ingreso";
             this.colnumero_transaccion.FieldName = "numero_transaccion";
-            this.colnumero_transaccion.MinWidth = 40;
             this.colnumero_transaccion.Name = "colnumero_transaccion";
             this.colnumero_transaccion.OptionsColumn.AllowEdit = false;
-            this.colnumero_transaccion.Width = 260;
+            this.colnumero_transaccion.Width = 130;
             // 
             // colcproveedor
             // 
             this.colcproveedor.FieldName = "cproveedor";
-            this.colcproveedor.MinWidth = 40;
             this.colcproveedor.Name = "colcproveedor";
             this.colcproveedor.OptionsColumn.AllowEdit = false;
-            this.colcproveedor.Width = 150;
             // 
             // colproveedor
             // 
             this.colproveedor.Caption = "Proveedor";
             this.colproveedor.FieldName = "proveedor";
-            this.colproveedor.MinWidth = 40;
             this.colproveedor.Name = "colproveedor";
             this.colproveedor.OptionsColumn.AllowEdit = false;
-            this.colproveedor.Width = 292;
+            this.colproveedor.Width = 146;
             // 
             // colcodigo1
             // 
             this.colcodigo1.Caption = "Codigo";
             this.colcodigo1.FieldName = "codigo";
-            this.colcodigo1.MinWidth = 40;
             this.colcodigo1.Name = "colcodigo1";
             this.colcodigo1.OptionsColumn.AllowEdit = false;
-            this.colcodigo1.Width = 108;
+            this.colcodigo1.Width = 54;
             // 
             // colingreso
             // 
@@ -507,10 +486,9 @@ namespace LOSA.TransaccionesMP
             this.colingreso.DisplayFormat.FormatString = "{0:#,###,##0.00} Kg.";
             this.colingreso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colingreso.FieldName = "ingreso";
-            this.colingreso.MinWidth = 40;
             this.colingreso.Name = "colingreso";
             this.colingreso.OptionsColumn.AllowEdit = false;
-            this.colingreso.Width = 190;
+            this.colingreso.Width = 95;
             // 
             // colsalidas
             // 
@@ -518,29 +496,26 @@ namespace LOSA.TransaccionesMP
             this.colsalidas.DisplayFormat.FormatString = "{0:#,###,##0.00} Kg.";
             this.colsalidas.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsalidas.FieldName = "salidas";
-            this.colsalidas.MinWidth = 40;
             this.colsalidas.Name = "colsalidas";
             this.colsalidas.OptionsColumn.AllowEdit = false;
-            this.colsalidas.Width = 160;
+            this.colsalidas.Width = 80;
             // 
             // colcode_sap1
             // 
             this.colcode_sap1.Caption = "Codigo SAP";
             this.colcode_sap1.FieldName = "code_sap";
-            this.colcode_sap1.MinWidth = 40;
             this.colcode_sap1.Name = "colcode_sap1";
             this.colcode_sap1.OptionsColumn.AllowEdit = false;
             this.colcode_sap1.Visible = true;
             this.colcode_sap1.VisibleIndex = 0;
-            this.colcode_sap1.Width = 168;
+            this.colcode_sap1.Width = 84;
             // 
             // colLog
             // 
             this.colLog.Caption = "Log de movimiento";
             this.colLog.ColumnEdit = this.btn_logmovimiento;
-            this.colLog.MinWidth = 40;
             this.colLog.Name = "colLog";
-            this.colLog.Width = 94;
+            this.colLog.Width = 47;
             // 
             // btn_logmovimiento
             // 
@@ -558,22 +533,20 @@ namespace LOSA.TransaccionesMP
             this.colsalida.DisplayFormat.FormatString = "n2";
             this.colsalida.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsalida.FieldName = "salida";
-            this.colsalida.MinWidth = 40;
             this.colsalida.Name = "colsalida";
             this.colsalida.OptionsColumn.AllowEdit = false;
             this.colsalida.Visible = true;
             this.colsalida.VisibleIndex = 5;
-            this.colsalida.Width = 302;
+            this.colsalida.Width = 151;
             // 
             // col_ajuste
             // 
             this.col_ajuste.Caption = "Ajuste";
             this.col_ajuste.ColumnEdit = this.buttonEdit_AjusteINV;
-            this.col_ajuste.MinWidth = 40;
             this.col_ajuste.Name = "col_ajuste";
             this.col_ajuste.Visible = true;
             this.col_ajuste.VisibleIndex = 7;
-            this.col_ajuste.Width = 170;
+            this.col_ajuste.Width = 85;
             // 
             // buttonEdit_AjusteINV
             // 
@@ -591,32 +564,29 @@ namespace LOSA.TransaccionesMP
             this.colentrada.DisplayFormat.FormatString = "n2";
             this.colentrada.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colentrada.FieldName = "entrada";
-            this.colentrada.MinWidth = 40;
             this.colentrada.Name = "colentrada";
             this.colentrada.OptionsColumn.AllowEdit = false;
             this.colentrada.Visible = true;
             this.colentrada.VisibleIndex = 4;
-            this.colentrada.Width = 314;
+            this.colentrada.Width = 157;
             // 
             // colTIpoName
             // 
             this.colTIpoName.Caption = "Tipo Ingreso";
             this.colTIpoName.FieldName = "TIpoName";
-            this.colTIpoName.MinWidth = 40;
             this.colTIpoName.Name = "colTIpoName";
             this.colTIpoName.OptionsColumn.AllowEdit = false;
             this.colTIpoName.Visible = true;
             this.colTIpoName.VisibleIndex = 2;
-            this.colTIpoName.Width = 206;
+            this.colTIpoName.Width = 103;
             // 
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Resumen por materia prima";
             this.tabNavigationPage2.Controls.Add(this.btnRefreshRptMP);
             this.tabNavigationPage2.Controls.Add(this.grd_data_resumen);
-            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(2724, 1242);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRefreshRptMP
             // 
@@ -624,10 +594,9 @@ namespace LOSA.TransaccionesMP
             this.btnRefreshRptMP.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnRefreshRptMP.Appearance.Options.UseFont = true;
             this.btnRefreshRptMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefreshRptMP.ImageOptions.SvgImage")));
-            this.btnRefreshRptMP.Location = new System.Drawing.Point(2442, 12);
-            this.btnRefreshRptMP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRefreshRptMP.Location = new System.Drawing.Point(1221, 6);
             this.btnRefreshRptMP.Name = "btnRefreshRptMP";
-            this.btnRefreshRptMP.Size = new System.Drawing.Size(228, 75);
+            this.btnRefreshRptMP.Size = new System.Drawing.Size(114, 39);
             this.btnRefreshRptMP.TabIndex = 4;
             this.btnRefreshRptMP.Text = "Actualizar";
             this.btnRefreshRptMP.Click += new System.EventHandler(this.btnRefreshRptMP_Click);
@@ -639,12 +608,10 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data_resumen.DataMember = "totales";
             this.grd_data_resumen.DataSource = this.dsTarima1;
-            this.grd_data_resumen.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grd_data_resumen.Location = new System.Drawing.Point(0, 92);
+            this.grd_data_resumen.Location = new System.Drawing.Point(0, 48);
             this.grd_data_resumen.MainView = this.grdv_data_resumen;
-            this.grd_data_resumen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_data_resumen.Name = "grd_data_resumen";
-            this.grd_data_resumen.Size = new System.Drawing.Size(2724, 1242);
+            this.grd_data_resumen.Size = new System.Drawing.Size(1362, 397);
             this.grd_data_resumen.TabIndex = 0;
             this.grd_data_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data_resumen});
@@ -679,7 +646,6 @@ namespace LOSA.TransaccionesMP
             this.colcode_sap,
             this.colTipoId,
             this.colTipoName1});
-            this.grdv_data_resumen.DetailHeight = 673;
             this.grdv_data_resumen.GridControl = this.grd_data_resumen;
             this.grdv_data_resumen.LevelIndent = 0;
             this.grdv_data_resumen.Name = "grdv_data_resumen";
@@ -691,20 +657,17 @@ namespace LOSA.TransaccionesMP
             // colid_mp1
             // 
             this.colid_mp1.FieldName = "id_mp";
-            this.colid_mp1.MinWidth = 40;
             this.colid_mp1.Name = "colid_mp1";
-            this.colid_mp1.Width = 150;
             // 
             // colnombre_comercial1
             // 
             this.colnombre_comercial1.Caption = "MP";
             this.colnombre_comercial1.FieldName = "nombre_comercial";
-            this.colnombre_comercial1.MinWidth = 40;
             this.colnombre_comercial1.Name = "colnombre_comercial1";
             this.colnombre_comercial1.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial1.Visible = true;
             this.colnombre_comercial1.VisibleIndex = 1;
-            this.colnombre_comercial1.Width = 496;
+            this.colnombre_comercial1.Width = 248;
             // 
             // colexistencia1
             // 
@@ -712,61 +675,54 @@ namespace LOSA.TransaccionesMP
             this.colexistencia1.DisplayFormat.FormatString = "n2";
             this.colexistencia1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia1.FieldName = "existencia";
-            this.colexistencia1.MinWidth = 40;
             this.colexistencia1.Name = "colexistencia1";
             this.colexistencia1.OptionsColumn.AllowEdit = false;
             this.colexistencia1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.colexistencia1.Visible = true;
             this.colexistencia1.VisibleIndex = 3;
-            this.colexistencia1.Width = 1640;
+            this.colexistencia1.Width = 820;
             // 
             // colcodigo
             // 
             this.colcodigo.Caption = "Codigo";
             this.colcodigo.FieldName = "codigo";
-            this.colcodigo.MinWidth = 40;
             this.colcodigo.Name = "colcodigo";
             this.colcodigo.OptionsColumn.AllowEdit = false;
-            this.colcodigo.Width = 214;
+            this.colcodigo.Width = 107;
             // 
             // colcode_sap
             // 
             this.colcode_sap.Caption = "SAP";
             this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.MinWidth = 40;
             this.colcode_sap.Name = "colcode_sap";
             this.colcode_sap.OptionsColumn.AllowEdit = false;
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 274;
+            this.colcode_sap.Width = 137;
             // 
             // colTipoId
             // 
             this.colTipoId.FieldName = "TipoId";
-            this.colTipoId.MinWidth = 40;
             this.colTipoId.Name = "colTipoId";
-            this.colTipoId.Width = 150;
             // 
             // colTipoName1
             // 
             this.colTipoName1.Caption = "Tipo Ingreso";
             this.colTipoName1.FieldName = "TipoName";
-            this.colTipoName1.MinWidth = 40;
             this.colTipoName1.Name = "colTipoName1";
             this.colTipoName1.OptionsColumn.AllowEdit = false;
             this.colTipoName1.Visible = true;
             this.colTipoName1.VisibleIndex = 2;
-            this.colTipoName1.Width = 278;
+            this.colTipoName1.Width = 139;
             // 
             // tabNavigationPage3
             // 
             this.tabNavigationPage3.Caption = "En Bodega PRD";
             this.tabNavigationPage3.Controls.Add(this.btnRptPRD);
             this.tabNavigationPage3.Controls.Add(this.gridControl1);
-            this.tabNavigationPage3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(2724, 1242);
+            this.tabNavigationPage3.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRptPRD
             // 
@@ -774,10 +730,9 @@ namespace LOSA.TransaccionesMP
             this.btnRptPRD.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnRptPRD.Appearance.Options.UseFont = true;
             this.btnRptPRD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRptPRD.ImageOptions.SvgImage")));
-            this.btnRptPRD.Location = new System.Drawing.Point(2442, 12);
-            this.btnRptPRD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRptPRD.Location = new System.Drawing.Point(1221, 6);
             this.btnRptPRD.Name = "btnRptPRD";
-            this.btnRptPRD.Size = new System.Drawing.Size(228, 75);
+            this.btnRptPRD.Size = new System.Drawing.Size(114, 39);
             this.btnRptPRD.TabIndex = 5;
             this.btnRptPRD.Text = "Actualizar";
             this.btnRptPRD.Click += new System.EventHandler(this.btnRptPRD_Click);
@@ -789,15 +744,13 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "informacionPRD";
             this.gridControl1.DataSource = this.dsTarima1;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.gridControl1.Location = new System.Drawing.Point(16, 94);
+            this.gridControl1.Location = new System.Drawing.Point(8, 49);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(2708, 1142);
+            this.gridControl1.Size = new System.Drawing.Size(1354, 393);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -840,7 +793,6 @@ namespace LOSA.TransaccionesMP
             this.gridColumn15,
             this.gridColumn16,
             this.gridColumn17});
-            this.gridView1.DetailHeight = 673;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.LevelIndent = 0;
             this.gridView1.Name = "gridView1";
@@ -854,115 +806,101 @@ namespace LOSA.TransaccionesMP
             this.gridColumn1.DisplayFormat.FormatString = "n2";
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "existencia";
-            this.gridColumn1.MinWidth = 40;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 5;
-            this.gridColumn1.Width = 174;
+            this.gridColumn1.Width = 87;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Materia Prima";
             this.gridColumn2.FieldName = "nombre_comercial";
-            this.gridColumn2.MinWidth = 40;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 344;
+            this.gridColumn2.Width = 172;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "F. Vencimiento";
             this.gridColumn3.FieldName = "fecha_vence";
-            this.gridColumn3.MinWidth = 40;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Width = 196;
+            this.gridColumn3.Width = 98;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "F. Produccion";
             this.gridColumn4.FieldName = "fecha_produccion";
-            this.gridColumn4.MinWidth = 40;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.Width = 196;
+            this.gridColumn4.Width = 98;
             // 
             // gridColumn5
             // 
             this.gridColumn5.FieldName = "id_mp";
-            this.gridColumn5.MinWidth = 40;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.Width = 150;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Lote";
             this.gridColumn6.FieldName = "lote";
-            this.gridColumn6.MinWidth = 40;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
-            this.gridColumn6.Width = 196;
+            this.gridColumn6.Width = 98;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Días";
             this.gridColumn7.FieldName = "dias";
-            this.gridColumn7.MinWidth = 40;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.Width = 112;
+            this.gridColumn7.Width = 56;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "F Ingreso";
             this.gridColumn8.FieldName = "fecha_ingreso";
-            this.gridColumn8.MinWidth = 40;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.Width = 158;
+            this.gridColumn8.Width = 79;
             // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "N Ingreso";
             this.gridColumn9.FieldName = "numero_transaccion";
-            this.gridColumn9.MinWidth = 40;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
-            this.gridColumn9.Width = 168;
+            this.gridColumn9.Width = 84;
             // 
             // gridColumn10
             // 
             this.gridColumn10.FieldName = "cproveedor";
-            this.gridColumn10.MinWidth = 40;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.Width = 150;
             // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "Proveedor";
             this.gridColumn11.FieldName = "proveedor";
-            this.gridColumn11.MinWidth = 40;
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
-            this.gridColumn11.Width = 292;
+            this.gridColumn11.Width = 146;
             // 
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Codigo";
             this.gridColumn12.FieldName = "codigo";
-            this.gridColumn12.MinWidth = 40;
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
-            this.gridColumn12.Width = 108;
+            this.gridColumn12.Width = 54;
             // 
             // gridColumn13
             // 
@@ -970,12 +908,11 @@ namespace LOSA.TransaccionesMP
             this.gridColumn13.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
             this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn13.FieldName = "ingreso";
-            this.gridColumn13.MinWidth = 40;
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 3;
-            this.gridColumn13.Width = 190;
+            this.gridColumn13.Width = 95;
             // 
             // gridColumn14
             // 
@@ -983,31 +920,28 @@ namespace LOSA.TransaccionesMP
             this.gridColumn14.DisplayFormat.FormatString = "{0:0.##.##} Kg.";
             this.gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn14.FieldName = "salidas";
-            this.gridColumn14.MinWidth = 40;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 4;
-            this.gridColumn14.Width = 160;
+            this.gridColumn14.Width = 80;
             // 
             // gridColumn15
             // 
             this.gridColumn15.Caption = "Codigo SAP";
             this.gridColumn15.FieldName = "code_sap";
-            this.gridColumn15.MinWidth = 40;
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 0;
-            this.gridColumn15.Width = 108;
+            this.gridColumn15.Width = 54;
             // 
             // gridColumn16
             // 
             this.gridColumn16.Caption = "Log de movimiento";
             this.gridColumn16.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.gridColumn16.MinWidth = 40;
             this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Width = 146;
+            this.gridColumn16.Width = 73;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -1022,9 +956,8 @@ namespace LOSA.TransaccionesMP
             // 
             this.gridColumn17.Caption = "Ajuste";
             this.gridColumn17.ColumnEdit = this.repositoryItemButtonEdit2;
-            this.gridColumn17.MinWidth = 40;
             this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Width = 140;
+            this.gridColumn17.Width = 70;
             // 
             // repositoryItemButtonEdit2
             // 
@@ -1040,9 +973,8 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4.Caption = "Resumen por MP y Bodega";
             this.tabNavigationPage4.Controls.Add(this.btnRptMPyBod);
             this.tabNavigationPage4.Controls.Add(this.gridControl2);
-            this.tabNavigationPage4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNavigationPage4.Name = "tabNavigationPage4";
-            this.tabNavigationPage4.Size = new System.Drawing.Size(2724, 1242);
+            this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRptMPyBod
             // 
@@ -1050,10 +982,9 @@ namespace LOSA.TransaccionesMP
             this.btnRptMPyBod.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnRptMPyBod.Appearance.Options.UseFont = true;
             this.btnRptMPyBod.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRptMPyBod.ImageOptions.SvgImage")));
-            this.btnRptMPyBod.Location = new System.Drawing.Point(2436, 12);
-            this.btnRptMPyBod.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRptMPyBod.Location = new System.Drawing.Point(1218, 6);
             this.btnRptMPyBod.Name = "btnRptMPyBod";
-            this.btnRptMPyBod.Size = new System.Drawing.Size(228, 75);
+            this.btnRptMPyBod.Size = new System.Drawing.Size(114, 39);
             this.btnRptMPyBod.TabIndex = 6;
             this.btnRptMPyBod.Text = "Actualizar";
             this.btnRptMPyBod.Click += new System.EventHandler(this.btnRptMPyBod_Click);
@@ -1065,12 +996,10 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl2.DataMember = "totales_bodegav2";
             this.gridControl2.DataSource = this.dsTarima1;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.gridControl2.Location = new System.Drawing.Point(16, 94);
+            this.gridControl2.Location = new System.Drawing.Point(8, 49);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(2702, 1163);
+            this.gridControl2.Size = new System.Drawing.Size(1351, 404);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1110,7 +1039,6 @@ namespace LOSA.TransaccionesMP
             this.colpresentacion,
             this.colproveedor1,
             this.colTipoName2});
-            this.gridView2.DetailHeight = 673;
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.GroupCount = 1;
             this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -1129,20 +1057,17 @@ namespace LOSA.TransaccionesMP
             // gridColumn18
             // 
             this.gridColumn18.FieldName = "id_mp";
-            this.gridColumn18.MinWidth = 40;
             this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Width = 150;
             // 
             // gridColumn19
             // 
             this.gridColumn19.Caption = "MP";
             this.gridColumn19.FieldName = "nombre_comercial";
-            this.gridColumn19.MinWidth = 40;
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.OptionsColumn.AllowEdit = false;
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 1;
-            this.gridColumn19.Width = 672;
+            this.gridColumn19.Width = 336;
             // 
             // gridColumn20
             // 
@@ -1150,118 +1075,106 @@ namespace LOSA.TransaccionesMP
             this.gridColumn20.DisplayFormat.FormatString = "n2";
             this.gridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn20.FieldName = "existencia";
-            this.gridColumn20.MinWidth = 40;
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.OptionsColumn.AllowEdit = false;
             this.gridColumn20.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 3;
-            this.gridColumn20.Width = 322;
+            this.gridColumn20.Width = 161;
             // 
             // gridColumn21
             // 
             this.gridColumn21.Caption = "Codigo";
             this.gridColumn21.FieldName = "codigo";
-            this.gridColumn21.MinWidth = 40;
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.OptionsColumn.AllowEdit = false;
-            this.gridColumn21.Width = 214;
+            this.gridColumn21.Width = 107;
             // 
             // gridColumn22
             // 
             this.gridColumn22.Caption = "Item Code";
             this.gridColumn22.FieldName = "code_sap";
-            this.gridColumn22.MinWidth = 40;
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.OptionsColumn.AllowEdit = false;
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 0;
-            this.gridColumn22.Width = 272;
+            this.gridColumn22.Width = 136;
             // 
             // colid_bodega
             // 
             this.colid_bodega.FieldName = "id_bodega";
-            this.colid_bodega.MinWidth = 40;
             this.colid_bodega.Name = "colid_bodega";
-            this.colid_bodega.Width = 150;
             // 
             // colwhs_equivalente
             // 
             this.colwhs_equivalente.Caption = "Bodega";
             this.colwhs_equivalente.FieldName = "whs_equivalente";
-            this.colwhs_equivalente.MinWidth = 40;
             this.colwhs_equivalente.Name = "colwhs_equivalente";
             this.colwhs_equivalente.OptionsColumn.AllowEdit = false;
             this.colwhs_equivalente.Visible = true;
             this.colwhs_equivalente.VisibleIndex = 1;
-            this.colwhs_equivalente.Width = 226;
+            this.colwhs_equivalente.Width = 113;
             // 
             // colexistencia_tm
             // 
             this.colexistencia_tm.DisplayFormat.FormatString = "n2";
             this.colexistencia_tm.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_tm.FieldName = "existencia_tm";
-            this.colexistencia_tm.MinWidth = 40;
             this.colexistencia_tm.Name = "colexistencia_tm";
             this.colexistencia_tm.OptionsColumn.AllowEdit = false;
             this.colexistencia_tm.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", "SUMA={0:##,###,##0.##} TM")});
             this.colexistencia_tm.Visible = true;
             this.colexistencia_tm.VisibleIndex = 4;
-            this.colexistencia_tm.Width = 286;
+            this.colexistencia_tm.Width = 143;
             // 
             // colexistencia_ud
             // 
             this.colexistencia_ud.DisplayFormat.FormatString = "###,###,##0 Ud";
             this.colexistencia_ud.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_ud.FieldName = "existencia_ud";
-            this.colexistencia_ud.MinWidth = 40;
             this.colexistencia_ud.Name = "colexistencia_ud";
             this.colexistencia_ud.OptionsColumn.AllowEdit = false;
             this.colexistencia_ud.Visible = true;
             this.colexistencia_ud.VisibleIndex = 2;
-            this.colexistencia_ud.Width = 228;
+            this.colexistencia_ud.Width = 114;
             // 
             // colpresentacion
             // 
             this.colpresentacion.Caption = "Presentación";
             this.colpresentacion.FieldName = "presentacion";
-            this.colpresentacion.MinWidth = 40;
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 5;
-            this.colpresentacion.Width = 204;
+            this.colpresentacion.Width = 102;
             // 
             // colproveedor1
             // 
             this.colproveedor1.FieldName = "proveedor";
-            this.colproveedor1.MinWidth = 40;
             this.colproveedor1.Name = "colproveedor1";
             this.colproveedor1.OptionsColumn.AllowEdit = false;
             this.colproveedor1.Visible = true;
             this.colproveedor1.VisibleIndex = 6;
-            this.colproveedor1.Width = 512;
+            this.colproveedor1.Width = 256;
             // 
             // colTipoName2
             // 
             this.colTipoName2.FieldName = "TipoName";
-            this.colTipoName2.MinWidth = 40;
             this.colTipoName2.Name = "colTipoName2";
             this.colTipoName2.OptionsColumn.AllowEdit = false;
             this.colTipoName2.Visible = true;
             this.colTipoName2.VisibleIndex = 7;
-            this.colTipoName2.Width = 216;
+            this.colTipoName2.Width = 108;
             // 
             // tabNavigationPage5
             // 
             this.tabNavigationPage5.Caption = "Reproceso";
             this.tabNavigationPage5.Controls.Add(this.btnActReproceso);
             this.tabNavigationPage5.Controls.Add(this.gridReproceso);
-            this.tabNavigationPage5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(2724, 1242);
+            this.tabNavigationPage5.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnActReproceso
             // 
@@ -1269,10 +1182,9 @@ namespace LOSA.TransaccionesMP
             this.btnActReproceso.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnActReproceso.Appearance.Options.UseFont = true;
             this.btnActReproceso.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnActReproceso.ImageOptions.SvgImage")));
-            this.btnActReproceso.Location = new System.Drawing.Point(2488, 8);
-            this.btnActReproceso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnActReproceso.Location = new System.Drawing.Point(1244, 4);
             this.btnActReproceso.Name = "btnActReproceso";
-            this.btnActReproceso.Size = new System.Drawing.Size(228, 75);
+            this.btnActReproceso.Size = new System.Drawing.Size(114, 39);
             this.btnActReproceso.TabIndex = 7;
             this.btnActReproceso.Text = "Actualizar";
             this.btnActReproceso.Click += new System.EventHandler(this.btnActReproceso_Click);
@@ -1284,14 +1196,12 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridReproceso.DataMember = "kardex_by_Reproceso";
             this.gridReproceso.DataSource = this.dsTarima1;
-            this.gridReproceso.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.gridReproceso.Location = new System.Drawing.Point(6, 92);
+            this.gridReproceso.Location = new System.Drawing.Point(3, 48);
             this.gridReproceso.MainView = this.gridView3;
-            this.gridReproceso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gridReproceso.Name = "gridReproceso";
             this.gridReproceso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmAjusteReproceso});
-            this.gridReproceso.Size = new System.Drawing.Size(2712, 1140);
+            this.gridReproceso.Size = new System.Drawing.Size(1356, 392);
             this.gridReproceso.TabIndex = 1;
             this.gridReproceso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1331,7 +1241,6 @@ namespace LOSA.TransaccionesMP
             this.colunidades_totales,
             this.gridColumn23,
             this.colbodega});
-            this.gridView3.DetailHeight = 673;
             this.gridView3.GridControl = this.gridReproceso;
             this.gridView3.LevelIndent = 0;
             this.gridView3.Name = "gridView3";
@@ -1344,137 +1253,123 @@ namespace LOSA.TransaccionesMP
             this.colexistencia2.DisplayFormat.FormatString = "{0:#,###,##0.00} Kg.";
             this.colexistencia2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia2.FieldName = "existencia";
-            this.colexistencia2.MinWidth = 40;
             this.colexistencia2.Name = "colexistencia2";
             this.colexistencia2.OptionsColumn.AllowEdit = false;
             this.colexistencia2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:#,###,##0.00} Kg.")});
             this.colexistencia2.Visible = true;
             this.colexistencia2.VisibleIndex = 9;
-            this.colexistencia2.Width = 204;
+            this.colexistencia2.Width = 102;
             // 
             // colnombre_comercial2
             // 
             this.colnombre_comercial2.FieldName = "nombre_comercial";
-            this.colnombre_comercial2.MinWidth = 40;
             this.colnombre_comercial2.Name = "colnombre_comercial2";
             this.colnombre_comercial2.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial2.Visible = true;
             this.colnombre_comercial2.VisibleIndex = 1;
-            this.colnombre_comercial2.Width = 246;
+            this.colnombre_comercial2.Width = 123;
             // 
             // colid_mp2
             // 
             this.colid_mp2.FieldName = "id_mp";
-            this.colid_mp2.MinWidth = 40;
             this.colid_mp2.Name = "colid_mp2";
             this.colid_mp2.OptionsColumn.AllowEdit = false;
-            this.colid_mp2.Width = 150;
             // 
             // collote1
             // 
             this.collote1.FieldName = "lote";
-            this.collote1.MinWidth = 40;
             this.collote1.Name = "collote1";
             this.collote1.OptionsColumn.AllowEdit = false;
             this.collote1.Visible = true;
             this.collote1.VisibleIndex = 2;
-            this.collote1.Width = 244;
+            this.collote1.Width = 122;
             // 
             // colcode_sap2
             // 
             this.colcode_sap2.FieldName = "code_sap";
-            this.colcode_sap2.MinWidth = 40;
             this.colcode_sap2.Name = "colcode_sap2";
             this.colcode_sap2.OptionsColumn.AllowEdit = false;
             this.colcode_sap2.Visible = true;
             this.colcode_sap2.VisibleIndex = 0;
-            this.colcode_sap2.Width = 292;
+            this.colcode_sap2.Width = 146;
             // 
             // colingreso1
             // 
             this.colingreso1.DisplayFormat.FormatString = "{0:#,###,##0.00} Kg.";
             this.colingreso1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colingreso1.FieldName = "ingreso";
-            this.colingreso1.MinWidth = 40;
             this.colingreso1.Name = "colingreso1";
             this.colingreso1.OptionsColumn.AllowEdit = false;
             this.colingreso1.Visible = true;
             this.colingreso1.VisibleIndex = 7;
-            this.colingreso1.Width = 204;
+            this.colingreso1.Width = 102;
             // 
             // colsalidas1
             // 
             this.colsalidas1.DisplayFormat.FormatString = "{0:#,###,##0.00} Kg.";
             this.colsalidas1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsalidas1.FieldName = "salidas";
-            this.colsalidas1.MinWidth = 40;
             this.colsalidas1.Name = "colsalidas1";
             this.colsalidas1.OptionsColumn.AllowEdit = false;
             this.colsalidas1.Visible = true;
             this.colsalidas1.VisibleIndex = 8;
-            this.colsalidas1.Width = 204;
+            this.colsalidas1.Width = 102;
             // 
             // colTipoId1
             // 
             this.colTipoId1.FieldName = "TipoId";
-            this.colTipoId1.MinWidth = 40;
             this.colTipoId1.Name = "colTipoId1";
             this.colTipoId1.OptionsColumn.AllowEdit = false;
-            this.colTipoId1.Width = 216;
+            this.colTipoId1.Width = 108;
             // 
             // colTipoName3
             // 
             this.colTipoName3.FieldName = "TipoName";
-            this.colTipoName3.MinWidth = 40;
             this.colTipoName3.Name = "colTipoName3";
             this.colTipoName3.OptionsColumn.AllowEdit = false;
-            this.colTipoName3.Width = 216;
+            this.colTipoName3.Width = 108;
             // 
             // colcode_sap_pt
             // 
             this.colcode_sap_pt.FieldName = "code_sap_pt";
-            this.colcode_sap_pt.MinWidth = 40;
             this.colcode_sap_pt.Name = "colcode_sap_pt";
             this.colcode_sap_pt.OptionsColumn.AllowEdit = false;
             this.colcode_sap_pt.Visible = true;
             this.colcode_sap_pt.VisibleIndex = 3;
-            this.colcode_sap_pt.Width = 232;
+            this.colcode_sap_pt.Width = 116;
             // 
             // coldescripcion_pt
             // 
             this.coldescripcion_pt.Caption = "Producto Terminado";
             this.coldescripcion_pt.FieldName = "descripcion_pt";
-            this.coldescripcion_pt.MinWidth = 40;
             this.coldescripcion_pt.Name = "coldescripcion_pt";
             this.coldescripcion_pt.OptionsColumn.AllowEdit = false;
             this.coldescripcion_pt.Visible = true;
             this.coldescripcion_pt.VisibleIndex = 4;
-            this.coldescripcion_pt.Width = 348;
+            this.coldescripcion_pt.Width = 174;
             // 
             // colunidades_totales
             // 
             this.colunidades_totales.DisplayFormat.FormatString = "{0:0.##} Ud.";
             this.colunidades_totales.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colunidades_totales.FieldName = "unidades_totales";
-            this.colunidades_totales.MinWidth = 40;
             this.colunidades_totales.Name = "colunidades_totales";
             this.colunidades_totales.OptionsColumn.AllowEdit = false;
             this.colunidades_totales.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades_totales", "SUMA={0:0.##} Ud.")});
             this.colunidades_totales.Visible = true;
             this.colunidades_totales.VisibleIndex = 6;
-            this.colunidades_totales.Width = 310;
+            this.colunidades_totales.Width = 155;
             // 
             // gridColumn23
             // 
             this.gridColumn23.Caption = "Ajuste";
             this.gridColumn23.ColumnEdit = this.cmAjusteReproceso;
-            this.gridColumn23.MinWidth = 40;
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 10;
-            this.gridColumn23.Width = 238;
+            this.gridColumn23.Width = 119;
             // 
             // cmAjusteReproceso
             // 
@@ -1490,12 +1385,11 @@ namespace LOSA.TransaccionesMP
             // 
             this.colbodega.Caption = "Bodega";
             this.colbodega.FieldName = "bodega";
-            this.colbodega.MinWidth = 40;
             this.colbodega.Name = "colbodega";
             this.colbodega.OptionsColumn.AllowEdit = false;
             this.colbodega.Visible = true;
             this.colbodega.VisibleIndex = 5;
-            this.colbodega.Width = 166;
+            this.colbodega.Width = 83;
             // 
             // tabNavigationPage6
             // 
@@ -1507,31 +1401,28 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage6.Controls.Add(this.btnSearchMP);
             this.tabNavigationPage6.Controls.Add(this.txtTitulo_Inv_Por_MPyBodega);
             this.tabNavigationPage6.Controls.Add(this.lblTitulo_Inv_Por_MPyBodega);
-            this.tabNavigationPage6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabNavigationPage6.Name = "tabNavigationPage6";
-            this.tabNavigationPage6.Size = new System.Drawing.Size(2724, 1242);
+            this.tabNavigationPage6.Size = new System.Drawing.Size(1362, 445);
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(16, 40);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl1.Location = new System.Drawing.Point(8, 21);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(184, 32);
+            this.labelControl1.Size = new System.Drawing.Size(87, 15);
             this.labelControl1.TabIndex = 18;
             this.labelControl1.Text = "Mostrar Toda(s)";
             // 
             // tggMostrarTotasInv_por_mp_y_bodega
             // 
-            this.tggMostrarTotasInv_por_mp_y_bodega.Location = new System.Drawing.Point(202, 31);
-            this.tggMostrarTotasInv_por_mp_y_bodega.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Location = new System.Drawing.Point(101, 16);
             this.tggMostrarTotasInv_por_mp_y_bodega.Name = "tggMostrarTotasInv_por_mp_y_bodega";
             this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Options.UseFont = true;
             this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OffText = "No";
             this.tggMostrarTotasInv_por_mp_y_bodega.Properties.OnText = "Si";
-            this.tggMostrarTotasInv_por_mp_y_bodega.Size = new System.Drawing.Size(218, 40);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Size = new System.Drawing.Size(109, 20);
             this.tggMostrarTotasInv_por_mp_y_bodega.TabIndex = 17;
             this.tggMostrarTotasInv_por_mp_y_bodega.Toggled += new System.EventHandler(this.tggMostrarTotasInv_por_mp_y_bodega_Toggled);
             // 
@@ -1541,10 +1432,9 @@ namespace LOSA.TransaccionesMP
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(2480, 13);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(1240, 7);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(228, 75);
+            this.simpleButton1.Size = new System.Drawing.Size(114, 39);
             this.simpleButton1.TabIndex = 16;
             this.simpleButton1.Text = "Actualizar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -1556,15 +1446,13 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdMPBodega.DataMember = "mp_bodega_lote";
             this.grdMPBodega.DataSource = this.dsTarima1;
-            this.grdMPBodega.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grdMPBodega.Location = new System.Drawing.Point(12, 96);
+            this.grdMPBodega.Location = new System.Drawing.Point(6, 50);
             this.grdMPBodega.MainView = this.gridView4;
-            this.grdMPBodega.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grdMPBodega.Name = "grdMPBodega";
             this.grdMPBodega.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemAjuste,
             this.repositoryItemLogKardex});
-            this.grdMPBodega.Size = new System.Drawing.Size(2702, 1146);
+            this.grdMPBodega.Size = new System.Drawing.Size(1351, 395);
             this.grdMPBodega.TabIndex = 15;
             this.grdMPBodega.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -1604,7 +1492,6 @@ namespace LOSA.TransaccionesMP
             this.collote2,
             this.gridColumn24,
             this.gridColumn25});
-            this.gridView4.DetailHeight = 673;
             this.gridView4.GridControl = this.grdMPBodega;
             this.gridView4.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", null, "(SUM={0:##,###,##0.00 Kg})"),
@@ -1623,14 +1510,13 @@ namespace LOSA.TransaccionesMP
             this.colexistencia3.DisplayFormat.FormatString = "n2";
             this.colexistencia3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia3.FieldName = "existencia";
-            this.colexistencia3.MinWidth = 40;
             this.colexistencia3.Name = "colexistencia3";
             this.colexistencia3.OptionsColumn.AllowEdit = false;
             this.colexistencia3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia", "SUMA={0:##,###,##0.##} Kg")});
             this.colexistencia3.Visible = true;
             this.colexistencia3.VisibleIndex = 6;
-            this.colexistencia3.Width = 228;
+            this.colexistencia3.Width = 114;
             // 
             // colexistencia_ud1
             // 
@@ -1638,14 +1524,13 @@ namespace LOSA.TransaccionesMP
             this.colexistencia_ud1.DisplayFormat.FormatString = "n0";
             this.colexistencia_ud1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_ud1.FieldName = "existencia_ud";
-            this.colexistencia_ud1.MinWidth = 40;
             this.colexistencia_ud1.Name = "colexistencia_ud1";
             this.colexistencia_ud1.OptionsColumn.AllowEdit = false;
             this.colexistencia_ud1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_ud", "SUMA={0:0.##} Ud")});
             this.colexistencia_ud1.Visible = true;
             this.colexistencia_ud1.VisibleIndex = 5;
-            this.colexistencia_ud1.Width = 308;
+            this.colexistencia_ud1.Width = 154;
             // 
             // colexistencia_tm1
             // 
@@ -1653,93 +1538,82 @@ namespace LOSA.TransaccionesMP
             this.colexistencia_tm1.DisplayFormat.FormatString = "n2";
             this.colexistencia_tm1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_tm1.FieldName = "existencia_tm";
-            this.colexistencia_tm1.MinWidth = 40;
             this.colexistencia_tm1.Name = "colexistencia_tm1";
             this.colexistencia_tm1.OptionsColumn.AllowEdit = false;
             this.colexistencia_tm1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", "SUMA={0:##,###,##0.##} TM")});
             this.colexistencia_tm1.Visible = true;
             this.colexistencia_tm1.VisibleIndex = 7;
-            this.colexistencia_tm1.Width = 234;
+            this.colexistencia_tm1.Width = 117;
             // 
             // colnombre_comercial3
             // 
             this.colnombre_comercial3.Caption = "Nombre Comercial";
             this.colnombre_comercial3.FieldName = "nombre_comercial";
-            this.colnombre_comercial3.MinWidth = 40;
             this.colnombre_comercial3.Name = "colnombre_comercial3";
             this.colnombre_comercial3.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial3.Visible = true;
             this.colnombre_comercial3.VisibleIndex = 1;
-            this.colnombre_comercial3.Width = 360;
+            this.colnombre_comercial3.Width = 180;
             // 
             // colid_mp3
             // 
             this.colid_mp3.FieldName = "id_mp";
-            this.colid_mp3.MinWidth = 40;
             this.colid_mp3.Name = "colid_mp3";
-            this.colid_mp3.Width = 150;
             // 
             // colcode_sap3
             // 
             this.colcode_sap3.Caption = "Codigo Sap";
             this.colcode_sap3.FieldName = "code_sap";
-            this.colcode_sap3.MinWidth = 40;
             this.colcode_sap3.Name = "colcode_sap3";
             this.colcode_sap3.OptionsColumn.AllowEdit = false;
             this.colcode_sap3.Visible = true;
             this.colcode_sap3.VisibleIndex = 0;
-            this.colcode_sap3.Width = 198;
+            this.colcode_sap3.Width = 99;
             // 
             // colwhs_equivalente1
             // 
             this.colwhs_equivalente1.Caption = "Bodega";
             this.colwhs_equivalente1.FieldName = "whs_equivalente";
-            this.colwhs_equivalente1.MinWidth = 40;
             this.colwhs_equivalente1.Name = "colwhs_equivalente1";
             this.colwhs_equivalente1.OptionsColumn.AllowEdit = false;
             this.colwhs_equivalente1.Visible = true;
             this.colwhs_equivalente1.VisibleIndex = 3;
-            this.colwhs_equivalente1.Width = 308;
+            this.colwhs_equivalente1.Width = 154;
             // 
             // colTipoId2
             // 
             this.colTipoId2.FieldName = "TipoId";
-            this.colTipoId2.MinWidth = 40;
             this.colTipoId2.Name = "colTipoId2";
-            this.colTipoId2.Width = 150;
             // 
             // colTipoName4
             // 
             this.colTipoName4.Caption = "Tipo Ingreso";
             this.colTipoName4.FieldName = "TipoName";
-            this.colTipoName4.MinWidth = 40;
             this.colTipoName4.Name = "colTipoName4";
             this.colTipoName4.OptionsColumn.AllowEdit = false;
             this.colTipoName4.Visible = true;
             this.colTipoName4.VisibleIndex = 2;
-            this.colTipoName4.Width = 248;
+            this.colTipoName4.Width = 124;
             // 
             // collote2
             // 
             this.collote2.Caption = "Lote";
             this.collote2.FieldName = "lote";
-            this.collote2.MinWidth = 40;
             this.collote2.Name = "collote2";
             this.collote2.OptionsColumn.AllowEdit = false;
             this.collote2.Visible = true;
             this.collote2.VisibleIndex = 4;
-            this.collote2.Width = 270;
+            this.collote2.Width = 135;
             // 
             // gridColumn24
             // 
             this.gridColumn24.Caption = "Ajustar Negativos";
             this.gridColumn24.ColumnEdit = this.repositoryItemAjuste;
-            this.gridColumn24.MinWidth = 40;
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 9;
-            this.gridColumn24.Width = 274;
+            this.gridColumn24.Width = 137;
             // 
             // repositoryItemAjuste
             // 
@@ -1755,11 +1629,10 @@ namespace LOSA.TransaccionesMP
             // 
             this.gridColumn25.Caption = "Log Kardex";
             this.gridColumn25.ColumnEdit = this.repositoryItemLogKardex;
-            this.gridColumn25.MinWidth = 40;
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 8;
-            this.gridColumn25.Width = 238;
+            this.gridColumn25.Width = 119;
             // 
             // repositoryItemLogKardex
             // 
@@ -1777,33 +1650,30 @@ namespace LOSA.TransaccionesMP
             this.btnSearchMP.Appearance.Options.UseFont = true;
             this.btnSearchMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnSearchMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchMP.ImageOptions.Image")));
-            this.btnSearchMP.Location = new System.Drawing.Point(1262, 23);
-            this.btnSearchMP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSearchMP.Location = new System.Drawing.Point(631, 12);
             this.btnSearchMP.Name = "btnSearchMP";
-            this.btnSearchMP.Size = new System.Drawing.Size(156, 62);
+            this.btnSearchMP.Size = new System.Drawing.Size(78, 32);
             this.btnSearchMP.TabIndex = 14;
             this.btnSearchMP.Text = "Buscar";
             this.btnSearchMP.Click += new System.EventHandler(this.btnSearchMP_Click);
             // 
             // txtTitulo_Inv_Por_MPyBodega
             // 
-            this.txtTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(718, 35);
-            this.txtTitulo_Inv_Por_MPyBodega.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(359, 18);
             this.txtTitulo_Inv_Por_MPyBodega.Name = "txtTitulo_Inv_Por_MPyBodega";
             this.txtTitulo_Inv_Por_MPyBodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo_Inv_Por_MPyBodega.Properties.Appearance.Options.UseFont = true;
             this.txtTitulo_Inv_Por_MPyBodega.Properties.ReadOnly = true;
-            this.txtTitulo_Inv_Por_MPyBodega.Size = new System.Drawing.Size(532, 46);
+            this.txtTitulo_Inv_Por_MPyBodega.Size = new System.Drawing.Size(266, 22);
             this.txtTitulo_Inv_Por_MPyBodega.TabIndex = 13;
             // 
             // lblTitulo_Inv_Por_MPyBodega
             // 
             this.lblTitulo_Inv_Por_MPyBodega.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo_Inv_Por_MPyBodega.Appearance.Options.UseFont = true;
-            this.lblTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(550, 40);
-            this.lblTitulo_Inv_Por_MPyBodega.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(275, 21);
             this.lblTitulo_Inv_Por_MPyBodega.Name = "lblTitulo_Inv_Por_MPyBodega";
-            this.lblTitulo_Inv_Por_MPyBodega.Size = new System.Drawing.Size(162, 32);
+            this.lblTitulo_Inv_Por_MPyBodega.Size = new System.Drawing.Size(78, 15);
             this.lblTitulo_Inv_Por_MPyBodega.TabIndex = 12;
             this.lblTitulo_Inv_Por_MPyBodega.Text = "Materia Prima";
             // 
@@ -1813,10 +1683,9 @@ namespace LOSA.TransaccionesMP
             this.btnExcel.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnExcel.Appearance.Options.UseFont = true;
             this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(2236, 12);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnExcel.Location = new System.Drawing.Point(1118, 6);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(228, 108);
+            this.btnExcel.Size = new System.Drawing.Size(114, 56);
             this.btnExcel.TabIndex = 2;
             this.btnExcel.Text = "Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
@@ -1826,10 +1695,9 @@ namespace LOSA.TransaccionesMP
             this.btnAjustePorLote.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnAjustePorLote.Appearance.Options.UseFont = true;
             this.btnAjustePorLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAjustePorLote.ImageOptions.Image")));
-            this.btnAjustePorLote.Location = new System.Drawing.Point(24, 12);
-            this.btnAjustePorLote.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAjustePorLote.Location = new System.Drawing.Point(12, 6);
             this.btnAjustePorLote.Name = "btnAjustePorLote";
-            this.btnAjustePorLote.Size = new System.Drawing.Size(370, 108);
+            this.btnAjustePorLote.Size = new System.Drawing.Size(185, 56);
             this.btnAjustePorLote.TabIndex = 3;
             this.btnAjustePorLote.Text = "Ajuste de Bodega";
             this.btnAjustePorLote.Click += new System.EventHandler(this.btnAjustePorLote_Click);
@@ -1852,10 +1720,9 @@ namespace LOSA.TransaccionesMP
             this.btnTrasladoKardex.Appearance.Options.UseTextOptions = true;
             this.btnTrasladoKardex.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTrasladoKardex.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTrasladoKardex.ImageOptions.Image")));
-            this.btnTrasladoKardex.Location = new System.Drawing.Point(1884, 12);
-            this.btnTrasladoKardex.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnTrasladoKardex.Location = new System.Drawing.Point(942, 6);
             this.btnTrasladoKardex.Name = "btnTrasladoKardex";
-            this.btnTrasladoKardex.Size = new System.Drawing.Size(316, 108);
+            this.btnTrasladoKardex.Size = new System.Drawing.Size(158, 56);
             this.btnTrasladoKardex.TabIndex = 4;
             this.btnTrasladoKardex.Text = "Traslado Entre Bodegas";
             this.btnTrasladoKardex.Click += new System.EventHandler(this.btnTrasladoKardex_Click);
@@ -1865,26 +1732,24 @@ namespace LOSA.TransaccionesMP
             this.cmdVerBorradorDeAjustes.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.cmdVerBorradorDeAjustes.Appearance.Options.UseFont = true;
             this.cmdVerBorradorDeAjustes.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
-            this.cmdVerBorradorDeAjustes.Location = new System.Drawing.Point(406, 12);
-            this.cmdVerBorradorDeAjustes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdVerBorradorDeAjustes.Location = new System.Drawing.Point(203, 6);
             this.cmdVerBorradorDeAjustes.Name = "cmdVerBorradorDeAjustes";
-            this.cmdVerBorradorDeAjustes.Size = new System.Drawing.Size(370, 108);
+            this.cmdVerBorradorDeAjustes.Size = new System.Drawing.Size(185, 56);
             this.cmdVerBorradorDeAjustes.TabIndex = 5;
             this.cmdVerBorradorDeAjustes.Text = "Ver Ajustes";
             this.cmdVerBorradorDeAjustes.Click += new System.EventHandler(this.cmdVerBorradorDeAjustes_Click);
             // 
             // frmReporteInventarioKardexGeneral
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2740, 1067);
+            this.ClientSize = new System.Drawing.Size(1370, 555);
             this.Controls.Add(this.cmdVerBorradorDeAjustes);
             this.Controls.Add(this.btnTrasladoKardex);
             this.Controls.Add(this.btnAjustePorLote);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.btnClose);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmReporteInventarioKardexGeneral";
             this.Text = "Reporte de Kardex";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

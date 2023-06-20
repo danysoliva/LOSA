@@ -52,6 +52,8 @@ namespace LOSA.Clases
         string _productoTerminadoName_Detalle;
         string turno;
         int _tipo_tarima;
+        int ud_existencia;
+        decimal kg_existencia;
         public Tarima()
         {
 
@@ -700,60 +702,32 @@ namespace LOSA.Clases
 
         }
 
-        public bool RecuperarRegistroTarimaMicros(int pIdTarima, string pCodigoBarra)
+        public bool RecuperarExistenciaTarima(int pid_tarima)
         {
             try
             {
                 DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("sp_get_row_tarima_micros_from_id", con);
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_existenica_for_id_tarima", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", pIdTarima);
-                //cmd.Parameters.AddWithValue("@codigo_barra", pCodigoBarra);
+                cmd.Parameters.AddWithValue("@id_tarima", pid_tarima);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Id = dr.GetInt32(0);
-                    Id_materiaprima = dr.GetInt32(1);
-                    IdProveedor = dr.GetString(2);
-                    FechaIngreso = dr.GetDateTime(3);
-                    NumeroTransaccion = dr.GetInt32(4);
-                    FechaVencimiento = dr.GetDateTime(5);
-                    _fechaProduccion = dr.GetDateTime(6);
-                    _LoteMP = dr.GetString(7);
-                    Enable= dr.GetBoolean(8);
-                    IdPresentacion = dr.GetInt32(9);
-                    _idUsuario = dr.GetInt32(10);
-                    _tipotarimaid = dr.GetInt32(11);
-                    IdBoleta = dr.GetInt32(12);
-                    CodigoBarra = dr.GetString(13);
-                    Cantidad = dr.GetDecimal(14);//ó unidades
-                    Id_ingreso = dr.GetInt32(15);
-                   
-                    
-                    
-                    //LotePT = dr.GetInt32(8);
-                    //Enable = dr.GetBoolean(9);
-                    //IdProductoterminado = dr.GetInt32(13);
-                    //_fechaProductoTerminadoProduccion = dr.GetDateTime(14);
-                    //IdUnidadMedida = dr.GetInt32(18);
-                    //_peso = dr.GetDecimal(19);
-                    //id_estadoCalidad = dr.GetInt32(20);
-                    //Id_alimentacion = dr.GetInt32(22);
-                    //Fecha_produccion_pt = dr.GetDateTime(23);
-                    //Id_turno = dr.GetInt32(24);
-                    //Recuperado = true;
+                    ud_existencia = dr.GetInt32(0);
+                    kg_existencia = dr.GetDecimal(1);
+                    Recuperado = true;
                 }
                 dr.Close();
-                con.Close();
+                conn.Close();
             }
-            catch (Exception ec)
+            catch (Exception ec2)
             {
-                CajaDialogo.Error(ec.Message);
+                CajaDialogo.Error(ec2.Message);
             }
             return Recuperado;
+        
         }
     }
 }
