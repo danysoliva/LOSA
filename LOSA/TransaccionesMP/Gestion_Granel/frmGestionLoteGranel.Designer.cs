@@ -89,6 +89,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.cmdBajar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colDesactivar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdDesactivar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colExistenciaKg = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBodega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -118,11 +120,13 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.cmdBajar_Soya = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdDesactivar_Soya = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colExistenciaKg1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBodega1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdCerrar = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cmdAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.colExistenciaKg = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colExistenciaKg1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_bodega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_bodega1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsGestionGranel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -185,12 +189,14 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.coltype_name,
             this.coluser_last_updated,
             this.colitemcode,
+            this.colid_bodega,
             this.colitemname,
             this.colLinea,
             this.colSubir,
             this.colBajar,
             this.colDesactivar,
-            this.colExistenciaKg});
+            this.colExistenciaKg,
+            this.colBodega});
             this.gridView1.DetailHeight = 673;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -219,7 +225,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.collot.OptionsColumn.ReadOnly = true;
             this.collot.Visible = true;
             this.collot.VisibleIndex = 3;
-            this.collot.Width = 150;
+            this.collot.Width = 192;
             // 
             // colenable
             // 
@@ -300,8 +306,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colstate_name.Name = "colstate_name";
             this.colstate_name.OptionsColumn.ReadOnly = true;
             this.colstate_name.Visible = true;
-            this.colstate_name.VisibleIndex = 5;
-            this.colstate_name.Width = 150;
+            this.colstate_name.VisibleIndex = 6;
+            this.colstate_name.Width = 210;
             // 
             // coltype_name
             // 
@@ -327,7 +333,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colitemcode.OptionsColumn.ReadOnly = true;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 1;
-            this.colitemcode.Width = 150;
+            this.colitemcode.Width = 192;
             // 
             // colitemname
             // 
@@ -337,7 +343,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colitemname.OptionsColumn.ReadOnly = true;
             this.colitemname.Visible = true;
             this.colitemname.VisibleIndex = 2;
-            this.colitemname.Width = 150;
+            this.colitemname.Width = 192;
             // 
             // colLinea
             // 
@@ -347,7 +353,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colLinea.OptionsColumn.ReadOnly = true;
             this.colLinea.Visible = true;
             this.colLinea.VisibleIndex = 0;
-            this.colLinea.Width = 150;
+            this.colLinea.Width = 192;
             // 
             // colSubir
             // 
@@ -356,8 +362,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colSubir.MinWidth = 40;
             this.colSubir.Name = "colSubir";
             this.colSubir.Visible = true;
-            this.colSubir.VisibleIndex = 6;
-            this.colSubir.Width = 150;
+            this.colSubir.VisibleIndex = 7;
+            this.colSubir.Width = 210;
             // 
             // cmdSubir
             // 
@@ -376,8 +382,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colBajar.MinWidth = 40;
             this.colBajar.Name = "colBajar";
             this.colBajar.Visible = true;
-            this.colBajar.VisibleIndex = 7;
-            this.colBajar.Width = 150;
+            this.colBajar.VisibleIndex = 8;
+            this.colBajar.Width = 210;
             // 
             // cmdBajar
             // 
@@ -396,8 +402,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.colDesactivar.MinWidth = 40;
             this.colDesactivar.Name = "colDesactivar";
             this.colDesactivar.Visible = true;
-            this.colDesactivar.VisibleIndex = 8;
-            this.colDesactivar.Width = 150;
+            this.colDesactivar.VisibleIndex = 9;
+            this.colDesactivar.Width = 218;
             // 
             // cmdDesactivar
             // 
@@ -408,6 +414,29 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.cmdDesactivar.Name = "cmdDesactivar";
             this.cmdDesactivar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdDesactivar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDesactivar_ButtonClick);
+            // 
+            // colExistenciaKg
+            // 
+            this.colExistenciaKg.DisplayFormat.FormatString = "n2";
+            this.colExistenciaKg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colExistenciaKg.FieldName = "Existencia Kg";
+            this.colExistenciaKg.MinWidth = 40;
+            this.colExistenciaKg.Name = "colExistenciaKg";
+            this.colExistenciaKg.OptionsColumn.ReadOnly = true;
+            this.colExistenciaKg.Visible = true;
+            this.colExistenciaKg.VisibleIndex = 4;
+            this.colExistenciaKg.Width = 192;
+            // 
+            // colBodega
+            // 
+            this.colBodega.Caption = "Bodega";
+            this.colBodega.FieldName = "Bodega";
+            this.colBodega.MinWidth = 40;
+            this.colBodega.Name = "colBodega";
+            this.colBodega.OptionsColumn.ReadOnly = true;
+            this.colBodega.Visible = true;
+            this.colBodega.VisibleIndex = 5;
+            this.colBodega.Width = 116;
             // 
             // xtraTabControl1
             // 
@@ -474,6 +503,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn10,
+            this.colid_bodega1,
             this.gridColumn11,
             this.gridColumn12,
             this.gridColumn13,
@@ -485,7 +515,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn19,
             this.gridColumn20,
             this.gridColumn21,
-            this.colExistenciaKg1});
+            this.colExistenciaKg1,
+            this.colBodega1});
             this.gridView2.DetailHeight = 673;
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
@@ -514,7 +545,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn3.OptionsColumn.ReadOnly = true;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 150;
+            this.gridColumn3.Width = 192;
             // 
             // gridColumn4
             // 
@@ -595,8 +626,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.ReadOnly = true;
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 4;
-            this.gridColumn13.Width = 150;
+            this.gridColumn13.VisibleIndex = 6;
+            this.gridColumn13.Width = 209;
             // 
             // gridColumn14
             // 
@@ -622,7 +653,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn16.OptionsColumn.ReadOnly = true;
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 1;
-            this.gridColumn16.Width = 150;
+            this.gridColumn16.Width = 192;
             // 
             // gridColumn17
             // 
@@ -632,7 +663,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn17.OptionsColumn.ReadOnly = true;
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 2;
-            this.gridColumn17.Width = 150;
+            this.gridColumn17.Width = 192;
             // 
             // gridColumn18
             // 
@@ -642,7 +673,7 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn18.OptionsColumn.ReadOnly = true;
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 0;
-            this.gridColumn18.Width = 150;
+            this.gridColumn18.Width = 192;
             // 
             // gridColumn19
             // 
@@ -651,8 +682,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn19.MinWidth = 40;
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 5;
-            this.gridColumn19.Width = 150;
+            this.gridColumn19.VisibleIndex = 7;
+            this.gridColumn19.Width = 209;
             // 
             // cmdSubir_Soya
             // 
@@ -671,8 +702,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn20.MinWidth = 40;
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 6;
-            this.gridColumn20.Width = 150;
+            this.gridColumn20.VisibleIndex = 8;
+            this.gridColumn20.Width = 209;
             // 
             // cmdBajar_Soya
             // 
@@ -691,8 +722,8 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.gridColumn21.MinWidth = 40;
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 7;
-            this.gridColumn21.Width = 150;
+            this.gridColumn21.VisibleIndex = 9;
+            this.gridColumn21.Width = 216;
             // 
             // cmdDesactivar_Soya
             // 
@@ -703,6 +734,29 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.cmdDesactivar_Soya.Name = "cmdDesactivar_Soya";
             this.cmdDesactivar_Soya.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdDesactivar_Soya.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDesactivar_Soya_ButtonClick);
+            // 
+            // colExistenciaKg1
+            // 
+            this.colExistenciaKg1.DisplayFormat.FormatString = "n2";
+            this.colExistenciaKg1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colExistenciaKg1.FieldName = "Existencia Kg";
+            this.colExistenciaKg1.MinWidth = 40;
+            this.colExistenciaKg1.Name = "colExistenciaKg1";
+            this.colExistenciaKg1.OptionsColumn.ReadOnly = true;
+            this.colExistenciaKg1.Visible = true;
+            this.colExistenciaKg1.VisibleIndex = 4;
+            this.colExistenciaKg1.Width = 192;
+            // 
+            // colBodega1
+            // 
+            this.colBodega1.Caption = "Bodega";
+            this.colBodega1.FieldName = "Bodega";
+            this.colBodega1.MinWidth = 40;
+            this.colBodega1.Name = "colBodega1";
+            this.colBodega1.OptionsColumn.ReadOnly = true;
+            this.colBodega1.Visible = true;
+            this.colBodega1.VisibleIndex = 5;
+            this.colBodega1.Width = 121;
             // 
             // cmdCerrar
             // 
@@ -745,29 +799,19 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
             this.cmdAdd.Text = "Adicionar Lote";
             this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
             // 
-            // colExistenciaKg
+            // colid_bodega
             // 
-            this.colExistenciaKg.DisplayFormat.FormatString = "n2";
-            this.colExistenciaKg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colExistenciaKg.FieldName = "Existencia Kg";
-            this.colExistenciaKg.MinWidth = 40;
-            this.colExistenciaKg.Name = "colExistenciaKg";
-            this.colExistenciaKg.OptionsColumn.ReadOnly = true;
-            this.colExistenciaKg.Visible = true;
-            this.colExistenciaKg.VisibleIndex = 4;
-            this.colExistenciaKg.Width = 150;
+            this.colid_bodega.FieldName = "id_bodega";
+            this.colid_bodega.MinWidth = 40;
+            this.colid_bodega.Name = "colid_bodega";
+            this.colid_bodega.Width = 150;
             // 
-            // colExistenciaKg1
+            // colid_bodega1
             // 
-            this.colExistenciaKg1.DisplayFormat.FormatString = "n2";
-            this.colExistenciaKg1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colExistenciaKg1.FieldName = "Existencia Kg";
-            this.colExistenciaKg1.MinWidth = 40;
-            this.colExistenciaKg1.Name = "colExistenciaKg1";
-            this.colExistenciaKg1.OptionsColumn.ReadOnly = true;
-            this.colExistenciaKg1.Visible = true;
-            this.colExistenciaKg1.VisibleIndex = 8;
-            this.colExistenciaKg1.Width = 150;
+            this.colid_bodega1.FieldName = "id_bodega";
+            this.colid_bodega1.MinWidth = 40;
+            this.colid_bodega1.Name = "colid_bodega1";
+            this.colid_bodega1.Width = 150;
             // 
             // frmGestionLoteGranel
             // 
@@ -864,5 +908,9 @@ namespace JAGUAR_APP.TransaccionesMP.Gestion_Granel
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDesactivar_Soya;
         private DevExpress.XtraGrid.Columns.GridColumn colExistenciaKg;
         private DevExpress.XtraGrid.Columns.GridColumn colExistenciaKg1;
+        private DevExpress.XtraGrid.Columns.GridColumn colBodega;
+        private DevExpress.XtraGrid.Columns.GridColumn colBodega1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_bodega;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_bodega1;
     }
 }

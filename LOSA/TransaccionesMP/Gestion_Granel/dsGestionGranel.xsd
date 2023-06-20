@@ -34,6 +34,8 @@
               <xs:element name="itemname" msdata:Caption="Item Name" msprop:Generator_ColumnVarNameInTable="columnitemname" msprop:Generator_ColumnPropNameInRow="itemname" msprop:Generator_ColumnPropNameInTable="itemnameColumn" msprop:Generator_UserColumnName="itemname" type="xs:string" minOccurs="0" />
               <xs:element name="Linea" msprop:Generator_ColumnVarNameInTable="columnLinea" msprop:Generator_ColumnPropNameInRow="Linea" msprop:Generator_ColumnPropNameInTable="LineaColumn" msprop:Generator_UserColumnName="Linea" type="xs:int" minOccurs="0" />
               <xs:element name="Existencia_x0020_Kg" msprop:Generator_ColumnVarNameInTable="columnExistencia_Kg" msprop:Generator_ColumnPropNameInRow="Existencia_Kg" msprop:Generator_ColumnPropNameInTable="Existencia_KgColumn" msprop:Generator_UserColumnName="Existencia Kg" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Bodega" msprop:Generator_ColumnVarNameInTable="columnBodega" msprop:Generator_ColumnPropNameInRow="Bodega" msprop:Generator_ColumnPropNameInTable="BodegaColumn" msprop:Generator_UserColumnName="Bodega" type="xs:string" minOccurs="0" />
+              <xs:element name="id_bodega" msprop:Generator_ColumnVarNameInTable="columnid_bodega" msprop:Generator_ColumnPropNameInRow="id_bodega" msprop:Generator_ColumnPropNameInTable="id_bodegaColumn" msprop:Generator_UserColumnName="id_bodega" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -59,6 +61,8 @@
               <xs:element name="itemname" msdata:Caption="Item Name" msprop:Generator_ColumnVarNameInTable="columnitemname" msprop:Generator_ColumnPropNameInRow="itemname" msprop:Generator_ColumnPropNameInTable="itemnameColumn" msprop:Generator_UserColumnName="itemname" type="xs:string" minOccurs="0" />
               <xs:element name="Linea" msprop:Generator_ColumnVarNameInTable="columnLinea" msprop:Generator_ColumnPropNameInRow="Linea" msprop:Generator_ColumnPropNameInTable="LineaColumn" msprop:Generator_UserColumnName="Linea" type="xs:int" minOccurs="0" />
               <xs:element name="Existencia_x0020_Kg" msprop:Generator_ColumnVarNameInTable="columnExistencia_Kg" msprop:Generator_ColumnPropNameInRow="Existencia_Kg" msprop:Generator_ColumnPropNameInTable="Existencia_KgColumn" msprop:Generator_UserColumnName="Existencia Kg" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Bodega" msprop:Generator_ColumnVarNameInTable="columnBodega" msprop:Generator_ColumnPropNameInRow="Bodega" msprop:Generator_ColumnPropNameInTable="BodegaColumn" msprop:Generator_UserColumnName="Bodega" type="xs:string" minOccurs="0" />
+              <xs:element name="id_bodega" msprop:Generator_ColumnVarNameInTable="columnid_bodega" msprop:Generator_ColumnPropNameInRow="id_bodega" msprop:Generator_ColumnPropNameInTable="id_bodegaColumn" msprop:Generator_UserColumnName="id_bodega" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
