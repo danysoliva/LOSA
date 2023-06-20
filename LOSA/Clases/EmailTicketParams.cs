@@ -21,6 +21,8 @@ namespace LOSA.Clases
         public string PrioridadTicket { get; set; }
         public string TituloTicket { get; set; }
         //public string Comentario { get; set; }
+        public string RequerInicial { get; set; }
+
 
     }
 }
