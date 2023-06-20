@@ -279,9 +279,9 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4,
             this.tabNavigationPage5,
             this.tabNavigationPage6});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1362, 680);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1362, 478);
             this.tabPane1.SelectedPage = this.tabNavigationPage2;
-            this.tabPane1.Size = new System.Drawing.Size(1362, 680);
+            this.tabPane1.Size = new System.Drawing.Size(1362, 478);
             this.tabPane1.TabIndex = 1;
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane1_SelectedPageChanged);
             // 
@@ -291,7 +291,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage1.Controls.Add(this.cmdActualizarResumenPorLote);
             this.tabNavigationPage1.Controls.Add(this.grd_data);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1362, 445);
             // 
             // cmdActualizarResumenPorLote
             // 
@@ -319,7 +319,7 @@ namespace LOSA.TransaccionesMP
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_logmovimiento,
             this.buttonEdit_AjusteINV});
-            this.grd_data.Size = new System.Drawing.Size(1362, 598);
+            this.grd_data.Size = new System.Drawing.Size(1362, 397);
             this.grd_data.TabIndex = 0;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -586,7 +586,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage2.Controls.Add(this.btnRefreshRptMP);
             this.tabNavigationPage2.Controls.Add(this.grd_data_resumen);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 647);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRefreshRptMP
             // 
@@ -611,7 +611,7 @@ namespace LOSA.TransaccionesMP
             this.grd_data_resumen.Location = new System.Drawing.Point(0, 48);
             this.grd_data_resumen.MainView = this.grdv_data_resumen;
             this.grd_data_resumen.Name = "grd_data_resumen";
-            this.grd_data_resumen.Size = new System.Drawing.Size(1362, 614);
+            this.grd_data_resumen.Size = new System.Drawing.Size(1362, 397);
             this.grd_data_resumen.TabIndex = 0;
             this.grd_data_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data_resumen});
@@ -722,7 +722,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage3.Controls.Add(this.btnRptPRD);
             this.tabNavigationPage3.Controls.Add(this.gridControl1);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage3.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRptPRD
             // 
@@ -750,7 +750,7 @@ namespace LOSA.TransaccionesMP
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(1354, 594);
+            this.gridControl1.Size = new System.Drawing.Size(1354, 393);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -974,7 +974,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4.Controls.Add(this.btnRptMPyBod);
             this.tabNavigationPage4.Controls.Add(this.gridControl2);
             this.tabNavigationPage4.Name = "tabNavigationPage4";
-            this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRptMPyBod
             // 
@@ -999,7 +999,7 @@ namespace LOSA.TransaccionesMP
             this.gridControl2.Location = new System.Drawing.Point(8, 49);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1351, 605);
+            this.gridControl2.Size = new System.Drawing.Size(1351, 404);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1174,7 +1174,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage5.Controls.Add(this.btnActReproceso);
             this.tabNavigationPage5.Controls.Add(this.gridReproceso);
             this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage5.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnActReproceso
             // 
@@ -1201,7 +1201,7 @@ namespace LOSA.TransaccionesMP
             this.gridReproceso.Name = "gridReproceso";
             this.gridReproceso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmAjusteReproceso});
-            this.gridReproceso.Size = new System.Drawing.Size(1356, 593);
+            this.gridReproceso.Size = new System.Drawing.Size(1356, 392);
             this.gridReproceso.TabIndex = 1;
             this.gridReproceso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1402,7 +1402,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage6.Controls.Add(this.txtTitulo_Inv_Por_MPyBodega);
             this.tabNavigationPage6.Controls.Add(this.lblTitulo_Inv_Por_MPyBodega);
             this.tabNavigationPage6.Name = "tabNavigationPage6";
-            this.tabNavigationPage6.Size = new System.Drawing.Size(1362, 646);
+            this.tabNavigationPage6.Size = new System.Drawing.Size(1362, 445);
             // 
             // labelControl1
             // 
@@ -1452,7 +1452,7 @@ namespace LOSA.TransaccionesMP
             this.grdMPBodega.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemAjuste,
             this.repositoryItemLogKardex});
-            this.grdMPBodega.Size = new System.Drawing.Size(1351, 596);
+            this.grdMPBodega.Size = new System.Drawing.Size(1351, 395);
             this.grdMPBodega.TabIndex = 15;
             this.grdMPBodega.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
