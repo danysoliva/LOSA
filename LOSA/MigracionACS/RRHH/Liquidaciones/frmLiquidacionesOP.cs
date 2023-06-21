@@ -122,8 +122,11 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                     TotalDerechos = rowd.total;
                 }
             }
-            txtTDerechos.Text = Convert.ToString(TotalDerechos);
-
+            txtTDerechos.Text = string.Format("{0:###,##0.00}", TotalDerechos);// Convert.ToString(TotalDerechos);
+            if(Id_liquidacion_ == 0)
+            {
+                dtEgreso.EditValue = dp.dNow();
+            }
 
 
         }
@@ -221,14 +224,14 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                             TotalDeducciones += Convert.ToDecimal(dr.total);
                         }
 
-                        txtTDeducciones.Text = Convert.ToString(TotalDeducciones);
+                        txtTDeducciones.Text = string.Format("{0:###,##0.00}", TotalDeducciones);// Convert.ToString(TotalDeducciones);
 
                          
                         foreach (dsRRHH_.derechos_calculo_liqRow item in dsRRHH_1.derechos_calculo_liq.Rows)
                         {
                             TotalDerechos += Convert.ToDecimal(item.total);    
                         }
-                        txtTDerechos.Text = Convert.ToString(TotalDerechos);
+                        txtTDerechos.Text = string.Format("{0:###,##0.00}", TotalDerechos);// Convert.ToString(TotalDerechos);
 
                         CalcularTotales();
                         CalculoDeTotalResumen();
@@ -1084,7 +1087,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 //}
                 CalcularTotales();
 
-                txtTDerechos.Text = Convert.ToString(TotalDerechos);
+                txtTDerechos.Text = string.Format("{0:#,###,##0.00}", TotalDerechos);// Convert.ToString(TotalDerechos);
                 //txtDiasPago.Text = Convert.ToString(DiasVacaciones_A_pagar_en_liquidacion);
             }
             CalculoDeTotalResumen();
@@ -1134,7 +1137,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 TotalDeducciones += Convert.ToDecimal(dr.total);
             }
 
-            txtTDeducciones.Text = Convert.ToString(TotalDeducciones);
+            txtTDeducciones.Text = string.Format("{0:#,###,##0.00}", TotalDeducciones);// Convert.ToString(TotalDeducciones);
 
             CalculoDeTotalResumen();
         }
@@ -1331,7 +1334,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
         {            
             decimal TotalGeneral;
             TotalGeneral = TotalDerechos - TotalDeducciones;
-            txtTotal.Text = Convert.ToString(TotalGeneral);
+            txtTotal.Text = string.Format("{0:#,###,##0.00}", TotalGeneral);// Convert.ToString(TotalGeneral);
         }
 
         private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -1417,8 +1420,8 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 }
             }
             CalcularTotales();
-            
-            txtTDerechos.Text = Convert.ToString(TotalDerechos);
+
+            txtTDerechos.Text = string.Format("{0:#,###,##0.00}", TotalDerechos);// Convert.ToString(TotalDerechos);
             CalculoDeTotalResumen();
         }
 
@@ -1441,7 +1444,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 else
                     break;
                 CalcularTotales();
-                txtTDerechos.Text = Convert.ToString(TotalDerechos);
+                txtTDerechos.Text = string.Format("{0:###,##0.00}", TotalDerechos);// Convert.ToString(TotalDerechos);
                 CalculoDeTotalResumen();
             }
         }
@@ -1470,7 +1473,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             }
 
             CalcularTotales();
-            txtTDerechos.Text = Convert.ToString(TotalDerechos);
+            txtTDerechos.Text = string.Format("{0:###,##0.00}", TotalDerechos);// Convert.ToString(TotalDerechos);
             CalculoDeTotalResumen();
 
 
@@ -1525,7 +1528,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 //}
                 CalcularTotales();
 
-                txtTDerechos.Text = Convert.ToString(TotalDerechos);
+                txtTDerechos.Text = string.Format("{0:###,##0.00}", TotalDerechos);// Convert.ToString(TotalDerechos);
                 //txtDiasPago.Text = Convert.ToString(DiasVacaciones_A_pagar_en_liquidacion);
             }
             CalculoDeTotalResumen();
@@ -1543,7 +1546,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 TotalDeducciones += Convert.ToDecimal(dr.total);
             }
 
-            txtTDeducciones.Text = Convert.ToString(TotalDeducciones);
+            txtTDeducciones.Text = string.Format("{0:###,##0.00}", TotalDeducciones);// Convert.ToString(TotalDeducciones);
 
             CalculoDeTotalResumen();
         }
