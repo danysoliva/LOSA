@@ -54,6 +54,7 @@
             this.colid_ingreso_h = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_presentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtCantSeleccionada = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gcLotesSeleccionados = new DevExpress.XtraGrid.GridControl();
             this.loteSeleccionadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -113,7 +114,6 @@
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colfecha_ingreso = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLote)).BeginInit();
@@ -237,6 +237,8 @@
             this.colcantidad_disponible.FieldName = "cantidad_disponible";
             this.colcantidad_disponible.Name = "colcantidad_disponible";
             this.colcantidad_disponible.OptionsColumn.AllowEdit = false;
+            this.colcantidad_disponible.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad_disponible", "={0:0.0,0#.##} Kg")});
             this.colcantidad_disponible.Visible = true;
             this.colcantidad_disponible.VisibleIndex = 2;
             this.colcantidad_disponible.Width = 74;
@@ -249,6 +251,8 @@
             this.colunidades_disponibles.FieldName = "unidades_disponibles";
             this.colunidades_disponibles.Name = "colunidades_disponibles";
             this.colunidades_disponibles.OptionsColumn.AllowEdit = false;
+            this.colunidades_disponibles.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "unidades_disponibles", "={0:0.#,#} Ud")});
             this.colunidades_disponibles.Visible = true;
             this.colunidades_disponibles.VisibleIndex = 3;
             this.colunidades_disponibles.Width = 58;
@@ -346,6 +350,16 @@
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 1;
             this.colpresentacion.Width = 67;
+            // 
+            // colfecha_ingreso
+            // 
+            this.colfecha_ingreso.Caption = "Fecha Ingreso";
+            this.colfecha_ingreso.FieldName = "fecha_ingreso";
+            this.colfecha_ingreso.Name = "colfecha_ingreso";
+            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
+            this.colfecha_ingreso.Visible = true;
+            this.colfecha_ingreso.VisibleIndex = 6;
+            this.colfecha_ingreso.Width = 61;
             // 
             // txtCantSeleccionada
             // 
@@ -609,9 +623,9 @@
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnDelete.Location = new System.Drawing.Point(614, 146);
+            this.btnDelete.Location = new System.Drawing.Point(614, 144);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(91, 38);
+            this.btnDelete.Size = new System.Drawing.Size(91, 36);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 51;
             this.btnDelete.Visible = false;
@@ -629,7 +643,7 @@
             this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAdd.Location = new System.Drawing.Point(614, 104);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(91, 38);
+            this.btnAdd.Size = new System.Drawing.Size(91, 36);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 50;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -666,16 +680,16 @@
             this.layoutControlItem2.Control = this.btnAdd;
             this.layoutControlItem2.Location = new System.Drawing.Point(602, 92);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(95, 42);
+            this.layoutControlItem2.Size = new System.Drawing.Size(95, 40);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnDelete;
-            this.layoutControlItem3.Location = new System.Drawing.Point(602, 134);
+            this.layoutControlItem3.Location = new System.Drawing.Point(602, 132);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(95, 42);
+            this.layoutControlItem3.Size = new System.Drawing.Size(95, 40);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -700,9 +714,9 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(602, 176);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(602, 172);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(95, 94);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(95, 98);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
@@ -1001,16 +1015,6 @@
             // gridView1
             // 
             this.gridView1.Name = "gridView1";
-            // 
-            // colfecha_ingreso
-            // 
-            this.colfecha_ingreso.Caption = "Fecha Ingreso";
-            this.colfecha_ingreso.FieldName = "fecha_ingreso";
-            this.colfecha_ingreso.Name = "colfecha_ingreso";
-            this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
-            this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 6;
-            this.colfecha_ingreso.Width = 61;
             // 
             // xfrmConfLotesSalidaAlmacen
             // 

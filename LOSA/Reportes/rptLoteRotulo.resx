@@ -123,7 +123,7 @@
   <data name="$this.ScriptsSource" xml:space="preserve">
     <value>using DevExpress.XtraReports.UI;  
 ReportPrintTool tool;  
-private void XtraReport1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {  
+private void XtraReport1_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e) {  
     tool = (sender as XtraReport).Tag as ReportPrintTool;  
     tool.PreviewForm.PrintControl.PrintingSystem.EndPrint += PrintingSystem_EndPrint;  
 }  
