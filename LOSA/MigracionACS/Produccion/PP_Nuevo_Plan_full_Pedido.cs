@@ -1363,8 +1363,33 @@ namespace LOSA.MigracionACS.Produccion
                 MessageBox.Show("Debes definir una descripción al plan.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void GetExistenciaGranel(int pid_mp)
+        {
+            
+        
+        }
+
         private void btn_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (grdv_reqMP_Total.RowCount == 0)
+            {
+                CajaDialogo.Error("Debe Seleccionar la Presenteaciacion!");
+                return;
+            }
+            else
+            {
+                //Vamos a validar existencia de Granel en Bodegas
+                foreach (DSProductos.MateriaPrimaRow row in dSProductos.MateriaPrima.Rows)
+                {
+                    //Trigo // H.Soya // H.SoyaN // H.SoyaR
+                    if (row.id_mp == 12 || row.id_mp == 14 || row.id_mp == 1062 || row.id_mp == 1063)
+                    {
+
+                    }
+                }
+            }
+
             int ParPlan;
             if (!tgg_reservarlote.IsOn)
             {
@@ -1772,6 +1797,15 @@ namespace LOSA.MigracionACS.Produccion
                 }
 
                 txtcant_tm.Text = cambio.ToString();
+            }
+
+            if (TypeTrans == 1)
+            {
+                llenado_mp_all_Reck();
+            }
+            else
+            {
+                llenado_mp_v2();
             }
         }
 

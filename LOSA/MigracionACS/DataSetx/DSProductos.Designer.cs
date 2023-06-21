@@ -8441,6 +8441,8 @@ namespace LOSA.MigracionACS.DataSetx {
             
             private global::System.Data.DataColumn columnestado;
             
+            private global::System.Data.DataColumn columnid_mp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MateriaPrimaDataTable() {
@@ -8524,6 +8526,14 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8559,7 +8569,7 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MateriaPrimaRow AddMateriaPrimaRow(string codigo, string mixType, string material, decimal pesokg, string tipo, string estado) {
+            public MateriaPrimaRow AddMateriaPrimaRow(string codigo, string mixType, string material, decimal pesokg, string tipo, string estado, int id_mp) {
                 MateriaPrimaRow rowMateriaPrimaRow = ((MateriaPrimaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codigo,
@@ -8567,7 +8577,8 @@ namespace LOSA.MigracionACS.DataSetx {
                         material,
                         pesokg,
                         tipo,
-                        estado};
+                        estado,
+                        id_mp};
                 rowMateriaPrimaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMateriaPrimaRow);
                 return rowMateriaPrimaRow;
@@ -8596,6 +8607,7 @@ namespace LOSA.MigracionACS.DataSetx {
                 this.columnpesokg = base.Columns["pesokg"];
                 this.columntipo = base.Columns["tipo"];
                 this.columnestado = base.Columns["estado"];
+                this.columnid_mp = base.Columns["id_mp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8613,6 +8625,8 @@ namespace LOSA.MigracionACS.DataSetx {
                 base.Columns.Add(this.columntipo);
                 this.columnestado = new global::System.Data.DataColumn("estado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestado);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17077,6 +17091,22 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tableMateriaPrima.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'MateriaPrima\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMateriaPrima.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscodigoNull() {
                 return this.IsNull(this.tableMateriaPrima.codigoColumn);
             }
@@ -17145,6 +17175,18 @@ namespace LOSA.MigracionACS.DataSetx {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetestadoNull() {
                 this[this.tableMateriaPrima.estadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tableMateriaPrima.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tableMateriaPrima.id_mpColumn] = global::System.Convert.DBNull;
             }
         }
         
