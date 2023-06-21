@@ -1369,12 +1369,7 @@ namespace LOSA.MigracionACS.Produccion
             }
         }
 
-        private void GetExistenciaGranel(int pid_mp)
-        {
-            
-        
-        }
-
+       
         private void btn_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (grdv_reqMP_Total.RowCount == 0)
@@ -1384,13 +1379,46 @@ namespace LOSA.MigracionACS.Produccion
             }
             else
             {
+                bool InventrioDisponible = false;
+                decimal Inventario_Bodega = 0;
                 //Vamos a validar existencia de Granel en Bodegas
                 foreach (DSProductos.MateriaPrimaRow row in dSProductos.MateriaPrima.Rows)
                 {
                     //Trigo // H.Soya // H.SoyaN // H.SoyaR
                     if (row.id_mp == 12 || row.id_mp == 14 || row.id_mp == 1062 || row.id_mp == 1063)
                     {
+                        try
+                        {
+                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand("sp_get_inve_extistencia_granel", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_mp", row.id_mp);
+                            cmd.Parameters.AddWithValue("@cantidad_solicitada", row.pesokg);
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                InventrioDisponible = dr.GetBoolean(0);
+                                Inventario_Bodega = dr.GetDecimal(1);
+                                dr.Close();
+                            }
+                            conn.Close();
 
+                            if (InventrioDisponible == false)
+                            {
+                                MateriaPrima mp = new MateriaPrima();
+                                mp.RecuperarRegistroFromID_RM(row.id_mp);
+                                CajaDialogo.Error("Materia Prima Insuficiente en Bodega \nNo se puede crear la Orden: " + mp.CodeMP_SAP +"-"+mp.NameComercial+"" +
+                                                "\nCantidad Solicitada: "+ String.Format("{0:0,0.00}", row.pesokg) +
+                                                "\nExistencia en Bodega: " + String.Format("{0:0,0.00}", Inventario_Bodega) + 
+                                                "\nContacte al Dpto. de Logistica.");
+                                return;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            CajaDialogo.Error(ex.Message);
+                        }
                     }
                 }
             }
