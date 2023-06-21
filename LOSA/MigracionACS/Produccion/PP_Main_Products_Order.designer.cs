@@ -271,7 +271,7 @@ namespace LOSA.MigracionACS.Produccion
             this.gridControl1.DataMember = "PedidoDetalle";
             this.gridControl1.DataSource = this.dSProductos1;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -287,7 +287,7 @@ namespace LOSA.MigracionACS.Produccion
             this.GridLook_Adicional,
             this.cmdBuscarFomula,
             this.cmdOrdenPRD});
-            this.gridControl1.Size = new System.Drawing.Size(1397, 367);
+            this.gridControl1.Size = new System.Drawing.Size(1395, 367);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -906,7 +906,8 @@ namespace LOSA.MigracionACS.Produccion
             this.btncerrar,
             this.barButtonItem9,
             this.btnRecargar,
-            this.barButtonItem10});
+            this.barButtonItem10,
+            this.ribbonControl1.SearchEditItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -919,7 +920,7 @@ namespace LOSA.MigracionACS.Produccion
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(1401, 31);
+            this.ribbonControl1.Size = new System.Drawing.Size(1401, 110);
             // 
             // barButtonNuevo
             // 
@@ -1094,10 +1095,10 @@ namespace LOSA.MigracionACS.Produccion
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonNuevo);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonCargar);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Opciones de Pedido";
             // 
             // ribbonPageGroup2
@@ -1121,9 +1122,9 @@ namespace LOSA.MigracionACS.Produccion
             this.panelControl1.Controls.Add(this.gridControl2);
             this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 31);
+            this.panelControl1.Location = new System.Drawing.Point(0, 110);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1401, 642);
+            this.panelControl1.Size = new System.Drawing.Size(1401, 563);
             this.panelControl1.TabIndex = 2;
             // 
             // gridControl2
@@ -1131,7 +1132,7 @@ namespace LOSA.MigracionACS.Produccion
             this.gridControl2.DataMember = "PedidoDetalleTilapia";
             this.gridControl2.DataSource = this.dSProductos1;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 369);
+            this.gridControl2.Location = new System.Drawing.Point(3, 370);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.ribbonControl1;
             this.gridControl2.Name = "gridControl2";
@@ -1144,7 +1145,7 @@ namespace LOSA.MigracionACS.Produccion
             this.GridLookUpEdit_EsAdicional_,
             this.cmdBuscarFormula,
             this.colCrearOrdenPRD});
-            this.gridControl2.Size = new System.Drawing.Size(1397, 271);
+            this.gridControl2.Size = new System.Drawing.Size(1395, 190);
             this.gridControl2.TabIndex = 2;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1667,7 +1668,7 @@ namespace LOSA.MigracionACS.Produccion
             // 
             // PP_Main_Products_Order
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1401, 673);
             this.Controls.Add(this.panelControl1);

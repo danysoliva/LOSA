@@ -362,7 +362,7 @@ namespace LOSA.MigracionACS.Produccion
                         cn.Open();
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_4";
+                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_5";
                         id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
                         int PesajeidManual = InsertOrdenPesajeManual(id_inserted, lote_fp, Convert.ToInt32(row["batch"]));

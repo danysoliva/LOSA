@@ -94,8 +94,12 @@ namespace LOSA.Calidad.LoteConfConsumo
         {
             try
             {
-                
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                SqlConnection con;
+                if (TipoBusquedaActual == TipoBusqueda.MaterialEmpaque)
+                    con = new SqlConnection(dp.ConnectionStringAMS);
+                else
+                    con = new SqlConnection(dp.ConnectionStringLOSA);
+
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand("sp_get_lista_materias_primas", con);
