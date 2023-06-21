@@ -385,6 +385,12 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
             
             private global::System.Data.DataColumn columnLinea;
             
+            private global::System.Data.DataColumn columnExistencia_Kg;
+            
+            private global::System.Data.DataColumn columnBodega;
+            
+            private global::System.Data.DataColumn columnid_bodega;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Trigo_LotesDataTable() {
@@ -564,6 +570,30 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Existencia_KgColumn {
+                get {
+                    return this.columnExistencia_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BodegaColumn {
+                get {
+                    return this.columnBodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_bodegaColumn {
+                get {
+                    return this.columnid_bodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -617,7 +647,10 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
                         string user_last_updated, 
                         string itemcode, 
                         string itemname, 
-                        int Linea) {
+                        int Linea, 
+                        decimal Existencia_Kg, 
+                        string Bodega, 
+                        int id_bodega) {
                 Trigo_LotesRow rowTrigo_LotesRow = ((Trigo_LotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -637,7 +670,10 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
                         user_last_updated,
                         itemcode,
                         itemname,
-                        Linea};
+                        Linea,
+                        Existencia_Kg,
+                        Bodega,
+                        id_bodega};
                 rowTrigo_LotesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTrigo_LotesRow);
                 return rowTrigo_LotesRow;
@@ -678,6 +714,9 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
                 this.columnitemcode = base.Columns["itemcode"];
                 this.columnitemname = base.Columns["itemname"];
                 this.columnLinea = base.Columns["Linea"];
+                this.columnExistencia_Kg = base.Columns["Existencia Kg"];
+                this.columnBodega = base.Columns["Bodega"];
+                this.columnid_bodega = base.Columns["id_bodega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -719,6 +758,12 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
                 base.Columns.Add(this.columnitemname);
                 this.columnLinea = new global::System.Data.DataColumn("Linea", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLinea);
+                this.columnExistencia_Kg = new global::System.Data.DataColumn("Existencia Kg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExistencia_Kg);
+                this.columnBodega = new global::System.Data.DataColumn("Bodega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBodega);
+                this.columnid_bodega = new global::System.Data.DataColumn("id_bodega", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_bodega);
                 this.columnlot.Caption = "Lote";
                 this.columnpriority.Caption = "Prioridad";
                 this.columndate_row.Caption = "Fecha Registro";
@@ -897,6 +942,12 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
             private global::System.Data.DataColumn columnitemname;
             
             private global::System.Data.DataColumn columnLinea;
+            
+            private global::System.Data.DataColumn columnExistencia_Kg;
+            
+            private global::System.Data.DataColumn columnBodega;
+            
+            private global::System.Data.DataColumn columnid_bodega;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1077,6 +1128,30 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Existencia_KgColumn {
+                get {
+                    return this.columnExistencia_Kg;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BodegaColumn {
+                get {
+                    return this.columnBodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_bodegaColumn {
+                get {
+                    return this.columnid_bodega;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1130,7 +1205,10 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
                         string user_last_updated, 
                         string itemcode, 
                         string itemname, 
-                        int Linea) {
+                        int Linea, 
+                        decimal Existencia_Kg, 
+                        string Bodega, 
+                        int id_bodega) {
                 Soya_LotesRow rowSoya_LotesRow = ((Soya_LotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1150,7 +1228,10 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
                         user_last_updated,
                         itemcode,
                         itemname,
-                        Linea};
+                        Linea,
+                        Existencia_Kg,
+                        Bodega,
+                        id_bodega};
                 rowSoya_LotesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSoya_LotesRow);
                 return rowSoya_LotesRow;
@@ -1191,6 +1272,9 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
                 this.columnitemcode = base.Columns["itemcode"];
                 this.columnitemname = base.Columns["itemname"];
                 this.columnLinea = base.Columns["Linea"];
+                this.columnExistencia_Kg = base.Columns["Existencia Kg"];
+                this.columnBodega = base.Columns["Bodega"];
+                this.columnid_bodega = base.Columns["id_bodega"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1232,6 +1316,12 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
                 base.Columns.Add(this.columnitemname);
                 this.columnLinea = new global::System.Data.DataColumn("Linea", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLinea);
+                this.columnExistencia_Kg = new global::System.Data.DataColumn("Existencia Kg", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExistencia_Kg);
+                this.columnBodega = new global::System.Data.DataColumn("Bodega", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBodega);
+                this.columnid_bodega = new global::System.Data.DataColumn("id_bodega", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_bodega);
                 this.columnlot.Caption = "Lote";
                 this.columnpriority.Caption = "Prioridad";
                 this.columndate_row.Caption = "Fecha Registro";
@@ -2052,6 +2142,54 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Existencia_Kg {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableTrigo_Lotes.Existencia_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Existencia Kg\' in table \'Trigo_Lotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.Existencia_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Bodega {
+                get {
+                    try {
+                        return ((string)(this[this.tableTrigo_Lotes.BodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bodega\' in table \'Trigo_Lotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.BodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_bodega {
+                get {
+                    try {
+                        return ((int)(this[this.tableTrigo_Lotes.id_bodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_bodega\' in table \'Trigo_Lotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrigo_Lotes.id_bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableTrigo_Lotes.idColumn);
             }
@@ -2264,6 +2402,42 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetLineaNull() {
                 this[this.tableTrigo_Lotes.LineaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsExistencia_KgNull() {
+                return this.IsNull(this.tableTrigo_Lotes.Existencia_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetExistencia_KgNull() {
+                this[this.tableTrigo_Lotes.Existencia_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBodegaNull() {
+                return this.IsNull(this.tableTrigo_Lotes.BodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBodegaNull() {
+                this[this.tableTrigo_Lotes.BodegaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_bodegaNull() {
+                return this.IsNull(this.tableTrigo_Lotes.id_bodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_bodegaNull() {
+                this[this.tableTrigo_Lotes.id_bodegaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2571,6 +2745,54 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal Existencia_Kg {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSoya_Lotes.Existencia_KgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Existencia Kg\' in table \'Soya_Lotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.Existencia_KgColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Bodega {
+                get {
+                    try {
+                        return ((string)(this[this.tableSoya_Lotes.BodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bodega\' in table \'Soya_Lotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.BodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_bodega {
+                get {
+                    try {
+                        return ((int)(this[this.tableSoya_Lotes.id_bodegaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_bodega\' in table \'Soya_Lotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSoya_Lotes.id_bodegaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableSoya_Lotes.idColumn);
             }
@@ -2783,6 +3005,42 @@ namespace LOSA.TransaccionesMP.Gestion_Granel {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetLineaNull() {
                 this[this.tableSoya_Lotes.LineaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsExistencia_KgNull() {
+                return this.IsNull(this.tableSoya_Lotes.Existencia_KgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetExistencia_KgNull() {
+                this[this.tableSoya_Lotes.Existencia_KgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBodegaNull() {
+                return this.IsNull(this.tableSoya_Lotes.BodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBodegaNull() {
+                this[this.tableSoya_Lotes.BodegaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_bodegaNull() {
+                return this.IsNull(this.tableSoya_Lotes.id_bodegaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_bodegaNull() {
+                this[this.tableSoya_Lotes.id_bodegaColumn] = global::System.Convert.DBNull;
             }
         }
         

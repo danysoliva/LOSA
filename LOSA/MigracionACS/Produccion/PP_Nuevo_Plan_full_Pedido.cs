@@ -362,7 +362,7 @@ namespace LOSA.MigracionACS.Produccion
                         cn.Open();
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_4";
+                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_5";
                         id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
                         int PesajeidManual = InsertOrdenPesajeManual(id_inserted, lote_fp, Convert.ToInt32(row["batch"]));
@@ -504,9 +504,9 @@ namespace LOSA.MigracionACS.Produccion
                         foreach (DataRow row in dSProductos.OrdenCamaron.Rows)
                         {
                             //string save = Recuperar_id_For(row["formula_code"].ToString()).ToString();
-                            command.CommandText = "PP_Plan_Ordenes_Insertv_4";
-                            command.CommandType = CommandType.StoredProcedure;
-                            command.Parameters.Clear();
+                            //command.CommandText = "PP_Plan_Ordenes_Insertv_4";
+                            //command.CommandType = CommandType.StoredProcedure;
+                            //command.Parameters.Clear();
 
                             ProductoTerminado prod1 = new ProductoTerminado(dp.ConnectionStringCostos);
                             if (prod1.Recuperar_producto(row["Codigo"].ToString() ))
@@ -522,7 +522,8 @@ namespace LOSA.MigracionACS.Produccion
                                 
                                 string CodigoOrden = Get_Prod_Orden_Code();
 
-                                command.CommandText = "PP_Plan_Ordenes_Insertv_4";
+                                command.CommandText = "[PP_Plan_Ordenes_Insertv_5]";
+                                command.CommandType = CommandType.StoredProcedure;
                                 command.Parameters.Clear();
 
                                 command.Parameters.AddWithValue("@id_plan", idPlan);
@@ -561,9 +562,13 @@ namespace LOSA.MigracionACS.Produccion
                                     Dato1.CodigoOrden = CodigoOrden;
                                     ListaInserted.Add(Dato1);
                                 }
-                                    
 
-                                
+                                //command.CommandText = "sp_create_traslado_auto_graneles_gestion_lotes";
+                                //command.Parameters.Clear();
+
+
+
+
                                 if (EstadoFormulaInt < 50)
                                 {
                                     //fmop.local_formula_change_status(Convert.ToInt32(save), int.Parse(ActiveUserCode), 50);

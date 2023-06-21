@@ -243,11 +243,11 @@ namespace LOSA.TransaccionesMP
                 {
                     if (row.__avance >= 95)
                     {
-                        e.Appearance.BackColor = Color.FromArgb(113, 220, 200);
+                        e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
                     }
                     else
                     {
-                        e.Appearance.BackColor = Color.Red;
+                        e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
                     }
 
 
