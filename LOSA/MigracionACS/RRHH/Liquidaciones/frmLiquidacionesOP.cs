@@ -112,14 +112,19 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             }
             //LoadDeducciones();
             //CargarLiquidacionHeader(idEmpleado);
-            
 
 
+            decimal TotalRecalculo = 0;
             foreach (dsRRHH_.derechos_calculo_liqRow rowd in dsRRHH_1.derechos_calculo_liq.Rows)
             {
                 if (rowd.id == 8)
                 {
-                    TotalDerechos = rowd.total;
+                    TotalDerechos = TotalRecalculo;
+                    rowd.total = TotalRecalculo;
+                }
+                else
+                {
+                    TotalRecalculo += Convert.ToDecimal(rowd.total);
                 }
             }
             txtTDerechos.Text = string.Format("{0:###,##0.00}", TotalDerechos);// Convert.ToString(TotalDerechos);
