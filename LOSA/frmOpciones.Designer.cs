@@ -499,6 +499,7 @@
             this.cmdGestionLotesGranel.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.cmdGestionLotesGranel.Appearance.Options.UseFont = true;
             this.cmdGestionLotesGranel.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdGestionLotesGranel.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.cmdGestionLotesGranel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGestionLotesGranel.ImageOptions.Image")));
             this.cmdGestionLotesGranel.Location = new System.Drawing.Point(416, 254);
             this.cmdGestionLotesGranel.Name = "cmdGestionLotesGranel";
@@ -560,7 +561,7 @@
             this.cmdReporteInventarioPorFecha.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdReporteInventarioPorFecha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdReporteInventarioPorFecha.ImageOptions.Image")));
             this.cmdReporteInventarioPorFecha.Location = new System.Drawing.Point(416, 110);
-            this.cmdReporteInventarioPorFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdReporteInventarioPorFecha.Margin = new System.Windows.Forms.Padding(4);
             this.cmdReporteInventarioPorFecha.Name = "cmdReporteInventarioPorFecha";
             this.cmdReporteInventarioPorFecha.Size = new System.Drawing.Size(199, 42);
             this.cmdReporteInventarioPorFecha.TabIndex = 46;
@@ -576,7 +577,7 @@
             this.simpleButton30.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton30.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton30.ImageOptions.Image")));
             this.simpleButton30.Location = new System.Drawing.Point(415, 61);
-            this.simpleButton30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton30.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton30.Name = "simpleButton30";
             this.simpleButton30.Size = new System.Drawing.Size(199, 43);
             this.simpleButton30.TabIndex = 45;
@@ -592,7 +593,7 @@
             this.simpleButton26.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton26.ImageOptions.Image")));
             this.simpleButton26.Location = new System.Drawing.Point(415, 14);
-            this.simpleButton26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton26.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton26.Name = "simpleButton26";
             this.simpleButton26.Size = new System.Drawing.Size(199, 42);
             this.simpleButton26.TabIndex = 44;
@@ -700,7 +701,7 @@
             this.btnPendientes_ingreso_a_planta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPendientes_ingreso_a_planta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPendientes_ingreso_a_planta.ImageOptions.Image")));
             this.btnPendientes_ingreso_a_planta.Location = new System.Drawing.Point(210, 15);
-            this.btnPendientes_ingreso_a_planta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPendientes_ingreso_a_planta.Margin = new System.Windows.Forms.Padding(4);
             this.btnPendientes_ingreso_a_planta.Name = "btnPendientes_ingreso_a_planta";
             this.btnPendientes_ingreso_a_planta.Size = new System.Drawing.Size(199, 42);
             this.btnPendientes_ingreso_a_planta.TabIndex = 39;
@@ -771,7 +772,7 @@
             this.btnTransferencia.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnTransferencia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTransferencia.ImageOptions.Image")));
             this.btnTransferencia.Location = new System.Drawing.Point(3, 110);
-            this.btnTransferencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTransferencia.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransferencia.Name = "btnTransferencia";
             this.btnTransferencia.Size = new System.Drawing.Size(199, 42);
             this.btnTransferencia.TabIndex = 36;
@@ -860,7 +861,7 @@
             this.btnLiquidos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnLiquidos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLiquidos.ImageOptions.Image")));
             this.btnLiquidos.Location = new System.Drawing.Point(4, 14);
-            this.btnLiquidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLiquidos.Margin = new System.Windows.Forms.Padding(2);
             this.btnLiquidos.Name = "btnLiquidos";
             this.btnLiquidos.Size = new System.Drawing.Size(199, 42);
             this.btnLiquidos.TabIndex = 41;
@@ -1022,7 +1023,7 @@
             this.btn_add_tarimas_pt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_add_tarimas_pt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_add_tarimas_pt.ImageOptions.SvgImage")));
             this.btn_add_tarimas_pt.Location = new System.Drawing.Point(4, 109);
-            this.btn_add_tarimas_pt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_add_tarimas_pt.Margin = new System.Windows.Forms.Padding(2);
             this.btn_add_tarimas_pt.Name = "btn_add_tarimas_pt";
             this.btn_add_tarimas_pt.Size = new System.Drawing.Size(198, 42);
             this.btn_add_tarimas_pt.TabIndex = 45;
@@ -1078,7 +1079,7 @@
             this.btntarimasactivadasPT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btntarimasactivadasPT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btntarimasactivadasPT.ImageOptions.Image")));
             this.btntarimasactivadasPT.Location = new System.Drawing.Point(208, 201);
-            this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btntarimasactivadasPT.Margin = new System.Windows.Forms.Padding(2);
             this.btntarimasactivadasPT.Name = "btntarimasactivadasPT";
             this.btntarimasactivadasPT.Size = new System.Drawing.Size(199, 42);
             this.btntarimasactivadasPT.TabIndex = 37;
@@ -1121,7 +1122,7 @@
             this.btnMPReproceso.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnMPReproceso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMPReproceso.ImageOptions.Image")));
             this.btnMPReproceso.Location = new System.Drawing.Point(1, 201);
-            this.btnMPReproceso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMPReproceso.Margin = new System.Windows.Forms.Padding(2);
             this.btnMPReproceso.Name = "btnMPReproceso";
             this.btnMPReproceso.Size = new System.Drawing.Size(200, 42);
             this.btnMPReproceso.TabIndex = 40;
