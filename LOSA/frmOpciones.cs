@@ -2975,11 +2975,6 @@ namespace LOSA
             frm.Show();
         }
 
-        private void btnAprobaTarimasConta_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_add_tarimas_pt_Click(object sender, EventArgs e)
         {
 
@@ -3493,6 +3488,11 @@ namespace LOSA
                     CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #81");
                 }
             }
+        }
+
+        private void btnGestionMP_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

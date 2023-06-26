@@ -310,7 +310,7 @@ namespace LOSA.Despachos
         {
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsReporte.detalleRow)gridView.GetFocusedDataRow();
-            Despachos.Reportes.frm_plan cp = new Despachos.Reportes.frm_plan(dp.ValidateNumberInt32(txtNumDoc.Text), this.UsuarioLogeado);
+            Despachos.Reportes.frm_plan cp = new Despachos.Reportes.frm_plan(Pid, this.UsuarioLogeado);
 
             cp.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             ReportPrintTool printReport = new ReportPrintTool(cp);

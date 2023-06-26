@@ -221,7 +221,7 @@
             this.TabContabilidad = new DevExpress.XtraTab.XtraTabPage();
             this.cmdAprobarAjustesInvALOSY = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteBancosPlanilla = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAprobaTarimasConta = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGestionMP = new DevExpress.XtraEditors.SimpleButton();
             this.btn_rutas_traza_contabilidad = new DevExpress.XtraEditors.SimpleButton();
             this.btn_mp_bodega_prd_finanzas = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton65 = new DevExpress.XtraEditors.SimpleButton();
@@ -295,7 +295,7 @@
             this.tabOpciones.Location = new System.Drawing.Point(5, 89);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabMontacarga;
-            this.tabOpciones.Size = new System.Drawing.Size(841, 565);
+            this.tabOpciones.Size = new System.Drawing.Size(841, 460);
             this.tabOpciones.TabIndex = 8;
             this.tabOpciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMontacarga,
@@ -321,7 +321,7 @@
             this.TabMontacarga.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabMontacarga.ImageOptions.Image")));
             this.TabMontacarga.Name = "TabMontacarga";
             this.TabMontacarga.PageVisible = false;
-            this.TabMontacarga.Size = new System.Drawing.Size(839, 505);
+            this.TabMontacarga.Size = new System.Drawing.Size(839, 400);
             this.TabMontacarga.Text = "MontaCarga";
             // 
             // labelControl4
@@ -445,7 +445,7 @@
             this.TabLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabLogistica.ImageOptions.Image")));
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
-            this.TabLogistica.Size = new System.Drawing.Size(839, 505);
+            this.TabLogistica.Size = new System.Drawing.Size(839, 400);
             this.TabLogistica.Text = "Logistica";
             // 
             // xtraTabControl1
@@ -454,7 +454,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.TabMP_Sacos;
-            this.xtraTabControl1.Size = new System.Drawing.Size(839, 505);
+            this.xtraTabControl1.Size = new System.Drawing.Size(839, 400);
             this.xtraTabControl1.TabIndex = 42;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMP_Sacos,
@@ -491,7 +491,7 @@
             this.TabMP_Sacos.Controls.Add(this.btnTransferencia);
             this.TabMP_Sacos.Controls.Add(this.btnajuste);
             this.TabMP_Sacos.Name = "TabMP_Sacos";
-            this.TabMP_Sacos.Size = new System.Drawing.Size(837, 476);
+            this.TabMP_Sacos.Size = new System.Drawing.Size(837, 371);
             this.TabMP_Sacos.Text = "MP en Sacos";
             // 
             // cmdGestionLotesGranel
@@ -1306,7 +1306,7 @@
             this.TabCalidad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabCalidad.ImageOptions.Image")));
             this.TabCalidad.Name = "TabCalidad";
             this.TabCalidad.PageVisible = false;
-            this.TabCalidad.Size = new System.Drawing.Size(839, 505);
+            this.TabCalidad.Size = new System.Drawing.Size(839, 400);
             this.TabCalidad.Text = "Calidad";
             // 
             // btnCalidadMaterialEmpaque
@@ -1641,7 +1641,7 @@
             this.TabAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabAdmin.ImageOptions.Image")));
             this.TabAdmin.Name = "TabAdmin";
             this.TabAdmin.PageVisible = false;
-            this.TabAdmin.Size = new System.Drawing.Size(839, 505);
+            this.TabAdmin.Size = new System.Drawing.Size(839, 400);
             this.TabAdmin.Text = "Administrador";
             // 
             // simpleButton37
@@ -1805,7 +1805,7 @@
             this.tabProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabProduccion.ImageOptions.Image")));
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
-            this.tabProduccion.Size = new System.Drawing.Size(839, 505);
+            this.tabProduccion.Size = new System.Drawing.Size(839, 400);
             this.tabProduccion.Text = "Producción";
             // 
             // navBarControl1
@@ -1864,7 +1864,7 @@
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
-            this.navBarControl1.Size = new System.Drawing.Size(347, 505);
+            this.navBarControl1.Size = new System.Drawing.Size(347, 400);
             this.navBarControl1.TabIndex = 20;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -2564,7 +2564,7 @@
             this.txtProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProduccion.ImageOptions.Image")));
             this.txtProduccion.Name = "txtProduccion";
             this.txtProduccion.PageVisible = false;
-            this.txtProduccion.Size = new System.Drawing.Size(839, 505);
+            this.txtProduccion.Size = new System.Drawing.Size(839, 400);
             this.txtProduccion.Text = "Produccion Administrativo";
             // 
             // btnPrioridadLotePT
@@ -2753,7 +2753,7 @@
             this.TabRRHH.ImageOptions.Image = global::LOSA.Properties.Resources.rrhh_24X24;
             this.TabRRHH.Name = "TabRRHH";
             this.TabRRHH.PageVisible = false;
-            this.TabRRHH.Size = new System.Drawing.Size(839, 505);
+            this.TabRRHH.Size = new System.Drawing.Size(839, 400);
             this.TabRRHH.Text = "RRHH";
             // 
             // cmdImprimirVouchers
@@ -2921,7 +2921,7 @@
             this.TabForecasting.ImageOptions.Image = global::LOSA.Properties.Resources.graph_32X32;
             this.TabForecasting.Name = "TabForecasting";
             this.TabForecasting.PageVisible = false;
-            this.TabForecasting.Size = new System.Drawing.Size(839, 505);
+            this.TabForecasting.Size = new System.Drawing.Size(839, 400);
             this.TabForecasting.Text = "Forecasting";
             // 
             // simpleButton52
@@ -3078,7 +3078,7 @@
             // 
             this.TabContabilidad.Controls.Add(this.cmdAprobarAjustesInvALOSY);
             this.TabContabilidad.Controls.Add(this.cmdReporteBancosPlanilla);
-            this.TabContabilidad.Controls.Add(this.btnAprobaTarimasConta);
+            this.TabContabilidad.Controls.Add(this.btnGestionMP);
             this.TabContabilidad.Controls.Add(this.btn_rutas_traza_contabilidad);
             this.TabContabilidad.Controls.Add(this.btn_mp_bodega_prd_finanzas);
             this.TabContabilidad.Controls.Add(this.simpleButton65);
@@ -3094,7 +3094,7 @@
             this.TabContabilidad.ImageOptions.Image = global::LOSA.Properties.Resources.calculo;
             this.TabContabilidad.Name = "TabContabilidad";
             this.TabContabilidad.PageVisible = false;
-            this.TabContabilidad.Size = new System.Drawing.Size(839, 505);
+            this.TabContabilidad.Size = new System.Drawing.Size(839, 400);
             this.TabContabilidad.Text = "Contabilidad";
             // 
             // cmdAprobarAjustesInvALOSY
@@ -3127,21 +3127,21 @@
             this.cmdReporteBancosPlanilla.Text = "Reporte Bancos Planilla";
             this.cmdReporteBancosPlanilla.Click += new System.EventHandler(this.cmdReporteBancosPlanilla_Click);
             // 
-            // btnAprobaTarimasConta
+            // btnGestionMP
             // 
-            this.btnAprobaTarimasConta.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAprobaTarimasConta.Appearance.Options.UseFont = true;
-            this.btnAprobaTarimasConta.Appearance.Options.UseTextOptions = true;
-            this.btnAprobaTarimasConta.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnAprobaTarimasConta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAprobaTarimasConta.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAprobaTarimasConta.ImageOptions.SvgImage")));
-            this.btnAprobaTarimasConta.Location = new System.Drawing.Point(545, 127);
-            this.btnAprobaTarimasConta.Name = "btnAprobaTarimasConta";
-            this.btnAprobaTarimasConta.Size = new System.Drawing.Size(223, 71);
-            this.btnAprobaTarimasConta.TabIndex = 51;
-            this.btnAprobaTarimasConta.Text = "Aprobacion de Tarimas PT";
-            this.btnAprobaTarimasConta.Visible = false;
-            this.btnAprobaTarimasConta.Click += new System.EventHandler(this.btnAprobaTarimasConta_Click);
+            this.btnGestionMP.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.btnGestionMP.Appearance.Options.UseFont = true;
+            this.btnGestionMP.Appearance.Options.UseTextOptions = true;
+            this.btnGestionMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnGestionMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnGestionMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAprobaTarimasConta.ImageOptions.Image")));
+            this.btnGestionMP.Location = new System.Drawing.Point(545, 127);
+            this.btnGestionMP.Name = "btnGestionMP";
+            this.btnGestionMP.Size = new System.Drawing.Size(223, 71);
+            this.btnGestionMP.TabIndex = 51;
+            this.btnGestionMP.Text = "Mantenimiento de Materia Prima";
+            this.btnGestionMP.Visible = false;
+            this.btnGestionMP.Click += new System.EventHandler(this.btnGestionMP_Click);
             // 
             // btn_rutas_traza_contabilidad
             // 
@@ -3686,7 +3686,7 @@
         private DevExpress.XtraEditors.SimpleButton btnRutas_traza_produccion;
         private DevExpress.XtraEditors.SimpleButton btnrutas_traz_logistica;
         private DevExpress.XtraEditors.SimpleButton btn_rutas_traza_contabilidad;
-        private DevExpress.XtraEditors.SimpleButton btnAprobaTarimasConta;
+        private DevExpress.XtraEditors.SimpleButton btnGestionMP;
         private DevExpress.XtraEditors.SimpleButton btn_add_tarimas_pt;
         private DevExpress.XtraEditors.SimpleButton simpleButton67;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;

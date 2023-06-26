@@ -39,7 +39,7 @@ namespace LOSA.Despachos.Reportes
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    txtid_documento.Text = Id_despachos.ToString();
+                    txtid_documento.Text = dr.GetInt32(1).ToString();
                     txtfecha.Text = string.Format("{0:dd/MM/yyyy}", dr.GetDateTime(2));
                     txtvehiculo.Text = dr.GetString(5);
                     txtboleta.Text = dr.GetInt32(3).ToString();
