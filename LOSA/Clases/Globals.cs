@@ -127,11 +127,11 @@ namespace ACS.Classes
         public static string odoo4_DB_Pass = "Aqua3820";
 
         //ODOO5
-        public static string odoo5_ServerAddress = "10.50.11.136";
+        public static string odoo5_ServerAddress = "10.50.11.137";
         public static string odoo5_ServerName = "Servidor Odoo Virtual";
         public static string odoo5_ActiveDB = "dbaquafeed";
         public static string odoo5_DB_User = "vegeta";
-        public static string odoo5_DB_Pass = "innova2020";
+        public static string odoo5_DB_Pass = "aquaf33d19";
 
 
         ////Promix -- TEST ---

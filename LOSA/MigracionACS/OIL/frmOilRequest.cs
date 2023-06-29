@@ -52,11 +52,11 @@ namespace LOSA.MigracionACS.OIL
                 switch (idNivel)
                 {
                     case 1://Basic View
-                    case 2://Basic No Autorization
-                        //btnc_VerifyReach.Enabled = false;
                         AccesoPrevio = true;
                         simpleButton1.Visible = false;
                         break;
+                    case 2://Basic No Autorization
+                        //btnc_VerifyReach.Enabled = false;
                     case 3://Medium Autorization
                     case 4://Depth With Delta
                     case 5://Depth Without Delta
