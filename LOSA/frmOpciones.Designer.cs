@@ -803,7 +803,7 @@
             this.tabMP_Granel.Controls.Add(this.btnLiquidos);
             this.tabMP_Granel.Controls.Add(this.simpleButton14);
             this.tabMP_Granel.Name = "tabMP_Granel";
-            this.tabMP_Granel.Size = new System.Drawing.Size(837, 476);
+            this.tabMP_Granel.Size = new System.Drawing.Size(837, 371);
             this.tabMP_Granel.Text = "MP Granel / Liquidos";
             // 
             // cmdLoteActivoGranel
@@ -894,7 +894,7 @@
             this.tabEntregaMP.Controls.Add(this.cmdRequisiciones_);
             this.tabEntregaMP.Controls.Add(this.btnplanrequisas);
             this.tabEntregaMP.Name = "tabEntregaMP";
-            this.tabEntregaMP.Size = new System.Drawing.Size(837, 476);
+            this.tabEntregaMP.Size = new System.Drawing.Size(837, 371);
             this.tabEntregaMP.Text = "Entrega MP - PRD";
             this.tabEntregaMP.Paint += new System.Windows.Forms.PaintEventHandler(this.tabEntregaMP_Paint);
             // 
@@ -995,7 +995,7 @@
             this.tabPT.Controls.Add(this.simpleButton10);
             this.tabPT.Controls.Add(this.btnReq_PT);
             this.tabPT.Name = "tabPT";
-            this.tabPT.Size = new System.Drawing.Size(837, 476);
+            this.tabPT.Size = new System.Drawing.Size(837, 371);
             this.tabPT.Text = "Producto Terminado";
             this.tabPT.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPT_Paint);
             // 
@@ -1179,7 +1179,7 @@
             this.tabMasterData.Controls.Add(this.simpleButton23);
             this.tabMasterData.Controls.Add(this.btn_andenes);
             this.tabMasterData.Name = "tabMasterData";
-            this.tabMasterData.Size = new System.Drawing.Size(837, 476);
+            this.tabMasterData.Size = new System.Drawing.Size(837, 371);
             this.tabMasterData.Text = "Configuraciones";
             this.tabMasterData.Paint += new System.Windows.Forms.PaintEventHandler(this.tabMasterData_Paint);
             // 
@@ -1230,7 +1230,7 @@
             this.tabReportes.Controls.Add(this.btnreportes);
             this.tabReportes.Controls.Add(this.simpleButton8);
             this.tabReportes.Name = "tabReportes";
-            this.tabReportes.Size = new System.Drawing.Size(837, 476);
+            this.tabReportes.Size = new System.Drawing.Size(837, 371);
             this.tabReportes.Text = "Reportes";
             // 
             // btnReporteProduccionDespachos
@@ -1875,7 +1875,6 @@
             this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup1.AppearancePressed.Options.UseFont = true;
             this.navBarGroup1.Caption = "Producción";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrazabilidad),
@@ -3134,7 +3133,7 @@
             this.btnGestionMP.Appearance.Options.UseTextOptions = true;
             this.btnGestionMP.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnGestionMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnGestionMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAprobaTarimasConta.ImageOptions.Image")));
+            this.btnGestionMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionMP.ImageOptions.Image")));
             this.btnGestionMP.Location = new System.Drawing.Point(545, 127);
             this.btnGestionMP.Name = "btnGestionMP";
             this.btnGestionMP.Size = new System.Drawing.Size(223, 71);
@@ -3332,7 +3331,7 @@
             this.TabBascula.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
             this.TabBascula.Name = "TabBascula";
             this.TabBascula.PageVisible = false;
-            this.TabBascula.Size = new System.Drawing.Size(839, 505);
+            this.TabBascula.Size = new System.Drawing.Size(839, 400);
             this.TabBascula.Text = "Báscula";
             // 
             // simpleButton71
@@ -3402,7 +3401,7 @@
             this.TabFormulacion.ImageOptions.Image = global::LOSA.Properties.Resources.formula_market_research;
             this.TabFormulacion.Name = "TabFormulacion";
             this.TabFormulacion.PageVisible = false;
-            this.TabFormulacion.Size = new System.Drawing.Size(839, 505);
+            this.TabFormulacion.Size = new System.Drawing.Size(839, 400);
             this.TabFormulacion.Text = "Formulación";
             // 
             // simpleButton73

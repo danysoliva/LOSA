@@ -3106,7 +3106,7 @@ namespace LOSA
         {
             try
             {
-                FML_Formulas_v2 fm = new FML_Formulas_v2(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups);
+                FML_Formulas_v2 fm = new FML_Formulas_v2(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
                 fm.MdiParent = this.MdiParent;
                 fm.Show();
             }

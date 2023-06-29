@@ -32,6 +32,7 @@ namespace LOSA.MigracionACS.Formulas
         string selected_code;
         DataTable UserGroups;
         DataTable dt;
+        UserLogin UsuarioLogeado;
 
         DataOperations dp = new DataOperations();
         FMOP fmop = new FMOP();
@@ -133,7 +134,7 @@ namespace LOSA.MigracionACS.Formulas
 
         #region Form Constructors
 
-        public FML_Formulas_v2(string ActiveUserCode, string ActiveUserName, string ActiveUserType, DataTable UserGroups)
+        public FML_Formulas_v2(string ActiveUserCode, string ActiveUserName, string ActiveUserType, DataTable UserGroups, UserLogin pUserLogin)
         {
             InitializeComponent();
             //Comment
@@ -142,6 +143,7 @@ namespace LOSA.MigracionACS.Formulas
             this.ActiveUserName = ActiveUserName;
             this.ActiveUserType = ActiveUserType;
             this.UserGroups = UserGroups;
+            UsuarioLogeado = pUserLogin;
         }
 
         #endregion
@@ -156,10 +158,11 @@ namespace LOSA.MigracionACS.Formulas
             {
                 Load_Formulas();
 
-                foreach (DataRow row in UserGroups.Rows)
+                //int i = Convert.ToInt32(UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo);
+
+                switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
                 {
-                    if (row["GroupName"].ToString() == "app_acs_it_admin")
-                    {
+                    case GrupoUser.GrupoUsuario.Administradores:
                         btn_new.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btn_newPreMix.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btn_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
@@ -171,35 +174,150 @@ namespace LOSA.MigracionACS.Formulas
                         btnc_requestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btnc_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    }
-                    else if (row["GroupName"].ToString() == "app_acs_fml_planner")
-                    {
-                        btn_new.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btn_newPreMix.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btn_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
 
-                        btnc_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btnc_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btnc_edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btnc_requestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btnc_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        
-                        btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always; // JV Adicionado 25/05/2017
-                        //Se coloca para Release 1
-                        //btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        //btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    }
-                    else if (row["GroupName"].ToString() == "app_acs_fml_approver_fin" || row["GroupName"].ToString() == "app_acs_fml_approver_prd")
-                    {
-                        btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                    }
-                    else
-                    {
+                        break;
 
-                    }
+                    case GrupoUser.GrupoUsuario.ProduccionV2:
+                        int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);
+                        switch (idNivel)
+                        {
+                            case 1://Basic View
+                                
+                                break;
+                            case 2://Basic No Autorization
+                                
+                                break;
+                            case 3://Medium Autorization
+                                btn_new.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btn_newPreMix.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btn_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                                btnc_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_requestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                                btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always; // JV Adicionado 25/05/2017
+                                break;
+                            case 4://Depth With Delta
+                                btn_new.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btn_newPreMix.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btn_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                                btnc_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_requestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                                btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always; // JV Adicionado 25/05/2017
+
+                                //"app_acs_fml_approver_fin" || row["GroupName"].ToString() == "app_acs_fml_approver_prd"
+                                btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                break;
+                            case 5://Depth Without Delta
+                                btn_new.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btn_newPreMix.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btn_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                                btnc_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_requestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                                btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always; // JV Adicionado 25/05/2017
+
+                                //"app_acs_fml_approver_fin" || row["GroupName"].ToString() == "app_acs_fml_approver_prd"
+                                btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                break;
+                            default:
+                                
+                                break;
+                        }
+                        break;
+
+                    case GrupoUser.GrupoUsuario.Contabilidad:
+                        idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);
+                        switch (idNivel)
+                        {
+                            case 1://Basic View
+                           
+                                break;
+                            case 2://Basic No Autorization
+                               
+                                break;
+                            case 3://Medium Autorization
+                             
+                                break;
+                            case 4://Depth With Delta
+                                btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                break;
+                            case 5://Depth Without Delta
+                                btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                                break;
+                            default:
+                                
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
                 }
+
+                //foreach (DataRow row in UserGroups.Rows)
+                //{
+                   
+                //    if (row["GroupName"].ToString() == "app_acs_it_admin")
+                //    {
+                //        //btn_new.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        //btn_newPreMix.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        //btn_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                //        //btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        //btnc_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        //btnc_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        //btnc_edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        //btnc_requestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        //btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        //btnc_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    }
+                //    else if (row["GroupName"].ToString() == "app_acs_fml_planner")
+                //    {
+                //        btn_new.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        btn_newPreMix.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        btn_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+                //        btnc_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        btnc_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        btnc_edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        btnc_requestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        btnc_CopySelected.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                        
+                //        btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always; // JV Adicionado 25/05/2017
+                //        //Se coloca para Release 1
+                //        //btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        //btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    }
+                //    else if (row["GroupName"].ToString() == "app_acs_fml_approver_fin" || row["GroupName"].ToString() == "app_acs_fml_approver_prd")
+                //    {
+                //        btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //        btnc_view.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //    }
+                //    else
+                //    {
+
+                //    }
+                //}
             }
             catch (Exception ex)
             {

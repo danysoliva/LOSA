@@ -147,7 +147,7 @@ namespace LOSA.MigracionACS.Produccion
 
         private void btn_formulas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FML_Formulas_v2 fm = new Formulas.FML_Formulas_v2(ActiveUserCode, ActiveUserName, ActiveUserType, null);
+            FML_Formulas_v2 fm = new FML_Formulas_v2(ActiveUserCode, ActiveUserName, ActiveUserType, null, UsuarioLogeado);
             fm.ShowDialog();
         }
 
