@@ -226,6 +226,21 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="remanente_tarimas" msprop:Generator_TableClassName="remanente_tarimasDataTable" msprop:Generator_TableVarName="tableremanente_tarimas" msprop:Generator_RowChangedName="remanente_tarimasRowChanged" msprop:Generator_TablePropName="remanente_tarimas" msprop:Generator_RowDeletingName="remanente_tarimasRowDeleting" msprop:Generator_RowChangingName="remanente_tarimasRowChanging" msprop:Generator_RowEvHandlerName="remanente_tarimasRowChangeEventHandler" msprop:Generator_RowDeletedName="remanente_tarimasRowDeleted" msprop:Generator_RowClassName="remanente_tarimasRow" msprop:Generator_UserTableName="remanente_tarimas" msprop:Generator_RowEvArgName="remanente_tarimasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_mp" msprop:Generator_ColumnVarNameInTable="columnid_mp" msprop:Generator_ColumnPropNameInRow="id_mp" msprop:Generator_ColumnPropNameInTable="id_mpColumn" msprop:Generator_UserColumnName="id_mp" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre_comercial" msprop:Generator_ColumnVarNameInTable="columnnombre_comercial" msprop:Generator_ColumnPropNameInRow="nombre_comercial" msprop:Generator_ColumnPropNameInTable="nombre_comercialColumn" msprop:Generator_UserColumnName="nombre_comercial" type="xs:string" minOccurs="0" />
+              <xs:element name="lote" msprop:Generator_ColumnVarNameInTable="columnlote" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_UserColumnName="lote" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_ingreso_prd" msprop:Generator_ColumnVarNameInTable="columnfecha_ingreso_prd" msprop:Generator_ColumnPropNameInRow="fecha_ingreso_prd" msprop:Generator_ColumnPropNameInTable="fecha_ingreso_prdColumn" msprop:Generator_UserColumnName="fecha_ingreso_prd" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
+              <xs:element name="existencia_kg" msprop:Generator_ColumnVarNameInTable="columnexistencia_kg" msprop:Generator_ColumnPropNameInRow="existencia_kg" msprop:Generator_ColumnPropNameInTable="existencia_kgColumn" msprop:Generator_UserColumnName="existencia_kg" type="xs:decimal" minOccurs="0" />
+              <xs:element name="unidades" msprop:Generator_ColumnVarNameInTable="columnunidades" msprop:Generator_ColumnPropNameInRow="unidades" msprop:Generator_ColumnPropNameInTable="unidadesColumn" msprop:Generator_UserColumnName="unidades" type="xs:int" minOccurs="0" />
+              <xs:element name="id_tarima_origen" msprop:Generator_ColumnVarNameInTable="columnid_tarima_origen" msprop:Generator_ColumnPropNameInRow="id_tarima_origen" msprop:Generator_ColumnPropNameInTable="id_tarima_origenColumn" msprop:Generator_UserColumnName="id_tarima_origen" type="xs:int" minOccurs="0" />
+              <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

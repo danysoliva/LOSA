@@ -103,9 +103,9 @@ namespace LOSA.TransaccionesMP
             {
                 CajaDialogo.Error(ex.Message);
             }
-            
 
-            
+
+
         }
         public void load_tarimas_scan_v2()
         {
@@ -125,7 +125,7 @@ namespace LOSA.TransaccionesMP
             {
                 CajaDialogo.Error(ex.Message);
             }
-            
+
 
         }
         private void cmdHome_Click(object sender, EventArgs e)
@@ -133,8 +133,14 @@ namespace LOSA.TransaccionesMP
             this.Close();
         }
 
+        private void LimpiarMensaje()
+        {
+            
+        }
+
         private void timerLimpiarMensaje_Tick(object sender, EventArgs e)
         {
+         
             timerLimpiarMensaje.Stop();
             timerLimpiarMensaje.Enabled = false;
             panelNotificacion.BackColor = Color.White;
@@ -183,6 +189,7 @@ namespace LOSA.TransaccionesMP
                                                                 "    Estado: " + RequisicionActual.Descripcion_estado;
                                     lblRequisicionEncontrada.BackColor = Color.FromArgb(0, 204, 204);
                                     load_tarimas_scan_v2();
+                                    xtraTabControl1.SelectedTabPage = xtraTabPage1;
                                     txtTarima.Focus();
                                     
                                     btnVerDetalleRequisa.Visible = true; 
@@ -275,6 +282,15 @@ namespace LOSA.TransaccionesMP
                 {
                     if (RequisicionActual.Bit_finalizar == false)
                     {
+                        Tarima tarRemanente = new Tarima();
+                        tarRemanente.ValidarTarimaRemanenteMacro(txtTarima.Text.Trim());
+                        if (tarRemanente.Tarima_existe)
+                        {
+                            EntregaRemanenteMacros(txtTarima.Text);
+                            load_tarimas_scan_v2();
+                            txtTarima.Text = "";
+                            return;
+                        }
                         EntregarTarima();
                         load_tarimas_scan_v2();
                     }
@@ -296,6 +312,101 @@ namespace LOSA.TransaccionesMP
                 //}
 
             }
+        }
+
+        private void EntregaRemanenteMacros(string pCodigo_barra)
+        {
+
+            if (!string.IsNullOrEmpty(pCodigo_barra))
+            {
+                decimal EntregadoRequisa = 0;
+                decimal SolicitadoRequisa = 0;
+
+
+                Tarima tarRemanente = new Tarima();
+                tarRemanente.RecuperarTarimaRemanenteMacros(pCodigo_barra);
+
+                if (tarRemanente.Id > 0)
+                {
+                    Requisicion req1 = new Requisicion();
+                    req1.RecuperarRegistroFromBarcodeClass(txtRequisicion.Text.Trim());
+                    //Vamos a Sacar Cuanto Se necesita segun la Requisa
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_get_solicitado_requisa_for_remanente", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_requisa", req1.IdRequisicion);
+                        cmd.Parameters.AddWithValue("@id_mp",tarRemanente.Id_materiaprima);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            SolicitadoRequisa = dr.GetDecimal(0);
+                            EntregadoRequisa = dr.GetDecimal(1);
+                        }
+                        dr.Close();
+                        conn.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+
+                    frmResumenToEntregar frmEntrega = new frmResumenToEntregar(tarRemanente.Id, tarRemanente.Peso, tarRemanente.Cantidad, EntregadoRequisa, SolicitadoRequisa);
+                    if (frmEntrega.ShowDialog() == DialogResult.OK)
+                    {
+                        bool Guardar = false;
+                        if (frmEntrega.pesoKg > 0)
+                        {
+                            
+                            //Aqui va la MAGIA
+                            try
+                            {
+                                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                                conn.Open();
+                                SqlCommand cmd = new SqlCommand("sp_insert_tarima_requisa_entrega_remanente_macro", conn);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@id_tarima",tarRemanente.Id);
+                                cmd.Parameters.AddWithValue("@ud_entrega",tarRemanente.Cantidad);
+                                cmd.Parameters.AddWithValue("@kg_entrega",frmEntrega.pesoKg);
+                                cmd.Parameters.AddWithValue("@id_requisa",req1.IdRequisicion);
+                                cmd.Parameters.AddWithValue("@id_usuario",usuarioLogueado.Id);
+                                //cmd.Parameters.AddWithValue("",);
+                                //cmd.Parameters.AddWithValue("",);
+                                //cmd.Parameters.AddWithValue("",);
+                                //cmd.Parameters.AddWithValue("",);
+                                cmd.ExecuteNonQuery();
+                                conn.Close();
+                                Guardar = true;
+                            }
+                            catch (Exception ex)
+                            {
+                                lblMensaje.Text = ex.Message;
+                                panelNotificacion.BackColor = Color.Red;
+                                timerLimpiarMensaje.Enabled = true;
+                                timerLimpiarMensaje.Start();
+                            }
+                        }
+
+                        if (Guardar)
+                        {
+                            
+                            //Mensaje de transaccion exitosa
+                            lblMensaje.Text = "Transacción Exitosa!";
+                            panelNotificacion.BackColor = Color.MediumSeaGreen;
+                            timerLimpiarMensaje.Enabled = true;
+                            timerLimpiarMensaje.Start();
+                        }
+
+
+
+                    }
+                }
+
+            }      
+        
         }
         //private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion, string codigoSAP, string MP)
         //{
@@ -445,29 +556,29 @@ namespace LOSA.TransaccionesMP
                         case 2://En Bodega
                             break;
                         case 3://Retenido
-                            mensaje = "Esta Tarima esta Retenida!";
+                            mensaje = "Esta Tarima esta Retenida por Calidad!";
                             Error = true;
                             break;
                         case 4://Comprometido
-                            mensaje = "Esta tarima ya esta comprometida!";
+                            mensaje = "Esta Tarima ya esta Comprometida!";
                             Error = true;
                             break;
                         case 5://En Produccion
-                            mensaje = "Esta tarima ya fue entrega a Producción";
+                            mensaje = "Esta Tarima ya fue Entregada a Producción";
                             Error = true;
                             break;
                         case 6://Consumido
-                            mensaje = "Esta Tarima ya fue entregada y consumida por producción!";
+                            mensaje = "Esta Tarima ya fue Entregada y Consumida por producción!";
                             Error = true;
                             break;
                         case 8://Parcialmente Entregado
                             break;
                         case 9://Rechazado
-                            mensaje = "Esta tarima fue Rechazada!";
+                            mensaje = "Esta Tarima fue Rechazada!";
                             Error = true;
                             break;
                         case 10://Ajuste de Inventario
-                            mensaje = "Esta tarima tuvo salida por ajuste de Inventario!";
+                            mensaje = "Esta Tarima tuvo salida por Ajuste de Inventario!";
                             Error = true;
                             break;
                     }
@@ -557,25 +668,7 @@ namespace LOSA.TransaccionesMP
                 //Validar si la tarima escaneada es valida
                 if (tarimaEncontrada.Recuperado)
                 {
-                    //Validar el estado de la tarima basado con el criterio del Depto de Calidad
-
-                    //if (tarimaEncontrada.Id_estadoCalidad > 1)
-                    //{
-                    //    error = true;
-                    //    mensaje = "Calidad tiene retenido esta tarima.!";
-                    //    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                    //    if (frm.ShowDialog() == DialogResult.Cancel)
-                    //    {
-
-                    //    }
-                    //    panelNotificacion.BackColor = Color.Red;
-                    //    timerLimpiarMensaje.Enabled = true;
-                    //    timerLimpiarMensaje.Start();
-                    //    return;
-                    //}
-
                     
-
                     //Validar Estaso de Tarima
                     switch (tarimaEncontrada.Id_estado_tarima)
                     {
@@ -695,18 +788,20 @@ namespace LOSA.TransaccionesMP
                         {
                             mensaje = "Existe MP Pendiente de Entrega: "+ tarimaEncontrada.MateriaPrima +
                                       "\nRemanente Pendiente: "+ req_val.CantidadPendiente+" Kg."+
-                                      "\nEntrege la MP pendiente, Materia Prima en PRD!";
+                                      "\nEntrege la MP pendiente: Materia Prima en Disponible PRD!";
                             //lblMensaje.Text = mensaje;
-                            lblMensaje.BackColor = Color.Red;
+                            //lblMensaje.BackColor = Color.Red;
                             Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
                             frm.ShowDialog();
 
-                            panelNotificacion.BackColor = Color.Red;
-                            timerLimpiarMensaje.Enabled = true;
-                            timerLimpiarMensaje.Start();
+                            //panelNotificacion.BackColor = Color.Red;
+                            //timerLimpiarMensaje.Enabled = true;
+                            //timerLimpiarMensaje.Start();
 
                             txtTarima.Text = "";
                             xtraTabControl1.SelectedTabPageIndex = 2;
+
+                            
                             return;
                         }
 
@@ -795,7 +890,7 @@ namespace LOSA.TransaccionesMP
                                 con.Open();
 
                                 //SqlCommand cmd = new SqlCommand("sp_set_insert_salida_tarima_bodega_mp", con);
-                                SqlCommand cmd = new SqlCommand("sp_insert_tarima_requisa_entrega_v9", con);
+                                SqlCommand cmd = new SqlCommand("sp_insert_tarima_requisa_entrega_v10", con);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@idtarima", tarimaEncontrada.Id);
                                 cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
@@ -1143,7 +1238,15 @@ namespace LOSA.TransaccionesMP
                     frmviewrequisa_detalle frm = new frmviewrequisa_detalle(req1.IdRequisicion, usuarioLogueado, req1.Lote);
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        load_tarimas_scan();
+                        if (txtRequisicion.Text == "")
+                        {
+                            load_tarimas_scan();
+                        }
+                        else
+                        {
+                            load_tarimas_scan_v2();
+                        }
+                        
                         load_bines_disponibles();
                         txtTarima.Focus();
                     }

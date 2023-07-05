@@ -279,7 +279,7 @@ namespace LOSA.Logistica
             this.tsEditarTarima.Properties.Appearance.Options.UseFont = true;
             this.tsEditarTarima.Properties.OffText = "No";
             this.tsEditarTarima.Properties.OnText = "Si";
-            this.tsEditarTarima.Size = new System.Drawing.Size(153, 32);
+            this.tsEditarTarima.Size = new System.Drawing.Size(153, 28);
             this.tsEditarTarima.TabIndex = 122;
             this.tsEditarTarima.Toggled += new System.EventHandler(this.tsEditarTarima_Toggled);
             // 

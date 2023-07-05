@@ -456,12 +456,16 @@ namespace LOSA.Logistica
 
         private void CalculoPeso()
         {
-            PresentacionX pres1 = new PresentacionX();
+            //if (Convert.ToInt32(grdPresentacion.EditValue) > 0)
+            //{
+            //    PresentacionX pres1 = new PresentacionX();
 
-            pres1.RecuperarRegistro(Convert.ToInt32(grdPresentacion.EditValue));
-            int Unidades = Convert.ToInt32(txtUnidades.EditValue);
+            //    pres1.RecuperarRegistro(Convert.ToInt32(grdPresentacion.EditValue));
+            //    int Unidades = Convert.ToInt32(txtUnidades.EditValue);
 
-            txtPeso.EditValue = Unidades * pres1.Factor;
+            //    txtPeso.EditValue = Unidades * pres1.Factor;
+            //}
+            
 
         }
 

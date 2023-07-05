@@ -184,6 +184,7 @@
             this.cmdTarimasPT = new DevExpress.XtraEditors.SimpleButton();
             this.btnAlimentacionManual = new DevExpress.XtraEditors.SimpleButton();
             this.txtProduccion = new DevExpress.XtraTab.XtraTabPage();
+            this.btn_print_mp_remanente = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrioridadLotePT = new DevExpress.XtraEditors.SimpleButton();
             this.btnReqMEmpaque = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCierreLotesPT = new DevExpress.XtraEditors.SimpleButton();
@@ -2320,7 +2321,6 @@
             this.navBarGroup4.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup4.AppearancePressed.Options.UseFont = true;
             this.navBarGroup4.Caption = "Inventario";
-            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrasladoAceiteExterno),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbSetMaterial),
@@ -2549,6 +2549,7 @@
             // 
             // txtProduccion
             // 
+            this.txtProduccion.Controls.Add(this.btn_print_mp_remanente);
             this.txtProduccion.Controls.Add(this.btnPrioridadLotePT);
             this.txtProduccion.Controls.Add(this.btnReqMEmpaque);
             this.txtProduccion.Controls.Add(this.cmdCierreLotesPT);
@@ -2566,6 +2567,21 @@
             this.txtProduccion.PageVisible = false;
             this.txtProduccion.Size = new System.Drawing.Size(839, 400);
             this.txtProduccion.Text = "Produccion Administrativo";
+            // 
+            // btn_print_mp_remanente
+            // 
+            this.btn_print_mp_remanente.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_print_mp_remanente.Appearance.Options.UseFont = true;
+            this.btn_print_mp_remanente.Appearance.Options.UseTextOptions = true;
+            this.btn_print_mp_remanente.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btn_print_mp_remanente.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_print_mp_remanente.ImageOptions.Image = global::LOSA.Properties.Resources.materia_prima_x32;
+            this.btn_print_mp_remanente.Location = new System.Drawing.Point(468, 174);
+            this.btn_print_mp_remanente.Name = "btn_print_mp_remanente";
+            this.btn_print_mp_remanente.Size = new System.Drawing.Size(199, 69);
+            this.btn_print_mp_remanente.TabIndex = 53;
+            this.btn_print_mp_remanente.Text = "MP Remanente Tarimas";
+            this.btn_print_mp_remanente.Click += new System.EventHandler(this.btn_print_mp_remanente_Click);
             // 
             // btnPrioridadLotePT
             // 
@@ -3710,5 +3726,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdAprobarAjustesInvALOSY;
         private DevExpress.XtraEditors.SimpleButton cmdImprimirVouchers;
         private DevExpress.XtraEditors.SimpleButton cmdGestionLotesGranel;
+        private DevExpress.XtraEditors.SimpleButton btn_print_mp_remanente;
     }
 }

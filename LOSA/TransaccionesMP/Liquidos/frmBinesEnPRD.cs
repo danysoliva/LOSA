@@ -163,6 +163,9 @@ namespace LOSA.TransaccionesMP.Liquidos
             Entregar_componentes(row.PendienteAsignacion, row.id_tarima);
             CajaDialogo.Information("Entregado correctamente.");
             load_bines_disponibles();
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
          }
     }
 }

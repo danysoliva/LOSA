@@ -55,9 +55,6 @@ namespace LOSA.TransaccionesMP
             Solicitado = psolicitado_Kg;
             id_tm = Pid_tm;
 
-
-
-
             Calculo();
             txtEnviados.Text = string.Format("{0:###,##0.00}", entregado);
             txtSolicitados.Text = string.Format("{0:###,##0.00}", Solicitado);
@@ -92,6 +89,31 @@ namespace LOSA.TransaccionesMP
                 CalcularKg(dp.ValidateNumberInt32(Math.Round(ud_enviar, 0)));
             }
         }
+
+        public frmResumenToEntregar(int pid_tm, decimal pExistenciaTarimaKg, decimal pExistenciaTarimaUnidades, decimal pEntregadoRequisa, decimal pSolicitadoRequisa)
+        {
+            InitializeComponent();
+            //vGridControl1.DataSource = Tarima;
+            ExistenciaTarimaUnidades = pExistenciaTarimaUnidades;
+            ExistenciaTarimaKg = pExistenciaTarimaKg;
+            ExistenciaKg = ExistenciaTarimaKg;
+            lblTotalUd_en_tarima.Text = string.Format("{0:###,##0}", ExistenciaTarimaUnidades) + " Ud";
+            entregado = pEntregadoRequisa;
+            Solicitado = pSolicitadoRequisa;
+            id_tm = pid_tm;
+            btnUP.Enabled = false;
+            btnDown.Enabled = false;
+            
+            txtEnviados.Text = string.Format("{0:###,##0.00}", entregado);
+            txtSolicitados.Text = string.Format("{0:###,##0.00}", Solicitado);
+            
+            txtPorEnviar.Text= string.Format("{0:###,##0.00}", ExistenciaTarimaUnidades);
+            txtKgAEnviar.Text = string.Format("{0:###,##0.00}", ExistenciaKg);
+            txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0.00}", ExistenciaTarimaUnidades);
+
+            txtRestante.Text = string.Format("{0:###,##0.00}", RestanteReq);
+        }
+
         public void Calculo()
         {
             RestanteReq = Solicitado - entregado;
@@ -275,6 +297,7 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+
             if (ExistenciaKg == 0 )
             {
                 Utileria.frmMensaje frm = new Utileria.frmMensaje(Utileria.frmMensaje.TipoMsj.error, "Debe seleccionar aun que sea una unidad");

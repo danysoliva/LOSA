@@ -25,7 +25,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
-    <ApplicationRevision>558</ApplicationRevision>
+    <ApplicationRevision>560</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -3670,6 +3670,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\dsProduccion.cs">
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\dsProduccion1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3722,6 +3725,12 @@
     </Compile>
     <Compile Include="Produccion\frmHomeEnsacado.Designer.cs">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmPrintTarimasRemanente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmPrintTarimasRemanente.Designer.cs">
+      <DependentUpon>frmPrintTarimasRemanente.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmPrioridadRequisas.cs">
       <SubType>Form</SubType>
@@ -7379,6 +7388,9 @@
     <EmbeddedResource Include="Produccion\frmHomeEnsacado.resx">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmPrintTarimasRemanente.resx">
+      <DependentUpon>frmPrintTarimasRemanente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmPrioridadRequisas.resx">
       <DependentUpon>frmPrioridadRequisas.cs</DependentUpon>
     </EmbeddedResource>
@@ -7421,6 +7433,7 @@
     <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -8494,6 +8507,7 @@
     <None Include="Resources\List-details-icon16px.png" />
     <None Include="Resources\label-icon32px.png" />
     <None Include="Resources\LogoLimp_x32.png" />
+    <None Include="Resources\materia_prima x32.png" />
     <Content Include="Resources\medal.png" />
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />

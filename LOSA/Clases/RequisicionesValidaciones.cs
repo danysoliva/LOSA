@@ -71,7 +71,8 @@ namespace LOSA.Clases
                 DataOperations dp = new DataOperations();
                 SqlConnection connection = new SqlConnection(dp.ConnectionStringLOSA);
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("sp_get_disponible_prd_mp_sacos_remanente", connection);
+                //SqlCommand cmd = new SqlCommand("sp_get_disponible_prd_mp_sacos_remanente", connection);
+                SqlCommand cmd = new SqlCommand("sp_get_disponible_prd_mp_sacos_remanenteV2", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idmp", pIdMP);
                 SqlDataReader dr = cmd.ExecuteReader();

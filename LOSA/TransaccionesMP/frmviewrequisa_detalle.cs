@@ -57,8 +57,8 @@ namespace LOSA.TransaccionesMP
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+             this.DialogResult = DialogResult.OK;
+             this.Close();
         }
     }
 }

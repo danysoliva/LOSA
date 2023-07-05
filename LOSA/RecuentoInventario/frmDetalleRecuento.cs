@@ -529,21 +529,36 @@ namespace LOSA.RecuentoInventario
             DialogResult r = CajaDialogo.Pregunta("Desea cerrar este recuento de inventario?");
             if (r != System.Windows.Forms.DialogResult.Yes)
                 return;
-
-
-            foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
+            if (Id_header > 0)
             {
-                if (item.contabilizado == false)
+                foreach (dsCierreMes.Recuento_mpRow item in dsCierreMes1.Recuento_mp.Rows)
                 {
-                    CajaDialogo.Error("No se realizado la contabilizacion completamente!");
-                    return;
+                    if (item.contabilizado == false)
+                    {
+                        CajaDialogo.Error("No se realizado la contabilizacion completamente!");
+                        return;
+                    }
                 }
-            }
 
-            
-            
+                try
+                {
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("sp_cerrar_recuento_inventario", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_header", Id_header);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
 
-            
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            } 
         }
 
         private void gridViewMP_RowStyle(object sender, RowStyleEventArgs e)
@@ -553,7 +568,7 @@ namespace LOSA.RecuentoInventario
             GridView View = sender as GridView;
             //string Estado = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Estatus"]);
             string Contabilizado = View.GetRowCellDisplayText(e.RowHandle, View.Columns["contabilizado"] /*["contabilizado"]*/);
-            if (Contabilizado == "Seleccionado")
+            if (Contabilizado == "Checked" )
             {
                 e.Appearance.BackColor = Color.Green;
             }
