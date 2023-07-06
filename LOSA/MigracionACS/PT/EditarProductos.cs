@@ -44,8 +44,10 @@ namespace LOSA.MigracionACS.PT
             VEstado = PEstado; //Estado. 
             VFormula = PFormula.ToString(); //Formula
             //spindDiasVenc.EditValue = dias_vencimiento;
-
-
+            ProductoTerminado prod1 = new ProductoTerminado(dp.ConnectionStringCostos);
+            prod1.Recuperar_producto(IdProducto);
+            spindDiasVenc.EditValue = prod1.dias_vencimiento;
+            spinDiasMinimos.EditValue = prod1.dias_venc_despacho;
             GenerarCodex();
             Llenado_Zarandas();
         }

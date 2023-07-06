@@ -52,6 +52,8 @@ namespace LOSA.Clases
                                       ,coalesce ([Registro], ' ') as [Registro]
                                       ,coalesce ([diametro], ' ') as [diametro]
                                       ,Codigo
+                                      ,coalesce ([dias_vencimiento], 0) as [dias_vencimiento]
+                                      ,coalesce ([dias_venc_despachos], 0) as [dias_venc_despachos]
                                   FROM [ACS].[dbo].[PT_Productos]
                                   where (Codigo) = '" + Pcodigo + "'";
                 //,coalesce([HorasTon], '00:00:00 a.m.') as HorasP
@@ -82,6 +84,8 @@ namespace LOSA.Clases
                     diametro = dl.GetString(17);
                     Codigo = dl.GetString(18);
                     // horasP = dl.GetTimeSpan(18);
+                    dias_vencimiento = dl.GetInt32(19);
+                    dias_venc_despacho = dl.GetInt32(20);
 
                     recuperado = true;
                 }
@@ -119,6 +123,8 @@ namespace LOSA.Clases
                                       ,coalesce ([diametro], ' ') as [diametro]
                                       ,Codigo
                                       ,coalesce(codigo_unite,'N/A') as codigo_unite
+                                      ,coalesce ([dias_vencimiento], 0) as [dias_vencimiento]
+                                      ,coalesce ([dias_venc_despachos], 0) as [dias_venc_despachos]
                                   FROM [ACS].[dbo].[PT_Productos]
                                   where id = '" + IdProd + "'";
                 //,coalesce([HorasTon], '00:00:00 a.m.') as HorasP
@@ -150,6 +156,8 @@ namespace LOSA.Clases
                     Codigo = dl.GetString(18);
                     // horasP = dl.GetTimeSpan(18);
                     codigo_unite = dl.GetString(19);
+                    dias_vencimiento = dl.GetInt32(20);
+                    dias_venc_despacho = dl.GetInt32(21);
                     recuperado = true;
                 }
             }

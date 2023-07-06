@@ -421,6 +421,7 @@ namespace LOSA.MigracionACS.PT
                     cmd.Parameters.AddWithValue("@indiceBag", indiceBag);
                     cmd.Parameters.AddWithValue("@size", size);
                     cmd.Parameters.AddWithValue("@Orgi", Orgi);
+                    cmd.Parameters.AddWithValue("@regist", regist);
                     cmd.Parameters.AddWithValue("@diam", diam);
                     cmd.Parameters.AddWithValue("@dias_vencimiento", spindDiasVenc.EditValue);
                     cmd.Parameters.AddWithValue("@dias_venc_despachos", spinDiasMinimos.EditValue);
