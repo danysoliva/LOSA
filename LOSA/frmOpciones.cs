@@ -3097,7 +3097,7 @@ namespace LOSA
         {
             try
             {
-                FML_FF_Main_Panel form = new FML_FF_Main_Panel(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups);
+                FML_FF_Main_Panel form = new FML_FF_Main_Panel(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
                 form.MdiParent = this.MdiParent;
                 form.Show();
             }
