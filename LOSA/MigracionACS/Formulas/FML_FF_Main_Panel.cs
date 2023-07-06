@@ -264,6 +264,10 @@ namespace LOSA.MigracionACS.Formulas
 
                                 break;
                             case 3://Medium Autorization
+                                
+                                break;
+                            case 4://Depth With Delta
+                            case 5://Depth Without Delta
                                 load_data();
                                 //app_acs_fml
                                 chk_descontinuadas.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
@@ -283,13 +287,6 @@ namespace LOSA.MigracionACS.Formulas
                                 btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                                 btnc_reject.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                                 btn_Export.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-
-                                break;
-                            case 4://Depth With Delta
-                               
-                                break;
-                            case 5://Depth Without Delta
-                            
                                 break;
                             default:
 
@@ -341,6 +338,31 @@ namespace LOSA.MigracionACS.Formulas
                     default:
                         break;
                 }
+
+
+                if (UsuarioLogeado.ValidarNivelPermisos(92))
+                {
+                    load_data();
+                    //app_acs_fml
+                    chk_descontinuadas.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btn_addComment.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btnc_viewDeprecated.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    //app_acs_fml_planner
+                    btn_RequestApproval.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btn_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btn_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btnc_RequestApprove.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btnc_deprecate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btnc_Habilitar.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btnc_Delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    //app_acs_fml_approver_prd
+                    btn_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btn_reject.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btnc_approve.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btnc_reject.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                    btn_Export.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                }
+
                 //foreach (DataRow row in UserGroups.Rows) 
                 //{
                 //    if (row["GroupName"].ToString() == "app_acs_fml") 
