@@ -1177,14 +1177,14 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.dsTarima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFabricante.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_f_ingreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingresadaUD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFacturas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvencimiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtproduccion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtproduccion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtproduccion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtinventarioActual.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingresada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdiasvencimiento.Properties)).BeginInit();
@@ -1206,6 +1206,9 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel1)).BeginInit();
+            this.gridSplitContainer1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel2)).BeginInit();
             this.gridSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
@@ -1224,8 +1227,16 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel1)).BeginInit();
+            this.splitContainerControl2.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel2)).BeginInit();
+            this.splitContainerControl2.Panel2.SuspendLayout();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
+            this.splitContainerControl1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
+            this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).BeginInit();
             this.xtraTabControl3.SuspendLayout();
@@ -1489,7 +1500,7 @@ namespace LOSA.Trazabilidad
             this.cmdLinkButtonMP,
             this.cmdCantidadDosificadaLoteLink,
             this.cmdDetalleBatch});
-            this.GridRuta4_detalle_trz_lote_pt.Size = new System.Drawing.Size(1342, 578);
+            this.GridRuta4_detalle_trz_lote_pt.Size = new System.Drawing.Size(1346, 581);
             this.GridRuta4_detalle_trz_lote_pt.TabIndex = 40;
             this.GridRuta4_detalle_trz_lote_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView20,
@@ -5836,7 +5847,7 @@ namespace LOSA.Trazabilidad
             this.toggleSwitchExpandAll_Row.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.toggleSwitchExpandAll_Row.Properties.OffText = "No";
             this.toggleSwitchExpandAll_Row.Properties.OnText = "Si";
-            this.toggleSwitchExpandAll_Row.Size = new System.Drawing.Size(121, 26);
+            this.toggleSwitchExpandAll_Row.Size = new System.Drawing.Size(121, 20);
             this.toggleSwitchExpandAll_Row.TabIndex = 123;
             this.toggleSwitchExpandAll_Row.Toggled += new System.EventHandler(this.toggleSwitchExpandAll_Row_Toggled);
             // 
@@ -6020,7 +6031,7 @@ namespace LOSA.Trazabilidad
             this.tggMuestras.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.tggMuestras.Properties.OffText = "No";
             this.tggMuestras.Properties.OnText = "Si";
-            this.tggMuestras.Size = new System.Drawing.Size(121, 26);
+            this.tggMuestras.Size = new System.Drawing.Size(121, 20);
             this.tggMuestras.TabIndex = 73;
             this.tggMuestras.Toggled += new System.EventHandler(this.tggMuestras_Toggled);
             // 
@@ -6047,7 +6058,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage1.Controls.Add(this.GridRuta4_detalle_trz_lote_pt);
             this.xtraTabPage1.Controls.Add(this.gridSplitContainer1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1364, 578);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1368, 581);
             this.xtraTabPage1.Text = "Detalle MP";
             // 
             // gridSplitContainer1
@@ -6056,6 +6067,9 @@ namespace LOSA.Trazabilidad
             this.gridSplitContainer1.Location = new System.Drawing.Point(0, 0);
             this.gridSplitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridSplitContainer1.Name = "gridSplitContainer1";
+            // 
+            // gridSplitContainer1.Panel1
+            // 
             this.gridSplitContainer1.Panel1.Controls.Add(this.grd_data);
             this.gridSplitContainer1.Size = new System.Drawing.Size(802, 292);
             this.gridSplitContainer1.TabIndex = 39;
@@ -6285,7 +6299,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage2.Controls.Add(this.gcClientesRecibieronLotePT);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1364, 578);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1368, 581);
             this.xtraTabPage2.Text = "Clientes que Recibieron el Lote PT";
             // 
             // gcClientesRecibieronLotePT
@@ -6300,7 +6314,7 @@ namespace LOSA.Trazabilidad
             this.btnLinkBoletaView,
             this.cmdDespachoId,
             this.btnTrazabilidadClientes});
-            this.gcClientesRecibieronLotePT.Size = new System.Drawing.Size(1364, 578);
+            this.gcClientesRecibieronLotePT.Size = new System.Drawing.Size(1368, 581);
             this.gcClientesRecibieronLotePT.TabIndex = 45;
             this.gcClientesRecibieronLotePT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvClientesRecibieronLote});
@@ -6532,7 +6546,7 @@ namespace LOSA.Trazabilidad
             this.PageInventario.Appearance.Header.Options.UseFont = true;
             this.PageInventario.Controls.Add(this.panelControl1);
             this.PageInventario.Name = "PageInventario";
-            this.PageInventario.Size = new System.Drawing.Size(1364, 578);
+            this.PageInventario.Size = new System.Drawing.Size(1368, 581);
             this.PageInventario.Text = "Inventario PT";
             // 
             // panelControl1
@@ -6542,7 +6556,7 @@ namespace LOSA.Trazabilidad
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1364, 578);
+            this.panelControl1.Size = new System.Drawing.Size(1368, 581);
             this.panelControl1.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -6553,11 +6567,17 @@ namespace LOSA.Trazabilidad
             this.splitContainerControl2.Horizontal = false;
             this.splitContainerControl2.Location = new System.Drawing.Point(6, 34);
             this.splitContainerControl2.Name = "splitContainerControl2";
+            // 
+            // splitContainerControl2.Panel1
+            // 
             this.splitContainerControl2.Panel1.Controls.Add(this.splitContainerControl1);
             this.splitContainerControl2.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl2.Panel2
+            // 
             this.splitContainerControl2.Panel2.Controls.Add(this.grd_resumen);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1357, 544);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1361, 547);
             this.splitContainerControl2.SplitterPosition = 394;
             this.splitContainerControl2.TabIndex = 37;
             // 
@@ -6566,11 +6586,17 @@ namespace LOSA.Trazabilidad
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl1.Name = "splitContainerControl1";
+            // 
+            // splitContainerControl1.Panel1
+            // 
             this.splitContainerControl1.Panel1.Controls.Add(this.xtraTabControl3);
             this.splitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl1.Panel2
+            // 
             this.splitContainerControl1.Panel2.Controls.Add(this.xtraTabControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1357, 394);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1361, 394);
             this.splitContainerControl1.SplitterPosition = 886;
             this.splitContainerControl1.TabIndex = 39;
             // 
@@ -6594,7 +6620,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage6.Controls.Add(this.grd_trasacciones);
             this.xtraTabPage6.Name = "xtraTabPage6";
-            this.xtraTabPage6.Size = new System.Drawing.Size(880, 362);
+            this.xtraTabPage6.Size = new System.Drawing.Size(884, 365);
             this.xtraTabPage6.Text = "Transacciones";
             // 
             // grd_trasacciones
@@ -6605,7 +6631,7 @@ namespace LOSA.Trazabilidad
             this.grd_trasacciones.Location = new System.Drawing.Point(0, 0);
             this.grd_trasacciones.MainView = this.grdv_trascciones;
             this.grd_trasacciones.Name = "grd_trasacciones";
-            this.grd_trasacciones.Size = new System.Drawing.Size(880, 362);
+            this.grd_trasacciones.Size = new System.Drawing.Size(884, 365);
             this.grd_trasacciones.TabIndex = 0;
             this.grd_trasacciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_trascciones});
@@ -6759,7 +6785,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage7.Controls.Add(this.grd_despachos);
             this.xtraTabPage7.Name = "xtraTabPage7";
-            this.xtraTabPage7.Size = new System.Drawing.Size(880, 362);
+            this.xtraTabPage7.Size = new System.Drawing.Size(884, 365);
             this.xtraTabPage7.Text = "Despachos";
             // 
             // grd_despachos
@@ -6770,7 +6796,7 @@ namespace LOSA.Trazabilidad
             this.grd_despachos.Location = new System.Drawing.Point(0, 0);
             this.grd_despachos.MainView = this.grdv_despachos;
             this.grd_despachos.Name = "grd_despachos";
-            this.grd_despachos.Size = new System.Drawing.Size(880, 362);
+            this.grd_despachos.Size = new System.Drawing.Size(884, 365);
             this.grd_despachos.TabIndex = 0;
             this.grd_despachos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_despachos});
@@ -6944,7 +6970,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl2.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabLiberado;
-            this.xtraTabControl2.Size = new System.Drawing.Size(466, 394);
+            this.xtraTabControl2.Size = new System.Drawing.Size(465, 394);
             this.xtraTabControl2.TabIndex = 39;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabLiberado,
@@ -6956,7 +6982,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabLiberado.Controls.Add(this.grd_liberado);
             this.xtraTabLiberado.Name = "xtraTabLiberado";
             this.xtraTabLiberado.PageVisible = false;
-            this.xtraTabLiberado.Size = new System.Drawing.Size(460, 362);
+            this.xtraTabLiberado.Size = new System.Drawing.Size(463, 365);
             this.xtraTabLiberado.Text = "Liberado";
             // 
             // grd_liberado
@@ -6967,7 +6993,7 @@ namespace LOSA.Trazabilidad
             this.grd_liberado.Location = new System.Drawing.Point(0, 0);
             this.grd_liberado.MainView = this.grdv_liberado;
             this.grd_liberado.Name = "grd_liberado";
-            this.grd_liberado.Size = new System.Drawing.Size(460, 362);
+            this.grd_liberado.Size = new System.Drawing.Size(463, 365);
             this.grd_liberado.TabIndex = 37;
             this.grd_liberado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_liberado});
@@ -7087,7 +7113,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage4.Controls.Add(this.grd_retenido);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(460, 362);
+            this.xtraTabPage4.Size = new System.Drawing.Size(463, 365);
             this.xtraTabPage4.Text = "Retenido";
             // 
             // grd_retenido
@@ -7098,7 +7124,7 @@ namespace LOSA.Trazabilidad
             this.grd_retenido.Location = new System.Drawing.Point(0, 0);
             this.grd_retenido.MainView = this.grdv_retenido;
             this.grd_retenido.Name = "grd_retenido";
-            this.grd_retenido.Size = new System.Drawing.Size(460, 362);
+            this.grd_retenido.Size = new System.Drawing.Size(463, 365);
             this.grd_retenido.TabIndex = 38;
             this.grd_retenido.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_retenido});
@@ -7218,7 +7244,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(460, 362);
+            this.xtraTabPage5.Size = new System.Drawing.Size(463, 365);
             this.xtraTabPage5.Text = "No conforme";
             // 
             // grd_resumen
@@ -7229,7 +7255,7 @@ namespace LOSA.Trazabilidad
             this.grd_resumen.Location = new System.Drawing.Point(0, 0);
             this.grd_resumen.MainView = this.grdv_resumen;
             this.grd_resumen.Name = "grd_resumen";
-            this.grd_resumen.Size = new System.Drawing.Size(1357, 145);
+            this.grd_resumen.Size = new System.Drawing.Size(1361, 143);
             this.grd_resumen.TabIndex = 38;
             this.grd_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_resumen});
@@ -7317,7 +7343,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage8.Controls.Add(this.gridControlMuestreoPorLote);
             this.xtraTabPage8.Controls.Add(this.gridControlNoConformidades);
             this.xtraTabPage8.Name = "xtraTabPage8";
-            this.xtraTabPage8.Size = new System.Drawing.Size(1364, 578);
+            this.xtraTabPage8.Size = new System.Drawing.Size(1368, 581);
             this.xtraTabPage8.Text = "Monitoreos del Proceso";
             // 
             // gridControlMuestreoPorLote
@@ -7330,7 +7356,7 @@ namespace LOSA.Trazabilidad
             this.gridControlMuestreoPorLote.Location = new System.Drawing.Point(1, 210);
             this.gridControlMuestreoPorLote.MainView = this.gridView3;
             this.gridControlMuestreoPorLote.Name = "gridControlMuestreoPorLote";
-            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(1363, 368);
+            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(1367, 371);
             this.gridControlMuestreoPorLote.TabIndex = 1;
             this.gridControlMuestreoPorLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -7521,7 +7547,7 @@ namespace LOSA.Trazabilidad
             this.gridControlNoConformidades.Location = new System.Drawing.Point(0, 0);
             this.gridControlNoConformidades.MainView = this.gridView4;
             this.gridControlNoConformidades.Name = "gridControlNoConformidades";
-            this.gridControlNoConformidades.Size = new System.Drawing.Size(1363, 204);
+            this.gridControlNoConformidades.Size = new System.Drawing.Size(1367, 204);
             this.gridControlNoConformidades.TabIndex = 0;
             this.gridControlNoConformidades.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -8100,8 +8126,8 @@ namespace LOSA.Trazabilidad
             // 
             // rowid
             // 
-            this.rowid.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowid.Appearance.Options.UseFont = true;
+            this.rowid.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowid.AppearanceCell.Options.UseFont = true;
             this.rowid.Name = "rowid";
             this.rowid.Properties.Caption = "id";
             this.rowid.Properties.FieldName = "id";
@@ -8109,40 +8135,40 @@ namespace LOSA.Trazabilidad
             // 
             // rowcodigo
             // 
-            this.rowcodigo.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rowcodigo.Appearance.Options.UseFont = true;
+            this.rowcodigo.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rowcodigo.AppearanceCell.Options.UseFont = true;
             this.rowcodigo.Name = "rowcodigo";
             this.rowcodigo.Properties.Caption = "Código";
             this.rowcodigo.Properties.FieldName = "codigo";
             // 
             // rowmaterial
             // 
-            this.rowmaterial.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowmaterial.Appearance.Options.UseFont = true;
+            this.rowmaterial.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowmaterial.AppearanceCell.Options.UseFont = true;
             this.rowmaterial.Name = "rowmaterial";
             this.rowmaterial.Properties.Caption = "Nombre";
             this.rowmaterial.Properties.FieldName = "material";
             // 
             // rowNombre_Comercial
             // 
-            this.rowNombre_Comercial.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowNombre_Comercial.Appearance.Options.UseFont = true;
+            this.rowNombre_Comercial.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowNombre_Comercial.AppearanceCell.Options.UseFont = true;
             this.rowNombre_Comercial.Name = "rowNombre_Comercial";
             this.rowNombre_Comercial.Properties.Caption = "Nombre Comercial";
             this.rowNombre_Comercial.Properties.FieldName = "Nombre Comercial";
             // 
             // rowTipo
             // 
-            this.rowTipo.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowTipo.Appearance.Options.UseFont = true;
+            this.rowTipo.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowTipo.AppearanceCell.Options.UseFont = true;
             this.rowTipo.Name = "rowTipo";
             this.rowTipo.Properties.Caption = "Tipo";
             this.rowTipo.Properties.FieldName = "Tipo";
             // 
             // rowTipo_F
             // 
-            this.rowTipo_F.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowTipo_F.Appearance.Options.UseFont = true;
+            this.rowTipo_F.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowTipo_F.AppearanceCell.Options.UseFont = true;
             this.rowTipo_F.Height = 20;
             this.rowTipo_F.Name = "rowTipo_F";
             this.rowTipo_F.Properties.Caption = "Tipo F";
@@ -8150,40 +8176,40 @@ namespace LOSA.Trazabilidad
             // 
             // rowTipo_R
             // 
-            this.rowTipo_R.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowTipo_R.Appearance.Options.UseFont = true;
+            this.rowTipo_R.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowTipo_R.AppearanceCell.Options.UseFont = true;
             this.rowTipo_R.Name = "rowTipo_R";
             this.rowTipo_R.Properties.Caption = "Tipo R";
             this.rowTipo_R.Properties.FieldName = "Tipo R";
             // 
             // rowCodigo_SAP
             // 
-            this.rowCodigo_SAP.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowCodigo_SAP.Appearance.Options.UseFont = true;
+            this.rowCodigo_SAP.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowCodigo_SAP.AppearanceCell.Options.UseFont = true;
             this.rowCodigo_SAP.Name = "rowCodigo_SAP";
             this.rowCodigo_SAP.Properties.Caption = "Codigo SAP";
             this.rowCodigo_SAP.Properties.FieldName = "Codigo SAP";
             // 
             // rowFecha_Creación
             // 
-            this.rowFecha_Creación.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowFecha_Creación.Appearance.Options.UseFont = true;
+            this.rowFecha_Creación.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowFecha_Creación.AppearanceCell.Options.UseFont = true;
             this.rowFecha_Creación.Name = "rowFecha_Creación";
             this.rowFecha_Creación.Properties.Caption = "Fecha Creación";
             this.rowFecha_Creación.Properties.FieldName = "Fecha Creación";
             // 
             // rowCreado_por
             // 
-            this.rowCreado_por.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowCreado_por.Appearance.Options.UseFont = true;
+            this.rowCreado_por.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowCreado_por.AppearanceCell.Options.UseFont = true;
             this.rowCreado_por.Name = "rowCreado_por";
             this.rowCreado_por.Properties.Caption = "Creado por";
             this.rowCreado_por.Properties.FieldName = "Creado por";
             // 
             // rowTipo_Alimentación
             // 
-            this.rowTipo_Alimentación.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.rowTipo_Alimentación.Appearance.Options.UseFont = true;
+            this.rowTipo_Alimentación.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.rowTipo_Alimentación.AppearanceCell.Options.UseFont = true;
             this.rowTipo_Alimentación.Name = "rowTipo_Alimentación";
             this.rowTipo_Alimentación.Properties.Caption = "Tipo Alimentación";
             this.rowTipo_Alimentación.Properties.FieldName = "Tipo Alimentación";
@@ -11741,10 +11767,10 @@ namespace LOSA.Trazabilidad
             this.grid_Header_ingresos.DataSource = this.dsMantenimientoC;
             this.grid_Header_ingresos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_Header_ingresos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.grid_Header_ingresos.Location = new System.Drawing.Point(2, 20);
+            this.grid_Header_ingresos.Location = new System.Drawing.Point(2, 23);
             this.grid_Header_ingresos.MainView = this.gvIngresoLote_Ruta4;
             this.grid_Header_ingresos.Name = "grid_Header_ingresos";
-            this.grid_Header_ingresos.Size = new System.Drawing.Size(722, 202);
+            this.grid_Header_ingresos.Size = new System.Drawing.Size(722, 199);
             this.grid_Header_ingresos.TabIndex = 54;
             this.grid_Header_ingresos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvIngresoLote_Ruta4});
@@ -12309,7 +12335,6 @@ namespace LOSA.Trazabilidad
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.Size = new System.Drawing.Size(260, 856);
             this.accordionControl1.TabIndex = 0;
-            this.accordionControl1.Text = "accordionControl1";
             // 
             // accordionControlElement1
             // 
@@ -12406,8 +12431,8 @@ namespace LOSA.Trazabilidad
             this.ClientSize = new System.Drawing.Size(1610, 856);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.navigationFrame1);
+            this.IconOptions.ShowIcon = false;
             this.Name = "frmRutasTrazabilidad";
-            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCantidadDosificadaLoteLink)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdLinkLoteMP)).EndInit();
@@ -12580,6 +12605,9 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel1)).EndInit();
+            this.gridSplitContainer1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1.Panel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSplitContainer1)).EndInit();
             this.gridSplitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
@@ -12599,8 +12627,16 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel1)).EndInit();
+            this.splitContainerControl2.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2.Panel2)).EndInit();
+            this.splitContainerControl2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
+            this.splitContainerControl1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
+            this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).EndInit();
