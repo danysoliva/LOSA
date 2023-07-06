@@ -411,7 +411,7 @@ namespace LOSA.MigracionACS.PT
                     cmd.Parameters.AddWithValue("@Codigo", txtCodigo.Text);
                     cmd.Parameters.AddWithValue("@Descripcion", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@Proteina", Convert.ToDecimal(txt_Proteina.Text));
-                    cmd.Parameters.AddWithValue("@Grasa", Convert.ToDecimal(txt_Proteina.Text));
+                    cmd.Parameters.AddWithValue("@Grasa", Convert.ToDecimal(spinEdit1.Text));
                     cmd.Parameters.AddWithValue("@peso", peso);
                     cmd.Parameters.AddWithValue("@Especie", Especie);
                     cmd.Parameters.AddWithValue("@indiceFam", indiceFam);
@@ -425,7 +425,7 @@ namespace LOSA.MigracionACS.PT
                     cmd.Parameters.AddWithValue("@dias_vencimiento", spindDiasVenc.EditValue);
                     cmd.Parameters.AddWithValue("@dias_venc_despachos", spinDiasMinimos.EditValue);
 
-                    //ACS_ID = Convert.ToInt32( cmd.ExecuteScalar());
+                    ACS_ID = Convert.ToInt32( cmd.ExecuteScalar());
                     string Incremento,Tipo;
                     if (toggleSwitchEspecie.IsOn)
                     {
@@ -458,7 +458,7 @@ namespace LOSA.MigracionACS.PT
                 if (ACS_ID == 0)
                 {
                     //Si entra aqui es porque no se ha generado el registro en el ACS
-                    CajaDialogo.Error("El registro no fue guardado en ACS correctamente.\nLamentablemente para guardar el registro en APMS el Producto Terminado debe registrarse primero en ACS.\nContacte al Administrador del Sistema!");
+                    CajaDialogo.Error("El registro no fue guardado en ALOSY correctamente.\nLamentablemente para guardar el registro en APMS el Producto Terminado debe registrarse primero en ALOSY.\nContacte al Administrador del Sistema!");
                     exito = false;
                 }
                 else
