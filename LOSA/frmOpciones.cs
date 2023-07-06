@@ -255,7 +255,10 @@ namespace LOSA
 
                             break;
                         case 5://Depth Without Delta
-
+                            tabOpciones.SelectedTabPageIndex = 2;//Calidad
+                            tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[8].PageVisible = true;
+                            tabOpciones.TabPages[4].PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
@@ -3094,7 +3097,7 @@ namespace LOSA
         {
             try
             {
-                FML_FF_Main_Panel form = new FML_FF_Main_Panel(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups);
+                FML_FF_Main_Panel form = new FML_FF_Main_Panel(ActiveUserCode, ActiveUserName, ActiveUserType, UserGroups, this.UsuarioLogeado);
                 form.MdiParent = this.MdiParent;
                 form.Show();
             }
@@ -3189,6 +3192,10 @@ namespace LOSA
                     break;
 
                 case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmValidacionTarimas frm2 = new frmValidacionTarimas(UsuarioLogeado);
+                    frm2.MdiParent = this.MdiParent;
+                    frm2.Show();
                     break;
 
                 case 5://Depth Without Delta
@@ -3495,6 +3502,12 @@ namespace LOSA
         private void btnGestionMP_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_print_mp_remanente_Click(object sender, EventArgs e)
+        {
+            frmPrintTarimasRemanente frm = new frmPrintTarimasRemanente();
+            frm.Show();
         }
     }
 }

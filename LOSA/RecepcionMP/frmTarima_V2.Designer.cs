@@ -29,6 +29,7 @@ namespace LOSA.RecepcionMP
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarima_V2));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -48,7 +49,7 @@ namespace LOSA.RecepcionMP
             this.txtPesoKg = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.gridLookUpEditPresentacion = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource();
+            this.presentacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRecepcionMPx = new LOSA.RecepcionMP.dsRecepcionMPx();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -126,14 +127,14 @@ namespace LOSA.RecepcionMP
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedorName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -242,7 +243,7 @@ namespace LOSA.RecepcionMP
             this.Tg_presentacion_promedio.Properties.Appearance.Options.UseFont = true;
             this.Tg_presentacion_promedio.Properties.OffText = "Activar presentacion promedio";
             this.Tg_presentacion_promedio.Properties.OnText = "Desactivar presentacion promedio";
-            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 32);
+            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 26);
             this.Tg_presentacion_promedio.TabIndex = 89;
             this.Tg_presentacion_promedio.Visible = false;
             this.Tg_presentacion_promedio.Toggled += new System.EventHandler(this.Tg_presentacion_promedio_Toggled);
@@ -502,6 +503,7 @@ namespace LOSA.RecepcionMP
             // dtFechaIngreso
             // 
             this.dtFechaIngreso.EditValue = null;
+            this.dtFechaIngreso.Enabled = false;
             this.dtFechaIngreso.Location = new System.Drawing.Point(154, 159);
             this.dtFechaIngreso.Name = "dtFechaIngreso";
             this.dtFechaIngreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -737,6 +739,8 @@ namespace LOSA.RecepcionMP
             // colfechaIngreso
             // 
             this.colfechaIngreso.Caption = "F Ingreso";
+            this.colfechaIngreso.DisplayFormat.FormatString = "g";
+            this.colfechaIngreso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colfechaIngreso.FieldName = "fechaIngreso";
             this.colfechaIngreso.Name = "colfechaIngreso";
             this.colfechaIngreso.OptionsColumn.AllowEdit = false;
@@ -1087,6 +1091,7 @@ namespace LOSA.RecepcionMP
             // txtid_lote
             // 
             this.txtid_lote.EditValue = "";
+            this.txtid_lote.Enabled = false;
             this.txtid_lote.Location = new System.Drawing.Point(424, 225);
             this.txtid_lote.Name = "txtid_lote";
             this.txtid_lote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);

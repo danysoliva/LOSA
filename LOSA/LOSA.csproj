@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,8 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
-    <ApplicationRevision>558</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
+    <ApplicationRevision>562</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -194,7 +194,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
     </Reference>
@@ -3670,6 +3673,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMaterialEmpaque.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\dsProduccion.cs">
+      <DependentUpon>dsProduccion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\dsProduccion1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3722,6 +3728,12 @@
     </Compile>
     <Compile Include="Produccion\frmHomeEnsacado.Designer.cs">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmPrintTarimasRemanente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmPrintTarimasRemanente.Designer.cs">
+      <DependentUpon>frmPrintTarimasRemanente.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmPrioridadRequisas.cs">
       <SubType>Form</SubType>
@@ -7379,6 +7391,9 @@
     <EmbeddedResource Include="Produccion\frmHomeEnsacado.resx">
       <DependentUpon>frmHomeEnsacado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmPrintTarimasRemanente.resx">
+      <DependentUpon>frmPrintTarimasRemanente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmPrioridadRequisas.resx">
       <DependentUpon>frmPrioridadRequisas.cs</DependentUpon>
     </EmbeddedResource>
@@ -8495,6 +8510,7 @@
     <None Include="Resources\List-details-icon16px.png" />
     <None Include="Resources\label-icon32px.png" />
     <None Include="Resources\LogoLimp_x32.png" />
+    <None Include="Resources\materia_prima x32.png" />
     <Content Include="Resources\medal.png" />
     <None Include="Resources\pallet pallet solo.png" />
     <None Include="Resources\pallet32px.png" />

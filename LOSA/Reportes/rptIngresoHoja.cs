@@ -115,7 +115,7 @@ namespace LOSA.Reportes
             if (dr.Read())
             {
                 txtingreso.Text = dr.IsDBNull(1) ? "" : dr.GetInt32(1).ToString();
-                dtingreso.Text = dr.IsDBNull(2) ? "" : dr.GetDateTime(2).ToString("dd/MM/yyyy");
+                dtingreso.Text = dr.IsDBNull(2) ? "" : dr.GetDateTime(2).ToString("dd/MM/yyyy hh:mm tt");
                 txtUserIngreso.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
                 txtproveedor.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
                 txtboleta.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();
@@ -148,7 +148,7 @@ namespace LOSA.Reportes
                     txtoc.Text = dr.IsDBNull(12) ? "" : dr.GetString(12).ToString();
                     txtsap.Text = dr.IsDBNull(12) ? "" : dr.GetString(12).ToString();
                     txtingreso.Text = dr.IsDBNull(1) ? "" : dr.GetInt32(1).ToString();
-                    dtingreso.Text = dr.IsDBNull(2) ? "" : dr.GetDateTime(2).ToString("dd/MM/yyyy");
+                    dtingreso.Text = dr.IsDBNull(2) ? "" : dr.GetDateTime(2).ToString("dd/MM/yyyy hh:mm tt");
                     txtUserIngreso.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
                     txtproveedor.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
                     txtboleta.Text = dr.IsDBNull(6) ? "" : dr.GetString(6);
@@ -209,7 +209,7 @@ namespace LOSA.Reportes
                 txtoc.Text = dr.IsDBNull(12) ? "" : dr.GetString(12).ToString();
                 txtsap.Text = dr.IsDBNull(12) ? "" : dr.GetString(12).ToString();
                 txtingreso.Text = dr.IsDBNull(1) ? "" : dr.GetInt32(1).ToString();
-                dtingreso.Text = dr.IsDBNull(2) ? "" : dr.GetDateTime(2).ToString("dd/MM/yyyy");
+                dtingreso.Text = dr.IsDBNull(2) ? "" : dr.GetDateTime(2).ToString("dd/MM/yyyy hh:mm tt");
                 txtUserIngreso.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
                 txtproveedor.Text = dr.IsDBNull(5) ? "" : dr.GetString(5);
                 txtboleta.Text = dr.IsDBNull(6) ? "" : dr.GetInt32(6).ToString();

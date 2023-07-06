@@ -98,7 +98,8 @@ namespace LOSA.TransaccionesMP
             report.ShowPrintMarginsWarning = false;
             //report.ShowPreview();
             report.PrintingSystem.StartPrint += new DevExpress.XtraPrinting.PrintDocumentEventHandler(PrintingSystem_StartPrint);
-            report.Print();
+            //report.Print();
+            report.ShowPreviewDialog();
 
         }
         private void PrintingSystem_StartPrint(object sender, DevExpress.XtraPrinting.PrintDocumentEventArgs e)

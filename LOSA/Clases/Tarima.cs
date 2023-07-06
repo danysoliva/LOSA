@@ -54,6 +54,7 @@ namespace LOSA.Clases
         int _tipo_tarima;
         int ud_existencia;
         decimal kg_existencia;
+        bool tarima_existe;
         public Tarima()
         {
 
@@ -109,6 +110,7 @@ namespace LOSA.Clases
         public int Id_ingresoH { get => _id_ingresoH; set => _id_ingresoH = value; }
         public int Id_lote_externo { get => _id_lote_externo; set => _id_lote_externo = value; }
         public int Tipo_tarima { get => _tipo_tarima; set => _tipo_tarima = value; }
+        public bool Tarima_existe { get => tarima_existe; set => tarima_existe = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -725,6 +727,74 @@ namespace LOSA.Clases
             catch (Exception ec2)
             {
                 CajaDialogo.Error(ec2.Message);
+            }
+            return Recuperado;
+        
+        }
+
+        public bool ValidarTarimaRemanenteMacro(string pCodigo_Barra)
+        {
+            
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_existencia_tarima_como_remanente", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Codigo_Barra", pCodigo_Barra.Trim());
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Tarima_existe = dr.GetBoolean(0);
+                    Recuperado = true;
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Recuperado = false;
+                CajaDialogo.Error(ex.Message);
+            }
+            return Recuperado;
+        }
+
+        public bool RecuperarTarimaRemanenteMacros(string pCodigo_Barra)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_existencia_remanente_mp_id_tarima", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo_barra", pCodigo_Barra.Trim());
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id = dr.GetInt32(0); 
+                    if (Id > 0)
+                    {
+                        
+                        Id_materiaprima = dr.GetInt32(1);
+                        MateriaPrima = dr.GetString(2);
+                        ItemCode = dr.GetString(3);
+                        LoteMP = dr.GetString(4);
+                        FechaIngreso = dr.GetDateTime(5);
+                        Cantidad = dr.GetInt32(6);
+                        CodigoBarra = dr.GetString(7);
+                        Peso = dr.GetDecimal(8);
+                        Recuperado = true;
+                    }
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Recuperado = false;
+                CajaDialogo.Error(ex.Message);
             }
             return Recuperado;
         

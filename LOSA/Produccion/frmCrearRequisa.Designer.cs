@@ -75,8 +75,8 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.grd_usuarios.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboTurno.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtsolicitud.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtsolicitud.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtsolicitud.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -424,6 +424,7 @@ namespace LOSA.Produccion
             // 
             this.dtsolicitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtsolicitud.EditValue = null;
+            this.dtsolicitud.Enabled = false;
             this.dtsolicitud.Location = new System.Drawing.Point(921, 117);
             this.dtsolicitud.Name = "dtsolicitud";
             this.dtsolicitud.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -468,9 +469,9 @@ namespace LOSA.Produccion
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCrearRequisa);
             this.Controls.Add(this.labelControl1);
+            this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.Name = "frmCrearRequisa";
-            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.txtcodigo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMaterialEmpaque1)).EndInit();
