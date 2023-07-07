@@ -363,7 +363,8 @@ namespace LOSA.MigracionACS.PT
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string Estado, peso;
-            string family, id_bag, id_proceso, id_portafolio, id_category;
+            string family, id_bag,  id_portafolio, id_category;
+            int id_proceso;
             if (toggleSwitch1.IsOn==true)
             {
                 Estado = "i";
@@ -414,11 +415,11 @@ namespace LOSA.MigracionACS.PT
 
             if (gridLookProce.EditValue.ToString()=="0")
             {
-                id_proceso = "NULL";
+                id_proceso = 0;
             }
             else
             {
-                id_proceso = gridLookProce.EditValue.ToString();
+                id_proceso = Convert.ToInt32(gridLookProce.EditValue);
             }
 
             if (gridLookTipoSaco.EditValue.ToString() == "0")
@@ -439,9 +440,9 @@ namespace LOSA.MigracionACS.PT
                id_category =  gridLookCate.EditValue.ToString();
             }
 
-            if (string.IsNullOrEmpty(id_proceso))
+            if (string.IsNullOrEmpty(id_proceso.ToString()))
             {
-                id_proceso = "";
+                id_proceso = 0;
             }
 
             if (Convert.ToInt32(spindDiasVenc.EditValue) <= Convert.ToInt32(spinDiasMinimos.EditValue))
