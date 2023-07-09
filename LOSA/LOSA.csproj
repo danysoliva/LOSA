@@ -319,11 +319,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsInformesRRHH.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ACS\RRHH\Informes\dsNominasVoucher.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNominasVoucher.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ACS\RRHH\Informes\frmHomePlanillaCatorceavo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ACS\RRHH\Informes\frmHomePlanillaCatorceavo.Designer.cs">
       <DependentUpon>frmHomePlanillaCatorceavo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\frmHomePrintVoucherPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\frmHomePrintVoucherPlanilla.Designer.cs">
+      <DependentUpon>frmHomePrintVoucherPlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptPlanillaHE.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptPlanillaHE.Designer.cs">
+      <DependentUpon>rptPlanillaHE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptPlanilla.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ACS\RRHH\Informes\rptPlanilla.Designer.cs">
+      <DependentUpon>rptPlanilla.cs</DependentUpon>
     </Compile>
     <Compile Include="ACS\RRHH\Informes\rptVoucher14vo.cs">
       <SubType>Component</SubType>
@@ -1112,6 +1135,8 @@
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Despacho.cs" />
     <Compile Include="Clases\Destinos_empaques.cs" />
+    <Compile Include="Clases\DetallePlanilla.cs" />
+    <Compile Include="Clases\DetallePlanillaHE.cs" />
     <Compile Include="Clases\dsColleccionesClases.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1145,6 +1170,7 @@
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\OrdenesCombustible.cs" />
     <Compile Include="Clases\OrdenProduccionH.cs" />
+    <Compile Include="Clases\PlanillaHeader.cs" />
     <Compile Include="Clases\PlantaPrvTrz.cs" />
     <Compile Include="Clases\Plan_Semanal.cs" />
     <Compile Include="Clases\PresentacionX.cs" />
@@ -3859,6 +3885,17 @@
     <None Include="ACS\RRHH\Informes\dsInformesRRHH.xss">
       <DependentUpon>dsInformesRRHH.xsd</DependentUpon>
     </None>
+    <None Include="ACS\RRHH\Informes\dsNominasVoucher.xsc">
+      <DependentUpon>dsNominasVoucher.xsd</DependentUpon>
+    </None>
+    <None Include="ACS\RRHH\Informes\dsNominasVoucher.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNominasVoucher.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ACS\RRHH\Informes\dsNominasVoucher.xss">
+      <DependentUpon>dsNominasVoucher.xsd</DependentUpon>
+    </None>
     <None Include="AlmacenesExterno\dsReporteAlmacenExterno.xsc">
       <DependentUpon>dsReporteAlmacenExterno.xsd</DependentUpon>
     </None>
@@ -5951,6 +5988,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ACS\RRHH\Informes\frmHomePlanillaCatorceavo.resx">
       <DependentUpon>frmHomePlanillaCatorceavo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACS\RRHH\Informes\frmHomePrintVoucherPlanilla.resx">
+      <DependentUpon>frmHomePrintVoucherPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACS\RRHH\Informes\rptPlanillaHE.resx">
+      <DependentUpon>rptPlanillaHE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ACS\RRHH\Informes\rptPlanilla.resx">
+      <DependentUpon>rptPlanilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ACS\RRHH\Informes\rptVoucher14vo.resx">
       <DependentUpon>rptVoucher14vo.cs</DependentUpon>
