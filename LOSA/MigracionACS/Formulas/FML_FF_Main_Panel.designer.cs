@@ -161,49 +161,49 @@
             // 
             this.colapprove_prod.Caption = "Apr. / Rej. Prod.";
             this.colapprove_prod.FieldName = "approve_prod";
-            this.colapprove_prod.MinWidth = 34;
+            this.colapprove_prod.MinWidth = 17;
             this.colapprove_prod.Name = "colapprove_prod";
             this.colapprove_prod.OptionsColumn.AllowEdit = false;
-            this.colapprove_prod.Width = 128;
+            this.colapprove_prod.Width = 64;
             // 
             // col_lcl_approve_prod_by
             // 
             this.col_lcl_approve_prod_by.Caption = "Aprob. Producción";
             this.col_lcl_approve_prod_by.FieldName = "lcl_approve_prod_by";
-            this.col_lcl_approve_prod_by.MinWidth = 34;
+            this.col_lcl_approve_prod_by.MinWidth = 17;
             this.col_lcl_approve_prod_by.Name = "col_lcl_approve_prod_by";
             this.col_lcl_approve_prod_by.OptionsColumn.AllowEdit = false;
             this.col_lcl_approve_prod_by.Visible = true;
             this.col_lcl_approve_prod_by.VisibleIndex = 5;
-            this.col_lcl_approve_prod_by.Width = 96;
+            this.col_lcl_approve_prod_by.Width = 48;
             // 
             // col_approve_fin
             // 
             this.col_approve_fin.Caption = "Apr. / Rej. Fin.";
             this.col_approve_fin.FieldName = "approve_fin";
-            this.col_approve_fin.MinWidth = 34;
+            this.col_approve_fin.MinWidth = 17;
             this.col_approve_fin.Name = "col_approve_fin";
             this.col_approve_fin.OptionsColumn.AllowEdit = false;
-            this.col_approve_fin.Width = 128;
+            this.col_approve_fin.Width = 64;
             // 
             // col_lcl_approve_fin_by
             // 
             this.col_lcl_approve_fin_by.Caption = "Aprob. Finanzas";
             this.col_lcl_approve_fin_by.FieldName = "lcl_approve_fin_by";
-            this.col_lcl_approve_fin_by.MinWidth = 34;
+            this.col_lcl_approve_fin_by.MinWidth = 17;
             this.col_lcl_approve_fin_by.Name = "col_lcl_approve_fin_by";
             this.col_lcl_approve_fin_by.OptionsColumn.AllowEdit = false;
             this.col_lcl_approve_fin_by.Visible = true;
             this.col_lcl_approve_fin_by.VisibleIndex = 6;
-            this.col_lcl_approve_fin_by.Width = 96;
+            this.col_lcl_approve_fin_by.Width = 48;
             // 
             // col_is_reject
             // 
             this.col_is_reject.Caption = "Rechazo";
             this.col_is_reject.FieldName = "is_reject";
-            this.col_is_reject.MinWidth = 34;
+            this.col_is_reject.MinWidth = 17;
             this.col_is_reject.Name = "col_is_reject";
-            this.col_is_reject.Width = 128;
+            this.col_is_reject.Width = 64;
             // 
             // barManager1
             // 
@@ -450,9 +450,8 @@
             this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 0);
             this.standaloneBarDockControl1.Manager = this.barManager1;
-            this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1018, 58);
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(509, 30);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
             // 
             // barDockControlTop
@@ -461,35 +460,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.barDockControlTop.Size = new System.Drawing.Size(2212, 122);
+            this.barDockControlTop.Size = new System.Drawing.Size(1106, 59);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1170);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 535);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.barDockControlBottom.Size = new System.Drawing.Size(2212, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1106, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 122);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 59);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1048);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 476);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(2212, 122);
+            this.barDockControlRight.Location = new System.Drawing.Point(1106, 59);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1048);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 476);
             // 
             // chk_seDiscontinued
             // 
@@ -612,10 +607,9 @@
             this.groupControl1.Controls.Add(this.radioBtnEspecie);
             this.groupControl1.Controls.Add(this.grd_main);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 122);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupControl1.Location = new System.Drawing.Point(0, 59);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1078, 1048);
+            this.groupControl1.Size = new System.Drawing.Size(539, 476);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Formulas Disponibles";
             // 
@@ -623,18 +617,16 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(14, 67);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl1.Location = new System.Drawing.Point(7, 35);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(211, 29);
+            this.labelControl1.Size = new System.Drawing.Size(105, 14);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Filtrar Especies por:";
             // 
             // radioBtnEspecie
             // 
             this.radioBtnEspecie.EditValue = 3;
-            this.radioBtnEspecie.Location = new System.Drawing.Point(238, 52);
-            this.radioBtnEspecie.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radioBtnEspecie.Location = new System.Drawing.Point(119, 27);
             this.radioBtnEspecie.MenuManager = this.barManager1;
             this.radioBtnEspecie.Name = "radioBtnEspecie";
             this.radioBtnEspecie.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -644,7 +636,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Tilapia", true, "Tilapia"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(2, "Camarón", true, "Camaron"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(3, "Todas", true, "Todas")});
-            this.radioBtnEspecie.Size = new System.Drawing.Size(464, 56);
+            this.radioBtnEspecie.Size = new System.Drawing.Size(232, 29);
             this.radioBtnEspecie.TabIndex = 4;
             this.radioBtnEspecie.SelectedIndexChanged += new System.EventHandler(this.radioBtnEspecie_SelectedIndexChanged);
             // 
@@ -653,15 +645,13 @@
             this.grd_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_main.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grd_main.Location = new System.Drawing.Point(4, 119);
+            this.grd_main.Location = new System.Drawing.Point(2, 62);
             this.grd_main.MainView = this.grdv_main;
-            this.grd_main.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_main.MenuManager = this.barManager1;
             this.grd_main.Name = "grd_main";
             this.grd_main.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnedit});
-            this.grd_main.Size = new System.Drawing.Size(1070, 925);
+            this.grd_main.Size = new System.Drawing.Size(535, 412);
             this.grd_main.TabIndex = 3;
             this.grd_main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_main});
@@ -685,7 +675,7 @@
             this.col_approve_fin,
             this.coledit,
             this.colownertype});
-            this.grdv_main.DetailHeight = 546;
+            this.grdv_main.DetailHeight = 284;
             this.grdv_main.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             gridFormatRule1.Column = this.colapprove_prod;
             gridFormatRule1.ColumnApplyTo = this.col_lcl_approve_prod_by;
@@ -733,6 +723,7 @@
             this.grdv_main.FormatRules.Add(gridFormatRule4);
             this.grdv_main.GridControl = this.grd_main;
             this.grdv_main.GroupCount = 2;
+            this.grdv_main.LevelIndent = 0;
             this.grdv_main.Name = "grdv_main";
             this.grdv_main.OptionsBehavior.AutoExpandAllGroups = true;
             this.grdv_main.OptionsNavigation.AutoMoveRowFocus = false;
@@ -741,6 +732,7 @@
             this.grdv_main.OptionsView.ShowAutoFilterRow = true;
             this.grdv_main.OptionsView.ShowFooter = true;
             this.grdv_main.OptionsView.ShowGroupPanel = false;
+            this.grdv_main.PreviewIndent = 0;
             this.grdv_main.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colownertype, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_status_desc, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -753,92 +745,91 @@
             // 
             this.col_id.Caption = "ID";
             this.col_id.FieldName = "id";
-            this.col_id.MinWidth = 34;
+            this.col_id.MinWidth = 17;
             this.col_id.Name = "col_id";
             this.col_id.OptionsColumn.AllowEdit = false;
-            this.col_id.Width = 128;
+            this.col_id.Width = 64;
             // 
             // col_src_formula_code
             // 
             this.col_src_formula_code.Caption = "Código";
             this.col_src_formula_code.FieldName = "src_formula_code";
-            this.col_src_formula_code.MinWidth = 34;
+            this.col_src_formula_code.MinWidth = 17;
             this.col_src_formula_code.Name = "col_src_formula_code";
             this.col_src_formula_code.OptionsColumn.AllowEdit = false;
             this.col_src_formula_code.Visible = true;
             this.col_src_formula_code.VisibleIndex = 0;
-            this.col_src_formula_code.Width = 118;
+            this.col_src_formula_code.Width = 59;
             // 
             // col_src_formula_name
             // 
             this.col_src_formula_name.Caption = "Formula Ext.";
             this.col_src_formula_name.FieldName = "src_formula_name";
-            this.col_src_formula_name.MinWidth = 34;
+            this.col_src_formula_name.MinWidth = 17;
             this.col_src_formula_name.Name = "col_src_formula_name";
             this.col_src_formula_name.OptionsColumn.AllowEdit = false;
             this.col_src_formula_name.Visible = true;
             this.col_src_formula_name.VisibleIndex = 1;
-            this.col_src_formula_name.Width = 126;
+            this.col_src_formula_name.Width = 63;
             // 
             // col_lcl_name
             // 
             this.col_lcl_name.Caption = "Formula Int.";
             this.col_lcl_name.FieldName = "lcl_name";
-            this.col_lcl_name.MinWidth = 34;
+            this.col_lcl_name.MinWidth = 17;
             this.col_lcl_name.Name = "col_lcl_name";
             this.col_lcl_name.OptionsColumn.AllowEdit = false;
             this.col_lcl_name.Visible = true;
             this.col_lcl_name.VisibleIndex = 2;
-            this.col_lcl_name.Width = 96;
+            this.col_lcl_name.Width = 48;
             // 
             // col_lcl_loaded_by
             // 
             this.col_lcl_loaded_by.Caption = "Cargada por";
             this.col_lcl_loaded_by.FieldName = "lcl_loaded_by";
-            this.col_lcl_loaded_by.MinWidth = 34;
+            this.col_lcl_loaded_by.MinWidth = 17;
             this.col_lcl_loaded_by.Name = "col_lcl_loaded_by";
             this.col_lcl_loaded_by.OptionsColumn.AllowEdit = false;
             this.col_lcl_loaded_by.Visible = true;
             this.col_lcl_loaded_by.VisibleIndex = 3;
-            this.col_lcl_loaded_by.Width = 110;
+            this.col_lcl_loaded_by.Width = 55;
             // 
             // col_lcl_loaded_date
             // 
             this.col_lcl_loaded_date.Caption = "Cargado el";
             this.col_lcl_loaded_date.FieldName = "lcl_loaded_date";
-            this.col_lcl_loaded_date.MinWidth = 34;
+            this.col_lcl_loaded_date.MinWidth = 17;
             this.col_lcl_loaded_date.Name = "col_lcl_loaded_date";
             this.col_lcl_loaded_date.OptionsColumn.AllowEdit = false;
             this.col_lcl_loaded_date.Visible = true;
             this.col_lcl_loaded_date.VisibleIndex = 4;
-            this.col_lcl_loaded_date.Width = 188;
+            this.col_lcl_loaded_date.Width = 94;
             // 
             // col_aprove_prod_date
             // 
             this.col_aprove_prod_date.Caption = "Fecha Aprob. Prd.";
             this.col_aprove_prod_date.FieldName = "aprove_prod_date";
-            this.col_aprove_prod_date.MinWidth = 34;
+            this.col_aprove_prod_date.MinWidth = 17;
             this.col_aprove_prod_date.Name = "col_aprove_prod_date";
             this.col_aprove_prod_date.OptionsColumn.AllowEdit = false;
-            this.col_aprove_prod_date.Width = 128;
+            this.col_aprove_prod_date.Width = 64;
             // 
             // col_aprove_fin_date
             // 
             this.col_aprove_fin_date.Caption = "Fecha Apro. Fin";
             this.col_aprove_fin_date.FieldName = "aprove_fin_date";
-            this.col_aprove_fin_date.MinWidth = 34;
+            this.col_aprove_fin_date.MinWidth = 17;
             this.col_aprove_fin_date.Name = "col_aprove_fin_date";
             this.col_aprove_fin_date.OptionsColumn.AllowEdit = false;
-            this.col_aprove_fin_date.Width = 128;
+            this.col_aprove_fin_date.Width = 64;
             // 
             // col_status
             // 
             this.col_status.Caption = "Estado";
             this.col_status.FieldName = "status";
-            this.col_status.MinWidth = 34;
+            this.col_status.MinWidth = 17;
             this.col_status.Name = "col_status";
             this.col_status.OptionsColumn.AllowEdit = false;
-            this.col_status.Width = 150;
             // 
             // col_status_desc
             // 
@@ -852,22 +843,22 @@
             this.col_status_desc.AppearanceHeader.Options.UseForeColor = true;
             this.col_status_desc.Caption = "Estado";
             this.col_status_desc.FieldName = "status_desc";
-            this.col_status_desc.MinWidth = 34;
+            this.col_status_desc.MinWidth = 17;
             this.col_status_desc.Name = "col_status_desc";
             this.col_status_desc.OptionsColumn.AllowEdit = false;
             this.col_status_desc.Visible = true;
             this.col_status_desc.VisibleIndex = 7;
-            this.col_status_desc.Width = 128;
+            this.col_status_desc.Width = 64;
             // 
             // coledit
             // 
             this.coledit.Caption = "Editar";
             this.coledit.ColumnEdit = this.btnedit;
-            this.coledit.MinWidth = 34;
+            this.coledit.MinWidth = 17;
             this.coledit.Name = "coledit";
             this.coledit.Visible = true;
             this.coledit.VisibleIndex = 7;
-            this.coledit.Width = 74;
+            this.coledit.Width = 37;
             // 
             // btnedit
             // 
@@ -886,12 +877,12 @@
             this.colownertype.AppearanceHeader.Options.UseFont = true;
             this.colownertype.Caption = "Tipo de formula";
             this.colownertype.FieldName = "ownertype";
-            this.colownertype.MinWidth = 34;
+            this.colownertype.MinWidth = 17;
             this.colownertype.Name = "colownertype";
             this.colownertype.OptionsColumn.AllowEdit = false;
             this.colownertype.Visible = true;
             this.colownertype.VisibleIndex = 8;
-            this.colownertype.Width = 128;
+            this.colownertype.Width = 64;
             // 
             // grp_detail
             // 
@@ -899,23 +890,20 @@
             this.grp_detail.AppearanceCaption.Options.UseFont = true;
             this.grp_detail.Controls.Add(this.grd_structure);
             this.grp_detail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grp_detail.Location = new System.Drawing.Point(3, 3);
-            this.grp_detail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grp_detail.Location = new System.Drawing.Point(2, 2);
             this.grp_detail.Name = "grp_detail";
-            this.grp_detail.Size = new System.Drawing.Size(1128, 598);
+            this.grp_detail.Size = new System.Drawing.Size(563, 241);
             this.grp_detail.TabIndex = 6;
             this.grp_detail.Text = "Estructura";
             // 
             // grd_structure
             // 
             this.grd_structure.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_structure.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grd_structure.Location = new System.Drawing.Point(3, 45);
+            this.grd_structure.Location = new System.Drawing.Point(2, 23);
             this.grd_structure.MainView = this.grdv_structure;
-            this.grd_structure.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_structure.MenuManager = this.barManager1;
             this.grd_structure.Name = "grd_structure";
-            this.grd_structure.Size = new System.Drawing.Size(1122, 550);
+            this.grd_structure.Size = new System.Drawing.Size(559, 216);
             this.grd_structure.TabIndex = 3;
             this.grd_structure.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_structure});
@@ -932,7 +920,7 @@
             this.grdv_structure.Appearance.FocusedRow.BorderColor = System.Drawing.Color.SteelBlue;
             this.grdv_structure.Appearance.FocusedRow.Options.UseBackColor = true;
             this.grdv_structure.Appearance.FocusedRow.Options.UseBorderColor = true;
-            this.grdv_structure.DetailHeight = 546;
+            this.grdv_structure.DetailHeight = 284;
             this.grdv_structure.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             gridFormatRule5.ApplyToRow = true;
             gridFormatRule5.Name = "Format0";
@@ -945,6 +933,7 @@
             gridFormatRule5.Rule = formatConditionRuleValue5;
             this.grdv_structure.FormatRules.Add(gridFormatRule5);
             this.grdv_structure.GridControl = this.grd_structure;
+            this.grdv_structure.LevelIndent = 0;
             this.grdv_structure.Name = "grdv_structure";
             this.grdv_structure.OptionsBehavior.AutoExpandAllGroups = true;
             this.grdv_structure.OptionsBehavior.Editable = false;
@@ -952,6 +941,7 @@
             this.grdv_structure.OptionsView.EnableAppearanceOddRow = true;
             this.grdv_structure.OptionsView.ShowFooter = true;
             this.grdv_structure.OptionsView.ShowGroupPanel = false;
+            this.grdv_structure.PreviewIndent = 0;
             this.grdv_structure.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.grdv_structure_RowClick);
             this.grdv_structure.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_structure_FocusedRowChanged);
             // 
@@ -960,10 +950,9 @@
             this.panelControl1.Controls.Add(this.grp_detail);
             this.panelControl1.Controls.Add(this.groupControl3);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(1078, 122);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl1.Location = new System.Drawing.Point(539, 59);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1134, 1048);
+            this.panelControl1.Size = new System.Drawing.Size(567, 476);
             this.panelControl1.TabIndex = 7;
             // 
             // groupControl3
@@ -972,10 +961,9 @@
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.navPane_comments);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl3.Location = new System.Drawing.Point(3, 601);
-            this.groupControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupControl3.Location = new System.Drawing.Point(2, 243);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1128, 444);
+            this.groupControl3.Size = new System.Drawing.Size(563, 231);
             this.groupControl3.TabIndex = 7;
             this.groupControl3.Text = "Comentarios y Eventos";
             // 
@@ -984,8 +972,7 @@
             this.navPane_comments.Controls.Add(this.page_comments);
             this.navPane_comments.Controls.Add(this.page_Events);
             this.navPane_comments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navPane_comments.Location = new System.Drawing.Point(3, 45);
-            this.navPane_comments.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.navPane_comments.Location = new System.Drawing.Point(2, 23);
             this.navPane_comments.Name = "navPane_comments";
             this.navPane_comments.PageProperties.ShowCollapseButton = false;
             this.navPane_comments.PageProperties.ShowExpandButton = false;
@@ -993,9 +980,9 @@
             this.navPane_comments.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.page_comments,
             this.page_Events});
-            this.navPane_comments.RegularSize = new System.Drawing.Size(1122, 396);
+            this.navPane_comments.RegularSize = new System.Drawing.Size(559, 206);
             this.navPane_comments.SelectedPage = this.page_Events;
-            this.navPane_comments.Size = new System.Drawing.Size(1122, 396);
+            this.navPane_comments.Size = new System.Drawing.Size(559, 206);
             this.navPane_comments.TabIndex = 33;
             this.navPane_comments.Text = "Eventos";
             // 
@@ -1005,22 +992,19 @@
             this.page_comments.Controls.Add(this.grd_comments);
             this.page_comments.Controls.Add(this.standaloneBarDockControl1);
             this.page_comments.ImageOptions.Image = global::LOSA.Properties.Resources.c_16;
-            this.page_comments.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.page_comments.Name = "page_comments";
             this.page_comments.PageText = "";
             this.page_comments.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Image;
-            this.page_comments.Size = new System.Drawing.Size(1018, 308);
+            this.page_comments.Size = new System.Drawing.Size(509, 160);
             // 
             // grd_comments
             // 
             this.grd_comments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_comments.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grd_comments.Location = new System.Drawing.Point(0, 58);
+            this.grd_comments.Location = new System.Drawing.Point(0, 30);
             this.grd_comments.MainView = this.grdv_comments;
-            this.grd_comments.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_comments.MenuManager = this.barManager1;
             this.grd_comments.Name = "grd_comments";
-            this.grd_comments.Size = new System.Drawing.Size(1018, 250);
+            this.grd_comments.Size = new System.Drawing.Size(509, 130);
             this.grd_comments.TabIndex = 1;
             this.grd_comments.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_comments});
@@ -1032,7 +1016,7 @@
             this.col_nombre,
             this.col_comment,
             this.col_is_reject});
-            this.grdv_comments.DetailHeight = 546;
+            this.grdv_comments.DetailHeight = 284;
             gridFormatRule6.ApplyToRow = true;
             gridFormatRule6.Column = this.col_is_reject;
             gridFormatRule6.Name = "Reject_format";
@@ -1045,6 +1029,7 @@
             gridFormatRule6.Rule = formatConditionRuleValue6;
             this.grdv_comments.FormatRules.Add(gridFormatRule6);
             this.grdv_comments.GridControl = this.grd_comments;
+            this.grdv_comments.LevelIndent = 0;
             this.grdv_comments.Name = "grdv_comments";
             this.grdv_comments.OptionsBehavior.AutoSelectAllInEditor = false;
             this.grdv_comments.OptionsBehavior.Editable = false;
@@ -1054,6 +1039,7 @@
             this.grdv_comments.OptionsMenu.EnableColumnMenu = false;
             this.grdv_comments.OptionsView.ShowAutoFilterRow = true;
             this.grdv_comments.OptionsView.ShowGroupPanel = false;
+            this.grdv_comments.PreviewIndent = 0;
             // 
             // col_comment_on
             // 
@@ -1061,51 +1047,48 @@
             this.col_comment_on.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss";
             this.col_comment_on.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.col_comment_on.FieldName = "comment_on";
-            this.col_comment_on.MinWidth = 34;
+            this.col_comment_on.MinWidth = 17;
             this.col_comment_on.Name = "col_comment_on";
             this.col_comment_on.Visible = true;
             this.col_comment_on.VisibleIndex = 0;
-            this.col_comment_on.Width = 220;
+            this.col_comment_on.Width = 110;
             // 
             // col_nombre
             // 
             this.col_nombre.Caption = "Usuario";
             this.col_nombre.FieldName = "nombre";
-            this.col_nombre.MinWidth = 34;
+            this.col_nombre.MinWidth = 17;
             this.col_nombre.Name = "col_nombre";
             this.col_nombre.Visible = true;
             this.col_nombre.VisibleIndex = 1;
-            this.col_nombre.Width = 166;
+            this.col_nombre.Width = 83;
             // 
             // col_comment
             // 
             this.col_comment.Caption = "Comentario";
             this.col_comment.FieldName = "comment";
-            this.col_comment.MinWidth = 34;
+            this.col_comment.MinWidth = 17;
             this.col_comment.Name = "col_comment";
             this.col_comment.Visible = true;
             this.col_comment.VisibleIndex = 2;
-            this.col_comment.Width = 560;
+            this.col_comment.Width = 280;
             // 
             // page_Events
             // 
             this.page_Events.Caption = "Eventos";
             this.page_Events.Controls.Add(this.grd_events);
             this.page_Events.ImageOptions.Image = global::LOSA.Properties.Resources.E_16;
-            this.page_Events.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.page_Events.Name = "page_Events";
-            this.page_Events.Size = new System.Drawing.Size(996, 267);
+            this.page_Events.Size = new System.Drawing.Size(488, 142);
             // 
             // grd_events
             // 
             this.grd_events.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_events.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_events.Location = new System.Drawing.Point(0, 0);
             this.grd_events.MainView = this.grdv_events;
-            this.grd_events.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_events.MenuManager = this.barManager1;
             this.grd_events.Name = "grd_events";
-            this.grd_events.Size = new System.Drawing.Size(996, 267);
+            this.grd_events.Size = new System.Drawing.Size(488, 142);
             this.grd_events.TabIndex = 2;
             this.grd_events.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_events});
@@ -1117,14 +1100,16 @@
             this.col_nombreEvent,
             this.col_event_type,
             this.col_event_comment});
-            this.grdv_events.DetailHeight = 546;
+            this.grdv_events.DetailHeight = 284;
             this.grdv_events.GridControl = this.grd_events;
+            this.grdv_events.LevelIndent = 0;
             this.grdv_events.Name = "grdv_events";
             this.grdv_events.OptionsBehavior.AutoSelectAllInEditor = false;
             this.grdv_events.OptionsBehavior.Editable = false;
             this.grdv_events.OptionsCustomization.AllowGroup = false;
             this.grdv_events.OptionsView.ShowAutoFilterRow = true;
             this.grdv_events.OptionsView.ShowGroupPanel = false;
+            this.grdv_events.PreviewIndent = 0;
             // 
             // col_event_date
             // 
@@ -1132,41 +1117,41 @@
             this.col_event_date.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss";
             this.col_event_date.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.col_event_date.FieldName = "event_date";
-            this.col_event_date.MinWidth = 34;
+            this.col_event_date.MinWidth = 17;
             this.col_event_date.Name = "col_event_date";
             this.col_event_date.Visible = true;
             this.col_event_date.VisibleIndex = 0;
-            this.col_event_date.Width = 210;
+            this.col_event_date.Width = 105;
             // 
             // col_nombreEvent
             // 
             this.col_nombreEvent.Caption = "Usuario";
             this.col_nombreEvent.FieldName = "nombre";
-            this.col_nombreEvent.MinWidth = 34;
+            this.col_nombreEvent.MinWidth = 17;
             this.col_nombreEvent.Name = "col_nombreEvent";
             this.col_nombreEvent.Visible = true;
             this.col_nombreEvent.VisibleIndex = 1;
-            this.col_nombreEvent.Width = 148;
+            this.col_nombreEvent.Width = 74;
             // 
             // col_event_type
             // 
             this.col_event_type.Caption = "Tipo";
             this.col_event_type.FieldName = "event_type";
-            this.col_event_type.MinWidth = 34;
+            this.col_event_type.MinWidth = 17;
             this.col_event_type.Name = "col_event_type";
             this.col_event_type.Visible = true;
             this.col_event_type.VisibleIndex = 2;
-            this.col_event_type.Width = 74;
+            this.col_event_type.Width = 37;
             // 
             // col_event_comment
             // 
             this.col_event_comment.Caption = "Comentario";
             this.col_event_comment.FieldName = "event_comment";
-            this.col_event_comment.MinWidth = 34;
+            this.col_event_comment.MinWidth = 17;
             this.col_event_comment.Name = "col_event_comment";
             this.col_event_comment.Visible = true;
             this.col_event_comment.VisibleIndex = 3;
-            this.col_event_comment.Width = 412;
+            this.col_event_comment.Width = 206;
             // 
             // ContextMenu
             // 
@@ -1201,9 +1186,9 @@
             // 
             // FML_FF_Main_Panel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2212, 1192);
+            this.ClientSize = new System.Drawing.Size(1106, 555);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -1212,7 +1197,6 @@
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FML_FF_Main_Panel.IconOptions.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FML_FF_Main_Panel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
