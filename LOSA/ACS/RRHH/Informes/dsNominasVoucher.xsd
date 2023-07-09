@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsNominasVoucher" targetNamespace="http://tempuri.org/dsNominasVoucher.xsd" xmlns:mstns="http://tempuri.org/dsNominasVoucher.xsd" xmlns="http://tempuri.org/dsNominasVoucher.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsNominasVoucher" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsNominasVoucher" msprop:Generator_UserDSName="dsNominasVoucher">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="header_planilla" msprop:Generator_TableClassName="header_planillaDataTable" msprop:Generator_TableVarName="tableheader_planilla" msprop:Generator_TablePropName="header_planilla" msprop:Generator_RowDeletingName="header_planillaRowDeleting" msprop:Generator_RowChangingName="header_planillaRowChanging" msprop:Generator_RowEvHandlerName="header_planillaRowChangeEventHandler" msprop:Generator_RowDeletedName="header_planillaRowDeleted" msprop:Generator_UserTableName="header_planilla" msprop:Generator_RowChangedName="header_planillaRowChanged" msprop:Generator_RowEvArgName="header_planillaRowChangeEvent" msprop:Generator_RowClassName="header_planillaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:long" minOccurs="0" />
+              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa" type="xs:string" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" msprop:Generator_UserColumnName="Titulo" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_desde" msprop:Generator_ColumnVarNameInTable="columnfecha_desde" msprop:Generator_ColumnPropNameInRow="fecha_desde" msprop:Generator_ColumnPropNameInTable="fecha_desdeColumn" msprop:Generator_UserColumnName="fecha_desde" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_hasta" msprop:Generator_ColumnVarNameInTable="columnfecha_hasta" msprop:Generator_ColumnPropNameInRow="fecha_hasta" msprop:Generator_ColumnPropNameInTable="fecha_hastaColumn" msprop:Generator_UserColumnName="fecha_hasta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
