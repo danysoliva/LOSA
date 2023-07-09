@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGenerarTarimas));
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -39,7 +40,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_producto = new DevExpress.XtraEditors.TextEdit();
             this.grdv_data = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bagsBindingSource = new System.Windows.Forms.BindingSource();
+            this.bagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsProduccion = new LOSA.Produccion.dsProduccion();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,10 +56,10 @@
             this.dt_fechaVencimiento = new DevExpress.XtraEditors.DateEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_print25 = new DevExpress.XtraEditors.SimpleButton();
-            this.timerPrintMulti = new System.Windows.Forms.Timer();
+            this.timerPrintMulti = new System.Windows.Forms.Timer(this.components);
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.grdturno = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.turnoBindingSource = new System.Windows.Forms.BindingSource();
+            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescrip = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -109,10 +110,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_unidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtkg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_fechaFabricaion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_fechaFabricaion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_fechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_fechaFabricaion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_fechaVencimiento.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_fechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdturno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -641,7 +642,7 @@
             this.colcodigo_tm.Caption = "Codigo Tm";
             this.colcodigo_tm.FieldName = "codigo_tm";
             this.colcodigo_tm.Name = "colcodigo_tm";
-            this.colcodigo_tm.OptionsColumn.AllowEdit = false;
+            this.colcodigo_tm.OptionsColumn.ReadOnly = true;
             this.colcodigo_tm.Visible = true;
             this.colcodigo_tm.VisibleIndex = 0;
             // 
@@ -892,7 +893,7 @@
             this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
             this.toggleSwitch1.Properties.OffText = "Las virtuales";
             this.toggleSwitch1.Properties.OnText = "Solo las Activas";
-            this.toggleSwitch1.Size = new System.Drawing.Size(266, 28);
+            this.toggleSwitch1.Size = new System.Drawing.Size(266, 22);
             this.toggleSwitch1.TabIndex = 70;
             this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
             // 

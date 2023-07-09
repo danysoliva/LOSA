@@ -28,6 +28,7 @@ namespace LOSA.Despachos
         UserLogin usuarioLogueado = new UserLogin();
         Tarima tarimaEncontrada;
         int id_selected = 0;
+        int existencia_tarima = 0;
 
         public frm_despacho_v3()
         {
@@ -379,7 +380,7 @@ namespace LOSA.Despachos
                     {
                         case 1://Virtual
                             error = true;
-                            mensaje = "Se imprimió el Rotulo de la tarima pero es necesario recepcionar o Activar la tarima!";
+                            mensaje = "Se imprimió el Rotulo de la tarima pero es necesario Recepcionar o Activar la tarima!";
                             break;
                         case 2://Recepcion
                             break;
@@ -394,6 +395,7 @@ namespace LOSA.Despachos
                         case 5://En Bodega
                             break;
                         case 6://Reproceso
+                            mensaje = "Esta Tarima se Convirtio en Reproceso!";
                             break;
                         default://Cualquier otro caso
                             break;
@@ -430,6 +432,7 @@ namespace LOSA.Despachos
                             {
                                 result = Convert.ToInt32(dr.GetValue(0));
                                 Error = dr.GetString(1);
+                                existencia_tarima = dr.GetInt32(2);
                             }
                             //disponible = Convert.ToBoolean(cmd.ExecuteScalar());
                             if (result == 1)
@@ -489,7 +492,7 @@ namespace LOSA.Despachos
                     timerLimpiarMensaje.Start();
                     return;
                 }
-                frm_seleccionUD frm = new frm_seleccionUD(Convert.ToDecimal(txtCantidadT.Text));
+                frm_seleccionUD frm = new frm_seleccionUD(Convert.ToDecimal(existencia_tarima));
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     try
