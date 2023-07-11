@@ -20,6 +20,7 @@ namespace LOSA.Despachos
         public frm_seleccionUD(decimal Pud)
         {
             InitializeComponent();
+            IsPT = false;
             Ud =Convert.ToInt32(Pud);
             Ud = Convert.ToInt32(Pud);
             Max = Convert.ToInt32(Pud);
