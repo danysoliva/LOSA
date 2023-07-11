@@ -1803,6 +1803,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap next_x16 {
+            get {
+                object obj = ResourceManager.GetObject("next_x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap no_image_icon_0 {
             get {
                 object obj = ResourceManager.GetObject("no_image_icon_0", resourceCulture);
@@ -1876,6 +1886,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap orders_production_32px {
             get {
                 object obj = ResourceManager.GetObject("orders_production_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Oxygen_Icons_org {
+            get {
+                object obj = ResourceManager.GetObject("Oxygen-Icons.org", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
