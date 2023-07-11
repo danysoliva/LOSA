@@ -3623,6 +3623,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsNir.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Nir\dsNIR_PRD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNIR_PRD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Nir\frmLecturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4588,6 +4593,17 @@
     </None>
     <None Include="Nir\dsNir.xss">
       <DependentUpon>dsNir.xsd</DependentUpon>
+    </None>
+    <None Include="Nir\dsNIR_PRD.xsc">
+      <DependentUpon>dsNIR_PRD.xsd</DependentUpon>
+    </None>
+    <None Include="Nir\dsNIR_PRD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNIR_PRD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Nir\dsNIR_PRD.xss">
+      <DependentUpon>dsNIR_PRD.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Produccion\CierreLote\dsCierreLotesPT.xsc">

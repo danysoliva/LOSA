@@ -55,9 +55,9 @@ namespace LOSA.Nir
                 SqlCommand cmd = new SqlCommand(query,CN);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", id_lectura);
-                dsNir.Nir_lecturas.Clear();
+                dsNIR_PRD1.Nir_lecturas.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsNir.Nir_lecturas);
+                da.Fill(dsNIR_PRD1.Nir_lecturas);
                 CN.Close();
                 query = "sp_load_titulo_de_lectura_h";
 
@@ -116,13 +116,13 @@ namespace LOSA.Nir
                     string Connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + file_name + "; Extended Properties=\"Excel 12.0 Xml; HDR = YES\"";
                     OleDbConnection con = new OleDbConnection(Connection);
                     OleDbDataAdapter myCommand = new OleDbDataAdapter("select * from [Sheet$]", con);
-                    dsNir.Nir_lecturas.Clear();
+                    dsNIR_PRD1.Nir_lecturas.Clear();
 
                     SplashForm frmProceso = new SplashForm();
                     try
                     {
-                        myCommand.Fill(dsNir.Nir_lecturas);
-                        dsNir.Nir_lecturas.AcceptChanges();
+                        myCommand.Fill(dsNIR_PRD1.Nir_lecturas);
+                        dsNIR_PRD1.Nir_lecturas.AcceptChanges();
                     }
                     catch (Exception ec)
                     {
@@ -152,7 +152,7 @@ namespace LOSA.Nir
                 if (MessageBox.Show("Desea eliminar esa fila?", "Desea eliminar esa fila?", MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK )
                 {
                     grdv_data.DeleteRow(grdv_data.FocusedRowHandle);
-                    dsNir.AcceptChanges();
+                    dsNIR_PRD1.AcceptChanges();
                 }
             }
             catch (Exception ex)
@@ -169,7 +169,7 @@ namespace LOSA.Nir
                 CajaDialogo.Error("No debe de quedar la caja de comentarios vacia.");
                 return;
             }
-            if (dsNir.Nir_lecturas.Rows.Count == 0)
+            if (dsNIR_PRD1.Nir_lecturas.Rows.Count == 0)
             {
                 CajaDialogo.Error("Debe de cargar por lo menos una lectora del Nir.");
                 return;
@@ -189,7 +189,7 @@ namespace LOSA.Nir
                     cn.Close();
 
                     query = @"sp_insert_lectura_nir_detalle";
-                    foreach (dsNir.Nir_lecturasRow row in dsNir.Nir_lecturas.Rows)
+                    foreach (dsNIR_PRD.Nir_lecturasRow row in dsNIR_PRD1.Nir_lecturas.Rows)
                     { 
                         cn.Open();
                         cmd = new SqlCommand(query,cn);
