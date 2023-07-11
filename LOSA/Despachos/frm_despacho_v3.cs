@@ -29,7 +29,8 @@ namespace LOSA.Despachos
         Tarima tarimaEncontrada;
         int id_selected = 0;
         int existencia_tarima = 0;
-
+        int solicitado = 0;
+        int entregado = 0;
         public frm_despacho_v3()
         {
             InitializeComponent();
@@ -423,7 +424,7 @@ namespace LOSA.Despachos
                             SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                             con.Open();
                             int result = 0;
-                            SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_pt", con);
+                            SqlCommand cmd = new SqlCommand("sp_verifica_diponibilidad_tarima_entrega_ptV2", con);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id", tarimaEncontrada.Id);
                             cmd.Parameters.AddWithValue("@id_despacho", N_Documento);
@@ -433,6 +434,8 @@ namespace LOSA.Despachos
                                 result = Convert.ToInt32(dr.GetValue(0));
                                 Error = dr.GetString(1);
                                 existencia_tarima = dr.GetInt32(2);
+                                solicitado = dr.GetInt32(3);
+                                entregado = dr.GetInt32(4);
                             }
                             //disponible = Convert.ToBoolean(cmd.ExecuteScalar());
                             if (result == 1)
@@ -492,7 +495,7 @@ namespace LOSA.Despachos
                     timerLimpiarMensaje.Start();
                     return;
                 }
-                frm_seleccionUD frm = new frm_seleccionUD(Convert.ToDecimal(existencia_tarima));
+                frm_seleccionUD frm = new frm_seleccionUD(Convert.ToDecimal(existencia_tarima), solicitado, entregado);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     try
