@@ -39,7 +39,7 @@ namespace LOSA.Nir
             this.btnDescargarPlantilla = new DevExpress.XtraEditors.SimpleButton();
             this.btnupdate = new DevExpress.XtraEditors.SimpleButton();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.dsNir = new LOSA.Nir.dsNir();
+            this.dsNIR_PRD1 = new LOSA.Nir.dsNIR_PRD();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_h = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,7 +62,7 @@ namespace LOSA.Nir
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtcomentario = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNIR_PRD1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarLectura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcomentario.Properties)).BeginInit();
@@ -77,9 +77,10 @@ namespace LOSA.Nir
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(448, 8);
+            this.cmdHome.Location = new System.Drawing.Point(896, 15);
+            this.cmdHome.Margin = new System.Windows.Forms.Padding(6);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 54);
+            this.cmdHome.Size = new System.Drawing.Size(398, 104);
             this.cmdHome.TabIndex = 8;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -89,9 +90,10 @@ namespace LOSA.Nir
             this.btnDescargarPlantilla.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDescargarPlantilla.Appearance.Options.UseFont = true;
             this.btnDescargarPlantilla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDescargarPlantilla.ImageOptions.Image")));
-            this.btnDescargarPlantilla.Location = new System.Drawing.Point(12, 75);
+            this.btnDescargarPlantilla.Location = new System.Drawing.Point(24, 144);
+            this.btnDescargarPlantilla.Margin = new System.Windows.Forms.Padding(6);
             this.btnDescargarPlantilla.Name = "btnDescargarPlantilla";
-            this.btnDescargarPlantilla.Size = new System.Drawing.Size(177, 52);
+            this.btnDescargarPlantilla.Size = new System.Drawing.Size(354, 100);
             this.btnDescargarPlantilla.TabIndex = 9;
             this.btnDescargarPlantilla.Text = "Descargar Plantilla";
             this.btnDescargarPlantilla.Click += new System.EventHandler(this.btnDescargarPlantilla_Click);
@@ -101,9 +103,10 @@ namespace LOSA.Nir
             this.btnupdate.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.Appearance.Options.UseFont = true;
             this.btnupdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnupdate.ImageOptions.Image")));
-            this.btnupdate.Location = new System.Drawing.Point(195, 75);
+            this.btnupdate.Location = new System.Drawing.Point(390, 144);
+            this.btnupdate.Margin = new System.Windows.Forms.Padding(6);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(177, 52);
+            this.btnupdate.Size = new System.Drawing.Size(354, 100);
             this.btnupdate.TabIndex = 10;
             this.btnupdate.Text = "Subir lecturas";
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
@@ -114,21 +117,23 @@ namespace LOSA.Nir
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "Nir_lecturas";
-            this.grd_data.DataSource = this.dsNir;
-            this.grd_data.Location = new System.Drawing.Point(0, 143);
+            this.grd_data.DataSource = this.dsNIR_PRD1;
+            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
+            this.grd_data.Location = new System.Drawing.Point(0, 275);
             this.grd_data.MainView = this.grdv_data;
+            this.grd_data.Margin = new System.Windows.Forms.Padding(6);
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEliminarLectura});
-            this.grd_data.Size = new System.Drawing.Size(653, 308);
+            this.grd_data.Size = new System.Drawing.Size(1306, 592);
             this.grd_data.TabIndex = 11;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
             // 
-            // dsNir
+            // dsNIR_PRD1
             // 
-            this.dsNir.DataSetName = "dsNir";
-            this.dsNir.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsNIR_PRD1.DataSetName = "dsNIR_PRD";
+            this.dsNIR_PRD1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -169,6 +174,7 @@ namespace LOSA.Nir
             this.collote,
             this.colenable,
             this.col});
+            this.grdv_data.DetailHeight = 673;
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -177,133 +183,165 @@ namespace LOSA.Nir
             // colid
             // 
             this.colid.FieldName = "id";
+            this.colid.MinWidth = 40;
             this.colid.Name = "colid";
+            this.colid.Width = 150;
             // 
             // colid_h
             // 
             this.colid_h.FieldName = "id_h";
+            this.colid_h.MinWidth = 40;
             this.colid_h.Name = "colid_h";
+            this.colid_h.Width = 150;
             // 
             // collectura
             // 
             this.collectura.Caption = "#Lectura";
             this.collectura.FieldName = "#Lectura";
+            this.collectura.MinWidth = 40;
             this.collectura.Name = "collectura";
             this.collectura.OptionsColumn.AllowEdit = false;
             this.collectura.Visible = true;
             this.collectura.VisibleIndex = 0;
+            this.collectura.Width = 150;
             // 
             // colfecha
             // 
             this.colfecha.Caption = "Fecha/Hora de Analisis";
             this.colfecha.FieldName = "Fecha/Hora de Analisis";
+            this.colfecha.MinWidth = 40;
             this.colfecha.Name = "colfecha";
             this.colfecha.OptionsColumn.AllowEdit = false;
             this.colfecha.Visible = true;
             this.colfecha.VisibleIndex = 1;
+            this.colfecha.Width = 150;
             // 
             // colcurva
             // 
             this.colcurva.Caption = "#Curva";
             this.colcurva.FieldName = "#Curva";
+            this.colcurva.MinWidth = 40;
             this.colcurva.Name = "colcurva";
             this.colcurva.OptionsColumn.AllowEdit = false;
             this.colcurva.Visible = true;
             this.colcurva.VisibleIndex = 2;
+            this.colcurva.Width = 150;
             // 
             // coln_curva
             // 
             this.coln_curva.Caption = "Nombre de la Curva";
             this.coln_curva.FieldName = "Nombre de la Curva";
+            this.coln_curva.MinWidth = 40;
             this.coln_curva.Name = "coln_curva";
             this.coln_curva.OptionsColumn.AllowEdit = false;
             this.coln_curva.Visible = true;
             this.coln_curva.VisibleIndex = 3;
+            this.coln_curva.Width = 150;
             // 
             // colid_bromatologia
             // 
             this.colid_bromatologia.Caption = "ID Bromatologia";
             this.colid_bromatologia.FieldName = "ID Bromatologia";
+            this.colid_bromatologia.MinWidth = 40;
             this.colid_bromatologia.Name = "colid_bromatologia";
             this.colid_bromatologia.OptionsColumn.AllowEdit = false;
             this.colid_bromatologia.Visible = true;
             this.colid_bromatologia.VisibleIndex = 4;
+            this.colid_bromatologia.Width = 150;
             // 
             // colbroma_porcentaje
             // 
             this.colbroma_porcentaje.Caption = "%Bromatologia";
             this.colbroma_porcentaje.FieldName = "%Bromatologia";
+            this.colbroma_porcentaje.MinWidth = 40;
             this.colbroma_porcentaje.Name = "colbroma_porcentaje";
             this.colbroma_porcentaje.OptionsColumn.AllowEdit = false;
             this.colbroma_porcentaje.Visible = true;
             this.colbroma_porcentaje.VisibleIndex = 5;
+            this.colbroma_porcentaje.Width = 150;
             // 
             // colGH
             // 
             this.colGH.Caption = "GH";
             this.colGH.FieldName = "GH";
+            this.colGH.MinWidth = 40;
             this.colGH.Name = "colGH";
             this.colGH.OptionsColumn.AllowEdit = false;
             this.colGH.Visible = true;
             this.colGH.VisibleIndex = 6;
+            this.colGH.Width = 150;
             // 
             // colNB
             // 
             this.colNB.Caption = "NB";
             this.colNB.FieldName = "NB";
+            this.colNB.MinWidth = 40;
             this.colNB.Name = "colNB";
             this.colNB.OptionsColumn.AllowEdit = false;
             this.colNB.Visible = true;
             this.colNB.VisibleIndex = 7;
+            this.colNB.Width = 150;
             // 
             // colTS
             // 
             this.colTS.Caption = "TS";
             this.colTS.FieldName = "TS";
+            this.colTS.MinWidth = 40;
             this.colTS.Name = "colTS";
             this.colTS.OptionsColumn.AllowEdit = false;
             this.colTS.Visible = true;
             this.colTS.VisibleIndex = 8;
+            this.colTS.Width = 150;
             // 
             // colcomentario
             // 
             this.colcomentario.Caption = "Comentario";
             this.colcomentario.FieldName = "Comentario";
+            this.colcomentario.MinWidth = 40;
             this.colcomentario.Name = "colcomentario";
             this.colcomentario.OptionsColumn.AllowEdit = false;
             this.colcomentario.Visible = true;
             this.colcomentario.VisibleIndex = 9;
+            this.colcomentario.Width = 150;
             // 
             // colnombre_producto
             // 
             this.colnombre_producto.Caption = "Nombre de Producto";
             this.colnombre_producto.FieldName = "Nombre de Producto";
+            this.colnombre_producto.MinWidth = 40;
             this.colnombre_producto.Name = "colnombre_producto";
             this.colnombre_producto.OptionsColumn.AllowEdit = false;
             this.colnombre_producto.Visible = true;
             this.colnombre_producto.VisibleIndex = 10;
+            this.colnombre_producto.Width = 150;
             // 
             // collote
             // 
             this.collote.Caption = "#Lote";
             this.collote.FieldName = "#Lote";
+            this.collote.MinWidth = 40;
             this.collote.Name = "collote";
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 11;
+            this.collote.Width = 150;
             // 
             // colenable
             // 
             this.colenable.FieldName = "enable";
+            this.colenable.MinWidth = 40;
             this.colenable.Name = "colenable";
+            this.colenable.Width = 150;
             // 
             // col
             // 
             this.col.Caption = "Eliminar";
             this.col.ColumnEdit = this.btnEliminarLectura;
+            this.col.MinWidth = 40;
             this.col.Name = "col";
             this.col.Visible = true;
             this.col.VisibleIndex = 12;
+            this.col.Width = 150;
             // 
             // btnEliminarLectura
             // 
@@ -321,9 +359,10 @@ namespace LOSA.Nir
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 457);
+            this.labelControl1.Location = new System.Drawing.Point(24, 879);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(94, 21);
+            this.labelControl1.Size = new System.Drawing.Size(185, 45);
             this.labelControl1.TabIndex = 12;
             this.labelControl1.Text = "Comentario:";
             // 
@@ -332,9 +371,10 @@ namespace LOSA.Nir
             this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(378, 75);
+            this.btnSave.Location = new System.Drawing.Point(756, 144);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(177, 52);
+            this.btnSave.Size = new System.Drawing.Size(354, 100);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Guardar";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -343,19 +383,20 @@ namespace LOSA.Nir
             // 
             this.txtcomentario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtcomentario.Location = new System.Drawing.Point(63, 484);
+            this.txtcomentario.Location = new System.Drawing.Point(126, 931);
+            this.txtcomentario.Margin = new System.Windows.Forms.Padding(6);
             this.txtcomentario.Name = "txtcomentario";
             this.txtcomentario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcomentario.Properties.Appearance.Options.UseFont = true;
             this.txtcomentario.Properties.MaxLength = 350;
-            this.txtcomentario.Size = new System.Drawing.Size(546, 101);
+            this.txtcomentario.Size = new System.Drawing.Size(1092, 194);
             this.txtcomentario.TabIndex = 14;
             // 
             // frm_cargar_lecturas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 618);
+            this.ClientSize = new System.Drawing.Size(1308, 1188);
             this.Controls.Add(this.txtcomentario);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.labelControl1);
@@ -364,11 +405,12 @@ namespace LOSA.Nir
             this.Controls.Add(this.btnDescargarPlantilla);
             this.Controls.Add(this.cmdHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frm_cargar_lecturas";
             this.Text = "frm_cargar_lecturas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNIR_PRD1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminarLectura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcomentario.Properties)).EndInit();
@@ -387,7 +429,6 @@ namespace LOSA.Nir
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.MemoEdit txtcomentario;
-        private dsNir dsNir;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colid_h;
         private DevExpress.XtraGrid.Columns.GridColumn collectura;
@@ -405,5 +446,6 @@ namespace LOSA.Nir
         private DevExpress.XtraGrid.Columns.GridColumn colenable;
         private DevExpress.XtraGrid.Columns.GridColumn col;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEliminarLectura;
+        private dsNIR_PRD dsNIR_PRD1;
     }
 }
