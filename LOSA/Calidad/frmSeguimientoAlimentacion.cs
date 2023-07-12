@@ -163,7 +163,17 @@ namespace LOSA.Calidad
 
         }
 
-    
+        private void btnExporte_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                grd_consumo.ExportToXlsx(dialog.FileName);
+            }
+        }
 
         private void btnImprimirRPT_Click(object sender, EventArgs e)
         {

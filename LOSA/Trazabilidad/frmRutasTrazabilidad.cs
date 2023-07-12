@@ -2743,97 +2743,94 @@ namespace LOSA.Trazabilidad
                 var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
                 var row = (dsMantoTrazabilidad.Ruta4_D_trz_loteRow)gridView.GetFocusedDataRow();
 
-                if (string.IsNullOrEmpty(row.lote_mp))
+                if (row.id_mp == 1101 || row.id_mp == 1110) //MP00081 MP00080 Reproceso Camaron y Tilapia
                 {
-                    return;
+
+                    if (txtlote.Text == "")
+                    {
+                        CajaDialogo.Error("Debe de especificar el lote que desea encontrar resultados.");
+                    }
+                    else
+                    {
+                        txtlote.Text = row.lote_mp;
+                    }
+
+                    dsCalidad.trazabilitad.Clear();
+                    load_header();
+                    load_data();
+                    Load_Despachos();
+                    LoadDatosDetalleDespacho();
+                    timerRuta4.Enabled = true;
+                    timerRuta4.Start();
+                    //Load_Despachos();
+                    //LoadDatosDetalleDespacho();
+                    //load_informacion_de_inventario();
+                    //load_tarimas_rechazadas();
+                    //load_MuestreoPT();
+
+                
+
+
+
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(row.lote_mp))
+                    {
+                        return;
+                    }
+
+                    navigationFrame1.SelectedPage = npRuta4_V2;
+
+                    load_Info_PT_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                    load_data_ingreso_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+
+                    LoadDataInicialIngresos_Ruta4(row.id_mp, row.lote_mp);
+                    foreach (dsMantenimientoC.Ingresos_Lote_detalleRow item in dsMantenimientoC.Ingresos_Lote_detalle.Rows)
+                    {
+                        if (item.numero_transaccion == row.NIngreso)
+                        {
+
+                            Id_ingreso_Ruta4 = item.id_ingreso;
+                            Id_boleta_Ruta4 = item.id_boleta;
+
+                            item.selected = true;
+                        }
+                    }
+
+                    Load_cargas_nir_Ruta4(row.id_mp);
+                    Inicalizar_Archivo_Ruta4();
+                    Inicializar_data_logistica_Ruta4(row.NIngreso);
+                    load_especie_Ruta4();
+                    load_zonas_Ruta4();
+                    load_tipo_Ruta4();
+                    load_paises_Ruta4();
+                    LoadLotesPT_Ruta4(row.id_mp, row.lote_mp);
+                    LoadInventarioKardex_Ruta4(row.lote_mp);
+
+                    if (ChCalidad_Ruta4)
+                    {
+                        load_criterios_configurados_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                        get_imagen_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                        load_empaque_estado_Mp_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                        load_trasporte_estado_transporte_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                        load_criterios_adicionales_Ruta4(row.id_mp, row.lote_mp, row.NIngreso);
+                        Inicalizar_Archivo_configurados_Ruta4(row.id_mp, row.lote_mp);
+
+                        if (full_pathImagen != "")
+                        {
+                            pc_Mp.Image = ByteToImage_Ruta4(GetImgByte_Ruta4(full_pathImagen));
+                        }
+                    }
+                    else
+                    {
+                        inicializar_criterios_Ruta4(row.id_mp);
+
+                    }
                 }
 
 
-
-            navigationFrame1.SelectedPage = npRuta4_V2;
-
-            load_Info_PT_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-            load_data_ingreso_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-
-            LoadDataInicialIngresos_Ruta4(row.id_mp, row.lote_mp);
-            foreach (dsMantenimientoC.Ingresos_Lote_detalleRow item in dsMantenimientoC.Ingresos_Lote_detalle.Rows)
-            {
-                if (item.numero_transaccion == row.NIngreso)
-                {
-
-                    Id_ingreso_Ruta4 = item.id_ingreso;
-                    Id_boleta_Ruta4 = item.id_boleta;
-
-                    item.selected = true;
-                }
             }
-
-            Load_cargas_nir_Ruta4(row.id_mp);
-            Inicalizar_Archivo_Ruta4();
-            Inicializar_data_logistica_Ruta4(row.NIngreso);
-            load_especie_Ruta4();
-            load_zonas_Ruta4();
-            load_tipo_Ruta4();
-            load_paises_Ruta4();
-            LoadLotesPT_Ruta4(row.id_mp,row.lote_mp);
-            LoadInventarioKardex_Ruta4(row.lote_mp);
-
-            if (ChCalidad_Ruta4)
-            {
-                load_criterios_configurados_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                get_imagen_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                load_empaque_estado_Mp_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                load_trasporte_estado_transporte_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                load_criterios_adicionales_Ruta4(row.id_mp, row.lote_mp,row.NIngreso);
-                Inicalizar_Archivo_configurados_Ruta4(row.id_mp, row.lote_mp);
-
-                if (full_pathImagen != "")
-                {
-                    pc_Mp.Image = ByteToImage_Ruta4(GetImgByte_Ruta4(full_pathImagen));
-                }
-            }
-            else
-            {
-                inicializar_criterios_Ruta4(row.id_mp);
-
-            }
-
-            /*CODIGO ANTERIOR*/
-            //navigationFrame1.SelectedPage = npInfoLote;
-            //Id_ingreso = 0;
-
-
-
-            //load_dataRuta2(row.lote_mp);
-            //load_data_ingresoRuta2(row.lote_mp);
-            //Load_cargas_niRuta2(row.lote_mp);
-            //Inicializar_data_logisticaRuta2(row.lote_mp);
-            //load_zonasRuta2();
-            //load_especieRuta2();
-            //load_tipo();
-            //load_paisesRuta2();
-            //LoadLotesPT_Ruta2();
-            //LoadInventarioKardexRuta2();
-            //if (ChCalidad)
-            //{
-            //    load_criterios_configuradosRuta2(row.lote_mp);
-            //    Inicalizar_Archivo_configuradosRuta2(row.lote_mp);
-            //    get_imagenRuta2(row.lote_mp);
-            //    load_empaque_estado_MpRuta2(row.lote_mp);
-            //    load_trasporte_estado_transporteRuta2(row.lote_mp);
-            //    load_criterios_adicionalesRuta2(row.lote_mp);
-
-            //    if (full_pathImagen != "")
-            //    {
-            //        pc_Mp.Image = ByteToImageRuta2(GetImgByteRuta2(full_pathImagen));
-            //    }
-            //}
-            //else
-            //{
-            //    inicializar_criteriosRuta2();
-            //    Inicalizar_ArchivoRuta2();
-            //}
-        }
 
             private void cmdLinkButtonMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
             {
