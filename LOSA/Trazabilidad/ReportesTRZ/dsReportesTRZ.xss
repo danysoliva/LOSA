@@ -18,8 +18,8 @@
     <Shape ID="DesignTable:pt_list_trzCamaron" ZOrder="6" X="39" Y="503" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:pt_list_trzTilapiaRuta2" ZOrder="5" X="47" Y="637" Height="106" Width="182" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:pt_list_trzCamaronRuta2" ZOrder="4" X="50" Y="748" Height="86" Width="181" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
-    <Shape ID="DesignTable:detalle_destinosRuta4" ZOrder="2" X="261" Y="518" Height="353" Width="166" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="349" />
-    <Shape ID="DesignTable:detalle_batch_ruta_4" ZOrder="1" X="448" Y="534" Height="200" Width="184" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
+    <Shape ID="DesignTable:detalle_destinosRuta4" ZOrder="1" X="261" Y="518" Height="353" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="349" />
+    <Shape ID="DesignTable:detalle_batch_ruta_4" ZOrder="2" X="448" Y="534" Height="200" Width="184" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="196" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

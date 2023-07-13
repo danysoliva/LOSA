@@ -77,7 +77,7 @@ namespace LOSA.Trazabilidad
 
         int navigationPageSeleccionado;
         int id_despacho;
-
+        int NumId_despacho;
 
 
         public frmRutasTrazabilidad(UserLogin log)
@@ -908,8 +908,9 @@ namespace LOSA.Trazabilidad
             navigationFrame1.SelectedPage = npRuta3DetalleDespacho;
 
             LoadDatosDetalleDespacho(row.Despacho);//Correcto filtramos despacho y lote
-            LoadHeaderDespacho(row.Despacho);
-            id_despacho = row.Despacho;
+            LoadHeaderDespacho(row.id_despacho);
+            NumId_despacho = row.Despacho;
+            id_despacho = row.id_despacho;
         }
 
         private void LoadHeaderDespacho(int despacho)
@@ -3184,7 +3185,7 @@ namespace LOSA.Trazabilidad
 
         private void btnImprimirDetalleCarga_Click(object sender, EventArgs e)
         {
-            if (id_despacho > 0)
+            if (NumId_despacho > 0)
             {
                 Despacho info_despacho = new Despacho();
                 info_despacho.RecuperarRegistroDespacho(id_despacho);
@@ -3199,7 +3200,7 @@ namespace LOSA.Trazabilidad
                 }
                 else
                 {
-                    CajaDialogo.Error("El Detalle de Carga del Despacho: "+ id_despacho +" no ha sido configurado, Solicite a Logistica la configuracion!");
+                    CajaDialogo.Error("El Detalle de Carga del Despacho: "+ NumId_despacho +" no ha sido configurado, Solicite a Logistica la configuracion!");
                 }
             }
         }
