@@ -112,19 +112,94 @@ namespace LOSA.MigracionACS.Formulas
                                 string approver_type = null;
                                 int count = 0;
 
-                                foreach (DataRow row in UserGroups.Rows)
+                                
+                                switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
                                 {
-                                    if (row["GroupName"].ToString().Trim() == "app_acs_fml_approver_fin")
-                                    {
+                                    case GrupoUser.GrupoUsuario.Administradores:
                                         approver_type = "FIN";
-                                        count++;
-                                    }
-                                    else if (row["GroupName"].ToString().Trim() == "app_acs_fml_approver_prd")
-                                    {
-                                        approver_type = "PRD";
-                                        count++;
-                                    }
+                                             count++;
+                                        break;
+
+                                    case GrupoUser.GrupoUsuario.ProduccionV2:
+                                        int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);
+                                        switch (idNivel)
+                                        {
+                                            case 1://Basic View
+
+                                                break;
+                                            case 2://Basic No Autorization
+
+                                                break;
+                                            case 3://Medium Autorization
+
+                                                break;
+                                            case 4://Depth With Delta
+                                            case 5://Depth Without Delta
+                                                //app_acs_fml_approver_prd
+                                                approver_type = "PRD";
+                                                count++;
+
+                                                break;
+                                            default:
+
+                                                break;
+                                        }
+                                        break;
+
+                                    case GrupoUser.GrupoUsuario.Contabilidad:
+                                        idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.Id, 7);
+                                        switch (idNivel)
+                                        {
+                                            case 1://Basic View
+
+                                                break;
+                                            case 2://Basic No Autorization
+
+                                                break;
+                                            case 3://Medium Autorization
+
+
+                                                break;
+                                            case 4://Depth With Delta
+
+                                                break;
+                                            case 5://Depth Without Delta
+                                                //app_acs_fml_approver_fin
+                                                approver_type = "FIN";
+                                                count++;
+
+                                                break;
+                                            default:
+
+                                                break;
+                                        }
+                                        break;
+
+                                    default:
+                                        break;
                                 }
+
+
+                                if (UsuarioLogeado.ValidarNivelPermisos(92))
+                                {
+                                    //app_acs_fml_approver_prd
+                                    approver_type = "PRD";
+                                    count++;
+                                }
+
+                                //foreach (DataRow row in UserGroups.Rows)
+                                //{
+                                //    if (row["GroupName"].ToString().Trim() == "app_acs_fml_approver_fin")
+                                //    {
+                                //        approver_type = "FIN";
+                                //        count++;
+                                //    }
+                                //    else if (row["GroupName"].ToString().Trim() == "app_acs_fml_approver_prd")
+                                //    {
+                                //        approver_type = "PRD";
+                                //        count++;
+                                //    }
+                                //}
                                 if (count == 1)
                                 {
                                     if (!fmop.ext_formula_exist_approve(int.Parse(row2["id"].ToString()), approver_type))
@@ -217,6 +292,12 @@ namespace LOSA.MigracionACS.Formulas
 
         private void FML_FF_Main_Panel_Load(object sender, EventArgs e)
         {
+            ValidarPermisos();
+            
+        }
+
+        private void ValidarPermisos()
+        {
             try
             {
                 //UserGroups = secure.Get_User_Groups("AQUAFEEDHN", txt_user.Text.ToString());
@@ -264,7 +345,7 @@ namespace LOSA.MigracionACS.Formulas
 
                                 break;
                             case 3://Medium Autorization
-                                
+
                                 break;
                             case 4://Depth With Delta
                             case 5://Depth Without Delta
@@ -305,11 +386,11 @@ namespace LOSA.MigracionACS.Formulas
 
                                 break;
                             case 3://Medium Autorization
-                                
+
 
                                 break;
                             case 4://Depth With Delta
-                             
+
                                 break;
                             case 5://Depth Without Delta
                                 //app_acs_fml
@@ -442,8 +523,6 @@ namespace LOSA.MigracionACS.Formulas
                 MessageBox.Show("Algo resulto mal, contacta al departamento de sistemas Detalle:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
         private void grdv_main_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -801,6 +880,7 @@ namespace LOSA.MigracionACS.Formulas
         }
 
         #endregion
+
 
         private void btn_PartirArchivo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

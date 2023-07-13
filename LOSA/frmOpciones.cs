@@ -246,13 +246,16 @@ namespace LOSA
                             UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 2://Basic No Autorization
-
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 3://Medium Autorization
-
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 4://Depth With Delta
-
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
