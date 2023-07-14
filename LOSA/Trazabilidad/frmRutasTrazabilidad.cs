@@ -1420,7 +1420,7 @@ namespace LOSA.Trazabilidad
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(@"@_lotemp", plotemp);
+                cmd.Parameters.AddWithValue("@_lotemp", plotemp);
                 dsMantenimientoC.logisticaInformacion.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsMantenimientoC.logisticaInformacion);
@@ -2801,7 +2801,8 @@ namespace LOSA.Trazabilidad
 
                     Load_cargas_nir_Ruta4(row.id_mp);
                     Inicalizar_Archivo_Ruta4();
-                    Inicializar_data_logistica_Ruta4(row.NIngreso);
+                    //Inicializar_data_logistica_Ruta4(row.NIngreso);
+                    Inicializar_data_logisticaRuta2(row.lote_mp);
                     load_especie_Ruta4();
                     load_zonas_Ruta4();
                     load_tipo_Ruta4();

@@ -126,7 +126,7 @@ namespace LOSA.Calidad
 
             //Archivos Configurados
             Inicalizar_Archivo_configurados();
-
+            Inicializar_data_logisticaRuta2(Lote);
             if (ChCalidad)
             {
                 load_criterios_configurados();
@@ -277,6 +277,28 @@ namespace LOSA.Calidad
             //tabControl1.Location = new Point(tabControl1.Location.X, 200);
 
         }
+
+        public void Inicializar_data_logisticaRuta2(string plotemp)
+        {
+            try
+            {
+                string query = @"sp_obtener_datos_logistica_to_show_calidad_by_lote";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_lotemp", plotemp);
+                dsMantenimientoC.logisticaInformacion.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.logisticaInformacion);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
 
         private void Load_Despachos(int plote)
         {
