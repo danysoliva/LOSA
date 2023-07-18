@@ -48,6 +48,9 @@ using LOSA.MigracionACS.RRHH.Encuesta;
 using LOSA.MigracionACS.RRHH.Liquidaciones;
 using LOSA.MigracionACS.RRHH.RelojFace;
 using LOSA.MigracionACS.RRHH.Reportes;
+using LOSA.MigracionACS.Solicitudes;
+using LOSA.MigracionACS.Tickets.Admin;
+using LOSA.MigracionACS.Tickets.EndUser;
 using LOSA.MigracionACS.Ttracer;
 using LOSA.MigracionACS.Ttracer.Reportes;
 using LOSA.MigracionACS.Ttracer.ViewLogistica;
@@ -246,13 +249,16 @@ namespace LOSA
                             UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 2://Basic No Autorization
-
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 3://Medium Autorization
-
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 4://Depth With Delta
-
+                            BasicView();
+                            UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
@@ -3547,6 +3553,79 @@ namespace LOSA
                 }
             }
             
+        }
+
+        private void navBarItem11_LinkPressed(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            LOSA.MigracionACS.Tickets.EndUser.frmMainUser frm = new LOSA.MigracionACS.Tickets.EndUser.frmMainUser(UsuarioLogeado, 1);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem13_LinkPressed(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            if (UsuarioLogeado.ValidarNivelPermisos(66))
+            {
+                frmAdminTicketscs frm = new frmAdminTicketscs(frmAdminTicketscs.TipoTicket.IT, UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            else
+            {
+                CajaDialogo.Error("No tiene privilegios para esta funcion! Permiso Requerido #66");
+            }
+        }
+
+        private void navBarItem14_LinkPressed(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmAllsolicitudesUser frmAllUsers = new frmAllsolicitudesUser();
+            frmAllUsers.MdiParent = this.MdiParent;
+            frmAllUsers.Show();
+        }
+
+        private void navBarItem15_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            LOSA.MigracionACS.Tickets.EndUser.frmMainUser frm = new LOSA.MigracionACS.Tickets.EndUser.frmMainUser(UsuarioLogeado, 1);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem20_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                   LOSA.MigracionACS.Tickets.EndUser.frmTicketSeguimiento_TI frm = new MigracionACS.Tickets.EndUser.frmTicketSeguimiento_TI(UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(65) || UsuarioLogeado.ValidarNivelPermisos(67))
+                {
+                    frmTicketSeguimiento_TI frm = new frmTicketSeguimiento_TI(UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #65");
+                }
+            }
         }
     }
 }

@@ -63,10 +63,15 @@ namespace LOSA.Calidad
             this.colfecha_entrega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnImprimirRPT = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExporte = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
+            this.splitContainerControl1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
+            this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             this.btnPrint.SuspendLayout();
@@ -96,10 +101,10 @@ namespace LOSA.Calidad
             this.grd_data.DataMember = "alimentacion";
             this.grd_data.DataSource = this.dsCalidad;
             this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_data.Location = new System.Drawing.Point(2, 28);
+            this.grd_data.Location = new System.Drawing.Point(2, 23);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(1276, 242);
+            this.grd_data.Size = new System.Drawing.Size(1276, 247);
             this.grd_data.TabIndex = 1;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -243,7 +248,7 @@ namespace LOSA.Calidad
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(177, 28);
+            this.simpleButton1.Location = new System.Drawing.Point(172, 5);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(143, 55);
             this.simpleButton1.TabIndex = 3;
@@ -261,7 +266,7 @@ namespace LOSA.Calidad
             this.btn_Refresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btn_Refresh.Appearance.Options.UseFont = true;
             this.btn_Refresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.ImageOptions.Image")));
-            this.btn_Refresh.Location = new System.Drawing.Point(12, 28);
+            this.btn_Refresh.Location = new System.Drawing.Point(12, 5);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(138, 55);
             this.btn_Refresh.TabIndex = 4;
@@ -276,8 +281,14 @@ namespace LOSA.Calidad
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 89);
             this.splitContainerControl1.Name = "splitContainerControl1";
+            // 
+            // splitContainerControl1.Panel1
+            // 
             this.splitContainerControl1.Panel1.Controls.Add(this.btnPrint);
             this.splitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl1.Panel2
+            // 
             this.splitContainerControl1.Panel2.Controls.Add(this.groupControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1280, 582);
@@ -305,7 +316,7 @@ namespace LOSA.Calidad
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1280, 305);
+            this.groupControl1.Size = new System.Drawing.Size(1280, 300);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Tarimas consumidas en el sistema";
             // 
@@ -314,7 +325,7 @@ namespace LOSA.Calidad
             this.grd_consumo.DataMember = "Consumido";
             this.grd_consumo.DataSource = this.dsCalidad;
             this.grd_consumo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_consumo.Location = new System.Drawing.Point(2, 28);
+            this.grd_consumo.Location = new System.Drawing.Point(2, 23);
             this.grd_consumo.MainView = this.grdv_consumo;
             this.grd_consumo.Name = "grd_consumo";
             this.grd_consumo.Size = new System.Drawing.Size(1276, 275);
@@ -454,6 +465,7 @@ namespace LOSA.Calidad
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btnExporte);
             this.panelControl1.Controls.Add(this.btnImprimirRPT);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.simpleButton1);
@@ -480,6 +492,21 @@ namespace LOSA.Calidad
             this.btnImprimirRPT.Text = "Imprimir Reporte";
             this.btnImprimirRPT.Click += new System.EventHandler(this.btnImprimirRPT_Click);
             // 
+            // btnExporte
+            // 
+            this.btnExporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExporte.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnExporte.Appearance.Options.UseFont = true;
+            this.btnExporte.Appearance.Options.UseTextOptions = true;
+            this.btnExporte.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnExporte.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
+            this.btnExporte.Location = new System.Drawing.Point(896, 5);
+            this.btnExporte.Name = "btnExporte";
+            this.btnExporte.Size = new System.Drawing.Size(114, 55);
+            this.btnExporte.TabIndex = 6;
+            this.btnExporte.Text = "Excel";
+            this.btnExporte.Click += new System.EventHandler(this.btnExporte_Click);
+            // 
             // frmSeguimientoAlimentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,6 +521,10 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsCalidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
+            this.splitContainerControl1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
+            this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
@@ -543,5 +574,6 @@ namespace LOSA.Calidad
         private DevExpress.XtraGrid.Columns.GridColumn collote1;
         private DevExpress.XtraEditors.SimpleButton btnImprimirRPT;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_entrega;
+        private DevExpress.XtraEditors.SimpleButton btnExporte;
     }
 }

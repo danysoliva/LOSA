@@ -270,7 +270,7 @@
             // dsTickets
             // 
             this.dsTickets.DataSetName = "dsTickets";
-            this.dsTickets.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.dsTickets.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridLookUpEdit1View
             // 

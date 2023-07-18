@@ -25,7 +25,7 @@ namespace LOSA.Nir
         public frmSeleccionarLectura(UserLogin Puser, int pid_lote)
         {
             InitializeComponent();
-            dtDesde.EditValue = dp.Now().AddMonths(-1);
+            dtDesde.EditValue = dp.Now().AddDays(-15);
             dtHasta.EditValue = dp.Now();
             UsuarioLogeado = Puser;
             id_lote = pid_lote;
@@ -144,7 +144,7 @@ namespace LOSA.Nir
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -224,22 +224,48 @@ namespace LOSA.Nir
 
         private void chTodas_CheckedChanged(object sender, EventArgs e)
         {
-            if (chTodas.Checked)
+            //Seleccionar lo Filtrado en Grid
+
+            var gridView = (GridView)grd_data.FocusedView;
+            int conta = dsNir.seleccion_lectura.Count;
+
+            for (int i = 0; i < conta; i++)
             {
-                foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+                dsNir.seleccion_lecturaRow row = (dsNir.seleccion_lecturaRow)gridView.GetDataRow(i);
+                int r = gridView.GetVisibleRowHandle(i);
+                if (r >= 0)
                 {
-                    row.selecionada = true;
-                    row.AcceptChanges();
+                    if (row != null)
+                    {
+                        row.selecionada = chTodas.Checked;
+                    }
+                }
+                else
+                {
+                    if (row != null)
+                    {
+                        row.selecionada = false;
+                    }
                 }
             }
-            else
-            {
-                foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
-                {
-                    row.selecionada = false;
-                    row.AcceptChanges();
-                }
-            }
+
+            //if (chTodas.Checked)
+            //{
+            //    foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+            //    {
+            //        row.selecionada = true;
+            //        row.AcceptChanges();
+            //    }
+            //}
+            //else
+            //{
+            //    foreach (dsNir.seleccion_lecturaRow row in dsNir.seleccion_lectura.Rows)
+            //    {
+            //        row.selecionada = false;
+            //        row.AcceptChanges();
+            //    }
+            //}
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
