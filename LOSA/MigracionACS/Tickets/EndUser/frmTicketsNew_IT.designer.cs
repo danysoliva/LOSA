@@ -214,9 +214,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 697);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 700);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(942, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(942, 22);
             // 
             // barDockControlLeft
             // 
@@ -224,7 +224,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 657);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 660);
             // 
             // barDockControlRight
             // 
@@ -232,7 +232,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(942, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 657);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 660);
             // 
             // lblTitulo
             // 
@@ -434,13 +434,13 @@
             this.grd_info.DataMember = "end_user";
             this.grd_info.DataSource = this.dsTickets;
             this.grd_info.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_info.Location = new System.Drawing.Point(2, 24);
+            this.grd_info.Location = new System.Drawing.Point(2, 23);
             this.grd_info.MainView = this.grdv_info;
             this.grd_info.MenuManager = this.barManager1;
             this.grd_info.Name = "grd_info";
             this.grd_info.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_delete});
-            this.grd_info.Size = new System.Drawing.Size(532, 240);
+            this.grd_info.Size = new System.Drawing.Size(532, 241);
             this.grd_info.TabIndex = 0;
             this.grd_info.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_info});
@@ -707,6 +707,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(942, 722);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtTitulo);
@@ -722,7 +723,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmTicketsNew_IT.IconOptions.Icon")));
             this.Name = "frmTicketsNew_IT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitud de asistencia de IT";
