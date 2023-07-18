@@ -47,12 +47,18 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow21 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblUsula2 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow41 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lblBanco2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow22 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblCafeteria2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow23 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell18 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblPrestamoCoop2 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow42 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lblOtrasDeduCoop2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow24 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell23 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblAhorroFijoCoop2 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -62,6 +68,9 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow26 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell30 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblIHSS_2 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow44 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell33 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lblSeguroMedico2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow27 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell35 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblIncapacidades2 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -112,6 +121,9 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow37 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell56 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblTransporte2 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow46 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell39 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lblOtrosIngresos2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow38 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell58 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblTotalIngresos2 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -139,6 +151,9 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow14 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblTransporte1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow45 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell36 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lblOtrosIngresos1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow19 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell37 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblTotalIngresos1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -165,12 +180,18 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblUsula1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow39 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lblBanco1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow11 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell31 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblCafeteria1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow8 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell22 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblPrestamoCoop1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow40 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lblOtrasDeduCoop1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow9 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell25 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblAhorroFijoCoop1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -180,6 +201,9 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow10 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell28 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblIHSS_1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow43 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell29 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lblSeguroMedico1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow16 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell21 = new DevExpress.XtraReports.UI.XRTableCell();
             this.lblIncapacidades1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -197,24 +221,6 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel31 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrShape1 = new DevExpress.XtraReports.UI.XRShape();
             this.xrShape2 = new DevExpress.XtraReports.UI.XRShape();
-            this.xrTableRow39 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lblBanco1 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow40 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell20 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lblOtrasDeduCoop1 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow41 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lblBanco2 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow42 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell24 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lblOtrasDeduCoop2 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow43 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell29 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lblSeguroMedico1 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableRow44 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.xrTableCell33 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lblSeguroMedico2 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -312,7 +318,7 @@ namespace LOSA.ACS.RRHH.Informes
             // xrLabel9
             // 
             this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(9.99999F, 954.8956F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 968.8956F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -349,7 +355,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow28,
             this.xrTableRow29,
             this.xrTableRow30});
-            this.xrTable3.SizeF = new System.Drawing.SizeF(345.4168F, 303.3335F);
+            this.xrTable3.SizeF = new System.Drawing.SizeF(345.42F, 247.27F);
             this.xrTable3.StylePriority.UseFont = false;
             this.xrTable3.StylePriority.UsePadding = false;
             // 
@@ -367,10 +373,12 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell4.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBackColor = false;
             this.xrTableCell4.StylePriority.UseBorders = false;
+            this.xrTableCell4.StylePriority.UseFont = false;
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
             this.xrTableCell4.Text = "Detalle";
             this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -381,10 +389,12 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell8.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell8.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBackColor = false;
             this.xrTableCell8.StylePriority.UseBorders = false;
+            this.xrTableCell8.StylePriority.UseFont = false;
             this.xrTableCell8.StylePriority.UseTextAlignment = false;
             this.xrTableCell8.Text = "Cantidad";
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -402,9 +412,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell10.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell10.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseBorders = false;
+            this.xrTableCell10.StylePriority.UseFont = false;
             this.xrTableCell10.StylePriority.UseTextAlignment = false;
             this.xrTableCell10.Text = "USULA";
             this.xrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -413,13 +425,49 @@ namespace LOSA.ACS.RRHH.Informes
             // lblUsula2
             // 
             this.lblUsula2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblUsula2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblUsula2.Multiline = true;
             this.lblUsula2.Name = "lblUsula2";
             this.lblUsula2.StylePriority.UseBorders = false;
+            this.lblUsula2.StylePriority.UseFont = false;
             this.lblUsula2.StylePriority.UseTextAlignment = false;
             this.lblUsula2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblUsula2.TextFormatString = "{0:n2}";
             this.lblUsula2.Weight = 0.613333737740638D;
+            // 
+            // xrTableRow41
+            // 
+            this.xrTableRow41.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell16,
+            this.lblBanco2});
+            this.xrTableRow41.Name = "xrTableRow41";
+            this.xrTableRow41.Weight = 1D;
+            // 
+            // xrTableCell16
+            // 
+            this.xrTableCell16.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell16.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.xrTableCell16.Multiline = true;
+            this.xrTableCell16.Name = "xrTableCell16";
+            this.xrTableCell16.StylePriority.UseBorders = false;
+            this.xrTableCell16.StylePriority.UseFont = false;
+            this.xrTableCell16.StylePriority.UseTextAlignment = false;
+            this.xrTableCell16.Text = "Banco";
+            this.xrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell16.Weight = 1.5804176453428072D;
+            // 
+            // lblBanco2
+            // 
+            this.lblBanco2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblBanco2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.lblBanco2.Multiline = true;
+            this.lblBanco2.Name = "lblBanco2";
+            this.lblBanco2.StylePriority.UseBorders = false;
+            this.lblBanco2.StylePriority.UseFont = false;
+            this.lblBanco2.StylePriority.UseTextAlignment = false;
+            this.lblBanco2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lblBanco2.Weight = 0.613333737740638D;
             // 
             // xrTableRow22
             // 
@@ -433,9 +481,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell14.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell14.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.StylePriority.UseBorders = false;
+            this.xrTableCell14.StylePriority.UseFont = false;
             this.xrTableCell14.StylePriority.UseTextAlignment = false;
             this.xrTableCell14.Text = "Cafetería";
             this.xrTableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -444,9 +494,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblCafeteria2
             // 
             this.lblCafeteria2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblCafeteria2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblCafeteria2.Multiline = true;
             this.lblCafeteria2.Name = "lblCafeteria2";
             this.lblCafeteria2.StylePriority.UseBorders = false;
+            this.lblCafeteria2.StylePriority.UseFont = false;
             this.lblCafeteria2.StylePriority.UseTextAlignment = false;
             this.lblCafeteria2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblCafeteria2.Weight = 0.613333737740638D;
@@ -463,9 +515,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell18.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell18.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell18.Multiline = true;
             this.xrTableCell18.Name = "xrTableCell18";
             this.xrTableCell18.StylePriority.UseBorders = false;
+            this.xrTableCell18.StylePriority.UseFont = false;
             this.xrTableCell18.StylePriority.UseTextAlignment = false;
             this.xrTableCell18.Text = "Prestamo Cooperativa";
             this.xrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -474,12 +528,48 @@ namespace LOSA.ACS.RRHH.Informes
             // lblPrestamoCoop2
             // 
             this.lblPrestamoCoop2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblPrestamoCoop2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblPrestamoCoop2.Multiline = true;
             this.lblPrestamoCoop2.Name = "lblPrestamoCoop2";
             this.lblPrestamoCoop2.StylePriority.UseBorders = false;
+            this.lblPrestamoCoop2.StylePriority.UseFont = false;
             this.lblPrestamoCoop2.StylePriority.UseTextAlignment = false;
             this.lblPrestamoCoop2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblPrestamoCoop2.Weight = 0.613333737740638D;
+            // 
+            // xrTableRow42
+            // 
+            this.xrTableRow42.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell24,
+            this.lblOtrasDeduCoop2});
+            this.xrTableRow42.Name = "xrTableRow42";
+            this.xrTableRow42.Weight = 1D;
+            // 
+            // xrTableCell24
+            // 
+            this.xrTableCell24.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell24.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.xrTableCell24.Multiline = true;
+            this.xrTableCell24.Name = "xrTableCell24";
+            this.xrTableCell24.StylePriority.UseBorders = false;
+            this.xrTableCell24.StylePriority.UseFont = false;
+            this.xrTableCell24.StylePriority.UseTextAlignment = false;
+            this.xrTableCell24.Text = "Otras Deducciones Cooperativa";
+            this.xrTableCell24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell24.Weight = 1.5804176453428072D;
+            // 
+            // lblOtrasDeduCoop2
+            // 
+            this.lblOtrasDeduCoop2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblOtrasDeduCoop2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.lblOtrasDeduCoop2.Multiline = true;
+            this.lblOtrasDeduCoop2.Name = "lblOtrasDeduCoop2";
+            this.lblOtrasDeduCoop2.StylePriority.UseBorders = false;
+            this.lblOtrasDeduCoop2.StylePriority.UseFont = false;
+            this.lblOtrasDeduCoop2.StylePriority.UseTextAlignment = false;
+            this.lblOtrasDeduCoop2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lblOtrasDeduCoop2.Weight = 0.613333737740638D;
             // 
             // xrTableRow24
             // 
@@ -493,9 +583,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell23.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell23.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell23.Multiline = true;
             this.xrTableCell23.Name = "xrTableCell23";
             this.xrTableCell23.StylePriority.UseBorders = false;
+            this.xrTableCell23.StylePriority.UseFont = false;
             this.xrTableCell23.StylePriority.UseTextAlignment = false;
             this.xrTableCell23.Text = "Ahorro Fijo Cooperativa";
             this.xrTableCell23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -504,9 +596,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblAhorroFijoCoop2
             // 
             this.lblAhorroFijoCoop2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblAhorroFijoCoop2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblAhorroFijoCoop2.Multiline = true;
             this.lblAhorroFijoCoop2.Name = "lblAhorroFijoCoop2";
             this.lblAhorroFijoCoop2.StylePriority.UseBorders = false;
+            this.lblAhorroFijoCoop2.StylePriority.UseFont = false;
             this.lblAhorroFijoCoop2.StylePriority.UseTextAlignment = false;
             this.lblAhorroFijoCoop2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblAhorroFijoCoop2.Weight = 0.613333737740638D;
@@ -523,9 +617,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell27.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell27.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell27.Multiline = true;
             this.xrTableCell27.Name = "xrTableCell27";
             this.xrTableCell27.StylePriority.UseBorders = false;
+            this.xrTableCell27.StylePriority.UseFont = false;
             this.xrTableCell27.StylePriority.UseTextAlignment = false;
             this.xrTableCell27.Text = "Ahorro Ret Cooperativa";
             this.xrTableCell27.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -534,9 +630,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblAhorroRetCoop2
             // 
             this.lblAhorroRetCoop2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblAhorroRetCoop2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblAhorroRetCoop2.Multiline = true;
             this.lblAhorroRetCoop2.Name = "lblAhorroRetCoop2";
             this.lblAhorroRetCoop2.StylePriority.UseBorders = false;
+            this.lblAhorroRetCoop2.StylePriority.UseFont = false;
             this.lblAhorroRetCoop2.StylePriority.UseTextAlignment = false;
             this.lblAhorroRetCoop2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblAhorroRetCoop2.Weight = 0.613333737740638D;
@@ -553,9 +651,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell30.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell30.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell30.Multiline = true;
             this.xrTableCell30.Name = "xrTableCell30";
             this.xrTableCell30.StylePriority.UseBorders = false;
+            this.xrTableCell30.StylePriority.UseFont = false;
             this.xrTableCell30.StylePriority.UseTextAlignment = false;
             this.xrTableCell30.Text = "IHSS";
             this.xrTableCell30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -564,12 +664,48 @@ namespace LOSA.ACS.RRHH.Informes
             // lblIHSS_2
             // 
             this.lblIHSS_2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblIHSS_2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblIHSS_2.Multiline = true;
             this.lblIHSS_2.Name = "lblIHSS_2";
             this.lblIHSS_2.StylePriority.UseBorders = false;
+            this.lblIHSS_2.StylePriority.UseFont = false;
             this.lblIHSS_2.StylePriority.UseTextAlignment = false;
             this.lblIHSS_2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblIHSS_2.Weight = 0.613333737740638D;
+            // 
+            // xrTableRow44
+            // 
+            this.xrTableRow44.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell33,
+            this.lblSeguroMedico2});
+            this.xrTableRow44.Name = "xrTableRow44";
+            this.xrTableRow44.Weight = 1D;
+            // 
+            // xrTableCell33
+            // 
+            this.xrTableCell33.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell33.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.xrTableCell33.Multiline = true;
+            this.xrTableCell33.Name = "xrTableCell33";
+            this.xrTableCell33.StylePriority.UseBorders = false;
+            this.xrTableCell33.StylePriority.UseFont = false;
+            this.xrTableCell33.StylePriority.UseTextAlignment = false;
+            this.xrTableCell33.Text = "Seguro Médico";
+            this.xrTableCell33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell33.Weight = 1.5804176453428072D;
+            // 
+            // lblSeguroMedico2
+            // 
+            this.lblSeguroMedico2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblSeguroMedico2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.lblSeguroMedico2.Multiline = true;
+            this.lblSeguroMedico2.Name = "lblSeguroMedico2";
+            this.lblSeguroMedico2.StylePriority.UseBorders = false;
+            this.lblSeguroMedico2.StylePriority.UseFont = false;
+            this.lblSeguroMedico2.StylePriority.UseTextAlignment = false;
+            this.lblSeguroMedico2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lblSeguroMedico2.Weight = 0.613333737740638D;
             // 
             // xrTableRow27
             // 
@@ -583,9 +719,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell35.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell35.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell35.Multiline = true;
             this.xrTableCell35.Name = "xrTableCell35";
             this.xrTableCell35.StylePriority.UseBorders = false;
+            this.xrTableCell35.StylePriority.UseFont = false;
             this.xrTableCell35.StylePriority.UseTextAlignment = false;
             this.xrTableCell35.Text = "Incapacidades";
             this.xrTableCell35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -594,9 +732,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblIncapacidades2
             // 
             this.lblIncapacidades2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblIncapacidades2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblIncapacidades2.Multiline = true;
             this.lblIncapacidades2.Name = "lblIncapacidades2";
             this.lblIncapacidades2.StylePriority.UseBorders = false;
+            this.lblIncapacidades2.StylePriority.UseFont = false;
             this.lblIncapacidades2.StylePriority.UseTextAlignment = false;
             this.lblIncapacidades2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblIncapacidades2.Weight = 0.613333737740638D;
@@ -613,9 +753,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell38.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell38.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell38.Multiline = true;
             this.xrTableCell38.Name = "xrTableCell38";
             this.xrTableCell38.StylePriority.UseBorders = false;
+            this.xrTableCell38.StylePriority.UseFont = false;
             this.xrTableCell38.StylePriority.UseTextAlignment = false;
             this.xrTableCell38.Text = "ISR";
             this.xrTableCell38.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -624,9 +766,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lbl_ISR2
             // 
             this.lbl_ISR2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lbl_ISR2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lbl_ISR2.Multiline = true;
             this.lbl_ISR2.Name = "lbl_ISR2";
             this.lbl_ISR2.StylePriority.UseBorders = false;
+            this.lbl_ISR2.StylePriority.UseFont = false;
             this.lbl_ISR2.StylePriority.UseTextAlignment = false;
             this.lbl_ISR2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lbl_ISR2.Weight = 0.613333737740638D;
@@ -644,7 +788,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell40.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell40.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell40.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrTableCell40.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell40.Multiline = true;
             this.xrTableCell40.Name = "xrTableCell40";
             this.xrTableCell40.StylePriority.UseBackColor = false;
@@ -659,7 +803,7 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.lblTotalEgresos2.BackColor = System.Drawing.Color.LightBlue;
             this.lblTotalEgresos2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblTotalEgresos2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.lblTotalEgresos2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblTotalEgresos2.Multiline = true;
             this.lblTotalEgresos2.Name = "lblTotalEgresos2";
             this.lblTotalEgresos2.StylePriority.UseBackColor = false;
@@ -682,7 +826,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell42.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell42.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell42.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrTableCell42.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell42.Multiline = true;
             this.xrTableCell42.Name = "xrTableCell42";
             this.xrTableCell42.StylePriority.UseBackColor = false;
@@ -697,7 +841,7 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.lblSalarioNeto2.BackColor = System.Drawing.Color.LightBlue;
             this.lblSalarioNeto2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblSalarioNeto2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.lblSalarioNeto2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblSalarioNeto2.Multiline = true;
             this.lblSalarioNeto2.Name = "lblSalarioNeto2";
             this.lblSalarioNeto2.StylePriority.UseBackColor = false;
@@ -710,7 +854,7 @@ namespace LOSA.ACS.RRHH.Informes
             // xrLabel10
             // 
             this.xrLabel10.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(515.1458F, 616.3958F);
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
@@ -725,7 +869,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblPuesto_Cargo2
             // 
             this.lblPuesto_Cargo2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblPuesto_Cargo2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblPuesto_Cargo2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblPuesto_Cargo2.LocationFloat = new DevExpress.Utils.PointFloat(144.375F, 662.3959F);
             this.lblPuesto_Cargo2.Multiline = true;
             this.lblPuesto_Cargo2.Name = "lblPuesto_Cargo2";
@@ -739,7 +883,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblNombre2
             // 
             this.lblNombre2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblNombre2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblNombre2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblNombre2.LocationFloat = new DevExpress.Utils.PointFloat(144.375F, 639.3959F);
             this.lblNombre2.Multiline = true;
             this.lblNombre2.Name = "lblNombre2";
@@ -753,7 +897,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblNota2
             // 
             this.lblNota2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblNota2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblNota2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblNota2.LocationFloat = new DevExpress.Utils.PointFloat(144.375F, 616.3959F);
             this.lblNota2.Multiline = true;
             this.lblNota2.Name = "lblNota2";
@@ -871,7 +1015,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblFechaPago2
             // 
             this.lblFechaPago2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblFechaPago2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblFechaPago2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblFechaPago2.LocationFloat = new DevExpress.Utils.PointFloat(515.1458F, 662.3958F);
             this.lblFechaPago2.Multiline = true;
             this.lblFechaPago2.Name = "lblFechaPago2";
@@ -901,7 +1045,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblCodigo2
             // 
             this.lblCodigo2.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblCodigo2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblCodigo2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblCodigo2.LocationFloat = new DevExpress.Utils.PointFloat(515.1458F, 639.3959F);
             this.lblCodigo2.Multiline = true;
             this.lblCodigo2.Name = "lblCodigo2";
@@ -941,8 +1085,9 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow35,
             this.xrTableRow36,
             this.xrTableRow37,
+            this.xrTableRow46,
             this.xrTableRow38});
-            this.xrTable4.SizeF = new System.Drawing.SizeF(345.4168F, 173.3334F);
+            this.xrTable4.SizeF = new System.Drawing.SizeF(345.42F, 158.96F);
             this.xrTable4.StylePriority.UseFont = false;
             this.xrTable4.StylePriority.UsePadding = false;
             // 
@@ -960,10 +1105,12 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell44.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell44.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell44.Multiline = true;
             this.xrTableCell44.Name = "xrTableCell44";
             this.xrTableCell44.StylePriority.UseBackColor = false;
             this.xrTableCell44.StylePriority.UseBorders = false;
+            this.xrTableCell44.StylePriority.UseFont = false;
             this.xrTableCell44.StylePriority.UseTextAlignment = false;
             this.xrTableCell44.Text = "Detalle";
             this.xrTableCell44.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -974,10 +1121,12 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell45.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell45.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell45.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell45.Multiline = true;
             this.xrTableCell45.Name = "xrTableCell45";
             this.xrTableCell45.StylePriority.UseBackColor = false;
             this.xrTableCell45.StylePriority.UseBorders = false;
+            this.xrTableCell45.StylePriority.UseFont = false;
             this.xrTableCell45.StylePriority.UseTextAlignment = false;
             this.xrTableCell45.Text = "Cantidad";
             this.xrTableCell45.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -995,9 +1144,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell46.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell46.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell46.Multiline = true;
             this.xrTableCell46.Name = "xrTableCell46";
             this.xrTableCell46.StylePriority.UseBorders = false;
+            this.xrTableCell46.StylePriority.UseFont = false;
             this.xrTableCell46.StylePriority.UseTextAlignment = false;
             this.xrTableCell46.Text = "Días de Vacaciones";
             this.xrTableCell46.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1006,9 +1157,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblDiasVacaciones2
             // 
             this.lblDiasVacaciones2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblDiasVacaciones2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblDiasVacaciones2.Multiline = true;
             this.lblDiasVacaciones2.Name = "lblDiasVacaciones2";
             this.lblDiasVacaciones2.StylePriority.UseBorders = false;
+            this.lblDiasVacaciones2.StylePriority.UseFont = false;
             this.lblDiasVacaciones2.StylePriority.UseTextAlignment = false;
             this.lblDiasVacaciones2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblDiasVacaciones2.TextFormatString = "{0:n2}";
@@ -1026,9 +1179,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell48.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell48.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell48.Multiline = true;
             this.xrTableCell48.Name = "xrTableCell48";
             this.xrTableCell48.StylePriority.UseBorders = false;
+            this.xrTableCell48.StylePriority.UseFont = false;
             this.xrTableCell48.StylePriority.UseTextAlignment = false;
             this.xrTableCell48.Text = "Días Faltados";
             this.xrTableCell48.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1037,9 +1192,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblDiasFaltados2
             // 
             this.lblDiasFaltados2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblDiasFaltados2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblDiasFaltados2.Multiline = true;
             this.lblDiasFaltados2.Name = "lblDiasFaltados2";
             this.lblDiasFaltados2.StylePriority.UseBorders = false;
+            this.lblDiasFaltados2.StylePriority.UseFont = false;
             this.lblDiasFaltados2.StylePriority.UseTextAlignment = false;
             this.lblDiasFaltados2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblDiasFaltados2.Weight = 0.613333737740638D;
@@ -1056,9 +1213,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell50.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell50.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell50.Multiline = true;
             this.xrTableCell50.Name = "xrTableCell50";
             this.xrTableCell50.StylePriority.UseBorders = false;
+            this.xrTableCell50.StylePriority.UseFont = false;
             this.xrTableCell50.StylePriority.UseTextAlignment = false;
             this.xrTableCell50.Text = "Días Laborados";
             this.xrTableCell50.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1067,9 +1226,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblDiasLaborados2
             // 
             this.lblDiasLaborados2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblDiasLaborados2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblDiasLaborados2.Multiline = true;
             this.lblDiasLaborados2.Name = "lblDiasLaborados2";
             this.lblDiasLaborados2.StylePriority.UseBorders = false;
+            this.lblDiasLaborados2.StylePriority.UseFont = false;
             this.lblDiasLaborados2.StylePriority.UseTextAlignment = false;
             this.lblDiasLaborados2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblDiasLaborados2.Weight = 0.613333737740638D;
@@ -1086,9 +1247,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell52.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell52.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell52.Multiline = true;
             this.xrTableCell52.Name = "xrTableCell52";
             this.xrTableCell52.StylePriority.UseBorders = false;
+            this.xrTableCell52.StylePriority.UseFont = false;
             this.xrTableCell52.StylePriority.UseTextAlignment = false;
             this.xrTableCell52.Text = "Salario Basico Total";
             this.xrTableCell52.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1097,9 +1260,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblSalarioBasicoTotal2
             // 
             this.lblSalarioBasicoTotal2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblSalarioBasicoTotal2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblSalarioBasicoTotal2.Multiline = true;
             this.lblSalarioBasicoTotal2.Name = "lblSalarioBasicoTotal2";
             this.lblSalarioBasicoTotal2.StylePriority.UseBorders = false;
+            this.lblSalarioBasicoTotal2.StylePriority.UseFont = false;
             this.lblSalarioBasicoTotal2.StylePriority.UseTextAlignment = false;
             this.lblSalarioBasicoTotal2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblSalarioBasicoTotal2.Weight = 0.613333737740638D;
@@ -1116,9 +1281,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell54.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell54.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell54.Multiline = true;
             this.xrTableCell54.Name = "xrTableCell54";
             this.xrTableCell54.StylePriority.UseBorders = false;
+            this.xrTableCell54.StylePriority.UseFont = false;
             this.xrTableCell54.StylePriority.UseTextAlignment = false;
             this.xrTableCell54.Text = "Vacaciones";
             this.xrTableCell54.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1127,9 +1294,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblPVacaciones2
             // 
             this.lblPVacaciones2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblPVacaciones2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblPVacaciones2.Multiline = true;
             this.lblPVacaciones2.Name = "lblPVacaciones2";
             this.lblPVacaciones2.StylePriority.UseBorders = false;
+            this.lblPVacaciones2.StylePriority.UseFont = false;
             this.lblPVacaciones2.StylePriority.UseTextAlignment = false;
             this.lblPVacaciones2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblPVacaciones2.Weight = 0.613333737740638D;
@@ -1146,9 +1315,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell56.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell56.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell56.Multiline = true;
             this.xrTableCell56.Name = "xrTableCell56";
             this.xrTableCell56.StylePriority.UseBorders = false;
+            this.xrTableCell56.StylePriority.UseFont = false;
             this.xrTableCell56.StylePriority.UseTextAlignment = false;
             this.xrTableCell56.Text = "Transporte";
             this.xrTableCell56.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1157,12 +1328,48 @@ namespace LOSA.ACS.RRHH.Informes
             // lblTransporte2
             // 
             this.lblTransporte2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblTransporte2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblTransporte2.Multiline = true;
             this.lblTransporte2.Name = "lblTransporte2";
             this.lblTransporte2.StylePriority.UseBorders = false;
+            this.lblTransporte2.StylePriority.UseFont = false;
             this.lblTransporte2.StylePriority.UseTextAlignment = false;
             this.lblTransporte2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblTransporte2.Weight = 0.613333737740638D;
+            // 
+            // xrTableRow46
+            // 
+            this.xrTableRow46.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell39,
+            this.lblOtrosIngresos2});
+            this.xrTableRow46.Name = "xrTableRow46";
+            this.xrTableRow46.Weight = 1D;
+            // 
+            // xrTableCell39
+            // 
+            this.xrTableCell39.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell39.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.xrTableCell39.Multiline = true;
+            this.xrTableCell39.Name = "xrTableCell39";
+            this.xrTableCell39.StylePriority.UseBorders = false;
+            this.xrTableCell39.StylePriority.UseFont = false;
+            this.xrTableCell39.StylePriority.UseTextAlignment = false;
+            this.xrTableCell39.Text = "Otros Ingresos";
+            this.xrTableCell39.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell39.Weight = 1.5804176453428072D;
+            // 
+            // lblOtrosIngresos2
+            // 
+            this.lblOtrosIngresos2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblOtrosIngresos2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.lblOtrosIngresos2.Multiline = true;
+            this.lblOtrosIngresos2.Name = "lblOtrosIngresos2";
+            this.lblOtrosIngresos2.StylePriority.UseBorders = false;
+            this.lblOtrosIngresos2.StylePriority.UseFont = false;
+            this.lblOtrosIngresos2.StylePriority.UseTextAlignment = false;
+            this.lblOtrosIngresos2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lblOtrosIngresos2.Weight = 0.613333737740638D;
             // 
             // xrTableRow38
             // 
@@ -1177,7 +1384,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell58.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell58.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell58.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrTableCell58.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell58.Multiline = true;
             this.xrTableCell58.Name = "xrTableCell58";
             this.xrTableCell58.StylePriority.UseBackColor = false;
@@ -1192,7 +1399,7 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.lblTotalIngresos2.BackColor = System.Drawing.Color.LightBlue;
             this.lblTotalIngresos2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblTotalIngresos2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.lblTotalIngresos2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblTotalIngresos2.Multiline = true;
             this.lblTotalIngresos2.Name = "lblTotalIngresos2";
             this.lblTotalIngresos2.StylePriority.UseBackColor = false;
@@ -1205,7 +1412,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblCedula2
             // 
             this.lblCedula2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
-            this.lblCedula2.LocationFloat = new DevExpress.Utils.PointFloat(9.99999F, 968.8956F);
+            this.lblCedula2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 954.8956F);
             this.lblCedula2.Multiline = true;
             this.lblCedula2.Name = "lblCedula2";
             this.lblCedula2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1217,7 +1424,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblCedula1
             // 
             this.lblCedula1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
-            this.lblCedula1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 471.1874F);
+            this.lblCedula1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 455.1873F);
             this.lblCedula1.Multiline = true;
             this.lblCedula1.Name = "lblCedula1";
             this.lblCedula1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1240,8 +1447,9 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow7,
             this.xrTableRow13,
             this.xrTableRow14,
+            this.xrTableRow45,
             this.xrTableRow19});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(345.4168F, 173.3334F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(345.4168F, 158.9597F);
             this.xrTable2.StylePriority.UseFont = false;
             this.xrTable2.StylePriority.UsePadding = false;
             // 
@@ -1259,10 +1467,12 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell5.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell5.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBackColor = false;
             this.xrTableCell5.StylePriority.UseBorders = false;
+            this.xrTableCell5.StylePriority.UseFont = false;
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
             this.xrTableCell5.Text = "Detalle";
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -1273,10 +1483,12 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell6.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell6.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell6.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBackColor = false;
             this.xrTableCell6.StylePriority.UseBorders = false;
+            this.xrTableCell6.StylePriority.UseFont = false;
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
             this.xrTableCell6.Text = "Cantidad";
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -1294,9 +1506,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell7.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell7.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBorders = false;
+            this.xrTableCell7.StylePriority.UseFont = false;
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
             this.xrTableCell7.Text = "Días de Vacaciones";
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1305,9 +1519,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblDiasVacaciones1
             // 
             this.lblDiasVacaciones1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblDiasVacaciones1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblDiasVacaciones1.Multiline = true;
             this.lblDiasVacaciones1.Name = "lblDiasVacaciones1";
             this.lblDiasVacaciones1.StylePriority.UseBorders = false;
+            this.lblDiasVacaciones1.StylePriority.UseFont = false;
             this.lblDiasVacaciones1.StylePriority.UseTextAlignment = false;
             this.lblDiasVacaciones1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblDiasVacaciones1.TextFormatString = "{0:n2}";
@@ -1325,9 +1541,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell9.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell9.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBorders = false;
+            this.xrTableCell9.StylePriority.UseFont = false;
             this.xrTableCell9.StylePriority.UseTextAlignment = false;
             this.xrTableCell9.Text = "Días Faltados";
             this.xrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1336,9 +1554,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblDiasFaltados1
             // 
             this.lblDiasFaltados1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblDiasFaltados1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblDiasFaltados1.Multiline = true;
             this.lblDiasFaltados1.Name = "lblDiasFaltados1";
             this.lblDiasFaltados1.StylePriority.UseBorders = false;
+            this.lblDiasFaltados1.StylePriority.UseFont = false;
             this.lblDiasFaltados1.StylePriority.UseTextAlignment = false;
             this.lblDiasFaltados1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblDiasFaltados1.Weight = 0.613333737740638D;
@@ -1355,9 +1575,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell11.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell11.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.StylePriority.UseBorders = false;
+            this.xrTableCell11.StylePriority.UseFont = false;
             this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "Días Laborados";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1366,9 +1588,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblDiasLaborados1
             // 
             this.lblDiasLaborados1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblDiasLaborados1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblDiasLaborados1.Multiline = true;
             this.lblDiasLaborados1.Name = "lblDiasLaborados1";
             this.lblDiasLaborados1.StylePriority.UseBorders = false;
+            this.lblDiasLaborados1.StylePriority.UseFont = false;
             this.lblDiasLaborados1.StylePriority.UseTextAlignment = false;
             this.lblDiasLaborados1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblDiasLaborados1.Weight = 0.613333737740638D;
@@ -1385,9 +1609,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell13.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell13.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.StylePriority.UseBorders = false;
+            this.xrTableCell13.StylePriority.UseFont = false;
             this.xrTableCell13.StylePriority.UseTextAlignment = false;
             this.xrTableCell13.Text = "Salario Basico Total";
             this.xrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1396,9 +1622,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblSalarioBasicoTotal1
             // 
             this.lblSalarioBasicoTotal1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblSalarioBasicoTotal1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblSalarioBasicoTotal1.Multiline = true;
             this.lblSalarioBasicoTotal1.Name = "lblSalarioBasicoTotal1";
             this.lblSalarioBasicoTotal1.StylePriority.UseBorders = false;
+            this.lblSalarioBasicoTotal1.StylePriority.UseFont = false;
             this.lblSalarioBasicoTotal1.StylePriority.UseTextAlignment = false;
             this.lblSalarioBasicoTotal1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblSalarioBasicoTotal1.Weight = 0.613333737740638D;
@@ -1415,9 +1643,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell15.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell15.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell15.Multiline = true;
             this.xrTableCell15.Name = "xrTableCell15";
             this.xrTableCell15.StylePriority.UseBorders = false;
+            this.xrTableCell15.StylePriority.UseFont = false;
             this.xrTableCell15.StylePriority.UseTextAlignment = false;
             this.xrTableCell15.Text = "Vacaciones";
             this.xrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1426,9 +1656,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblPVacaciones1
             // 
             this.lblPVacaciones1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblPVacaciones1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblPVacaciones1.Multiline = true;
             this.lblPVacaciones1.Name = "lblPVacaciones1";
             this.lblPVacaciones1.StylePriority.UseBorders = false;
+            this.lblPVacaciones1.StylePriority.UseFont = false;
             this.lblPVacaciones1.StylePriority.UseTextAlignment = false;
             this.lblPVacaciones1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblPVacaciones1.Weight = 0.613333737740638D;
@@ -1445,9 +1677,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell17.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell17.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell17.Multiline = true;
             this.xrTableCell17.Name = "xrTableCell17";
             this.xrTableCell17.StylePriority.UseBorders = false;
+            this.xrTableCell17.StylePriority.UseFont = false;
             this.xrTableCell17.StylePriority.UseTextAlignment = false;
             this.xrTableCell17.Text = "Transporte";
             this.xrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1456,12 +1690,48 @@ namespace LOSA.ACS.RRHH.Informes
             // lblTransporte1
             // 
             this.lblTransporte1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblTransporte1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblTransporte1.Multiline = true;
             this.lblTransporte1.Name = "lblTransporte1";
             this.lblTransporte1.StylePriority.UseBorders = false;
+            this.lblTransporte1.StylePriority.UseFont = false;
             this.lblTransporte1.StylePriority.UseTextAlignment = false;
             this.lblTransporte1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblTransporte1.Weight = 0.613333737740638D;
+            // 
+            // xrTableRow45
+            // 
+            this.xrTableRow45.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell36,
+            this.lblOtrosIngresos1});
+            this.xrTableRow45.Name = "xrTableRow45";
+            this.xrTableRow45.Weight = 1D;
+            // 
+            // xrTableCell36
+            // 
+            this.xrTableCell36.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell36.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.xrTableCell36.Multiline = true;
+            this.xrTableCell36.Name = "xrTableCell36";
+            this.xrTableCell36.StylePriority.UseBorders = false;
+            this.xrTableCell36.StylePriority.UseFont = false;
+            this.xrTableCell36.StylePriority.UseTextAlignment = false;
+            this.xrTableCell36.Text = "Otros Ingresos";
+            this.xrTableCell36.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell36.Weight = 1.5804176453428072D;
+            // 
+            // lblOtrosIngresos1
+            // 
+            this.lblOtrosIngresos1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblOtrosIngresos1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.lblOtrosIngresos1.Multiline = true;
+            this.lblOtrosIngresos1.Name = "lblOtrosIngresos1";
+            this.lblOtrosIngresos1.StylePriority.UseBorders = false;
+            this.lblOtrosIngresos1.StylePriority.UseFont = false;
+            this.lblOtrosIngresos1.StylePriority.UseTextAlignment = false;
+            this.lblOtrosIngresos1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lblOtrosIngresos1.Weight = 0.613333737740638D;
             // 
             // xrTableRow19
             // 
@@ -1476,7 +1746,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell37.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell37.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell37.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrTableCell37.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell37.Multiline = true;
             this.xrTableCell37.Name = "xrTableCell37";
             this.xrTableCell37.StylePriority.UseBackColor = false;
@@ -1491,7 +1761,7 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.lblTotalIngresos1.BackColor = System.Drawing.Color.LightBlue;
             this.lblTotalIngresos1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblTotalIngresos1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.lblTotalIngresos1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblTotalIngresos1.Multiline = true;
             this.lblTotalIngresos1.Name = "lblTotalIngresos1";
             this.lblTotalIngresos1.StylePriority.UseBackColor = false;
@@ -1519,7 +1789,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblCodigo1
             // 
             this.lblCodigo1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblCodigo1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblCodigo1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblCodigo1.LocationFloat = new DevExpress.Utils.PointFloat(515.1458F, 126.4792F);
             this.lblCodigo1.Multiline = true;
             this.lblCodigo1.Name = "lblCodigo1";
@@ -1548,7 +1818,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblFechaPago1
             // 
             this.lblFechaPago1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblFechaPago1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblFechaPago1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblFechaPago1.LocationFloat = new DevExpress.Utils.PointFloat(515.1458F, 149.4791F);
             this.lblFechaPago1.Multiline = true;
             this.lblFechaPago1.Name = "lblFechaPago1";
@@ -1667,7 +1937,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblNota1
             // 
             this.lblNota1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblNota1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblNota1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblNota1.LocationFloat = new DevExpress.Utils.PointFloat(144.375F, 103.4791F);
             this.lblNota1.Multiline = true;
             this.lblNota1.Name = "lblNota1";
@@ -1681,7 +1951,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblNombre1
             // 
             this.lblNombre1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblNombre1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblNombre1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblNombre1.LocationFloat = new DevExpress.Utils.PointFloat(144.375F, 126.4791F);
             this.lblNombre1.Multiline = true;
             this.lblNombre1.Name = "lblNombre1";
@@ -1695,7 +1965,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblPuesto_Cargo1
             // 
             this.lblPuesto_Cargo1.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblPuesto_Cargo1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblPuesto_Cargo1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblPuesto_Cargo1.LocationFloat = new DevExpress.Utils.PointFloat(144.375F, 149.4792F);
             this.lblPuesto_Cargo1.Multiline = true;
             this.lblPuesto_Cargo1.Name = "lblPuesto_Cargo1";
@@ -1709,7 +1979,7 @@ namespace LOSA.ACS.RRHH.Informes
             // lblDepartamento
             // 
             this.lblDepartamento.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.lblDepartamento.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F);
+            this.lblDepartamento.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblDepartamento.LocationFloat = new DevExpress.Utils.PointFloat(515.1458F, 103.479F);
             this.lblDepartamento.Multiline = true;
             this.lblDepartamento.Name = "lblDepartamento";
@@ -1742,7 +2012,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableRow15,
             this.xrTableRow17,
             this.xrTableRow18});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(345.4168F, 303.3335F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(345.4168F, 247.2706F);
             this.xrTable1.StylePriority.UseFont = false;
             this.xrTable1.StylePriority.UsePadding = false;
             // 
@@ -1760,10 +2030,12 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBackColor = false;
             this.xrTableCell1.StylePriority.UseBorders = false;
+            this.xrTableCell1.StylePriority.UseFont = false;
             this.xrTableCell1.StylePriority.UseTextAlignment = false;
             this.xrTableCell1.Text = "Detalle";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -1774,10 +2046,12 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell2.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseBackColor = false;
             this.xrTableCell2.StylePriority.UseBorders = false;
+            this.xrTableCell2.StylePriority.UseFont = false;
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
             this.xrTableCell2.Text = "Cantidad";
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -1795,9 +2069,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell3.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseBorders = false;
+            this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
             this.xrTableCell3.Text = "USULA";
             this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1806,13 +2082,49 @@ namespace LOSA.ACS.RRHH.Informes
             // lblUsula1
             // 
             this.lblUsula1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblUsula1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblUsula1.Multiline = true;
             this.lblUsula1.Name = "lblUsula1";
             this.lblUsula1.StylePriority.UseBorders = false;
+            this.lblUsula1.StylePriority.UseFont = false;
             this.lblUsula1.StylePriority.UseTextAlignment = false;
             this.lblUsula1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblUsula1.TextFormatString = "{0:n2}";
             this.lblUsula1.Weight = 0.613333737740638D;
+            // 
+            // xrTableRow39
+            // 
+            this.xrTableRow39.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell12,
+            this.lblBanco1});
+            this.xrTableRow39.Name = "xrTableRow39";
+            this.xrTableRow39.Weight = 1D;
+            // 
+            // xrTableCell12
+            // 
+            this.xrTableCell12.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell12.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.xrTableCell12.Multiline = true;
+            this.xrTableCell12.Name = "xrTableCell12";
+            this.xrTableCell12.StylePriority.UseBorders = false;
+            this.xrTableCell12.StylePriority.UseFont = false;
+            this.xrTableCell12.StylePriority.UseTextAlignment = false;
+            this.xrTableCell12.Text = "Banco";
+            this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell12.Weight = 1.5804176453428072D;
+            // 
+            // lblBanco1
+            // 
+            this.lblBanco1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblBanco1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.lblBanco1.Multiline = true;
+            this.lblBanco1.Name = "lblBanco1";
+            this.lblBanco1.StylePriority.UseBorders = false;
+            this.lblBanco1.StylePriority.UseFont = false;
+            this.lblBanco1.StylePriority.UseTextAlignment = false;
+            this.lblBanco1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lblBanco1.Weight = 0.613333737740638D;
             // 
             // xrTableRow11
             // 
@@ -1826,9 +2138,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell31.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell31.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell31.Multiline = true;
             this.xrTableCell31.Name = "xrTableCell31";
             this.xrTableCell31.StylePriority.UseBorders = false;
+            this.xrTableCell31.StylePriority.UseFont = false;
             this.xrTableCell31.StylePriority.UseTextAlignment = false;
             this.xrTableCell31.Text = "Cafetería";
             this.xrTableCell31.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1837,9 +2151,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblCafeteria1
             // 
             this.lblCafeteria1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblCafeteria1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblCafeteria1.Multiline = true;
             this.lblCafeteria1.Name = "lblCafeteria1";
             this.lblCafeteria1.StylePriority.UseBorders = false;
+            this.lblCafeteria1.StylePriority.UseFont = false;
             this.lblCafeteria1.StylePriority.UseTextAlignment = false;
             this.lblCafeteria1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblCafeteria1.Weight = 0.613333737740638D;
@@ -1856,9 +2172,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell22.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell22.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell22.Multiline = true;
             this.xrTableCell22.Name = "xrTableCell22";
             this.xrTableCell22.StylePriority.UseBorders = false;
+            this.xrTableCell22.StylePriority.UseFont = false;
             this.xrTableCell22.StylePriority.UseTextAlignment = false;
             this.xrTableCell22.Text = "Prestamo Cooperativa";
             this.xrTableCell22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1867,12 +2185,48 @@ namespace LOSA.ACS.RRHH.Informes
             // lblPrestamoCoop1
             // 
             this.lblPrestamoCoop1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblPrestamoCoop1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblPrestamoCoop1.Multiline = true;
             this.lblPrestamoCoop1.Name = "lblPrestamoCoop1";
             this.lblPrestamoCoop1.StylePriority.UseBorders = false;
+            this.lblPrestamoCoop1.StylePriority.UseFont = false;
             this.lblPrestamoCoop1.StylePriority.UseTextAlignment = false;
             this.lblPrestamoCoop1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblPrestamoCoop1.Weight = 0.613333737740638D;
+            // 
+            // xrTableRow40
+            // 
+            this.xrTableRow40.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell20,
+            this.lblOtrasDeduCoop1});
+            this.xrTableRow40.Name = "xrTableRow40";
+            this.xrTableRow40.Weight = 1D;
+            // 
+            // xrTableCell20
+            // 
+            this.xrTableCell20.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell20.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.xrTableCell20.Multiline = true;
+            this.xrTableCell20.Name = "xrTableCell20";
+            this.xrTableCell20.StylePriority.UseBorders = false;
+            this.xrTableCell20.StylePriority.UseFont = false;
+            this.xrTableCell20.StylePriority.UseTextAlignment = false;
+            this.xrTableCell20.Text = "Otras Deducciones Cooperativa";
+            this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell20.Weight = 1.5804176453428072D;
+            // 
+            // lblOtrasDeduCoop1
+            // 
+            this.lblOtrasDeduCoop1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblOtrasDeduCoop1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.lblOtrasDeduCoop1.Multiline = true;
+            this.lblOtrasDeduCoop1.Name = "lblOtrasDeduCoop1";
+            this.lblOtrasDeduCoop1.StylePriority.UseBorders = false;
+            this.lblOtrasDeduCoop1.StylePriority.UseFont = false;
+            this.lblOtrasDeduCoop1.StylePriority.UseTextAlignment = false;
+            this.lblOtrasDeduCoop1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lblOtrasDeduCoop1.Weight = 0.613333737740638D;
             // 
             // xrTableRow9
             // 
@@ -1886,9 +2240,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell25.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell25.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell25.Multiline = true;
             this.xrTableCell25.Name = "xrTableCell25";
             this.xrTableCell25.StylePriority.UseBorders = false;
+            this.xrTableCell25.StylePriority.UseFont = false;
             this.xrTableCell25.StylePriority.UseTextAlignment = false;
             this.xrTableCell25.Text = "Ahorro Fijo Cooperativa";
             this.xrTableCell25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1897,9 +2253,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblAhorroFijoCoop1
             // 
             this.lblAhorroFijoCoop1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblAhorroFijoCoop1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblAhorroFijoCoop1.Multiline = true;
             this.lblAhorroFijoCoop1.Name = "lblAhorroFijoCoop1";
             this.lblAhorroFijoCoop1.StylePriority.UseBorders = false;
+            this.lblAhorroFijoCoop1.StylePriority.UseFont = false;
             this.lblAhorroFijoCoop1.StylePriority.UseTextAlignment = false;
             this.lblAhorroFijoCoop1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblAhorroFijoCoop1.Weight = 0.613333737740638D;
@@ -1916,9 +2274,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell34.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell34.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell34.Multiline = true;
             this.xrTableCell34.Name = "xrTableCell34";
             this.xrTableCell34.StylePriority.UseBorders = false;
+            this.xrTableCell34.StylePriority.UseFont = false;
             this.xrTableCell34.StylePriority.UseTextAlignment = false;
             this.xrTableCell34.Text = "Ahorro Ret Cooperativa";
             this.xrTableCell34.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1927,9 +2287,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblAhorroRetCoop1
             // 
             this.lblAhorroRetCoop1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblAhorroRetCoop1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblAhorroRetCoop1.Multiline = true;
             this.lblAhorroRetCoop1.Name = "lblAhorroRetCoop1";
             this.lblAhorroRetCoop1.StylePriority.UseBorders = false;
+            this.lblAhorroRetCoop1.StylePriority.UseFont = false;
             this.lblAhorroRetCoop1.StylePriority.UseTextAlignment = false;
             this.lblAhorroRetCoop1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblAhorroRetCoop1.Weight = 0.613333737740638D;
@@ -1946,9 +2308,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell28.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell28.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell28.Multiline = true;
             this.xrTableCell28.Name = "xrTableCell28";
             this.xrTableCell28.StylePriority.UseBorders = false;
+            this.xrTableCell28.StylePriority.UseFont = false;
             this.xrTableCell28.StylePriority.UseTextAlignment = false;
             this.xrTableCell28.Text = "IHSS";
             this.xrTableCell28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1957,12 +2321,48 @@ namespace LOSA.ACS.RRHH.Informes
             // lblIHSS_1
             // 
             this.lblIHSS_1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblIHSS_1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblIHSS_1.Multiline = true;
             this.lblIHSS_1.Name = "lblIHSS_1";
             this.lblIHSS_1.StylePriority.UseBorders = false;
+            this.lblIHSS_1.StylePriority.UseFont = false;
             this.lblIHSS_1.StylePriority.UseTextAlignment = false;
             this.lblIHSS_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblIHSS_1.Weight = 0.613333737740638D;
+            // 
+            // xrTableRow43
+            // 
+            this.xrTableRow43.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell29,
+            this.lblSeguroMedico1});
+            this.xrTableRow43.Name = "xrTableRow43";
+            this.xrTableRow43.Weight = 1D;
+            // 
+            // xrTableCell29
+            // 
+            this.xrTableCell29.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell29.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.xrTableCell29.Multiline = true;
+            this.xrTableCell29.Name = "xrTableCell29";
+            this.xrTableCell29.StylePriority.UseBorders = false;
+            this.xrTableCell29.StylePriority.UseFont = false;
+            this.xrTableCell29.StylePriority.UseTextAlignment = false;
+            this.xrTableCell29.Text = "Seguro Médico";
+            this.xrTableCell29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell29.Weight = 1.5804176453428072D;
+            // 
+            // lblSeguroMedico1
+            // 
+            this.lblSeguroMedico1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblSeguroMedico1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
+            this.lblSeguroMedico1.Multiline = true;
+            this.lblSeguroMedico1.Name = "lblSeguroMedico1";
+            this.lblSeguroMedico1.StylePriority.UseBorders = false;
+            this.lblSeguroMedico1.StylePriority.UseFont = false;
+            this.lblSeguroMedico1.StylePriority.UseTextAlignment = false;
+            this.lblSeguroMedico1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.lblSeguroMedico1.Weight = 0.613333737740638D;
             // 
             // xrTableRow16
             // 
@@ -1976,9 +2376,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell21.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell21.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell21.Multiline = true;
             this.xrTableCell21.Name = "xrTableCell21";
             this.xrTableCell21.StylePriority.UseBorders = false;
+            this.xrTableCell21.StylePriority.UseFont = false;
             this.xrTableCell21.StylePriority.UseTextAlignment = false;
             this.xrTableCell21.Text = "Incapacidades";
             this.xrTableCell21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -1987,9 +2389,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lblIncapacidades1
             // 
             this.lblIncapacidades1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblIncapacidades1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lblIncapacidades1.Multiline = true;
             this.lblIncapacidades1.Name = "lblIncapacidades1";
             this.lblIncapacidades1.StylePriority.UseBorders = false;
+            this.lblIncapacidades1.StylePriority.UseFont = false;
             this.lblIncapacidades1.StylePriority.UseTextAlignment = false;
             this.lblIncapacidades1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lblIncapacidades1.Weight = 0.613333737740638D;
@@ -2006,9 +2410,11 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.xrTableCell19.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell19.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.xrTableCell19.Multiline = true;
             this.xrTableCell19.Name = "xrTableCell19";
             this.xrTableCell19.StylePriority.UseBorders = false;
+            this.xrTableCell19.StylePriority.UseFont = false;
             this.xrTableCell19.StylePriority.UseTextAlignment = false;
             this.xrTableCell19.Text = "ISR";
             this.xrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -2017,9 +2423,11 @@ namespace LOSA.ACS.RRHH.Informes
             // lbl_ISR1
             // 
             this.lbl_ISR1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lbl_ISR1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
             this.lbl_ISR1.Multiline = true;
             this.lbl_ISR1.Name = "lbl_ISR1";
             this.lbl_ISR1.StylePriority.UseBorders = false;
+            this.lbl_ISR1.StylePriority.UseFont = false;
             this.lbl_ISR1.StylePriority.UseTextAlignment = false;
             this.lbl_ISR1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.lbl_ISR1.Weight = 0.613333737740638D;
@@ -2037,7 +2445,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell26.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell26.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell26.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrTableCell26.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell26.Multiline = true;
             this.xrTableCell26.Name = "xrTableCell26";
             this.xrTableCell26.StylePriority.UseBackColor = false;
@@ -2052,7 +2460,7 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.lblTotalEgresos1.BackColor = System.Drawing.Color.LightBlue;
             this.lblTotalEgresos1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblTotalEgresos1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.lblTotalEgresos1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblTotalEgresos1.Multiline = true;
             this.lblTotalEgresos1.Name = "lblTotalEgresos1";
             this.lblTotalEgresos1.StylePriority.UseBackColor = false;
@@ -2075,7 +2483,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrTableCell32.BackColor = System.Drawing.Color.LightBlue;
             this.xrTableCell32.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell32.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrTableCell32.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell32.Multiline = true;
             this.xrTableCell32.Name = "xrTableCell32";
             this.xrTableCell32.StylePriority.UseBackColor = false;
@@ -2090,7 +2498,7 @@ namespace LOSA.ACS.RRHH.Informes
             // 
             this.lblSalarioNeto1.BackColor = System.Drawing.Color.LightBlue;
             this.lblSalarioNeto1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblSalarioNeto1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.lblSalarioNeto1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblSalarioNeto1.Multiline = true;
             this.lblSalarioNeto1.Name = "lblSalarioNeto1";
             this.lblSalarioNeto1.StylePriority.UseBackColor = false;
@@ -2122,7 +2530,7 @@ namespace LOSA.ACS.RRHH.Informes
             // xrLabel31
             // 
             this.xrLabel31.Font = new DevExpress.Drawing.DXFont("Segoe UI", 8F);
-            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 455.1874F);
+            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 469.1873F);
             this.xrLabel31.Multiline = true;
             this.xrLabel31.Name = "xrLabel31";
             this.xrLabel31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -2137,7 +2545,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrShape1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrShape1.Name = "xrShape1";
             this.xrShape1.Shape = shapeRectangle1;
-            this.xrShape1.SizeF = new System.Drawing.SizeF(719F, 494.8959F);
+            this.xrShape1.SizeF = new System.Drawing.SizeF(719F, 503.1874F);
             // 
             // xrShape2
             // 
@@ -2145,186 +2553,6 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrShape2.Name = "xrShape2";
             this.xrShape2.Shape = shapeRectangle2;
             this.xrShape2.SizeF = new System.Drawing.SizeF(719F, 489.3339F);
-            // 
-            // xrTableRow39
-            // 
-            this.xrTableRow39.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell12,
-            this.lblBanco1});
-            this.xrTableRow39.Name = "xrTableRow39";
-            this.xrTableRow39.Weight = 1D;
-            // 
-            // xrTableCell12
-            // 
-            this.xrTableCell12.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell12.Multiline = true;
-            this.xrTableCell12.Name = "xrTableCell12";
-            this.xrTableCell12.StylePriority.UseBorders = false;
-            this.xrTableCell12.StylePriority.UseTextAlignment = false;
-            this.xrTableCell12.Text = "Banco";
-            this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell12.Weight = 1.5804176453428072D;
-            // 
-            // lblBanco1
-            // 
-            this.lblBanco1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblBanco1.Multiline = true;
-            this.lblBanco1.Name = "lblBanco1";
-            this.lblBanco1.StylePriority.UseBorders = false;
-            this.lblBanco1.StylePriority.UseTextAlignment = false;
-            this.lblBanco1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.lblBanco1.Weight = 0.613333737740638D;
-            // 
-            // xrTableRow40
-            // 
-            this.xrTableRow40.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell20,
-            this.lblOtrasDeduCoop1});
-            this.xrTableRow40.Name = "xrTableRow40";
-            this.xrTableRow40.Weight = 1D;
-            // 
-            // xrTableCell20
-            // 
-            this.xrTableCell20.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell20.Multiline = true;
-            this.xrTableCell20.Name = "xrTableCell20";
-            this.xrTableCell20.StylePriority.UseBorders = false;
-            this.xrTableCell20.StylePriority.UseTextAlignment = false;
-            this.xrTableCell20.Text = "Otras Deducciones Cooperativa";
-            this.xrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell20.Weight = 1.5804176453428072D;
-            // 
-            // lblOtrasDeduCoop1
-            // 
-            this.lblOtrasDeduCoop1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblOtrasDeduCoop1.Multiline = true;
-            this.lblOtrasDeduCoop1.Name = "lblOtrasDeduCoop1";
-            this.lblOtrasDeduCoop1.StylePriority.UseBorders = false;
-            this.lblOtrasDeduCoop1.StylePriority.UseTextAlignment = false;
-            this.lblOtrasDeduCoop1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.lblOtrasDeduCoop1.Weight = 0.613333737740638D;
-            // 
-            // xrTableRow41
-            // 
-            this.xrTableRow41.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell16,
-            this.lblBanco2});
-            this.xrTableRow41.Name = "xrTableRow41";
-            this.xrTableRow41.Weight = 1D;
-            // 
-            // xrTableCell16
-            // 
-            this.xrTableCell16.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell16.Multiline = true;
-            this.xrTableCell16.Name = "xrTableCell16";
-            this.xrTableCell16.StylePriority.UseBorders = false;
-            this.xrTableCell16.StylePriority.UseTextAlignment = false;
-            this.xrTableCell16.Text = "Banco";
-            this.xrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell16.Weight = 1.5804176453428072D;
-            // 
-            // lblBanco2
-            // 
-            this.lblBanco2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblBanco2.Multiline = true;
-            this.lblBanco2.Name = "lblBanco2";
-            this.lblBanco2.StylePriority.UseBorders = false;
-            this.lblBanco2.StylePriority.UseTextAlignment = false;
-            this.lblBanco2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.lblBanco2.Weight = 0.613333737740638D;
-            // 
-            // xrTableRow42
-            // 
-            this.xrTableRow42.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell24,
-            this.lblOtrasDeduCoop2});
-            this.xrTableRow42.Name = "xrTableRow42";
-            this.xrTableRow42.Weight = 1D;
-            // 
-            // xrTableCell24
-            // 
-            this.xrTableCell24.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell24.Multiline = true;
-            this.xrTableCell24.Name = "xrTableCell24";
-            this.xrTableCell24.StylePriority.UseBorders = false;
-            this.xrTableCell24.StylePriority.UseTextAlignment = false;
-            this.xrTableCell24.Text = "Otras Deducciones Cooperativa";
-            this.xrTableCell24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell24.Weight = 1.5804176453428072D;
-            // 
-            // lblOtrasDeduCoop2
-            // 
-            this.lblOtrasDeduCoop2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblOtrasDeduCoop2.Multiline = true;
-            this.lblOtrasDeduCoop2.Name = "lblOtrasDeduCoop2";
-            this.lblOtrasDeduCoop2.StylePriority.UseBorders = false;
-            this.lblOtrasDeduCoop2.StylePriority.UseTextAlignment = false;
-            this.lblOtrasDeduCoop2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.lblOtrasDeduCoop2.Weight = 0.613333737740638D;
-            // 
-            // xrTableRow43
-            // 
-            this.xrTableRow43.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell29,
-            this.lblSeguroMedico1});
-            this.xrTableRow43.Name = "xrTableRow43";
-            this.xrTableRow43.Weight = 1D;
-            // 
-            // xrTableCell29
-            // 
-            this.xrTableCell29.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell29.Multiline = true;
-            this.xrTableCell29.Name = "xrTableCell29";
-            this.xrTableCell29.StylePriority.UseBorders = false;
-            this.xrTableCell29.StylePriority.UseTextAlignment = false;
-            this.xrTableCell29.Text = "Seguro Médico";
-            this.xrTableCell29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell29.Weight = 1.5804176453428072D;
-            // 
-            // lblSeguroMedico1
-            // 
-            this.lblSeguroMedico1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblSeguroMedico1.Multiline = true;
-            this.lblSeguroMedico1.Name = "lblSeguroMedico1";
-            this.lblSeguroMedico1.StylePriority.UseBorders = false;
-            this.lblSeguroMedico1.StylePriority.UseTextAlignment = false;
-            this.lblSeguroMedico1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.lblSeguroMedico1.Weight = 0.613333737740638D;
-            // 
-            // xrTableRow44
-            // 
-            this.xrTableRow44.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.xrTableCell33,
-            this.lblSeguroMedico2});
-            this.xrTableRow44.Name = "xrTableRow44";
-            this.xrTableRow44.Weight = 1D;
-            // 
-            // xrTableCell33
-            // 
-            this.xrTableCell33.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell33.Multiline = true;
-            this.xrTableCell33.Name = "xrTableCell33";
-            this.xrTableCell33.StylePriority.UseBorders = false;
-            this.xrTableCell33.StylePriority.UseTextAlignment = false;
-            this.xrTableCell33.Text = "Seguro Médico";
-            this.xrTableCell33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell33.Weight = 1.5804176453428072D;
-            // 
-            // lblSeguroMedico2
-            // 
-            this.lblSeguroMedico2.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblSeguroMedico2.Multiline = true;
-            this.lblSeguroMedico2.Name = "lblSeguroMedico2";
-            this.lblSeguroMedico2.StylePriority.UseBorders = false;
-            this.lblSeguroMedico2.StylePriority.UseTextAlignment = false;
-            this.lblSeguroMedico2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.lblSeguroMedico2.Weight = 0.613333737740638D;
             // 
             // rptPlanilla
             // 
@@ -2529,5 +2757,11 @@ namespace LOSA.ACS.RRHH.Informes
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow43;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell29;
         private DevExpress.XtraReports.UI.XRTableCell lblSeguroMedico1;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow46;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell39;
+        private DevExpress.XtraReports.UI.XRTableCell lblOtrosIngresos2;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow45;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell36;
+        private DevExpress.XtraReports.UI.XRTableCell lblOtrosIngresos1;
     }
 }

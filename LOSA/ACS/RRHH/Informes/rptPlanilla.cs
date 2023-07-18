@@ -55,6 +55,8 @@ namespace LOSA.ACS.RRHH.Informes
                     lblOtrasDeduCoop1.Text = lblOtrasDeduCoop2.Text = string.Format(stringFormatDecimal, Detalle1.Otras_deducciones_coop);
 
                     lblSeguroMedico1.Text = lblSeguroMedico2.Text = string.Format(stringFormatDecimal, Detalle1.Seguro_Medico);
+
+                    lblOtrosIngresos1.Text = lblOtrosIngresos2.Text = string.Format(stringFormatDecimal, Detalle1.Otros_Ingresos);
                 }
             }
             
