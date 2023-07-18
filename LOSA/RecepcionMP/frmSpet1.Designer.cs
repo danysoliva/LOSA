@@ -64,23 +64,25 @@ namespace LOSA.RecepcionMP
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(17, 13);
+            this.pictureEdit1.Location = new System.Drawing.Point(34, 25);
+            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit1.Properties.InitialImageOptions.Image")));
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(85, 85);
+            this.pictureEdit1.Size = new System.Drawing.Size(170, 163);
             this.pictureEdit1.TabIndex = 0;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(108, 62);
+            this.labelControl1.Location = new System.Drawing.Point(216, 119);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(186, 21);
+            this.labelControl1.Size = new System.Drawing.Size(368, 45);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Configuracion de Ingreso";
             // 
@@ -89,9 +91,10 @@ namespace LOSA.RecepcionMP
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(472, 11);
+            this.simpleButton1.Location = new System.Drawing.Point(944, 21);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(153, 49);
+            this.simpleButton1.Size = new System.Drawing.Size(306, 94);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -100,9 +103,10 @@ namespace LOSA.RecepcionMP
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(17, 104);
+            this.labelControl2.Location = new System.Drawing.Point(34, 200);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(267, 20);
+            this.labelControl2.Size = new System.Drawing.Size(535, 41);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Asistente para la creacion de un Ingreso.";
             // 
@@ -110,9 +114,10 @@ namespace LOSA.RecepcionMP
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(17, 130);
+            this.labelControl3.Location = new System.Drawing.Point(34, 250);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(472, 20);
+            this.labelControl3.Size = new System.Drawing.Size(947, 41);
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "Es un serie de pasos para poder crear los registros en el sistema ALOSY.";
             // 
@@ -120,9 +125,10 @@ namespace LOSA.RecepcionMP
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(12, 155);
+            this.labelControl4.Location = new System.Drawing.Point(34, 298);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(91, 20);
+            this.labelControl4.Size = new System.Drawing.Size(183, 41);
             this.labelControl4.TabIndex = 5;
             this.labelControl4.Text = "Primero paso:";
             // 
@@ -130,9 +136,10 @@ namespace LOSA.RecepcionMP
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(109, 155);
+            this.labelControl5.Location = new System.Drawing.Point(225, 298);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(361, 20);
+            this.labelControl5.Size = new System.Drawing.Size(732, 41);
             this.labelControl5.TabIndex = 6;
             this.labelControl5.Text = "Seleccione un tipo de bodega a cual se hara ingreso.";
             // 
@@ -140,10 +147,12 @@ namespace LOSA.RecepcionMP
             // 
             this.grd_data.DataMember = "tipo_ingreso";
             this.grd_data.DataSource = this.dsWizard;
-            this.grd_data.Location = new System.Drawing.Point(40, 181);
+            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_data.Location = new System.Drawing.Point(80, 348);
             this.grd_data.MainView = this.grdv_data;
+            this.grd_data.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(556, 231);
+            this.grd_data.Size = new System.Drawing.Size(1112, 444);
             this.grd_data.TabIndex = 7;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -184,6 +193,7 @@ namespace LOSA.RecepcionMP
             this.colid,
             this.coldescripcion,
             this.colselected});
+            this.grdv_data.DetailHeight = 673;
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -195,21 +205,27 @@ namespace LOSA.RecepcionMP
             // colid
             // 
             this.colid.FieldName = "id";
+            this.colid.MinWidth = 40;
             this.colid.Name = "colid";
+            this.colid.Width = 150;
             // 
             // coldescripcion
             // 
             this.coldescripcion.Caption = "Seleccion de bodega de Materia Prima";
             this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.MinWidth = 40;
             this.coldescripcion.Name = "coldescripcion";
             this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 0;
+            this.coldescripcion.Width = 150;
             // 
             // colselected
             // 
             this.colselected.FieldName = "selected";
+            this.colselected.MinWidth = 40;
             this.colselected.Name = "colselected";
+            this.colselected.Width = 150;
             // 
             // panel1
             // 
@@ -221,66 +237,72 @@ namespace LOSA.RecepcionMP
             this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Controls.Add(this.step1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 466);
+            this.panel1.Location = new System.Drawing.Point(0, 896);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 84);
+            this.panel1.Size = new System.Drawing.Size(1284, 162);
             this.panel1.TabIndex = 8;
             // 
             // pictureEdit4
             // 
             this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(261, 22);
+            this.pictureEdit4.Location = new System.Drawing.Point(522, 42);
+            this.pictureEdit4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit4.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit4.Properties.InitialImageOptions.Image")));
             this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit4.Size = new System.Drawing.Size(51, 50);
+            this.pictureEdit4.Size = new System.Drawing.Size(102, 96);
             this.pictureEdit4.TabIndex = 9;
             // 
             // pictureEdit3
             // 
             this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(189, 22);
+            this.pictureEdit3.Location = new System.Drawing.Point(378, 42);
+            this.pictureEdit3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit3.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit3.Properties.InitialImageOptions.Image")));
             this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit3.Size = new System.Drawing.Size(51, 50);
+            this.pictureEdit3.Size = new System.Drawing.Size(102, 96);
             this.pictureEdit3.TabIndex = 8;
             // 
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(109, 22);
+            this.pictureEdit2.Location = new System.Drawing.Point(218, 42);
+            this.pictureEdit2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit2.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit2.Properties.InitialImageOptions.Image")));
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit2.Size = new System.Drawing.Size(51, 50);
+            this.pictureEdit2.Size = new System.Drawing.Size(102, 96);
             this.pictureEdit2.TabIndex = 7;
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(3, 3);
+            this.labelControl6.Location = new System.Drawing.Point(6, 6);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(40, 20);
+            this.labelControl6.Size = new System.Drawing.Size(83, 41);
             this.labelControl6.TabIndex = 6;
             this.labelControl6.Text = "Pasos:";
             // 
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(506, 34);
+            this.simpleButton2.Location = new System.Drawing.Point(1012, 65);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(124, 38);
+            this.simpleButton2.Size = new System.Drawing.Size(248, 73);
             this.simpleButton2.TabIndex = 2;
             this.simpleButton2.Text = "Siguiente Paso";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -288,21 +310,22 @@ namespace LOSA.RecepcionMP
             // step1
             // 
             this.step1.EditValue = ((object)(resources.GetObject("step1.EditValue")));
-            this.step1.Location = new System.Drawing.Point(31, 22);
+            this.step1.Location = new System.Drawing.Point(62, 42);
+            this.step1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.step1.Name = "step1";
             this.step1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.step1.Properties.Appearance.Options.UseBackColor = true;
             this.step1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.step1.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("step1.Properties.InitialImageOptions.Image")));
             this.step1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.step1.Size = new System.Drawing.Size(51, 50);
+            this.step1.Size = new System.Drawing.Size(102, 96);
             this.step1.TabIndex = 1;
             // 
             // frmSpet1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 550);
+            this.ClientSize = new System.Drawing.Size(1284, 1058);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.labelControl5);
@@ -313,6 +336,7 @@ namespace LOSA.RecepcionMP
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.pictureEdit1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmSpet1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuracion de Ingreso";

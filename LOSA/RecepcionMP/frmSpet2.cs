@@ -35,6 +35,7 @@ namespace LOSA.RecepcionMP
         {
             if (isTraslado)
             {   //step 3
+                //Ingreso directo
                 frmSpet3 frm = new frmSpet3(UsuarioLogeado, Descripcion_Tipo_Selected, Tipo_Ingreso_Selected);
                 switch (frm.ShowDialog())
                 {
