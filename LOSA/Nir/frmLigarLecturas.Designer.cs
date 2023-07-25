@@ -35,6 +35,12 @@ namespace LOSA.Nir
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.btnLectura = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -44,15 +50,24 @@ namespace LOSA.Nir
             this.colnumero_transaccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colodoo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLigar = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnLectura = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repostbtnLigar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLectura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLectura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repostbtnLigar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnLectura
+            // 
+            this.btnLectura.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btnLectura.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnLectura.Name = "btnLectura";
+            this.btnLectura.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // cmdHome
             // 
@@ -63,7 +78,7 @@ namespace LOSA.Nir
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(442, 12);
+            this.cmdHome.Location = new System.Drawing.Point(930, 12);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(199, 54);
             this.cmdHome.TabIndex = 8;
@@ -79,9 +94,9 @@ namespace LOSA.Nir
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(128, 19);
+            this.labelControl3.Location = new System.Drawing.Point(480, 24);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(372, 39);
+            this.labelControl3.Size = new System.Drawing.Size(162, 30);
             this.labelControl3.TabIndex = 33;
             this.labelControl3.Text = "Lecturas del NIR";
             // 
@@ -96,8 +111,8 @@ namespace LOSA.Nir
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnLectura});
-            this.grd_data.Size = new System.Drawing.Size(651, 374);
+            this.repostbtnLigar});
+            this.grd_data.Size = new System.Drawing.Size(1139, 559);
             this.grd_data.TabIndex = 34;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -132,9 +147,8 @@ namespace LOSA.Nir
             this.colnumero_transaccion,
             this.collote,
             this.colnombre_comercial,
-            this.colodoo,
             this.colsap,
-            this.colLigar});
+            this.gridColumn1});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -171,16 +185,7 @@ namespace LOSA.Nir
             this.colnombre_comercial.Name = "colnombre_comercial";
             this.colnombre_comercial.OptionsColumn.AllowEdit = false;
             this.colnombre_comercial.Visible = true;
-            this.colnombre_comercial.VisibleIndex = 3;
-            // 
-            // colodoo
-            // 
-            this.colodoo.Caption = "Codigo Odoo";
-            this.colodoo.FieldName = "odoo";
-            this.colodoo.Name = "colodoo";
-            this.colodoo.OptionsColumn.AllowEdit = false;
-            this.colodoo.Visible = true;
-            this.colodoo.VisibleIndex = 2;
+            this.colnombre_comercial.VisibleIndex = 2;
             // 
             // colsap
             // 
@@ -189,40 +194,41 @@ namespace LOSA.Nir
             this.colsap.Name = "colsap";
             this.colsap.OptionsColumn.AllowEdit = false;
             // 
-            // colLigar
+            // gridColumn1
             // 
-            this.colLigar.Caption = "Ligar Lectura";
-            this.colLigar.ColumnEdit = this.btnLectura;
-            this.colLigar.Name = "colLigar";
-            this.colLigar.Visible = true;
-            this.colLigar.VisibleIndex = 4;
+            this.gridColumn1.Caption = "Ligar Lectura";
+            this.gridColumn1.ColumnEdit = this.repostbtnLigar;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
             // 
-            // btnLectura
+            // repostbtnLigar
             // 
-            this.btnLectura.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.btnLectura.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnLectura.Name = "btnLectura";
-            this.btnLectura.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnLectura.Click += new System.EventHandler(this.btnLectura_Click);
+            this.repostbtnLigar.AutoHeight = false;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap24px;
+            this.repostbtnLigar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repostbtnLigar.Name = "repostbtnLigar";
+            this.repostbtnLigar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repostbtnLigar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repostbtnLigar_ButtonClick);
             // 
             // frmLigarLecturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 454);
+            this.ClientSize = new System.Drawing.Size(1141, 639);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.ShowIcon = false;
             this.Name = "frmLigarLecturas";
-            this.Text = "frmLigarLecturas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.btnLectura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLectura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repostbtnLigar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -238,9 +244,9 @@ namespace LOSA.Nir
         private DevExpress.XtraGrid.Columns.GridColumn colnumero_transaccion;
         private DevExpress.XtraGrid.Columns.GridColumn collote;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
-        private DevExpress.XtraGrid.Columns.GridColumn colodoo;
         private DevExpress.XtraGrid.Columns.GridColumn colsap;
-        private DevExpress.XtraGrid.Columns.GridColumn colLigar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnLectura;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repostbtnLigar;
     }
 }

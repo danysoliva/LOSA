@@ -1218,6 +1218,8 @@ namespace LOSA.Nir {
             
             private global::System.Data.DataColumn columnodoo;
             
+            private global::System.Data.DataColumn columnid_mp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public nir_loteDataTable() {
@@ -1301,6 +1303,14 @@ namespace LOSA.Nir {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_mpColumn {
+                get {
+                    return this.columnid_mp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1336,7 +1346,7 @@ namespace LOSA.Nir {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public nir_loteRow Addnir_loteRow(int id, int numero_transaccion, string lote, string nombre_comercial, string sap, string odoo) {
+            public nir_loteRow Addnir_loteRow(int id, int numero_transaccion, string lote, string nombre_comercial, string sap, string odoo, int id_mp) {
                 nir_loteRow rownir_loteRow = ((nir_loteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -1344,7 +1354,8 @@ namespace LOSA.Nir {
                         lote,
                         nombre_comercial,
                         sap,
-                        odoo};
+                        odoo,
+                        id_mp};
                 rownir_loteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rownir_loteRow);
                 return rownir_loteRow;
@@ -1373,6 +1384,7 @@ namespace LOSA.Nir {
                 this.columnnombre_comercial = base.Columns["nombre_comercial"];
                 this.columnsap = base.Columns["sap"];
                 this.columnodoo = base.Columns["odoo"];
+                this.columnid_mp = base.Columns["id_mp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1390,6 +1402,8 @@ namespace LOSA.Nir {
                 base.Columns.Add(this.columnsap);
                 this.columnodoo = new global::System.Data.DataColumn("odoo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnodoo);
+                this.columnid_mp = new global::System.Data.DataColumn("id_mp", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_mp);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3163,6 +3177,22 @@ namespace LOSA.Nir {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_mp {
+                get {
+                    try {
+                        return ((int)(this[this.tablenir_lote.id_mpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_mp\' de la tabla \'nir_lote\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablenir_lote.id_mpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablenir_lote.idColumn);
             }
@@ -3231,6 +3261,18 @@ namespace LOSA.Nir {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetodooNull() {
                 this[this.tablenir_lote.odooColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_mpNull() {
+                return this.IsNull(this.tablenir_lote.id_mpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_mpNull() {
+                this[this.tablenir_lote.id_mpColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -33,7 +33,7 @@ namespace LOSA.Calidad
         string full_pathImagen = "";
         string fileNameImagen = "";
         string code_sap;
-        string codigo;
+        string codigo = "";
         string usercreadorIngreso;
         bool cambioImagen = false;
         string Direccion;
@@ -1311,7 +1311,7 @@ namespace LOSA.Calidad
             try
             {
 
-                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text,Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text));
+                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text,Id_ingreso, txtloteMP.Text, Convert.ToInt32(txtreferencia.Text), IdMP);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
 

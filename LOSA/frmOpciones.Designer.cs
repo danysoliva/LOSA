@@ -297,7 +297,7 @@
             this.tabOpciones.Location = new System.Drawing.Point(5, 89);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedTabPage = this.TabMontacarga;
-            this.tabOpciones.Size = new System.Drawing.Size(841, 460);
+            this.tabOpciones.Size = new System.Drawing.Size(841, 547);
             this.tabOpciones.TabIndex = 8;
             this.tabOpciones.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMontacarga,
@@ -447,7 +447,7 @@
             this.TabLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabLogistica.ImageOptions.Image")));
             this.TabLogistica.Name = "TabLogistica";
             this.TabLogistica.PageVisible = false;
-            this.TabLogistica.Size = new System.Drawing.Size(839, 400);
+            this.TabLogistica.Size = new System.Drawing.Size(839, 487);
             this.TabLogistica.Text = "Logistica";
             // 
             // xtraTabControl1
@@ -456,7 +456,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.TabMP_Sacos;
-            this.xtraTabControl1.Size = new System.Drawing.Size(839, 400);
+            this.xtraTabControl1.Size = new System.Drawing.Size(839, 487);
             this.xtraTabControl1.TabIndex = 42;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabMP_Sacos,
@@ -493,7 +493,7 @@
             this.TabMP_Sacos.Controls.Add(this.btnTransferencia);
             this.TabMP_Sacos.Controls.Add(this.btnajuste);
             this.TabMP_Sacos.Name = "TabMP_Sacos";
-            this.TabMP_Sacos.Size = new System.Drawing.Size(837, 371);
+            this.TabMP_Sacos.Size = new System.Drawing.Size(837, 458);
             this.TabMP_Sacos.Text = "MP en Sacos";
             // 
             // cmdGestionLotesGranel
@@ -1308,7 +1308,7 @@
             this.TabCalidad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabCalidad.ImageOptions.Image")));
             this.TabCalidad.Name = "TabCalidad";
             this.TabCalidad.PageVisible = false;
-            this.TabCalidad.Size = new System.Drawing.Size(839, 400);
+            this.TabCalidad.Size = new System.Drawing.Size(839, 487);
             this.TabCalidad.Text = "Calidad";
             // 
             // btnCalidadMaterialEmpaque
@@ -1643,7 +1643,7 @@
             this.TabAdmin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabAdmin.ImageOptions.Image")));
             this.TabAdmin.Name = "TabAdmin";
             this.TabAdmin.PageVisible = false;
-            this.TabAdmin.Size = new System.Drawing.Size(839, 400);
+            this.TabAdmin.Size = new System.Drawing.Size(839, 487);
             this.TabAdmin.Text = "Administrador";
             // 
             // simpleButton37
@@ -1807,7 +1807,7 @@
             this.tabProduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabProduccion.ImageOptions.Image")));
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.PageVisible = false;
-            this.tabProduccion.Size = new System.Drawing.Size(839, 400);
+            this.tabProduccion.Size = new System.Drawing.Size(839, 487);
             this.tabProduccion.Text = "Producción";
             // 
             // navBarControl1
@@ -1866,7 +1866,7 @@
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
-            this.navBarControl1.Size = new System.Drawing.Size(347, 400);
+            this.navBarControl1.Size = new System.Drawing.Size(347, 487);
             this.navBarControl1.TabIndex = 20;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -3494,7 +3494,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(844, 552);
+            this.ClientSize = new System.Drawing.Size(844, 639);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabOpciones);

@@ -211,7 +211,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.buttonEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.buttonEdit1.Size = new System.Drawing.Size(112, 38);
+            this.buttonEdit1.Size = new System.Drawing.Size(112, 40);
             this.buttonEdit1.TabIndex = 65;
             this.buttonEdit1.Click += new System.EventHandler(this.buttonEdit1_Click);
             // 
@@ -223,7 +223,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.cmdAddReproceso.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdAddReproceso.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdAddReproceso.Size = new System.Drawing.Size(88, 38);
+            this.cmdAddReproceso.Size = new System.Drawing.Size(88, 40);
             this.cmdAddReproceso.TabIndex = 64;
             this.cmdAddReproceso.Click += new System.EventHandler(this.cmdAddReproceso_Click);
             // 
@@ -726,7 +726,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.cmdAgregarCausa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdAgregarCausa.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.cmdAgregarCausa.Size = new System.Drawing.Size(88, 38);
+            this.cmdAgregarCausa.Size = new System.Drawing.Size(88, 40);
             this.cmdAgregarCausa.TabIndex = 57;
             this.cmdAgregarCausa.Click += new System.EventHandler(this.cmdAgregarCausa_Click);
             // 
@@ -877,7 +877,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.btnlote.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnlote.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnlote.Size = new System.Drawing.Size(88, 30);
+            this.btnlote.Size = new System.Drawing.Size(88, 32);
             this.btnlote.TabIndex = 55;
             this.btnlote.Click += new System.EventHandler(this.btnlote_Click);
             // 
@@ -895,7 +895,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             this.btnsave.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnsave.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.btnsave.Size = new System.Drawing.Size(186, 38);
+            this.btnsave.Size = new System.Drawing.Size(186, 40);
             this.btnsave.TabIndex = 54;
             this.btnsave.Visible = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);

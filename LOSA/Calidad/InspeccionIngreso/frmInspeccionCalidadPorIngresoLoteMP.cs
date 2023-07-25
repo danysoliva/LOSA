@@ -33,7 +33,7 @@ namespace LOSA.Calidad
         string full_pathImagen = "";
         string fileNameImagen = "";
         string code_sap;
-        string codigo;
+        string codigo = " ";
         string usercreadorIngreso;
         bool cambioImagen = false;
         string Direccion;
@@ -956,7 +956,7 @@ namespace LOSA.Calidad
 
         public void Load_cargas_nir()
         {
-            string query = @"sp_load_validaciones_del_nir_to_show_calidad";
+            string query = @"sp_load_validaciones_del_nir_to_show_calidadV2";
             //string query = @"[sp_load_validaciones_del_nir_to_show_calidad_by_lote_v2]";
             try
             {
@@ -966,7 +966,9 @@ namespace LOSA.Calidad
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", IdMP);
                 //cmd.Parameters.AddWithValue("@_lotemp", Lote);
-                cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                //cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                cmd.Parameters.AddWithValue("@lote", Lote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsMantenimientoC.show_nir.Clear();
                 da.Fill(dsMantenimientoC.show_nir);
@@ -981,25 +983,25 @@ namespace LOSA.Calidad
 
         public void Load_cargas_nir(string plotemp)
         {
-            string query = @"sp_load_validaciones_del_nir_to_show_calidad_by_lote";
-            try
-            {
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(@"@id_mp", id_materiaPrima);
-                cmd.Parameters.AddWithValue(@"@_lotemp", plotemp);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsMantenimientoC.show_nir.Clear();
-                da.Fill(dsMantenimientoC.show_nir);
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
+            //string query = @"sp_load_validaciones_del_nir_to_show_calidad_by_lote";
+            //try
+            //{
+            //    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            //    cn.Open();
+            //    SqlCommand cmd = new SqlCommand(query, cn);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue(@"@id_mp", id_materiaPrima);
+            //    cmd.Parameters.AddWithValue(@"@_lotemp", plotemp);
+            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //    dsMantenimientoC.show_nir.Clear();
+            //    da.Fill(dsMantenimientoC.show_nir);
+            //    cn.Close();
+            //}
+            //catch (Exception ex)
+            //{
 
-                CajaDialogo.Error(ex.Message);
-            }
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
 
         public void inicializar_criterios()
@@ -1560,7 +1562,7 @@ namespace LOSA.Calidad
             try
             {
 
-                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text, Id_ingreso, txtloteMP.Text, NumeroTransaccion/* Convert.ToInt32(txtreferencia.Text)*/);
+                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, code_sap, codigo, txtnombreMP.Text, Id_ingreso, txtloteMP.Text, NumeroTransaccion, IdMP);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
 
