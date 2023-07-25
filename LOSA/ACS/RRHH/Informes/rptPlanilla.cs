@@ -50,6 +50,13 @@ namespace LOSA.ACS.RRHH.Informes
 
                     lblTotalEgresos1.Text = lblTotalEgresos2.Text = string.Format(stringFormatDecimal, Detalle1.Total_Egresos);
                     lblSalarioNeto1.Text = lblSalarioNeto2.Text = string.Format(stringFormatDecimal, Detalle1.Salario_neto);
+
+                    lblBanco1.Text = lblBanco2.Text = string.Format(stringFormatDecimal, Detalle1.Bancos);
+                    lblOtrasDeduCoop1.Text = lblOtrasDeduCoop2.Text = string.Format(stringFormatDecimal, Detalle1.Otras_deducciones_coop);
+
+                    lblSeguroMedico1.Text = lblSeguroMedico2.Text = string.Format(stringFormatDecimal, Detalle1.Seguro_Medico);
+
+                    lblOtrosIngresos1.Text = lblOtrosIngresos2.Text = string.Format(stringFormatDecimal, Detalle1.Otros_Ingresos);
                 }
             }
             

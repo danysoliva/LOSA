@@ -126,8 +126,14 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Devart.Data, Version=5.0.3136.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
-    <Reference Include="Devart.Data.PostgreSql, Version=8.1.151.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data, Version=5.0.3075.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Devart\dotConnect\PostgreSQL\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.PostgreSql, Version=8.1.134.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Devart\dotConnect\PostgreSQL\Devart.Data.PostgreSql.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Dashboard.v22.2.Core, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -1184,6 +1190,7 @@
     <Compile Include="Clases\Security.cs" />
     <Compile Include="Clases\SeleccionLoteMPAuto.cs" />
     <Compile Include="Clases\SelectorFor.cs" />
+    <Compile Include="Clases\SolicitudIT.cs" />
     <Compile Include="Clases\Tanque.cs" />
     <Compile Include="Clases\Tarima.cs" />
     <Compile Include="Clases\TarimaMicroingrediente.cs" />
@@ -2325,6 +2332,47 @@
     <Compile Include="MigracionACS\Item_Selecction.designer.cs">
       <DependentUpon>Item_Selecction.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\IT\DsIT.cs">
+      <DependentUpon>DsIT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\DsIT.designer.cs">
+      <DependentUpon>DsIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\DsIT1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsIT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\dsSolicitudes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSolicitudes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmConfAccesos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmConfAccesos.designer.cs">
+      <DependentUpon>frmConfAccesos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmEditarAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmEditarAcceso.designer.cs">
+      <DependentUpon>frmEditarAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmNuevoAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\frmNuevoAcceso.designer.cs">
+      <DependentUpon>frmNuevoAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\Model\IT_Solicitud_Info.cs" />
+    <Compile Include="MigracionACS\IT\SolcitudIT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\SolcitudIT.designer.cs">
+      <DependentUpon>SolcitudIT.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3443,6 +3491,165 @@
     <Compile Include="MigracionACS\SAR\SAR_Selection.designer.cs">
       <DependentUpon>SAR_Selection.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Solicitudes\frmAllsolicitudesUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Solicitudes\frmAllsolicitudesUser.Designer.cs">
+      <DependentUpon>frmAllsolicitudesUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\IT\IT_Solicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\IT\IT_Solicitudes.designer.cs">
+      <DependentUpon>IT_Solicitudes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\dsAdminT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAdminT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmAdminTicketscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmAdminTicketscs.Designer.cs">
+      <DependentUpon>frmAdminTicketscs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmAdminTicketsMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmAdminTicketsMantenimiento.Designer.cs">
+      <DependentUpon>frmAdminTicketsMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmViewInfoTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\frmViewInfoTicket.Designer.cs">
+      <DependentUpon>frmViewInfoTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\xfrmChangePriority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\xfrmChangePriority.Designer.cs">
+      <DependentUpon>xfrmChangePriority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\xfrmVerAdjuntosAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Admin\xfrmVerAdjuntosAdmin.Designer.cs">
+      <DependentUpon>xfrmVerAdjuntosAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Clases\Ticket.cs" />
+    <Compile Include="MigracionACS\Tickets\EndUser\dsTickets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTickets.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmCopiarCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmCopiarCorreo.designer.cs">
+      <DependentUpon>frmCopiarCorreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmMainUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmMainUser.designer.cs">
+      <DependentUpon>frmMainUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmNotificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmNotificaciones.designer.cs">
+      <DependentUpon>frmNotificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTickets.designer.cs">
+      <DependentUpon>frmTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento.designer.cs">
+      <DependentUpon>frmTicketSeguimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimientoCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimientoCRUD.designer.cs">
+      <DependentUpon>frmTicketSeguimientoCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI.designer.cs">
+      <DependentUpon>frmTicketSeguimiento_TI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI_CRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI_CRUD.designer.cs">
+      <DependentUpon>frmTicketSeguimiento_TI_CRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew.designer.cs">
+      <DependentUpon>frmTicketsNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew_IT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew_IT.designer.cs">
+      <DependentUpon>frmTicketsNew_IT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew_Mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmTicketsNew_Mantenimiento.designer.cs">
+      <DependentUpon>frmTicketsNew_Mantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmVerAdjuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmVerAdjuntos.designer.cs">
+      <DependentUpon>frmVerAdjuntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.designer.cs">
+      <DependentUpon>frmVerSeguimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.designer.cs">
+      <DependentUpon>xfrmChangeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeUserAssigned.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeUserAssigned.designer.cs">
+      <DependentUpon>xfrmChangeUserAssigned.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Models\CopiaCorreo.cs" />
+    <Compile Include="MigracionACS\Tickets\Models\EquipoHardwareSelected.cs" />
+    <Compile Include="MigracionACS\Tickets\Models\ProyectoSelected.cs" />
+    <Compile Include="MigracionACS\Tickets\Models\TicketInfo.cs" />
+    <Compile Include="MigracionACS\Tickets\Reportes\rpt_Ticket_Manto.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Reportes\rpt_Ticket_Manto.Designer.cs">
+      <DependentUpon>rpt_Ticket_Manto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Reportes\rpt_Ticket_TI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\Reportes\rpt_Ticket_TI.Designer.cs">
+      <DependentUpon>rpt_Ticket_TI.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Ttracer\dSTtracer.cs">
       <DependentUpon>dSTtracer.xsd</DependentUpon>
     </Compile>
@@ -4264,6 +4471,28 @@
     <None Include="MigracionACS\Formulas\sdformula.xss">
       <DependentUpon>sdformula.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\IT\DsIT.xsc">
+      <DependentUpon>DsIT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\IT\DsIT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsIT1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\IT\DsIT.xss">
+      <DependentUpon>DsIT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\IT\dsSolicitudes.xsc">
+      <DependentUpon>dsSolicitudes.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\IT\dsSolicitudes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSolicitudes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\IT\dsSolicitudes.xss">
+      <DependentUpon>dsSolicitudes.xsd</DependentUpon>
+    </None>
     <None Include="MigracionACS\OIL\dsAceites.xsc">
       <DependentUpon>dsAceites.xsd</DependentUpon>
     </None>
@@ -4561,6 +4790,30 @@
     <None Include="MigracionACS\SAR\dS_SAR.xss">
       <DependentUpon>dS_SAR.xsd</DependentUpon>
     </None>
+    <None Include="MigracionACS\Tickets\Admin\dsAdminT.xsc">
+      <DependentUpon>dsAdminT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Tickets\Admin\dsAdminT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAdminT.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Tickets\Admin\dsAdminT.xss">
+      <DependentUpon>dsAdminT.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Tickets\EndUser\dsTickets.xsc">
+      <DependentUpon>dsTickets.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Tickets\EndUser\dsTickets.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTickets.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MigracionACS\Tickets\EndUser\dsTickets.xss">
+      <DependentUpon>dsTickets.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Tickets\Reportes\rpt_Ticket_Manto.Designer.cs.bak" />
+    <None Include="MigracionACS\Tickets\Reportes\rpt_Ticket_TI.Designer.cs.bak" />
     <None Include="MigracionACS\Ttracer\dSTtracer.xsc">
       <DependentUpon>dSTtracer.xsd</DependentUpon>
     </None>
@@ -6823,6 +7076,18 @@
     <EmbeddedResource Include="MigracionACS\Item_Selecction.resx">
       <DependentUpon>Item_Selecction.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\frmConfAccesos.resx">
+      <DependentUpon>frmConfAccesos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\frmEditarAcceso.resx">
+      <DependentUpon>frmEditarAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\frmNuevoAcceso.resx">
+      <DependentUpon>frmNuevoAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\SolcitudIT.resx">
+      <DependentUpon>SolcitudIT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Manegement\FML_Compare_Cost_External_Local.resx">
       <DependentUpon>FML_Compare_Cost_External_Local.cs</DependentUpon>
     </EmbeddedResource>
@@ -7314,6 +7579,78 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAR\SAR_Selection.resx">
       <DependentUpon>SAR_Selection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Solicitudes\frmAllsolicitudesUser.resx">
+      <DependentUpon>frmAllsolicitudesUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\IT\IT_Solicitudes.resx">
+      <DependentUpon>IT_Solicitudes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\frmAdminTicketscs.resx">
+      <DependentUpon>frmAdminTicketscs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\frmAdminTicketsMantenimiento.resx">
+      <DependentUpon>frmAdminTicketsMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\frmViewInfoTicket.resx">
+      <DependentUpon>frmViewInfoTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\xfrmChangePriority.resx">
+      <DependentUpon>xfrmChangePriority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Admin\xfrmVerAdjuntosAdmin.resx">
+      <DependentUpon>xfrmVerAdjuntosAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmCopiarCorreo.resx">
+      <DependentUpon>frmCopiarCorreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmMainUser.resx">
+      <DependentUpon>frmMainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmNotificaciones.resx">
+      <DependentUpon>frmNotificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTickets.resx">
+      <DependentUpon>frmTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento.resx">
+      <DependentUpon>frmTicketSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketSeguimientoCRUD.resx">
+      <DependentUpon>frmTicketSeguimientoCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI.resx">
+      <DependentUpon>frmTicketSeguimiento_TI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketSeguimiento_TI_CRUD.resx">
+      <DependentUpon>frmTicketSeguimiento_TI_CRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketsNew.resx">
+      <DependentUpon>frmTicketsNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketsNew_IT.resx">
+      <DependentUpon>frmTicketsNew_IT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmTicketsNew_Mantenimiento.resx">
+      <DependentUpon>frmTicketsNew_Mantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmVerAdjuntos.resx">
+      <DependentUpon>frmVerAdjuntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.resx">
+      <DependentUpon>frmVerSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.resx">
+      <DependentUpon>xfrmChangeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\xfrmChangeUserAssigned.resx">
+      <DependentUpon>xfrmChangeUserAssigned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Reportes\rpt_Ticket_Manto.resx">
+      <DependentUpon>rpt_Ticket_Manto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\Reportes\rpt_Ticket_TI.resx">
+      <DependentUpon>rpt_Ticket_TI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Ttracer\Reportes\frmDetalleDesechos.resx">
       <DependentUpon>frmDetalleDesechos.cs</DependentUpon>
