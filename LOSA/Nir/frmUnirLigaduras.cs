@@ -65,7 +65,6 @@ namespace LOSA.Nir
         {
 
             InitializeComponent();
-
             UsuarioLogeado = Puser;
             Sap = pSap;
             odoo = podoo;
@@ -80,7 +79,6 @@ namespace LOSA.Nir
             txtsap.Text = Sap;
             id_mp = pid_mp;
             load_Data();
-
 
         }
 
