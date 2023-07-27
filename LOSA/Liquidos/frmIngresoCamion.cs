@@ -766,7 +766,7 @@ namespace LOSA.Liquidos
                 txtDisponible.Text = Default_value.ToString();
                 
                 //Seguro va en Tarimas
-                grupoTarima.Enabled = true;
+                grupoTarima.Enabled = false;
                 ParaBines = SumaTotal;
                 txtEnTarimas.Text = ParaBines.ToString();
                 txtTotalIngreso.Text = SumaTotal.ToString();
