@@ -1391,24 +1391,24 @@ namespace LOSA.Trazabilidad
 
         public void Inicializar_data_logisticaRuta2()
         {
-            try
-            {
-                string query = @"sp_obtener_datos_logistica_to_show_calidad";
-                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(@"@id_ingreso", Id_ingreso);
-                dsMantenimientoC.logisticaInformacion.Clear();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsMantenimientoC.logisticaInformacion);
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    string query = @"sp_obtener_datos_logistica_to_show_calidad";
+            //    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            //    cn.Open();
+            //    SqlCommand cmd = new SqlCommand(query, cn);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.AddWithValue(@"@id_ingreso", Id_ingreso);
+            //    dsMantenimientoC.logisticaInformacion.Clear();
+            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //    da.Fill(dsMantenimientoC.logisticaInformacion);
+            //    cn.Close();
+            //}
+            //catch (Exception ex)
+            //{
 
-                CajaDialogo.Error(ex.Message);
-            }
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
 
         public void Inicializar_data_logisticaRuta2(string plotemp)
@@ -3947,6 +3947,40 @@ namespace LOSA.Trazabilidad
                         rw.file_name = frm.file_name;
                     }
                 }
+            }
+        }
+
+        private void gridView20_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            if (e.RowHandle >= 0)
+            {
+                var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+                //var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
+                var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetDataRow(e.RowHandle);
+                if (row != null)
+                {
+                    if (row.__avance >= 95)
+                    {
+                        e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
+                    }
+                    else
+                    {
+                        e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
+                    }
+
+                }
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                GridRuta4_detalle_trz_lote_pt.ExportToXlsx(dialog.FileName);
             }
         }
     }
