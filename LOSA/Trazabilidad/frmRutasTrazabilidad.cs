@@ -3976,7 +3976,7 @@ namespace LOSA.Trazabilidad
         {
             if (gridView20.RowCount == 0)
             {
-                CajaDialogo.Error("No se ha Cargador un Lote de PT!");
+                CajaDialogo.Error("No se ha Cargado un Lote de PT!");
                 txtlote.Focus();
                 return;
             }
