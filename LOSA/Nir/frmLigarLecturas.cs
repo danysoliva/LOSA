@@ -30,7 +30,8 @@ namespace LOSA.Nir
         {
             this.Close();
         }
-          public void load_data()
+
+        public void load_data()
         {
             string Query = @"sp_load_all_ingreso_lote_nir";
             try
@@ -50,14 +51,14 @@ namespace LOSA.Nir
             }
         }
 
-        private void btnLectura_Click(object sender, EventArgs e)
+        private void repostbtnLigar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             try
             {
                 var gridView = (GridView)grd_data.FocusedView;
                 var row = (dsNir.nir_loteRow)gridView.GetFocusedDataRow();
 
-                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado,row.sap,row.odoo,row.nombre_comercial,row.id,row.lote,row.numero_transaccion);
+                frmUnirLigaduras frm = new frmUnirLigaduras(UsuarioLogeado, row.sap,"", row.nombre_comercial, row.id, row.lote, row.numero_transaccion, row.id_mp);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
 

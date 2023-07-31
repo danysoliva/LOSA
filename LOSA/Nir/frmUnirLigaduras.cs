@@ -21,10 +21,38 @@ namespace LOSA.Nir
         string Sap;
         string odoo;
         string MP;
-        int id_lote;
+        int id_lote, id_mp;
         string lote;
-        int n_referencia;
+        int n_transaccion;
         DataOperations dp = new DataOperations();
+
+        //public frmUnirLigaduras(UserLogin Puser,
+        //                        string pSap,
+        //                        string podoo,
+        //                        string pMP,
+        //                        int pid_lote,
+        //                        string plote,
+        //                        int pn_referencia)
+        //{
+        //    InitializeComponent();
+        //    UsuarioLogeado = Puser;
+        //    Sap = pSap;
+        //    odoo = podoo;
+        //    MP = pMP;
+        //    id_lote = pid_lote;//Id_ingreso
+        //    lote = plote;
+        //    n_transaccion = pn_referencia;
+        //    txtingreso.Text = n_transaccion.ToString();
+        //    txtlote.Text = lote;
+        //    txtmp.Text = MP;
+        //    txtsap.Text = Sap;
+        //    txtodoo.Text = odoo;
+        //    MateriaPrima mp = new MateriaPrima();
+        //    mp.RecuperarRegistroFromCode(Sap);
+        //    id_mp = mp.IdMP_ACS;
+        //    load_Data();
+                
+        //}
 
         public frmUnirLigaduras(UserLogin Puser,
                                 string pSap,
@@ -32,25 +60,29 @@ namespace LOSA.Nir
                                 string pMP,
                                 int pid_lote,
                                 string plote,
-                                int pn_referencia)
+                                int pn_referencia,
+                                int pid_mp)
         {
+
             InitializeComponent();
             UsuarioLogeado = Puser;
             Sap = pSap;
             odoo = podoo;
             MP = pMP;
-            id_lote = pid_lote;//Id_ingreso
+            id_lote = pid_lote;
             lote = plote;
-            n_referencia = pn_referencia;
-            txtingreso.Text = n_referencia.ToString();
-            txtlote.Text = lote;
+            n_transaccion = pn_referencia;
+            txtingreso.Text = n_transaccion.ToString();
+            txtlote.Text = plote;
             txtmp.Text = MP;
-            txtsap.Text = Sap;
             txtodoo.Text = odoo;
+            txtsap.Text = Sap;
+            id_mp = pid_mp;
             load_Data();
-                
+
         }
-          public void load_Data() 
+
+        public void load_Data() 
         {
             string Query = @"sp_load_ingreso_lecturas_ingreso_lote_nir";
             try
@@ -59,7 +91,11 @@ namespace LOSA.Nir
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(Query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_ingreso", id_lote);//Id_ingreso
+                cmd.Parameters.AddWithValue("@num_transaccion", txtingreso.Text.Trim());
+                cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                cmd.Parameters.AddWithValue("@lote", txtlote.Text.Trim());
+                //cmd.Parameters.AddWithValue("@id_ingreso", id_lote);//Id_ingreso
+
                 dsNir.lecturas_ingreso.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsNir.lecturas_ingreso);
@@ -80,7 +116,7 @@ namespace LOSA.Nir
         {
             try
             {
-                frmSeleccionarLectura frm = new frmSeleccionarLectura(UsuarioLogeado, id_lote);
+                frmSeleccionarLectura frm = new frmSeleccionarLectura(UsuarioLogeado, n_transaccion, id_mp, lote);
                 if (frm.ShowDialog()== DialogResult.OK)
                 {
 

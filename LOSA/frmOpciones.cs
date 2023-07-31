@@ -320,7 +320,10 @@ namespace LOSA
                             UsuarioLogeado.Idnivel = idNivel4;
                             break;
                         case 2://Basic No Autorization
-
+                            BasicView();
+                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
+                            tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;
                             break;
                         case 3://Medium Autorization
 
@@ -2616,7 +2619,7 @@ namespace LOSA
             FCT_MRP mrp = new FCT_MRP(this.UsuarioLogeado);
             mrp.MdiParent = this.MdiParent;
             mrp.ActiveUserCode = ActiveUserCode;
-            mrp.ShowDialog();
+            mrp.Show();
         }
 
         private void simpleButton48_Click(object sender, EventArgs e)

@@ -30,70 +30,70 @@ namespace LOSA.Trazabilidad
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions25 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject97 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject98 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject99 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject100 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions26 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject101 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject102 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject103 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject104 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions11 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject41 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject42 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject43 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject44 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions12 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject45 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject46 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject47 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject48 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions27 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject105 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject106 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject107 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject108 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions28 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject109 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject110 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject111 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject112 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions29 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject113 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject114 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject115 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject116 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions30 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject117 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject118 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject119 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject120 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions31 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject121 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject122 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject123 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject124 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions32 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject125 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject126 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject127 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject128 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions33 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject129 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject130 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject131 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject132 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions34 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject133 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject134 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject135 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject136 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions35 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject137 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject138 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject139 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject140 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions36 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject141 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject142 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject143 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject144 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridView22 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colContado1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdCantidadDosificadaLoteLink = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -116,6 +116,7 @@ namespace LOSA.Trazabilidad
             this.cmdDetalleBatch = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid_mp4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colinclusion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAvance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView21 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn104 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn105 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -497,6 +498,7 @@ namespace LOSA.Trazabilidad
             this.tggMuestras = new DevExpress.XtraEditors.ToggleSwitch();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.btnExport = new DevExpress.XtraEditors.SimpleButton();
             this.gridSplitContainer1 = new DevExpress.XtraGrid.GridSplitContainer();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -1067,6 +1069,7 @@ namespace LOSA.Trazabilidad
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdLinkLoteMP)).BeginInit();
@@ -1456,10 +1459,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn183});
             this.gridView22.DetailHeight = 673;
             this.gridView22.GridControl = this.GridRuta4_detalle_trz_lote_pt;
+            this.gridView22.LevelIndent = 0;
             this.gridView22.Name = "gridView22";
             this.gridView22.OptionsBehavior.ReadOnly = true;
             this.gridView22.OptionsView.ShowFooter = true;
             this.gridView22.OptionsView.ShowGroupPanel = false;
+            this.gridView22.PreviewIndent = 0;
             // 
             // colContado1
             // 
@@ -1476,11 +1481,10 @@ namespace LOSA.Trazabilidad
             // cmdCantidadDosificadaLoteLink
             // 
             this.cmdCantidadDosificadaLoteLink.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions25.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions25.Image")));
             this.cmdCantidadDosificadaLoteLink.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions25, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject97, serializableAppearanceObject98, serializableAppearanceObject99, serializableAppearanceObject100, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdCantidadDosificadaLoteLink.Name = "cmdCantidadDosificadaLoteLink";
-            this.cmdCantidadDosificadaLoteLink.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdCantidadDosificadaLoteLink_ButtonClick);
             // 
             // collote_mp1
             // 
@@ -1495,11 +1499,10 @@ namespace LOSA.Trazabilidad
             // cmdLinkLoteMP
             // 
             this.cmdLinkLoteMP.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions26.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions26.Image")));
             this.cmdLinkLoteMP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions26, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject101, serializableAppearanceObject102, serializableAppearanceObject103, serializableAppearanceObject104, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdLinkLoteMP.Name = "cmdLinkLoteMP";
-            this.cmdLinkLoteMP.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdLinkLoteMP_ButtonClick);
             // 
             // colid_mp5
             // 
@@ -1523,21 +1526,16 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridRuta4_detalle_trz_lote_pt.DataMember = "Ruta4_H_trz_lote_pt";
             this.GridRuta4_detalle_trz_lote_pt.DataSource = this.dsMantoTrazabilidad;
-            this.GridRuta4_detalle_trz_lote_pt.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            gridLevelNode1.LevelTemplate = this.gridView22;
-            gridLevelNode1.RelationName = "Detalle de Lotes";
+            this.GridRuta4_detalle_trz_lote_pt.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
+            gridLevelNode3.LevelTemplate = this.gridView22;
+            gridLevelNode3.RelationName = "Detalle de Lotes";
             this.GridRuta4_detalle_trz_lote_pt.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode3});
             this.GridRuta4_detalle_trz_lote_pt.Location = new System.Drawing.Point(0, 0);
             this.GridRuta4_detalle_trz_lote_pt.MainView = this.gridView20;
-            this.GridRuta4_detalle_trz_lote_pt.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.GridRuta4_detalle_trz_lote_pt.Margin = new System.Windows.Forms.Padding(6);
             this.GridRuta4_detalle_trz_lote_pt.Name = "GridRuta4_detalle_trz_lote_pt";
-            this.GridRuta4_detalle_trz_lote_pt.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.cmdLinkLoteMP,
-            this.cmdLinkButtonMP,
-            this.cmdCantidadDosificadaLoteLink,
-            this.cmdDetalleBatch});
-            this.GridRuta4_detalle_trz_lote_pt.Size = new System.Drawing.Size(2677, 1113);
+            this.GridRuta4_detalle_trz_lote_pt.Size = new System.Drawing.Size(2662, 1073);
             this.GridRuta4_detalle_trz_lote_pt.TabIndex = 40;
             this.GridRuta4_detalle_trz_lote_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView20,
@@ -1561,12 +1559,16 @@ namespace LOSA.Trazabilidad
             this.colcant_batch_real,
             this.colkg_real_dosificado,
             this.colid_mp4,
-            this.colinclusion});
+            this.colinclusion,
+            this.colAvance});
             this.gridView20.DetailHeight = 673;
             this.gridView20.GridControl = this.GridRuta4_detalle_trz_lote_pt;
+            this.gridView20.LevelIndent = 0;
             this.gridView20.Name = "gridView20";
             this.gridView20.OptionsView.ShowAutoFilterRow = true;
             this.gridView20.OptionsView.ShowFooter = true;
+            this.gridView20.PreviewIndent = 0;
+            this.gridView20.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView20_RowStyle);
             // 
             // colid_mp3
             // 
@@ -1589,11 +1591,10 @@ namespace LOSA.Trazabilidad
             // cmdLinkButtonMP
             // 
             this.cmdLinkButtonMP.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions27.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions27.Image")));
             this.cmdLinkButtonMP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions27, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject105, serializableAppearanceObject106, serializableAppearanceObject107, serializableAppearanceObject108, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdLinkButtonMP.Name = "cmdLinkButtonMP";
-            this.cmdLinkButtonMP.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdLinkButtonMP_ButtonClick);
             // 
             // colItemCode1
             // 
@@ -1661,12 +1662,11 @@ namespace LOSA.Trazabilidad
             // cmdDetalleBatch
             // 
             this.cmdDetalleBatch.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions28.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions28.Image")));
             this.cmdDetalleBatch.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions28, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject109, serializableAppearanceObject110, serializableAppearanceObject111, serializableAppearanceObject112, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDetalleBatch.Name = "cmdDetalleBatch";
             this.cmdDetalleBatch.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmdDetalleBatch.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDetalleBatch_ButtonClick);
             // 
             // colid_mp4
             // 
@@ -1687,6 +1687,14 @@ namespace LOSA.Trazabilidad
             this.colinclusion.VisibleIndex = 7;
             this.colinclusion.Width = 150;
             // 
+            // colAvance
+            // 
+            this.colAvance.Caption = "Avance";
+            this.colAvance.FieldName = "%avance";
+            this.colAvance.MinWidth = 40;
+            this.colAvance.Name = "colAvance";
+            this.colAvance.Width = 150;
+            // 
             // gridView21
             // 
             this.gridView21.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -1695,6 +1703,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn106});
             this.gridView21.DetailHeight = 673;
             this.gridView21.GridControl = this.GridRuta4_detalle_trz_lote_pt;
+            this.gridView21.LevelIndent = 0;
             this.gridView21.Name = "gridView21";
             this.gridView21.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView21.OptionsDetail.EnableMasterViewMode = false;
@@ -1704,6 +1713,7 @@ namespace LOSA.Trazabilidad
             this.gridView21.OptionsView.ShowChildrenInGroupPanel = true;
             this.gridView21.OptionsView.ShowFooter = true;
             this.gridView21.OptionsView.ShowGroupPanel = false;
+            this.gridView21.PreviewIndent = 0;
             // 
             // gridColumn104
             // 
@@ -1759,7 +1769,7 @@ namespace LOSA.Trazabilidad
             this.navigationFrame1.Controls.Add(this.npRuta4_V2);
             this.navigationFrame1.Controls.Add(this.npDetalleDespacho_Ruta4);
             this.navigationFrame1.Location = new System.Drawing.Point(532, 0);
-            this.navigationFrame1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.navigationFrame1.Margin = new System.Windows.Forms.Padding(6);
             this.navigationFrame1.Name = "navigationFrame1";
             this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.npRuta2,
@@ -1774,7 +1784,7 @@ namespace LOSA.Trazabilidad
             this.npRuta4_V2,
             this.npDetalleDespacho_Ruta4});
             this.navigationFrame1.SelectedPage = this.npMain;
-            this.navigationFrame1.Size = new System.Drawing.Size(2746, 1646);
+            this.navigationFrame1.Size = new System.Drawing.Size(2684, 1610);
             this.navigationFrame1.TabIndex = 0;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
@@ -1792,9 +1802,9 @@ namespace LOSA.Trazabilidad
             this.npRuta2.Controls.Add(this.txtLoteMP_Ruta2);
             this.npRuta2.Controls.Add(this.simpleButton5);
             this.npRuta2.Controls.Add(this.labelControl22);
-            this.npRuta2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npRuta2.Margin = new System.Windows.Forms.Padding(6);
             this.npRuta2.Name = "npRuta2";
-            this.npRuta2.Size = new System.Drawing.Size(5492, 3165);
+            this.npRuta2.Size = new System.Drawing.Size(2684, 1610);
             // 
             // gridTilapia_lotes_ruta2
             // 
@@ -1802,14 +1812,14 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridTilapia_lotes_ruta2.DataMember = "pt_list_trzTilapiaRuta2";
             this.gridTilapia_lotes_ruta2.DataSource = this.dsReportesTRZ;
-            this.gridTilapia_lotes_ruta2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridTilapia_lotes_ruta2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridTilapia_lotes_ruta2.Location = new System.Drawing.Point(10, 1035);
             this.gridTilapia_lotes_ruta2.MainView = this.gridView6;
-            this.gridTilapia_lotes_ruta2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridTilapia_lotes_ruta2.Margin = new System.Windows.Forms.Padding(6);
             this.gridTilapia_lotes_ruta2.Name = "gridTilapia_lotes_ruta2";
             this.gridTilapia_lotes_ruta2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdTrz_Lote_PT_from_ruta3Tilapia});
-            this.gridTilapia_lotes_ruta2.Size = new System.Drawing.Size(728, 606);
+            this.gridTilapia_lotes_ruta2.Size = new System.Drawing.Size(728, 1360);
             this.gridTilapia_lotes_ruta2.TabIndex = 107;
             this.gridTilapia_lotes_ruta2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -1827,10 +1837,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn110});
             this.gridView6.DetailHeight = 673;
             this.gridView6.GridControl = this.gridTilapia_lotes_ruta2;
+            this.gridView6.LevelIndent = 0;
             this.gridView6.Name = "gridView6";
             this.gridView6.OptionsView.ShowAutoFilterRow = true;
             this.gridView6.OptionsView.ShowFooter = true;
             this.gridView6.OptionsView.ShowViewCaption = true;
+            this.gridView6.PreviewIndent = 0;
             this.gridView6.ViewCaption = "Tilapia";
             this.gridView6.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView6_SelectionChanged);
             this.gridView6.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView6_FocusedRowChanged);
@@ -1882,10 +1894,10 @@ namespace LOSA.Trazabilidad
             // 
             this.gridPT_CamaronRuta2.DataMember = "pt_list_trzCamaronRuta2";
             this.gridPT_CamaronRuta2.DataSource = this.dsReportesTRZ;
-            this.gridPT_CamaronRuta2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridPT_CamaronRuta2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridPT_CamaronRuta2.Location = new System.Drawing.Point(10, 317);
             this.gridPT_CamaronRuta2.MainView = this.gridView24;
-            this.gridPT_CamaronRuta2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridPT_CamaronRuta2.Margin = new System.Windows.Forms.Padding(6);
             this.gridPT_CamaronRuta2.Name = "gridPT_CamaronRuta2";
             this.gridPT_CamaronRuta2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdLinkPT_From_ruta3});
@@ -1903,10 +1915,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn113});
             this.gridView24.DetailHeight = 673;
             this.gridView24.GridControl = this.gridPT_CamaronRuta2;
+            this.gridView24.LevelIndent = 0;
             this.gridView24.Name = "gridView24";
             this.gridView24.OptionsView.ShowAutoFilterRow = true;
             this.gridView24.OptionsView.ShowFooter = true;
             this.gridView24.OptionsView.ShowViewCaption = true;
+            this.gridView24.PreviewIndent = 0;
             this.gridView24.ViewCaption = "Camarón";
             this.gridView24.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView24_SelectionChanged);
             this.gridView24.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView24_FocusedRowChanged);
@@ -1964,9 +1978,9 @@ namespace LOSA.Trazabilidad
             this.labelControl25.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl25.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl25.Location = new System.Drawing.Point(746, 260);
-            this.labelControl25.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl25.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(1976, 46);
+            this.labelControl25.Size = new System.Drawing.Size(3288, 46);
             this.labelControl25.TabIndex = 57;
             this.labelControl25.Text = "Clientes que recibieron el Producto ";
             // 
@@ -1977,15 +1991,15 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcDespachoRuta2.DataMember = "detalle_destinos";
             this.gcDespachoRuta2.DataSource = this.dsReportesTRZ;
-            this.gcDespachoRuta2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcDespachoRuta2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gcDespachoRuta2.Location = new System.Drawing.Point(746, 317);
             this.gcDespachoRuta2.MainView = this.gvDespacho;
-            this.gcDespachoRuta2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcDespachoRuta2.Margin = new System.Windows.Forms.Padding(6);
             this.gcDespachoRuta2.Name = "gcDespachoRuta2";
             this.gcDespachoRuta2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnLinkBoletaView_,
             this.cmdDespachoIdRuta});
-            this.gcDespachoRuta2.Size = new System.Drawing.Size(1994, 1323);
+            this.gcDespachoRuta2.Size = new System.Drawing.Size(3306, 2077);
             this.gcDespachoRuta2.TabIndex = 56;
             this.gcDespachoRuta2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDespacho});
@@ -2011,7 +2025,9 @@ namespace LOSA.Trazabilidad
             this.gridColumn44});
             this.gvDespacho.DetailHeight = 673;
             this.gvDespacho.GridControl = this.gcDespachoRuta2;
+            this.gvDespacho.LevelIndent = 0;
             this.gvDespacho.Name = "gvDespacho";
+            this.gvDespacho.PreviewIndent = 0;
             // 
             // gridColumn29
             // 
@@ -2197,7 +2213,7 @@ namespace LOSA.Trazabilidad
             this.labelControl23.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl23.Appearance.Options.UseFont = true;
             this.labelControl23.Location = new System.Drawing.Point(56, 117);
-            this.labelControl23.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl23.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl23.Name = "labelControl23";
             this.labelControl23.Size = new System.Drawing.Size(120, 45);
             this.labelControl23.TabIndex = 54;
@@ -2210,7 +2226,7 @@ namespace LOSA.Trazabilidad
             this.lblMateriaPrimaName.Appearance.Options.UseFont = true;
             this.lblMateriaPrimaName.Appearance.Options.UseForeColor = true;
             this.lblMateriaPrimaName.Location = new System.Drawing.Point(190, 117);
-            this.lblMateriaPrimaName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblMateriaPrimaName.Margin = new System.Windows.Forms.Padding(6);
             this.lblMateriaPrimaName.Name = "lblMateriaPrimaName";
             this.lblMateriaPrimaName.Size = new System.Drawing.Size(122, 45);
             this.lblMateriaPrimaName.TabIndex = 53;
@@ -2221,7 +2237,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton6.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton6.Appearance.Options.UseFont = true;
             this.simpleButton6.Location = new System.Drawing.Point(782, 169);
-            this.simpleButton6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton6.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(236, 79);
             this.simpleButton6.TabIndex = 52;
@@ -2233,7 +2249,7 @@ namespace LOSA.Trazabilidad
             this.btnGenerarRuta1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnGenerarRuta1.Appearance.Options.UseFont = true;
             this.btnGenerarRuta1.Location = new System.Drawing.Point(534, 169);
-            this.btnGenerarRuta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGenerarRuta1.Margin = new System.Windows.Forms.Padding(6);
             this.btnGenerarRuta1.Name = "btnGenerarRuta1";
             this.btnGenerarRuta1.Size = new System.Drawing.Size(236, 79);
             this.btnGenerarRuta1.TabIndex = 51;
@@ -2245,7 +2261,7 @@ namespace LOSA.Trazabilidad
             this.labelControl24.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl24.Appearance.Options.UseFont = true;
             this.labelControl24.Location = new System.Drawing.Point(56, 198);
-            this.labelControl24.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl24.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl24.Name = "labelControl24";
             this.labelControl24.Size = new System.Drawing.Size(122, 45);
             this.labelControl24.TabIndex = 50;
@@ -2254,7 +2270,7 @@ namespace LOSA.Trazabilidad
             // txtLoteMP_Ruta2
             // 
             this.txtLoteMP_Ruta2.Location = new System.Drawing.Point(190, 187);
-            this.txtLoteMP_Ruta2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtLoteMP_Ruta2.Margin = new System.Windows.Forms.Padding(6);
             this.txtLoteMP_Ruta2.Name = "txtLoteMP_Ruta2";
             this.txtLoteMP_Ruta2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoteMP_Ruta2.Properties.Appearance.Options.UseFont = true;
@@ -2270,8 +2286,8 @@ namespace LOSA.Trazabilidad
             this.simpleButton5.Appearance.Options.UseBackColor = true;
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton5.Location = new System.Drawing.Point(2378, 52);
-            this.simpleButton5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton5.Location = new System.Drawing.Point(3690, 52);
+            this.simpleButton5.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(312, 100);
             this.simpleButton5.TabIndex = 47;
@@ -2288,9 +2304,9 @@ namespace LOSA.Trazabilidad
             this.labelControl22.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl22.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl22.Location = new System.Drawing.Point(6, 83);
-            this.labelControl22.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl22.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(2734, 75);
+            this.labelControl22.Size = new System.Drawing.Size(4046, 75);
             this.labelControl22.TabIndex = 40;
             this.labelControl22.Text = "Trazabilidad de lote Materia Prima";
             // 
@@ -2299,9 +2315,9 @@ namespace LOSA.Trazabilidad
             this.npMain.Controls.Add(this.btnSalir);
             this.npMain.Controls.Add(this.labelControl80);
             this.npMain.Controls.Add(this.labelControl79);
-            this.npMain.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npMain.Margin = new System.Windows.Forms.Padding(6);
             this.npMain.Name = "npMain";
-            this.npMain.Size = new System.Drawing.Size(5492, 3165);
+            this.npMain.Size = new System.Drawing.Size(2684, 1610);
             this.npMain.Paint += new System.Windows.Forms.PaintEventHandler(this.npMain_Paint);
             // 
             // btnSalir
@@ -2312,8 +2328,8 @@ namespace LOSA.Trazabilidad
             this.btnSalir.Appearance.Options.UseBackColor = true;
             this.btnSalir.Appearance.Options.UseFont = true;
             this.btnSalir.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnSalir.Location = new System.Drawing.Point(2350, 54);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSalir.Location = new System.Drawing.Point(3662, 54);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(288, 79);
             this.btnSalir.TabIndex = 95;
@@ -2329,10 +2345,10 @@ namespace LOSA.Trazabilidad
             this.labelControl80.Appearance.Options.UseTextOptions = true;
             this.labelControl80.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl80.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl80.Location = new System.Drawing.Point(336, 215);
-            this.labelControl80.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl80.Location = new System.Drawing.Point(280, 215);
+            this.labelControl80.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl80.Name = "labelControl80";
-            this.labelControl80.Size = new System.Drawing.Size(2074, 433);
+            this.labelControl80.Size = new System.Drawing.Size(2258, 433);
             this.labelControl80.TabIndex = 1;
             this.labelControl80.Text = resources.GetString("labelControl80.Text");
             // 
@@ -2346,9 +2362,9 @@ namespace LOSA.Trazabilidad
             this.labelControl79.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl79.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl79.Location = new System.Drawing.Point(18, 88);
-            this.labelControl79.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl79.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl79.Name = "labelControl79";
-            this.labelControl79.Size = new System.Drawing.Size(2716, 44);
+            this.labelControl79.Size = new System.Drawing.Size(4028, 44);
             this.labelControl79.TabIndex = 0;
             this.labelControl79.Text = "Rutas de Trazabilidad";
             // 
@@ -2363,9 +2379,9 @@ namespace LOSA.Trazabilidad
             this.navigationPage3.Controls.Add(this.grDetalle);
             this.navigationPage3.Controls.Add(this.slueCliente);
             this.navigationPage3.Controls.Add(this.labelControl6);
-            this.navigationPage3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.navigationPage3.Margin = new System.Windows.Forms.Padding(6);
             this.navigationPage3.Name = "navigationPage3";
-            this.navigationPage3.Size = new System.Drawing.Size(5492, 3165);
+            this.navigationPage3.Size = new System.Drawing.Size(2684, 1610);
             // 
             // cmdExportExcelClientes_lotes
             // 
@@ -2376,8 +2392,8 @@ namespace LOSA.Trazabilidad
             this.cmdExportExcelClientes_lotes.Appearance.Options.UseFont = true;
             this.cmdExportExcelClientes_lotes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdExportExcelClientes_lotes.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
-            this.cmdExportExcelClientes_lotes.Location = new System.Drawing.Point(2412, 112);
-            this.cmdExportExcelClientes_lotes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdExportExcelClientes_lotes.Location = new System.Drawing.Point(3724, 112);
+            this.cmdExportExcelClientes_lotes.Margin = new System.Windows.Forms.Padding(6);
             this.cmdExportExcelClientes_lotes.Name = "cmdExportExcelClientes_lotes";
             this.cmdExportExcelClientes_lotes.Size = new System.Drawing.Size(288, 79);
             this.cmdExportExcelClientes_lotes.TabIndex = 101;
@@ -2394,7 +2410,7 @@ namespace LOSA.Trazabilidad
             this.navigationPage1.Controls.Add(this.gridControl4);
             this.navigationPage1.Controls.Add(this.searchLookUpEdit1);
             this.navigationPage1.Controls.Add(this.labelControl86);
-            this.navigationPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.navigationPage1.Margin = new System.Windows.Forms.Padding(6);
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(2602, 1646);
             // 
@@ -2406,7 +2422,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.Location = new System.Drawing.Point(1746, 112);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(288, 79);
             this.simpleButton1.TabIndex = 98;
@@ -2416,10 +2432,10 @@ namespace LOSA.Trazabilidad
             // 
             this.gridControl3.DataMember = "Direccion_Clientes";
             this.gridControl3.DataSource = this.dsCalidad;
-            this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl3.Location = new System.Drawing.Point(188, 112);
             this.gridControl3.MainView = this.gridView7;
-            this.gridControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl3.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
@@ -2448,9 +2464,11 @@ namespace LOSA.Trazabilidad
             this.gridColumn82});
             this.gridView7.DetailHeight = 673;
             this.gridView7.GridControl = this.gridControl3;
+            this.gridView7.LevelIndent = 0;
             this.gridView7.Name = "gridView7";
             this.gridView7.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView7.OptionsView.ShowGroupPanel = false;
+            this.gridView7.PreviewIndent = 0;
             // 
             // gridColumn73
             // 
@@ -2569,7 +2587,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton10.Appearance.Options.UseFont = true;
             this.simpleButton10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton10.Location = new System.Drawing.Point(2268, 23);
-            this.simpleButton10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton10.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(288, 79);
             this.simpleButton10.TabIndex = 96;
@@ -2585,7 +2603,7 @@ namespace LOSA.Trazabilidad
             this.labelControl83.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl83.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl83.Location = new System.Drawing.Point(6, 23);
-            this.labelControl83.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl83.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl83.Name = "labelControl83";
             this.labelControl83.Size = new System.Drawing.Size(2572, 48);
             this.labelControl83.TabIndex = 85;
@@ -2597,10 +2615,10 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl4.DataSource = this.despachadoClientesBindingSource;
-            this.gridControl4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl4.Location = new System.Drawing.Point(6, 317);
             this.gridControl4.MainView = this.gridView15;
-            this.gridControl4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl4.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl4.Name = "gridControl4";
             this.gridControl4.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit2});
@@ -2629,10 +2647,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn88});
             this.gridView15.DetailHeight = 673;
             this.gridView15.GridControl = this.gridControl4;
+            this.gridView15.LevelIndent = 0;
             this.gridView15.Name = "gridView15";
             this.gridView15.OptionsView.ShowAutoFilterRow = true;
             this.gridView15.OptionsView.ShowFooter = true;
             this.gridView15.OptionsView.ShowGroupPanel = false;
+            this.gridView15.PreviewIndent = 0;
             // 
             // gridColumn83
             // 
@@ -2710,7 +2730,7 @@ namespace LOSA.Trazabilidad
             this.searchLookUpEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchLookUpEdit1.Location = new System.Drawing.Point(2018, 17);
-            this.searchLookUpEdit1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.searchLookUpEdit1.Margin = new System.Windows.Forms.Padding(6);
             this.searchLookUpEdit1.Name = "searchLookUpEdit1";
             this.searchLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.searchLookUpEdit1.Properties.Appearance.Options.UseFont = true;
@@ -2743,9 +2763,11 @@ namespace LOSA.Trazabilidad
             this.gridColumn99});
             this.gridView16.DetailHeight = 673;
             this.gridView16.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView16.LevelIndent = 0;
             this.gridView16.Name = "gridView16";
             this.gridView16.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView16.OptionsView.ShowGroupPanel = false;
+            this.gridView16.PreviewIndent = 0;
             // 
             // gridColumn92
             // 
@@ -2835,7 +2857,7 @@ namespace LOSA.Trazabilidad
             this.labelControl86.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl86.Appearance.Options.UseFont = true;
             this.labelControl86.Location = new System.Drawing.Point(18, 112);
-            this.labelControl86.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl86.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl86.Name = "labelControl86";
             this.labelControl86.Size = new System.Drawing.Size(164, 44);
             this.labelControl86.TabIndex = 82;
@@ -2849,7 +2871,7 @@ namespace LOSA.Trazabilidad
             this.cmdBuscarCliente_.Appearance.Options.UseFont = true;
             this.cmdBuscarCliente_.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdBuscarCliente_.Location = new System.Drawing.Point(1746, 112);
-            this.cmdBuscarCliente_.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdBuscarCliente_.Margin = new System.Windows.Forms.Padding(6);
             this.cmdBuscarCliente_.Name = "cmdBuscarCliente_";
             this.cmdBuscarCliente_.Size = new System.Drawing.Size(288, 79);
             this.cmdBuscarCliente_.TabIndex = 98;
@@ -2860,10 +2882,10 @@ namespace LOSA.Trazabilidad
             // 
             this.gridControl2.DataMember = "Direccion_Clientes";
             this.gridControl2.DataSource = this.dsCalidad;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl2.Location = new System.Drawing.Point(188, 112);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdEliminar});
@@ -2888,9 +2910,11 @@ namespace LOSA.Trazabilidad
             this.colEliminar});
             this.gridView2.DetailHeight = 673;
             this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.LevelIndent = 0;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.PreviewIndent = 0;
             // 
             // colid6
             // 
@@ -3009,8 +3033,8 @@ namespace LOSA.Trazabilidad
             this.btnRuta3Home.Appearance.Options.UseBackColor = true;
             this.btnRuta3Home.Appearance.Options.UseFont = true;
             this.btnRuta3Home.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnRuta3Home.Location = new System.Drawing.Point(2412, 23);
-            this.btnRuta3Home.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRuta3Home.Location = new System.Drawing.Point(3724, 23);
+            this.btnRuta3Home.Margin = new System.Windows.Forms.Padding(6);
             this.btnRuta3Home.Name = "btnRuta3Home";
             this.btnRuta3Home.Size = new System.Drawing.Size(288, 79);
             this.btnRuta3Home.TabIndex = 96;
@@ -3027,9 +3051,9 @@ namespace LOSA.Trazabilidad
             this.labelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl20.Location = new System.Drawing.Point(6, 23);
-            this.labelControl20.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl20.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(2716, 48);
+            this.labelControl20.Size = new System.Drawing.Size(4028, 48);
             this.labelControl20.TabIndex = 85;
             this.labelControl20.Text = "Trazabilidad Clientes - Lotes";
             // 
@@ -3039,14 +3063,14 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grDetalle.DataSource = this.despachadoClientesBindingSource;
-            this.grDetalle.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grDetalle.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grDetalle.Location = new System.Drawing.Point(6, 317);
             this.grDetalle.MainView = this.gvDespachado;
-            this.grDetalle.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grDetalle.Margin = new System.Windows.Forms.Padding(6);
             this.grDetalle.Name = "grDetalle";
             this.grDetalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnVer});
-            this.grDetalle.Size = new System.Drawing.Size(2734, 1323);
+            this.grDetalle.Size = new System.Drawing.Size(4046, 2077);
             this.grDetalle.TabIndex = 84;
             this.grDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDespachado});
@@ -3069,10 +3093,12 @@ namespace LOSA.Trazabilidad
             this.gvDespachado.GridControl = this.grDetalle;
             this.gvDespachado.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "kg", this.colkg, "")});
+            this.gvDespachado.LevelIndent = 0;
             this.gvDespachado.Name = "gvDespachado";
             this.gvDespachado.OptionsView.ShowAutoFilterRow = true;
             this.gvDespachado.OptionsView.ShowFooter = true;
             this.gvDespachado.OptionsView.ShowGroupedColumns = true;
+            this.gvDespachado.PreviewIndent = 0;
             // 
             // collote_producto_termiado
             // 
@@ -3174,7 +3200,7 @@ namespace LOSA.Trazabilidad
             this.slueCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.slueCliente.Location = new System.Drawing.Point(2018, 17);
-            this.slueCliente.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.slueCliente.Margin = new System.Windows.Forms.Padding(6);
             this.slueCliente.Name = "slueCliente";
             this.slueCliente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.slueCliente.Properties.Appearance.Options.UseFont = true;
@@ -3185,7 +3211,7 @@ namespace LOSA.Trazabilidad
             this.slueCliente.Properties.NullText = "";
             this.slueCliente.Properties.PopupView = this.gridView1;
             this.slueCliente.Properties.ValueMember = "id";
-            this.slueCliente.Size = new System.Drawing.Size(334, 60);
+            this.slueCliente.Size = new System.Drawing.Size(1646, 60);
             this.slueCliente.TabIndex = 83;
             this.slueCliente.Visible = false;
             this.slueCliente.EditValueChanged += new System.EventHandler(this.slueCliente_EditValueChanged);
@@ -3203,9 +3229,11 @@ namespace LOSA.Trazabilidad
             this.coldireccion2});
             this.gridView1.DetailHeight = 673;
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.LevelIndent = 0;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.PreviewIndent = 0;
             // 
             // gridColumn1
             // 
@@ -3295,7 +3323,7 @@ namespace LOSA.Trazabilidad
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(18, 112);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(164, 44);
             this.labelControl6.TabIndex = 82;
@@ -3345,9 +3373,9 @@ namespace LOSA.Trazabilidad
             this.npInfoLote.Controls.Add(this.btnGuardar);
             this.npInfoLote.Controls.Add(this.labelControl26);
             this.npInfoLote.Controls.Add(this.simpleButton7);
-            this.npInfoLote.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npInfoLote.Margin = new System.Windows.Forms.Padding(6);
             this.npInfoLote.Name = "npInfoLote";
-            this.npInfoLote.Size = new System.Drawing.Size(5492, 3165);
+            this.npInfoLote.Size = new System.Drawing.Size(2684, 1610);
             // 
             // tabControl1
             // 
@@ -3362,10 +3390,10 @@ namespace LOSA.Trazabilidad
             this.tabControl1.Controls.Add(this.tb_inventario);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(6, 608);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(2740, 1038);
+            this.tabControl1.Size = new System.Drawing.Size(4052, 1792);
             this.tabControl1.TabIndex = 92;
             // 
             // tabPage1
@@ -3373,10 +3401,10 @@ namespace LOSA.Trazabilidad
             this.tabPage1.Controls.Add(this.PnNir);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(8, 59);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage1.Size = new System.Drawing.Size(2724, 971);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage1.Size = new System.Drawing.Size(4036, 1725);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NIR";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -3394,9 +3422,9 @@ namespace LOSA.Trazabilidad
             this.PnNir.Controls.Add(this.grd_nir);
             this.PnNir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnNir.Location = new System.Drawing.Point(6, 6);
-            this.PnNir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PnNir.Margin = new System.Windows.Forms.Padding(6);
             this.PnNir.Name = "PnNir";
-            this.PnNir.Size = new System.Drawing.Size(2712, 959);
+            this.PnNir.Size = new System.Drawing.Size(4024, 1713);
             this.PnNir.TabIndex = 1;
             // 
             // simpleButton9
@@ -3404,7 +3432,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton9.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton9.Appearance.Options.UseFont = true;
             this.simpleButton9.Location = new System.Drawing.Point(38, 37);
-            this.simpleButton9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton9.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(480, 75);
             this.simpleButton9.TabIndex = 21;
@@ -3417,9 +3445,9 @@ namespace LOSA.Trazabilidad
             this.panelControl9.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl9.Location = new System.Drawing.Point(0, 19);
-            this.panelControl9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl9.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(22, 921);
+            this.panelControl9.Size = new System.Drawing.Size(22, 1675);
             this.panelControl9.TabIndex = 20;
             // 
             // panelControl2
@@ -3428,10 +3456,10 @@ namespace LOSA.Trazabilidad
             this.panelControl2.Appearance.Options.UseBackColor = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl2.Location = new System.Drawing.Point(2690, 19);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl2.Location = new System.Drawing.Point(4002, 19);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(22, 921);
+            this.panelControl2.Size = new System.Drawing.Size(22, 1675);
             this.panelControl2.TabIndex = 19;
             // 
             // panelControl3
@@ -3440,10 +3468,10 @@ namespace LOSA.Trazabilidad
             this.panelControl3.Appearance.Options.UseBackColor = true;
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(0, 940);
-            this.panelControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl3.Location = new System.Drawing.Point(0, 1694);
+            this.panelControl3.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(2712, 19);
+            this.panelControl3.Size = new System.Drawing.Size(4024, 19);
             this.panelControl3.TabIndex = 18;
             // 
             // panelControl8
@@ -3453,9 +3481,9 @@ namespace LOSA.Trazabilidad
             this.panelControl8.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl8.Location = new System.Drawing.Point(0, 0);
-            this.panelControl8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl8.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(2712, 19);
+            this.panelControl8.Size = new System.Drawing.Size(4024, 19);
             this.panelControl8.TabIndex = 17;
             // 
             // grd_nir
@@ -3465,12 +3493,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_nir.DataMember = "show_nir";
             this.grd_nir.DataSource = this.dsMantenimientoCBindingSource;
-            this.grd_nir.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_nir.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_nir.Location = new System.Drawing.Point(28, 133);
             this.grd_nir.MainView = this.grdv_nir;
-            this.grd_nir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_nir.Margin = new System.Windows.Forms.Padding(6);
             this.grd_nir.Name = "grd_nir";
-            this.grd_nir.Size = new System.Drawing.Size(2654, 799);
+            this.grd_nir.Size = new System.Drawing.Size(3966, 1552);
             this.grd_nir.TabIndex = 1;
             this.grd_nir.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_nir});
@@ -3517,10 +3545,12 @@ namespace LOSA.Trazabilidad
             this.colbit_validacion});
             this.grdv_nir.DetailHeight = 673;
             this.grdv_nir.GridControl = this.grd_nir;
+            this.grdv_nir.LevelIndent = 0;
             this.grdv_nir.Name = "grdv_nir";
             this.grdv_nir.OptionsView.ShowAutoFilterRow = true;
             this.grdv_nir.OptionsView.ShowGroupPanel = false;
             this.grdv_nir.OptionsView.ShowViewCaption = true;
+            this.grdv_nir.PreviewIndent = 0;
             this.grdv_nir.ViewCaption = "BROMATOLOGIA";
             // 
             // gridColumn45
@@ -3602,10 +3632,10 @@ namespace LOSA.Trazabilidad
             this.tabPage3.Controls.Add(this.grd_parametros);
             this.tabPage3.Controls.Add(this.panelControl4);
             this.tabPage3.Location = new System.Drawing.Point(8, 59);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage3.Size = new System.Drawing.Size(2724, 971);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage3.Size = new System.Drawing.Size(4036, 1725);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Datos y Adjuntos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -3614,10 +3644,10 @@ namespace LOSA.Trazabilidad
             // 
             this.grd_adjuntos.DataMember = "adjuntos";
             this.grd_adjuntos.DataSource = this.dsMantenimientoC;
-            this.grd_adjuntos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_adjuntos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_adjuntos.Location = new System.Drawing.Point(1422, 25);
             this.grd_adjuntos.MainView = this.grdv_adjuntos;
-            this.grd_adjuntos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_adjuntos.Margin = new System.Windows.Forms.Padding(6);
             this.grd_adjuntos.Name = "grd_adjuntos";
             this.grd_adjuntos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnAdjuntarDocumento,
@@ -3665,10 +3695,12 @@ namespace LOSA.Trazabilidad
             this.Desadjuntar});
             this.grdv_adjuntos.DetailHeight = 673;
             this.grdv_adjuntos.GridControl = this.grd_adjuntos;
+            this.grdv_adjuntos.LevelIndent = 0;
             this.grdv_adjuntos.Name = "grdv_adjuntos";
             this.grdv_adjuntos.OptionsView.ShowAutoFilterRow = true;
             this.grdv_adjuntos.OptionsView.ShowGroupPanel = false;
             this.grdv_adjuntos.OptionsView.ShowViewCaption = true;
+            this.grdv_adjuntos.PreviewIndent = 0;
             this.grdv_adjuntos.ViewCaption = "Documentos Adjuntos";
             // 
             // colAdjunto
@@ -3752,7 +3784,7 @@ namespace LOSA.Trazabilidad
             this.btnAbrirAdjunto.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.btnAbrirAdjunto.Name = "btnAbrirAdjunto";
-            this.btnAbrirAdjunto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnAbrirAdjunto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
             // colid_conf
             // 
@@ -3792,14 +3824,14 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_parametros.DataMember = "parametros";
             this.grd_parametros.DataSource = this.dsMantenimientoC;
-            this.grd_parametros.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_parametros.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_parametros.Location = new System.Drawing.Point(12, 27);
             this.grd_parametros.MainView = this.grdv_parametros;
-            this.grd_parametros.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_parametros.Margin = new System.Windows.Forms.Padding(6);
             this.grd_parametros.Name = "grd_parametros";
             this.grd_parametros.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnseleccionar});
-            this.grd_parametros.Size = new System.Drawing.Size(1492, 417);
+            this.grd_parametros.Size = new System.Drawing.Size(2804, 417);
             this.grd_parametros.TabIndex = 0;
             this.grd_parametros.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_parametros});
@@ -3837,9 +3869,11 @@ namespace LOSA.Trazabilidad
             this.grdv_parametros.DetailHeight = 673;
             this.grdv_parametros.GridControl = this.grd_parametros;
             this.grdv_parametros.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.grdv_parametros.LevelIndent = 0;
             this.grdv_parametros.Name = "grdv_parametros";
             this.grdv_parametros.OptionsView.ShowAutoFilterRow = true;
             this.grdv_parametros.OptionsView.ShowGroupPanel = false;
+            this.grdv_parametros.PreviewIndent = 0;
             // 
             // gridColumn46
             // 
@@ -3941,9 +3975,9 @@ namespace LOSA.Trazabilidad
             this.panelControl4.Controls.Add(this.labelControl51);
             this.panelControl4.Controls.Add(this.spTipoporcentaje);
             this.panelControl4.Location = new System.Drawing.Point(6, 456);
-            this.panelControl4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl4.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1498, 456);
+            this.panelControl4.Size = new System.Drawing.Size(2810, 456);
             this.panelControl4.TabIndex = 49;
             // 
             // spsustentable
@@ -3954,7 +3988,7 @@ namespace LOSA.Trazabilidad
             0,
             0});
             this.spsustentable.Location = new System.Drawing.Point(602, 235);
-            this.spsustentable.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.spsustentable.Margin = new System.Windows.Forms.Padding(6);
             this.spsustentable.Name = "spsustentable";
             this.spsustentable.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.spsustentable.Properties.Appearance.Options.UseFont = true;
@@ -3966,7 +4000,7 @@ namespace LOSA.Trazabilidad
             // pc_Mp
             // 
             this.pc_Mp.Location = new System.Drawing.Point(1020, 115);
-            this.pc_Mp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pc_Mp.Margin = new System.Windows.Forms.Padding(6);
             this.pc_Mp.Name = "pc_Mp";
             this.pc_Mp.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pc_Mp.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
@@ -3976,7 +4010,7 @@ namespace LOSA.Trazabilidad
             // hyIUCN
             // 
             this.hyIUCN.Location = new System.Drawing.Point(602, 394);
-            this.hyIUCN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.hyIUCN.Margin = new System.Windows.Forms.Padding(6);
             this.hyIUCN.Name = "hyIUCN";
             this.hyIUCN.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.hyIUCN.Properties.Appearance.Options.UseFont = true;
@@ -3986,7 +4020,7 @@ namespace LOSA.Trazabilidad
             // hyfishsource
             // 
             this.hyfishsource.Location = new System.Drawing.Point(602, 342);
-            this.hyfishsource.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.hyfishsource.Margin = new System.Windows.Forms.Padding(6);
             this.hyfishsource.Name = "hyfishsource";
             this.hyfishsource.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.hyfishsource.Properties.Appearance.Options.UseFont = true;
@@ -3998,7 +4032,7 @@ namespace LOSA.Trazabilidad
             this.btnAdjuntarImagen.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdjuntarImagen.Appearance.Options.UseFont = true;
             this.btnAdjuntarImagen.Location = new System.Drawing.Point(1020, 367);
-            this.btnAdjuntarImagen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAdjuntarImagen.Margin = new System.Windows.Forms.Padding(6);
             this.btnAdjuntarImagen.Name = "btnAdjuntarImagen";
             this.btnAdjuntarImagen.Size = new System.Drawing.Size(334, 79);
             this.btnAdjuntarImagen.TabIndex = 2;
@@ -4008,7 +4042,7 @@ namespace LOSA.Trazabilidad
             // txtPLantaSenasa
             // 
             this.txtPLantaSenasa.Location = new System.Drawing.Point(602, 179);
-            this.txtPLantaSenasa.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtPLantaSenasa.Margin = new System.Windows.Forms.Padding(6);
             this.txtPLantaSenasa.Name = "txtPLantaSenasa";
             this.txtPLantaSenasa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtPLantaSenasa.Properties.Appearance.Options.UseFont = true;
@@ -4018,7 +4052,7 @@ namespace LOSA.Trazabilidad
             // grd_tipo
             // 
             this.grd_tipo.Location = new System.Drawing.Point(1020, 6);
-            this.grd_tipo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_tipo.Margin = new System.Windows.Forms.Padding(6);
             this.grd_tipo.Name = "grd_tipo";
             this.grd_tipo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.grd_tipo.Properties.Appearance.Options.UseFont = true;
@@ -4057,9 +4091,11 @@ namespace LOSA.Trazabilidad
             this.coldescripcion3});
             this.gridView8.DetailHeight = 673;
             this.gridView8.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView8.LevelIndent = 0;
             this.gridView8.Name = "gridView8";
             this.gridView8.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView8.OptionsView.ShowGroupPanel = false;
+            this.gridView8.PreviewIndent = 0;
             // 
             // colid4
             // 
@@ -4081,7 +4117,7 @@ namespace LOSA.Trazabilidad
             // grd_origen
             // 
             this.grd_origen.Location = new System.Drawing.Point(602, 288);
-            this.grd_origen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_origen.Margin = new System.Windows.Forms.Padding(6);
             this.grd_origen.Name = "grd_origen";
             this.grd_origen.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.grd_origen.Properties.Appearance.Options.UseFont = true;
@@ -4120,9 +4156,11 @@ namespace LOSA.Trazabilidad
             this.coldescripcion4});
             this.gridView9.DetailHeight = 673;
             this.gridView9.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView9.LevelIndent = 0;
             this.gridView9.Name = "gridView9";
             this.gridView9.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView9.OptionsView.ShowGroupPanel = false;
+            this.gridView9.PreviewIndent = 0;
             // 
             // colid5
             // 
@@ -4144,7 +4182,7 @@ namespace LOSA.Trazabilidad
             // grd_pesca
             // 
             this.grd_pesca.Location = new System.Drawing.Point(602, 96);
-            this.grd_pesca.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_pesca.Margin = new System.Windows.Forms.Padding(6);
             this.grd_pesca.Name = "grd_pesca";
             this.grd_pesca.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.grd_pesca.Properties.Appearance.Options.UseFont = true;
@@ -4185,9 +4223,11 @@ namespace LOSA.Trazabilidad
             this.gridColumn48});
             this.gridView10.DetailHeight = 673;
             this.gridView10.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView10.LevelIndent = 0;
             this.gridView10.Name = "gridView10";
             this.gridView10.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView10.OptionsView.ShowGroupPanel = false;
+            this.gridView10.PreviewIndent = 0;
             // 
             // colid2
             // 
@@ -4210,7 +4250,7 @@ namespace LOSA.Trazabilidad
             // grd_origenespecie
             // 
             this.grd_origenespecie.Location = new System.Drawing.Point(602, 42);
-            this.grd_origenespecie.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_origenespecie.Margin = new System.Windows.Forms.Padding(6);
             this.grd_origenespecie.Name = "grd_origenespecie";
             this.grd_origenespecie.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grd_origenespecie.Properties.Appearance.Options.UseFont = true;
@@ -4251,9 +4291,11 @@ namespace LOSA.Trazabilidad
             this.colfishsource});
             this.gridLookUpEdit1View.DetailHeight = 673;
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.LevelIndent = 0;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.gridLookUpEdit1View.PreviewIndent = 0;
             // 
             // colid3
             // 
@@ -4291,7 +4333,7 @@ namespace LOSA.Trazabilidad
             this.labelControl42.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl42.Appearance.Options.UseFont = true;
             this.labelControl42.Location = new System.Drawing.Point(404, 400);
-            this.labelControl42.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl42.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl42.Name = "labelControl42";
             this.labelControl42.Size = new System.Drawing.Size(170, 35);
             this.labelControl42.TabIndex = 49;
@@ -4302,7 +4344,7 @@ namespace LOSA.Trazabilidad
             this.labelControl43.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl43.Appearance.Options.UseFont = true;
             this.labelControl43.Location = new System.Drawing.Point(348, 350);
-            this.labelControl43.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl43.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl43.Name = "labelControl43";
             this.labelControl43.Size = new System.Drawing.Size(227, 35);
             this.labelControl43.TabIndex = 48;
@@ -4313,7 +4355,7 @@ namespace LOSA.Trazabilidad
             this.labelControl45.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl45.Appearance.Options.UseFont = true;
             this.labelControl45.Location = new System.Drawing.Point(938, 67);
-            this.labelControl45.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl45.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl45.Name = "labelControl45";
             this.labelControl45.Size = new System.Drawing.Size(72, 30);
             this.labelControl45.TabIndex = 47;
@@ -4324,7 +4366,7 @@ namespace LOSA.Trazabilidad
             this.labelControl46.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl46.Appearance.Options.UseFont = true;
             this.labelControl46.Location = new System.Drawing.Point(962, 13);
-            this.labelControl46.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl46.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl46.Name = "labelControl46";
             this.labelControl46.Size = new System.Drawing.Size(48, 30);
             this.labelControl46.TabIndex = 46;
@@ -4335,7 +4377,7 @@ namespace LOSA.Trazabilidad
             this.labelControl47.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl47.Appearance.Options.UseFont = true;
             this.labelControl47.Location = new System.Drawing.Point(384, 290);
-            this.labelControl47.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl47.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl47.Name = "labelControl47";
             this.labelControl47.Size = new System.Drawing.Size(173, 36);
             this.labelControl47.TabIndex = 45;
@@ -4347,7 +4389,7 @@ namespace LOSA.Trazabilidad
             this.labelControl48.Appearance.Options.UseFont = true;
             this.labelControl48.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl48.Location = new System.Drawing.Point(136, 233);
-            this.labelControl48.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl48.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl48.Name = "labelControl48";
             this.labelControl48.Size = new System.Drawing.Size(454, 38);
             this.labelControl48.TabIndex = 44;
@@ -4359,7 +4401,7 @@ namespace LOSA.Trazabilidad
             this.labelControl49.Appearance.Options.UseFont = true;
             this.labelControl49.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl49.Location = new System.Drawing.Point(28, 156);
-            this.labelControl49.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl49.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl49.Name = "labelControl49";
             this.labelControl49.Size = new System.Drawing.Size(578, 65);
             this.labelControl49.TabIndex = 43;
@@ -4370,7 +4412,7 @@ namespace LOSA.Trazabilidad
             this.labelControl50.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl50.Appearance.Options.UseFont = true;
             this.labelControl50.Location = new System.Drawing.Point(328, 98);
-            this.labelControl50.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl50.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl50.Name = "labelControl50";
             this.labelControl50.Size = new System.Drawing.Size(229, 36);
             this.labelControl50.TabIndex = 42;
@@ -4381,7 +4423,7 @@ namespace LOSA.Trazabilidad
             this.labelControl51.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl51.Appearance.Options.UseFont = true;
             this.labelControl51.Location = new System.Drawing.Point(378, 48);
-            this.labelControl51.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl51.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl51.Name = "labelControl51";
             this.labelControl51.Size = new System.Drawing.Size(178, 36);
             this.labelControl51.TabIndex = 41;
@@ -4395,7 +4437,7 @@ namespace LOSA.Trazabilidad
             0,
             0});
             this.spTipoporcentaje.Location = new System.Drawing.Point(1020, 60);
-            this.spTipoporcentaje.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.spTipoporcentaje.Margin = new System.Windows.Forms.Padding(6);
             this.spTipoporcentaje.Name = "spTipoporcentaje";
             this.spTipoporcentaje.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.spTipoporcentaje.Properties.Appearance.Options.UseFont = true;
@@ -4408,10 +4450,10 @@ namespace LOSA.Trazabilidad
             // 
             this.tabPage4.Controls.Add(this.panelControl6);
             this.tabPage4.Location = new System.Drawing.Point(8, 59);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage4.Size = new System.Drawing.Size(2724, 971);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage4.Size = new System.Drawing.Size(4036, 1725);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Logistica";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -4428,9 +4470,9 @@ namespace LOSA.Trazabilidad
             this.panelControl6.Controls.Add(this.panelControl21);
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(6, 6);
-            this.panelControl6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl6.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(2712, 959);
+            this.panelControl6.Size = new System.Drawing.Size(4024, 1713);
             this.panelControl6.TabIndex = 51;
             // 
             // panelControl25
@@ -4447,9 +4489,9 @@ namespace LOSA.Trazabilidad
             this.panelControl25.Controls.Add(this.labelControl57);
             this.panelControl25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl25.Location = new System.Drawing.Point(22, 21);
-            this.panelControl25.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl25.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl25.Name = "panelControl25";
-            this.panelControl25.Size = new System.Drawing.Size(2668, 919);
+            this.panelControl25.Size = new System.Drawing.Size(3980, 1673);
             this.panelControl25.TabIndex = 64;
             // 
             // labelControl52
@@ -4457,7 +4499,7 @@ namespace LOSA.Trazabilidad
             this.labelControl52.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
             this.labelControl52.Appearance.Options.UseFont = true;
             this.labelControl52.Location = new System.Drawing.Point(1328, 12);
-            this.labelControl52.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl52.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl52.Name = "labelControl52";
             this.labelControl52.Size = new System.Drawing.Size(484, 37);
             this.labelControl52.TabIndex = 49;
@@ -4467,7 +4509,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEmpaque4.EditValue = true;
             this.rdEmpaque4.Location = new System.Drawing.Point(2264, 263);
-            this.rdEmpaque4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEmpaque4.Margin = new System.Windows.Forms.Padding(6);
             this.rdEmpaque4.Name = "rdEmpaque4";
             this.rdEmpaque4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.rdEmpaque4.Properties.Appearance.Options.UseFont = true;
@@ -4482,7 +4524,7 @@ namespace LOSA.Trazabilidad
             this.labelControl53.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl53.Appearance.Options.UseFont = true;
             this.labelControl53.Location = new System.Drawing.Point(1424, 62);
-            this.labelControl53.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl53.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl53.Name = "labelControl53";
             this.labelControl53.Size = new System.Drawing.Size(874, 35);
             this.labelControl53.TabIndex = 50;
@@ -4492,7 +4534,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEmpaque3.EditValue = true;
             this.rdEmpaque3.Location = new System.Drawing.Point(2264, 173);
-            this.rdEmpaque3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEmpaque3.Margin = new System.Windows.Forms.Padding(6);
             this.rdEmpaque3.Name = "rdEmpaque3";
             this.rdEmpaque3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.rdEmpaque3.Properties.Appearance.Options.UseFont = true;
@@ -4506,7 +4548,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEmpaque1.EditValue = true;
             this.rdEmpaque1.Location = new System.Drawing.Point(2264, 54);
-            this.rdEmpaque1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEmpaque1.Margin = new System.Windows.Forms.Padding(6);
             this.rdEmpaque1.Name = "rdEmpaque1";
             this.rdEmpaque1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.rdEmpaque1.Properties.Appearance.Options.UseFont = true;
@@ -4522,15 +4564,15 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.grd_logistica.DataMember = "logisticaInformacion";
             this.grd_logistica.DataSource = this.dsMantenimientoC;
-            this.grd_logistica.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            gridLevelNode2.RelationName = "Level1";
+            this.grd_logistica.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
+            gridLevelNode4.RelationName = "Level1";
             this.grd_logistica.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode4});
             this.grd_logistica.Location = new System.Drawing.Point(6, 12);
             this.grd_logistica.MainView = this.grdv_logistica;
-            this.grd_logistica.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_logistica.Margin = new System.Windows.Forms.Padding(6);
             this.grd_logistica.Name = "grd_logistica";
-            this.grd_logistica.Size = new System.Drawing.Size(1266, 896);
+            this.grd_logistica.Size = new System.Drawing.Size(1266, 1650);
             this.grd_logistica.TabIndex = 39;
             this.grd_logistica.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_logistica});
@@ -4562,10 +4604,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn50});
             this.grdv_logistica.DetailHeight = 673;
             this.grdv_logistica.GridControl = this.grd_logistica;
+            this.grdv_logistica.LevelIndent = 0;
             this.grdv_logistica.Name = "grdv_logistica";
             this.grdv_logistica.OptionsView.ShowAutoFilterRow = true;
             this.grdv_logistica.OptionsView.ShowGroupPanel = false;
             this.grdv_logistica.OptionsView.ShowViewCaption = true;
+            this.grdv_logistica.PreviewIndent = 0;
             this.grdv_logistica.ViewCaption = "Logistica";
             // 
             // colresp
@@ -4594,7 +4638,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEmpaque2.EditValue = true;
             this.rdEmpaque2.Location = new System.Drawing.Point(2264, 112);
-            this.rdEmpaque2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEmpaque2.Margin = new System.Windows.Forms.Padding(6);
             this.rdEmpaque2.Name = "rdEmpaque2";
             this.rdEmpaque2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.rdEmpaque2.Properties.Appearance.Options.UseFont = true;
@@ -4609,7 +4653,7 @@ namespace LOSA.Trazabilidad
             this.labelControl54.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl54.Appearance.Options.UseFont = true;
             this.labelControl54.Location = new System.Drawing.Point(1424, 112);
-            this.labelControl54.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl54.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl54.Name = "labelControl54";
             this.labelControl54.Size = new System.Drawing.Size(603, 70);
             this.labelControl54.TabIndex = 52;
@@ -4620,7 +4664,7 @@ namespace LOSA.Trazabilidad
             this.labelControl56.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl56.Appearance.Options.UseFont = true;
             this.labelControl56.Location = new System.Drawing.Point(1424, 181);
-            this.labelControl56.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl56.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl56.Name = "labelControl56";
             this.labelControl56.Size = new System.Drawing.Size(754, 70);
             this.labelControl56.TabIndex = 54;
@@ -4632,7 +4676,7 @@ namespace LOSA.Trazabilidad
             this.labelControl57.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl57.Appearance.Options.UseFont = true;
             this.labelControl57.Location = new System.Drawing.Point(1424, 250);
-            this.labelControl57.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl57.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl57.Name = "labelControl57";
             this.labelControl57.Size = new System.Drawing.Size(572, 70);
             this.labelControl57.TabIndex = 56;
@@ -4645,10 +4689,10 @@ namespace LOSA.Trazabilidad
             this.panelControl24.Appearance.Options.UseBackColor = true;
             this.panelControl24.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl24.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl24.Location = new System.Drawing.Point(2690, 21);
-            this.panelControl24.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl24.Location = new System.Drawing.Point(4002, 21);
+            this.panelControl24.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl24.Name = "panelControl24";
-            this.panelControl24.Size = new System.Drawing.Size(22, 919);
+            this.panelControl24.Size = new System.Drawing.Size(22, 1673);
             this.panelControl24.TabIndex = 61;
             // 
             // panelControl23
@@ -4657,10 +4701,10 @@ namespace LOSA.Trazabilidad
             this.panelControl23.Appearance.Options.UseBackColor = true;
             this.panelControl23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl23.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl23.Location = new System.Drawing.Point(22, 940);
-            this.panelControl23.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl23.Location = new System.Drawing.Point(22, 1694);
+            this.panelControl23.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl23.Name = "panelControl23";
-            this.panelControl23.Size = new System.Drawing.Size(2690, 19);
+            this.panelControl23.Size = new System.Drawing.Size(4002, 19);
             this.panelControl23.TabIndex = 60;
             // 
             // panelControl22
@@ -4670,9 +4714,9 @@ namespace LOSA.Trazabilidad
             this.panelControl22.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl22.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl22.Location = new System.Drawing.Point(0, 21);
-            this.panelControl22.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl22.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl22.Name = "panelControl22";
-            this.panelControl22.Size = new System.Drawing.Size(22, 938);
+            this.panelControl22.Size = new System.Drawing.Size(22, 1692);
             this.panelControl22.TabIndex = 59;
             // 
             // panelControl21
@@ -4682,9 +4726,9 @@ namespace LOSA.Trazabilidad
             this.panelControl21.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl21.Location = new System.Drawing.Point(0, 0);
-            this.panelControl21.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl21.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl21.Name = "panelControl21";
-            this.panelControl21.Size = new System.Drawing.Size(2712, 21);
+            this.panelControl21.Size = new System.Drawing.Size(4024, 21);
             this.panelControl21.TabIndex = 58;
             // 
             // tabPage2
@@ -4692,10 +4736,10 @@ namespace LOSA.Trazabilidad
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.tabPage2.Controls.Add(this.panelControl5);
             this.tabPage2.Location = new System.Drawing.Point(8, 59);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage2.Size = new System.Drawing.Size(2724, 971);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage2.Size = new System.Drawing.Size(4036, 1725);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Estado de Materia prima y transporte";
             // 
@@ -4745,16 +4789,16 @@ namespace LOSA.Trazabilidad
             this.panelControl5.Controls.Add(this.labelControl76);
             this.panelControl5.Controls.Add(this.txtusercalidad);
             this.panelControl5.Location = new System.Drawing.Point(6, 0);
-            this.panelControl5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl5.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(2702, 965);
+            this.panelControl5.Size = new System.Drawing.Size(4014, 1719);
             this.panelControl5.TabIndex = 84;
             // 
             // cmdSelectUltimasCargas
             // 
             this.cmdSelectUltimasCargas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdSelectUltimasCargas.Location = new System.Drawing.Point(2304, 629);
-            this.cmdSelectUltimasCargas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdSelectUltimasCargas.Margin = new System.Windows.Forms.Padding(6);
             this.cmdSelectUltimasCargas.Name = "cmdSelectUltimasCargas";
             this.cmdSelectUltimasCargas.Size = new System.Drawing.Size(106, 62);
             this.cmdSelectUltimasCargas.TabIndex = 54;
@@ -4765,7 +4809,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtobservacionTras.EditValue = "";
             this.txtobservacionTras.Location = new System.Drawing.Point(16, 792);
-            this.txtobservacionTras.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtobservacionTras.Margin = new System.Windows.Forms.Padding(6);
             this.txtobservacionTras.Name = "txtobservacionTras";
             this.txtobservacionTras.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtobservacionTras.Properties.Appearance.Options.UseFont = true;
@@ -4775,10 +4819,10 @@ namespace LOSA.Trazabilidad
             // gridControl5
             // 
             this.gridControl5.DataMember = "ultimas_cargas";
-            this.gridControl5.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl5.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl5.Location = new System.Drawing.Point(1592, 627);
             this.gridControl5.MainView = this.gridView11;
-            this.gridControl5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl5.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl5.Name = "gridControl5";
             this.gridControl5.Size = new System.Drawing.Size(700, 231);
             this.gridControl5.TabIndex = 88;
@@ -4791,8 +4835,10 @@ namespace LOSA.Trazabilidad
             this.coldescripcion5});
             this.gridView11.DetailHeight = 673;
             this.gridView11.GridControl = this.gridControl5;
+            this.gridView11.LevelIndent = 0;
             this.gridView11.Name = "gridView11";
             this.gridView11.OptionsView.ShowGroupPanel = false;
+            this.gridView11.PreviewIndent = 0;
             // 
             // coldescripcion5
             // 
@@ -4809,7 +4855,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdTranporte3.EditValue = true;
             this.rdTranporte3.Location = new System.Drawing.Point(1150, 544);
-            this.rdTranporte3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdTranporte3.Margin = new System.Windows.Forms.Padding(6);
             this.rdTranporte3.Name = "rdTranporte3";
             this.rdTranporte3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdTranporte3.Properties.Appearance.Options.UseFont = true;
@@ -4823,7 +4869,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdTranporte2.EditValue = true;
             this.rdTranporte2.Location = new System.Drawing.Point(1150, 504);
-            this.rdTranporte2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdTranporte2.Margin = new System.Windows.Forms.Padding(6);
             this.rdTranporte2.Name = "rdTranporte2";
             this.rdTranporte2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdTranporte2.Properties.Appearance.Options.UseFont = true;
@@ -4837,7 +4883,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdTranporte1.EditValue = true;
             this.rdTranporte1.Location = new System.Drawing.Point(1150, 463);
-            this.rdTranporte1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdTranporte1.Margin = new System.Windows.Forms.Padding(6);
             this.rdTranporte1.Name = "rdTranporte1";
             this.rdTranporte1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdTranporte1.Properties.Appearance.Options.UseFont = true;
@@ -4851,7 +4897,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEstadomp.EditValue = true;
             this.rdEstadomp.Location = new System.Drawing.Point(10, 44);
-            this.rdEstadomp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEstadomp.Margin = new System.Windows.Forms.Padding(6);
             this.rdEstadomp.Name = "rdEstadomp";
             this.rdEstadomp.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdEstadomp.Properties.Appearance.Options.UseFont = true;
@@ -4866,7 +4912,7 @@ namespace LOSA.Trazabilidad
             this.labelControl58.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl58.Appearance.Options.UseFont = true;
             this.labelControl58.Location = new System.Drawing.Point(10, 10);
-            this.labelControl58.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl58.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl58.Name = "labelControl58";
             this.labelControl58.Size = new System.Drawing.Size(354, 36);
             this.labelControl58.TabIndex = 10;
@@ -4876,7 +4922,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdTranporte4.EditValue = true;
             this.rdTranporte4.Location = new System.Drawing.Point(1654, 479);
-            this.rdTranporte4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdTranporte4.Margin = new System.Windows.Forms.Padding(6);
             this.rdTranporte4.Name = "rdTranporte4";
             this.rdTranporte4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdTranporte4.Properties.Appearance.Options.UseFont = true;
@@ -4891,7 +4937,7 @@ namespace LOSA.Trazabilidad
             this.labelControl59.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl59.Appearance.Options.UseFont = true;
             this.labelControl59.Location = new System.Drawing.Point(6, 433);
-            this.labelControl59.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl59.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl59.Name = "labelControl59";
             this.labelControl59.Size = new System.Drawing.Size(455, 45);
             this.labelControl59.TabIndex = 29;
@@ -4902,7 +4948,7 @@ namespace LOSA.Trazabilidad
             this.labelControl60.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl60.Appearance.Options.UseFont = true;
             this.labelControl60.Location = new System.Drawing.Point(16, 473);
-            this.labelControl60.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl60.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl60.Name = "labelControl60";
             this.labelControl60.Size = new System.Drawing.Size(1072, 36);
             this.labelControl60.TabIndex = 30;
@@ -4913,7 +4959,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtdireccion.Enabled = false;
             this.txtdireccion.Location = new System.Drawing.Point(986, 383);
-            this.txtdireccion.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtdireccion.Margin = new System.Windows.Forms.Padding(6);
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(424, 40);
             this.txtdireccion.TabIndex = 74;
@@ -4923,7 +4969,7 @@ namespace LOSA.Trazabilidad
             this.labelControl61.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl61.Appearance.Options.UseFont = true;
             this.labelControl61.Location = new System.Drawing.Point(16, 627);
-            this.labelControl61.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl61.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl61.Name = "labelControl61";
             this.labelControl61.Size = new System.Drawing.Size(0, 36);
             this.labelControl61.TabIndex = 81;
@@ -4933,7 +4979,7 @@ namespace LOSA.Trazabilidad
             this.labelControl62.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl62.Appearance.Options.UseFont = true;
             this.labelControl62.Location = new System.Drawing.Point(832, 383);
-            this.labelControl62.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl62.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl62.Name = "labelControl62";
             this.labelControl62.Size = new System.Drawing.Size(113, 36);
             this.labelControl62.TabIndex = 73;
@@ -4944,7 +4990,7 @@ namespace LOSA.Trazabilidad
             this.labelControl63.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl63.Appearance.Options.UseFont = true;
             this.labelControl63.Location = new System.Drawing.Point(20, 513);
-            this.labelControl63.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl63.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl63.Name = "labelControl63";
             this.labelControl63.Size = new System.Drawing.Size(1043, 36);
             this.labelControl63.TabIndex = 44;
@@ -4956,7 +5002,7 @@ namespace LOSA.Trazabilidad
             this.labelControl64.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl64.Appearance.Options.UseFont = true;
             this.labelControl64.Location = new System.Drawing.Point(808, 10);
-            this.labelControl64.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl64.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl64.Name = "labelControl64";
             this.labelControl64.Size = new System.Drawing.Size(556, 36);
             this.labelControl64.TabIndex = 25;
@@ -4969,7 +5015,7 @@ namespace LOSA.Trazabilidad
             this.labelControl65.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelControl65.Appearance.Options.UseFont = true;
             this.labelControl65.Location = new System.Drawing.Point(1542, 583);
-            this.labelControl65.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl65.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl65.Name = "labelControl65";
             this.labelControl65.Size = new System.Drawing.Size(628, 36);
             this.labelControl65.TabIndex = 80;
@@ -4979,7 +5025,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txttransporte.Enabled = false;
             this.txttransporte.Location = new System.Drawing.Point(294, 383);
-            this.txttransporte.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txttransporte.Margin = new System.Windows.Forms.Padding(6);
             this.txttransporte.Name = "txttransporte";
             this.txttransporte.Size = new System.Drawing.Size(424, 40);
             this.txttransporte.TabIndex = 72;
@@ -4989,7 +5035,7 @@ namespace LOSA.Trazabilidad
             this.labelControl66.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl66.Appearance.Options.UseFont = true;
             this.labelControl66.Location = new System.Drawing.Point(784, 54);
-            this.labelControl66.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl66.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl66.Name = "labelControl66";
             this.labelControl66.Size = new System.Drawing.Size(672, 72);
             this.labelControl66.TabIndex = 26;
@@ -5001,7 +5047,7 @@ namespace LOSA.Trazabilidad
             this.txtmp3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtmp3.Location = new System.Drawing.Point(1658, 737);
-            this.txtmp3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtmp3.Margin = new System.Windows.Forms.Padding(6);
             this.txtmp3.Name = "txtmp3";
             this.txtmp3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtmp3.Properties.Appearance.Options.UseFont = true;
@@ -5014,7 +5060,7 @@ namespace LOSA.Trazabilidad
             this.labelControl67.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl67.Appearance.Options.UseFont = true;
             this.labelControl67.Location = new System.Drawing.Point(148, 383);
-            this.labelControl67.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl67.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl67.Name = "labelControl67";
             this.labelControl67.Size = new System.Drawing.Size(130, 36);
             this.labelControl67.TabIndex = 71;
@@ -5025,7 +5071,7 @@ namespace LOSA.Trazabilidad
             this.labelControl68.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl68.Appearance.Options.UseFont = true;
             this.labelControl68.Location = new System.Drawing.Point(20, 554);
-            this.labelControl68.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl68.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl68.Name = "labelControl68";
             this.labelControl68.Size = new System.Drawing.Size(957, 36);
             this.labelControl68.TabIndex = 46;
@@ -5037,7 +5083,7 @@ namespace LOSA.Trazabilidad
             this.labelControl69.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl69.Appearance.Options.UseFont = true;
             this.labelControl69.Location = new System.Drawing.Point(10, 131);
-            this.labelControl69.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl69.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl69.Name = "labelControl69";
             this.labelControl69.Size = new System.Drawing.Size(173, 36);
             this.labelControl69.TabIndex = 27;
@@ -5048,7 +5094,7 @@ namespace LOSA.Trazabilidad
             this.txtmp2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtmp2.Location = new System.Drawing.Point(1658, 681);
-            this.txtmp2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtmp2.Margin = new System.Windows.Forms.Padding(6);
             this.txtmp2.Name = "txtmp2";
             this.txtmp2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtmp2.Properties.Appearance.Options.UseFont = true;
@@ -5060,7 +5106,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(986, 340);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(6);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(424, 40);
             this.txtTelefono.TabIndex = 70;
@@ -5070,11 +5116,11 @@ namespace LOSA.Trazabilidad
             this.txtObseracionesMP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtObseracionesMP.Location = new System.Drawing.Point(0, 163);
-            this.txtObseracionesMP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtObseracionesMP.Margin = new System.Windows.Forms.Padding(6);
             this.txtObseracionesMP.Name = "txtObseracionesMP";
             this.txtObseracionesMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtObseracionesMP.Properties.Appearance.Options.UseFont = true;
-            this.txtObseracionesMP.Size = new System.Drawing.Size(2668, 125);
+            this.txtObseracionesMP.Size = new System.Drawing.Size(3980, 125);
             this.txtObseracionesMP.TabIndex = 28;
             // 
             // txtmp1
@@ -5082,7 +5128,7 @@ namespace LOSA.Trazabilidad
             this.txtmp1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtmp1.Location = new System.Drawing.Point(1656, 627);
-            this.txtmp1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtmp1.Margin = new System.Windows.Forms.Padding(6);
             this.txtmp1.Name = "txtmp1";
             this.txtmp1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmp1.Properties.Appearance.Options.UseFont = true;
@@ -5095,7 +5141,7 @@ namespace LOSA.Trazabilidad
             this.labelControl70.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl70.Appearance.Options.UseFont = true;
             this.labelControl70.Location = new System.Drawing.Point(832, 340);
-            this.labelControl70.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl70.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl70.Name = "labelControl70";
             this.labelControl70.Size = new System.Drawing.Size(122, 36);
             this.labelControl70.TabIndex = 69;
@@ -5106,7 +5152,7 @@ namespace LOSA.Trazabilidad
             this.labelControl71.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl71.Appearance.Options.UseFont = true;
             this.labelControl71.Location = new System.Drawing.Point(1698, 438);
-            this.labelControl71.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl71.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl71.Name = "labelControl71";
             this.labelControl71.Size = new System.Drawing.Size(407, 45);
             this.labelControl71.TabIndex = 75;
@@ -5117,7 +5163,7 @@ namespace LOSA.Trazabilidad
             this.labelControl72.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl72.Appearance.Options.UseFont = true;
             this.labelControl72.Location = new System.Drawing.Point(16, 298);
-            this.labelControl72.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl72.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl72.Name = "labelControl72";
             this.labelControl72.Size = new System.Drawing.Size(257, 36);
             this.labelControl72.TabIndex = 48;
@@ -5126,8 +5172,8 @@ namespace LOSA.Trazabilidad
             // radioGroup8
             // 
             this.radioGroup8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioGroup8.Location = new System.Drawing.Point(1874, 998);
-            this.radioGroup8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radioGroup8.Location = new System.Drawing.Point(1874, 1752);
+            this.radioGroup8.Margin = new System.Windows.Forms.Padding(6);
             this.radioGroup8.Name = "radioGroup8";
             this.radioGroup8.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "ACEPTADO"),
@@ -5139,7 +5185,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txttransportista.Enabled = false;
             this.txttransportista.Location = new System.Drawing.Point(294, 340);
-            this.txttransportista.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txttransportista.Margin = new System.Windows.Forms.Padding(6);
             this.txttransportista.Name = "txttransportista";
             this.txttransportista.Size = new System.Drawing.Size(424, 40);
             this.txttransportista.TabIndex = 68;
@@ -5149,7 +5195,7 @@ namespace LOSA.Trazabilidad
             this.labelControl73.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl73.Appearance.Options.UseFont = true;
             this.labelControl73.Location = new System.Drawing.Point(1530, 27);
-            this.labelControl73.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl73.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl73.Name = "labelControl73";
             this.labelControl73.Size = new System.Drawing.Size(192, 36);
             this.labelControl73.TabIndex = 63;
@@ -5159,7 +5205,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtuserlogistica.Enabled = false;
             this.txtuserlogistica.Location = new System.Drawing.Point(294, 298);
-            this.txtuserlogistica.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtuserlogistica.Margin = new System.Windows.Forms.Padding(6);
             this.txtuserlogistica.Name = "txtuserlogistica";
             this.txtuserlogistica.Size = new System.Drawing.Size(424, 40);
             this.txtuserlogistica.TabIndex = 58;
@@ -5168,7 +5214,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtCoordinadorcalidad.Enabled = false;
             this.txtCoordinadorcalidad.Location = new System.Drawing.Point(1844, 383);
-            this.txtCoordinadorcalidad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtCoordinadorcalidad.Margin = new System.Windows.Forms.Padding(6);
             this.txtCoordinadorcalidad.Name = "txtCoordinadorcalidad";
             this.txtCoordinadorcalidad.Size = new System.Drawing.Size(424, 40);
             this.txtCoordinadorcalidad.TabIndex = 62;
@@ -5178,7 +5224,7 @@ namespace LOSA.Trazabilidad
             this.labelControl74.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl74.Appearance.Options.UseFont = true;
             this.labelControl74.Location = new System.Drawing.Point(122, 340);
-            this.labelControl74.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl74.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl74.Name = "labelControl74";
             this.labelControl74.Size = new System.Drawing.Size(155, 36);
             this.labelControl74.TabIndex = 67;
@@ -5191,7 +5237,7 @@ namespace LOSA.Trazabilidad
             this.btnNoConformidad.Appearance.Options.UseBackColor = true;
             this.btnNoConformidad.Appearance.Options.UseFont = true;
             this.btnNoConformidad.Location = new System.Drawing.Point(1746, 6);
-            this.btnNoConformidad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnNoConformidad.Margin = new System.Windows.Forms.Padding(6);
             this.btnNoConformidad.Name = "btnNoConformidad";
             this.btnNoConformidad.Size = new System.Drawing.Size(272, 75);
             this.btnNoConformidad.TabIndex = 64;
@@ -5202,7 +5248,7 @@ namespace LOSA.Trazabilidad
             this.labelControl75.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl75.Appearance.Options.UseFont = true;
             this.labelControl75.Location = new System.Drawing.Point(832, 298);
-            this.labelControl75.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl75.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl75.Name = "labelControl75";
             this.labelControl75.Size = new System.Drawing.Size(136, 36);
             this.labelControl75.TabIndex = 59;
@@ -5213,7 +5259,7 @@ namespace LOSA.Trazabilidad
             this.labelControl76.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl76.Appearance.Options.UseFont = true;
             this.labelControl76.Location = new System.Drawing.Point(1542, 383);
-            this.labelControl76.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl76.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl76.Name = "labelControl76";
             this.labelControl76.Size = new System.Drawing.Size(276, 36);
             this.labelControl76.TabIndex = 61;
@@ -5223,7 +5269,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtusercalidad.Enabled = false;
             this.txtusercalidad.Location = new System.Drawing.Point(986, 298);
-            this.txtusercalidad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtusercalidad.Margin = new System.Windows.Forms.Padding(6);
             this.txtusercalidad.Name = "txtusercalidad";
             this.txtusercalidad.Size = new System.Drawing.Size(424, 40);
             this.txtusercalidad.TabIndex = 60;
@@ -5235,9 +5281,9 @@ namespace LOSA.Trazabilidad
             this.tabPageLotesPT.Controls.Add(this.labelControl78);
             this.tabPageLotesPT.Controls.Add(this.gridControl7);
             this.tabPageLotesPT.Location = new System.Drawing.Point(8, 59);
-            this.tabPageLotesPT.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageLotesPT.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageLotesPT.Name = "tabPageLotesPT";
-            this.tabPageLotesPT.Size = new System.Drawing.Size(2724, 971);
+            this.tabPageLotesPT.Size = new System.Drawing.Size(4036, 1725);
             this.tabPageLotesPT.TabIndex = 4;
             this.tabPageLotesPT.Text = "Lotes PT";
             this.tabPageLotesPT.UseVisualStyleBackColor = true;
@@ -5247,7 +5293,7 @@ namespace LOSA.Trazabilidad
             this.labelControl77.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl77.Appearance.Options.UseFont = true;
             this.labelControl77.Location = new System.Drawing.Point(734, 42);
-            this.labelControl77.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl77.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl77.Name = "labelControl77";
             this.labelControl77.Size = new System.Drawing.Size(487, 45);
             this.labelControl77.TabIndex = 47;
@@ -5259,15 +5305,15 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl6.DataMember = "detalle_destinos";
             this.gridControl6.DataSource = this.dsReportesTRZ;
-            this.gridControl6.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl6.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl6.Location = new System.Drawing.Point(734, 94);
             this.gridControl6.MainView = this.gridView12;
-            this.gridControl6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl6.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl6.Name = "gridControl6";
             this.gridControl6.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit4,
             this.repositoryItemButtonEdit3});
-            this.gridControl6.Size = new System.Drawing.Size(1984, 819);
+            this.gridControl6.Size = new System.Drawing.Size(3296, 819);
             this.gridControl6.TabIndex = 46;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView12});
@@ -5293,7 +5339,9 @@ namespace LOSA.Trazabilidad
             this.gridColumn66});
             this.gridView12.DetailHeight = 673;
             this.gridView12.GridControl = this.gridControl6;
+            this.gridView12.LevelIndent = 0;
             this.gridView12.Name = "gridView12";
+            this.gridView12.PreviewIndent = 0;
             // 
             // gridColumn51
             // 
@@ -5477,7 +5525,7 @@ namespace LOSA.Trazabilidad
             this.labelControl78.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl78.Appearance.Options.UseFont = true;
             this.labelControl78.Location = new System.Drawing.Point(16, 42);
-            this.labelControl78.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl78.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl78.Name = "labelControl78";
             this.labelControl78.Size = new System.Drawing.Size(371, 45);
             this.labelControl78.TabIndex = 42;
@@ -5487,10 +5535,10 @@ namespace LOSA.Trazabilidad
             // 
             this.gridControl7.DataMember = "pt_list_trz";
             this.gridControl7.DataSource = this.dsReportesTRZ;
-            this.gridControl7.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl7.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl7.Location = new System.Drawing.Point(16, 94);
             this.gridControl7.MainView = this.gridView13;
-            this.gridControl7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl7.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl7.Name = "gridControl7";
             this.gridControl7.Size = new System.Drawing.Size(706, 819);
             this.gridControl7.TabIndex = 1;
@@ -5505,7 +5553,9 @@ namespace LOSA.Trazabilidad
             this.gridColumn69});
             this.gridView13.DetailHeight = 673;
             this.gridView13.GridControl = this.gridControl7;
+            this.gridView13.LevelIndent = 0;
             this.gridView13.Name = "gridView13";
+            this.gridView13.PreviewIndent = 0;
             // 
             // gridColumn67
             // 
@@ -5543,10 +5593,10 @@ namespace LOSA.Trazabilidad
             // 
             this.tb_inventario.Controls.Add(this.gridControl8);
             this.tb_inventario.Location = new System.Drawing.Point(8, 59);
-            this.tb_inventario.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tb_inventario.Margin = new System.Windows.Forms.Padding(6);
             this.tb_inventario.Name = "tb_inventario";
-            this.tb_inventario.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tb_inventario.Size = new System.Drawing.Size(2724, 971);
+            this.tb_inventario.Padding = new System.Windows.Forms.Padding(6);
+            this.tb_inventario.Size = new System.Drawing.Size(4036, 1725);
             this.tb_inventario.TabIndex = 5;
             this.tb_inventario.Text = "Inventario de lote";
             this.tb_inventario.UseVisualStyleBackColor = true;
@@ -5556,12 +5606,12 @@ namespace LOSA.Trazabilidad
             this.gridControl8.DataMember = "informacion";
             this.gridControl8.DataSource = this.dsTarimaBindingSource;
             this.gridControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl8.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl8.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl8.Location = new System.Drawing.Point(6, 6);
             this.gridControl8.MainView = this.gridView14;
-            this.gridControl8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl8.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl8.Name = "gridControl8";
-            this.gridControl8.Size = new System.Drawing.Size(2712, 959);
+            this.gridControl8.Size = new System.Drawing.Size(4024, 1713);
             this.gridControl8.TabIndex = 1;
             this.gridControl8.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView14});
@@ -5610,10 +5660,12 @@ namespace LOSA.Trazabilidad
             this.colproveedor});
             this.gridView14.DetailHeight = 673;
             this.gridView14.GridControl = this.gridControl8;
+            this.gridView14.LevelIndent = 0;
             this.gridView14.Name = "gridView14";
             this.gridView14.OptionsView.ShowAutoFilterRow = true;
             this.gridView14.OptionsView.ShowFooter = true;
             this.gridView14.OptionsView.ShowGroupPanel = false;
+            this.gridView14.PreviewIndent = 0;
             // 
             // colexistencia
             // 
@@ -5738,7 +5790,7 @@ namespace LOSA.Trazabilidad
             // 
             this.simpleButton8.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.simpleButton8.Location = new System.Drawing.Point(932, 467);
-            this.simpleButton8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton8.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(108, 58);
             this.simpleButton8.TabIndex = 91;
@@ -5748,7 +5800,7 @@ namespace LOSA.Trazabilidad
             this.cmdSearchFabricantePrv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdSearchFabricantePrv.Image = global::LOSA.Properties.Resources.edit_table_1_;
             this.cmdSearchFabricantePrv.Location = new System.Drawing.Point(36, 519);
-            this.cmdSearchFabricantePrv.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdSearchFabricantePrv.Margin = new System.Windows.Forms.Padding(6);
             this.cmdSearchFabricantePrv.Name = "cmdSearchFabricantePrv";
             this.cmdSearchFabricantePrv.Size = new System.Drawing.Size(106, 62);
             this.cmdSearchFabricantePrv.TabIndex = 90;
@@ -5760,7 +5812,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtFabricante.Enabled = false;
             this.txtFabricante.Location = new System.Drawing.Point(378, 479);
-            this.txtFabricante.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtFabricante.Margin = new System.Windows.Forms.Padding(6);
             this.txtFabricante.Name = "txtFabricante";
             this.txtFabricante.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtFabricante.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5775,7 +5827,7 @@ namespace LOSA.Trazabilidad
             this.labelControl55.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl55.Appearance.Options.UseFont = true;
             this.labelControl55.Location = new System.Drawing.Point(48, 485);
-            this.labelControl55.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl55.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl55.Name = "labelControl55";
             this.labelControl55.Size = new System.Drawing.Size(125, 36);
             this.labelControl55.TabIndex = 88;
@@ -5786,7 +5838,7 @@ namespace LOSA.Trazabilidad
             this.dt_f_ingreso.EditValue = null;
             this.dt_f_ingreso.Enabled = false;
             this.dt_f_ingreso.Location = new System.Drawing.Point(1600, 315);
-            this.dt_f_ingreso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dt_f_ingreso.Margin = new System.Windows.Forms.Padding(6);
             this.dt_f_ingreso.Name = "dt_f_ingreso";
             this.dt_f_ingreso.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dt_f_ingreso.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5804,7 +5856,7 @@ namespace LOSA.Trazabilidad
             this.labelControl44.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl44.Appearance.Options.UseFont = true;
             this.labelControl44.Location = new System.Drawing.Point(1292, 321);
-            this.labelControl44.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl44.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl44.Name = "labelControl44";
             this.labelControl44.Size = new System.Drawing.Size(202, 36);
             this.labelControl44.TabIndex = 86;
@@ -5814,7 +5866,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtingresadaUD.Enabled = false;
             this.txtingresadaUD.Location = new System.Drawing.Point(2002, 415);
-            this.txtingresadaUD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtingresadaUD.Margin = new System.Windows.Forms.Padding(6);
             this.txtingresadaUD.Name = "txtingresadaUD";
             this.txtingresadaUD.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtingresadaUD.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5830,7 +5882,7 @@ namespace LOSA.Trazabilidad
             this.labelControl32.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl32.Appearance.Options.UseFont = true;
             this.labelControl32.Location = new System.Drawing.Point(1874, 425);
-            this.labelControl32.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl32.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl32.Name = "labelControl32";
             this.labelControl32.Size = new System.Drawing.Size(113, 36);
             this.labelControl32.TabIndex = 84;
@@ -5841,7 +5893,7 @@ namespace LOSA.Trazabilidad
             this.btnRecientes.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnRecientes.Appearance.Options.UseFont = true;
             this.btnRecientes.Location = new System.Drawing.Point(2002, 529);
-            this.btnRecientes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRecientes.Margin = new System.Windows.Forms.Padding(6);
             this.btnRecientes.Name = "btnRecientes";
             this.btnRecientes.Size = new System.Drawing.Size(528, 67);
             this.btnRecientes.TabIndex = 83;
@@ -5851,7 +5903,7 @@ namespace LOSA.Trazabilidad
             // btnOC
             // 
             this.btnOC.Location = new System.Drawing.Point(692, 358);
-            this.btnOC.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnOC.Margin = new System.Windows.Forms.Padding(6);
             this.btnOC.Name = "btnOC";
             this.btnOC.Size = new System.Drawing.Size(348, 58);
             this.btnOC.TabIndex = 82;
@@ -5862,7 +5914,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtFacturas.Enabled = false;
             this.txtFacturas.Location = new System.Drawing.Point(2002, 471);
-            this.txtFacturas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtFacturas.Margin = new System.Windows.Forms.Padding(6);
             this.txtFacturas.Name = "txtFacturas";
             this.txtFacturas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtFacturas.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5876,7 +5928,7 @@ namespace LOSA.Trazabilidad
             this.labelControl27.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl27.Appearance.Options.UseFont = true;
             this.labelControl27.Location = new System.Drawing.Point(1874, 477);
-            this.labelControl27.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl27.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl27.Name = "labelControl27";
             this.labelControl27.Size = new System.Drawing.Size(116, 36);
             this.labelControl27.TabIndex = 80;
@@ -5885,7 +5937,7 @@ namespace LOSA.Trazabilidad
             // btnRevisarBoleta
             // 
             this.btnRevisarBoleta.Location = new System.Drawing.Point(692, 244);
-            this.btnRevisarBoleta.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRevisarBoleta.Margin = new System.Windows.Forms.Padding(6);
             this.btnRevisarBoleta.Name = "btnRevisarBoleta";
             this.btnRevisarBoleta.Size = new System.Drawing.Size(348, 58);
             this.btnRevisarBoleta.TabIndex = 79;
@@ -5899,7 +5951,7 @@ namespace LOSA.Trazabilidad
             this.labelControl28.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl28.Appearance.Options.UseFont = true;
             this.labelControl28.Location = new System.Drawing.Point(614, 537);
-            this.labelControl28.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl28.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl28.Name = "labelControl28";
             this.labelControl28.Size = new System.Drawing.Size(1264, 51);
             this.labelControl28.TabIndex = 78;
@@ -5910,7 +5962,7 @@ namespace LOSA.Trazabilidad
             this.dtvencimiento.EditValue = null;
             this.dtvencimiento.Enabled = false;
             this.dtvencimiento.Location = new System.Drawing.Point(1600, 265);
-            this.dtvencimiento.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtvencimiento.Margin = new System.Windows.Forms.Padding(6);
             this.dtvencimiento.Name = "dtvencimiento";
             this.dtvencimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dtvencimiento.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5928,7 +5980,7 @@ namespace LOSA.Trazabilidad
             this.dtproduccion.EditValue = null;
             this.dtproduccion.Enabled = false;
             this.dtproduccion.Location = new System.Drawing.Point(1600, 213);
-            this.dtproduccion.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtproduccion.Margin = new System.Windows.Forms.Padding(6);
             this.dtproduccion.Name = "dtproduccion";
             this.dtproduccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dtproduccion.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5945,7 +5997,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtinventarioActual.Enabled = false;
             this.txtinventarioActual.Location = new System.Drawing.Point(1600, 471);
-            this.txtinventarioActual.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtinventarioActual.Margin = new System.Windows.Forms.Padding(6);
             this.txtinventarioActual.Name = "txtinventarioActual";
             this.txtinventarioActual.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtinventarioActual.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5958,7 +6010,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtingresada.Enabled = false;
             this.txtingresada.Location = new System.Drawing.Point(1600, 415);
-            this.txtingresada.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtingresada.Margin = new System.Windows.Forms.Padding(6);
             this.txtingresada.Name = "txtingresada";
             this.txtingresada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtingresada.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5973,7 +6025,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtdiasvencimiento.Enabled = false;
             this.txtdiasvencimiento.Location = new System.Drawing.Point(1600, 365);
-            this.txtdiasvencimiento.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtdiasvencimiento.Margin = new System.Windows.Forms.Padding(6);
             this.txtdiasvencimiento.Name = "txtdiasvencimiento";
             this.txtdiasvencimiento.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtdiasvencimiento.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5986,7 +6038,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtreferencia.Enabled = false;
             this.txtreferencia.Location = new System.Drawing.Point(1600, 163);
-            this.txtreferencia.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtreferencia.Margin = new System.Windows.Forms.Padding(6);
             this.txtreferencia.Name = "txtreferencia";
             this.txtreferencia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtreferencia.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -5999,7 +6051,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtnumtraslado.Enabled = false;
             this.txtnumtraslado.Location = new System.Drawing.Point(378, 419);
-            this.txtnumtraslado.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtnumtraslado.Margin = new System.Windows.Forms.Padding(6);
             this.txtnumtraslado.Name = "txtnumtraslado";
             this.txtnumtraslado.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtnumtraslado.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -6012,7 +6064,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtoc.Enabled = false;
             this.txtoc.Location = new System.Drawing.Point(378, 363);
-            this.txtoc.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtoc.Margin = new System.Windows.Forms.Padding(6);
             this.txtoc.Name = "txtoc";
             this.txtoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtoc.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -6025,7 +6077,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtproveedor.Enabled = false;
             this.txtproveedor.Location = new System.Drawing.Point(378, 308);
-            this.txtproveedor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtproveedor.Margin = new System.Windows.Forms.Padding(6);
             this.txtproveedor.Name = "txtproveedor";
             this.txtproveedor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtproveedor.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -6038,7 +6090,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtboleta.Enabled = false;
             this.txtboleta.Location = new System.Drawing.Point(378, 250);
-            this.txtboleta.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtboleta.Margin = new System.Windows.Forms.Padding(6);
             this.txtboleta.Name = "txtboleta";
             this.txtboleta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtboleta.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -6051,7 +6103,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtnombreMP.Enabled = false;
             this.txtnombreMP.Location = new System.Drawing.Point(378, 192);
-            this.txtnombreMP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtnombreMP.Margin = new System.Windows.Forms.Padding(6);
             this.txtnombreMP.Name = "txtnombreMP";
             this.txtnombreMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtnombreMP.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -6064,7 +6116,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtloteMP.Enabled = false;
             this.txtloteMP.Location = new System.Drawing.Point(378, 142);
-            this.txtloteMP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtloteMP.Margin = new System.Windows.Forms.Padding(6);
             this.txtloteMP.Name = "txtloteMP";
             this.txtloteMP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtloteMP.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -6078,7 +6130,7 @@ namespace LOSA.Trazabilidad
             this.labelControl29.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl29.Appearance.Options.UseFont = true;
             this.labelControl29.Location = new System.Drawing.Point(1292, 477);
-            this.labelControl29.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl29.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl29.Name = "labelControl29";
             this.labelControl29.Size = new System.Drawing.Size(200, 36);
             this.labelControl29.TabIndex = 65;
@@ -6089,7 +6141,7 @@ namespace LOSA.Trazabilidad
             this.labelControl30.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl30.Appearance.Options.UseFont = true;
             this.labelControl30.Location = new System.Drawing.Point(1292, 433);
-            this.labelControl30.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl30.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl30.Name = "labelControl30";
             this.labelControl30.Size = new System.Drawing.Size(267, 36);
             this.labelControl30.TabIndex = 64;
@@ -6100,7 +6152,7 @@ namespace LOSA.Trazabilidad
             this.labelControl31.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl31.Appearance.Options.UseFont = true;
             this.labelControl31.Location = new System.Drawing.Point(1292, 371);
-            this.labelControl31.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl31.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl31.Name = "labelControl31";
             this.labelControl31.Size = new System.Drawing.Size(262, 36);
             this.labelControl31.TabIndex = 63;
@@ -6111,7 +6163,7 @@ namespace LOSA.Trazabilidad
             this.labelControl33.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl33.Appearance.Options.UseFont = true;
             this.labelControl33.Location = new System.Drawing.Point(1292, 271);
-            this.labelControl33.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl33.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl33.Name = "labelControl33";
             this.labelControl33.Size = new System.Drawing.Size(260, 36);
             this.labelControl33.TabIndex = 62;
@@ -6122,7 +6174,7 @@ namespace LOSA.Trazabilidad
             this.labelControl34.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl34.Appearance.Options.UseFont = true;
             this.labelControl34.Location = new System.Drawing.Point(1292, 219);
-            this.labelControl34.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl34.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl34.Name = "labelControl34";
             this.labelControl34.Size = new System.Drawing.Size(245, 36);
             this.labelControl34.TabIndex = 61;
@@ -6133,7 +6185,7 @@ namespace LOSA.Trazabilidad
             this.labelControl35.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl35.Appearance.Options.UseFont = true;
             this.labelControl35.Location = new System.Drawing.Point(1292, 169);
-            this.labelControl35.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl35.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl35.Name = "labelControl35";
             this.labelControl35.Size = new System.Drawing.Size(107, 36);
             this.labelControl35.TabIndex = 60;
@@ -6144,7 +6196,7 @@ namespace LOSA.Trazabilidad
             this.labelControl36.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl36.Appearance.Options.UseFont = true;
             this.labelControl36.Location = new System.Drawing.Point(48, 433);
-            this.labelControl36.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl36.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl36.Name = "labelControl36";
             this.labelControl36.Size = new System.Drawing.Size(252, 36);
             this.labelControl36.TabIndex = 59;
@@ -6155,7 +6207,7 @@ namespace LOSA.Trazabilidad
             this.labelControl37.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl37.Appearance.Options.UseFont = true;
             this.labelControl37.Location = new System.Drawing.Point(48, 379);
-            this.labelControl37.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl37.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl37.Name = "labelControl37";
             this.labelControl37.Size = new System.Drawing.Size(212, 36);
             this.labelControl37.TabIndex = 58;
@@ -6166,7 +6218,7 @@ namespace LOSA.Trazabilidad
             this.labelControl38.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl38.Appearance.Options.UseFont = true;
             this.labelControl38.Location = new System.Drawing.Point(48, 263);
-            this.labelControl38.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl38.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl38.Name = "labelControl38";
             this.labelControl38.Size = new System.Drawing.Size(78, 36);
             this.labelControl38.TabIndex = 57;
@@ -6177,7 +6229,7 @@ namespace LOSA.Trazabilidad
             this.labelControl39.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl39.Appearance.Options.UseFont = true;
             this.labelControl39.Location = new System.Drawing.Point(48, 321);
-            this.labelControl39.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl39.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl39.Name = "labelControl39";
             this.labelControl39.Size = new System.Drawing.Size(124, 36);
             this.labelControl39.TabIndex = 56;
@@ -6188,7 +6240,7 @@ namespace LOSA.Trazabilidad
             this.labelControl40.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl40.Appearance.Options.UseFont = true;
             this.labelControl40.Location = new System.Drawing.Point(48, 206);
-            this.labelControl40.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl40.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl40.Name = "labelControl40";
             this.labelControl40.Size = new System.Drawing.Size(207, 36);
             this.labelControl40.TabIndex = 55;
@@ -6199,7 +6251,7 @@ namespace LOSA.Trazabilidad
             this.labelControl41.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl41.Appearance.Options.UseFont = true;
             this.labelControl41.Location = new System.Drawing.Point(48, 156);
-            this.labelControl41.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl41.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl41.Name = "labelControl41";
             this.labelControl41.Size = new System.Drawing.Size(131, 36);
             this.labelControl41.TabIndex = 54;
@@ -6211,8 +6263,8 @@ namespace LOSA.Trazabilidad
             this.btnGuardar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Appearance.Options.UseFont = true;
             this.btnGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnGuardar.Location = new System.Drawing.Point(2376, 38);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGuardar.Location = new System.Drawing.Point(3688, 38);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(6);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(252, 85);
             this.btnGuardar.TabIndex = 44;
@@ -6226,7 +6278,7 @@ namespace LOSA.Trazabilidad
             this.labelControl26.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl26.Appearance.Options.UseFont = true;
             this.labelControl26.Location = new System.Drawing.Point(838, 48);
-            this.labelControl26.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl26.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl26.Name = "labelControl26";
             this.labelControl26.Size = new System.Drawing.Size(426, 57);
             this.labelControl26.TabIndex = 43;
@@ -6240,8 +6292,8 @@ namespace LOSA.Trazabilidad
             this.simpleButton7.Appearance.Options.UseBackColor = true;
             this.simpleButton7.Appearance.Options.UseFont = true;
             this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton7.Location = new System.Drawing.Point(2112, 40);
-            this.simpleButton7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton7.Location = new System.Drawing.Point(3424, 40);
+            this.simpleButton7.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(252, 81);
             this.simpleButton7.TabIndex = 42;
@@ -6302,9 +6354,9 @@ namespace LOSA.Trazabilidad
             this.npReporteTrazabilidad.Controls.Add(this.txtlote);
             this.npReporteTrazabilidad.Controls.Add(this.cmdHome);
             this.npReporteTrazabilidad.Controls.Add(this.labelControl18);
-            this.npReporteTrazabilidad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npReporteTrazabilidad.Margin = new System.Windows.Forms.Padding(6);
             this.npReporteTrazabilidad.Name = "npReporteTrazabilidad";
-            this.npReporteTrazabilidad.Size = new System.Drawing.Size(5492, 3165);
+            this.npReporteTrazabilidad.Size = new System.Drawing.Size(2684, 1610);
             // 
             // labelControl94
             // 
@@ -6320,7 +6372,7 @@ namespace LOSA.Trazabilidad
             // toggleSwitchExpandAll_Row
             // 
             this.toggleSwitchExpandAll_Row.Location = new System.Drawing.Point(1656, 402);
-            this.toggleSwitchExpandAll_Row.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.toggleSwitchExpandAll_Row.Margin = new System.Windows.Forms.Padding(6);
             this.toggleSwitchExpandAll_Row.Name = "toggleSwitchExpandAll_Row";
             this.toggleSwitchExpandAll_Row.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.toggleSwitchExpandAll_Row.Properties.Appearance.Options.UseFont = true;
@@ -6337,7 +6389,7 @@ namespace LOSA.Trazabilidad
             this.cmdVerCuadroLotesRuta4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdVerCuadroLotesRuta4.ImageOptions.Image")));
             this.cmdVerCuadroLotesRuta4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.cmdVerCuadroLotesRuta4.Location = new System.Drawing.Point(1386, 200);
-            this.cmdVerCuadroLotesRuta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdVerCuadroLotesRuta4.Margin = new System.Windows.Forms.Padding(6);
             this.cmdVerCuadroLotesRuta4.Name = "cmdVerCuadroLotesRuta4";
             this.cmdVerCuadroLotesRuta4.Size = new System.Drawing.Size(58, 44);
             this.cmdVerCuadroLotesRuta4.TabIndex = 122;
@@ -6356,6 +6408,7 @@ namespace LOSA.Trazabilidad
             this.txtRuta4Fecha_produccion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtRuta4Fecha_produccion.Size = new System.Drawing.Size(220, 46);
             this.txtRuta4Fecha_produccion.TabIndex = 121;
+            this.txtRuta4Fecha_produccion.ToolTip = "Fecha dada segun el Primer Batch ";
             // 
             // labelControl92
             // 
@@ -6455,7 +6508,7 @@ namespace LOSA.Trazabilidad
             this.btnBack.Appearance.Options.UseBackColor = true;
             this.btnBack.Appearance.Options.UseFont = true;
             this.btnBack.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBack.Location = new System.Drawing.Point(2370, 10);
+            this.btnBack.Location = new System.Drawing.Point(3682, 10);
             this.btnBack.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(364, 113);
@@ -6475,7 +6528,7 @@ namespace LOSA.Trazabilidad
             this.labelControl19.Location = new System.Drawing.Point(288, 10);
             this.labelControl19.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(2070, 62);
+            this.labelControl19.Size = new System.Drawing.Size(3382, 62);
             this.labelControl19.TabIndex = 111;
             this.labelControl19.Text = "Trazabilidad de lote PT";
             // 
@@ -6506,7 +6559,7 @@ namespace LOSA.Trazabilidad
             // tggMuestras
             // 
             this.tggMuestras.Location = new System.Drawing.Point(1164, 402);
-            this.tggMuestras.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tggMuestras.Margin = new System.Windows.Forms.Padding(6);
             this.tggMuestras.Name = "tggMuestras";
             this.tggMuestras.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 8.75F, System.Drawing.FontStyle.Bold);
             this.tggMuestras.Properties.Appearance.Options.UseFont = true;
@@ -6523,10 +6576,10 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControl1.Location = new System.Drawing.Point(6, 473);
-            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(2740, 1173);
+            this.xtraTabControl1.Size = new System.Drawing.Size(2672, 1927);
             this.xtraTabControl1.TabIndex = 108;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -6538,12 +6591,26 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage1.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage1.Controls.Add(this.btnExport);
             this.xtraTabPage1.Controls.Add(this.GridRuta4_detalle_trz_lote_pt);
             this.xtraTabPage1.Controls.Add(this.gridSplitContainer1);
-            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(2736, 1113);
+            this.xtraTabPage1.Size = new System.Drawing.Size(2668, 1867);
             this.xtraTabPage1.Text = "Detalle MP";
+            // 
+            // btnExport
+            // 
+            this.btnExport.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Appearance.Options.UseFont = true;
+            this.btnExport.ImageOptions.Image = global::LOSA.Properties.Resources.excel_24x24;
+            this.btnExport.Location = new System.Drawing.Point(2386, 8);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(200, 54);
+            this.btnExport.TabIndex = 125;
+            this.btnExport.Text = "Exportar";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // gridSplitContainer1
             // 
@@ -6616,10 +6683,12 @@ namespace LOSA.Trazabilidad
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Contado", this.colContado, "(SUM={0:#,###,##0.00 Kg})", "Kg Utilizado")});
+            this.grdv_data.LevelIndent = 0;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Standard;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;
+            this.grdv_data.PreviewIndent = 0;
             // 
             // colContado
             // 
@@ -6786,9 +6855,9 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage2.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage2.Controls.Add(this.gcClientesRecibieronLotePT);
-            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(2736, 1113);
+            this.xtraTabPage2.Size = new System.Drawing.Size(2668, 1867);
             this.xtraTabPage2.Text = "Clientes que Recibieron el Lote PT";
             // 
             // gcClientesRecibieronLotePT
@@ -6796,16 +6865,16 @@ namespace LOSA.Trazabilidad
             this.gcClientesRecibieronLotePT.DataMember = "detalle_destinosRuta4";
             this.gcClientesRecibieronLotePT.DataSource = this.dsReportesTRZ;
             this.gcClientesRecibieronLotePT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcClientesRecibieronLotePT.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcClientesRecibieronLotePT.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gcClientesRecibieronLotePT.Location = new System.Drawing.Point(0, 0);
             this.gcClientesRecibieronLotePT.MainView = this.gvClientesRecibieronLote;
-            this.gcClientesRecibieronLotePT.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcClientesRecibieronLotePT.Margin = new System.Windows.Forms.Padding(6);
             this.gcClientesRecibieronLotePT.Name = "gcClientesRecibieronLotePT";
             this.gcClientesRecibieronLotePT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnLinkBoletaView,
             this.cmdDespachoId,
             this.btnTrazabilidadClientes});
-            this.gcClientesRecibieronLotePT.Size = new System.Drawing.Size(2736, 1113);
+            this.gcClientesRecibieronLotePT.Size = new System.Drawing.Size(2668, 1867);
             this.gcClientesRecibieronLotePT.TabIndex = 45;
             this.gcClientesRecibieronLotePT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvClientesRecibieronLote});
@@ -6833,9 +6902,11 @@ namespace LOSA.Trazabilidad
             this.colfecha_prd1});
             this.gvClientesRecibieronLote.DetailHeight = 673;
             this.gvClientesRecibieronLote.GridControl = this.gcClientesRecibieronLotePT;
+            this.gvClientesRecibieronLote.LevelIndent = 0;
             this.gvClientesRecibieronLote.Name = "gvClientesRecibieronLote";
             this.gvClientesRecibieronLote.OptionsView.ShowAutoFilterRow = true;
             this.gvClientesRecibieronLote.OptionsView.ShowFooter = true;
+            this.gvClientesRecibieronLote.PreviewIndent = 0;
             // 
             // colDespacho
             // 
@@ -6851,9 +6922,9 @@ namespace LOSA.Trazabilidad
             // cmdDespachoId
             // 
             this.cmdDespachoId.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions29.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions29.Image")));
             this.cmdDespachoId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions29, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject113, serializableAppearanceObject114, serializableAppearanceObject115, serializableAppearanceObject116, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDespachoId.Name = "cmdDespachoId";
             this.cmdDespachoId.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDespachoId_ButtonClick);
             // 
@@ -7023,9 +7094,9 @@ namespace LOSA.Trazabilidad
             // btnLinkBoletaView
             // 
             this.btnLinkBoletaView.AutoHeight = false;
-            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            editorButtonImageOptions30.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions30.Image")));
             this.btnLinkBoletaView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions30, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject117, serializableAppearanceObject118, serializableAppearanceObject119, serializableAppearanceObject120, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnLinkBoletaView.Name = "btnLinkBoletaView";
             this.btnLinkBoletaView.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnLinkBoletaView_ButtonClick);
             // 
@@ -7064,9 +7135,9 @@ namespace LOSA.Trazabilidad
             this.PageInventario.Appearance.Header.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.PageInventario.Appearance.Header.Options.UseFont = true;
             this.PageInventario.Controls.Add(this.panelControl1);
-            this.PageInventario.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PageInventario.Margin = new System.Windows.Forms.Padding(6);
             this.PageInventario.Name = "PageInventario";
-            this.PageInventario.Size = new System.Drawing.Size(2736, 1113);
+            this.PageInventario.Size = new System.Drawing.Size(2668, 1867);
             this.PageInventario.Text = "Inventario PT";
             // 
             // panelControl1
@@ -7075,9 +7146,9 @@ namespace LOSA.Trazabilidad
             this.panelControl1.Controls.Add(this.labelControl16);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(2736, 1113);
+            this.panelControl1.Size = new System.Drawing.Size(2668, 1867);
             this.panelControl1.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -7087,7 +7158,7 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainerControl2.Horizontal = false;
             this.splitContainerControl2.Location = new System.Drawing.Point(12, 65);
-            this.splitContainerControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.splitContainerControl2.Margin = new System.Windows.Forms.Padding(6);
             this.splitContainerControl2.Name = "splitContainerControl2";
             // 
             // splitContainerControl2.Panel1
@@ -7099,7 +7170,7 @@ namespace LOSA.Trazabilidad
             // 
             this.splitContainerControl2.Panel2.Controls.Add(this.grd_resumen);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(2722, 1048);
+            this.splitContainerControl2.Size = new System.Drawing.Size(2654, 1802);
             this.splitContainerControl2.SplitterPosition = 758;
             this.splitContainerControl2.TabIndex = 37;
             // 
@@ -7107,7 +7178,7 @@ namespace LOSA.Trazabilidad
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(6);
             this.splitContainerControl1.Name = "splitContainerControl1";
             // 
             // splitContainerControl1.Panel1
@@ -7119,7 +7190,7 @@ namespace LOSA.Trazabilidad
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.xtraTabControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(2722, 758);
+            this.splitContainerControl1.Size = new System.Drawing.Size(2654, 758);
             this.splitContainerControl1.SplitterPosition = 1772;
             this.splitContainerControl1.TabIndex = 39;
             // 
@@ -7131,7 +7202,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl3.AppearancePage.HeaderActive.Options.UseFont = true;
             this.xtraTabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl3.Location = new System.Drawing.Point(0, 0);
-            this.xtraTabControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabControl3.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabControl3.Name = "xtraTabControl3";
             this.xtraTabControl3.SelectedTabPage = this.xtraTabPage7;
             this.xtraTabControl3.Size = new System.Drawing.Size(1772, 758);
@@ -7143,7 +7214,7 @@ namespace LOSA.Trazabilidad
             // xtraTabPage7
             // 
             this.xtraTabPage7.Controls.Add(this.grd_despachos);
-            this.xtraTabPage7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabPage7.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabPage7.Name = "xtraTabPage7";
             this.xtraTabPage7.Size = new System.Drawing.Size(1768, 698);
             this.xtraTabPage7.Text = "Despachos";
@@ -7153,10 +7224,10 @@ namespace LOSA.Trazabilidad
             this.grd_despachos.DataMember = "detalle_despachos_home";
             this.grd_despachos.DataSource = this.dsReportesTRZ;
             this.grd_despachos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_despachos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_despachos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_despachos.Location = new System.Drawing.Point(0, 0);
             this.grd_despachos.MainView = this.grdv_despachos;
-            this.grd_despachos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_despachos.Margin = new System.Windows.Forms.Padding(6);
             this.grd_despachos.Name = "grd_despachos";
             this.grd_despachos.Size = new System.Drawing.Size(1768, 698);
             this.grd_despachos.TabIndex = 0;
@@ -7199,10 +7270,12 @@ namespace LOSA.Trazabilidad
             this.colcodigo_barra2});
             this.grdv_despachos.DetailHeight = 673;
             this.grdv_despachos.GridControl = this.grd_despachos;
+            this.grdv_despachos.LevelIndent = 0;
             this.grdv_despachos.Name = "grdv_despachos";
             this.grdv_despachos.OptionsView.ShowAutoFilterRow = true;
             this.grdv_despachos.OptionsView.ShowFooter = true;
             this.grdv_despachos.OptionsView.ShowGroupPanel = false;
+            this.grdv_despachos.PreviewIndent = 0;
             // 
             // gridColumn103
             // 
@@ -7338,7 +7411,7 @@ namespace LOSA.Trazabilidad
             // xtraTabPage6
             // 
             this.xtraTabPage6.Controls.Add(this.grd_trasacciones);
-            this.xtraTabPage6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabPage6.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabPage6.Name = "xtraTabPage6";
             this.xtraTabPage6.Size = new System.Drawing.Size(1768, 698);
             this.xtraTabPage6.Text = "Transacciones Kardex";
@@ -7348,10 +7421,10 @@ namespace LOSA.Trazabilidad
             this.grd_trasacciones.DataMember = "transacciones";
             this.grd_trasacciones.DataSource = this.dsInventarioPTBindingSource;
             this.grd_trasacciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_trasacciones.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_trasacciones.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_trasacciones.Location = new System.Drawing.Point(0, 0);
             this.grd_trasacciones.MainView = this.grdv_trascciones;
-            this.grd_trasacciones.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_trasacciones.Margin = new System.Windows.Forms.Padding(6);
             this.grd_trasacciones.Name = "grd_trasacciones";
             this.grd_trasacciones.Size = new System.Drawing.Size(1768, 698);
             this.grd_trasacciones.TabIndex = 0;
@@ -7402,9 +7475,11 @@ namespace LOSA.Trazabilidad
             this.coloperacion});
             this.grdv_trascciones.DetailHeight = 673;
             this.grdv_trascciones.GridControl = this.grd_trasacciones;
+            this.grdv_trascciones.LevelIndent = 0;
             this.grdv_trascciones.Name = "grdv_trascciones";
             this.grdv_trascciones.OptionsView.ShowAutoFilterRow = true;
             this.grdv_trascciones.OptionsView.ShowGroupPanel = false;
+            this.grdv_trascciones.PreviewIndent = 0;
             // 
             // colentrada
             // 
@@ -7520,10 +7595,10 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl2.AppearancePage.HeaderActive.Options.UseFont = true;
             this.xtraTabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl2.Location = new System.Drawing.Point(0, 0);
-            this.xtraTabControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabControl2.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabLiberado;
-            this.xtraTabControl2.Size = new System.Drawing.Size(930, 758);
+            this.xtraTabControl2.Size = new System.Drawing.Size(862, 758);
             this.xtraTabControl2.TabIndex = 39;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabLiberado,
@@ -7533,10 +7608,10 @@ namespace LOSA.Trazabilidad
             // xtraTabLiberado
             // 
             this.xtraTabLiberado.Controls.Add(this.grd_liberado);
-            this.xtraTabLiberado.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabLiberado.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabLiberado.Name = "xtraTabLiberado";
             this.xtraTabLiberado.PageVisible = false;
-            this.xtraTabLiberado.Size = new System.Drawing.Size(926, 698);
+            this.xtraTabLiberado.Size = new System.Drawing.Size(858, 698);
             this.xtraTabLiberado.Text = "Liberado";
             // 
             // grd_liberado
@@ -7544,12 +7619,12 @@ namespace LOSA.Trazabilidad
             this.grd_liberado.DataMember = "libres";
             this.grd_liberado.DataSource = this.dsInventarioPT;
             this.grd_liberado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_liberado.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_liberado.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_liberado.Location = new System.Drawing.Point(0, 0);
             this.grd_liberado.MainView = this.grdv_liberado;
-            this.grd_liberado.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_liberado.Margin = new System.Windows.Forms.Padding(6);
             this.grd_liberado.Name = "grd_liberado";
-            this.grd_liberado.Size = new System.Drawing.Size(926, 698);
+            this.grd_liberado.Size = new System.Drawing.Size(858, 698);
             this.grd_liberado.TabIndex = 37;
             this.grd_liberado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_liberado});
@@ -7588,10 +7663,12 @@ namespace LOSA.Trazabilidad
             this.colpeso});
             this.grdv_liberado.DetailHeight = 673;
             this.grdv_liberado.GridControl = this.grd_liberado;
+            this.grdv_liberado.LevelIndent = 0;
             this.grdv_liberado.Name = "grdv_liberado";
             this.grdv_liberado.OptionsView.ShowAutoFilterRow = true;
             this.grdv_liberado.OptionsView.ShowFooter = true;
             this.grdv_liberado.OptionsView.ShowGroupPanel = false;
+            this.grdv_liberado.PreviewIndent = 0;
             // 
             // colubicacion
             // 
@@ -7678,9 +7755,9 @@ namespace LOSA.Trazabilidad
             // xtraTabPage4
             // 
             this.xtraTabPage4.Controls.Add(this.grd_retenido);
-            this.xtraTabPage4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabPage4.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(926, 698);
+            this.xtraTabPage4.Size = new System.Drawing.Size(858, 698);
             this.xtraTabPage4.Text = "Retenido";
             // 
             // grd_retenido
@@ -7688,12 +7765,12 @@ namespace LOSA.Trazabilidad
             this.grd_retenido.DataMember = "retenidos";
             this.grd_retenido.DataSource = this.dsInventarioPT;
             this.grd_retenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_retenido.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_retenido.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_retenido.Location = new System.Drawing.Point(0, 0);
             this.grd_retenido.MainView = this.grdv_retenido;
-            this.grd_retenido.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_retenido.Margin = new System.Windows.Forms.Padding(6);
             this.grd_retenido.Name = "grd_retenido";
-            this.grd_retenido.Size = new System.Drawing.Size(926, 698);
+            this.grd_retenido.Size = new System.Drawing.Size(858, 698);
             this.grd_retenido.TabIndex = 38;
             this.grd_retenido.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_retenido});
@@ -7732,10 +7809,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn16});
             this.grdv_retenido.DetailHeight = 673;
             this.grdv_retenido.GridControl = this.grd_retenido;
+            this.grdv_retenido.LevelIndent = 0;
             this.grdv_retenido.Name = "grdv_retenido";
             this.grdv_retenido.OptionsView.ShowAutoFilterRow = true;
             this.grdv_retenido.OptionsView.ShowFooter = true;
             this.grdv_retenido.OptionsView.ShowGroupPanel = false;
+            this.grdv_retenido.PreviewIndent = 0;
             // 
             // gridColumn10
             // 
@@ -7821,10 +7900,10 @@ namespace LOSA.Trazabilidad
             // 
             // xtraTabPage5
             // 
-            this.xtraTabPage5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabPage5.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(926, 698);
+            this.xtraTabPage5.Size = new System.Drawing.Size(858, 698);
             this.xtraTabPage5.Text = "No conforme";
             // 
             // grd_resumen
@@ -7832,12 +7911,12 @@ namespace LOSA.Trazabilidad
             this.grd_resumen.DataMember = "resumen";
             this.grd_resumen.DataSource = this.dsInventarioPT;
             this.grd_resumen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_resumen.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_resumen.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_resumen.Location = new System.Drawing.Point(0, 0);
             this.grd_resumen.MainView = this.grdv_resumen;
-            this.grd_resumen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_resumen.Margin = new System.Windows.Forms.Padding(6);
             this.grd_resumen.Name = "grd_resumen";
-            this.grd_resumen.Size = new System.Drawing.Size(2722, 270);
+            this.grd_resumen.Size = new System.Drawing.Size(2654, 1024);
             this.grd_resumen.TabIndex = 38;
             this.grd_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_resumen});
@@ -7872,10 +7951,12 @@ namespace LOSA.Trazabilidad
             this.colpeso1});
             this.grdv_resumen.DetailHeight = 673;
             this.grdv_resumen.GridControl = this.grd_resumen;
+            this.grdv_resumen.LevelIndent = 0;
             this.grdv_resumen.Name = "grdv_resumen";
             this.grdv_resumen.OptionsView.ShowAutoFilterRow = true;
             this.grdv_resumen.OptionsView.ShowFooter = true;
             this.grdv_resumen.OptionsView.ShowGroupPanel = false;
+            this.grdv_resumen.PreviewIndent = 0;
             // 
             // colnombre
             // 
@@ -7931,9 +8012,9 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage8.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage8.Controls.Add(this.gridControlMuestreoPorLote);
             this.xtraTabPage8.Controls.Add(this.gridControlNoConformidades);
-            this.xtraTabPage8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.xtraTabPage8.Margin = new System.Windows.Forms.Padding(6);
             this.xtraTabPage8.Name = "xtraTabPage8";
-            this.xtraTabPage8.Size = new System.Drawing.Size(2736, 1113);
+            this.xtraTabPage8.Size = new System.Drawing.Size(2668, 1867);
             this.xtraTabPage8.Text = "Monitoreos del Proceso";
             // 
             // gridControlMuestreoPorLote
@@ -7943,12 +8024,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlMuestreoPorLote.DataMember = "muestreo_lote";
             this.gridControlMuestreoPorLote.DataSource = this.dsTrazabilidadReports;
-            this.gridControlMuestreoPorLote.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControlMuestreoPorLote.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControlMuestreoPorLote.Location = new System.Drawing.Point(2, 404);
             this.gridControlMuestreoPorLote.MainView = this.gridView3;
-            this.gridControlMuestreoPorLote.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControlMuestreoPorLote.Margin = new System.Windows.Forms.Padding(6);
             this.gridControlMuestreoPorLote.Name = "gridControlMuestreoPorLote";
-            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(2734, 709);
+            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(2666, 1463);
             this.gridControlMuestreoPorLote.TabIndex = 1;
             this.gridControlMuestreoPorLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -7995,11 +8076,13 @@ namespace LOSA.Trazabilidad
             this.gridView3.DetailHeight = 673;
             this.gridView3.GridControl = this.gridControlMuestreoPorLote;
             this.gridView3.GroupCount = 1;
+            this.gridView3.LevelIndent = 0;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView3.OptionsView.ShowAutoFilterRow = true;
             this.gridView3.OptionsView.ShowFooter = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.PreviewIndent = 0;
             this.gridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coldescripcion2, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
@@ -8169,12 +8252,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlNoConformidades.DataMember = "tarimas_rechazadas_pt";
             this.gridControlNoConformidades.DataSource = this.dsReportesTRZBindingSource;
-            this.gridControlNoConformidades.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControlNoConformidades.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControlNoConformidades.Location = new System.Drawing.Point(0, 0);
             this.gridControlNoConformidades.MainView = this.gridView4;
-            this.gridControlNoConformidades.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControlNoConformidades.Margin = new System.Windows.Forms.Padding(6);
             this.gridControlNoConformidades.Name = "gridControlNoConformidades";
-            this.gridControlNoConformidades.Size = new System.Drawing.Size(2734, 392);
+            this.gridControlNoConformidades.Size = new System.Drawing.Size(2666, 392);
             this.gridControlNoConformidades.TabIndex = 0;
             this.gridControlNoConformidades.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -8200,8 +8283,10 @@ namespace LOSA.Trazabilidad
             this.colturno_name});
             this.gridView4.DetailHeight = 673;
             this.gridView4.GridControl = this.gridControlNoConformidades;
+            this.gridView4.LevelIndent = 0;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsView.ShowFooter = true;
+            this.gridView4.PreviewIndent = 0;
             // 
             // colid
             // 
@@ -8507,6 +8592,7 @@ namespace LOSA.Trazabilidad
             this.txtReprocesoKg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtReprocesoKg.Size = new System.Drawing.Size(220, 46);
             this.txtReprocesoKg.TabIndex = 92;
+            this.txtReprocesoKg.ToolTip = "Suma de Tarimas Convertidas a Reproceso";
             // 
             // txtTotalKgSacosLiberados
             // 
@@ -8542,6 +8628,7 @@ namespace LOSA.Trazabilidad
             this.txtSacosLiberados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSacosLiberados.Size = new System.Drawing.Size(220, 46);
             this.txtSacosLiberados.TabIndex = 89;
+            this.txtSacosLiberados.ToolTip = "Suma de Tarimas: Menos las Virtuales y las de Reproceso";
             // 
             // btnExcel
             // 
@@ -8701,7 +8788,7 @@ namespace LOSA.Trazabilidad
             this.cmdHome.Appearance.Options.UseBackColor = true;
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdHome.Location = new System.Drawing.Point(2870, -175);
+            this.cmdHome.Location = new System.Drawing.Point(4182, -175);
             this.cmdHome.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(364, 131);
@@ -8720,7 +8807,7 @@ namespace LOSA.Trazabilidad
             this.labelControl18.Location = new System.Drawing.Point(-162, -160);
             this.labelControl18.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(3018, 98);
+            this.labelControl18.Size = new System.Drawing.Size(4330, 98);
             this.labelControl18.TabIndex = 74;
             this.labelControl18.Text = "Trazabilidad de lote PT";
             // 
@@ -8730,16 +8817,16 @@ namespace LOSA.Trazabilidad
             this.npRuta3MP.Controls.Add(this.vGridControl1);
             this.npRuta3MP.Controls.Add(this.simpleButton2);
             this.npRuta3MP.Controls.Add(this.gcLotes);
-            this.npRuta3MP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npRuta3MP.Margin = new System.Windows.Forms.Padding(6);
             this.npRuta3MP.Name = "npRuta3MP";
-            this.npRuta3MP.Size = new System.Drawing.Size(5492, 3165);
+            this.npRuta3MP.Size = new System.Drawing.Size(2684, 1610);
             // 
             // labelControl21
             // 
             this.labelControl21.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.75F);
             this.labelControl21.Appearance.Options.UseFont = true;
             this.labelControl21.Location = new System.Drawing.Point(28, 60);
-            this.labelControl21.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl21.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl21.Name = "labelControl21";
             this.labelControl21.Size = new System.Drawing.Size(298, 42);
             this.labelControl21.TabIndex = 96;
@@ -8753,11 +8840,12 @@ namespace LOSA.Trazabilidad
             this.vGridControl1.Appearance.RowHeaderPanel.Options.UseFont = true;
             this.vGridControl1.BandsInterval = 8;
             this.vGridControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.vGridControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.vGridControl1.DataMember = "view_mp";
             this.vGridControl1.DataSource = this.dsMantoTrazabilidad;
             this.vGridControl1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vGridControl1.Location = new System.Drawing.Point(6, 112);
-            this.vGridControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.vGridControl1.Margin = new System.Windows.Forms.Padding(6);
             this.vGridControl1.Name = "vGridControl1";
             this.vGridControl1.OptionsView.FixedLineWidth = 4;
             this.vGridControl1.OptionsView.MinRowAutoHeight = 19;
@@ -8776,7 +8864,7 @@ namespace LOSA.Trazabilidad
             this.rowFecha_Creación,
             this.rowCreado_por,
             this.rowTipo_Alimentación});
-            this.vGridControl1.Size = new System.Drawing.Size(2682, 423);
+            this.vGridControl1.Size = new System.Drawing.Size(3994, 423);
             this.vGridControl1.TabIndex = 95;
             // 
             // rowid
@@ -8786,6 +8874,7 @@ namespace LOSA.Trazabilidad
             this.rowid.Name = "rowid";
             this.rowid.Properties.Caption = "id";
             this.rowid.Properties.FieldName = "id";
+            this.rowid.Properties.ReadOnly = true;
             this.rowid.Visible = false;
             // 
             // rowcodigo
@@ -8795,6 +8884,7 @@ namespace LOSA.Trazabilidad
             this.rowcodigo.Name = "rowcodigo";
             this.rowcodigo.Properties.Caption = "Código";
             this.rowcodigo.Properties.FieldName = "codigo";
+            this.rowcodigo.Properties.ReadOnly = true;
             // 
             // rowmaterial
             // 
@@ -8803,6 +8893,7 @@ namespace LOSA.Trazabilidad
             this.rowmaterial.Name = "rowmaterial";
             this.rowmaterial.Properties.Caption = "Nombre";
             this.rowmaterial.Properties.FieldName = "material";
+            this.rowmaterial.Properties.ReadOnly = true;
             // 
             // rowNombre_Comercial
             // 
@@ -8811,6 +8902,7 @@ namespace LOSA.Trazabilidad
             this.rowNombre_Comercial.Name = "rowNombre_Comercial";
             this.rowNombre_Comercial.Properties.Caption = "Nombre Comercial";
             this.rowNombre_Comercial.Properties.FieldName = "Nombre Comercial";
+            this.rowNombre_Comercial.Properties.ReadOnly = true;
             // 
             // rowTipo
             // 
@@ -8819,6 +8911,7 @@ namespace LOSA.Trazabilidad
             this.rowTipo.Name = "rowTipo";
             this.rowTipo.Properties.Caption = "Tipo";
             this.rowTipo.Properties.FieldName = "Tipo";
+            this.rowTipo.Properties.ReadOnly = true;
             // 
             // rowTipo_F
             // 
@@ -8828,6 +8921,7 @@ namespace LOSA.Trazabilidad
             this.rowTipo_F.Name = "rowTipo_F";
             this.rowTipo_F.Properties.Caption = "Tipo F";
             this.rowTipo_F.Properties.FieldName = "Tipo F";
+            this.rowTipo_F.Properties.ReadOnly = true;
             // 
             // rowTipo_R
             // 
@@ -8836,6 +8930,7 @@ namespace LOSA.Trazabilidad
             this.rowTipo_R.Name = "rowTipo_R";
             this.rowTipo_R.Properties.Caption = "Tipo R";
             this.rowTipo_R.Properties.FieldName = "Tipo R";
+            this.rowTipo_R.Properties.ReadOnly = true;
             // 
             // rowCodigo_SAP
             // 
@@ -8844,6 +8939,7 @@ namespace LOSA.Trazabilidad
             this.rowCodigo_SAP.Name = "rowCodigo_SAP";
             this.rowCodigo_SAP.Properties.Caption = "Codigo SAP";
             this.rowCodigo_SAP.Properties.FieldName = "Codigo SAP";
+            this.rowCodigo_SAP.Properties.ReadOnly = true;
             // 
             // rowFecha_Creación
             // 
@@ -8852,6 +8948,8 @@ namespace LOSA.Trazabilidad
             this.rowFecha_Creación.Name = "rowFecha_Creación";
             this.rowFecha_Creación.Properties.Caption = "Fecha Creación";
             this.rowFecha_Creación.Properties.FieldName = "Fecha Creación";
+            this.rowFecha_Creación.Properties.ReadOnly = true;
+            this.rowFecha_Creación.Properties.RowEdit = this.btnAbrirAdjunto;
             // 
             // rowCreado_por
             // 
@@ -8860,6 +8958,7 @@ namespace LOSA.Trazabilidad
             this.rowCreado_por.Name = "rowCreado_por";
             this.rowCreado_por.Properties.Caption = "Creado por";
             this.rowCreado_por.Properties.FieldName = "Creado por";
+            this.rowCreado_por.Properties.ReadOnly = true;
             // 
             // rowTipo_Alimentación
             // 
@@ -8868,6 +8967,7 @@ namespace LOSA.Trazabilidad
             this.rowTipo_Alimentación.Name = "rowTipo_Alimentación";
             this.rowTipo_Alimentación.Properties.Caption = "Tipo Alimentación";
             this.rowTipo_Alimentación.Properties.FieldName = "Tipo Alimentación";
+            this.rowTipo_Alimentación.Properties.ReadOnly = true;
             // 
             // simpleButton2
             // 
@@ -8877,8 +8977,8 @@ namespace LOSA.Trazabilidad
             this.simpleButton2.Appearance.Options.UseBackColor = true;
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton2.Location = new System.Drawing.Point(2390, 23);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton2.Location = new System.Drawing.Point(3702, 23);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(288, 79);
             this.simpleButton2.TabIndex = 94;
@@ -8892,16 +8992,16 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcLotes.DataMember = "lista_lotes_mp";
             this.gcLotes.DataSource = this.dsMantoTrazabilidad;
-            this.gcLotes.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcLotes.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gcLotes.Location = new System.Drawing.Point(6, 546);
             this.gcLotes.MainView = this.gvLotes;
-            this.gcLotes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcLotes.Margin = new System.Windows.Forms.Padding(6);
             this.gcLotes.Name = "gcLotes";
             this.gcLotes.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdViewOC,
             this.cmdScaleDetails,
             this.linkTRZ_HaciaAdelante});
-            this.gcLotes.Size = new System.Drawing.Size(2734, 1094);
+            this.gcLotes.Size = new System.Drawing.Size(4046, 1848);
             this.gcLotes.TabIndex = 93;
             this.gcLotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLotes});
@@ -8953,10 +9053,12 @@ namespace LOSA.Trazabilidad
             this.colSize});
             this.gvLotes.DetailHeight = 673;
             this.gvLotes.GridControl = this.gcLotes;
+            this.gvLotes.LevelIndent = 0;
             this.gvLotes.Name = "gvLotes";
             this.gvLotes.OptionsView.ShowAutoFilterRow = true;
             this.gvLotes.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.gvLotes.OptionsView.ShowFooter = true;
+            this.gvLotes.PreviewIndent = 0;
             // 
             // gridColumn19
             // 
@@ -9150,9 +9252,9 @@ namespace LOSA.Trazabilidad
             this.npRuta3DetalleDespacho.Controls.Add(this.simpleButton3);
             this.npRuta3DetalleDespacho.Controls.Add(this.simpleButton4);
             this.npRuta3DetalleDespacho.Controls.Add(this.gridControl1);
-            this.npRuta3DetalleDespacho.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npRuta3DetalleDespacho.Margin = new System.Windows.Forms.Padding(6);
             this.npRuta3DetalleDespacho.Name = "npRuta3DetalleDespacho";
-            this.npRuta3DetalleDespacho.Size = new System.Drawing.Size(5492, 3165);
+            this.npRuta3DetalleDespacho.Size = new System.Drawing.Size(2684, 1610);
             // 
             // btnImprimirDetalleCarga
             // 
@@ -9163,8 +9265,8 @@ namespace LOSA.Trazabilidad
             this.btnImprimirDetalleCarga.Appearance.Options.UseFont = true;
             this.btnImprimirDetalleCarga.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnImprimirDetalleCarga.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnImprimirDetalleCarga.ImageOptions.SvgImage")));
-            this.btnImprimirDetalleCarga.Location = new System.Drawing.Point(1670, 23);
-            this.btnImprimirDetalleCarga.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnImprimirDetalleCarga.Location = new System.Drawing.Point(2982, 23);
+            this.btnImprimirDetalleCarga.Margin = new System.Windows.Forms.Padding(6);
             this.btnImprimirDetalleCarga.Name = "btnImprimirDetalleCarga";
             this.btnImprimirDetalleCarga.Size = new System.Drawing.Size(422, 100);
             this.btnImprimirDetalleCarga.TabIndex = 53;
@@ -9178,7 +9280,7 @@ namespace LOSA.Trazabilidad
             this.vGridControl3.DataMember = "hedaer_despacho";
             this.vGridControl3.DataSource = this.dsMantoTrazabilidad;
             this.vGridControl3.Location = new System.Drawing.Point(6, 6);
-            this.vGridControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.vGridControl3.Margin = new System.Windows.Forms.Padding(6);
             this.vGridControl3.Name = "vGridControl3";
             this.vGridControl3.OptionsBehavior.Editable = false;
             this.vGridControl3.OptionsView.FixedLineWidth = 4;
@@ -9275,8 +9377,8 @@ namespace LOSA.Trazabilidad
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton3.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
-            this.simpleButton3.Location = new System.Drawing.Point(2104, 23);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton3.Location = new System.Drawing.Point(3416, 23);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(312, 100);
             this.simpleButton3.TabIndex = 51;
@@ -9291,8 +9393,8 @@ namespace LOSA.Trazabilidad
             this.simpleButton4.Appearance.Options.UseBackColor = true;
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton4.Location = new System.Drawing.Point(2428, 23);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton4.Location = new System.Drawing.Point(3740, 23);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(312, 100);
             this.simpleButton4.TabIndex = 50;
@@ -9306,12 +9408,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "detalle_despachos";
             this.gridControl1.DataSource = this.dsReportesTRZ;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl1.Location = new System.Drawing.Point(6, 390);
             this.gridControl1.MainView = this.gridView5;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(2734, 1250);
+            this.gridControl1.Size = new System.Drawing.Size(4046, 2004);
             this.gridControl1.TabIndex = 49;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -9332,9 +9434,11 @@ namespace LOSA.Trazabilidad
             this.colcodigo_barra1});
             this.gridView5.DetailHeight = 673;
             this.gridView5.GridControl = this.gridControl1;
+            this.gridView5.LevelIndent = 0;
             this.gridView5.Name = "gridView5";
             this.gridView5.OptionsView.ShowAutoFilterRow = true;
             this.gridView5.OptionsView.ShowFooter = true;
+            this.gridView5.PreviewIndent = 0;
             // 
             // gridColumn21
             // 
@@ -9459,9 +9563,9 @@ namespace LOSA.Trazabilidad
             // 
             this.npBoletaView.Controls.Add(this.btnBackRuta1);
             this.npBoletaView.Controls.Add(this.vGridControl2);
-            this.npBoletaView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npBoletaView.Margin = new System.Windows.Forms.Padding(6);
             this.npBoletaView.Name = "npBoletaView";
-            this.npBoletaView.Size = new System.Drawing.Size(5492, 3165);
+            this.npBoletaView.Size = new System.Drawing.Size(2684, 1610);
             // 
             // btnBackRuta1
             // 
@@ -9471,8 +9575,8 @@ namespace LOSA.Trazabilidad
             this.btnBackRuta1.Appearance.Options.UseBackColor = true;
             this.btnBackRuta1.Appearance.Options.UseFont = true;
             this.btnBackRuta1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBackRuta1.Location = new System.Drawing.Point(2378, 23);
-            this.btnBackRuta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBackRuta1.Location = new System.Drawing.Point(3690, 23);
+            this.btnBackRuta1.Margin = new System.Windows.Forms.Padding(6);
             this.btnBackRuta1.Name = "btnBackRuta1";
             this.btnBackRuta1.Size = new System.Drawing.Size(312, 100);
             this.btnBackRuta1.TabIndex = 51;
@@ -9485,8 +9589,9 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.vGridControl2.BandsInterval = 4;
+            this.vGridControl2.Cursor = System.Windows.Forms.Cursors.Default;
             this.vGridControl2.Location = new System.Drawing.Point(16, 156);
-            this.vGridControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.vGridControl2.Margin = new System.Windows.Forms.Padding(6);
             this.vGridControl2.Name = "vGridControl2";
             this.vGridControl2.OptionsView.AllowGlyphSkinning = true;
             this.vGridControl2.OptionsView.AutoScaleBands = true;
@@ -9494,7 +9599,7 @@ namespace LOSA.Trazabilidad
             this.vGridControl2.OptionsView.MinRowAutoHeight = 19;
             this.vGridControl2.RecordWidth = 400;
             this.vGridControl2.RowHeaderWidth = 400;
-            this.vGridControl2.Size = new System.Drawing.Size(2730, 1490);
+            this.vGridControl2.Size = new System.Drawing.Size(4042, 2244);
             this.vGridControl2.TabIndex = 1;
             // 
             // npRuta1
@@ -9518,17 +9623,17 @@ namespace LOSA.Trazabilidad
             this.npRuta1.Controls.Add(this.txtLoteMPRuta1);
             this.npRuta1.Controls.Add(this.btnHome_Ruta1);
             this.npRuta1.Controls.Add(this.labelControl85);
-            this.npRuta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npRuta1.Margin = new System.Windows.Forms.Padding(6);
             this.npRuta1.Name = "npRuta1";
-            this.npRuta1.Size = new System.Drawing.Size(5492, 3165);
+            this.npRuta1.Size = new System.Drawing.Size(2684, 1610);
             // 
             // labelControl93
             // 
             this.labelControl93.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl93.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.labelControl93.Appearance.Options.UseFont = true;
-            this.labelControl93.Location = new System.Drawing.Point(272, 1583);
-            this.labelControl93.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl93.Location = new System.Drawing.Point(272, 2337);
+            this.labelControl93.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl93.Name = "labelControl93";
             this.labelControl93.Size = new System.Drawing.Size(182, 32);
             this.labelControl93.TabIndex = 107;
@@ -9538,8 +9643,8 @@ namespace LOSA.Trazabilidad
             // 
             this.txtTotalConsumidoRuta1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTotalConsumidoRuta1.EditValue = "0.00";
-            this.txtTotalConsumidoRuta1.Location = new System.Drawing.Point(462, 1577);
-            this.txtTotalConsumidoRuta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTotalConsumidoRuta1.Location = new System.Drawing.Point(462, 2331);
+            this.txtTotalConsumidoRuta1.Margin = new System.Windows.Forms.Padding(6);
             this.txtTotalConsumidoRuta1.Name = "txtTotalConsumidoRuta1";
             this.txtTotalConsumidoRuta1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalConsumidoRuta1.Properties.Appearance.Options.UseFont = true;
@@ -9558,14 +9663,14 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl12.DataMember = "pt_list_trz";
             this.gridControl12.DataSource = this.dsReportesTRZ;
-            this.gridControl12.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl12.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl12.Location = new System.Drawing.Point(0, 954);
             this.gridControl12.MainView = this.gridView23;
-            this.gridControl12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl12.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl12.Name = "gridControl12";
             this.gridControl12.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdLink_PT_Ruta4_from_ruta1});
-            this.gridControl12.Size = new System.Drawing.Size(728, 615);
+            this.gridControl12.Size = new System.Drawing.Size(728, 1369);
             this.gridControl12.TabIndex = 105;
             this.gridControl12.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView23});
@@ -9578,10 +9683,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn109});
             this.gridView23.DetailHeight = 673;
             this.gridView23.GridControl = this.gridControl12;
+            this.gridView23.LevelIndent = 0;
             this.gridView23.Name = "gridView23";
             this.gridView23.OptionsView.ShowAutoFilterRow = true;
             this.gridView23.OptionsView.ShowFooter = true;
             this.gridView23.OptionsView.ShowViewCaption = true;
+            this.gridView23.PreviewIndent = 0;
             this.gridView23.ViewCaption = "Tilapia";
             this.gridView23.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView23_RowClick);
             this.gridView23.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView23_FocusedRowChanged);
@@ -9634,7 +9741,7 @@ namespace LOSA.Trazabilidad
             this.btnBorrarRuta1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarRuta1.Appearance.Options.UseFont = true;
             this.btnBorrarRuta1.Location = new System.Drawing.Point(782, 135);
-            this.btnBorrarRuta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBorrarRuta1.Margin = new System.Windows.Forms.Padding(6);
             this.btnBorrarRuta1.Name = "btnBorrarRuta1";
             this.btnBorrarRuta1.Size = new System.Drawing.Size(236, 79);
             this.btnBorrarRuta1.TabIndex = 63;
@@ -9649,7 +9756,7 @@ namespace LOSA.Trazabilidad
             this.labelControl81.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl81.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl81.Location = new System.Drawing.Point(746, 213);
-            this.labelControl81.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl81.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl81.Name = "labelControl81";
             this.labelControl81.Size = new System.Drawing.Size(886, 37);
             this.labelControl81.TabIndex = 68;
@@ -9663,7 +9770,7 @@ namespace LOSA.Trazabilidad
             this.labelControl82.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl82.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl82.Location = new System.Drawing.Point(1644, 213);
-            this.labelControl82.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl82.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl82.Name = "labelControl82";
             this.labelControl82.Size = new System.Drawing.Size(934, 37);
             this.labelControl82.TabIndex = 104;
@@ -9675,12 +9782,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl11.DataMember = "reproceso_lote_pt_ruta1";
             this.gridControl11.DataSource = this.dsReportesTRZ;
-            this.gridControl11.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl11.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl11.Location = new System.Drawing.Point(1644, 256);
             this.gridControl11.MainView = this.gridView19;
-            this.gridControl11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl11.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl11.Name = "gridControl11";
-            this.gridControl11.Size = new System.Drawing.Size(1094, 687);
+            this.gridControl11.Size = new System.Drawing.Size(2406, 687);
             this.gridControl11.TabIndex = 103;
             this.gridControl11.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView19});
@@ -9700,8 +9807,10 @@ namespace LOSA.Trazabilidad
             this.coldescripcion_pt});
             this.gridView19.DetailHeight = 673;
             this.gridView19.GridControl = this.gridControl11;
+            this.gridView19.LevelIndent = 0;
             this.gridView19.Name = "gridView19";
             this.gridView19.OptionsView.ShowFooter = true;
+            this.gridView19.PreviewIndent = 0;
             // 
             // colexistencia2
             // 
@@ -9812,7 +9921,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton11.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton11.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
             this.simpleButton11.Location = new System.Drawing.Point(2284, 121);
-            this.simpleButton11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton11.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(312, 108);
             this.simpleButton11.TabIndex = 102;
@@ -9829,9 +9938,9 @@ namespace LOSA.Trazabilidad
             this.labelControl87.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl87.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl87.Location = new System.Drawing.Point(1206, 963);
-            this.labelControl87.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl87.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl87.Name = "labelControl87";
-            this.labelControl87.Size = new System.Drawing.Size(1032, 46);
+            this.labelControl87.Size = new System.Drawing.Size(2344, 46);
             this.labelControl87.TabIndex = 70;
             this.labelControl87.Text = "Registro de Ingresos";
             // 
@@ -9842,12 +9951,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl10.DataMember = "ingresos_mp_lote_ruta1";
             this.gridControl10.DataSource = this.dsReportesTRZ;
-            this.gridControl10.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl10.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl10.Location = new System.Drawing.Point(746, 1012);
             this.gridControl10.MainView = this.gridView18;
-            this.gridControl10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl10.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl10.Name = "gridControl10";
-            this.gridControl10.Size = new System.Drawing.Size(1992, 629);
+            this.gridControl10.Size = new System.Drawing.Size(3304, 1383);
             this.gridControl10.TabIndex = 71;
             this.gridControl10.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView18});
@@ -9869,8 +9978,10 @@ namespace LOSA.Trazabilidad
             this.colpeso_prod});
             this.gridView18.DetailHeight = 673;
             this.gridView18.GridControl = this.gridControl10;
+            this.gridView18.LevelIndent = 0;
             this.gridView18.Name = "gridView18";
             this.gridView18.OptionsView.ShowFooter = true;
+            this.gridView18.PreviewIndent = 0;
             // 
             // colidboleta
             // 
@@ -9997,7 +10108,7 @@ namespace LOSA.Trazabilidad
             this.btnGenerateRuta1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnGenerateRuta1.Appearance.Options.UseFont = true;
             this.btnGenerateRuta1.Location = new System.Drawing.Point(534, 135);
-            this.btnGenerateRuta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGenerateRuta1.Margin = new System.Windows.Forms.Padding(6);
             this.btnGenerateRuta1.Name = "btnGenerateRuta1";
             this.btnGenerateRuta1.Size = new System.Drawing.Size(236, 79);
             this.btnGenerateRuta1.TabIndex = 62;
@@ -10008,10 +10119,10 @@ namespace LOSA.Trazabilidad
             // 
             this.gridControl9.DataMember = "Inventario_mp_lote_ruta1";
             this.gridControl9.DataSource = this.dsReportesTRZ;
-            this.gridControl9.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl9.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl9.Location = new System.Drawing.Point(746, 256);
             this.gridControl9.MainView = this.gridView17;
-            this.gridControl9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl9.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl9.Name = "gridControl9";
             this.gridControl9.Size = new System.Drawing.Size(886, 687);
             this.gridControl9.TabIndex = 69;
@@ -10033,8 +10144,10 @@ namespace LOSA.Trazabilidad
             this.colexistencia_tm});
             this.gridView17.DetailHeight = 673;
             this.gridView17.GridControl = this.gridControl9;
+            this.gridView17.LevelIndent = 0;
             this.gridView17.Name = "gridView17";
             this.gridView17.OptionsView.ShowFooter = true;
+            this.gridView17.PreviewIndent = 0;
             // 
             // colexistencia1
             // 
@@ -10139,10 +10252,10 @@ namespace LOSA.Trazabilidad
             // 
             this.gcPT_Ruta1.DataMember = "pt_list_trzCamaron";
             this.gcPT_Ruta1.DataSource = this.dsReportesTRZ;
-            this.gcPT_Ruta1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcPT_Ruta1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gcPT_Ruta1.Location = new System.Drawing.Point(6, 256);
             this.gcPT_Ruta1.MainView = this.gvPT_Ruta1;
-            this.gcPT_Ruta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcPT_Ruta1.Margin = new System.Windows.Forms.Padding(6);
             this.gcPT_Ruta1.Name = "gcPT_Ruta1";
             this.gcPT_Ruta1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdButtonTrzLotePT_ruta4});
@@ -10160,10 +10273,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn91});
             this.gvPT_Ruta1.DetailHeight = 673;
             this.gvPT_Ruta1.GridControl = this.gcPT_Ruta1;
+            this.gvPT_Ruta1.LevelIndent = 0;
             this.gvPT_Ruta1.Name = "gvPT_Ruta1";
             this.gvPT_Ruta1.OptionsView.ShowAutoFilterRow = true;
             this.gvPT_Ruta1.OptionsView.ShowFooter = true;
             this.gvPT_Ruta1.OptionsView.ShowViewCaption = true;
+            this.gvPT_Ruta1.PreviewIndent = 0;
             this.gvPT_Ruta1.ViewCaption = "Camarón";
             this.gvPT_Ruta1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPT_Ruta1_RowClick);
             this.gvPT_Ruta1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvPT_Ruta1_FocusedRowChanged);
@@ -10216,7 +10331,7 @@ namespace LOSA.Trazabilidad
             this.lblLoteNameRuta1_Rotulo.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoteNameRuta1_Rotulo.Appearance.Options.UseFont = true;
             this.lblLoteNameRuta1_Rotulo.Location = new System.Drawing.Point(56, 87);
-            this.lblLoteNameRuta1_Rotulo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblLoteNameRuta1_Rotulo.Margin = new System.Windows.Forms.Padding(6);
             this.lblLoteNameRuta1_Rotulo.Name = "lblLoteNameRuta1_Rotulo";
             this.lblLoteNameRuta1_Rotulo.Size = new System.Drawing.Size(120, 45);
             this.lblLoteNameRuta1_Rotulo.TabIndex = 65;
@@ -10230,7 +10345,7 @@ namespace LOSA.Trazabilidad
             this.lblLoteNameRuta1.Appearance.Options.UseFont = true;
             this.lblLoteNameRuta1.Appearance.Options.UseForeColor = true;
             this.lblLoteNameRuta1.Location = new System.Drawing.Point(190, 88);
-            this.lblLoteNameRuta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblLoteNameRuta1.Margin = new System.Windows.Forms.Padding(6);
             this.lblLoteNameRuta1.Name = "lblLoteNameRuta1";
             this.lblLoteNameRuta1.Size = new System.Drawing.Size(122, 45);
             this.lblLoteNameRuta1.TabIndex = 64;
@@ -10242,7 +10357,7 @@ namespace LOSA.Trazabilidad
             this.labelControl84.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl84.Appearance.Options.UseFont = true;
             this.labelControl84.Location = new System.Drawing.Point(56, 163);
-            this.labelControl84.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl84.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl84.Name = "labelControl84";
             this.labelControl84.Size = new System.Drawing.Size(122, 45);
             this.labelControl84.TabIndex = 61;
@@ -10251,7 +10366,7 @@ namespace LOSA.Trazabilidad
             // txtLoteMPRuta1
             // 
             this.txtLoteMPRuta1.Location = new System.Drawing.Point(190, 152);
-            this.txtLoteMPRuta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtLoteMPRuta1.Margin = new System.Windows.Forms.Padding(6);
             this.txtLoteMPRuta1.Name = "txtLoteMPRuta1";
             this.txtLoteMPRuta1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoteMPRuta1.Properties.Appearance.Options.UseFont = true;
@@ -10267,8 +10382,8 @@ namespace LOSA.Trazabilidad
             this.btnHome_Ruta1.Appearance.Options.UseBackColor = true;
             this.btnHome_Ruta1.Appearance.Options.UseFont = true;
             this.btnHome_Ruta1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnHome_Ruta1.Location = new System.Drawing.Point(2428, 10);
-            this.btnHome_Ruta1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnHome_Ruta1.Location = new System.Drawing.Point(3740, 10);
+            this.btnHome_Ruta1.Margin = new System.Windows.Forms.Padding(6);
             this.btnHome_Ruta1.Name = "btnHome_Ruta1";
             this.btnHome_Ruta1.Size = new System.Drawing.Size(312, 100);
             this.btnHome_Ruta1.TabIndex = 59;
@@ -10285,9 +10400,9 @@ namespace LOSA.Trazabilidad
             this.labelControl85.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl85.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl85.Location = new System.Drawing.Point(4, 17);
-            this.labelControl85.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl85.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl85.Name = "labelControl85";
-            this.labelControl85.Size = new System.Drawing.Size(2734, 75);
+            this.labelControl85.Size = new System.Drawing.Size(4046, 75);
             this.labelControl85.TabIndex = 58;
             this.labelControl85.Text = "Trazabilidad de lote MP hacia Inventario Actual";
             // 
@@ -10317,9 +10432,9 @@ namespace LOSA.Trazabilidad
             this.npRuta4_V2.Controls.Add(this.labelControl102);
             this.npRuta4_V2.Controls.Add(this.labelControl103);
             this.npRuta4_V2.Controls.Add(this.simpleButton15);
-            this.npRuta4_V2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npRuta4_V2.Margin = new System.Windows.Forms.Padding(6);
             this.npRuta4_V2.Name = "npRuta4_V2";
-            this.npRuta4_V2.Size = new System.Drawing.Size(5492, 3165);
+            this.npRuta4_V2.Size = new System.Drawing.Size(2684, 1610);
             // 
             // tabControl2
             // 
@@ -10334,10 +10449,10 @@ namespace LOSA.Trazabilidad
             this.tabControl2.Controls.Add(this.tabPage10);
             this.tabControl2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl2.Location = new System.Drawing.Point(6, 610);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(2734, 1031);
+            this.tabControl2.Size = new System.Drawing.Size(4046, 1785);
             this.tabControl2.TabIndex = 82;
             // 
             // tabPage5
@@ -10345,10 +10460,10 @@ namespace LOSA.Trazabilidad
             this.tabPage5.Controls.Add(this.panelControl7);
             this.tabPage5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage5.Location = new System.Drawing.Point(8, 59);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage5.Size = new System.Drawing.Size(2718, 964);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage5.Size = new System.Drawing.Size(4030, 1718);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "NIR";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -10366,9 +10481,9 @@ namespace LOSA.Trazabilidad
             this.panelControl7.Controls.Add(this.grd_nir_Ruta4);
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl7.Location = new System.Drawing.Point(6, 6);
-            this.panelControl7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl7.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(2706, 952);
+            this.panelControl7.Size = new System.Drawing.Size(4018, 1706);
             this.panelControl7.TabIndex = 1;
             // 
             // simpleButton16
@@ -10377,7 +10492,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton16.Appearance.Options.UseFont = true;
             this.simpleButton16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton16.ImageOptions.Image")));
             this.simpleButton16.Location = new System.Drawing.Point(38, 37);
-            this.simpleButton16.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton16.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton16.Name = "simpleButton16";
             this.simpleButton16.Size = new System.Drawing.Size(480, 75);
             this.simpleButton16.TabIndex = 21;
@@ -10391,9 +10506,9 @@ namespace LOSA.Trazabilidad
             this.panelControl10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl10.Location = new System.Drawing.Point(0, 19);
-            this.panelControl10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl10.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(22, 914);
+            this.panelControl10.Size = new System.Drawing.Size(22, 1668);
             this.panelControl10.TabIndex = 20;
             // 
             // panelControl11
@@ -10402,10 +10517,10 @@ namespace LOSA.Trazabilidad
             this.panelControl11.Appearance.Options.UseBackColor = true;
             this.panelControl11.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl11.Location = new System.Drawing.Point(2684, 19);
-            this.panelControl11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl11.Location = new System.Drawing.Point(3996, 19);
+            this.panelControl11.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(22, 914);
+            this.panelControl11.Size = new System.Drawing.Size(22, 1668);
             this.panelControl11.TabIndex = 19;
             // 
             // panelControl12
@@ -10414,10 +10529,10 @@ namespace LOSA.Trazabilidad
             this.panelControl12.Appearance.Options.UseBackColor = true;
             this.panelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl12.Location = new System.Drawing.Point(0, 933);
-            this.panelControl12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl12.Location = new System.Drawing.Point(0, 1687);
+            this.panelControl12.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl12.Name = "panelControl12";
-            this.panelControl12.Size = new System.Drawing.Size(2706, 19);
+            this.panelControl12.Size = new System.Drawing.Size(4018, 19);
             this.panelControl12.TabIndex = 18;
             // 
             // panelControl13
@@ -10427,9 +10542,9 @@ namespace LOSA.Trazabilidad
             this.panelControl13.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl13.Location = new System.Drawing.Point(0, 0);
-            this.panelControl13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl13.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl13.Name = "panelControl13";
-            this.panelControl13.Size = new System.Drawing.Size(2706, 19);
+            this.panelControl13.Size = new System.Drawing.Size(4018, 19);
             this.panelControl13.TabIndex = 17;
             // 
             // grd_nir_Ruta4
@@ -10439,12 +10554,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_nir_Ruta4.DataMember = "show_nir";
             this.grd_nir_Ruta4.DataSource = this.dsMantenimientoC;
-            this.grd_nir_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_nir_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_nir_Ruta4.Location = new System.Drawing.Point(28, 133);
             this.grd_nir_Ruta4.MainView = this.gvNIR_Ruta4;
-            this.grd_nir_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_nir_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.grd_nir_Ruta4.Name = "grd_nir_Ruta4";
-            this.grd_nir_Ruta4.Size = new System.Drawing.Size(2648, 792);
+            this.grd_nir_Ruta4.Size = new System.Drawing.Size(3960, 1546);
             this.grd_nir_Ruta4.TabIndex = 1;
             this.grd_nir_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNIR_Ruta4});
@@ -10481,10 +10596,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn122});
             this.gvNIR_Ruta4.DetailHeight = 673;
             this.gvNIR_Ruta4.GridControl = this.grd_nir_Ruta4;
+            this.gvNIR_Ruta4.LevelIndent = 0;
             this.gvNIR_Ruta4.Name = "gvNIR_Ruta4";
             this.gvNIR_Ruta4.OptionsView.ShowAutoFilterRow = true;
             this.gvNIR_Ruta4.OptionsView.ShowGroupPanel = false;
             this.gvNIR_Ruta4.OptionsView.ShowViewCaption = true;
+            this.gvNIR_Ruta4.PreviewIndent = 0;
             this.gvNIR_Ruta4.ViewCaption = "BROMATOLOGIA";
             this.gvNIR_Ruta4.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvNIR_Ruta4_RowStyle);
             // 
@@ -10567,10 +10684,10 @@ namespace LOSA.Trazabilidad
             this.tabPage6.Controls.Add(this.gridControl15);
             this.tabPage6.Controls.Add(this.panelControl14);
             this.tabPage6.Location = new System.Drawing.Point(8, 59);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage6.Size = new System.Drawing.Size(2718, 964);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage6.Size = new System.Drawing.Size(4030, 1718);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Datos y Adjuntos";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -10581,16 +10698,16 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gcDocumentosAdjuntos_Ruta4.DataMember = "adjuntos";
             this.gcDocumentosAdjuntos_Ruta4.DataSource = this.dsMantenimientoC;
-            this.gcDocumentosAdjuntos_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcDocumentosAdjuntos_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gcDocumentosAdjuntos_Ruta4.Location = new System.Drawing.Point(1470, 12);
             this.gcDocumentosAdjuntos_Ruta4.MainView = this.gvDocumentosAdjuntos_Ruta4;
-            this.gcDocumentosAdjuntos_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcDocumentosAdjuntos_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.gcDocumentosAdjuntos_Ruta4.Name = "gcDocumentosAdjuntos_Ruta4";
             this.gcDocumentosAdjuntos_Ruta4.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit5,
             this.cmdArbirAdjunto_Ruta4,
             this.repositoryItemButtonEdit7});
-            this.gcDocumentosAdjuntos_Ruta4.Size = new System.Drawing.Size(1190, 951);
+            this.gcDocumentosAdjuntos_Ruta4.Size = new System.Drawing.Size(1190, 1707);
             this.gcDocumentosAdjuntos_Ruta4.TabIndex = 38;
             this.gcDocumentosAdjuntos_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDocumentosAdjuntos_Ruta4});
@@ -10632,10 +10749,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn132});
             this.gvDocumentosAdjuntos_Ruta4.DetailHeight = 673;
             this.gvDocumentosAdjuntos_Ruta4.GridControl = this.gcDocumentosAdjuntos_Ruta4;
+            this.gvDocumentosAdjuntos_Ruta4.LevelIndent = 0;
             this.gvDocumentosAdjuntos_Ruta4.Name = "gvDocumentosAdjuntos_Ruta4";
             this.gvDocumentosAdjuntos_Ruta4.OptionsView.ShowAutoFilterRow = true;
             this.gvDocumentosAdjuntos_Ruta4.OptionsView.ShowGroupPanel = false;
             this.gvDocumentosAdjuntos_Ruta4.OptionsView.ShowViewCaption = true;
+            this.gvDocumentosAdjuntos_Ruta4.PreviewIndent = 0;
             this.gvDocumentosAdjuntos_Ruta4.ViewCaption = "Documentos Adjuntos";
             // 
             // gridColumn123
@@ -10695,9 +10814,9 @@ namespace LOSA.Trazabilidad
             // repositoryItemButtonEdit5
             // 
             this.repositoryItemButtonEdit5.AutoHeight = false;
-            editorButtonImageOptions7.Image = global::LOSA.Properties.Resources.Upload_32x32;
+            editorButtonImageOptions31.Image = global::LOSA.Properties.Resources.Upload_32x32;
             this.repositoryItemButtonEdit5.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions31, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject121, serializableAppearanceObject122, serializableAppearanceObject123, serializableAppearanceObject124, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit5.Name = "repositoryItemButtonEdit5";
             this.repositoryItemButtonEdit5.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -10714,9 +10833,9 @@ namespace LOSA.Trazabilidad
             // cmdArbirAdjunto_Ruta4
             // 
             this.cmdArbirAdjunto_Ruta4.AutoHeight = false;
-            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
+            editorButtonImageOptions32.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions32.Image")));
             this.cmdArbirAdjunto_Ruta4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions32, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject125, serializableAppearanceObject126, serializableAppearanceObject127, serializableAppearanceObject128, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdArbirAdjunto_Ruta4.Name = "cmdArbirAdjunto_Ruta4";
             this.cmdArbirAdjunto_Ruta4.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdArbirAdjunto_Ruta4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdArbirAdjunto_Ruta4_ButtonClick);
@@ -10746,9 +10865,9 @@ namespace LOSA.Trazabilidad
             // repositoryItemButtonEdit7
             // 
             this.repositoryItemButtonEdit7.AutoHeight = false;
-            editorButtonImageOptions9.Image = global::LOSA.Properties.Resources.po_delete_24;
+            editorButtonImageOptions33.Image = global::LOSA.Properties.Resources.po_delete_24;
             this.repositoryItemButtonEdit7.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions33, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject129, serializableAppearanceObject130, serializableAppearanceObject131, serializableAppearanceObject132, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit7.Name = "repositoryItemButtonEdit7";
             this.repositoryItemButtonEdit7.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -10756,10 +10875,10 @@ namespace LOSA.Trazabilidad
             // 
             this.gridControl15.DataMember = "parametros";
             this.gridControl15.DataSource = this.dsMantenimientoC;
-            this.gridControl15.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl15.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl15.Location = new System.Drawing.Point(12, 10);
             this.gridControl15.MainView = this.gridView28;
-            this.gridControl15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl15.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl15.Name = "gridControl15";
             this.gridControl15.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit8});
@@ -10802,9 +10921,11 @@ namespace LOSA.Trazabilidad
             this.gridView28.DetailHeight = 673;
             this.gridView28.GridControl = this.gridControl15;
             this.gridView28.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gridView28.LevelIndent = 0;
             this.gridView28.Name = "gridView28";
             this.gridView28.OptionsView.ShowAutoFilterRow = true;
             this.gridView28.OptionsView.ShowGroupPanel = false;
+            this.gridView28.PreviewIndent = 0;
             this.gridView28.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView28_RowStyle);
             // 
             // gridColumn133
@@ -10872,9 +10993,9 @@ namespace LOSA.Trazabilidad
             // repositoryItemButtonEdit8
             // 
             this.repositoryItemButtonEdit8.AutoHeight = false;
-            editorButtonImageOptions10.Image = global::LOSA.Properties.Resources._click_24X24;
+            editorButtonImageOptions34.Image = global::LOSA.Properties.Resources._click_24X24;
             this.repositoryItemButtonEdit8.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions34, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject133, serializableAppearanceObject134, serializableAppearanceObject135, serializableAppearanceObject136, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit8.Name = "repositoryItemButtonEdit8";
             this.repositoryItemButtonEdit8.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -10906,9 +11027,9 @@ namespace LOSA.Trazabilidad
             this.panelControl14.Controls.Add(this.labelControl112);
             this.panelControl14.Controls.Add(this.spTipoporcentaje_Ruta4);
             this.panelControl14.Location = new System.Drawing.Point(6, 429);
-            this.panelControl14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl14.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl14.Name = "panelControl14";
-            this.panelControl14.Size = new System.Drawing.Size(1492, 456);
+            this.panelControl14.Size = new System.Drawing.Size(2804, 456);
             this.panelControl14.TabIndex = 49;
             // 
             // spsustentable_Ruta4
@@ -10919,7 +11040,7 @@ namespace LOSA.Trazabilidad
             0,
             0});
             this.spsustentable_Ruta4.Location = new System.Drawing.Point(602, 235);
-            this.spsustentable_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.spsustentable_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.spsustentable_Ruta4.Name = "spsustentable_Ruta4";
             this.spsustentable_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.spsustentable_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -10931,7 +11052,7 @@ namespace LOSA.Trazabilidad
             // pictureEdit1
             // 
             this.pictureEdit1.Location = new System.Drawing.Point(1020, 115);
-            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
@@ -10941,7 +11062,7 @@ namespace LOSA.Trazabilidad
             // hyIUCN_Ruta4
             // 
             this.hyIUCN_Ruta4.Location = new System.Drawing.Point(602, 394);
-            this.hyIUCN_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.hyIUCN_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.hyIUCN_Ruta4.Name = "hyIUCN_Ruta4";
             this.hyIUCN_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.hyIUCN_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -10951,7 +11072,7 @@ namespace LOSA.Trazabilidad
             // hyfishsource_Ruta4
             // 
             this.hyfishsource_Ruta4.Location = new System.Drawing.Point(602, 342);
-            this.hyfishsource_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.hyfishsource_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.hyfishsource_Ruta4.Name = "hyfishsource_Ruta4";
             this.hyfishsource_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.hyfishsource_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -10965,7 +11086,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton17.Enabled = false;
             this.simpleButton17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
             this.simpleButton17.Location = new System.Drawing.Point(1020, 367);
-            this.simpleButton17.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton17.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton17.Name = "simpleButton17";
             this.simpleButton17.Size = new System.Drawing.Size(410, 79);
             this.simpleButton17.TabIndex = 2;
@@ -10974,7 +11095,7 @@ namespace LOSA.Trazabilidad
             // txtPLantaSenasa_Ruta4
             // 
             this.txtPLantaSenasa_Ruta4.Location = new System.Drawing.Point(602, 179);
-            this.txtPLantaSenasa_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtPLantaSenasa_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtPLantaSenasa_Ruta4.Name = "txtPLantaSenasa_Ruta4";
             this.txtPLantaSenasa_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.txtPLantaSenasa_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -10984,7 +11105,7 @@ namespace LOSA.Trazabilidad
             // grd_tipo_Ruta4
             // 
             this.grd_tipo_Ruta4.Location = new System.Drawing.Point(1020, 6);
-            this.grd_tipo_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_tipo_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.grd_tipo_Ruta4.Name = "grd_tipo_Ruta4";
             this.grd_tipo_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.grd_tipo_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11029,9 +11150,11 @@ namespace LOSA.Trazabilidad
             this.gridColumn141});
             this.gridView29.DetailHeight = 673;
             this.gridView29.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView29.LevelIndent = 0;
             this.gridView29.Name = "gridView29";
             this.gridView29.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView29.OptionsView.ShowGroupPanel = false;
+            this.gridView29.PreviewIndent = 0;
             // 
             // gridColumn140
             // 
@@ -11053,7 +11176,7 @@ namespace LOSA.Trazabilidad
             // grd_origen_Ruta4
             // 
             this.grd_origen_Ruta4.Location = new System.Drawing.Point(602, 288);
-            this.grd_origen_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_origen_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.grd_origen_Ruta4.Name = "grd_origen_Ruta4";
             this.grd_origen_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.grd_origen_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11098,9 +11221,11 @@ namespace LOSA.Trazabilidad
             this.gridColumn143});
             this.gridView30.DetailHeight = 673;
             this.gridView30.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView30.LevelIndent = 0;
             this.gridView30.Name = "gridView30";
             this.gridView30.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView30.OptionsView.ShowGroupPanel = false;
+            this.gridView30.PreviewIndent = 0;
             // 
             // gridColumn142
             // 
@@ -11122,7 +11247,7 @@ namespace LOSA.Trazabilidad
             // grd_pesca_Ruta4
             // 
             this.grd_pesca_Ruta4.Location = new System.Drawing.Point(602, 96);
-            this.grd_pesca_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_pesca_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.grd_pesca_Ruta4.Name = "grd_pesca_Ruta4";
             this.grd_pesca_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.grd_pesca_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11169,9 +11294,11 @@ namespace LOSA.Trazabilidad
             this.gridColumn145});
             this.gridView31.DetailHeight = 673;
             this.gridView31.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView31.LevelIndent = 0;
             this.gridView31.Name = "gridView31";
             this.gridView31.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView31.OptionsView.ShowGroupPanel = false;
+            this.gridView31.PreviewIndent = 0;
             // 
             // gridColumn144
             // 
@@ -11194,7 +11321,7 @@ namespace LOSA.Trazabilidad
             // grd_origenespecie_Ruta4
             // 
             this.grd_origenespecie_Ruta4.Location = new System.Drawing.Point(602, 42);
-            this.grd_origenespecie_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_origenespecie_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.grd_origenespecie_Ruta4.Name = "grd_origenespecie_Ruta4";
             this.grd_origenespecie_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grd_origenespecie_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11241,9 +11368,11 @@ namespace LOSA.Trazabilidad
             this.gridColumn149});
             this.gridView32.DetailHeight = 673;
             this.gridView32.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView32.LevelIndent = 0;
             this.gridView32.Name = "gridView32";
             this.gridView32.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView32.OptionsView.ShowGroupPanel = false;
+            this.gridView32.PreviewIndent = 0;
             // 
             // gridColumn146
             // 
@@ -11281,7 +11410,7 @@ namespace LOSA.Trazabilidad
             this.labelControl104.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl104.Appearance.Options.UseFont = true;
             this.labelControl104.Location = new System.Drawing.Point(404, 400);
-            this.labelControl104.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl104.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl104.Name = "labelControl104";
             this.labelControl104.Size = new System.Drawing.Size(170, 35);
             this.labelControl104.TabIndex = 49;
@@ -11292,7 +11421,7 @@ namespace LOSA.Trazabilidad
             this.labelControl105.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl105.Appearance.Options.UseFont = true;
             this.labelControl105.Location = new System.Drawing.Point(348, 350);
-            this.labelControl105.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl105.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl105.Name = "labelControl105";
             this.labelControl105.Size = new System.Drawing.Size(227, 35);
             this.labelControl105.TabIndex = 48;
@@ -11303,7 +11432,7 @@ namespace LOSA.Trazabilidad
             this.labelControl106.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl106.Appearance.Options.UseFont = true;
             this.labelControl106.Location = new System.Drawing.Point(938, 67);
-            this.labelControl106.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl106.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl106.Name = "labelControl106";
             this.labelControl106.Size = new System.Drawing.Size(72, 30);
             this.labelControl106.TabIndex = 47;
@@ -11314,7 +11443,7 @@ namespace LOSA.Trazabilidad
             this.labelControl107.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl107.Appearance.Options.UseFont = true;
             this.labelControl107.Location = new System.Drawing.Point(962, 13);
-            this.labelControl107.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl107.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl107.Name = "labelControl107";
             this.labelControl107.Size = new System.Drawing.Size(48, 30);
             this.labelControl107.TabIndex = 46;
@@ -11325,7 +11454,7 @@ namespace LOSA.Trazabilidad
             this.labelControl108.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl108.Appearance.Options.UseFont = true;
             this.labelControl108.Location = new System.Drawing.Point(384, 290);
-            this.labelControl108.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl108.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl108.Name = "labelControl108";
             this.labelControl108.Size = new System.Drawing.Size(173, 36);
             this.labelControl108.TabIndex = 45;
@@ -11337,7 +11466,7 @@ namespace LOSA.Trazabilidad
             this.labelControl109.Appearance.Options.UseFont = true;
             this.labelControl109.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl109.Location = new System.Drawing.Point(136, 233);
-            this.labelControl109.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl109.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl109.Name = "labelControl109";
             this.labelControl109.Size = new System.Drawing.Size(454, 38);
             this.labelControl109.TabIndex = 44;
@@ -11349,7 +11478,7 @@ namespace LOSA.Trazabilidad
             this.labelControl110.Appearance.Options.UseFont = true;
             this.labelControl110.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl110.Location = new System.Drawing.Point(28, 156);
-            this.labelControl110.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl110.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl110.Name = "labelControl110";
             this.labelControl110.Size = new System.Drawing.Size(578, 65);
             this.labelControl110.TabIndex = 43;
@@ -11360,7 +11489,7 @@ namespace LOSA.Trazabilidad
             this.labelControl111.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl111.Appearance.Options.UseFont = true;
             this.labelControl111.Location = new System.Drawing.Point(328, 98);
-            this.labelControl111.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl111.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl111.Name = "labelControl111";
             this.labelControl111.Size = new System.Drawing.Size(229, 36);
             this.labelControl111.TabIndex = 42;
@@ -11371,7 +11500,7 @@ namespace LOSA.Trazabilidad
             this.labelControl112.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl112.Appearance.Options.UseFont = true;
             this.labelControl112.Location = new System.Drawing.Point(378, 48);
-            this.labelControl112.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl112.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl112.Name = "labelControl112";
             this.labelControl112.Size = new System.Drawing.Size(178, 36);
             this.labelControl112.TabIndex = 41;
@@ -11385,7 +11514,7 @@ namespace LOSA.Trazabilidad
             0,
             0});
             this.spTipoporcentaje_Ruta4.Location = new System.Drawing.Point(1020, 60);
-            this.spTipoporcentaje_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.spTipoporcentaje_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.spTipoporcentaje_Ruta4.Name = "spTipoporcentaje_Ruta4";
             this.spTipoporcentaje_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.spTipoporcentaje_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11398,10 +11527,10 @@ namespace LOSA.Trazabilidad
             // 
             this.tabPage7.Controls.Add(this.panelControl15);
             this.tabPage7.Location = new System.Drawing.Point(8, 59);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage7.Size = new System.Drawing.Size(2718, 964);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage7.Size = new System.Drawing.Size(4030, 1718);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Logistica";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -11418,9 +11547,9 @@ namespace LOSA.Trazabilidad
             this.panelControl15.Controls.Add(this.panelControl20);
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl15.Location = new System.Drawing.Point(6, 6);
-            this.panelControl15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl15.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(2706, 952);
+            this.panelControl15.Size = new System.Drawing.Size(4018, 1706);
             this.panelControl15.TabIndex = 51;
             // 
             // panelControl16
@@ -11437,9 +11566,9 @@ namespace LOSA.Trazabilidad
             this.panelControl16.Controls.Add(this.labelControl117);
             this.panelControl16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl16.Location = new System.Drawing.Point(22, 21);
-            this.panelControl16.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl16.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl16.Name = "panelControl16";
-            this.panelControl16.Size = new System.Drawing.Size(2662, 912);
+            this.panelControl16.Size = new System.Drawing.Size(3974, 1666);
             this.panelControl16.TabIndex = 64;
             // 
             // labelControl113
@@ -11447,7 +11576,7 @@ namespace LOSA.Trazabilidad
             this.labelControl113.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
             this.labelControl113.Appearance.Options.UseFont = true;
             this.labelControl113.Location = new System.Drawing.Point(1328, 12);
-            this.labelControl113.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl113.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl113.Name = "labelControl113";
             this.labelControl113.Size = new System.Drawing.Size(484, 37);
             this.labelControl113.TabIndex = 49;
@@ -11457,7 +11586,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEmpaque4_Ruta4.EditValue = true;
             this.rdEmpaque4_Ruta4.Location = new System.Drawing.Point(2264, 263);
-            this.rdEmpaque4_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEmpaque4_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.rdEmpaque4_Ruta4.Name = "rdEmpaque4_Ruta4";
             this.rdEmpaque4_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.rdEmpaque4_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11472,7 +11601,7 @@ namespace LOSA.Trazabilidad
             this.labelControl114.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl114.Appearance.Options.UseFont = true;
             this.labelControl114.Location = new System.Drawing.Point(1424, 62);
-            this.labelControl114.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl114.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl114.Name = "labelControl114";
             this.labelControl114.Size = new System.Drawing.Size(874, 35);
             this.labelControl114.TabIndex = 50;
@@ -11482,7 +11611,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEmpaque3_Ruta4.EditValue = true;
             this.rdEmpaque3_Ruta4.Location = new System.Drawing.Point(2264, 173);
-            this.rdEmpaque3_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEmpaque3_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.rdEmpaque3_Ruta4.Name = "rdEmpaque3_Ruta4";
             this.rdEmpaque3_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.rdEmpaque3_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11496,7 +11625,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEmpaque1_Ruta4.EditValue = true;
             this.rdEmpaque1_Ruta4.Location = new System.Drawing.Point(2264, 54);
-            this.rdEmpaque1_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEmpaque1_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.rdEmpaque1_Ruta4.Name = "rdEmpaque1_Ruta4";
             this.rdEmpaque1_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.rdEmpaque1_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11512,15 +11641,15 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl16.DataMember = "logisticaInformacion";
             this.gridControl16.DataSource = this.dsMantenimientoC;
-            this.gridControl16.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            gridLevelNode3.RelationName = "Level1";
+            this.gridControl16.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl16.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode1});
             this.gridControl16.Location = new System.Drawing.Point(6, 12);
             this.gridControl16.MainView = this.gridView33;
-            this.gridControl16.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl16.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl16.Name = "gridControl16";
-            this.gridControl16.Size = new System.Drawing.Size(1266, 889);
+            this.gridControl16.Size = new System.Drawing.Size(1266, 1643);
             this.gridControl16.TabIndex = 39;
             this.gridControl16.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView33});
@@ -11552,10 +11681,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn151});
             this.gridView33.DetailHeight = 673;
             this.gridView33.GridControl = this.gridControl16;
+            this.gridView33.LevelIndent = 0;
             this.gridView33.Name = "gridView33";
             this.gridView33.OptionsView.ShowAutoFilterRow = true;
             this.gridView33.OptionsView.ShowGroupPanel = false;
             this.gridView33.OptionsView.ShowViewCaption = true;
+            this.gridView33.PreviewIndent = 0;
             this.gridView33.ViewCaption = "Logistica";
             // 
             // gridColumn150
@@ -11584,7 +11715,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEmpaque2_Ruta4.EditValue = true;
             this.rdEmpaque2_Ruta4.Location = new System.Drawing.Point(2264, 112);
-            this.rdEmpaque2_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEmpaque2_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.rdEmpaque2_Ruta4.Name = "rdEmpaque2_Ruta4";
             this.rdEmpaque2_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.rdEmpaque2_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11599,7 +11730,7 @@ namespace LOSA.Trazabilidad
             this.labelControl115.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl115.Appearance.Options.UseFont = true;
             this.labelControl115.Location = new System.Drawing.Point(1424, 112);
-            this.labelControl115.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl115.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl115.Name = "labelControl115";
             this.labelControl115.Size = new System.Drawing.Size(603, 70);
             this.labelControl115.TabIndex = 52;
@@ -11610,7 +11741,7 @@ namespace LOSA.Trazabilidad
             this.labelControl116.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl116.Appearance.Options.UseFont = true;
             this.labelControl116.Location = new System.Drawing.Point(1424, 181);
-            this.labelControl116.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl116.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl116.Name = "labelControl116";
             this.labelControl116.Size = new System.Drawing.Size(754, 70);
             this.labelControl116.TabIndex = 54;
@@ -11622,7 +11753,7 @@ namespace LOSA.Trazabilidad
             this.labelControl117.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.labelControl117.Appearance.Options.UseFont = true;
             this.labelControl117.Location = new System.Drawing.Point(1424, 250);
-            this.labelControl117.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl117.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl117.Name = "labelControl117";
             this.labelControl117.Size = new System.Drawing.Size(572, 70);
             this.labelControl117.TabIndex = 56;
@@ -11635,10 +11766,10 @@ namespace LOSA.Trazabilidad
             this.panelControl17.Appearance.Options.UseBackColor = true;
             this.panelControl17.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl17.Location = new System.Drawing.Point(2684, 21);
-            this.panelControl17.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl17.Location = new System.Drawing.Point(3996, 21);
+            this.panelControl17.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl17.Name = "panelControl17";
-            this.panelControl17.Size = new System.Drawing.Size(22, 912);
+            this.panelControl17.Size = new System.Drawing.Size(22, 1666);
             this.panelControl17.TabIndex = 61;
             // 
             // panelControl18
@@ -11647,10 +11778,10 @@ namespace LOSA.Trazabilidad
             this.panelControl18.Appearance.Options.UseBackColor = true;
             this.panelControl18.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl18.Location = new System.Drawing.Point(22, 933);
-            this.panelControl18.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl18.Location = new System.Drawing.Point(22, 1687);
+            this.panelControl18.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl18.Name = "panelControl18";
-            this.panelControl18.Size = new System.Drawing.Size(2684, 19);
+            this.panelControl18.Size = new System.Drawing.Size(3996, 19);
             this.panelControl18.TabIndex = 60;
             // 
             // panelControl19
@@ -11660,9 +11791,9 @@ namespace LOSA.Trazabilidad
             this.panelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl19.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl19.Location = new System.Drawing.Point(0, 21);
-            this.panelControl19.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl19.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl19.Name = "panelControl19";
-            this.panelControl19.Size = new System.Drawing.Size(22, 931);
+            this.panelControl19.Size = new System.Drawing.Size(22, 1685);
             this.panelControl19.TabIndex = 59;
             // 
             // panelControl20
@@ -11672,9 +11803,9 @@ namespace LOSA.Trazabilidad
             this.panelControl20.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl20.Location = new System.Drawing.Point(0, 0);
-            this.panelControl20.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl20.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl20.Name = "panelControl20";
-            this.panelControl20.Size = new System.Drawing.Size(2706, 21);
+            this.panelControl20.Size = new System.Drawing.Size(4018, 21);
             this.panelControl20.TabIndex = 58;
             // 
             // tabPage8
@@ -11682,10 +11813,10 @@ namespace LOSA.Trazabilidad
             this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.tabPage8.Controls.Add(this.panelControl26);
             this.tabPage8.Location = new System.Drawing.Point(8, 59);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage8.Size = new System.Drawing.Size(2718, 964);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage8.Size = new System.Drawing.Size(4030, 1718);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Estado de Materia prima y transporte";
             // 
@@ -11735,9 +11866,9 @@ namespace LOSA.Trazabilidad
             this.panelControl26.Controls.Add(this.labelControl136);
             this.panelControl26.Controls.Add(this.txtusercalidad_Ruta4);
             this.panelControl26.Location = new System.Drawing.Point(6, 0);
-            this.panelControl26.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelControl26.Margin = new System.Windows.Forms.Padding(6);
             this.panelControl26.Name = "panelControl26";
-            this.panelControl26.Size = new System.Drawing.Size(2696, 959);
+            this.panelControl26.Size = new System.Drawing.Size(4008, 1714);
             this.panelControl26.TabIndex = 84;
             // 
             // button2
@@ -11745,7 +11876,7 @@ namespace LOSA.Trazabilidad
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(2304, 629);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 62);
             this.button2.TabIndex = 54;
@@ -11755,7 +11886,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtObservacionesTrans_Ruta4.EditValue = "";
             this.txtObservacionesTrans_Ruta4.Location = new System.Drawing.Point(16, 767);
-            this.txtObservacionesTrans_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtObservacionesTrans_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtObservacionesTrans_Ruta4.Name = "txtObservacionesTrans_Ruta4";
             this.txtObservacionesTrans_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservacionesTrans_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11766,10 +11897,10 @@ namespace LOSA.Trazabilidad
             // 
             this.gcCarga_Ruta4.DataMember = "ultimas_cargas";
             this.gcCarga_Ruta4.DataSource = this.dsTarimaBindingSource1;
-            this.gcCarga_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcCarga_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gcCarga_Ruta4.Location = new System.Drawing.Point(1592, 627);
             this.gcCarga_Ruta4.MainView = this.gvCarga_Ruta4;
-            this.gcCarga_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcCarga_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.gcCarga_Ruta4.Name = "gcCarga_Ruta4";
             this.gcCarga_Ruta4.Size = new System.Drawing.Size(700, 271);
             this.gcCarga_Ruta4.TabIndex = 88;
@@ -11787,8 +11918,10 @@ namespace LOSA.Trazabilidad
             this.gridColumn152});
             this.gvCarga_Ruta4.DetailHeight = 673;
             this.gvCarga_Ruta4.GridControl = this.gcCarga_Ruta4;
+            this.gvCarga_Ruta4.LevelIndent = 0;
             this.gvCarga_Ruta4.Name = "gvCarga_Ruta4";
             this.gvCarga_Ruta4.OptionsView.ShowGroupPanel = false;
+            this.gvCarga_Ruta4.PreviewIndent = 0;
             // 
             // gridColumn152
             // 
@@ -11805,7 +11938,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdTransporte3_Ruta4.EditValue = true;
             this.rdTransporte3_Ruta4.Location = new System.Drawing.Point(1150, 544);
-            this.rdTransporte3_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdTransporte3_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.rdTransporte3_Ruta4.Name = "rdTransporte3_Ruta4";
             this.rdTransporte3_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdTransporte3_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11819,7 +11952,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdTransporte2_Ruta4.EditValue = true;
             this.rdTransporte2_Ruta4.Location = new System.Drawing.Point(1150, 504);
-            this.rdTransporte2_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdTransporte2_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.rdTransporte2_Ruta4.Name = "rdTransporte2_Ruta4";
             this.rdTransporte2_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdTransporte2_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11833,7 +11966,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdTransporte1_Ruta4.EditValue = true;
             this.rdTransporte1_Ruta4.Location = new System.Drawing.Point(1150, 463);
-            this.rdTransporte1_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdTransporte1_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.rdTransporte1_Ruta4.Name = "rdTransporte1_Ruta4";
             this.rdTransporte1_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdTransporte1_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11847,7 +11980,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdEstadomp_Ruta4.EditValue = true;
             this.rdEstadomp_Ruta4.Location = new System.Drawing.Point(10, 44);
-            this.rdEstadomp_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdEstadomp_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.rdEstadomp_Ruta4.Name = "rdEstadomp_Ruta4";
             this.rdEstadomp_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdEstadomp_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11862,7 +11995,7 @@ namespace LOSA.Trazabilidad
             this.labelControl118.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl118.Appearance.Options.UseFont = true;
             this.labelControl118.Location = new System.Drawing.Point(10, 10);
-            this.labelControl118.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl118.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl118.Name = "labelControl118";
             this.labelControl118.Size = new System.Drawing.Size(354, 36);
             this.labelControl118.TabIndex = 10;
@@ -11872,7 +12005,7 @@ namespace LOSA.Trazabilidad
             // 
             this.rdTransporte4_Ruta4.EditValue = true;
             this.rdTransporte4_Ruta4.Location = new System.Drawing.Point(1654, 479);
-            this.rdTransporte4_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rdTransporte4_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.rdTransporte4_Ruta4.Name = "rdTransporte4_Ruta4";
             this.rdTransporte4_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdTransporte4_Ruta4.Properties.Appearance.Options.UseFont = true;
@@ -11887,7 +12020,7 @@ namespace LOSA.Trazabilidad
             this.labelControl119.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl119.Appearance.Options.UseFont = true;
             this.labelControl119.Location = new System.Drawing.Point(6, 433);
-            this.labelControl119.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl119.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl119.Name = "labelControl119";
             this.labelControl119.Size = new System.Drawing.Size(455, 45);
             this.labelControl119.TabIndex = 29;
@@ -11898,7 +12031,7 @@ namespace LOSA.Trazabilidad
             this.labelControl120.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl120.Appearance.Options.UseFont = true;
             this.labelControl120.Location = new System.Drawing.Point(16, 473);
-            this.labelControl120.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl120.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl120.Name = "labelControl120";
             this.labelControl120.Size = new System.Drawing.Size(1072, 36);
             this.labelControl120.TabIndex = 30;
@@ -11909,7 +12042,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtDireccion_Ruta4.Enabled = false;
             this.txtDireccion_Ruta4.Location = new System.Drawing.Point(986, 383);
-            this.txtDireccion_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtDireccion_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtDireccion_Ruta4.Name = "txtDireccion_Ruta4";
             this.txtDireccion_Ruta4.Size = new System.Drawing.Size(424, 40);
             this.txtDireccion_Ruta4.TabIndex = 74;
@@ -11919,7 +12052,7 @@ namespace LOSA.Trazabilidad
             this.labelControl121.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl121.Appearance.Options.UseFont = true;
             this.labelControl121.Location = new System.Drawing.Point(16, 602);
-            this.labelControl121.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl121.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl121.Name = "labelControl121";
             this.labelControl121.Size = new System.Drawing.Size(843, 180);
             this.labelControl121.TabIndex = 81;
@@ -11930,7 +12063,7 @@ namespace LOSA.Trazabilidad
             this.labelControl122.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl122.Appearance.Options.UseFont = true;
             this.labelControl122.Location = new System.Drawing.Point(832, 383);
-            this.labelControl122.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl122.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl122.Name = "labelControl122";
             this.labelControl122.Size = new System.Drawing.Size(113, 36);
             this.labelControl122.TabIndex = 73;
@@ -11941,7 +12074,7 @@ namespace LOSA.Trazabilidad
             this.labelControl123.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl123.Appearance.Options.UseFont = true;
             this.labelControl123.Location = new System.Drawing.Point(20, 513);
-            this.labelControl123.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl123.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl123.Name = "labelControl123";
             this.labelControl123.Size = new System.Drawing.Size(1043, 36);
             this.labelControl123.TabIndex = 44;
@@ -11953,7 +12086,7 @@ namespace LOSA.Trazabilidad
             this.labelControl124.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl124.Appearance.Options.UseFont = true;
             this.labelControl124.Location = new System.Drawing.Point(808, 10);
-            this.labelControl124.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl124.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl124.Name = "labelControl124";
             this.labelControl124.Size = new System.Drawing.Size(556, 36);
             this.labelControl124.TabIndex = 25;
@@ -11966,7 +12099,7 @@ namespace LOSA.Trazabilidad
             this.labelControl125.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelControl125.Appearance.Options.UseFont = true;
             this.labelControl125.Location = new System.Drawing.Point(1542, 583);
-            this.labelControl125.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl125.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl125.Name = "labelControl125";
             this.labelControl125.Size = new System.Drawing.Size(628, 36);
             this.labelControl125.TabIndex = 80;
@@ -11976,7 +12109,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txttransporte_Ruta4.Enabled = false;
             this.txttransporte_Ruta4.Location = new System.Drawing.Point(294, 383);
-            this.txttransporte_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txttransporte_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txttransporte_Ruta4.Name = "txttransporte_Ruta4";
             this.txttransporte_Ruta4.Size = new System.Drawing.Size(424, 40);
             this.txttransporte_Ruta4.TabIndex = 72;
@@ -11986,7 +12119,7 @@ namespace LOSA.Trazabilidad
             this.labelControl126.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl126.Appearance.Options.UseFont = true;
             this.labelControl126.Location = new System.Drawing.Point(784, 54);
-            this.labelControl126.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl126.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl126.Name = "labelControl126";
             this.labelControl126.Size = new System.Drawing.Size(672, 72);
             this.labelControl126.TabIndex = 26;
@@ -11998,7 +12131,7 @@ namespace LOSA.Trazabilidad
             this.textEdit11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textEdit11.Location = new System.Drawing.Point(1658, 737);
-            this.textEdit11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textEdit11.Margin = new System.Windows.Forms.Padding(6);
             this.textEdit11.Name = "textEdit11";
             this.textEdit11.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textEdit11.Properties.Appearance.Options.UseFont = true;
@@ -12011,7 +12144,7 @@ namespace LOSA.Trazabilidad
             this.labelControl127.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl127.Appearance.Options.UseFont = true;
             this.labelControl127.Location = new System.Drawing.Point(148, 383);
-            this.labelControl127.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl127.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl127.Name = "labelControl127";
             this.labelControl127.Size = new System.Drawing.Size(130, 36);
             this.labelControl127.TabIndex = 71;
@@ -12022,7 +12155,7 @@ namespace LOSA.Trazabilidad
             this.labelControl128.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl128.Appearance.Options.UseFont = true;
             this.labelControl128.Location = new System.Drawing.Point(20, 554);
-            this.labelControl128.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl128.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl128.Name = "labelControl128";
             this.labelControl128.Size = new System.Drawing.Size(957, 36);
             this.labelControl128.TabIndex = 46;
@@ -12034,7 +12167,7 @@ namespace LOSA.Trazabilidad
             this.labelControl129.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl129.Appearance.Options.UseFont = true;
             this.labelControl129.Location = new System.Drawing.Point(10, 131);
-            this.labelControl129.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl129.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl129.Name = "labelControl129";
             this.labelControl129.Size = new System.Drawing.Size(173, 36);
             this.labelControl129.TabIndex = 27;
@@ -12045,7 +12178,7 @@ namespace LOSA.Trazabilidad
             this.textEdit12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textEdit12.Location = new System.Drawing.Point(1658, 681);
-            this.textEdit12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textEdit12.Margin = new System.Windows.Forms.Padding(6);
             this.textEdit12.Name = "textEdit12";
             this.textEdit12.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textEdit12.Properties.Appearance.Options.UseFont = true;
@@ -12057,7 +12190,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtTelefono_Ruta4.Enabled = false;
             this.txtTelefono_Ruta4.Location = new System.Drawing.Point(986, 340);
-            this.txtTelefono_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTelefono_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtTelefono_Ruta4.Name = "txtTelefono_Ruta4";
             this.txtTelefono_Ruta4.Size = new System.Drawing.Size(424, 40);
             this.txtTelefono_Ruta4.TabIndex = 70;
@@ -12067,11 +12200,11 @@ namespace LOSA.Trazabilidad
             this.memoEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.memoEdit2.Location = new System.Drawing.Point(0, 163);
-            this.memoEdit2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.memoEdit2.Margin = new System.Windows.Forms.Padding(6);
             this.memoEdit2.Name = "memoEdit2";
             this.memoEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.memoEdit2.Properties.Appearance.Options.UseFont = true;
-            this.memoEdit2.Size = new System.Drawing.Size(2662, 125);
+            this.memoEdit2.Size = new System.Drawing.Size(3974, 125);
             this.memoEdit2.TabIndex = 28;
             // 
             // textEdit14
@@ -12079,7 +12212,7 @@ namespace LOSA.Trazabilidad
             this.textEdit14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textEdit14.Location = new System.Drawing.Point(1656, 627);
-            this.textEdit14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textEdit14.Margin = new System.Windows.Forms.Padding(6);
             this.textEdit14.Name = "textEdit14";
             this.textEdit14.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit14.Properties.Appearance.Options.UseFont = true;
@@ -12092,7 +12225,7 @@ namespace LOSA.Trazabilidad
             this.labelControl130.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl130.Appearance.Options.UseFont = true;
             this.labelControl130.Location = new System.Drawing.Point(832, 340);
-            this.labelControl130.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl130.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl130.Name = "labelControl130";
             this.labelControl130.Size = new System.Drawing.Size(122, 36);
             this.labelControl130.TabIndex = 69;
@@ -12103,7 +12236,7 @@ namespace LOSA.Trazabilidad
             this.labelControl131.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl131.Appearance.Options.UseFont = true;
             this.labelControl131.Location = new System.Drawing.Point(1698, 438);
-            this.labelControl131.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl131.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl131.Name = "labelControl131";
             this.labelControl131.Size = new System.Drawing.Size(407, 45);
             this.labelControl131.TabIndex = 75;
@@ -12114,7 +12247,7 @@ namespace LOSA.Trazabilidad
             this.labelControl132.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl132.Appearance.Options.UseFont = true;
             this.labelControl132.Location = new System.Drawing.Point(16, 298);
-            this.labelControl132.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl132.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl132.Name = "labelControl132";
             this.labelControl132.Size = new System.Drawing.Size(257, 36);
             this.labelControl132.TabIndex = 48;
@@ -12123,8 +12256,8 @@ namespace LOSA.Trazabilidad
             // radioGroup11
             // 
             this.radioGroup11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioGroup11.Location = new System.Drawing.Point(1874, 991);
-            this.radioGroup11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radioGroup11.Location = new System.Drawing.Point(1874, 1745);
+            this.radioGroup11.Margin = new System.Windows.Forms.Padding(6);
             this.radioGroup11.Name = "radioGroup11";
             this.radioGroup11.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "ACEPTADO"),
@@ -12136,7 +12269,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txttransportista_Ruta4.Enabled = false;
             this.txttransportista_Ruta4.Location = new System.Drawing.Point(294, 340);
-            this.txttransportista_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txttransportista_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txttransportista_Ruta4.Name = "txttransportista_Ruta4";
             this.txttransportista_Ruta4.Size = new System.Drawing.Size(424, 40);
             this.txttransportista_Ruta4.TabIndex = 68;
@@ -12146,7 +12279,7 @@ namespace LOSA.Trazabilidad
             this.labelControl133.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl133.Appearance.Options.UseFont = true;
             this.labelControl133.Location = new System.Drawing.Point(1530, 27);
-            this.labelControl133.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl133.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl133.Name = "labelControl133";
             this.labelControl133.Size = new System.Drawing.Size(192, 36);
             this.labelControl133.TabIndex = 63;
@@ -12156,7 +12289,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtuserlogistica_Ruta4.Enabled = false;
             this.txtuserlogistica_Ruta4.Location = new System.Drawing.Point(294, 298);
-            this.txtuserlogistica_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtuserlogistica_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtuserlogistica_Ruta4.Name = "txtuserlogistica_Ruta4";
             this.txtuserlogistica_Ruta4.Size = new System.Drawing.Size(424, 40);
             this.txtuserlogistica_Ruta4.TabIndex = 58;
@@ -12165,7 +12298,7 @@ namespace LOSA.Trazabilidad
             // 
             this.textEdit17.Enabled = false;
             this.textEdit17.Location = new System.Drawing.Point(1844, 383);
-            this.textEdit17.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textEdit17.Margin = new System.Windows.Forms.Padding(6);
             this.textEdit17.Name = "textEdit17";
             this.textEdit17.Size = new System.Drawing.Size(424, 40);
             this.textEdit17.TabIndex = 62;
@@ -12175,7 +12308,7 @@ namespace LOSA.Trazabilidad
             this.labelControl134.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl134.Appearance.Options.UseFont = true;
             this.labelControl134.Location = new System.Drawing.Point(122, 340);
-            this.labelControl134.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl134.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl134.Name = "labelControl134";
             this.labelControl134.Size = new System.Drawing.Size(155, 36);
             this.labelControl134.TabIndex = 67;
@@ -12188,7 +12321,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton18.Appearance.Options.UseBackColor = true;
             this.simpleButton18.Appearance.Options.UseFont = true;
             this.simpleButton18.Location = new System.Drawing.Point(1746, 6);
-            this.simpleButton18.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton18.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton18.Name = "simpleButton18";
             this.simpleButton18.Size = new System.Drawing.Size(272, 75);
             this.simpleButton18.TabIndex = 64;
@@ -12199,7 +12332,7 @@ namespace LOSA.Trazabilidad
             this.labelControl135.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl135.Appearance.Options.UseFont = true;
             this.labelControl135.Location = new System.Drawing.Point(832, 298);
-            this.labelControl135.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl135.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl135.Name = "labelControl135";
             this.labelControl135.Size = new System.Drawing.Size(136, 36);
             this.labelControl135.TabIndex = 59;
@@ -12210,7 +12343,7 @@ namespace LOSA.Trazabilidad
             this.labelControl136.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl136.Appearance.Options.UseFont = true;
             this.labelControl136.Location = new System.Drawing.Point(1542, 383);
-            this.labelControl136.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl136.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl136.Name = "labelControl136";
             this.labelControl136.Size = new System.Drawing.Size(276, 36);
             this.labelControl136.TabIndex = 61;
@@ -12220,7 +12353,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtusercalidad_Ruta4.Enabled = false;
             this.txtusercalidad_Ruta4.Location = new System.Drawing.Point(986, 298);
-            this.txtusercalidad_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtusercalidad_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtusercalidad_Ruta4.Name = "txtusercalidad_Ruta4";
             this.txtusercalidad_Ruta4.Size = new System.Drawing.Size(424, 40);
             this.txtusercalidad_Ruta4.TabIndex = 60;
@@ -12232,9 +12365,9 @@ namespace LOSA.Trazabilidad
             this.tabPage9.Controls.Add(this.labelControl138);
             this.tabPage9.Controls.Add(this.gcLotePT_Ruta4);
             this.tabPage9.Location = new System.Drawing.Point(8, 59);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(2718, 964);
+            this.tabPage9.Size = new System.Drawing.Size(4030, 1718);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "Lotes PT";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -12244,7 +12377,7 @@ namespace LOSA.Trazabilidad
             this.labelControl137.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl137.Appearance.Options.UseFont = true;
             this.labelControl137.Location = new System.Drawing.Point(734, 42);
-            this.labelControl137.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl137.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl137.Name = "labelControl137";
             this.labelControl137.Size = new System.Drawing.Size(487, 45);
             this.labelControl137.TabIndex = 47;
@@ -12256,15 +12389,15 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl18.DataSource = this.detalledestinosBindingSource1;
-            this.gridControl18.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl18.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl18.Location = new System.Drawing.Point(734, 94);
             this.gridControl18.MainView = this.gridView35;
-            this.gridControl18.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl18.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl18.Name = "gridControl18";
             this.gridControl18.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdBoleta_Ruta4,
             this.cmdDespachoId_Ruta4});
-            this.gridControl18.Size = new System.Drawing.Size(1978, 864);
+            this.gridControl18.Size = new System.Drawing.Size(3290, 1618);
             this.gridControl18.TabIndex = 46;
             this.gridControl18.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView35});
@@ -12295,7 +12428,9 @@ namespace LOSA.Trazabilidad
             this.gridColumn168});
             this.gridView35.DetailHeight = 673;
             this.gridView35.GridControl = this.gridControl18;
+            this.gridView35.LevelIndent = 0;
             this.gridView35.Name = "gridView35";
+            this.gridView35.PreviewIndent = 0;
             // 
             // gridColumn153
             // 
@@ -12311,9 +12446,9 @@ namespace LOSA.Trazabilidad
             // cmdDespachoId_Ruta4
             // 
             this.cmdDespachoId_Ruta4.AutoHeight = false;
-            editorButtonImageOptions11.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions11.Image")));
+            editorButtonImageOptions35.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions35.Image")));
             this.cmdDespachoId_Ruta4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions11, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject41, serializableAppearanceObject42, serializableAppearanceObject43, serializableAppearanceObject44, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions35, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject137, serializableAppearanceObject138, serializableAppearanceObject139, serializableAppearanceObject140, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDespachoId_Ruta4.Name = "cmdDespachoId_Ruta4";
             this.cmdDespachoId_Ruta4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDespachoId_Ruta4_ButtonClick);
             // 
@@ -12462,9 +12597,9 @@ namespace LOSA.Trazabilidad
             // cmdBoleta_Ruta4
             // 
             this.cmdBoleta_Ruta4.AutoHeight = false;
-            editorButtonImageOptions12.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions12.Image")));
+            editorButtonImageOptions36.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions36.Image")));
             this.cmdBoleta_Ruta4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions12, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject45, serializableAppearanceObject46, serializableAppearanceObject47, serializableAppearanceObject48, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions36, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject141, serializableAppearanceObject142, serializableAppearanceObject143, serializableAppearanceObject144, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdBoleta_Ruta4.Name = "cmdBoleta_Ruta4";
             this.cmdBoleta_Ruta4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdBoleta_Ruta4_ButtonClick);
             // 
@@ -12484,7 +12619,7 @@ namespace LOSA.Trazabilidad
             this.labelControl138.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl138.Appearance.Options.UseFont = true;
             this.labelControl138.Location = new System.Drawing.Point(16, 42);
-            this.labelControl138.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl138.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl138.Name = "labelControl138";
             this.labelControl138.Size = new System.Drawing.Size(371, 45);
             this.labelControl138.TabIndex = 42;
@@ -12495,12 +12630,12 @@ namespace LOSA.Trazabilidad
             this.gcLotePT_Ruta4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gcLotePT_Ruta4.DataSource = this.ptlisttrzBindingSource;
-            this.gcLotePT_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcLotePT_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gcLotePT_Ruta4.Location = new System.Drawing.Point(16, 94);
             this.gcLotePT_Ruta4.MainView = this.gvLotePT_Ruta4;
-            this.gcLotePT_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcLotePT_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.gcLotePT_Ruta4.Name = "gcLotePT_Ruta4";
-            this.gcLotePT_Ruta4.Size = new System.Drawing.Size(706, 864);
+            this.gcLotePT_Ruta4.Size = new System.Drawing.Size(706, 1618);
             this.gcLotePT_Ruta4.TabIndex = 1;
             this.gcLotePT_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLotePT_Ruta4});
@@ -12518,7 +12653,9 @@ namespace LOSA.Trazabilidad
             this.gridColumn171});
             this.gvLotePT_Ruta4.DetailHeight = 673;
             this.gvLotePT_Ruta4.GridControl = this.gcLotePT_Ruta4;
+            this.gvLotePT_Ruta4.LevelIndent = 0;
             this.gvLotePT_Ruta4.Name = "gvLotePT_Ruta4";
+            this.gvLotePT_Ruta4.PreviewIndent = 0;
             this.gvLotePT_Ruta4.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvLotePT_Ruta4_RowCellClick);
             // 
             // gridColumn169
@@ -12557,10 +12694,10 @@ namespace LOSA.Trazabilidad
             // 
             this.tabPage10.Controls.Add(this.gridControl20);
             this.tabPage10.Location = new System.Drawing.Point(8, 59);
-            this.tabPage10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage10.Size = new System.Drawing.Size(2718, 964);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(6);
+            this.tabPage10.Size = new System.Drawing.Size(4030, 1718);
             this.tabPage10.TabIndex = 5;
             this.tabPage10.Text = "Inventario de lote";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -12569,12 +12706,12 @@ namespace LOSA.Trazabilidad
             // 
             this.gridControl20.DataSource = this.informacionBindingSource;
             this.gridControl20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl20.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl20.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl20.Location = new System.Drawing.Point(6, 6);
             this.gridControl20.MainView = this.gridView37;
-            this.gridControl20.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl20.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl20.Name = "gridControl20";
-            this.gridControl20.Size = new System.Drawing.Size(2706, 952);
+            this.gridControl20.Size = new System.Drawing.Size(4018, 1706);
             this.gridControl20.TabIndex = 1;
             this.gridControl20.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView37});
@@ -12618,10 +12755,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn182});
             this.gridView37.DetailHeight = 673;
             this.gridView37.GridControl = this.gridControl20;
+            this.gridView37.LevelIndent = 0;
             this.gridView37.Name = "gridView37";
             this.gridView37.OptionsView.ShowAutoFilterRow = true;
             this.gridView37.OptionsView.ShowFooter = true;
             this.gridView37.OptionsView.ShowGroupPanel = false;
+            this.gridView37.PreviewIndent = 0;
             // 
             // gridColumn172
             // 
@@ -12747,7 +12886,7 @@ namespace LOSA.Trazabilidad
             this.btnViewBoleta.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnViewBoleta.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnViewBoleta.ImageOptions.SvgImage")));
             this.btnViewBoleta.Location = new System.Drawing.Point(2460, 371);
-            this.btnViewBoleta.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnViewBoleta.Margin = new System.Windows.Forms.Padding(6);
             this.btnViewBoleta.Name = "btnViewBoleta";
             this.btnViewBoleta.Size = new System.Drawing.Size(108, 58);
             this.btnViewBoleta.TabIndex = 81;
@@ -12757,7 +12896,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtBoleta_Ruta4.Enabled = false;
             this.txtBoleta_Ruta4.Location = new System.Drawing.Point(1808, 379);
-            this.txtBoleta_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBoleta_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtBoleta_Ruta4.Name = "txtBoleta_Ruta4";
             this.txtBoleta_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtBoleta_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -12771,7 +12910,7 @@ namespace LOSA.Trazabilidad
             this.labelControl95.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl95.Appearance.Options.UseFont = true;
             this.labelControl95.Location = new System.Drawing.Point(1508, 392);
-            this.labelControl95.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl95.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl95.Name = "labelControl95";
             this.labelControl95.Size = new System.Drawing.Size(78, 36);
             this.labelControl95.TabIndex = 79;
@@ -12781,7 +12920,7 @@ namespace LOSA.Trazabilidad
             // 
             this.groupControl1.Controls.Add(this.grid_Header_ingresos);
             this.groupControl1.Location = new System.Drawing.Point(36, 115);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(6);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1452, 431);
             this.groupControl1.TabIndex = 78;
@@ -12792,10 +12931,10 @@ namespace LOSA.Trazabilidad
             this.grid_Header_ingresos.DataMember = "Ingresos_Lote_detalle";
             this.grid_Header_ingresos.DataSource = this.dsMantenimientoC;
             this.grid_Header_ingresos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid_Header_ingresos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grid_Header_ingresos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.grid_Header_ingresos.Location = new System.Drawing.Point(3, 45);
             this.grid_Header_ingresos.MainView = this.gvIngresoLote_Ruta4;
-            this.grid_Header_ingresos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grid_Header_ingresos.Margin = new System.Windows.Forms.Padding(6);
             this.grid_Header_ingresos.Name = "grid_Header_ingresos";
             this.grid_Header_ingresos.Size = new System.Drawing.Size(1446, 383);
             this.grid_Header_ingresos.TabIndex = 54;
@@ -12827,9 +12966,11 @@ namespace LOSA.Trazabilidad
             this.colselected});
             this.gvIngresoLote_Ruta4.DetailHeight = 673;
             this.gvIngresoLote_Ruta4.GridControl = this.grid_Header_ingresos;
+            this.gvIngresoLote_Ruta4.LevelIndent = 0;
             this.gvIngresoLote_Ruta4.Name = "gvIngresoLote_Ruta4";
             this.gvIngresoLote_Ruta4.OptionsBehavior.Editable = false;
             this.gvIngresoLote_Ruta4.OptionsView.ShowGroupPanel = false;
+            this.gvIngresoLote_Ruta4.PreviewIndent = 0;
             this.gvIngresoLote_Ruta4.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colnumero_transaccion1, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
@@ -12972,7 +13113,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton12.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.simpleButton12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton12.ImageOptions.SvgImage")));
             this.simpleButton12.Location = new System.Drawing.Point(2460, 310);
-            this.simpleButton12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton12.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton12.Name = "simpleButton12";
             this.simpleButton12.Size = new System.Drawing.Size(108, 58);
             this.simpleButton12.TabIndex = 77;
@@ -12983,7 +13124,7 @@ namespace LOSA.Trazabilidad
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::LOSA.Properties.Resources.edit_table_1_;
             this.button1.Location = new System.Drawing.Point(2598, 115);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 62);
             this.button1.TabIndex = 76;
@@ -12994,7 +13135,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtFabricante_Ruta4.Enabled = false;
             this.txtFabricante_Ruta4.Location = new System.Drawing.Point(1808, 321);
-            this.txtFabricante_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtFabricante_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtFabricante_Ruta4.Name = "txtFabricante_Ruta4";
             this.txtFabricante_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtFabricante_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -13009,7 +13150,7 @@ namespace LOSA.Trazabilidad
             this.labelControl96.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl96.Appearance.Options.UseFont = true;
             this.labelControl96.Location = new System.Drawing.Point(1508, 327);
-            this.labelControl96.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl96.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl96.Name = "labelControl96";
             this.labelControl96.Size = new System.Drawing.Size(125, 36);
             this.labelControl96.TabIndex = 74;
@@ -13021,7 +13162,7 @@ namespace LOSA.Trazabilidad
             this.simpleButton13.Appearance.Options.UseFont = true;
             this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
             this.simpleButton13.Location = new System.Drawing.Point(2188, 488);
-            this.simpleButton13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton13.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton13.Name = "simpleButton13";
             this.simpleButton13.Size = new System.Drawing.Size(528, 67);
             this.simpleButton13.TabIndex = 73;
@@ -13032,7 +13173,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtNFactura_Ruta4.Enabled = false;
             this.txtNFactura_Ruta4.Location = new System.Drawing.Point(2054, 212);
-            this.txtNFactura_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNFactura_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtNFactura_Ruta4.Name = "txtNFactura_Ruta4";
             this.txtNFactura_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtNFactura_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -13046,7 +13187,7 @@ namespace LOSA.Trazabilidad
             this.labelControl97.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl97.Appearance.Options.UseFont = true;
             this.labelControl97.Location = new System.Drawing.Point(1934, 217);
-            this.labelControl97.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl97.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl97.Name = "labelControl97";
             this.labelControl97.Size = new System.Drawing.Size(116, 36);
             this.labelControl97.TabIndex = 71;
@@ -13059,8 +13200,8 @@ namespace LOSA.Trazabilidad
             this.simpleButton14.Appearance.Options.UseFont = true;
             this.simpleButton14.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
-            this.simpleButton14.Location = new System.Drawing.Point(2188, 21);
-            this.simpleButton14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton14.Location = new System.Drawing.Point(3500, 21);
+            this.simpleButton14.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton14.Name = "simpleButton14";
             this.simpleButton14.Size = new System.Drawing.Size(252, 85);
             this.simpleButton14.TabIndex = 70;
@@ -13074,7 +13215,7 @@ namespace LOSA.Trazabilidad
             this.labelControl98.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl98.Appearance.Options.UseFont = true;
             this.labelControl98.Location = new System.Drawing.Point(684, 550);
-            this.labelControl98.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl98.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl98.Name = "labelControl98";
             this.labelControl98.Size = new System.Drawing.Size(1264, 51);
             this.labelControl98.TabIndex = 69;
@@ -13084,7 +13225,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtInventarioActual_Ruta4.Enabled = false;
             this.txtInventarioActual_Ruta4.Location = new System.Drawing.Point(1808, 212);
-            this.txtInventarioActual_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtInventarioActual_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtInventarioActual_Ruta4.Name = "txtInventarioActual_Ruta4";
             this.txtInventarioActual_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtInventarioActual_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -13097,7 +13238,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtProcedencia_Ruta4.Enabled = false;
             this.txtProcedencia_Ruta4.Location = new System.Drawing.Point(1808, 262);
-            this.txtProcedencia_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtProcedencia_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtProcedencia_Ruta4.Name = "txtProcedencia_Ruta4";
             this.txtProcedencia_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtProcedencia_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -13110,7 +13251,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtNombreMP_Ruta4.Enabled = false;
             this.txtNombreMP_Ruta4.Location = new System.Drawing.Point(1808, 160);
-            this.txtNombreMP_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombreMP_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtNombreMP_Ruta4.Name = "txtNombreMP_Ruta4";
             this.txtNombreMP_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtNombreMP_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -13123,7 +13264,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtLoteMP_Ruta4.Enabled = false;
             this.txtLoteMP_Ruta4.Location = new System.Drawing.Point(1808, 110);
-            this.txtLoteMP_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtLoteMP_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.txtLoteMP_Ruta4.Name = "txtLoteMP_Ruta4";
             this.txtLoteMP_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtLoteMP_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -13137,7 +13278,7 @@ namespace LOSA.Trazabilidad
             this.labelControl99.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl99.Appearance.Options.UseFont = true;
             this.labelControl99.Location = new System.Drawing.Point(1508, 217);
-            this.labelControl99.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl99.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl99.Name = "labelControl99";
             this.labelControl99.Size = new System.Drawing.Size(200, 36);
             this.labelControl99.TabIndex = 64;
@@ -13148,7 +13289,7 @@ namespace LOSA.Trazabilidad
             this.labelControl100.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl100.Appearance.Options.UseFont = true;
             this.labelControl100.Location = new System.Drawing.Point(1508, 267);
-            this.labelControl100.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl100.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl100.Name = "labelControl100";
             this.labelControl100.Size = new System.Drawing.Size(252, 36);
             this.labelControl100.TabIndex = 63;
@@ -13159,7 +13300,7 @@ namespace LOSA.Trazabilidad
             this.labelControl101.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl101.Appearance.Options.UseFont = true;
             this.labelControl101.Location = new System.Drawing.Point(1508, 173);
-            this.labelControl101.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl101.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl101.Name = "labelControl101";
             this.labelControl101.Size = new System.Drawing.Size(207, 36);
             this.labelControl101.TabIndex = 62;
@@ -13170,7 +13311,7 @@ namespace LOSA.Trazabilidad
             this.labelControl102.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl102.Appearance.Options.UseFont = true;
             this.labelControl102.Location = new System.Drawing.Point(1508, 123);
-            this.labelControl102.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl102.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl102.Name = "labelControl102";
             this.labelControl102.Size = new System.Drawing.Size(131, 36);
             this.labelControl102.TabIndex = 61;
@@ -13183,7 +13324,7 @@ namespace LOSA.Trazabilidad
             this.labelControl103.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl103.Appearance.Options.UseFont = true;
             this.labelControl103.Location = new System.Drawing.Point(1342, 21);
-            this.labelControl103.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl103.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl103.Name = "labelControl103";
             this.labelControl103.Size = new System.Drawing.Size(426, 57);
             this.labelControl103.TabIndex = 60;
@@ -13198,8 +13339,8 @@ namespace LOSA.Trazabilidad
             this.simpleButton15.Appearance.Options.UseFont = true;
             this.simpleButton15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton15.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.simpleButton15.Location = new System.Drawing.Point(2452, 23);
-            this.simpleButton15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton15.Location = new System.Drawing.Point(3764, 23);
+            this.simpleButton15.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton15.Name = "simpleButton15";
             this.simpleButton15.Size = new System.Drawing.Size(252, 81);
             this.simpleButton15.TabIndex = 59;
@@ -13210,9 +13351,9 @@ namespace LOSA.Trazabilidad
             // 
             this.npDetalleDespacho_Ruta4.Controls.Add(this.cmdDespacho_Ruta4);
             this.npDetalleDespacho_Ruta4.Controls.Add(this.gcDetalleDespacho_Ruta4);
-            this.npDetalleDespacho_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.npDetalleDespacho_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.npDetalleDespacho_Ruta4.Name = "npDetalleDespacho_Ruta4";
-            this.npDetalleDespacho_Ruta4.Size = new System.Drawing.Size(5492, 3165);
+            this.npDetalleDespacho_Ruta4.Size = new System.Drawing.Size(2684, 1610);
             // 
             // cmdDespacho_Ruta4
             // 
@@ -13223,8 +13364,8 @@ namespace LOSA.Trazabilidad
             this.cmdDespacho_Ruta4.Appearance.Options.UseFont = true;
             this.cmdDespacho_Ruta4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdDespacho_Ruta4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdDespacho_Ruta4.ImageOptions.Image")));
-            this.cmdDespacho_Ruta4.Location = new System.Drawing.Point(2326, 23);
-            this.cmdDespacho_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdDespacho_Ruta4.Location = new System.Drawing.Point(3638, 23);
+            this.cmdDespacho_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.cmdDespacho_Ruta4.Name = "cmdDespacho_Ruta4";
             this.cmdDespacho_Ruta4.Size = new System.Drawing.Size(250, 100);
             this.cmdDespacho_Ruta4.TabIndex = 52;
@@ -13237,12 +13378,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcDetalleDespacho_Ruta4.DataSource = this.detalledespachosBindingSource;
-            this.gcDetalleDespacho_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcDetalleDespacho_Ruta4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gcDetalleDespacho_Ruta4.Location = new System.Drawing.Point(6, 167);
             this.gcDetalleDespacho_Ruta4.MainView = this.gvDetalleDespacho_Ruta4;
-            this.gcDetalleDespacho_Ruta4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gcDetalleDespacho_Ruta4.Margin = new System.Windows.Forms.Padding(6);
             this.gcDetalleDespacho_Ruta4.Name = "gcDetalleDespacho_Ruta4";
-            this.gcDetalleDespacho_Ruta4.Size = new System.Drawing.Size(2680, 1479);
+            this.gcDetalleDespacho_Ruta4.Size = new System.Drawing.Size(3992, 2233);
             this.gcDetalleDespacho_Ruta4.TabIndex = 1;
             this.gcDetalleDespacho_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetalleDespacho_Ruta4});
@@ -13268,9 +13409,11 @@ namespace LOSA.Trazabilidad
             this.gridColumn194});
             this.gvDetalleDespacho_Ruta4.DetailHeight = 673;
             this.gvDetalleDespacho_Ruta4.GridControl = this.gcDetalleDespacho_Ruta4;
+            this.gvDetalleDespacho_Ruta4.LevelIndent = 0;
             this.gvDetalleDespacho_Ruta4.Name = "gvDetalleDespacho_Ruta4";
             this.gvDetalleDespacho_Ruta4.OptionsView.ShowAutoFilterRow = true;
             this.gvDetalleDespacho_Ruta4.OptionsView.ShowFooter = true;
+            this.gvDetalleDespacho_Ruta4.PreviewIndent = 0;
             // 
             // gridColumn184
             // 
@@ -13414,9 +13557,9 @@ namespace LOSA.Trazabilidad
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.LookAndFeel.SkinName = "The Bezier";
             this.accordionControl1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.accordionControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(6);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(520, 1646);
+            this.accordionControl1.Size = new System.Drawing.Size(520, 1610);
             this.accordionControl1.TabIndex = 0;
             // 
             // accordionControlElement1
@@ -13511,11 +13654,11 @@ namespace LOSA.Trazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3220, 1646);
+            this.ClientSize = new System.Drawing.Size(3220, 1610);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.navigationFrame1);
             this.IconOptions.ShowIcon = false;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmRutasTrazabilidad";
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdCantidadDosificadaLoteLink)).EndInit();
@@ -14594,8 +14737,6 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn111;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn112;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn113;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdLinkLoteMP;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdLinkButtonMP;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdButtonTrzLotePT_ruta4;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdLink_PT_Ruta4_from_ruta1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdLinkPT_From_ruta3;
@@ -14620,7 +14761,6 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraGrid.Columns.GridColumn colNumID;
         private DevExpress.XtraGrid.Columns.GridColumn colFac_promix;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_prd1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdCantidadDosificadaLoteLink;
         private DevExpress.XtraEditors.SimpleButton cmdVerCuadroLotesRuta4;
         private DevExpress.XtraVerticalGrid.VGridControl vGridControl3;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow rowcodigo1;
@@ -14636,7 +14776,6 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraVerticalGrid.Rows.EditorRow rowud;
         private DevExpress.XtraEditors.LabelControl labelControl94;
         private DevExpress.XtraEditors.ToggleSwitch toggleSwitchExpandAll_Row;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDetalleBatch;
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo_barra3;
         private DevExpress.XtraEditors.SimpleButton btnImprimirDetalleCarga;
         private DevExpress.XtraBars.Navigation.NavigationPage npRuta4_V2;
@@ -14891,5 +15030,12 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.SimpleButton cmdDespacho_Ruta4;
         private System.Windows.Forms.BindingSource informacionBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn coloperacion;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdCantidadDosificadaLoteLink;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdLinkLoteMP;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdLinkButtonMP;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdDetalleBatch;
+        private DevExpress.XtraGrid.Columns.GridColumn colAvance;
+        private DevExpress.XtraEditors.SimpleButton btnExport;
     }
 }

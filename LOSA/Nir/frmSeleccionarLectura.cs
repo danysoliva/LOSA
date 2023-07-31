@@ -18,19 +18,25 @@ namespace LOSA.Nir
     public partial class frmSeleccionarLectura : DevExpress.XtraEditors.XtraForm
     {
         public int id_lectura;
-        public int id_h;
+        public int id_h, numero_transaccion, id_mp;
         public int id_lote;
+        public string Lote;
         UserLogin UsuarioLogeado;
         DataOperations dp = new DataOperations();
-        public frmSeleccionarLectura(UserLogin Puser, int pid_lote)
+        public frmSeleccionarLectura(UserLogin Puser,int pnumer_transaccion, int pid_mp, string pLote)
         {
             InitializeComponent();
             dtDesde.EditValue = dp.Now().AddDays(-15);
             dtHasta.EditValue = dp.Now();
             UsuarioLogeado = Puser;
-            id_lote = pid_lote;
+            numero_transaccion = pnumer_transaccion;
+            id_mp = pid_mp;
+            Lote = pLote;
+            //id_lote = pid_lote;
             load_Data();
         }
+
+
 
         public void load_Data() 
         {
@@ -104,8 +110,11 @@ namespace LOSA.Nir
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_lectura", id_lectura);
                     cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                    cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
+                    //cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
                     cmd.Parameters.AddWithValue("@id_h_lectura", id_h);
+                    cmd.Parameters.AddWithValue("@num_transaccion", numero_transaccion);
+                    cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                    cmd.Parameters.AddWithValue("@lote", Lote);
                     cmd.ExecuteNonQuery();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -113,7 +122,7 @@ namespace LOSA.Nir
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -134,8 +143,11 @@ namespace LOSA.Nir
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_lectura", id_lectura);
                     cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                    cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
+                    //cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
                     cmd.Parameters.AddWithValue("@id_h_lectura", id_h);
+                    cmd.Parameters.AddWithValue("@num_transaccion", numero_transaccion);
+                    cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                    cmd.Parameters.AddWithValue("@lote", Lote);
                     cmd.ExecuteNonQuery();
                     cn.Close();
                     this.DialogResult = DialogResult.OK;
@@ -178,8 +190,10 @@ namespace LOSA.Nir
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@id_lectura", id_lectura);
                                 cmd.Parameters.AddWithValue("@user_id", UsuarioLogeado.Id);
-                                cmd.Parameters.AddWithValue("@id_ingreso", id_lote);
                                 cmd.Parameters.AddWithValue("@id_h_lectura", id_h);
+                                cmd.Parameters.AddWithValue("@num_transaccion",numero_transaccion);
+                                cmd.Parameters.AddWithValue("@id_mp", id_mp);
+                                cmd.Parameters.AddWithValue("@lote", Lote);
                                 cmd.ExecuteNonQuery();
                                 cn.Close();
                             }

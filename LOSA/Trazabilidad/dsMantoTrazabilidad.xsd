@@ -194,6 +194,7 @@
               <xs:element name="cant_batch_real" msdata:Caption="Cant. Batch Real" msprop:Generator_ColumnVarNameInTable="columncant_batch_real" msprop:Generator_ColumnPropNameInRow="cant_batch_real" msprop:Generator_ColumnPropNameInTable="cant_batch_realColumn" msprop:Generator_UserColumnName="cant_batch_real" type="xs:int" minOccurs="0" />
               <xs:element name="kg_real_dosificado" msdata:Caption="Total Kg Adicionado" msprop:Generator_ColumnVarNameInTable="columnkg_real_dosificado" msprop:Generator_ColumnPropNameInRow="kg_real_dosificado" msprop:Generator_ColumnPropNameInTable="kg_real_dosificadoColumn" msprop:Generator_UserColumnName="kg_real_dosificado" type="xs:decimal" minOccurs="0" />
               <xs:element name="inclusion" msdata:Caption="% Inclusión" msprop:Generator_ColumnVarNameInTable="columninclusion" msprop:Generator_ColumnPropNameInRow="inclusion" msprop:Generator_ColumnPropNameInTable="inclusionColumn" msprop:Generator_UserColumnName="inclusion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="_x0025_avance" msprop:Generator_ColumnVarNameInTable="_column_avance" msprop:Generator_ColumnPropNameInRow="__avance" msprop:Generator_ColumnPropNameInTable="__avanceColumn" msprop:Generator_UserColumnName="%avance" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

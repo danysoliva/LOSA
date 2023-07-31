@@ -12,7 +12,7 @@
   <xs:element name="dsConfigLoteConsumo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsConfigLoteConsumo" msprop:Generator_UserDSName="dsConfigLoteConsumo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="search_mp" msprop:Generator_TableClassName="search_mpDataTable" msprop:Generator_TableVarName="tablesearch_mp" msprop:Generator_TablePropName="search_mp" msprop:Generator_RowDeletingName="search_mpRowDeleting" msprop:Generator_RowChangingName="search_mpRowChanging" msprop:Generator_RowEvHandlerName="search_mpRowChangeEventHandler" msprop:Generator_RowDeletedName="search_mpRowDeleted" msprop:Generator_UserTableName="search_mp" msprop:Generator_RowChangedName="search_mpRowChanged" msprop:Generator_RowEvArgName="search_mpRowChangeEvent" msprop:Generator_RowClassName="search_mpRow">
+        <xs:element name="search_mp" msprop:Generator_TableClassName="search_mpDataTable" msprop:Generator_TableVarName="tablesearch_mp" msprop:Generator_RowChangedName="search_mpRowChanged" msprop:Generator_TablePropName="search_mp" msprop:Generator_RowDeletingName="search_mpRowDeleting" msprop:Generator_RowChangingName="search_mpRowChanging" msprop:Generator_RowEvHandlerName="search_mpRowChangeEventHandler" msprop:Generator_RowDeletedName="search_mpRowDeleted" msprop:Generator_RowClassName="search_mpRow" msprop:Generator_UserTableName="search_mp" msprop:Generator_RowEvArgName="search_mpRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ItemCode" msprop:Generator_ColumnVarNameInTable="columnItemCode" msprop:Generator_ColumnPropNameInRow="ItemCode" msprop:Generator_ColumnPropNameInTable="ItemCodeColumn" msprop:Generator_UserColumnName="ItemCode" type="xs:string" minOccurs="0" />
@@ -23,7 +23,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="config_lote" msprop:Generator_TableClassName="config_loteDataTable" msprop:Generator_TableVarName="tableconfig_lote" msprop:Generator_TablePropName="config_lote" msprop:Generator_RowDeletingName="config_loteRowDeleting" msprop:Generator_RowChangingName="config_loteRowChanging" msprop:Generator_RowEvHandlerName="config_loteRowChangeEventHandler" msprop:Generator_RowDeletedName="config_loteRowDeleted" msprop:Generator_UserTableName="config_lote" msprop:Generator_RowChangedName="config_loteRowChanged" msprop:Generator_RowEvArgName="config_loteRowChangeEvent" msprop:Generator_RowClassName="config_loteRow">
+        <xs:element name="config_lote" msprop:Generator_TableClassName="config_loteDataTable" msprop:Generator_TableVarName="tableconfig_lote" msprop:Generator_RowChangedName="config_loteRowChanged" msprop:Generator_TablePropName="config_lote" msprop:Generator_RowDeletingName="config_loteRowDeleting" msprop:Generator_RowChangingName="config_loteRowChanging" msprop:Generator_RowEvHandlerName="config_loteRowChangeEventHandler" msprop:Generator_RowDeletedName="config_loteRowDeleted" msprop:Generator_RowClassName="config_loteRow" msprop:Generator_UserTableName="config_lote" msprop:Generator_RowEvArgName="config_loteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Linea" msprop:Generator_ColumnVarNameInTable="columnLinea" msprop:Generator_ColumnPropNameInRow="Linea" msprop:Generator_ColumnPropNameInTable="LineaColumn" msprop:Generator_UserColumnName="Linea" type="xs:int" minOccurs="0" />
