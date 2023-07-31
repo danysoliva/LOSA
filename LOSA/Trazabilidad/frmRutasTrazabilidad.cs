@@ -3974,13 +3974,22 @@ namespace LOSA.Trazabilidad
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
-            dialog.FilterIndex = 0;
-
-            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (gridView20.RowCount == 0)
             {
-                GridRuta4_detalle_trz_lote_pt.ExportToXlsx(dialog.FileName);
+                CajaDialogo.Error("No se ha Cargador un Lote de PT!");
+                txtlote.Focus();
+                return;
+            }
+            else
+            {
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    GridRuta4_detalle_trz_lote_pt.ExportToXlsx(dialog.FileName);
+                }
             }
         }
     }
