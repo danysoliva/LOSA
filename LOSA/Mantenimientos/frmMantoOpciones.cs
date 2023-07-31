@@ -33,9 +33,22 @@ namespace LOSA.Mantenimientos
 
         private void cmdPresentaciones_Click(object sender, EventArgs e)
         {
-            frmTipoPresentacion frm = new frmTipoPresentacion();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+            {
+                case GrupoUser.GrupoUsuario.Administradores:
+
+                    frmTipoPresentacion frm = new frmTipoPresentacion();
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Show();
+
+                    break;
+
+                default:
+
+                    CajaDialogo.Error("Si desea crear una Presentacion \n Solicite por Correo al Departamento de IT.");
+                    break;
+            }
+            
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
