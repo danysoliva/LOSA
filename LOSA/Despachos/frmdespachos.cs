@@ -47,6 +47,7 @@ namespace LOSA.Despachos
                 CajaDialogo.Error(ex.Message);
             }
         }
+
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

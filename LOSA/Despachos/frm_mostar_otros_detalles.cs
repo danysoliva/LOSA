@@ -25,8 +25,32 @@ namespace LOSA.Despachos
         {
             InitializeComponent();
             ParId = DocEntry;
+            load_data_orden_de_ventas();
             exe_sp_get_plan();
         }
+
+        public void load_data_orden_de_ventas()
+        {
+            DataOperations op = new DataOperations();
+            SqlConnection sqlConnection = new SqlConnection(op.ConnectionStringLOSA);
+            try
+            {
+                string qry = @"EXEC [dbo].[orden_venta_load_despachos]";//Query que obtiene la informacion de las Ordenes de ventas.
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand(qry, sqlConnection);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand);
+                ds_despachos.orden_venta.Clear();
+                dataAdapter.Fill(ds_despachos.orden_venta);
+                sqlConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         public void exe_sp_get_plan()
         {
             string query = @"EXECUTE [dbo].[sp_cargar_detalle_orden_de_venta] 
