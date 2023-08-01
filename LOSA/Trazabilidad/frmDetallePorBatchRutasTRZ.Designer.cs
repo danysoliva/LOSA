@@ -57,12 +57,12 @@ namespace LOSA.Trazabilidad
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(560, 1);
+            this.cmdHome.Location = new System.Drawing.Point(1179, 1);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(183, 56);
+            this.cmdHome.Size = new System.Drawing.Size(173, 52);
             this.cmdHome.TabIndex = 34;
             this.cmdHome.Text = "Cerrar";
-            this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
+            this.cmdHome.Visible = false;
             // 
             // gridControl1
             // 
@@ -74,7 +74,7 @@ namespace LOSA.Trazabilidad
             this.gridControl1.Location = new System.Drawing.Point(2, 59);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(741, 373);
+            this.gridControl1.Size = new System.Drawing.Size(1360, 676);
             this.gridControl1.TabIndex = 35;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -204,7 +204,7 @@ namespace LOSA.Trazabilidad
             this.cmdExportToExcel.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cmdExportToExcel.Location = new System.Drawing.Point(2, 2);
             this.cmdExportToExcel.Name = "cmdExportToExcel";
-            this.cmdExportToExcel.Size = new System.Drawing.Size(183, 56);
+            this.cmdExportToExcel.Size = new System.Drawing.Size(179, 51);
             this.cmdExportToExcel.TabIndex = 36;
             this.cmdExportToExcel.Text = "Exportar a Excel";
             this.cmdExportToExcel.Click += new System.EventHandler(this.cmdExportToExcel_Click);
@@ -213,12 +213,12 @@ namespace LOSA.Trazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 433);
+            this.ClientSize = new System.Drawing.Size(1364, 736);
             this.Controls.Add(this.cmdExportToExcel);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.cmdHome);
+            this.IconOptions.ShowIcon = false;
             this.Name = "frmDetallePorBatchRutasTRZ";
-            this.ShowIcon = false;
             this.Text = "Detalle de Batch";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesTRZ1)).EndInit();
