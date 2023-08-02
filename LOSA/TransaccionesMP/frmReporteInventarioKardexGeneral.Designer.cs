@@ -247,7 +247,7 @@ namespace LOSA.TransaccionesMP
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
             this.btnClose.Location = new System.Drawing.Point(2504, 12);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(228, 108);
             this.btnClose.TabIndex = 0;
@@ -272,7 +272,7 @@ namespace LOSA.TransaccionesMP
             this.tabPane1.Controls.Add(this.tabNavigationPage5);
             this.tabPane1.Controls.Add(this.tabNavigationPage6);
             this.tabPane1.Location = new System.Drawing.Point(8, 144);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
@@ -292,7 +292,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage1.Caption = "Resumen por lote";
             this.tabNavigationPage1.Controls.Add(this.cmdActualizarResumenPorLote);
             this.tabNavigationPage1.Controls.Add(this.grd_data);
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(2724, 856);
             // 
@@ -303,7 +303,7 @@ namespace LOSA.TransaccionesMP
             this.cmdActualizarResumenPorLote.Appearance.Options.UseFont = true;
             this.cmdActualizarResumenPorLote.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdActualizarResumenPorLote.ImageOptions.SvgImage")));
             this.cmdActualizarResumenPorLote.Location = new System.Drawing.Point(2442, 12);
-            this.cmdActualizarResumenPorLote.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdActualizarResumenPorLote.Margin = new System.Windows.Forms.Padding(6);
             this.cmdActualizarResumenPorLote.Name = "cmdActualizarResumenPorLote";
             this.cmdActualizarResumenPorLote.Size = new System.Drawing.Size(228, 75);
             this.cmdActualizarResumenPorLote.TabIndex = 3;
@@ -317,10 +317,10 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "kardex_by_lot";
             this.grd_data.DataSource = this.dsTarima1;
-            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_data.Location = new System.Drawing.Point(0, 92);
             this.grd_data.MainView = this.grdv_data;
-            this.grd_data.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_data.Margin = new System.Windows.Forms.Padding(6);
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_logmovimiento,
@@ -614,7 +614,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage2.Caption = "Resumen por materia prima";
             this.tabNavigationPage2.Controls.Add(this.btnRefreshRptMP);
             this.tabNavigationPage2.Controls.Add(this.grd_data_resumen);
-            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(6);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(2724, 853);
             // 
@@ -625,7 +625,7 @@ namespace LOSA.TransaccionesMP
             this.btnRefreshRptMP.Appearance.Options.UseFont = true;
             this.btnRefreshRptMP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRefreshRptMP.ImageOptions.SvgImage")));
             this.btnRefreshRptMP.Location = new System.Drawing.Point(2442, 12);
-            this.btnRefreshRptMP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRefreshRptMP.Margin = new System.Windows.Forms.Padding(6);
             this.btnRefreshRptMP.Name = "btnRefreshRptMP";
             this.btnRefreshRptMP.Size = new System.Drawing.Size(228, 75);
             this.btnRefreshRptMP.TabIndex = 4;
@@ -639,10 +639,10 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data_resumen.DataMember = "totales";
             this.grd_data_resumen.DataSource = this.dsTarima1;
-            this.grd_data_resumen.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_data_resumen.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grd_data_resumen.Location = new System.Drawing.Point(0, 92);
             this.grd_data_resumen.MainView = this.grdv_data_resumen;
-            this.grd_data_resumen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_data_resumen.Margin = new System.Windows.Forms.Padding(6);
             this.grd_data_resumen.Name = "grd_data_resumen";
             this.grd_data_resumen.Size = new System.Drawing.Size(2724, 824);
             this.grd_data_resumen.TabIndex = 0;
@@ -764,9 +764,9 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage3.Caption = "En Bodega PRD";
             this.tabNavigationPage3.Controls.Add(this.btnRptPRD);
             this.tabNavigationPage3.Controls.Add(this.gridControl1);
-            this.tabNavigationPage3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabNavigationPage3.Margin = new System.Windows.Forms.Padding(6);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(2724, 856);
+            this.tabNavigationPage3.Size = new System.Drawing.Size(2724, 853);
             // 
             // btnRptPRD
             // 
@@ -775,7 +775,7 @@ namespace LOSA.TransaccionesMP
             this.btnRptPRD.Appearance.Options.UseFont = true;
             this.btnRptPRD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRptPRD.ImageOptions.SvgImage")));
             this.btnRptPRD.Location = new System.Drawing.Point(2442, 12);
-            this.btnRptPRD.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRptPRD.Margin = new System.Windows.Forms.Padding(6);
             this.btnRptPRD.Name = "btnRptPRD";
             this.btnRptPRD.Size = new System.Drawing.Size(228, 75);
             this.btnRptPRD.TabIndex = 5;
@@ -789,15 +789,15 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "informacionPRD";
             this.gridControl1.DataSource = this.dsTarima1;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl1.Location = new System.Drawing.Point(16, 94);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2});
-            this.gridControl1.Size = new System.Drawing.Size(2708, 756);
+            this.gridControl1.Size = new System.Drawing.Size(2708, 753);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1040,9 +1040,9 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4.Caption = "Resumen por MP y Bodega";
             this.tabNavigationPage4.Controls.Add(this.btnRptMPyBod);
             this.tabNavigationPage4.Controls.Add(this.gridControl2);
-            this.tabNavigationPage4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabNavigationPage4.Margin = new System.Windows.Forms.Padding(6);
             this.tabNavigationPage4.Name = "tabNavigationPage4";
-            this.tabNavigationPage4.Size = new System.Drawing.Size(2724, 856);
+            this.tabNavigationPage4.Size = new System.Drawing.Size(2724, 853);
             // 
             // btnRptMPyBod
             // 
@@ -1051,7 +1051,7 @@ namespace LOSA.TransaccionesMP
             this.btnRptMPyBod.Appearance.Options.UseFont = true;
             this.btnRptMPyBod.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnRptMPyBod.ImageOptions.SvgImage")));
             this.btnRptMPyBod.Location = new System.Drawing.Point(2436, 12);
-            this.btnRptMPyBod.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnRptMPyBod.Margin = new System.Windows.Forms.Padding(6);
             this.btnRptMPyBod.Name = "btnRptMPyBod";
             this.btnRptMPyBod.Size = new System.Drawing.Size(228, 75);
             this.btnRptMPyBod.TabIndex = 6;
@@ -1065,12 +1065,12 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl2.DataMember = "totales_bodegav2";
             this.gridControl2.DataSource = this.dsTarima1;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl2.Location = new System.Drawing.Point(16, 94);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(2702, 777);
+            this.gridControl2.Size = new System.Drawing.Size(2702, 774);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1259,9 +1259,9 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage5.Caption = "Reproceso";
             this.tabNavigationPage5.Controls.Add(this.btnActReproceso);
             this.tabNavigationPage5.Controls.Add(this.gridReproceso);
-            this.tabNavigationPage5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabNavigationPage5.Margin = new System.Windows.Forms.Padding(6);
             this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(2724, 856);
+            this.tabNavigationPage5.Size = new System.Drawing.Size(2724, 853);
             // 
             // btnActReproceso
             // 
@@ -1270,7 +1270,7 @@ namespace LOSA.TransaccionesMP
             this.btnActReproceso.Appearance.Options.UseFont = true;
             this.btnActReproceso.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnActReproceso.ImageOptions.SvgImage")));
             this.btnActReproceso.Location = new System.Drawing.Point(2488, 8);
-            this.btnActReproceso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnActReproceso.Margin = new System.Windows.Forms.Padding(6);
             this.btnActReproceso.Name = "btnActReproceso";
             this.btnActReproceso.Size = new System.Drawing.Size(228, 75);
             this.btnActReproceso.TabIndex = 7;
@@ -1284,14 +1284,14 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridReproceso.DataMember = "kardex_by_Reproceso";
             this.gridReproceso.DataSource = this.dsTarima1;
-            this.gridReproceso.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridReproceso.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridReproceso.Location = new System.Drawing.Point(6, 92);
             this.gridReproceso.MainView = this.gridView3;
-            this.gridReproceso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridReproceso.Margin = new System.Windows.Forms.Padding(6);
             this.gridReproceso.Name = "gridReproceso";
             this.gridReproceso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmAjusteReproceso});
-            this.gridReproceso.Size = new System.Drawing.Size(2712, 754);
+            this.gridReproceso.Size = new System.Drawing.Size(2712, 751);
             this.gridReproceso.TabIndex = 1;
             this.gridReproceso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1507,7 +1507,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage6.Controls.Add(this.btnSearchMP);
             this.tabNavigationPage6.Controls.Add(this.txtTitulo_Inv_Por_MPyBodega);
             this.tabNavigationPage6.Controls.Add(this.lblTitulo_Inv_Por_MPyBodega);
-            this.tabNavigationPage6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabNavigationPage6.Margin = new System.Windows.Forms.Padding(6);
             this.tabNavigationPage6.Name = "tabNavigationPage6";
             this.tabNavigationPage6.Size = new System.Drawing.Size(2724, 853);
             // 
@@ -1516,7 +1516,7 @@ namespace LOSA.TransaccionesMP
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(16, 40);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(184, 32);
             this.labelControl1.TabIndex = 18;
@@ -1525,7 +1525,7 @@ namespace LOSA.TransaccionesMP
             // tggMostrarTotasInv_por_mp_y_bodega
             // 
             this.tggMostrarTotasInv_por_mp_y_bodega.Location = new System.Drawing.Point(202, 31);
-            this.tggMostrarTotasInv_por_mp_y_bodega.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tggMostrarTotasInv_por_mp_y_bodega.Margin = new System.Windows.Forms.Padding(6);
             this.tggMostrarTotasInv_por_mp_y_bodega.Name = "tggMostrarTotasInv_por_mp_y_bodega";
             this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.tggMostrarTotasInv_por_mp_y_bodega.Properties.Appearance.Options.UseFont = true;
@@ -1542,7 +1542,7 @@ namespace LOSA.TransaccionesMP
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
             this.simpleButton1.Location = new System.Drawing.Point(2480, 13);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(228, 75);
             this.simpleButton1.TabIndex = 16;
@@ -1556,10 +1556,10 @@ namespace LOSA.TransaccionesMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdMPBodega.DataMember = "mp_bodega_lote";
             this.grdMPBodega.DataSource = this.dsTarima1;
-            this.grdMPBodega.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grdMPBodega.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.grdMPBodega.Location = new System.Drawing.Point(12, 96);
             this.grdMPBodega.MainView = this.gridView4;
-            this.grdMPBodega.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grdMPBodega.Margin = new System.Windows.Forms.Padding(6);
             this.grdMPBodega.Name = "grdMPBodega";
             this.grdMPBodega.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemAjuste,
@@ -1778,7 +1778,7 @@ namespace LOSA.TransaccionesMP
             this.btnSearchMP.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnSearchMP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchMP.ImageOptions.Image")));
             this.btnSearchMP.Location = new System.Drawing.Point(1262, 23);
-            this.btnSearchMP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSearchMP.Margin = new System.Windows.Forms.Padding(6);
             this.btnSearchMP.Name = "btnSearchMP";
             this.btnSearchMP.Size = new System.Drawing.Size(156, 62);
             this.btnSearchMP.TabIndex = 14;
@@ -1788,7 +1788,7 @@ namespace LOSA.TransaccionesMP
             // txtTitulo_Inv_Por_MPyBodega
             // 
             this.txtTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(718, 35);
-            this.txtTitulo_Inv_Por_MPyBodega.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTitulo_Inv_Por_MPyBodega.Margin = new System.Windows.Forms.Padding(6);
             this.txtTitulo_Inv_Por_MPyBodega.Name = "txtTitulo_Inv_Por_MPyBodega";
             this.txtTitulo_Inv_Por_MPyBodega.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo_Inv_Por_MPyBodega.Properties.Appearance.Options.UseFont = true;
@@ -1801,7 +1801,7 @@ namespace LOSA.TransaccionesMP
             this.lblTitulo_Inv_Por_MPyBodega.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo_Inv_Por_MPyBodega.Appearance.Options.UseFont = true;
             this.lblTitulo_Inv_Por_MPyBodega.Location = new System.Drawing.Point(550, 40);
-            this.lblTitulo_Inv_Por_MPyBodega.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lblTitulo_Inv_Por_MPyBodega.Margin = new System.Windows.Forms.Padding(6);
             this.lblTitulo_Inv_Por_MPyBodega.Name = "lblTitulo_Inv_Por_MPyBodega";
             this.lblTitulo_Inv_Por_MPyBodega.Size = new System.Drawing.Size(162, 32);
             this.lblTitulo_Inv_Por_MPyBodega.TabIndex = 12;
@@ -1814,7 +1814,7 @@ namespace LOSA.TransaccionesMP
             this.btnExcel.Appearance.Options.UseFont = true;
             this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
             this.btnExcel.Location = new System.Drawing.Point(2236, 12);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(6);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(228, 108);
             this.btnExcel.TabIndex = 2;
@@ -1827,7 +1827,7 @@ namespace LOSA.TransaccionesMP
             this.btnAjustePorLote.Appearance.Options.UseFont = true;
             this.btnAjustePorLote.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAjustePorLote.ImageOptions.Image")));
             this.btnAjustePorLote.Location = new System.Drawing.Point(24, 12);
-            this.btnAjustePorLote.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAjustePorLote.Margin = new System.Windows.Forms.Padding(6);
             this.btnAjustePorLote.Name = "btnAjustePorLote";
             this.btnAjustePorLote.Size = new System.Drawing.Size(370, 108);
             this.btnAjustePorLote.TabIndex = 3;
@@ -1853,7 +1853,7 @@ namespace LOSA.TransaccionesMP
             this.btnTrasladoKardex.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btnTrasladoKardex.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTrasladoKardex.ImageOptions.Image")));
             this.btnTrasladoKardex.Location = new System.Drawing.Point(1884, 12);
-            this.btnTrasladoKardex.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnTrasladoKardex.Margin = new System.Windows.Forms.Padding(6);
             this.btnTrasladoKardex.Name = "btnTrasladoKardex";
             this.btnTrasladoKardex.Size = new System.Drawing.Size(316, 108);
             this.btnTrasladoKardex.TabIndex = 4;
@@ -1866,7 +1866,7 @@ namespace LOSA.TransaccionesMP
             this.cmdVerBorradorDeAjustes.Appearance.Options.UseFont = true;
             this.cmdVerBorradorDeAjustes.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
             this.cmdVerBorradorDeAjustes.Location = new System.Drawing.Point(406, 12);
-            this.cmdVerBorradorDeAjustes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdVerBorradorDeAjustes.Margin = new System.Windows.Forms.Padding(6);
             this.cmdVerBorradorDeAjustes.Name = "cmdVerBorradorDeAjustes";
             this.cmdVerBorradorDeAjustes.Size = new System.Drawing.Size(370, 108);
             this.cmdVerBorradorDeAjustes.TabIndex = 5;
@@ -1884,7 +1884,7 @@ namespace LOSA.TransaccionesMP
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.btnClose);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmReporteInventarioKardexGeneral";
             this.Text = "Reporte de Kardex";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

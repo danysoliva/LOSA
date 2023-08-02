@@ -643,6 +643,8 @@ namespace LOSA.Liquidos
      
             if (frm.ShowDialog()== DialogResult.OK)
             {
+                dsLiquidos_.Camiones_IN.Clear();
+
                 var CamionesSeleccionados = from Camion in dsLiquidos_.Camiones_IN.AsEnumerable()
                                                     select Camion.id;
 
@@ -654,50 +656,19 @@ namespace LOSA.Liquidos
                 {
 
                    gridView1.AddNewRow();
-                    var row = (dsLiquidos_.Camiones_INRow)gridView1.GetFocusedDataRow();
-                    //DataTable dt = gridControl1.DataSource as DataTable;
+                   var row = (dsLiquidos_.Camiones_INRow)gridView1.GetFocusedDataRow();
 
-                    ////DataRow row = dt.NewRow();
-                    //item.
-                    ////int d = gridView1.new NewItemRowHandle;
-                    ////var row1=(dsLiquidos_.Camiones_INRow)gridView1.GetFocusedDataRow();
-
-
-                    ////row1 = rowg;
                     row.itemcode = item.ItemCode;
-                    ////row1.card_name = item.Card_Name;
-                    ////pendiente agregar el valor de lote
                     row.id = item.ID;
                     row.comentarios = item.Comentarios;
                     row.empresaTrans = item.EmpresaTransporte;
-                    row.fechaEntra = item.FechaEntra;
-                    //row1.FechaFin = rowg.FechaFin;
-
-                    //try
-                    //{
-                    //    row1.shipid = rowg.shipid;
-                    //}
-                    //catch { row1.shipid = 0; }
-
-                    //try
-                    //{
-                    //    row1.barco = rowg.barco;
-                    //}
-                    //catch { row1.barco = ""; }
-
+                    row.fechaEntra = item.FechaEntra;        
                     row.NBoleta = item.Nboleta;
-                    //row1.numero_factura = rowg.numero_factura;
-                    //row1.Operador = rowg.Operador;
                     row.PesoBruto = item.PesoBruto;
                     row.PesonetoIn = item.PesoNetoIN;
                     row.PesoProd = item.PesoProd;
                     row.pesoSalida = item.PesoSalida;
                     row.peso_factura = item.PesoFactura;
-                    //row1.conductorin = rowg.conductorin;
-                    //row1.vehiculo = rowg.vehiculo;
-                    //row1.furgon = rowg.furgon;
-                    //row1.TipoBoleta = rowg.TipoBoleta;
-                    //row1.id_tipo_boleta = rowg.id_tipo_boleta;
                     row.SNegocio = item.SNegocio;
                     row.Producto = item.Producto;
                     row.cardcode = item.CardCode;
@@ -705,16 +676,10 @@ namespace LOSA.Liquidos
                     row.itemcode = item.ItemCode;
                     row.fecha_produccion = DateTime.Now;
                     row.fecha_vencimiento = DateTime.Now;
-                    //row1.seleccionar = rowg.seleccionar;
-                    //try
-                    //{
-                    //    row1.id_ubicacion = rowg.id_ubicacion;
-                    //}
-                    //catch { }
+
                     dsLiquidos_.Camiones_IN.AddCamiones_INRow(row);
                     dsLiquidos_.AcceptChanges();
-                    //dsRecepcionMPx1.granel.AddgranelRow(row1);
-                    //dsRecepcionMPx1.AcceptChanges();
+
                 }
                 Calcular_Ingreso();
 

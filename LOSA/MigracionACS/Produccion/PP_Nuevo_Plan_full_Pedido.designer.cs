@@ -152,13 +152,13 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grp_mainOptions)).BeginInit();
             this.grp_mainOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tgg_reservarlote.Properties)).BeginInit();
@@ -1661,6 +1661,11 @@
             this.gridColumn5.VisibleIndex = 3;
             this.gridColumn5.Width = 63;
             // 
+            // colid_mp
+            // 
+            this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.Name = "colid_mp";
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.labelControl6);
@@ -1732,11 +1737,6 @@
             // 
             this.bindingSource1.DataMember = "lineas_produccion";
             this.bindingSource1.DataSource = this.dsProduccion1;
-            // 
-            // colid_mp
-            // 
-            this.colid_mp.FieldName = "id_mp";
-            this.colid_mp.Name = "colid_mp";
             // 
             // PP_Nuevo_Plan_full_Pedido
             // 

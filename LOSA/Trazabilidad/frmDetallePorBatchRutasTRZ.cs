@@ -17,7 +17,7 @@ namespace LOSA.Trazabilidad
     public partial class frmDetallePorBatchRutasTRZ : DevExpress.XtraEditors.XtraForm
     {
         UserLogin UsuarioLogeado;
-        int LotePT;
+        public int LotePT;
         int IdMP;
         public frmDetallePorBatchRutasTRZ(UserLogin puser, int pLotePT, int pIdMP)
         {
@@ -54,7 +54,7 @@ namespace LOSA.Trazabilidad
 
         private void cmdHome_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 

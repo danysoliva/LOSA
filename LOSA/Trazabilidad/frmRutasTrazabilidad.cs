@@ -2741,95 +2741,7 @@ namespace LOSA.Trazabilidad
 
             private void cmdLinkLoteMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
             {
-                var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
-                var row = (dsMantoTrazabilidad.Ruta4_D_trz_loteRow)gridView.GetFocusedDataRow();
-
-                if (row.id_mp == 1101 || row.id_mp == 1110) //MP00081 MP00080 Reproceso Camaron y Tilapia
-                {
-
-                    if (txtlote.Text == "")
-                    {
-                        CajaDialogo.Error("Debe de especificar el lote que desea encontrar resultados.");
-                    }
-                    else
-                    {
-                        txtlote.Text = row.lote_mp;
-                    }
-
-                    dsCalidad.trazabilitad.Clear();
-                    load_header();
-                    load_data();
-                    Load_Despachos();
-                    LoadDatosDetalleDespacho();
-                    timerRuta4.Enabled = true;
-                    timerRuta4.Start();
-                    //Load_Despachos();
-                    //LoadDatosDetalleDespacho();
-                    //load_informacion_de_inventario();
-                    //load_tarimas_rechazadas();
-                    //load_MuestreoPT();
-
                 
-
-
-
-                }
-                else
-                {
-                    if (string.IsNullOrEmpty(row.lote_mp))
-                    {
-                        return;
-                    }
-
-                    navigationFrame1.SelectedPage = npRuta4_V2;
-
-                    load_Info_PT_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                    load_data_ingreso_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-
-                    LoadDataInicialIngresos_Ruta4(row.id_mp, row.lote_mp);
-                    foreach (dsMantenimientoC.Ingresos_Lote_detalleRow item in dsMantenimientoC.Ingresos_Lote_detalle.Rows)
-                    {
-                        if (item.numero_transaccion == row.NIngreso)
-                        {
-
-                            Id_ingreso_Ruta4 = item.id_ingreso;
-                            Id_boleta_Ruta4 = item.id_boleta;
-
-                            item.selected = true;
-                        }
-                    }
-
-                    Load_cargas_nir_Ruta4(row.id_mp);
-                    Inicalizar_Archivo_Ruta4();
-                    //Inicializar_data_logistica_Ruta4(row.NIngreso);
-                    Inicializar_data_logisticaRuta2(row.lote_mp);
-                    load_especie_Ruta4();
-                    load_zonas_Ruta4();
-                    load_tipo_Ruta4();
-                    load_paises_Ruta4();
-                    LoadLotesPT_Ruta4(row.id_mp, row.lote_mp);
-                    LoadInventarioKardex_Ruta4(row.lote_mp);
-
-                    if (ChCalidad_Ruta4)
-                    {
-                        load_criterios_configurados_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                        get_imagen_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                        load_empaque_estado_Mp_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                        load_trasporte_estado_transporte_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
-                        load_criterios_adicionales_Ruta4(row.id_mp, row.lote_mp, row.NIngreso);
-                        Inicalizar_Archivo_configurados_Ruta4(row.id_mp, row.lote_mp);
-
-                        if (full_pathImagen != "")
-                        {
-                            pc_Mp.Image = ByteToImage_Ruta4(GetImgByte_Ruta4(full_pathImagen));
-                        }
-                    }
-                    else
-                    {
-                        inicializar_criterios_Ruta4(row.id_mp);
-
-                    }
-                }
 
 
             }
@@ -3952,35 +3864,229 @@ namespace LOSA.Trazabilidad
 
         private void gridView20_RowStyle(object sender, RowStyleEventArgs e)
         {
+
+            GridView View = sender as GridView;
             if (e.RowHandle >= 0)
             {
-                var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
-                //var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
-                var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetDataRow(e.RowHandle);
-                if (row != null)
+                decimal avance = Convert.ToDecimal(View.GetRowCellDisplayText(e.RowHandle, View.Columns["%avance"]));
+                if (avance >= 95)
                 {
-                    if (row.__avance >= 95)
-                    {
-                        e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
-                    }
-                    else
-                    {
-                        e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
-                    }
+                    e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
+                    e.HighPriority = true;
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
+                }
+            }
+
+            //if (e.RowHandle >= 0)
+            //{
+            //    var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+            //    //var row = (dsNotas.notas_resumenRow)gridView.GetFocusedDataRow();
+            //    var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetDataRow(e.RowHandle);
+
+            //    if (row != null)
+            //    {
+            //        if (row.__avance >= 95)
+            //        {
+            //            e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
+            //        }
+            //        else
+            //        {
+            //            e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
+            //        }
+
+            //    }
+            //}
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (gridView20.RowCount == 0)
+            {
+                CajaDialogo.Error("No se ha Cargado un Lote de PT!");
+                txtlote.Focus();
+                return;
+            }
+            else
+            {
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Excel File (.xlsx)|*.xlsx";
+                dialog.FilterIndex = 0;
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    GridRuta4_detalle_trz_lote_pt.ExportToXlsx(dialog.FileName);
+                }
+            }
+        }
+
+        private void reposDetalleBatch_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+            var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetFocusedDataRow();
+
+            if (row != null)
+            {
+                if (row.cant_batch_real > 0)
+                {
+                    //frmDetallePorBatchRutasTRZ frm = new frmDetallePorBatchRutasTRZ(this.UsuarioLogeado, LoteActual.LotePT_Num, row.id_mp);
+                    //frm.MdiParent = this.MdiParent;
+                    //frm.WindowState = FormWindowState.Normal;
+                    //frm.Show();
+                    frmDetallePorBatchRutasTRZ frm = new frmDetallePorBatchRutasTRZ(this.UsuarioLogeado, LoteActual.LotePT_Num, row.id_mp);
+                    //frm.MdiParent = this.MdiParent;
+                    frm.WindowState = FormWindowState.Maximized;
+                    frm.Show();
+
 
                 }
             }
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private void reposLinkButtonMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Excel File (.xlsx)|*.xlsx";
-            dialog.FilterIndex = 0;
+            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+            var row = (dsMantoTrazabilidad.Ruta4_H_trz_lote_ptRow)gridView.GetFocusedDataRow();
+            //frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.lote_mp, 0);
+            //if (this.MdiParent != null)
+            //    frm.MdiParent = this.MdiParent;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
+            cargarDatosTarimas(row.ItemCode);
+            cargarMateriaPrima(row.ItemCode);
+            navigationFrame1.SelectedPage = npRuta3MP;
+        }
 
-            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        private void reposCantidadDosificadaLoteLink_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta1.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+            acordionRuta1.Appearance.Normal.ForeColor = Color.White;
+
+            this.rutaActiva = 1;
+            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+            var row = (dsMantoTrazabilidad.Ruta4_D_trz_loteRow)gridView.GetFocusedDataRow();
+
+            if (string.IsNullOrEmpty(row.lote_mp))
             {
-                GridRuta4_detalle_trz_lote_pt.ExportToXlsx(dialog.FileName);
+                return;
+            }
+
+
+
+            if (txtLoteMPRuta1.Text != row.lote_mp.ToString() || string.IsNullOrEmpty(txtLoteMPRuta1.Text))
+            {
+                txtLoteMPRuta1.Text = row.lote_mp;
+                btnGenerateRuta1_Click(sender, new EventArgs());
+            }
+            btnHome_Ruta1.Visible = false;
+            btnBack.Visible = true;
+
+            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npRuta1;
+            txtLoteMPRuta1.Focus();
+            //npRuta1
+        }
+
+        private void reposLinkLoteMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridView = (GridView)GridRuta4_detalle_trz_lote_pt.FocusedView;
+            var row = (dsMantoTrazabilidad.Ruta4_D_trz_loteRow)gridView.GetFocusedDataRow();
+
+            if (row.id_mp == 1101 || row.id_mp == 1110) //MP00081 MP00080 Reproceso Camaron y Tilapia
+            {
+
+                if (txtlote.Text == "")
+                {
+                    CajaDialogo.Error("Debe de especificar el lote que desea encontrar resultados.");
+                }
+                else
+                {
+                    txtlote.Text = row.lote_mp;
+                }
+
+                dsCalidad.trazabilitad.Clear();
+                load_header();
+                load_data();
+                Load_Despachos();
+                LoadDatosDetalleDespacho();
+                timerRuta4.Enabled = true;
+                timerRuta4.Start();
+                //Load_Despachos();
+                //LoadDatosDetalleDespacho();
+                //load_informacion_de_inventario();
+                //load_tarimas_rechazadas();
+                //load_MuestreoPT();
+
+
+
+
+
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(row.lote_mp))
+                {
+                    return;
+                }
+
+                navigationFrame1.SelectedPage = npRuta4_V2;
+
+                load_Info_PT_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                load_data_ingreso_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+
+                LoadDataInicialIngresos_Ruta4(row.id_mp, row.lote_mp);
+                foreach (dsMantenimientoC.Ingresos_Lote_detalleRow item in dsMantenimientoC.Ingresos_Lote_detalle.Rows)
+                {
+                    if (item.numero_transaccion == row.NIngreso)
+                    {
+
+                        Id_ingreso_Ruta4 = item.id_ingreso;
+                        Id_boleta_Ruta4 = item.id_boleta;
+
+                        item.selected = true;
+                    }
+                }
+
+                Load_cargas_nir_Ruta4(row.id_mp);
+                Inicalizar_Archivo_Ruta4();
+                //Inicializar_data_logistica_Ruta4(row.NIngreso);
+                Inicializar_data_logisticaRuta2(row.lote_mp);
+                load_especie_Ruta4();
+                load_zonas_Ruta4();
+                load_tipo_Ruta4();
+                load_paises_Ruta4();
+                LoadLotesPT_Ruta4(row.id_mp, row.lote_mp);
+                LoadInventarioKardex_Ruta4(row.lote_mp);
+
+                if (ChCalidad_Ruta4)
+                {
+                    load_criterios_configurados_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                    get_imagen_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                    load_empaque_estado_Mp_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                    load_trasporte_estado_transporte_Ruta4(row.NIngreso, row.id_mp, row.lote_mp);
+                    load_criterios_adicionales_Ruta4(row.id_mp, row.lote_mp, row.NIngreso);
+                    Inicalizar_Archivo_configurados_Ruta4(row.id_mp, row.lote_mp);
+
+                    if (full_pathImagen != "")
+                    {
+                        pc_Mp.Image = ByteToImage_Ruta4(GetImgByte_Ruta4(full_pathImagen));
+                    }
+                }
+                else
+                {
+                    inicializar_criterios_Ruta4(row.id_mp);
+
+                }
             }
         }
     }
