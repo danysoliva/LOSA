@@ -552,7 +552,7 @@ namespace LOSA.MigracionACS.IT
             // 
             // xrLine5
             // 
-            this.xrLine5.LineStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.xrLine5.LineStyle = DevExpress.Drawing.DXDashStyle.Custom;
             this.xrLine5.LineWidth = 2F;
             this.xrLine5.LocationFloat = new DevExpress.Utils.PointFloat(211.3333F, 48.16668F);
             this.xrLine5.Name = "xrLine5";

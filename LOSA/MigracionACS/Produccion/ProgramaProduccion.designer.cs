@@ -1153,7 +1153,7 @@
             this.xrTableCell30.StylePriority.UseBorders = false;
             this.xrTableCell30.StylePriority.UseFont = false;
             this.xrTableCell30.Text = "Sacos Solicitados";
-            this.xrTableCell30.TextTrimming = System.Drawing.StringTrimming.None;
+            this.xrTableCell30.TextTrimming = DevExpress.Drawing.DXStringTrimming.None;
             this.xrTableCell30.Weight = 0.67307612298081632D;
             // 
             // xrTableCell61
@@ -1621,7 +1621,7 @@
             this.xrTableCell45.Name = "xrTableCell45";
             this.xrTableCell45.StylePriority.UseFont = false;
             this.xrTableCell45.Text = "Sacos Solicitados";
-            this.xrTableCell45.TextTrimming = System.Drawing.StringTrimming.None;
+            this.xrTableCell45.TextTrimming = DevExpress.Drawing.DXStringTrimming.None;
             this.xrTableCell45.Weight = 0.67307612298081632D;
             // 
             // xrTableCell65
@@ -1778,7 +1778,7 @@
             this.Margins = new DevExpress.Drawing.DXMargins(16, 38, 7, 14);
             this.PageHeight = 850;
             this.PageWidth = 1400;
-            this.PaperKind = System.Drawing.Printing.PaperKind.Legal;
+            this.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Legal;
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();

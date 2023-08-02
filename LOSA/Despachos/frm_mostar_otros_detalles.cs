@@ -25,28 +25,50 @@ namespace LOSA.Despachos
         {
             InitializeComponent();
             ParId = DocEntry;
-            load_data_orden_de_ventas();
+            load_data_orden_de_ventas(DocEntry);
             exe_sp_get_plan();
         }
 
-        public void load_data_orden_de_ventas()
+        //public void load_data_orden_de_ventas()
+        //{
+        //    DataOperations op = new DataOperations();
+        //    SqlConnection sqlConnection = new SqlConnection(op.ConnectionStringLOSA);
+        //    try
+        //    {
+        //        string qry = @"EXEC [dbo].[orden_venta_load_despachos]";//Query que obtiene la informacion de las Ordenes de ventas.
+        //        sqlConnection.Open();
+        //        SqlCommand sqlCommand = new SqlCommand(qry, sqlConnection);
+        //        SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand);
+        //        ds_despachos.orden_venta.Clear();
+        //        dataAdapter.Fill(ds_despachos.orden_venta);
+        //        sqlConnection.Close();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        CajaDialogo.Error(ex.Message);
+        //    }
+        //}
+
+        public void load_data_orden_de_ventas(int pDocEntry)
         {
             DataOperations op = new DataOperations();
             SqlConnection sqlConnection = new SqlConnection(op.ConnectionStringLOSA);
             try
             {
-                string qry = @"EXEC [dbo].[orden_venta_load_despachos]";//Query que obtiene la informacion de las Ordenes de ventas.
+                string qry = @"[dbo].[orden_venta_load_despachos_v2]";//Query que obtiene la informacion de las Ordenes de ventas.
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand(qry, sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@docentry", pDocEntry);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand);
                 ds_despachos.orden_venta.Clear();
                 dataAdapter.Fill(ds_despachos.orden_venta);
                 sqlConnection.Close();
-
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
         }
