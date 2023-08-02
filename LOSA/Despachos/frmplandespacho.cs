@@ -134,11 +134,13 @@ namespace LOSA.Despachos
                 var gridview = (GridView)grd_detalle.FocusedView;
                 var row = (ds_despachos.plan_despachoRow)gridview.GetFocusedDataRow();
                 LOSA.Despachos.frm_generar_despacho frm = new frm_generar_despacho(row.DocNum, row.iddetalle, ParUser);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
+                //if (frm.ShowDialog() == DialogResult.OK)
+                //{
 
-                   // exe_sp_get_plan();
-                }
+                //   // exe_sp_get_plan();
+                //}
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
             catch (Exception ex)
             {

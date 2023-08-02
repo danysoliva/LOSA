@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_generar_despacho));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnatras = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -131,9 +131,10 @@
             this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
             this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnatras.Location = new System.Drawing.Point(608, 12);
+            this.btnatras.Location = new System.Drawing.Point(1216, 23);
+            this.btnatras.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnatras.Name = "btnatras";
-            this.btnatras.Size = new System.Drawing.Size(109, 44);
+            this.btnatras.Size = new System.Drawing.Size(218, 85);
             this.btnatras.TabIndex = 47;
             this.btnatras.Text = "Atras";
             this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
@@ -148,9 +149,10 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(204, 16);
+            this.labelControl1.Location = new System.Drawing.Point(408, 31);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(398, 40);
+            this.labelControl1.Size = new System.Drawing.Size(796, 77);
             this.labelControl1.TabIndex = 48;
             this.labelControl1.Text = "Planificacion de Despacho";
             // 
@@ -158,9 +160,10 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(3, 341);
+            this.labelControl2.Location = new System.Drawing.Point(6, 656);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(79, 21);
+            this.labelControl2.Size = new System.Drawing.Size(156, 45);
             this.labelControl2.TabIndex = 49;
             this.labelControl2.Text = "Productos:";
             // 
@@ -171,13 +174,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "detalle_despachosComplete";
             this.grd_data.DataSource = this.ds_despachos;
-            this.grd_data.Location = new System.Drawing.Point(3, 367);
+            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_data.Location = new System.Drawing.Point(6, 706);
             this.grd_data.MainView = this.grdv_data;
+            this.grd_data.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.grd_presentaciones,
             this.btn_clear});
-            this.grd_data.Size = new System.Drawing.Size(727, 341);
+            this.grd_data.Size = new System.Drawing.Size(1454, 656);
             this.grd_data.TabIndex = 50;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -225,8 +230,10 @@
             this.coltm_linea,
             this.colDocEntry,
             this.colitemname});
+            this.grdv_data.DetailHeight = 673;
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsEditForm.PopupEditFormWidth = 1600;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowFooter = true;
             this.grdv_data.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_data_CellValueChanged);
@@ -235,109 +242,128 @@
             // colRowNum
             // 
             this.colRowNum.FieldName = "RowNum";
+            this.colRowNum.MinWidth = 40;
             this.colRowNum.Name = "colRowNum";
             this.colRowNum.OptionsColumn.AllowEdit = false;
             this.colRowNum.Visible = true;
             this.colRowNum.VisibleIndex = 0;
-            this.colRowNum.Width = 78;
+            this.colRowNum.Width = 156;
             // 
             // colid
             // 
             this.colid.FieldName = "id";
+            this.colid.MinWidth = 40;
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
+            this.colid.Width = 150;
             // 
             // collot
             // 
             this.collot.FieldName = "lot";
+            this.collot.MinWidth = 40;
             this.collot.Name = "collot";
             this.collot.OptionsColumn.AllowEdit = false;
             this.collot.Visible = true;
             this.collot.VisibleIndex = 4;
+            this.collot.Width = 150;
             // 
             // colid_pt
             // 
             this.colid_pt.FieldName = "id_pt";
+            this.colid_pt.MinWidth = 40;
             this.colid_pt.Name = "colid_pt";
             this.colid_pt.OptionsColumn.AllowEdit = false;
+            this.colid_pt.Width = 150;
             // 
             // colcantidad
             // 
             this.colcantidad.FieldName = "cantidad";
+            this.colcantidad.MinWidth = 40;
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cantidad", "SUMA={0:#.##}")});
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 5;
+            this.colcantidad.Width = 150;
             // 
             // colpresentacion
             // 
             this.colpresentacion.FieldName = "presentacion";
+            this.colpresentacion.MinWidth = 40;
             this.colpresentacion.Name = "colpresentacion";
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 6;
-            this.colpresentacion.Width = 131;
+            this.colpresentacion.Width = 262;
             // 
             // colid_presentacion
             // 
             this.colid_presentacion.FieldName = "id_presentacion";
+            this.colid_presentacion.MinWidth = 40;
             this.colid_presentacion.Name = "colid_presentacion";
             this.colid_presentacion.OptionsColumn.AllowEdit = false;
+            this.colid_presentacion.Width = 150;
             // 
             // colid_detalle
             // 
             this.colid_detalle.FieldName = "id_detalle";
+            this.colid_detalle.MinWidth = 40;
             this.colid_detalle.Name = "colid_detalle";
             this.colid_detalle.OptionsColumn.AllowEdit = false;
+            this.colid_detalle.Width = 150;
             // 
             // colitemcode
             // 
             this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.MinWidth = 40;
             this.colitemcode.Name = "colitemcode";
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 2;
-            this.colitemcode.Width = 78;
+            this.colitemcode.Width = 156;
             // 
             // colKg_linea
             // 
             this.colKg_linea.FieldName = "Kg_linea";
+            this.colKg_linea.MinWidth = 40;
             this.colKg_linea.Name = "colKg_linea";
             this.colKg_linea.OptionsColumn.AllowEdit = false;
             this.colKg_linea.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Kg_linea", "SUMA={0:#.##}")});
             this.colKg_linea.Visible = true;
             this.colKg_linea.VisibleIndex = 7;
-            this.colKg_linea.Width = 61;
+            this.colKg_linea.Width = 122;
             // 
             // coltm_linea
             // 
             this.coltm_linea.FieldName = "tm_linea";
+            this.coltm_linea.MinWidth = 40;
             this.coltm_linea.Name = "coltm_linea";
             this.coltm_linea.OptionsColumn.AllowEdit = false;
             this.coltm_linea.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "tm_linea", "SUMA={0:#.##}")});
             this.coltm_linea.Visible = true;
             this.coltm_linea.VisibleIndex = 8;
-            this.coltm_linea.Width = 60;
+            this.coltm_linea.Width = 120;
             // 
             // colDocEntry
             // 
             this.colDocEntry.FieldName = "DocEntry";
+            this.colDocEntry.MinWidth = 40;
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
             this.colDocEntry.Visible = true;
             this.colDocEntry.VisibleIndex = 1;
-            this.colDocEntry.Width = 68;
+            this.colDocEntry.Width = 136;
             // 
             // colitemname
             // 
             this.colitemname.FieldName = "itemname";
+            this.colitemname.MinWidth = 40;
             this.colitemname.Name = "colitemname";
             this.colitemname.OptionsColumn.AllowEdit = false;
             this.colitemname.Visible = true;
             this.colitemname.VisibleIndex = 3;
-            this.colitemname.Width = 83;
+            this.colitemname.Width = 166;
             // 
             // grd_presentaciones
             // 
@@ -362,9 +388,9 @@
             // btn_clear
             // 
             this.btn_clear.AutoHeight = false;
-            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
             this.btn_clear.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
@@ -376,9 +402,10 @@
             this.btnAgregar.Appearance.Options.UseFont = true;
             this.btnAgregar.BackgroundImage = global::LOSA.Properties.Resources.pallet32px1;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.pallet32px1;
-            this.btnAgregar.Location = new System.Drawing.Point(595, 256);
+            this.btnAgregar.Location = new System.Drawing.Point(1190, 492);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(119, 46);
+            this.btnAgregar.Size = new System.Drawing.Size(238, 88);
             this.btnAgregar.TabIndex = 51;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -387,9 +414,10 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(25, 162);
+            this.labelControl3.Location = new System.Drawing.Point(50, 312);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(72, 21);
+            this.labelControl3.Size = new System.Drawing.Size(144, 45);
             this.labelControl3.TabIndex = 52;
             this.labelControl3.Text = "Unidades:";
             // 
@@ -397,9 +425,10 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(25, 132);
+            this.labelControl4.Location = new System.Drawing.Point(50, 254);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(132, 21);
+            this.labelControl4.Size = new System.Drawing.Size(263, 45);
             this.labelControl4.TabIndex = 53;
             this.labelControl4.Text = "Boleta de Bascula:";
             // 
@@ -407,9 +436,10 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(25, 200);
+            this.labelControl5.Location = new System.Drawing.Point(50, 385);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(63, 21);
+            this.labelControl5.Size = new System.Drawing.Size(125, 45);
             this.labelControl5.TabIndex = 54;
             this.labelControl5.Text = "Peso Kg:";
             // 
@@ -418,9 +448,10 @@
             this.btn_guardar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btn_guardar.Appearance.Options.UseFont = true;
             this.btn_guardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.ImageOptions.Image")));
-            this.btn_guardar.Location = new System.Drawing.Point(12, 12);
+            this.btn_guardar.Location = new System.Drawing.Point(24, 23);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(187, 71);
+            this.btn_guardar.Size = new System.Drawing.Size(374, 137);
             this.btn_guardar.TabIndex = 55;
             this.btn_guardar.Text = "Seleccion de lote";
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -428,11 +459,12 @@
             // txtboleta
             // 
             this.txtboleta.Enabled = false;
-            this.txtboleta.Location = new System.Drawing.Point(163, 129);
+            this.txtboleta.Location = new System.Drawing.Point(326, 248);
+            this.txtboleta.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtboleta.Name = "txtboleta";
             this.txtboleta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txtboleta.Properties.Appearance.Options.UseFont = true;
-            this.txtboleta.Size = new System.Drawing.Size(420, 28);
+            this.txtboleta.Size = new System.Drawing.Size(840, 60);
             this.txtboleta.TabIndex = 56;
             // 
             // simpleButton1
@@ -442,9 +474,10 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.BackgroundImage = global::LOSA.Properties.Resources.pallet32px1;
             this.simpleButton1.ImageOptions.Image = global::LOSA.Properties.Resources.tap;
-            this.simpleButton1.Location = new System.Drawing.Point(595, 119);
+            this.simpleButton1.Location = new System.Drawing.Point(1190, 229);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(119, 46);
+            this.simpleButton1.Size = new System.Drawing.Size(238, 88);
             this.simpleButton1.TabIndex = 57;
             this.simpleButton1.Text = "Boleta";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -453,61 +486,66 @@
             // 
             this.txtunidades.EditValue = "0";
             this.txtunidades.Enabled = false;
-            this.txtunidades.Location = new System.Drawing.Point(100, 163);
+            this.txtunidades.Location = new System.Drawing.Point(200, 313);
+            this.txtunidades.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtunidades.Name = "txtunidades";
             this.txtunidades.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txtunidades.Properties.Appearance.Options.UseFont = true;
             this.txtunidades.Properties.Mask.EditMask = "d";
             this.txtunidades.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtunidades.Size = new System.Drawing.Size(125, 28);
+            this.txtunidades.Size = new System.Drawing.Size(250, 60);
             this.txtunidades.TabIndex = 58;
             // 
             // txtKg
             // 
             this.txtKg.EditValue = "0";
             this.txtKg.Enabled = false;
-            this.txtKg.Location = new System.Drawing.Point(100, 197);
+            this.txtKg.Location = new System.Drawing.Point(200, 379);
+            this.txtKg.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtKg.Name = "txtKg";
             this.txtKg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txtKg.Properties.Appearance.Options.UseFont = true;
             this.txtKg.Properties.Mask.EditMask = "n";
             this.txtKg.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtKg.Size = new System.Drawing.Size(125, 28);
+            this.txtKg.Size = new System.Drawing.Size(250, 60);
             this.txtKg.TabIndex = 59;
             // 
             // txtconductor
             // 
             this.txtconductor.EditValue = "";
             this.txtconductor.Enabled = false;
-            this.txtconductor.Location = new System.Drawing.Point(329, 197);
+            this.txtconductor.Location = new System.Drawing.Point(658, 379);
+            this.txtconductor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtconductor.Name = "txtconductor";
             this.txtconductor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txtconductor.Properties.Appearance.Options.UseFont = true;
             this.txtconductor.Properties.Mask.EditMask = "n";
             this.txtconductor.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtconductor.Size = new System.Drawing.Size(254, 28);
+            this.txtconductor.Size = new System.Drawing.Size(508, 60);
             this.txtconductor.TabIndex = 63;
             // 
             // txtvehiculo
             // 
             this.txtvehiculo.EditValue = "";
             this.txtvehiculo.Enabled = false;
-            this.txtvehiculo.Location = new System.Drawing.Point(329, 163);
+            this.txtvehiculo.Location = new System.Drawing.Point(658, 313);
+            this.txtvehiculo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtvehiculo.Name = "txtvehiculo";
             this.txtvehiculo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txtvehiculo.Properties.Appearance.Options.UseFont = true;
             this.txtvehiculo.Properties.Mask.EditMask = "d";
             this.txtvehiculo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtvehiculo.Size = new System.Drawing.Size(254, 28);
+            this.txtvehiculo.Size = new System.Drawing.Size(508, 60);
             this.txtvehiculo.TabIndex = 62;
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(241, 200);
+            this.labelControl6.Location = new System.Drawing.Point(482, 385);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(82, 21);
+            this.labelControl6.Size = new System.Drawing.Size(162, 45);
             this.labelControl6.TabIndex = 61;
             this.labelControl6.Text = "Conductor:";
             // 
@@ -515,9 +553,10 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(241, 166);
+            this.labelControl7.Location = new System.Drawing.Point(482, 319);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(67, 21);
+            this.labelControl7.Size = new System.Drawing.Size(134, 45);
             this.labelControl7.TabIndex = 60;
             this.labelControl7.Text = "Vehiculo:";
             // 
@@ -525,16 +564,18 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(25, 241);
+            this.labelControl8.Location = new System.Drawing.Point(50, 463);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(110, 21);
+            this.labelControl8.Size = new System.Drawing.Size(220, 45);
             this.labelControl8.TabIndex = 64;
             this.labelControl8.Text = "Cliente Promix:";
             // 
             // grd_destino
             // 
             this.grd_destino.Enabled = false;
-            this.grd_destino.Location = new System.Drawing.Point(141, 238);
+            this.grd_destino.Location = new System.Drawing.Point(282, 458);
+            this.grd_destino.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_destino.Name = "grd_destino";
             this.grd_destino.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.grd_destino.Properties.Appearance.Options.UseFont = true;
@@ -544,7 +585,7 @@
             this.grd_destino.Properties.DisplayMember = "nombre";
             this.grd_destino.Properties.PopupView = this.gridLookUpEdit1View;
             this.grd_destino.Properties.ValueMember = "id";
-            this.grd_destino.Size = new System.Drawing.Size(442, 28);
+            this.grd_destino.Size = new System.Drawing.Size(884, 60);
             this.grd_destino.TabIndex = 65;
             // 
             // clientedespachoBindingSource
@@ -577,8 +618,10 @@
             this.coldireccion1,
             this.colciudad,
             this.colpais});
+            this.gridLookUpEdit1View.DetailHeight = 673;
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsEditForm.PopupEditFormWidth = 1600;
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
@@ -586,85 +629,101 @@
             // colid1
             // 
             this.colid1.FieldName = "id";
+            this.colid1.MinWidth = 40;
             this.colid1.Name = "colid1";
             this.colid1.OptionsColumn.AllowEdit = false;
+            this.colid1.Width = 150;
             // 
             // colcodigo
             // 
             this.colcodigo.Caption = "Codigo";
             this.colcodigo.FieldName = "codigo";
+            this.colcodigo.MinWidth = 40;
             this.colcodigo.Name = "colcodigo";
             this.colcodigo.OptionsColumn.AllowEdit = false;
             this.colcodigo.Visible = true;
             this.colcodigo.VisibleIndex = 0;
+            this.colcodigo.Width = 150;
             // 
             // colnombre
             // 
             this.colnombre.Caption = "Cliente";
             this.colnombre.FieldName = "nombre";
+            this.colnombre.MinWidth = 40;
             this.colnombre.Name = "colnombre";
             this.colnombre.OptionsColumn.AllowEdit = false;
             this.colnombre.Visible = true;
             this.colnombre.VisibleIndex = 1;
+            this.colnombre.Width = 150;
             // 
             // coldireccion1
             // 
             this.coldireccion1.FieldName = "direccion1";
+            this.coldireccion1.MinWidth = 40;
             this.coldireccion1.Name = "coldireccion1";
             this.coldireccion1.OptionsColumn.AllowEdit = false;
+            this.coldireccion1.Width = 150;
             // 
             // colciudad
             // 
             this.colciudad.Caption = "Ciudad";
             this.colciudad.FieldName = "ciudad";
+            this.colciudad.MinWidth = 40;
             this.colciudad.Name = "colciudad";
             this.colciudad.OptionsColumn.AllowEdit = false;
             this.colciudad.Visible = true;
             this.colciudad.VisibleIndex = 2;
+            this.colciudad.Width = 150;
             // 
             // colpais
             // 
             this.colpais.Caption = "País";
             this.colpais.FieldName = "pais";
+            this.colpais.MinWidth = 40;
             this.colpais.Name = "colpais";
             this.colpais.OptionsColumn.AllowEdit = false;
             this.colpais.Visible = true;
             this.colpais.VisibleIndex = 3;
+            this.colpais.Width = 150;
             // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(25, 98);
+            this.labelControl9.Location = new System.Drawing.Point(50, 188);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(89, 21);
+            this.labelControl9.Size = new System.Drawing.Size(179, 45);
             this.labelControl9.TabIndex = 66;
             this.labelControl9.Text = "# Despacho:";
             // 
             // txtNumDespacho
             // 
             this.txtNumDespacho.Enabled = false;
-            this.txtNumDespacho.Location = new System.Drawing.Point(163, 95);
+            this.txtNumDespacho.Location = new System.Drawing.Point(326, 183);
+            this.txtNumDespacho.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtNumDespacho.Name = "txtNumDespacho";
             this.txtNumDespacho.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txtNumDespacho.Properties.Appearance.Options.UseFont = true;
-            this.txtNumDespacho.Size = new System.Drawing.Size(160, 28);
+            this.txtNumDespacho.Size = new System.Drawing.Size(320, 60);
             this.txtNumDespacho.TabIndex = 67;
             // 
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(25, 281);
+            this.labelControl10.Location = new System.Drawing.Point(50, 540);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(165, 21);
+            this.labelControl10.Size = new System.Drawing.Size(330, 45);
             this.labelControl10.TabIndex = 68;
             this.labelControl10.Text = "Configuracion de Filas:";
             // 
             // grd_conf_filas
             // 
             this.grd_conf_filas.EditValue = "";
-            this.grd_conf_filas.Location = new System.Drawing.Point(196, 276);
+            this.grd_conf_filas.Location = new System.Drawing.Point(392, 531);
+            this.grd_conf_filas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_conf_filas.Name = "grd_conf_filas";
             this.grd_conf_filas.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.grd_conf_filas.Properties.Appearance.Options.UseFont = true;
@@ -674,7 +733,7 @@
             this.grd_conf_filas.Properties.DisplayMember = "Destino";
             this.grd_conf_filas.Properties.PopupView = this.gridView1;
             this.grd_conf_filas.Properties.ValueMember = "id";
-            this.grd_conf_filas.Size = new System.Drawing.Size(387, 28);
+            this.grd_conf_filas.Size = new System.Drawing.Size(774, 60);
             this.grd_conf_filas.TabIndex = 69;
             this.grd_conf_filas.EditValueChanged += new System.EventHandler(this.grd_conf_filas_EditValueChanged);
             // 
@@ -710,8 +769,10 @@
             this.colestiba_id,
             this.colid_presentacion1,
             this.colid2});
+            this.gridView1.DetailHeight = 673;
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 1600;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -719,54 +780,70 @@
             // coldestino_id
             // 
             this.coldestino_id.FieldName = "destino_id";
+            this.coldestino_id.MinWidth = 40;
             this.coldestino_id.Name = "coldestino_id";
+            this.coldestino_id.Width = 150;
             // 
             // colSacosTotal
             // 
             this.colSacosTotal.Caption = "Sacos Totales";
             this.colSacosTotal.FieldName = "SacosTotal";
+            this.colSacosTotal.MinWidth = 40;
             this.colSacosTotal.Name = "colSacosTotal";
             this.colSacosTotal.OptionsColumn.AllowEdit = false;
             this.colSacosTotal.Visible = true;
             this.colSacosTotal.VisibleIndex = 0;
+            this.colSacosTotal.Width = 150;
             // 
             // colTipo
             // 
             this.colTipo.Caption = "Tipo Estiba";
             this.colTipo.FieldName = "Tipo";
+            this.colTipo.MinWidth = 40;
             this.colTipo.Name = "colTipo";
             this.colTipo.OptionsColumn.AllowEdit = false;
+            this.colTipo.Width = 150;
             // 
             // colDestino
             // 
             this.colDestino.Caption = "Destino";
             this.colDestino.FieldName = "Destino";
+            this.colDestino.MinWidth = 40;
             this.colDestino.Name = "colDestino";
             this.colDestino.OptionsColumn.AllowEdit = false;
             this.colDestino.Visible = true;
             this.colDestino.VisibleIndex = 1;
+            this.colDestino.Width = 150;
             // 
             // colPresentacion1
             // 
             this.colPresentacion1.Caption = "Presentacion";
             this.colPresentacion1.FieldName = "Presentacion";
+            this.colPresentacion1.MinWidth = 40;
             this.colPresentacion1.Name = "colPresentacion1";
             this.colPresentacion1.OptionsColumn.AllowEdit = false;
+            this.colPresentacion1.Width = 150;
             // 
             // colestiba_id
             // 
             this.colestiba_id.FieldName = "estiba_id";
+            this.colestiba_id.MinWidth = 40;
             this.colestiba_id.Name = "colestiba_id";
+            this.colestiba_id.Width = 150;
             // 
             // colid_presentacion1
             // 
             this.colid_presentacion1.FieldName = "id_presentacion";
+            this.colid_presentacion1.MinWidth = 40;
             this.colid_presentacion1.Name = "colid_presentacion1";
+            this.colid_presentacion1.Width = 150;
             // 
             // colid2
             // 
             this.colid2.FieldName = "id";
+            this.colid2.MinWidth = 40;
             this.colid2.Name = "colid2";
+            this.colid2.Width = 150;
             // 
             // destinosempaquesptBindingSource
             // 
@@ -782,16 +859,17 @@
             // 
             this.txtInfoConFilas.Enabled = false;
             this.txtInfoConFilas.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.txtInfoConFilas.Location = new System.Drawing.Point(64, 310);
+            this.txtInfoConFilas.Location = new System.Drawing.Point(128, 596);
+            this.txtInfoConFilas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtInfoConFilas.Name = "txtInfoConFilas";
-            this.txtInfoConFilas.Size = new System.Drawing.Size(494, 29);
+            this.txtInfoConFilas.Size = new System.Drawing.Size(984, 50);
             this.txtInfoConFilas.TabIndex = 70;
             // 
             // frm_generar_despacho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 709);
+            this.ClientSize = new System.Drawing.Size(1458, 1363);
             this.Controls.Add(this.txtInfoConFilas);
             this.Controls.Add(this.grd_conf_filas);
             this.Controls.Add(this.labelControl10);
@@ -816,9 +894,9 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnatras);
             this.Controls.Add(this.btn_guardar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frm_generar_despacho";
-            this.Text = "frm_generar_despacho";
+            this.Text = "Generar Despacho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).EndInit();

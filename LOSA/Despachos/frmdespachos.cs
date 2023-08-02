@@ -47,6 +47,7 @@ namespace LOSA.Despachos
                 CajaDialogo.Error(ex.Message);
             }
         }
+
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -60,6 +61,7 @@ namespace LOSA.Despachos
                 var gridview = (GridView)grd_despachos.FocusedView;
                 var row = (ds_despachos.orden_ventaRow)gridview.GetFocusedDataRow();
                 frmplandespacho frm = new frmplandespacho(row.id, ULogin, row.CardCode, row.CardName , row.DocNum);
+                this.MdiParent = this.MdiParent;
                 frm.Show();
             }
             catch (Exception ex)

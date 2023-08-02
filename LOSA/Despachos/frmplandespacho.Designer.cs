@@ -86,8 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcliente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdocnum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnlotes
@@ -101,17 +101,16 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(183, 9);
+            this.labelControl1.Location = new System.Drawing.Point(494, 20);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(398, 40);
+            this.labelControl1.Size = new System.Drawing.Size(608, 77);
             this.labelControl1.TabIndex = 36;
             this.labelControl1.Text = "Orden de Venta";
             // 
@@ -125,9 +124,10 @@
             this.btncancel.Enabled = false;
             this.btncancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btncancel.ImageOptions.Image")));
             this.btncancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btncancel.Location = new System.Drawing.Point(135, 6);
+            this.btncancel.Location = new System.Drawing.Point(266, 8);
+            this.btncancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(101, 44);
+            this.btncancel.Size = new System.Drawing.Size(202, 87);
             this.btncancel.TabIndex = 37;
             this.btncancel.Text = "Cancelar";
             this.btncancel.Visible = false;
@@ -140,15 +140,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_detalle.DataMember = "plan_despacho";
             this.grd_detalle.DataSource = this.ds_despachos;
-            this.grd_detalle.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grd_detalle.Location = new System.Drawing.Point(0, 171);
+            this.grd_detalle.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.grd_detalle.Location = new System.Drawing.Point(0, 329);
             this.grd_detalle.MainView = this.grdv_detalle;
-            this.grd_detalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grd_detalle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.grd_detalle.Name = "grd_detalle";
             this.grd_detalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnlotess,
             this.btnver});
-            this.grd_detalle.Size = new System.Drawing.Size(726, 389);
+            this.grd_detalle.Size = new System.Drawing.Size(1452, 748);
             this.grd_detalle.TabIndex = 38;
             this.grd_detalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_detalle});
@@ -185,7 +185,7 @@
             this.colrestante,
             this.colEnviado,
             this.colver});
-            this.grdv_detalle.DetailHeight = 284;
+            this.grdv_detalle.DetailHeight = 546;
             this.grdv_detalle.GridControl = this.grd_detalle;
             this.grdv_detalle.Name = "grdv_detalle";
             this.grdv_detalle.OptionsView.ShowAutoFilterRow = true;
@@ -194,141 +194,141 @@
             // colid
             // 
             this.colid.FieldName = "id";
-            this.colid.MinWidth = 17;
+            this.colid.MinWidth = 34;
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
-            this.colid.Width = 64;
+            this.colid.Width = 128;
             // 
             // colidventa
             // 
             this.colidventa.FieldName = "idventa";
-            this.colidventa.MinWidth = 17;
+            this.colidventa.MinWidth = 34;
             this.colidventa.Name = "colidventa";
             this.colidventa.OptionsColumn.AllowEdit = false;
-            this.colidventa.Width = 64;
+            this.colidventa.Width = 128;
             // 
             // colCardCode
             // 
             this.colCardCode.Caption = "Cod. Cliente";
             this.colCardCode.FieldName = "CardCode";
-            this.colCardCode.MinWidth = 17;
+            this.colCardCode.MinWidth = 34;
             this.colCardCode.Name = "colCardCode";
             this.colCardCode.OptionsColumn.AllowEdit = false;
-            this.colCardCode.Width = 64;
+            this.colCardCode.Width = 128;
             // 
             // colCardName
             // 
             this.colCardName.Caption = "CLiente";
             this.colCardName.FieldName = "CardName";
-            this.colCardName.MinWidth = 17;
+            this.colCardName.MinWidth = 34;
             this.colCardName.Name = "colCardName";
             this.colCardName.OptionsColumn.AllowEdit = false;
-            this.colCardName.Width = 64;
+            this.colCardName.Width = 128;
             // 
             // colDocNum
             // 
             this.colDocNum.Caption = "SAP Num";
             this.colDocNum.FieldName = "DocNum";
-            this.colDocNum.MinWidth = 17;
+            this.colDocNum.MinWidth = 34;
             this.colDocNum.Name = "colDocNum";
             this.colDocNum.OptionsColumn.AllowEdit = false;
-            this.colDocNum.Width = 64;
+            this.colDocNum.Width = 128;
             // 
             // colItemCode
             // 
             this.colItemCode.Caption = "Cod. Producto";
             this.colItemCode.FieldName = "ItemCode";
-            this.colItemCode.MinWidth = 17;
+            this.colItemCode.MinWidth = 34;
             this.colItemCode.Name = "colItemCode";
             this.colItemCode.OptionsColumn.AllowEdit = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 0;
-            this.colItemCode.Width = 104;
+            this.colItemCode.Width = 208;
             // 
             // colDsCription
             // 
             this.colDsCription.Caption = "Producto";
             this.colDsCription.FieldName = "Dscription";
-            this.colDsCription.MinWidth = 17;
+            this.colDsCription.MinWidth = 34;
             this.colDsCription.Name = "colDsCription";
             this.colDsCription.OptionsColumn.AllowEdit = false;
             this.colDsCription.Visible = true;
             this.colDsCription.VisibleIndex = 1;
-            this.colDsCription.Width = 166;
+            this.colDsCription.Width = 332;
             // 
             // colcant_selected
             // 
             this.colcant_selected.Caption = "Ud. Seleccionadas";
             this.colcant_selected.FieldName = "cant_selected";
-            this.colcant_selected.MinWidth = 17;
+            this.colcant_selected.MinWidth = 34;
             this.colcant_selected.Name = "colcant_selected";
             this.colcant_selected.OptionsColumn.AllowEdit = false;
-            this.colcant_selected.Width = 150;
+            this.colcant_selected.Width = 300;
             // 
             // colQuantityTm
             // 
             this.colQuantityTm.Caption = "Cantidad (TM)";
             this.colQuantityTm.FieldName = "QuantityTm";
-            this.colQuantityTm.MinWidth = 17;
+            this.colQuantityTm.MinWidth = 34;
             this.colQuantityTm.Name = "colQuantityTm";
             this.colQuantityTm.OptionsColumn.AllowEdit = false;
-            this.colQuantityTm.Width = 127;
+            this.colQuantityTm.Width = 254;
             // 
             // coliddetalle
             // 
             this.coliddetalle.FieldName = "iddetalle";
-            this.coliddetalle.MinWidth = 17;
+            this.coliddetalle.MinWidth = 34;
             this.coliddetalle.Name = "coliddetalle";
-            this.coliddetalle.Width = 64;
+            this.coliddetalle.Width = 128;
             // 
             // colQuantityKg
             // 
             this.colQuantityKg.Caption = "Cantidad (Kg.)";
             this.colQuantityKg.FieldName = "QuantityKg";
-            this.colQuantityKg.MinWidth = 17;
+            this.colQuantityKg.MinWidth = 34;
             this.colQuantityKg.Name = "colQuantityKg";
             this.colQuantityKg.OptionsColumn.AllowEdit = false;
-            this.colQuantityKg.Width = 118;
+            this.colQuantityKg.Width = 236;
             // 
             // colprioridad
             // 
             this.colprioridad.Caption = "Prioridad";
             this.colprioridad.FieldName = "prioridad";
-            this.colprioridad.MinWidth = 17;
+            this.colprioridad.MinWidth = 34;
             this.colprioridad.Name = "colprioridad";
-            this.colprioridad.Width = 69;
+            this.colprioridad.Width = 138;
             // 
             // colU_Sacos
             // 
             this.colU_Sacos.Caption = "Ud. Solicitadas";
             this.colU_Sacos.FieldName = "U_Sacos";
-            this.colU_Sacos.MinWidth = 17;
+            this.colU_Sacos.MinWidth = 34;
             this.colU_Sacos.Name = "colU_Sacos";
             this.colU_Sacos.OptionsColumn.AllowEdit = false;
             this.colU_Sacos.Visible = true;
             this.colU_Sacos.VisibleIndex = 2;
-            this.colU_Sacos.Width = 128;
+            this.colU_Sacos.Width = 256;
             // 
             // colU_Peso
             // 
             this.colU_Peso.Caption = "Presentacion";
             this.colU_Peso.FieldName = "U_Peso";
-            this.colU_Peso.MinWidth = 17;
+            this.colU_Peso.MinWidth = 34;
             this.colU_Peso.Name = "colU_Peso";
             this.colU_Peso.OptionsColumn.AllowEdit = false;
             this.colU_Peso.Visible = true;
             this.colU_Peso.VisibleIndex = 5;
-            this.colU_Peso.Width = 105;
+            this.colU_Peso.Width = 210;
             // 
             // collotes
             // 
             this.collotes.Caption = "Despacho";
             this.collotes.ColumnEdit = this.btnlotess;
-            this.collotes.MinWidth = 17;
+            this.collotes.MinWidth = 34;
             this.collotes.Name = "collotes";
             this.collotes.Visible = true;
             this.collotes.VisibleIndex = 6;
-            this.collotes.Width = 56;
+            this.collotes.Width = 112;
             // 
             // btnlotess
             // 
@@ -344,27 +344,31 @@
             // 
             this.colrestante.Caption = "Restantes";
             this.colrestante.FieldName = "restante";
+            this.colrestante.MinWidth = 40;
             this.colrestante.Name = "colrestante";
             this.colrestante.OptionsColumn.AllowEdit = false;
             this.colrestante.Visible = true;
             this.colrestante.VisibleIndex = 4;
-            this.colrestante.Width = 64;
+            this.colrestante.Width = 128;
             // 
             // colEnviado
             // 
             this.colEnviado.Caption = "Enviadas";
             this.colEnviado.FieldName = "Enviado";
+            this.colEnviado.MinWidth = 40;
             this.colEnviado.Name = "colEnviado";
             this.colEnviado.OptionsColumn.AllowEdit = false;
             this.colEnviado.Visible = true;
             this.colEnviado.VisibleIndex = 3;
-            this.colEnviado.Width = 64;
+            this.colEnviado.Width = 128;
             // 
             // colver
             // 
             this.colver.Caption = "Despachos Relacionados";
             this.colver.ColumnEdit = this.btnver;
+            this.colver.MinWidth = 40;
             this.colver.Name = "colver";
+            this.colver.Width = 150;
             // 
             // btnver
             // 
@@ -380,10 +384,10 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(19, 98);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Location = new System.Drawing.Point(38, 188);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(59, 22);
+            this.labelControl2.Size = new System.Drawing.Size(122, 45);
             this.labelControl2.TabIndex = 39;
             this.labelControl2.Text = "Cliente:";
             // 
@@ -391,34 +395,36 @@
             // 
             this.txtcliente.EditValue = "";
             this.txtcliente.Enabled = false;
-            this.txtcliente.Location = new System.Drawing.Point(183, 95);
+            this.txtcliente.Location = new System.Drawing.Point(366, 183);
+            this.txtcliente.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtcliente.Name = "txtcliente";
             this.txtcliente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcliente.Properties.Appearance.Options.UseFont = true;
             this.txtcliente.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcliente.Size = new System.Drawing.Size(431, 28);
+            this.txtcliente.Size = new System.Drawing.Size(862, 60);
             this.txtcliente.TabIndex = 40;
             // 
             // txtdocnum
             // 
             this.txtdocnum.EditValue = "";
             this.txtdocnum.Enabled = false;
-            this.txtdocnum.Location = new System.Drawing.Point(183, 61);
+            this.txtdocnum.Location = new System.Drawing.Point(366, 117);
+            this.txtdocnum.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtdocnum.Name = "txtdocnum";
             this.txtdocnum.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdocnum.Properties.Appearance.Options.UseFont = true;
             this.txtdocnum.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtdocnum.Size = new System.Drawing.Size(431, 28);
+            this.txtdocnum.Size = new System.Drawing.Size(862, 60);
             this.txtdocnum.TabIndex = 42;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(20, 63);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Location = new System.Drawing.Point(40, 121);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(133, 22);
+            this.labelControl3.Size = new System.Drawing.Size(274, 45);
             this.labelControl3.TabIndex = 41;
             this.labelControl3.Text = "Documento SAP:";
             // 
@@ -426,10 +432,10 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(19, 136);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl4.Location = new System.Drawing.Point(38, 262);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(115, 22);
+            this.labelControl4.Size = new System.Drawing.Size(239, 45);
             this.labelControl4.TabIndex = 43;
             this.labelControl4.Text = "Fecha de plan:";
             // 
@@ -442,9 +448,10 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(11, 4);
+            this.simpleButton1.Location = new System.Drawing.Point(22, 8);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(116, 45);
+            this.simpleButton1.Size = new System.Drawing.Size(232, 87);
             this.simpleButton1.TabIndex = 44;
             this.simpleButton1.Text = "Guardar";
             this.simpleButton1.Visible = false;
@@ -453,7 +460,8 @@
             // dtfechaplan
             // 
             this.dtfechaplan.EditValue = null;
-            this.dtfechaplan.Location = new System.Drawing.Point(183, 132);
+            this.dtfechaplan.Location = new System.Drawing.Point(366, 254);
+            this.dtfechaplan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dtfechaplan.Name = "dtfechaplan";
             this.dtfechaplan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtfechaplan.Properties.Appearance.Options.UseFont = true;
@@ -463,7 +471,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtfechaplan.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dtfechaplan.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtfechaplan.Size = new System.Drawing.Size(431, 30);
+            this.dtfechaplan.Size = new System.Drawing.Size(862, 60);
             this.dtfechaplan.TabIndex = 45;
             // 
             // btnatras
@@ -476,18 +484,19 @@
             this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
             this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnatras.Location = new System.Drawing.Point(609, 4);
+            this.btnatras.Location = new System.Drawing.Point(1218, 8);
+            this.btnatras.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnatras.Name = "btnatras";
-            this.btnatras.Size = new System.Drawing.Size(109, 44);
+            this.btnatras.Size = new System.Drawing.Size(218, 85);
             this.btnatras.TabIndex = 46;
             this.btnatras.Text = "Atras";
             this.btnatras.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // frmplandespacho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 560);
+            this.ClientSize = new System.Drawing.Size(1458, 1077);
             this.Controls.Add(this.btnatras);
             this.Controls.Add(this.dtfechaplan);
             this.Controls.Add(this.simpleButton1);
@@ -499,10 +508,9 @@
             this.Controls.Add(this.grd_detalle);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.labelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Name = "frmplandespacho";
-            this.Text = "frmplandespacho";
+            this.Text = "Plan Despacho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.btnlotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_detalle)).EndInit();

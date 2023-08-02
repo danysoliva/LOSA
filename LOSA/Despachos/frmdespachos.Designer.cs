@@ -66,16 +66,16 @@
             this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
             this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(573, 32);
+            this.btnAtras.Location = new System.Drawing.Point(1146, 62);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(114, 57);
+            this.btnAtras.Size = new System.Drawing.Size(228, 110);
             this.btnAtras.TabIndex = 34;
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelControl1.Appearance.Options.UseFont = true;
@@ -84,9 +84,10 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(172, 32);
+            this.labelControl1.Location = new System.Drawing.Point(395, 100);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(312, 33);
+            this.labelControl1.Size = new System.Drawing.Size(624, 63);
             this.labelControl1.TabIndex = 35;
             this.labelControl1.Text = "Planificacion de despacho";
             // 
@@ -97,14 +98,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_despachos.DataMember = "orden_venta";
             this.grd_despachos.DataSource = this.ds_despachos;
-            this.grd_despachos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grd_despachos.Location = new System.Drawing.Point(-2, 103);
+            this.grd_despachos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.grd_despachos.Location = new System.Drawing.Point(-4, 198);
             this.grd_despachos.MainView = this.grdv_despachos;
-            this.grd_despachos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grd_despachos.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.grd_despachos.Name = "grd_despachos";
             this.grd_despachos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_ver});
-            this.grd_despachos.Size = new System.Drawing.Size(731, 459);
+            this.grd_despachos.Size = new System.Drawing.Size(1462, 883);
             this.grd_despachos.TabIndex = 36;
             this.grd_despachos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_despachos});
@@ -132,7 +133,7 @@
             this.colDocDate,
             this.colComentario,
             this.Colseleccionar});
-            this.grdv_despachos.DetailHeight = 284;
+            this.grdv_despachos.DetailHeight = 546;
             this.grdv_despachos.GridControl = this.grd_despachos;
             this.grdv_despachos.Name = "grdv_despachos";
             this.grdv_despachos.OptionsView.ShowAutoFilterRow = true;
@@ -140,92 +141,92 @@
             // colid
             // 
             this.colid.FieldName = "id";
-            this.colid.MinWidth = 17;
+            this.colid.MinWidth = 34;
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
-            this.colid.Width = 64;
+            this.colid.Width = 128;
             // 
             // colDocEntry
             // 
             this.colDocEntry.FieldName = "DocEntry";
-            this.colDocEntry.MinWidth = 17;
+            this.colDocEntry.MinWidth = 34;
             this.colDocEntry.Name = "colDocEntry";
             this.colDocEntry.OptionsColumn.AllowEdit = false;
-            this.colDocEntry.Width = 64;
+            this.colDocEntry.Width = 128;
             // 
             // colDocNum
             // 
             this.colDocNum.FieldName = "DocNum";
-            this.colDocNum.MinWidth = 17;
+            this.colDocNum.MinWidth = 34;
             this.colDocNum.Name = "colDocNum";
             this.colDocNum.OptionsColumn.AllowEdit = false;
             this.colDocNum.Visible = true;
             this.colDocNum.VisibleIndex = 0;
-            this.colDocNum.Width = 87;
+            this.colDocNum.Width = 174;
             // 
             // colCardName
             // 
             this.colCardName.Caption = "Cliente";
             this.colCardName.FieldName = "CardName";
-            this.colCardName.MinWidth = 17;
+            this.colCardName.MinWidth = 34;
             this.colCardName.Name = "colCardName";
             this.colCardName.OptionsColumn.AllowEdit = false;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 1;
-            this.colCardName.Width = 141;
+            this.colCardName.Width = 282;
             // 
             // colCardCode
             // 
             this.colCardCode.Caption = "Cod. Cliente";
             this.colCardCode.FieldName = "CardCode";
-            this.colCardCode.MinWidth = 17;
+            this.colCardCode.MinWidth = 34;
             this.colCardCode.Name = "colCardCode";
             this.colCardCode.OptionsColumn.AllowEdit = false;
             this.colCardCode.Visible = true;
             this.colCardCode.VisibleIndex = 2;
-            this.colCardCode.Width = 104;
+            this.colCardCode.Width = 208;
             // 
             // coloc_numero
             // 
             this.coloc_numero.Caption = "orden de venta cliente";
             this.coloc_numero.FieldName = "oc_numero";
-            this.coloc_numero.MinWidth = 17;
+            this.coloc_numero.MinWidth = 34;
             this.coloc_numero.Name = "coloc_numero";
             this.coloc_numero.OptionsColumn.AllowEdit = false;
-            this.coloc_numero.Width = 64;
+            this.coloc_numero.Width = 128;
             // 
             // colDocDate
             // 
             this.colDocDate.Caption = "Fecha de documento";
             this.colDocDate.FieldName = "DocDate";
-            this.colDocDate.MinWidth = 17;
+            this.colDocDate.MinWidth = 34;
             this.colDocDate.Name = "colDocDate";
             this.colDocDate.OptionsColumn.AllowEdit = false;
             this.colDocDate.Visible = true;
             this.colDocDate.VisibleIndex = 3;
-            this.colDocDate.Width = 175;
+            this.colDocDate.Width = 350;
             // 
             // colComentario
             // 
             this.colComentario.Caption = "Comentario";
             this.colComentario.FieldName = "Comentario";
-            this.colComentario.MinWidth = 17;
+            this.colComentario.MinWidth = 34;
             this.colComentario.Name = "colComentario";
             this.colComentario.OptionsColumn.AllowEdit = false;
             this.colComentario.Visible = true;
             this.colComentario.VisibleIndex = 4;
-            this.colComentario.Width = 146;
+            this.colComentario.Width = 292;
             // 
             // Colseleccionar
             // 
             this.Colseleccionar.Caption = "Ver";
             this.Colseleccionar.ColumnEdit = this.btn_ver;
             this.Colseleccionar.CustomizationCaption = "Seleccionar";
-            this.Colseleccionar.MinWidth = 17;
+            this.Colseleccionar.MinWidth = 34;
             this.Colseleccionar.Name = "Colseleccionar";
             this.Colseleccionar.Visible = true;
             this.Colseleccionar.VisibleIndex = 5;
-            this.Colseleccionar.Width = 62;
+            this.Colseleccionar.Width = 124;
             // 
             // btn_ver
             // 
@@ -246,9 +247,10 @@
             this.btnNuevoOrdenCarga.Appearance.Options.UseFont = true;
             this.btnNuevoOrdenCarga.Appearance.Options.UseForeColor = true;
             this.btnNuevoOrdenCarga.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnNuevoOrdenCarga.Location = new System.Drawing.Point(12, 32);
+            this.btnNuevoOrdenCarga.Location = new System.Drawing.Point(24, 62);
+            this.btnNuevoOrdenCarga.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnNuevoOrdenCarga.Name = "btnNuevoOrdenCarga";
-            this.btnNuevoOrdenCarga.Size = new System.Drawing.Size(127, 57);
+            this.btnNuevoOrdenCarga.Size = new System.Drawing.Size(254, 110);
             this.btnNuevoOrdenCarga.TabIndex = 37;
             this.btnNuevoOrdenCarga.Text = "Orden de \r\ncarga manual";
             this.btnNuevoOrdenCarga.Visible = false;
@@ -256,15 +258,14 @@
             // 
             // frmdespachos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 560);
+            this.ClientSize = new System.Drawing.Size(1458, 1077);
             this.Controls.Add(this.btnNuevoOrdenCarga);
             this.Controls.Add(this.grd_despachos);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnAtras);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Name = "frmdespachos";
             this.Text = "frmdespachos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
