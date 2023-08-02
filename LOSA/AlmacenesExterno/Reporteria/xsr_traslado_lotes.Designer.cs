@@ -821,7 +821,7 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Margins = new DevExpress.Drawing.DXMargins(0, 4, 0, 0);
             this.PageWidth = 753;
-            this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
+            this.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Custom;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.ID_H,
             this.tipo_id_reporte});

@@ -3890,7 +3890,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.Margins = new DevExpress.Drawing.DXMargins(25, 26, 6, 15);
             this.PageHeight = 850;
             this.PageWidth = 1400;
-            this.PaperKind = System.Drawing.Printing.PaperKind.Legal;
+            this.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Legal;
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();

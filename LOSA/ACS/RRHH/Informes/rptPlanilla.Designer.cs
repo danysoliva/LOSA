@@ -2513,7 +2513,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLine3.BorderColor = System.Drawing.Color.Gray;
             this.xrLine3.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Dash;
             this.xrLine3.ForeColor = System.Drawing.Color.DimGray;
-            this.xrLine3.LineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.xrLine3.LineStyle = DevExpress.Drawing.DXDashStyle.Dash;
             this.xrLine3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 503.1874F);
             this.xrLine3.Name = "xrLine3";
             this.xrLine3.SizeF = new System.Drawing.SizeF(719F, 5.812469F);
