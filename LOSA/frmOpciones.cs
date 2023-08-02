@@ -206,7 +206,8 @@ namespace LOSA
                     switch (idNivel)
                     {
                         case 1://Basic View
-                            BasicView();
+                            //BasicView();
+                            tabOpciones.TabPages[4].PageVisible = true;
                             UsuarioLogeado.Idnivel = idNivel;
                             break;
                         case 2://Basic No Autorization
