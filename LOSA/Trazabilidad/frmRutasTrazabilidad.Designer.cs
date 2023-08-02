@@ -30,95 +30,95 @@ namespace LOSA.Trazabilidad
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions35 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions69 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasTrazabilidad));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject137 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject138 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject139 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject140 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions36 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject141 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject142 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject143 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject144 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions37 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject145 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject146 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject147 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject148 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions38 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject149 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject150 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject151 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject152 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions39 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject153 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject154 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject155 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject156 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions40 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject157 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject158 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject159 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject160 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions41 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject161 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject162 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject163 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject164 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions42 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject165 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject166 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject167 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject168 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions43 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject169 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject170 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject171 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject172 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions44 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject173 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject174 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject175 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject176 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions45 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject177 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject178 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject179 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject180 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions46 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject181 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject182 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject183 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject184 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions47 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject185 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject186 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject187 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject188 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions48 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject189 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject190 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject191 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject192 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions49 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject193 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject194 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject195 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject196 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject273 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject274 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject275 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject276 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions70 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject277 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject278 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject279 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject280 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions50 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject197 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject198 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject199 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject200 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions51 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject201 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject202 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject203 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject204 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions71 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject281 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject282 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject283 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject284 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions72 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject285 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject286 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject287 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject288 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions73 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject289 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject290 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject291 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject292 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions74 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject293 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject294 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject295 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject296 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions75 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject297 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject298 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject299 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject300 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions76 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject301 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject302 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject303 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject304 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions83 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject329 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject330 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject331 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject332 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions84 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject333 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject334 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject335 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject336 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions85 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject337 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject338 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject339 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject340 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions77 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject305 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject306 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject307 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject308 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions78 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject309 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject310 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject311 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject312 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions79 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject313 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject314 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject315 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject316 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions80 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject317 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject318 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject319 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject320 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions81 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject321 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject322 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject323 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject324 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions82 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject325 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject326 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject327 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject328 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridView22 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colContado1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposCantidadDosificadaLoteLink = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -1512,9 +1512,9 @@ namespace LOSA.Trazabilidad
             // reposCantidadDosificadaLoteLink
             // 
             this.reposCantidadDosificadaLoteLink.AutoHeight = false;
-            editorButtonImageOptions35.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions35.Image")));
+            editorButtonImageOptions69.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions69.Image")));
             this.reposCantidadDosificadaLoteLink.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions35, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject137, serializableAppearanceObject138, serializableAppearanceObject139, serializableAppearanceObject140, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions69, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject273, serializableAppearanceObject274, serializableAppearanceObject275, serializableAppearanceObject276, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.reposCantidadDosificadaLoteLink.Name = "reposCantidadDosificadaLoteLink";
             this.reposCantidadDosificadaLoteLink.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposCantidadDosificadaLoteLink_ButtonClick);
             // 
@@ -1529,9 +1529,9 @@ namespace LOSA.Trazabilidad
             // reposLinkLoteMP
             // 
             this.reposLinkLoteMP.AutoHeight = false;
-            editorButtonImageOptions36.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions36.Image")));
+            editorButtonImageOptions70.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions70.Image")));
             this.reposLinkLoteMP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions36, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject141, serializableAppearanceObject142, serializableAppearanceObject143, serializableAppearanceObject144, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions70, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject277, serializableAppearanceObject278, serializableAppearanceObject279, serializableAppearanceObject280, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.reposLinkLoteMP.Name = "reposLinkLoteMP";
             this.reposLinkLoteMP.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposLinkLoteMP_ButtonClick);
             // 
@@ -1551,10 +1551,10 @@ namespace LOSA.Trazabilidad
             this.GridRuta4_detalle_trz_lote_pt.DataMember = "Ruta4_H_trz_lote_pt";
             this.GridRuta4_detalle_trz_lote_pt.DataSource = this.dsMantoTrazabilidad;
             this.GridRuta4_detalle_trz_lote_pt.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.LevelTemplate = this.gridView22;
-            gridLevelNode3.RelationName = "Detalle de Lotes";
+            gridLevelNode1.LevelTemplate = this.gridView22;
+            gridLevelNode1.RelationName = "Detalle de Lotes";
             this.GridRuta4_detalle_trz_lote_pt.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode1});
             this.GridRuta4_detalle_trz_lote_pt.Location = new System.Drawing.Point(0, 0);
             this.GridRuta4_detalle_trz_lote_pt.MainView = this.gridView20;
             this.GridRuta4_detalle_trz_lote_pt.Name = "GridRuta4_detalle_trz_lote_pt";
@@ -1615,9 +1615,9 @@ namespace LOSA.Trazabilidad
             // reposLinkButtonMP
             // 
             this.reposLinkButtonMP.AutoHeight = false;
-            editorButtonImageOptions37.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions37.Image")));
+            editorButtonImageOptions71.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions71.Image")));
             this.reposLinkButtonMP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions37, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject145, serializableAppearanceObject146, serializableAppearanceObject147, serializableAppearanceObject148, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions71, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject281, serializableAppearanceObject282, serializableAppearanceObject283, serializableAppearanceObject284, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.reposLinkButtonMP.Name = "reposLinkButtonMP";
             this.reposLinkButtonMP.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposLinkButtonMP_ButtonClick);
             // 
@@ -1675,9 +1675,9 @@ namespace LOSA.Trazabilidad
             // reposDetalleBatch
             // 
             this.reposDetalleBatch.AutoHeight = false;
-            editorButtonImageOptions38.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions38.Image")));
+            editorButtonImageOptions72.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions72.Image")));
             this.reposDetalleBatch.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions38, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject149, serializableAppearanceObject150, serializableAppearanceObject151, serializableAppearanceObject152, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions72, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject285, serializableAppearanceObject286, serializableAppearanceObject287, serializableAppearanceObject288, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.reposDetalleBatch.Name = "reposDetalleBatch";
             this.reposDetalleBatch.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposDetalleBatch_ButtonClick);
             // 
@@ -1752,9 +1752,9 @@ namespace LOSA.Trazabilidad
             // cmdLinkLoteMP
             // 
             this.cmdLinkLoteMP.AutoHeight = false;
-            editorButtonImageOptions39.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions39.Image")));
+            editorButtonImageOptions73.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions73.Image")));
             this.cmdLinkLoteMP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions39, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject153, serializableAppearanceObject154, serializableAppearanceObject155, serializableAppearanceObject156, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions73, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject289, serializableAppearanceObject290, serializableAppearanceObject291, serializableAppearanceObject292, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdLinkLoteMP.Name = "cmdLinkLoteMP";
             // 
             // gridColumn106
@@ -1766,25 +1766,25 @@ namespace LOSA.Trazabilidad
             // cmdCantidadDosificadaLoteLink
             // 
             this.cmdCantidadDosificadaLoteLink.AutoHeight = false;
-            editorButtonImageOptions40.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions40.Image")));
+            editorButtonImageOptions74.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions74.Image")));
             this.cmdCantidadDosificadaLoteLink.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions40, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject157, serializableAppearanceObject158, serializableAppearanceObject159, serializableAppearanceObject160, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions74, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject293, serializableAppearanceObject294, serializableAppearanceObject295, serializableAppearanceObject296, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdCantidadDosificadaLoteLink.Name = "cmdCantidadDosificadaLoteLink";
             // 
             // cmdLinkButtonMP
             // 
             this.cmdLinkButtonMP.AutoHeight = false;
-            editorButtonImageOptions41.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions41.Image")));
+            editorButtonImageOptions75.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions75.Image")));
             this.cmdLinkButtonMP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions41, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject161, serializableAppearanceObject162, serializableAppearanceObject163, serializableAppearanceObject164, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions75, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject297, serializableAppearanceObject298, serializableAppearanceObject299, serializableAppearanceObject300, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdLinkButtonMP.Name = "cmdLinkButtonMP";
             // 
             // cmdDetalleBatch
             // 
             this.cmdDetalleBatch.AutoHeight = false;
-            editorButtonImageOptions42.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions42.Image")));
+            editorButtonImageOptions76.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions76.Image")));
             this.cmdDetalleBatch.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions42, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject165, serializableAppearanceObject166, serializableAppearanceObject167, serializableAppearanceObject168, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions76, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject301, serializableAppearanceObject302, serializableAppearanceObject303, serializableAppearanceObject304, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDetalleBatch.Name = "cmdDetalleBatch";
             this.cmdDetalleBatch.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
@@ -2942,9 +2942,9 @@ namespace LOSA.Trazabilidad
             // cmdEliminar
             // 
             this.cmdEliminar.AutoHeight = false;
-            editorButtonImageOptions43.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions43.Image")));
+            editorButtonImageOptions83.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions83.Image")));
             this.cmdEliminar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions43, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject169, serializableAppearanceObject170, serializableAppearanceObject171, serializableAppearanceObject172, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions83, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject329, serializableAppearanceObject330, serializableAppearanceObject331, serializableAppearanceObject332, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdEliminar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdEliminar_ButtonClick);
@@ -6548,9 +6548,9 @@ namespace LOSA.Trazabilidad
             // cmdDespachoId
             // 
             this.cmdDespachoId.AutoHeight = false;
-            editorButtonImageOptions44.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions44.Image")));
+            editorButtonImageOptions84.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions84.Image")));
             this.cmdDespachoId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions44, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject173, serializableAppearanceObject174, serializableAppearanceObject175, serializableAppearanceObject176, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions84, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject333, serializableAppearanceObject334, serializableAppearanceObject335, serializableAppearanceObject336, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDespachoId.Name = "cmdDespachoId";
             this.cmdDespachoId.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDespachoId_ButtonClick);
             // 
@@ -6699,9 +6699,9 @@ namespace LOSA.Trazabilidad
             // btnLinkBoletaView
             // 
             this.btnLinkBoletaView.AutoHeight = false;
-            editorButtonImageOptions45.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions45.Image")));
+            editorButtonImageOptions85.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions85.Image")));
             this.btnLinkBoletaView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions45, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject177, serializableAppearanceObject178, serializableAppearanceObject179, serializableAppearanceObject180, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions85, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject337, serializableAppearanceObject338, serializableAppearanceObject339, serializableAppearanceObject340, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnLinkBoletaView.Name = "btnLinkBoletaView";
             this.btnLinkBoletaView.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnLinkBoletaView_ButtonClick);
             // 
@@ -8332,7 +8332,7 @@ namespace LOSA.Trazabilidad
             this.rowFecha_Creación,
             this.rowCreado_por,
             this.rowTipo_Alimentación});
-            this.vGridControl1.Size = new System.Drawing.Size(1754, 220);
+            this.vGridControl1.Size = new System.Drawing.Size(1090, 220);
             this.vGridControl1.TabIndex = 95;
             // 
             // rowid
@@ -8466,7 +8466,7 @@ namespace LOSA.Trazabilidad
             this.cmdViewOC,
             this.cmdScaleDetails,
             this.linkTRZ_HaciaAdelante});
-            this.gcLotes.Size = new System.Drawing.Size(1754, 851);
+            this.gcLotes.Size = new System.Drawing.Size(1090, 449);
             this.gcLotes.TabIndex = 93;
             this.gcLotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLotes});
@@ -8847,7 +8847,7 @@ namespace LOSA.Trazabilidad
             this.gridControl1.Location = new System.Drawing.Point(3, 203);
             this.gridControl1.MainView = this.gridView5;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1761, 932);
+            this.gridControl1.Size = new System.Drawing.Size(1090, 530);
             this.gridControl1.TabIndex = 49;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -9021,7 +9021,6 @@ namespace LOSA.Trazabilidad
             this.npRuta1.Controls.Add(this.txtTotalConsumidoRuta1);
             this.npRuta1.Controls.Add(this.gridControl12);
             this.npRuta1.Controls.Add(this.btnBorrarRuta1);
-            this.npRuta1.Controls.Add(this.labelControl81);
             this.npRuta1.Controls.Add(this.labelControl82);
             this.npRuta1.Controls.Add(this.gridControl11);
             this.npRuta1.Controls.Add(this.simpleButton11);
@@ -9036,6 +9035,7 @@ namespace LOSA.Trazabilidad
             this.npRuta1.Controls.Add(this.txtLoteMPRuta1);
             this.npRuta1.Controls.Add(this.btnHome_Ruta1);
             this.npRuta1.Controls.Add(this.labelControl85);
+            this.npRuta1.Controls.Add(this.labelControl81);
             this.npRuta1.Name = "npRuta1";
             this.npRuta1.Size = new System.Drawing.Size(1096, 736);
             // 
@@ -9073,12 +9073,12 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl12.DataMember = "pt_list_trz";
             this.gridControl12.DataSource = this.dsReportesTRZ;
-            this.gridControl12.Location = new System.Drawing.Point(0, 496);
+            this.gridControl12.Location = new System.Drawing.Point(3, 421);
             this.gridControl12.MainView = this.gridView23;
             this.gridControl12.Name = "gridControl12";
             this.gridControl12.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdLink_PT_Ruta4_from_ruta1});
-            this.gridControl12.Size = new System.Drawing.Size(364, 1013);
+            this.gridControl12.Size = new System.Drawing.Size(364, 312);
             this.gridControl12.TabIndex = 105;
             this.gridControl12.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView23});
@@ -9095,6 +9095,7 @@ namespace LOSA.Trazabilidad
             this.gridView23.OptionsEditForm.PopupEditFormWidth = 400;
             this.gridView23.OptionsView.ShowAutoFilterRow = true;
             this.gridView23.OptionsView.ShowFooter = true;
+            this.gridView23.OptionsView.ShowGroupPanel = false;
             this.gridView23.OptionsView.ShowViewCaption = true;
             this.gridView23.PreviewIndent = 0;
             this.gridView23.ViewCaption = "Tilapia";
@@ -9145,9 +9146,9 @@ namespace LOSA.Trazabilidad
             // 
             this.btnBorrarRuta1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarRuta1.Appearance.Options.UseFont = true;
-            this.btnBorrarRuta1.Location = new System.Drawing.Point(391, 70);
+            this.btnBorrarRuta1.Location = new System.Drawing.Point(373, 63);
             this.btnBorrarRuta1.Name = "btnBorrarRuta1";
-            this.btnBorrarRuta1.Size = new System.Drawing.Size(118, 41);
+            this.btnBorrarRuta1.Size = new System.Drawing.Size(100, 37);
             this.btnBorrarRuta1.TabIndex = 63;
             this.btnBorrarRuta1.Text = "Borrar";
             this.btnBorrarRuta1.Click += new System.EventHandler(this.btnBorrarRuta1_Click);
@@ -9159,9 +9160,9 @@ namespace LOSA.Trazabilidad
             this.labelControl81.Appearance.Options.UseTextOptions = true;
             this.labelControl81.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl81.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl81.Location = new System.Drawing.Point(373, 111);
+            this.labelControl81.Location = new System.Drawing.Point(373, 81);
             this.labelControl81.Name = "labelControl81";
-            this.labelControl81.Size = new System.Drawing.Size(443, 19);
+            this.labelControl81.Size = new System.Drawing.Size(368, 19);
             this.labelControl81.TabIndex = 68;
             this.labelControl81.Text = "Inventario Actual";
             // 
@@ -9172,9 +9173,9 @@ namespace LOSA.Trazabilidad
             this.labelControl82.Appearance.Options.UseTextOptions = true;
             this.labelControl82.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl82.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl82.Location = new System.Drawing.Point(822, 111);
+            this.labelControl82.Location = new System.Drawing.Point(747, 81);
             this.labelControl82.Name = "labelControl82";
-            this.labelControl82.Size = new System.Drawing.Size(467, 19);
+            this.labelControl82.Size = new System.Drawing.Size(346, 19);
             this.labelControl82.TabIndex = 104;
             this.labelControl82.Text = "Reproceso Lote PT";
             // 
@@ -9184,10 +9185,10 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl11.DataMember = "reproceso_lote_pt_ruta1";
             this.gridControl11.DataSource = this.dsReportesTRZ;
-            this.gridControl11.Location = new System.Drawing.Point(822, 133);
+            this.gridControl11.Location = new System.Drawing.Point(747, 111);
             this.gridControl11.MainView = this.gridView19;
             this.gridControl11.Name = "gridControl11";
-            this.gridControl11.Size = new System.Drawing.Size(1628, 357);
+            this.gridControl11.Size = new System.Drawing.Size(346, 304);
             this.gridControl11.TabIndex = 103;
             this.gridControl11.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView19});
@@ -9323,9 +9324,9 @@ namespace LOSA.Trazabilidad
             this.labelControl87.Appearance.Options.UseTextOptions = true;
             this.labelControl87.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl87.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl87.Location = new System.Drawing.Point(603, 501);
+            this.labelControl87.Location = new System.Drawing.Point(370, 421);
             this.labelControl87.Name = "labelControl87";
-            this.labelControl87.Size = new System.Drawing.Size(1597, 24);
+            this.labelControl87.Size = new System.Drawing.Size(723, 24);
             this.labelControl87.TabIndex = 70;
             this.labelControl87.Text = "Registro de Ingresos";
             // 
@@ -9336,10 +9337,10 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl10.DataMember = "ingresos_mp_lote_ruta1";
             this.gridControl10.DataSource = this.dsReportesTRZ;
-            this.gridControl10.Location = new System.Drawing.Point(373, 526);
+            this.gridControl10.Location = new System.Drawing.Point(373, 443);
             this.gridControl10.MainView = this.gridView18;
             this.gridControl10.Name = "gridControl10";
-            this.gridControl10.Size = new System.Drawing.Size(2077, 1020);
+            this.gridControl10.Size = new System.Drawing.Size(720, 290);
             this.gridControl10.TabIndex = 71;
             this.gridControl10.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView18});
@@ -9466,21 +9467,23 @@ namespace LOSA.Trazabilidad
             // 
             this.btnGenerateRuta1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnGenerateRuta1.Appearance.Options.UseFont = true;
-            this.btnGenerateRuta1.Location = new System.Drawing.Point(267, 70);
+            this.btnGenerateRuta1.Location = new System.Drawing.Point(267, 63);
             this.btnGenerateRuta1.Name = "btnGenerateRuta1";
-            this.btnGenerateRuta1.Size = new System.Drawing.Size(118, 41);
+            this.btnGenerateRuta1.Size = new System.Drawing.Size(100, 37);
             this.btnGenerateRuta1.TabIndex = 62;
             this.btnGenerateRuta1.Text = "Generar";
             this.btnGenerateRuta1.Click += new System.EventHandler(this.btnGenerateRuta1_Click);
             // 
             // gridControl9
             // 
+            this.gridControl9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl9.DataMember = "Inventario_mp_lote_ruta1";
             this.gridControl9.DataSource = this.dsReportesTRZ;
-            this.gridControl9.Location = new System.Drawing.Point(373, 133);
+            this.gridControl9.Location = new System.Drawing.Point(373, 111);
             this.gridControl9.MainView = this.gridView17;
             this.gridControl9.Name = "gridControl9";
-            this.gridControl9.Size = new System.Drawing.Size(443, 357);
+            this.gridControl9.Size = new System.Drawing.Size(368, 304);
             this.gridControl9.TabIndex = 69;
             this.gridControl9.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView17});
@@ -9591,14 +9594,16 @@ namespace LOSA.Trazabilidad
             // 
             // gcPT_Ruta1
             // 
+            this.gcPT_Ruta1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gcPT_Ruta1.DataMember = "pt_list_trzCamaron";
             this.gcPT_Ruta1.DataSource = this.dsReportesTRZ;
-            this.gcPT_Ruta1.Location = new System.Drawing.Point(3, 133);
+            this.gcPT_Ruta1.Location = new System.Drawing.Point(3, 111);
             this.gcPT_Ruta1.MainView = this.gvPT_Ruta1;
             this.gcPT_Ruta1.Name = "gcPT_Ruta1";
             this.gcPT_Ruta1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdButtonTrzLotePT_ruta4});
-            this.gcPT_Ruta1.Size = new System.Drawing.Size(364, 357);
+            this.gcPT_Ruta1.Size = new System.Drawing.Size(364, 304);
             this.gcPT_Ruta1.TabIndex = 66;
             this.gcPT_Ruta1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPT_Ruta1});
@@ -9616,6 +9621,7 @@ namespace LOSA.Trazabilidad
             this.gvPT_Ruta1.OptionsEditForm.PopupEditFormWidth = 400;
             this.gvPT_Ruta1.OptionsView.ShowAutoFilterRow = true;
             this.gvPT_Ruta1.OptionsView.ShowFooter = true;
+            this.gvPT_Ruta1.OptionsView.ShowGroupPanel = false;
             this.gvPT_Ruta1.OptionsView.ShowViewCaption = true;
             this.gvPT_Ruta1.PreviewIndent = 0;
             this.gvPT_Ruta1.ViewCaption = "Camarón";
@@ -9666,7 +9672,7 @@ namespace LOSA.Trazabilidad
             // 
             this.lblLoteNameRuta1_Rotulo.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoteNameRuta1_Rotulo.Appearance.Options.UseFont = true;
-            this.lblLoteNameRuta1_Rotulo.Location = new System.Drawing.Point(28, 45);
+            this.lblLoteNameRuta1_Rotulo.Location = new System.Drawing.Point(28, 43);
             this.lblLoteNameRuta1_Rotulo.Name = "lblLoteNameRuta1_Rotulo";
             this.lblLoteNameRuta1_Rotulo.Size = new System.Drawing.Size(61, 21);
             this.lblLoteNameRuta1_Rotulo.TabIndex = 65;
@@ -9679,7 +9685,7 @@ namespace LOSA.Trazabilidad
             this.lblLoteNameRuta1.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.lblLoteNameRuta1.Appearance.Options.UseFont = true;
             this.lblLoteNameRuta1.Appearance.Options.UseForeColor = true;
-            this.lblLoteNameRuta1.Location = new System.Drawing.Point(95, 46);
+            this.lblLoteNameRuta1.Location = new System.Drawing.Point(95, 43);
             this.lblLoteNameRuta1.Name = "lblLoteNameRuta1";
             this.lblLoteNameRuta1.Size = new System.Drawing.Size(61, 21);
             this.lblLoteNameRuta1.TabIndex = 64;
@@ -9690,7 +9696,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl84.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl84.Appearance.Options.UseFont = true;
-            this.labelControl84.Location = new System.Drawing.Point(28, 85);
+            this.labelControl84.Location = new System.Drawing.Point(27, 73);
             this.labelControl84.Name = "labelControl84";
             this.labelControl84.Size = new System.Drawing.Size(61, 21);
             this.labelControl84.TabIndex = 61;
@@ -9698,7 +9704,7 @@ namespace LOSA.Trazabilidad
             // 
             // txtLoteMPRuta1
             // 
-            this.txtLoteMPRuta1.Location = new System.Drawing.Point(95, 79);
+            this.txtLoteMPRuta1.Location = new System.Drawing.Point(95, 66);
             this.txtLoteMPRuta1.Name = "txtLoteMPRuta1";
             this.txtLoteMPRuta1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoteMPRuta1.Properties.Appearance.Options.UseFont = true;
@@ -9730,9 +9736,9 @@ namespace LOSA.Trazabilidad
             this.labelControl85.Appearance.Options.UseTextOptions = true;
             this.labelControl85.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl85.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl85.Location = new System.Drawing.Point(2, 9);
+            this.labelControl85.Location = new System.Drawing.Point(3, 3);
             this.labelControl85.Name = "labelControl85";
-            this.labelControl85.Size = new System.Drawing.Size(2448, 39);
+            this.labelControl85.Size = new System.Drawing.Size(1090, 39);
             this.labelControl85.TabIndex = 58;
             this.labelControl85.Text = "Trazabilidad de lote MP hacia Inventario Actual";
             // 
@@ -10107,9 +10113,9 @@ namespace LOSA.Trazabilidad
             // repositoryItemButtonEdit5
             // 
             this.repositoryItemButtonEdit5.AutoHeight = false;
-            editorButtonImageOptions46.Image = global::LOSA.Properties.Resources.Upload_32x32;
+            editorButtonImageOptions77.Image = global::LOSA.Properties.Resources.Upload_32x32;
             this.repositoryItemButtonEdit5.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions46, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject181, serializableAppearanceObject182, serializableAppearanceObject183, serializableAppearanceObject184, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions77, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject305, serializableAppearanceObject306, serializableAppearanceObject307, serializableAppearanceObject308, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit5.Name = "repositoryItemButtonEdit5";
             this.repositoryItemButtonEdit5.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -10125,9 +10131,9 @@ namespace LOSA.Trazabilidad
             // cmdArbirAdjunto_Ruta4
             // 
             this.cmdArbirAdjunto_Ruta4.AutoHeight = false;
-            editorButtonImageOptions47.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions47.Image")));
+            editorButtonImageOptions78.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions78.Image")));
             this.cmdArbirAdjunto_Ruta4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions47, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject185, serializableAppearanceObject186, serializableAppearanceObject187, serializableAppearanceObject188, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions78, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject309, serializableAppearanceObject310, serializableAppearanceObject311, serializableAppearanceObject312, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdArbirAdjunto_Ruta4.Name = "cmdArbirAdjunto_Ruta4";
             this.cmdArbirAdjunto_Ruta4.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdArbirAdjunto_Ruta4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdArbirAdjunto_Ruta4_ButtonClick);
@@ -10152,9 +10158,9 @@ namespace LOSA.Trazabilidad
             // repositoryItemButtonEdit7
             // 
             this.repositoryItemButtonEdit7.AutoHeight = false;
-            editorButtonImageOptions48.Image = global::LOSA.Properties.Resources.po_delete_24;
+            editorButtonImageOptions79.Image = global::LOSA.Properties.Resources.po_delete_24;
             this.repositoryItemButtonEdit7.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions48, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject189, serializableAppearanceObject190, serializableAppearanceObject191, serializableAppearanceObject192, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions79, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject313, serializableAppearanceObject314, serializableAppearanceObject315, serializableAppearanceObject316, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit7.Name = "repositoryItemButtonEdit7";
             this.repositoryItemButtonEdit7.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -10268,9 +10274,9 @@ namespace LOSA.Trazabilidad
             // repositoryItemButtonEdit8
             // 
             this.repositoryItemButtonEdit8.AutoHeight = false;
-            editorButtonImageOptions49.Image = global::LOSA.Properties.Resources._click_24X24;
+            editorButtonImageOptions80.Image = global::LOSA.Properties.Resources._click_24X24;
             this.repositoryItemButtonEdit8.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions49, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject193, serializableAppearanceObject194, serializableAppearanceObject195, serializableAppearanceObject196, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions80, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject317, serializableAppearanceObject318, serializableAppearanceObject319, serializableAppearanceObject320, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit8.Name = "repositoryItemButtonEdit8";
             this.repositoryItemButtonEdit8.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -10303,7 +10309,7 @@ namespace LOSA.Trazabilidad
             this.panelControl14.Controls.Add(this.spTipoporcentaje_Ruta4);
             this.panelControl14.Location = new System.Drawing.Point(3, 223);
             this.panelControl14.Name = "panelControl14";
-            this.panelControl14.Size = new System.Drawing.Size(1827, 237);
+            this.panelControl14.Size = new System.Drawing.Size(2275, 237);
             this.panelControl14.TabIndex = 49;
             // 
             // spsustentable_Ruta4
@@ -10763,7 +10769,7 @@ namespace LOSA.Trazabilidad
             this.tabPage7.Location = new System.Drawing.Point(4, 30);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(2440, 1195);
+            this.tabPage7.Size = new System.Drawing.Size(1992, 1195);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Logistica";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -10781,7 +10787,7 @@ namespace LOSA.Trazabilidad
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl15.Location = new System.Drawing.Point(3, 3);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(2434, 1189);
+            this.panelControl15.Size = new System.Drawing.Size(1986, 1189);
             this.panelControl15.TabIndex = 51;
             // 
             // panelControl16
@@ -10799,7 +10805,7 @@ namespace LOSA.Trazabilidad
             this.panelControl16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl16.Location = new System.Drawing.Point(11, 11);
             this.panelControl16.Name = "panelControl16";
-            this.panelControl16.Size = new System.Drawing.Size(2412, 1168);
+            this.panelControl16.Size = new System.Drawing.Size(1964, 1168);
             this.panelControl16.TabIndex = 64;
             // 
             // labelControl113
@@ -10867,9 +10873,9 @@ namespace LOSA.Trazabilidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl16.DataMember = "logisticaInformacion";
             this.gridControl16.DataSource = this.dsMantenimientoC;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl16.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl16.Location = new System.Drawing.Point(3, 6);
             this.gridControl16.MainView = this.gridView33;
             this.gridControl16.Name = "gridControl16";
@@ -10982,7 +10988,7 @@ namespace LOSA.Trazabilidad
             this.panelControl17.Appearance.Options.UseBackColor = true;
             this.panelControl17.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl17.Location = new System.Drawing.Point(2423, 11);
+            this.panelControl17.Location = new System.Drawing.Point(1975, 11);
             this.panelControl17.Name = "panelControl17";
             this.panelControl17.Size = new System.Drawing.Size(11, 1168);
             this.panelControl17.TabIndex = 61;
@@ -10995,7 +11001,7 @@ namespace LOSA.Trazabilidad
             this.panelControl18.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl18.Location = new System.Drawing.Point(11, 1179);
             this.panelControl18.Name = "panelControl18";
-            this.panelControl18.Size = new System.Drawing.Size(2423, 10);
+            this.panelControl18.Size = new System.Drawing.Size(1975, 10);
             this.panelControl18.TabIndex = 60;
             // 
             // panelControl19
@@ -11017,7 +11023,7 @@ namespace LOSA.Trazabilidad
             this.panelControl20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl20.Location = new System.Drawing.Point(0, 0);
             this.panelControl20.Name = "panelControl20";
-            this.panelControl20.Size = new System.Drawing.Size(2434, 11);
+            this.panelControl20.Size = new System.Drawing.Size(1986, 11);
             this.panelControl20.TabIndex = 58;
             // 
             // tabPage8
@@ -11027,7 +11033,7 @@ namespace LOSA.Trazabilidad
             this.tabPage8.Location = new System.Drawing.Point(4, 30);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(2440, 1195);
+            this.tabPage8.Size = new System.Drawing.Size(1992, 1195);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Estado de Materia prima y transporte";
             // 
@@ -11533,7 +11539,7 @@ namespace LOSA.Trazabilidad
             this.tabPage9.Controls.Add(this.gcLotePT_Ruta4);
             this.tabPage9.Location = new System.Drawing.Point(4, 30);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(2440, 1195);
+            this.tabPage9.Size = new System.Drawing.Size(1992, 1195);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "Lotes PT";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -11608,9 +11614,9 @@ namespace LOSA.Trazabilidad
             // cmdDespachoId_Ruta4
             // 
             this.cmdDespachoId_Ruta4.AutoHeight = false;
-            editorButtonImageOptions50.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions50.Image")));
+            editorButtonImageOptions81.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions81.Image")));
             this.cmdDespachoId_Ruta4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions50, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject197, serializableAppearanceObject198, serializableAppearanceObject199, serializableAppearanceObject200, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions81, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject321, serializableAppearanceObject322, serializableAppearanceObject323, serializableAppearanceObject324, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDespachoId_Ruta4.Name = "cmdDespachoId_Ruta4";
             this.cmdDespachoId_Ruta4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDespachoId_Ruta4_ButtonClick);
             // 
@@ -11740,9 +11746,9 @@ namespace LOSA.Trazabilidad
             // cmdBoleta_Ruta4
             // 
             this.cmdBoleta_Ruta4.AutoHeight = false;
-            editorButtonImageOptions51.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions51.Image")));
+            editorButtonImageOptions82.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions82.Image")));
             this.cmdBoleta_Ruta4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions51, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject201, serializableAppearanceObject202, serializableAppearanceObject203, serializableAppearanceObject204, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions82, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject325, serializableAppearanceObject326, serializableAppearanceObject327, serializableAppearanceObject328, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdBoleta_Ruta4.Name = "cmdBoleta_Ruta4";
             this.cmdBoleta_Ruta4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdBoleta_Ruta4_ButtonClick);
             // 
@@ -12014,20 +12020,20 @@ namespace LOSA.Trazabilidad
             // txtBoleta_Ruta4
             // 
             this.txtBoleta_Ruta4.Enabled = false;
-            this.txtBoleta_Ruta4.Location = new System.Drawing.Point(904, 197);
+            this.txtBoleta_Ruta4.Location = new System.Drawing.Point(832, 200);
             this.txtBoleta_Ruta4.Name = "txtBoleta_Ruta4";
             this.txtBoleta_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtBoleta_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtBoleta_Ruta4.Properties.Appearance.Options.UseFont = true;
             this.txtBoleta_Ruta4.Properties.Appearance.Options.UseForeColor = true;
-            this.txtBoleta_Ruta4.Size = new System.Drawing.Size(315, 24);
+            this.txtBoleta_Ruta4.Size = new System.Drawing.Size(176, 24);
             this.txtBoleta_Ruta4.TabIndex = 80;
             // 
             // labelControl95
             // 
             this.labelControl95.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl95.Appearance.Options.UseFont = true;
-            this.labelControl95.Location = new System.Drawing.Point(754, 204);
+            this.labelControl95.Location = new System.Drawing.Point(682, 207);
             this.labelControl95.Name = "labelControl95";
             this.labelControl95.Size = new System.Drawing.Size(39, 17);
             this.labelControl95.TabIndex = 79;
@@ -12036,9 +12042,9 @@ namespace LOSA.Trazabilidad
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.grid_Header_ingresos);
-            this.groupControl1.Location = new System.Drawing.Point(18, 60);
+            this.groupControl1.Location = new System.Drawing.Point(7, 60);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(726, 224);
+            this.groupControl1.Size = new System.Drawing.Size(669, 224);
             this.groupControl1.TabIndex = 78;
             this.groupControl1.Text = "Ingresos Por Lote";
             // 
@@ -12051,7 +12057,7 @@ namespace LOSA.Trazabilidad
             this.grid_Header_ingresos.Location = new System.Drawing.Point(2, 23);
             this.grid_Header_ingresos.MainView = this.gvIngresoLote_Ruta4;
             this.grid_Header_ingresos.Name = "grid_Header_ingresos";
-            this.grid_Header_ingresos.Size = new System.Drawing.Size(722, 199);
+            this.grid_Header_ingresos.Size = new System.Drawing.Size(665, 199);
             this.grid_Header_ingresos.TabIndex = 54;
             this.grid_Header_ingresos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvIngresoLote_Ruta4});
@@ -12142,16 +12148,12 @@ namespace LOSA.Trazabilidad
             // 
             this.colCardName1.FieldName = "CardName";
             this.colCardName1.Name = "colCardName1";
-            this.colCardName1.Visible = true;
-            this.colCardName1.VisibleIndex = 7;
             this.colCardName1.Width = 47;
             // 
             // colid_proveedor
             // 
             this.colid_proveedor.FieldName = "id_proveedor";
             this.colid_proveedor.Name = "colid_proveedor";
-            this.colid_proveedor.Visible = true;
-            this.colid_proveedor.VisibleIndex = 6;
             this.colid_proveedor.Width = 49;
             // 
             // colkg_ingresadas
@@ -12159,8 +12161,8 @@ namespace LOSA.Trazabilidad
             this.colkg_ingresadas.FieldName = "kg_ingresadas";
             this.colkg_ingresadas.Name = "colkg_ingresadas";
             this.colkg_ingresadas.Visible = true;
-            this.colkg_ingresadas.VisibleIndex = 10;
-            this.colkg_ingresadas.Width = 56;
+            this.colkg_ingresadas.VisibleIndex = 8;
+            this.colkg_ingresadas.Width = 66;
             // 
             // colNumID1
             // 
@@ -12176,8 +12178,8 @@ namespace LOSA.Trazabilidad
             this.gridColumn114.FieldName = "NumOC";
             this.gridColumn114.Name = "gridColumn114";
             this.gridColumn114.Visible = true;
-            this.gridColumn114.VisibleIndex = 9;
-            this.gridColumn114.Width = 43;
+            this.gridColumn114.VisibleIndex = 7;
+            this.gridColumn114.Width = 55;
             // 
             // colud_ingresadas
             // 
@@ -12230,21 +12232,21 @@ namespace LOSA.Trazabilidad
             // txtFabricante_Ruta4
             // 
             this.txtFabricante_Ruta4.Enabled = false;
-            this.txtFabricante_Ruta4.Location = new System.Drawing.Point(904, 167);
+            this.txtFabricante_Ruta4.Location = new System.Drawing.Point(832, 170);
             this.txtFabricante_Ruta4.Name = "txtFabricante_Ruta4";
             this.txtFabricante_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtFabricante_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtFabricante_Ruta4.Properties.Appearance.Options.UseFont = true;
             this.txtFabricante_Ruta4.Properties.Appearance.Options.UseForeColor = true;
             this.txtFabricante_Ruta4.Properties.ReadOnly = true;
-            this.txtFabricante_Ruta4.Size = new System.Drawing.Size(315, 24);
+            this.txtFabricante_Ruta4.Size = new System.Drawing.Size(220, 24);
             this.txtFabricante_Ruta4.TabIndex = 75;
             // 
             // labelControl96
             // 
             this.labelControl96.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl96.Appearance.Options.UseFont = true;
-            this.labelControl96.Location = new System.Drawing.Point(754, 170);
+            this.labelControl96.Location = new System.Drawing.Point(682, 173);
             this.labelControl96.Name = "labelControl96";
             this.labelControl96.Size = new System.Drawing.Size(63, 17);
             this.labelControl96.TabIndex = 74;
@@ -12265,20 +12267,20 @@ namespace LOSA.Trazabilidad
             // txtNFactura_Ruta4
             // 
             this.txtNFactura_Ruta4.Enabled = false;
-            this.txtNFactura_Ruta4.Location = new System.Drawing.Point(1027, 110);
+            this.txtNFactura_Ruta4.Location = new System.Drawing.Point(955, 113);
             this.txtNFactura_Ruta4.Name = "txtNFactura_Ruta4";
             this.txtNFactura_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtNFactura_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtNFactura_Ruta4.Properties.Appearance.Options.UseFont = true;
             this.txtNFactura_Ruta4.Properties.Appearance.Options.UseForeColor = true;
-            this.txtNFactura_Ruta4.Size = new System.Drawing.Size(260, 24);
+            this.txtNFactura_Ruta4.Size = new System.Drawing.Size(138, 24);
             this.txtNFactura_Ruta4.TabIndex = 72;
             // 
             // labelControl97
             // 
             this.labelControl97.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl97.Appearance.Options.UseFont = true;
-            this.labelControl97.Location = new System.Drawing.Point(967, 113);
+            this.labelControl97.Location = new System.Drawing.Point(895, 116);
             this.labelControl97.Name = "labelControl97";
             this.labelControl97.Size = new System.Drawing.Size(59, 17);
             this.labelControl97.TabIndex = 71;
@@ -12313,7 +12315,7 @@ namespace LOSA.Trazabilidad
             // txtInventarioActual_Ruta4
             // 
             this.txtInventarioActual_Ruta4.Enabled = false;
-            this.txtInventarioActual_Ruta4.Location = new System.Drawing.Point(904, 110);
+            this.txtInventarioActual_Ruta4.Location = new System.Drawing.Point(832, 113);
             this.txtInventarioActual_Ruta4.Name = "txtInventarioActual_Ruta4";
             this.txtInventarioActual_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtInventarioActual_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -12325,44 +12327,44 @@ namespace LOSA.Trazabilidad
             // txtProcedencia_Ruta4
             // 
             this.txtProcedencia_Ruta4.Enabled = false;
-            this.txtProcedencia_Ruta4.Location = new System.Drawing.Point(904, 136);
+            this.txtProcedencia_Ruta4.Location = new System.Drawing.Point(832, 139);
             this.txtProcedencia_Ruta4.Name = "txtProcedencia_Ruta4";
             this.txtProcedencia_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtProcedencia_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtProcedencia_Ruta4.Properties.Appearance.Options.UseFont = true;
             this.txtProcedencia_Ruta4.Properties.Appearance.Options.UseForeColor = true;
-            this.txtProcedencia_Ruta4.Size = new System.Drawing.Size(383, 24);
+            this.txtProcedencia_Ruta4.Size = new System.Drawing.Size(261, 24);
             this.txtProcedencia_Ruta4.TabIndex = 67;
             // 
             // txtNombreMP_Ruta4
             // 
             this.txtNombreMP_Ruta4.Enabled = false;
-            this.txtNombreMP_Ruta4.Location = new System.Drawing.Point(904, 83);
+            this.txtNombreMP_Ruta4.Location = new System.Drawing.Point(832, 86);
             this.txtNombreMP_Ruta4.Name = "txtNombreMP_Ruta4";
             this.txtNombreMP_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtNombreMP_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtNombreMP_Ruta4.Properties.Appearance.Options.UseFont = true;
             this.txtNombreMP_Ruta4.Properties.Appearance.Options.UseForeColor = true;
-            this.txtNombreMP_Ruta4.Size = new System.Drawing.Size(383, 24);
+            this.txtNombreMP_Ruta4.Size = new System.Drawing.Size(261, 24);
             this.txtNombreMP_Ruta4.TabIndex = 66;
             // 
             // txtLoteMP_Ruta4
             // 
             this.txtLoteMP_Ruta4.Enabled = false;
-            this.txtLoteMP_Ruta4.Location = new System.Drawing.Point(904, 57);
+            this.txtLoteMP_Ruta4.Location = new System.Drawing.Point(832, 60);
             this.txtLoteMP_Ruta4.Name = "txtLoteMP_Ruta4";
             this.txtLoteMP_Ruta4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtLoteMP_Ruta4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtLoteMP_Ruta4.Properties.Appearance.Options.UseFont = true;
             this.txtLoteMP_Ruta4.Properties.Appearance.Options.UseForeColor = true;
-            this.txtLoteMP_Ruta4.Size = new System.Drawing.Size(383, 24);
+            this.txtLoteMP_Ruta4.Size = new System.Drawing.Size(261, 24);
             this.txtLoteMP_Ruta4.TabIndex = 65;
             // 
             // labelControl99
             // 
             this.labelControl99.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl99.Appearance.Options.UseFont = true;
-            this.labelControl99.Location = new System.Drawing.Point(754, 113);
+            this.labelControl99.Location = new System.Drawing.Point(682, 116);
             this.labelControl99.Name = "labelControl99";
             this.labelControl99.Size = new System.Drawing.Size(99, 17);
             this.labelControl99.TabIndex = 64;
@@ -12372,7 +12374,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl100.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl100.Appearance.Options.UseFont = true;
-            this.labelControl100.Location = new System.Drawing.Point(754, 139);
+            this.labelControl100.Location = new System.Drawing.Point(682, 142);
             this.labelControl100.Name = "labelControl100";
             this.labelControl100.Size = new System.Drawing.Size(130, 17);
             this.labelControl100.TabIndex = 63;
@@ -12382,7 +12384,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl101.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl101.Appearance.Options.UseFont = true;
-            this.labelControl101.Location = new System.Drawing.Point(754, 90);
+            this.labelControl101.Location = new System.Drawing.Point(682, 93);
             this.labelControl101.Name = "labelControl101";
             this.labelControl101.Size = new System.Drawing.Size(108, 17);
             this.labelControl101.TabIndex = 62;
@@ -12392,7 +12394,7 @@ namespace LOSA.Trazabilidad
             // 
             this.labelControl102.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl102.Appearance.Options.UseFont = true;
-            this.labelControl102.Location = new System.Drawing.Point(754, 64);
+            this.labelControl102.Location = new System.Drawing.Point(682, 67);
             this.labelControl102.Name = "labelControl102";
             this.labelControl102.Size = new System.Drawing.Size(67, 17);
             this.labelControl102.TabIndex = 61;
