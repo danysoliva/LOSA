@@ -5901,6 +5901,11 @@
     <Compile Include="TransaccionesPT\dsProductos.Designer.cs">
       <DependentUpon>dsProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesPT\dsProductosPRD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProductosPRD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesPT\dsPT.cs">
       <DependentUpon>dsPT.xsd</DependentUpon>
     </Compile>
@@ -7837,6 +7842,7 @@
     <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -8753,6 +8759,17 @@
     <None Include="TransaccionesPT\dsProductos.xsd" />
     <None Include="TransaccionesPT\dsProductos.xss">
       <DependentUpon>dsProductos.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesPT\dsProductosPRD.xsc">
+      <DependentUpon>dsProductosPRD.xsd</DependentUpon>
+    </None>
+    <None Include="TransaccionesPT\dsProductosPRD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProductosPRD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TransaccionesPT\dsProductosPRD.xss">
+      <DependentUpon>dsProductosPRD.xsd</DependentUpon>
     </None>
     <None Include="TransaccionesPT\dsPT.xsc">
       <DependentUpon>dsPT.xsd</DependentUpon>
