@@ -1099,6 +1099,7 @@ namespace LOSA.Trazabilidad
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.colFormula = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposLinkLoteMP)).BeginInit();
@@ -3008,7 +3009,8 @@ namespace LOSA.Trazabilidad
             this.colcode_sap,
             this.colCodigo,
             this.colDescripcion,
-            this.colFecha_PRD});
+            this.colFecha_PRD,
+            this.colFormula});
             this.gvDespachado.GridControl = this.grDetalle;
             this.gvDespachado.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "kg", this.colkg, "")});
@@ -3028,7 +3030,7 @@ namespace LOSA.Trazabilidad
             this.collote_producto_termiado.Name = "collote_producto_termiado";
             this.collote_producto_termiado.Visible = true;
             this.collote_producto_termiado.VisibleIndex = 0;
-            this.collote_producto_termiado.Width = 94;
+            this.collote_producto_termiado.Width = 74;
             // 
             // btnVer
             // 
@@ -3048,8 +3050,8 @@ namespace LOSA.Trazabilidad
             this.colCantidadDespachado.Name = "colCantidadDespachado";
             this.colCantidadDespachado.OptionsColumn.AllowEdit = false;
             this.colCantidadDespachado.Visible = true;
-            this.colCantidadDespachado.VisibleIndex = 1;
-            this.colCantidadDespachado.Width = 122;
+            this.colCantidadDespachado.VisibleIndex = 2;
+            this.colCantidadDespachado.Width = 119;
             // 
             // colkg
             // 
@@ -3064,8 +3066,8 @@ namespace LOSA.Trazabilidad
             this.colkg.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "kg", "SUMA={0:n2}")});
             this.colkg.Visible = true;
-            this.colkg.VisibleIndex = 2;
-            this.colkg.Width = 126;
+            this.colkg.VisibleIndex = 3;
+            this.colkg.Width = 88;
             // 
             // colcode_sap
             // 
@@ -3073,8 +3075,8 @@ namespace LOSA.Trazabilidad
             this.colcode_sap.FieldName = "code_sap";
             this.colcode_sap.Name = "colcode_sap";
             this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 3;
-            this.colcode_sap.Width = 229;
+            this.colcode_sap.VisibleIndex = 4;
+            this.colcode_sap.Width = 161;
             // 
             // colCodigo
             // 
@@ -3082,8 +3084,8 @@ namespace LOSA.Trazabilidad
             this.colCodigo.FieldName = "Codigo";
             this.colCodigo.Name = "colCodigo";
             this.colCodigo.Visible = true;
-            this.colCodigo.VisibleIndex = 4;
-            this.colCodigo.Width = 121;
+            this.colCodigo.VisibleIndex = 5;
+            this.colCodigo.Width = 83;
             // 
             // colDescripcion
             // 
@@ -3092,8 +3094,8 @@ namespace LOSA.Trazabilidad
             this.colDescripcion.Name = "colDescripcion";
             this.colDescripcion.OptionsColumn.AllowEdit = false;
             this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 5;
-            this.colDescripcion.Width = 345;
+            this.colDescripcion.VisibleIndex = 6;
+            this.colDescripcion.Width = 247;
             // 
             // colFecha_PRD
             // 
@@ -3105,8 +3107,8 @@ namespace LOSA.Trazabilidad
             this.colFecha_PRD.FieldName = "Fecha_PRD";
             this.colFecha_PRD.Name = "colFecha_PRD";
             this.colFecha_PRD.Visible = true;
-            this.colFecha_PRD.VisibleIndex = 6;
-            this.colFecha_PRD.Width = 240;
+            this.colFecha_PRD.VisibleIndex = 7;
+            this.colFecha_PRD.Width = 193;
             // 
             // slueCliente
             // 
@@ -12724,6 +12726,16 @@ namespace LOSA.Trazabilidad
             this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
             // 
+            // colFormula
+            // 
+            this.colFormula.Caption = "Formula";
+            this.colFormula.FieldName = "formula";
+            this.colFormula.Name = "colFormula";
+            this.colFormula.OptionsColumn.ReadOnly = true;
+            this.colFormula.Visible = true;
+            this.colFormula.VisibleIndex = 1;
+            this.colFormula.Width = 100;
+            // 
             // frmRutasTrazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -14118,5 +14130,6 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposLinkButtonMP;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposCantidadDosificadaLoteLink;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposLinkLoteMP;
+        private DevExpress.XtraGrid.Columns.GridColumn colFormula;
     }
 }
