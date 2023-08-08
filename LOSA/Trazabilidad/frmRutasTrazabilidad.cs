@@ -690,7 +690,6 @@ namespace LOSA.Trazabilidad
                     SqlDataAdapter adat = new SqlDataAdapter(cmd);
                     adat.Fill(dsReportesTRZ.tarimas_rechazadas_pt);
 
-
                     con.Close();
                 }
                 catch (Exception ec)
