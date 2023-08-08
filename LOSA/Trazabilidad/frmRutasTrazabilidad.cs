@@ -3869,15 +3869,34 @@ namespace LOSA.Trazabilidad
             if (e.RowHandle >= 0)
             {
                 decimal avance = Convert.ToDecimal(View.GetRowCellDisplayText(e.RowHandle, View.Columns["%avance"]));
-                if (avance >= 95)
+                string ItemCode = Convert.ToString(View.GetRowCellDisplayText(e.RowHandle, View.Columns["ItemCode"]));
+                decimal inclusion = Convert.ToDecimal(View.GetRowCellDisplayText(e.RowHandle, View.Columns["inclusion"]));
+                if (ItemCode == "MP00080" || ItemCode == "MP00081") //Si es Reproceso
                 {
-                    e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
-                    e.HighPriority = true;
+                    if (inclusion > 5) //Sobre Paso el Porcentaje del 5% de Inlcusion que debe adicionarse del Reproceso
+                    {
+                        e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
+                    }
+                    else
+                    {
+                        e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
+                        e.HighPriority = true;
+                    }
                 }
                 else
                 {
-                    e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
+                    if (avance >= 95)
+                    {
+                        e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
+                        e.HighPriority = true;
+                    }
+                    else
+                    {
+                        e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
+                    }
                 }
+
+                
             }
 
             //if (e.RowHandle >= 0)

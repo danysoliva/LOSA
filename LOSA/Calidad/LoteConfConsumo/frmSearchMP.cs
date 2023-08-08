@@ -106,7 +106,6 @@ namespace LOSA.Calidad.LoteConfConsumo
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@parametro_busqueda", Convert.ToInt32(TipoBusquedaActual));
 
-
                 dsConfigLoteConsumo1.search_mp.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsConfigLoteConsumo1.search_mp);
