@@ -787,7 +787,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 dsRRHH_1.liquidacion_vac.Clear();
                 adat.Fill(dsRRHH_1.liquidacion_vac);
 
-                string descripcion;
+                //string descripcion;
 
                 foreach (dsRRHH_.liquidacion_vacRow item in dsRRHH_1.liquidacion_vac.Rows)
                 {

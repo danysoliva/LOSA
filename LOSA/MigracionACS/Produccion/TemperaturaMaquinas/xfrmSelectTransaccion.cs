@@ -55,6 +55,7 @@ namespace LOSA.MigracionACS.Produccion.TemperaturaMaquinas
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 CajaDialogo.Error("Error al cargar los datos, contacte con el administrador");
                 throw;
             }

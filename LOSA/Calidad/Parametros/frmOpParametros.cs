@@ -56,7 +56,7 @@ namespace LOSA.Calidad.Parametros
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -76,7 +76,7 @@ namespace LOSA.Calidad.Parametros
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
         public void load_informacion()

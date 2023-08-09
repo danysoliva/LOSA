@@ -107,6 +107,15 @@ namespace LOSA.TransaccionesMP
             {
                 gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;//Significa que no tiene ningun privilegio para cambiar estado
             }
+
+            if (UsuarioLogeado.ValidarNivelPermisos(93)) //Permiso Limitado: Produccion
+            {
+                if (IdEstado == 3)
+                    LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                else
+                    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;
+
+            }
         }
 
         private void LoadPermisos(int pIPermiso)

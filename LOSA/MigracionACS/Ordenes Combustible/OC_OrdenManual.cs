@@ -78,7 +78,7 @@ namespace LOSA.MigracionACS.Ordenes_Combustible
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int contador;
+            //int contador;
 
             if (gridView1.DataRowCount == 0)
             {

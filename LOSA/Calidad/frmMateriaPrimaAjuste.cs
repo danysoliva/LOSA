@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ACS.Classes;
 using LOSA.Clases;
-using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.Threading;
 using Huellas;

@@ -67,8 +67,8 @@ namespace LOSA.Liquidos
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
 
-              
             }
         }
 
@@ -84,7 +84,7 @@ namespace LOSA.Liquidos
             catch (Exception ex)
             {
 
-
+                Console.WriteLine(ex.Message);
             }
         }
     }

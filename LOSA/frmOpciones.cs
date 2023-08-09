@@ -256,10 +256,12 @@ namespace LOSA
                         case 3://Medium Autorization
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel2;
+                            tabOpciones.TabPages[8].PageVisible = true;
                             break;
                         case 4://Depth With Delta
                             BasicView();
                             UsuarioLogeado.Idnivel = idNivel2;
+                            tabOpciones.TabPages[8].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
                             tabOpciones.SelectedTabPageIndex = 2;//Calidad
@@ -2949,7 +2951,10 @@ namespace LOSA
 
         private void simpleButton57_Click(object sender, EventArgs e)
         {
-            rd_OdooMenu.ShowPopup(new Point((this.Width / 2), (this.Height / 2)));
+            //rd_OdooMenu.ShowPopup(new Point((this.Width / 2), (this.Height / 2)));
+            frmReportManager frm = new frmReportManager(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
 
         private void btnMP_BodsegaPRD_Click(object sender, EventArgs e)

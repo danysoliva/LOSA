@@ -21,8 +21,6 @@ namespace LOSA.Calidad
         UserLogin UsuarioLogeado;
         string Lote;
         int id_mp;
-        string ingreso;
-        int Tipo_tarima;
         int id_turno;
         public frm_retenciones(UserLogin Puser
                                   , string codigoP

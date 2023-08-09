@@ -62,7 +62,7 @@ namespace LOSA.ACS.RRHH.Informes
         private void cmdPrintAll_Click(object sender, EventArgs e)
         {
             int contador_print = 0;
-            rptVoucher14vo reportResumen = null;
+            //rptVoucher14vo reportResumen = null;
             rptVoucher14vo reportResumenReproceso = null;
 
             foreach(dsInformesRRHH.catorceavoRow row in dsInformesRRHH1.catorceavo)

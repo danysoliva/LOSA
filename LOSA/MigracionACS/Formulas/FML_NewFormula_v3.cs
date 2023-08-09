@@ -1269,7 +1269,7 @@ namespace LOSA.MigracionACS.Formulas
             }
             catch (Exception ec)
             {
-
+                Console.WriteLine(ec.Message);
             }
         }
 

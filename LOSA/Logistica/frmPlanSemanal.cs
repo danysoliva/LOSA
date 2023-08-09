@@ -77,7 +77,7 @@ namespace LOSA.Logistica
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
 
@@ -384,6 +384,7 @@ namespace LOSA.Logistica
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine(ex.Message);
                         comd.Parameters.AddWithValue("@viernes", 0);
                     }
                     try
@@ -392,6 +393,7 @@ namespace LOSA.Logistica
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine(ex.Message);
                         comd.Parameters.AddWithValue("@sabado", 0);
                     }
                     comd.Parameters.AddWithValue("@tipo", 0);

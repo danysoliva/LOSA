@@ -304,7 +304,7 @@ namespace LOSA.MigracionACS.PT
                         }
                         catch (Exception ex)
                         {
-
+                            Console.WriteLine(ex.Message);
                             CajaDialogo.Error("Valor no valido");
                         }
                         break;

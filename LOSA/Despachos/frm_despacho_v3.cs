@@ -651,7 +651,7 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
 
             }
         }

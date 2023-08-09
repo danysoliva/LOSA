@@ -12,7 +12,7 @@
   <xs:element name="dSRPT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dSRPT" msprop:Generator_UserDSName="dSRPT">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="RPT_Teorico" msprop:Generator_TableClassName="RPT_TeoricoDataTable" msprop:Generator_TableVarName="tableRPT_Teorico" msprop:Generator_RowChangedName="RPT_TeoricoRowChanged" msprop:Generator_TablePropName="RPT_Teorico" msprop:Generator_RowDeletingName="RPT_TeoricoRowDeleting" msprop:Generator_RowChangingName="RPT_TeoricoRowChanging" msprop:Generator_RowEvHandlerName="RPT_TeoricoRowChangeEventHandler" msprop:Generator_RowDeletedName="RPT_TeoricoRowDeleted" msprop:Generator_RowClassName="RPT_TeoricoRow" msprop:Generator_UserTableName="RPT_Teorico" msprop:Generator_RowEvArgName="RPT_TeoricoRowChangeEvent">
+        <xs:element name="RPT_Teorico" msprop:Generator_TableClassName="RPT_TeoricoDataTable" msprop:Generator_TableVarName="tableRPT_Teorico" msprop:Generator_TablePropName="RPT_Teorico" msprop:Generator_RowDeletingName="RPT_TeoricoRowDeleting" msprop:Generator_RowChangingName="RPT_TeoricoRowChanging" msprop:Generator_RowEvHandlerName="RPT_TeoricoRowChangeEventHandler" msprop:Generator_RowDeletedName="RPT_TeoricoRowDeleted" msprop:Generator_UserTableName="RPT_Teorico" msprop:Generator_RowChangedName="RPT_TeoricoRowChanged" msprop:Generator_RowEvArgName="RPT_TeoricoRowChangeEvent" msprop:Generator_RowClassName="RPT_TeoricoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="h_fml_id" msprop:Generator_ColumnVarNameInTable="columnh_fml_id" msprop:Generator_ColumnPropNameInRow="h_fml_id" msprop:Generator_ColumnPropNameInTable="h_fml_idColumn" msprop:Generator_UserColumnName="h_fml_id" type="xs:int" minOccurs="0" />
@@ -30,6 +30,14 @@
               <xs:element name="kg_totales" msprop:Generator_ColumnVarNameInTable="columnkg_totales" msprop:Generator_ColumnPropNameInRow="kg_totales" msprop:Generator_ColumnPropNameInTable="kg_totalesColumn" msprop:Generator_UserColumnName="kg_totales" type="xs:decimal" minOccurs="0" />
               <xs:element name="costo_total" msprop:Generator_ColumnVarNameInTable="columncosto_total" msprop:Generator_ColumnPropNameInRow="costo_total" msprop:Generator_ColumnPropNameInTable="costo_totalColumn" msprop:Generator_UserColumnName="costo_total" type="xs:decimal" minOccurs="0" />
               <xs:element name="inclusionCal" msprop:Generator_ColumnVarNameInTable="columninclusionCal" msprop:Generator_ColumnPropNameInRow="inclusionCal" msprop:Generator_ColumnPropNameInTable="inclusionCalColumn" msprop:Generator_UserColumnName="inclusionCal" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="report_manager" msprop:Generator_TableClassName="report_managerDataTable" msprop:Generator_TableVarName="tablereport_manager" msprop:Generator_TablePropName="report_manager" msprop:Generator_RowDeletingName="report_managerRowDeleting" msprop:Generator_RowChangingName="report_managerRowChanging" msprop:Generator_RowEvHandlerName="report_managerRowChangeEventHandler" msprop:Generator_RowDeletedName="report_managerRowDeleted" msprop:Generator_UserTableName="report_manager" msprop:Generator_RowChangedName="report_managerRowChanged" msprop:Generator_RowEvArgName="report_managerRowChangeEvent" msprop:Generator_RowClassName="report_managerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_reporte" msprop:Generator_ColumnVarNameInTable="columnid_reporte" msprop:Generator_ColumnPropNameInRow="id_reporte" msprop:Generator_ColumnPropNameInTable="id_reporteColumn" msprop:Generator_UserColumnName="id_reporte" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

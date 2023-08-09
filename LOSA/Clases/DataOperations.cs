@@ -228,7 +228,7 @@ namespace ACS.Classes
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -755,6 +755,7 @@ namespace ACS.Classes
             }
             catch (Exception ex)
             {
+                Console.Write(ex.Message);
                 return "Error al generar el codigo no se ha podido obtener el codigo siguiente.";
               
             }

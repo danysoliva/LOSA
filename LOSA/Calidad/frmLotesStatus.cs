@@ -279,7 +279,7 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                int id = 0;
+                //int id = 0;
                  ArrayList array = Grid_Get_Selected_Items();
 
                 if (array.Count > 0)
@@ -469,7 +469,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
 

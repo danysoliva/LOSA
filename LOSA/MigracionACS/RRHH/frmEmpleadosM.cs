@@ -99,7 +99,7 @@ namespace LOSA.MigracionACS.RRHH
                 {
                     //pictureBoxProfile.Image = pictureBoxBackup.Image;
                     //CajaDialogo.Error(ec.Message);
-
+                    Console.WriteLine(ec.Message);
                     Thread.Sleep(1000);
                     if (Id_Empleado > 0)
                     {

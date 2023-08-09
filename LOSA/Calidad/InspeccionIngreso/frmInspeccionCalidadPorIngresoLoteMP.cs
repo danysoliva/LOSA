@@ -33,10 +33,10 @@ namespace LOSA.Calidad
         string full_pathImagen = "";
         string fileNameImagen = "";
         string code_sap;
+        bool cambioImagen = false;
         string codigo = " ";
         string usercreadorIngreso;
-        bool cambioImagen = false;
-        string Direccion;
+        string Direccion = "";
         string phone;
         string CodeSAP_Proveedor;
         string NombreSAP_Proveedor;
@@ -1366,7 +1366,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
 
