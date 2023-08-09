@@ -206,8 +206,32 @@ namespace LOSA.TransaccionesMP
                                     break;
                                 case 5://Nueva
                                     Utileria.frmMensajeCalidad frm2 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error,
-                                                        "La Requisición NO esta habilitada o Disponible! Contacte a un supervisor de Logística.");
+                                                        "La Requisición NO esta habilitada o Disponible! Contacte a un Supervisor de Logística.");
                                     if (frm2.ShowDialog() == DialogResult.Cancel)
+                                    {
+                                        lblRequisicionEncontrada.BackColor = Color.Transparent;
+                                        lblRequisicionEncontrada.ResetText();
+                                        txtRequisicion.Focus();
+                                        txtRequisicion.Text = "";
+                                    }
+                                    break;
+
+                                case 6:
+                                    Utileria.frmMensajeCalidad frm6 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error,
+                                                        "La Requisicion Esta en Estado: Cancelada! Contacte al Planeador de Produccion o \nContacte a un Supervisor de Logística.");
+                                    if (frm6.ShowDialog() == DialogResult.OK)
+                                    {
+                                        lblRequisicionEncontrada.BackColor = Color.Transparent;
+                                        lblRequisicionEncontrada.ResetText();
+                                        txtRequisicion.Focus();
+                                        txtRequisicion.Text = "";
+                                    }
+                                    break;
+
+                                case 7:
+                                    Utileria.frmMensajeCalidad frm7 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error,
+                                                        "La Requisicion esta en Espera! Contacte al Planeador de Produccion o \nContacte a un Supervisor de Logística.");
+                                    if (frm7.ShowDialog() == DialogResult.OK)
                                     {
                                         lblRequisicionEncontrada.BackColor = Color.Transparent;
                                         lblRequisicionEncontrada.ResetText();

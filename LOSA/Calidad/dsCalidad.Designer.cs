@@ -8685,6 +8685,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnFecha_PRD;
             
+            private global::System.Data.DataColumn columnformula;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DespachadoClientesDataTable() {
@@ -8776,6 +8778,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn formulaColumn {
+                get {
+                    return this.columnformula;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8811,7 +8821,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DespachadoClientesRow AddDespachadoClientesRow(string lote_producto_termiado, decimal CantidadDespachado, decimal kg, string code_sap, string Codigo, string Descripcion, System.DateTime Fecha_PRD) {
+            public DespachadoClientesRow AddDespachadoClientesRow(string lote_producto_termiado, decimal CantidadDespachado, decimal kg, string code_sap, string Codigo, string Descripcion, System.DateTime Fecha_PRD, int formula) {
                 DespachadoClientesRow rowDespachadoClientesRow = ((DespachadoClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         lote_producto_termiado,
@@ -8820,7 +8830,8 @@ namespace LOSA.Calidad {
                         code_sap,
                         Codigo,
                         Descripcion,
-                        Fecha_PRD};
+                        Fecha_PRD,
+                        formula};
                 rowDespachadoClientesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDespachadoClientesRow);
                 return rowDespachadoClientesRow;
@@ -8850,6 +8861,7 @@ namespace LOSA.Calidad {
                 this.columnCodigo = base.Columns["Codigo"];
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnFecha_PRD = base.Columns["Fecha_PRD"];
+                this.columnformula = base.Columns["formula"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8869,6 +8881,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnDescripcion);
                 this.columnFecha_PRD = new global::System.Data.DataColumn("Fecha_PRD", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha_PRD);
+                this.columnformula = new global::System.Data.DataColumn("formula", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnformula);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15896,6 +15910,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int formula {
+                get {
+                    try {
+                        return ((int)(this[this.tableDespachadoClientes.formulaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'formula\' in table \'DespachadoClientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDespachadoClientes.formulaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Islote_producto_termiadoNull() {
                 return this.IsNull(this.tableDespachadoClientes.lote_producto_termiadoColumn);
             }
@@ -15976,6 +16006,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetFecha_PRDNull() {
                 this[this.tableDespachadoClientes.Fecha_PRDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsformulaNull() {
+                return this.IsNull(this.tableDespachadoClientes.formulaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetformulaNull() {
+                this[this.tableDespachadoClientes.formulaColumn] = global::System.Convert.DBNull;
             }
         }
         
