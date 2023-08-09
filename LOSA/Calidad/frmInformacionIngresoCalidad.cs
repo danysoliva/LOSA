@@ -1238,7 +1238,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
         private void DownloadFile(string pathSource, string pathDestination)
@@ -1344,7 +1344,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
         private bool Upload(string pathFile, string fileName)

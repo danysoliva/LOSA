@@ -182,7 +182,7 @@ namespace LOSA.MigracionACS.SAR
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -233,7 +233,7 @@ namespace LOSA.MigracionACS.SAR
                 }
                 catch (Exception ex)
                 {
-
+                    Console.WriteLine(ex.Message);
                 }
 
 

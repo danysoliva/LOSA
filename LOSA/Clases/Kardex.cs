@@ -46,6 +46,7 @@ namespace LOSA.Clases
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
                 return false;
             }
            

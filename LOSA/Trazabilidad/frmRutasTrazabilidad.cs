@@ -539,7 +539,9 @@ namespace LOSA.Trazabilidad
                     //}
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {
+                Console.Write(ex.Message);
+            }
             finally { }
         }
 
@@ -560,7 +562,9 @@ namespace LOSA.Trazabilidad
                     //}
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {
+                Console.Write(ex.Message);
+            }
             finally { }
         }
 
@@ -2362,6 +2366,7 @@ namespace LOSA.Trazabilidad
             catch (Exception ec)
             {
                 //CajaDialogo.Error(ec.Message);
+                Console.Write(ec.Message);
             }
 
             if (deleted)
@@ -3582,7 +3587,7 @@ namespace LOSA.Trazabilidad
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex);
             }
         }
 

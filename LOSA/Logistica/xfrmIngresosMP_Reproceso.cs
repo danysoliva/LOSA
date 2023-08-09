@@ -145,7 +145,7 @@ namespace LOSA.Logistica
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
 
             }
 
@@ -183,7 +183,7 @@ namespace LOSA.Logistica
                     }
                     catch (Exception ex)
                     {
-
+                        Console.Write(ex.Message);
                     }
                 }
                 else
@@ -195,7 +195,7 @@ namespace LOSA.Logistica
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
 
             }
         }

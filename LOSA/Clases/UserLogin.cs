@@ -34,11 +34,11 @@ namespace LOSA.Clases
         //Migracion ACS
 
         #region Members
-        int vUserid;
+        //int vUserid;
         string vNombre;
         string vAlias;
         bool vRecuperado;
-        DataOperations dp;
+        //DataOperations dp;
         bool vSuperUser;
         string vPassword;
         #endregion

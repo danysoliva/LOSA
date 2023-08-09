@@ -144,7 +144,7 @@ namespace LOSA.AlmacenesExterno
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
         public void load_data_con_parametro()
@@ -194,7 +194,7 @@ namespace LOSA.AlmacenesExterno
             catch (Exception ex)
             {
 
-                
+                Console.Write(ex);
             }
         }
 

@@ -243,6 +243,7 @@ namespace LOSA.MigracionACS.Produccion
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
                     CajaDialogo.Error("Debe de ingresar el numero de formula en el portafolio para planificar este producto.");
                 }
                 load_EditCamaron();

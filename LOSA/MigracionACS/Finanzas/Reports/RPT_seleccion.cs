@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Devart.Data.PostgreSql;
 using LOSA.MigracionACS.Finanzas;
-using Devart.Data.PostgreSql;
 using ACS.Classes;
 
 namespace LOSA.MigracionACS.Finanzas.Reports

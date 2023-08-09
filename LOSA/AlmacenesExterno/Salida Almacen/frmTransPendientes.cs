@@ -68,7 +68,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex);
             }
         }
 

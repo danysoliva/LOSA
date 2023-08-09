@@ -24,8 +24,8 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         List<Ingresos_Externos_D> lista = new List<Ingresos_Externos_D>();
         Ingreso_Almacenes_Externos_H ingreso_h = new Ingreso_Almacenes_Externos_H();
         int id_salida_h;
-        string bodega;
-        int id_mp;
+        string bodega = "";
+        int id_mp = 0;
         int id_salida_d;
         DataOperations dp = new DataOperations();
         UserLogin UsuarioLogeado;
@@ -602,7 +602,7 @@ namespace LOSA.AlmacenesExterno.Salida_Almacen
         private void btnDelete_Click(object sender, EventArgs e)
         {
             gvLote.PostEditor();
-            int contarRepetidos = 0;
+            //int contarRepetidos = 0;
             var gvl = (GridView)gcLotesSeleccionados.FocusedView;
             var row_lote = (dsSalidasAlmacenesExternos.Lote_SeleccionadosRow)gvl.GetDataRow(gvl.FocusedRowHandle);
 

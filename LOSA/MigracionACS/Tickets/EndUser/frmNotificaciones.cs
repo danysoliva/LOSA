@@ -69,7 +69,7 @@ namespace LOSA.MigracionACS.Tickets.EndUser
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
                 throw;
             }
         }
@@ -103,20 +103,21 @@ namespace LOSA.MigracionACS.Tickets.EndUser
 
         private void btnver_Click(object sender, EventArgs e)
         {
-               try
-                {
-                    var gridView = (GridView)grd_data.FocusedView;
-                    var row = (dsTickets._NotificacionesRow)gridView.GetFocusedDataRow();
+            try
+            {
+                var gridView = (GridView)grd_data.FocusedView;
+                var row = (dsTickets._NotificacionesRow)gridView.GetFocusedDataRow();
 
-                    frmTickets frm = new frmTickets(UsuarioLogeado, frmTickets.TipoTicket.Manto, row.id_ticket);
-                    frm.Show();
+                frmTickets frm = new frmTickets(UsuarioLogeado, frmTickets.TipoTicket.Manto, row.id_ticket);
+                frm.Show();
 
-                }
-                catch (Exception ex)
-                {
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
 
 
-                }
+            }
            
         }
 

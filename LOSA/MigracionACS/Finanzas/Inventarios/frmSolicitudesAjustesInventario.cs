@@ -92,6 +92,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             }
             catch (Exception ec)
             {
+                Console.WriteLine(ec.Message);
                 //CajaDialogo.Error(ec.Message);
             }
         }

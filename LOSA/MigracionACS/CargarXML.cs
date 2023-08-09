@@ -458,7 +458,7 @@ namespace LOSA.MigracionACS
 
         private void grdHeader2_TextChanged(object sender, EventArgs e)
         {
-            string a = "";
+            //string a = "";
         }
 
         private void gridView2_KeyDown(object sender, KeyEventArgs e)

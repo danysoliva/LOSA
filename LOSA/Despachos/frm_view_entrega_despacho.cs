@@ -246,8 +246,8 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
 
-                
             }
         }
 
@@ -286,7 +286,7 @@ namespace LOSA.Despachos
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
 
             }
         }

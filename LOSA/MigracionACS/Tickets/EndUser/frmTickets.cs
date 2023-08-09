@@ -252,7 +252,8 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                 cn.Close();
             }
             catch (Exception ex)
-            {                                     
+            {
+                Console.WriteLine(ex.Message);
             }
 
         }

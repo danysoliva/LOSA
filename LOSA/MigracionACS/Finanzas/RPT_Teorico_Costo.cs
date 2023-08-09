@@ -53,8 +53,8 @@ namespace LOSA.MigracionACS.Finanzas
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
 
-                   
                 }
                 dSRPT.RPT_Teorico.AcceptChanges();
               
