@@ -62,7 +62,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -77,7 +77,7 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
         }
     }

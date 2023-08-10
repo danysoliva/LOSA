@@ -39,7 +39,7 @@ namespace LOSA.MigracionACS
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
                 MessageBox.Show("Error en los datos");
             }
             

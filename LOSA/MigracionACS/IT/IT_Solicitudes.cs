@@ -516,7 +516,7 @@ namespace LOSA.MigracionACS.IT
             try
             {
                 #region Obteniendo_datos
-                String query = @"";
+                //String query = @"";
                 Console.Out.WriteLine();
                 #endregion
 

@@ -286,7 +286,7 @@ namespace LOSA.Calidad.Parametros
             }
             catch (Exception ex)
             {
-
+                CajaDialogo.Error(ex.Message);
             }
         }
 

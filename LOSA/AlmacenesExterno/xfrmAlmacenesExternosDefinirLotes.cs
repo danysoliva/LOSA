@@ -256,7 +256,7 @@ namespace LOSA.AlmacenesExterno
 
                 //var SumCantSeleccionados = list_lotes_seleccionados.Sum(x => x.Cantidad);
                 //var SumUnidadesSeleccionados = list_lotes_seleccionados.Sum(x => x.Unidades);
-                bool puedeguardar = false;
+                //bool puedeguardar = false;
                 decimal Comparacion = 0;
                 int id_perteneceDetalle = 0;
                 decimal SumadelLote = 0;
@@ -504,7 +504,7 @@ namespace LOSA.AlmacenesExterno
             var gridView = (GridView)gcLote.FocusedView;
             var row = (dsAlmacenesExternos.LoteRow)gridView.GetFocusedDataRow();
             int RowIdEnMemoria;
-            bool TenemosRowUsandose = false;
+            //bool TenemosRowUsandose = false;
             RowIdEnMemoria = row.LoteNumerador;
             foreach (var item in dsTodas.Lote)
             {
@@ -645,7 +645,7 @@ namespace LOSA.AlmacenesExterno
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex);
             }
         }
 

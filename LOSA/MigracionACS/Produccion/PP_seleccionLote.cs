@@ -71,7 +71,7 @@ namespace  LOSA.MigracionACS.Produccion
             }
             catch (Exception ex)
             {
-                      
+                Console.WriteLine(ex.Message);
             }
         }
 

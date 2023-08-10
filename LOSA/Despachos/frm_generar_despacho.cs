@@ -825,7 +825,7 @@ namespace LOSA.Despachos
             catch (Exception ex)
             {
 
-
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

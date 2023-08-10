@@ -21,6 +21,7 @@ namespace LOSA.Calidad.LoteConfConsumo
         DataOperations dp = new DataOperations();
         public ItemBusqueda ItemSeleccionado;
         DataView dv;// = new DataView(dsConfigLoteConsumo1.search_mp);
+        string StoreProcedureConfigActual = "";
         public enum TipoBusqueda
         {
             MateriaPrima = 1,
@@ -33,7 +34,6 @@ namespace LOSA.Calidad.LoteConfConsumo
         }
 
         TipoBusqueda TipoBusquedaActual;
-        string StoreProcedureConfigActual;
         public frmSearchMP(TipoBusqueda pTipo)
         {
             InitializeComponent();

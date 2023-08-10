@@ -877,39 +877,40 @@ namespace LOSA.Clases
             return dp.ACS_Exec_SP_Get_Data("PP_Get_Plan_PO", cmd);
         }
         public int pp_get_lote_fp_inserted_in_order(int id_orden)
-            {
+        {
             int ID = -1;
             try
-                {
-                  
-                    string query = @"pp_get_lote_from_pp_order";
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(query,cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_orden", id_orden);
-                    SqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            ID = dr.GetInt32(0);
-                        }
-                        else
-                        {
-                              ID = -1;
-                        }
-                           dr.Close();
-                         cn.Close();
-                    return ID;
-                                                                                         
-                }
-                catch (Exception ex)
-                {
+            {
 
-                    
-                           ID = -1;
-                         return ID;
+                string query = @"pp_get_lote_from_pp_order";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_orden", id_orden);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    ID = dr.GetInt32(0);
                 }
+                else
+                {
+                    ID = -1;
+                }
+                dr.Close();
+                cn.Close();
+                return ID;
+
             }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+                ID = -1;
+                return ID;
+            }
+        }
+
         public int pp_order_get_next_lot_number() 
         {
             SqlCommand cmd = new SqlCommand();

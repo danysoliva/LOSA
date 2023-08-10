@@ -7,7 +7,6 @@ using ACS.Classes;
 using System.Net;
 using System.Net.Mail;
 using System.Data;
-using ACS.Classes;
 //using Microsoft.Exchange.WebServices.Data;
 
 namespace LOSA.Clases
@@ -246,6 +245,7 @@ namespace LOSA.Clases
             }
             catch (Exception ex)
             {
+                CajaDialogo.Error(ex.Message);
                 return null;
             }
         }

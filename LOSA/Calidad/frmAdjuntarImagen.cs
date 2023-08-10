@@ -17,9 +17,9 @@ namespace LOSA.Calidad
     {
        public string full_path = "";
         public string fileName = "";
-        long id_ot = 0;
-        int id_repuesto = 0;
-        UserLogin userLogin;
+        //long id_ot = 0;
+        //int id_repuesto = 0;
+        //UserLogin userLogin;
         public frmAdjuntarImagen()
         {
             InitializeComponent();

@@ -137,7 +137,7 @@ namespace LOSA.AlmacenesExterno
             }
         }
 
-        SqlTransaction transaction;
+        //SqlTransaction transaction;
         private void btn_Click(object sender, EventArgs e)
         {
             List<Conf_MP_Ingresada> lista = new List<Conf_MP_Ingresada>();

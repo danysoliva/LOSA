@@ -77,7 +77,7 @@ namespace LOSA.Despachos.Reportes
             }
             catch (Exception ex)
             {
-                
+                CajaDialogo.Error(ex.Message);
             }
          
 

@@ -20,7 +20,7 @@ namespace LOSA.Logistica
     {
         DataOperations dp = new DataOperations();
         private int id_tarima;
-        string codigo_barra;
+        //string codigo_barra;
         Tarima tarimaEncontrada;
         int id_estado_original_tarima;
         UserLogin UsuarioLogeado;

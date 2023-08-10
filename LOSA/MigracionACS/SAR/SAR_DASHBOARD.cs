@@ -67,7 +67,7 @@ namespace LOSA.MigracionACS.SAR
             }
             catch (Exception ex)
             {
-                
+                Console.WriteLine(ex.Message);
             }
         }
 

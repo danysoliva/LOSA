@@ -534,7 +534,7 @@ namespace LOSA.MigracionACS.PT
                                                     }
                                                     catch (Exception ex)
                                                     {
-
+                                                        Console.WriteLine(ex.Message);
                                                         MessageBox.Show("Error al momento de guardar si la formula fua actualizada, pero el proceso continuo normalmente.");
                                                     }
                                                     MessageBox.Show("Lista de materiales Actualizada", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
