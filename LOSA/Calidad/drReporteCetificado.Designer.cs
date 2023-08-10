@@ -583,6 +583,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnmax_plan;
             
+            private global::System.Data.DataColumn columnficha_tecnica;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ParametrosLotesDataTable() {
@@ -650,6 +652,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ficha_tecnicaColumn {
+                get {
+                    return this.columnficha_tecnica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -685,13 +695,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ParametrosLotesRow AddParametrosLotesRow(string Parametro, string Resultaod, decimal min_plan, decimal max_plan) {
+            public ParametrosLotesRow AddParametrosLotesRow(string Parametro, string Resultaod, decimal min_plan, decimal max_plan, decimal ficha_tecnica) {
                 ParametrosLotesRow rowParametrosLotesRow = ((ParametrosLotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Parametro,
                         Resultaod,
                         min_plan,
-                        max_plan};
+                        max_plan,
+                        ficha_tecnica};
                 rowParametrosLotesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowParametrosLotesRow);
                 return rowParametrosLotesRow;
@@ -718,6 +729,7 @@ namespace LOSA.Calidad {
                 this.columnResultaod = base.Columns["Resultaod"];
                 this.columnmin_plan = base.Columns["min_plan"];
                 this.columnmax_plan = base.Columns["max_plan"];
+                this.columnficha_tecnica = base.Columns["ficha_tecnica"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -731,6 +743,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnmin_plan);
                 this.columnmax_plan = new global::System.Data.DataColumn("max_plan", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmax_plan);
+                this.columnficha_tecnica = new global::System.Data.DataColumn("ficha_tecnica", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnficha_tecnica);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1008,6 +1022,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ficha_tecnica {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableParametrosLotes.ficha_tecnicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ficha_tecnica\' in table \'ParametrosLotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableParametrosLotes.ficha_tecnicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsParametroNull() {
                 return this.IsNull(this.tableParametrosLotes.ParametroColumn);
             }
@@ -1052,6 +1082,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setmax_planNull() {
                 this[this.tableParametrosLotes.max_planColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isficha_tecnicaNull() {
+                return this.IsNull(this.tableParametrosLotes.ficha_tecnicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setficha_tecnicaNull() {
+                this[this.tableParametrosLotes.ficha_tecnicaColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -266,6 +266,7 @@ namespace LOSA.Trazabilidad
             this.colCodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFecha_PRD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFormula = new DevExpress.XtraGrid.Columns.GridColumn();
             this.slueCliente = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -1099,7 +1100,6 @@ namespace LOSA.Trazabilidad
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.colFormula = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposLinkLoteMP)).BeginInit();
@@ -2351,9 +2351,9 @@ namespace LOSA.Trazabilidad
             this.labelControl79.Appearance.Options.UseTextOptions = true;
             this.labelControl79.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl79.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl79.Location = new System.Drawing.Point(9, 46);
+            this.labelControl79.Location = new System.Drawing.Point(3, 52);
             this.labelControl79.Name = "labelControl79";
-            this.labelControl79.Size = new System.Drawing.Size(2439, 23);
+            this.labelControl79.Size = new System.Drawing.Size(1083, 23);
             this.labelControl79.TabIndex = 0;
             this.labelControl79.Text = "Rutas de Trazabilidad";
             // 
@@ -3109,6 +3109,16 @@ namespace LOSA.Trazabilidad
             this.colFecha_PRD.Visible = true;
             this.colFecha_PRD.VisibleIndex = 7;
             this.colFecha_PRD.Width = 193;
+            // 
+            // colFormula
+            // 
+            this.colFormula.Caption = "Formula";
+            this.colFormula.FieldName = "formula";
+            this.colFormula.Name = "colFormula";
+            this.colFormula.OptionsColumn.ReadOnly = true;
+            this.colFormula.Visible = true;
+            this.colFormula.VisibleIndex = 1;
+            this.colFormula.Width = 100;
             // 
             // slueCliente
             // 
@@ -12725,16 +12735,6 @@ namespace LOSA.Trazabilidad
             // 
             this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
-            // 
-            // colFormula
-            // 
-            this.colFormula.Caption = "Formula";
-            this.colFormula.FieldName = "formula";
-            this.colFormula.Name = "colFormula";
-            this.colFormula.OptionsColumn.ReadOnly = true;
-            this.colFormula.Visible = true;
-            this.colFormula.VisibleIndex = 1;
-            this.colFormula.Width = 100;
             // 
             // frmRutasTrazabilidad
             // 

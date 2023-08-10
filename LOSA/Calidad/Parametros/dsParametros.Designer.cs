@@ -1845,6 +1845,8 @@ namespace LOSA.Calidad.Parametros {
             
             private global::System.Data.DataColumn columntipo_rep;
             
+            private global::System.Data.DataColumn columnficha_tecnica;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public parametroProductoDataTable() {
@@ -1952,6 +1954,14 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ficha_tecnicaColumn {
+                get {
+                    return this.columnficha_tecnica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1987,7 +1997,7 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public parametroProductoRow AddparametroProductoRow(int id_parametro, string parametro, decimal min, decimal maximo, int id_grupo, bool id_printed_cef, int id, string descipcion, int tipo_rep) {
+            public parametroProductoRow AddparametroProductoRow(int id_parametro, string parametro, decimal min, decimal maximo, int id_grupo, bool id_printed_cef, int id, string descipcion, int tipo_rep, decimal ficha_tecnica) {
                 parametroProductoRow rowparametroProductoRow = ((parametroProductoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_parametro,
@@ -1998,7 +2008,8 @@ namespace LOSA.Calidad.Parametros {
                         id_printed_cef,
                         id,
                         descipcion,
-                        tipo_rep};
+                        tipo_rep,
+                        ficha_tecnica};
                 rowparametroProductoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowparametroProductoRow);
                 return rowparametroProductoRow;
@@ -2030,6 +2041,7 @@ namespace LOSA.Calidad.Parametros {
                 this.columnid = base.Columns["id"];
                 this.columndescipcion = base.Columns["descipcion"];
                 this.columntipo_rep = base.Columns["tipo_rep"];
+                this.columnficha_tecnica = base.Columns["ficha_tecnica"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2053,6 +2065,8 @@ namespace LOSA.Calidad.Parametros {
                 base.Columns.Add(this.columndescipcion);
                 this.columntipo_rep = new global::System.Data.DataColumn("tipo_rep", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntipo_rep);
+                this.columnficha_tecnica = new global::System.Data.DataColumn("ficha_tecnica", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnficha_tecnica);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5174,6 +5188,22 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ficha_tecnica {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableparametroProducto.ficha_tecnicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ficha_tecnica\' in table \'parametroProducto\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableparametroProducto.ficha_tecnicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isid_parametroNull() {
                 return this.IsNull(this.tableparametroProducto.id_parametroColumn);
             }
@@ -5278,6 +5308,18 @@ namespace LOSA.Calidad.Parametros {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Settipo_repNull() {
                 this[this.tableparametroProducto.tipo_repColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isficha_tecnicaNull() {
+                return this.IsNull(this.tableparametroProducto.ficha_tecnicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setficha_tecnicaNull() {
+                this[this.tableparametroProducto.ficha_tecnicaColumn] = global::System.Convert.DBNull;
             }
         }
         

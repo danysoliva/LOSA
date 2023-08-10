@@ -2763,6 +2763,12 @@
     <Compile Include="MigracionACS\Produccion\Eficiencia\frm_seleccion_tarimas.designer.cs">
       <DependentUpon>frm_seleccion_tarimas.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_LotesLigados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_LotesLigados.Designer.cs">
+      <DependentUpon>PRB_LotesLigados.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7256,6 +7262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\frm_seleccion_tarimas.resx">
       <DependentUpon>frm_seleccion_tarimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\PRB_LotesLigados.resx">
+      <DependentUpon>PRB_LotesLigados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Eficiencia\PRB_Lote_Pick_v3.resx">
       <DependentUpon>PRB_Lote_Pick_v3.cs</DependentUpon>
