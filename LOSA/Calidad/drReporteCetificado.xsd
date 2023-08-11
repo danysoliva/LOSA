@@ -27,7 +27,7 @@
               <xs:element name="Resultaod" msprop:Generator_ColumnVarNameInTable="columnResultaod" msprop:Generator_ColumnPropNameInRow="Resultaod" msprop:Generator_ColumnPropNameInTable="ResultaodColumn" msprop:Generator_UserColumnName="Resultaod" type="xs:string" minOccurs="0" />
               <xs:element name="min_plan" msprop:Generator_ColumnVarNameInTable="columnmin_plan" msprop:Generator_ColumnPropNameInRow="min_plan" msprop:Generator_ColumnPropNameInTable="min_planColumn" msprop:Generator_UserColumnName="min_plan" type="xs:decimal" minOccurs="0" />
               <xs:element name="max_plan" msprop:Generator_ColumnVarNameInTable="columnmax_plan" msprop:Generator_ColumnPropNameInRow="max_plan" msprop:Generator_ColumnPropNameInTable="max_planColumn" msprop:Generator_UserColumnName="max_plan" type="xs:decimal" minOccurs="0" />
-              <xs:element name="ficha_tecnica" msprop:Generator_ColumnVarNameInTable="columnficha_tecnica" msprop:Generator_ColumnPropNameInRow="ficha_tecnica" msprop:Generator_ColumnPropNameInTable="ficha_tecnicaColumn" msprop:Generator_UserColumnName="ficha_tecnica" type="xs:decimal" minOccurs="0" />
+              <xs:element name="especificaciones" msprop:Generator_ColumnVarNameInTable="columnespecificaciones" msprop:Generator_ColumnPropNameInRow="especificaciones" msprop:Generator_ColumnPropNameInTable="especificacionesColumn" msprop:Generator_UserColumnName="especificaciones" type="xs:string" default="0" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -50,7 +50,7 @@ namespace LOSA.Calidad
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue(@"@LotNumber", NumberLote);
+                cmd.Parameters.AddWithValue("@LotNumber", NumberLote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 drReporteCetificado1.ParametrosLotes.Clear();
                 da.Fill(drReporteCetificado1.ParametrosLotes);

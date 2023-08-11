@@ -6814,7 +6814,7 @@ namespace LOSA.Trazabilidad
             this.splitContainerControl1.Panel2.Controls.Add(this.xtraTabControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1081, 228);
-            this.splitContainerControl1.SplitterPosition = 627;
+            this.splitContainerControl1.SplitterPosition = 689;
             this.splitContainerControl1.TabIndex = 39;
             // 
             // xtraTabControl3
@@ -6828,7 +6828,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl3.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl3.Name = "xtraTabControl3";
             this.xtraTabControl3.SelectedTabPage = this.xtraTabPage7;
-            this.xtraTabControl3.Size = new System.Drawing.Size(624, 229);
+            this.xtraTabControl3.Size = new System.Drawing.Size(686, 229);
             this.xtraTabControl3.TabIndex = 0;
             this.xtraTabControl3.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage6,
@@ -6838,7 +6838,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage7.Controls.Add(this.grd_despachos);
             this.xtraTabPage7.Name = "xtraTabPage7";
-            this.xtraTabPage7.Size = new System.Drawing.Size(622, 200);
+            this.xtraTabPage7.Size = new System.Drawing.Size(684, 200);
             this.xtraTabPage7.Text = "Despachos";
             // 
             // grd_despachos
@@ -6849,7 +6849,7 @@ namespace LOSA.Trazabilidad
             this.grd_despachos.Location = new System.Drawing.Point(0, 0);
             this.grd_despachos.MainView = this.grdv_despachos;
             this.grd_despachos.Name = "grd_despachos";
-            this.grd_despachos.Size = new System.Drawing.Size(622, 200);
+            this.grd_despachos.Size = new System.Drawing.Size(684, 200);
             this.grd_despachos.TabIndex = 0;
             this.grd_despachos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_despachos});
@@ -7020,7 +7020,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage6.Controls.Add(this.grd_trasacciones);
             this.xtraTabPage6.Name = "xtraTabPage6";
-            this.xtraTabPage6.Size = new System.Drawing.Size(622, 200);
+            this.xtraTabPage6.Size = new System.Drawing.Size(684, 200);
             this.xtraTabPage6.Text = "Transacciones Kardex";
             // 
             // grd_trasacciones
@@ -7031,7 +7031,7 @@ namespace LOSA.Trazabilidad
             this.grd_trasacciones.Location = new System.Drawing.Point(0, 0);
             this.grd_trasacciones.MainView = this.grdv_trascciones;
             this.grd_trasacciones.Name = "grd_trasacciones";
-            this.grd_trasacciones.Size = new System.Drawing.Size(622, 200);
+            this.grd_trasacciones.Size = new System.Drawing.Size(684, 200);
             this.grd_trasacciones.TabIndex = 0;
             this.grd_trasacciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_trascciones});
@@ -7190,7 +7190,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl2.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabLiberado;
-            this.xtraTabControl2.Size = new System.Drawing.Size(444, 228);
+            this.xtraTabControl2.Size = new System.Drawing.Size(382, 228);
             this.xtraTabControl2.TabIndex = 39;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabLiberado,
@@ -7202,7 +7202,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabLiberado.Controls.Add(this.grd_liberado);
             this.xtraTabLiberado.Name = "xtraTabLiberado";
             this.xtraTabLiberado.PageVisible = false;
-            this.xtraTabLiberado.Size = new System.Drawing.Size(442, 199);
+            this.xtraTabLiberado.Size = new System.Drawing.Size(380, 199);
             this.xtraTabLiberado.Text = "Liberado";
             // 
             // grd_liberado
@@ -7213,7 +7213,7 @@ namespace LOSA.Trazabilidad
             this.grd_liberado.Location = new System.Drawing.Point(0, 0);
             this.grd_liberado.MainView = this.grdv_liberado;
             this.grd_liberado.Name = "grd_liberado";
-            this.grd_liberado.Size = new System.Drawing.Size(442, 199);
+            this.grd_liberado.Size = new System.Drawing.Size(380, 199);
             this.grd_liberado.TabIndex = 37;
             this.grd_liberado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_liberado});
@@ -7337,7 +7337,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage4.Controls.Add(this.grd_retenido);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(442, 199);
+            this.xtraTabPage4.Size = new System.Drawing.Size(380, 199);
             this.xtraTabPage4.Text = "Retenido";
             // 
             // grd_retenido
@@ -7348,7 +7348,7 @@ namespace LOSA.Trazabilidad
             this.grd_retenido.Location = new System.Drawing.Point(0, 0);
             this.grd_retenido.MainView = this.grdv_retenido;
             this.grd_retenido.Name = "grd_retenido";
-            this.grd_retenido.Size = new System.Drawing.Size(442, 199);
+            this.grd_retenido.Size = new System.Drawing.Size(380, 199);
             this.grd_retenido.TabIndex = 38;
             this.grd_retenido.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_retenido});
@@ -7471,7 +7471,7 @@ namespace LOSA.Trazabilidad
             // 
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(442, 199);
+            this.xtraTabPage5.Size = new System.Drawing.Size(380, 199);
             this.xtraTabPage5.Text = "No conforme";
             // 
             // grd_resumen

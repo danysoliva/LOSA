@@ -286,8 +286,8 @@ namespace LOSA.Calidad.Parametros
             // 
             // colFichaTecnica
             // 
-            this.colFichaTecnica.Caption = "Ficha Tecnica";
-            this.colFichaTecnica.FieldName = "ficha_tecnica";
+            this.colFichaTecnica.Caption = "Especificacion";
+            this.colFichaTecnica.FieldName = "especificaciones";
             this.colFichaTecnica.Name = "colFichaTecnica";
             this.colFichaTecnica.Visible = true;
             this.colFichaTecnica.VisibleIndex = 1;

@@ -192,7 +192,7 @@ namespace LOSA.Calidad.Parametros
                 }
                 if (e.Column.FieldName == "ficha_tecnica")
                 {
-                    row.ficha_tecnica = Convert.ToDecimal(e.Value);
+                    row.especificaciones = Convert.ToString(e.Value);
                     row.AcceptChanges();
                 }
                 string query = @"sp_update_producto_parametro";
@@ -205,7 +205,7 @@ namespace LOSA.Calidad.Parametros
                 cmd.Parameters.AddWithValue("@max", row.maximo);
                 cmd.Parameters.AddWithValue("@id_grupo", row.id_grupo);
                 cmd.Parameters.AddWithValue("@is_printed_cef", row.id_printed_cef ? 1 : 0);
-                cmd.Parameters.AddWithValue("@ficha_tecnica", row.ficha_tecnica);
+                cmd.Parameters.AddWithValue("@especificaciones ", row.especificaciones);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

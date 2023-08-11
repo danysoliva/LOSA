@@ -111,7 +111,10 @@ namespace LOSA.TransaccionesMP
             if (UsuarioLogeado.ValidarNivelPermisos(93)) //Permiso Limitado: Produccion
             {
                 if (IdEstado == 3)
+                {
                     LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                }
                 else
                     gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;
 
