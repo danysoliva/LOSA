@@ -146,7 +146,8 @@ namespace LOSA
                             tabOpciones.TabPages[i].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
-
+                            tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                            tabOpciones.TabPages[i].PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -3633,7 +3634,7 @@ namespace LOSA
                 if (UsuarioLogeado.ValidarNivelPermisos(65) || UsuarioLogeado.ValidarNivelPermisos(67))
                 {
                     frmTicketSeguimiento_TI frm = new frmTicketSeguimiento_TI(UsuarioLogeado);
-                    frm.MdiParent = this.MdiParent;
+                    frm.MdiParent = this.MdiParent; 
                     frm.Show();
                 }
                 else
@@ -3641,6 +3642,21 @@ namespace LOSA
                     CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #65");
                 }
             }
+        }
+
+        private void frmRepor_KepServer_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    IntakeBatchViewerFull frm = new IntakeBatchViewerFull(UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad);
+            //    frm.MdiParent = this.MdiParent;
+            //    frm.Show();
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+
+            //}
         }
     }
 }
