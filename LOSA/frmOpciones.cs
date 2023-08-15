@@ -3646,17 +3646,17 @@ namespace LOSA
 
         private void frmRepor_KepServer_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    IntakeBatchViewerFull frm = new IntakeBatchViewerFull(UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad);
-            //    frm.MdiParent = this.MdiParent;
-            //    frm.Show();
-            //}
-            //catch (Exception ex)
-            //{
-            //    CajaDialogo.Error(ex.Message);
+            try
+            {
+                IntakeBatchViewerFull frm = new IntakeBatchViewerFull(UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
 
-            //}
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ namespace LOSA.MigracionACS.Produccion.Consumos
         DataOperations dp = new DataOperations();
         LotePT LoteActual;
         Int64 OrderIdBalanceMasa;
-
+        UserLogin UsuarioLogueado;
         enum TipoBusqueda
         {
             Ninguna  = 0,
@@ -249,7 +249,13 @@ namespace LOSA.MigracionACS.Produccion.Consumos
         {
             InitializeComponent();
 
+            UsuarioLogueado = userLogin;
 
+            if (UsuarioLogueado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Calidad)
+            {
+                xtraTabPage2.PageVisible = false;
+                xtraTabPage6.PageVisible = false;
+            }
 
             #region Screen Selection
             if (Screen.AllScreens.Count() > 1)
@@ -284,6 +290,8 @@ namespace LOSA.MigracionACS.Produccion.Consumos
         public IntakeBatchViewerFull()
         {
             InitializeComponent();
+
+
 
             #region Screen Selection
             if (Screen.AllScreens.Count() > 1)
