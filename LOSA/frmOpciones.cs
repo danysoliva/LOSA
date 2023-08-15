@@ -100,6 +100,7 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Logistica:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
+                    tabOpciones.TabPages[11].PageVisible = true;
                     int idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
                     {
@@ -129,6 +130,8 @@ namespace LOSA
                     
                 case GrupoUser.GrupoUsuario.Calidad:
                     idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+                    tabOpciones.TabPages[i].PageVisible = true;
+                    tabOpciones.TabPages[11].PageVisible = true;
                     switch (idNivel)
                     {
                         case 1://Basic View
@@ -158,7 +161,7 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Administradores:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
-
+                    tabOpciones.TabPages[11].PageVisible = true;
                     idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
                     {
@@ -195,14 +198,16 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Produccion:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
+                    //tabOpciones.TabPages[11].PageVisible = true;
                     break;
                 case GrupoUser.GrupoUsuario.ProduccionV2:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i - 1].PageVisible = true;
-                    
-                    
+                    tabOpciones.TabPages[11].PageVisible = true;
+
+
                     idNivel = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
                     switch (idNivel)
                     {
@@ -244,6 +249,7 @@ namespace LOSA
                     break;
                 case GrupoUser.GrupoUsuario.Contabilidad:
                     int idNivel2 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
+                    tabOpciones.TabPages[11].PageVisible = true;
                     switch (idNivel2)
                     {
                         case 1://Basic View
@@ -280,7 +286,7 @@ namespace LOSA
 
                 case GrupoUser.GrupoUsuario.RRHH:
                     int idNivel3 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
-
+                    tabOpciones.TabPages[11].PageVisible = true;
                     switch (idNivel3)
                     {
                         case 1://Basic View
@@ -316,7 +322,7 @@ namespace LOSA
 
                 case GrupoUser.GrupoUsuario.Forecasting:
                     int idNivel4 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
-
+                    tabOpciones.TabPages[11].PageVisible = true;
                     switch (idNivel4)
                     {
                         case 1://Basic View
@@ -351,7 +357,7 @@ namespace LOSA
 
                 case GrupoUser.GrupoUsuario.Bascula:
                     int idNivel10 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
-
+                    tabOpciones.TabPages[11].PageVisible = true;
                     switch (idNivel10)
                     {
                         case 1://Basic View
@@ -379,7 +385,7 @@ namespace LOSA
 
                 case GrupoUser.GrupoUsuario.Formulacion:
                     int idNivel11 = pUser.idNivelAcceso(pUser.Id, 7);//7 = ALOSY
-
+                    tabOpciones.TabPages[11].PageVisible = true;
                     switch (idNivel11)
                     {
                         case 1://Basic View

@@ -4112,5 +4112,37 @@ namespace LOSA.Trazabilidad
                 }
             }
         }
+
+        private void repostOpenDOc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)gcDocumentosAdjuntos_Ruta4.FocusedView;
+                var row = (dsMantenimientoC.adjuntosRow)gvDocumentosAdjuntos_Ruta4.GetFocusedDataRow();
+                if (row.bit_subido)
+                {
+                    string dir = @"C:\alosy_temp";
+                    if (!Directory.Exists(dir))
+                    {
+                        Directory.CreateDirectory(dir);
+                    }
+
+                    DataOperations dp = new DataOperations();
+                    string PathCompleto = dp.FTP_Tickets_LOSA + row.path_load;
+
+                    OpenFile_Ruta4(PathCompleto, dir + @"\" + row.file_name);
+                }
+                else
+                {
+                    CajaDialogo.Error("Debe de cargar almenos un archivo.");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }
