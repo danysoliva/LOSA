@@ -29,7 +29,7 @@ namespace LOSA.Calidad
         public int Id_ingreso, Id_boleta;
         UserLogin UsuarioLogeado;
         bool ChCalidad;
-        int id_materiaPrima;
+        //int id_materiaPrima;
         string full_pathImagen = "";
         string fileNameImagen = "";
         string code_sap;
@@ -772,7 +772,7 @@ namespace LOSA.Calidad
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@_lotemp", plotemp);
-                cmd.Parameters.AddWithValue(@"@id_mp", id_materiaPrima);
+                cmd.Parameters.AddWithValue(@"@id_mp", IdMP);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsMantenimientoC.parametros.Clear();
                 da.Fill(dsMantenimientoC.parametros);
@@ -1139,7 +1139,7 @@ namespace LOSA.Calidad
                     //txtingresada.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
                     //txtingresadaUD.Text = dr.IsDBNull(5) ? "" : dr.GetDecimal(5).ToString();
                     txtinventarioActual.Text = dr.IsDBNull(0) ? "" : dr.GetDecimal(0).ToString();
-                    id_materiaPrima = dr.IsDBNull(1) ? 0 : dr.GetInt32(1);
+                    IdMP = dr.IsDBNull(1) ? 0 : dr.GetInt32(1);
                 }
                 dr.Close();
 
@@ -1180,7 +1180,7 @@ namespace LOSA.Calidad
                     //txtdiasvencimiento.Text = dr.IsDBNull(2) ? "0" : dr.GetInt32(2).ToString();
                     //txtingresada.Text = dr.IsDBNull(3) ? "" : dr.GetDecimal(3).ToString();
                     txtinventarioActual.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
-                    id_materiaPrima = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
+                    IdMP = dr.IsDBNull(5) ? 0 : dr.GetInt32(5);
                 }
                 dr.Close();
                 cn.Close();
@@ -1379,7 +1379,7 @@ namespace LOSA.Calidad
                         cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                         cmd.Parameters.AddWithValue("@id_config",row.id_conf);
                         cmd.Parameters.AddWithValue("@bit_pic",0);
-                        cmd.Parameters.AddWithValue("@id_mp",id_materiaPrima);
+                        cmd.Parameters.AddWithValue("@id_mp", IdMP);
                         cmd.Parameters.AddWithValue("@lote_mp", Lote);
                         cmd.ExecuteNonQuery();
                         conn.Close();
@@ -2148,7 +2148,7 @@ namespace LOSA.Calidad
                     SqlCommand cmd = new SqlCommand("sp_desligar_archvio_ingreso_calidad", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_registro", row.id_registro);
-                    cmd.Parameters.AddWithValue("@id_mp", id_materiaPrima);
+                    cmd.Parameters.AddWithValue("@id_mp", IdMP);
                     cmd.Parameters.AddWithValue("@lote", Lote);
                     cmd.ExecuteNonQuery();
                     conn.Close();
