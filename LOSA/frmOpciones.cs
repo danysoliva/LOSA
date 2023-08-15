@@ -198,7 +198,7 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Produccion:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
-                    tabOpciones.TabPages[11].PageVisible = true;
+                    //tabOpciones.TabPages[11].PageVisible = true;
                     break;
                 case GrupoUser.GrupoUsuario.ProduccionV2:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
