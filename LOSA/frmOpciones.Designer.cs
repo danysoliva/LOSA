@@ -98,6 +98,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.frmRepor_KepServer = new DevExpress.XtraEditors.SimpleButton();
             this.btnCalidadMaterialEmpaque = new DevExpress.XtraEditors.SimpleButton();
             this.btnViewRequisasCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton67 = new DevExpress.XtraEditors.SimpleButton();
@@ -287,7 +288,6 @@
             this.navBarItem54 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.frmRepor_KepServer = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1356,6 +1356,21 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(835, 480);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // frmRepor_KepServer
+            // 
+            this.frmRepor_KepServer.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmRepor_KepServer.Appearance.Options.UseFont = true;
+            this.frmRepor_KepServer.Appearance.Options.UseTextOptions = true;
+            this.frmRepor_KepServer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.frmRepor_KepServer.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.frmRepor_KepServer.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("frmRepor_KepServer.ImageOptions.SvgImage")));
+            this.frmRepor_KepServer.Location = new System.Drawing.Point(214, 413);
+            this.frmRepor_KepServer.Name = "frmRepor_KepServer";
+            this.frmRepor_KepServer.Size = new System.Drawing.Size(199, 59);
+            this.frmRepor_KepServer.TabIndex = 54;
+            this.frmRepor_KepServer.Text = "Reporte por Batch KepServer";
+            this.frmRepor_KepServer.Click += new System.EventHandler(this.frmRepor_KepServer_Click);
             // 
             // btnCalidadMaterialEmpaque
             // 
@@ -4111,21 +4126,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // frmRepor_KepServer
-            // 
-            this.frmRepor_KepServer.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frmRepor_KepServer.Appearance.Options.UseFont = true;
-            this.frmRepor_KepServer.Appearance.Options.UseTextOptions = true;
-            this.frmRepor_KepServer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.frmRepor_KepServer.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.frmRepor_KepServer.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
-            this.frmRepor_KepServer.Location = new System.Drawing.Point(214, 413);
-            this.frmRepor_KepServer.Name = "frmRepor_KepServer";
-            this.frmRepor_KepServer.Size = new System.Drawing.Size(199, 59);
-            this.frmRepor_KepServer.TabIndex = 54;
-            this.frmRepor_KepServer.Text = "Reporte por Batch KepServer";
-            this.frmRepor_KepServer.Click += new System.EventHandler(this.frmRepor_KepServer_Click);
             // 
             // frmOpciones
             // 
