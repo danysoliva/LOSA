@@ -87,14 +87,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumIngreso.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProveedorName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
@@ -770,17 +770,19 @@
             this.btnMP.Name = "btnMP";
             this.btnMP.Size = new System.Drawing.Size(55, 41);
             this.btnMP.TabIndex = 85;
+            this.btnMP.Visible = false;
             this.btnMP.Click += new System.EventHandler(this.btnMP_Click);
             // 
             // Tg_presentacion_promedio
             // 
+            this.Tg_presentacion_promedio.EditValue = true;
             this.Tg_presentacion_promedio.Location = new System.Drawing.Point(709, 211);
             this.Tg_presentacion_promedio.Name = "Tg_presentacion_promedio";
             this.Tg_presentacion_promedio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tg_presentacion_promedio.Properties.Appearance.Options.UseFont = true;
             this.Tg_presentacion_promedio.Properties.OffText = "Activar presentacion promedio";
             this.Tg_presentacion_promedio.Properties.OnText = "Desactivar presentacion promedio";
-            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 32);
+            this.Tg_presentacion_promedio.Size = new System.Drawing.Size(411, 26);
             this.Tg_presentacion_promedio.TabIndex = 86;
             this.Tg_presentacion_promedio.Toggled += new System.EventHandler(this.Tg_presentacion_promedio_Toggled);
             // 
