@@ -61,7 +61,7 @@ namespace LOSA.Calidad
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl3.Location = new System.Drawing.Point(148, 15);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(372, 39);
+            this.labelControl3.Size = new System.Drawing.Size(484, 39);
             this.labelControl3.TabIndex = 35;
             this.labelControl3.Text = "Mantenimiento";
             // 
@@ -87,7 +87,7 @@ namespace LOSA.Calidad
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(448, 8);
+            this.cmdHome.Location = new System.Drawing.Point(560, 8);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(199, 54);
             this.cmdHome.TabIndex = 7;
@@ -299,7 +299,7 @@ namespace LOSA.Calidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 599);
+            this.ClientSize = new System.Drawing.Size(766, 599);
             this.Controls.Add(this.cmdMateriasPrimas);
             this.Controls.Add(this.cmdProveedores);
             this.Controls.Add(this.btnCertificado);

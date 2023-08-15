@@ -287,6 +287,7 @@
             this.navBarItem54 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.frmRepor_KepServer = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1326,6 +1327,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.frmRepor_KepServer);
             this.TabCalidad.Controls.Add(this.btnCalidadMaterialEmpaque);
             this.TabCalidad.Controls.Add(this.btnViewRequisasCalidad);
             this.TabCalidad.Controls.Add(this.simpleButton67);
@@ -2045,6 +2047,7 @@
             this.navBarGroup2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup2.AppearancePressed.Options.UseFont = true;
             this.navBarGroup2.Caption = "Gestión de Producción";
+            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbReporteBatch),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbReporteEnsacadora),
@@ -4109,6 +4112,21 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // frmRepor_KepServer
+            // 
+            this.frmRepor_KepServer.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmRepor_KepServer.Appearance.Options.UseFont = true;
+            this.frmRepor_KepServer.Appearance.Options.UseTextOptions = true;
+            this.frmRepor_KepServer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.frmRepor_KepServer.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.frmRepor_KepServer.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
+            this.frmRepor_KepServer.Location = new System.Drawing.Point(214, 413);
+            this.frmRepor_KepServer.Name = "frmRepor_KepServer";
+            this.frmRepor_KepServer.Size = new System.Drawing.Size(199, 59);
+            this.frmRepor_KepServer.TabIndex = 54;
+            this.frmRepor_KepServer.Text = "Reporte por Batch KepServer";
+            this.frmRepor_KepServer.Click += new System.EventHandler(this.frmRepor_KepServer_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4409,5 +4427,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem52;
         private DevExpress.XtraNavBar.NavBarItem navBarItem53;
         private DevExpress.XtraNavBar.NavBarItem navBarItem54;
+        private DevExpress.XtraEditors.SimpleButton frmRepor_KepServer;
     }
 }

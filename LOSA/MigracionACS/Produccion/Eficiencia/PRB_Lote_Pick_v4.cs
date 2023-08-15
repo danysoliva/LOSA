@@ -376,5 +376,16 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia
             }
             
         }
+
+        private void btnSacosLigados_EditValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSacosLigados_Click(object sender, EventArgs e)
+        {
+            PRB_LotesLigados frm = new PRB_LotesLigados();
+            frm.ShowDialog();
+        }
     }
 }

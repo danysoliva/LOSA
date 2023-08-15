@@ -40,7 +40,7 @@ namespace LOSA.Calidad.Parametros
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtproducto = new DevExpress.XtraEditors.TextEdit();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
-            this.dsParametros = new LOSA.Calidad.Parametros.dsParametros();
+            this.dsParametros1 = new LOSA.Calidad.Parametros.dsParametros();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_parametro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colparametro = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,10 +55,11 @@ namespace LOSA.Calidad.Parametros
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescipcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_printed_cef = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFichaTecnica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtproducto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsParametros1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_grupos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gruposBindingSource)).BeginInit();
@@ -72,7 +73,7 @@ namespace LOSA.Calidad.Parametros
             this.btnClose.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(621, 8);
+            this.btnClose.Location = new System.Drawing.Point(701, 8);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(112, 52);
             this.btnClose.TabIndex = 1;
@@ -107,7 +108,7 @@ namespace LOSA.Calidad.Parametros
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataMember = "parametroProducto";
-            this.grd_data.DataSource = this.dsParametros;
+            this.grd_data.DataSource = this.dsParametros1;
             this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_data.Location = new System.Drawing.Point(3, 128);
             this.grd_data.MainView = this.grdv_data;
@@ -116,16 +117,16 @@ namespace LOSA.Calidad.Parametros
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnEliminar,
             this.grd_grupos});
-            this.grd_data.Size = new System.Drawing.Size(740, 655);
+            this.grd_data.Size = new System.Drawing.Size(820, 655);
             this.grd_data.TabIndex = 4;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
             this.grd_data.Click += new System.EventHandler(this.grd_data_Click);
             // 
-            // dsParametros
+            // dsParametros1
             // 
-            this.dsParametros.DataSetName = "dsParametros";
-            this.dsParametros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsParametros1.DataSetName = "dsParametros";
+            this.dsParametros1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -162,7 +163,8 @@ namespace LOSA.Calidad.Parametros
             this.colEliminar,
             this.colid,
             this.coldescipcion,
-            this.colid_printed_cef});
+            this.colid_printed_cef,
+            this.colFichaTecnica});
             this.grdv_data.DetailHeight = 284;
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
@@ -187,7 +189,7 @@ namespace LOSA.Calidad.Parametros
             this.colparametro.OptionsColumn.AllowEdit = false;
             this.colparametro.Visible = true;
             this.colparametro.VisibleIndex = 0;
-            this.colparametro.Width = 130;
+            this.colparametro.Width = 127;
             // 
             // colmin
             // 
@@ -196,8 +198,8 @@ namespace LOSA.Calidad.Parametros
             this.colmin.MinWidth = 21;
             this.colmin.Name = "colmin";
             this.colmin.Visible = true;
-            this.colmin.VisibleIndex = 1;
-            this.colmin.Width = 130;
+            this.colmin.VisibleIndex = 2;
+            this.colmin.Width = 118;
             // 
             // colmaximo
             // 
@@ -206,8 +208,8 @@ namespace LOSA.Calidad.Parametros
             this.colmaximo.MinWidth = 21;
             this.colmaximo.Name = "colmaximo";
             this.colmaximo.Visible = true;
-            this.colmaximo.VisibleIndex = 2;
-            this.colmaximo.Width = 130;
+            this.colmaximo.VisibleIndex = 3;
+            this.colmaximo.Width = 118;
             // 
             // colid_grupo
             // 
@@ -217,8 +219,8 @@ namespace LOSA.Calidad.Parametros
             this.colid_grupo.MinWidth = 21;
             this.colid_grupo.Name = "colid_grupo";
             this.colid_grupo.Visible = true;
-            this.colid_grupo.VisibleIndex = 3;
-            this.colid_grupo.Width = 125;
+            this.colid_grupo.VisibleIndex = 4;
+            this.colid_grupo.Width = 114;
             // 
             // grd_grupos
             // 
@@ -235,7 +237,7 @@ namespace LOSA.Calidad.Parametros
             // gruposBindingSource
             // 
             this.gruposBindingSource.DataMember = "grupos";
-            this.gruposBindingSource.DataSource = this.dsParametros;
+            this.gruposBindingSource.DataSource = this.dsParametros1;
             // 
             // repositoryItemGridLookUpEdit1View
             // 
@@ -251,8 +253,7 @@ namespace LOSA.Calidad.Parametros
             this.colEliminar.MinWidth = 21;
             this.colEliminar.Name = "colEliminar";
             this.colEliminar.Visible = true;
-            this.colEliminar.VisibleIndex = 5;
-            this.colEliminar.Width = 50;
+            this.colEliminar.VisibleIndex = 6;
             // 
             // btnEliminar
             // 
@@ -280,8 +281,17 @@ namespace LOSA.Calidad.Parametros
             this.colid_printed_cef.FieldName = "id_printed_cef";
             this.colid_printed_cef.Name = "colid_printed_cef";
             this.colid_printed_cef.Visible = true;
-            this.colid_printed_cef.VisibleIndex = 4;
-            this.colid_printed_cef.Width = 157;
+            this.colid_printed_cef.VisibleIndex = 5;
+            this.colid_printed_cef.Width = 136;
+            // 
+            // colFichaTecnica
+            // 
+            this.colFichaTecnica.Caption = "Especificacion";
+            this.colFichaTecnica.FieldName = "especificaciones";
+            this.colFichaTecnica.Name = "colFichaTecnica";
+            this.colFichaTecnica.Visible = true;
+            this.colFichaTecnica.VisibleIndex = 1;
+            this.colFichaTecnica.Width = 107;
             // 
             // simpleButton1
             // 
@@ -300,7 +310,7 @@ namespace LOSA.Calidad.Parametros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 782);
+            this.ClientSize = new System.Drawing.Size(821, 782);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.txtproducto);
@@ -312,7 +322,7 @@ namespace LOSA.Calidad.Parametros
             this.Text = "Modificacion de Parametros";
             ((System.ComponentModel.ISupportInitialize)(this.txtproducto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsParametros1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_grupos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gruposBindingSource)).EndInit();
@@ -331,7 +341,7 @@ namespace LOSA.Calidad.Parametros
         private DevExpress.XtraGrid.GridControl grd_data;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private dsParametros dsParametros;
+        private dsParametros dsParametros1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_parametro;
         private DevExpress.XtraGrid.Columns.GridColumn colparametro;
         private DevExpress.XtraGrid.Columns.GridColumn colmin;
@@ -345,5 +355,6 @@ namespace LOSA.Calidad.Parametros
         private System.Windows.Forms.BindingSource gruposBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn colid_printed_cef;
+        private DevExpress.XtraGrid.Columns.GridColumn colFichaTecnica;
     }
 }

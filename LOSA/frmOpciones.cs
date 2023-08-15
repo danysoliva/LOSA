@@ -146,7 +146,8 @@ namespace LOSA
                             tabOpciones.TabPages[i].PageVisible = true;
                             break;
                         case 5://Depth Without Delta
-
+                            tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
+                            tabOpciones.TabPages[i].PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -246,11 +247,11 @@ namespace LOSA
                     switch (idNivel2)
                     {
                         case 1://Basic View
-                            BasicView();
+                            tabOpciones.TabPages[8].PageVisible = true;
                             UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 2://Basic No Autorization
-                            BasicView();
+                            tabOpciones.TabPages[8].PageVisible = true;
                             UsuarioLogeado.Idnivel = idNivel2;
                             break;
                         case 3://Medium Autorization
@@ -2648,20 +2649,26 @@ namespace LOSA
                 case 1://Basic View
                     break;
                 case 2://Basic No Autorization
+                    FCT_MRP_Complete frm2 = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm2.MdiParent = this.MdiParent;
+                    frm2.Show();
                     break;
                 case 3://Medium Autorization
+                    FCT_MRP_Complete frm3 = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm3.MdiParent = this.MdiParent;
+                    frm3.Show();
                     break;
                 case 4://Depth With Delta
                     accesoprevio = true;
-                    FCT_MRP_Complete frm = new FCT_MRP_Complete(this.UsuarioLogeado);
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
+                    FCT_MRP_Complete frm4 = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm4.MdiParent = this.MdiParent;
+                    frm4.Show();
                     break;
                 case 5://Depth Without Delta
                     accesoprevio = true;
-                    FCT_MRP_Complete frm1 = new FCT_MRP_Complete(this.UsuarioLogeado);
-                    frm1.MdiParent = this.MdiParent;
-                    frm1.Show();
+                    FCT_MRP_Complete frm5 = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm5.MdiParent = this.MdiParent;
+                    frm5.Show();
                     break;
                 default:
                     break;
@@ -3627,7 +3634,7 @@ namespace LOSA
                 if (UsuarioLogeado.ValidarNivelPermisos(65) || UsuarioLogeado.ValidarNivelPermisos(67))
                 {
                     frmTicketSeguimiento_TI frm = new frmTicketSeguimiento_TI(UsuarioLogeado);
-                    frm.MdiParent = this.MdiParent;
+                    frm.MdiParent = this.MdiParent; 
                     frm.Show();
                 }
                 else
@@ -3635,6 +3642,21 @@ namespace LOSA
                     CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #65");
                 }
             }
+        }
+
+        private void frmRepor_KepServer_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    IntakeBatchViewerFull frm = new IntakeBatchViewerFull(UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo = GrupoUser.GrupoUsuario.Calidad);
+            //    frm.MdiParent = this.MdiParent;
+            //    frm.Show();
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+
+            //}
         }
     }
 }

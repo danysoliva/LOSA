@@ -418,7 +418,7 @@ namespace LOSA.RecepcionMP
             var gridview = (GridView)grd_ingreso.FocusedView;
             var row = (dsRecepcionMPx.IngresosMPRow)gridview.GetFocusedDataRow();
 
-            frmIngresoAdjuntos frm = new frmIngresoAdjuntos(row.id, UsuarioLogeado);
+            frmIngresoAdjuntos frm = new frmIngresoAdjuntos(row.id, row.itemcode, row.Ningreso, UsuarioLogeado);
             frm.Show();
         }
     }

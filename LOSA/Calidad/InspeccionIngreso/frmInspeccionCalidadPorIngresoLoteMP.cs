@@ -653,28 +653,6 @@ namespace LOSA.Calidad
 
         public void Inicalizar_Archivo_configurados()
         {
-            //try
-            //{
-            //    //string query = @"sp_load_trz_documentos_ingreso";
-            //    //string query = "[sp_load_trz_documentos_ingresov2]";
-            //    string query = "[sp_load_trz_documentos_ingresovV3]";
-            //    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-            //    cn.Open();
-            //    SqlCommand cmd = new SqlCommand(query, cn);
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    //cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
-            //    cmd.Parameters.AddWithValue("@id_mp", IdMP);
-            //    cmd.Parameters.AddWithValue("@lote", Lote);
-            //    dsMantenimientoC.adjuntos.Clear();
-            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //    da.Fill(dsMantenimientoC.adjuntos);
-            //    cn.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    CajaDialogo.Error(ex.Message);
-            //}
-
             try
             {
                 string query = "sp_load_trz_documentos_ingreso_for_loteV4";
@@ -692,7 +670,6 @@ namespace LOSA.Calidad
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
         }

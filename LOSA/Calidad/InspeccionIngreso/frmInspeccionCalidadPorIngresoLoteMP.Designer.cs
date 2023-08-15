@@ -2841,10 +2841,10 @@ namespace LOSA.Calidad
             this.grid_Header_ingresos.DataSource = this.dsMantenimientoC;
             this.grid_Header_ingresos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_Header_ingresos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.grid_Header_ingresos.Location = new System.Drawing.Point(2, 20);
+            this.grid_Header_ingresos.Location = new System.Drawing.Point(2, 23);
             this.grid_Header_ingresos.MainView = this.gridView7;
             this.grid_Header_ingresos.Name = "grid_Header_ingresos";
-            this.grid_Header_ingresos.Size = new System.Drawing.Size(722, 188);
+            this.grid_Header_ingresos.Size = new System.Drawing.Size(722, 185);
             this.grid_Header_ingresos.TabIndex = 54;
             this.grid_Header_ingresos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7});
@@ -3069,9 +3069,9 @@ namespace LOSA.Calidad
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cmdHome);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmInspeccionCalidadPorIngresoLoteMP";
-            this.ShowIcon = false;
             this.Text = "Información Lote";
             this.Load += new System.EventHandler(this.frmInspeccionCalidadPorIngresoLoteMP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).EndInit();

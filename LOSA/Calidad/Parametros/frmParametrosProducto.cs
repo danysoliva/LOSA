@@ -46,9 +46,9 @@ namespace LOSA.Calidad.Parametros
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(Query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    dsParametros.grupos.Clear();
+                    dsParametros1.grupos.Clear();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dsParametros.grupos);
+                    da.Fill(dsParametros1.grupos);
                     cn.Close();
                 }
                 catch (Exception ex)
@@ -77,9 +77,9 @@ namespace LOSA.Calidad.Parametros
                     SqlCommand cmd = new SqlCommand(Query,cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_pt",id );
-                    dsParametros.parametroProducto.Clear();
+                    dsParametros1.parametroProducto.Clear();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dsParametros.parametroProducto);
+                    da.Fill(dsParametros1.parametroProducto);
                     cn.Close();
                 }
                 catch (Exception ex)
@@ -190,6 +190,11 @@ namespace LOSA.Calidad.Parametros
                     row.id_printed_cef = Convert.ToBoolean(e.Value);
                     row.AcceptChanges();
                 }
+                if (e.Column.FieldName == "ficha_tecnica")
+                {
+                    row.especificaciones = Convert.ToString(e.Value);
+                    row.AcceptChanges();
+                }
                 string query = @"sp_update_producto_parametro";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
@@ -200,6 +205,7 @@ namespace LOSA.Calidad.Parametros
                 cmd.Parameters.AddWithValue("@max", row.maximo);
                 cmd.Parameters.AddWithValue("@id_grupo", row.id_grupo);
                 cmd.Parameters.AddWithValue("@is_printed_cef", row.id_printed_cef ? 1 : 0);
+                cmd.Parameters.AddWithValue("@especificaciones ", row.especificaciones);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
