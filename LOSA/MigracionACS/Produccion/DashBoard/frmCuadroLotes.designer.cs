@@ -52,10 +52,14 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
             this.colcantidad_sacos_prd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltm = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
+            this.colid_linea = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLinea = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHoras = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDashBoard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -173,7 +177,11 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
             this.colorder_code,
             this.colcantidad_sacos_prd,
             this.colpresentacion,
-            this.coltm});
+            this.coltm,
+            this.colid_linea,
+            this.colLinea,
+            this.colHoras,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -285,6 +293,39 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
             this.coltm.Visible = true;
             this.coltm.VisibleIndex = 11;
             // 
+            // colid_linea
+            // 
+            this.colid_linea.FieldName = "id_linea";
+            this.colid_linea.Name = "colid_linea";
+            // 
+            // colLinea
+            // 
+            this.colLinea.FieldName = "Linea";
+            this.colLinea.Name = "colLinea";
+            this.colLinea.OptionsColumn.ReadOnly = true;
+            this.colLinea.Visible = true;
+            this.colLinea.VisibleIndex = 12;
+            // 
+            // colHoras
+            // 
+            this.colHoras.DisplayFormat.FormatString = "n2";
+            this.colHoras.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colHoras.FieldName = "Horas";
+            this.colHoras.Name = "colHoras";
+            this.colHoras.OptionsColumn.ReadOnly = true;
+            this.colHoras.Visible = true;
+            this.colHoras.VisibleIndex = 13;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.DisplayFormat.FormatString = "n2";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn1.FieldName = "TM/h";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 14;
+            // 
             // frmCuadroLotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,5 +375,9 @@ namespace LOSA.MigracionACS.Produccion.Produccion.DashBoard
         private DevExpress.XtraGrid.Columns.GridColumn colcantidad_sacos_prd;
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
         private DevExpress.XtraGrid.Columns.GridColumn coltm;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_linea;
+        private DevExpress.XtraGrid.Columns.GridColumn colLinea;
+        private DevExpress.XtraGrid.Columns.GridColumn colHoras;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

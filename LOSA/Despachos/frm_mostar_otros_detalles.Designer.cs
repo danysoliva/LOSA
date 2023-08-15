@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mostar_otros_detalles));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnatras = new DevExpress.XtraEditors.SimpleButton();
             this.lblOrdenDespachoNo = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -181,9 +181,11 @@
             // 
             this.grdv_data.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.grdv_data.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 7.875F);
+            this.grdv_data.Appearance.EvenRow.Options.UseFont = true;
             this.grdv_data.Appearance.FilterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FilterPanel.Options.UseFont = true;
-            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FocusedRow.Options.UseFont = true;
             this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
@@ -191,15 +193,17 @@
             this.grdv_data.Appearance.GroupPanel.Options.UseFont = true;
             this.grdv_data.Appearance.GroupRow.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.grdv_data.Appearance.GroupRow.Options.UseFont = true;
-            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 7.875F);
             this.grdv_data.Appearance.HeaderPanel.Options.UseFont = true;
-            this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.OddRow.Options.UseFont = true;
+            this.grdv_data.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 7.875F);
             this.grdv_data.Appearance.Preview.Options.UseFont = true;
             this.grdv_data.Appearance.Row.BackColor = System.Drawing.Color.LightYellow;
-            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_data.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 7.875F);
             this.grdv_data.Appearance.Row.Options.UseBackColor = true;
             this.grdv_data.Appearance.Row.Options.UseFont = true;
-            this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_data.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_data.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
@@ -271,7 +275,7 @@
             this.colItemCode.OptionsColumn.AllowEdit = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 0;
-            this.colItemCode.Width = 119;
+            this.colItemCode.Width = 106;
             // 
             // colDscription
             // 
@@ -282,7 +286,7 @@
             this.colDscription.OptionsColumn.AllowEdit = false;
             this.colDscription.Visible = true;
             this.colDscription.VisibleIndex = 1;
-            this.colDscription.Width = 219;
+            this.colDscription.Width = 192;
             // 
             // colQuantityTm
             // 
@@ -302,7 +306,7 @@
             this.colQuantityKg.OptionsColumn.AllowEdit = false;
             this.colQuantityKg.Visible = true;
             this.colQuantityKg.VisibleIndex = 2;
-            this.colQuantityKg.Width = 150;
+            this.colQuantityKg.Width = 130;
             // 
             // colU_Sacos
             // 
@@ -315,7 +319,7 @@
             this.colU_Sacos.OptionsColumn.AllowEdit = false;
             this.colU_Sacos.Visible = true;
             this.colU_Sacos.VisibleIndex = 3;
-            this.colU_Sacos.Width = 81;
+            this.colU_Sacos.Width = 83;
             // 
             // colU_Peso
             // 
@@ -328,7 +332,7 @@
             this.colU_Peso.OptionsColumn.AllowEdit = false;
             this.colU_Peso.Visible = true;
             this.colU_Peso.VisibleIndex = 4;
-            this.colU_Peso.Width = 96;
+            this.colU_Peso.Width = 100;
             // 
             // coldate_plafinificada
             // 
@@ -370,7 +374,7 @@
             this.colEnviado.Name = "colEnviado";
             this.colEnviado.Visible = true;
             this.colEnviado.VisibleIndex = 5;
-            this.colEnviado.Width = 114;
+            this.colEnviado.Width = 120;
             // 
             // colrestante
             // 
@@ -383,7 +387,7 @@
             this.colrestante.OptionsColumn.AllowEdit = false;
             this.colrestante.Visible = true;
             this.colrestante.VisibleIndex = 6;
-            this.colrestante.Width = 108;
+            this.colrestante.Width = 112;
             // 
             // colutilizar
             // 
@@ -393,14 +397,14 @@
             this.colutilizar.Name = "colutilizar";
             this.colutilizar.Visible = true;
             this.colutilizar.VisibleIndex = 7;
-            this.colutilizar.Width = 59;
+            this.colutilizar.Width = 73;
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions3.Image = global::LOSA.Properties.Resources.tap24px;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
@@ -547,9 +551,9 @@
             // btn_ver
             // 
             this.btn_ver.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btn_ver.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_ver.Name = "btn_ver";
             this.btn_ver.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -786,6 +790,7 @@
             // 
             // cmdAplicarA_OrdenVenta
             // 
+            this.cmdAplicarA_OrdenVenta.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.cmdAplicarA_OrdenVenta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAplicarA_OrdenVenta.ImageOptions.Image")));
             this.cmdAplicarA_OrdenVenta.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.cmdAplicarA_OrdenVenta.Location = new System.Drawing.Point(865, 717);
@@ -793,6 +798,7 @@
             this.cmdAplicarA_OrdenVenta.Size = new System.Drawing.Size(90, 80);
             this.cmdAplicarA_OrdenVenta.TabIndex = 57;
             this.cmdAplicarA_OrdenVenta.ToolTip = "Aplicar para el despacho en la tabla derecha";
+            this.cmdAplicarA_OrdenVenta.Click += new System.EventHandler(this.cmdAplicarA_OrdenVenta_Click);
             // 
             // frm_mostar_otros_detalles
             // 

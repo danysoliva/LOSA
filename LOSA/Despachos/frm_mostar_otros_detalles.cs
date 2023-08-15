@@ -25,7 +25,7 @@ namespace LOSA.Despachos
         {
             InitializeComponent();
             ParId = DocEntry;
-            lblOrdenDespachoNo.Text = "Productos para la orden #: " + pIdDespacho.ToString();
+            lblOrdenDespachoNo.Text = "Productos para la orden #: " + DocEntry.ToString();
             load_data_orden_de_ventas(DocEntry);
             exe_sp_get_plan();
             GetProductosOrdenCompraCliente(DocEntry);
@@ -99,14 +99,15 @@ namespace LOSA.Despachos
 
         public void GetProductosOrdenCompraCliente(int pDocEntry)
         {
-            string query = @"EXECUTE [dbo].[sp_cargar_detalle_orden_de_venta_v2] 
-                               @DocEntry = @DocEntryy";
+            string query = @"[dbo].[sp_cargar_detalle_orden_de_venta_v3]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.Parameters.Add("@DocEntryy", SqlDbType.Int).Value = pDocEntry;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@DocEntry", SqlDbType.Int).Value = pDocEntry;
+                cmd.Parameters.Add("@DocEntryBase", SqlDbType.Int).Value = ParId;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 ds_despachos.detalle_productos_oc_cliente.Clear();
                 da.Fill(ds_despachos.detalle_productos_oc_cliente);
@@ -174,6 +175,11 @@ namespace LOSA.Despachos
             //var gridView = (GridView)gridControl1.FocusedView;
             //var row = (ds_despachos.detalle_productos_oc_clienteRow)gridView.GetFocusedDataRow();
             //GetProductosOrdenCompraCliente(row.id);
+        }
+
+        private void cmdAplicarA_OrdenVenta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
