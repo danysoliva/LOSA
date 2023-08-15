@@ -21,12 +21,14 @@ namespace LOSA.Despachos
         private int ParId;
         public int LineNUm;
         public int DocEntry;
-        public frm_mostar_otros_detalles(int DocEntry)
+        public frm_mostar_otros_detalles(int DocEntry, int pIdDespacho)
         {
             InitializeComponent();
             ParId = DocEntry;
+            lblOrdenDespachoNo.Text = "Productos para la orden #: " + DocEntry.ToString();
             load_data_orden_de_ventas(DocEntry);
             exe_sp_get_plan();
+            GetProductosOrdenCompraCliente(DocEntry);
         }
 
         //public void load_data_orden_de_ventas()
@@ -95,6 +97,29 @@ namespace LOSA.Despachos
             }
         }
 
+        public void GetProductosOrdenCompraCliente(int pDocEntry)
+        {
+            string query = @"[dbo].[sp_cargar_detalle_orden_de_venta_v3]";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@DocEntry", SqlDbType.Int).Value = pDocEntry;
+                cmd.Parameters.Add("@DocEntryBase", SqlDbType.Int).Value = ParId;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                ds_despachos.detalle_productos_oc_cliente.Clear();
+                da.Fill(ds_despachos.detalle_productos_oc_cliente);
+                cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         private void btnatras_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -136,6 +161,25 @@ namespace LOSA.Despachos
 
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void gridView1_RowClick(object sender, RowClickEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (ds_despachos.orden_ventaRow)gridView.GetFocusedDataRow();
+            GetProductosOrdenCompraCliente(row.DocEntry) ;
+        }
+
+        private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            //var gridView = (GridView)gridControl1.FocusedView;
+            //var row = (ds_despachos.detalle_productos_oc_clienteRow)gridView.GetFocusedDataRow();
+            //GetProductosOrdenCompraCliente(row.id);
+        }
+
+        private void cmdAplicarA_OrdenVenta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

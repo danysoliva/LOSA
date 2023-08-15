@@ -263,10 +263,11 @@
             this.col_ene.DisplayFormat.FormatString = "n4";
             this.col_ene.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_ene.FieldName = "ene";
+            this.col_ene.MinWidth = 40;
             this.col_ene.Name = "col_ene";
             this.col_ene.Visible = true;
             this.col_ene.VisibleIndex = 3;
-            this.col_ene.Width = 69;
+            this.col_ene.Width = 138;
             // 
             // btEneroCompras
             // 
@@ -286,10 +287,11 @@
             this.col_feb.DisplayFormat.FormatString = "n4";
             this.col_feb.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_feb.FieldName = "feb";
+            this.col_feb.MinWidth = 40;
             this.col_feb.Name = "col_feb";
             this.col_feb.Visible = true;
             this.col_feb.VisibleIndex = 4;
-            this.col_feb.Width = 69;
+            this.col_feb.Width = 138;
             // 
             // btnFebCompras
             // 
@@ -309,10 +311,11 @@
             this.col_mar.DisplayFormat.FormatString = "n4";
             this.col_mar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_mar.FieldName = "mar";
+            this.col_mar.MinWidth = 40;
             this.col_mar.Name = "col_mar";
             this.col_mar.Visible = true;
             this.col_mar.VisibleIndex = 5;
-            this.col_mar.Width = 69;
+            this.col_mar.Width = 138;
             // 
             // btnMarzoCompras
             // 
@@ -332,10 +335,11 @@
             this.col_abr.DisplayFormat.FormatString = "n4";
             this.col_abr.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_abr.FieldName = "abr";
+            this.col_abr.MinWidth = 40;
             this.col_abr.Name = "col_abr";
             this.col_abr.Visible = true;
             this.col_abr.VisibleIndex = 6;
-            this.col_abr.Width = 69;
+            this.col_abr.Width = 138;
             // 
             // btnAbrilCompras
             // 
@@ -355,10 +359,11 @@
             this.col_may.DisplayFormat.FormatString = "n4";
             this.col_may.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_may.FieldName = "may";
+            this.col_may.MinWidth = 40;
             this.col_may.Name = "col_may";
             this.col_may.Visible = true;
             this.col_may.VisibleIndex = 7;
-            this.col_may.Width = 69;
+            this.col_may.Width = 138;
             // 
             // btnMayoCompras
             // 
@@ -378,10 +383,11 @@
             this.col_jun.DisplayFormat.FormatString = "n4";
             this.col_jun.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_jun.FieldName = "jun";
+            this.col_jun.MinWidth = 40;
             this.col_jun.Name = "col_jun";
             this.col_jun.Visible = true;
             this.col_jun.VisibleIndex = 8;
-            this.col_jun.Width = 69;
+            this.col_jun.Width = 138;
             // 
             // btJunioCompras
             // 
@@ -401,10 +407,11 @@
             this.col_jul.DisplayFormat.FormatString = "n4";
             this.col_jul.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_jul.FieldName = "jul";
+            this.col_jul.MinWidth = 40;
             this.col_jul.Name = "col_jul";
             this.col_jul.Visible = true;
             this.col_jul.VisibleIndex = 9;
-            this.col_jul.Width = 69;
+            this.col_jul.Width = 138;
             // 
             // btnJulCompras
             // 
@@ -424,10 +431,11 @@
             this.col_ago.DisplayFormat.FormatString = "n4";
             this.col_ago.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_ago.FieldName = "ago";
+            this.col_ago.MinWidth = 40;
             this.col_ago.Name = "col_ago";
             this.col_ago.Visible = true;
             this.col_ago.VisibleIndex = 10;
-            this.col_ago.Width = 69;
+            this.col_ago.Width = 138;
             // 
             // btAgoCompras
             // 
@@ -447,10 +455,11 @@
             this.col_sep.DisplayFormat.FormatString = "n4";
             this.col_sep.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_sep.FieldName = "sep";
+            this.col_sep.MinWidth = 40;
             this.col_sep.Name = "col_sep";
             this.col_sep.Visible = true;
             this.col_sep.VisibleIndex = 11;
-            this.col_sep.Width = 69;
+            this.col_sep.Width = 138;
             // 
             // btnSeptCompras
             // 
@@ -470,10 +479,11 @@
             this.col_oct.DisplayFormat.FormatString = "n4";
             this.col_oct.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_oct.FieldName = "oct";
+            this.col_oct.MinWidth = 40;
             this.col_oct.Name = "col_oct";
             this.col_oct.Visible = true;
             this.col_oct.VisibleIndex = 12;
-            this.col_oct.Width = 69;
+            this.col_oct.Width = 138;
             // 
             // btnOctubreCompras
             // 
@@ -493,10 +503,11 @@
             this.col_nov.DisplayFormat.FormatString = "n4";
             this.col_nov.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_nov.FieldName = "nov";
+            this.col_nov.MinWidth = 40;
             this.col_nov.Name = "col_nov";
             this.col_nov.Visible = true;
             this.col_nov.VisibleIndex = 13;
-            this.col_nov.Width = 69;
+            this.col_nov.Width = 138;
             // 
             // btnComprasNov
             // 
@@ -516,10 +527,11 @@
             this.col_dic.DisplayFormat.FormatString = "n4";
             this.col_dic.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_dic.FieldName = "dic";
+            this.col_dic.MinWidth = 40;
             this.col_dic.Name = "col_dic";
             this.col_dic.Visible = true;
             this.col_dic.VisibleIndex = 14;
-            this.col_dic.Width = 69;
+            this.col_dic.Width = 138;
             // 
             // btnViewDetailsDiciembre
             // 
@@ -541,8 +553,9 @@
             this.grp_Options.Controls.Add(this.pet_logo);
             this.grp_Options.Dock = System.Windows.Forms.DockStyle.Top;
             this.grp_Options.Location = new System.Drawing.Point(0, 0);
+            this.grp_Options.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grp_Options.Name = "grp_Options";
-            this.grp_Options.Size = new System.Drawing.Size(1242, 100);
+            this.grp_Options.Size = new System.Drawing.Size(2484, 192);
             this.grp_Options.TabIndex = 2;
             this.grp_Options.Text = "Material Requirements Planning";
             // 
@@ -553,9 +566,10 @@
             this.grp_Opciones.Controls.Add(this.groupControl1);
             this.grp_Opciones.Controls.Add(this.grp_MRP);
             this.grp_Opciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grp_Opciones.Location = new System.Drawing.Point(78, 25);
+            this.grp_Opciones.Location = new System.Drawing.Point(155, 45);
+            this.grp_Opciones.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grp_Opciones.Name = "grp_Opciones";
-            this.grp_Opciones.Size = new System.Drawing.Size(1087, 73);
+            this.grp_Opciones.Size = new System.Drawing.Size(2176, 144);
             this.grp_Opciones.TabIndex = 2;
             this.grp_Opciones.Text = "Opciones";
             // 
@@ -563,9 +577,10 @@
             // 
             this.grp_GridOptions.Controls.Add(this.rgrp_Grid);
             this.grp_GridOptions.Dock = System.Windows.Forms.DockStyle.Left;
-            this.grp_GridOptions.Location = new System.Drawing.Point(754, 20);
+            this.grp_GridOptions.Location = new System.Drawing.Point(1507, 45);
+            this.grp_GridOptions.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grp_GridOptions.Name = "grp_GridOptions";
-            this.grp_GridOptions.Size = new System.Drawing.Size(190, 51);
+            this.grp_GridOptions.Size = new System.Drawing.Size(380, 96);
             this.grp_GridOptions.TabIndex = 8;
             this.grp_GridOptions.Text = "Grupos";
             // 
@@ -573,14 +588,15 @@
             // 
             this.rgrp_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rgrp_Grid.Enabled = false;
-            this.rgrp_Grid.Location = new System.Drawing.Point(2, 20);
+            this.rgrp_Grid.Location = new System.Drawing.Point(3, 45);
+            this.rgrp_Grid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rgrp_Grid.MenuManager = this.barManager1;
             this.rgrp_Grid.Name = "rgrp_Grid";
             this.rgrp_Grid.Properties.Columns = 2;
             this.rgrp_Grid.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Expandir Todo"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Colapsar Todo")});
-            this.rgrp_Grid.Size = new System.Drawing.Size(186, 29);
+            this.rgrp_Grid.Size = new System.Drawing.Size(374, 48);
             this.rgrp_Grid.TabIndex = 5;
             this.rgrp_Grid.SelectedIndexChanged += new System.EventHandler(this.rgrp_Grid_SelectedIndexChanged);
             // 
@@ -842,10 +858,11 @@
             // 
             this.standaloneBarDockControl1.CausesValidation = false;
             this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 100);
+            this.standaloneBarDockControl1.Location = new System.Drawing.Point(0, 192);
             this.standaloneBarDockControl1.Manager = this.barManager1;
+            this.standaloneBarDockControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
-            this.standaloneBarDockControl1.Size = new System.Drawing.Size(1242, 47);
+            this.standaloneBarDockControl1.Size = new System.Drawing.Size(2484, 90);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
             // 
             // barDockControlTop
@@ -854,15 +871,17 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1242, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.barDockControlTop.Size = new System.Drawing.Size(2484, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 396);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 762);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1242, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.barDockControlBottom.Size = new System.Drawing.Size(2484, 0);
             // 
             // barDockControlLeft
             // 
@@ -870,15 +889,17 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 396);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 762);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1242, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(2484, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 396);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 762);
             // 
             // barSubItem1
             // 
@@ -890,9 +911,10 @@
             // 
             this.groupControl2.Controls.Add(this.cmb_meses);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl2.Location = new System.Drawing.Point(569, 20);
+            this.groupControl2.Location = new System.Drawing.Point(1137, 45);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(185, 51);
+            this.groupControl2.Size = new System.Drawing.Size(370, 96);
             this.groupControl2.TabIndex = 7;
             this.groupControl2.Text = "Calcular Inventario Inicial desde";
             // 
@@ -901,7 +923,8 @@
             this.cmb_meses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmb_meses.EditValue = "Enero";
             this.cmb_meses.Enabled = false;
-            this.cmb_meses.Location = new System.Drawing.Point(2, 20);
+            this.cmb_meses.Location = new System.Drawing.Point(3, 45);
+            this.cmb_meses.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmb_meses.MenuManager = this.barManager1;
             this.cmb_meses.Name = "cmb_meses";
             this.cmb_meses.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -922,7 +945,7 @@
             "Noviembre",
             "Diciembre"});
             this.cmb_meses.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmb_meses.Size = new System.Drawing.Size(181, 24);
+            this.cmb_meses.Size = new System.Drawing.Size(364, 50);
             this.cmb_meses.TabIndex = 2;
             this.cmb_meses.SelectedIndexChanged += new System.EventHandler(this.cmb_meses_SelectedIndexChanged);
             // 
@@ -930,9 +953,10 @@
             // 
             this.groupControl1.Controls.Add(this.rgrp_Todo);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(334, 20);
+            this.groupControl1.Location = new System.Drawing.Point(667, 45);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(235, 51);
+            this.groupControl1.Size = new System.Drawing.Size(470, 96);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Mostrar Consumos";
             // 
@@ -940,14 +964,15 @@
             // 
             this.rgrp_Todo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rgrp_Todo.Enabled = false;
-            this.rgrp_Todo.Location = new System.Drawing.Point(2, 20);
+            this.rgrp_Todo.Location = new System.Drawing.Point(3, 45);
+            this.rgrp_Todo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rgrp_Todo.MenuManager = this.barManager1;
             this.rgrp_Todo.Name = "rgrp_Todo";
             this.rgrp_Todo.Properties.Columns = 2;
             this.rgrp_Todo.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Todo"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Según Fecha Actual")});
-            this.rgrp_Todo.Size = new System.Drawing.Size(231, 29);
+            this.rgrp_Todo.Size = new System.Drawing.Size(464, 48);
             this.rgrp_Todo.TabIndex = 5;
             this.rgrp_Todo.SelectedIndexChanged += new System.EventHandler(this.rgrp_Todo_SelectedIndexChanged);
             // 
@@ -955,16 +980,18 @@
             // 
             this.grp_MRP.Controls.Add(this.cmb_MRPs);
             this.grp_MRP.Dock = System.Windows.Forms.DockStyle.Left;
-            this.grp_MRP.Location = new System.Drawing.Point(2, 20);
+            this.grp_MRP.Location = new System.Drawing.Point(3, 45);
+            this.grp_MRP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grp_MRP.Name = "grp_MRP";
-            this.grp_MRP.Size = new System.Drawing.Size(332, 51);
+            this.grp_MRP.Size = new System.Drawing.Size(664, 96);
             this.grp_MRP.TabIndex = 0;
             this.grp_MRP.Text = "Seleccionar MRP";
             // 
             // cmb_MRPs
             // 
             this.cmb_MRPs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmb_MRPs.Location = new System.Drawing.Point(2, 20);
+            this.cmb_MRPs.Location = new System.Drawing.Point(3, 45);
+            this.cmb_MRPs.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmb_MRPs.MenuManager = this.barManager1;
             this.cmb_MRPs.Name = "cmb_MRPs";
             this.cmb_MRPs.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -972,13 +999,13 @@
             this.cmb_MRPs.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb_MRPs.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Id", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "MRP", 30, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("usuario", "Creada Por", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Id", 40, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "MRP", 60, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("usuario", "Creada Por")});
             this.cmb_MRPs.Properties.DisplayMember = "nombre";
-            this.cmb_MRPs.Properties.PopupFormMinSize = new System.Drawing.Size(500, 200);
+            this.cmb_MRPs.Properties.PopupFormMinSize = new System.Drawing.Size(1000, 385);
             this.cmb_MRPs.Properties.ValueMember = "id";
-            this.cmb_MRPs.Size = new System.Drawing.Size(328, 24);
+            this.cmb_MRPs.Size = new System.Drawing.Size(658, 50);
             this.cmb_MRPs.TabIndex = 1;
             this.cmb_MRPs.EditValueChanged += new System.EventHandler(this.cmb_MRPs_EditValueChanged);
             // 
@@ -987,13 +1014,14 @@
             this.pet_logoaqf.Cursor = System.Windows.Forms.Cursors.Default;
             this.pet_logoaqf.Dock = System.Windows.Forms.DockStyle.Right;
             this.pet_logoaqf.EditValue = global::LOSA.Properties.Resources.logoAguaFeed;
-            this.pet_logoaqf.Location = new System.Drawing.Point(1165, 25);
+            this.pet_logoaqf.Location = new System.Drawing.Point(2331, 45);
+            this.pet_logoaqf.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pet_logoaqf.Name = "pet_logoaqf";
             this.pet_logoaqf.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pet_logoaqf.Properties.Appearance.Options.UseBackColor = true;
             this.pet_logoaqf.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pet_logoaqf.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pet_logoaqf.Size = new System.Drawing.Size(75, 73);
+            this.pet_logoaqf.Size = new System.Drawing.Size(150, 144);
             this.pet_logoaqf.TabIndex = 1;
             // 
             // pet_logo
@@ -1001,20 +1029,23 @@
             this.pet_logo.Cursor = System.Windows.Forms.Cursors.Default;
             this.pet_logo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pet_logo.EditValue = global::LOSA.Properties.Resources.MRP_222x222;
-            this.pet_logo.Location = new System.Drawing.Point(2, 25);
+            this.pet_logo.Location = new System.Drawing.Point(3, 45);
+            this.pet_logo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pet_logo.Name = "pet_logo";
             this.pet_logo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pet_logo.Properties.Appearance.Options.UseBackColor = true;
             this.pet_logo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pet_logo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pet_logo.Size = new System.Drawing.Size(76, 73);
+            this.pet_logo.Size = new System.Drawing.Size(152, 144);
             this.pet_logo.TabIndex = 0;
             // 
             // grd_mrp
             // 
             this.grd_mrp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_mrp.Location = new System.Drawing.Point(0, 147);
+            this.grd_mrp.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_mrp.Location = new System.Drawing.Point(0, 282);
             this.grd_mrp.MainView = this.grdv_mrp;
+            this.grd_mrp.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_mrp.MenuManager = this.barManager1;
             this.grd_mrp.Name = "grd_mrp";
             this.grd_mrp.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1030,7 +1061,7 @@
             this.btnMarzoCompras,
             this.btnFebCompras,
             this.btEneroCompras});
-            this.grd_mrp.Size = new System.Drawing.Size(1242, 249);
+            this.grd_mrp.Size = new System.Drawing.Size(2484, 480);
             this.grd_mrp.TabIndex = 8;
             this.grd_mrp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_mrp});
@@ -1069,6 +1100,7 @@
             this.col_dic,
             this.col_total,
             this.col_itemocde});
+            this.grdv_mrp.DetailHeight = 673;
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.DarkRed;
             styleFormatCondition1.Appearance.BackColor2 = System.Drawing.Color.Firebrick;
             styleFormatCondition1.Appearance.BorderColor = System.Drawing.Color.Red;
@@ -1654,6 +1686,7 @@
             this.grdv_mrp.Name = "grdv_mrp";
             this.grdv_mrp.OptionsBehavior.AutoExpandAllGroups = true;
             this.grdv_mrp.OptionsCustomization.AllowSort = false;
+            this.grdv_mrp.OptionsEditForm.PopupEditFormWidth = 1600;
             this.grdv_mrp.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Office2003;
             this.grdv_mrp.OptionsView.ShowGroupPanel = false;
             this.grdv_mrp.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -1667,61 +1700,72 @@
             // 
             this.col_cod_oddo.Caption = "Cod Oddo";
             this.col_cod_oddo.FieldName = "cod_oddo";
+            this.col_cod_oddo.MinWidth = 40;
             this.col_cod_oddo.Name = "col_cod_oddo";
             this.col_cod_oddo.OptionsColumn.AllowEdit = false;
             this.col_cod_oddo.Visible = true;
             this.col_cod_oddo.VisibleIndex = 0;
+            this.col_cod_oddo.Width = 150;
             // 
             // col_id
             // 
             this.col_id.Caption = "id";
             this.col_id.FieldName = "id";
+            this.col_id.MinWidth = 40;
             this.col_id.Name = "col_id";
+            this.col_id.Width = 150;
             // 
             // col_id_mp
             // 
             this.col_id_mp.Caption = "ID Materia Prima";
             this.col_id_mp.FieldName = "id_mp";
+            this.col_id_mp.MinWidth = 40;
             this.col_id_mp.Name = "col_id_mp";
+            this.col_id_mp.Width = 150;
             // 
             // col_material
             // 
             this.col_material.Caption = "Materia Prima";
             this.col_material.FieldName = "material";
+            this.col_material.MinWidth = 40;
             this.col_material.Name = "col_material";
             this.col_material.OptionsColumn.AllowEdit = false;
             this.col_material.OptionsColumn.AllowFocus = false;
             this.col_material.Visible = true;
             this.col_material.VisibleIndex = 0;
-            this.col_material.Width = 65;
+            this.col_material.Width = 130;
             // 
             // col_tipo
             // 
             this.col_tipo.Caption = "Tipo";
             this.col_tipo.FieldName = "tipo";
+            this.col_tipo.MinWidth = 40;
             this.col_tipo.Name = "col_tipo";
             this.col_tipo.OptionsColumn.AllowEdit = false;
             this.col_tipo.OptionsColumn.AllowFocus = false;
             this.col_tipo.Visible = true;
             this.col_tipo.VisibleIndex = 3;
-            this.col_tipo.Width = 52;
+            this.col_tipo.Width = 104;
             // 
             // col_kind
             // 
             this.col_kind.Caption = "Kind";
             this.col_kind.FieldName = "kind";
+            this.col_kind.MinWidth = 40;
             this.col_kind.Name = "col_kind";
+            this.col_kind.Width = 150;
             // 
             // col_kindN
             // 
             this.col_kindN.Caption = "Descripción";
             this.col_kindN.FieldName = "kindN";
+            this.col_kindN.MinWidth = 40;
             this.col_kindN.Name = "col_kindN";
             this.col_kindN.OptionsColumn.AllowEdit = false;
             this.col_kindN.OptionsColumn.AllowFocus = false;
             this.col_kindN.Visible = true;
             this.col_kindN.VisibleIndex = 2;
-            this.col_kindN.Width = 156;
+            this.col_kindN.Width = 312;
             // 
             // col_total
             // 
@@ -1731,30 +1775,34 @@
             this.col_total.DisplayFormat.FormatString = "n4";
             this.col_total.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.col_total.FieldName = "total";
+            this.col_total.MinWidth = 40;
             this.col_total.Name = "col_total";
             this.col_total.OptionsColumn.AllowEdit = false;
             this.col_total.OptionsColumn.AllowFocus = false;
             this.col_total.Visible = true;
             this.col_total.VisibleIndex = 15;
-            this.col_total.Width = 163;
+            this.col_total.Width = 326;
             // 
             // col_itemocde
             // 
             this.col_itemocde.Caption = "Itemocde";
             this.col_itemocde.FieldName = "itemocde";
+            this.col_itemocde.MinWidth = 40;
             this.col_itemocde.Name = "col_itemocde";
             this.col_itemocde.OptionsColumn.AllowEdit = false;
             this.col_itemocde.Visible = true;
             this.col_itemocde.VisibleIndex = 1;
-            this.col_itemocde.Width = 77;
+            this.col_itemocde.Width = 154;
             // 
             // grd_toExcel
             // 
-            this.grd_toExcel.Location = new System.Drawing.Point(62, 260);
+            this.grd_toExcel.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grd_toExcel.Location = new System.Drawing.Point(124, 500);
             this.grd_toExcel.MainView = this.grdv_toExcel;
+            this.grd_toExcel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_toExcel.MenuManager = this.barManager1;
             this.grd_toExcel.Name = "grd_toExcel";
-            this.grd_toExcel.Size = new System.Drawing.Size(180, 91);
+            this.grd_toExcel.Size = new System.Drawing.Size(360, 175);
             this.grd_toExcel.TabIndex = 14;
             this.grd_toExcel.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_toExcel});
@@ -1762,14 +1810,16 @@
             // 
             // grdv_toExcel
             // 
+            this.grdv_toExcel.DetailHeight = 673;
             this.grdv_toExcel.GridControl = this.grd_toExcel;
             this.grdv_toExcel.Name = "grdv_toExcel";
+            this.grdv_toExcel.OptionsEditForm.PopupEditFormWidth = 1600;
             // 
             // FCT_MRP_Complete
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1242, 396);
+            this.ClientSize = new System.Drawing.Size(2484, 762);
             this.Controls.Add(this.grd_toExcel);
             this.Controls.Add(this.grd_mrp);
             this.Controls.Add(this.standaloneBarDockControl1);
@@ -1778,7 +1828,8 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FCT_MRP_Complete.IconOptions.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FCT_MRP_Complete";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MRP New";
