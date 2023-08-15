@@ -46,9 +46,9 @@
             this.colMateriaPrima = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colconductor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.basculaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.colconductor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basculaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP)).BeginInit();
@@ -228,6 +228,16 @@
             this.colfecha.VisibleIndex = 6;
             this.colfecha.Width = 84;
             // 
+            // colconductor
+            // 
+            this.colconductor.Caption = "Conductor";
+            this.colconductor.FieldName = "conductor";
+            this.colconductor.Name = "colconductor";
+            this.colconductor.OptionsColumn.AllowEdit = false;
+            this.colconductor.Visible = true;
+            this.colconductor.VisibleIndex = 2;
+            this.colconductor.Width = 92;
+            // 
             // basculaBindingSource
             // 
             this.basculaBindingSource.DataMember = "Bascula";
@@ -247,16 +257,6 @@
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
-            // 
-            // colconductor
-            // 
-            this.colconductor.Caption = "Conductor";
-            this.colconductor.FieldName = "conductor";
-            this.colconductor.Name = "colconductor";
-            this.colconductor.OptionsColumn.AllowEdit = false;
-            this.colconductor.Visible = true;
-            this.colconductor.VisibleIndex = 2;
-            this.colconductor.Width = 92;
             // 
             // FrmBoleta
             // 
