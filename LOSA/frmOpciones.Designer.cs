@@ -245,7 +245,7 @@
             this.TabFormulacion = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton73 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton72 = new DevExpress.XtraEditors.SimpleButton();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.TabTickets = new DevExpress.XtraTab.XtraTabPage();
             this.navBarControl2 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
@@ -253,7 +253,6 @@
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem20 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup6 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem25 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem26 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem27 = new DevExpress.XtraNavBar.NavBarItem();
@@ -267,7 +266,6 @@
             this.navBarItem35 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem36 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem37 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup7 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem38 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem39 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem40 = new DevExpress.XtraNavBar.NavBarItem();
@@ -276,7 +274,6 @@
             this.navBarItem43 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem44 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup8 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem46 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem47 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem48 = new DevExpress.XtraNavBar.NavBarItem();
@@ -310,7 +307,7 @@
             this.TabContabilidad.SuspendLayout();
             this.TabBascula.SuspendLayout();
             this.TabFormulacion.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
+            this.TabTickets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
             this.SuspendLayout();
@@ -355,7 +352,7 @@
             this.TabContabilidad,
             this.TabBascula,
             this.TabFormulacion,
-            this.xtraTabPage1});
+            this.TabTickets});
             // 
             // TabMontacarga
             // 
@@ -3530,13 +3527,14 @@
             this.simpleButton72.Text = "Fórmulas Aprobadas por Finanzas";
             this.simpleButton72.Click += new System.EventHandler(this.simpleButton72_Click);
             // 
-            // xtraTabPage1
+            // TabTickets
             // 
-            this.xtraTabPage1.Controls.Add(this.navBarControl2);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.PageVisible = false;
-            this.xtraTabPage1.Size = new System.Drawing.Size(835, 480);
-            this.xtraTabPage1.Text = "Tickets";
+            this.TabTickets.Controls.Add(this.navBarControl2);
+            this.TabTickets.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabTickets.ImageOptions.Image")));
+            this.TabTickets.Name = "TabTickets";
+            this.TabTickets.PageVisible = false;
+            this.TabTickets.Size = new System.Drawing.Size(835, 480);
+            this.TabTickets.Text = "Tickets";
             // 
             // navBarControl2
             // 
@@ -3547,10 +3545,7 @@
             this.navBarControl2.Appearance.ButtonPressed.Options.UseFont = true;
             this.navBarControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl2.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
-            this.navBarGroup5,
-            this.navBarGroup6,
-            this.navBarGroup7,
-            this.navBarGroup8});
+            this.navBarGroup5});
             this.navBarControl2.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem11,
             this.navBarItem13,
@@ -3675,29 +3670,6 @@
             this.navBarItem20.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem20.ImageOptions.SvgImage")));
             this.navBarItem20.Name = "navBarItem20";
             this.navBarItem20.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem20_LinkClicked);
-            // 
-            // navBarGroup6
-            // 
-            this.navBarGroup6.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup6.Appearance.Options.UseFont = true;
-            this.navBarGroup6.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup6.AppearancePressed.Options.UseFont = true;
-            this.navBarGroup6.Caption = "Gestión de Producción";
-            this.navBarGroup6.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem25),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem26),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem27),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem28),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem29),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem30),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem31),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem32),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem33),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem34),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem35),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem36),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem37)});
-            this.navBarGroup6.Name = "navBarGroup6";
             // 
             // navBarItem25
             // 
@@ -3856,26 +3828,6 @@
             this.navBarItem37.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_32x32;
             this.navBarItem37.Name = "navBarItem37";
             // 
-            // navBarGroup7
-            // 
-            this.navBarGroup7.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup7.Appearance.Options.UseFont = true;
-            this.navBarGroup7.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup7.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarGroup7.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup7.AppearancePressed.Options.UseFont = true;
-            this.navBarGroup7.Caption = "Generales";
-            this.navBarGroup7.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem38),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem39),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem40),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem41),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem42),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem43),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem44),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem45)});
-            this.navBarGroup7.Name = "navBarGroup7";
-            // 
             // navBarItem38
             // 
             this.navBarItem38.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
@@ -3974,27 +3926,6 @@
             this.navBarItem45.Caption = "MP por BIN";
             this.navBarItem45.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem45.ImageOptions.SvgImage")));
             this.navBarItem45.Name = "navBarItem45";
-            // 
-            // navBarGroup8
-            // 
-            this.navBarGroup8.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup8.Appearance.Options.UseFont = true;
-            this.navBarGroup8.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup8.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarGroup8.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.navBarGroup8.AppearancePressed.Options.UseFont = true;
-            this.navBarGroup8.Caption = "Inventario";
-            this.navBarGroup8.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem46),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem47),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem48),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem49),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem50),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem51),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem52),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem53),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem54)});
-            this.navBarGroup8.Name = "navBarGroup8";
             // 
             // navBarItem46
             // 
@@ -4162,7 +4093,7 @@
             this.TabContabilidad.ResumeLayout(false);
             this.TabBascula.ResumeLayout(false);
             this.TabFormulacion.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
+            this.TabTickets.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
             this.ResumeLayout(false);
@@ -4386,7 +4317,7 @@
         private DevExpress.XtraEditors.SimpleButton cmdGestionLotesGranel;
         private DevExpress.XtraEditors.SimpleButton btn_print_mp_remanente;
         private DevExpress.XtraEditors.SimpleButton cmdPrintVouchersPlanillas;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage TabTickets;
         private DevExpress.XtraNavBar.NavBarControl navBarControl2;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem11;
@@ -4394,7 +4325,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
         private DevExpress.XtraNavBar.NavBarItem navBarItem15;
         private DevExpress.XtraNavBar.NavBarItem navBarItem20;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup6;
         private DevExpress.XtraNavBar.NavBarItem navBarItem25;
         private DevExpress.XtraNavBar.NavBarItem navBarItem26;
         private DevExpress.XtraNavBar.NavBarItem navBarItem27;
@@ -4408,7 +4338,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem35;
         private DevExpress.XtraNavBar.NavBarItem navBarItem36;
         private DevExpress.XtraNavBar.NavBarItem navBarItem37;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup7;
         private DevExpress.XtraNavBar.NavBarItem navBarItem38;
         private DevExpress.XtraNavBar.NavBarItem navBarItem39;
         private DevExpress.XtraNavBar.NavBarItem navBarItem40;
@@ -4417,7 +4346,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem43;
         private DevExpress.XtraNavBar.NavBarItem navBarItem44;
         private DevExpress.XtraNavBar.NavBarItem navBarItem45;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup8;
         private DevExpress.XtraNavBar.NavBarItem navBarItem46;
         private DevExpress.XtraNavBar.NavBarItem navBarItem47;
         private DevExpress.XtraNavBar.NavBarItem navBarItem48;
