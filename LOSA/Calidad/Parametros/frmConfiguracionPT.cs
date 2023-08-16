@@ -75,5 +75,10 @@ namespace LOSA.Calidad.Parametros
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void repostDoc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
+        }
     }
 }

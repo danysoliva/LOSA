@@ -13,13 +13,15 @@ namespace LOSA.Calidad
     {
         public int NumberLote;
         DataOperations dp = new DataOperations();
-
-        public rpt_certificado_calidad(int PLote)
+        UserLogin UsuarioLogueado;
+        public rpt_certificado_calidad(int PLote, UserLogin pUserLog)
         {
             InitializeComponent();
+            UsuarioLogueado = pUserLog;
             NumberLote = PLote;
             GetLoteInfo();
             GetLoteParametros();
+            xrUsuario.Text = UsuarioLogueado.NombreUser;
         }
         public void GetLoteInfo()
         {

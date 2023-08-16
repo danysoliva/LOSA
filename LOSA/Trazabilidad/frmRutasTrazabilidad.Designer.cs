@@ -103,6 +103,11 @@ namespace LOSA.Trazabilidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject54 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject55 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject56 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions15 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject57 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject58 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject59 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject60 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions16 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject61 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -114,11 +119,6 @@ namespace LOSA.Trazabilidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject66 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject67 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject68 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions15 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject57 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject58 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject59 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject60 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridView22 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colContado1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposCantidadDosificadaLoteLink = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -305,6 +305,7 @@ namespace LOSA.Trazabilidad
             this.grd_adjuntos = new DevExpress.XtraGrid.GridControl();
             this.grdv_adjuntos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAdjunto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnAbrirAdjunto = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colpath = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbit_subido = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpath_load = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -312,7 +313,6 @@ namespace LOSA.Trazabilidad
             this.colAdjuntar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAdjuntarDocumento = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colabrir = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnAbrirAdjunto = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid_conf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfile_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Desadjuntar = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -863,6 +863,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn127 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn128 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn129 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repostOpenDOc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn130 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn131 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn132 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -1094,7 +1095,6 @@ namespace LOSA.Trazabilidad
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.repostOpenDOc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposLinkLoteMP)).BeginInit();
@@ -1165,8 +1165,8 @@ namespace LOSA.Trazabilidad
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_adjuntos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_adjuntos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdjuntarDocumento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbrirAdjunto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdjuntarDocumento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDesligar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_parametros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_parametros)).BeginInit();
@@ -1387,6 +1387,7 @@ namespace LOSA.Trazabilidad
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDocumentosAdjuntos_Ruta4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDocumentosAdjuntos_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repostOpenDOc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
@@ -1481,7 +1482,6 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.detalledestinosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repostOpenDOc)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView22
@@ -3619,6 +3619,14 @@ namespace LOSA.Trazabilidad
             this.colAdjunto.VisibleIndex = 0;
             this.colAdjunto.Width = 250;
             // 
+            // btnAbrirAdjunto
+            // 
+            this.btnAbrirAdjunto.AutoHeight = false;
+            this.btnAbrirAdjunto.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
+            this.btnAbrirAdjunto.Name = "btnAbrirAdjunto";
+            this.btnAbrirAdjunto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
             // colpath
             // 
             this.colpath.FieldName = "path";
@@ -3670,14 +3678,6 @@ namespace LOSA.Trazabilidad
             this.colabrir.Visible = true;
             this.colabrir.VisibleIndex = 1;
             this.colabrir.Width = 127;
-            // 
-            // btnAbrirAdjunto
-            // 
-            this.btnAbrirAdjunto.AutoHeight = false;
-            this.btnAbrirAdjunto.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
-            this.btnAbrirAdjunto.Name = "btnAbrirAdjunto";
-            this.btnAbrirAdjunto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
             // colid_conf
             // 
@@ -10124,6 +10124,16 @@ namespace LOSA.Trazabilidad
             this.gridColumn129.VisibleIndex = 2;
             this.gridColumn129.Width = 78;
             // 
+            // repostOpenDOc
+            // 
+            this.repostOpenDOc.AutoHeight = false;
+            editorButtonImageOptions15.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions15.Image")));
+            this.repostOpenDOc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions15, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject57, serializableAppearanceObject58, serializableAppearanceObject59, serializableAppearanceObject60, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repostOpenDOc.Name = "repostOpenDOc";
+            this.repostOpenDOc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repostOpenDOc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repostOpenDOc_ButtonClick);
+            // 
             // gridColumn130
             // 
             this.gridColumn130.FieldName = "id_conf";
@@ -12664,16 +12674,6 @@ namespace LOSA.Trazabilidad
             this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
             // 
-            // repostOpenDOc
-            // 
-            this.repostOpenDOc.AutoHeight = false;
-            editorButtonImageOptions15.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions15.Image")));
-            this.repostOpenDOc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions15, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject57, serializableAppearanceObject58, serializableAppearanceObject59, serializableAppearanceObject60, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repostOpenDOc.Name = "repostOpenDOc";
-            this.repostOpenDOc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repostOpenDOc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repostOpenDOc_ButtonClick);
-            // 
             // frmRutasTrazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -12757,8 +12757,8 @@ namespace LOSA.Trazabilidad
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_adjuntos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_adjuntos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdjuntarDocumento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbrirAdjunto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdjuntarDocumento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDesligar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_parametros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_parametros)).EndInit();
@@ -12987,6 +12987,7 @@ namespace LOSA.Trazabilidad
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcDocumentosAdjuntos_Ruta4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDocumentosAdjuntos_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repostOpenDOc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).EndInit();
@@ -13084,7 +13085,6 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.detalledestinosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repostOpenDOc)).EndInit();
             this.ResumeLayout(false);
 
         }

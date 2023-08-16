@@ -795,7 +795,7 @@ namespace LOSA.Trazabilidad
                 CajaDialogo.Error("Debe tener seleccionado un lote de PT para imprimir el certificado de calidad.");
                 return;
             }
-            rpt_certificado_calidad report = new rpt_certificado_calidad(LoteActual.LotePT_Num);
+            rpt_certificado_calidad report = new rpt_certificado_calidad(LoteActual.LotePT_Num, UsuarioLogeado);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             ReportPrintTool printReport = new ReportPrintTool(report);
             printReport.ShowPreview();

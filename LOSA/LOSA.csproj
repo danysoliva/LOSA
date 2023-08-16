@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,8 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>575</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <ApplicationRevision>576</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -615,6 +615,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTrazabilidadReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\dsTRZ_Reports.cs">
+      <DependentUpon>dsTRZ_Reports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\dsTRZ_Reports.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -981,6 +984,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsParametros.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmAdjuntos_PT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\frmAdjuntos_PT.Designer.cs">
+      <DependentUpon>frmAdjuntos_PT.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Parametros\frmConfiguracionPT.cs">
       <SubType>Form</SubType>
@@ -6554,6 +6563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\LoteConfConsumo\frmSearchMP.resx">
       <DependentUpon>frmSearchMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\frmAdjuntos_PT.resx">
+      <DependentUpon>frmAdjuntos_PT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Parametros\frmConfiguracionPT.resx">
       <DependentUpon>frmConfiguracionPT.cs</DependentUpon>
