@@ -811,17 +811,17 @@ namespace LOSA.Trazabilidad
 
         private void btnLinkMateriaPrima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            //rmMateriaPrimaViewer(string SAPCODE_MP, string SAP_CARD_CODE)
-            var gridView = (GridView)grd_data.FocusedView;
-            var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
-            //frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.lote_mp, 0);
-            //if (this.MdiParent != null)
-            //    frm.MdiParent = this.MdiParent;
-            //frm.WindowState = FormWindowState.Maximized;
-            //frm.Show();
-            cargarDatosTarimas(row.code_sap);
-            cargarMateriaPrima(row.code_sap);
-            navigationFrame1.SelectedPage = npRuta3MP;
+            ////rmMateriaPrimaViewer(string SAPCODE_MP, string SAP_CARD_CODE)
+            //var gridView = (GridView)grd_data.FocusedView;
+            //var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
+            ////frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.lote_mp, 0);
+            ////if (this.MdiParent != null)
+            ////    frm.MdiParent = this.MdiParent;
+            ////frm.WindowState = FormWindowState.Maximized;
+            ////frm.Show();
+            //cargarDatosTarimas(row.code_sap);
+            //cargarMateriaPrima(row.code_sap);
+            //navigationFrame1.SelectedPage = npRuta3MP;
         }
 
 
@@ -1244,48 +1244,48 @@ namespace LOSA.Trazabilidad
 
         private void btnTrazabilidadLoteMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridView = (GridView)grd_data.FocusedView;
-            var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
+            //var gridView = (GridView)grd_data.FocusedView;
+            //var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
 
-            if (string.IsNullOrEmpty(row.lote_mp))
-            {
-                return;
-            }
+            //if (string.IsNullOrEmpty(row.lote_mp))
+            //{
+            //    return;
+            //}
 
-            navigationFrame1.SelectedPage = npInfoLote;
-            Id_ingreso = 0;
-            //UsuarioLogeado = Puser;
-            //tabControl1.TabPages[4]
-            load_dataRuta2(row.lote_mp);
-            load_data_ingresoRuta2(row.lote_mp);
-            Load_cargas_niRuta2(row.lote_mp);
-            Inicializar_data_logisticaRuta2(row.lote_mp);
-            load_zonasRuta2();
-            load_especieRuta2();
-            load_tipo();
-            load_paisesRuta2();
-            LoadLotesPT_Ruta2();
-            LoadInventarioKardexRuta2();
-            //Load_Despachos();
-            if (ChCalidad)
-            {
-                load_criterios_configuradosRuta2(row.lote_mp);
-                Inicalizar_Archivo_configuradosRuta2(row.lote_mp);
-                get_imagenRuta2(row.lote_mp);
-                load_empaque_estado_MpRuta2(row.lote_mp);
-                load_trasporte_estado_transporteRuta2(row.lote_mp);
-                load_criterios_adicionalesRuta2(row.lote_mp);
+            //navigationFrame1.SelectedPage = npInfoLote;
+            //Id_ingreso = 0;
+            ////UsuarioLogeado = Puser;
+            ////tabControl1.TabPages[4]
+            //load_dataRuta2(row.lote_mp);
+            //load_data_ingresoRuta2(row.lote_mp);
+            //Load_cargas_niRuta2(row.lote_mp);
+            //Inicializar_data_logisticaRuta2(row.lote_mp);
+            //load_zonasRuta2();
+            //load_especieRuta2();
+            //load_tipo();
+            //load_paisesRuta2();
+            //LoadLotesPT_Ruta2();
+            //LoadInventarioKardexRuta2();
+            ////Load_Despachos();
+            //if (ChCalidad)
+            //{
+            //    load_criterios_configuradosRuta2(row.lote_mp);
+            //    Inicalizar_Archivo_configuradosRuta2(row.lote_mp);
+            //    get_imagenRuta2(row.lote_mp);
+            //    load_empaque_estado_MpRuta2(row.lote_mp);
+            //    load_trasporte_estado_transporteRuta2(row.lote_mp);
+            //    load_criterios_adicionalesRuta2(row.lote_mp);
 
-                if (full_pathImagen != "")
-                {
-                    pc_Mp.Image = ByteToImageRuta2(GetImgByteRuta2(full_pathImagen));
-                }
-            }
-            else
-            {
-                inicializar_criteriosRuta2();
-                Inicalizar_ArchivoRuta2();
-            }
+            //    if (full_pathImagen != "")
+            //    {
+            //        pc_Mp.Image = ByteToImageRuta2(GetImgByteRuta2(full_pathImagen));
+            //    }
+            //}
+            //else
+            //{
+            //    inicializar_criteriosRuta2();
+            //    Inicalizar_ArchivoRuta2();
+            //}
 
 
             //frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp, row.nombre_comercial);
