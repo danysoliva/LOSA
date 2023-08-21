@@ -10,12 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ACS.Classes;
+using LOSA.Clases;
+using System.Data.SqlClient;
 
 namespace LOSA.Calidad.Parametros
 {
     public partial class frmAdjuntos_PT : DevExpress.XtraEditors.XtraForm
     {
-        public frmAdjuntos_PT()
+        DataOperations dp = new DataOperations();
+        UserLogin UsuarioLogueado;
+        int id_pt;
+        int lote_pt;
+        public frmAdjuntos_PT(UserLogin pUserLog)
         {
             InitializeComponent();
         }
@@ -39,7 +45,7 @@ namespace LOSA.Calidad.Parametros
                 DataOperations dp = new DataOperations();
                 string Path_ = row.id_conf + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + row.file_name;
                 FTP_Class fpt1 = new FTP_Class();
-                if (fpt1.GuardarArchivo(UsuarioLogeado, Path_, row.path))
+                if (fpt1.GuardarArchivo(UsuarioLogueado, Path_, row.path))
                 {
                     SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                     conn.Open();
@@ -47,11 +53,9 @@ namespace LOSA.Calidad.Parametros
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@path", Path_);
                     cmd.Parameters.AddWithValue("@file_name", row.file_name);
-                    cmd.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
+                    cmd.Parameters.AddWithValue("@id_user", UsuarioLogueado.Id);
                     cmd.Parameters.AddWithValue("@id_config", row.id_conf);
-                    cmd.Parameters.AddWithValue("@bit_pic", 0);
-                    cmd.Parameters.AddWithValue("@id_mp", IdMP);
-                    cmd.Parameters.AddWithValue("@lote_mp", Lote);
+
                     cmd.ExecuteNonQuery();
                     conn.Close();
                 }
@@ -63,6 +67,29 @@ namespace LOSA.Calidad.Parametros
                 //row.bit_subido = true;
             }
 
+        }
+
+        private void Inicalizar_Archivo_configurados()
+        {
+            try
+            {
+                string query = "sp_load_trz_documentos_ingreso_for_loteV4";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
+                cmd.Parameters.AddWithValue("@id_pt", id_pt);
+                //cmd.Parameters.AddWithValue("@lote", Lote);
+                dsTRZ_Reports1.adjuntos_pt.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsTRZ_Reports1.adjuntos_pt);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }
