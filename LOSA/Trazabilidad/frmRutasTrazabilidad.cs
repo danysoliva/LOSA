@@ -24,6 +24,7 @@ using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Base;
 using LOSA.MigracionACS.Produccion.Produccion.DashBoard;
 using System.Diagnostics;
+using LOSA.Produccion;
 
 namespace LOSA.Trazabilidad
 {
@@ -2802,38 +2803,7 @@ namespace LOSA.Trazabilidad
 
             private void cmdLink_PT_Ruta4_from_ruta1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
             {
-                acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
-                acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
-
-                acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-                acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-                acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-                acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-                acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-                acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-                this.rutaActiva = 4;
-                var gridView = (GridView)gridControl12.FocusedView;
-                var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
-                //dsReportesTRZ.pt_list_trzCamaron
-
-                if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
-                {
-                    txtlote.Text = row.Lote_PT.ToString();
-                    //dsCalidad.trazabilitad.Clear();
-                    load_header();
-                    load_data();//Detalle de materias primas usadas en lote de PT
-                    Load_Despachos();
-                    LoadDatosDetalleDespacho();
-                    timerRuta4.Enabled = true;
-                    timerRuta4.Start();
-                }
-                btnBack.Visible = true;
-
-                navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
-                txtlote.Focus();
+                
             }
 
             private void cmdLinkPT_From_ruta3_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -4143,6 +4113,84 @@ namespace LOSA.Trazabilidad
 
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void cmdLink_PT_Ruta4_from_ruta1_Tilapia_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+            acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            this.rutaActiva = 4;
+            var gridView = (GridView)gridControl12.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+            //dsReportesTRZ.pt_list_trzCamaron
+
+            if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
+            {
+                txtlote.Text = row.Lote_PT.ToString();
+                //dsCalidad.trazabilitad.Clear();
+                load_header();
+                load_data();//Detalle de materias primas usadas en lote de PT
+                Load_Despachos();
+                LoadDatosDetalleDespacho();
+                timerRuta4.Enabled = true;
+                timerRuta4.Start();
+            }
+            btnBack.Visible = true;
+
+            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+            txtlote.Focus();
+        }
+
+        private void repostMP_Bodega_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            frm_MateriaPrimaEnBodegaPRd frm = new frm_MateriaPrimaEnBodegaPRd(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void repost_lote_pt_hacia_ruta_4_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+            acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            this.rutaActiva = 4;
+            var gridView = (GridView)gcLotePT_Ruta4.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+            //dsReportesTRZ.pt_list_trzCamaron
+
+            if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
+            {
+                txtlote.Text = row.Lote_PT.ToString();
+                //dsCalidad.trazabilitad.Clear();
+                load_header();
+                load_data();//Detalle de materias primas usadas en lote de PT
+                Load_Despachos();
+                LoadDatosDetalleDespacho();
+                timerRuta4.Enabled = true;
+                timerRuta4.Start();
+            }
+            btnBack.Visible = true;
+
+            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+            txtlote.Focus();
         }
     }
 }
