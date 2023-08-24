@@ -4072,6 +4072,7 @@
             this.btn_.TabIndex = 54;
             this.btn_.Text = "Exoneracion Fiscal";
             this.btn_.Visible = false;
+            this.btn_.Click += new System.EventHandler(this.btn__Click);
             // 
             // frmOpciones
             // 
