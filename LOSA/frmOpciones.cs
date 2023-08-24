@@ -2659,6 +2659,9 @@ namespace LOSA
             switch (idNivel)
             {
                 case 1://Basic View
+                    FCT_MRP_Complete frm2 = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm2.MdiParent = this.MdiParent;
+                    frm2.Show();
                     break;
                 case 2://Basic No Autorization
                     FCT_MRP_Complete frm2 = new FCT_MRP_Complete(this.UsuarioLogeado);
