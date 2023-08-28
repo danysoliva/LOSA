@@ -34,8 +34,8 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnactualizar = new DevExpress.XtraBars.BarButtonItem();
             this.btngenerar = new DevExpress.XtraBars.BarButtonItem();
-            this.btnclose = new DevExpress.XtraBars.BarButtonItem();
             this.btnexcel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnclose = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -49,7 +49,7 @@
             this.dtini = new DevExpress.XtraEditors.DateEdit();
             this.pn_top = new DevExpress.XtraEditors.PanelControl();
             this.grd_bascula = new DevExpress.XtraGrid.GridControl();
-            this.dSTtracer = new MigracionACS.Ttracer.dSTtracer();
+            this.dSTtracer = new LOSA.MigracionACS.Ttracer.dSTtracer();
             this.grdv_bascula = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colcomentarios = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colconductorin = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -79,10 +79,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnmain)).BeginInit();
             this.pnmain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtfin.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfin.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtini.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtfin.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtini.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtini.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pn_top)).BeginInit();
             this.pn_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_bascula)).BeginInit();
@@ -144,16 +144,6 @@
             this.btngenerar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btngenerar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btngenerar_ItemClick);
             // 
-            // btnclose
-            // 
-            this.btnclose.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.btnclose.Caption = "Cerrar";
-            this.btnclose.Id = 2;
-            this.btnclose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.ImageOptions.Image")));
-            this.btnclose.Name = "btnclose";
-            this.btnclose.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btnclose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnclose_ItemClick);
-            // 
             // btnexcel
             // 
             this.btnexcel.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
@@ -163,6 +153,16 @@
             this.btnexcel.Name = "btnexcel";
             this.btnexcel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnexcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnexcel_ItemClick);
+            // 
+            // btnclose
+            // 
+            this.btnclose.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.btnclose.Caption = "Cerrar";
+            this.btnclose.Id = 2;
+            this.btnclose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.ImageOptions.Image")));
+            this.btnclose.Name = "btnclose";
+            this.btnclose.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnclose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnclose_ItemClick);
             // 
             // bar3
             // 
@@ -189,10 +189,10 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 628);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 631);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1264, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1264, 20);
             // 
             // barDockControlLeft
             // 
@@ -201,7 +201,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 588);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 591);
             // 
             // barDockControlRight
             // 
@@ -210,7 +210,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1264, 40);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 588);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 591);
             // 
             // pnmain
             // 
@@ -298,7 +298,7 @@
             this.pn_top.Location = new System.Drawing.Point(0, 121);
             this.pn_top.Margin = new System.Windows.Forms.Padding(2);
             this.pn_top.Name = "pn_top";
-            this.pn_top.Size = new System.Drawing.Size(1264, 507);
+            this.pn_top.Size = new System.Drawing.Size(1264, 510);
             this.pn_top.TabIndex = 5;
             // 
             // grd_bascula
@@ -312,7 +312,7 @@
             this.grd_bascula.Margin = new System.Windows.Forms.Padding(2);
             this.grd_bascula.MenuManager = this.barManager1;
             this.grd_bascula.Name = "grd_bascula";
-            this.grd_bascula.Size = new System.Drawing.Size(1260, 503);
+            this.grd_bascula.Size = new System.Drawing.Size(1260, 506);
             this.grd_bascula.TabIndex = 0;
             this.grd_bascula.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_bascula});
@@ -356,6 +356,8 @@
             this.grdv_bascula.Name = "grdv_bascula";
             this.grdv_bascula.OptionsBehavior.AutoExpandAllGroups = true;
             this.grdv_bascula.OptionsBehavior.Editable = false;
+            this.grdv_bascula.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_bascula.OptionsView.ShowFooter = true;
             this.grdv_bascula.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTipoBoleta, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
