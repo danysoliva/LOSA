@@ -29,10 +29,17 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado;
         int Id_ingreso;
         decimal factor;
-        public frmagregarlote(int id_ingreso, int numero_referencia, UserLogin user)
+        public frmagregarlote(int id_ingreso, int numero_referencia, UserLogin user, string pitemcode)
         {
             InitializeComponent();
             UsuarioLogeado = user;
+            ItemCode = pitemcode;
+            MateriaPrima mp = new MateriaPrima();
+            mp.RecuperarRegistroFromCode(ItemCode);
+
+            txtCodigoMP.Text = ItemCode;
+            txtMP_Name.Text = mp.NameComercial;
+
             this.Id_ingreso = id_ingreso;
             LoadPresentaciones();
             Load_Data();

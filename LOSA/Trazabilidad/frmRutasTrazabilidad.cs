@@ -24,6 +24,7 @@ using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Base;
 using LOSA.MigracionACS.Produccion.Produccion.DashBoard;
 using System.Diagnostics;
+using LOSA.Produccion;
 
 namespace LOSA.Trazabilidad
 {
@@ -795,7 +796,7 @@ namespace LOSA.Trazabilidad
                 CajaDialogo.Error("Debe tener seleccionado un lote de PT para imprimir el certificado de calidad.");
                 return;
             }
-            rpt_certificado_calidad report = new rpt_certificado_calidad(LoteActual.LotePT_Num);
+            rpt_certificado_calidad report = new rpt_certificado_calidad(LoteActual.LotePT_Num, UsuarioLogeado);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             ReportPrintTool printReport = new ReportPrintTool(report);
             printReport.ShowPreview();
@@ -811,17 +812,17 @@ namespace LOSA.Trazabilidad
 
         private void btnLinkMateriaPrima_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            //rmMateriaPrimaViewer(string SAPCODE_MP, string SAP_CARD_CODE)
-            var gridView = (GridView)grd_data.FocusedView;
-            var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
-            //frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.lote_mp, 0);
-            //if (this.MdiParent != null)
-            //    frm.MdiParent = this.MdiParent;
-            //frm.WindowState = FormWindowState.Maximized;
-            //frm.Show();
-            cargarDatosTarimas(row.code_sap);
-            cargarMateriaPrima(row.code_sap);
-            navigationFrame1.SelectedPage = npRuta3MP;
+            ////rmMateriaPrimaViewer(string SAPCODE_MP, string SAP_CARD_CODE)
+            //var gridView = (GridView)grd_data.FocusedView;
+            //var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
+            ////frmMateriaPrimaViewer frm = new frmMateriaPrimaViewer(row.code_sap, row.lote_mp, 0);
+            ////if (this.MdiParent != null)
+            ////    frm.MdiParent = this.MdiParent;
+            ////frm.WindowState = FormWindowState.Maximized;
+            ////frm.Show();
+            //cargarDatosTarimas(row.code_sap);
+            //cargarMateriaPrima(row.code_sap);
+            //navigationFrame1.SelectedPage = npRuta3MP;
         }
 
 
@@ -1244,48 +1245,48 @@ namespace LOSA.Trazabilidad
 
         private void btnTrazabilidadLoteMP_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var gridView = (GridView)grd_data.FocusedView;
-            var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
+            //var gridView = (GridView)grd_data.FocusedView;
+            //var row = (dsCalidad.trazabilitadRow)gridView.GetFocusedDataRow();
 
-            if (string.IsNullOrEmpty(row.lote_mp))
-            {
-                return;
-            }
+            //if (string.IsNullOrEmpty(row.lote_mp))
+            //{
+            //    return;
+            //}
 
-            navigationFrame1.SelectedPage = npInfoLote;
-            Id_ingreso = 0;
-            //UsuarioLogeado = Puser;
-            //tabControl1.TabPages[4]
-            load_dataRuta2(row.lote_mp);
-            load_data_ingresoRuta2(row.lote_mp);
-            Load_cargas_niRuta2(row.lote_mp);
-            Inicializar_data_logisticaRuta2(row.lote_mp);
-            load_zonasRuta2();
-            load_especieRuta2();
-            load_tipo();
-            load_paisesRuta2();
-            LoadLotesPT_Ruta2();
-            LoadInventarioKardexRuta2();
-            //Load_Despachos();
-            if (ChCalidad)
-            {
-                load_criterios_configuradosRuta2(row.lote_mp);
-                Inicalizar_Archivo_configuradosRuta2(row.lote_mp);
-                get_imagenRuta2(row.lote_mp);
-                load_empaque_estado_MpRuta2(row.lote_mp);
-                load_trasporte_estado_transporteRuta2(row.lote_mp);
-                load_criterios_adicionalesRuta2(row.lote_mp);
+            //navigationFrame1.SelectedPage = npInfoLote;
+            //Id_ingreso = 0;
+            ////UsuarioLogeado = Puser;
+            ////tabControl1.TabPages[4]
+            //load_dataRuta2(row.lote_mp);
+            //load_data_ingresoRuta2(row.lote_mp);
+            //Load_cargas_niRuta2(row.lote_mp);
+            //Inicializar_data_logisticaRuta2(row.lote_mp);
+            //load_zonasRuta2();
+            //load_especieRuta2();
+            //load_tipo();
+            //load_paisesRuta2();
+            //LoadLotesPT_Ruta2();
+            //LoadInventarioKardexRuta2();
+            ////Load_Despachos();
+            //if (ChCalidad)
+            //{
+            //    load_criterios_configuradosRuta2(row.lote_mp);
+            //    Inicalizar_Archivo_configuradosRuta2(row.lote_mp);
+            //    get_imagenRuta2(row.lote_mp);
+            //    load_empaque_estado_MpRuta2(row.lote_mp);
+            //    load_trasporte_estado_transporteRuta2(row.lote_mp);
+            //    load_criterios_adicionalesRuta2(row.lote_mp);
 
-                if (full_pathImagen != "")
-                {
-                    pc_Mp.Image = ByteToImageRuta2(GetImgByteRuta2(full_pathImagen));
-                }
-            }
-            else
-            {
-                inicializar_criteriosRuta2();
-                Inicalizar_ArchivoRuta2();
-            }
+            //    if (full_pathImagen != "")
+            //    {
+            //        pc_Mp.Image = ByteToImageRuta2(GetImgByteRuta2(full_pathImagen));
+            //    }
+            //}
+            //else
+            //{
+            //    inicializar_criteriosRuta2();
+            //    Inicalizar_ArchivoRuta2();
+            //}
 
 
             //frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.lote_mp, row.nombre_comercial);
@@ -2802,38 +2803,7 @@ namespace LOSA.Trazabilidad
 
             private void cmdLink_PT_Ruta4_from_ruta1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
             {
-                acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
-                acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
-
-                acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-                acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-                acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-                acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-                acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
-                acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
-
-                this.rutaActiva = 4;
-                var gridView = (GridView)gridControl12.FocusedView;
-                var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
-                //dsReportesTRZ.pt_list_trzCamaron
-
-                if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
-                {
-                    txtlote.Text = row.Lote_PT.ToString();
-                    //dsCalidad.trazabilitad.Clear();
-                    load_header();
-                    load_data();//Detalle de materias primas usadas en lote de PT
-                    Load_Despachos();
-                    LoadDatosDetalleDespacho();
-                    timerRuta4.Enabled = true;
-                    timerRuta4.Start();
-                }
-                btnBack.Visible = true;
-
-                navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
-                txtlote.Focus();
+                
             }
 
             private void cmdLinkPT_From_ruta3_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -4143,6 +4113,84 @@ namespace LOSA.Trazabilidad
 
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void cmdLink_PT_Ruta4_from_ruta1_Tilapia_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+            acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            this.rutaActiva = 4;
+            var gridView = (GridView)gridControl12.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+            //dsReportesTRZ.pt_list_trzCamaron
+
+            if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
+            {
+                txtlote.Text = row.Lote_PT.ToString();
+                //dsCalidad.trazabilitad.Clear();
+                load_header();
+                load_data();//Detalle de materias primas usadas en lote de PT
+                Load_Despachos();
+                LoadDatosDetalleDespacho();
+                timerRuta4.Enabled = true;
+                timerRuta4.Start();
+            }
+            btnBack.Visible = true;
+
+            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+            txtlote.Focus();
+        }
+
+        private void repostMP_Bodega_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            frm_MateriaPrimaEnBodegaPRd frm = new frm_MateriaPrimaEnBodegaPRd(UsuarioLogeado);
+            frm.Show();
+        }
+
+        private void repost_lote_pt_hacia_ruta_4_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            acordionRuta4.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+            acordionRuta4.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta1.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta1.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            this.rutaActiva = 4;
+            var gridView = (GridView)gcLotePT_Ruta4.FocusedView;
+            var row = (dsReportesTRZ.pt_list_trzRow)gridView.GetFocusedDataRow();
+            //dsReportesTRZ.pt_list_trzCamaron
+
+            if (txtRuta4LotePT_Trazado_.Text != row.Lote_PT.ToString() || string.IsNullOrEmpty(txtRuta4LotePT_Trazado_.Text))
+            {
+                txtlote.Text = row.Lote_PT.ToString();
+                //dsCalidad.trazabilitad.Clear();
+                load_header();
+                load_data();//Detalle de materias primas usadas en lote de PT
+                Load_Despachos();
+                LoadDatosDetalleDespacho();
+                timerRuta4.Enabled = true;
+                timerRuta4.Start();
+            }
+            btnBack.Visible = true;
+
+            navigationFrame1.SelectedPage = navigationFrame1.SelectedPage = npReporteTrazabilidad;
+            txtlote.Focus();
         }
     }
 }

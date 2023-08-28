@@ -31,11 +31,16 @@ namespace LOSA.Calidad.Parametros
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfiguracionPT));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
@@ -47,11 +52,14 @@ namespace LOSA.Calidad.Parametros
             this.colcodigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEditar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnadParametros = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repostDoc = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnadParametros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repostDoc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -60,10 +68,9 @@ namespace LOSA.Calidad.Parametros
             this.btnClose.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1387, 9);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Location = new System.Drawing.Point(1182, 28);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(131, 64);
+            this.btnClose.Size = new System.Drawing.Size(112, 52);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Cerrar";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -72,10 +79,9 @@ namespace LOSA.Calidad.Parametros
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(14, 15);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Location = new System.Drawing.Point(12, 44);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(404, 25);
+            this.labelControl1.Size = new System.Drawing.Size(324, 20);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Configuracion de PT con parametros de calidad";
             // 
@@ -85,14 +91,13 @@ namespace LOSA.Calidad.Parametros
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataSource = this.productoBindingSource;
-            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grd_data.Location = new System.Drawing.Point(0, 122);
+            this.grd_data.Location = new System.Drawing.Point(0, 99);
             this.grd_data.MainView = this.grdv_data;
-            this.grd_data.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnadParametros});
-            this.grd_data.Size = new System.Drawing.Size(1524, 842);
+            this.btnadParametros,
+            this.repostDoc});
+            this.grd_data.Size = new System.Drawing.Size(1306, 684);
             this.grd_data.TabIndex = 2;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -135,79 +140,95 @@ namespace LOSA.Calidad.Parametros
             this.colid,
             this.coldescripcion,
             this.colcodigo,
-            this.colEditar});
-            this.grdv_data.DetailHeight = 431;
+            this.colEditar,
+            this.gridColumn1});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsEditForm.PopupEditFormWidth = 686;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             // 
             // colid
             // 
             this.colid.FieldName = "id";
-            this.colid.MinWidth = 23;
             this.colid.Name = "colid";
-            this.colid.Width = 87;
             // 
             // coldescripcion
             // 
             this.coldescripcion.Caption = "Producto";
             this.coldescripcion.FieldName = "descripcion";
-            this.coldescripcion.MinWidth = 23;
             this.coldescripcion.Name = "coldescripcion";
             this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 1;
-            this.coldescripcion.Width = 922;
+            this.coldescripcion.Width = 772;
             // 
             // colcodigo
             // 
             this.colcodigo.Caption = "Codigo";
             this.colcodigo.FieldName = "codigo";
-            this.colcodigo.MinWidth = 23;
             this.colcodigo.Name = "colcodigo";
             this.colcodigo.OptionsColumn.AllowEdit = false;
             this.colcodigo.Visible = true;
             this.colcodigo.VisibleIndex = 0;
-            this.colcodigo.Width = 180;
+            this.colcodigo.Width = 169;
             // 
             // colEditar
             // 
             this.colEditar.Caption = "Agregar Parametros";
             this.colEditar.ColumnEdit = this.btnadParametros;
-            this.colEditar.MinWidth = 23;
             this.colEditar.Name = "colEditar";
             this.colEditar.Visible = true;
-            this.colEditar.VisibleIndex = 2;
-            this.colEditar.Width = 184;
+            this.colEditar.VisibleIndex = 3;
+            this.colEditar.Width = 182;
             // 
             // btnadParametros
             // 
             this.btnadParametros.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.btnadParametros.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnadParametros.Name = "btnadParametros";
             this.btnadParametros.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnadParametros.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnadParametros_ButtonClick);
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Documentos";
+            this.gridColumn1.ColumnEdit = this.repostDoc;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            this.gridColumn1.Width = 158;
+            // 
+            // repostDoc
+            // 
+            this.repostDoc.AutoHeight = false;
+            editorButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions4.SvgImage")));
+            this.repostDoc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repostDoc.Name = "repostDoc";
+            this.repostDoc.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repostDoc.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repostDoc_ButtonClick);
+            // 
             // frmConfiguracionPT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1524, 960);
+            this.ClientSize = new System.Drawing.Size(1306, 780);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnClose);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.IconOptions.ShowIcon = false;
             this.Name = "frmConfiguracionPT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Configuracion de PT";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnadParametros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repostDoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +247,7 @@ namespace LOSA.Calidad.Parametros
         private DevExpress.XtraGrid.Columns.GridColumn colcodigo;
         private DevExpress.XtraGrid.Columns.GridColumn colEditar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnadParametros;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repostDoc;
     }
 }

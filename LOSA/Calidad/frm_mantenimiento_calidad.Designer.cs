@@ -59,7 +59,7 @@ namespace LOSA.Calidad
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(148, 15);
+            this.labelControl3.Location = new System.Drawing.Point(146, 47);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(484, 39);
             this.labelControl3.TabIndex = 35;
@@ -87,9 +87,9 @@ namespace LOSA.Calidad
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(560, 8);
+            this.cmdHome.Location = new System.Drawing.Point(565, 36);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 54);
+            this.cmdHome.Size = new System.Drawing.Size(174, 50);
             this.cmdHome.TabIndex = 7;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);

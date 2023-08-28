@@ -499,7 +499,7 @@ namespace LOSA.RecepcionMP
             //Debemos validar si es compra puede agregar mas tarimas
             //if () //Es Compra
             //{
-                frmagregarlote frm = new frmagregarlote(Id_ingreso, Numero_transaccion, UsuarioLogeado);
+                frmagregarlote frm = new frmagregarlote(Id_ingreso, Numero_transaccion, UsuarioLogeado, ItemCode);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     LoadTarimas();

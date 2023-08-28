@@ -30,11 +30,11 @@ namespace LOSA.Liquidos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrm_select_camiones));
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.camionesINBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -85,15 +85,13 @@ namespace LOSA.Liquidos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_data.DataSource = this.camionesINBindingSource;
-            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grd_data.Location = new System.Drawing.Point(4, 217);
+            this.grd_data.Location = new System.Drawing.Point(2, 113);
             this.grd_data.MainView = this.grdv_data;
-            this.grd_data.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnSeleccionar,
             this.ceSeleccionar});
-            this.grd_data.Size = new System.Drawing.Size(3102, 602);
+            this.grd_data.Size = new System.Drawing.Size(1325, 789);
             this.grd_data.TabIndex = 1;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -159,249 +157,220 @@ namespace LOSA.Liquidos
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3});
-            this.grdv_data.DetailHeight = 673;
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.grdv_data.LevelIndent = 0;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsEditForm.PopupEditFormWidth = 400;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
+            this.grdv_data.PreviewIndent = 0;
             this.grdv_data.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_data_CellValueChanged);
             this.grdv_data.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_data_CellValueChanging);
             // 
             // colid
             // 
             this.colid.FieldName = "id";
-            this.colid.MinWidth = 40;
             this.colid.Name = "colid";
-            this.colid.Width = 150;
             // 
             // colcomentarios
             // 
             this.colcomentarios.FieldName = "comentarios";
-            this.colcomentarios.MinWidth = 40;
             this.colcomentarios.Name = "colcomentarios";
-            this.colcomentarios.Width = 360;
+            this.colcomentarios.Width = 180;
             // 
             // colempresaTrans
             // 
             this.colempresaTrans.FieldName = "empresaTrans";
-            this.colempresaTrans.MinWidth = 40;
             this.colempresaTrans.Name = "colempresaTrans";
-            this.colempresaTrans.Width = 296;
+            this.colempresaTrans.Width = 148;
             // 
             // colfecha_entrada
             // 
             this.colfecha_entrada.FieldName = "fechaEntra";
-            this.colfecha_entrada.MinWidth = 40;
             this.colfecha_entrada.Name = "colfecha_entrada";
             this.colfecha_entrada.OptionsColumn.AllowEdit = false;
             this.colfecha_entrada.Visible = true;
             this.colfecha_entrada.VisibleIndex = 1;
-            this.colfecha_entrada.Width = 178;
+            this.colfecha_entrada.Width = 105;
             // 
             // colfecha_fin
             // 
             this.colfecha_fin.FieldName = "FechaFin";
-            this.colfecha_fin.MinWidth = 40;
             this.colfecha_fin.Name = "colfecha_fin";
             this.colfecha_fin.OptionsColumn.AllowEdit = false;
-            this.colfecha_fin.Visible = true;
-            this.colfecha_fin.VisibleIndex = 2;
-            this.colfecha_fin.Width = 148;
+            this.colfecha_fin.Width = 82;
             // 
             // colshipid
             // 
             this.colshipid.FieldName = "shipid";
-            this.colshipid.MinWidth = 40;
             this.colshipid.Name = "colshipid";
             this.colshipid.OptionsColumn.AllowEdit = false;
-            this.colshipid.Width = 136;
+            this.colshipid.Width = 68;
             // 
             // colbarco
             // 
             this.colbarco.FieldName = "barco";
-            this.colbarco.MinWidth = 40;
             this.colbarco.Name = "colbarco";
-            this.colbarco.Width = 124;
+            this.colbarco.Width = 62;
             // 
             // colNBoleta
             // 
             this.colNBoleta.FieldName = "NBoleta";
-            this.colNBoleta.MinWidth = 40;
             this.colNBoleta.Name = "colNBoleta";
             this.colNBoleta.OptionsColumn.AllowEdit = false;
             this.colNBoleta.Visible = true;
             this.colNBoleta.VisibleIndex = 0;
-            this.colNBoleta.Width = 146;
+            this.colNBoleta.Width = 73;
             // 
             // colnumero_factura
             // 
             this.colnumero_factura.FieldName = "numero_factura";
-            this.colnumero_factura.MinWidth = 40;
             this.colnumero_factura.Name = "colnumero_factura";
-            this.colnumero_factura.Width = 248;
+            this.colnumero_factura.Width = 124;
             // 
             // coloperador
             // 
             this.coloperador.Caption = "Operador";
             this.coloperador.FieldName = "operador";
-            this.coloperador.MinWidth = 40;
             this.coloperador.Name = "coloperador";
             this.coloperador.OptionsColumn.AllowEdit = false;
             this.coloperador.Visible = true;
             this.coloperador.VisibleIndex = 4;
-            this.coloperador.Width = 174;
+            this.coloperador.Width = 87;
             // 
             // colpesoBruto
             // 
             this.colpesoBruto.FieldName = "PesoBruto";
-            this.colpesoBruto.MinWidth = 40;
             this.colpesoBruto.Name = "colpesoBruto";
             this.colpesoBruto.OptionsColumn.AllowEdit = false;
             this.colpesoBruto.Visible = true;
             this.colpesoBruto.VisibleIndex = 5;
-            this.colpesoBruto.Width = 210;
+            this.colpesoBruto.Width = 105;
             // 
             // colpesonetoIn
             // 
             this.colpesonetoIn.FieldName = "PesonetoIn";
-            this.colpesonetoIn.MinWidth = 40;
             this.colpesonetoIn.Name = "colpesonetoIn";
             this.colpesonetoIn.OptionsColumn.AllowEdit = false;
             this.colpesonetoIn.Visible = true;
             this.colpesonetoIn.VisibleIndex = 6;
-            this.colpesonetoIn.Width = 196;
+            this.colpesonetoIn.Width = 98;
             // 
             // colpresoProd
             // 
             this.colpresoProd.FieldName = "PesoProd";
-            this.colpresoProd.MinWidth = 40;
             this.colpresoProd.Name = "colpresoProd";
             this.colpresoProd.OptionsColumn.AllowEdit = false;
             this.colpresoProd.Visible = true;
             this.colpresoProd.VisibleIndex = 7;
-            this.colpresoProd.Width = 200;
+            this.colpresoProd.Width = 100;
             // 
             // colpesoSalida
             // 
             this.colpesoSalida.Caption = "Peso Salida";
             this.colpesoSalida.FieldName = "pesoSalida";
-            this.colpesoSalida.MinWidth = 40;
             this.colpesoSalida.Name = "colpesoSalida";
             this.colpesoSalida.OptionsColumn.AllowEdit = false;
             this.colpesoSalida.Visible = true;
             this.colpesoSalida.VisibleIndex = 8;
-            this.colpesoSalida.Width = 176;
+            this.colpesoSalida.Width = 88;
             // 
             // colpeso_factura
             // 
             this.colpeso_factura.FieldName = "peso_factura";
-            this.colpeso_factura.MinWidth = 40;
             this.colpeso_factura.Name = "colpeso_factura";
-            this.colpeso_factura.Width = 204;
+            this.colpeso_factura.Width = 102;
             // 
             // colconductorin
             // 
             this.colconductorin.FieldName = "conductorin";
-            this.colconductorin.MinWidth = 40;
             this.colconductorin.Name = "colconductorin";
             this.colconductorin.OptionsColumn.AllowEdit = false;
             this.colconductorin.Visible = true;
             this.colconductorin.VisibleIndex = 9;
-            this.colconductorin.Width = 204;
+            this.colconductorin.Width = 102;
             // 
             // colvehiculo
             // 
             this.colvehiculo.FieldName = "vehiculo";
-            this.colvehiculo.MinWidth = 40;
             this.colvehiculo.Name = "colvehiculo";
             this.colvehiculo.OptionsColumn.AllowEdit = false;
             this.colvehiculo.Visible = true;
             this.colvehiculo.VisibleIndex = 10;
-            this.colvehiculo.Width = 134;
+            this.colvehiculo.Width = 67;
             // 
             // colfurgon
             // 
             this.colfurgon.Caption = "Furgón";
             this.colfurgon.FieldName = "furgon";
-            this.colfurgon.MinWidth = 40;
             this.colfurgon.Name = "colfurgon";
             this.colfurgon.OptionsColumn.AllowEdit = false;
             this.colfurgon.Visible = true;
             this.colfurgon.VisibleIndex = 11;
-            this.colfurgon.Width = 154;
+            this.colfurgon.Width = 77;
             // 
             // colTipoBoleta
             // 
             this.colTipoBoleta.FieldName = "TipoBoleta";
-            this.colTipoBoleta.MinWidth = 40;
             this.colTipoBoleta.Name = "colTipoBoleta";
-            this.colTipoBoleta.Width = 122;
+            this.colTipoBoleta.Width = 61;
             // 
             // colid_tipo_boleta
             // 
             this.colid_tipo_boleta.FieldName = "id_tipo_boleta";
-            this.colid_tipo_boleta.MinWidth = 40;
             this.colid_tipo_boleta.Name = "colid_tipo_boleta";
-            this.colid_tipo_boleta.Width = 102;
+            this.colid_tipo_boleta.Width = 51;
             // 
             // colSNegocio
             // 
             this.colSNegocio.FieldName = "SNegocio";
-            this.colSNegocio.MinWidth = 40;
             this.colSNegocio.Name = "colSNegocio";
             this.colSNegocio.OptionsColumn.AllowEdit = false;
             this.colSNegocio.Visible = true;
             this.colSNegocio.VisibleIndex = 12;
-            this.colSNegocio.Width = 220;
+            this.colSNegocio.Width = 110;
             // 
             // colProducto
             // 
             this.colProducto.FieldName = "Producto";
-            this.colProducto.MinWidth = 40;
             this.colProducto.Name = "colProducto";
             this.colProducto.OptionsColumn.AllowEdit = false;
             this.colProducto.Visible = true;
             this.colProducto.VisibleIndex = 3;
-            this.colProducto.Width = 222;
+            this.colProducto.Width = 111;
             // 
             // colitemcode
             // 
             this.colitemcode.FieldName = "itemcode";
-            this.colitemcode.MinWidth = 40;
             this.colitemcode.Name = "colitemcode";
-            this.colitemcode.Width = 182;
+            this.colitemcode.Width = 91;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Selecc.";
             this.gridColumn1.FieldName = "seleccionar";
-            this.gridColumn1.MinWidth = 40;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 13;
-            this.gridColumn1.Width = 146;
+            this.gridColumn1.Width = 73;
             // 
             // gridColumn2
             // 
             this.gridColumn2.FieldName = "cardcode";
-            this.gridColumn2.MinWidth = 40;
             this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Width = 150;
             // 
             // gridColumn3
             // 
             this.gridColumn3.FieldName = "cardname";
-            this.gridColumn3.MinWidth = 40;
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Width = 150;
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions2.Image = global::LOSA.Properties.Resources.tap;
             this.btnSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -420,10 +389,9 @@ namespace LOSA.Liquidos
             this.cmdConfirm.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdConfirm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdConfirm.ImageOptions.Image")));
             this.cmdConfirm.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdConfirm.Location = new System.Drawing.Point(2480, 83);
-            this.cmdConfirm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmdConfirm.Location = new System.Drawing.Point(12, 43);
             this.cmdConfirm.Name = "cmdConfirm";
-            this.cmdConfirm.Size = new System.Drawing.Size(270, 108);
+            this.cmdConfirm.Size = new System.Drawing.Size(135, 56);
             this.cmdConfirm.TabIndex = 97;
             this.cmdConfirm.Text = "Confirmar";
             this.cmdConfirm.Click += new System.EventHandler(this.cmdConfirm_Click);
@@ -438,10 +406,9 @@ namespace LOSA.Liquidos
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(2792, 83);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(1181, 51);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(270, 108);
+            this.simpleButton1.Size = new System.Drawing.Size(135, 56);
             this.simpleButton1.TabIndex = 98;
             this.simpleButton1.Text = "Cancelar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -455,24 +422,22 @@ namespace LOSA.Liquidos
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(4, 83);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl1.Location = new System.Drawing.Point(2, 43);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(3102, 48);
+            this.labelControl1.Size = new System.Drawing.Size(1325, 25);
             this.labelControl1.TabIndex = 99;
             this.labelControl1.Text = "Boletas Líquidos";
             // 
             // xfrm_select_camiones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3108, 819);
+            this.ClientSize = new System.Drawing.Size(1328, 902);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.cmdConfirm);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.labelControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MinimizeBox = false;
             this.Name = "xfrm_select_camiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccionar Camiones";

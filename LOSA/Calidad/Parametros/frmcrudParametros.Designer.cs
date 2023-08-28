@@ -238,6 +238,7 @@ namespace LOSA.Calidad.Parametros
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.grd_data);
+            this.IconOptions.ShowIcon = false;
             this.Name = "frmcrudParametros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parametros";

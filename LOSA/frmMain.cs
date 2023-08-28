@@ -121,10 +121,47 @@ namespace LOSA
                 Thread.Sleep(TiempoP);
                 frmProceso.Close();
 
+                
+
                 //Teclado.cerrarTeclado();
                 UserLogin Log1 = new UserLogin();
                 if (Log1.RecuperarRegistroFromUser(user))
                 {
+                    string HostName = Dns.GetHostName();
+                    string DBActive = Globals.LOSA_ActiveDB;
+                    string IPAddress = "0.0.0.0";
+                    var host = Dns.GetHostEntry(HostName);
+                    foreach (var ip in host.AddressList)
+                    {
+                        if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                        {
+                            IPAddress = ip.ToString();
+                        }
+
+                    }
+
+                    try
+                    {
+                        //Guardar Log de Inicio de Sesion
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_insert_login_user_alosy", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_user", Log1.Id);
+                        cmd.Parameters.AddWithValue("@pc_conexion", HostName);
+                        cmd.Parameters.AddWithValue("@ip_conexion", IPAddress);
+                        cmd.Parameters.AddWithValue("@database_conexion", DBActive);
+                        cmd.Parameters.AddWithValue("@id_grupo", Log1.IdGrupo);
+                        cmd.Parameters.AddWithValue("@version", AssemblyVersion);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+
+
+
                     Log1.Pass = txtClave.Text;
                     Log1.GrupoUsuario.GrupoUsuarioActivo = (GrupoUser.GrupoUsuario)Log1.IdGrupo;
                     frmOpciones frm = new frmOpciones(Log1);

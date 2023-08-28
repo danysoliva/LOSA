@@ -326,31 +326,37 @@ namespace LOSA
                     switch (idNivel4)
                     {
                         case 1://Basic View
-                            BasicView();
+                            //BasicView();
+                            tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;
+                            tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
+                            
                             UsuarioLogeado.Idnivel = idNivel4;
                             break;
                         case 2://Basic No Autorization
-                            BasicView();
-                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
+                            tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             break;
                         case 3://Medium Autorization
 
                             break;
                         case 4://Depth With Delta
-                            BasicView();
-                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
+                            tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             break;
                         case 5://Depth Without Delta
 
                             break;
                         default:
-                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
+                            tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             break;
                     }
                     break;
@@ -2653,6 +2659,9 @@ namespace LOSA
             switch (idNivel)
             {
                 case 1://Basic View
+                    FCT_MRP_Complete frm2 = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm2.MdiParent = this.MdiParent;
+                    frm2.Show();
                     break;
                 case 2://Basic No Autorization
                     FCT_MRP_Complete frm2 = new FCT_MRP_Complete(this.UsuarioLogeado);
@@ -3663,6 +3672,11 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
 
             }
+        }
+
+        private void btn__Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

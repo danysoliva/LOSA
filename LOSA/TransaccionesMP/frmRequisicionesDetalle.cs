@@ -110,13 +110,34 @@ namespace LOSA.TransaccionesMP
 
             if (UsuarioLogeado.ValidarNivelPermisos(93)) //Permiso Limitado: Produccion
             {
-                if (IdEstado == 3)
+                switch (IdEstado)
                 {
-                    LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
-                    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                    case 3:
+                        LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                        gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                        break;
+
+                    case 7:
+                        LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                        gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                        break;
+
+                    //case 3:
+                    //    LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                    //    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                    //    break;
+
+                    default:
+                        gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;
+                        break;
                 }
-                else
-                    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;
+                //if (IdEstado == 3)
+                //{
+                //    LoadPermisos(93); //Cargamos los Permitosos En Proceso - En Espera
+                //    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = true;
+                //}
+                //else
+                //    gridLookUpEdit_estados.Visible = lblEtiquetaEstadosReq.Visible = false;
 
             }
         }
