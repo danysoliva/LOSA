@@ -321,8 +321,10 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
                             switch (idnivel)
                             {
                                 case 1://Basic View
-                                    CajaDialogo.Error("No tiene permiso de Usar este Reporte.");
-                                    grdSelectReport.Text = null;
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
                                     break;
                                 case 2://Basic No Autorization
                                     labelControl1.Visible = true;

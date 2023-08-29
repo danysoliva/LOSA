@@ -1426,6 +1426,17 @@
     <Compile Include="Despachos\rpt_despacho.Designer.cs">
       <DependentUpon>rpt_despacho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finanzas\dsExoneracion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsExoneracion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionAQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionAQ.Designer.cs">
+      <DependentUpon>frmExoneracionAQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4280,6 +4291,17 @@
     <None Include="Despachos\Reportes\dsReporte.xss">
       <DependentUpon>dsReporte.xsd</DependentUpon>
     </None>
+    <None Include="Finanzas\dsExoneracion.xsc">
+      <DependentUpon>dsExoneracion.xsd</DependentUpon>
+    </None>
+    <None Include="Finanzas\dsExoneracion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsExoneracion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Finanzas\dsExoneracion.xss">
+      <DependentUpon>dsExoneracion.xsd</DependentUpon>
+    </None>
     <None Include="Liquidos\dsLiquidos_.xsc">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
@@ -6732,6 +6754,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\rpt_despacho.resx">
       <DependentUpon>rpt_despacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\frmExoneracionAQ.resx">
+      <DependentUpon>frmExoneracionAQ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
