@@ -56,6 +56,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnExport = new DevExpress.XtraEditors.SimpleButton();
+            this.btnReiniciarOrden = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsAceites1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -254,6 +255,20 @@
             this.btnExport.Text = "Exportar";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // btnReiniciarOrden
+            // 
+            this.btnReiniciarOrden.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReiniciarOrden.Appearance.Options.UseFont = true;
+            this.btnReiniciarOrden.Appearance.Options.UseTextOptions = true;
+            this.btnReiniciarOrden.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnReiniciarOrden.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnReiniciarOrden.Location = new System.Drawing.Point(163, 14);
+            this.btnReiniciarOrden.Name = "btnReiniciarOrden";
+            this.btnReiniciarOrden.Size = new System.Drawing.Size(174, 46);
+            this.btnReiniciarOrden.TabIndex = 4;
+            this.btnReiniciarOrden.Text = "Reiniciar Seteo de Orden";
+            this.btnReiniciarOrden.Click += new System.EventHandler(this.btnReiniciarOrden_Click);
+            // 
             // frmOilRequest
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -261,6 +276,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 585);
+            this.Controls.Add(this.btnReiniciarOrden);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
@@ -297,5 +313,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonEliminar;
         private DevExpress.XtraGrid.Columns.GridColumn collote_pt;
         private DevExpress.XtraEditors.SimpleButton btnExport;
+        private DevExpress.XtraEditors.SimpleButton btnReiniciarOrden;
     }
 }

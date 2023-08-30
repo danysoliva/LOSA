@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace LOSA.RecepcionMP
 {
-    public partial class frmagregarlote : DevExpress.XtraEditors.XtraForm
+    public partial class frmagregarloteCopy : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
         int IdSerie;
@@ -29,7 +29,7 @@ namespace LOSA.RecepcionMP
         UserLogin UsuarioLogeado;
         int Id_ingreso;
         decimal factor;
-        public frmagregarlote(int id_ingreso, int numero_referencia, UserLogin user, string pitemcode)
+        public frmagregarloteCopy(int id_ingreso, int numero_referencia, UserLogin user, string pitemcode)
         {
             InitializeComponent();
             UsuarioLogeado = user;

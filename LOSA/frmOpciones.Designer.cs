@@ -222,6 +222,7 @@
             this.simpleButton48 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton47 = new DevExpress.XtraEditors.SimpleButton();
             this.TabContabilidad = new DevExpress.XtraTab.XtraTabPage();
+            this.btn_ExoneracionAQ = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAprobarAjustesInvALOSY = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteBancosPlanilla = new DevExpress.XtraEditors.SimpleButton();
             this.btnGestionMP = new DevExpress.XtraEditors.SimpleButton();
@@ -285,7 +286,6 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btn_ = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2381,6 +2381,7 @@
             this.navBarGroup4.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup4.AppearancePressed.Options.UseFont = true;
             this.navBarGroup4.Caption = "Inventario";
+            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrasladoAceiteExterno),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbSetMaterial),
@@ -3168,7 +3169,7 @@
             // 
             // TabContabilidad
             // 
-            this.TabContabilidad.Controls.Add(this.btn_);
+            this.TabContabilidad.Controls.Add(this.btn_ExoneracionAQ);
             this.TabContabilidad.Controls.Add(this.cmdAprobarAjustesInvALOSY);
             this.TabContabilidad.Controls.Add(this.cmdReporteBancosPlanilla);
             this.TabContabilidad.Controls.Add(this.btnGestionMP);
@@ -3189,6 +3190,22 @@
             this.TabContabilidad.PageVisible = false;
             this.TabContabilidad.Size = new System.Drawing.Size(835, 480);
             this.TabContabilidad.Text = "Contabilidad";
+            // 
+            // btn_ExoneracionAQ
+            // 
+            this.btn_ExoneracionAQ.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ExoneracionAQ.Appearance.Options.UseFont = true;
+            this.btn_ExoneracionAQ.Appearance.Options.UseTextOptions = true;
+            this.btn_ExoneracionAQ.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btn_ExoneracionAQ.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_ExoneracionAQ.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_.ImageOptions.Image")));
+            this.btn_ExoneracionAQ.Location = new System.Drawing.Point(643, 42);
+            this.btn_ExoneracionAQ.Name = "btn_ExoneracionAQ";
+            this.btn_ExoneracionAQ.Size = new System.Drawing.Size(182, 56);
+            this.btn_ExoneracionAQ.TabIndex = 54;
+            this.btn_ExoneracionAQ.Text = "Exoneracion Fiscal";
+            this.btn_ExoneracionAQ.Visible = false;
+            this.btn_ExoneracionAQ.Click += new System.EventHandler(this.btn_ExoneracionAQ_Click);
             // 
             // cmdAprobarAjustesInvALOSY
             // 
@@ -4058,22 +4075,6 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // btn_
-            // 
-            this.btn_.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_.Appearance.Options.UseFont = true;
-            this.btn_.Appearance.Options.UseTextOptions = true;
-            this.btn_.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btn_.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.btn_.Location = new System.Drawing.Point(643, 42);
-            this.btn_.Name = "btn_";
-            this.btn_.Size = new System.Drawing.Size(182, 56);
-            this.btn_.TabIndex = 54;
-            this.btn_.Text = "Exoneracion Fiscal";
-            this.btn_.Visible = false;
-            this.btn_.Click += new System.EventHandler(this.btn__Click);
-            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4372,6 +4373,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem53;
         private DevExpress.XtraNavBar.NavBarItem navBarItem54;
         private DevExpress.XtraEditors.SimpleButton frmRepor_KepServer;
-        private DevExpress.XtraEditors.SimpleButton btn_;
+        private DevExpress.XtraEditors.SimpleButton btn_ExoneracionAQ;
     }
 }

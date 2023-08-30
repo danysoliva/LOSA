@@ -67,6 +67,7 @@ using LOSA.TransaccionesMP;
 using LOSA.TransaccionesPT;
 using LOSA.Trazabilidad;
 using LOSA.Trazabilidad.ReportesTRZ;
+using LOSA.Finanzas;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -3674,9 +3675,11 @@ namespace LOSA
             }
         }
 
-        private void btn__Click(object sender, EventArgs e)
+        private void btn_ExoneracionAQ_Click(object sender, EventArgs e)
         {
-
+            frmExoneracionAQ frm = new frmExoneracionAQ(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

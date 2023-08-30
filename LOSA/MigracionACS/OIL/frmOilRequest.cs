@@ -12,6 +12,7 @@ using LOSA.Clases;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using ACS.Classes;
+using LOSA.Utileria;
 
 namespace LOSA.MigracionACS.OIL
 {
@@ -20,6 +21,7 @@ namespace LOSA.MigracionACS.OIL
         UserLogin UsuarioLogeado;
         DataOperations dp; 
         public bool CerrarForm;
+        bool OrdenEnProceso = false;
 
         public frmOilRequest(UserLogin pUser)
         {
@@ -287,5 +289,41 @@ namespace LOSA.MigracionACS.OIL
                 gridControl1.ExportToXlsx(dialog.FileName);
             }
         }
+
+        private void btnReiniciarOrden_Click(object sender, EventArgs e)
+        {
+            DialogResult r = CajaDialogo.Pregunta("Esto Permite Reescribir la Orden en la Pantalla de Traslados.\nDesea continuar?");
+            if (r != System.Windows.Forms.DialogResult.Yes)
+                return;
+
+            try
+            {
+                string sql = @"sp_reiniciar_seteo_en_pantalla_aceites_traslado";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                OrdenEnProceso = Convert.ToBoolean(cmd.ExecuteScalar());
+                conn.Close();
+
+                if (OrdenEnProceso)
+                {
+                    string mensaje_info = "Se a Actualizo la Orden en la Pantalla de Traslado\nRevisar la Pantalla!";
+                    frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.info, mensaje_info);
+                    frm.Show();
+                }
+                else
+                {
+                    string mensaje_error = "No Existe una Orden de Aceite en Proceso!";
+                    frmMensaje frm = new frmMensaje(frmMensaje.TipoMsj.error, mensaje_error);
+                    frm.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
     }
 }
