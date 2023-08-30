@@ -101,6 +101,7 @@
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.txtTitulo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNameVentana = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtcomentario.Properties)).BeginInit();
@@ -124,6 +125,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcEquipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEquipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameVentana.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -700,6 +702,19 @@
             this.labelControl2.TabIndex = 42;
             this.labelControl2.Text = "Título";
             // 
+            // txtNameVentana
+            // 
+            this.txtNameVentana.EditValue = "frmTicketsNew_IT";
+            this.txtNameVentana.Location = new System.Drawing.Point(16, 46);
+            this.txtNameVentana.MenuManager = this.barManager1;
+            this.txtNameVentana.Name = "txtNameVentana";
+            this.txtNameVentana.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtNameVentana.Properties.Appearance.Options.UseFont = true;
+            this.txtNameVentana.Properties.ReadOnly = true;
+            this.txtNameVentana.Size = new System.Drawing.Size(141, 22);
+            this.txtNameVentana.TabIndex = 47;
+            this.txtNameVentana.Visible = false;
+            // 
             // frmTicketsNew_IT
             // 
             this.AllowDrop = true;
@@ -709,6 +724,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(942, 722);
+            this.Controls.Add(this.txtNameVentana);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.navigationFrame1);
@@ -755,6 +771,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcEquipo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvEquipo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameVentana.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -818,6 +835,7 @@
         private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtTitulo;
+        private DevExpress.XtraEditors.TextEdit txtNameVentana;
         //private System.Windows.Forms.BindingSource dsEndUserBindingSource;
         //private DataSets.dsEndUser dsEndUser;
     }

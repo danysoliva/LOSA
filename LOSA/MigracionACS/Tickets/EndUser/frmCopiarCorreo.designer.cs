@@ -41,33 +41,34 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.dsTickets = new LOSA.MigracionACS.Tickets.EndUser.dsTickets();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
+            this.txtNameVentana = new DevExpress.XtraEditors.TextEdit();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluser = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcorro = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colselecionado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colCC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
+            this.grd_data = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTickets)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameVentana.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(14, 213);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Location = new System.Drawing.Point(12, 134);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(68, 28);
+            this.labelControl1.Size = new System.Drawing.Size(55, 21);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Correo:";
             this.labelControl1.Visible = false;
@@ -143,69 +144,89 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(845, 50);
+            this.barDockControlTop.Size = new System.Drawing.Size(724, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 555);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 447);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(845, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(724, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 505);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 407);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(845, 50);
+            this.barDockControlRight.Location = new System.Drawing.Point(724, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 505);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 407);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(105, 203);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Location = new System.Drawing.Point(90, 126);
             this.textBox1.MaxLength = 200;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(472, 39);
+            this.textBox1.Size = new System.Drawing.Size(405, 33);
             this.textBox1.TabIndex = 5;
             this.textBox1.Visible = false;
-            // 
-            // grd_data
-            // 
-            this.grd_data.DataMember = "userCorreos";
-            this.grd_data.DataSource = this.dsTickets;
-            this.grd_data.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grd_data.Location = new System.Drawing.Point(0, -4018);
-            this.grd_data.MainView = this.grdv_data;
-            this.grd_data.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grd_data.MenuManager = this.barManager1;
-            this.grd_data.Name = "grd_data";
-            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemCheckEdit1});
-            this.grd_data.Size = new System.Drawing.Size(845, 4573);
-            this.grd_data.TabIndex = 6;
-            this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdv_data});
             // 
             // dsTickets
             // 
             this.dsTickets.DataSetName = "dsEndUser";
             this.dsTickets.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(12, 99);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(48, 21);
+            this.labelControl2.TabIndex = 7;
+            this.labelControl2.Text = "Copia:";
+            this.labelControl2.Visible = false;
+            // 
+            // toggleSwitch1
+            // 
+            this.toggleSwitch1.Location = new System.Drawing.Point(90, 94);
+            this.toggleSwitch1.MenuManager = this.barManager1;
+            this.toggleSwitch1.Name = "toggleSwitch1";
+            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
+            this.toggleSwitch1.Properties.OffText = "Destinatario";
+            this.toggleSwitch1.Properties.OnText = "Solo CC";
+            this.toggleSwitch1.Size = new System.Drawing.Size(405, 26);
+            this.toggleSwitch1.TabIndex = 8;
+            this.toggleSwitch1.Visible = false;
+            // 
+            // txtNameVentana
+            // 
+            this.txtNameVentana.EditValue = "frmCopiarCorreo";
+            this.txtNameVentana.Location = new System.Drawing.Point(12, 46);
+            this.txtNameVentana.MenuManager = this.barManager1;
+            this.txtNameVentana.Name = "txtNameVentana";
+            this.txtNameVentana.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtNameVentana.Properties.Appearance.Options.UseFont = true;
+            this.txtNameVentana.Properties.ReadOnly = true;
+            this.txtNameVentana.Size = new System.Drawing.Size(141, 22);
+            this.txtNameVentana.TabIndex = 48;
+            this.txtNameVentana.Visible = false;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.repositoryItemCheckEdit1.CheckedChanged += new System.EventHandler(this.repositoryItemCheckEdit1_CheckedChanged);
             // 
             // grdv_data
             // 
@@ -239,9 +260,9 @@
             this.colcorro,
             this.colselecionado,
             this.colCC});
-            this.grdv_data.DetailHeight = 431;
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsEditForm.PopupEditFormWidth = 686;
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             this.grdv_data.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.grdv_data_CellValueChanging);
@@ -249,88 +270,66 @@
             // colid
             // 
             this.colid.FieldName = "id";
-            this.colid.MinWidth = 23;
             this.colid.Name = "colid";
-            this.colid.Width = 87;
             // 
             // coluser
             // 
             this.coluser.Caption = "Nombre";
             this.coluser.FieldName = "user";
-            this.coluser.MinWidth = 23;
             this.coluser.Name = "coluser";
             this.coluser.OptionsColumn.AllowEdit = false;
             this.coluser.Visible = true;
             this.coluser.VisibleIndex = 2;
-            this.coluser.Width = 213;
+            this.coluser.Width = 183;
             // 
             // colcorro
             // 
             this.colcorro.Caption = "Correo";
             this.colcorro.FieldName = "corro";
-            this.colcorro.MinWidth = 23;
             this.colcorro.Name = "colcorro";
             this.colcorro.OptionsColumn.AllowEdit = false;
             this.colcorro.Visible = true;
             this.colcorro.VisibleIndex = 1;
-            this.colcorro.Width = 222;
+            this.colcorro.Width = 190;
             // 
             // colselecionado
             // 
             this.colselecionado.Caption = "Enviar a";
             this.colselecionado.ColumnEdit = this.repositoryItemCheckEdit1;
             this.colselecionado.FieldName = "seleccionado";
-            this.colselecionado.MinWidth = 23;
             this.colselecionado.Name = "colselecionado";
             this.colselecionado.Visible = true;
             this.colselecionado.VisibleIndex = 0;
-            this.colselecionado.Width = 117;
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            this.repositoryItemCheckEdit1.CheckedChanged += new System.EventHandler(this.repositoryItemCheckEdit1_CheckedChanged);
+            this.colselecionado.Width = 100;
             // 
             // colCC
             // 
             this.colCC.Caption = "Como copia o destinatario";
             this.colCC.FieldName = "CC";
-            this.colCC.MinWidth = 23;
             this.colCC.Name = "colCC";
-            this.colCC.Width = 272;
+            this.colCC.Width = 233;
             // 
-            // labelControl2
+            // grd_data
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(14, 122);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(58, 28);
-            this.labelControl2.TabIndex = 7;
-            this.labelControl2.Text = "Copia:";
-            this.labelControl2.Visible = false;
-            // 
-            // toggleSwitch1
-            // 
-            this.toggleSwitch1.Location = new System.Drawing.Point(105, 116);
-            this.toggleSwitch1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.toggleSwitch1.MenuManager = this.barManager1;
-            this.toggleSwitch1.Name = "toggleSwitch1";
-            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
-            this.toggleSwitch1.Properties.OffText = "Destinatario";
-            this.toggleSwitch1.Properties.OnText = "Solo CC";
-            this.toggleSwitch1.Size = new System.Drawing.Size(472, 32);
-            this.toggleSwitch1.TabIndex = 8;
-            this.toggleSwitch1.Visible = false;
+            this.grd_data.DataMember = "userCorreos";
+            this.grd_data.DataSource = this.dsTickets;
+            this.grd_data.Location = new System.Drawing.Point(4, 74);
+            this.grd_data.MainView = this.grdv_data;
+            this.grd_data.MenuManager = this.barManager1;
+            this.grd_data.Name = "grd_data";
+            this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
+            this.grd_data.Size = new System.Drawing.Size(708, 367);
+            this.grd_data.TabIndex = 6;
+            this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_data});
             // 
             // frmCopiarCorreo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 575);
+            this.ClientSize = new System.Drawing.Size(724, 467);
+            this.Controls.Add(this.txtNameVentana);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.toggleSwitch1);
             this.Controls.Add(this.labelControl2);
@@ -340,15 +339,15 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCopiarCorreo";
             this.Text = "Copiar Correos";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTickets)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameVentana.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,15 +367,16 @@
         private DevExpress.XtraBars.BarButtonItem btnadd;
         private DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraGrid.GridControl grd_data;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
         private System.Windows.Forms.TextBox textBox1;
         private dsTickets dsTickets;
+        private DevExpress.XtraEditors.TextEdit txtNameVentana;
+        private DevExpress.XtraGrid.GridControl grd_data;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coluser;
         private DevExpress.XtraGrid.Columns.GridColumn colcorro;
         private DevExpress.XtraGrid.Columns.GridColumn colselecionado;
-        private DevExpress.XtraGrid.Columns.GridColumn colCC;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCC;
     }
 }

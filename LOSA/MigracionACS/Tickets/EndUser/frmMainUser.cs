@@ -44,6 +44,9 @@ namespace LOSA.MigracionACS.Tickets.EndUser
 
             }
 
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                lblFormulario.Visible = txtNameVentana.Visible = true;
+
 
      
         }

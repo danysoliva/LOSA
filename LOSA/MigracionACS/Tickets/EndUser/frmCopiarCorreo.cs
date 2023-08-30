@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
 using LOSA.MigracionACS.Tickets.Models;
+using LOSA.Clases;
 
 namespace LOSA.MigracionACS.Tickets.EndUser
 {
