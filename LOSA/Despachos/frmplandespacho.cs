@@ -26,6 +26,12 @@ namespace LOSA.Despachos
             InitializeComponent();
             ParId = IdOrdendeVenta;
             ParUser = UsuarioLogeado;
+            if (ParUser.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = true;
+            else
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = false;
+
+
             exe_sp_get_plan();
             txtcliente.Text = "(" + CardCode + ") - " + CardName;
             txtdocnum.Text = DocNum.ToString();

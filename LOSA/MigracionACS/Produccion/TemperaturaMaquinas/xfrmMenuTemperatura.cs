@@ -112,7 +112,7 @@ namespace LOSA.MigracionACS.Produccion.TemperaturaMaquinas
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            xfrmEficienciaMolinos frm = new xfrmEficienciaMolinos();
+            xfrmEficienciaMolinos frm = new xfrmEficienciaMolinos(this.UsuarioLogeado);
             if (this.MdiParent != null)
                 frm.MdiParent = this.MdiParent;
             frm.Show();

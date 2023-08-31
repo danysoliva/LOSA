@@ -38,6 +38,7 @@ using LOSA.MigracionACS.Produccion.Consumos;
 using LOSA.MigracionACS.Produccion.Eficiencia;
 using LOSA.MigracionACS.Produccion.Eficiencia.DatosBromatologicos;
 using LOSA.MigracionACS.Produccion.ForecastPRD;
+using LOSA.MigracionACS.Produccion.Molinos;
 using LOSA.MigracionACS.Produccion.Produccion.DashBoard;
 using LOSA.MigracionACS.Produccion.Reports;
 using LOSA.MigracionACS.Produccion.TemperaturaMaquinas;
@@ -2665,26 +2666,26 @@ namespace LOSA
                     frm.Show();
                     break;
                 case 2://Basic No Autorization
-                    FCT_MRP_Complete frm2 = new FCT_MRP_Complete(this.UsuarioLogeado);
-                    frm2.MdiParent = this.MdiParent;
-                    frm2.Show();
-                    break;
-                case 3://Medium Autorization
                     FCT_MRP_Complete frm3 = new FCT_MRP_Complete(this.UsuarioLogeado);
                     frm3.MdiParent = this.MdiParent;
                     frm3.Show();
                     break;
-                case 4://Depth With Delta
-                    accesoprevio = true;
+                case 3://Medium Autorization
                     FCT_MRP_Complete frm4 = new FCT_MRP_Complete(this.UsuarioLogeado);
                     frm4.MdiParent = this.MdiParent;
                     frm4.Show();
                     break;
-                case 5://Depth Without Delta
+                case 4://Depth With Delta
                     accesoprevio = true;
                     FCT_MRP_Complete frm5 = new FCT_MRP_Complete(this.UsuarioLogeado);
                     frm5.MdiParent = this.MdiParent;
                     frm5.Show();
+                    break;
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    FCT_MRP_Complete frm6 = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm6.MdiParent = this.MdiParent;
+                    frm6.Show();
                     break;
                 default:
                     break;
@@ -3680,6 +3681,85 @@ namespace LOSA
             frmExoneracionAQ frm = new frmExoneracionAQ(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void navBarItemEficienciaMolinosKg_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            //
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    xfrmEficienciaMolinos frm = new xfrmEficienciaMolinos(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(45))
+                {
+                    xfrmEficienciaMolinos frm = new xfrmEficienciaMolinos(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #45");
+                }
+            }
+        }
+
+        private void navBarItem21_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    xfrmEficienciaMolinos frm = new xfrmEficienciaMolinos(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(45))
+                {
+                    xfrmEficienciaMolinos frm = new xfrmEficienciaMolinos(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #45");
+                }
+            }
         }
     }
 }

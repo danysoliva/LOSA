@@ -24,7 +24,10 @@ namespace LOSA.Despachos
             InitializeComponent();
             load_data_orden_de_ventas();
             ULogin = UsuarioLogeado;
-
+            if(ULogin.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = true;
+            else
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = false;
 
         }
         public void load_data_orden_de_ventas()

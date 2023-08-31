@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmplandespacho));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject26 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject27 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject28 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions8 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject29 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnlotes = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btncancel = new DevExpress.XtraEditors.SimpleButton();
@@ -78,6 +78,7 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dtfechaplan = new DevExpress.XtraEditors.DateEdit();
             this.btnatras = new DevExpress.XtraEditors.SimpleButton();
+            this.txtNameForIT_Support = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.btnlotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_detalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_despachos)).BeginInit();
@@ -88,14 +89,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtdocnum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameForIT_Support.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnlotes
             // 
             this.btnlotes.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions7.Image")));
             this.btnlotes.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnlotes.Name = "btnlotes";
             this.btnlotes.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -107,10 +109,9 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(494, 20);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelControl1.Location = new System.Drawing.Point(247, 31);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(608, 77);
+            this.labelControl1.Size = new System.Drawing.Size(304, 40);
             this.labelControl1.TabIndex = 36;
             this.labelControl1.Text = "Orden de Venta";
             // 
@@ -124,10 +125,9 @@
             this.btncancel.Enabled = false;
             this.btncancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btncancel.ImageOptions.Image")));
             this.btncancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btncancel.Location = new System.Drawing.Point(266, 8);
-            this.btncancel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btncancel.Location = new System.Drawing.Point(133, 25);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(202, 87);
+            this.btncancel.Size = new System.Drawing.Size(101, 45);
             this.btncancel.TabIndex = 37;
             this.btncancel.Text = "Cancelar";
             this.btncancel.Visible = false;
@@ -140,15 +140,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_detalle.DataMember = "plan_despacho";
             this.grd_detalle.DataSource = this.ds_despachos;
-            this.grd_detalle.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.grd_detalle.Location = new System.Drawing.Point(0, 329);
+            this.grd_detalle.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grd_detalle.Location = new System.Drawing.Point(0, 171);
             this.grd_detalle.MainView = this.grdv_detalle;
-            this.grd_detalle.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.grd_detalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grd_detalle.Name = "grd_detalle";
             this.grd_detalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnlotess,
             this.btnver});
-            this.grd_detalle.Size = new System.Drawing.Size(1452, 748);
+            this.grd_detalle.Size = new System.Drawing.Size(726, 389);
             this.grd_detalle.TabIndex = 38;
             this.grd_detalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_detalle});
@@ -185,157 +185,160 @@
             this.colrestante,
             this.colEnviado,
             this.colver});
-            this.grdv_detalle.DetailHeight = 546;
+            this.grdv_detalle.DetailHeight = 284;
             this.grdv_detalle.GridControl = this.grd_detalle;
+            this.grdv_detalle.LevelIndent = 0;
             this.grdv_detalle.Name = "grdv_detalle";
+            this.grdv_detalle.OptionsEditForm.PopupEditFormWidth = 400;
             this.grdv_detalle.OptionsView.ShowAutoFilterRow = true;
             this.grdv_detalle.OptionsView.ShowGroupPanel = false;
+            this.grdv_detalle.PreviewIndent = 0;
             // 
             // colid
             // 
             this.colid.FieldName = "id";
-            this.colid.MinWidth = 34;
+            this.colid.MinWidth = 17;
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
-            this.colid.Width = 128;
+            this.colid.Width = 64;
             // 
             // colidventa
             // 
             this.colidventa.FieldName = "idventa";
-            this.colidventa.MinWidth = 34;
+            this.colidventa.MinWidth = 17;
             this.colidventa.Name = "colidventa";
             this.colidventa.OptionsColumn.AllowEdit = false;
-            this.colidventa.Width = 128;
+            this.colidventa.Width = 64;
             // 
             // colCardCode
             // 
             this.colCardCode.Caption = "Cod. Cliente";
             this.colCardCode.FieldName = "CardCode";
-            this.colCardCode.MinWidth = 34;
+            this.colCardCode.MinWidth = 17;
             this.colCardCode.Name = "colCardCode";
             this.colCardCode.OptionsColumn.AllowEdit = false;
-            this.colCardCode.Width = 128;
+            this.colCardCode.Width = 64;
             // 
             // colCardName
             // 
             this.colCardName.Caption = "CLiente";
             this.colCardName.FieldName = "CardName";
-            this.colCardName.MinWidth = 34;
+            this.colCardName.MinWidth = 17;
             this.colCardName.Name = "colCardName";
             this.colCardName.OptionsColumn.AllowEdit = false;
-            this.colCardName.Width = 128;
+            this.colCardName.Width = 64;
             // 
             // colDocNum
             // 
             this.colDocNum.Caption = "SAP Num";
             this.colDocNum.FieldName = "DocNum";
-            this.colDocNum.MinWidth = 34;
+            this.colDocNum.MinWidth = 17;
             this.colDocNum.Name = "colDocNum";
             this.colDocNum.OptionsColumn.AllowEdit = false;
-            this.colDocNum.Width = 128;
+            this.colDocNum.Width = 64;
             // 
             // colItemCode
             // 
             this.colItemCode.Caption = "Cod. Producto";
             this.colItemCode.FieldName = "ItemCode";
-            this.colItemCode.MinWidth = 34;
+            this.colItemCode.MinWidth = 17;
             this.colItemCode.Name = "colItemCode";
             this.colItemCode.OptionsColumn.AllowEdit = false;
             this.colItemCode.Visible = true;
             this.colItemCode.VisibleIndex = 0;
-            this.colItemCode.Width = 208;
+            this.colItemCode.Width = 104;
             // 
             // colDsCription
             // 
             this.colDsCription.Caption = "Producto";
             this.colDsCription.FieldName = "Dscription";
-            this.colDsCription.MinWidth = 34;
+            this.colDsCription.MinWidth = 17;
             this.colDsCription.Name = "colDsCription";
             this.colDsCription.OptionsColumn.AllowEdit = false;
             this.colDsCription.Visible = true;
             this.colDsCription.VisibleIndex = 1;
-            this.colDsCription.Width = 332;
+            this.colDsCription.Width = 166;
             // 
             // colcant_selected
             // 
             this.colcant_selected.Caption = "Ud. Seleccionadas";
             this.colcant_selected.FieldName = "cant_selected";
-            this.colcant_selected.MinWidth = 34;
+            this.colcant_selected.MinWidth = 17;
             this.colcant_selected.Name = "colcant_selected";
             this.colcant_selected.OptionsColumn.AllowEdit = false;
-            this.colcant_selected.Width = 300;
+            this.colcant_selected.Width = 150;
             // 
             // colQuantityTm
             // 
             this.colQuantityTm.Caption = "Cantidad (TM)";
             this.colQuantityTm.FieldName = "QuantityTm";
-            this.colQuantityTm.MinWidth = 34;
+            this.colQuantityTm.MinWidth = 17;
             this.colQuantityTm.Name = "colQuantityTm";
             this.colQuantityTm.OptionsColumn.AllowEdit = false;
-            this.colQuantityTm.Width = 254;
+            this.colQuantityTm.Width = 127;
             // 
             // coliddetalle
             // 
             this.coliddetalle.FieldName = "iddetalle";
-            this.coliddetalle.MinWidth = 34;
+            this.coliddetalle.MinWidth = 17;
             this.coliddetalle.Name = "coliddetalle";
-            this.coliddetalle.Width = 128;
+            this.coliddetalle.Width = 64;
             // 
             // colQuantityKg
             // 
             this.colQuantityKg.Caption = "Cantidad (Kg.)";
             this.colQuantityKg.FieldName = "QuantityKg";
-            this.colQuantityKg.MinWidth = 34;
+            this.colQuantityKg.MinWidth = 17;
             this.colQuantityKg.Name = "colQuantityKg";
             this.colQuantityKg.OptionsColumn.AllowEdit = false;
-            this.colQuantityKg.Width = 236;
+            this.colQuantityKg.Width = 118;
             // 
             // colprioridad
             // 
             this.colprioridad.Caption = "Prioridad";
             this.colprioridad.FieldName = "prioridad";
-            this.colprioridad.MinWidth = 34;
+            this.colprioridad.MinWidth = 17;
             this.colprioridad.Name = "colprioridad";
-            this.colprioridad.Width = 138;
+            this.colprioridad.Width = 69;
             // 
             // colU_Sacos
             // 
             this.colU_Sacos.Caption = "Ud. Solicitadas";
             this.colU_Sacos.FieldName = "U_Sacos";
-            this.colU_Sacos.MinWidth = 34;
+            this.colU_Sacos.MinWidth = 17;
             this.colU_Sacos.Name = "colU_Sacos";
             this.colU_Sacos.OptionsColumn.AllowEdit = false;
             this.colU_Sacos.Visible = true;
             this.colU_Sacos.VisibleIndex = 2;
-            this.colU_Sacos.Width = 256;
+            this.colU_Sacos.Width = 128;
             // 
             // colU_Peso
             // 
             this.colU_Peso.Caption = "Presentacion";
             this.colU_Peso.FieldName = "U_Peso";
-            this.colU_Peso.MinWidth = 34;
+            this.colU_Peso.MinWidth = 17;
             this.colU_Peso.Name = "colU_Peso";
             this.colU_Peso.OptionsColumn.AllowEdit = false;
             this.colU_Peso.Visible = true;
             this.colU_Peso.VisibleIndex = 5;
-            this.colU_Peso.Width = 210;
+            this.colU_Peso.Width = 105;
             // 
             // collotes
             // 
             this.collotes.Caption = "Despacho";
             this.collotes.ColumnEdit = this.btnlotess;
-            this.collotes.MinWidth = 34;
+            this.collotes.MinWidth = 17;
             this.collotes.Name = "collotes";
             this.collotes.Visible = true;
             this.collotes.VisibleIndex = 6;
-            this.collotes.Width = 112;
+            this.collotes.Width = 56;
             // 
             // btnlotess
             // 
             this.btnlotess.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions8.Image")));
             this.btnlotess.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnlotess.Name = "btnlotess";
             this.btnlotess.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnlotess.Click += new System.EventHandler(this.btnlotess_Click);
@@ -344,38 +347,34 @@
             // 
             this.colrestante.Caption = "Restantes";
             this.colrestante.FieldName = "restante";
-            this.colrestante.MinWidth = 40;
             this.colrestante.Name = "colrestante";
             this.colrestante.OptionsColumn.AllowEdit = false;
             this.colrestante.Visible = true;
             this.colrestante.VisibleIndex = 4;
-            this.colrestante.Width = 128;
+            this.colrestante.Width = 64;
             // 
             // colEnviado
             // 
             this.colEnviado.Caption = "Enviadas";
             this.colEnviado.FieldName = "Enviado";
-            this.colEnviado.MinWidth = 40;
             this.colEnviado.Name = "colEnviado";
             this.colEnviado.OptionsColumn.AllowEdit = false;
             this.colEnviado.Visible = true;
             this.colEnviado.VisibleIndex = 3;
-            this.colEnviado.Width = 128;
+            this.colEnviado.Width = 64;
             // 
             // colver
             // 
             this.colver.Caption = "Despachos Relacionados";
             this.colver.ColumnEdit = this.btnver;
-            this.colver.MinWidth = 40;
             this.colver.Name = "colver";
-            this.colver.Width = 150;
             // 
             // btnver
             // 
             this.btnver.AutoHeight = false;
-            editorButtonImageOptions6.Image = global::LOSA.Properties.Resources.tap;
+            editorButtonImageOptions9.Image = global::LOSA.Properties.Resources.tap;
             this.btnver.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnver.Name = "btnver";
             this.btnver.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnver.Click += new System.EventHandler(this.btnver_Click);
@@ -384,10 +383,10 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(38, 188);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.labelControl2.Location = new System.Drawing.Point(19, 111);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(122, 45);
+            this.labelControl2.Size = new System.Drawing.Size(59, 22);
             this.labelControl2.TabIndex = 39;
             this.labelControl2.Text = "Cliente:";
             // 
@@ -395,36 +394,34 @@
             // 
             this.txtcliente.EditValue = "";
             this.txtcliente.Enabled = false;
-            this.txtcliente.Location = new System.Drawing.Point(366, 183);
-            this.txtcliente.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtcliente.Location = new System.Drawing.Point(183, 109);
             this.txtcliente.Name = "txtcliente";
             this.txtcliente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcliente.Properties.Appearance.Options.UseFont = true;
             this.txtcliente.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtcliente.Size = new System.Drawing.Size(862, 60);
+            this.txtcliente.Size = new System.Drawing.Size(431, 28);
             this.txtcliente.TabIndex = 40;
             // 
             // txtdocnum
             // 
             this.txtdocnum.EditValue = "";
             this.txtdocnum.Enabled = false;
-            this.txtdocnum.Location = new System.Drawing.Point(366, 117);
-            this.txtdocnum.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtdocnum.Location = new System.Drawing.Point(183, 79);
             this.txtdocnum.Name = "txtdocnum";
             this.txtdocnum.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdocnum.Properties.Appearance.Options.UseFont = true;
             this.txtdocnum.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtdocnum.Size = new System.Drawing.Size(862, 60);
+            this.txtdocnum.Size = new System.Drawing.Size(431, 28);
             this.txtdocnum.TabIndex = 42;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(40, 121);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.labelControl3.Location = new System.Drawing.Point(20, 81);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(274, 45);
+            this.labelControl3.Size = new System.Drawing.Size(133, 22);
             this.labelControl3.TabIndex = 41;
             this.labelControl3.Text = "Documento SAP:";
             // 
@@ -432,10 +429,10 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(38, 262);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.labelControl4.Location = new System.Drawing.Point(19, 143);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(239, 45);
+            this.labelControl4.Size = new System.Drawing.Size(115, 22);
             this.labelControl4.TabIndex = 43;
             this.labelControl4.Text = "Fecha de plan:";
             // 
@@ -448,10 +445,9 @@
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(22, 8);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(11, 25);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(232, 87);
+            this.simpleButton1.Size = new System.Drawing.Size(116, 45);
             this.simpleButton1.TabIndex = 44;
             this.simpleButton1.Text = "Guardar";
             this.simpleButton1.Visible = false;
@@ -460,8 +456,7 @@
             // dtfechaplan
             // 
             this.dtfechaplan.EditValue = null;
-            this.dtfechaplan.Location = new System.Drawing.Point(366, 254);
-            this.dtfechaplan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtfechaplan.Location = new System.Drawing.Point(183, 139);
             this.dtfechaplan.Name = "dtfechaplan";
             this.dtfechaplan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtfechaplan.Properties.Appearance.Options.UseFont = true;
@@ -471,7 +466,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtfechaplan.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dtfechaplan.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtfechaplan.Size = new System.Drawing.Size(862, 60);
+            this.dtfechaplan.Size = new System.Drawing.Size(431, 30);
             this.dtfechaplan.TabIndex = 45;
             // 
             // btnatras
@@ -484,19 +479,30 @@
             this.btnatras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnatras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnatras.ImageOptions.Image")));
             this.btnatras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnatras.Location = new System.Drawing.Point(1218, 8);
-            this.btnatras.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnatras.Location = new System.Drawing.Point(609, 25);
             this.btnatras.Name = "btnatras";
-            this.btnatras.Size = new System.Drawing.Size(218, 85);
+            this.btnatras.Size = new System.Drawing.Size(109, 44);
             this.btnatras.TabIndex = 46;
             this.btnatras.Text = "Atras";
             this.btnatras.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // txtNameForIT_Support
+            // 
+            this.txtNameForIT_Support.EditValue = "frmplandespacho";
+            this.txtNameForIT_Support.Location = new System.Drawing.Point(11, 0);
+            this.txtNameForIT_Support.Name = "txtNameForIT_Support";
+            this.txtNameForIT_Support.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameForIT_Support.Properties.Appearance.Options.UseFont = true;
+            this.txtNameForIT_Support.Size = new System.Drawing.Size(199, 24);
+            this.txtNameForIT_Support.TabIndex = 47;
+            this.txtNameForIT_Support.Visible = false;
+            // 
             // frmplandespacho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1458, 1077);
+            this.ClientSize = new System.Drawing.Size(729, 560);
+            this.Controls.Add(this.txtNameForIT_Support);
             this.Controls.Add(this.btnatras);
             this.Controls.Add(this.dtfechaplan);
             this.Controls.Add(this.simpleButton1);
@@ -508,7 +514,7 @@
             this.Controls.Add(this.grd_detalle);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.labelControl1);
-            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmplandespacho";
             this.Text = "Plan Despacho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -522,6 +528,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtdocnum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtfechaplan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameForIT_Support.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,5 +570,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEnviado;
         private DevExpress.XtraGrid.Columns.GridColumn colver;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnver;
+        private DevExpress.XtraEditors.TextEdit txtNameForIT_Support;
     }
 }

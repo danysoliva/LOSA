@@ -61,7 +61,7 @@ namespace LOSA.RecepcionMP
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_getBoletasBascula", con);
+                SqlCommand cmd = new SqlCommand("[dbo].[sp_getBoletasBascula_v2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 dsRecepcionMP.Bascula.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);

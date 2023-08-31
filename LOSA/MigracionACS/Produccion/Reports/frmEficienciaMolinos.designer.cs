@@ -44,13 +44,15 @@ namespace LOSA.MigracionACS.Produccion.Reports
             this.colhorase = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhorasm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coleficiencia = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
+            this.txtSupporIT_WindowName = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalleReq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEficienciaMolinos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupporIT_WindowName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -212,11 +214,22 @@ namespace LOSA.MigracionACS.Produccion.Reports
             this.coleficiencia.Visible = true;
             this.coleficiencia.VisibleIndex = 3;
             // 
+            // txtSupporIT_WindowName
+            // 
+            this.txtSupporIT_WindowName.EditValue = "frmEficienciaMolinos";
+            this.txtSupporIT_WindowName.Location = new System.Drawing.Point(2, 1);
+            this.txtSupporIT_WindowName.Name = "txtSupporIT_WindowName";
+            this.txtSupporIT_WindowName.Properties.ReadOnly = true;
+            this.txtSupporIT_WindowName.Size = new System.Drawing.Size(126, 20);
+            this.txtSupporIT_WindowName.TabIndex = 27;
+            this.txtSupporIT_WindowName.Visible = false;
+            // 
             // frmEficienciaMolinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 438);
+            this.Controls.Add(this.txtSupporIT_WindowName);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label3);
@@ -234,6 +247,7 @@ namespace LOSA.MigracionACS.Produccion.Reports
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalleReq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsEficienciaMolinos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupporIT_WindowName.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +269,6 @@ namespace LOSA.MigracionACS.Produccion.Reports
         private DevExpress.XtraGrid.Columns.GridColumn colhorase;
         private DevExpress.XtraGrid.Columns.GridColumn colhorasm;
         private DevExpress.XtraGrid.Columns.GridColumn coleficiencia;
+        private DevExpress.XtraEditors.TextEdit txtSupporIT_WindowName;
     }
 }

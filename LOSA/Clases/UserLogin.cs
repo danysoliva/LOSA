@@ -29,7 +29,7 @@ namespace LOSA.Clases
         public string Pass { get => pass; set => pass = value; }
         public int Idnivel { get => idnivel; set => idnivel = value; }
         public string Tipo { get => tipo; set => tipo = value; }
-
+        public string HostNameConnected { get; set; }
 
         //Migracion ACS
 

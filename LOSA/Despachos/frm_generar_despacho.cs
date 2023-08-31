@@ -45,6 +45,12 @@ namespace LOSA.Despachos
             this.DocEntry = DocEntry;
             this.LineNum = LineNum;
             UsuarioLogeado = Puser;
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtNameForIT_Support.Visible = txtNameForIT_Support.ReadOnly = true;
+            else
+                txtNameForIT_Support.Visible = false;
+
             LoadPresentaciones();
             load_informacion();
             LoadPresentacionesHabilitadas();
