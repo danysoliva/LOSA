@@ -1,6 +1,6 @@
 ﻿namespace LOSA.RecepcionMP
 {
-    partial class frmagregarlote
+    partial class frmagregarloteCopy
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmagregarlote));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmagregarloteCopy));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -799,7 +799,7 @@
             this.txtpresentacionPromedio.Size = new System.Drawing.Size(195, 32);
             this.txtpresentacionPromedio.TabIndex = 87;
             // 
-            // frmagregarlote
+            // frmagregarloteCopy
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
@@ -845,8 +845,8 @@
             this.Controls.Add(this.txtpresentacionPromedio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmagregarlote";
-            this.Text = "frmagregarlote";
+            this.Name = "frmagregarloteCopy";
+            this.Text = "frmagregarloteCopy";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidadTarimasTotal.Properties)).EndInit();

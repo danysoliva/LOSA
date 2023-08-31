@@ -337,9 +337,9 @@ namespace LOSA.Clases
             }
             message.IsBodyHtml = emailTicketParmas.IsHTML;
 
-            smtp.EnableSsl = false;
-            smtp.Port = 3535;
-            smtp.Host = "smtpout.secureserver.net";
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.Host = "outlook.office365.com";
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = new NetworkCredential("apps@aquafeedhn.net", "$Applications1620&$");
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -390,9 +390,9 @@ namespace LOSA.Clases
             }
             message.IsBodyHtml = emailTicketParmas.IsHTML;
 
-            smtp.EnableSsl = false;
-            smtp.Port = 3535;
-            smtp.Host = "smtpout.secureserver.net";
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.Host = "outlook.office365.com";
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = new NetworkCredential("apps@aquafeedhn.net", "$Applications1620&$");
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -443,9 +443,9 @@ namespace LOSA.Clases
             }
             message.IsBodyHtml = emailTicketParmas.IsHTML;
 
-            smtp.EnableSsl = false;
-            smtp.Port = 3535;
-            smtp.Host = "smtpout.secureserver.net";
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.Host = "outlook.office365.com";
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = new NetworkCredential("apps@aquafeedhn.net", "$Applications1620&$");
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -494,9 +494,9 @@ namespace LOSA.Clases
             }
             message.IsBodyHtml = emailTicketParmas.IsHTML;
 
-            smtp.EnableSsl = false;
-            smtp.Port = 3535;
-            smtp.Host = "smtpout.secureserver.net";
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.Host = "outlook.office365.com";
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = new NetworkCredential("apps@aquafeedhn.net", "$Applications1620&$");
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -541,9 +541,9 @@ namespace LOSA.Clases
             }
             message.IsBodyHtml = email_IT_RequestParams.IsHTML;
 
-            smtp.EnableSsl = false;
-            smtp.Port = 3535;
-            smtp.Host = "smtpout.secureserver.net";
+            smtp.EnableSsl = true;
+            smtp.Port = 587;
+            smtp.Host = "outlook.office365.com";
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = new NetworkCredential("apps@aquafeedhn.net", "$Applications1620&$");
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;

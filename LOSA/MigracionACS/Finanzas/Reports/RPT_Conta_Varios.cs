@@ -2251,7 +2251,7 @@ namespace LOSA.MigracionACS.Finanzas.Reports
 
                 inicializar_grid();
             }
-            else if(cmb_reports.SelectedIndex == 28)
+            else if(cmb_reports.SelectedIndex == 28) //Reporte de Gastos SAP
             {
                 bool accesoprevio = false;
                 int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
@@ -2282,7 +2282,7 @@ namespace LOSA.MigracionACS.Finanzas.Reports
                     {
                         pnl_fechas.Visible = false;
                         txt_ErrorMessage.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 59");
+                        CajaDialogo.Error("Usted no cuenta con los privilegios para generar este reporte! Permiso requerido Standar #: 62");
                     }
                 }
 

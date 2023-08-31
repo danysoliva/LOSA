@@ -73,6 +73,10 @@ namespace LOSA.MigracionACS.Tickets.EndUser
             txtTitulo.Text = tk.Titulo;
 
             UsuarioLogeado = Puser;
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtNameVentana.Visible = true;
+
             load_Data();
             LoadEquiposHardware();
             //LoadProyectosSeleccionados();
@@ -397,7 +401,7 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@user", UsuarioLogeado.UserId);
                 cmd.Parameters.AddWithValue("@comentario", txtcomentario.Text);
-                cmd.Parameters.AddWithValue("@name", UsuarioLogeado.Nombre);
+                cmd.Parameters.AddWithValue("@name", UsuarioLogeado.NombreUser);
                 //cmd.Parameters.AddWithValue("@id_proyecto", grd_proyectoPrimerNivel.EditValue);
                 cmd.Parameters.AddWithValue("@comentario2", txtcomentario.Text);
 

@@ -222,7 +222,7 @@
             this.simpleButton48 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton47 = new DevExpress.XtraEditors.SimpleButton();
             this.TabContabilidad = new DevExpress.XtraTab.XtraTabPage();
-            this.btn_ = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ExoneracionAQ = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAprobarAjustesInvALOSY = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReporteBancosPlanilla = new DevExpress.XtraEditors.SimpleButton();
             this.btnGestionMP = new DevExpress.XtraEditors.SimpleButton();
@@ -286,7 +286,6 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navBarItemEficienciaMolinosKg = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1921,8 +1920,7 @@
             this.navBarItem17,
             this.navBarItem19,
             this.navBarItem2,
-            this.navBarItem9,
-            this.navBarItemEficienciaMolinosKg});
+            this.navBarItem9});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
@@ -1938,7 +1936,6 @@
             this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup1.AppearancePressed.Options.UseFont = true;
             this.navBarGroup1.Caption = "Producción";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrazabilidad),
@@ -2062,7 +2059,6 @@
             this.navBarGroup2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup2.AppearancePressed.Options.UseFont = true;
             this.navBarGroup2.Caption = "Gestión de Producción";
-            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbReporteBatch),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbReporteEnsacadora),
@@ -2076,8 +2072,7 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTemperatura),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbForeCastPRD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbConfiguraciones),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem22),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemEficienciaMolinosKg)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem22)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // nbReporteBatch
@@ -2166,7 +2161,7 @@
             this.nbEficienciaMolinos.AppearanceHotTracked.Options.UseFont = true;
             this.nbEficienciaMolinos.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbEficienciaMolinos.AppearancePressed.Options.UseFont = true;
-            this.nbEficienciaMolinos.Caption = "Eficiencia de Molinos Horas";
+            this.nbEficienciaMolinos.Caption = "Eficiencia de Molinos";
             this.nbEficienciaMolinos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("nbEficienciaMolinos.ImageOptions.SvgImage")));
             this.nbEficienciaMolinos.Name = "nbEficienciaMolinos";
             this.nbEficienciaMolinos.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbEficienciaMolinos_LinkClicked);
@@ -2386,6 +2381,7 @@
             this.navBarGroup4.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup4.AppearancePressed.Options.UseFont = true;
             this.navBarGroup4.Caption = "Inventario";
+            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrasladoAceiteExterno),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbSetMaterial),
@@ -3173,7 +3169,7 @@
             // 
             // TabContabilidad
             // 
-            this.TabContabilidad.Controls.Add(this.btn_);
+            this.TabContabilidad.Controls.Add(this.btn_ExoneracionAQ);
             this.TabContabilidad.Controls.Add(this.cmdAprobarAjustesInvALOSY);
             this.TabContabilidad.Controls.Add(this.cmdReporteBancosPlanilla);
             this.TabContabilidad.Controls.Add(this.btnGestionMP);
@@ -3195,21 +3191,21 @@
             this.TabContabilidad.Size = new System.Drawing.Size(835, 480);
             this.TabContabilidad.Text = "Contabilidad";
             // 
-            // btn_
+            // btn_ExoneracionAQ
             // 
-            this.btn_.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_.Appearance.Options.UseFont = true;
-            this.btn_.Appearance.Options.UseTextOptions = true;
-            this.btn_.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btn_.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_.ImageOptions.Image")));
-            this.btn_.Location = new System.Drawing.Point(643, 42);
-            this.btn_.Name = "btn_";
-            this.btn_.Size = new System.Drawing.Size(182, 56);
-            this.btn_.TabIndex = 54;
-            this.btn_.Text = "Exoneracion Fiscal";
-            this.btn_.Visible = false;
-            this.btn_.Click += new System.EventHandler(this.btn__Click);
+            this.btn_ExoneracionAQ.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ExoneracionAQ.Appearance.Options.UseFont = true;
+            this.btn_ExoneracionAQ.Appearance.Options.UseTextOptions = true;
+            this.btn_ExoneracionAQ.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btn_ExoneracionAQ.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_ExoneracionAQ.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_.ImageOptions.Image")));
+            this.btn_ExoneracionAQ.Location = new System.Drawing.Point(643, 42);
+            this.btn_ExoneracionAQ.Name = "btn_ExoneracionAQ";
+            this.btn_ExoneracionAQ.Size = new System.Drawing.Size(182, 56);
+            this.btn_ExoneracionAQ.TabIndex = 54;
+            this.btn_ExoneracionAQ.Text = "Exoneracion Fiscal";
+            this.btn_ExoneracionAQ.Visible = false;
+            this.btn_ExoneracionAQ.Click += new System.EventHandler(this.btn_ExoneracionAQ_Click);
             // 
             // cmdAprobarAjustesInvALOSY
             // 
@@ -4079,19 +4075,6 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // navBarItemEficienciaMolinosKg
-            // 
-            this.navBarItemEficienciaMolinosKg.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItemEficienciaMolinosKg.Appearance.Options.UseFont = true;
-            this.navBarItemEficienciaMolinosKg.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItemEficienciaMolinosKg.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItemEficienciaMolinosKg.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItemEficienciaMolinosKg.AppearancePressed.Options.UseFont = true;
-            this.navBarItemEficienciaMolinosKg.Caption = "Eficiencia Molinos TM";
-            this.navBarItemEficienciaMolinosKg.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItemEficienciaMolinosKg.ImageOptions.SvgImage")));
-            this.navBarItemEficienciaMolinosKg.Name = "navBarItemEficienciaMolinosKg";
-            this.navBarItemEficienciaMolinosKg.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemEficienciaMolinosKg_LinkClicked);
-            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4390,7 +4373,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem53;
         private DevExpress.XtraNavBar.NavBarItem navBarItem54;
         private DevExpress.XtraEditors.SimpleButton frmRepor_KepServer;
-        private DevExpress.XtraEditors.SimpleButton btn_;
-        private DevExpress.XtraNavBar.NavBarItem navBarItemEficienciaMolinosKg;
+        private DevExpress.XtraEditors.SimpleButton btn_ExoneracionAQ;
     }
 }

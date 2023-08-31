@@ -79,6 +79,8 @@
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
             this.btnHistorial = new DevExpress.XtraEditors.SimpleButton();
             this.TimerN = new System.Windows.Forms.Timer(this.components);
+            this.txtNameVentana = new DevExpress.XtraEditors.TextEdit();
+            this.lblFormulario = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTickets)).BeginInit();
@@ -89,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameVentana.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -147,7 +150,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1239, 50);
+            this.barDockControlTop.Size = new System.Drawing.Size(1239, 40);
             // 
             // barDockControlBottom
             // 
@@ -161,26 +164,26 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 668);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 678);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1239, 50);
+            this.barDockControlRight.Location = new System.Drawing.Point(1239, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 668);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 678);
             // 
             // btnNuevaSolicitud
             // 
             this.btnNuevaSolicitud.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaSolicitud.Appearance.Options.UseFont = true;
             this.btnNuevaSolicitud.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaSolicitud.ImageOptions.Image")));
-            this.btnNuevaSolicitud.Location = new System.Drawing.Point(5, 22);
+            this.btnNuevaSolicitud.Location = new System.Drawing.Point(12, 33);
             this.btnNuevaSolicitud.Name = "btnNuevaSolicitud";
-            this.btnNuevaSolicitud.Size = new System.Drawing.Size(191, 63);
+            this.btnNuevaSolicitud.Size = new System.Drawing.Size(184, 52);
             this.btnNuevaSolicitud.TabIndex = 5;
             this.btnNuevaSolicitud.Text = "Nueva Solicitud";
             this.btnNuevaSolicitud.Click += new System.EventHandler(this.btnNuevaSolicitud_Click);
@@ -190,9 +193,9 @@
             this.btnNotificaciones.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotificaciones.Appearance.Options.UseFont = true;
             this.btnNotificaciones.ImageOptions.Image = global::LOSA.Properties.Resources.new_message_icon__1_32;
-            this.btnNotificaciones.Location = new System.Drawing.Point(202, 22);
+            this.btnNotificaciones.Location = new System.Drawing.Point(202, 33);
             this.btnNotificaciones.Name = "btnNotificaciones";
-            this.btnNotificaciones.Size = new System.Drawing.Size(191, 63);
+            this.btnNotificaciones.Size = new System.Drawing.Size(191, 52);
             this.btnNotificaciones.TabIndex = 6;
             this.btnNotificaciones.Text = "Notificaciones";
             this.btnNotificaciones.Click += new System.EventHandler(this.btnNotificaciones_Click);
@@ -212,7 +215,7 @@
             this.btnver,
             this.btnEstado,
             this.btnUserAssigned});
-            this.grd_data.Size = new System.Drawing.Size(1234, 559);
+            this.grd_data.Size = new System.Drawing.Size(1234, 569);
             this.grd_data.TabIndex = 11;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -412,15 +415,17 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.lblFormulario);
+            this.panelControl1.Controls.Add(this.txtNameVentana);
             this.panelControl1.Controls.Add(this.toggleSwitch1);
             this.panelControl1.Controls.Add(this.btnHistorial);
             this.panelControl1.Controls.Add(this.grd_data);
             this.panelControl1.Controls.Add(this.btnNuevaSolicitud);
             this.panelControl1.Controls.Add(this.btnNotificaciones);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 50);
+            this.panelControl1.Location = new System.Drawing.Point(0, 40);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1239, 668);
+            this.panelControl1.Size = new System.Drawing.Size(1239, 678);
             this.panelControl1.TabIndex = 12;
             // 
             // toggleSwitch1
@@ -434,7 +439,7 @@
             this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
             this.toggleSwitch1.Properties.OffText = "Ver Todos";
             this.toggleSwitch1.Properties.OnText = "Solo Ticket Activos";
-            this.toggleSwitch1.Size = new System.Drawing.Size(195, 24);
+            this.toggleSwitch1.Size = new System.Drawing.Size(195, 20);
             this.toggleSwitch1.TabIndex = 13;
             this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
             // 
@@ -443,9 +448,9 @@
             this.btnHistorial.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorial.Appearance.Options.UseFont = true;
             this.btnHistorial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHistorial.ImageOptions.Image")));
-            this.btnHistorial.Location = new System.Drawing.Point(399, 22);
+            this.btnHistorial.Location = new System.Drawing.Point(399, 33);
             this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(179, 63);
+            this.btnHistorial.Size = new System.Drawing.Size(179, 52);
             this.btnHistorial.TabIndex = 12;
             this.btnHistorial.Text = "Mis Solicitudes";
             this.btnHistorial.Visible = false;
@@ -456,10 +461,34 @@
             this.TimerN.Interval = 1000;
             this.TimerN.Tick += new System.EventHandler(this.TimerN_Tick);
             // 
+            // txtNameVentana
+            // 
+            this.txtNameVentana.EditValue = "frmMainUser";
+            this.txtNameVentana.Location = new System.Drawing.Point(150, 8);
+            this.txtNameVentana.MenuManager = this.barManager1;
+            this.txtNameVentana.Name = "txtNameVentana";
+            this.txtNameVentana.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtNameVentana.Properties.Appearance.Options.UseFont = true;
+            this.txtNameVentana.Properties.ReadOnly = true;
+            this.txtNameVentana.Size = new System.Drawing.Size(141, 22);
+            this.txtNameVentana.TabIndex = 14;
+            this.txtNameVentana.Visible = false;
+            // 
+            // lblFormulario
+            // 
+            this.lblFormulario.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.lblFormulario.Appearance.Options.UseFont = true;
+            this.lblFormulario.Location = new System.Drawing.Point(13, 12);
+            this.lblFormulario.Name = "lblFormulario";
+            this.lblFormulario.Size = new System.Drawing.Size(128, 16);
+            this.lblFormulario.TabIndex = 15;
+            this.lblFormulario.Text = "Nombre de la Ventana";
+            this.lblFormulario.Visible = false;
+            // 
             // frmMainUser
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1239, 738);
             this.Controls.Add(this.panelControl1);
@@ -482,7 +511,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnUserAssigned)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNameVentana.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,5 +556,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEstado;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnUserAssigned;
+        private DevExpress.XtraEditors.LabelControl lblFormulario;
+        private DevExpress.XtraEditors.TextEdit txtNameVentana;
     }
 }

@@ -68,6 +68,7 @@ using LOSA.TransaccionesMP;
 using LOSA.TransaccionesPT;
 using LOSA.Trazabilidad;
 using LOSA.Trazabilidad.ReportesTRZ;
+using LOSA.Finanzas;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -2660,9 +2661,9 @@ namespace LOSA
             switch (idNivel)
             {
                 case 1://Basic View
-                    FCT_MRP_Complete frm2 = new FCT_MRP_Complete(this.UsuarioLogeado);
-                    frm2.MdiParent = this.MdiParent;
-                    frm2.Show();
+                    FCT_MRP_Complete frm = new FCT_MRP_Complete(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
                     break;
                 case 2://Basic No Autorization
                     FCT_MRP_Complete frm3 = new FCT_MRP_Complete(this.UsuarioLogeado);
@@ -3675,9 +3676,11 @@ namespace LOSA
             }
         }
 
-        private void btn__Click(object sender, EventArgs e)
+        private void btn_ExoneracionAQ_Click(object sender, EventArgs e)
         {
-
+            frmExoneracionAQ frm = new frmExoneracionAQ(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
 
         private void navBarItemEficienciaMolinosKg_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
