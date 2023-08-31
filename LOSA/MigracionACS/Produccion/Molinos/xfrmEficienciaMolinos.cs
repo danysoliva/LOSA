@@ -4,6 +4,7 @@ using ACS.Produccion.TemperaturaMaquinas.Reportes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +20,15 @@ namespace LOSA.MigracionACS.Produccion.Molinos
 {
     public partial class xfrmEficienciaMolinos : DevExpress.XtraEditors.XtraForm
     {
-        public xfrmEficienciaMolinos()
+        UserLogin UsuarioLogeado;
+        public xfrmEficienciaMolinos(UserLogin pUser)
         {
             InitializeComponent();
+            UsuarioLogeado = pUser;
+            if(UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtSupport_IT.Visible = txtSupport_IT.ReadOnly = true;
+            else
+                txtSupport_IT.Visible = false;
             load_orden_activas();
         }
 

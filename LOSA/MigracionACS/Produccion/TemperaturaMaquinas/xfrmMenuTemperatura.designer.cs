@@ -118,6 +118,7 @@ namespace LOSA.MigracionACS.Produccion.TemperaturaMaquinas
             this.simpleButton1.Size = new System.Drawing.Size(153, 61);
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Text = "Eficiencia Molinos";
+            this.simpleButton1.Visible = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // xfrmMenuTemperatura

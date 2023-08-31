@@ -32,12 +32,12 @@ namespace LOSA.MigracionACS.Produccion.Molinos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmEficienciaMolinos));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dsTemperatura = new LOSA.MigracionACS.Produccion.TemperaturaMaquinas.dsTemperatura();
             this.extusoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnFiltrar = new DevExpress.XtraEditors.SimpleButton();
@@ -66,6 +66,17 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_acs_turno = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -81,24 +92,16 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.colid_turno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmaquina = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_maquina = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtSupport_IT = new DevExpress.XtraEditors.TextEdit();
+            this.colrendimientoTM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTMEnviadas = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dsTemperatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.extusoraBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordenActivaConsolaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTemperatura2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMolinosEficiencia1)).BeginInit();
@@ -107,11 +110,12 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPrintReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupport_IT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dsTemperatura
@@ -236,7 +240,7 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(903, 476);
+            this.gridControl1.Size = new System.Drawing.Size(907, 479);
             this.gridControl1.TabIndex = 32;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -257,7 +261,9 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.colhoras,
             this.colrendimiento,
             this.colorder_force,
-            this.colfp_lot_number});
+            this.colfp_lot_number,
+            this.colrendimientoTM,
+            this.colTMEnviadas});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -272,6 +278,7 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.colorder_code.FieldName = "order_code";
             this.colorder_code.Name = "colorder_code";
             this.colorder_code.OptionsColumn.AllowEdit = false;
+            this.colorder_code.OptionsColumn.ReadOnly = true;
             this.colorder_code.Visible = true;
             this.colorder_code.VisibleIndex = 0;
             // 
@@ -281,6 +288,7 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.colproducto.FieldName = "producto";
             this.colproducto.Name = "colproducto";
             this.colproducto.OptionsColumn.AllowEdit = false;
+            this.colproducto.OptionsColumn.ReadOnly = true;
             this.colproducto.Visible = true;
             this.colproducto.VisibleIndex = 2;
             // 
@@ -290,24 +298,31 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.colmolino.FieldName = "molino";
             this.colmolino.Name = "colmolino";
             this.colmolino.OptionsColumn.AllowEdit = false;
+            this.colmolino.OptionsColumn.ReadOnly = true;
             this.colmolino.Visible = true;
             this.colmolino.VisibleIndex = 3;
             // 
             // colkg_enviados
             // 
             this.colkg_enviados.Caption = "Kg";
+            this.colkg_enviados.DisplayFormat.FormatString = "n2";
+            this.colkg_enviados.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colkg_enviados.FieldName = "kg_enviados";
             this.colkg_enviados.Name = "colkg_enviados";
             this.colkg_enviados.OptionsColumn.AllowEdit = false;
+            this.colkg_enviados.OptionsColumn.ReadOnly = true;
             this.colkg_enviados.Visible = true;
             this.colkg_enviados.VisibleIndex = 4;
             // 
             // colhoras
             // 
             this.colhoras.Caption = "Horas";
+            this.colhoras.DisplayFormat.FormatString = "n2";
+            this.colhoras.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colhoras.FieldName = "horas";
             this.colhoras.Name = "colhoras";
             this.colhoras.OptionsColumn.AllowEdit = false;
+            this.colhoras.OptionsColumn.ReadOnly = true;
             this.colhoras.Visible = true;
             this.colhoras.VisibleIndex = 5;
             // 
@@ -317,6 +332,7 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.colrendimiento.FieldName = "rendimiento";
             this.colrendimiento.Name = "colrendimiento";
             this.colrendimiento.OptionsColumn.AllowEdit = false;
+            this.colrendimiento.OptionsColumn.ReadOnly = true;
             this.colrendimiento.Visible = true;
             this.colrendimiento.VisibleIndex = 6;
             // 
@@ -329,6 +345,7 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             // 
             this.colfp_lot_number.FieldName = "fp_lot_number";
             this.colfp_lot_number.Name = "colfp_lot_number";
+            this.colfp_lot_number.OptionsColumn.ReadOnly = true;
             this.colfp_lot_number.Visible = true;
             this.colfp_lot_number.VisibleIndex = 1;
             // 
@@ -350,7 +367,7 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             // 
             this.xtraTabPage1.Controls.Add(this.gridControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(903, 476);
+            this.xtraTabPage1.Size = new System.Drawing.Size(907, 479);
             this.xtraTabPage1.Text = "Acumulado";
             // 
             // xtraTabPage2
@@ -358,8 +375,107 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.xtraTabPage2.Controls.Add(this.gridControl3);
             this.xtraTabPage2.Controls.Add(this.gridControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(903, 476);
+            this.xtraTabPage2.Size = new System.Drawing.Size(907, 479);
             this.xtraTabPage2.Text = "Detalle";
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.DataMember = "resumen_molinos";
+            this.gridControl3.DataSource = this.dsMolinosEficiencia1;
+            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl3.Location = new System.Drawing.Point(0, 207);
+            this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(907, 272);
+            this.gridControl3.TabIndex = 38;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10});
+            this.gridView3.GridControl = this.gridControl3;
+            this.gridView3.Name = "gridView3";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.FieldName = "orden_id";
+            this.gridColumn2.Name = "gridColumn2";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Orden";
+            this.gridColumn3.FieldName = "order_code";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Producto";
+            this.gridColumn4.FieldName = "producto";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 2;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Molino";
+            this.gridColumn5.FieldName = "molino";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 3;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Kg";
+            this.gridColumn6.FieldName = "kg_enviados";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 4;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Horas";
+            this.gridColumn7.FieldName = "horas";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 5;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Rendimiento";
+            this.gridColumn8.FieldName = "rendimiento";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 6;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.FieldName = "order_force";
+            this.gridColumn9.Name = "gridColumn9";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.FieldName = "fp_lot_number";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 1;
             // 
             // gridControl2
             // 
@@ -371,7 +487,7 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdPrintReport});
-            this.gridControl2.Size = new System.Drawing.Size(903, 207);
+            this.gridControl2.Size = new System.Drawing.Size(907, 207);
             this.gridControl2.TabIndex = 37;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -474,9 +590,9 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             // cmdPrintReport
             // 
             this.cmdPrintReport.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.cmdPrintReport.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdPrintReport.Name = "cmdPrintReport";
             this.cmdPrintReport.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -499,110 +615,40 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.colid_maquina.FieldName = "id_maquina";
             this.colid_maquina.Name = "colid_maquina";
             // 
-            // gridControl3
+            // txtSupport_IT
             // 
-            this.gridControl3.DataMember = "resumen_molinos";
-            this.gridControl3.DataSource = this.dsMolinosEficiencia1;
-            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.Location = new System.Drawing.Point(0, 207);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(903, 269);
-            this.gridControl3.TabIndex = 38;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
+            this.txtSupport_IT.EditValue = "xfrmEficienciaMolinos";
+            this.txtSupport_IT.Location = new System.Drawing.Point(2, 13);
+            this.txtSupport_IT.Name = "txtSupport_IT";
+            this.txtSupport_IT.Properties.ReadOnly = true;
+            this.txtSupport_IT.Size = new System.Drawing.Size(135, 20);
+            this.txtSupport_IT.TabIndex = 34;
+            this.txtSupport_IT.Visible = false;
             // 
-            // gridView3
+            // colrendimientoTM
             // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10});
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.Name = "gridView3";
+            this.colrendimientoTM.FieldName = "rendimientoTM";
+            this.colrendimientoTM.Name = "colrendimientoTM";
+            this.colrendimientoTM.OptionsColumn.ReadOnly = true;
+            this.colrendimientoTM.Visible = true;
+            this.colrendimientoTM.VisibleIndex = 8;
             // 
-            // gridColumn2
+            // colTMEnviadas
             // 
-            this.gridColumn2.FieldName = "orden_id";
-            this.gridColumn2.Name = "gridColumn2";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Orden";
-            this.gridColumn3.FieldName = "order_code";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Producto";
-            this.gridColumn4.FieldName = "producto";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Molino";
-            this.gridColumn5.FieldName = "molino";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Kg";
-            this.gridColumn6.FieldName = "kg_enviados";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "Horas";
-            this.gridColumn7.FieldName = "horas";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Rendimiento";
-            this.gridColumn8.FieldName = "rendimiento";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.FieldName = "order_force";
-            this.gridColumn9.Name = "gridColumn9";
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.FieldName = "fp_lot_number";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 1;
+            this.colTMEnviadas.DisplayFormat.FormatString = "n2";
+            this.colTMEnviadas.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTMEnviadas.FieldName = "TM Enviadas";
+            this.colTMEnviadas.Name = "colTMEnviadas";
+            this.colTMEnviadas.OptionsColumn.ReadOnly = true;
+            this.colTMEnviadas.Visible = true;
+            this.colTMEnviadas.VisibleIndex = 7;
             // 
             // xfrmEficienciaMolinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 609);
+            this.Controls.Add(this.txtSupport_IT);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtHasta);
@@ -627,11 +673,12 @@ namespace LOSA.MigracionACS.Produccion.Molinos
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdPrintReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSupport_IT.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,5 +740,8 @@ namespace LOSA.MigracionACS.Produccion.Molinos
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraEditors.TextEdit txtSupport_IT;
+        private DevExpress.XtraGrid.Columns.GridColumn colrendimientoTM;
+        private DevExpress.XtraGrid.Columns.GridColumn colTMEnviadas;
     }
 }

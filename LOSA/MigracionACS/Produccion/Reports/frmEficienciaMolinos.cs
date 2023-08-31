@@ -22,6 +22,12 @@ namespace LOSA.MigracionACS.Produccion.Reports
         {
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
+            
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtSupporIT_WindowName.Visible = txtSupporIT_WindowName.ReadOnly = true;
+            else
+                txtSupporIT_WindowName.Visible = false;
+
             DataOperations dp = new DataOperations();
             dtDesde.EditValue = dp.Now().AddDays(-3);
             dtHasta.EditValue = dp.Now();
