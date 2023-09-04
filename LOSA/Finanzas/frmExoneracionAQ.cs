@@ -12,6 +12,7 @@ using LOSA.Finanzas;
 using LOSA.Clases;
 using ACS.Classes;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Finanzas
 {
@@ -31,8 +32,8 @@ namespace LOSA.Finanzas
         {
             try
             {
-                string query = @"";
-                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_OnlySELECT);
+                string query = @"sp_get_header_exoneracion_aq";
+                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -50,6 +51,49 @@ namespace LOSA.Finanzas
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void reposCerrarPeriodo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grdListaExoneracion.FocusedView;
+            var row = (dsExoneracion.lista_exoneracionRow)gridview.GetFocusedDataRow();
+
+            bool PeriodoActivo = false;
+            if (row.cerrado)
+            {
+                CajaDialogo.Error("Este Periodo esta Cerrado!");
+                return;
+            }
+
+            if (dp.Now() < row.final)
+            {
+                PeriodoActivo = true;
+            }
+
+            if (PeriodoActivo)
+            {
+                DialogResult r = CajaDialogo.Pregunta("La Exoneracion sigue Vigente!\n Fecha de Finalizacion: "+row.final + "\n Fecha Actual: "+ dp.Now()+"\n Desea Cerrar de todos modos?");
+                if (r != DialogResult.Yes)
+                    return;
+            }
+            else
+            {
+                DialogResult r = CajaDialogo.Pregunta("Esta seguro que desea cerrar el Periodo de Exoneracion Año: " + row.anio + "?");
+                if (r != DialogResult.Yes)
+                    return;
+            }
+            
+
+
+
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

@@ -29,7 +29,12 @@ namespace LOSA.Finanzas
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExoneracionAQ));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grdListaExoneracion = new DevExpress.XtraGrid.GridControl();
             this.dsExoneracion1 = new LOSA.Finanzas.dsExoneracion();
             this.grdvListaExoneracion = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -45,11 +50,15 @@ namespace LOSA.Finanzas
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.reposCerrarPeriodo = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaExoneracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsExoneracion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListaExoneracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposCerrarPeriodo)).BeginInit();
             this.SuspendLayout();
             // 
             // grdListaExoneracion
@@ -62,6 +71,8 @@ namespace LOSA.Finanzas
             this.grdListaExoneracion.Location = new System.Drawing.Point(2, 91);
             this.grdListaExoneracion.MainView = this.grdvListaExoneracion;
             this.grdListaExoneracion.Name = "grdListaExoneracion";
+            this.grdListaExoneracion.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.reposCerrarPeriodo});
             this.grdListaExoneracion.Size = new System.Drawing.Size(1232, 640);
             this.grdListaExoneracion.TabIndex = 0;
             this.grdListaExoneracion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -82,7 +93,9 @@ namespace LOSA.Finanzas
             this.coluser_create,
             this.coluser_name,
             this.colenable,
-            this.colcerrado});
+            this.colcerrado,
+            this.gridColumn1,
+            this.gridColumn2});
             this.grdvListaExoneracion.GridControl = this.grdListaExoneracion;
             this.grdvListaExoneracion.Name = "grdvListaExoneracion";
             this.grdvListaExoneracion.OptionsBehavior.ReadOnly = true;
@@ -93,57 +106,56 @@ namespace LOSA.Finanzas
             // 
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
-            this.colid.Visible = true;
-            this.colid.VisibleIndex = 0;
             // 
             // colanio
             // 
+            this.colanio.Caption = "Año";
             this.colanio.FieldName = "anio";
             this.colanio.Name = "colanio";
             this.colanio.Visible = true;
-            this.colanio.VisibleIndex = 1;
+            this.colanio.VisibleIndex = 0;
             // 
             // colinicio
             // 
+            this.colinicio.Caption = "F. Inicial";
             this.colinicio.FieldName = "inicio";
             this.colinicio.Name = "colinicio";
             this.colinicio.Visible = true;
-            this.colinicio.VisibleIndex = 2;
+            this.colinicio.VisibleIndex = 1;
             // 
             // colfinal
             // 
+            this.colfinal.Caption = "F. Final";
             this.colfinal.FieldName = "final";
             this.colfinal.Name = "colfinal";
             this.colfinal.Visible = true;
-            this.colfinal.VisibleIndex = 3;
+            this.colfinal.VisibleIndex = 2;
             // 
             // coluser_create
             // 
             this.coluser_create.FieldName = "user_create";
             this.coluser_create.Name = "coluser_create";
-            this.coluser_create.Visible = true;
-            this.coluser_create.VisibleIndex = 4;
             // 
             // coluser_name
             // 
+            this.coluser_name.Caption = "Usuario Creador";
             this.coluser_name.FieldName = "user_name";
             this.coluser_name.Name = "coluser_name";
             this.coluser_name.Visible = true;
-            this.coluser_name.VisibleIndex = 5;
+            this.coluser_name.VisibleIndex = 3;
             // 
             // colenable
             // 
             this.colenable.FieldName = "enable";
             this.colenable.Name = "colenable";
-            this.colenable.Visible = true;
-            this.colenable.VisibleIndex = 6;
             // 
             // colcerrado
             // 
+            this.colcerrado.Caption = "Periodo Cerrado";
             this.colcerrado.FieldName = "cerrado";
             this.colcerrado.Name = "colcerrado";
             this.colcerrado.Visible = true;
-            this.colcerrado.VisibleIndex = 7;
+            this.colcerrado.VisibleIndex = 4;
             // 
             // gridLookUpEdit1
             // 
@@ -194,6 +206,31 @@ namespace LOSA.Finanzas
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // reposCerrarPeriodo
+            // 
+            this.reposCerrarPeriodo.AutoHeight = false;
+            editorButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions2.SvgImage")));
+            this.reposCerrarPeriodo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposCerrarPeriodo.Name = "reposCerrarPeriodo";
+            this.reposCerrarPeriodo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposCerrarPeriodo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposCerrarPeriodo_ButtonClick);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Cerrar Periodo";
+            this.gridColumn1.ColumnEdit = this.reposCerrarPeriodo;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 5;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Detalle de Presupuesto";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 6;
+            // 
             // frmExoneracionAQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +248,7 @@ namespace LOSA.Finanzas
             ((System.ComponentModel.ISupportInitialize)(this.grdvListaExoneracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposCerrarPeriodo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,5 +270,8 @@ namespace LOSA.Finanzas
         private DevExpress.XtraGrid.Columns.GridColumn colcerrado;
         private DevExpress.XtraEditors.SimpleButton btnAgregar;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposCerrarPeriodo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

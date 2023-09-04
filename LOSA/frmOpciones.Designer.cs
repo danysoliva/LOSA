@@ -159,6 +159,7 @@
             this.nbForeCastPRD = new DevExpress.XtraNavBar.NavBarItem();
             this.nbConfiguraciones = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem22 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem21 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
@@ -286,7 +287,6 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navBarItem21 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1358,7 +1358,7 @@
             // 
             // frmRepor_KepServer
             // 
-            this.frmRepor_KepServer.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmRepor_KepServer.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frmRepor_KepServer.Appearance.Options.UseFont = true;
             this.frmRepor_KepServer.Appearance.Options.UseTextOptions = true;
             this.frmRepor_KepServer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -2248,6 +2248,19 @@
             this.navBarItem22.ImageOptions.SmallImage = global::LOSA.Properties.Resources.report_32x32;
             this.navBarItem22.Name = "navBarItem22";
             this.navBarItem22.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem22_LinkClicked);
+            // 
+            // navBarItem21
+            // 
+            this.navBarItem21.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem21.Appearance.Options.UseFont = true;
+            this.navBarItem21.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem21.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem21.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem21.AppearancePressed.Options.UseFont = true;
+            this.navBarItem21.Caption = "Eficiencia Molinos Tm";
+            this.navBarItem21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem21.ImageOptions.SvgImage")));
+            this.navBarItem21.Name = "navBarItem21";
+            this.navBarItem21.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem21_LinkClicked);
             // 
             // navBarGroup3
             // 
@@ -4078,19 +4091,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // navBarItem21
-            // 
-            this.navBarItem21.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem21.Appearance.Options.UseFont = true;
-            this.navBarItem21.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem21.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem21.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem21.AppearancePressed.Options.UseFont = true;
-            this.navBarItem21.Caption = "Eficiencia Molinos Tm";
-            this.navBarItem21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem21.ImageOptions.SvgImage")));
-            this.navBarItem21.Name = "navBarItem21";
-            this.navBarItem21.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem21_LinkClicked);
             // 
             // frmOpciones
             // 
