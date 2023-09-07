@@ -81,6 +81,22 @@ namespace LOSA.Finanzas
                 DialogResult r = CajaDialogo.Pregunta("Esta seguro que desea cerrar el Periodo de Exoneracion Año: " + row.anio + "?");
                 if (r != DialogResult.Yes)
                     return;
+
+                try
+                {
+                    SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("sp_update_cerrar_periodo_fiscal", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_header", row.id);
+                    cmd.ExecuteNonQuery();
+
+                    cargarheader();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
             }
             
             try
@@ -104,6 +120,22 @@ namespace LOSA.Finanzas
                 cargarheader();
             }
 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            //Vamos a Validar que exista uno Activo, no dejar crear el Otro!
+            //O dejarlo en Espera, vamos a pensarlo
+            if (true)
+            {
+
+            }
+
+            frmExoneracionAQ_OP frm = new frmExoneracionAQ_OP(UsuarioLogueado, frmExoneracionAQ_OP.TipoOperacion.insert, 0);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                cargarheader();
+            }
         }
     }
 }

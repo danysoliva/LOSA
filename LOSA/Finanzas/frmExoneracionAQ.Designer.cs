@@ -54,17 +54,13 @@ namespace LOSA.Finanzas
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposCerrarPeriodo = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repostGestionPresupuesto = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.repostGestionPresupuesto = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaExoneracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsExoneracion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListaExoneracion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposCerrarPeriodo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repostGestionPresupuesto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,22 +187,15 @@ namespace LOSA.Finanzas
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 6;
             // 
-            // gridLookUpEdit1
+            // repostGestionPresupuesto
             // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(12, 41);
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(161, 20);
-            this.gridLookUpEdit1.TabIndex = 1;
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.repostGestionPresupuesto.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.repostGestionPresupuesto.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repostGestionPresupuesto.Name = "repostGestionPresupuesto";
+            this.repostGestionPresupuesto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repostGestionPresupuesto.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repostGestionPresupuesto_ButtonClick);
             // 
             // btnAgregar
             // 
@@ -216,12 +205,13 @@ namespace LOSA.Finanzas
             this.btnAgregar.Appearance.Options.UseFont = true;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(194, 27);
+            this.btnAgregar.Location = new System.Drawing.Point(13, 39);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(148, 45);
             this.btnAgregar.TabIndex = 29;
-            this.btnAgregar.Text = "Agregar Ingreso";
+            this.btnAgregar.Text = "Agregar Periodo";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnAtras
             // 
@@ -240,16 +230,6 @@ namespace LOSA.Finanzas
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
-            // repostGestionPresupuesto
-            // 
-            this.repostGestionPresupuesto.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            this.repostGestionPresupuesto.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repostGestionPresupuesto.Name = "repostGestionPresupuesto";
-            this.repostGestionPresupuesto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repostGestionPresupuesto.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repostGestionPresupuesto_ButtonClick);
-            // 
             // frmExoneracionAQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,7 +238,6 @@ namespace LOSA.Finanzas
             this.ControlBox = false;
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.gridLookUpEdit1);
             this.Controls.Add(this.grdListaExoneracion);
             this.IconOptions.ShowIcon = false;
             this.Name = "frmExoneracionAQ";
@@ -266,8 +245,6 @@ namespace LOSA.Finanzas
             ((System.ComponentModel.ISupportInitialize)(this.dsExoneracion1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvListaExoneracion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposCerrarPeriodo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repostGestionPresupuesto)).EndInit();
             this.ResumeLayout(false);
 
@@ -277,8 +254,6 @@ namespace LOSA.Finanzas
 
         private DevExpress.XtraGrid.GridControl grdListaExoneracion;
         private DevExpress.XtraGrid.Views.Grid.GridView grdvListaExoneracion;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private dsExoneracion dsExoneracion1;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colanio;

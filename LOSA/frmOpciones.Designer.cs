@@ -287,6 +287,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.cmdReportSalidaDesechosRRHH = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2835,6 +2836,7 @@
             // 
             // TabRRHH
             // 
+            this.TabRRHH.Controls.Add(this.cmdReportSalidaDesechosRRHH);
             this.TabRRHH.Controls.Add(this.cmdPrintVouchersPlanillas);
             this.TabRRHH.Controls.Add(this.cmdImprimirVouchers);
             this.TabRRHH.Controls.Add(this.simpleButton46);
@@ -4092,6 +4094,21 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // cmdReportSalidaDesechosRRHH
+            // 
+            this.cmdReportSalidaDesechosRRHH.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdReportSalidaDesechosRRHH.Appearance.Options.UseFont = true;
+            this.cmdReportSalidaDesechosRRHH.Appearance.Options.UseTextOptions = true;
+            this.cmdReportSalidaDesechosRRHH.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdReportSalidaDesechosRRHH.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReportSalidaDesechosRRHH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
+            this.cmdReportSalidaDesechosRRHH.Location = new System.Drawing.Point(473, 116);
+            this.cmdReportSalidaDesechosRRHH.Name = "cmdReportSalidaDesechosRRHH";
+            this.cmdReportSalidaDesechosRRHH.Size = new System.Drawing.Size(199, 71);
+            this.cmdReportSalidaDesechosRRHH.TabIndex = 53;
+            this.cmdReportSalidaDesechosRRHH.Text = "Reporte Salidas Desecho";
+            this.cmdReportSalidaDesechosRRHH.Click += new System.EventHandler(this.cmdReportSalidaDesechosRRHH_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4392,5 +4409,6 @@
         private DevExpress.XtraEditors.SimpleButton frmRepor_KepServer;
         private DevExpress.XtraEditors.SimpleButton btn_ExoneracionAQ;
         private DevExpress.XtraNavBar.NavBarItem navBarItem21;
+        private DevExpress.XtraEditors.SimpleButton cmdReportSalidaDesechosRRHH;
     }
 }

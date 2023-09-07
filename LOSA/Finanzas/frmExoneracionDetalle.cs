@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using LOSA.Clases;
 using ACS.Classes;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Finanzas
 {
@@ -51,11 +52,46 @@ namespace LOSA.Finanzas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmExoneracionOP frm = new frmExoneracionOP(frmExoneracionOP.TipoOperacion.insert, UsuarioLogueado, 0);
+            DetalleExoneracion dHedaer = new DetalleExoneracion();
+            dHedaer.RecuperarHedaer(id_header);
+
+            if (dHedaer.Cerrado)
+            {
+                CajaDialogo.Error("El Periodo se encuentra Cerrado!");
+                return;
+            }
+
+          
+            frmExoneracionOP frm = new frmExoneracionOP(frmExoneracionOP.TipoOperacion.insert, UsuarioLogueado, id_header, 0);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 cargar_detalle(id_header);
             }
+        }
+
+        private void repostEditar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grdDetalle.FocusedView;
+            var row = (dsExoneracion.detalle_exoneracionRow)gridview.GetFocusedDataRow();
+
+            DetalleExoneracion dHedaer = new DetalleExoneracion();
+            dHedaer.RecuperarHedaer(id_header);
+            if (dHedaer.Cerrado)
+            {
+                CajaDialogo.Error("No se puede Editar!\nEl Periodo se encuentra Cerrado!");
+                return;
+            }
+
+            frmExoneracionOP frm = new frmExoneracionOP(frmExoneracionOP.TipoOperacion.update, UsuarioLogueado,row.id_presupuesto , row.id);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                cargar_detalle(id_header);
+            }
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
