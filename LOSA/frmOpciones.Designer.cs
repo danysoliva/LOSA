@@ -287,7 +287,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.cmdReporteDesechos = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdReportSalidaDesechosRRHH = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1359,7 +1359,7 @@
             // 
             // frmRepor_KepServer
             // 
-            this.frmRepor_KepServer.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frmRepor_KepServer.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frmRepor_KepServer.Appearance.Options.UseFont = true;
             this.frmRepor_KepServer.Appearance.Options.UseTextOptions = true;
             this.frmRepor_KepServer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -1939,6 +1939,7 @@
             this.navBarGroup1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup1.AppearancePressed.Options.UseFont = true;
             this.navBarGroup1.Caption = "Producción";
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbTrazabilidad),
@@ -2835,7 +2836,7 @@
             // 
             // TabRRHH
             // 
-            this.TabRRHH.Controls.Add(this.cmdReporteDesechos);
+            this.TabRRHH.Controls.Add(this.cmdReportSalidaDesechosRRHH);
             this.TabRRHH.Controls.Add(this.cmdPrintVouchersPlanillas);
             this.TabRRHH.Controls.Add(this.cmdImprimirVouchers);
             this.TabRRHH.Controls.Add(this.simpleButton46);
@@ -3223,7 +3224,6 @@
             this.btn_ExoneracionAQ.Size = new System.Drawing.Size(182, 56);
             this.btn_ExoneracionAQ.TabIndex = 54;
             this.btn_ExoneracionAQ.Text = "Exoneracion Fiscal";
-            this.btn_ExoneracionAQ.Visible = false;
             this.btn_ExoneracionAQ.Click += new System.EventHandler(this.btn_ExoneracionAQ_Click);
             // 
             // cmdAprobarAjustesInvALOSY
@@ -4094,20 +4094,20 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // cmdReporteDesechos
+            // cmdReportSalidaDesechosRRHH
             // 
-            this.cmdReporteDesechos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdReporteDesechos.Appearance.Options.UseFont = true;
-            this.cmdReporteDesechos.Appearance.Options.UseTextOptions = true;
-            this.cmdReporteDesechos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdReporteDesechos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdReporteDesechos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
-            this.cmdReporteDesechos.Location = new System.Drawing.Point(473, 116);
-            this.cmdReporteDesechos.Name = "cmdReporteDesechos";
-            this.cmdReporteDesechos.Size = new System.Drawing.Size(199, 71);
-            this.cmdReporteDesechos.TabIndex = 21;
-            this.cmdReporteDesechos.Text = "Reporte de Desechos";
-            this.cmdReporteDesechos.Click += new System.EventHandler(this.cmdReporteDesechos_Click);
+            this.cmdReportSalidaDesechosRRHH.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdReportSalidaDesechosRRHH.Appearance.Options.UseFont = true;
+            this.cmdReportSalidaDesechosRRHH.Appearance.Options.UseTextOptions = true;
+            this.cmdReportSalidaDesechosRRHH.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdReportSalidaDesechosRRHH.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReportSalidaDesechosRRHH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
+            this.cmdReportSalidaDesechosRRHH.Location = new System.Drawing.Point(473, 116);
+            this.cmdReportSalidaDesechosRRHH.Name = "cmdReportSalidaDesechosRRHH";
+            this.cmdReportSalidaDesechosRRHH.Size = new System.Drawing.Size(199, 71);
+            this.cmdReportSalidaDesechosRRHH.TabIndex = 53;
+            this.cmdReportSalidaDesechosRRHH.Text = "Reporte Salidas Desecho";
+            this.cmdReportSalidaDesechosRRHH.Click += new System.EventHandler(this.cmdReportSalidaDesechosRRHH_Click);
             // 
             // frmOpciones
             // 
@@ -4409,6 +4409,6 @@
         private DevExpress.XtraEditors.SimpleButton frmRepor_KepServer;
         private DevExpress.XtraEditors.SimpleButton btn_ExoneracionAQ;
         private DevExpress.XtraNavBar.NavBarItem navBarItem21;
-        private DevExpress.XtraEditors.SimpleButton cmdReporteDesechos;
+        private DevExpress.XtraEditors.SimpleButton cmdReportSalidaDesechosRRHH;
     }
 }

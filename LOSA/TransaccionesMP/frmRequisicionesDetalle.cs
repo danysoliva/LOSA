@@ -19,6 +19,7 @@ namespace LOSA.TransaccionesMP
         UserLogin UsuarioLogeado;
         int IdRequisicionHeader;
         DataOperations dp;
+        int idEstadoOld;
         int IdEstado;
         int LotePT;
         public frmRequisicionesDetalle(UserLogin pUsuarioLogeado, int pIdReqH, int pLote, int pIdEstado, string pNombre_pt)
@@ -26,6 +27,7 @@ namespace LOSA.TransaccionesMP
             InitializeComponent();
             LotePT = pLote;
             IdEstado = pIdEstado;
+            idEstadoOld = pIdEstado;
             lblRequisicionH_Num.Text = pIdReqH.ToString();
             txtLote.Text = pLote.ToString();
             UsuarioLogeado = pUsuarioLogeado;
@@ -34,6 +36,9 @@ namespace LOSA.TransaccionesMP
 
              dp = new DataOperations();
             LoadDatos();
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
 
 
             ValidarPermisosReqDetalle();
@@ -376,38 +381,91 @@ namespace LOSA.TransaccionesMP
             int vIdEstadoSeleccionado = dp.ValidateNumberInt32(gridLookUpEdit_estados.EditValue);
             if (vIdEstadoSeleccionado > 0)
             {
-                if (vIdEstadoSeleccionado == 4)
+                if (vIdEstadoSeleccionado == 6) //Se enviara la Requisa a Cancelar
                 {
-                    DialogResult r = CajaDialogo.Pregunta("Esta seguro del cambio de estado en la requisición?");
+                    DialogResult r = CajaDialogo.Pregunta("Se cancelara la Requisa y se Cancelara la Orden de Produccion, esta seguro?\nNo se puede revertir esta accion!");
                     if (r != DialogResult.Yes)
                     {
                         gridLookUpEdit_estados.EditValue = IdEstado;
                         return;
                     }
-                }
-
-                if(vIdEstadoSeleccionado != IdEstado)
-                {
-                    //Update Estado Req
+                    bool PermitirCancelar = false;
+                    string Mensaje = "";
                     try
                     {
                         DataOperations dp = new DataOperations();
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
 
-                        SqlCommand cmd = new SqlCommand("sp_set_update_requisicion_header_estado", con);
+                        SqlCommand cmd = new SqlCommand("[sp_set_update_requisicion_header_estado_cancelar]", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_req_h", IdRequisicionHeader);
                         cmd.Parameters.AddWithValue("@id_estado", vIdEstadoSeleccionado);
                         cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
-                        cmd.ExecuteNonQuery();
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            PermitirCancelar = dr.GetBoolean(0);
+                            Mensaje = dr.GetString(1);
+                            dr.Close();
+                        }
                         con.Close();
+
+                        if (PermitirCancelar == true)
+                        {
+                            CajaDialogo.Information(Mensaje);
+                        }
+                        else
+                        {
+                            CajaDialogo.Error(Mensaje);
+                            gridLookUpEdit_estados.EditValue = idEstadoOld;
+                            return;
+                        }
                     }
                     catch (Exception ec)
                     {
                         CajaDialogo.Error(ec.Message);
                     }
+
                 }
+                else
+                {
+                    if (vIdEstadoSeleccionado == 4)
+                    {
+                        DialogResult r = CajaDialogo.Pregunta("Esta seguro del cambio de estado en la requisición?");
+                        if (r != DialogResult.Yes)
+                        {
+                            gridLookUpEdit_estados.EditValue = IdEstado;
+                            return;
+                        }
+                    }
+
+                    if (vIdEstadoSeleccionado != IdEstado)
+                    {
+                        //Update Estado Req
+                        try
+                        {
+                            DataOperations dp = new DataOperations();
+                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                            con.Open();
+
+                            SqlCommand cmd = new SqlCommand("sp_set_update_requisicion_header_estado", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_req_h", IdRequisicionHeader);
+                            cmd.Parameters.AddWithValue("@id_estado", vIdEstadoSeleccionado);
+                            cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogeado.Id);
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                        catch (Exception ec)
+                        {
+                            CajaDialogo.Error(ec.Message);
+                        }
+                    }
+                }
+
+
+                
             }
         }
 

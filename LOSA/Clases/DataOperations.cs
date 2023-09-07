@@ -52,6 +52,11 @@ namespace ACS.Classes
                                                          User Id=" + Globals.SAP_DB_User + @";
                                                            Password=" + Globals.SAP_DB_Pass + ";";
 
+        internal string ConnectionSAP_ACS = @"Server=" + Globals.SAP_ACS_ServerAddress + @";
+                                                        Database=" + Globals.SAP_ACS_ActiveDB + @";
+                                                         User Id=" + Globals.SAP_ACS_DB_User + @";
+                                                           Password=" + Globals.SAP_ACS_DB_Pass + ";";
+
         internal string ConnectionStringConsola = @";Database=" + Globals.CMS_ActiveDB + @";
                                                     User Id=" + Globals.CMS_DB_User + @";
                                                     Password=" + Globals.CMS_DB_Pass + ";";

@@ -26,6 +26,38 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="detalle_exoneracion" msprop:Generator_TableClassName="detalle_exoneracionDataTable" msprop:Generator_TableVarName="tabledetalle_exoneracion" msprop:Generator_RowChangedName="detalle_exoneracionRowChanged" msprop:Generator_TablePropName="detalle_exoneracion" msprop:Generator_RowDeletingName="detalle_exoneracionRowDeleting" msprop:Generator_RowChangingName="detalle_exoneracionRowChanging" msprop:Generator_RowEvHandlerName="detalle_exoneracionRowChangeEventHandler" msprop:Generator_RowDeletedName="detalle_exoneracionRowDeleted" msprop:Generator_RowClassName="detalle_exoneracionRow" msprop:Generator_UserTableName="detalle_exoneracion" msprop:Generator_RowEvArgName="detalle_exoneracionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="capitulo" msprop:Generator_ColumnVarNameInTable="columncapitulo" msprop:Generator_ColumnPropNameInRow="capitulo" msprop:Generator_ColumnPropNameInTable="capituloColumn" msprop:Generator_UserColumnName="capitulo" type="xs:string" minOccurs="0" />
+              <xs:element name="capitulo_descripcion" msprop:Generator_ColumnVarNameInTable="columncapitulo_descripcion" msprop:Generator_ColumnPropNameInRow="capitulo_descripcion" msprop:Generator_ColumnPropNameInTable="capitulo_descripcionColumn" msprop:Generator_UserColumnName="capitulo_descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="rubro" msprop:Generator_ColumnVarNameInTable="columnrubro" msprop:Generator_ColumnPropNameInRow="rubro" msprop:Generator_ColumnPropNameInTable="rubroColumn" msprop:Generator_UserColumnName="rubro" type="xs:string" minOccurs="0" />
+              <xs:element name="rubro_descripcion" msprop:Generator_ColumnVarNameInTable="columnrubro_descripcion" msprop:Generator_ColumnPropNameInRow="rubro_descripcion" msprop:Generator_ColumnPropNameInTable="rubro_descripcionColumn" msprop:Generator_UserColumnName="rubro_descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="id_presupuesto" msprop:Generator_ColumnVarNameInTable="columnid_presupuesto" msprop:Generator_ColumnPropNameInRow="id_presupuesto" msprop:Generator_ColumnPropNameInTable="id_presupuestoColumn" msprop:Generator_UserColumnName="id_presupuesto" type="xs:int" minOccurs="0" />
+              <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" minOccurs="0" />
+              <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rubros" msprop:Generator_TableClassName="rubrosDataTable" msprop:Generator_TableVarName="tablerubros" msprop:Generator_TablePropName="rubros" msprop:Generator_RowDeletingName="rubrosRowDeleting" msprop:Generator_RowChangingName="rubrosRowChanging" msprop:Generator_RowEvHandlerName="rubrosRowChangeEventHandler" msprop:Generator_RowDeletedName="rubrosRowDeleted" msprop:Generator_UserTableName="rubros" msprop:Generator_RowChangedName="rubrosRowChanged" msprop:Generator_RowEvArgName="rubrosRowChangeEvent" msprop:Generator_RowClassName="rubrosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="concat_" msprop:Generator_ColumnVarNameInTable="columnconcat_" msprop:Generator_ColumnPropNameInRow="concat_" msprop:Generator_ColumnPropNameInTable="concat_Column" msprop:Generator_UserColumnName="concat_" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="capitulos" msprop:Generator_TableClassName="capitulosDataTable" msprop:Generator_TableVarName="tablecapitulos" msprop:Generator_RowChangedName="capitulosRowChanged" msprop:Generator_TablePropName="capitulos" msprop:Generator_RowDeletingName="capitulosRowDeleting" msprop:Generator_RowChangingName="capitulosRowChanging" msprop:Generator_RowEvHandlerName="capitulosRowChangeEventHandler" msprop:Generator_RowDeletedName="capitulosRowDeleted" msprop:Generator_RowClassName="capitulosRow" msprop:Generator_UserTableName="capitulos" msprop:Generator_RowEvArgName="capitulosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code" type="xs:string" minOccurs="0" />
+              <xs:element name="U_AQUA_Desc" msprop:Generator_ColumnVarNameInTable="columnU_AQUA_Desc" msprop:Generator_ColumnPropNameInRow="U_AQUA_Desc" msprop:Generator_ColumnPropNameInTable="U_AQUA_DescColumn" msprop:Generator_UserColumnName="U_AQUA_Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="concat_" msprop:Generator_ColumnVarNameInTable="columnconcat_" msprop:Generator_ColumnPropNameInRow="concat_" msprop:Generator_ColumnPropNameInTable="concat_Column" msprop:Generator_UserColumnName="concat_" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

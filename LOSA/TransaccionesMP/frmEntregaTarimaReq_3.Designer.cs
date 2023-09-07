@@ -133,6 +133,7 @@ namespace LOSA.TransaccionesMP
             this.cmdEntregaMPSacosPrd = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cmdLotesProximosVencerMP = new DevExpress.XtraEditors.SimpleButton();
             this.btnVerDetalleRequisa = new DevExpress.XtraEditors.SimpleButton();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtRequisicion.Properties)).BeginInit();
             this.panelNotificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
@@ -1169,11 +1170,22 @@ namespace LOSA.TransaccionesMP
             this.btnVerDetalleRequisa.Visible = false;
             this.btnVerDetalleRequisa.Click += new System.EventHandler(this.btnVerDetalleRequisa_Click);
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(266, 35);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 116;
+            this.txtVentana.Text = "frmEntregaTarimaReq_3";
+            this.txtVentana.Visible = false;
+            // 
             // frmEntregaTarimaReq_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 757);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.btnVerDetalleRequisa);
             this.Controls.Add(this.txtRequisicion);
             this.Controls.Add(this.cmdLotesProximosVencerMP);
@@ -1305,5 +1317,6 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit cmdEntregaMPSacosPrd;
         private DevExpress.XtraGrid.Columns.GridColumn colid_alimentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colentregado_micros;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }

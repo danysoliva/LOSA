@@ -37,6 +37,9 @@ namespace LOSA.TransaccionesMP
             txtRequisicion.Focus();
             txtTarima.Text = "";
 
+            if (usuarioLogueado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
+
         }
 
         private void load_bines_disponibles()
@@ -216,7 +219,7 @@ namespace LOSA.TransaccionesMP
                                     }
                                     break;
 
-                                case 6:
+                                case 6: //Cancelada
                                     Utileria.frmMensajeCalidad frm6 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error,
                                                         "La Requisicion Esta en Estado: Cancelada! Contacte al Planeador de Produccion o \nContacte a un Supervisor de Logística.");
                                     if (frm6.ShowDialog() == DialogResult.OK)
@@ -228,7 +231,7 @@ namespace LOSA.TransaccionesMP
                                     }
                                     break;
 
-                                case 7:
+                                case 7: //En Espera
                                     Utileria.frmMensajeCalidad frm7 = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error,
                                                         "La Requisicion esta en Espera! Contacte al Planeador de Produccion o \nContacte a un Supervisor de Logística.");
                                     if (frm7.ShowDialog() == DialogResult.OK)

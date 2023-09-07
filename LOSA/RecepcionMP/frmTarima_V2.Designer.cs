@@ -117,6 +117,7 @@ namespace LOSA.RecepcionMP
             this.btnSelccionarProveedor = new DevExpress.XtraEditors.SimpleButton();
             this.txtfactura = new DevExpress.XtraEditors.TextEdit();
             this.txtid_lote = new DevExpress.XtraEditors.TextEdit();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdBoleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtpresentacionPromedio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tg_presentacion_promedio.Properties)).BeginInit();
@@ -1101,11 +1102,23 @@ namespace LOSA.RecepcionMP
             this.txtid_lote.Size = new System.Drawing.Size(40, 24);
             this.txtid_lote.TabIndex = 102;
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVentana.Location = new System.Drawing.Point(20, 58);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(140, 23);
+            this.txtVentana.TabIndex = 103;
+            this.txtVentana.Text = "frmTarima_V2";
+            this.txtVentana.Visible = false;
+            // 
             // frmTarima_V2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 694);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.txtid_lote);
             this.Controls.Add(this.txtfactura);
             this.Controls.Add(this.btnSelccionarProveedor);
@@ -1275,5 +1288,6 @@ namespace LOSA.RecepcionMP
         private dsRecepcionMPx dsRecepcionMPx;
         private DevExpress.XtraEditors.TextEdit txtid_lote;
         private DevExpress.XtraGrid.Columns.GridColumn colid_lote_externo;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }

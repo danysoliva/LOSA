@@ -1415,16 +1415,17 @@ namespace LOSA.Trazabilidad
             //}
         }
 
-        public void Inicializar_data_logisticaRuta2(string plotemp)
+        public void Inicializar_data_logisticaRuta2(string plotemp, int pnum_trans)
         {
             try
             {
-                string query = @"sp_obtener_datos_logistica_to_show_calidad_by_lote";
+                string query = @"[sp_obtener_datos_logistica_to_show_calidad_by_loteV2]";
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@_lotemp", plotemp);
+                cmd.Parameters.AddWithValue("@num_transa", pnum_trans);
                 dsMantenimientoC.logisticaInformacion.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dsMantenimientoC.logisticaInformacion);
@@ -4053,7 +4054,7 @@ namespace LOSA.Trazabilidad
                 Load_cargas_nir_Ruta4(row.id_mp);
                 Inicalizar_Archivo_Ruta4();
                 //Inicializar_data_logistica_Ruta4(row.NIngreso);
-                Inicializar_data_logisticaRuta2(row.lote_mp);
+                Inicializar_data_logisticaRuta2(row.lote_mp, row.NIngreso);
                 load_especie_Ruta4();
                 load_zonas_Ruta4();
                 load_tipo_Ruta4();

@@ -85,6 +85,13 @@ namespace ACS.Classes
         public static string SAP_DB_User = "sa";
         public static string SAP_DB_Pass = "Aqua2018";
 
+        //SAP_ACS
+        public static string SAP_ACS_ServerAddress = @"AQFSVR006\AQFSVR006";
+        public static string SAP_ACS_ServerName = "Servidor de Desarrollo";
+        public static string SAP_ACS_ActiveDB = "ACS";
+        public static string SAP_ACS_DB_User = "sa";
+        public static string SAP_ACS_DB_Pass = "Aqua2018";
+
 
         // APMS(Aquafeed Pocess Management System)
         public static string APMS_Server = @"AQFSVR008\AQFSVR008";

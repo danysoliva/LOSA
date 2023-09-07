@@ -3105,7 +3105,7 @@ namespace LOSA
             try
             {
                 bool accesoprevio = false;
-                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
                 switch (idNivel)
                 {
                     case 1://Basic View
@@ -3113,14 +3113,12 @@ namespace LOSA
                     case 2://Basic No Autorization
                         break;
                     case 3://Medium Autorization
-                        break;
                     case 4://Depth With Delta
+                    case 5://Depth Without Delta
                         accesoprevio = true;
                         frmDetalleDesechos frm = new frmDetalleDesechos(this.UsuarioLogeado);
                         frm.MdiParent = this.MdiParent;
                         frm.Show();
-                        break;
-                    case 5://Depth Without Delta
                         break;
                     default:
                         break;
@@ -3678,9 +3676,50 @@ namespace LOSA
 
         private void btn_ExoneracionAQ_Click(object sender, EventArgs e)
         {
-            frmExoneracionAQ frm = new frmExoneracionAQ(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            //frmExoneracionAQ frm = new frmExoneracionAQ(UsuarioLogeado);
+            //frm.MdiParent = this.MdiParent;
+            //frm.Show();
+
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmExoneracionAQ frm4 = new frmExoneracionAQ(UsuarioLogeado);
+                    frm4.MdiParent = this.MdiParent;
+                    frm4.Show();
+
+                    break;
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmExoneracionAQ frm5 = new frmExoneracionAQ(UsuarioLogeado);
+                    frm5.MdiParent = this.MdiParent;
+                    frm5.Show();
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(94))
+                {
+                    frmExoneracionAQ frm1 = new frmExoneracionAQ(UsuarioLogeado);
+                    frm1.MdiParent = this.MdiParent;
+                    frm1.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #94");
+                }
+            }
         }
 
         private void navBarItemEficienciaMolinosKg_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -3762,43 +3801,35 @@ namespace LOSA
             }
         }
 
-        private void cmdReporteDesechos_Click(object sender, EventArgs e)
+        private void cmdReportSalidaDesechosRRHH_Click(object sender, EventArgs e)
         {
-            //frmDetalleDesechos
-            bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
-            switch (idNivel)
+            try
             {
-                case 1://Basic View
-                    break;
-                case 2://Basic No Autorization
-                    break;
-                case 3://Medium Autorization
-                    break;
-                case 4://Depth With Delta
-                    accesoprevio = true;
-                    frmDetalleDesechos frm = new frmDetalleDesechos(this.UsuarioLogeado);
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                    break;
-                case 5://Depth Without Delta
-                    break;
-                default:
-                    break;
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                        accesoprevio = true;
+                        frmDetalleDesechos frm = new frmDetalleDesechos(this.UsuarioLogeado);
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
+                        break;
+                    case 5://Depth Without Delta
+                        break;
+                    default:
+                        break;
+                }
             }
-            if (!accesoprevio)
+            catch (Exception ex)
             {
-                if (UsuarioLogeado.ValidarNivelPermisos(75))
-                {
-                    //frmMantoPhotosTV frm = new frmMantoPhotosTV(UsuarioLogeado);
-                    frmDetalleDesechos frm = new frmDetalleDesechos(this.UsuarioLogeado);
-                    frm.MdiParent = this;
-                    frm.Show();
-                }
-                else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #75");
-                }
+                CajaDialogo.Error(ex.Message);
             }
         }
     }

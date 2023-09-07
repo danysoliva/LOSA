@@ -95,6 +95,11 @@ namespace LOSA.RecepcionMP
             LoadPresentaciones();
             LoadNumeroTransaccion();
             dtFechaIngreso.EditValue = dp.Now();
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+            {
+                txtVentana.Visible = true;
+            }
         }
         public frmTarima_V2(bool PIstraslado, UserLogin Puser, int Pid_traslado, int Pid_transferencia, int pDocEntry, int pId_mp)
         {
@@ -127,6 +132,11 @@ namespace LOSA.RecepcionMP
             LoadPresentaciones();
             LoadNumeroTransaccion();
             dtFechaIngreso.EditValue = dp.Now();
+
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+            {
+                txtVentana.Visible = true;
+            }
         }
 
         private void LoadNumeroTransaccion()

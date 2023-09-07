@@ -80,6 +80,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lblnombre_pt = new DevExpress.XtraEditors.LabelControl();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grDetalleLote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
@@ -533,12 +534,22 @@
             this.btnRefresh.Text = "Actualizar";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(622, 59);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.Size = new System.Drawing.Size(166, 20);
+            this.txtVentana.TabIndex = 56;
+            this.txtVentana.Text = "frmRequisicionesDetalle";
+            this.txtVentana.Visible = false;
+            // 
             // frmRequisicionesDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1226, 560);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lblnombre_pt);
             this.Controls.Add(this.labelControl3);
@@ -610,5 +621,6 @@
         private DevExpress.XtraEditors.LabelControl lblnombre_pt;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }
