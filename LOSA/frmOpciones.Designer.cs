@@ -159,6 +159,7 @@
             this.nbForeCastPRD = new DevExpress.XtraNavBar.NavBarItem();
             this.nbConfiguraciones = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem22 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem21 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
@@ -286,7 +287,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navBarItem21 = new DevExpress.XtraNavBar.NavBarItem();
+            this.cmdReporteDesechos = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2249,6 +2250,19 @@
             this.navBarItem22.Name = "navBarItem22";
             this.navBarItem22.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem22_LinkClicked);
             // 
+            // navBarItem21
+            // 
+            this.navBarItem21.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem21.Appearance.Options.UseFont = true;
+            this.navBarItem21.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem21.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem21.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem21.AppearancePressed.Options.UseFont = true;
+            this.navBarItem21.Caption = "Eficiencia Molinos Tm";
+            this.navBarItem21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem21.ImageOptions.SvgImage")));
+            this.navBarItem21.Name = "navBarItem21";
+            this.navBarItem21.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem21_LinkClicked);
+            // 
             // navBarGroup3
             // 
             this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
@@ -2821,6 +2835,7 @@
             // 
             // TabRRHH
             // 
+            this.TabRRHH.Controls.Add(this.cmdReporteDesechos);
             this.TabRRHH.Controls.Add(this.cmdPrintVouchersPlanillas);
             this.TabRRHH.Controls.Add(this.cmdImprimirVouchers);
             this.TabRRHH.Controls.Add(this.simpleButton46);
@@ -4079,18 +4094,20 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // navBarItem21
+            // cmdReporteDesechos
             // 
-            this.navBarItem21.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem21.Appearance.Options.UseFont = true;
-            this.navBarItem21.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem21.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem21.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem21.AppearancePressed.Options.UseFont = true;
-            this.navBarItem21.Caption = "Eficiencia Molinos Tm";
-            this.navBarItem21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem21.ImageOptions.SvgImage")));
-            this.navBarItem21.Name = "navBarItem21";
-            this.navBarItem21.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem21_LinkClicked);
+            this.cmdReporteDesechos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdReporteDesechos.Appearance.Options.UseFont = true;
+            this.cmdReporteDesechos.Appearance.Options.UseTextOptions = true;
+            this.cmdReporteDesechos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdReporteDesechos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteDesechos.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
+            this.cmdReporteDesechos.Location = new System.Drawing.Point(473, 116);
+            this.cmdReporteDesechos.Name = "cmdReporteDesechos";
+            this.cmdReporteDesechos.Size = new System.Drawing.Size(199, 71);
+            this.cmdReporteDesechos.TabIndex = 21;
+            this.cmdReporteDesechos.Text = "Reporte de Desechos";
+            this.cmdReporteDesechos.Click += new System.EventHandler(this.cmdReporteDesechos_Click);
             // 
             // frmOpciones
             // 
@@ -4392,5 +4409,6 @@
         private DevExpress.XtraEditors.SimpleButton frmRepor_KepServer;
         private DevExpress.XtraEditors.SimpleButton btn_ExoneracionAQ;
         private DevExpress.XtraNavBar.NavBarItem navBarItem21;
+        private DevExpress.XtraEditors.SimpleButton cmdReporteDesechos;
     }
 }

@@ -3761,5 +3761,45 @@ namespace LOSA
                 }
             }
         }
+
+        private void cmdReporteDesechos_Click(object sender, EventArgs e)
+        {
+            //frmDetalleDesechos
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmDetalleDesechos frm = new frmDetalleDesechos(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(75))
+                {
+                    //frmMantoPhotosTV frm = new frmMantoPhotosTV(UsuarioLogeado);
+                    frmDetalleDesechos frm = new frmDetalleDesechos(this.UsuarioLogeado);
+                    frm.MdiParent = this;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #75");
+                }
+            }
+        }
     }
 }
