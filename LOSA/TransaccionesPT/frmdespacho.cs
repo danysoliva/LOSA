@@ -160,6 +160,7 @@ namespace LOSA.TransaccionesPT
                 return;
             }
 
+            Validar_Entrega(row.NumID);    
 
             if (row.bit_abierto == false)
             {
@@ -192,6 +193,32 @@ namespace LOSA.TransaccionesPT
                     CajaDialogo.Error(ex.Message);
                 }
 
+            }
+        }
+
+        private void Validar_Entrega(int NumID)
+        {
+            bool Permitir = false; 
+            try
+            {
+                string sql = @"sp_validacion_entrega_eliminar_despacho";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@num_id", NumID);
+                Permitir = Convert.ToBoolean(cmd.ExecuteScalar());
+                conn.Close();
+
+                if (Permitir == false)
+                {
+                    CajaDialogo.Error("No se puede Eliminar este Despacho existe Tarimas Escaneadas!\n Elimine las tarimas del Despacho.");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
 

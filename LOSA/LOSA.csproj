@@ -1158,6 +1158,7 @@
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Despacho.cs" />
     <Compile Include="Clases\Destinos_empaques.cs" />
+    <Compile Include="Clases\DetalleExoneracion.cs" />
     <Compile Include="Clases\DetallePlanilla.cs" />
     <Compile Include="Clases\DetallePlanillaHE.cs" />
     <Compile Include="Clases\dsColleccionesClases.Designer.cs">
@@ -1426,6 +1427,9 @@
     <Compile Include="Despachos\rpt_despacho.Designer.cs">
       <DependentUpon>rpt_despacho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finanzas\dsExoneracion.cs">
+      <DependentUpon>dsExoneracion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Finanzas\dsExoneracion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1436,6 +1440,18 @@
     </Compile>
     <Compile Include="Finanzas\frmExoneracionAQ.Designer.cs">
       <DependentUpon>frmExoneracionAQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionDetalle.Designer.cs">
+      <DependentUpon>frmExoneracionDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas\frmExoneracionOP.Designer.cs">
+      <DependentUpon>frmExoneracionOP.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -6763,6 +6779,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finanzas\frmExoneracionAQ.resx">
       <DependentUpon>frmExoneracionAQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\frmExoneracionDetalle.resx">
+      <DependentUpon>frmExoneracionDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas\frmExoneracionOP.resx">
+      <DependentUpon>frmExoneracionOP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

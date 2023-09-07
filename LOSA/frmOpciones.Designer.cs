@@ -3222,7 +3222,6 @@
             this.btn_ExoneracionAQ.Size = new System.Drawing.Size(182, 56);
             this.btn_ExoneracionAQ.TabIndex = 54;
             this.btn_ExoneracionAQ.Text = "Exoneracion Fiscal";
-            this.btn_ExoneracionAQ.Visible = false;
             this.btn_ExoneracionAQ.Click += new System.EventHandler(this.btn_ExoneracionAQ_Click);
             // 
             // cmdAprobarAjustesInvALOSY

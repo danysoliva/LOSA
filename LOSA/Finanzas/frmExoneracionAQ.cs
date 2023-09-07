@@ -83,9 +83,6 @@ namespace LOSA.Finanzas
                     return;
             }
             
-
-
-
             try
             {
                 
@@ -94,6 +91,19 @@ namespace LOSA.Finanzas
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void repostGestionPresupuesto_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)grdListaExoneracion.FocusedView;
+            var row = (dsExoneracion.lista_exoneracionRow)gridview.GetFocusedDataRow();
+
+            frmExoneracionDetalle frm = new frmExoneracionDetalle(UsuarioLogueado, row.id);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                cargarheader();
+            }
+
         }
     }
 }
