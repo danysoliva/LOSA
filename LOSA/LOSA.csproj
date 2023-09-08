@@ -3445,6 +3445,13 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.Designer.cs" />
+    <Compile Include="MigracionACS\RRHH\Reportes\frmDetalleDesechos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Reportes\frmDetalleDesechos.Designer.cs">
+      <DependentUpon>frmDetalleDesechos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\RRHH\Reportes\frmResumenNominas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4851,6 +4858,13 @@
     </None>
     <None Include="MigracionACS\RRHH\Reportes\dsReportesRRHH.xss">
       <DependentUpon>dsReportesRRHH.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xsc">
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xsd" />
+    <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xss">
+      <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\SAR\dS_SAR.xsc">
       <DependentUpon>dS_SAR.xsd</DependentUpon>
@@ -7638,6 +7652,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RRHH\RelojFace\frm_Operaciones_Marcas.resx">
       <DependentUpon>frm_Operaciones_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmDetalleDesechos.resx">
+      <DependentUpon>frmDetalleDesechos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmResumenNominas.resx">
       <DependentUpon>frmResumenNominas.cs</DependentUpon>
