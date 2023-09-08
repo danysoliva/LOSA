@@ -3691,11 +3691,6 @@ namespace LOSA
                 case 3://Medium Autorization
                     break;
                 case 4://Depth With Delta
-                    accesoprevio = true;
-                    frmExoneracionAQ frm4 = new frmExoneracionAQ(UsuarioLogeado);
-                    frm4.MdiParent = this.MdiParent;
-                    frm4.Show();
-
                     break;
                 case 5://Depth Without Delta
                     accesoprevio = true;
