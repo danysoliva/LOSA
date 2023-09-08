@@ -2524,7 +2524,6 @@ namespace LOSA
                 case 2://Basic No Autorization
                     break;
                 case 3://Medium Autorization
-                    break;
                 case 4://Depth With Delta
                     accesoprevio = true;
                     frmResumenNominas frm = new frmResumenNominas();
@@ -2549,14 +2548,12 @@ namespace LOSA
                 case 2://Basic No Autorization
                     break;
                 case 3://Medium Autorization
-                    break;
                 case 4://Depth With Delta
+                case 5://Depth Without Delta
                     accesoprevio = true;
                     frmResumenVacaciones frm = new frmResumenVacaciones();
                     frm.MdiParent = this;
                     frm.Show();
-                    break;
-                case 5://Depth Without Delta
                     break;
                 default:
                     break;
@@ -3809,14 +3806,13 @@ namespace LOSA
                     case 2://Basic No Autorization
                         break;
                     case 3://Medium Autorization
-                        break;
                     case 4://Depth With Delta
+                    case 5://Depth Without Delta
                         accesoprevio = true;
                         frmDetalleDesechos frm = new frmDetalleDesechos(this.UsuarioLogeado);
                         frm.MdiParent = this.MdiParent;
                         frm.Show();
-                        break;
-                    case 5://Depth Without Delta
+                    
                         break;
                     default:
                         break;
