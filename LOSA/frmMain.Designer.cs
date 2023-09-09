@@ -83,7 +83,7 @@ namespace LOSA
             // 
             // txtClave
             // 
-            this.txtClave.EditValue = "deed984Ahem";
+            this.txtClave.EditValue = "";
             this.txtClave.Location = new System.Drawing.Point(189, 165);
             this.txtClave.Name = "txtClave";
             this.txtClave.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -97,7 +97,7 @@ namespace LOSA
             // 
             // txtUsuario
             // 
-            this.txtUsuario.EditValue = "blanca.escalante";
+            this.txtUsuario.EditValue = "";
             this.txtUsuario.Location = new System.Drawing.Point(189, 107);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Properties.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
