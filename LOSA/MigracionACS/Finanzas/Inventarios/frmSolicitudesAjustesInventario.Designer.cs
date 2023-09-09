@@ -44,6 +44,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.toggleSwitchVerTodos = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dsRecepcionMP_AjusteLote1 = new LOSA.TransaccionesMP.DataSet.dsRecepcionMP_AjusteLote();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_operacion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -79,13 +80,12 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.btnEliminar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colAprobar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdAprobar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.dsRecepcionMP_AjusteLote1 = new LOSA.TransaccionesMP.DataSet.dsRecepcionMP_AjusteLote();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAprobar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
@@ -106,7 +106,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.toggleSwitchVerTodos.Properties.Appearance.Options.UseFont = true;
             this.toggleSwitchVerTodos.Properties.OffText = "No";
             this.toggleSwitchVerTodos.Properties.OnText = "Si";
-            this.toggleSwitchVerTodos.Size = new System.Drawing.Size(105, 26);
+            this.toggleSwitchVerTodos.Size = new System.Drawing.Size(105, 20);
             this.toggleSwitchVerTodos.TabIndex = 6;
             this.toggleSwitchVerTodos.Toggled += new System.EventHandler(this.toggleSwitchVerTodos_Toggled);
             // 
@@ -138,6 +138,11 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // dsRecepcionMP_AjusteLote1
+            // 
+            this.dsRecepcionMP_AjusteLote1.DataSetName = "dsRecepcionMP_AjusteLote";
+            this.dsRecepcionMP_AjusteLote1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -176,6 +181,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.colAprobar});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             // 
             // colid
             // 
@@ -445,11 +451,6 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.cmdAprobar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdAprobar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdAprobar_ButtonClick);
             // 
-            // dsRecepcionMP_AjusteLote1
-            // 
-            this.dsRecepcionMP_AjusteLote1.DataSetName = "dsRecepcionMP_AjusteLote";
-            this.dsRecepcionMP_AjusteLote1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // frmSolicitudesAjustesInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,10 +464,10 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.Text = "Solicitudes Ajustes Inventario";
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchVerTodos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdAprobar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMP_AjusteLote1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
