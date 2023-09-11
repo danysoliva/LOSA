@@ -174,7 +174,7 @@ namespace LOSA
                 }
                 else
                 {
-                    CajaDialogo.Error("Usuario No encontrado en AQFSVR003!");
+                    CajaDialogo.Error("Usuario No encontrado en AQFSVR010!");
                 }
             }
             else
