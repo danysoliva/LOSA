@@ -2933,7 +2933,7 @@ namespace LOSA
                 if (UsuarioLogeado.ValidarNivelPermisos(58))
                 {
                     frmConsumoConsolaReal frm = new frmConsumoConsolaReal();
-                    frm.MdiParent = this;
+                    frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
                 else
