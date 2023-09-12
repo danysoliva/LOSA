@@ -40,6 +40,9 @@ namespace LOSA.Produccion
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnExport = new DevExpress.XtraEditors.SimpleButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rdFiltro = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -50,6 +53,8 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdFiltro.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -75,11 +80,10 @@ namespace LOSA.Produccion
             // 
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.label1);
+            this.panelControl1.Controls.Add(this.rdFiltro);
+            this.panelControl1.Controls.Add(this.groupBox1);
             this.panelControl1.Controls.Add(this.btnExport);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.dtDesde);
-            this.panelControl1.Controls.Add(this.dtHasta);
             this.panelControl1.Controls.Add(this.btnRefresh);
             this.panelControl1.Location = new System.Drawing.Point(2, -1);
             this.panelControl1.Name = "panelControl1";
@@ -116,9 +120,9 @@ namespace LOSA.Produccion
             // dtHasta
             // 
             this.dtHasta.EditValue = null;
-            this.dtHasta.Location = new System.Drawing.Point(445, 35);
+            this.dtHasta.Location = new System.Drawing.Point(192, 22);
             this.dtHasta.Name = "dtHasta";
-            this.dtHasta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtHasta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtHasta.Properties.Appearance.Options.UseFont = true;
             this.dtHasta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -133,15 +137,15 @@ namespace LOSA.Produccion
             this.dtHasta.Properties.MaskSettings.Set("mask", "d");
             this.dtHasta.Properties.UseMaskAsDisplayFormat = true;
             this.dtHasta.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtHasta.Size = new System.Drawing.Size(149, 28);
+            this.dtHasta.Size = new System.Drawing.Size(96, 24);
             this.dtHasta.TabIndex = 31;
             // 
             // dtDesde
             // 
             this.dtDesde.EditValue = null;
-            this.dtDesde.Location = new System.Drawing.Point(238, 35);
+            this.dtDesde.Location = new System.Drawing.Point(49, 22);
             this.dtDesde.Name = "dtDesde";
-            this.dtDesde.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtDesde.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dtDesde.Properties.Appearance.Options.UseFont = true;
             this.dtDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -156,39 +160,85 @@ namespace LOSA.Produccion
             this.dtDesde.Properties.MaskSettings.Set("mask", "d");
             this.dtDesde.Properties.UseMaskAsDisplayFormat = true;
             this.dtDesde.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtDesde.Size = new System.Drawing.Size(149, 28);
+            this.dtDesde.Size = new System.Drawing.Size(96, 24);
             this.dtDesde.TabIndex = 32;
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(186, 38);
+            this.labelControl3.Location = new System.Drawing.Point(3, 25);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(46, 21);
+            this.labelControl3.Size = new System.Drawing.Size(40, 17);
             this.labelControl3.TabIndex = 33;
             this.labelControl3.Text = "Desde:";
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(393, 38);
+            this.labelControl1.Location = new System.Drawing.Point(150, 25);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(42, 21);
+            this.labelControl1.Size = new System.Drawing.Size(36, 17);
             this.labelControl1.TabIndex = 34;
             this.labelControl1.Text = "Hasta:";
             this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // btnExport
             // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
+            this.btnExport.Appearance.Options.UseFont = true;
             this.btnExport.ImageOptions.Image = global::LOSA.Properties.Resources.excel32px;
-            this.btnExport.Location = new System.Drawing.Point(870, 22);
+            this.btnExport.Location = new System.Drawing.Point(922, 38);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(83, 41);
+            this.btnExport.Size = new System.Drawing.Size(127, 45);
             this.btnExport.TabIndex = 84;
             this.btnExport.Text = "Excel";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dtHasta);
+            this.groupBox1.Controls.Add(this.dtDesde);
+            this.groupBox1.Controls.Add(this.labelControl1);
+            this.groupBox1.Controls.Add(this.labelControl3);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(598, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(295, 56);
+            this.groupBox1.TabIndex = 85;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Rango de Fechas";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(178, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 87;
+            this.label1.Text = "Filtro";
+            // 
+            // rdFiltro
+            // 
+            this.rdFiltro.Location = new System.Drawing.Point(181, 38);
+            this.rdFiltro.Margin = new System.Windows.Forms.Padding(2);
+            this.rdFiltro.Name = "rdFiltro";
+            this.rdFiltro.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdFiltro.Properties.Appearance.Options.UseFont = true;
+            this.rdFiltro.Properties.Appearance.Options.UseTextOptions = true;
+            this.rdFiltro.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.rdFiltro.Properties.Columns = 1;
+            this.rdFiltro.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.rdFiltro.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Por Rango de Fechas"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Por Número de Lote PT", false)});
+            this.rdFiltro.Properties.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Column;
+            this.rdFiltro.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rdFiltro.Size = new System.Drawing.Size(160, 45);
+            this.rdFiltro.TabIndex = 86;
             // 
             // frmConsumoRealPRD
             // 
@@ -210,6 +260,9 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdFiltro.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,5 +279,8 @@ namespace LOSA.Produccion
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnExport;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.RadioGroup rdFiltro;
     }
 }
