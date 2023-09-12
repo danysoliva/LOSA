@@ -3818,5 +3818,49 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
             }
         }
+
+        private void btnTeorico_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(58))
+                {
+                    frmConsumoConsolaTeorico frm = new frmConsumoConsolaTeorico();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+        private void simpleButton5_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(95))
+                {
+                    frmConsumoRealPRD frm = new frmConsumoRealPRD();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #95");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
     }
 }

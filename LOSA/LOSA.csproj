@@ -4012,6 +4012,12 @@
     <Compile Include="Produccion\frmAlimentacionPanel.Designer.cs">
       <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmConsumoRealPRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmConsumoRealPRD.Designer.cs">
+      <DependentUpon>frmConsumoRealPRD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmCrearRequisa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7901,6 +7907,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAlimentacionPanel.resx">
       <DependentUpon>frmAlimentacionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmConsumoRealPRD.resx">
+      <DependentUpon>frmConsumoRealPRD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmCrearRequisa.resx">
       <DependentUpon>frmCrearRequisa.cs</DependentUpon>

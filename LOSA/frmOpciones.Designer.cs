@@ -288,6 +288,8 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.btnTeorico = new DevExpress.XtraEditors.SimpleButton();
+            this.btnConsumoRealForeCast = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -3036,6 +3038,8 @@
             // 
             // TabForecasting
             // 
+            this.TabForecasting.Controls.Add(this.btnConsumoRealForeCast);
+            this.TabForecasting.Controls.Add(this.btnTeorico);
             this.TabForecasting.Controls.Add(this.simpleButton52);
             this.TabForecasting.Controls.Add(this.simpleButton53);
             this.TabForecasting.Controls.Add(this.simpleButton54);
@@ -4109,6 +4113,36 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // btnTeorico
+            // 
+            this.btnTeorico.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnTeorico.Appearance.Options.UseFont = true;
+            this.btnTeorico.Appearance.Options.UseTextOptions = true;
+            this.btnTeorico.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnTeorico.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnTeorico.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage1")));
+            this.btnTeorico.Location = new System.Drawing.Point(502, 26);
+            this.btnTeorico.Name = "btnTeorico";
+            this.btnTeorico.Size = new System.Drawing.Size(223, 71);
+            this.btnTeorico.TabIndex = 21;
+            this.btnTeorico.Text = "Consumo Teórico";
+            this.btnTeorico.Click += new System.EventHandler(this.btnTeorico_Click);
+            // 
+            // btnConsumoRealForeCast
+            // 
+            this.btnConsumoRealForeCast.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnConsumoRealForeCast.Appearance.Options.UseFont = true;
+            this.btnConsumoRealForeCast.Appearance.Options.UseTextOptions = true;
+            this.btnConsumoRealForeCast.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnConsumoRealForeCast.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnConsumoRealForeCast.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
+            this.btnConsumoRealForeCast.Location = new System.Drawing.Point(502, 111);
+            this.btnConsumoRealForeCast.Name = "btnConsumoRealForeCast";
+            this.btnConsumoRealForeCast.Size = new System.Drawing.Size(223, 71);
+            this.btnConsumoRealForeCast.TabIndex = 22;
+            this.btnConsumoRealForeCast.Text = "Base Consola Real";
+            this.btnConsumoRealForeCast.Click += new System.EventHandler(this.simpleButton5_Click_1);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4410,5 +4444,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_ExoneracionAQ;
         private DevExpress.XtraNavBar.NavBarItem navBarItem21;
         private DevExpress.XtraEditors.SimpleButton cmdReportSalidaDesechosRRHH;
+        private DevExpress.XtraEditors.SimpleButton btnTeorico;
+        private DevExpress.XtraEditors.SimpleButton btnConsumoRealForeCast;
     }
 }
