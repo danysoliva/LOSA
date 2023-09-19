@@ -2516,7 +2516,7 @@ namespace LOSA
         private void simpleButton43_Click(object sender, EventArgs e)
         {
             bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
             switch (idNivel)
             {
                 case 1://Basic View
@@ -2540,7 +2540,7 @@ namespace LOSA
         private void simpleButton44_Click(object sender, EventArgs e)
         {
             bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
             switch (idNivel)
             {
                 case 1://Basic View
@@ -2563,7 +2563,7 @@ namespace LOSA
         private void simpleButton45_Click(object sender, EventArgs e)
         {
             bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
             switch (idNivel)
             {
                 case 1://Basic View
@@ -2653,7 +2653,7 @@ namespace LOSA
         private void simpleButton52_Click(object sender, EventArgs e)
         {
             bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
             switch (idNivel)
             {
                 case 1://Basic View
@@ -3816,6 +3816,50 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void btnTeorico_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(58))
+                {
+                    frmConsumoConsolaTeorico frm = new frmConsumoConsolaTeorico();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+        private void simpleButton5_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(95))
+                {
+                    frmConsumoRealPRD frm = new frmConsumoRealPRD();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #95");
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
             }
         }
     }
