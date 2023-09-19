@@ -167,7 +167,7 @@ namespace LOSA.Despachos
         {
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (ds_despachos.orden_ventaRow)gridView.GetFocusedDataRow();
-            GetProductosOrdenCompraCliente(row.DocEntry) ;
+            GetProductosOrdenCompraCliente(row.DocEntry);
         }
 
         private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
@@ -179,7 +179,33 @@ namespace LOSA.Despachos
 
         private void cmdAplicarA_OrdenVenta_Click(object sender, EventArgs e)
         {
+            foreach(ds_despachos.detalle_productos_oc_clienteRow row in ds_despachos.detalle_productos_oc_cliente)
+            {
+                if(row.seleccionado)
+                {
+                    string query = @"[dbo].[sp_set_insert_line_orden_compra_cliente_despacho]";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    try
+                    {
+                        ds_despachos.orden_ventaRow row2 = (ds_despachos.orden_ventaRow)gridView1.GetFocusedDataRow();
+                        cn.Open();
+                        SqlCommand cmd = new SqlCommand(query, cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@docEntryOrigen", row2.DocEntry);
+                        cmd.Parameters.AddWithValue("@docEntryDestino", ParId);
+                        cmd.Parameters.AddWithValue("@itemcode", row.itemcode);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        ds_despachos.detalle_productos_oc_cliente.Clear();
+                        da.Fill(ds_despachos.detalle_productos_oc_cliente);
+                        cn.Close();
 
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+                }
+            }
         }
     }
 }
