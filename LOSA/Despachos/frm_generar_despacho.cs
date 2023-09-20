@@ -334,7 +334,6 @@ namespace LOSA.Despachos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
             frm_mostar_otros_detalles frm = new frm_mostar_otros_detalles(DocEntry, this.Id_despacho);
             if (frm.ShowDialog() == DialogResult.OK)
             {
