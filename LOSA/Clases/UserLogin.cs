@@ -91,7 +91,8 @@ namespace LOSA.Clases
                 string sql = @"SELECT top 1 id, 
                                        nombre, 
 	                                   id_grupo_losa,
-                                       ADUser
+                                       ADUser,
+                                        super_user
                                 FROM [ACS].dbo.conf_usuarios 
                                 where [ADUser] ='" + pUser + "'";
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -103,6 +104,7 @@ namespace LOSA.Clases
                     nombreUser = dr.GetString(1);
                     idGrupo = dr.GetInt32(2);
                     ADuser = dr.GetString(3);
+                    IsSuperUser = dr.GetBoolean(4);
                     recuperado = true;
                 }
                 dr.Close();
@@ -127,7 +129,8 @@ namespace LOSA.Clases
                 string sql = @"SELECT id, 
                                        nombre, 
 	                                   id_grupo_losa,
-                                       tipo
+                                       tipo,
+                                        super_user
                                 FROM [ACS].dbo.conf_usuarios 
                                 where id ="+ pId;
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -139,6 +142,8 @@ namespace LOSA.Clases
                     nombreUser = dr.GetString(1);
                     idGrupo = dr.GetInt32(2);
                     Tipo = dr.GetString(3);
+                    IsSuperUser = dr.GetBoolean(4);
+
                     recuperado = true;
                 }
                 dr.Close();
