@@ -77,7 +77,7 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@id_ticket", SqlDbType.Int).Value = idTicket;
                         cmd.Parameters.Add("@id_user", SqlDbType.Int).Value = IdUserNewAssigned;
-                        cmd.Parameters.Add("@usuario_nombre", SqlDbType.VarChar).Value = User.Nombre;
+                        cmd.Parameters.Add("@usuario_nombre", SqlDbType.VarChar).Value = User.NombreUser;
                         cmd.ExecuteNonQuery();
                         cnx.Close();
                     }

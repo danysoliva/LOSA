@@ -317,6 +317,17 @@
     <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.Designer.cs">
       <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accesos\Notificaciones\dsNotificaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNotificaciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\Notificaciones\frmHomeNotificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\Notificaciones\frmHomeNotificaciones.Designer.cs">
+      <DependentUpon>frmHomeNotificaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="ACS\RRHH\dsRRHH_reportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -4150,6 +4161,17 @@
     <None Include="Accesos\dsAccesos.xss">
       <DependentUpon>dsAccesos.xsd</DependentUpon>
     </None>
+    <None Include="Accesos\Notificaciones\dsNotificaciones.xsc">
+      <DependentUpon>dsNotificaciones.xsd</DependentUpon>
+    </None>
+    <None Include="Accesos\Notificaciones\dsNotificaciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNotificaciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Accesos\Notificaciones\dsNotificaciones.xss">
+      <DependentUpon>dsNotificaciones.xsd</DependentUpon>
+    </None>
     <None Include="ACS\RRHH\dsRRHH_reportes.xsc">
       <DependentUpon>dsRRHH_reportes.xsd</DependentUpon>
     </None>
@@ -6355,6 +6377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.resx">
       <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\Notificaciones\frmHomeNotificaciones.resx">
+      <DependentUpon>frmHomeNotificaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ACS\RRHH\frmReporteAsistencia.resx">
       <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
