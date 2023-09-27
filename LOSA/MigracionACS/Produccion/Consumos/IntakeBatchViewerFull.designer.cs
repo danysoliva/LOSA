@@ -163,6 +163,7 @@
             this.colSource_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAplicadoenCouter = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAplicadoenMezcla = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colreal_batch_count = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dtHastaBalanceMasa = new DevExpress.XtraEditors.DateEdit();
             this.dtDesdeBalanceMasa = new DevExpress.XtraEditors.DateEdit();
@@ -173,7 +174,6 @@
             this.txtOrderIdBalanceMasa = new DevExpress.XtraEditors.TextEdit();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.colAplicadoenMezcla = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -199,10 +199,10 @@
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
             this.xtraTabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLotePtBalanceMasa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalKgBalanceMasaPT.Properties)).BeginInit();
@@ -211,10 +211,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderCodePP_BalanceMasa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtHastaBalanceMasa.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtHastaBalanceMasa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtDesdeBalanceMasa.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHastaBalanceMasa.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesdeBalanceMasa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtDesdeBalanceMasa.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderIdBalanceMasa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -380,7 +380,7 @@
             this.xtraTabPage1.Controls.Add(this.labelControl1);
             this.xtraTabPage1.Controls.Add(this.txtCodeOrder);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(966, 452);
+            this.xtraTabPage1.Size = new System.Drawing.Size(970, 455);
             this.xtraTabPage1.Text = "Por Orden de Fabricación";
             // 
             // simpleButton3
@@ -408,7 +408,7 @@
             this.xtraTabControl_Lines.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraTabControl_Lines.Location = new System.Drawing.Point(0, 104);
+            this.xtraTabControl_Lines.Location = new System.Drawing.Point(1, 104);
             this.xtraTabControl_Lines.Name = "xtraTabControl_Lines";
             this.xtraTabControl_Lines.SelectedTabPage = this.xtraTabPage3;
             this.xtraTabControl_Lines.Size = new System.Drawing.Size(924, 348);
@@ -422,7 +422,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.gridControl1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(918, 320);
+            this.xtraTabPage3.Size = new System.Drawing.Size(922, 323);
             this.xtraTabPage3.Text = "Resumen por Batch";
             // 
             // gridControl1
@@ -434,7 +434,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(918, 320);
+            this.gridControl1.Size = new System.Drawing.Size(922, 323);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -614,7 +614,7 @@
             // 
             this.xtraTabPage4.Controls.Add(this.gridControl2);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(918, 320);
+            this.xtraTabPage4.Size = new System.Drawing.Size(922, 323);
             this.xtraTabPage4.Text = "Resumen por MP";
             // 
             // gridControl2
@@ -626,7 +626,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(918, 320);
+            this.gridControl2.Size = new System.Drawing.Size(922, 323);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -802,7 +802,7 @@
             // 
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.PageVisible = false;
-            this.xtraTabPage5.Size = new System.Drawing.Size(918, 320);
+            this.xtraTabPage5.Size = new System.Drawing.Size(922, 323);
             this.xtraTabPage5.Text = "Balance de Masa";
             // 
             // simpleButton1
@@ -1042,7 +1042,7 @@
             this.xtraTabPage2.Controls.Add(this.labelControl14);
             this.xtraTabPage2.Controls.Add(this.labelControl16);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(966, 452);
+            this.xtraTabPage2.Size = new System.Drawing.Size(970, 455);
             this.xtraTabPage2.Text = "Por Rango de Fechas";
             // 
             // simpleButton4
@@ -1337,7 +1337,7 @@
             this.xtraTabPage6.Controls.Add(this.labelControl9);
             this.xtraTabPage6.Controls.Add(this.txtOrderIdBalanceMasa);
             this.xtraTabPage6.Name = "xtraTabPage6";
-            this.xtraTabPage6.Size = new System.Drawing.Size(966, 452);
+            this.xtraTabPage6.Size = new System.Drawing.Size(970, 455);
             this.xtraTabPage6.Text = "Balance de Masa";
             // 
             // txtLotePtBalanceMasa
@@ -1637,6 +1637,16 @@
             this.colAplicadoenCouter.Visible = true;
             this.colAplicadoenCouter.VisibleIndex = 6;
             // 
+            // colAplicadoenMezcla
+            // 
+            this.colAplicadoenMezcla.DisplayFormat.FormatString = "n2";
+            this.colAplicadoenMezcla.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colAplicadoenMezcla.FieldName = "Aplicado en Mezcla";
+            this.colAplicadoenMezcla.Name = "colAplicadoenMezcla";
+            this.colAplicadoenMezcla.OptionsColumn.AllowEdit = false;
+            this.colAplicadoenMezcla.Visible = true;
+            this.colAplicadoenMezcla.VisibleIndex = 7;
+            // 
             // colreal_batch_count
             // 
             this.colreal_batch_count.Caption = "Cant. Batch Aplicados";
@@ -1746,16 +1756,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // colAplicadoenMezcla
-            // 
-            this.colAplicadoenMezcla.DisplayFormat.FormatString = "n2";
-            this.colAplicadoenMezcla.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colAplicadoenMezcla.FieldName = "Aplicado en Mezcla";
-            this.colAplicadoenMezcla.Name = "colAplicadoenMezcla";
-            this.colAplicadoenMezcla.OptionsColumn.AllowEdit = false;
-            this.colAplicadoenMezcla.Visible = true;
-            this.colAplicadoenMezcla.VisibleIndex = 7;
-            // 
             // IntakeBatchViewerFull
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1766,7 +1766,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("IntakeBatchViewerFull.IconOptions.Icon")));
             this.Name = "IntakeBatchViewerFull";
             this.Text = "IntakeViewer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
