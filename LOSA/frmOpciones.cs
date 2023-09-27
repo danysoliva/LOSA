@@ -75,6 +75,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
+using LOSA.Accesos.Notificaciones;
 
 namespace LOSA
 {
@@ -3860,6 +3861,20 @@ namespace LOSA
             {
                 CajaDialogo.Error(ex.Message);
 
+            }
+        }
+
+        private void btnNotificaciones_Click(object sender, EventArgs e)
+        {
+            if (UsuarioLogeado.ValidarNivelPermisos(58))
+            {
+                frmHomeNotificaciones frm = new frmHomeNotificaciones();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            else
+            {
+                CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
             }
         }
     }

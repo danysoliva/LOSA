@@ -13026,6 +13026,8 @@ namespace LOSA.Despachos {
             
             private global::System.Data.DataColumn columnquantity;
             
+            private global::System.Data.DataColumn columnseleccionado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public detalle_productos_oc_clienteDataTable() {
@@ -13093,6 +13095,14 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn seleccionadoColumn {
+                get {
+                    return this.columnseleccionado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -13128,13 +13138,14 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public detalle_productos_oc_clienteRow Adddetalle_productos_oc_clienteRow(int id, string itemcode, string itemname, decimal quantity) {
+            public detalle_productos_oc_clienteRow Adddetalle_productos_oc_clienteRow(int id, string itemcode, string itemname, decimal quantity, bool seleccionado) {
                 detalle_productos_oc_clienteRow rowdetalle_productos_oc_clienteRow = ((detalle_productos_oc_clienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         itemcode,
                         itemname,
-                        quantity};
+                        quantity,
+                        seleccionado};
                 rowdetalle_productos_oc_clienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_productos_oc_clienteRow);
                 return rowdetalle_productos_oc_clienteRow;
@@ -13161,6 +13172,7 @@ namespace LOSA.Despachos {
                 this.columnitemcode = base.Columns["itemcode"];
                 this.columnitemname = base.Columns["itemname"];
                 this.columnquantity = base.Columns["quantity"];
+                this.columnseleccionado = base.Columns["seleccionado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13174,10 +13186,13 @@ namespace LOSA.Despachos {
                 base.Columns.Add(this.columnitemname);
                 this.columnquantity = new global::System.Data.DataColumn("quantity", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnquantity);
+                this.columnseleccionado = new global::System.Data.DataColumn("seleccionado", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseleccionado);
                 this.columnid.Caption = "Id";
                 this.columnitemcode.Caption = "ItemCode";
                 this.columnitemname.Caption = "ItemName";
                 this.columnquantity.Caption = "Quantity";
+                this.columnseleccionado.Caption = "Seleccionar";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21101,6 +21116,23 @@ namespace LOSA.Despachos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool seleccionado {
+                get {
+                    try {
+                        return ((bool)(this[this.tabledetalle_productos_oc_cliente.seleccionadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'seleccionado\' in table \'detalle_productos_oc_cliente\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_productos_oc_cliente.seleccionadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabledetalle_productos_oc_cliente.idColumn);
             }
@@ -21145,6 +21177,18 @@ namespace LOSA.Despachos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetquantityNull() {
                 this[this.tabledetalle_productos_oc_cliente.quantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsseleccionadoNull() {
+                return this.IsNull(this.tabledetalle_productos_oc_cliente.seleccionadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetseleccionadoNull() {
+                this[this.tabledetalle_productos_oc_cliente.seleccionadoColumn] = global::System.Convert.DBNull;
             }
         }
         

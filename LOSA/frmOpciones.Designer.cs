@@ -123,6 +123,7 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLotesCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
+            this.btnNotificaciones = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton37 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAccesoSistemas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdGruposAlosy = new DevExpress.XtraEditors.SimpleButton();
@@ -213,6 +214,8 @@
             this.simpleButton39 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton38 = new DevExpress.XtraEditors.SimpleButton();
             this.TabForecasting = new DevExpress.XtraTab.XtraTabPage();
+            this.btnConsumoRealForeCast = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTeorico = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton52 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton53 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton54 = new DevExpress.XtraEditors.SimpleButton();
@@ -288,8 +291,6 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btnTeorico = new DevExpress.XtraEditors.SimpleButton();
-            this.btnConsumoRealForeCast = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1692,6 +1693,7 @@
             // 
             // TabAdmin
             // 
+            this.TabAdmin.Controls.Add(this.btnNotificaciones);
             this.TabAdmin.Controls.Add(this.simpleButton37);
             this.TabAdmin.Controls.Add(this.cmdAccesoSistemas);
             this.TabAdmin.Controls.Add(this.cmdGruposAlosy);
@@ -1708,6 +1710,22 @@
             this.TabAdmin.PageVisible = false;
             this.TabAdmin.Size = new System.Drawing.Size(835, 480);
             this.TabAdmin.Text = "Administrador";
+            // 
+            // btnNotificaciones
+            // 
+            this.btnNotificaciones.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotificaciones.Appearance.Options.UseFont = true;
+            this.btnNotificaciones.Appearance.Options.UseTextOptions = true;
+            this.btnNotificaciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnNotificaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnNotificaciones.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNotificaciones.ImageOptions.SvgImage")));
+            this.btnNotificaciones.Location = new System.Drawing.Point(390, 190);
+            this.btnNotificaciones.Name = "btnNotificaciones";
+            this.btnNotificaciones.Size = new System.Drawing.Size(204, 71);
+            this.btnNotificaciones.TabIndex = 18;
+            this.btnNotificaciones.Text = "Admin Notificaciones";
+            this.btnNotificaciones.Visible = false;
+            this.btnNotificaciones.Click += new System.EventHandler(this.btnNotificaciones_Click);
             // 
             // simpleButton37
             // 
@@ -3056,6 +3074,36 @@
             this.TabForecasting.Size = new System.Drawing.Size(835, 480);
             this.TabForecasting.Text = "Forecasting";
             // 
+            // btnConsumoRealForeCast
+            // 
+            this.btnConsumoRealForeCast.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnConsumoRealForeCast.Appearance.Options.UseFont = true;
+            this.btnConsumoRealForeCast.Appearance.Options.UseTextOptions = true;
+            this.btnConsumoRealForeCast.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnConsumoRealForeCast.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnConsumoRealForeCast.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnConsumoRealForeCast.ImageOptions.SvgImage")));
+            this.btnConsumoRealForeCast.Location = new System.Drawing.Point(502, 111);
+            this.btnConsumoRealForeCast.Name = "btnConsumoRealForeCast";
+            this.btnConsumoRealForeCast.Size = new System.Drawing.Size(223, 71);
+            this.btnConsumoRealForeCast.TabIndex = 22;
+            this.btnConsumoRealForeCast.Text = "Base Consola Real";
+            this.btnConsumoRealForeCast.Click += new System.EventHandler(this.simpleButton5_Click_1);
+            // 
+            // btnTeorico
+            // 
+            this.btnTeorico.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnTeorico.Appearance.Options.UseFont = true;
+            this.btnTeorico.Appearance.Options.UseTextOptions = true;
+            this.btnTeorico.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnTeorico.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnTeorico.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTeorico.ImageOptions.SvgImage")));
+            this.btnTeorico.Location = new System.Drawing.Point(502, 26);
+            this.btnTeorico.Name = "btnTeorico";
+            this.btnTeorico.Size = new System.Drawing.Size(223, 71);
+            this.btnTeorico.TabIndex = 21;
+            this.btnTeorico.Text = "Consumo Teórico";
+            this.btnTeorico.Click += new System.EventHandler(this.btnTeorico_Click);
+            // 
             // simpleButton52
             // 
             this.simpleButton52.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4113,36 +4161,6 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // btnTeorico
-            // 
-            this.btnTeorico.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnTeorico.Appearance.Options.UseFont = true;
-            this.btnTeorico.Appearance.Options.UseTextOptions = true;
-            this.btnTeorico.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnTeorico.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnTeorico.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage1")));
-            this.btnTeorico.Location = new System.Drawing.Point(502, 26);
-            this.btnTeorico.Name = "btnTeorico";
-            this.btnTeorico.Size = new System.Drawing.Size(223, 71);
-            this.btnTeorico.TabIndex = 21;
-            this.btnTeorico.Text = "Consumo Teórico";
-            this.btnTeorico.Click += new System.EventHandler(this.btnTeorico_Click);
-            // 
-            // btnConsumoRealForeCast
-            // 
-            this.btnConsumoRealForeCast.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnConsumoRealForeCast.Appearance.Options.UseFont = true;
-            this.btnConsumoRealForeCast.Appearance.Options.UseTextOptions = true;
-            this.btnConsumoRealForeCast.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnConsumoRealForeCast.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnConsumoRealForeCast.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
-            this.btnConsumoRealForeCast.Location = new System.Drawing.Point(502, 111);
-            this.btnConsumoRealForeCast.Name = "btnConsumoRealForeCast";
-            this.btnConsumoRealForeCast.Size = new System.Drawing.Size(223, 71);
-            this.btnConsumoRealForeCast.TabIndex = 22;
-            this.btnConsumoRealForeCast.Text = "Base Consola Real";
-            this.btnConsumoRealForeCast.Click += new System.EventHandler(this.simpleButton5_Click_1);
-            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4446,5 +4464,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdReportSalidaDesechosRRHH;
         private DevExpress.XtraEditors.SimpleButton btnTeorico;
         private DevExpress.XtraEditors.SimpleButton btnConsumoRealForeCast;
+        private DevExpress.XtraEditors.SimpleButton btnNotificaciones;
     }
 }
