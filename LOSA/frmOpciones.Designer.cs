@@ -290,6 +290,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.buttonSupporIT_RRHH = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -2839,6 +2840,7 @@
             // 
             // TabRRHH
             // 
+            this.TabRRHH.Controls.Add(this.buttonSupporIT_RRHH);
             this.TabRRHH.Controls.Add(this.cmdReportSalidaDesechosRRHH);
             this.TabRRHH.Controls.Add(this.cmdPrintVouchersPlanillas);
             this.TabRRHH.Controls.Add(this.cmdImprimirVouchers);
@@ -4144,6 +4146,21 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // buttonSupporIT_RRHH
+            // 
+            this.buttonSupporIT_RRHH.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSupporIT_RRHH.Appearance.Options.UseFont = true;
+            this.buttonSupporIT_RRHH.Appearance.Options.UseTextOptions = true;
+            this.buttonSupporIT_RRHH.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.buttonSupporIT_RRHH.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.buttonSupporIT_RRHH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.buttonSupporIT_RRHH.Location = new System.Drawing.Point(473, 202);
+            this.buttonSupporIT_RRHH.Name = "buttonSupporIT_RRHH";
+            this.buttonSupporIT_RRHH.Size = new System.Drawing.Size(199, 71);
+            this.buttonSupporIT_RRHH.TabIndex = 54;
+            this.buttonSupporIT_RRHH.Text = "Migracion TMP";
+            this.buttonSupporIT_RRHH.Click += new System.EventHandler(this.buttonSupporIT_RRHH_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4447,5 +4464,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdReportSalidaDesechosRRHH;
         private DevExpress.XtraEditors.SimpleButton btnTeorico;
         private DevExpress.XtraEditors.SimpleButton btnConsumoRealForeCast;
+        private DevExpress.XtraEditors.SimpleButton buttonSupporIT_RRHH;
     }
 }

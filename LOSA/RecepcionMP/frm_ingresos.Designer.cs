@@ -141,7 +141,7 @@
             this.btnprinttraslado,
             this.btnCopiarAtraslado,
             this.reposAdjunto});
-            this.grd_ingreso.Size = new System.Drawing.Size(1461, 556);
+            this.grd_ingreso.Size = new System.Drawing.Size(1461, 555);
             this.grd_ingreso.TabIndex = 0;
             this.grd_ingreso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_ingreso});

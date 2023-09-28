@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA_TEST\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,8 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
-    <ApplicationRevision>585</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA_TEST\</InstallUrl>
+    <ApplicationRevision>590</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -3464,6 +3464,18 @@
     <Compile Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.Designer.cs">
       <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\RRHH\Utilerias\dsUtilerias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsUtilerias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Utilerias\frmProfileEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Utilerias\frmProfileEmployees.Designer.cs">
+      <DependentUpon>frmProfileEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Utilerias\UpdateEmployeeTMP.cs" />
     <Compile Include="MigracionACS\SAP\frmLoginSAP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4871,6 +4883,17 @@
     <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xsd" />
     <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xss">
       <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Utilerias\dsUtilerias.xsc">
+      <DependentUpon>dsUtilerias.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Utilerias\dsUtilerias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsUtilerias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\RRHH\Utilerias\dsUtilerias.xss">
+      <DependentUpon>dsUtilerias.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\SAR\dS_SAR.xsc">
       <DependentUpon>dS_SAR.xsd</DependentUpon>
@@ -7667,6 +7690,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.resx">
       <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Utilerias\frmProfileEmployees.resx">
+      <DependentUpon>frmProfileEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAP\frmLoginSAP.resx">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>

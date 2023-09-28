@@ -75,6 +75,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
+using LOSA.MigracionACS.RRHH.Utilerias;
 
 namespace LOSA
 {
@@ -3861,6 +3862,13 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
 
             }
+        }
+
+        private void buttonSupporIT_RRHH_Click(object sender, EventArgs e)
+        {
+            frmProfileEmployees frm = new frmProfileEmployees();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }
