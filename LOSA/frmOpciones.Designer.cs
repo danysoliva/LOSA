@@ -123,6 +123,7 @@
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLotesCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.TabAdmin = new DevExpress.XtraTab.XtraTabPage();
+            this.btnNotificaciones = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton37 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdAccesoSistemas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdGruposAlosy = new DevExpress.XtraEditors.SimpleButton();
@@ -290,7 +291,6 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.buttonSupporIT_RRHH = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1564,12 +1564,11 @@
             this.simpleButton19.Appearance.Options.UseFont = true;
             this.simpleButton19.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton19.ImageOptions.Image")));
-            this.simpleButton19.Location = new System.Drawing.Point(627, 23);
+            this.simpleButton19.Location = new System.Drawing.Point(419, 153);
             this.simpleButton19.Name = "simpleButton19";
             this.simpleButton19.Size = new System.Drawing.Size(199, 59);
             this.simpleButton19.TabIndex = 22;
             this.simpleButton19.Text = "Trazabilidad \r\nde lote MP";
-            this.simpleButton19.Visible = false;
             this.simpleButton19.Click += new System.EventHandler(this.simpleButton19_Click);
             // 
             // btnAut_Tm
@@ -1694,6 +1693,7 @@
             // 
             // TabAdmin
             // 
+            this.TabAdmin.Controls.Add(this.btnNotificaciones);
             this.TabAdmin.Controls.Add(this.simpleButton37);
             this.TabAdmin.Controls.Add(this.cmdAccesoSistemas);
             this.TabAdmin.Controls.Add(this.cmdGruposAlosy);
@@ -1710,6 +1710,22 @@
             this.TabAdmin.PageVisible = false;
             this.TabAdmin.Size = new System.Drawing.Size(835, 480);
             this.TabAdmin.Text = "Administrador";
+            // 
+            // btnNotificaciones
+            // 
+            this.btnNotificaciones.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotificaciones.Appearance.Options.UseFont = true;
+            this.btnNotificaciones.Appearance.Options.UseTextOptions = true;
+            this.btnNotificaciones.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnNotificaciones.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnNotificaciones.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNotificaciones.ImageOptions.SvgImage")));
+            this.btnNotificaciones.Location = new System.Drawing.Point(390, 190);
+            this.btnNotificaciones.Name = "btnNotificaciones";
+            this.btnNotificaciones.Size = new System.Drawing.Size(204, 71);
+            this.btnNotificaciones.TabIndex = 18;
+            this.btnNotificaciones.Text = "Admin Notificaciones";
+            this.btnNotificaciones.Visible = false;
+            this.btnNotificaciones.Click += new System.EventHandler(this.btnNotificaciones_Click);
             // 
             // simpleButton37
             // 
@@ -2840,7 +2856,6 @@
             // 
             // TabRRHH
             // 
-            this.TabRRHH.Controls.Add(this.buttonSupporIT_RRHH);
             this.TabRRHH.Controls.Add(this.cmdReportSalidaDesechosRRHH);
             this.TabRRHH.Controls.Add(this.cmdPrintVouchersPlanillas);
             this.TabRRHH.Controls.Add(this.cmdImprimirVouchers);
@@ -4146,21 +4161,6 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // buttonSupporIT_RRHH
-            // 
-            this.buttonSupporIT_RRHH.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSupporIT_RRHH.Appearance.Options.UseFont = true;
-            this.buttonSupporIT_RRHH.Appearance.Options.UseTextOptions = true;
-            this.buttonSupporIT_RRHH.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.buttonSupporIT_RRHH.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.buttonSupporIT_RRHH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.buttonSupporIT_RRHH.Location = new System.Drawing.Point(473, 202);
-            this.buttonSupporIT_RRHH.Name = "buttonSupporIT_RRHH";
-            this.buttonSupporIT_RRHH.Size = new System.Drawing.Size(199, 71);
-            this.buttonSupporIT_RRHH.TabIndex = 54;
-            this.buttonSupporIT_RRHH.Text = "Migracion TMP";
-            this.buttonSupporIT_RRHH.Click += new System.EventHandler(this.buttonSupporIT_RRHH_Click);
-            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4464,6 +4464,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdReportSalidaDesechosRRHH;
         private DevExpress.XtraEditors.SimpleButton btnTeorico;
         private DevExpress.XtraEditors.SimpleButton btnConsumoRealForeCast;
-        private DevExpress.XtraEditors.SimpleButton buttonSupporIT_RRHH;
+        private DevExpress.XtraEditors.SimpleButton btnNotificaciones;
     }
 }

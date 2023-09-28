@@ -75,7 +75,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
-using LOSA.MigracionACS.RRHH.Utilerias;
+using LOSA.Accesos.Notificaciones;
 
 namespace LOSA
 {
@@ -3864,11 +3864,18 @@ namespace LOSA
             }
         }
 
-        private void buttonSupporIT_RRHH_Click(object sender, EventArgs e)
+        private void btnNotificaciones_Click(object sender, EventArgs e)
         {
-            frmProfileEmployees frm = new frmProfileEmployees();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            if (UsuarioLogeado.ValidarNivelPermisos(58))
+            {
+                frmHomeNotificaciones frm = new frmHomeNotificaciones();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            else
+            {
+                CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
+            }
         }
     }
 }

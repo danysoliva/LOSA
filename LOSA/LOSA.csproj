@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA_TEST\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,8 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA_TEST\</InstallUrl>
-    <ApplicationRevision>590</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <ApplicationRevision>586</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -316,6 +316,17 @@
     </Compile>
     <Compile Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.Designer.cs">
       <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\Notificaciones\dsNotificaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsNotificaciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Accesos\Notificaciones\frmHomeNotificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accesos\Notificaciones\frmHomeNotificaciones.Designer.cs">
+      <DependentUpon>frmHomeNotificaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="ACS\RRHH\dsRRHH_reportes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -3464,18 +3475,6 @@
     <Compile Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.Designer.cs">
       <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="MigracionACS\RRHH\Utilerias\dsUtilerias.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsUtilerias.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\RRHH\Utilerias\frmProfileEmployees.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\RRHH\Utilerias\frmProfileEmployees.Designer.cs">
-      <DependentUpon>frmProfileEmployees.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\RRHH\Utilerias\UpdateEmployeeTMP.cs" />
     <Compile Include="MigracionACS\SAP\frmLoginSAP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4161,6 +4160,17 @@
     </None>
     <None Include="Accesos\dsAccesos.xss">
       <DependentUpon>dsAccesos.xsd</DependentUpon>
+    </None>
+    <None Include="Accesos\Notificaciones\dsNotificaciones.xsc">
+      <DependentUpon>dsNotificaciones.xsd</DependentUpon>
+    </None>
+    <None Include="Accesos\Notificaciones\dsNotificaciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsNotificaciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Accesos\Notificaciones\dsNotificaciones.xss">
+      <DependentUpon>dsNotificaciones.xsd</DependentUpon>
     </None>
     <None Include="ACS\RRHH\dsRRHH_reportes.xsc">
       <DependentUpon>dsRRHH_reportes.xsd</DependentUpon>
@@ -4883,17 +4893,6 @@
     <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xsd" />
     <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xss">
       <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\RRHH\Utilerias\dsUtilerias.xsc">
-      <DependentUpon>dsUtilerias.xsd</DependentUpon>
-    </None>
-    <None Include="MigracionACS\RRHH\Utilerias\dsUtilerias.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsUtilerias.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MigracionACS\RRHH\Utilerias\dsUtilerias.xss">
-      <DependentUpon>dsUtilerias.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\SAR\dS_SAR.xsc">
       <DependentUpon>dS_SAR.xsd</DependentUpon>
@@ -6379,6 +6378,9 @@
     <EmbeddedResource Include="Accesos\AccesosUsuarios\xfrmAccesosTemporalesAdmin.resx">
       <DependentUpon>xfrmAccesosTemporalesAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accesos\Notificaciones\frmHomeNotificaciones.resx">
+      <DependentUpon>frmHomeNotificaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ACS\RRHH\frmReporteAsistencia.resx">
       <DependentUpon>frmReporteAsistencia.cs</DependentUpon>
     </EmbeddedResource>
@@ -7690,9 +7692,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.resx">
       <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\RRHH\Utilerias\frmProfileEmployees.resx">
-      <DependentUpon>frmProfileEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAP\frmLoginSAP.resx">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>
