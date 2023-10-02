@@ -280,15 +280,38 @@ namespace LOSA.MicroIngredientes
                         existencia_kg_micros = tar1.GetKgExistenciaEnMicros(Convert.ToInt32(tarima.Id));
                         if (existencia_kg_micros <= 0)
                         {
-                            CajaDialogo.Error("ERROR: Tarima de Micro Ingrediente consumida en su Totalidad");
+                            string mensaje = "Tarima " + txtCodBarra.Text + " de Micro Ingrediente consumida en su Totalidad.";
+                            frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+
+                            }
+                            txtCodBarra.Text = "";
                             return;
                         }
 
-                        if (pesoBascula1 > existencia_kg_micros)
-                        {
-                            
-                        }
+                        //if (pesoBascula1 > existencia_kg_micros)
+                        //{
+                        //    string mensaje = "El peso en Bascula es mayor que lo disponible en tarima!\nDisponible en Tarima: "+ existencia_kg_micros;
+                        //    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                        //    if (frm.ShowDialog() == DialogResult.OK)
+                        //    {
 
+                        //    }
+                        //    btnBascula1.Enabled = false;
+                        //    return;
+                        //}
+                        //if (pesoBascula2 > existencia_kg_micros)
+                        //{
+                        //    string mensaje = "El peso en Bascula es mayor que lo disponible en tarima!\nDisponible en Tarima: " + existencia_kg_micros;
+                        //    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                        //    if (frm.ShowDialog() == DialogResult.OK)
+                        //    {
+
+                        //    }
+                        //    btnBascula2.Enabled = false;
+                        //    return;
+                        //}
 
                         timer1.Enabled = true;
                         indicePeso = 0;
@@ -310,8 +333,6 @@ namespace LOSA.MicroIngredientes
 
 
                             var row = (dsMicros.MP_EscaneoRow)dsMicros.MP_Escaneo.NewRow();
-
-
 
                             row.mp = tarima.MateriaPrima;
                             row.lote = tarima.LoteMP;
@@ -499,7 +520,8 @@ namespace LOSA.MicroIngredientes
             {
                 cnx.Open();
                 dsMicros.Pesaje_Bascula.Clear();
-                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value", cnx);
+                //SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value", cnx);
+                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value_pruebas", cnx);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.Fill(dsMicros.Pesaje_Bascula);
 

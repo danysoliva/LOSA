@@ -5039,6 +5039,12 @@
     <Compile Include="RecepcionMP\frmCambioIngreso.Designer.cs">
       <DependentUpon>frmCambioIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmDevolucionMicros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmDevolucionMicros.Designer.cs">
+      <DependentUpon>frmDevolucionMicros.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmeditarLote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -8009,6 +8015,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmCambioIngreso.resx">
       <DependentUpon>frmCambioIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmDevolucionMicros.resx">
+      <DependentUpon>frmDevolucionMicros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmeditarLote.resx">
       <DependentUpon>frmeditarLote.cs</DependentUpon>
