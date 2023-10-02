@@ -79,7 +79,7 @@ namespace LOSA.Reproceso
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdHome.ImageOptions.SvgImage")));
-            this.cmdHome.Location = new System.Drawing.Point(657, 12);
+            this.cmdHome.Location = new System.Drawing.Point(668, 12);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(102, 50);
             this.cmdHome.TabIndex = 55;
@@ -106,14 +106,14 @@ namespace LOSA.Reproceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 167);
+            this.ClientSize = new System.Drawing.Size(794, 167);
             this.ControlBox = false;
             this.Controls.Add(this.btnDetaleTarimaReproceso);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.btnReprocesoIngreso);
             this.Controls.Add(this.btnAgregar);
+            this.IconOptions.ShowIcon = false;
             this.Name = "frmEleccionReproceso";
-            this.ShowIcon = false;
             this.Text = "Agregar Reproceso";
             this.ResumeLayout(false);
 

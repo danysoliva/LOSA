@@ -167,5 +167,12 @@ namespace LOSA.TransaccionesMP
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

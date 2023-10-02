@@ -388,7 +388,10 @@ namespace LOSA.MicroIngredientes
                         {
                             string mensaje = "Tarima "+ txtCodBarra.Text +" de Micro Ingrediente consumida en su Totalidad.";
                             frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
-                            frm.Show();
+                            if (frm.ShowDialog() == DialogResult.OK)
+                            {
+
+                            }
                             txtCodBarra.Text = "";
                             return;
                         }
@@ -586,8 +589,8 @@ namespace LOSA.MicroIngredientes
             {
                 cnx.Open();
                 dsMicros.Pesaje_Bascula.Clear();
-                //SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value", cnx);
-                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value_pruebas", cnx);
+                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value", cnx);
+                //SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value_pruebas", cnx);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.Fill(dsMicros.Pesaje_Bascula);
 
