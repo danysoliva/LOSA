@@ -379,12 +379,27 @@ namespace LOSA.MigracionACS.Produccion
                     cmd.Parameters.Add(new SqlParameter("@id_presentacion", SqlDbType.Int));
                     cmd.Parameters.Add(new SqlParameter("@ud_x_tarima", SqlDbType.Int));
                     cmd.Parameters.Add(new SqlParameter("@id_lotereservado", SqlDbType.Int));
-                    string save = Recuperar_id_For(row["formula_code"].ToString()).ToString();
+                    cmd.Parameters.Add(new SqlParameter("@is_medicado", SqlDbType.Bit));
+
+                    string save = "";
+                    
+                    if(!EsMedicado) 
+                        save = Recuperar_id_For(row["formula_code"].ToString()).ToString();
+                    
                     cmd.Parameters["@id_plan"].Value = idPlan;
                     cmd.Parameters["@pp_code"].Value = Get_Prod_Orden_Code();
                     cmd.Parameters["@id_pt"].Value = Recuperar_Id_pt(row["Codigo"].ToString());
-                    cmd.Parameters["@id_formula"].Value = Recuperar_id_For(row["formula_code"].ToString());
-                    cmd.Parameters["@form_wincc"].Value = (Get_Formula_Wincc_Code(save).Substring(0, 11) + Get_Prod_Orden_Code().Substring(3, 7));
+                    
+                    if(EsMedicado)
+                        cmd.Parameters["@id_formula"].Value = DBNull.Value;
+                    else
+                        cmd.Parameters["@id_formula"].Value = Recuperar_id_For(row["formula_code"].ToString());
+
+                    if (EsMedicado)
+                        cmd.Parameters["@form_wincc"].Value = DBNull.Value;
+                    else
+                        cmd.Parameters["@form_wincc"].Value = (Get_Formula_Wincc_Code(save).Substring(0, 11) + Get_Prod_Orden_Code().Substring(3, 7));
+
                     cmd.Parameters["@kg_production"].Value = Convert.ToDouble((Convert.ToDouble(row["Peso_Pedido"]) * 1000));
                     cmd.Parameters["@bag_production"].Value = unidades;
                     cmd.Parameters["@lot_number"].Value = lote_fp;
@@ -403,6 +418,8 @@ namespace LOSA.MigracionACS.Produccion
                     cmd.Parameters["@id_presentacion"].Value = grd_presentacion.EditValue;  //
                     cmd.Parameters["@ud_x_tarima"].Value = unidades;
                     cmd.Parameters["@id_lotereservado"].Value = id_gestion_lote;
+                    cmd.Parameters["@is_medicado"].Value = EsMedicado;
+                    
 
                     int id_inserted = 0;
                     try
@@ -417,30 +434,21 @@ namespace LOSA.MigracionACS.Produccion
 
                         if (EsMedicado)
                         {
+                            DataOperations dp = new DataOperations();
+                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                            con.Open();
                             //Guardar el detalle de la requisicion de un manera diferente
-                            foreach(DSProductos.MateriaPrimaRow rowM in dSProductos1.MateriaPrima)
+                            foreach (DSProductos.MateriaPrimaRow rowM in dSProductos1.MateriaPrima)
                             {
-                                try
-                                {
-                                    DataOperations dp = new DataOperations();
-                                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                                    con.Open();
-
-                                    SqlCommand cmdD = new SqlCommand("dbo.sp_set_insert_detalle_requisicion_mp_medicado", con);
-                                    cmdD.CommandType = CommandType.StoredProcedure;
-                                    cmdD.Parameters.AddWithValue("@lote_pt", lote_fp);
-                                    cmdD.Parameters.AddWithValue("@cantidad_solicitada", rowM.pesokg);
-                                    cmdD.Parameters.AddWithValue("@id_unidad_medida", grd_presentacion.EditValue);
-                                    cmdD.Parameters.AddWithValue("@code_sap", rowM.code_sap);
-                                    cmd.ExecuteNonQuery();
-
-                                    con.Close();
-                                }
-                                catch (Exception ec)
-                                {
-                                    CajaDialogo.Error(ec.Message);
-                                }
+                                SqlCommand cmdD = new SqlCommand("dbo.sp_set_insert_detalle_requisicion_mp_medicado", con);
+                                cmdD.CommandType = CommandType.StoredProcedure;
+                                cmdD.Parameters.AddWithValue("@lote_pt", lote_fp);
+                                cmdD.Parameters.AddWithValue("@cantidad_solicitada", rowM.pesokg);
+                                cmdD.Parameters.AddWithValue("@id_unidad_medida", grd_presentacion.EditValue);
+                                cmdD.Parameters.AddWithValue("@code_sap", rowM.code_sap);
+                                cmdD.ExecuteNonQuery();
                             }
+                            con.Close();
                         }
                         else
                         {
@@ -1304,9 +1312,12 @@ namespace LOSA.MigracionACS.Produccion
                     
                     int rmi = 0;
 
-                    foreach (DataRow row in dSProductos1.OrdenTilapia.Rows)
+                    if (!EsMedicado)
                     {
-                        rmi += dp.get_inactive_rm(Recuperar_id_For(row["formula_code"].ToString()));
+                        foreach (DataRow row in dSProductos1.OrdenTilapia.Rows)
+                        {
+                            rmi += dp.get_inactive_rm(Recuperar_id_For(row["formula_code"].ToString()));
+                        }
                     }
 
                     if (rmi > 0)
