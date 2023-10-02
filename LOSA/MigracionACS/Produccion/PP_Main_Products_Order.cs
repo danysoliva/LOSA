@@ -1683,10 +1683,8 @@ namespace LOSA.MigracionACS.Produccion
             //    return;
             //}
             //Crear orden de fabricacion individual
-            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id,1, UsuarioLogeado, 0);
-            //PNPFP.ActiveUserCodeP = this.ActiveUserCode;
-            //PNPFP.ActiveUserNameP = this.ActiveUserName;
-            //PNPFP.ActiveUserTypeP = this.ActiveUserType;
+            //PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido, row.id,1, UsuarioLogeado, 0);
+            PP_Nuevo_Plan_full_PedidoWithMedicado PNPFP = new PP_Nuevo_Plan_full_PedidoWithMedicado(ID_Pedido, row.id, 1, UsuarioLogeado, 0);
             PNPFP.Id_Pedido1 = this.ID_Pedido;
             if (PNPFP.ShowDialog() == DialogResult.OK)
             {

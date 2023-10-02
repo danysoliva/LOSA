@@ -14,6 +14,8 @@ using DevExpress.XtraGrid.Views.Grid;
 using LOSA.MigracionACS.DataSetx;
 using LOSA.Clases;
 using System.Collections;
+using LOSA.MigracionACS.Produccion.ProductoMedicado;
+using LOSA.TransaccionesPT;
 
 namespace LOSA.MigracionACS.Produccion
 {
@@ -37,23 +39,71 @@ namespace LOSA.MigracionACS.Produccion
         int Id_Pedido;
         int id_gestion_lote;
         int lote_fp = 0;
-        //public string ActiveUserCodeP
-        //{
-        //    get { return ActiveUserCode; }
-        //    set { ActiveUserCode = value; }
-        //}
 
-        //public string ActiveUserNameP
-        //{
-        //    get { return ActiveUserName; }
-        //    set { ActiveUserName = value; }
-        //}
+        bool EsMedicado;
 
-        //public string ActiveUserTypeP
-        //{
-        //    get { return ActiveUserType; }
-        //    set { ActiveUserType = value; }
-        //}
+        public PP_Nuevo_Plan_full_PedidoWithMedicado(int PiDPedido, UserLogin pUsuarioLogeado, int pLotePT)
+        {
+            InitializeComponent();
+            EsMedicado = false;
+            UsuarioLogeado = pUsuarioLogeado;
+            LotePT = pLotePT;
+            btn_NewOP.Enabled = false;
+            this.FormAction = "new";
+            Id_Pedido1 = PiDPedido;
+            btn_Save.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            dp = new DataOperations();
+            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
+            nc.Open();
+            string qeri;
+            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
+            SqlCommand cmmd = new SqlCommand(qeri, nc);
+            SqlDataReader rd = cmmd.ExecuteReader();
+            if (rd.Read())
+            {
+                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
+                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
+                dt_desde.Text = dt_desde.EditValue.ToString();
+                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
+            }
+
+            chk_AutoGen.Checked = false;
+            chk_AutoGen.Checked = true;
+            llenado_mp_all_Reck();
+        }
+        int Especie;
+        public PP_Nuevo_Plan_full_PedidoWithMedicado(int PiDPedido, int pIdPedidoDetalle, int PEspecie, UserLogin pUsuarioLogeado, int pLotePt)
+        {
+            InitializeComponent();
+            EsMedicado = false;
+            LotePT = pLotePt;
+            UsuarioLogeado = pUsuarioLogeado;
+            load_unidades_por_tarima();
+            load_presentacion();
+            TypeTrans = 2;
+            btn_NewOP.Enabled = false;
+            this.FormAction = "new";
+            Id_Pedido1 = PiDPedido;
+            IdPedidoDetalle = pIdPedidoDetalle;
+            dp = new DataOperations();
+            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
+            nc.Open();
+            string qeri;
+            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
+            SqlCommand cmmd = new SqlCommand(qeri, nc);
+            SqlDataReader rd = cmmd.ExecuteReader();
+            if (rd.Read())
+            {
+                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
+                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
+                dt_desde.Text = dt_desde.EditValue.ToString();
+                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
+            }
+
+            chk_AutoGen.Checked = false;
+            chk_AutoGen.Checked = true;
+            Especie = PEspecie;
+        }
 
         public class DatoOrdenFabricacion
         {
@@ -281,8 +331,8 @@ namespace LOSA.MigracionACS.Produccion
                             WHERE [status] >= 40 AND [status] < 80";
             SqlCommand cmd = new SqlCommand(sql, Conn);
             SqlDataAdapter adat = new SqlDataAdapter(cmd);
-            dSProductos.lineas_produccion.Clear();
-            adat.Fill(dSProductos.lineas_produccion);
+            dSProductos1.lineas_produccion.Clear();
+            adat.Fill(dSProductos1.lineas_produccion);
         }
 
 
@@ -298,11 +348,10 @@ namespace LOSA.MigracionACS.Produccion
                     {
                         unidades = row3.unidades;
                     }
-
                 }
 
                 lote_fp = lote_fp == 0 ? fmop.pp_order_get_next_lot_number() : lote_fp;
-                foreach (DataRow row in dSProductos.OrdenTilapia.Rows)
+                foreach (DataRow row in dSProductos1.OrdenTilapia.Rows)
                 {
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -362,11 +411,42 @@ namespace LOSA.MigracionACS.Produccion
                         cn.Open();
                         cmd.Connection = cn;
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.CommandText = @"PP_Plan_Ordenes_Insertv_5";
+                        cmd.CommandText = @"[dbo].[PP_Plan_Ordenes_Insert_v6]";
                         id_inserted = Convert.ToInt32(cmd.ExecuteScalar());
                         cn.Close();
-                        int PesajeidManual = InsertOrdenPesajeManual(id_inserted, lote_fp, Convert.ToInt32(row["batch"]));
-                        InsertOrdenPesajeManualDetalle(PesajeidManual, id_inserted);
+
+                        if (EsMedicado)
+                        {
+                            //Guardar el detalle de la requisicion de un manera diferente
+                            foreach(DSProductos.MateriaPrimaRow rowM in dSProductos1.MateriaPrima)
+                            {
+                                try
+                                {
+                                    DataOperations dp = new DataOperations();
+                                    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                                    con.Open();
+
+                                    SqlCommand cmdD = new SqlCommand("dbo.sp_set_insert_detalle_requisicion_mp_medicado", con);
+                                    cmdD.CommandType = CommandType.StoredProcedure;
+                                    cmdD.Parameters.AddWithValue("@lote_pt", lote_fp);
+                                    cmdD.Parameters.AddWithValue("@cantidad_solicitada", rowM.pesokg);
+                                    cmdD.Parameters.AddWithValue("@id_unidad_medida", grd_presentacion.EditValue);
+                                    cmdD.Parameters.AddWithValue("@code_sap", rowM.code_sap);
+                                    cmd.ExecuteNonQuery();
+
+                                    con.Close();
+                                }
+                                catch (Exception ec)
+                                {
+                                    CajaDialogo.Error(ec.Message);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            int PesajeidManual = InsertOrdenPesajeManual(id_inserted, lote_fp, Convert.ToInt32(row["batch"]));
+                            InsertOrdenPesajeManualDetalle(PesajeidManual, id_inserted);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -377,23 +457,26 @@ namespace LOSA.MigracionACS.Produccion
 
                     #region Validate & Change Formula Status
 
-                    int status = fmop.local_formula_get_status(Recuperar_id_For(row["formula_code"].ToString()));
-
-                    if (status < 50)
+                    if (!EsMedicado)
                     {
-                        //fmop.local_formula_change_status(Convert.ToInt32(save), int.Parse(ActiveUserCode), 50);
-                        fmop.local_formula_change_status(Convert.ToInt32(save), this.UsuarioLogeado.UserId, 50);
+                        int status = fmop.local_formula_get_status(Recuperar_id_For(row["formula_code"].ToString()));
 
-                        int nucleo = int.Parse(dp.ACS_GetSelectData(string.Format(@"SELECT COALESCE([nucleo], 0 ) AS nucleo FROM [dbo].[FML_Ingredientes_v2] WHERE [formula] = {0} AND [tipo] = 'NC' ", save)).Tables[0].Rows[0][0].ToString());
-
-                        if (nucleo > 0)
+                        if (status < 50)
                         {
-                            status = fmop.local_formula_get_status(nucleo);
+                            //fmop.local_formula_change_status(Convert.ToInt32(save), int.Parse(ActiveUserCode), 50);
+                            fmop.local_formula_change_status(Convert.ToInt32(save), this.UsuarioLogeado.UserId, 50);
 
-                            if (status < 50)
+                            int nucleo = int.Parse(dp.ACS_GetSelectData(string.Format(@"SELECT COALESCE([nucleo], 0 ) AS nucleo FROM [dbo].[FML_Ingredientes_v2] WHERE [formula] = {0} AND [tipo] = 'NC' ", save)).Tables[0].Rows[0][0].ToString());
+
+                            if (nucleo > 0)
                             {
-                                //fmop.local_formula_change_status(nucleo, int.Parse(ActiveUserCode), 50);
-                                fmop.local_formula_change_status(nucleo, this.UsuarioLogeado.UserId, 50);
+                                status = fmop.local_formula_get_status(nucleo);
+
+                                if (status < 50)
+                                {
+                                    //fmop.local_formula_change_status(nucleo, int.Parse(ActiveUserCode), 50);
+                                    fmop.local_formula_change_status(nucleo, this.UsuarioLogeado.UserId, 50);
+                                }
                             }
                         }
                     }
@@ -501,7 +584,7 @@ namespace LOSA.MigracionACS.Produccion
 
                     try
                     {
-                        foreach (DataRow row in dSProductos.OrdenCamaron.Rows)
+                        foreach (DataRow row in dSProductos1.OrdenCamaron.Rows)
                         {
                             //string save = Recuperar_id_For(row["formula_code"].ToString()).ToString();
                             //command.CommandText = "PP_Plan_Ordenes_Insertv_4";
@@ -827,66 +910,7 @@ namespace LOSA.MigracionACS.Produccion
             return Convert.ToInt32(Cmd.ExecuteScalar());
             
         }
-        public PP_Nuevo_Plan_full_PedidoWithMedicado(int PiDPedido, UserLogin pUsuarioLogeado, int pLotePT)
-        {
-            InitializeComponent();
-            UsuarioLogeado = pUsuarioLogeado;
-            LotePT = pLotePT;
-            btn_NewOP.Enabled = false;
-            this.FormAction = "new";
-            Id_Pedido1 = PiDPedido;
-            btn_Save.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            dp = new DataOperations();
-            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
-            nc.Open();
-            string qeri;
-            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
-            SqlCommand cmmd = new SqlCommand(qeri, nc);
-            SqlDataReader rd = cmmd.ExecuteReader();
-            if (rd.Read())
-            {
-                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
-                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
-                dt_desde.Text = dt_desde.EditValue.ToString();
-                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
-            }
-
-            chk_AutoGen.Checked = false;
-            chk_AutoGen.Checked = true;
-            llenado_mp_all_Reck();
-        }
-        int Especie;
-        public PP_Nuevo_Plan_full_PedidoWithMedicado(int PiDPedido, int pIdPedidoDetalle, int PEspecie, UserLogin pUsuarioLogeado, int pLotePt)
-        {
-            InitializeComponent();
-            LotePT = pLotePt;
-            UsuarioLogeado = pUsuarioLogeado;
-            load_unidades_por_tarima();
-            load_presentacion();
-            TypeTrans = 2;
-            btn_NewOP.Enabled = false;
-            this.FormAction = "new";
-            Id_Pedido1 = PiDPedido;
-            IdPedidoDetalle = pIdPedidoDetalle;
-            dp = new DataOperations();
-            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
-            nc.Open();
-            string qeri;
-            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
-            SqlCommand cmmd = new SqlCommand(qeri, nc);
-            SqlDataReader rd = cmmd.ExecuteReader();
-            if (rd.Read())
-            {
-                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
-                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
-                dt_desde.Text = dt_desde.EditValue.ToString();
-                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
-            }
-
-            chk_AutoGen.Checked = false;
-            chk_AutoGen.Checked = true;
-            Especie = PEspecie;
-        }
+       
         public void load_presentacion()
         {
             string query = @"sp_load_pt_bags";
@@ -930,8 +954,8 @@ namespace LOSA.MigracionACS.Produccion
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(Q, cn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dSProductos.OrdenCamaron.Clear();
-                da.Fill(dSProductos.OrdenCamaron);
+                dSProductos1.OrdenCamaron.Clear();
+                da.Fill(dSProductos1.OrdenCamaron);
 
 
 
@@ -952,23 +976,23 @@ namespace LOSA.MigracionACS.Produccion
                 
                 cmd = new SqlCommand(QueryTilapia, cn);
                 SqlDataAdapter dap = new SqlDataAdapter(cmd);
-                dSProductos.OrdenTilapia.Clear();
-                dap.Fill(dSProductos.OrdenTilapia);
-                dSProductos.AcceptChanges();
+                dSProductos1.OrdenTilapia.Clear();
+                dap.Fill(dSProductos1.OrdenTilapia);
+                dSProductos1.AcceptChanges();
                 Recoleccion_Datos();
                 
-                countT = dSProductos.OrdenTilapia.Rows.Count;
-                countC = dSProductos.OrdenCamaron.Rows.Count;
+                countT = dSProductos1.OrdenTilapia.Rows.Count;
+                countC = dSProductos1.OrdenCamaron.Rows.Count;
                 if (Especie == 1)  // si es tilapia pues sacamos el peso de Tilapia.
                 {
-                    foreach (DSProductos.OrdenTilapiaRow rw in dSProductos.OrdenTilapia.Rows)
+                    foreach (DSProductos.OrdenTilapiaRow rw in dSProductos1.OrdenTilapia.Rows)
                     {
                         PesoTotalKG = rw.Peso_Pedido;
                     }
                 }
                 else
                 {
-                    foreach (DSProductos.OrdenCamaronRow rw in dSProductos.OrdenCamaron.Rows)
+                    foreach (DSProductos.OrdenCamaronRow rw in dSProductos1.OrdenCamaron.Rows)
                     {
                         PesoTotalKG = rw.Peso_Pedido;
                     }
@@ -1007,6 +1031,10 @@ namespace LOSA.MigracionACS.Produccion
 
         public void Llenado_MP()
         {
+            if(tggMedicado.IsOn)
+            {
+                return;
+            }
 
             try
             {
@@ -1016,8 +1044,8 @@ namespace LOSA.MigracionACS.Produccion
                 DMC.CommandType = CommandType.StoredProcedure;
                 DMC.Parameters.AddWithValue(" @Id_Pedido", Id_Pedido);
                 SqlDataAdapter da = new SqlDataAdapter(DMC);
-                dSProductos.MateriaPrima.Clear();
-                da.Fill(dSProductos.MateriaPrima);
+                dSProductos1.MateriaPrima.Clear();
+                da.Fill(dSProductos1.MateriaPrima);
 
             }
             catch (Exception ex)
@@ -1248,13 +1276,13 @@ namespace LOSA.MigracionACS.Produccion
             if (txt_Descripcion.Text != "")
             {
                 double cantKilos = 0;
-                foreach (DataRow r in dSProductos.OrdenTilapia.Rows)
+                foreach (DataRow r in dSProductos1.OrdenTilapia.Rows)
                 {
                     cantKilos += Convert.ToDouble(r["Peso_Pedido"]);
                 }
 
                 bool OP_Generadas = false;
-                foreach (DSProductos.OrdenTilapiaRow row in dSProductos.OrdenTilapia.Rows)
+                foreach (DSProductos.OrdenTilapiaRow row in dSProductos1.OrdenTilapia.Rows)
                 {
                     if (!string.IsNullOrEmpty(row.code_pp))
                     {
@@ -1276,7 +1304,7 @@ namespace LOSA.MigracionACS.Produccion
                     
                     int rmi = 0;
 
-                    foreach (DataRow row in dSProductos.OrdenTilapia.Rows)
+                    foreach (DataRow row in dSProductos1.OrdenTilapia.Rows)
                     {
                         rmi += dp.get_inactive_rm(Recuperar_id_For(row["formula_code"].ToString()));
                     }
@@ -1305,14 +1333,14 @@ namespace LOSA.MigracionACS.Produccion
             if (txt_Descripcion.Text != "")
             {
                 double cantKilos = 0;
-                foreach (DataRow r in dSProductos.OrdenCamaron.Rows)
+                foreach (DataRow r in dSProductos1.OrdenCamaron.Rows)
                 {
                     cantKilos += Convert.ToDouble(r["Peso_Pedido"]);
                 }
                 cantKilos = cantKilos * 1000;
 
                 bool OP_Generadas = false;
-                foreach (DSProductos.OrdenCamaronRow row in dSProductos.OrdenCamaron.Rows)
+                foreach (DSProductos.OrdenCamaronRow row in dSProductos1.OrdenCamaron.Rows)
                 {
 
                     if (!string.IsNullOrEmpty(row.code_pp))
@@ -1345,7 +1373,7 @@ namespace LOSA.MigracionACS.Produccion
 
                     int rmi = 0;
 
-                    foreach (DataRow row in dSProductos.OrdenCamaron.Rows)
+                    foreach (DataRow row in dSProductos1.OrdenCamaron.Rows)
                     {
                         rmi += dp.get_inactive_rm(Recuperar_id_For(row["formula_code"].ToString()));
                     }
@@ -1374,50 +1402,53 @@ namespace LOSA.MigracionACS.Produccion
         {
             if (grdv_reqMP_Total.RowCount == 0)
             {
-                CajaDialogo.Error("Debe Seleccionar la Presenteaciacion!");
+                CajaDialogo.Error("Debe contener un listado de materiales para poder continuar!");
                 return;
             }
             else
             {
-                bool InventrioDisponible = false;
-                decimal Inventario_Bodega = 0;
-                //Vamos a validar existencia de Granel en Bodegas
-                foreach (DSProductos.MateriaPrimaRow row in dSProductos.MateriaPrima.Rows)
+                if (!tggMedicado.IsOn)//Sino es medicado que haga la validacion
                 {
-                    //Trigo // H.Soya // H.SoyaN // H.SoyaR
-                    if (row.id_mp == 12 || row.id_mp == 14 || row.id_mp == 1062 || row.id_mp == 1063)
+                    bool InventrioDisponible = false;
+                    decimal Inventario_Bodega = 0;
+                    //Vamos a validar existencia de Granel en Bodegas
+                    foreach (DSProductos.MateriaPrimaRow row in dSProductos1.MateriaPrima.Rows)
                     {
-                        try
+                        //Trigo // H.Soya // H.SoyaN // H.SoyaR
+                        if (row.id_mp == 12 || row.id_mp == 14 || row.id_mp == 1062 || row.id_mp == 1063)
                         {
-                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                            conn.Open();
-                            SqlCommand cmd = new SqlCommand("sp_get_inve_extistencia_granel", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@id_mp", row.id_mp);
-                            cmd.Parameters.AddWithValue("@cantidad_solicitada", row.pesokg);
-                            SqlDataReader dr = cmd.ExecuteReader();
-                            if (dr.Read())
+                            try
                             {
-                                InventrioDisponible = dr.GetBoolean(0);
-                                Inventario_Bodega = dr.GetDecimal(1);
-                                dr.Close();
-                            }
-                            conn.Close();
+                                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                                conn.Open();
+                                SqlCommand cmd = new SqlCommand("sp_get_inve_extistencia_granel", conn);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@id_mp", row.id_mp);
+                                cmd.Parameters.AddWithValue("@cantidad_solicitada", row.pesokg);
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                if (dr.Read())
+                                {
+                                    InventrioDisponible = dr.GetBoolean(0);
+                                    Inventario_Bodega = dr.GetDecimal(1);
+                                    dr.Close();
+                                }
+                                conn.Close();
 
-                            if (InventrioDisponible == false)
-                            {
-                                MateriaPrima mp = new MateriaPrima();
-                                mp.RecuperarRegistroFromID_RM(row.id_mp);
-                                CajaDialogo.Error("Materia Prima Insuficiente en Bodega \nNo se puede crear la Orden: " + mp.CodeMP_SAP +"-"+mp.NameComercial+"" +
-                                                "\nCantidad Solicitada: "+ String.Format("{0:0,0.00}", row.pesokg) +
-                                                "\nExistencia en Bodega: " + String.Format("{0:0,0.00}", Inventario_Bodega) + 
-                                                "\nContacte al Dpto. de Logistica.");
-                                return;
+                                if (InventrioDisponible == false)
+                                {
+                                    MateriaPrima mp = new MateriaPrima();
+                                    mp.RecuperarRegistroFromID_RM(row.id_mp);
+                                    CajaDialogo.Error("Materia Prima Insuficiente en Bodega \nNo se puede crear la Orden: " + mp.CodeMP_SAP + "-" + mp.NameComercial + "" +
+                                                    "\nCantidad Solicitada: " + String.Format("{0:0,0.00}", row.pesokg) +
+                                                    "\nExistencia en Bodega: " + String.Format("{0:0,0.00}", Inventario_Bodega) +
+                                                    "\nContacte al Dpto. de Logistica.");
+                                    return;
+                                }
                             }
-                        }
-                        catch (Exception ex)
-                        {
-                            CajaDialogo.Error(ex.Message);
+                            catch (Exception ex)
+                            {
+                                CajaDialogo.Error(ex.Message);
+                            }
                         }
                     }
                 }
@@ -1436,6 +1467,7 @@ namespace LOSA.MigracionACS.Produccion
                 grd_presentacion.ShowPopup();
                 return;
             }
+
             if (grd_udtm.EditValue == null)
             {
                 CajaDialogo.Error("Debe especificar la cantidad de sacos que se asignan por la tarima.");
@@ -1443,47 +1475,15 @@ namespace LOSA.MigracionACS.Produccion
                 return;
             }
 
-            //if (dSProductos.OrdenTilapia.Count > 0)
-            //{
-
-            //    if (dSProductos.OrdenCamaron.Count > 0)
-            //    {
-            //        ParPlan = Insert_Header();
-            //        Validacion_Camaron(ParPlan);
-
-            //    }
-            //    else
-            //    {
-            //        ParPlan = Insert_Header();
-            //        Validacion_Tilapia(ParPlan);
-            //    }
-
-            //}
-            //else
-            //{
-            //    if (dSProductos.OrdenCamaron.Count > 0)
-            //    {
-            //        ParPlan = Insert_Header();
-            //        Validacion_Camaron(ParPlan);
-
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("No hay datos ingresados...");
-            //        this.Close();
-            //    }
-
-            //}
-
             bool Guardo = false;
-            if (dSProductos.OrdenTilapia.Count > 0)
+            if (dSProductos1.OrdenTilapia.Count > 0)
             {
                 ParPlan = Insert_Header();
                 Validacion_Tilapia(ParPlan);
                 Guardo = true;
             }
 
-            if (dSProductos.OrdenCamaron.Count > 0)
+            if (dSProductos1.OrdenCamaron.Count > 0)
             {
                 ParPlan = Insert_Header();
                 Validacion_Camaron(ParPlan);
@@ -1501,6 +1501,8 @@ namespace LOSA.MigracionACS.Produccion
         private void btn_EditOP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Llenado_MP();
+            if (tggMedicado.IsOn)
+                return;
 
             if (TypeTrans == 1)
             {
@@ -1528,8 +1530,8 @@ namespace LOSA.MigracionACS.Produccion
                 DMC.CommandType = CommandType.StoredProcedure;
                 DMC.Parameters.AddWithValue("@Id_Pedido", Id_Pedido);
                 SqlDataAdapter da = new SqlDataAdapter(DMC);
-                dSProductos.MateriaPrima.Clear();
-                da.Fill(dSProductos.MateriaPrima);
+                dSProductos1.MateriaPrima.Clear();
+                da.Fill(dSProductos1.MateriaPrima);
                 cn.Close();
 
 
@@ -1567,8 +1569,8 @@ namespace LOSA.MigracionACS.Produccion
                 DMC.Parameters.AddWithValue("@id_formula", id_formula);
                 DMC.Parameters.AddWithValue("@Id_Pedido", IdPedidoDetalle);
                 SqlDataAdapter da = new SqlDataAdapter(DMC);
-                dSProductos.MateriaPrima.Clear();
-                da.Fill(dSProductos.MateriaPrima);
+                dSProductos1.MateriaPrima.Clear();
+                da.Fill(dSProductos1.MateriaPrima);
                 cn.Close();
 
 
@@ -1918,6 +1920,49 @@ namespace LOSA.MigracionACS.Produccion
             else
             {
                 btnBuscarLote.Enabled = false;
+            }
+        }
+
+        private void toggleSwitch1_Toggled(object sender, EventArgs e)
+        {
+            if (tggMedicado.IsOn)
+            {
+                dSProductos1.MateriaPrima.Clear();
+            }
+            EsMedicado = tggMedicado.IsOn;
+        }
+
+        private void cmdAgregarMP_Requerimiento_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Agregar Materias Primas
+            if (tggMedicado.IsOn) {
+                frmAddItemForMedicado frm = new frmAddItemForMedicado();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    dSProductos1.MateriaPrima.Clear();
+
+                    foreach (dsMedicado.seleccionar_itemRow rowS in frm.dsMedicado1.seleccionar_item) 
+                    {
+                        decimal val = 0;
+                        try
+                        {
+                            val = Convert.ToDecimal(rowS.cantidad);
+                        }
+                        catch { }
+
+                        if (val > 0)
+                        {
+                            DSProductos.MateriaPrimaRow row = dSProductos1.MateriaPrima.NewMateriaPrimaRow();
+                            row.code_sap = rowS.code_sap;
+                            row.material = rowS.descripcion;
+                            row.pesokg = rowS.cantidad;
+
+
+                            dSProductos1.MateriaPrima.AddMateriaPrimaRow(row);
+                            dSProductos1.AcceptChanges();
+                        }
+                    }
+                }
             }
         }
 

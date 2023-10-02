@@ -37,23 +37,67 @@ namespace LOSA.MigracionACS.Produccion
         int Id_Pedido;
         int id_gestion_lote;
         int lote_fp = 0;
-        //public string ActiveUserCodeP
-        //{
-        //    get { return ActiveUserCode; }
-        //    set { ActiveUserCode = value; }
-        //}
 
-        //public string ActiveUserNameP
-        //{
-        //    get { return ActiveUserName; }
-        //    set { ActiveUserName = value; }
-        //}
+        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, UserLogin pUsuarioLogeado, int pLotePT)
+        {
+            InitializeComponent();
+            UsuarioLogeado = pUsuarioLogeado;
+            LotePT = pLotePT;
+            btn_NewOP.Enabled = false;
+            this.FormAction = "new";
+            Id_Pedido1 = PiDPedido;
+            btn_Save.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            dp = new DataOperations();
+            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
+            nc.Open();
+            string qeri;
+            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
+            SqlCommand cmmd = new SqlCommand(qeri, nc);
+            SqlDataReader rd = cmmd.ExecuteReader();
+            if (rd.Read())
+            {
+                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
+                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
+                dt_desde.Text = dt_desde.EditValue.ToString();
+                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
+            }
 
-        //public string ActiveUserTypeP
-        //{
-        //    get { return ActiveUserType; }
-        //    set { ActiveUserType = value; }
-        //}
+            chk_AutoGen.Checked = false;
+            chk_AutoGen.Checked = true;
+            llenado_mp_all_Reck();
+        }
+        int Especie;
+        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, int pIdPedidoDetalle, int PEspecie, UserLogin pUsuarioLogeado, int pLotePt)
+        {
+            InitializeComponent();
+            LotePT = pLotePt;
+            UsuarioLogeado = pUsuarioLogeado;
+            load_unidades_por_tarima();
+            load_presentacion();
+            TypeTrans = 2;
+            btn_NewOP.Enabled = false;
+            this.FormAction = "new";
+            Id_Pedido1 = PiDPedido;
+            IdPedidoDetalle = pIdPedidoDetalle;
+            dp = new DataOperations();
+            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
+            nc.Open();
+            string qeri;
+            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
+            SqlCommand cmmd = new SqlCommand(qeri, nc);
+            SqlDataReader rd = cmmd.ExecuteReader();
+            if (rd.Read())
+            {
+                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
+                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
+                dt_desde.Text = dt_desde.EditValue.ToString();
+                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
+            }
+
+            chk_AutoGen.Checked = false;
+            chk_AutoGen.Checked = true;
+            Especie = PEspecie;
+        }
 
         public class DatoOrdenFabricacion
         {
@@ -827,66 +871,7 @@ namespace LOSA.MigracionACS.Produccion
             return Convert.ToInt32(Cmd.ExecuteScalar());
             
         }
-        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, UserLogin pUsuarioLogeado, int pLotePT)
-        {
-            InitializeComponent();
-            UsuarioLogeado = pUsuarioLogeado;
-            LotePT = pLotePT;
-            btn_NewOP.Enabled = false;
-            this.FormAction = "new";
-            Id_Pedido1 = PiDPedido;
-            btn_Save.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            dp = new DataOperations();
-            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
-            nc.Open();
-            string qeri;
-            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
-            SqlCommand cmmd = new SqlCommand(qeri, nc);
-            SqlDataReader rd = cmmd.ExecuteReader();
-            if (rd.Read())
-            {
-                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
-                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
-                dt_desde.Text = dt_desde.EditValue.ToString();
-                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
-            }
-
-            chk_AutoGen.Checked = false;
-            chk_AutoGen.Checked = true;
-            llenado_mp_all_Reck();
-        }
-        int Especie;
-        public PP_Nuevo_Plan_full_Pedido(int PiDPedido, int pIdPedidoDetalle, int PEspecie, UserLogin pUsuarioLogeado, int pLotePt)
-        {
-            InitializeComponent();
-            LotePT = pLotePt;
-            UsuarioLogeado = pUsuarioLogeado;
-            load_unidades_por_tarima();
-            load_presentacion();
-            TypeTrans = 2;
-            btn_NewOP.Enabled = false;
-            this.FormAction = "new";
-            Id_Pedido1 = PiDPedido;
-            IdPedidoDetalle = pIdPedidoDetalle;
-            dp = new DataOperations();
-            SqlConnection nc = new SqlConnection(dp.ConnectionStringCostos);
-            nc.Open();
-            string qeri;
-            qeri = @"Select fecha_ini, fecha_fin from [dbo].[PT_Pedido] Where id_Pedido = " + Id_Pedido;
-            SqlCommand cmmd = new SqlCommand(qeri, nc);
-            SqlDataReader rd = cmmd.ExecuteReader();
-            if (rd.Read())
-            {
-                dt_desde.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(0));
-                dt_Hasta.EditValue = string.Format("{0:yyyy-MM-dd}", rd.GetDateTime(1));
-                dt_desde.Text = dt_desde.EditValue.ToString();
-                dt_Hasta.Text = dt_Hasta.EditValue.ToString();
-            }
-
-            chk_AutoGen.Checked = false;
-            chk_AutoGen.Checked = true;
-            Especie = PEspecie;
-        }
+       
         public void load_presentacion()
         {
             string query = @"sp_load_pt_bags";

@@ -3053,6 +3053,17 @@
     <Compile Include="MigracionACS\Produccion\PRB_Report_v2.designer.cs">
       <DependentUpon>PRB_Report_v2.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMedicado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\ProductoMedicado\frmAddItemForMedicado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\ProductoMedicado\frmAddItemForMedicado.Designer.cs">
+      <DependentUpon>frmAddItemForMedicado.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\Prod_Ordenes_Produccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4804,6 +4815,17 @@
     </None>
     <None Include="MigracionACS\Produccion\PlanProductionIntegrated\dsPlanPRD.xss">
       <DependentUpon>dsPlanPRD.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.xsc">
+      <DependentUpon>dsMedicado.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMedicado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.xss">
+      <DependentUpon>dsMedicado.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura.xsc">
       <DependentUpon>dsTemperatura.xsd</DependentUpon>
@@ -7503,6 +7525,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\PRB_Report_v2.resx">
       <DependentUpon>PRB_Report_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\ProductoMedicado\frmAddItemForMedicado.resx">
+      <DependentUpon>frmAddItemForMedicado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Prod_Ordenes_Produccion.resx">
       <DependentUpon>Prod_Ordenes_Produccion.cs</DependentUpon>

@@ -129,7 +129,7 @@ namespace LOSA.Reportes
             this.tabNavigationPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabNavigationPage1.ImageOptions.Image")));
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1319, 547);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1319, 550);
             // 
             // grd_inventario_camaron
             // 
@@ -139,7 +139,7 @@ namespace LOSA.Reportes
             this.grd_inventario_camaron.Location = new System.Drawing.Point(0, 0);
             this.grd_inventario_camaron.MainView = this.grdv_inventario_camaron;
             this.grd_inventario_camaron.Name = "grd_inventario_camaron";
-            this.grd_inventario_camaron.Size = new System.Drawing.Size(1319, 547);
+            this.grd_inventario_camaron.Size = new System.Drawing.Size(1319, 550);
             this.grd_inventario_camaron.TabIndex = 0;
             this.grd_inventario_camaron.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_camaron});
@@ -304,7 +304,7 @@ namespace LOSA.Reportes
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Properties.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.tabNavigationPage2.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1319, 547);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1319, 550);
             // 
             // grd_inventario_Tilapia
             // 
@@ -314,7 +314,7 @@ namespace LOSA.Reportes
             this.grd_inventario_Tilapia.Location = new System.Drawing.Point(0, 0);
             this.grd_inventario_Tilapia.MainView = this.grdv_inventario_Tilapia;
             this.grd_inventario_Tilapia.Name = "grd_inventario_Tilapia";
-            this.grd_inventario_Tilapia.Size = new System.Drawing.Size(1319, 547);
+            this.grd_inventario_Tilapia.Size = new System.Drawing.Size(1319, 550);
             this.grd_inventario_Tilapia.TabIndex = 0;
             this.grd_inventario_Tilapia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_Tilapia});

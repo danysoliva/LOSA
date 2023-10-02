@@ -977,7 +977,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage4.Controls.Add(this.btnRptMPyBod);
             this.tabNavigationPage4.Controls.Add(this.gridControl2);
             this.tabNavigationPage4.Name = "tabNavigationPage4";
-            this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 444);
+            this.tabNavigationPage4.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnRptMPyBod
             // 
@@ -1002,7 +1002,7 @@ namespace LOSA.TransaccionesMP
             this.gridControl2.Location = new System.Drawing.Point(8, 49);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1351, 402);
+            this.gridControl2.Size = new System.Drawing.Size(1351, 403);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1178,7 +1178,7 @@ namespace LOSA.TransaccionesMP
             this.tabNavigationPage5.Controls.Add(this.btnActReproceso);
             this.tabNavigationPage5.Controls.Add(this.gridReproceso);
             this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(1362, 444);
+            this.tabNavigationPage5.Size = new System.Drawing.Size(1362, 445);
             // 
             // btnActReproceso
             // 
@@ -1205,7 +1205,7 @@ namespace LOSA.TransaccionesMP
             this.gridReproceso.Name = "gridReproceso";
             this.gridReproceso.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmAjusteReproceso});
-            this.gridReproceso.Size = new System.Drawing.Size(1356, 391);
+            this.gridReproceso.Size = new System.Drawing.Size(1356, 392);
             this.gridReproceso.TabIndex = 1;
             this.gridReproceso.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
