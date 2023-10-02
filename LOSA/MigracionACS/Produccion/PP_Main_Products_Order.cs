@@ -1702,7 +1702,9 @@ namespace LOSA.MigracionACS.Produccion
             //var row = (dsMensualidades.mensualidadesRow)gridView.GetFocusedDataRow();
             string name = sender.ToString();
             //Crear orden de fabricacion individual
-            PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido,UsuarioLogeado,0);
+            //PP_Nuevo_Plan_full_Pedido PNPFP = new PP_Nuevo_Plan_full_Pedido(ID_Pedido,UsuarioLogeado,0);
+
+            PP_Nuevo_Plan_full_PedidoWithMedicado PNPFP = new PP_Nuevo_Plan_full_PedidoWithMedicado(ID_Pedido, UsuarioLogeado, 0);
             //PNPFP.ActiveUserCodeP = this.ActiveUserCode;
             //PNPFP.ActiveUserNameP = this.ActiveUserName;
             //PNPFP.ActiveUserTypeP = this.ActiveUserType;

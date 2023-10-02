@@ -2951,6 +2951,12 @@
     <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full.designer.cs">
       <DependentUpon>PP_Nuevo_Plan_full.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_PedidoWithMedicado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_PedidoWithMedicado.designer.cs">
+      <DependentUpon>PP_Nuevo_Plan_full_PedidoWithMedicado.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7446,6 +7452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full.resx">
       <DependentUpon>PP_Nuevo_Plan_full.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_PedidoWithMedicado.resx">
+      <DependentUpon>PP_Nuevo_Plan_full_PedidoWithMedicado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_Pedido.resx">
       <DependentUpon>PP_Nuevo_Plan_full_Pedido.cs</DependentUpon>

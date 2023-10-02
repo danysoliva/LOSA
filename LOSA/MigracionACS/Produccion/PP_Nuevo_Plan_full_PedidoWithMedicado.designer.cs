@@ -1,6 +1,6 @@
 ﻿namespace LOSA.MigracionACS.Produccion
 {
-    partial class PP_Nuevo_Plan_full_Pedido
+    partial class PP_Nuevo_Plan_full_PedidoWithMedicado
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PP_Nuevo_Plan_full_Pedido));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PP_Nuevo_Plan_full_PedidoWithMedicado));
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grp_mainOptions = new DevExpress.XtraEditors.GroupControl();
-            this.tgg_reservarlote = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btn_NewOP = new DevExpress.XtraBars.BarButtonItem();
@@ -58,6 +59,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.tgg_reservarlote = new DevExpress.XtraEditors.ToggleSwitch();
             this.btnBuscarLote = new DevExpress.XtraEditors.SimpleButton();
             this.txtloteselec = new DevExpress.XtraEditors.TextEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
@@ -159,12 +161,11 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grp_mainOptions)).BeginInit();
             this.grp_mainOptions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tgg_reservarlote.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgg_reservarlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteselec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_udtm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unidadestarimaBindingSource)).BeginInit();
@@ -216,7 +217,6 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn7
@@ -273,18 +273,27 @@
             this.grp_mainOptions.TabIndex = 0;
             this.grp_mainOptions.Text = "Información Basica";
             // 
-            // tgg_reservarlote
+            // labelControl17
             // 
-            this.tgg_reservarlote.Location = new System.Drawing.Point(987, 98);
-            this.tgg_reservarlote.MenuManager = this.barManager1;
-            this.tgg_reservarlote.Name = "tgg_reservarlote";
-            this.tgg_reservarlote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.tgg_reservarlote.Properties.Appearance.Options.UseFont = true;
-            this.tgg_reservarlote.Properties.OffText = "Sin reservacion";
-            this.tgg_reservarlote.Properties.OnText = "Con reservacion";
-            this.tgg_reservarlote.Size = new System.Drawing.Size(230, 24);
-            this.tgg_reservarlote.TabIndex = 48;
-            this.tgg_reservarlote.Toggled += new System.EventHandler(this.tgg_reservarlote_Toggled);
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Location = new System.Drawing.Point(799, 129);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(182, 20);
+            this.labelControl17.TabIndex = 50;
+            this.labelControl17.Text = "Orden Producto Medicado";
+            // 
+            // toggleSwitch1
+            // 
+            this.toggleSwitch1.Location = new System.Drawing.Point(987, 127);
+            this.toggleSwitch1.MenuManager = this.barManager1;
+            this.toggleSwitch1.Name = "toggleSwitch1";
+            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
+            this.toggleSwitch1.Properties.OffText = "No";
+            this.toggleSwitch1.Properties.OnText = "Si";
+            this.toggleSwitch1.Size = new System.Drawing.Size(230, 24);
+            this.toggleSwitch1.TabIndex = 49;
             // 
             // barManager1
             // 
@@ -530,6 +539,19 @@
             this.barButtonItem1.Caption = "Ambos";
             this.barButtonItem1.Id = 13;
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // tgg_reservarlote
+            // 
+            this.tgg_reservarlote.Location = new System.Drawing.Point(987, 98);
+            this.tgg_reservarlote.MenuManager = this.barManager1;
+            this.tgg_reservarlote.Name = "tgg_reservarlote";
+            this.tgg_reservarlote.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.tgg_reservarlote.Properties.Appearance.Options.UseFont = true;
+            this.tgg_reservarlote.Properties.OffText = "Sin reservacion";
+            this.tgg_reservarlote.Properties.OnText = "Con reservacion";
+            this.tgg_reservarlote.Size = new System.Drawing.Size(230, 24);
+            this.tgg_reservarlote.TabIndex = 48;
+            this.tgg_reservarlote.Toggled += new System.EventHandler(this.tgg_reservarlote_Toggled);
             // 
             // btnBuscarLote
             // 
@@ -1743,31 +1765,7 @@
             this.bindingSource1.DataMember = "lineas_produccion";
             this.bindingSource1.DataSource = this.dsProduccion1;
             // 
-            // toggleSwitch1
-            // 
-            this.toggleSwitch1.Location = new System.Drawing.Point(987, 127);
-            this.toggleSwitch1.MenuManager = this.barManager1;
-            this.toggleSwitch1.Name = "toggleSwitch1";
-            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
-            this.toggleSwitch1.Properties.OffText = "No";
-            this.toggleSwitch1.Properties.OnText = "Si";
-            this.toggleSwitch1.Size = new System.Drawing.Size(230, 24);
-            this.toggleSwitch1.TabIndex = 49;
-            this.toggleSwitch1.Visible = false;
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(799, 129);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(182, 20);
-            this.labelControl17.TabIndex = 50;
-            this.labelControl17.Text = "Orden Producto Medicado";
-            this.labelControl17.Visible = false;
-            // 
-            // PP_Nuevo_Plan_full_Pedido
+            // PP_Nuevo_Plan_full_PedidoWithMedicado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1778,17 +1776,17 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PP_Nuevo_Plan_full_Pedido.IconOptions.Icon")));
-            this.Name = "PP_Nuevo_Plan_full_Pedido";
+            this.Name = "PP_Nuevo_Plan_full_PedidoWithMedicado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plan de Producción - Crear";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PP_Nuevo_Plan_full_Pedido_FormClosing);
-            this.Load += new System.EventHandler(this.PP_Nuevo_Plan_full_Pedido_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PP_Nuevo_Plan_full_PedidoWithMedicado_FormClosing);
+            this.Load += new System.EventHandler(this.PP_Nuevo_Plan_full_PedidoWithMedicado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grp_mainOptions)).EndInit();
             this.grp_mainOptions.ResumeLayout(false);
             this.grp_mainOptions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tgg_reservarlote.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tgg_reservarlote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteselec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_udtm.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unidadestarimaBindingSource)).EndInit();
@@ -1840,7 +1838,6 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
