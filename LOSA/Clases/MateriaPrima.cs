@@ -193,7 +193,7 @@ namespace LOSA.Clases
                 {
                     IdMP_ACS = dr.GetInt32(0);
                     Codigo = dr.GetString(1);
-                    Name = dr.GetString(2);
+                    NameComercial = Name = dr.GetString(2);
                     //name sap = dr.GetString(3);
                     CodeMP_SAP = dr.GetString(4);
                 }
@@ -224,7 +224,7 @@ namespace LOSA.Clases
                 {
                     IdMP_ACS = dr.GetInt32(0);
                     Codigo = dr.GetString(1);
-                    Name = dr.GetString(2);
+                    NameComercial = Name = dr.GetString(2);
                     CodeMP_SAP = dr.GetString(3);
                 }
                 dr.Close();
@@ -254,7 +254,7 @@ namespace LOSA.Clases
                 {
                     IdMP_ACS = dr.GetInt32(0);
                     Codigo = dr.GetString(1);
-                    Name = dr.GetString(2);
+                    NameComercial = Name = dr.GetString(2);
                     CodeMP_SAP = dr.GetString(3);
                 }
                 dr.Close();
@@ -286,7 +286,7 @@ namespace LOSA.Clases
                 {
                     IdMP_ACS = dr.GetInt32(0);
                     Codigo = dr.GetString(1);
-                    Name = dr.GetString(2);
+                    NameComercial =  Name = dr.GetString(2);
                     CodeMP_SAP = pCodeSAP;
                 }
                 dr.Close();

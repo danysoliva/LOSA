@@ -120,7 +120,7 @@
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAgregar.Location = new System.Drawing.Point(140, 6);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(110, 73);
+            this.btnAgregar.Size = new System.Drawing.Size(142, 73);
             this.btnAgregar.TabIndex = 29;
             this.btnAgregar.Text = "Agregar \r\nlote";
             this.btnAgregar.Visible = false;
@@ -508,9 +508,9 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnAtras);
+            this.IconOptions.ShowIcon = false;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_ingresos_lotes";
-            this.ShowIcon = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).EndInit();

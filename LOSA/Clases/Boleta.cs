@@ -15,6 +15,7 @@ namespace LOSA.Clases
         bool recuperado;
         string _furgon;
         string _placa_vehiculo;
+        int _cantidadMP;
         public Boleta()
         {
         }
@@ -24,6 +25,7 @@ namespace LOSA.Clases
         public bool Recuperado { get => recuperado; set => recuperado = value; }
         public string Furgon { get => _furgon; set => _furgon = value; }
         public string Placa_vehiculo { get => _placa_vehiculo; set => _placa_vehiculo = value; }
+        public int CantidadMP { get => _cantidadMP; set => _cantidadMP = value; }
 
         public bool RecuperarRegistro(int pIdSerial)
         {
@@ -37,6 +39,7 @@ namespace LOSA.Clases
                                      ,[NumID]
                                      ,furgon
                                      ,vehiculo--placa cabezal o vehiculo
+                                     ,coalesce([cant_mp_usos_alosy],1) as [cant_mp_usos_alosy]
                                 FROM [BASCULA].[dbo].[TS_in_and_out]tt
                                 where tt.id = " + pIdSerial;
                 SqlCommand cmd = new SqlCommand(sql, con);
@@ -46,6 +49,7 @@ namespace LOSA.Clases
                     this._NumID = dr.GetInt32(1);
                     this.Furgon = dr.GetString(2);
                     this.Placa_vehiculo = dr.GetString(3);
+                    this._cantidadMP = dr.GetInt32(4);
                 }
                 dr.Close();
                 con.Close();

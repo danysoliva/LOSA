@@ -83,8 +83,9 @@ namespace LOSA.RecepcionMP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    txtCodigoMP.Text = dr.GetString(1);
-                    txtMP_Name.Text = dr.GetString(2);
+                    //txtCodigoMP.Text = dr.GetString(1);
+                    //txtMP_Name.Text = dr.GetString(2);
+
                     txtCodigoProveedor.Text = dr.GetString(3);
                     txtProveedorName.Text = dr.GetString(4);
                     NumBoleta = dr.GetInt32(0);

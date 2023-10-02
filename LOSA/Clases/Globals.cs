@@ -127,16 +127,16 @@ namespace ACS.Classes
 
 
         //ODOO4
-        public static string odoo4_ServerAddress = "AQFSVR003";
-        public static string odoo4_ServerName = "Servidor Productivo";
-        public static string odoo4_ActiveDB = "odoo_sap";
-        public static string odoo4_DB_User = "aquafeed";
-        public static string odoo4_DB_Pass = "Aqua3820";
+        public static string odoo4_ServerAddress = "10.50.11.137";
+        public static string odoo4_ServerName = "Servidor Odoo Virtual";
+        public static string odoo4_ActiveDB = "aqua_base";
+        public static string odoo4_DB_User = "vegeta";
+        public static string odoo4_DB_Pass = "aquaf33d19";
 
         //ODOO5
         public static string odoo5_ServerAddress = "10.50.11.137";
         public static string odoo5_ServerName = "Servidor Odoo Virtual";
-        public static string odoo5_ActiveDB = "dbaquafeed";
+        public static string odoo5_ActiveDB = "dbaquafeed_bk";
         public static string odoo5_DB_User = "vegeta";
         public static string odoo5_DB_Pass = "aquaf33d19";
 

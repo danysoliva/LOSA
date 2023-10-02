@@ -69,6 +69,7 @@
             this.colfinalizado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colnombre_comercial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tggView = new DevExpress.XtraEditors.ToggleSwitch();
+            this.cmdRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grRequisicoinesMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTarimas)).BeginInit();
@@ -105,9 +106,9 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(135, 12);
+            this.labelControl1.Location = new System.Drawing.Point(250, 10);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(740, 40);
+            this.labelControl1.Size = new System.Drawing.Size(384, 40);
             this.labelControl1.TabIndex = 35;
             this.labelControl1.Text = "Requisiciones MP";
             // 
@@ -369,9 +370,26 @@
             this.tggView.Properties.Appearance.Options.UseFont = true;
             this.tggView.Properties.OffText = "Ver todas";
             this.tggView.Properties.OnText = "Solo Activas";
-            this.tggView.Size = new System.Drawing.Size(232, 30);
+            this.tggView.Size = new System.Drawing.Size(232, 24);
             this.tggView.TabIndex = 36;
             this.tggView.Toggled += new System.EventHandler(this.tggView_Toggled);
+            // 
+            // cmdRefresh
+            // 
+            this.cmdRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdRefresh.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmdRefresh.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRefresh.Appearance.Options.UseBackColor = true;
+            this.cmdRefresh.Appearance.Options.UseFont = true;
+            this.cmdRefresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.cmdRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdRefresh.Location = new System.Drawing.Point(727, 3);
+            this.cmdRefresh.Name = "cmdRefresh";
+            this.cmdRefresh.Size = new System.Drawing.Size(148, 47);
+            this.cmdRefresh.TabIndex = 37;
+            this.cmdRefresh.Text = "Recargar";
+            this.cmdRefresh.Click += new System.EventHandler(this.cmdRefresh_Click);
             // 
             // frmRequisiciones
             // 
@@ -379,6 +397,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1030, 636);
+            this.Controls.Add(this.cmdRefresh);
             this.Controls.Add(this.tggView);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.labelControl1);
@@ -423,5 +442,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colfinalizado;
         private DevExpress.XtraGrid.Columns.GridColumn colLote;
         private DevExpress.XtraGrid.Columns.GridColumn colnombre_comercial;
+        private DevExpress.XtraEditors.SimpleButton cmdRefresh;
     }
 }

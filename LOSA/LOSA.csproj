@@ -2951,6 +2951,12 @@
     <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full.designer.cs">
       <DependentUpon>PP_Nuevo_Plan_full.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_PedidoWithMedicado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_PedidoWithMedicado.designer.cs">
+      <DependentUpon>PP_Nuevo_Plan_full_PedidoWithMedicado.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_Pedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3046,6 +3052,17 @@
     </Compile>
     <Compile Include="MigracionACS\Produccion\PRB_Report_v2.designer.cs">
       <DependentUpon>PRB_Report_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMedicado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\ProductoMedicado\frmAddItemForMedicado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\ProductoMedicado\frmAddItemForMedicado.Designer.cs">
+      <DependentUpon>frmAddItemForMedicado.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\Produccion\Prod_Ordenes_Produccion.cs">
       <SubType>Form</SubType>
@@ -4798,6 +4815,17 @@
     </None>
     <None Include="MigracionACS\Produccion\PlanProductionIntegrated\dsPlanPRD.xss">
       <DependentUpon>dsPlanPRD.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.xsc">
+      <DependentUpon>dsMedicado.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMedicado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Produccion\ProductoMedicado\dsMedicado.xss">
+      <DependentUpon>dsMedicado.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura.xsc">
       <DependentUpon>dsTemperatura.xsd</DependentUpon>
@@ -7453,6 +7481,9 @@
     <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full.resx">
       <DependentUpon>PP_Nuevo_Plan_full.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_PedidoWithMedicado.resx">
+      <DependentUpon>PP_Nuevo_Plan_full_PedidoWithMedicado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\PP_Nuevo_Plan_full_Pedido.resx">
       <DependentUpon>PP_Nuevo_Plan_full_Pedido.cs</DependentUpon>
     </EmbeddedResource>
@@ -7500,6 +7531,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\PRB_Report_v2.resx">
       <DependentUpon>PRB_Report_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\ProductoMedicado\frmAddItemForMedicado.resx">
+      <DependentUpon>frmAddItemForMedicado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Prod_Ordenes_Produccion.resx">
       <DependentUpon>Prod_Ordenes_Produccion.cs</DependentUpon>

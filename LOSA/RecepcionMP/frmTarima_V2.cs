@@ -519,12 +519,24 @@ namespace LOSA.RecepcionMP
                 txtIdBoleta.Text = frm.NumBoleta.ToString();
                 this.IdSerie = frm.IdSerie;
                 this.NumBoleta = frm.NumBoleta;
+                Boleta boleta1 = new Boleta();
+                if (boleta1.RecuperarRegistro(frm.IdSerie))
+                {
+                    if (boleta1.CantidadMP > 1)
+                    {
+                        btnSelccionarProveedor.Enabled = true;
+                        btnSelecciondeMp.Enabled = true;
+                        //dtFechaIngreso.Enabled = true;
+                    }
+                }
+
                 if (!Istraslado)
                 {
                     this.ItemCode = frm.ItemCode;
                     txtCodigoMP.Text = frm.ItemCode;
                     LoadDatosBoleta(IdSerie);
                 }
+
                 txtoc.Text = frm.OC;
                 txtfactura.Text = frm.Factura;
                 this.peso_boleta = frm.Peso_Bascula;

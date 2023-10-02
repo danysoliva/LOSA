@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMedicado" targetNamespace="http://tempuri.org/dsMedicado.xsd" xmlns:mstns="http://tempuri.org/dsMedicado.xsd" xmlns="http://tempuri.org/dsMedicado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMedicado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMedicado" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMedicado">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="seleccionar_item" msprop:Generator_RowEvHandlerName="seleccionar_itemRowChangeEventHandler" msprop:Generator_RowDeletedName="seleccionar_itemRowDeleted" msprop:Generator_RowDeletingName="seleccionar_itemRowDeleting" msprop:Generator_RowEvArgName="seleccionar_itemRowChangeEvent" msprop:Generator_TablePropName="seleccionar_item" msprop:Generator_RowChangedName="seleccionar_itemRowChanged" msprop:Generator_UserTableName="seleccionar_item" msprop:Generator_RowChangingName="seleccionar_itemRowChanging" msprop:Generator_RowClassName="seleccionar_itemRow" msprop:Generator_TableClassName="seleccionar_itemDataTable" msprop:Generator_TableVarName="tableseleccionar_item">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="code_sap" msdata:Caption="ItemCode" msprop:Generator_ColumnPropNameInTable="code_sapColumn" msprop:Generator_ColumnPropNameInRow="code_sap" msprop:Generator_UserColumnName="code_sap" msprop:Generator_ColumnVarNameInTable="columncode_sap" type="xs:string" minOccurs="0" />
+              <xs:element name="descripcion" msdata:Caption="ItemName" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_UserColumnName="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="inv_kg" msdata:Caption="Inventario Kg" msprop:Generator_ColumnPropNameInTable="inv_kgColumn" msprop:Generator_ColumnPropNameInRow="inv_kg" msprop:Generator_UserColumnName="inv_kg" msprop:Generator_ColumnVarNameInTable="columninv_kg" type="xs:decimal" minOccurs="0" />
+              <xs:element name="inv_tm" msdata:Caption="Inventario TM" msprop:Generator_ColumnPropNameInTable="inv_tmColumn" msprop:Generator_ColumnPropNameInRow="inv_tm" msprop:Generator_UserColumnName="inv_tm" msprop:Generator_ColumnVarNameInTable="columninv_tm" type="xs:decimal" minOccurs="0" />
+              <xs:element name="seleccionado" msdata:Caption="Seleccionado" msprop:Generator_ColumnPropNameInTable="seleccionadoColumn" msprop:Generator_ColumnPropNameInRow="seleccionado" msprop:Generator_UserColumnName="seleccionado" msprop:Generator_ColumnVarNameInTable="columnseleccionado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="lote" msdata:Caption="Lote" msprop:Generator_UserColumnName="lote" msprop:Generator_ColumnPropNameInTable="loteColumn" msprop:Generator_ColumnPropNameInRow="lote" msprop:Generator_ColumnVarNameInTable="columnlote" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad" msdata:Caption="Cantidad kg" msprop:Generator_UserColumnName="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

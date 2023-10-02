@@ -250,5 +250,17 @@ namespace LOSA.TransaccionesMP
                 LoadDatos_Finalizadas();
             }
         }
+
+        private void cmdRefresh_Click(object sender, EventArgs e)
+        {
+            if (tggView.IsOn)                 // vista Activas
+            {
+                LoadDatos();
+            }
+            else
+            {
+                LoadDatos_Finalizadas();
+            }
+        }
     }
 }
