@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LOSA.Utileria;
 
 namespace LOSA.MicroIngredientes
 {
@@ -281,6 +282,11 @@ namespace LOSA.MicroIngredientes
                         {
                             CajaDialogo.Error("ERROR: Tarima de Micro Ingrediente consumida en su Totalidad");
                             return;
+                        }
+
+                        if (pesoBascula1 > existencia_kg_micros)
+                        {
+                            
                         }
 
 

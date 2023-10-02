@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LOSA.Utileria;
 
 namespace LOSA.MicroIngredientes
 {
@@ -103,16 +104,82 @@ namespace LOSA.MicroIngredientes
         {
             try
             {
-                var row = (dsMicros.MP_EscaneoRow)dsMicros.MP_Escaneo.NewRow();
-                row.mp = TarimaEscaneada.MateriaPrima;
-                row.lote = TarimaEscaneada.LoteMP;
-                lblLoteName.Text = "Lote: " + TarimaEscaneada.LoteMP;
-                row.id_mp = TarimaEscaneada.Id_materiaprima;
-                row.id_tarima_origen = TarimaEscaneada.IdTarimaOrigen;
-                row.id_tarima_micro = TarimaEscaneada.Id;
-                row.peso = pesoBasculaAcumulado1;
+                //Vamos a validar Peso Bascula sea igual o menor que peso en Tarima Escaneada
+
+                bool Permitir = false;
+                TarimaMicroingrediente tar1 = new TarimaMicroingrediente();
+                decimal existencia_kg_micros = tar1.GetKgExistenciaEnMicros(Convert.ToInt32(id_tarima_micros));
                 
-                dsMicros.MP_Escaneo.AddMP_EscaneoRow(row);
+                if (pesoBascula1 > existencia_kg_micros)
+                {
+                    string mensaje = "El Peso en Bascula debe ser igual o menor al peso existente en la Tarima!\nPeso en Tarima: " + existencia_kg_micros+ "Kg\nPeso en Bascula:"+ pesoBascula1 +"Kg";
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        txtCodBarra.Text = "";
+                        txtCodBarra.Focus();
+                    }
+                    
+                    btnBascula1.Enabled = false;
+                    Permitir = false;
+                    return;
+                }
+                else
+                {
+                    Permitir = true;
+                }
+
+                decimal acumulador_por_tarima = 0;
+                foreach (dsMicros.MP_EscaneoRow row in dsMicros.MP_Escaneo.Rows)
+                {
+                    if (row.id_tarima_micro == id_tarima_micros)
+                    {
+                        acumulador_por_tarima = acumulador_por_tarima + row.peso;
+                    }
+                }
+
+                acumulador_por_tarima = acumulador_por_tarima + pesoBascula1;
+
+                if (acumulador_por_tarima > existencia_kg_micros)
+                {
+                    string mensaje = "El pesaje acumulado supera la cantidad disponible en la Tarima: "+ tar1.CodigoBarra +"\nPeso Disponible en Tarima: " + existencia_kg_micros +"Kg\nPeso Acumulado: "+ acumulador_por_tarima + "Kg";
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        
+                    }
+                    txtCodBarra.Text = "";
+                    txtCodBarra.Focus();
+                    btnBascula1.Enabled = false;
+                    Permitir = false;
+                    return;
+
+                }
+                else
+                {
+                    Permitir = true;
+                }
+
+                if (id_tarima_micros != 0)
+                {
+                    if (Permitir)
+                    {
+                        var row = (dsMicros.MP_EscaneoRow)dsMicros.MP_Escaneo.NewRow();
+                        row.mp = TarimaEscaneada.MateriaPrima;
+                        row.lote = TarimaEscaneada.LoteMP;
+                        lblLoteName.Text = "Lote: " + TarimaEscaneada.LoteMP;
+                        row.id_mp = TarimaEscaneada.Id_materiaprima;
+                        row.id_tarima_origen = TarimaEscaneada.IdTarimaOrigen;
+                        row.id_tarima_micro = TarimaEscaneada.Id;
+                        row.peso = pesoBasculaAcumulado1;
+
+                        dsMicros.MP_Escaneo.AddMP_EscaneoRow(row);
+                        btnBascula1.Enabled = false;
+                    }
+                    
+                }
+
+                
                 //PesajeAcumulado = new List<LoteMPAcumulado>();
 
                 //foreach (dsMicros.MP_EscaneoRow row in dsMicros.MP_Escaneo.Rows)
@@ -173,17 +240,83 @@ namespace LOSA.MicroIngredientes
         {
             try
             {
-                var row = (dsMicros.MP_EscaneoRow)dsMicros.MP_Escaneo.NewRow();
-                row.mp = TarimaEscaneada.MateriaPrima;
-                row.lote = TarimaEscaneada.LoteMP;
-                lblLoteName.Text = "Lote: " + TarimaEscaneada.LoteMP;
-                row.id_mp = TarimaEscaneada.Id_materiaprima;
-                row.id_tarima_origen = TarimaEscaneada.IdTarimaOrigen;
-                row.id_tarima_micro = TarimaEscaneada.Id;
+                //Vamos a validar Peso Bascula sea igual o menor que peso en Tarima Escaneada
+                //Vamos a validar Peso Bascula sea igual o menor que peso en Tarima Escaneada
 
-                row.peso = pesoBasculaAcumulado2;
+                bool Permitir = false;
+                TarimaMicroingrediente tar1 = new TarimaMicroingrediente();
+                decimal existencia_kg_micros = tar1.GetKgExistenciaEnMicros(Convert.ToInt32(id_tarima_micros));
 
-                dsMicros.MP_Escaneo.AddMP_EscaneoRow(row);
+                if (pesoBascula2 > existencia_kg_micros)
+                {
+                    string mensaje = "El Peso en Bascula debe ser igual o menor al peso existente en la Tarima!\nPeso en Tarima: " + existencia_kg_micros + "Kg\nPeso en Bascula:" + pesoBascula2 + "Kg";
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        txtCodBarra.Text = "";
+                        txtCodBarra.Focus();
+                    }
+
+                    btnBascula2.Enabled = false;
+                    Permitir = false;
+                    return;
+                }
+                else
+                {
+                    Permitir = true;
+                }
+
+                decimal acumulador_por_tarima = 0;
+                foreach (dsMicros.MP_EscaneoRow row in dsMicros.MP_Escaneo.Rows)
+                {
+                    if (row.id_tarima_micro == id_tarima_micros)
+                    {
+                        acumulador_por_tarima = acumulador_por_tarima + row.peso;
+                    }
+                }
+
+                acumulador_por_tarima = acumulador_por_tarima + pesoBascula1;
+
+                if (acumulador_por_tarima > existencia_kg_micros)
+                {
+                    string mensaje = "El pesaje acumulado supera la cantidad disponible en la Tarima: " + tar1.CodigoBarra + "\nPeso Disponible en Tarima: " + existencia_kg_micros + "Kg\nPeso Acumulado: " + acumulador_por_tarima + "Kg";
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+
+                    }
+                    txtCodBarra.Text = "";
+                    txtCodBarra.Focus();
+                    btnBascula2.Enabled = false;
+                    Permitir = false;
+                    return;
+
+                }
+                else
+                {
+                    Permitir = true;
+                }
+
+                if (!string.IsNullOrEmpty(txtCodBarra.Text))
+                {
+                    if (Permitir)
+                    {
+                        var row = (dsMicros.MP_EscaneoRow)dsMicros.MP_Escaneo.NewRow();
+                        row.mp = TarimaEscaneada.MateriaPrima;
+                        row.lote = TarimaEscaneada.LoteMP;
+                        lblLoteName.Text = "Lote: " + TarimaEscaneada.LoteMP;
+                        row.id_mp = TarimaEscaneada.Id_materiaprima;
+                        row.id_tarima_origen = TarimaEscaneada.IdTarimaOrigen;
+                        row.id_tarima_micro = TarimaEscaneada.Id;
+
+                        row.peso = pesoBasculaAcumulado2;
+
+                        dsMicros.MP_Escaneo.AddMP_EscaneoRow(row);
+                        btnBascula2.Enabled = false;
+                    }
+                    
+                }
+                    
             }
             catch (Exception ex)
             {
@@ -225,11 +358,6 @@ namespace LOSA.MicroIngredientes
             txtCodBarra.Focus();
         }
 
-        private void lblValorBascula1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         int indicePeso = 0;
         private void txtCodBarra_KeyDown(object sender, KeyEventArgs e)
         {
@@ -239,7 +367,7 @@ namespace LOSA.MicroIngredientes
                 {
                     TarimaMicroingrediente tarima = new TarimaMicroingrediente();
                     tarima.RecuperarRegistroPorCodBarra(txtCodBarra.Text);
-
+                    id_tarima_micros = tarima.Id;
                     MateriaPrima mp = new MateriaPrima();
                     mp.RecuperarRegistro_MPACS_For_IDRM_APMS(pesaje.MateriaPrimaID);
 
@@ -255,9 +383,13 @@ namespace LOSA.MicroIngredientes
 
                         TarimaMicroingrediente tar1 = new TarimaMicroingrediente();
                         decimal existencia_kg_micros = tar1.GetKgExistenciaEnMicros(Convert.ToInt32(tarima.Id));
+                        txtExistenciaTmMicro.Text = Convert.ToString("Existencia en Tarima "+ existencia_kg_micros + " Kg");
                         if (existencia_kg_micros <= 0)
                         {
-                            CajaDialogo.Error("Tarima de Micro Ingrediente consumida en su Totalidad");
+                            string mensaje = "Tarima "+ txtCodBarra.Text +" de Micro Ingrediente consumida en su Totalidad.";
+                            frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                            frm.Show();
+                            txtCodBarra.Text = "";
                             return;
                         }
 
@@ -284,6 +416,15 @@ namespace LOSA.MicroIngredientes
                             TarimaEscaneada = tarima;
                             txtCodBarra.Focus();
 
+                            if (pesoBascula2 > 0)
+                            {
+                                btnBascula2.Enabled = true;
+                            }
+                            if (pesoBascula1 > 0)
+                            {
+                                btnBascula1.Enabled = true; 
+                            }
+                          
                             //var row = (dsMicros.MP_EscaneoRow)dsMicros.MP_Escaneo.NewRow();
                             //row.mp = tarima.MateriaPrima;
                             //row.lote = tarima.LoteMP;
@@ -445,7 +586,8 @@ namespace LOSA.MicroIngredientes
             {
                 cnx.Open();
                 dsMicros.Pesaje_Bascula.Clear();
-                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value", cnx);
+                //SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value", cnx);
+                SqlDataAdapter da = new SqlDataAdapter("dbo.sp_get_basculas_value_pruebas", cnx);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.Fill(dsMicros.Pesaje_Bascula);
 
@@ -487,7 +629,7 @@ namespace LOSA.MicroIngredientes
                 //lblError.Visible = true;
                 lblSuperior.Visible = true;
                 //lblInferior.Visible = true;
-                btnBascula1.Enabled = true;
+                //btnBascula1.Enabled = true;
                 //lblError.Text = "El peso acumulado es de " + pesoBasculaAcumulado1.ToString("N2") + " Kg";
                 //lblError.ForeColor = Color.Green;
                 lblSuperior.ForeColor = Color.Green;
