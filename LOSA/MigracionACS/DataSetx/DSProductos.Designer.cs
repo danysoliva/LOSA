@@ -8445,6 +8445,8 @@ namespace LOSA.MigracionACS.DataSetx {
             
             private global::System.Data.DataColumn columncode_sap;
             
+            private global::System.Data.DataColumn columnlote_asignado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MateriaPrimaDataTable() {
@@ -8544,6 +8546,14 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn lote_asignadoColumn {
+                get {
+                    return this.columnlote_asignado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8579,7 +8589,7 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MateriaPrimaRow AddMateriaPrimaRow(string codigo, string mixType, string material, decimal pesokg, string tipo, string estado, int id_mp, string code_sap) {
+            public MateriaPrimaRow AddMateriaPrimaRow(string codigo, string mixType, string material, decimal pesokg, string tipo, string estado, int id_mp, string code_sap, string lote_asignado) {
                 MateriaPrimaRow rowMateriaPrimaRow = ((MateriaPrimaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codigo,
@@ -8589,7 +8599,8 @@ namespace LOSA.MigracionACS.DataSetx {
                         tipo,
                         estado,
                         id_mp,
-                        code_sap};
+                        code_sap,
+                        lote_asignado};
                 rowMateriaPrimaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMateriaPrimaRow);
                 return rowMateriaPrimaRow;
@@ -8620,6 +8631,7 @@ namespace LOSA.MigracionACS.DataSetx {
                 this.columnestado = base.Columns["estado"];
                 this.columnid_mp = base.Columns["id_mp"];
                 this.columncode_sap = base.Columns["code_sap"];
+                this.columnlote_asignado = base.Columns["lote_asignado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8641,7 +8653,10 @@ namespace LOSA.MigracionACS.DataSetx {
                 base.Columns.Add(this.columnid_mp);
                 this.columncode_sap = new global::System.Data.DataColumn("code_sap", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncode_sap);
+                this.columnlote_asignado = new global::System.Data.DataColumn("lote_asignado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_asignado);
                 this.columncode_sap.Caption = "ItemCode";
+                this.columnlote_asignado.Caption = "Lote Asignado";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17130,6 +17145,22 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string lote_asignado {
+                get {
+                    try {
+                        return ((string)(this[this.tableMateriaPrima.lote_asignadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lote_asignado\' in table \'MateriaPrima\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMateriaPrima.lote_asignadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscodigoNull() {
                 return this.IsNull(this.tableMateriaPrima.codigoColumn);
             }
@@ -17222,6 +17253,18 @@ namespace LOSA.MigracionACS.DataSetx {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcode_sapNull() {
                 this[this.tableMateriaPrima.code_sapColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Islote_asignadoNull() {
+                return this.IsNull(this.tableMateriaPrima.lote_asignadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setlote_asignadoNull() {
+                this[this.tableMateriaPrima.lote_asignadoColumn] = global::System.Convert.DBNull;
             }
         }
         

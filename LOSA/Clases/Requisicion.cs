@@ -52,6 +52,7 @@ namespace LOSA.Clases
         public int User_end { get => _user_end; set => _user_end = value; }
         public int Lote { get => _Lote; set => _Lote = value; }
         public string Descripcion_estado { get => _descripcion_estado; set => _descripcion_estado = value; }
+        public bool EsMedicado { get; internal set; }
 
         public bool RecuperarRegistroFromBarcodeClass(string barcode)
         {
@@ -197,7 +198,10 @@ namespace LOSA.Clases
                     if (!dr.IsDBNull(dr.GetOrdinal("descripcion_estado")))
                         Descripcion_estado = dr.GetString(14);
 
-                    Recuperado = true;
+                    if (!dr.IsDBNull(dr.GetOrdinal("bit_medicado")))
+                        EsMedicado = dr.GetBoolean(15);
+
+                        Recuperado = true;
                 }
                 dr.Close();
                 con.Close();

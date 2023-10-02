@@ -156,13 +156,14 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collote_asignado = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grp_mainOptions)).BeginInit();
             this.grp_mainOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tggMedicado.Properties)).BeginInit();
@@ -229,7 +230,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 124;
+            this.gridColumn7.Width = 80;
             // 
             // grp_mainOptions
             // 
@@ -1635,7 +1636,8 @@
             this.gridColumn5,
             this.gridColumn7,
             this.colid_mp,
-            this.colcode_sap});
+            this.colcode_sap,
+            this.collote_asignado});
             this.grdv_reqMP_Total.DetailHeight = 284;
             this.grdv_reqMP_Total.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             gridFormatRule1.ApplyToRow = true;
@@ -1670,7 +1672,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 92;
+            this.gridColumn1.Width = 82;
             // 
             // gridColumn2
             // 
@@ -1680,7 +1682,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 3;
-            this.gridColumn2.Width = 161;
+            this.gridColumn2.Width = 144;
             // 
             // gridColumn3
             // 
@@ -1690,7 +1692,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 43;
+            this.gridColumn3.Width = 38;
             // 
             // gridColumn5
             // 
@@ -1702,12 +1704,21 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 134;
+            this.gridColumn5.Width = 119;
             // 
             // colid_mp
             // 
             this.colid_mp.FieldName = "id_mp";
             this.colid_mp.Name = "colid_mp";
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.ReadOnly = true;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 1;
+            this.colcode_sap.Width = 73;
             // 
             // panelControl2
             // 
@@ -1781,14 +1792,14 @@
             this.bindingSource1.DataMember = "lineas_produccion";
             this.bindingSource1.DataSource = this.dsProduccion1;
             // 
-            // colcode_sap
+            // collote_asignado
             // 
-            this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.Name = "colcode_sap";
-            this.colcode_sap.OptionsColumn.ReadOnly = true;
-            this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 1;
-            this.colcode_sap.Width = 82;
+            this.collote_asignado.FieldName = "lote_asignado";
+            this.collote_asignado.Name = "collote_asignado";
+            this.collote_asignado.OptionsColumn.ReadOnly = true;
+            this.collote_asignado.Visible = true;
+            this.collote_asignado.VisibleIndex = 6;
+            this.collote_asignado.Width = 100;
             // 
             // PP_Nuevo_Plan_full_PedidoWithMedicado
             // 
@@ -2001,5 +2012,6 @@
         private DevExpress.XtraEditors.ToggleSwitch tggMedicado;
         private DevExpress.XtraBars.BarButtonItem cmdAgregarMP_Requerimiento;
         private DevExpress.XtraGrid.Columns.GridColumn colcode_sap;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_asignado;
     }
 }

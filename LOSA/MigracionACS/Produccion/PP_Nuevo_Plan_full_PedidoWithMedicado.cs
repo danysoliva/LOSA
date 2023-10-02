@@ -446,6 +446,19 @@ namespace LOSA.MigracionACS.Produccion
                                 cmdD.Parameters.AddWithValue("@cantidad_solicitada", rowM.pesokg);
                                 cmdD.Parameters.AddWithValue("@id_unidad_medida", grd_presentacion.EditValue);
                                 cmdD.Parameters.AddWithValue("@code_sap", rowM.code_sap);
+
+                                string vLote = "";
+                                try 
+                                {
+                                    vLote = rowM.lote_asignado;
+                                }
+                                catch { }
+
+                                if(dp.ValidateStringIsNullOrEmpty(vLote))
+                                    cmdD.Parameters.AddWithValue("@lote_asignado", DBNull.Value);
+                                else
+                                    cmdD.Parameters.AddWithValue("@lote_asignado", rowM.lote_asignado);
+
                                 cmdD.ExecuteNonQuery();
                             }
                             con.Close();
@@ -1967,7 +1980,7 @@ namespace LOSA.MigracionACS.Produccion
                             row.code_sap = rowS.code_sap;
                             row.material = rowS.descripcion;
                             row.pesokg = rowS.cantidad;
-
+                            row.lote_asignado = rowS.lote;
 
                             dSProductos1.MateriaPrima.AddMateriaPrimaRow(row);
                             dSProductos1.AcceptChanges();
