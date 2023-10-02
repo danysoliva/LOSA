@@ -259,6 +259,7 @@ namespace LOSA.TransaccionesMP
             this.vGridControl1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.vGridControl1.Location = new System.Drawing.Point(10, 3);
             this.vGridControl1.Name = "vGridControl1";
+            this.vGridControl1.OptionsView.AllowReadOnlyRowAppearance = DevExpress.Utils.DefaultBoolean.True;
             this.vGridControl1.RecordWidth = 453;
             this.vGridControl1.RowHeaderWidth = 130;
             this.vGridControl1.RowHeaderWidthChangeStep = 4;
@@ -284,6 +285,7 @@ namespace LOSA.TransaccionesMP
             this.rowid.Name = "rowid";
             this.rowid.Properties.Caption = "id";
             this.rowid.Properties.FieldName = "id";
+            this.rowid.Properties.ReadOnly = true;
             this.rowid.Visible = false;
             // 
             // rownombreTarima
@@ -291,44 +293,51 @@ namespace LOSA.TransaccionesMP
             this.rownombreTarima.Name = "rownombreTarima";
             this.rownombreTarima.Properties.Caption = "Código Barra";
             this.rownombreTarima.Properties.FieldName = "nombreTarima";
+            this.rownombreTarima.Properties.ReadOnly = true;
             // 
             // rownombreProveedor
             // 
             this.rownombreProveedor.Name = "rownombreProveedor";
             this.rownombreProveedor.Properties.Caption = "Proveedor";
             this.rownombreProveedor.Properties.FieldName = "nombreProveedor";
+            this.rownombreProveedor.Properties.ReadOnly = true;
             // 
             // rowfecha_ingreso
             // 
             this.rowfecha_ingreso.Name = "rowfecha_ingreso";
             this.rowfecha_ingreso.Properties.Caption = "Fecha Ingreso";
             this.rowfecha_ingreso.Properties.FieldName = "fecha_ingreso";
+            this.rowfecha_ingreso.Properties.ReadOnly = true;
             // 
             // rownumero_transaccion
             // 
-            this.rownumero_transaccion.Appearance.Options.UseTextOptions = true;
-            this.rownumero_transaccion.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.rownumero_transaccion.AppearanceCell.Options.UseTextOptions = true;
+            this.rownumero_transaccion.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.rownumero_transaccion.Name = "rownumero_transaccion";
             this.rownumero_transaccion.Properties.Caption = "# Ingreso";
             this.rownumero_transaccion.Properties.FieldName = "numero_transaccion";
+            this.rownumero_transaccion.Properties.ReadOnly = true;
             // 
             // rowlote_materia_prima
             // 
             this.rowlote_materia_prima.Name = "rowlote_materia_prima";
             this.rowlote_materia_prima.Properties.Caption = "Lote";
             this.rowlote_materia_prima.Properties.FieldName = "lote_materia_prima";
+            this.rowlote_materia_prima.Properties.ReadOnly = true;
             // 
             // rowpresentacion
             // 
             this.rowpresentacion.Name = "rowpresentacion";
             this.rowpresentacion.Properties.Caption = "Presentación";
             this.rowpresentacion.Properties.FieldName = "presentacion";
+            this.rowpresentacion.Properties.ReadOnly = true;
             // 
             // rowtipo_tarima
             // 
             this.rowtipo_tarima.Name = "rowtipo_tarima";
             this.rowtipo_tarima.Properties.Caption = "tipo_tarima";
             this.rowtipo_tarima.Properties.FieldName = "tipo_tarima";
+            this.rowtipo_tarima.Properties.ReadOnly = true;
             this.rowtipo_tarima.Visible = false;
             // 
             // rowid_boleta
@@ -336,6 +345,7 @@ namespace LOSA.TransaccionesMP
             this.rowid_boleta.Name = "rowid_boleta";
             this.rowid_boleta.Properties.Caption = "id_boleta";
             this.rowid_boleta.Properties.FieldName = "id_boleta";
+            this.rowid_boleta.Properties.ReadOnly = true;
             this.rowid_boleta.Visible = false;
             // 
             // rownum
@@ -343,6 +353,7 @@ namespace LOSA.TransaccionesMP
             this.rownum.Name = "rownum";
             this.rownum.Properties.Caption = "num";
             this.rownum.Properties.FieldName = "num";
+            this.rownum.Properties.ReadOnly = true;
             this.rownum.Visible = false;
             // 
             // rowIsMicro
@@ -350,6 +361,7 @@ namespace LOSA.TransaccionesMP
             this.rowIsMicro.Name = "rowIsMicro";
             this.rowIsMicro.Properties.Caption = "Is Micro";
             this.rowIsMicro.Properties.FieldName = "IsMicro";
+            this.rowIsMicro.Properties.ReadOnly = true;
             this.rowIsMicro.Visible = false;
             // 
             // rowitemcode
@@ -357,6 +369,7 @@ namespace LOSA.TransaccionesMP
             this.rowitemcode.Name = "rowitemcode";
             this.rowitemcode.Properties.Caption = "ItemCode";
             this.rowitemcode.Properties.FieldName = "itemcode";
+            this.rowitemcode.Properties.ReadOnly = true;
             // 
             // rowmp_name
             // 
@@ -364,6 +377,7 @@ namespace LOSA.TransaccionesMP
             this.rowmp_name.Properties.AllowEdit = false;
             this.rowmp_name.Properties.Caption = "Materia Prima";
             this.rowmp_name.Properties.FieldName = "mp_name";
+            this.rowmp_name.Properties.ReadOnly = true;
             // 
             // labelControl7
             // 

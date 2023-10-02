@@ -484,46 +484,90 @@ namespace LOSA.TransaccionesMP
 
                     bool Error = false;
                     string mensaje = " ";
-                    switch (idEstadoTarima)
+
+                    Tarima tarPT = new Tarima();
+                    tarPT.RecuperarTarimaPorCodBarra(txtTarima.Text);
+
+                    if (tarPT.Tipo_tarima == 2) //Tarima de Producto Terminado
                     {
-                        case 0:
-                        default:
-                            mensaje = "TARIMA NO ENCONTRADA";
-                            Error = true;
-                            break;
-                        case 1://Recepcionado
-                            mensaje = "Esta tarima aun no ha sido ingresada a bodega! Solo se genero el rotulo, es necesario activar y ubicar!.";
-                            Error = true;
-                            break;
-                        case 2://En Bodega
-                            break;
-                        case 3://Retenido
-                            mensaje = "Esta Tarima esta Retenida por Calidad!";
-                            Error = true;
-                            break;
-                        case 4://Comprometido
-                            mensaje = "Esta Tarima ya esta Comprometida!";
-                            Error = true;
-                            break;
-                        case 5://En Produccion
-                            mensaje = "Esta Tarima ya fue Entregada a Producción";
-                            Error = true;
-                            break;
-                        case 6://Consumido
-                            mensaje = "Esta Tarima ya fue Entregada y Consumida por producción!";
-                            Error = true;
-                            break;
-                        case 8://Parcialmente Entregado
-                            break;
-                        case 9://Rechazado
-                            mensaje = "Esta Tarima fue Rechazada!";
-                            Error = true;
-                            break;
-                        case 10://Ajuste de Inventario
-                            mensaje = "Esta Tarima tuvo salida por Ajuste de Inventario!";
-                            Error = true;
-                            break;
+                        switch (idEstadoTarima)
+                        {
+
+                            case 1://Virtual
+                                Error = true;//No puede ser entregada
+                                mensaje = "Esta tarima aun no ha sido ingresada a bodega de PT! Solo se genero el rotulo, es necesario activar y ubicar!.";
+                                break;
+                            case 2://Recepcion
+                                Error = true;
+                                mensaje = "Calidad no ha liberado esta tarima.!";
+                                break;
+                            case 3://Desactivado
+                                Error = true;
+                                mensaje = "Esta Tarima esta Desactivada!";
+                                break;
+                            case 4://Entregada
+                                Error = true;
+                                mensaje = "Esta tarima ya fue entregada!";
+                                break;
+                            case 5://En bodega
+                                Error = false;//esta habilitada
+                                              //mensaje = "Esta tarima ya fue entrega a Producción";
+                                break;
+                            case 6://Reproceso
+                                Error = true;
+                                mensaje = "Esta Tarima fue creada como Reproceso, no se puede entregar!";
+                                break;
+                            default:
+                                break;
+                        }
                     }
+                    else //Tarima de Materia Prima
+                    {
+                        
+                        switch (idEstadoTarima)
+                        {
+                            case 0:
+                            default:
+                                mensaje = "TARIMA NO ENCONTRADA";
+                                Error = true;
+                                break;
+                            case 1://Recepcionado
+                                mensaje = "Esta tarima aun no ha sido ingresada a bodega! Solo se genero el rotulo, es necesario activar y ubicar!.";
+                                Error = true;
+                                break;
+                            case 2://En Bodega
+                                break;
+                            case 3://Retenido
+                                mensaje = "Esta Tarima esta Retenida por Calidad!";
+                                Error = true;
+                                break;
+                            case 4://Comprometido
+                                mensaje = "Esta Tarima ya esta Comprometida!";
+                                Error = true;
+                                break;
+                            case 5://En Produccion
+                                mensaje = "Esta Tarima ya fue Entregada a Producción";
+                                Error = true;
+                                break;
+                            case 6://Consumido
+                                mensaje = "Esta Tarima ya fue Entregada y Consumida por producción!";
+                                Error = true;
+                                break;
+                            case 8://Parcialmente Entregado
+                                break;
+                            case 9://Rechazado
+                                mensaje = "Esta Tarima fue Rechazada!";
+                                Error = true;
+                                break;
+                            case 10://Ajuste de Inventario
+                                mensaje = "Esta Tarima tuvo salida por Ajuste de Inventario!";
+                                Error = true;
+                                break;
+                        }
+
+                    }
+
+                    
 
                     if (Error)
                     {
@@ -601,6 +645,11 @@ namespace LOSA.TransaccionesMP
                         timerLimpiarMensaje.Start();
                         return;
                     }
+
+                    //Validar si el Lote de PT Solicitado en Requisa == Lote PT en Tarima Escaneada
+                    //RequisicionActual.RecuperarRegistroFromBarcodeClass();
+                    
+
 
                     //Validar Estaso de Tarima
                     switch (tarimaEncontrada.id_estado_pt)
@@ -1070,9 +1119,8 @@ namespace LOSA.TransaccionesMP
                             timerLimpiarMensaje.Start();
                             return;
                         }
-                        #endregion
-
                     }
+                    #endregion
                 }
 
             }
@@ -1223,95 +1271,111 @@ namespace LOSA.TransaccionesMP
             var gridView = (GridView)grd_data.FocusedView;
             var row = (dsTransaccionesMP.viewTarimasRow)gridView.GetFocusedDataRow();
 
-            //Vamos a Validar si la MP esta considerada como Micros
-            MateriaPrima mp = new MateriaPrima();
-            mp.ValidarMPIsMicroIngrediente(row.id_mp);
-
-            if (mp.Permitir)
+            if (row.id_mp == 0)
             {
-                
-                //TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
-                //if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
-                //decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
-                //if (Kg_Entregados_Micros >= dp.ValidateNumberDecimal(row.kg))
-                if(row.entregado_micros == true)
-                {
-                    string mensaje = "La tarima ya fue entregada en Micro Ingredientes!";
-                    lblMensaje.Text = mensaje;
-                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                    frm.ShowDialog();
-                    panelNotificacion.BackColor = Color.Red;
-                    timerLimpiarMensaje.Enabled = true;
-                    timerLimpiarMensaje.Start();
-                    return;
-                }
-
-                frm_entrega_tarima_micros frmx = new frm_entrega_tarima_micros(row.id_mp, row.id_tarima, row.lote, row.kg, dp.ValidateNumberInt32(row.cantidad));
-                //(int pidMP, int pIdTarima, string pLote,bool pMicros )
-                bool Guardo = false;
-                if (frmx.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        Tarima tar1 = new Tarima();
-                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima_v3]", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        if (tar1.RecuperarRegistro(row.id_tarima))
-                            cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
-                        else
-                            cmd.Parameters.AddWithValue("@numero_transaccion", 0);
-                        cmd.Parameters.AddWithValue("@id_materia_prima", row.id_mp);
-                        cmd.Parameters.AddWithValue("@lotemp", row.lote);
-                        cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
-                        cmd.Parameters.AddWithValue("@cantidad_unidades", frmx.UdEnviar);
-                        cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
-                        cmd.Parameters.AddWithValue("@id_req_detalle", row.id_detalle_requisicion);//Id requisicion detalle
-                        cmd.Parameters.AddWithValue("@id_alimentacion", row.id_alimentacion);
-                        cmd.Parameters.AddWithValue("@id_mp_entrega",row.id);
-                        SqlDataReader dr = cmd.ExecuteReader();
-                        if (dr.Read())
-                        {
-                            Guardo = dr.GetInt32(0) == 1 ? true : false;
-                        }
-                        dr.Close();
-                        con.Close();
-
-                    }
-                    catch (Exception ec)
-                    {
-                        //CajaDialogo.Error(ec.Message);
-                        lblMensaje.Text = ec.Message;
-                        panelNotificacion.BackColor = Color.Red;
-                        timerLimpiarMensaje.Enabled = true;
-                        timerLimpiarMensaje.Start();
-                    }
-
-                }
-                else
-                {
-                    txtTarima.Text = "";
-                    txtTarima.Focus();
-                }
-                if (Guardo)
-                {
-                    //Mensaje de transaccion exitosa
-                    lblMensaje.Text = "Transacción Exitosa!";
-                    panelNotificacion.BackColor = Color.MediumSeaGreen;
-                    timerLimpiarMensaje.Enabled = true;
-                    timerLimpiarMensaje.Start();
-                    load_tarimas_scan_v2();
-                    //LoadDataMicros();
-                }
-            }
-            else
-            {
-                lblMensaje.Text = "La MP: "+ row.mp +" no es un Micro Ingrediente!";
+                string mensaje = "Esto no es un Micro Ingrediente, es Producto Terminado para Medicado!";
+                lblMensaje.Text = mensaje;
+                Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                frm.ShowDialog();
                 panelNotificacion.BackColor = Color.Red;
                 timerLimpiarMensaje.Enabled = true;
                 timerLimpiarMensaje.Start();
+                return;
             }
+            else
+            {
+                //Vamos a Validar si la MP esta considerada como Micros
+                MateriaPrima mp = new MateriaPrima();
+                mp.ValidarMPIsMicroIngrediente(row.id_mp);
+
+                if (mp.Permitir)
+                {
+
+                    //TarimaMicroingrediente Tarx1 = new TarimaMicroingrediente();
+                    //if (dp.ValidateNumberDecimal(row.cant_entregada_micros) >= dp.ValidateNumberDecimal(row.kg))
+                    //decimal Kg_Entregados_Micros = Tarx1.GetKgEntregadosA_Micros_from_tarima_ALOSY(row.id_tarima, row.id_detalle_requisicion);
+                    //if (Kg_Entregados_Micros >= dp.ValidateNumberDecimal(row.kg))
+                    if (row.entregado_micros == true)
+                    {
+                        string mensaje = "La tarima ya fue entregada en Micro Ingredientes!";
+                        lblMensaje.Text = mensaje;
+                        Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        frm.ShowDialog();
+                        panelNotificacion.BackColor = Color.Red;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        return;
+                    }
+
+                    frm_entrega_tarima_micros frmx = new frm_entrega_tarima_micros(row.id_mp, row.id_tarima, row.lote, row.kg, dp.ValidateNumberInt32(row.cantidad));
+                    //(int pidMP, int pIdTarima, string pLote,bool pMicros )
+                    bool Guardo = false;
+                    if (frmx.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            Tarima tar1 = new Tarima();
+                            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                            con.Open();
+                            SqlCommand cmd = new SqlCommand("[sp_insert_tarima_micro_ing_out_tarima_v3]", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            if (tar1.RecuperarRegistro(row.id_tarima))
+                                cmd.Parameters.AddWithValue("@numero_transaccion", tar1.NumeroTransaccion);
+                            else
+                                cmd.Parameters.AddWithValue("@numero_transaccion", 0);
+                            cmd.Parameters.AddWithValue("@id_materia_prima", row.id_mp);
+                            cmd.Parameters.AddWithValue("@lotemp", row.lote);
+                            cmd.Parameters.AddWithValue("@id_usuario", usuarioLogueado.Id);
+                            cmd.Parameters.AddWithValue("@cantidad_unidades", frmx.UdEnviar);
+                            cmd.Parameters.AddWithValue("@cantidadkg", frmx.KgEnviar);
+                            cmd.Parameters.AddWithValue("@id_req_detalle", row.id_detalle_requisicion);//Id requisicion detalle
+                            cmd.Parameters.AddWithValue("@id_alimentacion", row.id_alimentacion);
+                            cmd.Parameters.AddWithValue("@id_mp_entrega", row.id);
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            if (dr.Read())
+                            {
+                                Guardo = dr.GetInt32(0) == 1 ? true : false;
+                            }
+                            dr.Close();
+                            con.Close();
+
+                        }
+                        catch (Exception ec)
+                        {
+                            //CajaDialogo.Error(ec.Message);
+                            lblMensaje.Text = ec.Message;
+                            panelNotificacion.BackColor = Color.Red;
+                            timerLimpiarMensaje.Enabled = true;
+                            timerLimpiarMensaje.Start();
+                        }
+
+                    }
+                    else
+                    {
+                        txtTarima.Text = "";
+                        txtTarima.Focus();
+                    }
+                    if (Guardo)
+                    {
+                        //Mensaje de transaccion exitosa
+                        lblMensaje.Text = "Transacción Exitosa!";
+                        panelNotificacion.BackColor = Color.MediumSeaGreen;
+                        timerLimpiarMensaje.Enabled = true;
+                        timerLimpiarMensaje.Start();
+                        load_tarimas_scan_v2();
+                        //LoadDataMicros();
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "La MP: " + row.mp + " no es un Micro Ingrediente!";
+                    panelNotificacion.BackColor = Color.Red;
+                    timerLimpiarMensaje.Enabled = true;
+                    timerLimpiarMensaje.Start();
+                }
+            }
+
+            
 
             
         }

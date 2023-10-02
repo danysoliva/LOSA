@@ -32,6 +32,7 @@
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.tabOpciones = new DevExpress.XtraTab.XtraTabControl();
             this.TabMateriaPrima = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdRequisiciones = new DevExpress.XtraEditors.SimpleButton();
@@ -47,7 +48,6 @@
             this.cmdOrdenesCargaPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCambiarUbicacionPT = new DevExpress.XtraEditors.SimpleButton();
             this.cmdIngresoPT = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMateriaPrima.SuspendLayout();
@@ -100,6 +100,22 @@
             this.TabMateriaPrima.PageVisible = false;
             this.TabMateriaPrima.Size = new System.Drawing.Size(900, 491);
             this.TabMateriaPrima.Text = "Materia Prima";
+            // 
+            // simpleButton7
+            // 
+            this.simpleButton7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton7.Appearance.Options.UseFont = true;
+            this.simpleButton7.Appearance.Options.UseTextOptions = true;
+            this.simpleButton7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton7.ImageOptions.Image = global::LOSA.Properties.Resources.devoluciones;
+            this.simpleButton7.Location = new System.Drawing.Point(220, 214);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton7.TabIndex = 12;
+            this.simpleButton7.Text = "Devoluciones MicroIngredientes";
+            this.simpleButton7.Visible = false;
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // simpleButton3
             // 
@@ -321,21 +337,6 @@
             this.cmdIngresoPT.Text = "Ingreso PT";
             this.cmdIngresoPT.Visible = false;
             this.cmdIngresoPT.Click += new System.EventHandler(this.cmdIngresoPT_Click);
-            // 
-            // simpleButton7
-            // 
-            this.simpleButton7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton7.Appearance.Options.UseFont = true;
-            this.simpleButton7.Appearance.Options.UseTextOptions = true;
-            this.simpleButton7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton7.ImageOptions.Image = global::LOSA.Properties.Resources.devoluciones;
-            this.simpleButton7.Location = new System.Drawing.Point(220, 214);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton7.TabIndex = 12;
-            this.simpleButton7.Text = "Devoluciones MicroIngredientes";
-            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // frmOptionMontaCarga
             // 
