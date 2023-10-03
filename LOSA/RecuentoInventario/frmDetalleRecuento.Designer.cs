@@ -87,6 +87,7 @@ namespace LOSA.RecuentoInventario
             this.cmdClose = new DevExpress.XtraEditors.SimpleButton();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -120,6 +121,7 @@ namespace LOSA.RecuentoInventario
             this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Controls.Add(this.txtVentana);
             this.panelControl2.Controls.Add(this.btnRefresh);
             this.panelControl2.Controls.Add(this.btnFinContabilziacion);
             this.panelControl2.Controls.Add(this.xtraTabControl1);
@@ -182,7 +184,7 @@ namespace LOSA.RecuentoInventario
             this.xtraTabPageMP.Appearance.Header.Options.UseFont = true;
             this.xtraTabPageMP.Controls.Add(this.grd_mps);
             this.xtraTabPageMP.Name = "xtraTabPageMP";
-            this.xtraTabPageMP.Size = new System.Drawing.Size(1260, 555);
+            this.xtraTabPageMP.Size = new System.Drawing.Size(1264, 558);
             this.xtraTabPageMP.Text = "Materia Prima";
             // 
             // grd_mps
@@ -195,7 +197,7 @@ namespace LOSA.RecuentoInventario
             this.grd_mps.Name = "grd_mps";
             this.grd_mps.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryGridBodega});
-            this.grd_mps.Size = new System.Drawing.Size(1260, 555);
+            this.grd_mps.Size = new System.Drawing.Size(1264, 558);
             this.grd_mps.TabIndex = 0;
             this.grd_mps.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMP,
@@ -523,7 +525,7 @@ namespace LOSA.RecuentoInventario
             this.xtraTabPagePT.Controls.Add(this.grd_pt);
             this.xtraTabPagePT.Name = "xtraTabPagePT";
             this.xtraTabPagePT.PageVisible = false;
-            this.xtraTabPagePT.Size = new System.Drawing.Size(1260, 555);
+            this.xtraTabPagePT.Size = new System.Drawing.Size(1264, 558);
             this.xtraTabPagePT.Text = "Producto Terminado";
             // 
             // grd_pt
@@ -775,6 +777,16 @@ namespace LOSA.RecuentoInventario
             this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(293, 63);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 117;
+            this.txtVentana.Text = "frmDetalleRecuento";
+            this.txtVentana.Visible = false;
+            // 
             // frmDetalleRecuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -871,5 +883,6 @@ namespace LOSA.RecuentoInventario
         private DevExpress.XtraEditors.SimpleButton btnFinContabilziacion;
         private DevExpress.XtraGrid.Columns.GridColumn colcontabilizado;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }
