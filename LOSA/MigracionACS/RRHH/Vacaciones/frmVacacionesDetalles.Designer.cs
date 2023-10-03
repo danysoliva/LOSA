@@ -61,6 +61,8 @@
             this.colnumber_of_days = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colholiday_status_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfecha_creado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lblNombre = new DevExpress.XtraEditors.LabelControl();
+            this.lblTotalDias = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesVacaciones1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -334,14 +336,14 @@
             this.coldate_from.FieldName = "date_from";
             this.coldate_from.Name = "coldate_from";
             this.coldate_from.Visible = true;
-            this.coldate_from.VisibleIndex = 2;
+            this.coldate_from.VisibleIndex = 1;
             // 
             // coldate_to
             // 
             this.coldate_to.FieldName = "date_to";
             this.coldate_to.Name = "coldate_to";
             this.coldate_to.Visible = true;
-            this.coldate_to.VisibleIndex = 3;
+            this.coldate_to.VisibleIndex = 2;
             // 
             // colnumber_of_days
             // 
@@ -350,7 +352,7 @@
             this.colnumber_of_days.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "number_of_days", "SUM={0:0.##}")});
             this.colnumber_of_days.Visible = true;
-            this.colnumber_of_days.VisibleIndex = 4;
+            this.colnumber_of_days.VisibleIndex = 3;
             // 
             // colholiday_status_id
             // 
@@ -362,13 +364,35 @@
             this.colfecha_creado.FieldName = "fecha_creado";
             this.colfecha_creado.Name = "colfecha_creado";
             this.colfecha_creado.Visible = true;
-            this.colfecha_creado.VisibleIndex = 5;
+            this.colfecha_creado.VisibleIndex = 4;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNombre.Appearance.Options.UseFont = true;
+            this.lblNombre.Location = new System.Drawing.Point(121, 21);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(149, 17);
+            this.lblNombre.TabIndex = 27;
+            this.lblNombre.Text = "Seleccione los materiales";
+            // 
+            // lblTotalDias
+            // 
+            this.lblTotalDias.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTotalDias.Appearance.Options.UseFont = true;
+            this.lblTotalDias.Location = new System.Drawing.Point(583, 21);
+            this.lblTotalDias.Name = "lblTotalDias";
+            this.lblTotalDias.Size = new System.Drawing.Size(149, 17);
+            this.lblTotalDias.TabIndex = 28;
+            this.lblTotalDias.Text = "Seleccione los materiales";
             // 
             // frmVacacionesDetalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 510);
+            this.Controls.Add(this.lblTotalDias);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.gridControl3);
             this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.gridControl1);
@@ -385,6 +409,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -422,5 +447,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colnumber_of_days;
         private DevExpress.XtraGrid.Columns.GridColumn colholiday_status_id;
         private DevExpress.XtraGrid.Columns.GridColumn colfecha_creado;
+        private DevExpress.XtraEditors.LabelControl lblNombre;
+        private DevExpress.XtraEditors.LabelControl lblTotalDias;
     }
 }

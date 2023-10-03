@@ -69,7 +69,7 @@ namespace LOSA.MigracionACS.RRHH.Vacaciones
         {
             //Ver detalle
             var row = (dsReportesVacaciones.resumen_vacacionesRow)gridView1.GetFocusedDataRow();
-            frmVacacionesDetalles frm = new frmVacacionesDetalles(row.id);
+            frmVacacionesDetalles frm = new frmVacacionesDetalles(row.id, row.name, row.dias_pendientes_stand.ToString());
             frm.ShowDialog();
         }
     }

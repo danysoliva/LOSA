@@ -16,9 +16,11 @@ namespace LOSA.MigracionACS.RRHH.Vacaciones
     public partial class frmVacacionesDetalles : DevExpress.XtraEditors.XtraForm
     {
         int EmployeeId;
-        public frmVacacionesDetalles(int pEmployeeId)
+        public frmVacacionesDetalles(int pEmployeeId, string pNombre, string pdias)
         {
             InitializeComponent();
+            lblNombre.Text = pNombre;
+            lblTotalDias.Text = "Cantidad dias Pendientes: " + pdias;
             EmployeeId = pEmployeeId;
             LoadDetalle();
         }
