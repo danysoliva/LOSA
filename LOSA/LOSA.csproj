@@ -3492,6 +3492,23 @@
     <Compile Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.Designer.cs">
       <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\dsReportesVacaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReportesVacaciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\frmVacacionesDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\frmVacacionesDetalles.Designer.cs">
+      <DependentUpon>frmVacacionesDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\frmVacacionesHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\RRHH\Vacaciones\frmVacacionesHome.Designer.cs">
+      <DependentUpon>frmVacacionesHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\SAP\frmLoginSAP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4921,6 +4938,17 @@
     <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xsd" />
     <None Include="MigracionACS\RRHH\Reportes\dsReportesTtrace.xss">
       <DependentUpon>dsReportesTtrace.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Vacaciones\dsReportesVacaciones.xsc">
+      <DependentUpon>dsReportesVacaciones.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\RRHH\Vacaciones\dsReportesVacaciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReportesVacaciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\RRHH\Vacaciones\dsReportesVacaciones.xss">
+      <DependentUpon>dsReportesVacaciones.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\SAR\dS_SAR.xsc">
       <DependentUpon>dS_SAR.xsd</DependentUpon>
@@ -7732,6 +7760,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RRHH\Reportes\frmResumenVacaciones.resx">
       <DependentUpon>frmResumenVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Vacaciones\frmVacacionesDetalles.resx">
+      <DependentUpon>frmVacacionesDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\RRHH\Vacaciones\frmVacacionesHome.resx">
+      <DependentUpon>frmVacacionesHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\SAP\frmLoginSAP.resx">
       <DependentUpon>frmLoginSAP.cs</DependentUpon>

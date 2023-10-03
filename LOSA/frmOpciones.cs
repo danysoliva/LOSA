@@ -76,10 +76,13 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using LOSA.Accesos.Notificaciones;
+using LOSA.MigracionACS.RRHH.Vacaciones;
+using SAPbouiCOM;
+using DataTable = System.Data.DataTable;
 
 namespace LOSA
 {
-    public partial class frmOpciones : Form
+    public partial class frmOpciones : System.Windows.Forms.Form
     {
         UserLogin UsuarioLogeado;
         string ActiveUserCode;
@@ -3876,6 +3879,13 @@ namespace LOSA
             {
                 CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #58");
             }
+        }
+
+        private void simpleButton5_Click_2(object sender, EventArgs e)
+        {
+            frmVacacionesHome frm = new frmVacacionesHome();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }
