@@ -538,6 +538,7 @@
             // 
             this.txtVentana.Location = new System.Drawing.Point(622, 59);
             this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
             this.txtVentana.Size = new System.Drawing.Size(166, 20);
             this.txtVentana.TabIndex = 56;
             this.txtVentana.Text = "frmRequisicionesDetalle";
