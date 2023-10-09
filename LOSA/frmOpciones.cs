@@ -3887,5 +3887,12 @@ namespace LOSA
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btn_historic_inventario_Click(object sender, EventArgs e)
+        {
+            frmReporteGeneralProductoTermnado frm = new frmReporteGeneralProductoTermnado(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

@@ -201,6 +201,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.TabRRHH = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReportSalidaDesechosRRHH = new DevExpress.XtraEditors.SimpleButton();
             this.cmdPrintVouchersPlanillas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdImprimirVouchers = new DevExpress.XtraEditors.SimpleButton();
@@ -291,7 +292,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_historic_inventario = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1033,6 +1034,7 @@
             // 
             this.tabPT.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabPT.Appearance.Header.Options.UseFont = true;
+            this.tabPT.Controls.Add(this.btn_historic_inventario);
             this.tabPT.Controls.Add(this.btnMaterialEmpaquePT);
             this.tabPT.Controls.Add(this.btn_add_tarimas_pt);
             this.tabPT.Controls.Add(this.btnHistorialPT);
@@ -1073,7 +1075,7 @@
             this.btn_add_tarimas_pt.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.btn_add_tarimas_pt.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btn_add_tarimas_pt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_add_tarimas_pt.ImageOptions.SvgImage")));
-            this.btn_add_tarimas_pt.Location = new System.Drawing.Point(4, 109);
+            this.btn_add_tarimas_pt.Location = new System.Drawing.Point(414, 109);
             this.btn_add_tarimas_pt.Margin = new System.Windows.Forms.Padding(2);
             this.btn_add_tarimas_pt.Name = "btn_add_tarimas_pt";
             this.btn_add_tarimas_pt.Size = new System.Drawing.Size(198, 42);
@@ -2876,6 +2878,21 @@
             this.TabRRHH.Size = new System.Drawing.Size(835, 480);
             this.TabRRHH.Text = "RRHH";
             // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Appearance.Options.UseTextOptions = true;
+            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(473, 202);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton5.TabIndex = 54;
+            this.simpleButton5.Text = "Reporte Vacaciones";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click_2);
+            // 
             // cmdReportSalidaDesechosRRHH
             // 
             this.cmdReportSalidaDesechosRRHH.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4163,20 +4180,18 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // simpleButton5
+            // btn_historic_inventario
             // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Appearance.Options.UseTextOptions = true;
-            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(473, 202);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton5.TabIndex = 54;
-            this.simpleButton5.Text = "Reporte Vacaciones";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click_2);
+            this.btn_historic_inventario.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btn_historic_inventario.Appearance.Options.UseFont = true;
+            this.btn_historic_inventario.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_historic_inventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton74.ImageOptions.Image")));
+            this.btn_historic_inventario.Location = new System.Drawing.Point(3, 109);
+            this.btn_historic_inventario.Name = "btn_historic_inventario";
+            this.btn_historic_inventario.Size = new System.Drawing.Size(198, 42);
+            this.btn_historic_inventario.TabIndex = 53;
+            this.btn_historic_inventario.Text = "Inventario Despachos";
+            this.btn_historic_inventario.Click += new System.EventHandler(this.btn_historic_inventario_Click);
             // 
             // frmOpciones
             // 
@@ -4483,5 +4498,6 @@
         private DevExpress.XtraEditors.SimpleButton btnConsumoRealForeCast;
         private DevExpress.XtraEditors.SimpleButton btnNotificaciones;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton btn_historic_inventario;
     }
 }

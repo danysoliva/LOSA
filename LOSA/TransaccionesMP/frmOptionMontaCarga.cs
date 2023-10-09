@@ -170,7 +170,7 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton7_Click(object sender, EventArgs e)
         {
-            frmDevolucionKardex frm = new frmDevolucionKardex(UsuarioLogeado);
+            frmDevolucionMicros frm = new frmDevolucionMicros(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
