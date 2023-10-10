@@ -950,7 +950,7 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public mp_microsRow Addmp_microsRow(string barcode, double cantidad_entregada, double cantidad_unidades, string Codigo, string code_sap, string lote_materia_prima, string nombre_comercial, string codigo_barra, bool selected, int id, System.DateTime fecha, int id_requisa_header, bool consumido, int unidades_devolucion, decimal kg_devolucion) {
+            public mp_microsRow Addmp_microsRow(string barcode, decimal cantidad_entregada, double cantidad_unidades, string Codigo, string code_sap, string lote_materia_prima, string nombre_comercial, string codigo_barra, bool selected, int id, System.DateTime fecha, int id_requisa_header, bool consumido, int unidades_devolucion, decimal kg_devolucion) {
                 mp_microsRow rowmp_microsRow = ((mp_microsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         barcode,
@@ -1012,7 +1012,7 @@ namespace LOSA.RecepcionMP {
             private void InitClass() {
                 this.columnbarcode = new global::System.Data.DataColumn("barcode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbarcode);
-                this.columncantidad_entregada = new global::System.Data.DataColumn("cantidad_entregada", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columncantidad_entregada = new global::System.Data.DataColumn("cantidad_entregada", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad_entregada);
                 this.columncantidad_unidades = new global::System.Data.DataColumn("cantidad_unidades", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad_unidades);
@@ -1041,6 +1041,8 @@ namespace LOSA.RecepcionMP {
                 this.columnkg_devolucion = new global::System.Data.DataColumn("kg_devolucion", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnkg_devolucion);
                 this.columnconsumido.DefaultValue = ((bool)(false));
+                this.columnunidades_devolucion.DefaultValue = ((int)(0));
+                this.columnkg_devolucion.DefaultValue = ((decimal)(0.00m));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1578,10 +1580,10 @@ namespace LOSA.RecepcionMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double cantidad_entregada {
+            public decimal cantidad_entregada {
                 get {
                     try {
-                        return ((double)(this[this.tablemp_micros.cantidad_entregadaColumn]));
+                        return ((decimal)(this[this.tablemp_micros.cantidad_entregadaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad_entregada\' de la tabla \'mp_micros\' es DBNull.", e);
