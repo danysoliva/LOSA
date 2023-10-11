@@ -85,10 +85,9 @@ namespace LOSA.Reportes
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.ImageOptions.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1427, 10);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Location = new System.Drawing.Point(1223, 8);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(115, 58);
+            this.btnClose.Size = new System.Drawing.Size(99, 47);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Cerrar";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -99,10 +98,9 @@ namespace LOSA.Reportes
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl2.Controls.Add(this.tabPane1);
-            this.panelControl2.Location = new System.Drawing.Point(6, 86);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.panelControl2.Location = new System.Drawing.Point(5, 70);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1544, 735);
+            this.panelControl2.Size = new System.Drawing.Size(1323, 597);
             this.panelControl2.TabIndex = 4;
             // 
             // tabPane1
@@ -112,15 +110,14 @@ namespace LOSA.Reportes
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.tabPane1.Location = new System.Drawing.Point(2, 2);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
             this.tabNavigationPage2});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1540, 731);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1319, 593);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
-            this.tabPane1.Size = new System.Drawing.Size(1540, 731);
+            this.tabPane1.Size = new System.Drawing.Size(1319, 593);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "tabPane1";
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.tabPane1_SelectedPageChanged);
@@ -131,21 +128,18 @@ namespace LOSA.Reportes
             this.tabNavigationPage1.Controls.Add(this.grd_inventario_camaron);
             this.tabNavigationPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNavigationPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabNavigationPage1.ImageOptions.Image")));
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1540, 686);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1319, 550);
             // 
             // grd_inventario_camaron
             // 
             this.grd_inventario_camaron.DataMember = "inventario_kardex";
             this.grd_inventario_camaron.DataSource = this.dsReportesInventario1;
             this.grd_inventario_camaron.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_inventario_camaron.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.grd_inventario_camaron.Location = new System.Drawing.Point(0, 0);
             this.grd_inventario_camaron.MainView = this.grdv_inventario_camaron;
-            this.grd_inventario_camaron.Margin = new System.Windows.Forms.Padding(4);
             this.grd_inventario_camaron.Name = "grd_inventario_camaron";
-            this.grd_inventario_camaron.Size = new System.Drawing.Size(1925, 858);
+            this.grd_inventario_camaron.Size = new System.Drawing.Size(1319, 550);
             this.grd_inventario_camaron.TabIndex = 0;
             this.grd_inventario_camaron.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_camaron});
@@ -185,57 +179,47 @@ namespace LOSA.Reportes
             this.colpeso_out,
             this.colexistencia_kg,
             this.colexistencia_tm});
-            this.grdv_inventario_camaron.DetailHeight = 431;
             this.grdv_inventario_camaron.GridControl = this.grd_inventario_camaron;
             this.grdv_inventario_camaron.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", null, "(Kilogramos: SUMA={0:0.##.##} Kg)"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_unidades", null, "(Unidades en Existencia: SUMA={0:0.##.##} Ud)"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", null, "(Toneladas: SUMA={0:0.##.##} TM)")});
             this.grdv_inventario_camaron.Name = "grdv_inventario_camaron";
-            this.grdv_inventario_camaron.OptionsEditForm.PopupEditFormWidth = 933;
             this.grdv_inventario_camaron.OptionsView.ShowAutoFilterRow = true;
             this.grdv_inventario_camaron.OptionsView.ShowFooter = true;
             // 
             // colid_pt
             // 
             this.colid_pt.FieldName = "id_pt";
-            this.colid_pt.MinWidth = 23;
             this.colid_pt.Name = "colid_pt";
             this.colid_pt.OptionsColumn.AllowEdit = false;
-            this.colid_pt.Width = 87;
             // 
             // colcode_sap
             // 
             this.colcode_sap.Caption = "Cod. SAP";
             this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.MinWidth = 23;
             this.colcode_sap.Name = "colcode_sap";
             this.colcode_sap.OptionsColumn.AllowEdit = false;
             this.colcode_sap.Visible = true;
             this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 87;
             // 
             // colProducto
             // 
             this.colProducto.Caption = "N Producto";
             this.colProducto.FieldName = "Producto";
-            this.colProducto.MinWidth = 23;
             this.colProducto.Name = "colProducto";
             this.colProducto.OptionsColumn.AllowEdit = false;
             this.colProducto.Visible = true;
             this.colProducto.VisibleIndex = 1;
-            this.colProducto.Width = 87;
             // 
             // collote_pt
             // 
             this.collote_pt.Caption = "# Lote";
             this.collote_pt.FieldName = "lote_pt";
-            this.collote_pt.MinWidth = 23;
             this.collote_pt.Name = "collote_pt";
             this.collote_pt.OptionsColumn.AllowEdit = false;
             this.collote_pt.Visible = true;
             this.collote_pt.VisibleIndex = 2;
-            this.collote_pt.Width = 87;
             // 
             // colcantidad_in
             // 
@@ -243,10 +227,8 @@ namespace LOSA.Reportes
             this.colcantidad_in.DisplayFormat.FormatString = "{0:0.##.##} Ud";
             this.colcantidad_in.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad_in.FieldName = "cantidad_in";
-            this.colcantidad_in.MinWidth = 23;
             this.colcantidad_in.Name = "colcantidad_in";
             this.colcantidad_in.OptionsColumn.AllowEdit = false;
-            this.colcantidad_in.Width = 87;
             // 
             // colcantidad_out
             // 
@@ -254,10 +236,8 @@ namespace LOSA.Reportes
             this.colcantidad_out.DisplayFormat.FormatString = "{0:0.##.##} Ud";
             this.colcantidad_out.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad_out.FieldName = "cantidad_out";
-            this.colcantidad_out.MinWidth = 23;
             this.colcantidad_out.Name = "colcantidad_out";
             this.colcantidad_out.OptionsColumn.AllowEdit = false;
-            this.colcantidad_out.Width = 87;
             // 
             // colexistencia_unidades
             // 
@@ -265,14 +245,12 @@ namespace LOSA.Reportes
             this.colexistencia_unidades.DisplayFormat.FormatString = "{0:#,###,##0} Ud";
             this.colexistencia_unidades.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_unidades.FieldName = "existencia_unidades";
-            this.colexistencia_unidades.MinWidth = 23;
             this.colexistencia_unidades.Name = "colexistencia_unidades";
             this.colexistencia_unidades.OptionsColumn.AllowEdit = false;
             this.colexistencia_unidades.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_unidades", "SUMA={0:#,###,##0} Ud")});
             this.colexistencia_unidades.Visible = true;
             this.colexistencia_unidades.VisibleIndex = 3;
-            this.colexistencia_unidades.Width = 87;
             // 
             // colpeso_in
             // 
@@ -280,10 +258,8 @@ namespace LOSA.Reportes
             this.colpeso_in.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colpeso_in.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso_in.FieldName = "peso_in";
-            this.colpeso_in.MinWidth = 23;
             this.colpeso_in.Name = "colpeso_in";
             this.colpeso_in.OptionsColumn.AllowEdit = false;
-            this.colpeso_in.Width = 87;
             // 
             // colpeso_out
             // 
@@ -291,10 +267,8 @@ namespace LOSA.Reportes
             this.colpeso_out.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colpeso_out.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso_out.FieldName = "peso_out";
-            this.colpeso_out.MinWidth = 23;
             this.colpeso_out.Name = "colpeso_out";
             this.colpeso_out.OptionsColumn.AllowEdit = false;
-            this.colpeso_out.Width = 87;
             // 
             // colexistencia_kg
             // 
@@ -302,14 +276,12 @@ namespace LOSA.Reportes
             this.colexistencia_kg.DisplayFormat.FormatString = "{0:##,##0.00} Kg";
             this.colexistencia_kg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_kg.FieldName = "existencia_kg";
-            this.colexistencia_kg.MinWidth = 23;
             this.colexistencia_kg.Name = "colexistencia_kg";
             this.colexistencia_kg.OptionsColumn.AllowEdit = false;
             this.colexistencia_kg.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", "SUMA={0:#,###,##0.00}  Kg")});
             this.colexistencia_kg.Visible = true;
             this.colexistencia_kg.VisibleIndex = 4;
-            this.colexistencia_kg.Width = 87;
             // 
             // colexistencia_tm
             // 
@@ -317,14 +289,12 @@ namespace LOSA.Reportes
             this.colexistencia_tm.DisplayFormat.FormatString = "{0:#,##0.00} TM";
             this.colexistencia_tm.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_tm.FieldName = "existencia_tm";
-            this.colexistencia_tm.MinWidth = 23;
             this.colexistencia_tm.Name = "colexistencia_tm";
             this.colexistencia_tm.OptionsColumn.AllowEdit = false;
             this.colexistencia_tm.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", "SUMA={0:#,###,##0.00} TM")});
             this.colexistencia_tm.Visible = true;
             this.colexistencia_tm.VisibleIndex = 5;
-            this.colexistencia_tm.Width = 87;
             // 
             // tabNavigationPage2
             // 
@@ -332,23 +302,20 @@ namespace LOSA.Reportes
             this.tabNavigationPage2.Controls.Add(this.grd_inventario_Tilapia);
             this.tabNavigationPage2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.tabNavigationPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabNavigationPage2.ImageOptions.Image")));
-            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Properties.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.tabNavigationPage2.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1540, 686);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1320, 557);
             // 
             // grd_inventario_Tilapia
             // 
             this.grd_inventario_Tilapia.DataMember = "inventario_kardex";
             this.grd_inventario_Tilapia.DataSource = this.dsReportesInventario1;
             this.grd_inventario_Tilapia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_inventario_Tilapia.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.grd_inventario_Tilapia.Location = new System.Drawing.Point(0, 0);
             this.grd_inventario_Tilapia.MainView = this.grdv_inventario_Tilapia;
-            this.grd_inventario_Tilapia.Margin = new System.Windows.Forms.Padding(4);
             this.grd_inventario_Tilapia.Name = "grd_inventario_Tilapia";
-            this.grd_inventario_Tilapia.Size = new System.Drawing.Size(1925, 858);
+            this.grd_inventario_Tilapia.Size = new System.Drawing.Size(1320, 557);
             this.grd_inventario_Tilapia.TabIndex = 0;
             this.grd_inventario_Tilapia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_Tilapia});
@@ -383,56 +350,46 @@ namespace LOSA.Reportes
             this.colpeso_out1,
             this.colexistencia_kg1,
             this.colexistencia_tm1});
-            this.grdv_inventario_Tilapia.DetailHeight = 431;
             this.grdv_inventario_Tilapia.GridControl = this.grd_inventario_Tilapia;
             this.grdv_inventario_Tilapia.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", null, "(Kilogramos: SUMA={0:0.##.##} Kg)"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_unidades", null, "(Unidades en Existencia: SUMA={0:0.##.##} Ud)"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", null, "(TM Existencia: SUMA={0:0.##.##} TM)")});
             this.grdv_inventario_Tilapia.Name = "grdv_inventario_Tilapia";
-            this.grdv_inventario_Tilapia.OptionsEditForm.PopupEditFormWidth = 933;
             this.grdv_inventario_Tilapia.OptionsView.ShowAutoFilterRow = true;
             this.grdv_inventario_Tilapia.OptionsView.ShowFooter = true;
             // 
             // colid_pt1
             // 
             this.colid_pt1.FieldName = "id_pt";
-            this.colid_pt1.MinWidth = 23;
             this.colid_pt1.Name = "colid_pt1";
-            this.colid_pt1.Width = 87;
             // 
             // colcode_sap1
             // 
             this.colcode_sap1.Caption = "Cod. SAP";
             this.colcode_sap1.FieldName = "code_sap";
-            this.colcode_sap1.MinWidth = 23;
             this.colcode_sap1.Name = "colcode_sap1";
             this.colcode_sap1.OptionsColumn.AllowEdit = false;
             this.colcode_sap1.Visible = true;
             this.colcode_sap1.VisibleIndex = 0;
-            this.colcode_sap1.Width = 87;
             // 
             // colProducto1
             // 
             this.colProducto1.Caption = "N Producto";
             this.colProducto1.FieldName = "Producto";
-            this.colProducto1.MinWidth = 23;
             this.colProducto1.Name = "colProducto1";
             this.colProducto1.OptionsColumn.AllowEdit = false;
             this.colProducto1.Visible = true;
             this.colProducto1.VisibleIndex = 1;
-            this.colProducto1.Width = 87;
             // 
             // collote_pt1
             // 
             this.collote_pt1.Caption = "# Lote";
             this.collote_pt1.FieldName = "lote_pt";
-            this.collote_pt1.MinWidth = 23;
             this.collote_pt1.Name = "collote_pt1";
             this.collote_pt1.OptionsColumn.AllowEdit = false;
             this.collote_pt1.Visible = true;
             this.collote_pt1.VisibleIndex = 2;
-            this.collote_pt1.Width = 87;
             // 
             // colcantidad_in1
             // 
@@ -440,10 +397,8 @@ namespace LOSA.Reportes
             this.colcantidad_in1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
             this.colcantidad_in1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad_in1.FieldName = "cantidad_in";
-            this.colcantidad_in1.MinWidth = 23;
             this.colcantidad_in1.Name = "colcantidad_in1";
             this.colcantidad_in1.OptionsColumn.AllowEdit = false;
-            this.colcantidad_in1.Width = 87;
             // 
             // colcantidad_out1
             // 
@@ -451,10 +406,8 @@ namespace LOSA.Reportes
             this.colcantidad_out1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
             this.colcantidad_out1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colcantidad_out1.FieldName = "cantidad_out";
-            this.colcantidad_out1.MinWidth = 23;
             this.colcantidad_out1.Name = "colcantidad_out1";
             this.colcantidad_out1.OptionsColumn.AllowEdit = false;
-            this.colcantidad_out1.Width = 87;
             // 
             // colexistencia_unidades1
             // 
@@ -462,14 +415,12 @@ namespace LOSA.Reportes
             this.colexistencia_unidades1.DisplayFormat.FormatString = "{0:#,###,##0} Ud";
             this.colexistencia_unidades1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_unidades1.FieldName = "existencia_unidades";
-            this.colexistencia_unidades1.MinWidth = 23;
             this.colexistencia_unidades1.Name = "colexistencia_unidades1";
             this.colexistencia_unidades1.OptionsColumn.AllowEdit = false;
             this.colexistencia_unidades1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_unidades", "SUMA={0:#,###,##0} Ud")});
             this.colexistencia_unidades1.Visible = true;
             this.colexistencia_unidades1.VisibleIndex = 3;
-            this.colexistencia_unidades1.Width = 87;
             // 
             // colpeso_in1
             // 
@@ -477,10 +428,8 @@ namespace LOSA.Reportes
             this.colpeso_in1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colpeso_in1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso_in1.FieldName = "peso_in";
-            this.colpeso_in1.MinWidth = 23;
             this.colpeso_in1.Name = "colpeso_in1";
             this.colpeso_in1.OptionsColumn.AllowEdit = false;
-            this.colpeso_in1.Width = 87;
             // 
             // colpeso_out1
             // 
@@ -488,10 +437,8 @@ namespace LOSA.Reportes
             this.colpeso_out1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
             this.colpeso_out1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso_out1.FieldName = "peso_out";
-            this.colpeso_out1.MinWidth = 23;
             this.colpeso_out1.Name = "colpeso_out1";
             this.colpeso_out1.OptionsColumn.AllowEdit = false;
-            this.colpeso_out1.Width = 87;
             // 
             // colexistencia_kg1
             // 
@@ -499,14 +446,12 @@ namespace LOSA.Reportes
             this.colexistencia_kg1.DisplayFormat.FormatString = "{0:#,###,##0.00} Kg";
             this.colexistencia_kg1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_kg1.FieldName = "existencia_kg";
-            this.colexistencia_kg1.MinWidth = 23;
             this.colexistencia_kg1.Name = "colexistencia_kg1";
             this.colexistencia_kg1.OptionsColumn.AllowEdit = false;
             this.colexistencia_kg1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", "SUMA={0:#,###,##0.00}  Kg")});
             this.colexistencia_kg1.Visible = true;
             this.colexistencia_kg1.VisibleIndex = 4;
-            this.colexistencia_kg1.Width = 87;
             // 
             // colexistencia_tm1
             // 
@@ -514,14 +459,12 @@ namespace LOSA.Reportes
             this.colexistencia_tm1.DisplayFormat.FormatString = "{0:#,###,##0.00} TM";
             this.colexistencia_tm1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colexistencia_tm1.FieldName = "existencia_tm";
-            this.colexistencia_tm1.MinWidth = 23;
             this.colexistencia_tm1.Name = "colexistencia_tm1";
             this.colexistencia_tm1.OptionsColumn.AllowEdit = false;
             this.colexistencia_tm1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", "SUMA={0:#,###,##0.00} TM")});
             this.colexistencia_tm1.Visible = true;
             this.colexistencia_tm1.VisibleIndex = 5;
-            this.colexistencia_tm1.Width = 87;
             // 
             // simpleButton1
             // 
@@ -530,10 +473,9 @@ namespace LOSA.Reportes
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(1298, 11);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton1.Location = new System.Drawing.Point(1113, 9);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(121, 58);
+            this.simpleButton1.Size = new System.Drawing.Size(104, 47);
             this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Text = "Excel";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -544,10 +486,9 @@ namespace LOSA.Reportes
             this.cmdAjuste.Appearance.Options.UseFont = true;
             this.cmdAjuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdAjuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdAjuste.ImageOptions.Image")));
-            this.cmdAjuste.Location = new System.Drawing.Point(14, 10);
-            this.cmdAjuste.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdAjuste.Location = new System.Drawing.Point(12, 8);
             this.cmdAjuste.Name = "cmdAjuste";
-            this.cmdAjuste.Size = new System.Drawing.Size(201, 58);
+            this.cmdAjuste.Size = new System.Drawing.Size(172, 47);
             this.cmdAjuste.TabIndex = 6;
             this.cmdAjuste.Text = "Ajuste de Inventario";
             this.cmdAjuste.Click += new System.EventHandler(this.cmdAjuste_Click);
@@ -559,25 +500,23 @@ namespace LOSA.Reportes
             this.cmdRecargar.Appearance.Options.UseFont = true;
             this.cmdRecargar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRecargar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdRecargar.ImageOptions.SvgImage")));
-            this.cmdRecargar.Location = new System.Drawing.Point(1170, 11);
-            this.cmdRecargar.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdRecargar.Location = new System.Drawing.Point(1003, 9);
             this.cmdRecargar.Name = "cmdRecargar";
-            this.cmdRecargar.Size = new System.Drawing.Size(121, 58);
+            this.cmdRecargar.Size = new System.Drawing.Size(104, 47);
             this.cmdRecargar.TabIndex = 7;
             this.cmdRecargar.Text = "Recargar";
             this.cmdRecargar.Click += new System.EventHandler(this.cmdRecargar_Click);
             // 
             // frmReporteGeneralProductoTermnado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1550, 825);
+            this.ClientSize = new System.Drawing.Size(1329, 670);
             this.Controls.Add(this.cmdRecargar);
             this.Controls.Add(this.cmdAjuste);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.btnClose);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmReporteGeneralProductoTermnado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte General de Producto Terminado.";
