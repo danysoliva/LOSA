@@ -33,11 +33,13 @@ namespace LOSA.RecepcionMP
         public frm_ingresos_lotes(int Pid_ingreso, int Pnumero_transaccion, UserLogin Puser, bool Finalizado, int id_traslado, string pItemCode)
         {
             InitializeComponent();
-            
+            UsuarioLogeado = Puser;
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
 
             Numero_transaccion = Pnumero_transaccion;
             Id_ingreso = Pid_ingreso;
-            UsuarioLogeado = Puser;
+            
             //btnFinalizar.Visible = !Finalizado && id_traslado !=0 ? true : false;
             ItemCode = pItemCode;
             LoadTarimas();
@@ -841,6 +843,11 @@ namespace LOSA.RecepcionMP
                     }
                 }
             }
+        }
+
+        private void cmdRefresh_Click(object sender, EventArgs e)
+        {
+            LoadTarimas();
         }
     }
 }

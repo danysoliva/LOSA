@@ -82,6 +82,9 @@ namespace LOSA.RecepcionMP
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog(this.components);
             this.Dialog = new System.Windows.Forms.OpenFileDialog();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -100,7 +103,7 @@ namespace LOSA.RecepcionMP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataMember = "adjuntos";
             this.gridControl1.DataSource = this.dsRecepcionMPx1;
-            this.gridControl1.Location = new System.Drawing.Point(3, 82);
+            this.gridControl1.Location = new System.Drawing.Point(3, 68);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -108,7 +111,7 @@ namespace LOSA.RecepcionMP
             this.cmdVerImg,
             this.cmdDescargar,
             this.reposCargar});
-            this.gridControl1.Size = new System.Drawing.Size(873, 413);
+            this.gridControl1.Size = new System.Drawing.Size(873, 216);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -329,7 +332,7 @@ namespace LOSA.RecepcionMP
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 478);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 442);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(878, 20);
             // 
@@ -339,7 +342,7 @@ namespace LOSA.RecepcionMP
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 478);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 442);
             // 
             // barDockControlRight
             // 
@@ -347,7 +350,7 @@ namespace LOSA.RecepcionMP
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(878, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 478);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 442);
             // 
             // barButtonItem1
             // 
@@ -381,12 +384,47 @@ namespace LOSA.RecepcionMP
             // 
             this.Dialog.FileName = "openFileDialog1";
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(12, 309);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(166, 17);
+            this.labelControl3.TabIndex = 16;
+            this.labelControl3.Text = "Observaciones del Ingreso:";
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtObservacion.Location = new System.Drawing.Point(184, 306);
+            this.txtObservacion.MaxLength = 300;
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(682, 118);
+            this.txtObservacion.TabIndex = 17;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(45, 346);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(105, 40);
+            this.btnGuardar.TabIndex = 22;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // frmIngresoAdjuntos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 498);
+            this.ClientSize = new System.Drawing.Size(878, 462);
             this.ControlBox = false;
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.txtObservacion);
+            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gridControl1);
@@ -441,5 +479,8 @@ namespace LOSA.RecepcionMP
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposCargar;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private System.Windows.Forms.TextBox txtObservacion;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.SimpleButton btnGuardar;
     }
 }

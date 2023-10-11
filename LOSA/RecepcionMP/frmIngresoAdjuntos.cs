@@ -257,6 +257,32 @@ namespace LOSA.RecepcionMP
             }
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_ingreso_mp_update_observacion", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                cmd.Parameters.AddWithValue("@numero_transaccion", numero_transaccion);
+                if (txtObservacion.Text == "")
+                    cmd.Parameters.AddWithValue("@observacion", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@observacion", txtObservacion.Text);
+                cmd.ExecuteNonQuery();
+
+                CajaDialogo.Information("Observacion Guardada con Exito");
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         private void DownloadFile(string pathSource, string pathDestination)
         {
             try

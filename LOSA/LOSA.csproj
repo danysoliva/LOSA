@@ -5239,6 +5239,12 @@
     <Compile Include="RecepcionMP\frmMP_Granel_Selec_Lote.Designer.cs">
       <DependentUpon>frmMP_Granel_Selec_Lote.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionMP\frmObservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionMP\frmObservacion.Designer.cs">
+      <DependentUpon>frmObservacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMP\frmRecepcionMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -8161,6 +8167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmMP_Granel_Selec_Lote.resx">
       <DependentUpon>frmMP_Granel_Selec_Lote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionMP\frmObservacion.resx">
+      <DependentUpon>frmObservacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionMP\frmRecepcionMP.resx">
       <DependentUpon>frmRecepcionMP.cs</DependentUpon>

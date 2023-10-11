@@ -2969,7 +2969,6 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-            
             }
         }
 

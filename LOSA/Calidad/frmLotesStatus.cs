@@ -41,6 +41,9 @@ namespace LOSA.Calidad
 
 
             UsuarioLogeado = Puser;
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;  
+
             LoadTarimasAvailables();
             LoadTarimasObs();
             LoadTarimasRet();
@@ -2003,6 +2006,15 @@ namespace LOSA.Calidad
 
             frmVerHistorialEstadoTarima frm = new frmVerHistorialEstadoTarima(row.id);
             frm.Show();
+        }
+
+        private void reposDetalleCausas_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)gridRechazado.FocusedView;
+            var row = (dsCalidad.tarimas_rechazadasRow)gridView3.GetFocusedDataRow();
+
+            frmcausasRechazo frm = new frmcausasRechazo(row.id);
+            frm.ShowDialog();
         }
     }
 }

@@ -1015,6 +1015,7 @@ namespace LOSA.Trazabilidad
             this.ptlisttrzBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvLotePT_Ruta4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn169 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repost_lote_pt_hacia_ruta_4 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn170 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn171 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabPage10 = new System.Windows.Forms.TabPage();
@@ -1104,7 +1105,6 @@ namespace LOSA.Trazabilidad
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.repost_lote_pt_hacia_ruta_4 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposLinkLoteMP)).BeginInit();
@@ -1458,6 +1458,7 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.gcLotePT_Ruta4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptlisttrzBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotePT_Ruta4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repost_lote_pt_hacia_ruta_4)).BeginInit();
             this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informacionBindingSource)).BeginInit();
@@ -1482,7 +1483,6 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.detalledestinosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repost_lote_pt_hacia_ruta_4)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView22
@@ -7771,7 +7771,7 @@ namespace LOSA.Trazabilidad
             this.gridControlMuestreoPorLote.Location = new System.Drawing.Point(1, 210);
             this.gridControlMuestreoPorLote.MainView = this.gridView3;
             this.gridControlMuestreoPorLote.Name = "gridControlMuestreoPorLote";
-            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(1087, 761);
+            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(1087, 245);
             this.gridControlMuestreoPorLote.TabIndex = 1;
             this.gridControlMuestreoPorLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -11591,6 +11591,15 @@ namespace LOSA.Trazabilidad
             this.gridColumn169.VisibleIndex = 0;
             this.gridColumn169.Width = 67;
             // 
+            // repost_lote_pt_hacia_ruta_4
+            // 
+            this.repost_lote_pt_hacia_ruta_4.AutoHeight = false;
+            editorButtonImageOptions22.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions22.Image")));
+            this.repost_lote_pt_hacia_ruta_4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions22, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject85, serializableAppearanceObject86, serializableAppearanceObject87, serializableAppearanceObject88, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repost_lote_pt_hacia_ruta_4.Name = "repost_lote_pt_hacia_ruta_4";
+            this.repost_lote_pt_hacia_ruta_4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repost_lote_pt_hacia_ruta_4_ButtonClick);
+            // 
             // gridColumn170
             // 
             this.gridColumn170.FieldName = "Producto";
@@ -12495,15 +12504,6 @@ namespace LOSA.Trazabilidad
             this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
             // 
-            // repost_lote_pt_hacia_ruta_4
-            // 
-            this.repost_lote_pt_hacia_ruta_4.AutoHeight = false;
-            editorButtonImageOptions22.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions22.Image")));
-            this.repost_lote_pt_hacia_ruta_4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions22, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject85, serializableAppearanceObject86, serializableAppearanceObject87, serializableAppearanceObject88, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repost_lote_pt_hacia_ruta_4.Name = "repost_lote_pt_hacia_ruta_4";
-            this.repost_lote_pt_hacia_ruta_4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repost_lote_pt_hacia_ruta_4_ButtonClick);
-            // 
             // frmRutasTrazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -12881,6 +12881,7 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.gcLotePT_Ruta4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptlisttrzBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLotePT_Ruta4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repost_lote_pt_hacia_ruta_4)).EndInit();
             this.tabPage10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informacionBindingSource)).EndInit();
@@ -12905,7 +12906,6 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.detalledestinosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repost_lote_pt_hacia_ruta_4)).EndInit();
             this.ResumeLayout(false);
 
         }

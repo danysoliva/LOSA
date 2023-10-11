@@ -48,6 +48,37 @@ namespace LOSA.Calidad
             ListaTarimas = pListaTarimas;
         }
 
+        public frmcausasRechazo(int id_tarima)
+        {
+            InitializeComponent();
+
+            simpleButton1.Visible = false;
+            btnAgregar.Visible = false;
+            grdv_causa.OptionsMenu.EnableColumnMenu = false;
+            grdv_causa.Columns["eliminar"].Visible = false;
+
+            load_causas(id_tarima);
+        }
+
+        private void load_causas(int pid_tarima)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_causas_rechazo", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima", pid_tarima);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsCalidad.causaadd.Clear();
+                adat.Fill(dsCalidad.causaadd);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
