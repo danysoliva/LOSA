@@ -89,6 +89,7 @@ namespace LOSA.Logistica
             this.collote.Caption = "Lote";
             this.collote.FieldName = "lote";
             this.collote.Name = "collote";
+            this.collote.OptionsColumn.ReadOnly = true;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 0;
             // 
@@ -96,6 +97,7 @@ namespace LOSA.Logistica
             // 
             this.colFórmula.FieldName = "Fórmula";
             this.colFórmula.Name = "colFórmula";
+            this.colFórmula.OptionsColumn.ReadOnly = true;
             this.colFórmula.Visible = true;
             this.colFórmula.VisibleIndex = 1;
             // 
@@ -103,6 +105,7 @@ namespace LOSA.Logistica
             // 
             this.colVersión.FieldName = "Versión";
             this.colVersión.Name = "colVersión";
+            this.colVersión.OptionsColumn.ReadOnly = true;
             this.colVersión.Visible = true;
             this.colVersión.VisibleIndex = 2;
             // 
@@ -110,6 +113,7 @@ namespace LOSA.Logistica
             // 
             this.colOrdenFabricaciónCódigo.FieldName = "Orden Fabricación Código";
             this.colOrdenFabricaciónCódigo.Name = "colOrdenFabricaciónCódigo";
+            this.colOrdenFabricaciónCódigo.OptionsColumn.ReadOnly = true;
             this.colOrdenFabricaciónCódigo.Visible = true;
             this.colOrdenFabricaciónCódigo.VisibleIndex = 3;
             // 

@@ -38,7 +38,14 @@ namespace LOSA.RecepcionMP
             numero_transaccion = pnum_trans;
             Inicalizar_Archivo_configurados();
             UsuarioLogeado = pUserLogin;
-            
+
+
+            IngresoMP ingreso = new IngresoMP();
+            ingreso.RecuperarRegistrosIngreso(numero_transaccion);
+            if (ingreso.Observacion.Length > 0)
+            {
+                txtObservacion.Text = ingreso.Observacion;
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
