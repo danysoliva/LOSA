@@ -35,6 +35,10 @@ namespace LOSA.Reproceso
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.xrPanel1 = new DevExpress.XtraReports.UI.XRPanel();
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
@@ -57,6 +61,11 @@ namespace LOSA.Reproceso
             this.xrLabel18 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.xrTable3 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlblTurno = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.BarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
@@ -65,19 +74,22 @@ namespace LOSA.Reproceso
             this.lblTipoReproceso = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblFechaIngreso = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblNumeroIngreso = new DevExpress.XtraReports.UI.XRLabel();
             this.lblCantidad = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblFechaProduccion = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblFechadeVencimiento = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblLote = new DevExpress.XtraReports.UI.XRLabel();
-            this.BarCode2 = new DevExpress.XtraReports.UI.XRBarCode();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.txtcodigo = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblLote = new DevExpress.XtraReports.UI.XRLabel();
+            this.BarCode2 = new DevExpress.XtraReports.UI.XRBarCode();
+            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.dsRecepcionMPx1 = new LOSA.RecepcionMP.dsRecepcionMPx();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -92,8 +104,52 @@ namespace LOSA.Reproceso
             // 
             // Detail
             // 
-            this.Detail.HeightF = 14.58333F;
+            this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrTable1});
+            this.Detail.HeightF = 20.20874F;
             this.Detail.Name = "Detail";
+            // 
+            // xrTable1
+            // 
+            this.xrTable1.BorderWidth = 2F;
+            this.xrTable1.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 12F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(45.79344F, 0F);
+            this.xrTable1.Name = "xrTable1";
+            this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow1});
+            this.xrTable1.SizeF = new System.Drawing.SizeF(685.8176F, 20.20874F);
+            this.xrTable1.StylePriority.UseBorderWidth = false;
+            this.xrTable1.StylePriority.UseFont = false;
+            // 
+            // xrTableRow1
+            // 
+            this.xrTableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell1,
+            this.xrTableCell2});
+            this.xrTableRow1.Name = "xrTableRow1";
+            this.xrTableRow1.Weight = 1D;
+            // 
+            // xrTableCell1
+            // 
+            this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[causa]")});
+            this.xrTableCell1.Name = "xrTableCell1";
+            this.xrTableCell1.StylePriority.UseBorders = false;
+            this.xrTableCell1.Text = "xrTableCell1";
+            this.xrTableCell1.Weight = 1.2257424634130349D;
+            // 
+            // xrTableCell2
+            // 
+            this.xrTableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[comentario]")});
+            this.xrTableCell2.Name = "xrTableCell2";
+            this.xrTableCell2.StylePriority.UseBorders = false;
+            this.xrTableCell2.Text = "xrTableCell2";
+            this.xrTableCell2.Weight = 1.548975018428316D;
             // 
             // ReportHeader
             // 
@@ -125,7 +181,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel12.BorderWidth = 2F;
-            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(9.99999F, 28.125F);
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -141,7 +198,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel11.BorderWidth = 2F;
-            this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(9.99999F, 2.083333F);
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -170,7 +228,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel15.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel15.BorderWidth = 2F;
-            this.xrLabel15.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel15.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(6.00001F, 4.729112F);
             this.xrLabel15.Name = "xrLabel15";
             this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -186,7 +245,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel16.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel16.BorderWidth = 2F;
-            this.xrLabel16.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel16.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(5.999985F, 22.87501F);
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -217,7 +277,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel14.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel14.BorderWidth = 2F;
-            this.xrLabel14.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel14.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 21.14584F);
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -233,7 +294,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel13.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel13.BorderWidth = 2F;
-            this.xrLabel13.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel13.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 3.000005F);
             this.xrLabel13.Name = "xrLabel13";
             this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -277,7 +339,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel24.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel24.BorderWidth = 2F;
-            this.xrLabel24.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel24.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(142.375F, 3.000005F);
             this.xrLabel24.Name = "xrLabel24";
             this.xrLabel24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -293,7 +356,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel23.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel23.BorderWidth = 2F;
-            this.xrLabel23.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel23.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(142.375F, 23.14584F);
             this.xrLabel23.Name = "xrLabel23";
             this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -309,7 +373,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel22.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel22.BorderWidth = 2F;
-            this.xrLabel22.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel22.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(142.375F, 45.29167F);
             this.xrLabel22.Name = "xrLabel22";
             this.xrLabel22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -338,7 +403,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel20.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel20.BorderWidth = 2F;
-            this.xrLabel20.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel20.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(9.999974F, 4.729176F);
             this.xrLabel20.Name = "xrLabel20";
             this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -354,7 +420,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel21.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel21.BorderWidth = 2F;
-            this.xrLabel21.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel21.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(9.999974F, 22.87501F);
             this.xrLabel21.Name = "xrLabel21";
             this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -370,7 +437,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel19.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel19.BorderWidth = 2F;
-            this.xrLabel19.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel19.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(3.999974F, 45.29167F);
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -386,7 +454,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel18.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel18.BorderWidth = 2F;
-            this.xrLabel18.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel18.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(3.999974F, 23.14584F);
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -402,7 +471,8 @@ namespace LOSA.Reproceso
             // 
             this.xrLabel17.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel17.BorderWidth = 2F;
-            this.xrLabel17.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel17.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(3.999974F, 3.000007F);
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -417,6 +487,8 @@ namespace LOSA.Reproceso
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrTable3,
+            this.xrLabel5,
             this.xrlblTurno,
             this.xrLabel2,
             this.BarCode1,
@@ -425,21 +497,78 @@ namespace LOSA.Reproceso
             this.lblTipoReproceso,
             this.xrLabel3,
             this.lblFechaIngreso,
-            this.xrLabel5,
-            this.lblNumeroIngreso,
             this.lblCantidad,
             this.xrLabel6,
             this.lblFechaProduccion,
             this.xrLabel8,
             this.xrLabel10,
             this.lblFechadeVencimiento,
-            this.xrLabel9,
-            this.lblLote,
-            this.BarCode2,
             this.xrLabel4,
             this.txtcodigo});
-            this.PageHeader.HeightF = 827.4582F;
+            this.PageHeader.HeightF = 604.9171F;
             this.PageHeader.Name = "PageHeader";
+            // 
+            // xrTable3
+            // 
+            this.xrTable3.BorderWidth = 2F;
+            this.xrTable3.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 12F);
+            this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(45.79315F, 584.7084F);
+            this.xrTable3.Name = "xrTable3";
+            this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrTable3.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow3});
+            this.xrTable3.SizeF = new System.Drawing.SizeF(685.8178F, 20.20874F);
+            this.xrTable3.StylePriority.UseBorderWidth = false;
+            this.xrTable3.StylePriority.UseFont = false;
+            // 
+            // xrTableRow3
+            // 
+            this.xrTableRow3.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell7,
+            this.xrTableCell8});
+            this.xrTableRow3.Name = "xrTableRow3";
+            this.xrTableRow3.Weight = 1D;
+            // 
+            // xrTableCell7
+            // 
+            this.xrTableCell7.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell7.Multiline = true;
+            this.xrTableCell7.Name = "xrTableCell7";
+            this.xrTableCell7.StylePriority.UseBorders = false;
+            this.xrTableCell7.StylePriority.UseTextAlignment = false;
+            this.xrTableCell7.Text = "Causa";
+            this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrTableCell7.Weight = 1.0135049208109985D;
+            // 
+            // xrTableCell8
+            // 
+            this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell8.Multiline = true;
+            this.xrTableCell8.Name = "xrTableCell8";
+            this.xrTableCell8.StylePriority.UseBorders = false;
+            this.xrTableCell8.StylePriority.UseTextAlignment = false;
+            this.xrTableCell8.Text = "Comentario\t";
+            this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrTableCell8.Weight = 1.280768384574893D;
+            // 
+            // xrLabel5
+            // 
+            this.xrLabel5.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrLabel5.BorderWidth = 2F;
+            this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 12F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(45.79341F, 562.7501F);
+            this.xrLabel5.Name = "xrLabel5";
+            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(685.8177F, 21.95837F);
+            this.xrLabel5.StylePriority.UseBorders = false;
+            this.xrLabel5.StylePriority.UseBorderWidth = false;
+            this.xrLabel5.StylePriority.UseFont = false;
+            this.xrLabel5.StylePriority.UseTextAlignment = false;
+            this.xrLabel5.Text = "Causas de Reproceso";
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrlblTurno
             // 
@@ -448,10 +577,10 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrlblTurno.BorderWidth = 2F;
             this.xrlblTurno.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrlblTurno.LocationFloat = new DevExpress.Utils.PointFloat(459.6041F, 587.2083F);
+            this.xrlblTurno.LocationFloat = new DevExpress.Utils.PointFloat(111.4184F, 440.3749F);
             this.xrlblTurno.Name = "xrlblTurno";
             this.xrlblTurno.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrlblTurno.SizeF = new System.Drawing.SizeF(316.3905F, 34F);
+            this.xrlblTurno.SizeF = new System.Drawing.SizeF(303.8905F, 34F);
             this.xrlblTurno.StylePriority.UseBorders = false;
             this.xrlblTurno.StylePriority.UseBorderWidth = false;
             this.xrlblTurno.StylePriority.UseFont = false;
@@ -465,10 +594,10 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel2.BorderWidth = 2F;
             this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(334.375F, 587.2083F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 440.3749F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(118.71F, 34F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(98.9184F, 33.99997F);
             this.xrLabel2.StylePriority.UseBorders = false;
             this.xrLabel2.StylePriority.UseBorderWidth = false;
             this.xrLabel2.StylePriority.UseFont = false;
@@ -494,7 +623,8 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel1.BorderWidth = 2F;
-            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 253.0241F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -547,7 +677,8 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel3.BorderWidth = 2F;
-            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0.4583994F, 334.6458F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -565,7 +696,8 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblFechaIngreso.BorderWidth = 2F;
-            this.lblFechaIngreso.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 27.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.lblFechaIngreso.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 27.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblFechaIngreso.LocationFloat = new DevExpress.Utils.PointFloat(273.9585F, 334.6458F);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
             this.lblFechaIngreso.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -576,52 +708,18 @@ namespace LOSA.Reproceso
             this.lblFechaIngreso.StylePriority.UseTextAlignment = false;
             this.lblFechaIngreso.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel5
-            // 
-            this.xrLabel5.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel5.BorderWidth = 2F;
-            this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 21.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(0.4583359F, 406.3749F);
-            this.xrLabel5.Name = "xrLabel5";
-            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(219.7501F, 58.41669F);
-            this.xrLabel5.StylePriority.UseBorders = false;
-            this.xrLabel5.StylePriority.UseBorderWidth = false;
-            this.xrLabel5.StylePriority.UseFont = false;
-            this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "# De Ingreso";
-            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // lblNumeroIngreso
-            // 
-            this.lblNumeroIngreso.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblNumeroIngreso.BorderWidth = 2F;
-            this.lblNumeroIngreso.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 30F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.lblNumeroIngreso.LocationFloat = new DevExpress.Utils.PointFloat(230.6667F, 406.3749F);
-            this.lblNumeroIngreso.Name = "lblNumeroIngreso";
-            this.lblNumeroIngreso.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNumeroIngreso.SizeF = new System.Drawing.SizeF(189.0208F, 58.41669F);
-            this.lblNumeroIngreso.StylePriority.UseBorders = false;
-            this.lblNumeroIngreso.StylePriority.UseBorderWidth = false;
-            this.lblNumeroIngreso.StylePriority.UseFont = false;
-            this.lblNumeroIngreso.StylePriority.UseTextAlignment = false;
-            this.lblNumeroIngreso.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
             // lblCantidad
             // 
             this.lblCantidad.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblCantidad.BorderWidth = 2F;
-            this.lblCantidad.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 30F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.lblCantidad.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 30F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblCantidad.LocationFloat = new DevExpress.Utils.PointFloat(593.2292F, 406.3749F);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblCantidad.SizeF = new System.Drawing.SizeF(182.7708F, 58.41669F);
+            this.lblCantidad.SizeF = new System.Drawing.SizeF(182.7708F, 67.99997F);
             this.lblCantidad.StylePriority.UseBorders = false;
             this.lblCantidad.StylePriority.UseBorderWidth = false;
             this.lblCantidad.StylePriority.UseFont = false;
@@ -634,11 +732,12 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel6.BorderWidth = 2F;
-            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(430.146F, 406.3749F);
+            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(430.1459F, 406.3749F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(152.0417F, 58.41669F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(152.0416F, 67.99997F);
             this.xrLabel6.StylePriority.UseBorders = false;
             this.xrLabel6.StylePriority.UseBorderWidth = false;
             this.xrLabel6.StylePriority.UseFont = false;
@@ -652,11 +751,12 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblFechaProduccion.BorderWidth = 2F;
-            this.lblFechaProduccion.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.lblFechaProduccion.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblFechaProduccion.LocationFloat = new DevExpress.Utils.PointFloat(334.375F, 477.2917F);
             this.lblFechaProduccion.Name = "lblFechaProduccion";
             this.lblFechaProduccion.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblFechaProduccion.SizeF = new System.Drawing.SizeF(441.625F, 34.45844F);
+            this.lblFechaProduccion.SizeF = new System.Drawing.SizeF(441.62F, 35.5F);
             this.lblFechaProduccion.StylePriority.UseBorders = false;
             this.lblFechaProduccion.StylePriority.UseBorderWidth = false;
             this.lblFechaProduccion.StylePriority.UseFont = false;
@@ -669,7 +769,8 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel8.BorderWidth = 2F;
-            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(0.458463F, 477.2917F);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -687,7 +788,8 @@ namespace LOSA.Reproceso
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel10.BorderWidth = 2F;
-            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(0.458463F, 514.7499F);
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -709,73 +811,23 @@ namespace LOSA.Reproceso
             this.lblFechadeVencimiento.LocationFloat = new DevExpress.Utils.PointFloat(334.375F, 515.79F);
             this.lblFechadeVencimiento.Name = "lblFechadeVencimiento";
             this.lblFechadeVencimiento.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblFechadeVencimiento.SizeF = new System.Drawing.SizeF(441.62F, 34.46F);
+            this.lblFechadeVencimiento.SizeF = new System.Drawing.SizeF(441.62F, 35.5F);
             this.lblFechadeVencimiento.StylePriority.UseBorders = false;
             this.lblFechadeVencimiento.StylePriority.UseBorderWidth = false;
             this.lblFechadeVencimiento.StylePriority.UseFont = false;
             this.lblFechadeVencimiento.StylePriority.UseTextAlignment = false;
             this.lblFechadeVencimiento.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel9
-            // 
-            this.xrLabel9.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel9.BorderWidth = 2F;
-            this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 36F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(0.458463F, 553.2083F);
-            this.xrLabel9.Name = "xrLabel9";
-            this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel9.SizeF = new System.Drawing.SizeF(322.9167F, 66.75F);
-            this.xrLabel9.StylePriority.UseBorders = false;
-            this.xrLabel9.StylePriority.UseBorderWidth = false;
-            this.xrLabel9.StylePriority.UseFont = false;
-            this.xrLabel9.StylePriority.UseTextAlignment = false;
-            this.xrLabel9.Text = "Lote";
-            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // lblLote
-            // 
-            this.lblLote.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblLote.BorderWidth = 2F;
-            this.lblLote.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 60F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.lblLote.LocationFloat = new DevExpress.Utils.PointFloat(0.0001882017F, 624.2916F);
-            this.lblLote.Name = "lblLote";
-            this.lblLote.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblLote.SizeF = new System.Drawing.SizeF(775.9948F, 82.37506F);
-            this.lblLote.StylePriority.UseBorders = false;
-            this.lblLote.StylePriority.UseBorderWidth = false;
-            this.lblLote.StylePriority.UseFont = false;
-            this.lblLote.StylePriority.UseTextAlignment = false;
-            this.lblLote.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // BarCode2
-            // 
-            this.BarCode2.AutoModule = true;
-            this.BarCode2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.BarCode2.LocationFloat = new DevExpress.Utils.PointFloat(207.771F, 709.4166F);
-            this.BarCode2.Name = "BarCode2";
-            this.BarCode2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.BarCode2.SizeF = new System.Drawing.SizeF(374.4166F, 114F);
-            this.BarCode2.StylePriority.UseFont = false;
-            this.BarCode2.StylePriority.UseTextAlignment = false;
-            this.BarCode2.Symbology = code93Generator2;
-            this.BarCode2.Text = "TM0000000009";
-            this.BarCode2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
             // xrLabel4
             // 
-            this.xrLabel4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrLabel4.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right)));
             this.xrLabel4.BorderWidth = 2F;
             this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(334.8333F, 553.2083F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 406.3749F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(118.71F, 34F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(98.9184F, 34F);
             this.xrLabel4.StylePriority.UseBorders = false;
             this.xrLabel4.StylePriority.UseBorderWidth = false;
             this.xrLabel4.StylePriority.UseFont = false;
@@ -785,20 +837,85 @@ namespace LOSA.Reproceso
             // 
             // txtcodigo
             // 
-            this.txtcodigo.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.txtcodigo.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right)));
             this.txtcodigo.BorderWidth = 2F;
             this.txtcodigo.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.txtcodigo.LocationFloat = new DevExpress.Utils.PointFloat(459.6041F, 553.2083F);
+            this.txtcodigo.LocationFloat = new DevExpress.Utils.PointFloat(111.4184F, 406.3749F);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txtcodigo.SizeF = new System.Drawing.SizeF(316.3905F, 34F);
+            this.txtcodigo.SizeF = new System.Drawing.SizeF(303.8905F, 34F);
             this.txtcodigo.StylePriority.UseBorders = false;
             this.txtcodigo.StylePriority.UseBorderWidth = false;
             this.txtcodigo.StylePriority.UseFont = false;
             this.txtcodigo.StylePriority.UseTextAlignment = false;
             this.txtcodigo.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // lblLote
+            // 
+            this.lblLote.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lblLote.BorderWidth = 2F;
+            this.lblLote.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 60F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.lblLote.LocationFloat = new DevExpress.Utils.PointFloat(247.3386F, 9.999974F);
+            this.lblLote.Name = "lblLote";
+            this.lblLote.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblLote.SizeF = new System.Drawing.SizeF(520.6613F, 80.29175F);
+            this.lblLote.StylePriority.UseBorders = false;
+            this.lblLote.StylePriority.UseBorderWidth = false;
+            this.lblLote.StylePriority.UseFont = false;
+            this.lblLote.StylePriority.UseTextAlignment = false;
+            this.lblLote.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // BarCode2
+            // 
+            this.BarCode2.AutoModule = true;
+            this.BarCode2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.BarCode2.LocationFloat = new DevExpress.Utils.PointFloat(207.771F, 107.0422F);
+            this.BarCode2.Name = "BarCode2";
+            this.BarCode2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
+            this.BarCode2.SizeF = new System.Drawing.SizeF(374.4166F, 114F);
+            this.BarCode2.StylePriority.UseFont = false;
+            this.BarCode2.StylePriority.UseTextAlignment = false;
+            this.BarCode2.Symbology = code93Generator2;
+            this.BarCode2.Text = "TM0000000009";
+            this.BarCode2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel9
+            // 
+            this.xrLabel9.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrLabel9.BorderWidth = 2F;
+            this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 36F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(0.4583994F, 9.999974F);
+            this.xrLabel9.Name = "xrLabel9";
+            this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel9.SizeF = new System.Drawing.SizeF(234.375F, 80.29175F);
+            this.xrLabel9.StylePriority.UseBorders = false;
+            this.xrLabel9.StylePriority.UseBorderWidth = false;
+            this.xrLabel9.StylePriority.UseFont = false;
+            this.xrLabel9.StylePriority.UseTextAlignment = false;
+            this.xrLabel9.Text = "Lote";
+            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // ReportFooter
+            // 
+            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.lblLote,
+            this.xrLabel9,
+            this.BarCode2});
+            this.ReportFooter.HeightF = 235.6674F;
+            this.ReportFooter.Name = "ReportFooter";
+            // 
+            // dsRecepcionMPx1
+            // 
+            this.dsRecepcionMPx1.DataSetName = "dsRecepcionMPx";
+            this.dsRecepcionMPx1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rptTarimaReproceso
             // 
@@ -807,10 +924,18 @@ namespace LOSA.Reproceso
             this.BottomMargin,
             this.Detail,
             this.ReportHeader,
-            this.PageHeader});
+            this.PageHeader,
+            this.ReportFooter});
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.dsRecepcionMPx1});
+            this.DataMember = "causas_reproceso";
+            this.DataSource = this.dsRecepcionMPx1;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
-            this.Margins = new DevExpress.Drawing.DXMargins(36, 38, 31, 10);
-            this.Version = "18.2";
+            this.Margins = new DevExpress.Drawing.DXMargins(36F, 38F, 31F, 10F);
+            this.Version = "23.1";
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -848,20 +973,29 @@ namespace LOSA.Reproceso
         private DevExpress.XtraReports.UI.XRLabel lblTipoReproceso;
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRLabel lblFechaIngreso;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel5;
-        private DevExpress.XtraReports.UI.XRLabel lblNumeroIngreso;
         private DevExpress.XtraReports.UI.XRLabel lblCantidad;
         private DevExpress.XtraReports.UI.XRLabel xrLabel6;
         private DevExpress.XtraReports.UI.XRLabel lblFechaProduccion;
         private DevExpress.XtraReports.UI.XRLabel xrLabel8;
         private DevExpress.XtraReports.UI.XRLabel xrLabel10;
         private DevExpress.XtraReports.UI.XRLabel lblFechadeVencimiento;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel9;
         private DevExpress.XtraReports.UI.XRLabel lblLote;
         private DevExpress.XtraReports.UI.XRBarCode BarCode2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
         private DevExpress.XtraReports.UI.XRLabel txtcodigo;
         private DevExpress.XtraReports.UI.XRLabel xrlblTurno;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel9;
+        private DevExpress.XtraReports.UI.XRTable xrTable1;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel5;
+        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
+        private DevExpress.XtraReports.UI.XRTable xrTable3;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow3;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell7;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell8;
+        private RecepcionMP.dsRecepcionMPx dsRecepcionMPx1;
     }
 }

@@ -48,6 +48,13 @@ namespace LOSA.RecepcionMP
             {
                 btnAgregar.Visible = true;
             }
+
+            if (ItemCode == "MP00080" || ItemCode == "MP00081")
+            {
+                btnAgregar.Visible = false;
+                simpleButton1.Visible = false;
+
+            }
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
