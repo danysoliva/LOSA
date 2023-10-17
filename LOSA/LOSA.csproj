@@ -2863,6 +2863,17 @@
     <Compile Include="MigracionACS\Produccion\Llenado_Zarandas.designer.cs">
       <DependentUpon>Llenado_Zarandas.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\MedicionElectrica\dsMedicionElectrica.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMedicionElectrica.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\MedicionElectrica\frmMedicionElectricaKWH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\MedicionElectrica\frmMedicionElectricaKWH.Designer.cs">
+      <DependentUpon>frmMedicionElectricaKWH.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\Molinos\dsMolinosEficiencia1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -4810,6 +4821,17 @@
     </None>
     <None Include="MigracionACS\Produccion\ForecastPRD\dsFCT_PRD.xss">
       <DependentUpon>dsFCT_PRD.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\MedicionElectrica\dsMedicionElectrica.xsc">
+      <DependentUpon>dsMedicionElectrica.xsd</DependentUpon>
+    </None>
+    <None Include="MigracionACS\Produccion\MedicionElectrica\dsMedicionElectrica.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMedicionElectrica.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MigracionACS\Produccion\MedicionElectrica\dsMedicionElectrica.xss">
+      <DependentUpon>dsMedicionElectrica.xsd</DependentUpon>
     </None>
     <None Include="MigracionACS\Produccion\Molinos\dsMolinosEficiencia.xsc">
       <DependentUpon>dsMolinosEficiencia.xsd</DependentUpon>
@@ -7481,6 +7503,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Llenado_Zarandas.resx">
       <DependentUpon>Llenado_Zarandas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\MedicionElectrica\frmMedicionElectricaKWH.resx">
+      <DependentUpon>frmMedicionElectricaKWH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\Molinos\xfrmEficienciaMolinos.resx">
       <DependentUpon>xfrmEficienciaMolinos.cs</DependentUpon>

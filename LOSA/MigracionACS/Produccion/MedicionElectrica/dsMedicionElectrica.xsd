@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsMedicionElectrica" targetNamespace="http://tempuri.org/dsMedicionElectrica.xsd" xmlns:mstns="http://tempuri.org/dsMedicionElectrica.xsd" xmlns="http://tempuri.org/dsMedicionElectrica.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsMedicionElectrica" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsMedicionElectrica" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMedicionElectrica">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="turnos" msprop:Generator_RowEvHandlerName="turnosRowChangeEventHandler" msprop:Generator_RowDeletedName="turnosRowDeleted" msprop:Generator_RowDeletingName="turnosRowDeleting" msprop:Generator_RowEvArgName="turnosRowChangeEvent" msprop:Generator_TablePropName="turnos" msprop:Generator_RowChangedName="turnosRowChanged" msprop:Generator_UserTableName="turnos" msprop:Generator_RowChangingName="turnosRowChanging" msprop:Generator_RowClassName="turnosRow" msprop:Generator_TableClassName="turnosDataTable" msprop:Generator_TableVarName="tableturnos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_acs_turno" msprop:Generator_ColumnPropNameInTable="id_acs_turnoColumn" msprop:Generator_ColumnPropNameInRow="id_acs_turno" msprop:Generator_UserColumnName="id_acs_turno" msprop:Generator_ColumnVarNameInTable="columnid_acs_turno" type="xs:int" minOccurs="0" />
+              <xs:element name="order_id" msprop:Generator_ColumnPropNameInTable="order_idColumn" msprop:Generator_ColumnPropNameInRow="order_id" msprop:Generator_UserColumnName="order_id" msprop:Generator_ColumnVarNameInTable="columnorder_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Lote" msprop:Generator_ColumnPropNameInTable="LoteColumn" msprop:Generator_ColumnPropNameInRow="Lote" msprop:Generator_UserColumnName="Lote" msprop:Generator_ColumnVarNameInTable="columnLote" type="xs:int" minOccurs="0" />
+              <xs:element name="turno" msprop:Generator_ColumnPropNameInTable="turnoColumn" msprop:Generator_ColumnPropNameInRow="turno" msprop:Generator_UserColumnName="turno" msprop:Generator_ColumnVarNameInTable="columnturno" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_UserColumnName="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="horario" msprop:Generator_ColumnPropNameInTable="horarioColumn" msprop:Generator_ColumnPropNameInRow="horario" msprop:Generator_UserColumnName="horario" msprop:Generator_ColumnVarNameInTable="columnhorario" type="xs:string" minOccurs="0" />
+              <xs:element name="order_code" msprop:Generator_ColumnPropNameInTable="order_codeColumn" msprop:Generator_ColumnPropNameInRow="order_code" msprop:Generator_UserColumnName="order_code" msprop:Generator_ColumnVarNameInTable="columnorder_code" type="xs:string" minOccurs="0" />
+              <xs:element name="id_turno_horario" msprop:Generator_ColumnPropNameInTable="id_turno_horarioColumn" msprop:Generator_ColumnPropNameInRow="id_turno_horario" msprop:Generator_UserColumnName="id_turno_horario" msprop:Generator_ColumnVarNameInTable="columnid_turno_horario" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_inicio" msprop:Generator_ColumnPropNameInRow="fecha_inicio" msprop:Generator_ColumnPropNameInTable="fecha_inicioColumn" msprop:Generator_ColumnVarNameInTable="columnfecha_inicio" msprop:Generator_UserColumnName="fecha_inicio" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="detalle_consumos_kwh" msprop:Generator_RowClassName="detalle_consumos_kwhRow" msprop:Generator_RowEvHandlerName="detalle_consumos_kwhRowChangeEventHandler" msprop:Generator_RowDeletedName="detalle_consumos_kwhRowDeleted" msprop:Generator_RowDeletingName="detalle_consumos_kwhRowDeleting" msprop:Generator_RowEvArgName="detalle_consumos_kwhRowChangeEvent" msprop:Generator_TablePropName="detalle_consumos_kwh" msprop:Generator_RowChangedName="detalle_consumos_kwhRowChanged" msprop:Generator_UserTableName="detalle_consumos_kwh" msprop:Generator_RowChangingName="detalle_consumos_kwhRowChanging" msprop:Generator_TableClassName="detalle_consumos_kwhDataTable" msprop:Generator_TableVarName="tabledetalle_consumos_kwh">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_sub_maquina" msprop:Generator_UserColumnName="id_sub_maquina" msprop:Generator_ColumnPropNameInTable="id_sub_maquinaColumn" msprop:Generator_ColumnPropNameInRow="id_sub_maquina" msprop:Generator_ColumnVarNameInTable="columnid_sub_maquina" type="xs:int" minOccurs="0" />
+              <xs:element name="SubMaquinaName" msdata:Caption="Sub Maquina Name" msprop:Generator_UserColumnName="SubMaquinaName" msprop:Generator_ColumnPropNameInTable="SubMaquinaNameColumn" msprop:Generator_ColumnPropNameInRow="SubMaquinaName" msprop:Generator_ColumnVarNameInTable="columnSubMaquinaName" type="xs:string" minOccurs="0" />
+              <xs:element name="id_maquina" msprop:Generator_UserColumnName="id_maquina" msprop:Generator_ColumnPropNameInTable="id_maquinaColumn" msprop:Generator_ColumnPropNameInRow="id_maquina" msprop:Generator_ColumnVarNameInTable="columnid_maquina" type="xs:int" minOccurs="0" />
+              <xs:element name="MaquinaName" msdata:Caption="Maquina Name" msprop:Generator_UserColumnName="MaquinaName" msprop:Generator_ColumnPropNameInTable="MaquinaNameColumn" msprop:Generator_ColumnPropNameInRow="MaquinaName" msprop:Generator_ColumnVarNameInTable="columnMaquinaName" type="xs:string" minOccurs="0" />
+              <xs:element name="PLC" msprop:Generator_UserColumnName="PLC" msprop:Generator_ColumnPropNameInTable="PLCColumn" msprop:Generator_ColumnPropNameInRow="PLC" msprop:Generator_ColumnVarNameInTable="columnPLC" type="xs:string" minOccurs="0" />
+              <xs:element name="Kwh" msdata:Caption="Kw/h" msprop:Generator_UserColumnName="Kwh" msprop:Generator_ColumnPropNameInTable="KwhColumn" msprop:Generator_ColumnPropNameInRow="Kwh" msprop:Generator_ColumnVarNameInTable="columnKwh" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

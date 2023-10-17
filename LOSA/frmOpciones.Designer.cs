@@ -77,6 +77,7 @@
             this.cmdRequisiciones_ = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanrequisas = new DevExpress.XtraEditors.SimpleButton();
             this.tabPT = new DevExpress.XtraTab.XtraTabPage();
+            this.btn_historic_inventario = new DevExpress.XtraEditors.SimpleButton();
             this.btnMaterialEmpaquePT = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add_tarimas_pt = new DevExpress.XtraEditors.SimpleButton();
             this.btnHistorialPT = new DevExpress.XtraEditors.SimpleButton();
@@ -292,7 +293,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btn_historic_inventario = new DevExpress.XtraEditors.SimpleButton();
+            this.navBarItem23 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1051,6 +1052,19 @@
             this.tabPT.Size = new System.Drawing.Size(833, 451);
             this.tabPT.Text = "Producto Terminado";
             this.tabPT.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPT_Paint);
+            // 
+            // btn_historic_inventario
+            // 
+            this.btn_historic_inventario.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btn_historic_inventario.Appearance.Options.UseFont = true;
+            this.btn_historic_inventario.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_historic_inventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_historic_inventario.ImageOptions.Image")));
+            this.btn_historic_inventario.Location = new System.Drawing.Point(3, 109);
+            this.btn_historic_inventario.Name = "btn_historic_inventario";
+            this.btn_historic_inventario.Size = new System.Drawing.Size(198, 42);
+            this.btn_historic_inventario.TabIndex = 53;
+            this.btn_historic_inventario.Text = "Inventario Despachos";
+            this.btn_historic_inventario.Click += new System.EventHandler(this.btn_historic_inventario_Click);
             // 
             // btnMaterialEmpaquePT
             // 
@@ -1946,7 +1960,8 @@
             this.navBarItem19,
             this.navBarItem2,
             this.navBarItem9,
-            this.navBarItem21});
+            this.navBarItem21,
+            this.navBarItem23});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
@@ -2101,7 +2116,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbForeCastPRD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbConfiguraciones),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem22),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem21)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem21),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem23)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // nbReporteBatch
@@ -4180,18 +4196,18 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // btn_historic_inventario
+            // navBarItem23
             // 
-            this.btn_historic_inventario.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btn_historic_inventario.Appearance.Options.UseFont = true;
-            this.btn_historic_inventario.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_historic_inventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton74.ImageOptions.Image")));
-            this.btn_historic_inventario.Location = new System.Drawing.Point(3, 109);
-            this.btn_historic_inventario.Name = "btn_historic_inventario";
-            this.btn_historic_inventario.Size = new System.Drawing.Size(198, 42);
-            this.btn_historic_inventario.TabIndex = 53;
-            this.btn_historic_inventario.Text = "Inventario Despachos";
-            this.btn_historic_inventario.Click += new System.EventHandler(this.btn_historic_inventario_Click);
+            this.navBarItem23.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.Appearance.Options.UseFont = true;
+            this.navBarItem23.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem23.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.AppearancePressed.Options.UseFont = true;
+            this.navBarItem23.Caption = "Medición Electrica";
+            this.navBarItem23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem23.ImageOptions.SvgImage")));
+            this.navBarItem23.Name = "navBarItem23";
+            this.navBarItem23.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem23_LinkClicked);
             // 
             // frmOpciones
             // 
@@ -4499,5 +4515,6 @@
         private DevExpress.XtraEditors.SimpleButton btnNotificaciones;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton btn_historic_inventario;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem23;
     }
 }
