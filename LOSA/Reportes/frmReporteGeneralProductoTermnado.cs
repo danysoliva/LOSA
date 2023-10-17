@@ -69,7 +69,6 @@ namespace LOSA.Reportes
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
         }

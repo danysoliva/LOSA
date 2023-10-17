@@ -94,8 +94,8 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.txtnombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtformula.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_fecharegistro.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_fecharegistro.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_fecharegistro.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_turno_inicial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).BeginInit();
@@ -111,10 +111,10 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.txtcomentarios.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_turno_fin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtdesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtdesde.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dthasta.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtdesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dthasta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dthasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCandidadSacos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRango.Properties)).BeginInit();
             this.SuspendLayout();
@@ -685,7 +685,7 @@ namespace LOSA.Calidad.Parametros
             this.dtdesde.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dtdesde.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dtdesde.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dtdesde.Size = new System.Drawing.Size(225, 24);
+            this.dtdesde.Size = new System.Drawing.Size(135, 24);
             this.dtdesde.TabIndex = 26;
             // 
             // dthasta
@@ -707,7 +707,7 @@ namespace LOSA.Calidad.Parametros
             this.dthasta.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dthasta.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dthasta.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dthasta.Size = new System.Drawing.Size(225, 24);
+            this.dthasta.Size = new System.Drawing.Size(135, 24);
             this.dthasta.TabIndex = 27;
             // 
             // labelControl12

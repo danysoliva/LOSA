@@ -224,9 +224,9 @@ namespace LOSA.RecepcionMP
             this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Controls.Add(this.step1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 529);
+            this.panel1.Location = new System.Drawing.Point(0, 446);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 21);
+            this.panel1.Size = new System.Drawing.Size(642, 77);
             this.panel1.TabIndex = 8;
             // 
             // pictureEdit4
@@ -305,7 +305,7 @@ namespace LOSA.RecepcionMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 550);
+            this.ClientSize = new System.Drawing.Size(642, 523);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.labelControl5);

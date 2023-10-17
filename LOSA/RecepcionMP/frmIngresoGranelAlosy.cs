@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using LOSA.AlmacenesExterno;
 using LOSA.Clases;
+using LOSA.Utileria;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -34,6 +35,8 @@ namespace LOSA.RecepcionMP
             UsuarioLogeado = pUsuarioLogeado;
             pLista = pArray;
             dtFechaIngreso.EditValue = string.Format("{0:dd/MM/yyyy}", dp.Now());
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
             //if (pItem.ItemCode == "MP00003" || pItem.ItemCode == "MP00004")
             //{
             //    txtCodigoMP.Text = "MP00002";
@@ -45,6 +48,8 @@ namespace LOSA.RecepcionMP
             //    txtMP_Name.Text = pItem.Card_Name;
             //}
             txtLote.Text = pItem.Lote;
+            txtCodigoMP.Text = pItem.ItemCode;
+            txtMP_Name.Text = pItem.Card_Name;
             IdLoteSelected = pItem.IdLote;
             LoadBarcos();
             LoadUbicaciones();
@@ -119,6 +124,8 @@ namespace LOSA.RecepcionMP
         {
             InitializeComponent();
             UsuarioLogeado = pUsuarioLogeado;
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
             pLista = pArray;
             dtFechaIngreso.EditValue = string.Format("{0:dd/MM/yyyy}", dp.Now());
             txtCodigoMP.Text = pItem.ItemCode;
@@ -260,6 +267,13 @@ namespace LOSA.RecepcionMP
 
         private void cmdGenerarIngreso_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(txtCodigoMP.Text))
+            {
+                CajaDialogo.Error("Es necesario saber la Materia Prima que se Registrara");
+                return;
+            }
+
             if(dtFechaVencimiento.EditValue == null)
             {
                 CajaDialogo.Error("Es necesario seleccionar una fecha de Vencimiento!");
@@ -318,6 +332,47 @@ namespace LOSA.RecepcionMP
                 return;
             }
 
+            //VALIDACION DE NOMBRE DE LOTE!
+            try
+            {
+                bool permitir = false;
+                string mensaje = "";
+
+                MateriaPrima mp1 = new MateriaPrima();
+                mp1.RecuperarRegistroFromCode(txtCodigoMP.Text);
+
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd1 = new SqlCommand("sp_validar_existencia_lote_granel", conn);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.Parameters.AddWithValue("@lote", txtLote.Text.Trim());
+                cmd1.Parameters.AddWithValue("@fecha_prod", dtFechaProduccion.DateTime);
+                cmd1.Parameters.AddWithValue("@fecha_vencimiento", dtFechaVencimiento.DateTime);
+                cmd1.Parameters.AddWithValue("@id_mp", mp1.IdMP_ACS);
+                SqlDataReader dr = cmd1.ExecuteReader();
+                if (dr.Read())
+                {
+                    permitir = dr.GetBoolean(0);
+                    mensaje = dr.GetString(1);
+
+                }
+                dr.Close();
+                conn.Close();
+
+                if (!permitir)
+                {
+                    frmMensajeCalidad frm = new frmMensajeCalidad(frmMensajeCalidad.TipoMsj.error, mensaje);
+                    frm.ShowDialog();
+                    return;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+
             //SqlConnection cn;
             SqlCommand cmd;
             SqlTransaction transaction = null;
@@ -353,7 +408,7 @@ namespace LOSA.RecepcionMP
                     ingreso = Convert.ToInt32(cmd.ExecuteScalar());
                 }
                 else//Es ingreso existente
-                {   
+                {
                     ingreso = Convert.ToInt32(txtingreso.Text);
                 }
 
@@ -428,7 +483,7 @@ namespace LOSA.RecepcionMP
                 int id_salida_h = 0;
                 IngresoExternoH IngresoExterno1 = new IngresoExternoH();
                 IngresoExternoD DetalleExterno1 = new IngresoExternoD();
-                
+
                 if (IngresoExterno1.RecuperarRegistro(id_externo_ingreso))
                 {
                     if (DetalleExterno1.RecuperaRegistroInFromIdIngresoH_and_MP_Code(id_externo_ingreso))
@@ -597,9 +652,7 @@ namespace LOSA.RecepcionMP
 
                     }
                 }
-               
 
-                
                 Guardo = true;
                 transaction.Commit();
                 cnx.Close();
@@ -618,6 +671,11 @@ namespace LOSA.RecepcionMP
             }
 
 
+        }
+
+        private void ValidarExistenciaLote()
+        {
+            
         }
 
         private void grdbarco_EditValueChanged(object sender, EventArgs e)
