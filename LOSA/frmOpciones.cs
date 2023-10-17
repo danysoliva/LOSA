@@ -79,7 +79,6 @@ using LOSA.Accesos.Notificaciones;
 using LOSA.MigracionACS.RRHH.Vacaciones;
 using SAPbouiCOM;
 using DataTable = System.Data.DataTable;
-using LOSA.MigracionACS.Produccion.MedicionElectrica;
 
 namespace LOSA
 {
@@ -2970,7 +2969,6 @@ namespace LOSA
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
-            
             }
         }
 
@@ -3889,43 +3887,11 @@ namespace LOSA
             frm.Show();
         }
 
-        private void navBarItem23_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void btn_historic_inventario_Click(object sender, EventArgs e)
         {
-            bool accesoprevio = false;
-            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
-            switch (idNivel)
-            {
-                case 1://Basic View
-                    break;
-                case 2://Basic No Autorization
-                    break;
-                case 3://Medium Autorization
-                    break;
-                case 4://Depth With Delta
-                    accesoprevio = true;
-                    frmMedicionElectricaKWH frm = new frmMedicionElectricaKWH();
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                    break;
-                case 5://Depth Without Delta
-                    break;
-                default:
-                    break;
-            }
-
-            if (!accesoprevio)
-            {
-                if (UsuarioLogeado.ValidarNivelPermisos(45))
-                {
-                    frmMedicionElectricaKWH frm = new frmMedicionElectricaKWH();
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
-                }
-                else
-                {
-                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #45");
-                }
-            }
+            frmReporteGeneralProductoTermnado frm = new frmReporteGeneralProductoTermnado(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
     }
 }

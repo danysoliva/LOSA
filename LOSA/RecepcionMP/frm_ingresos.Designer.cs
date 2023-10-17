@@ -104,6 +104,7 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesdeDisponibles = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ingreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_ingreso)).BeginInit();
@@ -193,7 +194,7 @@
             this.colNingreso.OptionsColumn.AllowEdit = false;
             this.colNingreso.Visible = true;
             this.colNingreso.VisibleIndex = 0;
-            this.colNingreso.Width = 56;
+            this.colNingreso.Width = 90;
             // 
             // colitemcode
             // 
@@ -203,7 +204,7 @@
             this.colitemcode.OptionsColumn.AllowEdit = false;
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 1;
-            this.colitemcode.Width = 70;
+            this.colitemcode.Width = 113;
             // 
             // colItemName
             // 
@@ -213,7 +214,7 @@
             this.colItemName.OptionsColumn.AllowEdit = false;
             this.colItemName.Visible = true;
             this.colItemName.VisibleIndex = 2;
-            this.colItemName.Width = 153;
+            this.colItemName.Width = 248;
             // 
             // colid_proveedor
             // 
@@ -231,7 +232,7 @@
             this.colCardName.OptionsColumn.AllowEdit = false;
             this.colCardName.Visible = true;
             this.colCardName.VisibleIndex = 4;
-            this.colCardName.Width = 163;
+            this.colCardName.Width = 264;
             // 
             // coltarimas
             // 
@@ -240,7 +241,7 @@
             this.coltarimas.Name = "coltarimas";
             this.coltarimas.Visible = true;
             this.coltarimas.VisibleIndex = 6;
-            this.coltarimas.Width = 78;
+            this.coltarimas.Width = 90;
             // 
             // btnver
             // 
@@ -264,7 +265,7 @@
             this.colprint.Name = "colprint";
             this.colprint.Visible = true;
             this.colprint.VisibleIndex = 7;
-            this.colprint.Width = 63;
+            this.colprint.Width = 84;
             // 
             // btnprint
             // 
@@ -300,7 +301,7 @@
             this.colEditar.Name = "colEditar";
             this.colEditar.Visible = true;
             this.colEditar.VisibleIndex = 8;
-            this.colEditar.Width = 65;
+            this.colEditar.Width = 80;
             // 
             // btnEdit
             // 
@@ -325,7 +326,7 @@
             this.coldescripcion.OptionsColumn.AllowEdit = false;
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 5;
-            this.coldescripcion.Width = 73;
+            this.coldescripcion.Width = 118;
             // 
             // colprinttraslado
             // 
@@ -383,15 +384,16 @@
             this.colfecha_creacion.OptionsColumn.AllowEdit = false;
             this.colfecha_creacion.Visible = true;
             this.colfecha_creacion.VisibleIndex = 3;
-            this.colfecha_creacion.Width = 89;
+            this.colfecha_creacion.Width = 144;
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "Documentos";
+            this.gridColumn1.Caption = "Documentos / Observaciones";
             this.gridColumn1.ColumnEdit = this.reposAdjunto;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 9;
+            this.gridColumn1.Width = 205;
             // 
             // reposAdjunto
             // 
@@ -548,10 +550,21 @@
             this.labelControl8.TabIndex = 96;
             this.labelControl8.Text = "Fecha Desde:";
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(976, 12);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 117;
+            this.txtVentana.Text = "frm_ingresos";
+            this.txtVentana.Visible = false;
+            // 
             // frm_ingresos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1462, 641);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.cmdRefreshDisponibles);
             this.Controls.Add(this.toggleSwitchVerTodos_Disponibles);
             this.Controls.Add(this.labelControl1);
@@ -631,5 +644,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposAdjunto;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }

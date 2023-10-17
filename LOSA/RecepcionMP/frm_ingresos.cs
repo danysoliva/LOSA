@@ -34,6 +34,9 @@ namespace LOSA.RecepcionMP
 
             Load_Info();
 
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
+
 
         }
         public void Load_Info()
@@ -421,5 +424,6 @@ namespace LOSA.RecepcionMP
             frmIngresoAdjuntos frm = new frmIngresoAdjuntos(row.id, row.itemcode, row.Ningreso, UsuarioLogeado);
             frm.Show();
         }
+
     }
 }

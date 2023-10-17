@@ -100,7 +100,6 @@
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.txtsap = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             this.id_ingreso = new DevExpress.XtraReports.Parameters.Parameter();
             this.id_materia_prima = new DevExpress.XtraReports.Parameters.Parameter();
             this.is_granel = new DevExpress.XtraReports.Parameters.Parameter();
@@ -258,12 +257,13 @@
             this.xrLabel150 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrCheckBox27 = new DevExpress.XtraReports.UI.XRCheckBox();
             this.xrCheckBox26 = new DevExpress.XtraReports.UI.XRCheckBox();
-            this.xrLabel151 = new DevExpress.XtraReports.UI.XRLabel();
+            this.txtObservacion = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel152 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel153 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel154 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel156 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel155 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -1231,16 +1231,6 @@
             this.xrLabel26});
             this.GroupFooter1.HeightF = 468.4779F;
             this.GroupFooter1.Name = "GroupFooter1";
-            // 
-            // xrSubreport1
-            // 
-            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 343.5817F);
-            this.xrSubreport1.Name = "xrSubreport1";
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_ingreso", this.id_ingreso));
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_materia_prima", this.id_materia_prima));
-            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("is_granel", this.is_granel));
-            this.xrSubreport1.ReportSource = new LOSA.Reportes.subReporteIngresoHoja();
-            this.xrSubreport1.SizeF = new System.Drawing.SizeF(862.6894F, 100F);
             // 
             // id_ingreso
             // 
@@ -2833,7 +2823,7 @@
             this.xrLabel150,
             this.xrCheckBox27,
             this.xrCheckBox26,
-            this.xrLabel151,
+            this.txtObservacion,
             this.xrLabel152,
             this.xrLabel153,
             this.xrLabel154,
@@ -3503,18 +3493,17 @@
             this.xrCheckBox26.Text = "ACEPTADO";
             this.xrCheckBox26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleJustify;
             // 
-            // xrLabel151
+            // txtObservacion
             // 
-            this.xrLabel151.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrLabel151.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
-            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel151.LocationFloat = new DevExpress.Utils.PointFloat(142.3482F, 605.2474F);
-            this.xrLabel151.Multiline = true;
-            this.xrLabel151.Name = "xrLabel151";
-            this.xrLabel151.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel151.SizeF = new System.Drawing.SizeF(738.9924F, 14.28998F);
-            this.xrLabel151.StylePriority.UseBorders = false;
-            this.xrLabel151.StylePriority.UseFont = false;
+            this.txtObservacion.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.txtObservacion.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Underline);
+            this.txtObservacion.LocationFloat = new DevExpress.Utils.PointFloat(142.3482F, 605.2473F);
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txtObservacion.SizeF = new System.Drawing.SizeF(738.9924F, 71.45013F);
+            this.txtObservacion.StylePriority.UseBorders = false;
+            this.txtObservacion.StylePriority.UseFont = false;
             // 
             // xrLabel152
             // 
@@ -3540,6 +3529,7 @@
             this.xrLabel153.SizeF = new System.Drawing.SizeF(840.2244F, 14.28998F);
             this.xrLabel153.StylePriority.UseBorders = false;
             this.xrLabel153.StylePriority.UseFont = false;
+            this.xrLabel153.Visible = false;
             // 
             // xrLabel154
             // 
@@ -3553,6 +3543,7 @@
             this.xrLabel154.SizeF = new System.Drawing.SizeF(840.2244F, 14.28998F);
             this.xrLabel154.StylePriority.UseBorders = false;
             this.xrLabel154.StylePriority.UseFont = false;
+            this.xrLabel154.Visible = false;
             // 
             // xrLabel156
             // 
@@ -3566,6 +3557,7 @@
             this.xrLabel156.SizeF = new System.Drawing.SizeF(840.2244F, 14.28998F);
             this.xrLabel156.StylePriority.UseBorders = false;
             this.xrLabel156.StylePriority.UseFont = false;
+            this.xrLabel156.Visible = false;
             // 
             // xrLabel155
             // 
@@ -3579,6 +3571,17 @@
             this.xrLabel155.SizeF = new System.Drawing.SizeF(840.2244F, 14.28998F);
             this.xrLabel155.StylePriority.UseBorders = false;
             this.xrLabel155.StylePriority.UseFont = false;
+            this.xrLabel155.Visible = false;
+            // 
+            // xrSubreport1
+            // 
+            this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 343.5817F);
+            this.xrSubreport1.Name = "xrSubreport1";
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_ingreso", this.id_ingreso));
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("id_materia_prima", this.id_materia_prima));
+            this.xrSubreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("is_granel", this.is_granel));
+            this.xrSubreport1.ReportSource = new LOSA.Reportes.subReporteIngresoHoja();
+            this.xrSubreport1.SizeF = new System.Drawing.SizeF(862.6894F, 100F);
             // 
             // rptIngresoHoja
             // 
@@ -3602,7 +3605,7 @@
             this.id_ingreso,
             this.id_materia_prima,
             this.is_granel});
-            this.Version = "22.2";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
@@ -3714,7 +3717,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel150;
         private DevExpress.XtraReports.UI.XRCheckBox xrCheckBox27;
         private DevExpress.XtraReports.UI.XRCheckBox xrCheckBox26;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel151;
+        private DevExpress.XtraReports.UI.XRLabel txtObservacion;
         private DevExpress.XtraReports.UI.XRLabel xrLabel152;
         private DevExpress.XtraReports.UI.XRLabel xrLabel153;
         private DevExpress.XtraReports.UI.XRLabel xrLabel154;

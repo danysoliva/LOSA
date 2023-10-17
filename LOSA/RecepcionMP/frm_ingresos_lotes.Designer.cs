@@ -83,6 +83,8 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrintSeleccionados = new DevExpress.XtraEditors.SimpleButton();
             this.checkBoxSelectAll = new System.Windows.Forms.CheckBox();
+            this.txtVentana = new System.Windows.Forms.TextBox();
+            this.cmdRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRecepcionMPx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -118,9 +120,9 @@
             this.btnAgregar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnAgregar.ImageOptions.Image = global::LOSA.Properties.Resources.plus;
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(140, 6);
+            this.btnAgregar.Location = new System.Drawing.Point(172, 35);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(142, 73);
+            this.btnAgregar.Size = new System.Drawing.Size(114, 41);
             this.btnAgregar.TabIndex = 29;
             this.btnAgregar.Text = "Agregar \r\nlote";
             this.btnAgregar.Visible = false;
@@ -459,9 +461,9 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(12, 6);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 35);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(96, 73);
+            this.simpleButton1.Size = new System.Drawing.Size(103, 44);
             this.simpleButton1.TabIndex = 53;
             this.simpleButton1.Text = "Lotes";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -476,9 +478,9 @@
             this.btnPrintSeleccionados.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnPrintSeleccionados.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnPrintSeleccionados.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrintSeleccionados.ImageOptions.SvgImage")));
-            this.btnPrintSeleccionados.Location = new System.Drawing.Point(991, 6);
+            this.btnPrintSeleccionados.Location = new System.Drawing.Point(974, 34);
             this.btnPrintSeleccionados.Name = "btnPrintSeleccionados";
-            this.btnPrintSeleccionados.Size = new System.Drawing.Size(183, 73);
+            this.btnPrintSeleccionados.Size = new System.Drawing.Size(183, 44);
             this.btnPrintSeleccionados.TabIndex = 55;
             this.btnPrintSeleccionados.Text = "Imprimir Seleccionado";
             this.btnPrintSeleccionados.Click += new System.EventHandler(this.btnPrintSeleccionados_Click);
@@ -488,7 +490,7 @@
             this.checkBoxSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxSelectAll.AutoSize = true;
             this.checkBoxSelectAll.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBoxSelectAll.Location = new System.Drawing.Point(873, 59);
+            this.checkBoxSelectAll.Location = new System.Drawing.Point(856, 59);
             this.checkBoxSelectAll.Name = "checkBoxSelectAll";
             this.checkBoxSelectAll.Size = new System.Drawing.Size(112, 17);
             this.checkBoxSelectAll.TabIndex = 66;
@@ -496,11 +498,39 @@
             this.checkBoxSelectAll.UseVisualStyleBackColor = true;
             this.checkBoxSelectAll.CheckedChanged += new System.EventHandler(this.checkBoxSelectAll_CheckedChanged);
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(331, 6);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 117;
+            this.txtVentana.Text = "frm_ingresos_lotes";
+            this.txtVentana.Visible = false;
+            // 
+            // cmdRefresh
+            // 
+            this.cmdRefresh.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.cmdRefresh.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRefresh.Appearance.Options.UseBackColor = true;
+            this.cmdRefresh.Appearance.Options.UseFont = true;
+            this.cmdRefresh.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRefreshDisponibles.ImageOptions.Image")));
+            this.cmdRefresh.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.cmdRefresh.Location = new System.Drawing.Point(331, 35);
+            this.cmdRefresh.Name = "cmdRefresh";
+            this.cmdRefresh.Size = new System.Drawing.Size(117, 41);
+            this.cmdRefresh.TabIndex = 118;
+            this.cmdRefresh.Text = "Refresh";
+            this.cmdRefresh.Click += new System.EventHandler(this.cmdRefresh_Click);
+            // 
             // frm_ingresos_lotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 720);
+            this.Controls.Add(this.cmdRefresh);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.checkBoxSelectAll);
             this.Controls.Add(this.btnPrintSeleccionados);
             this.Controls.Add(this.btnAgregar);
@@ -559,5 +589,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colpresentacion;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia;
         private DevExpress.XtraGrid.Columns.GridColumn colub_rack;
+        private System.Windows.Forms.TextBox txtVentana;
+        private DevExpress.XtraEditors.SimpleButton cmdRefresh;
     }
 }

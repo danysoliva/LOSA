@@ -52,7 +52,7 @@ namespace LOSA.Clases
         string _productoTerminadoName_Detalle;
         string turno;
         int _tipo_tarima;
-        int ud_existencia;
+        decimal ud_existencia;
         decimal kg_existencia;
         bool tarima_existe;
         public Tarima()
@@ -111,6 +111,8 @@ namespace LOSA.Clases
         public int Id_lote_externo { get => _id_lote_externo; set => _id_lote_externo = value; }
         public int Tipo_tarima { get => _tipo_tarima; set => _tipo_tarima = value; }
         public bool Tarima_existe { get => tarima_existe; set => tarima_existe = value; }
+        public decimal Ud_existencia { get => ud_existencia; set => ud_existencia = value; }
+        public decimal Kg_existencia { get => kg_existencia; set => kg_existencia = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -733,8 +735,8 @@ namespace LOSA.Clases
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    ud_existencia = dr.GetInt32(0);
-                    kg_existencia = dr.GetDecimal(1);
+                    Ud_existencia = dr.GetDecimal(0);
+                    Kg_existencia = dr.GetDecimal(1);
                     Recuperado = true;
                 }
                 dr.Close();

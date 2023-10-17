@@ -127,6 +127,7 @@ namespace LOSA.Reportes
                 txtoc.Text = dr.IsDBNull(12) ? "" : dr.GetString(12).ToString();
                 txtsap.Text = dr.IsDBNull(12) ? "" : dr.GetString(12).ToString();
                 xrLabel5.Text = dr.IsDBNull(13) ? "" : dr.GetString(13).ToString();
+                txtObservacion.Text = dr.IsDBNull(14) ? "" : dr.GetString(14).ToString();
             }
             dr.Close();
             cn.Close();
@@ -157,6 +158,7 @@ namespace LOSA.Reportes
                     txtransporte.Text = dr.IsDBNull(10) ? "" : dr.GetString(10).ToString();
                     txtconductor.Text = dr.IsDBNull(11) ? "" : dr.GetString(11);
                     txtplaca.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
+                    txtObservacion.Text = dr.IsDBNull(13) ? "" : dr.GetString(13);
                 }
                 dr.Close();
                 cn.Close();
@@ -218,6 +220,7 @@ namespace LOSA.Reportes
                 txtransporte.Text = dr.IsDBNull(10) ? "" : dr.GetString(10).ToString();
                 txtconductor.Text = dr.IsDBNull(11) ? "" : dr.GetString(11);
                 txtplaca.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
+                txtObservacion.Text = dr.IsDBNull(13) ? "" : dr.GetString(13);
             }
             dr.Close();
             cn.Close();

@@ -114,7 +114,6 @@
             this.simpleButton7.Size = new System.Drawing.Size(199, 71);
             this.simpleButton7.TabIndex = 12;
             this.simpleButton7.Text = "Devoluciones MicroIngredientes";
-            this.simpleButton7.Visible = false;
             this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // simpleButton3

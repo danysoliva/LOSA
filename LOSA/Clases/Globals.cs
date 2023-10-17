@@ -156,21 +156,27 @@ namespace ACS.Classes
 
         #endregion
 
-        #region Credenciales de Testing PC 9PG91W2 - Ruben
+        #region Credenciales de Testing PC 6G1SST3 - Ruben
 
         ////ACS(Costos)
-        //public static string CTS_ServerAddress = "9PG91W2";
-        //public static string CTS_ServerName = "9PG91W2";
+        //public static string CTS_ServerAddress = "6G1SST3";
+        //public static string CTS_ServerName = "6G1SST3";
         //public static string CTS_ActiveDB = "ACS";
         //public static string CTS_DB_User = "sa";
         //public static string CTS_DB_Pass = "Marathones00";
 
-        ////LOSA
-        //public static string LOSA_ServerAddress = "9PG91W2";
-        //public static string LOSA_ServerName = "9PG91W2";
+        //////LOSA
+        //public static string LOSA_ServerAddress = "6G1SST3";
+        //public static string LOSA_ServerName = "6G1SST3";
         //public static string LOSA_ActiveDB = "LOSA"; //BASE de Prueba 
         //public static string LOSA_DB_User = "sa";
         //public static string LOSA_DB_Pass = " Marathones00";
+
+        //public static string Bas_ServerAddress = "6G1SST3";
+        //public static string Bas_ServerName = "Servidor Desarrollo";
+        //public static string Bas_ActiveDB = "BASCULA";
+        //public static string Bas_DB_User = "sa";
+        //public static string Bas_DB_Pass = "Marathones00";
 
         #endregion
 

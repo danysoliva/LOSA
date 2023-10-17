@@ -38,7 +38,7 @@ namespace LOSA.Clases
         int _idTarimaOrigen;
         int _idRM;
         int _lotept;
-
+        decimal factor;
 
 
         public Int64 Id { get => _id; set => _id = value; }
@@ -64,6 +64,7 @@ namespace LOSA.Clases
         public int IdTarimaOrigen { get => _idTarimaOrigen; set => _idTarimaOrigen = value; }
         public int IdRM { get => _idRM; set => _idRM = value; }
         public int Lotept { get => _lotept; set => _lotept = value; }
+        public decimal Factor { get => factor; set => factor = value; }
 
         public TarimaMicroingrediente()
         {
@@ -151,6 +152,9 @@ namespace LOSA.Clases
                         Lotept = dr.GetInt32(18);
                     else
                         Lotept = 0;
+
+                    Factor = dr.GetDecimal(19);
+
                      Recuperado = true;
                 }
                 dr.Close();
