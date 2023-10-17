@@ -201,6 +201,7 @@
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRequisasManuales = new DevExpress.XtraEditors.SimpleButton();
             this.TabRRHH = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.cmdReportSalidaDesechosRRHH = new DevExpress.XtraEditors.SimpleButton();
             this.cmdPrintVouchersPlanillas = new DevExpress.XtraEditors.SimpleButton();
             this.cmdImprimirVouchers = new DevExpress.XtraEditors.SimpleButton();
@@ -291,7 +292,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.navBarItem23 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1944,7 +1945,8 @@
             this.navBarItem19,
             this.navBarItem2,
             this.navBarItem9,
-            this.navBarItem21});
+            this.navBarItem21,
+            this.navBarItem23});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
@@ -2099,7 +2101,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbForeCastPRD),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbConfiguraciones),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem22),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem21)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem21),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem23)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // nbReporteBatch
@@ -2875,6 +2878,21 @@
             this.TabRRHH.PageVisible = false;
             this.TabRRHH.Size = new System.Drawing.Size(835, 480);
             this.TabRRHH.Text = "RRHH";
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton5.Appearance.Options.UseFont = true;
+            this.simpleButton5.Appearance.Options.UseTextOptions = true;
+            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(473, 202);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton5.TabIndex = 54;
+            this.simpleButton5.Text = "Reporte Vacaciones";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click_2);
             // 
             // cmdReportSalidaDesechosRRHH
             // 
@@ -4163,20 +4181,18 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // simpleButton5
+            // navBarItem23
             // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Appearance.Options.UseTextOptions = true;
-            this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(473, 202);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(199, 71);
-            this.simpleButton5.TabIndex = 54;
-            this.simpleButton5.Text = "Reporte Vacaciones";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click_2);
+            this.navBarItem23.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.Appearance.Options.UseFont = true;
+            this.navBarItem23.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem23.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.AppearancePressed.Options.UseFont = true;
+            this.navBarItem23.Caption = "Medición Electrica";
+            this.navBarItem23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem23.ImageOptions.SvgImage")));
+            this.navBarItem23.Name = "navBarItem23";
+            this.navBarItem23.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem23_LinkClicked);
             // 
             // frmOpciones
             // 
@@ -4483,5 +4499,6 @@
         private DevExpress.XtraEditors.SimpleButton btnConsumoRealForeCast;
         private DevExpress.XtraEditors.SimpleButton btnNotificaciones;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem23;
     }
 }

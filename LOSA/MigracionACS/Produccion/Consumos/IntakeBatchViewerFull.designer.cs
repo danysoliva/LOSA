@@ -174,6 +174,7 @@
             this.txtOrderIdBalanceMasa = new DevExpress.XtraEditors.TextEdit();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -356,6 +357,7 @@
             // 
             this.xtraTabPage1.Appearance.PageClient.BackColor = System.Drawing.Color.Silver;
             this.xtraTabPage1.Appearance.PageClient.Options.UseBackColor = true;
+            this.xtraTabPage1.Controls.Add(this.txtVentana);
             this.xtraTabPage1.Controls.Add(this.simpleButton3);
             this.xtraTabPage1.Controls.Add(this.simpleButton2);
             this.xtraTabPage1.Controls.Add(this.xtraTabControl_Lines);
@@ -1756,6 +1758,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(630, 1);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 21);
+            this.txtVentana.TabIndex = 117;
+            this.txtVentana.Text = "IntakeBatchViewerFull";
+            this.txtVentana.Visible = false;
+            // 
             // IntakeBatchViewerFull
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1967,5 +1979,6 @@
         private DevExpress.XtraEditors.TextEdit txtLotePtBalanceMasa;
         private DevExpress.XtraGrid.Columns.GridColumn colAplicadoenCouter;
         private DevExpress.XtraGrid.Columns.GridColumn colAplicadoenMezcla;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }
