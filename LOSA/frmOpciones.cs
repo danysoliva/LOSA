@@ -3898,6 +3898,8 @@ namespace LOSA
         private void navBarItem23_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             bool accesoprevio = false;
+
+
             int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
             switch (idNivel)
             {
