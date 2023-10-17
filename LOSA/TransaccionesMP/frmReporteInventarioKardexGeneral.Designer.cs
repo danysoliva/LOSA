@@ -612,7 +612,7 @@ namespace LOSA.TransaccionesMP
             this.grd_data_resumen.Location = new System.Drawing.Point(0, 48);
             this.grd_data_resumen.MainView = this.grdv_data_resumen;
             this.grd_data_resumen.Name = "grd_data_resumen";
-            this.grd_data_resumen.Size = new System.Drawing.Size(1362, 412);
+            this.grd_data_resumen.Size = new System.Drawing.Size(1362, 397);
             this.grd_data_resumen.TabIndex = 0;
             this.grd_data_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data_resumen});

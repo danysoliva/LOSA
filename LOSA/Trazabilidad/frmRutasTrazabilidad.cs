@@ -2515,6 +2515,54 @@ namespace LOSA.Trazabilidad
                 }
 
             }
+
+
+            //RESUMEN
+            decimal entradas = 0;
+            //decimal consumosCamaron = 0;
+            //decimal consumosTilapia = 0;
+            decimal consumo = 0;
+            decimal existencia = 0;
+            //ENTRADA
+            foreach (dsReportesTRZ.ingresos_mp_lote_ruta1Row item in dsReportesTRZ.ingresos_mp_lote_ruta1.Rows)
+            {
+                entradas += item.peso_prod;
+            }
+            //CONSUMO CAMARON
+            foreach (dsReportesTRZ.pt_list_trzCamaronRow item in dsReportesTRZ.pt_list_trzCamaron.Rows)
+            {
+                consumo += item.cant_mp;
+            }
+            //CONSUMO TILAPIA
+            foreach (dsReportesTRZ.pt_list_trzRow item in dsReportesTRZ.pt_list_trz.Rows)
+            {
+                consumo += item.cant_mp;
+            }
+
+            //INVENTARIO ACTUAL
+            foreach (dsReportesTRZ.Inventario_mp_lote_ruta1Row item in dsReportesTRZ.Inventario_mp_lote_ruta1.Rows)
+            {
+                existencia += item.existencia;
+            }
+
+            //consumo = consumosCamaron + consumosTilapia;
+
+            try
+            {
+                DataRow dr = dsMantenimientoC.resumen_ruta_1.NewRow();
+                dr[0] = entradas;
+                dr[1] = consumo;
+                dr[2] = existencia;
+                dr[3] = entradas - consumo;
+
+                dsMantenimientoC.resumen_ruta_1.Rows.Add(dr);
+                dsMantenimientoC.resumen_ruta_1.AcceptChanges();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
         }
 
 

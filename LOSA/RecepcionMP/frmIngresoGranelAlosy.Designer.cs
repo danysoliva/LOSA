@@ -115,14 +115,15 @@ namespace LOSA.RecepcionMP
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.cmdBuscarIngresoExterno = new DevExpress.XtraEditors.SimpleButton();
             this.txtIngresoExterno = new DevExpress.XtraEditors.TextEdit();
+            this.txtVentana = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.beNuevaUbicacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaProduccion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaIngreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMP_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -870,7 +871,7 @@ namespace LOSA.RecepcionMP
             this.tggNuevoIngreso.Properties.Appearance.Options.UseFont = true;
             this.tggNuevoIngreso.Properties.OffText = "No";
             this.tggNuevoIngreso.Properties.OnText = "Si";
-            this.tggNuevoIngreso.Size = new System.Drawing.Size(147, 32);
+            this.tggNuevoIngreso.Size = new System.Drawing.Size(147, 26);
             this.tggNuevoIngreso.TabIndex = 105;
             this.tggNuevoIngreso.Toggled += new System.EventHandler(this.tggNuevoIngreso_Toggled);
             // 
@@ -922,11 +923,22 @@ namespace LOSA.RecepcionMP
             this.txtIngresoExterno.TabIndex = 109;
             this.txtIngresoExterno.Visible = false;
             // 
+            // txtVentana
+            // 
+            this.txtVentana.Location = new System.Drawing.Point(24, 14);
+            this.txtVentana.Name = "txtVentana";
+            this.txtVentana.ReadOnly = true;
+            this.txtVentana.Size = new System.Drawing.Size(196, 20);
+            this.txtVentana.TabIndex = 118;
+            this.txtVentana.Text = "frmIngresoGranelAlosy";
+            this.txtVentana.Visible = false;
+            // 
             // frmIngresoGranelAlosy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 621);
+            this.Controls.Add(this.txtVentana);
             this.Controls.Add(this.txtIngresoExterno);
             this.Controls.Add(this.cmdBuscarIngresoExterno);
             this.Controls.Add(this.labelControl11);
@@ -1073,5 +1085,6 @@ namespace LOSA.RecepcionMP
         private LabelControl labelControl11;
         private SimpleButton cmdBuscarIngresoExterno;
         private TextEdit txtIngresoExterno;
+        private System.Windows.Forms.TextBox txtVentana;
     }
 }

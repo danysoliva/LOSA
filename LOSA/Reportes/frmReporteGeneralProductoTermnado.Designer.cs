@@ -305,7 +305,7 @@ namespace LOSA.Reportes
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Properties.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.tabNavigationPage2.Properties.AppearanceCaption.Options.UseFont = true;
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1320, 557);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1319, 550);
             // 
             // grd_inventario_Tilapia
             // 
@@ -315,7 +315,7 @@ namespace LOSA.Reportes
             this.grd_inventario_Tilapia.Location = new System.Drawing.Point(0, 0);
             this.grd_inventario_Tilapia.MainView = this.grdv_inventario_Tilapia;
             this.grd_inventario_Tilapia.Name = "grd_inventario_Tilapia";
-            this.grd_inventario_Tilapia.Size = new System.Drawing.Size(1320, 557);
+            this.grd_inventario_Tilapia.Size = new System.Drawing.Size(1319, 550);
             this.grd_inventario_Tilapia.TabIndex = 0;
             this.grd_inventario_Tilapia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_Tilapia});
