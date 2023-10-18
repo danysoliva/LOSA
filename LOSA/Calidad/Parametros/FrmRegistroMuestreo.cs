@@ -37,8 +37,57 @@ namespace LOSA.Calidad.Parametros
             load_decision();
             obtener_sacos();
             load_obtenet_rango();
+            load_jornadas();
             UsuarioLogeado = Puser;
+            load_data_ultimo_muestreo(Convert.ToInt32(Lote));
         }
+
+        private void load_data_ultimo_muestreo(int plote)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_last_parametro_por_lote", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lote_pt", plote);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    grd_turno_inicial.EditValue = dr.GetInt32(1);
+                    grd_turno_fin.EditValue = dr.GetInt32(2);
+                    dtdesde.EditValue = dr.GetDateTime(3);
+                    dtdesdeJornada.Text = dr.GetString(4);
+                    dthasta.EditValue = dr.GetString(5);
+                    dthastaJornada.Text = dr.GetString(6);
+                    txtcomentarios.Text = dr.GetString(7);
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void load_jornadas()
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_jornada_laboral_horas", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsParametros.jornada.Clear();
+                adat.Fill(dsParametros.jornada);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         public void load_obtenet_rango()
         {
             int Maximo = 0;
@@ -412,18 +461,34 @@ namespace LOSA.Calidad.Parametros
                 grd_turno_fin.ShowPopup();
                 return;
             }
-            if (dtdesde.EditValue == null)
+            if (dtdesde.EditValue == null )
             {
-                CajaDialogo.Error("Debe escoger la jornada y la hora de inicio.");
+                CajaDialogo.Error("Debe escoger la Jornada - Fecha Inicio.");
                 dtdesde.ShowPopup();
                 return;
             }
+
+            if (dtdesdeJornada.EditValue == null)
+            {
+                CajaDialogo.Error("Debe escoger la Hora de Inicio.");
+                dtdesde.ShowPopup();
+                return;
+            }
+
             if (dthasta.EditValue == null)
             {
-                CajaDialogo.Error("Debe escoger la jornada y la hora de final.");
+                CajaDialogo.Error("Debe escoger la Jornada - Fecha Final.");
                 dtdesde.ShowPopup();
                 return;
             }
+
+            if (dthastaJornada.EditValue == null)
+            {
+                CajaDialogo.Error("Debe escoger la Hora de Final.");
+                dtdesde.ShowPopup();
+                return;
+            }
+
             bool AsNoCumple = false;
             foreach (dsParametros.parametros_decisionRow row in dsParametros.parametros_decision.Rows)
             {
@@ -475,7 +540,7 @@ namespace LOSA.Calidad.Parametros
 
             if (Save)
             {
-                string query = @"sp_insert_muestreo_of_product";
+                string query = @"[sp_insert_muestreo_of_productV2]";
                 try
                 {
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -494,6 +559,9 @@ namespace LOSA.Calidad.Parametros
                     cmd.Parameters.AddWithValue("@rango_inicial", codigo_minmo);
                     cmd.Parameters.AddWithValue("@rango_final", codigo_maximo);
                     cmd.Parameters.AddWithValue("@id_decision", AsNoCumple ?2 :1 );
+                    cmd.Parameters.AddWithValue("@jornada_hora_inicial",dtdesdeJornada.Text);
+                    cmd.Parameters.AddWithValue("@jornada_hora_final",dthastaJornada.Text);
+                    cmd.Parameters.AddWithValue("@comentario", txtcomentarios.Text);
                     int id_muestreo = 0;
                     id_muestreo = Convert.ToInt32(cmd.ExecuteScalar());
 

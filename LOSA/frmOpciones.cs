@@ -1096,10 +1096,19 @@ namespace LOSA
                 newVersion = notifications.ValidarVersionBuild(notifications.Major, notifications.Minor, notifications.Build, notifications.Revision, UsuarioLogeado.Id);
                 notificacionesSinLeer = notifications.ValidarNotificacionesSinLeer(UsuarioLogeado.Id);
 
-                if (notificacionesSinLeer)
+                if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Montacarga)
                 {
-                    frm.Show();
+
                 }
+                else
+                {
+                    if (notificacionesSinLeer)
+                    {
+                        frm.Show();
+                    }
+                }
+
+                
             }
             catch (Exception ex)
             {
@@ -2203,7 +2212,7 @@ namespace LOSA
         {
             try
             {
-                IntakeBatchViewerFull frm = new IntakeBatchViewerFull();
+                IntakeBatchViewerFull frm = new IntakeBatchViewerFull(UsuarioLogeado);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }

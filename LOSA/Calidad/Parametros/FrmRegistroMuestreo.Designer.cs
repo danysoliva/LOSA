@@ -31,11 +31,11 @@ namespace LOSA.Calidad.Parametros
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistroMuestreo));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -91,6 +91,15 @@ namespace LOSA.Calidad.Parametros
             this.txtCandidadSacos = new DevExpress.XtraEditors.TextEdit();
             this.txtRango = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.dtdesdeJornada = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dthastaJornada = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.jornadaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtformula.Properties)).BeginInit();
@@ -117,6 +126,11 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.dthasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCandidadSacos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRango.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtdesdeJornada.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dthastaJornada.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jornadaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -569,9 +583,9 @@ namespace LOSA.Calidad.Parametros
             // btn_respuestas
             // 
             this.btn_respuestas.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.btn_respuestas.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_respuestas.Name = "btn_respuestas";
             this.btn_respuestas.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_respuestas.Click += new System.EventHandler(this.btn_respuestas_Click);
@@ -597,7 +611,7 @@ namespace LOSA.Calidad.Parametros
             this.txtcomentarios.EditValue = "Escribe algunas observaciones sobre el producto....";
             this.txtcomentarios.Location = new System.Drawing.Point(6, 20);
             this.txtcomentarios.Name = "txtcomentarios";
-            this.txtcomentarios.Size = new System.Drawing.Size(749, 127);
+            this.txtcomentarios.Size = new System.Drawing.Size(749, 65);
             this.txtcomentarios.TabIndex = 0;
             this.txtcomentarios.Click += new System.EventHandler(this.txtcomentarios_Click);
             this.txtcomentarios.Enter += new System.EventHandler(this.txtcomentarios_Enter);
@@ -680,12 +694,12 @@ namespace LOSA.Calidad.Parametros
             this.dtdesde.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dtdesde.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtdesde.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dtdesde.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
             this.dtdesde.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dtdesde.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dtdesde.Properties.EditFormat.FormatString = "yyyy-MM-dd";
             this.dtdesde.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dtdesde.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dtdesde.Size = new System.Drawing.Size(135, 24);
+            this.dtdesde.Size = new System.Drawing.Size(112, 24);
             this.dtdesde.TabIndex = 26;
             // 
             // dthasta
@@ -702,12 +716,12 @@ namespace LOSA.Calidad.Parametros
             this.dthasta.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
             this.dthasta.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dthasta.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dthasta.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
             this.dthasta.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.dthasta.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
+            this.dthasta.Properties.EditFormat.FormatString = "yyyy-MM-dd";
             this.dthasta.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dthasta.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dthasta.Size = new System.Drawing.Size(135, 24);
+            this.dthasta.Size = new System.Drawing.Size(112, 24);
             this.dthasta.TabIndex = 27;
             // 
             // labelControl12
@@ -750,11 +764,96 @@ namespace LOSA.Calidad.Parametros
             this.labelControl13.TabIndex = 31;
             this.labelControl13.Text = "Rango:";
             // 
+            // dtdesdeJornada
+            // 
+            this.dtdesdeJornada.Location = new System.Drawing.Point(664, 178);
+            this.dtdesdeJornada.Name = "dtdesdeJornada";
+            this.dtdesdeJornada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtdesdeJornada.Properties.Appearance.Options.UseFont = true;
+            this.dtdesdeJornada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtdesdeJornada.Properties.DataSource = this.jornadaBindingSource;
+            this.dtdesdeJornada.Properties.DisplayMember = "descripcion";
+            this.dtdesdeJornada.Properties.NullText = "";
+            this.dtdesdeJornada.Properties.PopupView = this.gridView2;
+            this.dtdesdeJornada.Properties.ValueMember = "id";
+            this.dtdesdeJornada.Size = new System.Drawing.Size(98, 24);
+            this.dtdesdeJornada.TabIndex = 32;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid1,
+            this.coldescripcion});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // dthastaJornada
+            // 
+            this.dthastaJornada.Location = new System.Drawing.Point(664, 212);
+            this.dthastaJornada.Name = "dthastaJornada";
+            this.dthastaJornada.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dthastaJornada.Properties.Appearance.Options.UseFont = true;
+            this.dthastaJornada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dthastaJornada.Properties.DataSource = this.jornadaBindingSource;
+            this.dthastaJornada.Properties.DisplayMember = "descripcion";
+            this.dthastaJornada.Properties.NullText = "";
+            this.dthastaJornada.Properties.PopupView = this.gridView3;
+            this.dthastaJornada.Properties.ValueMember = "id";
+            this.dthastaJornada.Size = new System.Drawing.Size(98, 24);
+            this.dthastaJornada.TabIndex = 33;
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid2,
+            this.coldescripcion1});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // jornadaBindingSource
+            // 
+            this.jornadaBindingSource.DataMember = "jornada";
+            this.jornadaBindingSource.DataSource = this.dsParametros;
+            // 
+            // colid1
+            // 
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            // 
+            // coldescripcion
+            // 
+            this.coldescripcion.Caption = "Horario";
+            this.coldescripcion.FieldName = "descripcion";
+            this.coldescripcion.Name = "coldescripcion";
+            this.coldescripcion.Visible = true;
+            this.coldescripcion.VisibleIndex = 0;
+            // 
+            // colid2
+            // 
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
+            // 
+            // coldescripcion1
+            // 
+            this.coldescripcion1.Caption = "Jornada";
+            this.coldescripcion1.FieldName = "descripcion";
+            this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.Visible = true;
+            this.coldescripcion1.VisibleIndex = 0;
+            // 
             // FrmRegistroMuestreo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 825);
+            this.Controls.Add(this.dthastaJornada);
+            this.Controls.Add(this.dtdesdeJornada);
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.txtRango);
             this.Controls.Add(this.txtCandidadSacos);
@@ -812,6 +911,11 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.dthasta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCandidadSacos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRango.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtdesdeJornada.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dthastaJornada.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jornadaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -874,5 +978,14 @@ namespace LOSA.Calidad.Parametros
         private DevExpress.XtraEditors.TextEdit txtCandidadSacos;
         private DevExpress.XtraEditors.TextEdit txtRango;
         private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.GridLookUpEdit dtdesdeJornada;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.GridLookUpEdit dthastaJornada;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private System.Windows.Forms.BindingSource jornadaBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid1;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn colid2;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
     }
 }
