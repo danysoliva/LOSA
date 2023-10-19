@@ -58,7 +58,7 @@ namespace LOSA.Calidad.Parametros
                     grd_turno_fin.EditValue = dr.GetInt32(2);
                     dtdesde.EditValue = dr.GetDateTime(3);
                     dtdesdeJornada.Text = dr.GetString(4);
-                    dthasta.EditValue = dr.GetString(5);
+                    dthasta.EditValue = dr.GetDateTime(5);
                     dthastaJornada.Text = dr.GetString(6);
                     txtcomentarios.Text = dr.GetString(7);
                 }
