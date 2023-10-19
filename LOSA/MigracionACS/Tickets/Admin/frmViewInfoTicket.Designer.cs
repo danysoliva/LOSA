@@ -51,19 +51,19 @@ namespace LOSA.MigracionACS.Tickets.Admin
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEstado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserAsignado.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFechaC.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaC.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProyecto.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUserCreador
             // 
             this.txtUserCreador.Enabled = false;
-            this.txtUserCreador.Location = new System.Drawing.Point(305, 101);
+            this.txtUserCreador.Location = new System.Drawing.Point(189, 101);
             this.txtUserCreador.Name = "txtUserCreador";
             this.txtUserCreador.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserCreador.Properties.Appearance.Options.UseFont = true;
-            this.txtUserCreador.Size = new System.Drawing.Size(269, 24);
+            this.txtUserCreador.Size = new System.Drawing.Size(508, 24);
             this.txtUserCreador.TabIndex = 1;
             // 
             // labelControl1
@@ -80,7 +80,7 @@ namespace LOSA.MigracionACS.Tickets.Admin
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(130, 106);
+            this.labelControl2.Location = new System.Drawing.Point(14, 106);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(138, 19);
             this.labelControl2.TabIndex = 3;
@@ -100,7 +100,7 @@ namespace LOSA.MigracionACS.Tickets.Admin
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(258, 312);
+            this.labelControl3.Location = new System.Drawing.Point(14, 315);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(175, 19);
             this.labelControl3.TabIndex = 5;
@@ -110,7 +110,7 @@ namespace LOSA.MigracionACS.Tickets.Admin
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(130, 213);
+            this.labelControl4.Location = new System.Drawing.Point(14, 211);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(54, 19);
             this.labelControl4.TabIndex = 6;
@@ -118,13 +118,14 @@ namespace LOSA.MigracionACS.Tickets.Admin
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Enabled = false;
-            this.txtTitulo.Location = new System.Drawing.Point(305, 208);
+            this.txtTitulo.Location = new System.Drawing.Point(189, 208);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo.Properties.Appearance.Options.UseFont = true;
-            this.txtTitulo.Size = new System.Drawing.Size(269, 24);
+            this.txtTitulo.Properties.ReadOnly = true;
+            this.txtTitulo.Size = new System.Drawing.Size(508, 24);
             this.txtTitulo.TabIndex = 7;
+            this.txtTitulo.DoubleClick += new System.EventHandler(this.txtTitulo_DoubleClick);
             // 
             // btnBack
             // 
@@ -142,18 +143,18 @@ namespace LOSA.MigracionACS.Tickets.Admin
             // txtEstado
             // 
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(305, 246);
+            this.txtEstado.Location = new System.Drawing.Point(189, 246);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstado.Properties.Appearance.Options.UseFont = true;
-            this.txtEstado.Size = new System.Drawing.Size(269, 24);
+            this.txtEstado.Size = new System.Drawing.Size(508, 24);
             this.txtEstado.TabIndex = 41;
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(130, 251);
+            this.labelControl5.Location = new System.Drawing.Point(14, 251);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(61, 19);
             this.labelControl5.TabIndex = 40;
@@ -163,7 +164,7 @@ namespace LOSA.MigracionACS.Tickets.Admin
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(130, 141);
+            this.labelControl6.Location = new System.Drawing.Point(14, 141);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(148, 19);
             this.labelControl6.TabIndex = 43;
@@ -172,20 +173,20 @@ namespace LOSA.MigracionACS.Tickets.Admin
             // txtUserAsignado
             // 
             this.txtUserAsignado.Enabled = false;
-            this.txtUserAsignado.Location = new System.Drawing.Point(305, 136);
+            this.txtUserAsignado.Location = new System.Drawing.Point(189, 136);
             this.txtUserAsignado.Name = "txtUserAsignado";
             this.txtUserAsignado.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserAsignado.Properties.Appearance.Options.UseFont = true;
-            this.txtUserAsignado.Size = new System.Drawing.Size(269, 24);
+            this.txtUserAsignado.Size = new System.Drawing.Size(508, 24);
             this.txtUserAsignado.TabIndex = 42;
             // 
             // txtComentario2
             // 
             this.txtComentario2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComentario2.Location = new System.Drawing.Point(115, 338);
+            this.txtComentario2.Location = new System.Drawing.Point(12, 337);
             this.txtComentario2.Name = "txtComentario2";
             this.txtComentario2.ReadOnly = true;
-            this.txtComentario2.Size = new System.Drawing.Size(478, 125);
+            this.txtComentario2.Size = new System.Drawing.Size(685, 125);
             this.txtComentario2.TabIndex = 44;
             this.txtComentario2.Text = "";
             // 
@@ -193,7 +194,7 @@ namespace LOSA.MigracionACS.Tickets.Admin
             // 
             this.dtFechaC.EditValue = null;
             this.dtFechaC.Enabled = false;
-            this.dtFechaC.Location = new System.Drawing.Point(305, 171);
+            this.dtFechaC.Location = new System.Drawing.Point(189, 171);
             this.dtFechaC.Name = "dtFechaC";
             this.dtFechaC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.dtFechaC.Properties.Appearance.Options.UseFont = true;
@@ -201,14 +202,14 @@ namespace LOSA.MigracionACS.Tickets.Admin
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaC.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFechaC.Size = new System.Drawing.Size(269, 24);
+            this.dtFechaC.Size = new System.Drawing.Size(508, 24);
             this.dtFechaC.TabIndex = 45;
             // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(130, 176);
+            this.labelControl7.Location = new System.Drawing.Point(14, 176);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(129, 19);
             this.labelControl7.TabIndex = 46;
@@ -217,18 +218,18 @@ namespace LOSA.MigracionACS.Tickets.Admin
             // txtProyecto
             // 
             this.txtProyecto.Enabled = false;
-            this.txtProyecto.Location = new System.Drawing.Point(305, 281);
+            this.txtProyecto.Location = new System.Drawing.Point(189, 281);
             this.txtProyecto.Name = "txtProyecto";
             this.txtProyecto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProyecto.Properties.Appearance.Options.UseFont = true;
-            this.txtProyecto.Size = new System.Drawing.Size(269, 24);
+            this.txtProyecto.Size = new System.Drawing.Size(508, 24);
             this.txtProyecto.TabIndex = 47;
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(130, 286);
+            this.labelControl8.Location = new System.Drawing.Point(14, 286);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(80, 19);
             this.labelControl8.TabIndex = 48;
@@ -256,10 +257,10 @@ namespace LOSA.MigracionACS.Tickets.Admin
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtUserCreador);
+            this.IconOptions.ShowIcon = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmViewInfoTicket";
-            this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.txtUserCreador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEstado.Properties)).EndInit();
