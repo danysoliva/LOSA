@@ -1649,7 +1649,10 @@ namespace LOSA.Calidad
                             cmd.Parameters.AddWithValue("@definicion", row.definicion);
                             cmd.Parameters.AddWithValue("@id_criterio", row.id_criterio == 0 ? (object)DBNull.Value : row.id_criterio);
                             cmd.Parameters.AddWithValue("@id_respuesta", row.id_respuestas == 0 ? (object)DBNull.Value : row.id_respuestas);
-                            cmd.Parameters.AddWithValue("@respuesta", row.respuesta);
+                            if (string.IsNullOrEmpty(row.respuesta))
+                                cmd.Parameters.AddWithValue("@respuesta", "");
+                            else
+                                cmd.Parameters.AddWithValue("@respuesta", row.respuesta);
                             cmd.Parameters.AddWithValue("@criterio", row.descripcion);
                             cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                             cmd.Parameters.AddWithValue("@user_register", UsuarioLogeado.Id);
