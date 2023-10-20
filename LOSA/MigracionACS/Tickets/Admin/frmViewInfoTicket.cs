@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ACS.Classes;
 
 namespace LOSA.MigracionACS.Tickets.Admin
 {
@@ -35,6 +36,11 @@ namespace LOSA.MigracionACS.Tickets.Admin
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtTitulo_DoubleClick(object sender, EventArgs e)
+        {
+            CajaDialogo.Information(txtTitulo.Text);
         }
     }
 }
