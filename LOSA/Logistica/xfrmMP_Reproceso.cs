@@ -420,7 +420,7 @@ namespace LOSA.Logistica
                                 //Vamos a Guardar a id_tariam de la Lista de la Causa.
                                 command.CommandText = "sp_reproceso_insert_causas_rechazo";
                                 command.Parameters.Clear();
-                                command.Parameters.AddWithValue("@id_tarima",IdTarima);
+                                command.Parameters.AddWithValue("@id_tarima",item);
                                 command.Parameters.AddWithValue("@id_causa",row.id);
                                 command.Parameters.AddWithValue("@user_creador",usuarioLogueado.Id);
                                 command.Parameters.AddWithValue("@comentario",row.comentario);
