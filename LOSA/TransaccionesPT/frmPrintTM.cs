@@ -124,7 +124,7 @@ namespace LOSA.TransaccionesPT
             {
                 var gridView = (GridView)grd_data.FocusedView;
                 var row = (dsPT.loadplanesRow)gridView.GetFocusedDataRow();
-                frmGenerarTarimas frm = new frmGenerarTarimas(row.id,row.Siguiente);
+                frmGenerarTarimas frm = new frmGenerarTarimas(row.id,row.Siguiente, UsuarioLogeado);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     Loda_data();

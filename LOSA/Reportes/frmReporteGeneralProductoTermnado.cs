@@ -97,7 +97,7 @@ namespace LOSA.Reportes
                 {
                     if (Especie == 2)
                     {
-                        grd_inventario_camaron.ExportToXlsx(dialog.FileName);
+                        //grd_inventario_camaron.ExportToXlsx(dialog.FileName);
                     }
                     else
                     {

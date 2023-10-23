@@ -21,7 +21,7 @@ namespace LOSA.Produccion
 {
     public partial class frmGenerarTarimas : DevExpress.XtraEditors.XtraForm
     {
-
+        UserLogin UsuarioLogueado;
         int id_alimentacion;
         int unidades;
         int presentacion;
@@ -42,9 +42,10 @@ namespace LOSA.Produccion
 
 
         DataOperations dp = new DataOperations();
-        public frmGenerarTarimas(int Pid_ali, int NextPrint)
+        public frmGenerarTarimas(int Pid_ali, int NextPrint, UserLogin pUserLogin)
         {
             InitializeComponent();
+            UsuarioLogueado = pUserLogin;
             id_alimentacion = Pid_ali;
             PsiguienteSa = NextPrint;
             txtdesde.Text = PsiguienteSa.ToString();
@@ -53,6 +54,21 @@ namespace LOSA.Produccion
             load_turno();
             txthasta.Text = ((PsiguienteSa - 1) + Convert.ToInt32(txt_unidades.Text)).ToString();
             load_tarimas();
+
+
+            switch (UsuarioLogueado.GrupoUsuario.GrupoUsuarioActivo)
+            {
+                case GrupoUser.GrupoUsuario.Logistica:
+                    simpleButton1.Enabled = false;
+                    simpleButton2.Enabled = false;
+                    simpleButton3.Enabled = false;
+                    btn_print25.Enabled = false;
+
+
+                    break;
+                default:
+                    break;
+            }
 
         }
 

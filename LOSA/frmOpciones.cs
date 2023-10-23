@@ -334,21 +334,29 @@ namespace LOSA
                     {
                         case 1://Basic View
                             //BasicView();
-                            tabOpciones.TabPages[1].PageVisible = true;
+                            //tabOpciones.TabPages[1].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
-                            tabOpciones.TabPages[4].PageVisible = true;
+                            //tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.TabPages[8].PageVisible = true;
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             
                             UsuarioLogeado.Idnivel = idNivel4;
                             break;
                         case 2://Basic No Autorization
-                            tabOpciones.TabPages[1].PageVisible = true;
+                            //BasicView();
+                            //tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[8].PageVisible = true;
                             tabOpciones.TabPages[7].PageVisible = true;
                             tabOpciones.TabPages[4].PageVisible = true;
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             break;
                         case 3://Medium Autorization
-
+                            tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;
+                            tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.TabPages[8].PageVisible = true;
+                            //BasicView();
+                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             break;
                         case 4://Depth With Delta
                             tabOpciones.TabPages[1].PageVisible = true;
@@ -357,7 +365,10 @@ namespace LOSA
                             tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             break;
                         case 5://Depth Without Delta
-
+                            tabOpciones.TabPages[1].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;
+                            tabOpciones.TabPages[4].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 7;//Forecasting
                             break;
                         default:
                             tabOpciones.TabPages[1].PageVisible = true;
@@ -3899,7 +3910,7 @@ namespace LOSA
 
         private void btn_historic_inventario_Click(object sender, EventArgs e)
         {
-            frmReporteGeneralProductoTermnado frm = new frmReporteGeneralProductoTermnado(UsuarioLogeado);
+            frmPT_Despachado_Kardex frm = new frmPT_Despachado_Kardex(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

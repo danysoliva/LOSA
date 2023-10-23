@@ -1064,7 +1064,6 @@
             this.btn_historic_inventario.Size = new System.Drawing.Size(198, 42);
             this.btn_historic_inventario.TabIndex = 53;
             this.btn_historic_inventario.Text = "Inventario Despachos";
-            this.btn_historic_inventario.Visible = false;
             this.btn_historic_inventario.Click += new System.EventHandler(this.btn_historic_inventario_Click);
             // 
             // btnMaterialEmpaquePT
@@ -2326,6 +2325,7 @@
             this.navBarGroup3.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.navBarGroup3.AppearancePressed.Options.UseFont = true;
             this.navBarGroup3.Caption = "Generales";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
