@@ -162,6 +162,7 @@
             this.nbConfiguraciones = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem22 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem21 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem23 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
@@ -293,7 +294,6 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.navBarItem23 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1064,6 +1064,7 @@
             this.btn_historic_inventario.Size = new System.Drawing.Size(198, 42);
             this.btn_historic_inventario.TabIndex = 53;
             this.btn_historic_inventario.Text = "Inventario Despachos";
+            this.btn_historic_inventario.Visible = false;
             this.btn_historic_inventario.Click += new System.EventHandler(this.btn_historic_inventario_Click);
             // 
             // btnMaterialEmpaquePT
@@ -2302,6 +2303,19 @@
             this.navBarItem21.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem21.ImageOptions.SvgImage")));
             this.navBarItem21.Name = "navBarItem21";
             this.navBarItem21.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem21_LinkClicked);
+            // 
+            // navBarItem23
+            // 
+            this.navBarItem23.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.Appearance.Options.UseFont = true;
+            this.navBarItem23.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItem23.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem23.AppearancePressed.Options.UseFont = true;
+            this.navBarItem23.Caption = "Medición Electrica";
+            this.navBarItem23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem23.ImageOptions.SvgImage")));
+            this.navBarItem23.Name = "navBarItem23";
+            this.navBarItem23.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem23_LinkClicked);
             // 
             // navBarGroup3
             // 
@@ -4195,19 +4209,6 @@
             // 
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
-            // 
-            // navBarItem23
-            // 
-            this.navBarItem23.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem23.Appearance.Options.UseFont = true;
-            this.navBarItem23.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem23.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItem23.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarItem23.AppearancePressed.Options.UseFont = true;
-            this.navBarItem23.Caption = "Medición Electrica";
-            this.navBarItem23.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem23.ImageOptions.SvgImage")));
-            this.navBarItem23.Name = "navBarItem23";
-            this.navBarItem23.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem23_LinkClicked);
             // 
             // frmOpciones
             // 
