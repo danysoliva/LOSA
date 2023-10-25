@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace LOSA.MigracionACS.Finanzas.Inventarios
 {
@@ -18,6 +19,8 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
     {
         UserLogin UsuarioLogueado;
         DataOperations dp = new DataOperations();
+        string query = "";
+        DataTable tabla = new DataTable();
         public frmReportManager(UserLogin pUserLogin )
         {
             InitializeComponent();
@@ -50,7 +53,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            gridView1.Columns.Clear();
+            grdv_data.Columns.Clear();
 
             if (grdSelectReport.EditValue == null)
             {
@@ -71,7 +74,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
                 dtHasta.Focus();
                 return;
             }
-            string query = "";
+            
             switch (grdSelectReport.EditValue)
             {
                 case 1:
@@ -94,25 +97,68 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
 
             }
 
+            pnl_barra.Visible = true; 
+
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.DoWork += bw_DoWork;
+            bw.RunWorkerCompleted += bw_RunWorkerCompleted;
+            bw.RunWorkerAsync();
+
+            grdReporte.DataSource = null;
+            grdv_data.Columns.Clear();
+
+
+            
+        }
+        void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            pnl_barra.Visible = false;
+            btnGenerar.Enabled = btnExcel.Enabled = true;
+            grdReporte.DataSource = tabla;
+            grid_autoajustar();
+
+            //generar_totales_grid();
+            //GridViewOptionsBehavior.ReadOnly 
+        }
+
+        void bw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            cargar_grid();
+            //Thread.Sleep(10000);
+        }
+
+        private void cargar_grid()
+        {
             try
             {
                 SqlConnection conn = new SqlConnection(dp.ConnectionSAP_OnlySELECT);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(query,conn);
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@desde", dtDesde.EditValue);
                 cmd.Parameters.AddWithValue("@hasta", dtHasta.EditValue);
-                DataTable tabla = new DataTable();
+                
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(tabla);
                 grdReporte.DataSource = tabla;
                 conn.Close();
+
+                grid_autoajustar();
 
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        void grid_autoajustar()
+        {
+            grdv_data.OptionsView.ColumnAutoWidth = false;
+            grdv_data.BestFitColumns();
+            GridViewInfo viewInfo = grdv_data.GetViewInfo() as GridViewInfo;
+            if (viewInfo.ViewRects.ColumnTotalWidth < viewInfo.ViewRects.ColumnPanelWidth)
+                grdv_data.OptionsView.ColumnAutoWidth = true;
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -249,8 +295,6 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
 
                     break;
 
-
-
                 case 2: //Reporte de Ordenes de Compra por Detalle de Rubro y Capitulo
                     switch (UsuarioLogueado.GrupoUsuario.GrupoUsuarioActivo)
                     {
@@ -366,11 +410,139 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
                     }
 
                     break;
+
+                case 3: //Reporte de Gastos - Integraciones
+                    switch (UsuarioLogueado.GrupoUsuario.GrupoUsuarioActivo)
+                    {
+                        case GrupoUser.GrupoUsuario.Logistica:
+                            int idnivel = UsuarioLogueado.idNivelAcceso(UsuarioLogueado.Id, 7);
+
+                            switch (idnivel)
+                            {
+                                case 1://Basic View
+                                    CajaDialogo.Error("No tiene permiso de Usar este Reporte.");
+                                    break;
+                                case 2://Basic No Autorization
+                                    CajaDialogo.Error("No tiene permiso de Usar este Reporte.");
+                                    break;
+                                case 3://Medium Autorization
+                                    CajaDialogo.Error("No tiene permiso de Usar este Reporte.");
+                                    break;
+                                case 4://Depth With Delta
+                                    CajaDialogo.Error("No tiene permiso de Usar este Reporte.");
+                                    break;
+                                case 5://Depth Without Delta
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                default:
+                                    CajaDialogo.Error("No tiene permiso de Usar este Reporte.");
+                                    break;
+                            }
+
+                            break;
+                        case GrupoUser.GrupoUsuario.Administradores:
+                            idnivel = UsuarioLogueado.idNivelAcceso(UsuarioLogueado.Id, 7);
+
+                            switch (idnivel)
+                            {
+                                case 1://Basic View
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                case 2://Basic No Autorization
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                case 3://Medium Autorization
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                case 4://Depth With Delta
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                case 5://Depth Without Delta
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                default:
+                                    CajaDialogo.Error("No tiene permiso de Usar este Reporte.");
+                                    break;
+                            }
+                            break;
+                        case GrupoUser.GrupoUsuario.Contabilidad:
+                            idnivel = UsuarioLogueado.idNivelAcceso(UsuarioLogueado.Id, 7);
+
+                            switch (idnivel)
+                            {
+                                case 1://Basic View
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                case 2://Basic No Autorization
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                case 3://Medium Autorization
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                case 4://Depth With Delta
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                case 5://Depth Without Delta
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
+                                    break;
+                                default:
+                                    CajaDialogo.Error("No tiene permiso de Usar este Reporte.");
+                                    break;
+                            }
+                            break;
+
+
+
+                        default:
+                            break;
+
+                           
+                    }
+
+                    break;
                 default:
                     break;
             }
 
             
+        }
+
+        private void bar_BarraProgreso_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

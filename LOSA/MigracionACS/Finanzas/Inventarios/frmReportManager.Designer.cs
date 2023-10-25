@@ -31,8 +31,6 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportManager));
-            this.grdReporte = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnGenerar = new DevExpress.XtraEditors.SimpleButton();
             this.dtDesde = new DevExpress.XtraEditors.DateEdit();
@@ -47,8 +45,10 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_reporte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grdReporte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.grdReporte = new DevExpress.XtraGrid.GridControl();
+            this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.pnl_barra = new System.Windows.Forms.Panel();
+            this.marqueeProgressBarControl1 = new DevExpress.XtraEditors.MarqueeProgressBarControl();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).BeginInit();
@@ -58,28 +58,11 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             ((System.ComponentModel.ISupportInitialize)(this.dSRPTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSRPT1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
+            this.pnl_barra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grdReporte
-            // 
-            this.grdReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdReporte.Location = new System.Drawing.Point(2, 48);
-            this.grdReporte.MainView = this.gridView1;
-            this.grdReporte.Name = "grdReporte";
-            this.grdReporte.Size = new System.Drawing.Size(1188, 457);
-            this.grdReporte.TabIndex = 1;
-            this.grdReporte.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.grdReporte;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // labelControl2
             // 
@@ -224,11 +207,58 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.coldescripcion.Visible = true;
             this.coldescripcion.VisibleIndex = 0;
             // 
+            // grdReporte
+            // 
+            this.grdReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdReporte.Location = new System.Drawing.Point(2, 86);
+            this.grdReporte.MainView = this.grdv_data;
+            this.grdReporte.Name = "grdReporte";
+            this.grdReporte.Size = new System.Drawing.Size(1188, 422);
+            this.grdReporte.TabIndex = 16;
+            this.grdReporte.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_data});
+            // 
+            // grdv_data
+            // 
+            this.grdv_data.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.grdv_data.Appearance.FooterPanel.Options.UseFont = true;
+            this.grdv_data.GridControl = this.grdReporte;
+            this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsBehavior.Editable = false;
+            this.grdv_data.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
+            this.grdv_data.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_data.OptionsView.ShowFooter = true;
+            // 
+            // pnl_barra
+            // 
+            this.pnl_barra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_barra.Controls.Add(this.marqueeProgressBarControl1);
+            this.pnl_barra.Location = new System.Drawing.Point(2, 66);
+            this.pnl_barra.Name = "pnl_barra";
+            this.pnl_barra.Size = new System.Drawing.Size(1188, 14);
+            this.pnl_barra.TabIndex = 23;
+            this.pnl_barra.Visible = false;
+            // 
+            // marqueeProgressBarControl1
+            // 
+            this.marqueeProgressBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.marqueeProgressBarControl1.EditValue = 0;
+            this.marqueeProgressBarControl1.Location = new System.Drawing.Point(0, 0);
+            this.marqueeProgressBarControl1.Name = "marqueeProgressBarControl1";
+            this.marqueeProgressBarControl1.Properties.MarqueeAnimationSpeed = 20;
+            this.marqueeProgressBarControl1.Size = new System.Drawing.Size(1188, 14);
+            this.marqueeProgressBarControl1.TabIndex = 10;
+            // 
             // frmReportManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1193, 509);
+            this.Controls.Add(this.pnl_barra);
+            this.Controls.Add(this.grdReporte);
             this.Controls.Add(this.grdSelectReport);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.labelControl3);
@@ -237,12 +267,9 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.Controls.Add(this.dtDesde);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.grdReporte);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmReportManager.IconOptions.Image")));
             this.Name = "frmReportManager";
             this.Text = "Report Manager SAP";
-            ((System.ComponentModel.ISupportInitialize)(this.grdReporte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).EndInit();
@@ -252,14 +279,16 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             ((System.ComponentModel.ISupportInitialize)(this.dSRPTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSRPT1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
+            this.pnl_barra.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraGrid.GridControl grdReporte;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SimpleButton btnGenerar;
         private DevExpress.XtraEditors.DateEdit dtDesde;
@@ -274,5 +303,9 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
         private dSRPT dSRPT1;
         private DevExpress.XtraGrid.Columns.GridColumn colid_reporte;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
+        private DevExpress.XtraGrid.GridControl grdReporte;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_data;
+        private System.Windows.Forms.Panel pnl_barra;
+        private DevExpress.XtraEditors.MarqueeProgressBarControl marqueeProgressBarControl1;
     }
 }

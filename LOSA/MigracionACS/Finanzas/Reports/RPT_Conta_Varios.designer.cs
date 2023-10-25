@@ -99,10 +99,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bar_BarraProgreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Period.Properties)).BeginInit();
             this.pnl_fechas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_desde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_desde.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dt_hasta.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_desde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_hasta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_hasta.Properties.CalendarTimeProperties)).BeginInit();
             this.pnl_anio_mes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkContabilizado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spn_mes.Properties)).BeginInit();
@@ -299,31 +299,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1276, 47);
+            this.barDockControlTop.Size = new System.Drawing.Size(1276, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 508);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 511);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1276, 23);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1276, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 461);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 471);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1276, 47);
+            this.barDockControlRight.Location = new System.Drawing.Point(1276, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 461);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 471);
             // 
             // cmb_Reportes
             // 
@@ -384,7 +384,7 @@
             this.pnl_parametros.Controls.Add(this.pnl_anio_mes);
             this.pnl_parametros.Controls.Add(this.lbl_periodo);
             this.pnl_parametros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_parametros.Location = new System.Drawing.Point(0, 47);
+            this.pnl_parametros.Location = new System.Drawing.Point(0, 40);
             this.pnl_parametros.Name = "pnl_parametros";
             this.pnl_parametros.Size = new System.Drawing.Size(1276, 99);
             this.pnl_parametros.TabIndex = 4;
@@ -461,7 +461,7 @@
             this.btn_periodo_fecha.Name = "btn_periodo_fecha";
             this.btn_periodo_fecha.Properties.OffText = "Periodo";
             this.btn_periodo_fecha.Properties.OnText = "Fechas";
-            this.btn_periodo_fecha.Size = new System.Drawing.Size(116, 24);
+            this.btn_periodo_fecha.Size = new System.Drawing.Size(116, 18);
             this.btn_periodo_fecha.TabIndex = 0;
             this.btn_periodo_fecha.EditValueChanged += new System.EventHandler(this.btn_periodo_fecha_EditValueChanged);
             // 
@@ -473,7 +473,7 @@
             this.pnl_tipoReporte.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_tipoReporte.Location = new System.Drawing.Point(2, 23);
             this.pnl_tipoReporte.Name = "pnl_tipoReporte";
-            this.pnl_tipoReporte.Size = new System.Drawing.Size(418, 60);
+            this.pnl_tipoReporte.Size = new System.Drawing.Size(418, 74);
             this.pnl_tipoReporte.TabIndex = 23;
             // 
             // radGrupo
@@ -556,7 +556,6 @@
             // pnl_barra
             // 
             this.pnl_barra.Controls.Add(this.bar_BarraProgreso);
-            this.pnl_barra.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_barra.Location = new System.Drawing.Point(2, 83);
             this.pnl_barra.Name = "pnl_barra";
             this.pnl_barra.Size = new System.Drawing.Size(1272, 14);
@@ -695,7 +694,7 @@
             this.chkContabilizado.Location = new System.Drawing.Point(6, 31);
             this.chkContabilizado.Name = "chkContabilizado";
             this.chkContabilizado.Properties.Caption = "Contabilizado";
-            this.chkContabilizado.Size = new System.Drawing.Size(99, 19);
+            this.chkContabilizado.Size = new System.Drawing.Size(99, 20);
             this.chkContabilizado.TabIndex = 14;
             this.chkContabilizado.Visible = false;
             // 
@@ -803,7 +802,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("RPT_Conta_Varios.IconOptions.Icon")));
             this.Name = "RPT_Conta_Varios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
