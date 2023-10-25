@@ -31,34 +31,45 @@ namespace LOSA.Reportes
         {
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPT_Despachado_Kardex));
-            this.grdvDetalleDespachos = new DevExpress.XtraGrid.Views.Grid.GridView();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            this.grdDetalleDespachos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grd_inventario_camaron = new DevExpress.XtraGrid.GridControl();
             this.dsReportesInventario1 = new LOSA.Reportes.dsReportesInventario();
             this.grdv_inventario_camaron = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
-            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.grd_inventario_Tilapia = new DevExpress.XtraGrid.GridControl();
-            this.grdv_inventario_Tilapia = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colid_pt1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcode_sap1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProducto1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.collote_pt1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcantidad_in1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcantidad_out1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia_unidades1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpeso_in1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpeso_out1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia_kg1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colexistencia_tm1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cmdRecargar = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.colitemcode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.collote_producto_termiado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colud_existencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colexistencia_kg = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grdvDetalleDespachos)).BeginInit();
+            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
+            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.cmdRecargar = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            this.collote_pt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colud_despachadas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colkg_despachados = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfecha_despacho = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnum_doc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldestino = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltransporte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDetalleDespachos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_camaron)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesInventario1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_camaron)).BeginInit();
@@ -66,22 +77,34 @@ namespace LOSA.Reportes
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_Tilapia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_Tilapia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // grdvDetalleDespachos
+            // grdDetalleDespachos
             // 
-            this.grdvDetalleDespachos.GridControl = this.grd_inventario_camaron;
-            this.grdvDetalleDespachos.Name = "grdvDetalleDespachos";
+            this.grdDetalleDespachos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.collote_pt,
+            this.colnum_doc,
+            this.colfecha_despacho,
+            this.coltransporte,
+            this.coldestino,
+            this.colcliente,
+            this.colud_despachadas,
+            this.colkg_despachados});
+            this.grdDetalleDespachos.GridControl = this.grd_inventario_camaron;
+            this.grdDetalleDespachos.Name = "grdDetalleDespachos";
+            this.grdDetalleDespachos.OptionsView.ShowFooter = true;
+            this.grdDetalleDespachos.OptionsView.ShowGroupPanel = false;
             // 
             // grd_inventario_camaron
             // 
             this.grd_inventario_camaron.DataMember = "inventario_tarimas";
             this.grd_inventario_camaron.DataSource = this.dsReportesInventario1;
             this.grd_inventario_camaron.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.grdvDetalleDespachos;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode1.LevelTemplate = this.grdDetalleDespachos;
+            gridLevelNode1.RelationName = "inventario_tarimas_detalle_despacho_lote";
             this.grd_inventario_camaron.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
             this.grd_inventario_camaron.Location = new System.Drawing.Point(0, 0);
@@ -91,7 +114,7 @@ namespace LOSA.Reportes
             this.grd_inventario_camaron.TabIndex = 0;
             this.grd_inventario_camaron.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_inventario_camaron,
-            this.grdvDetalleDespachos});
+            this.grdDetalleDespachos});
             // 
             // dsReportesInventario1
             // 
@@ -128,6 +151,52 @@ namespace LOSA.Reportes
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", null, "(Toneladas: SUMA={0:0.##.##} TM)")});
             this.grdv_inventario_camaron.Name = "grdv_inventario_camaron";
             this.grdv_inventario_camaron.OptionsView.ShowAutoFilterRow = true;
+            this.grdv_inventario_camaron.OptionsView.ShowFooter = true;
+            this.grdv_inventario_camaron.OptionsView.ShowGroupPanel = false;
+            // 
+            // colitemcode
+            // 
+            this.colitemcode.Caption = "Code Sap";
+            this.colitemcode.FieldName = "itemcode";
+            this.colitemcode.Name = "colitemcode";
+            this.colitemcode.OptionsColumn.ReadOnly = true;
+            this.colitemcode.Visible = true;
+            this.colitemcode.VisibleIndex = 0;
+            // 
+            // collote_producto_termiado
+            // 
+            this.collote_producto_termiado.Caption = "Lote Producto Terminado";
+            this.collote_producto_termiado.FieldName = "lote_producto_termiado";
+            this.collote_producto_termiado.Name = "collote_producto_termiado";
+            this.collote_producto_termiado.OptionsColumn.ReadOnly = true;
+            this.collote_producto_termiado.Visible = true;
+            this.collote_producto_termiado.VisibleIndex = 1;
+            // 
+            // colud_existencia
+            // 
+            this.colud_existencia.Caption = "Existencia Ud";
+            this.colud_existencia.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.colud_existencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colud_existencia.FieldName = "ud_existencia";
+            this.colud_existencia.Name = "colud_existencia";
+            this.colud_existencia.OptionsColumn.ReadOnly = true;
+            this.colud_existencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ud_existencia", "{0:0.##} Ud")});
+            this.colud_existencia.Visible = true;
+            this.colud_existencia.VisibleIndex = 2;
+            // 
+            // colexistencia_kg
+            // 
+            this.colexistencia_kg.Caption = "Existencia Kg";
+            this.colexistencia_kg.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.colexistencia_kg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colexistencia_kg.FieldName = "existencia_kg";
+            this.colexistencia_kg.Name = "colexistencia_kg";
+            this.colexistencia_kg.OptionsColumn.ReadOnly = true;
+            this.colexistencia_kg.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", "{0:#,###,##0.00} Kg")});
+            this.colexistencia_kg.Visible = true;
+            this.colexistencia_kg.VisibleIndex = 3;
             // 
             // tabPane1
             // 
@@ -162,7 +231,7 @@ namespace LOSA.Reportes
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Tilapia";
-            this.tabNavigationPage2.Controls.Add(this.grd_inventario_Tilapia);
+            this.tabNavigationPage2.Controls.Add(this.gridControl1);
             this.tabNavigationPage2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.tabNavigationPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("tabNavigationPage2.ImageOptions.Image")));
             this.tabNavigationPage2.Name = "tabNavigationPage2";
@@ -170,168 +239,8 @@ namespace LOSA.Reportes
             this.tabNavigationPage2.Properties.AppearanceCaption.Options.UseFont = true;
             this.tabNavigationPage2.Size = new System.Drawing.Size(1325, 575);
             // 
-            // grd_inventario_Tilapia
-            // 
-            this.grd_inventario_Tilapia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grd_inventario_Tilapia.DataMember = "inventario_kardex";
-            this.grd_inventario_Tilapia.Location = new System.Drawing.Point(0, 0);
-            this.grd_inventario_Tilapia.MainView = this.grdv_inventario_Tilapia;
-            this.grd_inventario_Tilapia.Name = "grd_inventario_Tilapia";
-            this.grd_inventario_Tilapia.Size = new System.Drawing.Size(1319, 550);
-            this.grd_inventario_Tilapia.TabIndex = 0;
-            this.grd_inventario_Tilapia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdv_inventario_Tilapia});
-            // 
-            // grdv_inventario_Tilapia
-            // 
-            this.grdv_inventario_Tilapia.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.grdv_inventario_Tilapia.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.grdv_inventario_Tilapia.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.grdv_inventario_Tilapia.Appearance.FocusedRow.Options.UseFont = true;
-            this.grdv_inventario_Tilapia.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.grdv_inventario_Tilapia.Appearance.GroupFooter.Options.UseFont = true;
-            this.grdv_inventario_Tilapia.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.grdv_inventario_Tilapia.Appearance.GroupPanel.Options.UseFont = true;
-            this.grdv_inventario_Tilapia.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grdv_inventario_Tilapia.Appearance.HeaderPanel.Options.UseFont = true;
-            this.grdv_inventario_Tilapia.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.grdv_inventario_Tilapia.Appearance.Preview.Options.UseFont = true;
-            this.grdv_inventario_Tilapia.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.grdv_inventario_Tilapia.Appearance.Row.Options.UseFont = true;
-            this.grdv_inventario_Tilapia.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.grdv_inventario_Tilapia.Appearance.TopNewRow.Options.UseFont = true;
-            this.grdv_inventario_Tilapia.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid_pt1,
-            this.colcode_sap1,
-            this.colProducto1,
-            this.collote_pt1,
-            this.colcantidad_in1,
-            this.colcantidad_out1,
-            this.colexistencia_unidades1,
-            this.colpeso_in1,
-            this.colpeso_out1,
-            this.colexistencia_kg1,
-            this.colexistencia_tm1});
-            this.grdv_inventario_Tilapia.GridControl = this.grd_inventario_Tilapia;
-            this.grdv_inventario_Tilapia.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", null, "(Kilogramos: SUMA={0:0.##.##} Kg)"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_unidades", null, "(Unidades en Existencia: SUMA={0:0.##.##} Ud)"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", null, "(TM Existencia: SUMA={0:0.##.##} TM)")});
-            this.grdv_inventario_Tilapia.Name = "grdv_inventario_Tilapia";
-            this.grdv_inventario_Tilapia.OptionsView.ShowAutoFilterRow = true;
-            // 
-            // colid_pt1
-            // 
-            this.colid_pt1.FieldName = "id_pt";
-            this.colid_pt1.Name = "colid_pt1";
-            // 
-            // colcode_sap1
-            // 
-            this.colcode_sap1.Caption = "Cod. SAP";
-            this.colcode_sap1.FieldName = "code_sap";
-            this.colcode_sap1.Name = "colcode_sap1";
-            this.colcode_sap1.OptionsColumn.AllowEdit = false;
-            this.colcode_sap1.Visible = true;
-            this.colcode_sap1.VisibleIndex = 0;
-            // 
-            // colProducto1
-            // 
-            this.colProducto1.Caption = "N Producto";
-            this.colProducto1.FieldName = "Producto";
-            this.colProducto1.Name = "colProducto1";
-            this.colProducto1.OptionsColumn.AllowEdit = false;
-            this.colProducto1.Visible = true;
-            this.colProducto1.VisibleIndex = 1;
-            // 
-            // collote_pt1
-            // 
-            this.collote_pt1.Caption = "# Lote";
-            this.collote_pt1.FieldName = "lote_pt";
-            this.collote_pt1.Name = "collote_pt1";
-            this.collote_pt1.OptionsColumn.AllowEdit = false;
-            this.collote_pt1.Visible = true;
-            this.collote_pt1.VisibleIndex = 2;
-            // 
-            // colcantidad_in1
-            // 
-            this.colcantidad_in1.Caption = "Cantidad Entrada";
-            this.colcantidad_in1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
-            this.colcantidad_in1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colcantidad_in1.FieldName = "cantidad_in";
-            this.colcantidad_in1.Name = "colcantidad_in1";
-            this.colcantidad_in1.OptionsColumn.AllowEdit = false;
-            // 
-            // colcantidad_out1
-            // 
-            this.colcantidad_out1.Caption = "Cantidad Salida";
-            this.colcantidad_out1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
-            this.colcantidad_out1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colcantidad_out1.FieldName = "cantidad_out";
-            this.colcantidad_out1.Name = "colcantidad_out1";
-            this.colcantidad_out1.OptionsColumn.AllowEdit = false;
-            // 
-            // colexistencia_unidades1
-            // 
-            this.colexistencia_unidades1.Caption = "Unidades en Existencia";
-            this.colexistencia_unidades1.DisplayFormat.FormatString = "{0:0.##.##} Ud";
-            this.colexistencia_unidades1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia_unidades1.FieldName = "existencia_unidades";
-            this.colexistencia_unidades1.Name = "colexistencia_unidades1";
-            this.colexistencia_unidades1.OptionsColumn.AllowEdit = false;
-            this.colexistencia_unidades1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_unidades", "SUMA={0:0.##.##} Ud")});
-            this.colexistencia_unidades1.Visible = true;
-            this.colexistencia_unidades1.VisibleIndex = 3;
-            // 
-            // colpeso_in1
-            // 
-            this.colpeso_in1.Caption = "Peso Entrada";
-            this.colpeso_in1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.colpeso_in1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colpeso_in1.FieldName = "peso_in";
-            this.colpeso_in1.Name = "colpeso_in1";
-            this.colpeso_in1.OptionsColumn.AllowEdit = false;
-            // 
-            // colpeso_out1
-            // 
-            this.colpeso_out1.Caption = "Peso Salida";
-            this.colpeso_out1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.colpeso_out1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colpeso_out1.FieldName = "peso_out";
-            this.colpeso_out1.Name = "colpeso_out1";
-            this.colpeso_out1.OptionsColumn.AllowEdit = false;
-            // 
-            // colexistencia_kg1
-            // 
-            this.colexistencia_kg1.Caption = "Kilogramos";
-            this.colexistencia_kg1.DisplayFormat.FormatString = "{0:0.##.##} Kg";
-            this.colexistencia_kg1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia_kg1.FieldName = "existencia_kg";
-            this.colexistencia_kg1.Name = "colexistencia_kg1";
-            this.colexistencia_kg1.OptionsColumn.AllowEdit = false;
-            this.colexistencia_kg1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", "SUMA={0:0.##.##} Kg")});
-            this.colexistencia_kg1.Visible = true;
-            this.colexistencia_kg1.VisibleIndex = 4;
-            // 
-            // colexistencia_tm1
-            // 
-            this.colexistencia_tm1.Caption = "Toneladas";
-            this.colexistencia_tm1.DisplayFormat.FormatString = "{0:0.##.##} TM";
-            this.colexistencia_tm1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colexistencia_tm1.FieldName = "existencia_tm";
-            this.colexistencia_tm1.Name = "colexistencia_tm1";
-            this.colexistencia_tm1.OptionsColumn.AllowEdit = false;
-            this.colexistencia_tm1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", "SUMA={0:0.##.##} TM")});
-            this.colexistencia_tm1.Visible = true;
-            this.colexistencia_tm1.VisibleIndex = 5;
-            // 
             // cmdRecargar
             // 
-            this.cmdRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdRecargar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdRecargar.Appearance.Options.UseFont = true;
             this.cmdRecargar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -341,10 +250,10 @@ namespace LOSA.Reportes
             this.cmdRecargar.Size = new System.Drawing.Size(104, 38);
             this.cmdRecargar.TabIndex = 8;
             this.cmdRecargar.Text = "Recargar";
+            this.cmdRecargar.Click += new System.EventHandler(this.cmdRecargar_Click);
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
@@ -354,6 +263,7 @@ namespace LOSA.Reportes
             this.simpleButton1.Size = new System.Drawing.Size(104, 38);
             this.simpleButton1.TabIndex = 9;
             this.simpleButton1.Text = "Excel";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btnClose
             // 
@@ -367,34 +277,294 @@ namespace LOSA.Reportes
             this.btnClose.Size = new System.Drawing.Size(104, 38);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Cerrar";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // colitemcode
+            // collote_pt
             // 
-            this.colitemcode.FieldName = "itemcode";
-            this.colitemcode.Name = "colitemcode";
-            this.colitemcode.Visible = true;
-            this.colitemcode.VisibleIndex = 0;
+            this.collote_pt.Caption = "Lote PT";
+            this.collote_pt.FieldName = "lote_pt";
+            this.collote_pt.Name = "collote_pt";
+            this.collote_pt.OptionsColumn.ReadOnly = true;
+            this.collote_pt.Visible = true;
+            this.collote_pt.VisibleIndex = 0;
+            this.collote_pt.Width = 97;
             // 
-            // collote_producto_termiado
+            // colud_despachadas
             // 
-            this.collote_producto_termiado.FieldName = "lote_producto_termiado";
-            this.collote_producto_termiado.Name = "collote_producto_termiado";
-            this.collote_producto_termiado.Visible = true;
-            this.collote_producto_termiado.VisibleIndex = 1;
+            this.colud_despachadas.Caption = "Unidades Despachadas";
+            this.colud_despachadas.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.colud_despachadas.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colud_despachadas.FieldName = "ud_despachadas";
+            this.colud_despachadas.Name = "colud_despachadas";
+            this.colud_despachadas.OptionsColumn.ReadOnly = true;
+            this.colud_despachadas.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ud_despachadas", "{0:0.##} Ud")});
+            this.colud_despachadas.Visible = true;
+            this.colud_despachadas.VisibleIndex = 6;
+            this.colud_despachadas.Width = 126;
             // 
-            // colud_existencia
+            // colkg_despachados
             // 
-            this.colud_existencia.FieldName = "ud_existencia";
-            this.colud_existencia.Name = "colud_existencia";
-            this.colud_existencia.Visible = true;
-            this.colud_existencia.VisibleIndex = 2;
+            this.colkg_despachados.Caption = "Kg Despachados";
+            this.colkg_despachados.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.colkg_despachados.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colkg_despachados.FieldName = "kg_despachados";
+            this.colkg_despachados.Name = "colkg_despachados";
+            this.colkg_despachados.OptionsColumn.ReadOnly = true;
+            this.colkg_despachados.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "kg_despachados", "{0:#,###,##0.00} Kg")});
+            this.colkg_despachados.Visible = true;
+            this.colkg_despachados.VisibleIndex = 7;
+            this.colkg_despachados.Width = 137;
             // 
-            // colexistencia_kg
+            // colfecha_despacho
             // 
-            this.colexistencia_kg.FieldName = "existencia_kg";
-            this.colexistencia_kg.Name = "colexistencia_kg";
-            this.colexistencia_kg.Visible = true;
-            this.colexistencia_kg.VisibleIndex = 3;
+            this.colfecha_despacho.Caption = "Fecha Despacho";
+            this.colfecha_despacho.FieldName = "fecha_despacho";
+            this.colfecha_despacho.Name = "colfecha_despacho";
+            this.colfecha_despacho.OptionsColumn.ReadOnly = true;
+            this.colfecha_despacho.Visible = true;
+            this.colfecha_despacho.VisibleIndex = 1;
+            this.colfecha_despacho.Width = 126;
+            // 
+            // colnum_doc
+            // 
+            this.colnum_doc.Caption = "# Orden de Carga";
+            this.colnum_doc.FieldName = "num_doc";
+            this.colnum_doc.Name = "colnum_doc";
+            this.colnum_doc.OptionsColumn.ReadOnly = true;
+            this.colnum_doc.Visible = true;
+            this.colnum_doc.VisibleIndex = 2;
+            this.colnum_doc.Width = 126;
+            // 
+            // colcliente
+            // 
+            this.colcliente.Caption = "Cliente";
+            this.colcliente.FieldName = "cliente";
+            this.colcliente.Name = "colcliente";
+            this.colcliente.OptionsColumn.ReadOnly = true;
+            this.colcliente.Visible = true;
+            this.colcliente.VisibleIndex = 5;
+            this.colcliente.Width = 126;
+            // 
+            // coldestino
+            // 
+            this.coldestino.Caption = "Destino";
+            this.coldestino.FieldName = "destino";
+            this.coldestino.Name = "coldestino";
+            this.coldestino.OptionsColumn.ReadOnly = true;
+            this.coldestino.Visible = true;
+            this.coldestino.VisibleIndex = 3;
+            this.coldestino.Width = 126;
+            // 
+            // coltransporte
+            // 
+            this.coltransporte.Caption = "Transporte";
+            this.coltransporte.FieldName = "transporte";
+            this.coltransporte.Name = "coltransporte";
+            this.coltransporte.OptionsColumn.ReadOnly = true;
+            this.coltransporte.Visible = true;
+            this.coltransporte.VisibleIndex = 4;
+            this.coltransporte.Width = 126;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataMember = "inventario_tarimas";
+            this.gridControl1.DataSource = this.dsReportesInventario1;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode2.LevelTemplate = this.gridView1;
+            gridLevelNode2.RelationName = "inventario_tarimas_detalle_despacho_lote";
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView2;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1325, 575);
+            this.gridControl1.TabIndex = 1;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1,
+            this.gridView2});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Lote PT";
+            this.gridColumn1.FieldName = "lote_pt";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 97;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "# Orden de Carga";
+            this.gridColumn2.FieldName = "num_doc";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 126;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Fecha Despacho";
+            this.gridColumn3.FieldName = "fecha_despacho";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.ReadOnly = true;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 126;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Transporte";
+            this.gridColumn4.FieldName = "transporte";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.ReadOnly = true;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.Width = 126;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Destino";
+            this.gridColumn5.FieldName = "destino";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.ReadOnly = true;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.Width = 126;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Cliente";
+            this.gridColumn6.FieldName = "cliente";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.ReadOnly = true;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 126;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Unidades Despachadas";
+            this.gridColumn7.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn7.FieldName = "ud_despachadas";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.ReadOnly = true;
+            this.gridColumn7.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ud_despachadas", "{0:0.##} Ud")});
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 126;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Kg Despachados";
+            this.gridColumn8.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn8.FieldName = "kg_despachados";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.ReadOnly = true;
+            this.gridColumn8.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "kg_despachados", "{0:#,###,##0.00} Kg")});
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.Width = 137;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView2.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView2.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridView2.Appearance.GroupFooter.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView2.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridView2.Appearance.GroupPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView2.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.Preview.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView2.Appearance.Preview.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView2.Appearance.Row.Options.UseFont = true;
+            this.gridView2.Appearance.TopNewRow.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.gridView2.Appearance.TopNewRow.Options.UseFont = true;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12});
+            this.gridView2.GridControl = this.gridControl1;
+            this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", null, "(Kilogramos: SUMA={0:0.##.##} Kg)"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_unidades", null, "(Unidades en Existencia: SUMA={0:0.##.##} Ud)"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_tm", null, "(Toneladas: SUMA={0:0.##.##} TM)")});
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridView2.OptionsView.ShowFooter = true;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Code Sap";
+            this.gridColumn9.FieldName = "itemcode";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.ReadOnly = true;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Lote Producto Terminado";
+            this.gridColumn10.FieldName = "lote_producto_termiado";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.ReadOnly = true;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 1;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Existencia Ud";
+            this.gridColumn11.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn11.FieldName = "ud_existencia";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.ReadOnly = true;
+            this.gridColumn11.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ud_existencia", "{0:0.##} Ud")});
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 2;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Existencia Kg";
+            this.gridColumn12.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn12.FieldName = "existencia_kg";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.ReadOnly = true;
+            this.gridColumn12.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "existencia_kg", "{0:#,###,##0.00} Kg")});
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 3;
             // 
             // frmPT_Despachado_Kardex
             // 
@@ -407,7 +577,7 @@ namespace LOSA.Reportes
             this.Controls.Add(this.tabPane1);
             this.Name = "frmPT_Despachado_Kardex";
             this.Text = "frmPT_Despachado_Kardex";
-            ((System.ComponentModel.ISupportInitialize)(this.grdvDetalleDespachos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDetalleDespachos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_camaron)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsReportesInventario1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_camaron)).EndInit();
@@ -415,8 +585,9 @@ namespace LOSA.Reportes
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             this.tabNavigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grd_inventario_Tilapia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_inventario_Tilapia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -428,27 +599,37 @@ namespace LOSA.Reportes
         private DevExpress.XtraGrid.GridControl grd_inventario_camaron;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_inventario_camaron;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private DevExpress.XtraGrid.GridControl grd_inventario_Tilapia;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdv_inventario_Tilapia;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_pt1;
-        private DevExpress.XtraGrid.Columns.GridColumn colcode_sap1;
-        private DevExpress.XtraGrid.Columns.GridColumn colProducto1;
-        private DevExpress.XtraGrid.Columns.GridColumn collote_pt1;
-        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_in1;
-        private DevExpress.XtraGrid.Columns.GridColumn colcantidad_out1;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_unidades1;
-        private DevExpress.XtraGrid.Columns.GridColumn colpeso_in1;
-        private DevExpress.XtraGrid.Columns.GridColumn colpeso_out1;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_kg1;
-        private DevExpress.XtraGrid.Columns.GridColumn colexistencia_tm1;
         private DevExpress.XtraEditors.SimpleButton cmdRecargar;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnClose;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdvDetalleDespachos;
         private dsReportesInventario dsReportesInventario1;
         private DevExpress.XtraGrid.Columns.GridColumn colitemcode;
         private DevExpress.XtraGrid.Columns.GridColumn collote_producto_termiado;
         private DevExpress.XtraGrid.Columns.GridColumn colud_existencia;
         private DevExpress.XtraGrid.Columns.GridColumn colexistencia_kg;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdDetalleDespachos;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_pt;
+        private DevExpress.XtraGrid.Columns.GridColumn colnum_doc;
+        private DevExpress.XtraGrid.Columns.GridColumn colfecha_despacho;
+        private DevExpress.XtraGrid.Columns.GridColumn coltransporte;
+        private DevExpress.XtraGrid.Columns.GridColumn coldestino;
+        private DevExpress.XtraGrid.Columns.GridColumn colcliente;
+        private DevExpress.XtraGrid.Columns.GridColumn colud_despachadas;
+        private DevExpress.XtraGrid.Columns.GridColumn colkg_despachados;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
     }
 }

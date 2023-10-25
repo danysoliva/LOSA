@@ -84,6 +84,10 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
                     query = @"sp_report_manager_oc_detalle_rubros_capitulos";
     
                     break;
+                case 3:
+
+                    query = @"[sp_reporte_de_gastos_integraciones]";
+                    break;
 
                 default:
                     break;
@@ -205,8 +209,10 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
                             switch (idnivel)
                             {
                                 case 1://Basic View
-                                    CajaDialogo.Error("No tiene permiso de Usar este Reporte.");
-                                    grdSelectReport.Text = null;
+                                    labelControl1.Visible = true;
+                                    labelControl3.Visible = true;
+                                    dtDesde.Visible = true;
+                                    dtHasta.Visible = true;
                                     break;
                                 case 2://Basic No Autorization
                                     labelControl1.Visible = true;

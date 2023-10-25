@@ -37,6 +37,10 @@ namespace LOSA.Despachos
 
             load_data();
             load_andenes();
+
+            if (usuarioLogueado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
+
         }
 
         public void load_andenes()
@@ -367,6 +371,7 @@ namespace LOSA.Despachos
             bool error = false;
             bool disponible = false;
             string mensaje = "";
+            
             if (tarimaEncontrada != null)
             {
                 if (tarimaEncontrada.Recuperado)
@@ -495,6 +500,46 @@ namespace LOSA.Despachos
                     timerLimpiarMensaje.Start();
                     return;
                 }
+                else
+                {
+                    bool Permitir = true;
+
+                    //Vamos a Validar la Fecha de Vencimiento!
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_validar_vencimiento_pt_tarimas", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_Tarima", tarimaEncontrada.Id);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            Permitir = dr.GetBoolean(0);
+                            mensaje = dr.GetString(1);
+                            dr.Close();
+                        }
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+
+                    if (Permitir == false)
+                    {
+                        Utileria.frmMensajeCalidad frmMensajeCalidad = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                        frmMensajeCalidad.ShowDialog();
+
+                        beTarima.Text = "";
+                        txtCantidadT.Text = "0";
+                        txtPeso.Text = "0";
+                        
+                        beTarima.Focus();
+                        return;
+                    }
+                }
+
                 frm_seleccionUD frm = new frm_seleccionUD(Convert.ToDecimal(existencia_tarima), solicitado, entregado);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
@@ -555,6 +600,13 @@ namespace LOSA.Despachos
                 timerLimpiarMensaje.Start();
             }
 
+        }
+
+        private void ValidarVencimiento(int pid_tarima)
+        {
+            
+
+            
         }
 
         public void Clear() 

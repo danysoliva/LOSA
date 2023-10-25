@@ -41,7 +41,9 @@ namespace LOSA.Reportes
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@especie", Especie);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
+
                 adat.Fill(dsReportesInventario1.inventario_tarimas);
                 if (dsReportesInventario1.inventario_tarimas.Rows.Count == 0)
                 {
@@ -49,12 +51,20 @@ namespace LOSA.Reportes
                 }
                 else
                 {
-                    query = @"sp_get_despachos_por_lote_pt";
-                    cmd = new SqlCommand(query, conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    adat = new SqlDataAdapter(cmd);
-                    dsReportesInventario1.detalle_despacho_lote.Clear();
-                    adat.Fill(dsReportesInventario1.detalle_despacho_lote);  
+                    foreach (dsReportesInventario.inventario_tarimasRow item in dsReportesInventario1.inventario_tarimas.Rows)
+                    {
+                        if (item.lote_producto_termiado > 0)
+                        {
+                            query = @"sp_get_despachos_por_lote_pt";
+                            cmd = new SqlCommand(query, conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@lote_pt", item.lote_producto_termiado);
+                            adat = new SqlDataAdapter(cmd);
+                            //dsReportesInventario1.detalle_despacho_lote.Clear();
+                            adat.Fill(dsReportesInventario1.detalle_despacho_lote);
+                        }
+                    }
+                    
                 }
                 conn.Close();
             }
@@ -75,6 +85,29 @@ namespace LOSA.Reportes
                 Especie = 1;
             }
             get_inventario();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmdRecargar_Click(object sender, EventArgs e)
+        {
+            if (tabPane1.SelectedPageIndex == 0) // Camaron
+            {
+                Especie = 2;
+            }
+            else
+            {
+                Especie = 1;
+            }
+            get_inventario();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

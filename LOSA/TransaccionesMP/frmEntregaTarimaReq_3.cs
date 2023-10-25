@@ -285,10 +285,25 @@ namespace LOSA.TransaccionesMP
                         tarRemanente.ValidarTarimaRemanenteMacro(txtTarima.Text.Trim());
                         if (tarRemanente.Tarima_existe)
                         {
-                            EntregaRemanenteMacros(txtTarima.Text);
-                            load_tarimas_scan_v2();
-                            txtTarima.Text = "";
-                            return;
+                            if (dp.Now() > tarimaEncontrada.FechaVencimiento)
+                            {
+                                Utileria.frmMensajeCalidad frm 
+                                = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Materia Prima VENCIDA!\nNotifique al Departamento de Calidad\nFecha Vencimiento: "+tarimaEncontrada.FechaVencimiento);
+                                if (frm.ShowDialog() == DialogResult.Cancel)
+                                {
+                                    txtTarima.Text = "";
+                                    txtTarima.Focus();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                EntregaRemanenteMacros(txtTarima.Text);
+                                load_tarimas_scan_v2();
+                                txtTarima.Text = "";
+                                return;
+                            }
+                            
                         }
                         EntregarTarima();
                         load_tarimas_scan_v2();
@@ -561,6 +576,10 @@ namespace LOSA.TransaccionesMP
                                 break;
                             case 10://Ajuste de Inventario
                                 mensaje = "Esta Tarima tuvo salida por Ajuste de Inventario!";
+                                Error = true;
+                                break;
+                            case 11://Retenido por Logistica
+                                mensaje = "Esta Tarima esta Retenida por Logistica";
                                 Error = true;
                                 break;
                         }
@@ -1031,6 +1050,22 @@ namespace LOSA.TransaccionesMP
                                     CajaDialogo.Error(ec.Message);
                                 }
 
+
+                                //VALIDACION FECHA DE VENCIMIENTO!
+
+                                if (dp.Now() > tarimaEncontrada.FechaVencimiento)
+                                {
+                                    mensaje = "MATERIA PRIMA VENCIDA!\nTarima: "+tarimaEncontrada.CodigoBarra+" con Lote: "+tarimaEncontrada.LoteMP+"\nFecha de Vencimiento: "+ string.Format("{0:d}",tarimaEncontrada.FechaVencimiento);
+                                    Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                                    frm.ShowDialog();
+
+                                    lblMensaje.Text = "MATERIA PRIMA VENCIDA!";
+                                    panelNotificacion.BackColor = Color.Red;
+                                    timerLimpiarMensaje.Enabled = true;
+                                    timerLimpiarMensaje.Start();
+                                    return;
+
+                                }
 
                                 frmResumenToEntregar frms = new frmResumenToEntregar(ExistenciaTarimaKg
                                                                                     , ExistenciaTarimaUnidades
