@@ -137,13 +137,17 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@desde", dtDesde.EditValue);
                 cmd.Parameters.AddWithValue("@hasta", dtHasta.EditValue);
-                
+                if (tabla == null)
+                    tabla = new DataTable();
+                tabla.Clear();
+                cmd.CommandTimeout = 500000;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(tabla);
                 grdReporte.DataSource = tabla;
                 conn.Close();
 
                 grid_autoajustar();
+                pnl_barra.Visible = false;
 
             }
             catch (Exception ex)
