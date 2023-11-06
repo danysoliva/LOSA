@@ -263,6 +263,8 @@
             this.xrLabel154 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel156 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel155 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
+            this.txtBodegaOrigen = new DevExpress.XtraReports.UI.XRLabel();
             this.xrSubreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -395,6 +397,8 @@
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.txtBodegaOrigen,
+            this.xrLabel8,
             this.xrPanel1,
             this.txtNTransferencia,
             this.xrLabel6,
@@ -946,7 +950,7 @@
             // 
             this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
             new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 207.1646F);
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 220.7152F);
             this.xrLabel12.Multiline = true;
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -959,7 +963,7 @@
             this.txtplaca.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.txtplaca.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
             new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.txtplaca.LocationFloat = new DevExpress.Utils.PointFloat(760.0342F, 206.4252F);
+            this.txtplaca.LocationFloat = new DevExpress.Utils.PointFloat(760.0342F, 219.9758F);
             this.txtplaca.Multiline = true;
             this.txtplaca.Name = "txtplaca";
             this.txtplaca.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -972,7 +976,7 @@
             this.txtoc.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.txtoc.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
             new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.txtoc.LocationFloat = new DevExpress.Utils.PointFloat(760.0342F, 192.8747F);
+            this.txtoc.LocationFloat = new DevExpress.Utils.PointFloat(760.0342F, 206.4253F);
             this.txtoc.Multiline = true;
             this.txtoc.Name = "txtoc";
             this.txtoc.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -984,7 +988,7 @@
             // 
             this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
             new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 192.8746F);
+            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 206.4252F);
             this.xrLabel11.Multiline = true;
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -997,7 +1001,7 @@
             this.txtfactura.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.txtfactura.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
             new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.txtfactura.LocationFloat = new DevExpress.Utils.PointFloat(760.0342F, 178.5846F);
+            this.txtfactura.LocationFloat = new DevExpress.Utils.PointFloat(760.0342F, 192.1352F);
             this.txtfactura.Multiline = true;
             this.txtfactura.Name = "txtfactura";
             this.txtfactura.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1009,7 +1013,7 @@
             // 
             this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
             new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 178.5846F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 192.1352F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -1022,11 +1026,11 @@
             this.dtingreso.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.dtingreso.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
             new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.dtingreso.LocationFloat = new DevExpress.Utils.PointFloat(760.0342F, 164.2947F);
+            this.dtingreso.LocationFloat = new DevExpress.Utils.PointFloat(760.0342F, 178.5894F);
             this.dtingreso.Multiline = true;
             this.dtingreso.Name = "dtingreso";
             this.dtingreso.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.dtingreso.SizeF = new System.Drawing.SizeF(167.7083F, 14.28998F);
+            this.dtingreso.SizeF = new System.Drawing.SizeF(167.7083F, 13.54581F);
             this.dtingreso.StylePriority.UseBorders = false;
             this.dtingreso.StylePriority.UseFont = false;
             this.dtingreso.TextFormatString = "{0:g}";
@@ -1035,11 +1039,11 @@
             // 
             this.xrLabel7.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
             new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 164.2946F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 178.5847F);
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel7.SizeF = new System.Drawing.SizeF(116.67F, 14.29F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(116.67F, 13.55049F);
             this.xrLabel7.StylePriority.UseFont = false;
             this.xrLabel7.Text = "Fecha de Ingreso:";
             // 
@@ -1053,18 +1057,18 @@
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel4.SizeF = new System.Drawing.SizeF(116.67F, 14.29F);
             this.xrLabel4.StylePriority.UseFont = false;
-            this.xrLabel4.Text = "Bodega:";
+            this.xrLabel4.Text = "Bodega Origen:";
             // 
             // xrLabel5
             // 
             this.xrLabel5.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
             this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
             new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(760.0342F, 150F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(760.0916F, 164.2947F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(167.7083F, 14.29465F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(167.7083F, 14.29468F);
             this.xrLabel5.StylePriority.UseBorders = false;
             this.xrLabel5.StylePriority.UseFont = false;
             // 
@@ -3573,6 +3577,31 @@
             this.xrLabel155.StylePriority.UseFont = false;
             this.xrLabel155.Visible = false;
             // 
+            // xrLabel8
+            // 
+            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(643.3644F, 164.2947F);
+            this.xrLabel8.Multiline = true;
+            this.xrLabel8.Name = "xrLabel8";
+            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(116.67F, 14.29466F);
+            this.xrLabel8.StylePriority.UseFont = false;
+            this.xrLabel8.Text = "Bodega:";
+            // 
+            // txtBodegaOrigen
+            // 
+            this.txtBodegaOrigen.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.txtBodegaOrigen.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.txtBodegaOrigen.LocationFloat = new DevExpress.Utils.PointFloat(760.0916F, 150F);
+            this.txtBodegaOrigen.Multiline = true;
+            this.txtBodegaOrigen.Name = "txtBodegaOrigen";
+            this.txtBodegaOrigen.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txtBodegaOrigen.SizeF = new System.Drawing.SizeF(167.7083F, 14.29466F);
+            this.txtBodegaOrigen.StylePriority.UseBorders = false;
+            this.txtBodegaOrigen.StylePriority.UseFont = false;
+            // 
             // xrSubreport1
             // 
             this.xrSubreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 343.5817F);
@@ -3851,5 +3880,7 @@
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow8;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell21;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell24;
+        private DevExpress.XtraReports.UI.XRLabel txtBodegaOrigen;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel8;
     }
 }

@@ -44,6 +44,8 @@ namespace LOSA.RecepcionMP
             gridLookUpEditPresentacion.Visible = true;
             gridLookUpEditPresentacion.Enabled = true;
 
+
+
             this.Id_ingreso = id_ingreso;
             LoadPresentaciones();
             Load_Data();

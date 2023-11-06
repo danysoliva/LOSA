@@ -56,7 +56,7 @@ namespace LOSA.Reportes
 
                 Transferencia transf = new Transferencia();
                 transf.RecuperarHeaderTransf(Convert.ToInt32(txtingreso.Text));
-
+                txtBodegaOrigen.Text = transf.Bodega_in;
                 txtNTransferencia.Text = Convert.ToString(transf.Id_transferencia);
             }
 

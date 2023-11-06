@@ -79,7 +79,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.btnGenerar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnGenerar.Appearance.Options.UseFont = true;
             this.btnGenerar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGenerar.ImageOptions.SvgImage")));
-            this.btnGenerar.Location = new System.Drawing.Point(343, 1);
+            this.btnGenerar.Location = new System.Drawing.Point(401, 1);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(114, 39);
             this.btnGenerar.TabIndex = 9;
@@ -89,7 +89,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             // dtDesde
             // 
             this.dtDesde.EditValue = null;
-            this.dtDesde.Location = new System.Drawing.Point(677, 9);
+            this.dtDesde.Location = new System.Drawing.Point(706, 9);
             this.dtDesde.Name = "dtDesde";
             this.dtDesde.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dtDesde.Properties.Appearance.Options.UseFont = true;
@@ -104,7 +104,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             // dtHasta
             // 
             this.dtHasta.EditValue = null;
-            this.dtHasta.Location = new System.Drawing.Point(863, 9);
+            this.dtHasta.Location = new System.Drawing.Point(892, 9);
             this.dtHasta.Name = "dtHasta";
             this.dtHasta.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.dtHasta.Properties.Appearance.Options.UseFont = true;
@@ -120,7 +120,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(631, 12);
+            this.labelControl1.Location = new System.Drawing.Point(660, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(40, 17);
             this.labelControl1.TabIndex = 12;
@@ -131,7 +131,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(821, 13);
+            this.labelControl3.Location = new System.Drawing.Point(850, 13);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(36, 17);
             this.labelControl3.TabIndex = 13;
@@ -143,7 +143,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.btnExcel.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnExcel.Appearance.Options.UseFont = true;
             this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(476, 1);
+            this.btnExcel.Location = new System.Drawing.Point(534, 1);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(114, 39);
             this.btnExcel.TabIndex = 14;
@@ -163,7 +163,7 @@ namespace LOSA.MigracionACS.Finanzas.Inventarios
             this.grdSelectReport.Properties.NullText = "";
             this.grdSelectReport.Properties.PopupView = this.gridLookUpEdit1View;
             this.grdSelectReport.Properties.ValueMember = "id_reporte";
-            this.grdSelectReport.Size = new System.Drawing.Size(218, 24);
+            this.grdSelectReport.Size = new System.Drawing.Size(291, 24);
             this.grdSelectReport.TabIndex = 15;
             this.grdSelectReport.EditValueChanged += new System.EventHandler(this.gridLookUpEdit1_EditValueChanged);
             // 

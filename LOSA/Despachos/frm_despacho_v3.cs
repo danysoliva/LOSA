@@ -503,7 +503,7 @@ namespace LOSA.Despachos
                 else
                 {
                     bool Permitir = true;
-
+                    int tipo_notificacion = 0;
                     //Vamos a Validar la Fecha de Vencimiento!
                     try
                     {
@@ -517,6 +517,7 @@ namespace LOSA.Despachos
                         {
                             Permitir = dr.GetBoolean(0);
                             mensaje = dr.GetString(1);
+                            tipo_notificacion = dr.GetInt32(2);
                             dr.Close();
                         }
                         conn.Close();
@@ -530,6 +531,8 @@ namespace LOSA.Despachos
                     {
                         Utileria.frmMensajeCalidad frmMensajeCalidad = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
                         frmMensajeCalidad.ShowDialog();
+
+                        EnviarCorreoConTarimasProximasAVencer(tarimaEncontrada.Id, tipo_notificacion);
 
                         beTarima.Text = "";
                         txtCantidadT.Text = "0";
@@ -600,6 +603,26 @@ namespace LOSA.Despachos
                 timerLimpiarMensaje.Start();
             }
 
+        }
+
+        private void EnviarCorreoConTarimasProximasAVencer(int pid_tarima, int ptipo_notificacion)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_insert_log_envio_notificacion_pt_bloqueado", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima", pid_tarima);
+                cmd.Parameters.AddWithValue("@tipo_notificacion", ptipo_notificacion);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void ValidarVencimiento(int pid_tarima)
