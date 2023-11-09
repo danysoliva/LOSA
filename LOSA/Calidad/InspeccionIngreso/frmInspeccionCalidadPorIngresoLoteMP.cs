@@ -1622,7 +1622,14 @@ namespace LOSA.Calidad
             }
             else
             {
-                
+                foreach (dsMantenimientoC.parametrosRow row in dsMantenimientoC.parametros.Rows)
+                {
+                    if (string.IsNullOrWhiteSpace(row.respuesta) || string.IsNullOrEmpty(row.respuesta))
+                    {
+                        CajaDialogo.Error("El Campo Resultado de los Parametros y Especificaciones no pueden quedar vacios!");
+                        return;
+                    }
+                }
 
                 string Query = @"sp_delete_criterio_ingreso_respuestaV2";       //Elimna todas las respuestas guardadas.
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);

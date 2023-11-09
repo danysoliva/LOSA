@@ -8687,6 +8687,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnformula;
             
+            private global::System.Data.DataColumn columnFechaDespacho;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DespachadoClientesDataTable() {
@@ -8786,6 +8788,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FechaDespachoColumn {
+                get {
+                    return this.columnFechaDespacho;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8821,7 +8831,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DespachadoClientesRow AddDespachadoClientesRow(string lote_producto_termiado, decimal CantidadDespachado, decimal kg, string code_sap, string Codigo, string Descripcion, System.DateTime Fecha_PRD, int formula) {
+            public DespachadoClientesRow AddDespachadoClientesRow(string lote_producto_termiado, decimal CantidadDespachado, decimal kg, string code_sap, string Codigo, string Descripcion, System.DateTime Fecha_PRD, int formula, System.DateTime FechaDespacho) {
                 DespachadoClientesRow rowDespachadoClientesRow = ((DespachadoClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         lote_producto_termiado,
@@ -8831,7 +8841,8 @@ namespace LOSA.Calidad {
                         Codigo,
                         Descripcion,
                         Fecha_PRD,
-                        formula};
+                        formula,
+                        FechaDespacho};
                 rowDespachadoClientesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDespachadoClientesRow);
                 return rowDespachadoClientesRow;
@@ -8862,6 +8873,7 @@ namespace LOSA.Calidad {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnFecha_PRD = base.Columns["Fecha_PRD"];
                 this.columnformula = base.Columns["formula"];
+                this.columnFechaDespacho = base.Columns["FechaDespacho"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8883,6 +8895,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnFecha_PRD);
                 this.columnformula = new global::System.Data.DataColumn("formula", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnformula);
+                this.columnFechaDespacho = new global::System.Data.DataColumn("FechaDespacho", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaDespacho);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15936,6 +15950,23 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime FechaDespacho {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDespachadoClientes.FechaDespachoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaDespacho\' de la tabla \'DespachadoClientes\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableDespachadoClientes.FechaDespachoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Islote_producto_termiadoNull() {
                 return this.IsNull(this.tableDespachadoClientes.lote_producto_termiadoColumn);
             }
@@ -16028,6 +16059,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetformulaNull() {
                 this[this.tableDespachadoClientes.formulaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFechaDespachoNull() {
+                return this.IsNull(this.tableDespachadoClientes.FechaDespachoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFechaDespachoNull() {
+                this[this.tableDespachadoClientes.FechaDespachoColumn] = global::System.Convert.DBNull;
             }
         }
         
