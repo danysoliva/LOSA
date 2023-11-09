@@ -611,10 +611,11 @@ namespace LOSA.Despachos
             {
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_insert_log_envio_notificacion_pt_bloqueado", conn);
+                SqlCommand cmd = new SqlCommand("[sp_insert_log_envio_notificacion_pt_bloqueadoV2]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_tarima", pid_tarima);
                 cmd.Parameters.AddWithValue("@tipo_notificacion", ptipo_notificacion);
+                cmd.Parameters.AddWithValue("@idUser",usuarioLogueado.Id);
                 cmd.ExecuteNonQuery();
                 conn.Close();
 

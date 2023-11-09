@@ -1055,6 +1055,24 @@ namespace LOSA.TransaccionesMP
 
                                 if (dp.Now() > tarimaEncontrada.FechaVencimiento)
                                 {
+                                    try
+                                    {
+                                        SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                                        conn.Open();
+                                        SqlCommand cmd = new SqlCommand("[sp_insert_log_envio_notificacion_pt_bloqueadoV2]", conn);
+                                        cmd.CommandType = CommandType.StoredProcedure;
+                                        cmd.Parameters.AddWithValue("@id_tarima", tarimaEncontrada.Id);
+                                        cmd.Parameters.AddWithValue("@tipo_notificacion", 3 /*Materia Prima Vencida*/);
+                                        cmd.Parameters.AddWithValue("@idUser", usuarioLogueado.Id);
+                                        cmd.ExecuteNonQuery();
+                                        conn.Close();
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        CajaDialogo.Error(ex.Message);
+                                    }
+
                                     mensaje = "MATERIA PRIMA VENCIDA!\nTarima: "+tarimaEncontrada.CodigoBarra+" con Lote: "+tarimaEncontrada.LoteMP+"\nFecha de Vencimiento: "+ string.Format("{0:d}",tarimaEncontrada.FechaVencimiento);
                                     Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
                                     frm.ShowDialog();
