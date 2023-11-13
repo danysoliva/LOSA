@@ -96,6 +96,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.colmes_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.AddDeduccion = new DevExpress.XtraEditors.SimpleButton();
             this.gridDeducciones = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -117,7 +118,6 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldias1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltotal1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.AddDeduccion = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtEgreso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEgreso.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtIngreso.Properties)).BeginInit();
@@ -882,6 +882,18 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.groupControl2.TabIndex = 125;
             this.groupControl2.Text = "Deducciones";
             // 
+            // AddDeduccion
+            // 
+            this.AddDeduccion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.AddDeduccion.Location = new System.Drawing.Point(95, 1);
+            this.AddDeduccion.Name = "AddDeduccion";
+            this.AddDeduccion.Size = new System.Drawing.Size(29, 21);
+            this.AddDeduccion.TabIndex = 134;
+            this.AddDeduccion.Tag = "Agregar Item o Servicio";
+            this.AddDeduccion.ToolTip = "Guardar";
+            this.AddDeduccion.Visible = false;
+            this.AddDeduccion.Click += new System.EventHandler(this.AddDeduccion_Click);
+            // 
             // gridDeducciones
             // 
             this.gridDeducciones.DataMember = "deducciones";
@@ -1053,9 +1065,10 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.coltotal1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle_1);
+            this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor_1);
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged_1);
             // 
             // colid1
             // 
@@ -1068,6 +1081,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.coldescripcion1.Caption = "Descripción";
             this.coldescripcion1.FieldName = "descripcion";
             this.coldescripcion1.Name = "coldescripcion1";
+            this.coldescripcion1.OptionsColumn.AllowEdit = false;
             this.coldescripcion1.Visible = true;
             this.coldescripcion1.VisibleIndex = 0;
             this.coldescripcion1.Width = 388;
@@ -1090,22 +1104,10 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.coltotal1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltotal1.FieldName = "total";
             this.coltotal1.Name = "coltotal1";
+            this.coltotal1.OptionsColumn.AllowEdit = false;
             this.coltotal1.Visible = true;
             this.coltotal1.VisibleIndex = 2;
             this.coltotal1.Width = 160;
-            // 
-            // AddDeduccion
-            // 
-            this.AddDeduccion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.AddDeduccion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.AddDeduccion.Location = new System.Drawing.Point(95, 1);
-            this.AddDeduccion.Name = "AddDeduccion";
-            this.AddDeduccion.Size = new System.Drawing.Size(29, 21);
-            this.AddDeduccion.TabIndex = 134;
-            this.AddDeduccion.Tag = "Agregar Item o Servicio";
-            this.AddDeduccion.ToolTip = "Guardar";
-            this.AddDeduccion.Visible = false;
-            this.AddDeduccion.Click += new System.EventHandler(this.AddDeduccion_Click);
             // 
             // frmLiquidacionesOP
             // 

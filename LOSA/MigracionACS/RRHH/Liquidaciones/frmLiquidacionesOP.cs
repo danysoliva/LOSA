@@ -36,6 +36,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
         public decimal SueldoBasePromedioDiarioMasExtraOrdinario;
         public decimal TotalDeducciones;
         public decimal TotalDerechos;
+        public int Dias_Trabajados;
         int IdPorcentajeSelected = 0;
         Liquidacion liqui = new Liquidacion();
         /// <summary>
@@ -117,7 +118,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             decimal TotalRecalculo = 0;
             foreach (dsRRHH_.derechos_calculo_liqRow rowd in dsRRHH_1.derechos_calculo_liq.Rows)
             {
-                if (rowd.id == 8)
+                if (rowd.id == 9)
                 {
                     TotalDerechos = TotalRecalculo;
                     rowd.total = TotalRecalculo;
@@ -176,6 +177,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                         IdPorcentajeSelected = Liq1.id_porcentaje;
                         dtEgreso.EditValue = liqui.fecha_egreso;
                         tsAplicaPreaviso.IsOn = liqui.Aplica_preaviso;
+                        Dias_Trabajados = liqui.Dias_trabajados;
                         //Setear porcentaje guardado
                         foreach (dsRRHH_.porcentajes_liquidacionRow rowi in dsRRHH_1.porcentajes_liquidacion)
                         {
@@ -345,19 +347,23 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 //double DiasTre = Diff_dates.TotalDays;
                 //decimal dDiastre = Convert.ToDecimal(DiasTre);
 
-                string query = @"public.ft_get_calculo_derechos_liquidacion";
-                PgSqlConnection conn = new PgSqlConnection(dp.ConnectionStringODOO5);
+                //string query = @"public.ft_get_calculo_derechos_liquidacion";
+                string query = @"sp_rrhh_get_calculo_derechos_liquidacion";
+                //PgSqlConnection conn = new PgSqlConnection(dp.ConnectionStringODOO5);
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringCostos);
                 conn.Open();
-                PgSqlCommand cmd = new PgSqlCommand(query, conn);
+                //PgSqlCommand cmd = new PgSqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("pyear", Anio);
-                cmd.Parameters.AddWithValue("pmes", Mes);
-                cmd.Parameters.AddWithValue("pdia", Dia);
-                cmd.Parameters.AddWithValue("ppprom_diario_extraor", SueldoBasePromedioDiarioMasExtraOrdinario);
-                cmd.Parameters.AddWithValue("pdias_catorceavo", dDiasCat);
-                cmd.Parameters.AddWithValue("pdias_treceavo", dDiastre);
-                cmd.Parameters.AddWithValue("psalario_base_diario", SueldoBasePromedioDiario);
-                PgSqlDataAdapter adat = new PgSqlDataAdapter(cmd);
+                cmd.Parameters.AddWithValue("@pyear", Anio);
+                cmd.Parameters.AddWithValue("@pmes", Mes);
+                cmd.Parameters.AddWithValue("@pdia", Dia);
+                cmd.Parameters.AddWithValue("@ppprom_diario_extraor", SueldoBasePromedioDiarioMasExtraOrdinario);
+                cmd.Parameters.AddWithValue("@pdias_catorceavo", dDiasCat);
+                cmd.Parameters.AddWithValue("@pdias_treceavo", dDiastre);
+                cmd.Parameters.AddWithValue("@psalario_base_diario", SueldoBasePromedioDiario);
+                //PgSqlDataAdapter adat = new PgSqlDataAdapter(cmd);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsRRHH_1.derechos_calculo_liq.Clear();
                 adat.Fill(dsRRHH_1.derechos_calculo_liq);
                 conn.Close();
@@ -369,6 +375,13 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                         item.dias = DiasVacaciones_A_pagar_en_liquidacion;
                         item.total = decimal.Round(DiasVacaciones_A_pagar_en_liquidacion * SueldoBasePromedioDiarioMasExtraOrdinario, 2, MidpointRounding.AwayFromZero);
                     }
+
+                    if (item.id == 8) //Dias Trabajados
+                    {
+                        item.dias = Dias_Trabajados;
+                        item.total = decimal.Round(Dias_Trabajados * SueldoBasePromedioDiario, 2, MidpointRounding.AwayFromZero);
+                    }
+
                 }
 
             }
@@ -477,21 +490,19 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                             row.total = PreAvisoTotal;
                         }
                     }
+                    
+                    if (row.id == 8) //Dias Trabajados
+                    {
+                        row.dias = Dias_Trabajados;
+                        row.total =decimal.Round(Dias_Trabajados * SueldoBasePromedioDiario, 2, MidpointRounding.AwayFromZero);
+                        
+                    }
                 }
-                //decimal acumulado = 0;
-                //foreach (dsRRHH_.derechos_calculo_liqRow rowd in dsRRHH_1.derechos_calculo_liq.Rows)
-                //{
-                //    if (rowd.id == 4)
-                //    {
-                //        rowd.dias = DiasVacaciones_A_pagar_en_liquidacion;
-                //        rowd.total = decimal.Round(DiasVacaciones_A_pagar_en_liquidacion * SueldoBasePromedioDiarioMasExtraOrdinario, 2, MidpointRounding.AwayFromZero);
-                //    }
-                //    if (rowd.id < 8)
-                //        acumulado += rowd.total;
-                //    if (rowd.id == 8)
-                //        rowd.total = acumulado;
-                //    TotalDerechos = rowd.total;
-                //}
+
+                
+                
+                
+               
                 CalcularTotales();
                 dr.Close();
                 //PgSqlDataAdapter adat = new PgSqlDataAdapter(cmd);
@@ -918,7 +929,11 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                         liqui.Decimo_tercero_total = row.total;
                         break;
 
-                    case 8://total asignacion
+                    case 8://Dias Trabajados
+
+                        break;
+
+                    case 9://total asignacion
                         liqui.Total_derechos = row.total;
                         break;
 
@@ -1380,11 +1395,12 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                     rowd.dias = DiasVacaciones_A_pagar_en_liquidacion;
                     rowd.total = decimal.Round(DiasVacaciones_A_pagar_en_liquidacion * SueldoBasePromedioDiarioMasExtraOrdinario, 2, MidpointRounding.AwayFromZero);
                 }
-                if (rowd.id < 8)
+                if (rowd.id < 9)
                     acumulado += rowd.total;
-                if (rowd.id == 8)
+                if (rowd.id == 9)
                     rowd.total = acumulado;
                 TotalDerechos = rowd.total;
+                txtTDerechos.Text = string.Format("{0:#,###,##0.00}", TotalDerechos);
             }
         }
 
@@ -1486,12 +1502,12 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
 
         private void gridView3_ShowingEditor_1(object sender, CancelEventArgs e)
         {
-            //var gridView = (GridView)gridControl3.FocusedView;
-            //var row = (dsRRHH_.liquidacion_vacRow)gridView.GetFocusedDataRow();
-            //if (row.id != -2)
-            //{
-            //    e.Cancel = true;
-            //}
+            var gridView = (GridView)gridControl3.FocusedView;
+            var row = (dsRRHH_.liquidacion_vacRow)gridView.GetFocusedDataRow();
+            if (row.id != -2)
+            {
+                e.Cancel = true;
+            }
 
         }
 
@@ -1594,7 +1610,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                     {
                         switch (row.id)
                         {
-                            case 8:
+                            case 9:
                                 e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
                                 break;
                             case -8:
@@ -1616,6 +1632,32 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
 
             }
 
+        }
+
+
+        private void gridView1_ShowingEditor_1(object sender, CancelEventArgs e)
+        {
+           
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsRRHH_.derechos_calculo_liqRow)gridView.GetFocusedDataRow();
+            if (row.id != 8)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void gridView1_CellValueChanged_1(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsRRHH_.derechos_calculo_liqRow)gridView.GetFocusedDataRow();
+
+            if (row.id == 8)
+            {
+                row.total = decimal.Round(row.dias * SueldoBasePromedioDiario,2, MidpointRounding.AwayFromZero);
+            }
+
+            CalcularTotales();
+            CalculoDeTotalResumen();
         }
     }
 }
