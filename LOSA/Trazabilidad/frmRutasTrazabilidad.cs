@@ -2584,6 +2584,8 @@ namespace LOSA.Trazabilidad
                 dsReportesTRZ.Inventario_mp_lote_ruta1.Clear();
                 dsReportesTRZ.reproceso_lote_pt_ruta1.Clear();
                 dsReportesTRZ.ingresos_mp_lote_ruta1.Clear();
+                dsMantenimientoC.resumen_ruta_1.Clear();
+
             }
 
             private void cmdExportExcelClientes_lotes_Click(object sender, EventArgs e)
