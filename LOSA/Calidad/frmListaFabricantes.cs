@@ -1,6 +1,7 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,10 @@ namespace LOSA.Calidad
         public frmListaFabricantes(string pproveedor, string provName)
         {
             InitializeComponent();
-            txtproveedor.Text = pproveedor + " - " + provName;
+            Proveedor prov = new Proveedor();
+            prov.RecuperarRegistroWithRTN(pproveedor);
+
+            txtproveedor.Text = pproveedor + " - " + prov.Nombre;
             LoadFabricantes(pproveedor);
         }
 
