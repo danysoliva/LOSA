@@ -1223,7 +1223,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                     command.Parameters.AddWithValue("@dias_tomados", DiasTomados);
                     command.Parameters.AddWithValue("@id_porcentaje", IdPorcentajeSelected);
                     command.Parameters.AddWithValue("@bit_aplica_preaviso", tsAplicaPreaviso.IsOn);
-                    
+                    command.Parameters.AddWithValue("@Dias_Trabajados", Dias_Trabajados);
 
                     SqlDataReader dr1 = command.ExecuteReader();
                     int Id_Liquidacion = 0;
@@ -1651,9 +1651,29 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsRRHH_.derechos_calculo_liqRow)gridView.GetFocusedDataRow();
 
+          
+
             if (row.id == 8)
             {
                 row.total = decimal.Round(row.dias * SueldoBasePromedioDiario,2, MidpointRounding.AwayFromZero);
+                Dias_Trabajados = Convert.ToInt32(row.dias);
+            }
+
+            CalcularTotales();
+            CalculoDeTotalResumen();
+        }
+
+        private void gridView1_CellValueChanging_1(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var gridView = (GridView)gridControl1.FocusedView;
+            var row = (dsRRHH_.derechos_calculo_liqRow)gridView.GetFocusedDataRow();
+
+
+
+            if (row.id == 8)
+            {
+                row.total = decimal.Round(row.dias * SueldoBasePromedioDiario, 2, MidpointRounding.AwayFromZero);
+                Dias_Trabajados = Convert.ToInt32(row.dias);
             }
 
             CalcularTotales();
