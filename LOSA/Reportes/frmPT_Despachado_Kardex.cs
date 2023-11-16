@@ -45,28 +45,49 @@ namespace LOSA.Reportes
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
 
                 adat.Fill(dsReportesInventario1.inventario_tarimas);
-                if (dsReportesInventario1.inventario_tarimas.Rows.Count == 0)
-                {
+                //if (dsReportesInventario1.inventario_tarimas.Rows.Count == 0)
+                //{
 
-                }
-                else
+                //}
+                //else
+                //{
+                //    foreach (dsReportesInventario.inventario_tarimasRow item in dsReportesInventario1.inventario_tarimas.Rows)
+                //    {
+                //        if (item.lote_producto_termiado > 0)
+                //        {
+                //            query = @"sp_get_despachos_por_lote_pt";
+                //            cmd = new SqlCommand(query, conn);
+                //            cmd.CommandType = CommandType.StoredProcedure;
+                //            cmd.Parameters.AddWithValue("@lote_pt", item.lote_producto_termiado);
+                //            adat = new SqlDataAdapter(cmd);
+                //            //dsReportesInventario1.detalle_despacho_lote.Clear();
+                //            adat.Fill(dsReportesInventario1.detalle_despacho_lote);
+                //        }
+                //    }
+
+                //}
+                //conn.Close();
+                if (dsReportesInventario1.inventario_tarimas.Rows.Count > 0)
                 {
-                    foreach (dsReportesInventario.inventario_tarimasRow item in dsReportesInventario1.inventario_tarimas.Rows)
-                    {
-                        if (item.lote_producto_termiado > 0)
-                        {
-                            query = @"sp_get_despachos_por_lote_pt";
-                            cmd = new SqlCommand(query, conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@lote_pt", item.lote_producto_termiado);
-                            adat = new SqlDataAdapter(cmd);
-                            //dsReportesInventario1.detalle_despacho_lote.Clear();
-                            adat.Fill(dsReportesInventario1.detalle_despacho_lote);
-                        }
-                    }
+                    
+                    query = @"dbo.[sp_get_despachos_por_lote_pt_v2]";
+                    cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@lote_pt", item.lote_producto_termiado);
+                    cmd.Parameters.AddWithValue("@especie", Especie);
+                    adat = new SqlDataAdapter(cmd);
+                    //dsReportesInventario1.detalle_despacho_lote.Clear();
+                    adat.Fill(dsReportesInventario1.detalle_despacho_lote);
                     
                 }
+
+
+
+
+
                 conn.Close();
+
+
             }
             catch (Exception ex)
             {
