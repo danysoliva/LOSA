@@ -1688,7 +1688,7 @@ namespace LOSA.Calidad
 
         private void btnNoConformidad_Click(object sender, EventArgs e)
         {
-            frmNoConfirmidadMP frm = new frmNoConfirmidadMP(Id_ingreso);
+            frmNoConfirmidadMP frm = new frmNoConfirmidadMP(Id_ingreso, "", UsuarioLogeado, NumeroTransaccion);
             if (frm.ShowDialog()== DialogResult.OK)
             {
 
