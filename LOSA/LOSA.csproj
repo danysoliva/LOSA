@@ -2721,6 +2721,12 @@
     <Compile Include="MigracionACS\Produccion\DashBoard\frmReprocesoDashboard.designer.cs">
       <DependentUpon>frmReprocesoDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\DashBoard\frmReprocesoDetalleRuta4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\DashBoard\frmReprocesoDetalleRuta4.Designer.cs">
+      <DependentUpon>frmReprocesoDetalleRuta4.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\DashBoard\frmResumenBrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7452,6 +7458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmReprocesoDashboard.resx">
       <DependentUpon>frmReprocesoDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmReprocesoDetalleRuta4.resx">
+      <DependentUpon>frmReprocesoDetalleRuta4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\DashBoard\frmResumenBrom.resx">
       <DependentUpon>frmResumenBrom.cs</DependentUpon>
