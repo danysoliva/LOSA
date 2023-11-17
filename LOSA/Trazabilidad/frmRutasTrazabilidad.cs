@@ -4225,16 +4225,41 @@ namespace LOSA.Trazabilidad
         {
             if (!string.IsNullOrEmpty(txtlote.Text))
             {
+                
                 txtLoteMPRuta1.Text = txtlote.Text;
                 LoadGenerateRuta1();
 
+                acordionRuta1.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+                acordionRuta1.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+                acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+                acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+                this.rutaActiva = 1;
+
                 navigationFrame1.SelectedPage = npRuta1;
+                
             }
             else
             {
                 CajaDialogo.Error("Seleccione un Lote PT");
                 return;
             }
+        }
+
+        private void btnVerBoleta_Click(object sender, EventArgs e)
+        {
+            
+            frmViewBasculaBoleta frm = new frmViewBasculaBoleta(Convert.ToInt32(txtBoleta_Ruta4.Text));
+            frm.Show();
+            
+
         }
     }
 }
