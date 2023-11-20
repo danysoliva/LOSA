@@ -28,6 +28,8 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
         
         private detalle_consumos_kwhDataTable tabledetalle_consumos_kwh;
         
+        private detalle_consumos_kwhAcumuladoDataTable tabledetalle_consumos_kwhAcumulado;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -61,6 +63,9 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
                 }
                 if ((ds.Tables["detalle_consumos_kwh"] != null)) {
                     base.Tables.Add(new detalle_consumos_kwhDataTable(ds.Tables["detalle_consumos_kwh"]));
+                }
+                if ((ds.Tables["detalle_consumos_kwhAcumulado"] != null)) {
+                    base.Tables.Add(new detalle_consumos_kwhAcumuladoDataTable(ds.Tables["detalle_consumos_kwhAcumulado"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -97,6 +102,16 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
         public detalle_consumos_kwhDataTable detalle_consumos_kwh {
             get {
                 return this.tabledetalle_consumos_kwh;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public detalle_consumos_kwhAcumuladoDataTable detalle_consumos_kwhAcumulado {
+            get {
+                return this.tabledetalle_consumos_kwhAcumulado;
             }
         }
         
@@ -173,6 +188,9 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
                 if ((ds.Tables["detalle_consumos_kwh"] != null)) {
                     base.Tables.Add(new detalle_consumos_kwhDataTable(ds.Tables["detalle_consumos_kwh"]));
                 }
+                if ((ds.Tables["detalle_consumos_kwhAcumulado"] != null)) {
+                    base.Tables.Add(new detalle_consumos_kwhAcumuladoDataTable(ds.Tables["detalle_consumos_kwhAcumulado"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -218,6 +236,12 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
                     this.tabledetalle_consumos_kwh.InitVars();
                 }
             }
+            this.tabledetalle_consumos_kwhAcumulado = ((detalle_consumos_kwhAcumuladoDataTable)(base.Tables["detalle_consumos_kwhAcumulado"]));
+            if ((initTable == true)) {
+                if ((this.tabledetalle_consumos_kwhAcumulado != null)) {
+                    this.tabledetalle_consumos_kwhAcumulado.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -232,6 +256,8 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
             base.Tables.Add(this.tableturnos);
             this.tabledetalle_consumos_kwh = new detalle_consumos_kwhDataTable();
             base.Tables.Add(this.tabledetalle_consumos_kwh);
+            this.tabledetalle_consumos_kwhAcumulado = new detalle_consumos_kwhAcumuladoDataTable();
+            base.Tables.Add(this.tabledetalle_consumos_kwhAcumulado);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -243,6 +269,12 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializedetalle_consumos_kwh() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializedetalle_consumos_kwhAcumulado() {
             return false;
         }
         
@@ -306,6 +338,9 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void detalle_consumos_kwhRowChangeEventHandler(object sender, detalle_consumos_kwhRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void detalle_consumos_kwhAcumuladoRowChangeEventHandler(object sender, detalle_consumos_kwhAcumuladoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -685,6 +720,8 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
             
             private global::System.Data.DataColumn columnKwh;
             
+            private global::System.Data.DataColumn columnPorcentaje;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public detalle_consumos_kwhDataTable() {
@@ -768,6 +805,14 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PorcentajeColumn {
+                get {
+                    return this.columnPorcentaje;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -803,7 +848,7 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public detalle_consumos_kwhRow Adddetalle_consumos_kwhRow(int id_sub_maquina, string SubMaquinaName, int id_maquina, string MaquinaName, string PLC, decimal Kwh) {
+            public detalle_consumos_kwhRow Adddetalle_consumos_kwhRow(int id_sub_maquina, string SubMaquinaName, int id_maquina, string MaquinaName, string PLC, decimal Kwh, decimal Porcentaje) {
                 detalle_consumos_kwhRow rowdetalle_consumos_kwhRow = ((detalle_consumos_kwhRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_sub_maquina,
@@ -811,7 +856,8 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
                         id_maquina,
                         MaquinaName,
                         PLC,
-                        Kwh};
+                        Kwh,
+                        Porcentaje};
                 rowdetalle_consumos_kwhRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_consumos_kwhRow);
                 return rowdetalle_consumos_kwhRow;
@@ -840,6 +886,7 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
                 this.columnMaquinaName = base.Columns["MaquinaName"];
                 this.columnPLC = base.Columns["PLC"];
                 this.columnKwh = base.Columns["Kwh"];
+                this.columnPorcentaje = base.Columns["Porcentaje"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -857,6 +904,8 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
                 base.Columns.Add(this.columnPLC);
                 this.columnKwh = new global::System.Data.DataColumn("Kwh", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKwh);
+                this.columnPorcentaje = new global::System.Data.DataColumn("Porcentaje", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPorcentaje);
                 this.columnSubMaquinaName.Caption = "Sub Maquina Name";
                 this.columnMaquinaName.Caption = "Maquina Name";
                 this.columnKwh.Caption = "Kw/h";
@@ -946,6 +995,340 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "detalle_consumos_kwhDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class detalle_consumos_kwhAcumuladoDataTable : global::System.Data.TypedTableBase<detalle_consumos_kwhAcumuladoRow> {
+            
+            private global::System.Data.DataColumn columnid_sub_maquina;
+            
+            private global::System.Data.DataColumn columnSubMaquinaName;
+            
+            private global::System.Data.DataColumn columnid_maquina;
+            
+            private global::System.Data.DataColumn columnMaquinaName;
+            
+            private global::System.Data.DataColumn columnPLC;
+            
+            private global::System.Data.DataColumn columnKwh;
+            
+            private global::System.Data.DataColumn columnPorcentaje;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public detalle_consumos_kwhAcumuladoDataTable() {
+                this.TableName = "detalle_consumos_kwhAcumulado";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal detalle_consumos_kwhAcumuladoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected detalle_consumos_kwhAcumuladoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_sub_maquinaColumn {
+                get {
+                    return this.columnid_sub_maquina;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SubMaquinaNameColumn {
+                get {
+                    return this.columnSubMaquinaName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_maquinaColumn {
+                get {
+                    return this.columnid_maquina;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MaquinaNameColumn {
+                get {
+                    return this.columnMaquinaName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PLCColumn {
+                get {
+                    return this.columnPLC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn KwhColumn {
+                get {
+                    return this.columnKwh;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PorcentajeColumn {
+                get {
+                    return this.columnPorcentaje;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public detalle_consumos_kwhAcumuladoRow this[int index] {
+                get {
+                    return ((detalle_consumos_kwhAcumuladoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event detalle_consumos_kwhAcumuladoRowChangeEventHandler detalle_consumos_kwhAcumuladoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event detalle_consumos_kwhAcumuladoRowChangeEventHandler detalle_consumos_kwhAcumuladoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event detalle_consumos_kwhAcumuladoRowChangeEventHandler detalle_consumos_kwhAcumuladoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event detalle_consumos_kwhAcumuladoRowChangeEventHandler detalle_consumos_kwhAcumuladoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Adddetalle_consumos_kwhAcumuladoRow(detalle_consumos_kwhAcumuladoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public detalle_consumos_kwhAcumuladoRow Adddetalle_consumos_kwhAcumuladoRow(int id_sub_maquina, string SubMaquinaName, int id_maquina, string MaquinaName, string PLC, decimal Kwh, decimal Porcentaje) {
+                detalle_consumos_kwhAcumuladoRow rowdetalle_consumos_kwhAcumuladoRow = ((detalle_consumos_kwhAcumuladoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        id_sub_maquina,
+                        SubMaquinaName,
+                        id_maquina,
+                        MaquinaName,
+                        PLC,
+                        Kwh,
+                        Porcentaje};
+                rowdetalle_consumos_kwhAcumuladoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdetalle_consumos_kwhAcumuladoRow);
+                return rowdetalle_consumos_kwhAcumuladoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                detalle_consumos_kwhAcumuladoDataTable cln = ((detalle_consumos_kwhAcumuladoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new detalle_consumos_kwhAcumuladoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnid_sub_maquina = base.Columns["id_sub_maquina"];
+                this.columnSubMaquinaName = base.Columns["SubMaquinaName"];
+                this.columnid_maquina = base.Columns["id_maquina"];
+                this.columnMaquinaName = base.Columns["MaquinaName"];
+                this.columnPLC = base.Columns["PLC"];
+                this.columnKwh = base.Columns["Kwh"];
+                this.columnPorcentaje = base.Columns["Porcentaje"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnid_sub_maquina = new global::System.Data.DataColumn("id_sub_maquina", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_sub_maquina);
+                this.columnSubMaquinaName = new global::System.Data.DataColumn("SubMaquinaName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubMaquinaName);
+                this.columnid_maquina = new global::System.Data.DataColumn("id_maquina", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_maquina);
+                this.columnMaquinaName = new global::System.Data.DataColumn("MaquinaName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaquinaName);
+                this.columnPLC = new global::System.Data.DataColumn("PLC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPLC);
+                this.columnKwh = new global::System.Data.DataColumn("Kwh", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKwh);
+                this.columnPorcentaje = new global::System.Data.DataColumn("Porcentaje", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPorcentaje);
+                this.columnSubMaquinaName.Caption = "Sub Maquina Name";
+                this.columnMaquinaName.Caption = "Maquina Name";
+                this.columnKwh.Caption = "Kw/h";
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public detalle_consumos_kwhAcumuladoRow Newdetalle_consumos_kwhAcumuladoRow() {
+                return ((detalle_consumos_kwhAcumuladoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new detalle_consumos_kwhAcumuladoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(detalle_consumos_kwhAcumuladoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.detalle_consumos_kwhAcumuladoRowChanged != null)) {
+                    this.detalle_consumos_kwhAcumuladoRowChanged(this, new detalle_consumos_kwhAcumuladoRowChangeEvent(((detalle_consumos_kwhAcumuladoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.detalle_consumos_kwhAcumuladoRowChanging != null)) {
+                    this.detalle_consumos_kwhAcumuladoRowChanging(this, new detalle_consumos_kwhAcumuladoRowChangeEvent(((detalle_consumos_kwhAcumuladoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.detalle_consumos_kwhAcumuladoRowDeleted != null)) {
+                    this.detalle_consumos_kwhAcumuladoRowDeleted(this, new detalle_consumos_kwhAcumuladoRowChangeEvent(((detalle_consumos_kwhAcumuladoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.detalle_consumos_kwhAcumuladoRowDeleting != null)) {
+                    this.detalle_consumos_kwhAcumuladoRowDeleting(this, new detalle_consumos_kwhAcumuladoRowChangeEvent(((detalle_consumos_kwhAcumuladoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Removedetalle_consumos_kwhAcumuladoRow(detalle_consumos_kwhAcumuladoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMedicionElectrica ds = new dsMedicionElectrica();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "detalle_consumos_kwhAcumuladoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1365,6 +1748,22 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Porcentaje {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledetalle_consumos_kwh.PorcentajeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Porcentaje\' in table \'detalle_consumos_kwh\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_consumos_kwh.PorcentajeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isid_sub_maquinaNull() {
                 return this.IsNull(this.tabledetalle_consumos_kwh.id_sub_maquinaColumn);
             }
@@ -1434,6 +1833,234 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
             public void SetKwhNull() {
                 this[this.tabledetalle_consumos_kwh.KwhColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPorcentajeNull() {
+                return this.IsNull(this.tabledetalle_consumos_kwh.PorcentajeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPorcentajeNull() {
+                this[this.tabledetalle_consumos_kwh.PorcentajeColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class detalle_consumos_kwhAcumuladoRow : global::System.Data.DataRow {
+            
+            private detalle_consumos_kwhAcumuladoDataTable tabledetalle_consumos_kwhAcumulado;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal detalle_consumos_kwhAcumuladoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledetalle_consumos_kwhAcumulado = ((detalle_consumos_kwhAcumuladoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int id_sub_maquina {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalle_consumos_kwhAcumulado.id_sub_maquinaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_sub_maquina\' in table \'detalle_consumos_kwhAcumulado\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_consumos_kwhAcumulado.id_sub_maquinaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SubMaquinaName {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_consumos_kwhAcumulado.SubMaquinaNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SubMaquinaName\' in table \'detalle_consumos_kwhAcumulado\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_consumos_kwhAcumulado.SubMaquinaNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int id_maquina {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalle_consumos_kwhAcumulado.id_maquinaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_maquina\' in table \'detalle_consumos_kwhAcumulado\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_consumos_kwhAcumulado.id_maquinaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MaquinaName {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_consumos_kwhAcumulado.MaquinaNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MaquinaName\' in table \'detalle_consumos_kwhAcumulado\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_consumos_kwhAcumulado.MaquinaNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PLC {
+                get {
+                    try {
+                        return ((string)(this[this.tabledetalle_consumos_kwhAcumulado.PLCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PLC\' in table \'detalle_consumos_kwhAcumulado\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_consumos_kwhAcumulado.PLCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Kwh {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledetalle_consumos_kwhAcumulado.KwhColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Kwh\' in table \'detalle_consumos_kwhAcumulado\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_consumos_kwhAcumulado.KwhColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Porcentaje {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledetalle_consumos_kwhAcumulado.PorcentajeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Porcentaje\' in table \'detalle_consumos_kwhAcumulado\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_consumos_kwhAcumulado.PorcentajeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_sub_maquinaNull() {
+                return this.IsNull(this.tabledetalle_consumos_kwhAcumulado.id_sub_maquinaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_sub_maquinaNull() {
+                this[this.tabledetalle_consumos_kwhAcumulado.id_sub_maquinaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSubMaquinaNameNull() {
+                return this.IsNull(this.tabledetalle_consumos_kwhAcumulado.SubMaquinaNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSubMaquinaNameNull() {
+                this[this.tabledetalle_consumos_kwhAcumulado.SubMaquinaNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_maquinaNull() {
+                return this.IsNull(this.tabledetalle_consumos_kwhAcumulado.id_maquinaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_maquinaNull() {
+                this[this.tabledetalle_consumos_kwhAcumulado.id_maquinaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMaquinaNameNull() {
+                return this.IsNull(this.tabledetalle_consumos_kwhAcumulado.MaquinaNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMaquinaNameNull() {
+                this[this.tabledetalle_consumos_kwhAcumulado.MaquinaNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPLCNull() {
+                return this.IsNull(this.tabledetalle_consumos_kwhAcumulado.PLCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPLCNull() {
+                this[this.tabledetalle_consumos_kwhAcumulado.PLCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsKwhNull() {
+                return this.IsNull(this.tabledetalle_consumos_kwhAcumulado.KwhColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetKwhNull() {
+                this[this.tabledetalle_consumos_kwhAcumulado.KwhColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPorcentajeNull() {
+                return this.IsNull(this.tabledetalle_consumos_kwhAcumulado.PorcentajeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPorcentajeNull() {
+                this[this.tabledetalle_consumos_kwhAcumulado.PorcentajeColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1490,6 +2117,40 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public detalle_consumos_kwhRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class detalle_consumos_kwhAcumuladoRowChangeEvent : global::System.EventArgs {
+            
+            private detalle_consumos_kwhAcumuladoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public detalle_consumos_kwhAcumuladoRowChangeEvent(detalle_consumos_kwhAcumuladoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public detalle_consumos_kwhAcumuladoRow Row {
                 get {
                     return this.eventRow;
                 }
