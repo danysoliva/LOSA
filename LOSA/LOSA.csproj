@@ -5810,6 +5810,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionesMP\EntregaMP\frmEntregaTarimaReq_4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaccionesMP\EntregaMP\frmEntregaTarimaReq_4.Designer.cs">
+      <DependentUpon>frmEntregaTarimaReq_4.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransaccionesMP\frmAjusteLotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -8434,6 +8440,9 @@
     <EmbeddedResource Include="Tools\xfrmPopup.resx">
       <DependentUpon>xfrmPopup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransaccionesMP\EntregaMP\frmEntregaTarimaReq_4.resx">
+      <DependentUpon>frmEntregaTarimaReq_4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransaccionesMP\frmAjusteLotes.resx">
       <DependentUpon>frmAjusteLotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -8992,6 +9001,7 @@
     <None Include="TransaccionesMP\dsTransaccionesMP.xss">
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </None>
+    <None Include="TransaccionesMP\EntregaMP\frmEntregaTarimaReq_4.resx.bak" />
     <None Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.xsc">
       <DependentUpon>dsGestionGranel.xsd</DependentUpon>
     </None>

@@ -28,10 +28,17 @@ namespace LOSA.TransaccionesMP
         public decimal factor;
         public decimal ud_enviar = 0;
         public decimal kg_enviar = 0;
+        public int BasculaID = 0;
 
         DataOperations dp = new DataOperations();
-        
-        
+
+        enum Basculas
+        {
+            Bascula1 = 1,
+            Bascula2 = 2
+        }
+
+        //RUTA PRINCIPAL PARA ENTREGA DE MATERIA PRIMA!
         public frmResumenToEntregar(
                                     decimal ExistenciaTarima_kg,//Kg
                                     decimal pExistenciaTarima_Unidades,
@@ -87,6 +94,76 @@ namespace LOSA.TransaccionesMP
                 txtRestanteTarimasUnidades.Text = string.Format("{0:###,##0}", pExistenciaTarima_Unidades - ud_enviar);
                 txtPorEnviar.Text = string.Format("{0:###,##0.00}", ud_enviar);
                 CalcularKg(dp.ValidateNumberInt32(Math.Round(ud_enviar, 0)));
+            }
+
+
+
+            //Tarima tm = new Tarima();
+            //tm.ValidarSiEsMPBscula(id_tm);
+            //if (tm.IsMacroIngrediente)
+            //{
+            //    btnBasc1.Visible = true;
+            //    btnBasc2.Visible = true;
+            //    DisponibilidadDeBascula();
+            //}
+
+        }
+
+        private void DisponibilidadDeBascula()
+        {
+            try
+            {
+                int DisponibleBascula1 = 1;
+                int DisponibleBascula2 = 1;
+                bool BasculaDisponible;
+
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_disponibilidad_bascula", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    DisponibleBascula1 = dr.GetInt32(0);
+                    DisponibleBascula2 = dr.GetInt32(1);
+                    
+                }
+                dr.Close();
+                conn.Close();
+
+                if (DisponibleBascula2 == 0)
+                {
+                    BasculaID = (int)Basculas.Bascula1;
+                    btnBasc1.Appearance.BackColor = default(Color);
+                    btnBasc2.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+                    simpleButton1.Enabled = true;
+
+                }
+                
+
+                if (DisponibleBascula1 == 0)
+                {
+                    BasculaID = (int)Basculas.Bascula1;
+                    btnBasc2.Appearance.BackColor = default(Color);
+                    btnBasc1.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+                    simpleButton1.Enabled = true;
+
+                }
+                
+                
+
+                
+
+                if (DisponibleBascula1 > 0 || DisponibleBascula2 > 0)
+                {
+                    simpleButton1.Enabled = false;
+                    lblErrorBascula.Text = "BASCULAS CON TARIMAS PENDIENTES DE ENTREGA\nSe debe Completar los Pesajes pendientes!";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -297,6 +374,12 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            //if (BasculaID == 0)
+            //{
+            //    Utileria.frmMensaje frm = new Utileria.frmMensaje(Utileria.frmMensaje.TipoMsj.error, "Debe seleccionar una Bascula");
+            //    frm.ShowDialog();
+            //    return;
+            //}
 
             if (ExistenciaKg == 0 )
             {
@@ -336,6 +419,22 @@ namespace LOSA.TransaccionesMP
         private void frmResumenToEntregar_Load(object sender, EventArgs e)
         {
             //chConsumirPendientes.Checked = true;
+        }
+
+        private void btnBasc1_Click(object sender, EventArgs e)
+        {
+            BasculaID = (int)Basculas.Bascula1;
+            btnBasc2.Appearance.BackColor = default(Color);
+            btnBasc1.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+            simpleButton1.Enabled = true;
+        }
+
+        private void btnBasc2_Click(object sender, EventArgs e)
+        {
+            BasculaID = (int)Basculas.Bascula2;
+            btnBasc1.Appearance.BackColor = default(Color);
+            btnBasc2.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
+            simpleButton1.Enabled = true;
         }
     }
 }

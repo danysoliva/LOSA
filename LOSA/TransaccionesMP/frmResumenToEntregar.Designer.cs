@@ -64,6 +64,9 @@ namespace LOSA.TransaccionesMP
             this.txtKgAEnviar = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
+            this.btnBasc2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBasc1 = new DevExpress.XtraEditors.SimpleButton();
+            this.lblErrorBascula = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtSolicitados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEnviados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorEnviar.Properties)).BeginInit();
@@ -84,7 +87,7 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(327, 531);
+            this.cmdHome.Location = new System.Drawing.Point(315, 608);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(175, 48);
             this.cmdHome.TabIndex = 7;
@@ -100,7 +103,7 @@ namespace LOSA.TransaccionesMP
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(134, 531);
+            this.simpleButton1.Location = new System.Drawing.Point(122, 608);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(175, 48);
             this.simpleButton1.TabIndex = 8;
@@ -237,7 +240,7 @@ namespace LOSA.TransaccionesMP
             // 
             // chConsumirPendientes
             // 
-            this.chConsumirPendientes.Location = new System.Drawing.Point(1, 543);
+            this.chConsumirPendientes.Location = new System.Drawing.Point(5, 614);
             this.chConsumirPendientes.Name = "chConsumirPendientes";
             this.chConsumirPendientes.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.chConsumirPendientes.Properties.Appearance.Options.UseFont = true;
@@ -425,11 +428,58 @@ namespace LOSA.TransaccionesMP
             this.dsTransaccionesMP1.DataSetName = "dsTransaccionesMP";
             this.dsTransaccionesMP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // btnBasc2
+            // 
+            this.btnBasc2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnBasc2.Appearance.Options.UseFont = true;
+            this.btnBasc2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnBasc2.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X32;
+            this.btnBasc2.Location = new System.Drawing.Point(353, 539);
+            this.btnBasc2.Name = "btnBasc2";
+            this.btnBasc2.Size = new System.Drawing.Size(112, 49);
+            this.btnBasc2.TabIndex = 119;
+            this.btnBasc2.Text = "Báscula 2";
+            this.btnBasc2.Visible = false;
+            this.btnBasc2.Click += new System.EventHandler(this.btnBasc2_Click);
+            // 
+            // btnBasc1
+            // 
+            this.btnBasc1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBasc1.Appearance.Options.UseFont = true;
+            this.btnBasc1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnBasc1.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
+            this.btnBasc1.Location = new System.Drawing.Point(171, 539);
+            this.btnBasc1.Name = "btnBasc1";
+            this.btnBasc1.Size = new System.Drawing.Size(112, 49);
+            this.btnBasc1.TabIndex = 118;
+            this.btnBasc1.Text = "Báscula 1";
+            this.btnBasc1.Visible = false;
+            this.btnBasc1.Click += new System.EventHandler(this.btnBasc1_Click);
+            // 
+            // lblErrorBascula
+            // 
+            this.lblErrorBascula.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorBascula.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorBascula.Appearance.Options.UseFont = true;
+            this.lblErrorBascula.Appearance.Options.UseForeColor = true;
+            this.lblErrorBascula.Appearance.Options.UseTextOptions = true;
+            this.lblErrorBascula.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblErrorBascula.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblErrorBascula.Location = new System.Drawing.Point(129, 287);
+            this.lblErrorBascula.Name = "lblErrorBascula";
+            this.lblErrorBascula.Size = new System.Drawing.Size(344, 47);
+            this.lblErrorBascula.TabIndex = 120;
+            this.lblErrorBascula.Text = "NO EXISTE BASCULA DISPONIBLE";
+            this.lblErrorBascula.Visible = false;
+            // 
             // frmResumenToEntregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 584);
+            this.ClientSize = new System.Drawing.Size(640, 668);
+            this.Controls.Add(this.lblErrorBascula);
+            this.Controls.Add(this.btnBasc2);
+            this.Controls.Add(this.btnBasc1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtKgAEnviar);
             this.Controls.Add(this.labelControl5);
@@ -504,5 +554,8 @@ namespace LOSA.TransaccionesMP
         private DevExpress.XtraEditors.LabelControl lblTotalUd_en_tarima;
         private DevExpress.XtraEditors.TextEdit txtKgAEnviar;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.SimpleButton btnBasc2;
+        private DevExpress.XtraEditors.SimpleButton btnBasc1;
+        private DevExpress.XtraEditors.LabelControl lblErrorBascula;
     }
 }

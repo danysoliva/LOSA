@@ -1,4 +1,5 @@
 ﻿using LOSA.Clases;
+using LOSA.TransaccionesMP.EntregaMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,7 @@ namespace LOSA.TransaccionesMP
             if (path.Camino == 1)//Ultimo camino habilitado
             {
                 frmEntregaTarimaReq_3 frm = new frmEntregaTarimaReq_3(UsuarioLogeado);
+                //frmEntregaTarimaReq_4 frm = new frmEntregaTarimaReq_4(UsuarioLogeado);
                 frm.WindowState = FormWindowState.Maximized;
                 frm.MdiParent = this.MdiParent;
                 frm.Show();

@@ -95,7 +95,7 @@ namespace LOSA.RecepcionMP
             this.grd_data.Location = new System.Drawing.Point(2, 107);
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
-            this.grd_data.Size = new System.Drawing.Size(826, 533);
+            this.grd_data.Size = new System.Drawing.Size(826, 522);
             this.grd_data.TabIndex = 32;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -251,7 +251,7 @@ namespace LOSA.RecepcionMP
             this.Controls.Add(this.grd_data);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnAtras);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_detalle_granel";
             this.Text = "frm_detalle_granel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

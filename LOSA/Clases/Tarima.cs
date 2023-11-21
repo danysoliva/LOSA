@@ -55,6 +55,7 @@ namespace LOSA.Clases
         decimal ud_existencia;
         decimal kg_existencia;
         bool tarima_existe;
+        bool isMacroIngrediente;
         public Tarima()
         {
 
@@ -113,6 +114,7 @@ namespace LOSA.Clases
         public bool Tarima_existe { get => tarima_existe; set => tarima_existe = value; }
         public decimal Ud_existencia { get => ud_existencia; set => ud_existencia = value; }
         public decimal Kg_existencia { get => kg_existencia; set => kg_existencia = value; }
+        public bool IsMacroIngrediente { get => isMacroIngrediente; set => isMacroIngrediente = value; }
 
         public bool RecuperarRegistro(int pIdTarima, string pCodigoBarra)
         {
@@ -816,6 +818,34 @@ namespace LOSA.Clases
             }
             return Recuperado;
         
+        }
+
+        public bool ValidarSiEsMPBscula(int pidTarima)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_get_validar_si_es_macro", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@pidTarima", pidTarima);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IsMacroIngrediente = dr.GetBoolean(0);
+                    Recuperado = true;
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Recuperado = false;
+                CajaDialogo.Error(ex.Message);
+            }
+            return Recuperado;
+
         }
     }
 }
