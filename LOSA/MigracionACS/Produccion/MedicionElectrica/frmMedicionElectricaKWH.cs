@@ -23,7 +23,8 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica
         {
             Turnos=1,
             DetalleTurno=2,
-            DetalleAcumulado=3
+            DetalleAcumulado=3,
+            Instantaneas=4
         }
 
         GridExportOption GridExportActualOption;
@@ -37,6 +38,9 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica
         {
             load_data();
             Load_DataALL_Turnos();
+            LoadDetalleDatosInstantaneos();
+            timerInstantaneos.Enabled = true;
+            timerInstantaneos.Start();
         }
 
         private void Load_DataALL_Turnos()
@@ -160,6 +164,9 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica
                     case GridExportOption.DetalleAcumulado:
                         gridControl3.ExportToXlsx(dialog.FileName);
                         break;
+                    case GridExportOption.Instantaneas:
+                        gridControl4.ExportToXlsx(dialog.FileName);
+                        break;
                 }
                 
             }
@@ -211,5 +218,42 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica
         {
             GridExportActualOption = GridExportOption.DetalleTurno;
         }
+
+        private void gridView4_RowClick(object sender, RowClickEventArgs e)
+        {
+            GridExportActualOption = GridExportOption.Instantaneas;
+        }
+
+        private void timerInstantaneos_Tick(object sender, EventArgs e)
+        {
+            LoadDetalleDatosInstantaneos();
+        }
+
+        private void LoadDetalleDatosInstantaneos()
+        {
+            string query = @"[dbo].sp_get_detalle_lecturas_automaticas_kwh";
+            DataOperations dp = new DataOperations();
+
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@desde", dtDesde.EditValue);
+                //cmd.Parameters.AddWithValue("@hasta", dtHasta.EditValue);
+                //cmd.Parameters.AddWithValue("@todos", tsVerTodosTickets.EditValue);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                dsMedicionElectrica1.instanteos_lectura.Clear();
+                da.Fill(dsMedicionElectrica1.instanteos_lectura);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+
     }
 }

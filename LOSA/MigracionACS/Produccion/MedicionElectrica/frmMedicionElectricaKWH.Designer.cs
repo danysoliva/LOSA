@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMedicionElectricaKWH));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.label9 = new System.Windows.Forms.Label();
             this.dtHasta = new DevExpress.XtraEditors.DateEdit();
             this.label7 = new System.Windows.Forms.Label();
@@ -68,6 +69,8 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.lblTmProducidas = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblKgProducidos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
@@ -80,8 +83,18 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPorcentaje1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPorcentaje_kg1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lblTmProducidas = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_sub_maquinas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubMaquina = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_maquina1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaquina = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collectura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collast_update = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPLC1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.timerInstantaneos = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).BeginInit();
@@ -98,6 +111,9 @@
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -289,9 +305,9 @@
             // cmdPrintReport
             // 
             this.cmdPrintReport.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.cmdPrintReport.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdPrintReport.Name = "cmdPrintReport";
             this.cmdPrintReport.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -438,7 +454,8 @@
             this.xtraTabControl1.TabIndex = 41;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3});
             // 
             // xtraTabPage1
             // 
@@ -458,6 +475,26 @@
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(984, 427);
             this.xtraTabPage2.Text = "Resumen Acumulado";
+            // 
+            // lblTmProducidas
+            // 
+            this.lblTmProducidas.AutoSize = true;
+            this.lblTmProducidas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTmProducidas.Location = new System.Drawing.Point(127, 30);
+            this.lblTmProducidas.Name = "lblTmProducidas";
+            this.lblTmProducidas.Size = new System.Drawing.Size(66, 20);
+            this.lblTmProducidas.TabIndex = 44;
+            this.lblTmProducidas.Text = "0.00 Tm";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 20);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "Tm Producidas: ";
             // 
             // lblKgProducidos
             // 
@@ -582,25 +619,107 @@
             this.colPorcentaje_kg1.Visible = true;
             this.colPorcentaje_kg1.VisibleIndex = 5;
             // 
-            // lblTmProducidas
+            // xtraTabPage3
             // 
-            this.lblTmProducidas.AutoSize = true;
-            this.lblTmProducidas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTmProducidas.Location = new System.Drawing.Point(127, 30);
-            this.lblTmProducidas.Name = "lblTmProducidas";
-            this.lblTmProducidas.Size = new System.Drawing.Size(66, 20);
-            this.lblTmProducidas.TabIndex = 44;
-            this.lblTmProducidas.Text = "0.00 Tm";
+            this.xtraTabPage3.Controls.Add(this.gridControl4);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(984, 427);
+            this.xtraTabPage3.Text = "Lectura en vivo";
             // 
-            // label3
+            // gridControl4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 20);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "Tm Producidas: ";
+            this.gridControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl4.DataMember = "instanteos_lectura";
+            this.gridControl4.DataSource = this.dsMedicionElectrica1;
+            this.gridControl4.Location = new System.Drawing.Point(3, 3);
+            this.gridControl4.MainView = this.gridView4;
+            this.gridControl4.Name = "gridControl4";
+            this.gridControl4.Size = new System.Drawing.Size(978, 424);
+            this.gridControl4.TabIndex = 0;
+            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colid_sub_maquinas,
+            this.colSubMaquina,
+            this.colid_maquina1,
+            this.colMaquina,
+            this.collectura,
+            this.collast_update,
+            this.colPLC1});
+            this.gridView4.GridControl = this.gridControl4;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView4_RowClick);
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            // 
+            // colid_sub_maquinas
+            // 
+            this.colid_sub_maquinas.FieldName = "id_sub_maquinas";
+            this.colid_sub_maquinas.Name = "colid_sub_maquinas";
+            this.colid_sub_maquinas.OptionsColumn.AllowEdit = false;
+            // 
+            // colSubMaquina
+            // 
+            this.colSubMaquina.FieldName = "SubMaquina";
+            this.colSubMaquina.Name = "colSubMaquina";
+            this.colSubMaquina.OptionsColumn.AllowEdit = false;
+            this.colSubMaquina.Visible = true;
+            this.colSubMaquina.VisibleIndex = 0;
+            // 
+            // colid_maquina1
+            // 
+            this.colid_maquina1.FieldName = "id_maquina";
+            this.colid_maquina1.Name = "colid_maquina1";
+            this.colid_maquina1.OptionsColumn.AllowEdit = false;
+            // 
+            // colMaquina
+            // 
+            this.colMaquina.FieldName = "Maquina";
+            this.colMaquina.Name = "colMaquina";
+            this.colMaquina.OptionsColumn.AllowEdit = false;
+            // 
+            // collectura
+            // 
+            this.collectura.DisplayFormat.FormatString = "n2";
+            this.collectura.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.collectura.FieldName = "lectura";
+            this.collectura.Name = "collectura";
+            this.collectura.OptionsColumn.AllowEdit = false;
+            this.collectura.Visible = true;
+            this.collectura.VisibleIndex = 1;
+            // 
+            // collast_update
+            // 
+            this.collast_update.DisplayFormat.FormatString = "g";
+            this.collast_update.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.collast_update.FieldName = "last_update";
+            this.collast_update.Name = "collast_update";
+            this.collast_update.OptionsColumn.AllowEdit = false;
+            this.collast_update.Visible = true;
+            this.collast_update.VisibleIndex = 2;
+            // 
+            // colPLC1
+            // 
+            this.colPLC1.FieldName = "PLC";
+            this.colPLC1.Name = "colPLC1";
+            this.colPLC1.OptionsColumn.AllowEdit = false;
+            this.colPLC1.Visible = true;
+            this.colPLC1.VisibleIndex = 3;
+            // 
+            // timerInstantaneos
+            // 
+            this.timerInstantaneos.Interval = 600000;
+            this.timerInstantaneos.Tick += new System.EventHandler(this.timerInstantaneos_Tick);
             // 
             // frmMedicionElectricaKWH
             // 
@@ -635,6 +754,9 @@
             this.xtraTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,5 +812,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTmProducidas;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraGrid.GridControl gridControl4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_sub_maquinas;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubMaquina;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_maquina1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaquina;
+        private DevExpress.XtraGrid.Columns.GridColumn collectura;
+        private DevExpress.XtraGrid.Columns.GridColumn collast_update;
+        private DevExpress.XtraGrid.Columns.GridColumn colPLC1;
+        private System.Windows.Forms.Timer timerInstantaneos;
     }
 }
