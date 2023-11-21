@@ -1141,6 +1141,7 @@ namespace LOSA.TransaccionesMP
                                     lblMensaje.Text = mensaje;
                                     Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Transaccion Cancelada.");
                                     frm.ShowDialog() ;
+                                    
                                     panelNotificacion.BackColor = Color.Red;
                                     timerLimpiarMensaje.Enabled = true;
                                     timerLimpiarMensaje.Start();

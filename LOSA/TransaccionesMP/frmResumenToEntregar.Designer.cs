@@ -462,12 +462,10 @@ namespace LOSA.TransaccionesMP
             this.lblErrorBascula.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblErrorBascula.Appearance.Options.UseFont = true;
             this.lblErrorBascula.Appearance.Options.UseForeColor = true;
-            this.lblErrorBascula.Appearance.Options.UseTextOptions = true;
-            this.lblErrorBascula.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblErrorBascula.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblErrorBascula.Location = new System.Drawing.Point(129, 287);
+            this.lblErrorBascula.Location = new System.Drawing.Point(122, 488);
             this.lblErrorBascula.Name = "lblErrorBascula";
-            this.lblErrorBascula.Size = new System.Drawing.Size(344, 47);
+            this.lblErrorBascula.Size = new System.Drawing.Size(400, 48);
             this.lblErrorBascula.TabIndex = 120;
             this.lblErrorBascula.Text = "NO EXISTE BASCULA DISPONIBLE";
             this.lblErrorBascula.Visible = false;

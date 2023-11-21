@@ -29,6 +29,7 @@ namespace LOSA.TransaccionesMP
         public decimal ud_enviar = 0;
         public decimal kg_enviar = 0;
         public int BasculaID = 0;
+        int IsMacroIngrediente;
 
         DataOperations dp = new DataOperations();
 
@@ -98,14 +99,14 @@ namespace LOSA.TransaccionesMP
 
 
 
-            //Tarima tm = new Tarima();
-            //tm.ValidarSiEsMPBscula(id_tm);
-            //if (tm.IsMacroIngrediente)
-            //{
-            //    btnBasc1.Visible = true;
-            //    btnBasc2.Visible = true;
-            //    DisponibilidadDeBascula();
-            //}
+            Tarima tm = new Tarima();
+            tm.ValidarSiEsMPBscula(id_tm);
+            if (tm.IsMacroIngrediente)
+            {
+                btnBasc1.Visible = true;
+                btnBasc2.Visible = true;
+                DisponibilidadDeBascula();
+            }
 
         }
 
@@ -115,7 +116,6 @@ namespace LOSA.TransaccionesMP
             {
                 int DisponibleBascula1 = 1;
                 int DisponibleBascula2 = 1;
-                bool BasculaDisponible;
 
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
@@ -137,7 +137,10 @@ namespace LOSA.TransaccionesMP
                     btnBasc1.Appearance.BackColor = default(Color);
                     btnBasc2.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
                     simpleButton1.Enabled = true;
-
+                }
+                else
+                {
+                    btnBasc2.Enabled = false;
                 }
                 
 
@@ -147,17 +150,22 @@ namespace LOSA.TransaccionesMP
                     btnBasc2.Appearance.BackColor = default(Color);
                     btnBasc1.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
                     simpleButton1.Enabled = true;
-
+                }
+                else
+                {
+                    btnBasc1.Enabled = false;
                 }
                 
                 
 
                 
 
-                if (DisponibleBascula1 > 0 || DisponibleBascula2 > 0)
+                if (DisponibleBascula1 > 0 && DisponibleBascula2 > 0)
                 {
                     simpleButton1.Enabled = false;
                     lblErrorBascula.Text = "BASCULAS CON TARIMAS PENDIENTES DE ENTREGA\nSe debe Completar los Pesajes pendientes!";
+                    lblErrorBascula.Visible = true;
+
                 }
 
             }
@@ -374,12 +382,19 @@ namespace LOSA.TransaccionesMP
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            //if (BasculaID == 0)
-            //{
-            //    Utileria.frmMensaje frm = new Utileria.frmMensaje(Utileria.frmMensaje.TipoMsj.error, "Debe seleccionar una Bascula");
-            //    frm.ShowDialog();
-            //    return;
-            //}
+            Tarima tm = new Tarima();
+            tm.ValidarSiEsMPBscula(id_tm);
+            if (tm.IsMacroIngrediente)
+            {
+                if (BasculaID == 0)
+                {
+                    Utileria.frmMensaje frm = new Utileria.frmMensaje(Utileria.frmMensaje.TipoMsj.error, "Debe seleccionar una Bascula");
+                    frm.ShowDialog();
+                    return;
+                }
+            }
+
+            
 
             if (ExistenciaKg == 0 )
             {

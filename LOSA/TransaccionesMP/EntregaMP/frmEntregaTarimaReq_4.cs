@@ -1129,7 +1129,9 @@ namespace LOSA.TransaccionesMP.EntregaMP
                                 {
                                     lblMensaje.Text = mensaje;
                                     Utileria.frmMensajeCalidad frm = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Transaccion Cancelada.");
-                                    frm.ShowDialog() ;
+                                    frm.ShowDialog();
+                                    txtTarima.Clear();
+                                    txtTarima.Focus();
                                     panelNotificacion.BackColor = Color.Red;
                                     timerLimpiarMensaje.Enabled = true;
                                     timerLimpiarMensaje.Start();
@@ -1534,6 +1536,23 @@ namespace LOSA.TransaccionesMP.EntregaMP
             //{
             //    CajaDialogo.Error("No se Encontro la Requisa! Escanee Nuevamente la Requisa!");
             //}
+        }
+
+        private void btnVerTarimas_Click(object sender, EventArgs e)
+        {
+            frmShowTarimasEnBascula frm = new frmShowTarimasEnBascula();
+            frm.ShowDialog();
+
+            if (string.IsNullOrEmpty(txtRequisicion.Text))
+            {
+                txtRequisicion.Focus();
+            }
+            else
+            {
+                txtTarima.Focus();
+            }
+
+
         }
     }
 }
