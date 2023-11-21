@@ -1,4 +1,5 @@
 ﻿using ACS.Classes;
+using DevExpress.CodeParser;
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
@@ -67,6 +68,14 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 dsMedicionElectrica1.detalle_consumos_kwhAcumulado.Clear();
                 da.Fill(dsMedicionElectrica1.detalle_consumos_kwhAcumulado);
+
+                foreach(dsMedicionElectrica.detalle_consumos_kwhAcumuladoRow rowI in dsMedicionElectrica1.detalle_consumos_kwhAcumulado) 
+                {
+                    lblKgProducidos.Text = string.Format("{0:###,##0.00 Kg}", rowI.kg_producidos);
+                    lblTmProducidas.Text = string.Format("{0:###,##0.00 Tm}", rowI.kg_producidos/1000);
+                    break;
+                }
+
                 cn.Close();
             }
             catch (Exception ex)
@@ -78,7 +87,7 @@ namespace LOSA.MigracionACS.Produccion.MedicionElectrica
         public void load_data()
         {
             //string query = @"sp_get_temperatura_extusora_log";
-            string query = @"sp_get_turnos_registro_temperaturas";
+            string query = @"[dbo].[sp_get_turnos_registro_temperaturas_v2]";
             DataOperations dp = new DataOperations();
 
             SqlConnection cn = new SqlConnection(dp.ConnectionStringAPMS);

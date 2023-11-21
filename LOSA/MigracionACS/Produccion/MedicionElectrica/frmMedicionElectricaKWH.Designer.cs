@@ -53,6 +53,7 @@
             this.colid_turno_horario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdPrint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdPrintReport = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colkg_producidos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_sub_maquina = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,10 +62,14 @@
             this.colMaquinaName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKwh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPorcentaje = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPorcentaje_kg = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.lblKgProducidos = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,8 +78,10 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPorcentaje = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPorcentaje1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPorcentaje_kg1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lblTmProducidas = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtDesde.Properties)).BeginInit();
@@ -196,7 +203,8 @@
             this.colfecha,
             this.colhorario,
             this.colid_turno_horario,
-            this.cmdPrint});
+            this.cmdPrint,
+            this.colkg_producidos});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
@@ -287,6 +295,16 @@
             this.cmdPrintReport.Name = "cmdPrintReport";
             this.cmdPrintReport.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
+            // colkg_producidos
+            // 
+            this.colkg_producidos.DisplayFormat.FormatString = "n2";
+            this.colkg_producidos.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colkg_producidos.FieldName = "kg_producidos";
+            this.colkg_producidos.Name = "colkg_producidos";
+            this.colkg_producidos.OptionsColumn.AllowEdit = false;
+            this.colkg_producidos.Visible = true;
+            this.colkg_producidos.VisibleIndex = 6;
+            // 
             // gridControl2
             // 
             this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -312,7 +330,8 @@
             this.colMaquinaName,
             this.colPLC,
             this.colKwh,
-            this.colPorcentaje});
+            this.colPorcentaje,
+            this.colPorcentaje_kg});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
@@ -371,6 +390,26 @@
             this.colKwh.Visible = true;
             this.colKwh.VisibleIndex = 3;
             // 
+            // colPorcentaje
+            // 
+            this.colPorcentaje.DisplayFormat.FormatString = "n1";
+            this.colPorcentaje.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colPorcentaje.FieldName = "Porcentaje";
+            this.colPorcentaje.Name = "colPorcentaje";
+            this.colPorcentaje.OptionsColumn.AllowEdit = false;
+            this.colPorcentaje.Visible = true;
+            this.colPorcentaje.VisibleIndex = 4;
+            // 
+            // colPorcentaje_kg
+            // 
+            this.colPorcentaje_kg.DisplayFormat.FormatString = "n2";
+            this.colPorcentaje_kg.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colPorcentaje_kg.FieldName = "Porcentaje_kg";
+            this.colPorcentaje_kg.Name = "colPorcentaje_kg";
+            this.colPorcentaje_kg.OptionsColumn.AllowEdit = false;
+            this.colPorcentaje_kg.Visible = true;
+            this.colPorcentaje_kg.VisibleIndex = 5;
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -411,10 +450,34 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.lblTmProducidas);
+            this.xtraTabPage2.Controls.Add(this.label3);
+            this.xtraTabPage2.Controls.Add(this.lblKgProducidos);
+            this.xtraTabPage2.Controls.Add(this.label1);
             this.xtraTabPage2.Controls.Add(this.gridControl3);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(984, 427);
             this.xtraTabPage2.Text = "Resumen Acumulado";
+            // 
+            // lblKgProducidos
+            // 
+            this.lblKgProducidos.AutoSize = true;
+            this.lblKgProducidos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKgProducidos.Location = new System.Drawing.Point(127, 10);
+            this.lblKgProducidos.Name = "lblKgProducidos";
+            this.lblKgProducidos.Size = new System.Drawing.Size(63, 20);
+            this.lblKgProducidos.TabIndex = 42;
+            this.lblKgProducidos.Text = "0.00 Kg";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Kg Producidos: ";
             // 
             // gridControl3
             // 
@@ -423,10 +486,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl3.DataMember = "detalle_consumos_kwhAcumulado";
             this.gridControl3.DataSource = this.dsMedicionElectrica1;
-            this.gridControl3.Location = new System.Drawing.Point(3, 3);
+            this.gridControl3.Location = new System.Drawing.Point(3, 58);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(978, 421);
+            this.gridControl3.Size = new System.Drawing.Size(978, 366);
             this.gridControl3.TabIndex = 40;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -441,7 +504,8 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
-            this.colPorcentaje1});
+            this.colPorcentaje1,
+            this.colPorcentaje_kg1});
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.ShowAutoFilterRow = true;
@@ -498,16 +562,6 @@
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
             // 
-            // colPorcentaje
-            // 
-            this.colPorcentaje.DisplayFormat.FormatString = "n1";
-            this.colPorcentaje.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colPorcentaje.FieldName = "Porcentaje";
-            this.colPorcentaje.Name = "colPorcentaje";
-            this.colPorcentaje.OptionsColumn.AllowEdit = false;
-            this.colPorcentaje.Visible = true;
-            this.colPorcentaje.VisibleIndex = 4;
-            // 
             // colPorcentaje1
             // 
             this.colPorcentaje1.DisplayFormat.FormatString = "n1";
@@ -517,6 +571,36 @@
             this.colPorcentaje1.OptionsColumn.AllowEdit = false;
             this.colPorcentaje1.Visible = true;
             this.colPorcentaje1.VisibleIndex = 4;
+            // 
+            // colPorcentaje_kg1
+            // 
+            this.colPorcentaje_kg1.DisplayFormat.FormatString = "n2";
+            this.colPorcentaje_kg1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colPorcentaje_kg1.FieldName = "Porcentaje_kg";
+            this.colPorcentaje_kg1.Name = "colPorcentaje_kg1";
+            this.colPorcentaje_kg1.OptionsColumn.AllowEdit = false;
+            this.colPorcentaje_kg1.Visible = true;
+            this.colPorcentaje_kg1.VisibleIndex = 5;
+            // 
+            // lblTmProducidas
+            // 
+            this.lblTmProducidas.AutoSize = true;
+            this.lblTmProducidas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTmProducidas.Location = new System.Drawing.Point(127, 30);
+            this.lblTmProducidas.Name = "lblTmProducidas";
+            this.lblTmProducidas.Size = new System.Drawing.Size(66, 20);
+            this.lblTmProducidas.TabIndex = 44;
+            this.lblTmProducidas.Text = "0.00 Tm";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 20);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "Tm Producidas: ";
             // 
             // frmMedicionElectricaKWH
             // 
@@ -548,6 +632,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
+            this.xtraTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
@@ -598,5 +683,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn colPorcentaje;
         private DevExpress.XtraGrid.Columns.GridColumn colPorcentaje1;
+        private DevExpress.XtraGrid.Columns.GridColumn colkg_producidos;
+        private DevExpress.XtraGrid.Columns.GridColumn colPorcentaje_kg;
+        private DevExpress.XtraGrid.Columns.GridColumn colPorcentaje_kg1;
+        private System.Windows.Forms.Label lblKgProducidos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTmProducidas;
+        private System.Windows.Forms.Label label3;
     }
 }
