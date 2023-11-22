@@ -137,6 +137,7 @@ namespace LOSA.TransaccionesMP
                     btnBasc1.Appearance.BackColor = default(Color);
                     btnBasc2.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
                     simpleButton1.Enabled = true;
+                    BasculaID = Convert.ToInt32(Basculas.Bascula2);
                 }
                 else
                 {
@@ -150,16 +151,13 @@ namespace LOSA.TransaccionesMP
                     btnBasc2.Appearance.BackColor = default(Color);
                     btnBasc1.Appearance.BackColor = ColorTranslator.FromHtml("#479DEE");
                     simpleButton1.Enabled = true;
+                    BasculaID = Convert.ToInt32(Basculas.Bascula1);
                 }
                 else
                 {
                     btnBasc1.Enabled = false;
                 }
                 
-                
-
-                
-
                 if (DisponibleBascula1 > 0 && DisponibleBascula2 > 0)
                 {
                     simpleButton1.Enabled = false;

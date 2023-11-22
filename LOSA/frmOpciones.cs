@@ -3955,5 +3955,34 @@ namespace LOSA
                 }
             }
         }
+
+        private void btnAlimentacionBascula_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void navBarIPesajeBascula_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                case 5://Depth Without Delta
+                    accesoprevio = true;
+                    frmAlimentacionConBasculas frm = new frmAlimentacionConBasculas(UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

@@ -181,6 +181,7 @@
     <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v23.1, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v23.1.Extensions, Version=23.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -1158,6 +1159,7 @@
     <Compile Include="Calidad\xrpCertificadoCalidad.Designer.cs">
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\AlimentacionBasculas.cs" />
     <Compile Include="Clases\AlimentacionTolvaMicrosPesaje.cs" />
     <Compile Include="Clases\APMS_OrderProduction.cs" />
     <Compile Include="Clases\BagsPT.cs" />
@@ -4056,6 +4058,12 @@
     </Compile>
     <Compile Include="Produccion\frmAddTarimaPT.Designer.cs">
       <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionConBasculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionConBasculas.Designer.cs">
+      <DependentUpon>frmAlimentacionConBasculas.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmAlimentacionManual.cs">
       <SubType>Form</SubType>
@@ -8057,6 +8065,9 @@
     <EmbeddedResource Include="Produccion\frmAddTarimaPT.resx">
       <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmAlimentacionConBasculas.resx">
+      <DependentUpon>frmAlimentacionConBasculas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAlimentacionManual.resx">
       <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
     </EmbeddedResource>
@@ -9151,6 +9162,7 @@
     <None Include="Resources\Background_test.png" />
     <None Include="Resources\bomba-de-gas_32X32.png" />
     <None Include="Resources\ani_wait.gif" />
+    <None Include="Resources\bascula_x32.png" />
     <Content Include="Resources\box.png" />
     <None Include="Resources\box32px.png" />
     <None Include="Resources\boxPT32px.png" />

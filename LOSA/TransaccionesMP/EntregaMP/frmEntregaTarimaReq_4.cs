@@ -204,7 +204,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
                                     load_tarimas_scan_v2();
                                     xtraTabControl1.SelectedTabPage = xtraTabPage1;
                                     txtTarima.Focus();
-                                    
+                                    btnVerTarimas.Visible = true;
                                     btnVerDetalleRequisa.Visible = true; 
                                     break;
                                 case 4://Cerrada
@@ -1540,7 +1540,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
 
         private void btnVerTarimas_Click(object sender, EventArgs e)
         {
-            frmShowTarimasEnBascula frm = new frmShowTarimasEnBascula();
+            frmShowTarimasEnBascula frm = new frmShowTarimasEnBascula(frmShowTarimasEnBascula.TipoVentana.Vista);
             frm.ShowDialog();
 
             if (string.IsNullOrEmpty(txtRequisicion.Text))

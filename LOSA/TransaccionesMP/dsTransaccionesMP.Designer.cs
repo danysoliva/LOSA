@@ -9459,6 +9459,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn columncodigo_barra;
             
+            private global::System.Data.DataColumn columnlote_pt;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tarimas_basculaDataTable() {
@@ -9598,6 +9600,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_ptColumn {
+                get {
+                    return this.columnlote_pt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9633,7 +9643,7 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tarimas_basculaRow Addtarimas_basculaRow(int id, int @__requisa, int id_tarima, string mp, System.DateTime fecha_ingreso, string usuario_montacarga, decimal unidades, decimal peso, string lote, decimal peso_prd, string estado, int bascula, string codigo_barra) {
+            public tarimas_basculaRow Addtarimas_basculaRow(int id, int @__requisa, int id_tarima, string mp, System.DateTime fecha_ingreso, string usuario_montacarga, decimal unidades, decimal peso, string lote, decimal peso_prd, string estado, int bascula, string codigo_barra, int lote_pt) {
                 tarimas_basculaRow rowtarimas_basculaRow = ((tarimas_basculaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -9648,7 +9658,8 @@ namespace LOSA.TransaccionesMP {
                         peso_prd,
                         estado,
                         bascula,
-                        codigo_barra};
+                        codigo_barra,
+                        lote_pt};
                 rowtarimas_basculaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_basculaRow);
                 return rowtarimas_basculaRow;
@@ -9684,6 +9695,7 @@ namespace LOSA.TransaccionesMP {
                 this.columnestado = base.Columns["estado"];
                 this.columnbascula = base.Columns["bascula"];
                 this.columncodigo_barra = base.Columns["codigo_barra"];
+                this.columnlote_pt = base.Columns["lote_pt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9717,6 +9729,8 @@ namespace LOSA.TransaccionesMP {
                 base.Columns.Add(this.columnbascula);
                 this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo_barra);
+                this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_pt);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16943,6 +16957,22 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int lote_pt {
+                get {
+                    try {
+                        return ((int)(this[this.tabletarimas_bascula.lote_ptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_pt\' de la tabla \'tarimas_bascula\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_bascula.lote_ptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_bascula.idColumn);
             }
@@ -17095,6 +17125,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcodigo_barraNull() {
                 this[this.tabletarimas_bascula.codigo_barraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_ptNull() {
+                return this.IsNull(this.tabletarimas_bascula.lote_ptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_ptNull() {
+                this[this.tabletarimas_bascula.lote_ptColumn] = global::System.Convert.DBNull;
             }
         }
         
