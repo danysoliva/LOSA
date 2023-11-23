@@ -133,8 +133,8 @@ namespace LOSA.Produccion
                 conn.Close();
             }
 
-            lblBascula1.Text = "Valor en Báscula: " + pesoBascula1.ToString("N2") + " Kg";
-            lblBascula2.Text = "Valor en Báscula: " + pesoBascula2.ToString("N2") + " Kg";
+            lblValorBascula1.Text = "Valor en Báscula: " + pesoBascula1.ToString("N2") + " Kg";
+            lblValorBascula2.Text = "Valor en Báscula: " + pesoBascula2.ToString("N2") + " Kg";
         }
 
         private void InitializeComponent()
@@ -154,7 +154,6 @@ namespace LOSA.Produccion
             this.timerBasculas = new System.Windows.Forms.Timer(this.components);
             this.dsProduccion1 = new LOSA.Produccion.dsProduccion();
             this.vGrid1 = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.dsProduccion2 = new LOSA.MigracionACS.DataSetx.dsProduccion();
             this.row_requisa1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowmp1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowunidades1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -165,6 +164,7 @@ namespace LOSA.Produccion
             this.rowpeso_prd1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowbascula1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowcodigo_barra1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.dsProduccion2 = new LOSA.MigracionACS.DataSetx.dsProduccion();
             this.row_requisa = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowmp = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowunidades = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -324,6 +324,8 @@ namespace LOSA.Produccion
             // 
             // vGrid1
             // 
+            this.vGrid1.Appearance.Caption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vGrid1.Appearance.Caption.Options.UseFont = true;
             this.vGrid1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.vGrid1.Cursor = System.Windows.Forms.Cursors.Default;
             this.vGrid1.CustomizationFormBounds = new System.Drawing.Rectangle(457, 176, 214, 258);
@@ -347,11 +349,6 @@ namespace LOSA.Produccion
             this.rowcodigo_barra1});
             this.vGrid1.Size = new System.Drawing.Size(409, 222);
             this.vGrid1.TabIndex = 48;
-            // 
-            // dsProduccion2
-            // 
-            this.dsProduccion2.DataSetName = "dsProduccion";
-            this.dsProduccion2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // row_requisa1
             // 
@@ -412,6 +409,11 @@ namespace LOSA.Produccion
             this.rowcodigo_barra1.Name = "rowcodigo_barra1";
             this.rowcodigo_barra1.Properties.Caption = "codigo_barra";
             this.rowcodigo_barra1.Properties.FieldName = "codigo_barra";
+            // 
+            // dsProduccion2
+            // 
+            this.dsProduccion2.DataSetName = "dsProduccion";
+            this.dsProduccion2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // row_requisa
             // 
