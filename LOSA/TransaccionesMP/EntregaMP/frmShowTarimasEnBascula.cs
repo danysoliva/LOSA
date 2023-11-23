@@ -18,6 +18,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
     public partial class frmShowTarimasEnBascula : DevExpress.XtraEditors.XtraForm
     {
         public int Id_RegistroBascula;
+        public int BascuilaID;
 
         public enum TipoVentana 
         {
@@ -76,6 +77,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
             var row = (dsTransaccionesMP.tarimas_basculaRow)gridview.GetFocusedDataRow();
 
             Id_RegistroBascula = row.id;
+            BascuilaID = row.bascula;
 
             this.DialogResult = DialogResult.OK;
             this.Close();
