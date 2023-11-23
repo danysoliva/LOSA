@@ -11,15 +11,41 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LOSA.Classes;
 using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.TransaccionesMP.EntregaMP
 {
     public partial class frmShowTarimasEnBascula : DevExpress.XtraEditors.XtraForm
     {
-        public frmShowTarimasEnBascula()
+        public int Id_RegistroBascula;
+
+        public enum TipoVentana 
+        {
+            Vista = 1,
+            Seleccion = 2
+        }
+        TipoVentana tipoVentana;
+
+        public frmShowTarimasEnBascula(frmShowTarimasEnBascula.TipoVentana pTipo)
         {
             InitializeComponent();
+            tipoVentana = pTipo;
+
             load_date();
+
+            switch (tipoVentana)
+            {
+                case TipoVentana.Vista:
+                    gridView1.OptionsMenu.EnableColumnMenu = false;
+                    gridView1.Columns["selected"].Visible = false;
+                    break;
+                case TipoVentana.Seleccion:
+                    gridView1.OptionsMenu.EnableColumnMenu = true;
+                    gridView1.Columns["selected"].Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void load_date()
@@ -42,6 +68,17 @@ namespace LOSA.TransaccionesMP.EntregaMP
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void reposSelect_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)gridDetalle.FocusedView;
+            var row = (dsTransaccionesMP.tarimas_basculaRow)gridview.GetFocusedDataRow();
+
+            Id_RegistroBascula = row.id;
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

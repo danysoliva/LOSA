@@ -29,6 +29,12 @@ namespace LOSA.TransaccionesMP.EntregaMP
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShowTarimasEnBascula));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridDetalle = new DevExpress.XtraGrid.GridControl();
             this.dsTransaccionesMP1 = new LOSA.TransaccionesMP.dsTransaccionesMP();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -45,9 +51,13 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.colestado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbascula = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // gridDetalle
@@ -60,6 +70,8 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.gridDetalle.Location = new System.Drawing.Point(3, 2);
             this.gridDetalle.MainView = this.gridView1;
             this.gridDetalle.Name = "gridDetalle";
+            this.gridDetalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.reposSelect});
             this.gridDetalle.Size = new System.Drawing.Size(965, 381);
             this.gridDetalle.TabIndex = 0;
             this.gridDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -89,7 +101,9 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.colpeso_prd,
             this.colestado,
             this.colbascula,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
             this.gridView1.GridControl = this.gridDetalle;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -108,7 +122,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 68;
+            this.gridColumn1.Width = 72;
             // 
             // colid_tarima
             // 
@@ -123,8 +137,8 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.colmp.Name = "colmp";
             this.colmp.OptionsColumn.AllowEdit = false;
             this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 1;
-            this.colmp.Width = 139;
+            this.colmp.VisibleIndex = 2;
+            this.colmp.Width = 168;
             // 
             // colfecha_ingreso
             // 
@@ -135,8 +149,8 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.colfecha_ingreso.Name = "colfecha_ingreso";
             this.colfecha_ingreso.OptionsColumn.AllowEdit = false;
             this.colfecha_ingreso.Visible = true;
-            this.colfecha_ingreso.VisibleIndex = 2;
-            this.colfecha_ingreso.Width = 114;
+            this.colfecha_ingreso.VisibleIndex = 3;
+            this.colfecha_ingreso.Width = 121;
             // 
             // colusuario_montacarga
             // 
@@ -144,9 +158,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.colusuario_montacarga.FieldName = "usuario_montacarga";
             this.colusuario_montacarga.Name = "colusuario_montacarga";
             this.colusuario_montacarga.OptionsColumn.AllowEdit = false;
-            this.colusuario_montacarga.Visible = true;
-            this.colusuario_montacarga.VisibleIndex = 4;
-            this.colusuario_montacarga.Width = 96;
+            this.colusuario_montacarga.Width = 77;
             // 
             // colunidades
             // 
@@ -156,7 +168,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.colunidades.OptionsColumn.AllowEdit = false;
             this.colunidades.Visible = true;
             this.colunidades.VisibleIndex = 7;
-            this.colunidades.Width = 96;
+            this.colunidades.Width = 84;
             // 
             // colpeso
             // 
@@ -166,7 +178,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.colpeso.OptionsColumn.AllowEdit = false;
             this.colpeso.Visible = true;
             this.colpeso.VisibleIndex = 8;
-            this.colpeso.Width = 96;
+            this.colpeso.Width = 66;
             // 
             // collote
             // 
@@ -176,7 +188,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.collote.OptionsColumn.AllowEdit = false;
             this.collote.Visible = true;
             this.collote.VisibleIndex = 5;
-            this.collote.Width = 102;
+            this.collote.Width = 100;
             // 
             // colpeso_prd
             // 
@@ -201,7 +213,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.colbascula.OptionsColumn.AllowEdit = false;
             this.colbascula.Visible = true;
             this.colbascula.VisibleIndex = 6;
-            this.colbascula.Width = 96;
+            this.colbascula.Width = 68;
             // 
             // gridColumn2
             // 
@@ -210,8 +222,38 @@ namespace LOSA.TransaccionesMP.EntregaMP
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
-            this.gridColumn2.Width = 87;
+            this.gridColumn2.VisibleIndex = 4;
+            this.gridColumn2.Width = 110;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Seleccionar";
+            this.gridColumn3.ColumnEdit = this.reposSelect;
+            this.gridColumn3.FieldName = "selected";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 9;
+            this.gridColumn3.Width = 93;
+            // 
+            // reposSelect
+            // 
+            this.reposSelect.AutoHeight = false;
+            editorButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("editorButtonImageOptions1.SvgImage")));
+            this.reposSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposSelect.Name = "reposSelect";
+            this.reposSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposSelect_ButtonClick);
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Lote PT";
+            this.gridColumn4.FieldName = "lote_pt";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.Width = 58;
             // 
             // frmShowTarimasEnBascula
             // 
@@ -224,6 +266,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTransaccionesMP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposSelect)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +289,8 @@ namespace LOSA.TransaccionesMP.EntregaMP
         private DevExpress.XtraGrid.Columns.GridColumn colestado;
         private DevExpress.XtraGrid.Columns.GridColumn colbascula;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposSelect;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

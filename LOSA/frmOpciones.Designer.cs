@@ -172,6 +172,7 @@
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarIPesajeBascula = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbTrasladoAceiteExterno = new DevExpress.XtraNavBar.NavBarItem();
             this.nbSetMaterial = new DevExpress.XtraNavBar.NavBarItem();
@@ -1961,7 +1962,8 @@
             this.navBarItem2,
             this.navBarItem9,
             this.navBarItem21,
-            this.navBarItem23});
+            this.navBarItem23,
+            this.navBarIPesajeBascula});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 347;
@@ -2334,7 +2336,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarIPesajeBascula)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // navBarItem10
@@ -2443,6 +2446,21 @@
             this.navBarItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem9.ImageOptions.SvgImage")));
             this.navBarItem9.Name = "navBarItem9";
             this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
+            // 
+            // navBarIPesajeBascula
+            // 
+            this.navBarIPesajeBascula.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarIPesajeBascula.Appearance.Options.UseFont = true;
+            this.navBarIPesajeBascula.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarIPesajeBascula.AppearanceDisabled.Options.UseFont = true;
+            this.navBarIPesajeBascula.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarIPesajeBascula.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarIPesajeBascula.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarIPesajeBascula.AppearancePressed.Options.UseFont = true;
+            this.navBarIPesajeBascula.Caption = "Pesaje Bascula Alimentacion";
+            this.navBarIPesajeBascula.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarIPesajeBascula.ImageOptions.SmallImage")));
+            this.navBarIPesajeBascula.Name = "navBarIPesajeBascula";
+            this.navBarIPesajeBascula.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarIPesajeBascula_LinkClicked);
             // 
             // navBarGroup4
             // 
@@ -4517,5 +4535,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton btn_historic_inventario;
         private DevExpress.XtraNavBar.NavBarItem navBarItem23;
+        private DevExpress.XtraNavBar.NavBarItem navBarIPesajeBascula;
     }
 }
