@@ -1222,6 +1222,14 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnunidades;
             
+            private global::System.Data.DataColumn columnid_presentacion;
+            
+            private global::System.Data.DataColumn columnfactor;
+            
+            private global::System.Data.DataColumn columnkg_enviados;
+            
+            private global::System.Data.DataColumn columntm_enviados;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public detalle_despachos_clientesDataTable() {
@@ -1345,6 +1353,38 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_presentacionColumn {
+                get {
+                    return this.columnid_presentacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn factorColumn {
+                get {
+                    return this.columnfactor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn kg_enviadosColumn {
+                get {
+                    return this.columnkg_enviados;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn tm_enviadosColumn {
+                get {
+                    return this.columntm_enviados;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1380,7 +1420,7 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public detalle_despachos_clientesRow Adddetalle_despachos_clientesRow(int Despacho, int SerieBoleta, int Boleta, clientes_resumen_ruta2trzRow parentclientes_resumen_ruta2trzRowByclientes_resumen_ruta2trz_detalle_despachos_clientes, string Nombre_Cliente, string numero_factura, string cardname, string Fact_promix, string lote_producto_termiado, int id_producto_termiado, int unidades) {
+            public detalle_despachos_clientesRow Adddetalle_despachos_clientesRow(int Despacho, int SerieBoleta, int Boleta, clientes_resumen_ruta2trzRow parentclientes_resumen_ruta2trzRowByclientes_resumen_ruta2trz_detalle_despachos_clientes, string Nombre_Cliente, string numero_factura, string cardname, string Fact_promix, string lote_producto_termiado, int id_producto_termiado, int unidades, int id_presentacion, decimal factor, decimal kg_enviados, decimal tm_enviados) {
                 detalle_despachos_clientesRow rowdetalle_despachos_clientesRow = ((detalle_despachos_clientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Despacho,
@@ -1393,7 +1433,11 @@ namespace LOSA.Calidad {
                         Fact_promix,
                         lote_producto_termiado,
                         id_producto_termiado,
-                        unidades};
+                        unidades,
+                        id_presentacion,
+                        factor,
+                        kg_enviados,
+                        tm_enviados};
                 if ((parentclientes_resumen_ruta2trzRowByclientes_resumen_ruta2trz_detalle_despachos_clientes != null)) {
                     columnValuesArray[3] = parentclientes_resumen_ruta2trzRowByclientes_resumen_ruta2trz_detalle_despachos_clientes[0];
                 }
@@ -1430,6 +1474,10 @@ namespace LOSA.Calidad {
                 this.columnlote_producto_termiado = base.Columns["lote_producto_termiado"];
                 this.columnid_producto_termiado = base.Columns["id_producto_termiado"];
                 this.columnunidades = base.Columns["unidades"];
+                this.columnid_presentacion = base.Columns["id_presentacion"];
+                this.columnfactor = base.Columns["factor"];
+                this.columnkg_enviados = base.Columns["kg_enviados"];
+                this.columntm_enviados = base.Columns["tm_enviados"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1457,6 +1505,16 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnid_producto_termiado);
                 this.columnunidades = new global::System.Data.DataColumn("unidades", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunidades);
+                this.columnid_presentacion = new global::System.Data.DataColumn("id_presentacion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_presentacion);
+                this.columnfactor = new global::System.Data.DataColumn("factor", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfactor);
+                this.columnkg_enviados = new global::System.Data.DataColumn("kg_enviados", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkg_enviados);
+                this.columntm_enviados = new global::System.Data.DataColumn("tm_enviados", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntm_enviados);
+                this.columnkg_enviados.Caption = "Kg";
+                this.columntm_enviados.Caption = "TM";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2761,6 +2819,73 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int id_presentacion {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalle_despachos_clientes.id_presentacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_presentacion\' in table \'detalle_despachos_clientes\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_despachos_clientes.id_presentacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal factor {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledetalle_despachos_clientes.factorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'factor\' in table \'detalle_despachos_clientes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_despachos_clientes.factorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal kg_enviados {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledetalle_despachos_clientes.kg_enviadosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kg_enviados\' in table \'detalle_despachos_clientes\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_despachos_clientes.kg_enviadosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal tm_enviados {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabledetalle_despachos_clientes.tm_enviadosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tm_enviados\' in table \'detalle_despachos_clientes\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_despachos_clientes.tm_enviadosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public clientes_resumen_ruta2trzRow clientes_resumen_ruta2trzRow {
                 get {
                     return ((clientes_resumen_ruta2trzRow)(this.GetParentRow(this.Table.ParentRelations["clientes_resumen_ruta2trz_detalle_despachos_clientes"])));
@@ -2900,6 +3025,54 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetunidadesNull() {
                 this[this.tabledetalle_despachos_clientes.unidadesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_presentacionNull() {
+                return this.IsNull(this.tabledetalle_despachos_clientes.id_presentacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_presentacionNull() {
+                this[this.tabledetalle_despachos_clientes.id_presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsfactorNull() {
+                return this.IsNull(this.tabledetalle_despachos_clientes.factorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetfactorNull() {
+                this[this.tabledetalle_despachos_clientes.factorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iskg_enviadosNull() {
+                return this.IsNull(this.tabledetalle_despachos_clientes.kg_enviadosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setkg_enviadosNull() {
+                this[this.tabledetalle_despachos_clientes.kg_enviadosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istm_enviadosNull() {
+                return this.IsNull(this.tabledetalle_despachos_clientes.tm_enviadosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settm_enviadosNull() {
+                this[this.tabledetalle_despachos_clientes.tm_enviadosColumn] = global::System.Convert.DBNull;
             }
         }
         

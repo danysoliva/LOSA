@@ -1150,7 +1150,7 @@ namespace LOSA.Trazabilidad
 
 
 
-                Thread.Sleep(400);
+                Thread.Sleep(200);
 
 
 
