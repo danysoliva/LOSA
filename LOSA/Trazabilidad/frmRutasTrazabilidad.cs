@@ -26,6 +26,7 @@ using LOSA.MigracionACS.Produccion.Produccion.DashBoard;
 using System.Diagnostics;
 using LOSA.Produccion;
 using LOSA.MigracionACS.Produccion.DashBoard;
+using System.Threading;
 
 namespace LOSA.Trazabilidad
 {
@@ -1146,6 +1147,42 @@ namespace LOSA.Trazabilidad
                 cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
                 adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsReportesTRZ.pt_list_trzTilapiaRuta2);
+
+
+
+                Thread.Sleep(200);
+
+
+
+                //Header Clientes
+                cmd = new SqlCommand("dbo.sp_get_header_clientes_recibieron_lote_pt_ruta2_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtLoteMP_Ruta2.Text);
+                cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                dsTrazabilidadReports.clientes_resumen_ruta2trz.Clear();
+                adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsTrazabilidadReports.clientes_resumen_ruta2trz);
+
+
+                //Lineas Clientes
+                cmd = new SqlCommand("dbo.sp_get_header_clientes_recibieron_lote_pt_ruta2_trz_detalle_despachos", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtLoteMP_Ruta2.Text);
+                cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                adat = new SqlDataAdapter(cmd);
+                dsTrazabilidadReports.detalle_despachos_clientes.Clear();
+                adat.Fill(dsTrazabilidadReports.detalle_despachos_clientes);
+
+
+                //Kg Utilizados por lote PT
+                cmd = new SqlCommand("dbo.sp_get_detalle_kg_utlizados_por_lotePT_ruta_2_trz", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@lotemp", txtLoteMP_Ruta2.Text);
+                cmd.Parameters.AddWithValue("@idrm", idMP_Selected);
+                adat = new SqlDataAdapter(cmd);
+                dsTrazabilidadReports.kg_usados_por_pt.Clear();
+                adat.Fill(dsTrazabilidadReports.kg_usados_por_pt);
+
 
                 con.Close();
             }
