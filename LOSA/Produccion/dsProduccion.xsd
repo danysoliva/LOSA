@@ -254,6 +254,8 @@
               <xs:element name="peso_prd" msprop:Generator_ColumnVarNameInTable="columnpeso_prd" msprop:Generator_ColumnPropNameInRow="peso_prd" msprop:Generator_ColumnPropNameInTable="peso_prdColumn" msprop:Generator_UserColumnName="peso_prd" type="xs:decimal" minOccurs="0" />
               <xs:element name="bascula" msprop:Generator_ColumnVarNameInTable="columnbascula" msprop:Generator_ColumnPropNameInRow="bascula" msprop:Generator_ColumnPropNameInTable="basculaColumn" msprop:Generator_UserColumnName="bascula" type="xs:int" minOccurs="0" />
               <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
+              <xs:element name="presentacion" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:string" minOccurs="0" />
+              <xs:element name="lote_pt" msprop:Generator_ColumnVarNameInTable="columnlote_pt" msprop:Generator_ColumnPropNameInRow="lote_pt" msprop:Generator_ColumnPropNameInTable="lote_ptColumn" msprop:Generator_UserColumnName="lote_pt" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -270,6 +272,8 @@
               <xs:element name="peso_prd" msprop:Generator_ColumnVarNameInTable="columnpeso_prd" msprop:Generator_ColumnPropNameInRow="peso_prd" msprop:Generator_ColumnPropNameInTable="peso_prdColumn" msprop:Generator_UserColumnName="peso_prd" type="xs:decimal" minOccurs="0" />
               <xs:element name="bascula" msprop:Generator_ColumnVarNameInTable="columnbascula" msprop:Generator_ColumnPropNameInRow="bascula" msprop:Generator_ColumnPropNameInTable="basculaColumn" msprop:Generator_UserColumnName="bascula" type="xs:int" minOccurs="0" />
               <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:string" minOccurs="0" />
+              <xs:element name="presentacion" msprop:Generator_ColumnVarNameInTable="columnpresentacion" msprop:Generator_ColumnPropNameInRow="presentacion" msprop:Generator_ColumnPropNameInTable="presentacionColumn" msprop:Generator_UserColumnName="presentacion" type="xs:string" minOccurs="0" />
+              <xs:element name="lote_pt" msprop:Generator_ColumnVarNameInTable="columnlote_pt" msprop:Generator_ColumnPropNameInRow="lote_pt" msprop:Generator_ColumnPropNameInTable="lote_ptColumn" msprop:Generator_UserColumnName="lote_pt" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

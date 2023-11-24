@@ -28,6 +28,7 @@ namespace LOSA.Clases
         int bascula;
         string codio_Barra;
         bool recuperado;
+        bool enProceso;
 
         public int Id { get => id; set => id = value; }
         public int Id_detalle_requisicion { get => id_detalle_requisicion; set => id_detalle_requisicion = value; }
@@ -46,6 +47,7 @@ namespace LOSA.Clases
         public int Bascula { get => bascula; set => bascula = value; }
         public string Codio_Barra { get => codio_Barra; set => codio_Barra = value; }
         public bool Recuperado { get => recuperado; set => recuperado = value; }
+        public bool EnProceso { get => enProceso; set => enProceso = value; }
 
         public bool RecuperarRegistros(int pid)
         {
@@ -78,6 +80,7 @@ namespace LOSA.Clases
                     Estado = dr.GetString(13);
                     Bascula = dr.GetInt32(14);
                     Codio_Barra = dr.GetString(15);
+                    EnProceso = dr.GetBoolean(16);
                     Recuperado = true;
                 }
             }

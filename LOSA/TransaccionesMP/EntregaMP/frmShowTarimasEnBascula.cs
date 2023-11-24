@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using LOSA.Classes;
 using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.Clases;
 
 namespace LOSA.TransaccionesMP.EntregaMP
 {
@@ -76,11 +77,29 @@ namespace LOSA.TransaccionesMP.EntregaMP
             var gridview = (GridView)gridDetalle.FocusedView;
             var row = (dsTransaccionesMP.tarimas_basculaRow)gridview.GetFocusedDataRow();
 
-            Id_RegistroBascula = row.id;
-            BascuilaID = row.bascula;
+            if (row.id > 0)
+            {
+                AlimentacionBasculas ali = new AlimentacionBasculas();
+                ali.RecuperarRegistros(row.id);
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                if (ali.EnProceso)
+                {
+                    CajaDialogo.Error("Este Pesaje ya esta en Proceso.\nDebe completar el pesaje en la Bascula.");
+                    return;
+                }
+                else
+                {
+                    Id_RegistroBascula = row.id;
+                    BascuilaID = row.bascula;
+                    
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+
+            }
+            
+
+            
         }
     }
 }

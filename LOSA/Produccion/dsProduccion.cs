@@ -4,6 +4,10 @@
 
     partial class dsProduccion
     {
+        partial class Bascula2DataTable
+        {
+        }
+
         partial class Bascula1DataTable
         {
         }

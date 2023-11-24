@@ -41,19 +41,9 @@ namespace LOSA.Produccion
             this.btnBascula2ON = new DevExpress.XtraEditors.SimpleButton();
             this.btnBascula1Off = new DevExpress.XtraEditors.SimpleButton();
             this.btnBascula2Off = new DevExpress.XtraEditors.SimpleButton();
-            this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
-            this.dsProduccion1 = new LOSA.Produccion.dsProduccion();
-            this.row_requisa = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowmp = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowunidades = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowpeso = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowlote = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowpeso_bruto = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowpeso_tara = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowpeso_prd = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowbascula = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowcodigo_barra = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.timerBascula = new System.Windows.Forms.Timer(this.components);
             this.vGridControl2 = new DevExpress.XtraVerticalGrid.VGridControl();
+            this.dsProduccion1 = new LOSA.Produccion.dsProduccion();
             this.row_requisa1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowmp1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowunidades1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -64,10 +54,24 @@ namespace LOSA.Produccion
             this.rowpeso_prd1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowbascula1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowcodigo_barra1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.timerBascula = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
+            this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
+            this.row_requisa = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowmp = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowlote = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowunidades = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowPresentacion = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowpeso = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowpeso_bruto = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowpeso_tara = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowpeso_prd = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowbascula = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowcodigo_barra = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowLotePT = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowLoteP = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowPres = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -98,7 +102,6 @@ namespace LOSA.Produccion
             this.cmdSelectTarima.Name = "cmdSelectTarima";
             this.cmdSelectTarima.Size = new System.Drawing.Size(62, 44);
             this.cmdSelectTarima.TabIndex = 109;
-            this.cmdSelectTarima.Visible = false;
             this.cmdSelectTarima.Click += new System.EventHandler(this.cmdSelectTarima_Click);
             // 
             // lblValorBascula1
@@ -190,12 +193,13 @@ namespace LOSA.Produccion
             this.btnBascula1Off.Appearance.Options.UseFont = true;
             this.btnBascula1Off.Enabled = false;
             this.btnBascula1Off.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnBascula1Off.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula1.ImageOptions.SvgImage")));
+            this.btnBascula1Off.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula1Off.ImageOptions.SvgImage")));
             this.btnBascula1Off.Location = new System.Drawing.Point(272, 527);
             this.btnBascula1Off.Name = "btnBascula1Off";
             this.btnBascula1Off.Size = new System.Drawing.Size(104, 74);
             this.btnBascula1Off.TabIndex = 116;
             this.btnBascula1Off.Text = "Guardar";
+            this.btnBascula1Off.Click += new System.EventHandler(this.btnBascula1Off_Click);
             // 
             // btnBascula2Off
             // 
@@ -204,113 +208,18 @@ namespace LOSA.Produccion
             this.btnBascula2Off.Appearance.Options.UseFont = true;
             this.btnBascula2Off.Enabled = false;
             this.btnBascula2Off.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnBascula2Off.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula2.ImageOptions.SvgImage")));
+            this.btnBascula2Off.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBascula2Off.ImageOptions.SvgImage")));
             this.btnBascula2Off.Location = new System.Drawing.Point(955, 527);
             this.btnBascula2Off.Name = "btnBascula2Off";
             this.btnBascula2Off.Size = new System.Drawing.Size(104, 74);
             this.btnBascula2Off.TabIndex = 117;
             this.btnBascula2Off.Text = "Guardar";
+            this.btnBascula2Off.Click += new System.EventHandler(this.btnBascula2Off_Click);
             // 
-            // vGridControl1
+            // timerBascula
             // 
-            this.vGridControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.vGridControl1.DataMember = "Bascula1";
-            this.vGridControl1.DataSource = this.dsProduccion1;
-            this.vGridControl1.LayoutStyle = DevExpress.XtraVerticalGrid.LayoutViewStyle.SingleRecordView;
-            this.vGridControl1.Location = new System.Drawing.Point(135, 311);
-            this.vGridControl1.Name = "vGridControl1";
-            this.vGridControl1.RecordWidth = 115;
-            this.vGridControl1.RowHeaderWidth = 85;
-            this.vGridControl1.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
-            this.row_requisa,
-            this.rowmp,
-            this.rowunidades,
-            this.rowpeso,
-            this.rowlote,
-            this.rowpeso_bruto,
-            this.rowpeso_tara,
-            this.rowpeso_prd,
-            this.rowbascula,
-            this.rowcodigo_barra});
-            this.vGridControl1.Size = new System.Drawing.Size(389, 200);
-            this.vGridControl1.TabIndex = 118;
-            // 
-            // dsProduccion1
-            // 
-            this.dsProduccion1.DataSetName = "dsProduccion";
-            this.dsProduccion1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // row_requisa
-            // 
-            this.row_requisa.Name = "row_requisa";
-            this.row_requisa.Properties.AllowEdit = false;
-            this.row_requisa.Properties.Caption = "#requisa";
-            this.row_requisa.Properties.FieldName = "#requisa";
-            // 
-            // rowmp
-            // 
-            this.rowmp.Name = "rowmp";
-            this.rowmp.Properties.AllowEdit = false;
-            this.rowmp.Properties.Caption = "mp";
-            this.rowmp.Properties.FieldName = "mp";
-            // 
-            // rowunidades
-            // 
-            this.rowunidades.Name = "rowunidades";
-            this.rowunidades.Properties.AllowEdit = false;
-            this.rowunidades.Properties.Caption = "unidades";
-            this.rowunidades.Properties.FieldName = "unidades";
-            // 
-            // rowpeso
-            // 
-            this.rowpeso.Name = "rowpeso";
-            this.rowpeso.Properties.AllowEdit = false;
-            this.rowpeso.Properties.Caption = "peso";
-            this.rowpeso.Properties.FieldName = "peso";
-            // 
-            // rowlote
-            // 
-            this.rowlote.Name = "rowlote";
-            this.rowlote.Properties.AllowEdit = false;
-            this.rowlote.Properties.Caption = "lote";
-            this.rowlote.Properties.FieldName = "lote";
-            // 
-            // rowpeso_bruto
-            // 
-            this.rowpeso_bruto.Name = "rowpeso_bruto";
-            this.rowpeso_bruto.Properties.AllowEdit = false;
-            this.rowpeso_bruto.Properties.Caption = "peso_bruto";
-            this.rowpeso_bruto.Properties.FieldName = "peso_bruto";
-            // 
-            // rowpeso_tara
-            // 
-            this.rowpeso_tara.Name = "rowpeso_tara";
-            this.rowpeso_tara.Properties.AllowEdit = false;
-            this.rowpeso_tara.Properties.Caption = "peso_tara";
-            this.rowpeso_tara.Properties.FieldName = "peso_tara";
-            // 
-            // rowpeso_prd
-            // 
-            this.rowpeso_prd.Name = "rowpeso_prd";
-            this.rowpeso_prd.Properties.AllowEdit = false;
-            this.rowpeso_prd.Properties.Caption = "peso_prd";
-            this.rowpeso_prd.Properties.FieldName = "peso_prd";
-            // 
-            // rowbascula
-            // 
-            this.rowbascula.Name = "rowbascula";
-            this.rowbascula.Properties.AllowEdit = false;
-            this.rowbascula.Properties.Caption = "bascula";
-            this.rowbascula.Properties.FieldName = "bascula";
-            // 
-            // rowcodigo_barra
-            // 
-            this.rowcodigo_barra.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rowcodigo_barra.AppearanceCell.Options.UseFont = true;
-            this.rowcodigo_barra.Name = "rowcodigo_barra";
-            this.rowcodigo_barra.Properties.AllowEdit = false;
-            this.rowcodigo_barra.Properties.Caption = "codigo_barra";
-            this.rowcodigo_barra.Properties.FieldName = "codigo_barra";
+            this.timerBascula.Interval = 650;
+            this.timerBascula.Tick += new System.EventHandler(this.timerBascula_Tick);
             // 
             // vGridControl2
             // 
@@ -325,58 +234,65 @@ namespace LOSA.Produccion
             this.vGridControl2.RowHeaderWidth = 85;
             this.vGridControl2.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
             this.row_requisa1,
+            this.rowLoteP,
             this.rowmp1,
-            this.rowunidades1,
-            this.rowpeso1,
             this.rowlote1,
+            this.rowcodigo_barra1,
+            this.rowunidades1,
+            this.rowPres,
+            this.rowpeso1,
             this.rowpeso_bruto1,
             this.rowpeso_tara1,
             this.rowpeso_prd1,
-            this.rowbascula1,
-            this.rowcodigo_barra1});
+            this.rowbascula1});
             this.vGridControl2.Size = new System.Drawing.Size(389, 200);
             this.vGridControl2.TabIndex = 119;
+            // 
+            // dsProduccion1
+            // 
+            this.dsProduccion1.DataSetName = "dsProduccion";
+            this.dsProduccion1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // row_requisa1
             // 
             this.row_requisa1.Name = "row_requisa1";
             this.row_requisa1.Properties.AllowEdit = false;
-            this.row_requisa1.Properties.Caption = "#requisa";
+            this.row_requisa1.Properties.Caption = "# Requisa";
             this.row_requisa1.Properties.FieldName = "#requisa";
             // 
             // rowmp1
             // 
             this.rowmp1.Name = "rowmp1";
             this.rowmp1.Properties.AllowEdit = false;
-            this.rowmp1.Properties.Caption = "mp";
+            this.rowmp1.Properties.Caption = "Materia Prima";
             this.rowmp1.Properties.FieldName = "mp";
             // 
             // rowunidades1
             // 
             this.rowunidades1.Name = "rowunidades1";
             this.rowunidades1.Properties.AllowEdit = false;
-            this.rowunidades1.Properties.Caption = "unidades";
+            this.rowunidades1.Properties.Caption = "Unidades";
             this.rowunidades1.Properties.FieldName = "unidades";
             // 
             // rowpeso1
             // 
             this.rowpeso1.Name = "rowpeso1";
             this.rowpeso1.Properties.AllowEdit = false;
-            this.rowpeso1.Properties.Caption = "peso";
+            this.rowpeso1.Properties.Caption = "Peso en Sacos";
             this.rowpeso1.Properties.FieldName = "peso";
             // 
             // rowlote1
             // 
             this.rowlote1.Name = "rowlote1";
             this.rowlote1.Properties.AllowEdit = false;
-            this.rowlote1.Properties.Caption = "lote";
+            this.rowlote1.Properties.Caption = "Lote MP";
             this.rowlote1.Properties.FieldName = "lote";
             // 
             // rowpeso_bruto1
             // 
             this.rowpeso_bruto1.Name = "rowpeso_bruto1";
             this.rowpeso_bruto1.Properties.AllowEdit = false;
-            this.rowpeso_bruto1.Properties.Caption = "peso_bruto";
+            this.rowpeso_bruto1.Properties.Caption = "Peso Inicial";
             this.rowpeso_bruto1.Properties.FieldName = "peso_bruto";
             // 
             // rowpeso_tara1
@@ -385,6 +301,7 @@ namespace LOSA.Produccion
             this.rowpeso_tara1.Properties.AllowEdit = false;
             this.rowpeso_tara1.Properties.Caption = "peso_tara";
             this.rowpeso_tara1.Properties.FieldName = "peso_tara";
+            this.rowpeso_tara1.Visible = false;
             // 
             // rowpeso_prd1
             // 
@@ -392,6 +309,7 @@ namespace LOSA.Produccion
             this.rowpeso_prd1.Properties.AllowEdit = false;
             this.rowpeso_prd1.Properties.Caption = "peso_prd";
             this.rowpeso_prd1.Properties.FieldName = "peso_prd";
+            this.rowpeso_prd1.Visible = false;
             // 
             // rowbascula1
             // 
@@ -399,18 +317,142 @@ namespace LOSA.Produccion
             this.rowbascula1.Properties.AllowEdit = false;
             this.rowbascula1.Properties.Caption = "bascula";
             this.rowbascula1.Properties.FieldName = "bascula";
+            this.rowbascula1.Visible = false;
             // 
             // rowcodigo_barra1
             // 
             this.rowcodigo_barra1.Name = "rowcodigo_barra1";
             this.rowcodigo_barra1.Properties.AllowEdit = false;
-            this.rowcodigo_barra1.Properties.Caption = "codigo_barra";
+            this.rowcodigo_barra1.Properties.Caption = "Codigo de Barra";
             this.rowcodigo_barra1.Properties.FieldName = "codigo_barra";
             // 
-            // timerBascula
+            // vGridControl1
             // 
-            this.timerBascula.Interval = 650;
-            this.timerBascula.Tick += new System.EventHandler(this.timerBascula_Tick);
+            this.vGridControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.vGridControl1.DataMember = "Bascula1";
+            this.vGridControl1.DataSource = this.dsProduccion1;
+            this.vGridControl1.LayoutStyle = DevExpress.XtraVerticalGrid.LayoutViewStyle.SingleRecordView;
+            this.vGridControl1.Location = new System.Drawing.Point(135, 311);
+            this.vGridControl1.Name = "vGridControl1";
+            this.vGridControl1.RecordWidth = 115;
+            this.vGridControl1.RowHeaderWidth = 85;
+            this.vGridControl1.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
+            this.row_requisa,
+            this.rowLotePT,
+            this.rowmp,
+            this.rowlote,
+            this.rowcodigo_barra,
+            this.rowunidades,
+            this.rowPresentacion,
+            this.rowpeso,
+            this.rowpeso_bruto,
+            this.rowpeso_tara,
+            this.rowpeso_prd,
+            this.rowbascula});
+            this.vGridControl1.Size = new System.Drawing.Size(389, 200);
+            this.vGridControl1.TabIndex = 118;
+            // 
+            // row_requisa
+            // 
+            this.row_requisa.Name = "row_requisa";
+            this.row_requisa.Properties.AllowEdit = false;
+            this.row_requisa.Properties.Caption = "# Requisa";
+            this.row_requisa.Properties.FieldName = "#requisa";
+            // 
+            // rowmp
+            // 
+            this.rowmp.Name = "rowmp";
+            this.rowmp.Properties.AllowEdit = false;
+            this.rowmp.Properties.Caption = "Materia Prima";
+            this.rowmp.Properties.FieldName = "mp";
+            // 
+            // rowlote
+            // 
+            this.rowlote.Name = "rowlote";
+            this.rowlote.Properties.AllowEdit = false;
+            this.rowlote.Properties.Caption = "Lote MP";
+            this.rowlote.Properties.FieldName = "lote";
+            // 
+            // rowunidades
+            // 
+            this.rowunidades.Name = "rowunidades";
+            this.rowunidades.Properties.AllowEdit = false;
+            this.rowunidades.Properties.Caption = "Unidades";
+            this.rowunidades.Properties.FieldName = "unidades";
+            // 
+            // rowPresentacion
+            // 
+            this.rowPresentacion.Name = "rowPresentacion";
+            this.rowPresentacion.Properties.AllowEdit = false;
+            this.rowPresentacion.Properties.Caption = "Presentacion Saco";
+            this.rowPresentacion.Properties.FieldName = "presentacion";
+            // 
+            // rowpeso
+            // 
+            this.rowpeso.Name = "rowpeso";
+            this.rowpeso.Properties.AllowEdit = false;
+            this.rowpeso.Properties.Caption = "Peso en Sacos";
+            this.rowpeso.Properties.FieldName = "peso";
+            // 
+            // rowpeso_bruto
+            // 
+            this.rowpeso_bruto.Name = "rowpeso_bruto";
+            this.rowpeso_bruto.Properties.AllowEdit = false;
+            this.rowpeso_bruto.Properties.Caption = "Peso Inicial";
+            this.rowpeso_bruto.Properties.FieldName = "peso_bruto";
+            // 
+            // rowpeso_tara
+            // 
+            this.rowpeso_tara.Name = "rowpeso_tara";
+            this.rowpeso_tara.Properties.AllowEdit = false;
+            this.rowpeso_tara.Properties.Caption = "peso_tara";
+            this.rowpeso_tara.Properties.FieldName = "peso_tara";
+            this.rowpeso_tara.Visible = false;
+            // 
+            // rowpeso_prd
+            // 
+            this.rowpeso_prd.Name = "rowpeso_prd";
+            this.rowpeso_prd.Properties.AllowEdit = false;
+            this.rowpeso_prd.Properties.Caption = "peso_prd";
+            this.rowpeso_prd.Properties.FieldName = "peso_prd";
+            this.rowpeso_prd.Visible = false;
+            // 
+            // rowbascula
+            // 
+            this.rowbascula.Name = "rowbascula";
+            this.rowbascula.Properties.AllowEdit = false;
+            this.rowbascula.Properties.Caption = "Bascula #";
+            this.rowbascula.Properties.FieldName = "bascula";
+            this.rowbascula.Visible = false;
+            // 
+            // rowcodigo_barra
+            // 
+            this.rowcodigo_barra.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rowcodigo_barra.AppearanceCell.Options.UseFont = true;
+            this.rowcodigo_barra.Name = "rowcodigo_barra";
+            this.rowcodigo_barra.Properties.AllowEdit = false;
+            this.rowcodigo_barra.Properties.Caption = "Codigo de Barra";
+            this.rowcodigo_barra.Properties.FieldName = "codigo_barra";
+            // 
+            // rowLotePT
+            // 
+            this.rowLotePT.Name = "rowLotePT";
+            this.rowLotePT.Properties.AllowEdit = false;
+            this.rowLotePT.Properties.Caption = "Lote PT";
+            // 
+            // rowLoteP
+            // 
+            this.rowLoteP.Name = "rowLoteP";
+            this.rowLoteP.Properties.AllowEdit = false;
+            this.rowLoteP.Properties.Caption = "Lote PT";
+            this.rowLoteP.Properties.FieldName = "lote_pt";
+            // 
+            // rowPres
+            // 
+            this.rowPres.Name = "rowPres";
+            this.rowPres.Properties.AllowEdit = false;
+            this.rowPres.Properties.Caption = "Presentacion";
+            this.rowPres.Properties.FieldName = "presentacion";
             // 
             // frmAlimentacionMacros
             // 
@@ -431,9 +473,9 @@ namespace LOSA.Produccion
             this.Controls.Add(this.labelControl1);
             this.Name = "frmAlimentacionMacros";
             this.Text = "Alimentacion de MacroIngredientes";
-            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,5 +516,9 @@ namespace LOSA.Produccion
         private DevExpress.XtraVerticalGrid.Rows.EditorRow rowbascula1;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow rowcodigo_barra1;
         private System.Windows.Forms.Timer timerBascula;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowPresentacion;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowLotePT;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowLoteP;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowPres;
     }
 }

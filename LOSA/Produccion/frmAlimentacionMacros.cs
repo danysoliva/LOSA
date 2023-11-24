@@ -29,11 +29,35 @@ namespace LOSA.Produccion
             Bascula2 = 2
         }
 
+        Bascula BasculaIni;
+
         public frmAlimentacionMacros(UserLogin pUserLogin)
         {
             InitializeComponent();
             UsuarioLogueado = pUserLogin;
             timerBascula.Start();
+
+            ValidarCargaEnProceso();
+        }
+
+        private void ValidarCargaEnProceso()
+        {
+            try
+            {
+                switch (BasculaIni)
+                {
+                    case Bascula.Bascula1:
+                        break;
+                    case Bascula.Bascula2:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void cmdSelectTarima_Click(object sender, EventArgs e)
@@ -60,6 +84,7 @@ namespace LOSA.Produccion
                             Id_registro_bascula2 = frm.Id_RegistroBascula;
                             CargarDetalleBascula2(Id_registro_bascula2);
                             btnBascula2ON.Enabled = true;
+
                             break;
                         default:
                             break;
@@ -149,6 +174,8 @@ namespace LOSA.Produccion
             }
 
             GuardarPesoBruto(Bascula.Bascula1);
+
+            
         }
 
         private void GuardarPesoBruto(Bascula BasculaSelected)
@@ -180,7 +207,7 @@ namespace LOSA.Produccion
                 switch (BasculaSelected)
                 {
                     case Bascula.Bascula1:
-                        CargarDetalleBascula2(Id_registro_bascula1);
+                        CargarDetalleBascula1(Id_registro_bascula1);
                         btnBascula1Off.Enabled = true;
                         break;
                     case Bascula.Bascula2:
@@ -206,6 +233,16 @@ namespace LOSA.Produccion
             }
 
             GuardarPesoBruto(Bascula.Bascula1);
+        }
+
+        private void btnBascula1Off_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBascula2Off_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

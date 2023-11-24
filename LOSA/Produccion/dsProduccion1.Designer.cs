@@ -6874,6 +6874,10 @@ namespace LOSA.Produccion {
             
             private global::System.Data.DataColumn columncodigo_barra;
             
+            private global::System.Data.DataColumn columnpresentacion;
+            
+            private global::System.Data.DataColumn columnlote_pt;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Bascula1DataTable() {
@@ -6989,6 +6993,22 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn presentacionColumn {
+                get {
+                    return this.columnpresentacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_ptColumn {
+                get {
+                    return this.columnlote_pt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7024,7 +7044,7 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Bascula1Row AddBascula1Row(int @__requisa, string mp, decimal unidades, decimal peso, string lote, decimal peso_bruto, decimal peso_tara, decimal peso_prd, int bascula, string codigo_barra) {
+            public Bascula1Row AddBascula1Row(int @__requisa, string mp, decimal unidades, decimal peso, string lote, decimal peso_bruto, decimal peso_tara, decimal peso_prd, int bascula, string codigo_barra, string presentacion, int lote_pt) {
                 Bascula1Row rowBascula1Row = ((Bascula1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         @__requisa,
@@ -7036,7 +7056,9 @@ namespace LOSA.Produccion {
                         peso_tara,
                         peso_prd,
                         bascula,
-                        codigo_barra};
+                        codigo_barra,
+                        presentacion,
+                        lote_pt};
                 rowBascula1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBascula1Row);
                 return rowBascula1Row;
@@ -7069,6 +7091,8 @@ namespace LOSA.Produccion {
                 this.columnpeso_prd = base.Columns["peso_prd"];
                 this.columnbascula = base.Columns["bascula"];
                 this.columncodigo_barra = base.Columns["codigo_barra"];
+                this.columnpresentacion = base.Columns["presentacion"];
+                this.columnlote_pt = base.Columns["lote_pt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7096,6 +7120,10 @@ namespace LOSA.Produccion {
                 base.Columns.Add(this.columnbascula);
                 this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo_barra);
+                this.columnpresentacion = new global::System.Data.DataColumn("presentacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpresentacion);
+                this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_pt);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7249,6 +7277,10 @@ namespace LOSA.Produccion {
             
             private global::System.Data.DataColumn columncodigo_barra;
             
+            private global::System.Data.DataColumn columnpresentacion;
+            
+            private global::System.Data.DataColumn columnlote_pt;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Bascula2DataTable() {
@@ -7364,6 +7396,22 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn presentacionColumn {
+                get {
+                    return this.columnpresentacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lote_ptColumn {
+                get {
+                    return this.columnlote_pt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7399,7 +7447,7 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Bascula2Row AddBascula2Row(int @__requisa, string mp, decimal unidades, decimal peso, string lote, decimal peso_bruto, decimal peso_tara, decimal peso_prd, int bascula, string codigo_barra) {
+            public Bascula2Row AddBascula2Row(int @__requisa, string mp, decimal unidades, decimal peso, string lote, decimal peso_bruto, decimal peso_tara, decimal peso_prd, int bascula, string codigo_barra, string presentacion, int lote_pt) {
                 Bascula2Row rowBascula2Row = ((Bascula2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         @__requisa,
@@ -7411,7 +7459,9 @@ namespace LOSA.Produccion {
                         peso_tara,
                         peso_prd,
                         bascula,
-                        codigo_barra};
+                        codigo_barra,
+                        presentacion,
+                        lote_pt};
                 rowBascula2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBascula2Row);
                 return rowBascula2Row;
@@ -7444,6 +7494,8 @@ namespace LOSA.Produccion {
                 this.columnpeso_prd = base.Columns["peso_prd"];
                 this.columnbascula = base.Columns["bascula"];
                 this.columncodigo_barra = base.Columns["codigo_barra"];
+                this.columnpresentacion = base.Columns["presentacion"];
+                this.columnlote_pt = base.Columns["lote_pt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7471,6 +7523,10 @@ namespace LOSA.Produccion {
                 base.Columns.Add(this.columnbascula);
                 this.columncodigo_barra = new global::System.Data.DataColumn("codigo_barra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigo_barra);
+                this.columnpresentacion = new global::System.Data.DataColumn("presentacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpresentacion);
+                this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_pt);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11451,6 +11507,38 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string presentacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableBascula1.presentacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'presentacion\' de la tabla \'Bascula1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBascula1.presentacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int lote_pt {
+                get {
+                    try {
+                        return ((int)(this[this.tableBascula1.lote_ptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_pt\' de la tabla \'Bascula1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBascula1.lote_ptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is__requisaNull() {
                 return this.IsNull(this.tableBascula1.@__requisaColumn);
             }
@@ -11567,6 +11655,30 @@ namespace LOSA.Produccion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcodigo_barraNull() {
                 this[this.tableBascula1.codigo_barraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IspresentacionNull() {
+                return this.IsNull(this.tableBascula1.presentacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetpresentacionNull() {
+                this[this.tableBascula1.presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_ptNull() {
+                return this.IsNull(this.tableBascula1.lote_ptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_ptNull() {
+                this[this.tableBascula1.lote_ptColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11746,6 +11858,38 @@ namespace LOSA.Produccion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string presentacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableBascula2.presentacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'presentacion\' de la tabla \'Bascula2\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBascula2.presentacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int lote_pt {
+                get {
+                    try {
+                        return ((int)(this[this.tableBascula2.lote_ptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'lote_pt\' de la tabla \'Bascula2\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBascula2.lote_ptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is__requisaNull() {
                 return this.IsNull(this.tableBascula2.@__requisaColumn);
             }
@@ -11862,6 +12006,30 @@ namespace LOSA.Produccion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcodigo_barraNull() {
                 this[this.tableBascula2.codigo_barraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IspresentacionNull() {
+                return this.IsNull(this.tableBascula2.presentacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetpresentacionNull() {
+                this[this.tableBascula2.presentacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islote_ptNull() {
+                return this.IsNull(this.tableBascula2.lote_ptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlote_ptNull() {
+                this[this.tableBascula2.lote_ptColumn] = global::System.Convert.DBNull;
             }
         }
         
