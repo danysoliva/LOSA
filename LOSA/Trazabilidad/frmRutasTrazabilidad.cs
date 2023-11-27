@@ -36,10 +36,13 @@ namespace LOSA.Trazabilidad
         Ruta3 = 3,
 
     }
+
+    
+
     public partial class frmRutasTrazabilidad : DevExpress.XtraEditors.XtraForm
     {
         UserLogin UsuarioLogeado = new UserLogin();
-
+        //string LastNavigationPage_ForBack;
 
         //Varibles de Ruta 3
         LotePT LoteActual;
@@ -1584,7 +1587,8 @@ namespace LOSA.Trazabilidad
 
         private void LoadInventarioKardexRuta2()
         {
-            string query = @"sp_obtener_inventario_general_por_lote_trz";
+            //string query = @"sp_obtener_inventario_general_por_lote_trz";
+            string query = @"[dbo].[sp_obtener_inventario_general_por_lote_trz_v2]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -1593,8 +1597,8 @@ namespace LOSA.Trazabilidad
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lotemp", txtloteMP.Text);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsTarima.informacion.Clear();
-                da.Fill(dsTarima.informacion);
+                dsTarima.detalle_ingreso_inventario.Clear();
+                da.Fill(dsTarima.detalle_ingreso_inventario);
                 cn.Close();
             }
             catch (Exception ex)
@@ -2343,8 +2347,10 @@ namespace LOSA.Trazabilidad
             if (rutaActiva==2)
             navigationFrame1.SelectedPage = npRuta2;
 
-            if (rutaActiva==4)
-            navigationFrame1.SelectedPage = npRuta4_V2;
+            if (rutaActiva == 4)
+            {
+                navigationFrame1.SelectedPage = npRuta4_V2;
+            }
 
         }
         #endregion
@@ -3473,7 +3479,8 @@ namespace LOSA.Trazabilidad
 
         private void LoadInventarioKardex_Ruta4(string pLote)
         {
-            string query = @"sp_obtener_inventario_general_por_lote_trz";
+            //string query = @"sp_obtener_inventario_general_por_lote_trz";
+            string query = @"[dbo].[sp_obtener_inventario_general_por_lote_trz_v2]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -3482,12 +3489,12 @@ namespace LOSA.Trazabilidad
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lotemp", pLote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsTarima.informacion.Clear();
-                da.Fill(dsTarima.informacion);
+                dsTarima.detalle_ingreso_inventario.Clear();
+                da.Fill(dsTarima.detalle_ingreso_inventario);
                 cn.Close();
             }
             catch (Exception ex)
-            {
+            {   
 
                 CajaDialogo.Error(ex.Message);
             }
@@ -3851,7 +3858,9 @@ namespace LOSA.Trazabilidad
         private void cmdDespacho_Ruta4_Click(object sender, EventArgs e)
         {
             //if(rutaActiva==4)
-                navigationFrame1.SelectedPage = npRuta4_V2;
+           
+
+            navigationFrame1.SelectedPage = npRuta4_V2;
 
         }
 
@@ -4067,6 +4076,8 @@ namespace LOSA.Trazabilidad
                 {
                     return;
                 }
+
+               
 
                 navigationFrame1.SelectedPage = npRuta4_V2;
 
@@ -4321,6 +4332,8 @@ namespace LOSA.Trazabilidad
             var gridView = (GridView)gridControl10.FocusedView;
             var row = (dsReportesTRZ.ingresos_mp_lote_ruta1Row)gridView.GetFocusedDataRow();
 
+          
+
             navigationFrame1.SelectedPage = npRuta4_V2;
 
             load_Info_PT_Ruta4(row.Num_Ingreso, id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
@@ -4369,6 +4382,11 @@ namespace LOSA.Trazabilidad
                 inicializar_criterios_Ruta4(id_materiaPrima_Ruta1);
 
             }
+        }
+
+        private void cmdBack_npRuta4_V2_Click(object sender, EventArgs e)
+        {
+            navigationFrame1.SelectPrevPage();
         }
     }
 }
