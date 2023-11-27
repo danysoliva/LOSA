@@ -43,6 +43,7 @@ namespace LOSA.Trazabilidad
 
         //Varibles de Ruta 3
         LotePT LoteActual;
+
         public int lote_fp;
         DataOperations dp = new DataOperations();
 
@@ -74,7 +75,9 @@ namespace LOSA.Trazabilidad
         string Direccion_Ruta4;
         string phone_Ruta4;
         int id_materiaPrima_Ruta4;
+        int id_materiaPrima_Ruta1;
         int Id_ingreso_Ruta4;
+        int NumIngresoRuta4;
         int Id_boleta_Ruta4;
 
 
@@ -2494,6 +2497,7 @@ namespace LOSA.Trazabilidad
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         LoadLotesPT_Ruta1(frm.IdMP_Selected);
+                        id_materiaPrima_Ruta1 = dp.ValidateNumberInt32(frm.IdMP_Selected);
                         lblLoteNameRuta1.Text = frm.NameMaterialselected;
                         LoadInventarioLotesRuta1();
                         LoadRegistroIngresosLotesRuta1();
@@ -2504,6 +2508,7 @@ namespace LOSA.Trazabilidad
                 else
                 {
                     LoadLotesPT_Ruta1(LoteMP_.IdMPSingle);
+                    id_materiaPrima_Ruta1 = LoteMP_.IdMPSingle;
                     lblLoteNameRuta1.Text = LoteMP_.NombreComercialSingle;
                     LoadInventarioLotesRuta1();
                     LoadRegistroIngresosLotesRuta1();
@@ -2528,6 +2533,7 @@ namespace LOSA.Trazabilidad
                     {
                         lblLoteNameRuta1.Text = frm.NameMaterialselected;
                         LoteMP_.IdMPSingle = Convert.ToInt32(frm.IdMP_Selected);
+                        id_materiaPrima_Ruta1 = LoteMP_.IdMPSingle;
                         LoteMP_.Recuperado = true;
                     }
                 }
@@ -2538,6 +2544,7 @@ namespace LOSA.Trazabilidad
                         if (LoteMP_.RecuperarMateriaPrimaFromLOTE_MP_and_ITEMCODE(txtLoteMPRuta1.Text))
                         {
                             lblLoteNameRuta1.Text = LoteMP_.NombreComercialSingle;
+                            id_materiaPrima_Ruta1 = LoteMP_.IdMPSingle;
                         }
                         else
                         {
@@ -3217,10 +3224,10 @@ namespace LOSA.Trazabilidad
             cn.Close();
         }
 
-        public void Load_cargas_nir_Ruta4(int pIDMP)
+        public void Load_cargas_nir_Ruta4(int pIDMP, string pLoteMP, int pnum_ingreso)
         {
-            string query = @"sp_load_validaciones_del_nir_to_show_calidad";
-            //string query = @"[sp_load_validaciones_del_nir_to_show_calidad_by_lote_v2]";
+            //string query = @"sp_load_validaciones_del_nir_to_show_calidad";
+            string query = @"[dbo].[sp_load_validaciones_del_nir_to_show_calidadV2]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -3229,8 +3236,11 @@ namespace LOSA.Trazabilidad
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp", pIDMP);
                 //cmd.Parameters.AddWithValue("@_lotemp", Lote);
-                cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso_Ruta4);
+                //cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso_Ruta4);
+                cmd.Parameters.AddWithValue("@num_transaccion", pnum_ingreso);
+                cmd.Parameters.AddWithValue("@lote", pLoteMP);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
+
                 dsMantenimientoC.show_nir.Clear();
                 da.Fill(dsMantenimientoC.show_nir);
                 cn.Close();
@@ -4071,12 +4081,12 @@ namespace LOSA.Trazabilidad
 
                         Id_ingreso_Ruta4 = item.id_ingreso;
                         Id_boleta_Ruta4 = item.id_boleta;
-
+                        NumIngresoRuta4 = item.numero_transaccion;
                         item.selected = true;
                     }
                 }
 
-                Load_cargas_nir_Ruta4(row.id_mp);
+                Load_cargas_nir_Ruta4(row.id_mp, row.lote_mp, NumIngresoRuta4);
                 Inicalizar_Archivo_Ruta4();
                 //Inicializar_data_logistica_Ruta4(row.NIngreso);
                 Inicializar_data_logisticaRuta2(row.lote_mp, row.NIngreso);
@@ -4297,6 +4307,68 @@ namespace LOSA.Trazabilidad
             frm.Show();
             
 
+        }
+
+        private void cmdVerIngresoLote_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //Ver detalle del ingreso 
+
+            if (string.IsNullOrEmpty(txtLoteMPRuta1.Text))
+            {
+                return;
+            }
+
+            var gridView = (GridView)gridControl10.FocusedView;
+            var row = (dsReportesTRZ.ingresos_mp_lote_ruta1Row)gridView.GetFocusedDataRow();
+
+            navigationFrame1.SelectedPage = npRuta4_V2;
+
+            load_Info_PT_Ruta4(row.Num_Ingreso, id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
+            load_data_ingreso_Ruta4(row.Num_Ingreso, id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
+
+            LoadDataInicialIngresos_Ruta4(id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
+            foreach (dsMantenimientoC.Ingresos_Lote_detalleRow item in dsMantenimientoC.Ingresos_Lote_detalle.Rows)
+            {
+                if (item.numero_transaccion == row.Num_Ingreso)
+                {
+
+                    Id_ingreso_Ruta4 = item.id_ingreso;
+                    Id_boleta_Ruta4 = item.id_boleta;
+                    NumIngresoRuta4 = item.numero_transaccion;
+                    item.selected = true;
+                }
+            }
+
+            Load_cargas_nir_Ruta4(id_materiaPrima_Ruta1, txtLoteMPRuta1.Text, NumIngresoRuta4);
+            Inicalizar_Archivo_Ruta4();
+            //Inicializar_data_logistica_Ruta4(row.NIngreso);
+            Inicializar_data_logisticaRuta2(txtLoteMPRuta1.Text, row.Num_Ingreso);
+            load_especie_Ruta4();
+            load_zonas_Ruta4();
+            load_tipo_Ruta4();
+            load_paises_Ruta4();
+            LoadLotesPT_Ruta4(id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
+            LoadInventarioKardex_Ruta4(txtLoteMPRuta1.Text);
+
+            if (ChCalidad_Ruta4)
+            {
+                load_criterios_configurados_Ruta4(row.Num_Ingreso, id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
+                get_imagen_Ruta4(row.Num_Ingreso, id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
+                load_empaque_estado_Mp_Ruta4(row.Num_Ingreso, id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
+                load_trasporte_estado_transporte_Ruta4(row.Num_Ingreso, id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
+                load_criterios_adicionales_Ruta4(id_materiaPrima_Ruta1, txtLoteMPRuta1.Text, row.Num_Ingreso);
+                Inicalizar_Archivo_configurados_Ruta4(id_materiaPrima_Ruta1, txtLoteMPRuta1.Text);
+
+                if (full_pathImagen != "")
+                {
+                    pc_Mp.Image = ByteToImage_Ruta4(GetImgByte_Ruta4(full_pathImagen));
+                }
+            }
+            else
+            {
+                inicializar_criterios_Ruta4(id_materiaPrima_Ruta1);
+
+            }
         }
     }
 }
