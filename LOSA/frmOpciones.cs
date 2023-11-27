@@ -3976,7 +3976,7 @@ namespace LOSA
                 case 4://Depth With Delta
                 case 5://Depth Without Delta
                     accesoprevio = true;
-                    frmAlimentacionConBasculas frm = new frmAlimentacionConBasculas(UsuarioLogeado);
+                    frmAlimentacionMacros frm = new frmAlimentacionMacros(UsuarioLogeado);
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                     break;

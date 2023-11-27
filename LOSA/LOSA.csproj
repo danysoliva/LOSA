@@ -4059,11 +4059,11 @@
     <Compile Include="Produccion\frmAddTarimaPT.Designer.cs">
       <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produccion\frmAlimentacionConBasculas.cs">
+    <Compile Include="Produccion\frmAlimentacionMacros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produccion\frmAlimentacionConBasculas.Designer.cs">
-      <DependentUpon>frmAlimentacionConBasculas.cs</DependentUpon>
+    <Compile Include="Produccion\frmAlimentacionMacros.Designer.cs">
+      <DependentUpon>frmAlimentacionMacros.cs</DependentUpon>
     </Compile>
     <Compile Include="Produccion\frmAlimentacionManual.cs">
       <SubType>Form</SubType>
@@ -8065,8 +8065,8 @@
     <EmbeddedResource Include="Produccion\frmAddTarimaPT.resx">
       <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produccion\frmAlimentacionConBasculas.resx">
-      <DependentUpon>frmAlimentacionConBasculas.cs</DependentUpon>
+    <EmbeddedResource Include="Produccion\frmAlimentacionMacros.resx">
+      <DependentUpon>frmAlimentacionMacros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAlimentacionManual.resx">
       <DependentUpon>frmAlimentacionManual.cs</DependentUpon>
@@ -9022,7 +9022,6 @@
     <None Include="TransaccionesMP\dsTransaccionesMP.xss">
       <DependentUpon>dsTransaccionesMP.xsd</DependentUpon>
     </None>
-    <None Include="TransaccionesMP\EntregaMP\frmEntregaTarimaReq_4.resx.bak" />
     <None Include="TransaccionesMP\Gestion_Granel\dsGestionGranel.xsc">
       <DependentUpon>dsGestionGranel.xsd</DependentUpon>
     </None>
