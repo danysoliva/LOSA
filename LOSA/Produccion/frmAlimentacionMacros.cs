@@ -268,15 +268,16 @@ namespace LOSA.Produccion
 
             try
             {
+
                 DataOperations dp = new DataOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("sp_insert_requisa_entrega_a_prd_pesajeBascula", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_tarima",AliBasculas.Id_Tarima);
-                cmd.Parameters.AddWithValue("@id_usuario",UsuarioLogueado.Id);
+                cmd.Parameters.AddWithValue("@id_tarima", AliBasculas.Id_Tarima);
+                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
                 cmd.Parameters.AddWithValue("@id_req", AliBasculas.Num_Requisa);
-                cmd.Parameters.AddWithValue("@cantidad",AliBasculas.Unidades);
+                cmd.Parameters.AddWithValue("@cantidad", AliBasculas.Unidades);
                 cmd.Parameters.AddWithValue("@peso", AliBasculas.Peso);
                 cmd.Parameters.AddWithValue("@peso_bascula", pesoBascula1);
                 cmd.Parameters.AddWithValue("@id_registro", Id_registro_bascula1);
@@ -290,8 +291,6 @@ namespace LOSA.Produccion
             {
                 CajaDialogo.Error(ex.Message);
             }
-
-
 
         }
 
