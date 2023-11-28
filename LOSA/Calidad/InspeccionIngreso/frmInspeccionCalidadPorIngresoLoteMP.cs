@@ -20,6 +20,7 @@ using LOSA.Trazabilidad;
 using LOSA.Trazabilidad.ReportesTRZ;
 using LOSA.Trazabilidad.Despachos;
 using LOSA.TransaccionesMP;
+using DevExpress.CodeParser;
 
 
 namespace LOSA.Calidad
@@ -1119,7 +1120,8 @@ namespace LOSA.Calidad
 
         public void load_data_ingreso()
         {
-            string query = @"sp_get_informacion_get_to_show_calidad_inven_actual_por_lote_ingreso";
+            //string query = @"sp_get_informacion_get_to_show_calidad_inven_actual_por_lote_ingreso";
+            string query = @"[dbo].[sp_get_inventario_kg_kardex]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -1127,7 +1129,7 @@ namespace LOSA.Calidad
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
-                cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
+                //cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
                 cmd.Parameters.AddWithValue("@idmp", IdMP);
                 cmd.Parameters.AddWithValue("@lote", Lote);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -1139,23 +1141,13 @@ namespace LOSA.Calidad
                     //txtdiasvencimiento.Text = dr.IsDBNull(3) ? "0" : dr.GetInt32(3).ToString();
                     //txtingresada.Text = dr.IsDBNull(4) ? "" : dr.GetDecimal(4).ToString();
                     //txtingresadaUD.Text = dr.IsDBNull(5) ? "" : dr.GetDecimal(5).ToString();
-                    txtinventarioActual.Text = dr.IsDBNull(0) ? "" : dr.GetDecimal(0).ToString();
-                    IdMP = dr.IsDBNull(1) ? 0 : dr.GetInt32(1);
+                    decimal Inv_kg = dr.IsDBNull(0) ? 0 : dr.GetDecimal(0);
+                    txtinventarioActual.Text = string.Format("{0:###,##0.00}", Inv_kg);
+                    txtTM_inventarioActual.Text = string.Format("{0:###,##0.00}", Inv_kg/1000);
+
+                    //IdMP = dr.IsDBNull(1) ? 0 : dr.GetInt32(1);
                 }
                 dr.Close();
-
-                //query = @"[sp_get_informacion_get_to_show_calidad_data_mp_v3]";
-                //cmd = new SqlCommand(query, cn);
-                //cmd.CommandType = CommandType.StoredProcedure;
-                ////cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
-                ////cmd.Parameters.AddWithValue("@numero_transaccion", NumeroTransaccion);
-                //cmd.Parameters.AddWithValue("@idmp", IdMP);
-                //cmd.Parameters.AddWithValue("@lote", Lote);
-                //dsMantenimientoC.Ingresos_Lote_detalle.Clear();
-                //SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                //adat.Fill(dsMantenimientoC.Ingresos_Lote_detalle);
-                
-                //cn.Close();
             }
             catch (Exception ex)
             {

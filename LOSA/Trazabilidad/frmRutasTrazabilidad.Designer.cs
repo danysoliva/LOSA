@@ -1035,7 +1035,7 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.SimpleButton cmdBack_npRuta4_V2;
         private DevExpress.XtraEditors.LabelControl labelControl78;
         private DevExpress.XtraEditors.LabelControl labelControl77;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtTM_inventarioActual;
         private DevExpress.XtraGrid.GridControl gridControl14;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView36;
     }

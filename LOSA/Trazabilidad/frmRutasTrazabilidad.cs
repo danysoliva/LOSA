@@ -3185,7 +3185,8 @@ namespace LOSA.Trazabilidad
 
         public void load_data_ingreso_Ruta4(int pNumeroTransaccion, int pIDMP, string pLote)
         {
-            string query = @"sp_get_informacion_get_to_show_calidad_inven_actual_por_lote_ingreso";
+            //string query = @"sp_get_informacion_get_to_show_calidad_inven_actual_por_lote_ingreso";
+            string query = @"[dbo].[sp_get_inventario_kg_kardex]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -3193,14 +3194,17 @@ namespace LOSA.Trazabilidad
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@id_lote", Id_ingreso);
-                cmd.Parameters.AddWithValue("@numero_transaccion", pNumeroTransaccion);
+                //cmd.Parameters.AddWithValue("@numero_transaccion", pNumeroTransaccion);
                 cmd.Parameters.AddWithValue("@idmp", pIDMP);
                 cmd.Parameters.AddWithValue("@lote", pLote);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    txtInventarioActual_Ruta4.Text = dr.IsDBNull(0) ? "" : dr.GetDecimal(0).ToString();
-                    id_materiaPrima_Ruta4 = dr.IsDBNull(1) ? 0 : dr.GetInt32(1);
+                    //txtInventarioActual_Ruta4.Text = dr.IsDBNull(0) ? "" : dr.GetDecimal(0).ToString();
+                    decimal Inv_kg = dr.IsDBNull(0) ? 0 : dr.GetDecimal(0);
+                    txtInventarioActual_Ruta4.Text = string.Format("{0:###,##0.00}", Inv_kg);
+                    txtTM_inventarioActual.Text = string.Format("{0:###,##0.00}", Inv_kg / 1000);
+                    id_materiaPrima_Ruta4 = pIDMP;// dr.IsDBNull(1) ? 0 : dr.GetInt32(1);
                 }
                 dr.Close();
 
@@ -5266,7 +5270,7 @@ namespace LOSA.Trazabilidad
             this.npRuta4_V2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.labelControl78 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl77 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtTM_inventarioActual = new DevExpress.XtraEditors.TextEdit();
             this.cmdBack_npRuta4_V2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnVerBoleta = new DevExpress.XtraEditors.SimpleButton();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -5445,6 +5449,19 @@ namespace LOSA.Trazabilidad
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.gridControl14 = new DevExpress.XtraGrid.GridControl();
             this.gridView36 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn172 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumIngreso1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFechaIngreso1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumFactura1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumOC1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn173 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProveedor2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumBoleta2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_prod1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colusuario1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colClaseIngreso1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colClaseIngresoName1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpeso_tm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl20 = new DevExpress.XtraGrid.GridControl();
             this.gridView37 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_materia_prima = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -5535,19 +5552,6 @@ namespace LOSA.Trazabilidad
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerRuta4 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.gridColumn172 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNumIngreso1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFechaIngreso1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNumFactura1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNumOC1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn173 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProveedor2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNumBoleta2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpeso_prod1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colusuario1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colClaseIngreso1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colClaseIngresoName1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpeso_tm = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposCantidadDosificadaLoteLink)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reposLinkLoteMP)).BeginInit();
@@ -5829,7 +5833,7 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.cmdButtonTrzLotePT_ruta4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).BeginInit();
             this.npRuta4_V2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTM_inventarioActual.Properties)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
@@ -14477,7 +14481,7 @@ namespace LOSA.Trazabilidad
             // 
             this.npRuta4_V2.Controls.Add(this.labelControl78);
             this.npRuta4_V2.Controls.Add(this.labelControl77);
-            this.npRuta4_V2.Controls.Add(this.textEdit1);
+            this.npRuta4_V2.Controls.Add(this.txtTM_inventarioActual);
             this.npRuta4_V2.Controls.Add(this.cmdBack_npRuta4_V2);
             this.npRuta4_V2.Controls.Add(this.btnVerBoleta);
             this.npRuta4_V2.Controls.Add(this.tabControl2);
@@ -14527,17 +14531,17 @@ namespace LOSA.Trazabilidad
             this.labelControl77.TabIndex = 86;
             this.labelControl77.Text = "Kg";
             // 
-            // textEdit1
+            // txtTM_inventarioActual
             // 
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(963, 100);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Size = new System.Drawing.Size(97, 24);
-            this.textEdit1.TabIndex = 85;
+            this.txtTM_inventarioActual.Enabled = false;
+            this.txtTM_inventarioActual.Location = new System.Drawing.Point(963, 100);
+            this.txtTM_inventarioActual.Name = "txtTM_inventarioActual";
+            this.txtTM_inventarioActual.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtTM_inventarioActual.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtTM_inventarioActual.Properties.Appearance.Options.UseFont = true;
+            this.txtTM_inventarioActual.Properties.Appearance.Options.UseForeColor = true;
+            this.txtTM_inventarioActual.Size = new System.Drawing.Size(97, 24);
+            this.txtTM_inventarioActual.TabIndex = 85;
             // 
             // cmdBack_npRuta4_V2
             // 
@@ -16639,6 +16643,103 @@ namespace LOSA.Trazabilidad
             this.gridView36.OptionsView.ShowAutoFilterRow = true;
             this.gridView36.OptionsView.ShowFooter = true;
             // 
+            // gridColumn172
+            // 
+            this.gridColumn172.FieldName = "idboleta";
+            this.gridColumn172.Name = "gridColumn172";
+            // 
+            // colNumIngreso1
+            // 
+            this.colNumIngreso1.FieldName = "Num Ingreso";
+            this.colNumIngreso1.Name = "colNumIngreso1";
+            this.colNumIngreso1.Visible = true;
+            this.colNumIngreso1.VisibleIndex = 0;
+            // 
+            // colFechaIngreso1
+            // 
+            this.colFechaIngreso1.DisplayFormat.FormatString = "d";
+            this.colFechaIngreso1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colFechaIngreso1.FieldName = "Fecha Ingreso";
+            this.colFechaIngreso1.Name = "colFechaIngreso1";
+            this.colFechaIngreso1.Visible = true;
+            this.colFechaIngreso1.VisibleIndex = 1;
+            // 
+            // colNumFactura1
+            // 
+            this.colNumFactura1.FieldName = "Num Factura";
+            this.colNumFactura1.Name = "colNumFactura1";
+            this.colNumFactura1.Visible = true;
+            this.colNumFactura1.VisibleIndex = 2;
+            // 
+            // colNumOC1
+            // 
+            this.colNumOC1.FieldName = "Num OC";
+            this.colNumOC1.Name = "colNumOC1";
+            this.colNumOC1.Visible = true;
+            this.colNumOC1.VisibleIndex = 3;
+            // 
+            // gridColumn173
+            // 
+            this.gridColumn173.FieldName = "Cod. Proveedor";
+            this.gridColumn173.Name = "gridColumn173";
+            this.gridColumn173.Visible = true;
+            this.gridColumn173.VisibleIndex = 4;
+            // 
+            // colProveedor2
+            // 
+            this.colProveedor2.FieldName = "Proveedor";
+            this.colProveedor2.Name = "colProveedor2";
+            this.colProveedor2.Visible = true;
+            this.colProveedor2.VisibleIndex = 5;
+            // 
+            // colNumBoleta2
+            // 
+            this.colNumBoleta2.FieldName = "Num Boleta";
+            this.colNumBoleta2.Name = "colNumBoleta2";
+            this.colNumBoleta2.Visible = true;
+            this.colNumBoleta2.VisibleIndex = 6;
+            // 
+            // colpeso_prod1
+            // 
+            this.colpeso_prod1.DisplayFormat.FormatString = "n2";
+            this.colpeso_prod1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso_prod1.FieldName = "peso_prod";
+            this.colpeso_prod1.Name = "colpeso_prod1";
+            this.colpeso_prod1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso_prod", "SUM Kg={0:n2}")});
+            this.colpeso_prod1.Visible = true;
+            this.colpeso_prod1.VisibleIndex = 7;
+            // 
+            // colusuario1
+            // 
+            this.colusuario1.FieldName = "usuario";
+            this.colusuario1.Name = "colusuario1";
+            this.colusuario1.Visible = true;
+            this.colusuario1.VisibleIndex = 9;
+            // 
+            // colClaseIngreso1
+            // 
+            this.colClaseIngreso1.FieldName = "Clase Ingreso";
+            this.colClaseIngreso1.Name = "colClaseIngreso1";
+            // 
+            // colClaseIngresoName1
+            // 
+            this.colClaseIngresoName1.FieldName = "Clase Ingreso Name";
+            this.colClaseIngresoName1.Name = "colClaseIngresoName1";
+            this.colClaseIngresoName1.Visible = true;
+            this.colClaseIngresoName1.VisibleIndex = 10;
+            // 
+            // colpeso_tm
+            // 
+            this.colpeso_tm.DisplayFormat.FormatString = "n2";
+            this.colpeso_tm.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colpeso_tm.FieldName = "peso_tm";
+            this.colpeso_tm.Name = "colpeso_tm";
+            this.colpeso_tm.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso_tm", "SUM TM={0:n2}")});
+            this.colpeso_tm.Visible = true;
+            this.colpeso_tm.VisibleIndex = 8;
+            // 
             // gridControl20
             // 
             this.gridControl20.DataMember = "detalle_ingreso_inventario";
@@ -17075,7 +17176,7 @@ namespace LOSA.Trazabilidad
             this.txtFabricante_Ruta4.Properties.Appearance.Options.UseFont = true;
             this.txtFabricante_Ruta4.Properties.Appearance.Options.UseForeColor = true;
             this.txtFabricante_Ruta4.Properties.ReadOnly = true;
-            this.txtFabricante_Ruta4.Size = new System.Drawing.Size(220, 24);
+            this.txtFabricante_Ruta4.Size = new System.Drawing.Size(261, 24);
             this.txtFabricante_Ruta4.TabIndex = 75;
             // 
             // labelControl96
@@ -17554,103 +17655,6 @@ namespace LOSA.Trazabilidad
             this.timerRuta4.Interval = 2300;
             this.timerRuta4.Tick += new System.EventHandler(this.timerRuta4_Tick);
             // 
-            // gridColumn172
-            // 
-            this.gridColumn172.FieldName = "idboleta";
-            this.gridColumn172.Name = "gridColumn172";
-            // 
-            // colNumIngreso1
-            // 
-            this.colNumIngreso1.FieldName = "Num Ingreso";
-            this.colNumIngreso1.Name = "colNumIngreso1";
-            this.colNumIngreso1.Visible = true;
-            this.colNumIngreso1.VisibleIndex = 0;
-            // 
-            // colFechaIngreso1
-            // 
-            this.colFechaIngreso1.DisplayFormat.FormatString = "d";
-            this.colFechaIngreso1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colFechaIngreso1.FieldName = "Fecha Ingreso";
-            this.colFechaIngreso1.Name = "colFechaIngreso1";
-            this.colFechaIngreso1.Visible = true;
-            this.colFechaIngreso1.VisibleIndex = 1;
-            // 
-            // colNumFactura1
-            // 
-            this.colNumFactura1.FieldName = "Num Factura";
-            this.colNumFactura1.Name = "colNumFactura1";
-            this.colNumFactura1.Visible = true;
-            this.colNumFactura1.VisibleIndex = 2;
-            // 
-            // colNumOC1
-            // 
-            this.colNumOC1.FieldName = "Num OC";
-            this.colNumOC1.Name = "colNumOC1";
-            this.colNumOC1.Visible = true;
-            this.colNumOC1.VisibleIndex = 3;
-            // 
-            // gridColumn173
-            // 
-            this.gridColumn173.FieldName = "Cod. Proveedor";
-            this.gridColumn173.Name = "gridColumn173";
-            this.gridColumn173.Visible = true;
-            this.gridColumn173.VisibleIndex = 4;
-            // 
-            // colProveedor2
-            // 
-            this.colProveedor2.FieldName = "Proveedor";
-            this.colProveedor2.Name = "colProveedor2";
-            this.colProveedor2.Visible = true;
-            this.colProveedor2.VisibleIndex = 5;
-            // 
-            // colNumBoleta2
-            // 
-            this.colNumBoleta2.FieldName = "Num Boleta";
-            this.colNumBoleta2.Name = "colNumBoleta2";
-            this.colNumBoleta2.Visible = true;
-            this.colNumBoleta2.VisibleIndex = 6;
-            // 
-            // colpeso_prod1
-            // 
-            this.colpeso_prod1.DisplayFormat.FormatString = "n2";
-            this.colpeso_prod1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colpeso_prod1.FieldName = "peso_prod";
-            this.colpeso_prod1.Name = "colpeso_prod1";
-            this.colpeso_prod1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso_prod", "SUM Kg={0:n2}")});
-            this.colpeso_prod1.Visible = true;
-            this.colpeso_prod1.VisibleIndex = 7;
-            // 
-            // colusuario1
-            // 
-            this.colusuario1.FieldName = "usuario";
-            this.colusuario1.Name = "colusuario1";
-            this.colusuario1.Visible = true;
-            this.colusuario1.VisibleIndex = 9;
-            // 
-            // colClaseIngreso1
-            // 
-            this.colClaseIngreso1.FieldName = "Clase Ingreso";
-            this.colClaseIngreso1.Name = "colClaseIngreso1";
-            // 
-            // colClaseIngresoName1
-            // 
-            this.colClaseIngresoName1.FieldName = "Clase Ingreso Name";
-            this.colClaseIngresoName1.Name = "colClaseIngresoName1";
-            this.colClaseIngresoName1.Visible = true;
-            this.colClaseIngresoName1.VisibleIndex = 10;
-            // 
-            // colpeso_tm
-            // 
-            this.colpeso_tm.DisplayFormat.FormatString = "n2";
-            this.colpeso_tm.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colpeso_tm.FieldName = "peso_tm";
-            this.colpeso_tm.Name = "colpeso_tm";
-            this.colpeso_tm.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso_tm", "SUM TM={0:n2}")});
-            this.colpeso_tm.Visible = true;
-            this.colpeso_tm.VisibleIndex = 8;
-            // 
             // frmRutasTrazabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -17954,7 +17958,7 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.txtLoteMPRuta1.Properties)).EndInit();
             this.npRuta4_V2.ResumeLayout(false);
             this.npRuta4_V2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTM_inventarioActual.Properties)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();

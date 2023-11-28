@@ -121,7 +121,7 @@
   <data name="simpleButton1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6wAAAOsBK2zXwgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAScSURBVFhHrZdt
+        6gAAAOoB+Ss1JgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAScSURBVFhHrZdt
         bFNVGMc7iJSuXTeW3RaDJpr49sF3jImffEEjyVyWsI1t4QshQV3rMIt8QQyRRGNEZJg5RDYlGhAZ2UeD
         OM3CihDHeAk64JNR5hd729u32260vffvc25Pb3tf1rXMJ/knze09z+9/es55zlNHtYH+Zi8C/l6lTxhR
         A8K0GvCFSVku+ixMKwHfEQT9PdjW0sCHLT8QbHlICfi/IkiahCqVVgLCKN4QHuRpag8M3OOiGe2nZDlT
@@ -150,7 +150,7 @@
   <data name="btnAdjuntarImagen.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6wAAAOsBK2zXwgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAVRSURBVFhHzZd7
+        6gAAAOoB+Ss1JgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAVRSURBVFhHzZd7
         UBQFAIedQG+PO++4g3vyOA5IQ9FETFJJBBShxhrNtGS0RkRT0DENCfIx+SDfpinOOWCKiPhCUxQkwicP
         QUFM0zKNxGw0x3yCssiv3b29x97tnYh/1G/mGwaO2e+73eNu6fR/mFQmIfIkIuKuUCh4QhCCppdBKCSa
         xWK3FhM+3urbUmnXRNZlP5lEeCB5TMjTy3sTYEiPaQvUe6GlqQEgb3SYtie/gHxUwXChdgd69gggKVW0
@@ -231,13 +231,10 @@
   <metadata name="origenespecieBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>318, 56</value>
   </metadata>
-  <metadata name="dsTarima1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <data name="cmdSelectUltimasCargas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6wAAAOsBK2zXwgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKRSURBVFhH7ddJ
+        6gAAAOoB+Ss1JgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKRSURBVFhH7ddJ
         yI1RHMfxFxlSKJShlGknYSOkpJQhezayMJWpkBWvlEKZSZGNBSWSKUPGWNlQFhYkMpV5HkKG7/c899Tz
         3vd5773PHWThV5+653R7zv895zznnrfpX8oQrMVBHK6zHZiENjMP3/AMp5H1kGodxW38xhF0RotMxE9s
         Qkc7GpRp+ICdoZXKBVxCu9BKvvi4YKodqWzFe1xDXztyZhG+o1doFfIRS5OPIQ58rOCRHYWMhdO4CvZv
@@ -252,6 +249,9 @@
         SUVORK5CYII=
 </value>
   </data>
+  <metadata name="dsTarima1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <data name="labelControl51.Text" xml:space="preserve">
     <value>FISICO: Metal, Piedras, Palos, Plástico, Tornillos, Tuercas, Vidrio.	 	 	 	 	
 QUIMICO: Combustible, ( Diésel, Gasolina, Aceite), Detergente, Pesticidas, 
@@ -310,7 +310,7 @@ BIOLOGICO: Heces, Insectos, Lodo, Residuos de Otros Alimentos.
   <data name="btnRecientes.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6wAAAOsBK2zXwgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQHSURBVFhH1ZcP
+        6gAAAOoB+Ss1JgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQHSURBVFhH1ZcP
         bBNVHMfXu2vvujLmQgIGZ4RtMQsQZyz4J0GGY90yxE26dpMtiozNEBzi2OYmMkZ0EJIhwxA6JcbEGBMi
         8Q/BbBLjogEBGUGzoHMgEATxH27sT5nd2n5973orffQ13K0hhm/ySe9eru/7zfu9e+9dwm1QppAgvK1I
         0m+CyeS3iNKgIpm/Ju1lBEF9IobuI+wgfBQHnxLT8UdT03x7Cp5BZ1k19ruqsHZ+dlCWpHES5Dh5Zjoh
