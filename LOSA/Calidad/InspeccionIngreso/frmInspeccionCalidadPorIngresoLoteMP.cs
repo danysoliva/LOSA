@@ -376,7 +376,8 @@ namespace LOSA.Calidad
 
         private void LoadInventarioKardex()
         {
-            string query = @"sp_obtener_inventario_general_por_lote_trz";
+            //string query = @"sp_obtener_inventario_general_por_lote_trz";
+            string query = @"[dbo].[sp_get_ingresos_lotes_mp_ruta_trz1]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -385,8 +386,8 @@ namespace LOSA.Calidad
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@lotemp", Lote);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsTarima1.informacion.Clear();
-                da.Fill(dsTarima1.informacion);
+                dsTarima1.ingresos_lote_mp.Clear();
+                da.Fill(dsTarima1.ingresos_lote_mp);
                 cn.Close();
             }
             catch (Exception ex)
