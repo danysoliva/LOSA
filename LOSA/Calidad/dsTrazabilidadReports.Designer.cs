@@ -32,6 +32,8 @@ namespace LOSA.Calidad {
         
         private kg_usados_por_ptDataTable tablekg_usados_por_pt;
         
+        private muestreo_lote_promedioDataTable tablemuestreo_lote_promedio;
+        
         private global::System.Data.DataRelation relationclientes_resumen_ruta2trz_detalle_despachos_clientes;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -73,6 +75,9 @@ namespace LOSA.Calidad {
                 }
                 if ((ds.Tables["kg_usados_por_pt"] != null)) {
                     base.Tables.Add(new kg_usados_por_ptDataTable(ds.Tables["kg_usados_por_pt"]));
+                }
+                if ((ds.Tables["muestreo_lote_promedio"] != null)) {
+                    base.Tables.Add(new muestreo_lote_promedioDataTable(ds.Tables["muestreo_lote_promedio"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -129,6 +134,16 @@ namespace LOSA.Calidad {
         public kg_usados_por_ptDataTable kg_usados_por_pt {
             get {
                 return this.tablekg_usados_por_pt;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public muestreo_lote_promedioDataTable muestreo_lote_promedio {
+            get {
+                return this.tablemuestreo_lote_promedio;
             }
         }
         
@@ -211,6 +226,9 @@ namespace LOSA.Calidad {
                 if ((ds.Tables["kg_usados_por_pt"] != null)) {
                     base.Tables.Add(new kg_usados_por_ptDataTable(ds.Tables["kg_usados_por_pt"]));
                 }
+                if ((ds.Tables["muestreo_lote_promedio"] != null)) {
+                    base.Tables.Add(new muestreo_lote_promedioDataTable(ds.Tables["muestreo_lote_promedio"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -268,6 +286,12 @@ namespace LOSA.Calidad {
                     this.tablekg_usados_por_pt.InitVars();
                 }
             }
+            this.tablemuestreo_lote_promedio = ((muestreo_lote_promedioDataTable)(base.Tables["muestreo_lote_promedio"]));
+            if ((initTable == true)) {
+                if ((this.tablemuestreo_lote_promedio != null)) {
+                    this.tablemuestreo_lote_promedio.InitVars();
+                }
+            }
             this.relationclientes_resumen_ruta2trz_detalle_despachos_clientes = this.Relations["clientes_resumen_ruta2trz_detalle_despachos_clientes"];
         }
         
@@ -287,6 +311,8 @@ namespace LOSA.Calidad {
             base.Tables.Add(this.tabledetalle_despachos_clientes);
             this.tablekg_usados_por_pt = new kg_usados_por_ptDataTable();
             base.Tables.Add(this.tablekg_usados_por_pt);
+            this.tablemuestreo_lote_promedio = new muestreo_lote_promedioDataTable();
+            base.Tables.Add(this.tablemuestreo_lote_promedio);
             this.relationclientes_resumen_ruta2trz_detalle_despachos_clientes = new global::System.Data.DataRelation("clientes_resumen_ruta2trz_detalle_despachos_clientes", new global::System.Data.DataColumn[] {
                         this.tableclientes_resumen_ruta2trz.Id_ClienteColumn}, new global::System.Data.DataColumn[] {
                         this.tabledetalle_despachos_clientes.Id_ClienteColumn}, false);
@@ -314,6 +340,12 @@ namespace LOSA.Calidad {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializekg_usados_por_pt() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializemuestreo_lote_promedio() {
             return false;
         }
         
@@ -383,6 +415,9 @@ namespace LOSA.Calidad {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void kg_usados_por_ptRowChangeEventHandler(object sender, kg_usados_por_ptRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void muestreo_lote_promedioRowChangeEventHandler(object sender, muestreo_lote_promedioRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1932,6 +1967,324 @@ namespace LOSA.Calidad {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class muestreo_lote_promedioDataTable : global::System.Data.TypedTableBase<muestreo_lote_promedioRow> {
+            
+            private global::System.Data.DataColumn columnlote_pt;
+            
+            private global::System.Data.DataColumn columnid_parametro;
+            
+            private global::System.Data.DataColumn columnparametro;
+            
+            private global::System.Data.DataColumn columnmin_plan;
+            
+            private global::System.Data.DataColumn columnpromedio;
+            
+            private global::System.Data.DataColumn columnmax_plan;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public muestreo_lote_promedioDataTable() {
+                this.TableName = "muestreo_lote_promedio";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal muestreo_lote_promedioDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected muestreo_lote_promedioDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn lote_ptColumn {
+                get {
+                    return this.columnlote_pt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_parametroColumn {
+                get {
+                    return this.columnid_parametro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn parametroColumn {
+                get {
+                    return this.columnparametro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn min_planColumn {
+                get {
+                    return this.columnmin_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn promedioColumn {
+                get {
+                    return this.columnpromedio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn max_planColumn {
+                get {
+                    return this.columnmax_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public muestreo_lote_promedioRow this[int index] {
+                get {
+                    return ((muestreo_lote_promedioRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event muestreo_lote_promedioRowChangeEventHandler muestreo_lote_promedioRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event muestreo_lote_promedioRowChangeEventHandler muestreo_lote_promedioRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event muestreo_lote_promedioRowChangeEventHandler muestreo_lote_promedioRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event muestreo_lote_promedioRowChangeEventHandler muestreo_lote_promedioRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Addmuestreo_lote_promedioRow(muestreo_lote_promedioRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public muestreo_lote_promedioRow Addmuestreo_lote_promedioRow(string lote_pt, string id_parametro, string parametro, decimal min_plan, decimal promedio, decimal max_plan) {
+                muestreo_lote_promedioRow rowmuestreo_lote_promedioRow = ((muestreo_lote_promedioRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        lote_pt,
+                        id_parametro,
+                        parametro,
+                        min_plan,
+                        promedio,
+                        max_plan};
+                rowmuestreo_lote_promedioRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowmuestreo_lote_promedioRow);
+                return rowmuestreo_lote_promedioRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                muestreo_lote_promedioDataTable cln = ((muestreo_lote_promedioDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new muestreo_lote_promedioDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnlote_pt = base.Columns["lote_pt"];
+                this.columnid_parametro = base.Columns["id_parametro"];
+                this.columnparametro = base.Columns["parametro"];
+                this.columnmin_plan = base.Columns["min_plan"];
+                this.columnpromedio = base.Columns["promedio"];
+                this.columnmax_plan = base.Columns["max_plan"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnlote_pt = new global::System.Data.DataColumn("lote_pt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlote_pt);
+                this.columnid_parametro = new global::System.Data.DataColumn("id_parametro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_parametro);
+                this.columnparametro = new global::System.Data.DataColumn("parametro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnparametro);
+                this.columnmin_plan = new global::System.Data.DataColumn("min_plan", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmin_plan);
+                this.columnpromedio = new global::System.Data.DataColumn("promedio", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpromedio);
+                this.columnmax_plan = new global::System.Data.DataColumn("max_plan", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmax_plan);
+                this.columnpromedio.Caption = "Promedio";
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public muestreo_lote_promedioRow Newmuestreo_lote_promedioRow() {
+                return ((muestreo_lote_promedioRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new muestreo_lote_promedioRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(muestreo_lote_promedioRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.muestreo_lote_promedioRowChanged != null)) {
+                    this.muestreo_lote_promedioRowChanged(this, new muestreo_lote_promedioRowChangeEvent(((muestreo_lote_promedioRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.muestreo_lote_promedioRowChanging != null)) {
+                    this.muestreo_lote_promedioRowChanging(this, new muestreo_lote_promedioRowChangeEvent(((muestreo_lote_promedioRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.muestreo_lote_promedioRowDeleted != null)) {
+                    this.muestreo_lote_promedioRowDeleted(this, new muestreo_lote_promedioRowChangeEvent(((muestreo_lote_promedioRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.muestreo_lote_promedioRowDeleting != null)) {
+                    this.muestreo_lote_promedioRowDeleting(this, new muestreo_lote_promedioRowChangeEvent(((muestreo_lote_promedioRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Removemuestreo_lote_promedioRow(muestreo_lote_promedioRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsTrazabilidadReports ds = new dsTrazabilidadReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "muestreo_lote_promedioDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class muestreo_loteRow : global::System.Data.DataRow {
@@ -3204,6 +3557,189 @@ namespace LOSA.Calidad {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class muestreo_lote_promedioRow : global::System.Data.DataRow {
+            
+            private muestreo_lote_promedioDataTable tablemuestreo_lote_promedio;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal muestreo_lote_promedioRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablemuestreo_lote_promedio = ((muestreo_lote_promedioDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string lote_pt {
+                get {
+                    try {
+                        return ((string)(this[this.tablemuestreo_lote_promedio.lote_ptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lote_pt\' in table \'muestreo_lote_promedio\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemuestreo_lote_promedio.lote_ptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string id_parametro {
+                get {
+                    try {
+                        return ((string)(this[this.tablemuestreo_lote_promedio.id_parametroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_parametro\' in table \'muestreo_lote_promedio\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemuestreo_lote_promedio.id_parametroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string parametro {
+                get {
+                    try {
+                        return ((string)(this[this.tablemuestreo_lote_promedio.parametroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'parametro\' in table \'muestreo_lote_promedio\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemuestreo_lote_promedio.parametroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal min_plan {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablemuestreo_lote_promedio.min_planColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'min_plan\' in table \'muestreo_lote_promedio\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemuestreo_lote_promedio.min_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal promedio {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablemuestreo_lote_promedio.promedioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'promedio\' in table \'muestreo_lote_promedio\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemuestreo_lote_promedio.promedioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal max_plan {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablemuestreo_lote_promedio.max_planColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'max_plan\' in table \'muestreo_lote_promedio\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemuestreo_lote_promedio.max_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Islote_ptNull() {
+                return this.IsNull(this.tablemuestreo_lote_promedio.lote_ptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setlote_ptNull() {
+                this[this.tablemuestreo_lote_promedio.lote_ptColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_parametroNull() {
+                return this.IsNull(this.tablemuestreo_lote_promedio.id_parametroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_parametroNull() {
+                this[this.tablemuestreo_lote_promedio.id_parametroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsparametroNull() {
+                return this.IsNull(this.tablemuestreo_lote_promedio.parametroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetparametroNull() {
+                this[this.tablemuestreo_lote_promedio.parametroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ismin_planNull() {
+                return this.IsNull(this.tablemuestreo_lote_promedio.min_planColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setmin_planNull() {
+                this[this.tablemuestreo_lote_promedio.min_planColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IspromedioNull() {
+                return this.IsNull(this.tablemuestreo_lote_promedio.promedioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetpromedioNull() {
+                this[this.tablemuestreo_lote_promedio.promedioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ismax_planNull() {
+                return this.IsNull(this.tablemuestreo_lote_promedio.max_planColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setmax_planNull() {
+                this[this.tablemuestreo_lote_promedio.max_planColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -3325,6 +3861,40 @@ namespace LOSA.Calidad {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public kg_usados_por_ptRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class muestreo_lote_promedioRowChangeEvent : global::System.EventArgs {
+            
+            private muestreo_lote_promedioRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public muestreo_lote_promedioRowChangeEvent(muestreo_lote_promedioRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public muestreo_lote_promedioRow Row {
                 get {
                     return this.eventRow;
                 }

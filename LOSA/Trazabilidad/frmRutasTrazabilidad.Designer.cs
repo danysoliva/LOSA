@@ -1038,5 +1038,16 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraEditors.TextEdit txtTM_inventarioActual;
         private DevExpress.XtraGrid.GridControl gridControl14;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView36;
+        private DevExpress.XtraEditors.SimpleButton cmdImprimirDespacho;
+        private DevExpress.XtraGrid.GridControl gridControl17;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView38;
+        private DevExpress.XtraGrid.Columns.GridColumn collote_pt1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_parametro1;
+        private DevExpress.XtraGrid.Columns.GridColumn colparametro1;
+        private DevExpress.XtraGrid.Columns.GridColumn colmin_plan1;
+        private DevExpress.XtraGrid.Columns.GridColumn colpromedio;
+        private DevExpress.XtraGrid.Columns.GridColumn colmax_plan1;
+        private DevExpress.XtraEditors.LabelControl labelControl82;
+        private DevExpress.XtraEditors.LabelControl labelControl81;
     }
 }
