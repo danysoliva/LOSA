@@ -94,5 +94,37 @@ namespace LOSA.Clases
             return Recuperado;
         
         }
+
+        public bool RecuperarPesajeEnProcesoBascula(int pBasculaID)
+        {
+            Recuperado = false;
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("[sp_get_tarimas_en_proceso_for_bascula]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@BasculaID", pBasculaID);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Id = dr.GetInt32(0);
+                    Id_detalle_requisicion = dr.GetInt32(1);
+                    Bascula = dr.GetInt32(2);
+                    Recuperado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Recuperado = false;
+                CajaDialogo.Error(ex.Message);
+
+            }
+
+            return Recuperado;
+
+        }
     }
 }

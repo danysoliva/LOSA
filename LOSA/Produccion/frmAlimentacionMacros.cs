@@ -44,15 +44,20 @@ namespace LOSA.Produccion
         {
             try
             {
-                switch (BasculaIni)
-                {
-                    case Bascula.Bascula1:
-                        break;
-                    case Bascula.Bascula2:
-                        break;
-                    default:
-                        break;
-                }
+                AlimentacionBasculas aliMacro = new AlimentacionBasculas();
+                 
+                aliMacro.RecuperarPesajeEnProcesoBascula(Convert.ToInt32(Bascula.Bascula1));
+                        
+                if(aliMacro.Recuperado)
+                    CargarDetalleBascula1(aliMacro.Id);
+
+                                         
+                aliMacro.RecuperarPesajeEnProcesoBascula(Convert.ToInt32(Bascula.Bascula2));
+
+                if (aliMacro.Recuperado)
+                    CargarDetalleBascula2(aliMacro.Id);
+
+                
             }
             catch (Exception ex)
             {
@@ -110,6 +115,8 @@ namespace LOSA.Produccion
                 dsProduccion1.Bascula1.Clear();
                 adat.Fill(dsProduccion1.Bascula1);
                 conn.Close();
+
+                btnBascula1Off.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -132,6 +139,8 @@ namespace LOSA.Produccion
                 dsProduccion1.Bascula2.Clear();
                 adat.Fill(dsProduccion1.Bascula2);
                 conn.Close();
+
+                btnBascula2Off.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -208,11 +217,13 @@ namespace LOSA.Produccion
                 {
                     case Bascula.Bascula1:
                         CargarDetalleBascula1(Id_registro_bascula1);
-                        btnBascula1Off.Enabled = true;
+                        btnBascula1ON.Enabled = false;
+
                         break;
                     case Bascula.Bascula2:
                         CargarDetalleBascula2(Id_registro_bascula2);
-                        btnBascula2Off.Enabled = true;
+                        btnBascula2ON.Enabled = false;
+
                         break;
                     default:
                         break;
@@ -232,17 +243,115 @@ namespace LOSA.Produccion
                 return;
             }
 
-            GuardarPesoBruto(Bascula.Bascula1);
+            GuardarPesoBruto(Bascula.Bascula2);
         }
 
         private void btnBascula1Off_Click(object sender, EventArgs e)
         {
+            if (dsProduccion1.Bascula1.Count == 0)
+            {
+                CajaDialogo.Error("No se a Cargado el Pesaje!");
+                return;
+            }
 
+            foreach (dsProduccion.Bascula1Row item in dsProduccion1.Bascula1.Rows)
+            {
+                if (item.id_registro > 0)
+                {
+                    Id_registro_bascula1 = item.id_registro;
+                }
+                
+            }
+
+            AlimentacionBasculas AliBasculas = new AlimentacionBasculas();
+            AliBasculas.RecuperarRegistros(Id_registro_bascula1);
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_insert_requisa_entrega_a_prd_pesajeBascula", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima",AliBasculas.Id_Tarima);
+                cmd.Parameters.AddWithValue("@id_usuario",UsuarioLogueado.Id);
+                cmd.Parameters.AddWithValue("@id_req", AliBasculas.Num_Requisa);
+                cmd.Parameters.AddWithValue("@cantidad",AliBasculas.Unidades);
+                cmd.Parameters.AddWithValue("@peso", AliBasculas.Peso);
+                cmd.Parameters.AddWithValue("@peso_bascula", pesoBascula1);
+                cmd.Parameters.AddWithValue("@id_registro", Id_registro_bascula1);
+                //cmd.Parameters.AddWithValue("", AliBasculas.);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                LimpiarDatosBascula1();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+
+
+        }
+
+        private void LimpiarDatosBascula1()
+        {
+            dsProduccion1.Bascula1.Clear();
+            Id_registro_bascula1 = 0;
+            btnBascula1Off.Enabled = false;
+        }
+        private void LimpiarDatosBascula2()
+        {
+            dsProduccion1.Bascula2.Clear();
+            Id_registro_bascula2 = 0;
+            btnBascula2Off.Enabled = false;
         }
 
         private void btnBascula2Off_Click(object sender, EventArgs e)
         {
+            if (dsProduccion1.Bascula2.Count == 0)
+            {
+                CajaDialogo.Error("No se a Cargado el Pesaje!");
+                return;
+            }
 
+            foreach (dsProduccion.Bascula2Row item in dsProduccion1.Bascula2.Rows)
+            {
+                if (item.id_registro > 0)
+                {
+                    Id_registro_bascula2 = item.id_registro;
+                }
+
+            }
+
+            AlimentacionBasculas AliBasculas = new AlimentacionBasculas();
+            AliBasculas.RecuperarRegistros(Id_registro_bascula2);
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_insert_requisa_entrega_a_prd_pesajeBascula", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_tarima", AliBasculas.Id_Tarima);
+                cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
+                cmd.Parameters.AddWithValue("@id_req", AliBasculas.Num_Requisa);
+                cmd.Parameters.AddWithValue("@cantidad", AliBasculas.Unidades);
+                cmd.Parameters.AddWithValue("@peso", AliBasculas.Peso);
+                cmd.Parameters.AddWithValue("@peso_bascula", pesoBascula2);
+                cmd.Parameters.AddWithValue("@id_registro", Id_registro_bascula2);
+                //cmd.Parameters.AddWithValue("", AliBasculas.);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                LimpiarDatosBascula1();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

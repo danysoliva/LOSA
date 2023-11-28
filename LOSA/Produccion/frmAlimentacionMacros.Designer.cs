@@ -45,19 +45,24 @@ namespace LOSA.Produccion
             this.vGridControl2 = new DevExpress.XtraVerticalGrid.VGridControl();
             this.dsProduccion1 = new LOSA.Produccion.dsProduccion();
             this.row_requisa1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowLoteP = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowmp1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowunidades1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowpeso1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowlote1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowcodigo_barra1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowunidades1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowPres = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowpeso1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowpeso_bruto1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowpeso_tara1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowpeso_prd1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowbascula1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowcodigo_barra1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.row1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
             this.row_requisa = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowLotePT = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowmp = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowlote = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowcodigo_barra = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowunidades = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowPresentacion = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowpeso = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
@@ -65,10 +70,7 @@ namespace LOSA.Produccion
             this.rowpeso_tara = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowpeso_prd = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowbascula = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowcodigo_barra = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowLotePT = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowLoteP = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
-            this.rowPres = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowID = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
@@ -228,7 +230,7 @@ namespace LOSA.Produccion
             this.vGridControl2.DataMember = "Bascula2";
             this.vGridControl2.DataSource = this.dsProduccion1;
             this.vGridControl2.LayoutStyle = DevExpress.XtraVerticalGrid.LayoutViewStyle.SingleRecordView;
-            this.vGridControl2.Location = new System.Drawing.Point(814, 311);
+            this.vGridControl2.Location = new System.Drawing.Point(814, 295);
             this.vGridControl2.Name = "vGridControl2";
             this.vGridControl2.RecordWidth = 115;
             this.vGridControl2.RowHeaderWidth = 85;
@@ -244,8 +246,9 @@ namespace LOSA.Produccion
             this.rowpeso_bruto1,
             this.rowpeso_tara1,
             this.rowpeso_prd1,
-            this.rowbascula1});
-            this.vGridControl2.Size = new System.Drawing.Size(389, 200);
+            this.rowbascula1,
+            this.row1});
+            this.vGridControl2.Size = new System.Drawing.Size(389, 226);
             this.vGridControl2.TabIndex = 119;
             // 
             // dsProduccion1
@@ -255,41 +258,80 @@ namespace LOSA.Produccion
             // 
             // row_requisa1
             // 
+            this.row_requisa1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.row_requisa1.AppearanceCell.Options.UseFont = true;
             this.row_requisa1.Name = "row_requisa1";
             this.row_requisa1.Properties.AllowEdit = false;
             this.row_requisa1.Properties.Caption = "# Requisa";
             this.row_requisa1.Properties.FieldName = "#requisa";
             // 
+            // rowLoteP
+            // 
+            this.rowLoteP.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowLoteP.AppearanceCell.Options.UseFont = true;
+            this.rowLoteP.Name = "rowLoteP";
+            this.rowLoteP.Properties.AllowEdit = false;
+            this.rowLoteP.Properties.Caption = "Lote PT";
+            this.rowLoteP.Properties.FieldName = "lote_pt";
+            // 
             // rowmp1
             // 
+            this.rowmp1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowmp1.AppearanceCell.Options.UseFont = true;
             this.rowmp1.Name = "rowmp1";
             this.rowmp1.Properties.AllowEdit = false;
             this.rowmp1.Properties.Caption = "Materia Prima";
             this.rowmp1.Properties.FieldName = "mp";
             // 
-            // rowunidades1
-            // 
-            this.rowunidades1.Name = "rowunidades1";
-            this.rowunidades1.Properties.AllowEdit = false;
-            this.rowunidades1.Properties.Caption = "Unidades";
-            this.rowunidades1.Properties.FieldName = "unidades";
-            // 
-            // rowpeso1
-            // 
-            this.rowpeso1.Name = "rowpeso1";
-            this.rowpeso1.Properties.AllowEdit = false;
-            this.rowpeso1.Properties.Caption = "Peso en Sacos";
-            this.rowpeso1.Properties.FieldName = "peso";
-            // 
             // rowlote1
             // 
+            this.rowlote1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowlote1.AppearanceCell.Options.UseFont = true;
             this.rowlote1.Name = "rowlote1";
             this.rowlote1.Properties.AllowEdit = false;
             this.rowlote1.Properties.Caption = "Lote MP";
             this.rowlote1.Properties.FieldName = "lote";
             // 
+            // rowcodigo_barra1
+            // 
+            this.rowcodigo_barra1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowcodigo_barra1.AppearanceCell.Options.UseFont = true;
+            this.rowcodigo_barra1.Name = "rowcodigo_barra1";
+            this.rowcodigo_barra1.Properties.AllowEdit = false;
+            this.rowcodigo_barra1.Properties.Caption = "Codigo de Barra";
+            this.rowcodigo_barra1.Properties.FieldName = "codigo_barra";
+            // 
+            // rowunidades1
+            // 
+            this.rowunidades1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowunidades1.AppearanceCell.Options.UseFont = true;
+            this.rowunidades1.Name = "rowunidades1";
+            this.rowunidades1.Properties.AllowEdit = false;
+            this.rowunidades1.Properties.Caption = "Unidades";
+            this.rowunidades1.Properties.FieldName = "unidades";
+            // 
+            // rowPres
+            // 
+            this.rowPres.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowPres.AppearanceCell.Options.UseFont = true;
+            this.rowPres.Name = "rowPres";
+            this.rowPres.Properties.AllowEdit = false;
+            this.rowPres.Properties.Caption = "Presentacion";
+            this.rowPres.Properties.FieldName = "presentacion";
+            // 
+            // rowpeso1
+            // 
+            this.rowpeso1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowpeso1.AppearanceCell.Options.UseFont = true;
+            this.rowpeso1.Name = "rowpeso1";
+            this.rowpeso1.Properties.AllowEdit = false;
+            this.rowpeso1.Properties.Caption = "Peso en Sacos";
+            this.rowpeso1.Properties.FieldName = "peso";
+            // 
             // rowpeso_bruto1
             // 
+            this.rowpeso_bruto1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowpeso_bruto1.AppearanceCell.Options.UseFont = true;
             this.rowpeso_bruto1.Name = "rowpeso_bruto1";
             this.rowpeso_bruto1.Properties.AllowEdit = false;
             this.rowpeso_bruto1.Properties.Caption = "Peso Inicial";
@@ -319,20 +361,21 @@ namespace LOSA.Produccion
             this.rowbascula1.Properties.FieldName = "bascula";
             this.rowbascula1.Visible = false;
             // 
-            // rowcodigo_barra1
+            // row1
             // 
-            this.rowcodigo_barra1.Name = "rowcodigo_barra1";
-            this.rowcodigo_barra1.Properties.AllowEdit = false;
-            this.rowcodigo_barra1.Properties.Caption = "Codigo de Barra";
-            this.rowcodigo_barra1.Properties.FieldName = "codigo_barra";
+            this.row1.Name = "row1";
+            this.row1.Properties.Caption = "row1";
+            this.row1.Properties.FieldName = "id_registro";
+            this.row1.Visible = false;
             // 
             // vGridControl1
             // 
             this.vGridControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.vGridControl1.DataMember = "Bascula1";
             this.vGridControl1.DataSource = this.dsProduccion1;
+            this.vGridControl1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.vGridControl1.LayoutStyle = DevExpress.XtraVerticalGrid.LayoutViewStyle.SingleRecordView;
-            this.vGridControl1.Location = new System.Drawing.Point(135, 311);
+            this.vGridControl1.Location = new System.Drawing.Point(135, 295);
             this.vGridControl1.Name = "vGridControl1";
             this.vGridControl1.RecordWidth = 115;
             this.vGridControl1.RowHeaderWidth = 85;
@@ -348,19 +391,32 @@ namespace LOSA.Produccion
             this.rowpeso_bruto,
             this.rowpeso_tara,
             this.rowpeso_prd,
-            this.rowbascula});
-            this.vGridControl1.Size = new System.Drawing.Size(389, 200);
+            this.rowbascula,
+            this.rowID});
+            this.vGridControl1.Size = new System.Drawing.Size(389, 226);
             this.vGridControl1.TabIndex = 118;
             // 
             // row_requisa
             // 
+            this.row_requisa.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.row_requisa.AppearanceCell.Options.UseFont = true;
             this.row_requisa.Name = "row_requisa";
             this.row_requisa.Properties.AllowEdit = false;
             this.row_requisa.Properties.Caption = "# Requisa";
             this.row_requisa.Properties.FieldName = "#requisa";
             // 
+            // rowLotePT
+            // 
+            this.rowLotePT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowLotePT.AppearanceCell.Options.UseFont = true;
+            this.rowLotePT.Name = "rowLotePT";
+            this.rowLotePT.Properties.AllowEdit = false;
+            this.rowLotePT.Properties.Caption = "Lote PT";
+            // 
             // rowmp
             // 
+            this.rowmp.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowmp.AppearanceCell.Options.UseFont = true;
             this.rowmp.Name = "rowmp";
             this.rowmp.Properties.AllowEdit = false;
             this.rowmp.Properties.Caption = "Materia Prima";
@@ -368,13 +424,26 @@ namespace LOSA.Produccion
             // 
             // rowlote
             // 
+            this.rowlote.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowlote.AppearanceCell.Options.UseFont = true;
             this.rowlote.Name = "rowlote";
             this.rowlote.Properties.AllowEdit = false;
             this.rowlote.Properties.Caption = "Lote MP";
             this.rowlote.Properties.FieldName = "lote";
             // 
+            // rowcodigo_barra
+            // 
+            this.rowcodigo_barra.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rowcodigo_barra.AppearanceCell.Options.UseFont = true;
+            this.rowcodigo_barra.Name = "rowcodigo_barra";
+            this.rowcodigo_barra.Properties.AllowEdit = false;
+            this.rowcodigo_barra.Properties.Caption = "Codigo de Barra";
+            this.rowcodigo_barra.Properties.FieldName = "codigo_barra";
+            // 
             // rowunidades
             // 
+            this.rowunidades.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowunidades.AppearanceCell.Options.UseFont = true;
             this.rowunidades.Name = "rowunidades";
             this.rowunidades.Properties.AllowEdit = false;
             this.rowunidades.Properties.Caption = "Unidades";
@@ -382,6 +451,8 @@ namespace LOSA.Produccion
             // 
             // rowPresentacion
             // 
+            this.rowPresentacion.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowPresentacion.AppearanceCell.Options.UseFont = true;
             this.rowPresentacion.Name = "rowPresentacion";
             this.rowPresentacion.Properties.AllowEdit = false;
             this.rowPresentacion.Properties.Caption = "Presentacion Saco";
@@ -389,6 +460,8 @@ namespace LOSA.Produccion
             // 
             // rowpeso
             // 
+            this.rowpeso.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowpeso.AppearanceCell.Options.UseFont = true;
             this.rowpeso.Name = "rowpeso";
             this.rowpeso.Properties.AllowEdit = false;
             this.rowpeso.Properties.Caption = "Peso en Sacos";
@@ -396,6 +469,8 @@ namespace LOSA.Produccion
             // 
             // rowpeso_bruto
             // 
+            this.rowpeso_bruto.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowpeso_bruto.AppearanceCell.Options.UseFont = true;
             this.rowpeso_bruto.Name = "rowpeso_bruto";
             this.rowpeso_bruto.Properties.AllowEdit = false;
             this.rowpeso_bruto.Properties.Caption = "Peso Inicial";
@@ -403,6 +478,8 @@ namespace LOSA.Produccion
             // 
             // rowpeso_tara
             // 
+            this.rowpeso_tara.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.rowpeso_tara.AppearanceCell.Options.UseFont = true;
             this.rowpeso_tara.Name = "rowpeso_tara";
             this.rowpeso_tara.Properties.AllowEdit = false;
             this.rowpeso_tara.Properties.Caption = "peso_tara";
@@ -425,34 +502,12 @@ namespace LOSA.Produccion
             this.rowbascula.Properties.FieldName = "bascula";
             this.rowbascula.Visible = false;
             // 
-            // rowcodigo_barra
+            // rowID
             // 
-            this.rowcodigo_barra.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rowcodigo_barra.AppearanceCell.Options.UseFont = true;
-            this.rowcodigo_barra.Name = "rowcodigo_barra";
-            this.rowcodigo_barra.Properties.AllowEdit = false;
-            this.rowcodigo_barra.Properties.Caption = "Codigo de Barra";
-            this.rowcodigo_barra.Properties.FieldName = "codigo_barra";
-            // 
-            // rowLotePT
-            // 
-            this.rowLotePT.Name = "rowLotePT";
-            this.rowLotePT.Properties.AllowEdit = false;
-            this.rowLotePT.Properties.Caption = "Lote PT";
-            // 
-            // rowLoteP
-            // 
-            this.rowLoteP.Name = "rowLoteP";
-            this.rowLoteP.Properties.AllowEdit = false;
-            this.rowLoteP.Properties.Caption = "Lote PT";
-            this.rowLoteP.Properties.FieldName = "lote_pt";
-            // 
-            // rowPres
-            // 
-            this.rowPres.Name = "rowPres";
-            this.rowPres.Properties.AllowEdit = false;
-            this.rowPres.Properties.Caption = "Presentacion";
-            this.rowPres.Properties.FieldName = "presentacion";
+            this.rowID.Name = "rowID";
+            this.rowID.Properties.Caption = "rowId";
+            this.rowID.Properties.FieldName = "id_registro";
+            this.rowID.Visible = false;
             // 
             // frmAlimentacionMacros
             // 
@@ -520,5 +575,7 @@ namespace LOSA.Produccion
         private DevExpress.XtraVerticalGrid.Rows.EditorRow rowLotePT;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow rowLoteP;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow rowPres;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowID;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow row1;
     }
 }

@@ -289,6 +289,30 @@ namespace LOSA.TransaccionesMP.EntregaMP
                 {
                     if (RequisicionActual.Bit_finalizar == false)
                     {
+                        Tarima tarRemanante = new Tarima();
+                        tarRemanante.ValidarTarimaRemanenteMacro(txtTarima.Text.Trim());
+                        tarRemanante.RecuperarRegistro_v3(0, txtTarima.Text.Trim());
+                        if (tarRemanante.Tarima_existe)
+                        {
+                            if (dp.Now() > tarRemanante.FechaVencimiento)
+                            {
+                                Utileria.frmMensajeCalidad frm
+                                = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Materia Prima VENCIDA!\nNotifique al Departamento de Calidad\nFecha Vencimiento: " + tarimaEncontrada.FechaVencimiento);
+                                if (frm.ShowDialog() == DialogResult.Cancel)
+                                {
+                                    txtTarima.Text = "";
+                                    txtTarima.Focus();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                EntregaRemanenteMacros(txtTarima.Text);
+                                load_tarimas_scan_v2();
+                                txtTarima.Text = "";
+                                return;
+                            }
+                        }
                         EntregarTarima();
                         load_tarimas_scan_v2();
                     }
@@ -367,6 +391,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
                                 cmd.Parameters.AddWithValue("@kg_entrega",frmEntrega.pesoKg);
                                 cmd.Parameters.AddWithValue("@id_requisa",req1.IdRequisicion);
                                 cmd.Parameters.AddWithValue("@id_usuario",usuarioLogueado.Id);
+                                cmd.Parameters.AddWithValue("@basculaid", frmEntrega.BasculaID);
                                 //cmd.Parameters.AddWithValue("",);
                                 //cmd.Parameters.AddWithValue("",);
                                 //cmd.Parameters.AddWithValue("",);
@@ -393,41 +418,11 @@ namespace LOSA.TransaccionesMP.EntregaMP
                             timerLimpiarMensaje.Enabled = true;
                             timerLimpiarMensaje.Start();
                         }
-
-
-
                     }
                 }
-
-            }      
-        
+            }             
         }
-        //private DataTable CreateDataTarima(int idTarima, string pProveedor, string pNombreTarima, string pLote, string pPpresentacion, string codigoSAP, string MP)
-        //{
-        //    DataTable dt = new DataTable();
-
-        //    try
-        //    {
-        //        dt.Columns.Add("Detalle", typeof(string));
-        //        dt.Columns.Add("Valor", typeof(string));
-
-
-        //        dt.Rows.Add("TARIMA", idTarima);
-        //        dt.Rows.Add("PROVEEDOR", pProveedor);
-        //        dt.Rows.Add("LOTE", pLote);
-        //        dt.Rows.Add("PRESENTACION", pPpresentacion);
-
-        //        dt.Rows.Add("Codigo", codigoSAP);
-        //        dt.Rows.Add("Materia Prima", MP);
-
-        //        return dt;
-        //    }
-        //    catch (Exception error)
-        //    {
-        //        CajaDialogo.Information(error.Message);
-        //        return dt;
-        //    }
-        //}
+        
 
         private DataTable CreateDataTarima(Tarima pTarima)
         {
