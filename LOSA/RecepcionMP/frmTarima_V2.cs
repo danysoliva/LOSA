@@ -17,6 +17,7 @@ using Core.Clases.Herramientas;
 using System.Collections;
 using DevExpress.XtraReports.UI;
 using LOSA.Reportes;
+using DevExpress.CodeParser;
 
 namespace LOSA.RecepcionMP
 {
@@ -319,6 +320,7 @@ namespace LOSA.RecepcionMP
                             //cmd = new SqlCommand("sp_insert_new_tarima_v4", TransactionIngreso.Connection);
                             cmd = cn.CreateCommand();
                             cmd.CommandText = "sp_insert_new_tarima_v4";
+                            //cmd.CommandText = "[dbo].[sp_insert_new_tarima_v5]";
                             cmd.Connection = cn;
                             cmd.Transaction = TransactionIngreso;
                             cmd.CommandType = CommandType.StoredProcedure;
@@ -334,6 +336,18 @@ namespace LOSA.RecepcionMP
                             cmd.Parameters.AddWithValue("@id_boleta", this.IdSerie);
                             cmd.Parameters.AddWithValue("@codigo_barra", barcode);
                             cmd.Parameters.AddWithValue("@cant", row.udxtarima);
+
+                            //string oc_num = "";
+                            //try 
+                            //{
+                            //    oc_num = row.oc;
+                            //}
+                            //catch {}
+
+                            //if(string.IsNullOrEmpty(oc_num))
+                            //    cmd.Parameters.AddWithValue("@num_oc_sap", DBNull.Value);
+                            //else
+                            //    cmd.Parameters.AddWithValue("@num_oc_sap", oc_num);
 
                             int CantUnidadesTarima = 0;
                             try
