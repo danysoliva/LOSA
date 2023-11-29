@@ -544,7 +544,7 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
             this.ResumeLayout(false);
 
-
+        }
         #endregion
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton cmdSelectTarima;
