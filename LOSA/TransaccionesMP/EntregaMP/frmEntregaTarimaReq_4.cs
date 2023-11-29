@@ -297,7 +297,7 @@ namespace LOSA.TransaccionesMP.EntregaMP
                             if (dp.Now() > tarRemanante.FechaVencimiento)
                             {
                                 Utileria.frmMensajeCalidad frm
-                                = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Materia Prima VENCIDA!\nNotifique al Departamento de Calidad\nFecha Vencimiento: " + tarimaEncontrada.FechaVencimiento);
+                                = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, "Materia Prima VENCIDA!\nNotifique al Departamento de Calidad\nFecha Vencimiento: " + tarRemanante.FechaVencimiento);
                                 if (frm.ShowDialog() == DialogResult.Cancel)
                                 {
                                     txtTarima.Text = "";
