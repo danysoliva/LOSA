@@ -157,7 +157,8 @@ namespace LOSA.Produccion
             pesoBascula1 = 0;
             pesoBascula2 = 0;
 
-            using (SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS))
+            //using (SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS))
+            using (SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("[sp_get_basculas_value_alimentacion]", conn);
