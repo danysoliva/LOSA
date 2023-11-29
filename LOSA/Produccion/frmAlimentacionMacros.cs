@@ -744,7 +744,7 @@ namespace LOSA.Produccion
             this.rowpeso1.AppearanceCell.Options.UseFont = true;
             this.rowpeso1.Name = "rowpeso1";
             this.rowpeso1.Properties.AllowEdit = false;
-            this.rowpeso1.Properties.Caption = "Peso en Sacos";
+            this.rowpeso1.Properties.Caption = "Requerido en Requisa";
             this.rowpeso1.Properties.FieldName = "peso";
             // 
             // rowpeso_bruto1
@@ -753,7 +753,7 @@ namespace LOSA.Produccion
             this.rowpeso_bruto1.AppearanceCell.Options.UseFont = true;
             this.rowpeso_bruto1.Name = "rowpeso_bruto1";
             this.rowpeso_bruto1.Properties.AllowEdit = false;
-            this.rowpeso_bruto1.Properties.Caption = "Peso Inicial";
+            this.rowpeso_bruto1.Properties.Caption = "Peso Inicial Bascula";
             this.rowpeso_bruto1.Properties.FieldName = "peso_bruto";
             // 
             // rowpeso_tara1
@@ -884,7 +884,7 @@ namespace LOSA.Produccion
             this.rowpeso.AppearanceCell.Options.UseFont = true;
             this.rowpeso.Name = "rowpeso";
             this.rowpeso.Properties.AllowEdit = false;
-            this.rowpeso.Properties.Caption = "Peso en Sacos";
+            this.rowpeso.Properties.Caption = "Requerido en Requisa";
             this.rowpeso.Properties.FieldName = "peso";
             // 
             // rowpeso_bruto
@@ -893,7 +893,7 @@ namespace LOSA.Produccion
             this.rowpeso_bruto.AppearanceCell.Options.UseFont = true;
             this.rowpeso_bruto.Name = "rowpeso_bruto";
             this.rowpeso_bruto.Properties.AllowEdit = false;
-            this.rowpeso_bruto.Properties.Caption = "Peso Inicial";
+            this.rowpeso_bruto.Properties.Caption = "Peso Inicial Bascula";
             this.rowpeso_bruto.Properties.FieldName = "peso_bruto";
             // 
             // rowpeso_tara
