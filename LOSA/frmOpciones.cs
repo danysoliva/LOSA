@@ -3965,6 +3965,7 @@ namespace LOSA
         {
             frmAlimentacionMacros frm = new frmAlimentacionMacros(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
 
             //bool accesoprevio = false;
