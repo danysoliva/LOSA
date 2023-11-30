@@ -36,7 +36,7 @@ namespace ACS.Classes
         public static string DB_User = "losa_user_db";
         public static string DB_Pass = "AquaF33dHN2014";
 
-        ////ACS(Costos)
+        //ACS(Costos)
         public static string CTS_ServerAddress = "AQFSVR010\\AQFSVR010";
         public static string CTS_ServerName = "Servidor Productivo";
         public static string CTS_ActiveDB = "ACS";
@@ -158,7 +158,7 @@ namespace ACS.Classes
 
         #region Credenciales de Testing PC 6G1SST3 - Ruben
 
-        //ACS(Costos)
+        //////ACS(Costos)
         //public static string CTS_ServerAddress = "6G1SST3";
         //public static string CTS_ServerName = "6G1SST3";
         //public static string CTS_ActiveDB = "ACS";

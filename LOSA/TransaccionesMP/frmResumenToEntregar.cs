@@ -161,7 +161,7 @@ namespace LOSA.TransaccionesMP
                 if (DisponibleBascula1 > 0 && DisponibleBascula2 > 0)
                 {
                     simpleButton1.Enabled = false;
-                    lblErrorBascula.Text = "BASCULAS CON TARIMAS PENDIENTES DE ENTREGA\nSe debe Completar los Pesajes pendientes!";
+                    lblErrorBascula.Text = "BASCULAS CON TARIMAS PENDIENTES DE ENTREGA\nSe debe Completar los Pesajes Pendientes!";
                     lblErrorBascula.Visible = true;
 
                 }

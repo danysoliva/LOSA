@@ -311,7 +311,7 @@ namespace LOSA.Produccion
             dsProduccion1.Bascula2.Clear();
             Id_registro_bascula2 = 0;
             btnBascula2Off.Enabled = false;
-            btnCancelBasc1.Enabled = false;
+            btnCancelBasc2.Enabled = false;
         }
 
         private void btnBascula2Off_Click(object sender, EventArgs e)
