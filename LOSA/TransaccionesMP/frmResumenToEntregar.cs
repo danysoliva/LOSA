@@ -41,7 +41,7 @@ namespace LOSA.TransaccionesMP
 
         //RUTA PRINCIPAL PARA ENTREGA DE MATERIA PRIMA!
         public frmResumenToEntregar(
-                                    decimal ExistenciaTarima_kg,//Kg
+                                    decimal ExistenciaTarima_kg,
                                     decimal pExistenciaTarima_Unidades,
                                     decimal PEntregado_Kg,
                                     decimal psolicitado_Kg,
