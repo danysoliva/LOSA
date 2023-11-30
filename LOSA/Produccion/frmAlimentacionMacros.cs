@@ -182,7 +182,7 @@ namespace LOSA.Produccion
             if (pesoBascula1 <= 0)
             {
                 CajaDialogo.Error("No hay Peso en la Bascula 1");
-                return;
+                return; 
             }
 
             GuardarPesoBruto(Bascula.Bascula1);
