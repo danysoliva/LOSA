@@ -49,5 +49,6 @@ namespace LOSA.Produccion
         private DevExpress.XtraVerticalGrid.Rows.EditorRow row1;
         private DevExpress.XtraEditors.SimpleButton btnCancelBasc1;
         private DevExpress.XtraEditors.SimpleButton btnCancelBasc2;
+        private DevExpress.XtraEditors.SimpleButton btnActualizar;
     }
 }

@@ -157,8 +157,8 @@ namespace LOSA.Produccion
             pesoBascula1 = 0;
             pesoBascula2 = 0;
 
-            //using (SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS))
-            using (SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA))
+            using (SqlConnection conn = new SqlConnection(dp.ConnectionStringAPMS))
+            //using (SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("[sp_get_basculas_value_alimentacion]", conn);
@@ -288,6 +288,8 @@ namespace LOSA.Produccion
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
+                CajaDialogo.Information("Pesaje Completado!");
+
                 LimpiarDatosBascula1();
             }
             catch (Exception ex)
@@ -391,7 +393,7 @@ namespace LOSA.Produccion
                     cmd.ExecuteNonQuery();
                     conn.Close();
 
-                    CajaDialogo.Information("Pesaje Completado!");
+                    CajaDialogo.Information("Pesaje Cancelado!");
 
                     LimpiarDatosBascula1();
                 }
@@ -434,6 +436,8 @@ namespace LOSA.Produccion
                     cmd.Parameters.AddWithValue("@id_registro_pesjaje", Id_registro_bascula2);
                     cmd.ExecuteNonQuery();
                     conn.Close();
+
+                    CajaDialogo.Information("Pesaje Cancelado!");
 
                     LimpiarDatosBascula2();
                 }
@@ -490,6 +494,7 @@ namespace LOSA.Produccion
             this.rowID = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.btnCancelBasc1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelBasc2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnActualizar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
@@ -958,11 +963,27 @@ namespace LOSA.Produccion
             this.btnCancelBasc2.Text = "Cancelar";
             this.btnCancelBasc2.Click += new System.EventHandler(this.btnCancelBasc2_Click);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnActualizar.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Appearance.Options.UseFont = true;
+            this.btnActualizar.Enabled = false;
+            this.btnActualizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnActualizar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnActualizar.Location = new System.Drawing.Point(612, 153);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(104, 74);
+            this.btnActualizar.TabIndex = 122;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // frmAlimentacionMacros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 765);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCancelBasc2);
             this.Controls.Add(this.btnCancelBasc1);
             this.Controls.Add(this.vGridControl2);
@@ -984,6 +1005,11 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ValidarCargaEnProceso();
         }
 
         //private void InitializeComponent()
