@@ -25,7 +25,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA_TEST\</InstallUrl>
-    <ApplicationRevision>630</ApplicationRevision>
+    <ApplicationRevision>631</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -73,8 +73,7 @@
   <PropertyGroup>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>LOSA_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -93,10 +92,10 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>LOSA2_TEMP.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Losa_TEMP.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>58D92D2056CFE14B56A707F83EF92F159340168A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -4443,6 +4442,8 @@
       <DependentUpon>dsCierreMes.xsd</DependentUpon>
     </None>
     <None Include="LOSA2_TEMP.pfx" />
+    <None Include="LOSA_1_TemporaryKey.pfx" />
+    <None Include="Losa_TEMP.pfx" />
     <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="MigracionACS\ACSDataSet2.xsc">
       <DependentUpon>ACSDataSet2.xsd</DependentUpon>
@@ -9335,7 +9336,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
