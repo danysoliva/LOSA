@@ -167,9 +167,9 @@ namespace LOSA.Nir
             {
                 try
                 {
-                        string query = @"sp_delete_link_ingreso_lectura_nir";
-                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                        cn.Open();
+                    string query = @"sp_delete_link_ingreso_lectura_nir";
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                    cn.Open();
 
                     foreach (dsNir.lecturas_ingresoRow row in dsNir.lecturas_ingreso.Rows)
                     {
