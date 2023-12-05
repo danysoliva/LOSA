@@ -53,6 +53,7 @@ namespace LOSA.Produccion
             this.btnCancelBasc1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelBasc2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnActualizar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBinActivo = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
@@ -538,11 +539,25 @@ namespace LOSA.Produccion
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // btnBinActivo
+            // 
+            this.btnBinActivo.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBinActivo.Appearance.Options.UseFont = true;
+            this.btnBinActivo.ImageOptions.Image = global::LOSA.Properties.Resources.tanque;
+            this.btnBinActivo.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnBinActivo.Location = new System.Drawing.Point(12, 19);
+            this.btnBinActivo.Name = "btnBinActivo";
+            this.btnBinActivo.Size = new System.Drawing.Size(120, 68);
+            this.btnBinActivo.TabIndex = 123;
+            this.btnBinActivo.Text = "Bin Activo";
+            this.btnBinActivo.Click += new System.EventHandler(this.btnBinActivo_Click);
+            // 
             // frmAlimentacionMacros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 765);
+            this.Controls.Add(this.btnBinActivo);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCancelBasc2);
             this.Controls.Add(this.btnCancelBasc1);
@@ -613,5 +628,6 @@ namespace LOSA.Produccion
         private DevExpress.XtraEditors.SimpleButton btnCancelBasc1;
         private DevExpress.XtraEditors.SimpleButton btnCancelBasc2;
         private DevExpress.XtraEditors.SimpleButton btnActualizar;
+        private DevExpress.XtraEditors.SimpleButton btnBinActivo;
     }
 }

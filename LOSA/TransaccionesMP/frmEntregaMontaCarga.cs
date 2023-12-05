@@ -89,5 +89,12 @@ namespace LOSA.TransaccionesMP
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
+
+        private void btnDevolucionesMacro_Click(object sender, EventArgs e)
+        {
+            frmDevolucionMacroOP frm = new frmDevolucionMacroOP(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

@@ -457,6 +457,11 @@ namespace LOSA.Produccion
             ValidarCargaEnProceso();
         }
 
-    
+        private void btnBinActivo_Click(object sender, EventArgs e)
+        {
+            xfrmCheckActiveBin frm = new xfrmCheckActiveBin();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }
