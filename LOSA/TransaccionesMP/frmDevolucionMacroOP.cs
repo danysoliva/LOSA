@@ -78,5 +78,10 @@ namespace LOSA.TransaccionesMP
 
             }
         }
+
+        private void cmdHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

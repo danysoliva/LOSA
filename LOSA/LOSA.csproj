@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,8 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
-    <ApplicationRevision>607</ApplicationRevision>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <ApplicationRevision>608</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -4060,6 +4060,12 @@
     <Compile Include="Produccion\frmAddTarimaPT.Designer.cs">
       <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produccion\frmAlimentacionBasculasMacros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\frmAlimentacionBasculasMacros.Designer.cs">
+      <DependentUpon>frmAlimentacionBasculasMacros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\frmAlimentacionMacros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -8081,6 +8087,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAddTarimaPT.resx">
       <DependentUpon>frmAddTarimaPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\frmAlimentacionBasculasMacros.resx">
+      <DependentUpon>frmAlimentacionBasculasMacros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\frmAlimentacionMacros.resx">
       <DependentUpon>frmAlimentacionMacros.cs</DependentUpon>

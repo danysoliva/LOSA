@@ -84,6 +84,7 @@ namespace LOSA.Produccion
                             Id_registro_bascula1 = frm.Id_RegistroBascula;
                             CargarDetalleBascula1(Id_registro_bascula1);
                             btnBascula1ON.Enabled = true;
+                            btnCancelBasc1.Enabled = true;
 
                             break;
 
@@ -91,6 +92,7 @@ namespace LOSA.Produccion
                             Id_registro_bascula2 = frm.Id_RegistroBascula;
                             CargarDetalleBascula2(Id_registro_bascula2);
                             btnBascula2ON.Enabled = true;
+                            btnCancelBasc2.Enabled = true;
 
                             break;
                         default:
@@ -186,6 +188,8 @@ namespace LOSA.Produccion
                 CajaDialogo.Error("No hay Peso en la Bascula 1");
                 return; 
             }
+            btnCancelBasc1.Enabled = false;
+
 
             GuardarPesoBruto(Bascula.Bascula1);
 
@@ -222,12 +226,12 @@ namespace LOSA.Produccion
                 {
                     case Bascula.Bascula1:
                         CargarDetalleBascula1(Id_registro_bascula1);
-                        btnBascula1ON.Enabled = false;
+
 
                         break;
                     case Bascula.Bascula2:
                         CargarDetalleBascula2(Id_registro_bascula2);
-                        btnBascula2ON.Enabled = false;
+
 
                         break;
                     default:
@@ -247,7 +251,7 @@ namespace LOSA.Produccion
                 CajaDialogo.Error("No hay Peso en la Bascula 2");
                 return;
             }
-
+            btnCancelBasc2.Enabled = false;
             GuardarPesoBruto(Bascula.Bascula2);
         }
 

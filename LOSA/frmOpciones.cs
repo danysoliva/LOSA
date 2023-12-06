@@ -3437,7 +3437,9 @@ namespace LOSA
 
         private void btnPrioridadLotePT_Click(object sender, EventArgs e)
         {
-
+            frmAlimentacionBasculasMacros frm = new frmAlimentacionBasculasMacros();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
 
         private void cmdAprobarAjustesInvALOSY_Click(object sender, EventArgs e)
