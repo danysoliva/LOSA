@@ -1549,5 +1549,10 @@ namespace LOSA.TransaccionesMP.EntregaMP
 
 
         }
+
+        private void txtRequisicion_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

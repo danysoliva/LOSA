@@ -10706,7 +10706,7 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public alimentacion_macrosRow Addalimentacion_macrosRow(int Turno, System.DateTime fecha_inicio, int bascula, string nombre_comercial, string lote_materia_prima, int LotePT, decimal peso_inicial, decimal peso_final, decimal peso_producto_bascula, decimal peso_teorico, decimal diferencia, decimal cantsacos, string presentacion, System.DateTime fecha_final, decimal peso_saco_promedio) {
+            public alimentacion_macrosRow Addalimentacion_macrosRow(string Turno, System.DateTime fecha_inicio, int bascula, string nombre_comercial, string lote_materia_prima, int LotePT, decimal peso_inicial, decimal peso_final, decimal peso_producto_bascula, decimal peso_teorico, decimal diferencia, decimal cantsacos, string presentacion, System.DateTime fecha_final, decimal peso_saco_promedio) {
                 alimentacion_macrosRow rowalimentacion_macrosRow = ((alimentacion_macrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Turno,
@@ -10766,7 +10766,7 @@ namespace LOSA.MigracionACS.DataSetx {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnTurno = new global::System.Data.DataColumn("Turno", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnTurno = new global::System.Data.DataColumn("Turno", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTurno);
                 this.columnfecha_inicio = new global::System.Data.DataColumn("fecha_inicio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_inicio);
@@ -18364,10 +18364,10 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Turno {
+            public string Turno {
                 get {
                     try {
-                        return ((int)(this[this.tablealimentacion_macros.TurnoColumn]));
+                        return ((string)(this[this.tablealimentacion_macros.TurnoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Turno\' de la tabla \'alimentacion_macros\' es DBNull.", e);

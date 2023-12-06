@@ -54,9 +54,18 @@ namespace LOSA.Produccion
             this.btnCancelBasc2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnActualizar = new DevExpress.XtraEditors.SimpleButton();
             this.btnBinActivo = new DevExpress.XtraEditors.SimpleButton();
+            this.gridTurno = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescrip = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTurno.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -532,7 +541,7 @@ namespace LOSA.Produccion
             this.btnActualizar.Appearance.Options.UseFont = true;
             this.btnActualizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnActualizar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnActualizar.ImageOptions.SvgImage")));
-            this.btnActualizar.Location = new System.Drawing.Point(612, 153);
+            this.btnActualizar.Location = new System.Drawing.Point(620, 206);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 74);
             this.btnActualizar.TabIndex = 122;
@@ -552,11 +561,78 @@ namespace LOSA.Produccion
             this.btnBinActivo.Text = "Bin Activo";
             this.btnBinActivo.Click += new System.EventHandler(this.btnBinActivo_Click);
             // 
+            // gridTurno
+            // 
+            this.gridTurno.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gridTurno.Location = new System.Drawing.Point(610, 115);
+            this.gridTurno.Name = "gridTurno";
+            this.gridTurno.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.gridTurno.Properties.Appearance.Options.UseFont = true;
+            this.gridTurno.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridTurno.Properties.DataSource = this.turnoBindingSource;
+            this.gridTurno.Properties.DisplayMember = "descrip";
+            this.gridTurno.Properties.NullText = "";
+            this.gridTurno.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridTurno.Properties.ValueMember = "id";
+            this.gridTurno.Size = new System.Drawing.Size(184, 32);
+            this.gridTurno.TabIndex = 124;
+            // 
+            // turnoBindingSource
+            // 
+            this.turnoBindingSource.DataMember = "turno";
+            this.turnoBindingSource.DataSource = this.dsProduccion1;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.Row.Options.UseFont = true;
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.coldescrip});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            // 
+            // coldescrip
+            // 
+            this.coldescrip.Caption = "Turno";
+            this.coldescrip.FieldName = "descrip";
+            this.coldescrip.Name = "coldescrip";
+            this.coldescrip.OptionsColumn.AllowEdit = false;
+            this.coldescrip.Visible = true;
+            this.coldescrip.VisibleIndex = 0;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(536, 118);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(77, 25);
+            this.labelControl3.TabIndex = 125;
+            this.labelControl3.Text = "Turno:";
+            // 
             // frmAlimentacionMacros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 765);
+            this.Controls.Add(this.gridTurno);
+            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.btnBinActivo);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCancelBasc2);
@@ -578,6 +654,9 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTurno.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -629,5 +708,11 @@ namespace LOSA.Produccion
         private DevExpress.XtraEditors.SimpleButton btnCancelBasc2;
         private DevExpress.XtraEditors.SimpleButton btnActualizar;
         private DevExpress.XtraEditors.SimpleButton btnBinActivo;
+        private DevExpress.XtraEditors.GridLookUpEdit gridTurno;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.BindingSource turnoBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescrip;
     }
 }

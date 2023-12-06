@@ -112,10 +112,13 @@ namespace LOSA.Produccion
             // 
             // colTurno
             // 
+            this.colTurno.Caption = "Turno";
             this.colTurno.FieldName = "Turno";
             this.colTurno.Name = "colTurno";
             this.colTurno.OptionsColumn.AllowEdit = false;
             this.colTurno.OptionsColumn.ReadOnly = true;
+            this.colTurno.Visible = true;
+            this.colTurno.VisibleIndex = 0;
             // 
             // colfecha_inicio
             // 
@@ -127,7 +130,7 @@ namespace LOSA.Produccion
             this.colfecha_inicio.OptionsColumn.AllowEdit = false;
             this.colfecha_inicio.OptionsColumn.ReadOnly = true;
             this.colfecha_inicio.Visible = true;
-            this.colfecha_inicio.VisibleIndex = 0;
+            this.colfecha_inicio.VisibleIndex = 1;
             this.colfecha_inicio.Width = 132;
             // 
             // colDataColumn3
@@ -140,7 +143,7 @@ namespace LOSA.Produccion
             this.colDataColumn3.OptionsColumn.AllowEdit = false;
             this.colDataColumn3.OptionsColumn.ReadOnly = true;
             this.colDataColumn3.Visible = true;
-            this.colDataColumn3.VisibleIndex = 1;
+            this.colDataColumn3.VisibleIndex = 2;
             this.colDataColumn3.Width = 120;
             // 
             // colbascula
@@ -151,7 +154,7 @@ namespace LOSA.Produccion
             this.colbascula.OptionsColumn.AllowEdit = false;
             this.colbascula.OptionsColumn.ReadOnly = true;
             this.colbascula.Visible = true;
-            this.colbascula.VisibleIndex = 2;
+            this.colbascula.VisibleIndex = 3;
             this.colbascula.Width = 57;
             // 
             // colnombre_comercial
@@ -161,7 +164,7 @@ namespace LOSA.Produccion
             this.colnombre_comercial.Name = "colnombre_comercial";
             this.colnombre_comercial.OptionsColumn.ReadOnly = true;
             this.colnombre_comercial.Visible = true;
-            this.colnombre_comercial.VisibleIndex = 3;
+            this.colnombre_comercial.VisibleIndex = 4;
             this.colnombre_comercial.Width = 102;
             // 
             // collote_materia_prima
@@ -172,7 +175,7 @@ namespace LOSA.Produccion
             this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.OptionsColumn.ReadOnly = true;
             this.collote_materia_prima.Visible = true;
-            this.collote_materia_prima.VisibleIndex = 4;
+            this.collote_materia_prima.VisibleIndex = 5;
             this.collote_materia_prima.Width = 134;
             // 
             // colLotePT
@@ -183,7 +186,7 @@ namespace LOSA.Produccion
             this.colLotePT.OptionsColumn.AllowEdit = false;
             this.colLotePT.OptionsColumn.ReadOnly = true;
             this.colLotePT.Visible = true;
-            this.colLotePT.VisibleIndex = 5;
+            this.colLotePT.VisibleIndex = 6;
             // 
             // colpeso_inicial
             // 
@@ -195,7 +198,7 @@ namespace LOSA.Produccion
             this.colpeso_inicial.OptionsColumn.AllowEdit = false;
             this.colpeso_inicial.OptionsColumn.ReadOnly = true;
             this.colpeso_inicial.Visible = true;
-            this.colpeso_inicial.VisibleIndex = 6;
+            this.colpeso_inicial.VisibleIndex = 7;
             this.colpeso_inicial.Width = 85;
             // 
             // colpeso_final
@@ -208,7 +211,7 @@ namespace LOSA.Produccion
             this.colpeso_final.OptionsColumn.AllowEdit = false;
             this.colpeso_final.OptionsColumn.ReadOnly = true;
             this.colpeso_final.Visible = true;
-            this.colpeso_final.VisibleIndex = 7;
+            this.colpeso_final.VisibleIndex = 8;
             this.colpeso_final.Width = 78;
             // 
             // colpeso_producto_bascula
@@ -221,7 +224,7 @@ namespace LOSA.Produccion
             this.colpeso_producto_bascula.OptionsColumn.AllowEdit = false;
             this.colpeso_producto_bascula.OptionsColumn.ReadOnly = true;
             this.colpeso_producto_bascula.Visible = true;
-            this.colpeso_producto_bascula.VisibleIndex = 8;
+            this.colpeso_producto_bascula.VisibleIndex = 9;
             this.colpeso_producto_bascula.Width = 134;
             // 
             // colpeso_teorico
@@ -234,7 +237,7 @@ namespace LOSA.Produccion
             this.colpeso_teorico.OptionsColumn.AllowEdit = false;
             this.colpeso_teorico.OptionsColumn.ReadOnly = true;
             this.colpeso_teorico.Visible = true;
-            this.colpeso_teorico.VisibleIndex = 9;
+            this.colpeso_teorico.VisibleIndex = 10;
             this.colpeso_teorico.Width = 136;
             // 
             // coldiferencia
@@ -247,7 +250,7 @@ namespace LOSA.Produccion
             this.coldiferencia.OptionsColumn.AllowEdit = false;
             this.coldiferencia.OptionsColumn.ReadOnly = true;
             this.coldiferencia.Visible = true;
-            this.coldiferencia.VisibleIndex = 10;
+            this.coldiferencia.VisibleIndex = 11;
             this.coldiferencia.Width = 70;
             // 
             // colcantsacos
@@ -260,7 +263,7 @@ namespace LOSA.Produccion
             this.colcantsacos.OptionsColumn.AllowEdit = false;
             this.colcantsacos.OptionsColumn.ReadOnly = true;
             this.colcantsacos.Visible = true;
-            this.colcantsacos.VisibleIndex = 11;
+            this.colcantsacos.VisibleIndex = 12;
             this.colcantsacos.Width = 127;
             // 
             // colpresentacion
@@ -271,7 +274,7 @@ namespace LOSA.Produccion
             this.colpresentacion.OptionsColumn.AllowEdit = false;
             this.colpresentacion.OptionsColumn.ReadOnly = true;
             this.colpresentacion.Visible = true;
-            this.colpresentacion.VisibleIndex = 12;
+            this.colpresentacion.VisibleIndex = 13;
             this.colpresentacion.Width = 105;
             // 
             // gridColumn1
@@ -283,7 +286,7 @@ namespace LOSA.Produccion
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 13;
+            this.gridColumn1.VisibleIndex = 14;
             this.gridColumn1.Width = 116;
             // 
             // cmdGuardar
