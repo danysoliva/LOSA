@@ -455,7 +455,7 @@ namespace LOSA
             cmdUbicaciones.Enabled =
             simpleButton3.Enabled =
             btndespachos.Enabled =
-            btnReq_PT.Enabled =
+            //btnReq_PT.Enabled =
             simpleButton2.Enabled =
             btnPlantarimas.Enabled = false;
         }
@@ -722,9 +722,7 @@ namespace LOSA
 
         private void btnReq_PT_Click(object sender, EventArgs e)
         {
-            LOSA.Despachos.frm_Reqresumen_pt frm = new Despachos.frm_Reqresumen_pt(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            
         }
 
         private void btnreportes_Click(object sender, EventArgs e)
@@ -3966,6 +3964,23 @@ namespace LOSA
         private void navBarIPesajeBascula_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             frmAlimentacionMacros frm = new frmAlimentacionMacros(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnSolicitudesDespachos_Click(object sender, EventArgs e)
+        {
+           
+            frmSolicitudesDespachoLote frm = new frmSolicitudesDespachoLote(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnSolicitudDespachoCalidad_Click(object sender, EventArgs e)
+        {
+            frmSolicitudesDespachoLote frm = new frmSolicitudesDespachoLote(UsuarioLogeado);
             frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();

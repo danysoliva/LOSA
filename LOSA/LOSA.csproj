@@ -1245,6 +1245,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ds_despachos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Despachos\frmCrearSolicitudAutorizacionLotePT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmCrearSolicitudAutorizacionLotePT.Designer.cs">
+      <DependentUpon>frmCrearSolicitudAutorizacionLotePT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\frmdespachos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1310,6 +1316,12 @@
     </Compile>
     <Compile Include="Despachos\frmseleccionlote.Designer.cs">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Despachos\frmSolicitudesDespachoLote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Despachos\frmSolicitudesDespachoLote.Designer.cs">
+      <DependentUpon>frmSolicitudesDespachoLote.cs</DependentUpon>
     </Compile>
     <Compile Include="Despachos\frm_despachos.cs">
       <SubType>Form</SubType>
@@ -6877,6 +6889,9 @@
     <EmbeddedResource Include="Calidad\xrpCertificadoCalidad.resx">
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmCrearSolicitudAutorizacionLotePT.resx">
+      <DependentUpon>frmCrearSolicitudAutorizacionLotePT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmdespachos.resx">
       <DependentUpon>frmdespachos.cs</DependentUpon>
     </EmbeddedResource>
@@ -6909,6 +6924,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmseleccionlote.resx">
       <DependentUpon>frmseleccionlote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachos\frmSolicitudesDespachoLote.resx">
+      <DependentUpon>frmSolicitudesDespachoLote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frm_despachos.resx">
       <DependentUpon>frm_despachos.cs</DependentUpon>
@@ -8163,6 +8181,7 @@
     <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

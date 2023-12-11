@@ -77,6 +77,7 @@
             this.cmdRequisiciones_ = new DevExpress.XtraEditors.SimpleButton();
             this.btnplanrequisas = new DevExpress.XtraEditors.SimpleButton();
             this.tabPT = new DevExpress.XtraTab.XtraTabPage();
+            this.btnSolicitudesDespachos = new DevExpress.XtraEditors.SimpleButton();
             this.btn_historic_inventario = new DevExpress.XtraEditors.SimpleButton();
             this.btnMaterialEmpaquePT = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add_tarimas_pt = new DevExpress.XtraEditors.SimpleButton();
@@ -89,7 +90,6 @@
             this.btnMPReproceso = new DevExpress.XtraEditors.SimpleButton();
             this.btn_salidapt = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnReq_PT = new DevExpress.XtraEditors.SimpleButton();
             this.tabMasterData = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton24 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton23 = new DevExpress.XtraEditors.SimpleButton();
@@ -164,6 +164,7 @@
             this.navBarItem21 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem23 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarIPesajeBascula = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
@@ -172,7 +173,6 @@
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarIPesajeBascula = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbTrasladoAceiteExterno = new DevExpress.XtraNavBar.NavBarItem();
             this.nbSetMaterial = new DevExpress.XtraNavBar.NavBarItem();
@@ -295,6 +295,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.btnSolicitudDespachoCalidad = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1012,7 +1013,7 @@
             this.cmdRequisiciones_.Appearance.Options.UseFont = true;
             this.cmdRequisiciones_.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdRequisiciones_.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdRequisiciones_.ImageOptions.Image")));
-            this.cmdRequisiciones_.Location = new System.Drawing.Point(8, 159);
+            this.cmdRequisiciones_.Location = new System.Drawing.Point(7, 159);
             this.cmdRequisiciones_.Name = "cmdRequisiciones_";
             this.cmdRequisiciones_.Size = new System.Drawing.Size(199, 42);
             this.cmdRequisiciones_.TabIndex = 14;
@@ -1036,6 +1037,7 @@
             // 
             this.tabPT.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabPT.Appearance.Header.Options.UseFont = true;
+            this.tabPT.Controls.Add(this.btnSolicitudesDespachos);
             this.tabPT.Controls.Add(this.btn_historic_inventario);
             this.tabPT.Controls.Add(this.btnMaterialEmpaquePT);
             this.tabPT.Controls.Add(this.btn_add_tarimas_pt);
@@ -1048,11 +1050,25 @@
             this.tabPT.Controls.Add(this.btnMPReproceso);
             this.tabPT.Controls.Add(this.btn_salidapt);
             this.tabPT.Controls.Add(this.simpleButton10);
-            this.tabPT.Controls.Add(this.btnReq_PT);
             this.tabPT.Name = "tabPT";
             this.tabPT.Size = new System.Drawing.Size(833, 451);
             this.tabPT.Text = "Producto Terminado";
             this.tabPT.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPT_Paint);
+            // 
+            // btnSolicitudesDespachos
+            // 
+            this.btnSolicitudesDespachos.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSolicitudesDespachos.Appearance.Options.UseFont = true;
+            this.btnSolicitudesDespachos.Appearance.Options.UseTextOptions = true;
+            this.btnSolicitudesDespachos.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnSolicitudesDespachos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnSolicitudesDespachos.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
+            this.btnSolicitudesDespachos.Location = new System.Drawing.Point(2, 156);
+            this.btnSolicitudesDespachos.Name = "btnSolicitudesDespachos";
+            this.btnSolicitudesDespachos.Size = new System.Drawing.Size(198, 42);
+            this.btnSolicitudesDespachos.TabIndex = 54;
+            this.btnSolicitudesDespachos.Text = "Solicitudes Despacho Lote PT";
+            this.btnSolicitudesDespachos.Click += new System.EventHandler(this.btnSolicitudesDespachos_Click);
             // 
             // btn_historic_inventario
             // 
@@ -1225,20 +1241,6 @@
             this.simpleButton10.Visible = false;
             this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
             // 
-            // btnReq_PT
-            // 
-            this.btnReq_PT.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnReq_PT.Appearance.Options.UseFont = true;
-            this.btnReq_PT.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnReq_PT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReq_PT.ImageOptions.Image")));
-            this.btnReq_PT.Location = new System.Drawing.Point(2, 156);
-            this.btnReq_PT.Name = "btnReq_PT";
-            this.btnReq_PT.Size = new System.Drawing.Size(199, 42);
-            this.btnReq_PT.TabIndex = 23;
-            this.btnReq_PT.Text = "Requisiciones PT";
-            this.btnReq_PT.Visible = false;
-            this.btnReq_PT.Click += new System.EventHandler(this.btnReq_PT_Click);
-            // 
             // tabMasterData
             // 
             this.tabMasterData.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -1348,6 +1350,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.btnSolicitudDespachoCalidad);
             this.TabCalidad.Controls.Add(this.frmRepor_KepServer);
             this.TabCalidad.Controls.Add(this.btnCalidadMaterialEmpaque);
             this.TabCalidad.Controls.Add(this.btnViewRequisasCalidad);
@@ -2338,6 +2341,21 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
+            // navBarIPesajeBascula
+            // 
+            this.navBarIPesajeBascula.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarIPesajeBascula.Appearance.Options.UseFont = true;
+            this.navBarIPesajeBascula.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarIPesajeBascula.AppearanceDisabled.Options.UseFont = true;
+            this.navBarIPesajeBascula.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarIPesajeBascula.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarIPesajeBascula.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarIPesajeBascula.AppearancePressed.Options.UseFont = true;
+            this.navBarIPesajeBascula.Caption = "Pesaje Bascula Alimentacion";
+            this.navBarIPesajeBascula.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarIPesajeBascula.ImageOptions.SmallImage")));
+            this.navBarIPesajeBascula.Name = "navBarIPesajeBascula";
+            this.navBarIPesajeBascula.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarIPesajeBascula_LinkClicked);
+            // 
             // navBarItem10
             // 
             this.navBarItem10.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
@@ -2444,21 +2462,6 @@
             this.navBarItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem9.ImageOptions.SvgImage")));
             this.navBarItem9.Name = "navBarItem9";
             this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked_1);
-            // 
-            // navBarIPesajeBascula
-            // 
-            this.navBarIPesajeBascula.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarIPesajeBascula.Appearance.Options.UseFont = true;
-            this.navBarIPesajeBascula.AppearanceDisabled.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarIPesajeBascula.AppearanceDisabled.Options.UseFont = true;
-            this.navBarIPesajeBascula.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarIPesajeBascula.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarIPesajeBascula.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.navBarIPesajeBascula.AppearancePressed.Options.UseFont = true;
-            this.navBarIPesajeBascula.Caption = "Pesaje Bascula Alimentacion";
-            this.navBarIPesajeBascula.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarIPesajeBascula.ImageOptions.SmallImage")));
-            this.navBarIPesajeBascula.Name = "navBarIPesajeBascula";
-            this.navBarIPesajeBascula.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarIPesajeBascula_LinkClicked);
             // 
             // navBarGroup4
             // 
@@ -4225,6 +4228,21 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // btnSolicitudDespachoCalidad
+            // 
+            this.btnSolicitudDespachoCalidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnSolicitudDespachoCalidad.Appearance.Options.UseFont = true;
+            this.btnSolicitudDespachoCalidad.Appearance.Options.UseTextOptions = true;
+            this.btnSolicitudDespachoCalidad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnSolicitudDespachoCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnSolicitudDespachoCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
+            this.btnSolicitudDespachoCalidad.Location = new System.Drawing.Point(627, 23);
+            this.btnSolicitudDespachoCalidad.Name = "btnSolicitudDespachoCalidad";
+            this.btnSolicitudDespachoCalidad.Size = new System.Drawing.Size(199, 59);
+            this.btnSolicitudDespachoCalidad.TabIndex = 55;
+            this.btnSolicitudDespachoCalidad.Text = "Solicitudes Despacho Lote PT";
+            this.btnSolicitudDespachoCalidad.Click += new System.EventHandler(this.btnSolicitudDespachoCalidad_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4294,7 +4312,6 @@
         private DevExpress.XtraEditors.SimpleButton cmdTarimasPT;
         private DevExpress.XtraEditors.SimpleButton cmdLotesCalidad;
         private DevExpress.XtraEditors.SimpleButton btndespachos;
-        private DevExpress.XtraEditors.SimpleButton btnReq_PT;
         private DevExpress.XtraEditors.SimpleButton btnreportes;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnplanrequisas;
@@ -4533,5 +4550,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_historic_inventario;
         private DevExpress.XtraNavBar.NavBarItem navBarItem23;
         private DevExpress.XtraNavBar.NavBarItem navBarIPesajeBascula;
+        private DevExpress.XtraEditors.SimpleButton btnSolicitudesDespachos;
+        private DevExpress.XtraEditors.SimpleButton btnSolicitudDespachoCalidad;
     }
 }
