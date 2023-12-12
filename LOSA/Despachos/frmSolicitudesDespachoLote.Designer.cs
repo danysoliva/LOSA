@@ -29,12 +29,12 @@ namespace LOSA.Despachos
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitudesDespachoLote));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tsFiltro = new DevExpress.XtraEditors.ToggleSwitch();
@@ -169,7 +169,7 @@ namespace LOSA.Despachos
             this.colusuario_cre.OptionsColumn.ReadOnly = true;
             this.colusuario_cre.Visible = true;
             this.colusuario_cre.VisibleIndex = 0;
-            this.colusuario_cre.Width = 113;
+            this.colusuario_cre.Width = 90;
             // 
             // colcomentario
             // 
@@ -179,7 +179,7 @@ namespace LOSA.Despachos
             this.colcomentario.OptionsColumn.ReadOnly = true;
             this.colcomentario.Visible = true;
             this.colcomentario.VisibleIndex = 2;
-            this.colcomentario.Width = 107;
+            this.colcomentario.Width = 109;
             // 
             // colfecha_creacion
             // 
@@ -191,7 +191,7 @@ namespace LOSA.Despachos
             this.colfecha_creacion.OptionsColumn.ReadOnly = true;
             this.colfecha_creacion.Visible = true;
             this.colfecha_creacion.VisibleIndex = 3;
-            this.colfecha_creacion.Width = 107;
+            this.colfecha_creacion.Width = 109;
             // 
             // colestado
             // 
@@ -201,7 +201,7 @@ namespace LOSA.Despachos
             this.colestado.OptionsColumn.ReadOnly = true;
             this.colestado.Visible = true;
             this.colestado.VisibleIndex = 5;
-            this.colestado.Width = 120;
+            this.colestado.Width = 122;
             // 
             // colusuario_autoriza_calidad
             // 
@@ -217,7 +217,7 @@ namespace LOSA.Despachos
             this.colautorizado_calidad.OptionsColumn.ReadOnly = true;
             this.colautorizado_calidad.Visible = true;
             this.colautorizado_calidad.VisibleIndex = 6;
-            this.colautorizado_calidad.Width = 124;
+            this.colautorizado_calidad.Width = 126;
             // 
             // colfecha_autorizacion_calidad
             // 
@@ -229,7 +229,7 @@ namespace LOSA.Despachos
             this.colfecha_autorizacion_calidad.OptionsColumn.ReadOnly = true;
             this.colfecha_autorizacion_calidad.Visible = true;
             this.colfecha_autorizacion_calidad.VisibleIndex = 7;
-            this.colfecha_autorizacion_calidad.Width = 101;
+            this.colfecha_autorizacion_calidad.Width = 103;
             // 
             // colusaurio_autoriza_finanzas
             // 
@@ -245,7 +245,7 @@ namespace LOSA.Despachos
             this.colautorizado_finanzas.OptionsColumn.ReadOnly = true;
             this.colautorizado_finanzas.Visible = true;
             this.colautorizado_finanzas.VisibleIndex = 8;
-            this.colautorizado_finanzas.Width = 126;
+            this.colautorizado_finanzas.Width = 146;
             // 
             // colfecha_autorizacion_finanzas
             // 
@@ -257,7 +257,7 @@ namespace LOSA.Despachos
             this.colfecha_autorizacion_finanzas.OptionsColumn.ReadOnly = true;
             this.colfecha_autorizacion_finanzas.Visible = true;
             this.colfecha_autorizacion_finanzas.VisibleIndex = 9;
-            this.colfecha_autorizacion_finanzas.Width = 94;
+            this.colfecha_autorizacion_finanzas.Width = 99;
             // 
             // collote_pt
             // 
@@ -267,7 +267,7 @@ namespace LOSA.Despachos
             this.collote_pt.OptionsColumn.ReadOnly = true;
             this.collote_pt.Visible = true;
             this.collote_pt.VisibleIndex = 4;
-            this.collote_pt.Width = 88;
+            this.collote_pt.Width = 89;
             // 
             // coltipo_solicitud_despacho
             // 
@@ -277,7 +277,7 @@ namespace LOSA.Despachos
             this.coltipo_solicitud_despacho.OptionsColumn.ReadOnly = true;
             this.coltipo_solicitud_despacho.Visible = true;
             this.coltipo_solicitud_despacho.VisibleIndex = 1;
-            this.coltipo_solicitud_despacho.Width = 151;
+            this.coltipo_solicitud_despacho.Width = 154;
             // 
             // gridColumn1
             // 
@@ -287,14 +287,14 @@ namespace LOSA.Despachos
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 10;
-            this.gridColumn1.Width = 113;
+            this.gridColumn1.Width = 97;
             // 
             // btnGestionar
             // 
             this.btnGestionar.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnGestionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnGestionar.Name = "btnGestionar";
             this.btnGestionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnGestionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnGestionar_ButtonClick);

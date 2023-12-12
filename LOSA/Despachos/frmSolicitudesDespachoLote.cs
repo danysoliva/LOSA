@@ -168,6 +168,32 @@ namespace LOSA.Despachos
             var gridview = (GridView)gridControl1.FocusedView;
             var row = (dsTransaccionesDespacho.solicitudes_lote_despachosRow)gridview.GetFocusedDataRow();
 
+            switch (UsuarioLogueado.GrupoUsuario.GrupoUsuarioActivo)
+            {
+                case GrupoUser.GrupoUsuario.Calidad:
+                    if (row.status_calidad == true)
+                    {
+                        CajaDialogo.Error("La Solicitud ya fue Aprobada por Calidad");
+                        return;
+                    }
+                        
+                    break;
+
+                case GrupoUser.GrupoUsuario.Administradores:
+                    break;
+
+                case GrupoUser.GrupoUsuario.Contabilidad:
+                    if (row.status_finanzas == true)
+                    {
+                        CajaDialogo.Error("La Solicitud ya fue Aprobada por Contabalidad");
+                        return;
+                    }
+                        
+                    break;
+
+                default:
+                    break;
+            }
 
             frmCrearSolicitudAutorizacionLotePT frm = new frmCrearSolicitudAutorizacionLotePT(UsuarioLogueado, frmCrearSolicitudAutorizacionLotePT.Operacion.Update, row.id);
             if (frm.ShowDialog() == DialogResult.OK)

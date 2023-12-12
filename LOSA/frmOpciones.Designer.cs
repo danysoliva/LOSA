@@ -99,6 +99,7 @@
             this.btnreportes = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.TabCalidad = new DevExpress.XtraTab.XtraTabPage();
+            this.btnSolicitudDespachoCalidad = new DevExpress.XtraEditors.SimpleButton();
             this.frmRepor_KepServer = new DevExpress.XtraEditors.SimpleButton();
             this.btnCalidadMaterialEmpaque = new DevExpress.XtraEditors.SimpleButton();
             this.btnViewRequisasCalidad = new DevExpress.XtraEditors.SimpleButton();
@@ -295,7 +296,8 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.btnSolicitudDespachoCalidad = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSolicitudDespachoConta = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCertidicadPTMain = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -1350,6 +1352,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.btnCertidicadPTMain);
             this.TabCalidad.Controls.Add(this.btnSolicitudDespachoCalidad);
             this.TabCalidad.Controls.Add(this.frmRepor_KepServer);
             this.TabCalidad.Controls.Add(this.btnCalidadMaterialEmpaque);
@@ -1380,6 +1383,21 @@
             this.TabCalidad.PageVisible = false;
             this.TabCalidad.Size = new System.Drawing.Size(835, 480);
             this.TabCalidad.Text = "Calidad";
+            // 
+            // btnSolicitudDespachoCalidad
+            // 
+            this.btnSolicitudDespachoCalidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.btnSolicitudDespachoCalidad.Appearance.Options.UseFont = true;
+            this.btnSolicitudDespachoCalidad.Appearance.Options.UseTextOptions = true;
+            this.btnSolicitudDespachoCalidad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnSolicitudDespachoCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnSolicitudDespachoCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
+            this.btnSolicitudDespachoCalidad.Location = new System.Drawing.Point(627, 23);
+            this.btnSolicitudDespachoCalidad.Name = "btnSolicitudDespachoCalidad";
+            this.btnSolicitudDespachoCalidad.Size = new System.Drawing.Size(199, 59);
+            this.btnSolicitudDespachoCalidad.TabIndex = 55;
+            this.btnSolicitudDespachoCalidad.Text = "Solicitudes Despacho Lote PT";
+            this.btnSolicitudDespachoCalidad.Click += new System.EventHandler(this.btnSolicitudDespachoCalidad_Click);
             // 
             // frmRepor_KepServer
             // 
@@ -1417,7 +1435,7 @@
             this.btnViewRequisasCalidad.Appearance.Options.UseFont = true;
             this.btnViewRequisasCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnViewRequisasCalidad.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnViewRequisasCalidad.ImageOptions.SvgImage")));
-            this.btnViewRequisasCalidad.Location = new System.Drawing.Point(419, 86);
+            this.btnViewRequisasCalidad.Location = new System.Drawing.Point(419, 88);
             this.btnViewRequisasCalidad.Name = "btnViewRequisasCalidad";
             this.btnViewRequisasCalidad.Size = new System.Drawing.Size(199, 59);
             this.btnViewRequisasCalidad.TabIndex = 49;
@@ -1638,7 +1656,7 @@
             this.simpleButton16.Appearance.Options.UseFont = true;
             this.simpleButton16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton16.ImageOptions.SvgImage")));
-            this.simpleButton16.Location = new System.Drawing.Point(627, 89);
+            this.simpleButton16.Location = new System.Drawing.Point(624, 346);
             this.simpleButton16.Name = "simpleButton16";
             this.simpleButton16.Size = new System.Drawing.Size(199, 59);
             this.simpleButton16.TabIndex = 18;
@@ -3323,6 +3341,7 @@
             // 
             // TabContabilidad
             // 
+            this.TabContabilidad.Controls.Add(this.btnSolicitudDespachoConta);
             this.TabContabilidad.Controls.Add(this.btn_ExoneracionAQ);
             this.TabContabilidad.Controls.Add(this.cmdAprobarAjustesInvALOSY);
             this.TabContabilidad.Controls.Add(this.cmdReporteBancosPlanilla);
@@ -3547,7 +3566,7 @@
             this.simpleButton59.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton59.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton59.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton59.ImageOptions.SvgImage")));
-            this.simpleButton59.Location = new System.Drawing.Point(227, 353);
+            this.simpleButton59.Location = new System.Drawing.Point(643, 118);
             this.simpleButton59.Name = "simpleButton59";
             this.simpleButton59.Size = new System.Drawing.Size(182, 56);
             this.simpleButton59.TabIndex = 14;
@@ -4228,20 +4247,35 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // btnSolicitudDespachoCalidad
+            // btnSolicitudDespachoConta
             // 
-            this.btnSolicitudDespachoCalidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.btnSolicitudDespachoCalidad.Appearance.Options.UseFont = true;
-            this.btnSolicitudDespachoCalidad.Appearance.Options.UseTextOptions = true;
-            this.btnSolicitudDespachoCalidad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnSolicitudDespachoCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnSolicitudDespachoCalidad.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
-            this.btnSolicitudDespachoCalidad.Location = new System.Drawing.Point(627, 23);
-            this.btnSolicitudDespachoCalidad.Name = "btnSolicitudDespachoCalidad";
-            this.btnSolicitudDespachoCalidad.Size = new System.Drawing.Size(199, 59);
-            this.btnSolicitudDespachoCalidad.TabIndex = 55;
-            this.btnSolicitudDespachoCalidad.Text = "Solicitudes Despacho Lote PT";
-            this.btnSolicitudDespachoCalidad.Click += new System.EventHandler(this.btnSolicitudDespachoCalidad_Click);
+            this.btnSolicitudDespachoConta.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSolicitudDespachoConta.Appearance.Options.UseFont = true;
+            this.btnSolicitudDespachoConta.Appearance.Options.UseTextOptions = true;
+            this.btnSolicitudDespachoConta.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnSolicitudDespachoConta.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnSolicitudDespachoConta.ImageOptions.Image = global::LOSA.Properties.Resources.document_aproved_32px;
+            this.btnSolicitudDespachoConta.Location = new System.Drawing.Point(227, 353);
+            this.btnSolicitudDespachoConta.Name = "btnSolicitudDespachoConta";
+            this.btnSolicitudDespachoConta.Size = new System.Drawing.Size(182, 56);
+            this.btnSolicitudDespachoConta.TabIndex = 55;
+            this.btnSolicitudDespachoConta.Text = "Solicitudes Despacho Lote PT";
+            this.btnSolicitudDespachoConta.Click += new System.EventHandler(this.btnSolicitudDespachoConta_Click);
+            // 
+            // btnCertidicadPTMain
+            // 
+            this.btnCertidicadPTMain.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCertidicadPTMain.Appearance.Options.UseFont = true;
+            this.btnCertidicadPTMain.Appearance.Options.UseTextOptions = true;
+            this.btnCertidicadPTMain.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnCertidicadPTMain.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnCertidicadPTMain.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton74.ImageOptions.Image")));
+            this.btnCertidicadPTMain.Location = new System.Drawing.Point(627, 88);
+            this.btnCertidicadPTMain.Name = "btnCertidicadPTMain";
+            this.btnCertidicadPTMain.Size = new System.Drawing.Size(199, 59);
+            this.btnCertidicadPTMain.TabIndex = 56;
+            this.btnCertidicadPTMain.Text = "Certificado de Producto Terminado";
+            this.btnCertidicadPTMain.Click += new System.EventHandler(this.btnCertidicadPTMain_Click);
             // 
             // frmOpciones
             // 
@@ -4552,5 +4586,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarIPesajeBascula;
         private DevExpress.XtraEditors.SimpleButton btnSolicitudesDespachos;
         private DevExpress.XtraEditors.SimpleButton btnSolicitudDespachoCalidad;
+        private DevExpress.XtraEditors.SimpleButton btnSolicitudDespachoConta;
+        private DevExpress.XtraEditors.SimpleButton btnCertidicadPTMain;
     }
 }

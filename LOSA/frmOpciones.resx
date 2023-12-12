@@ -7116,6 +7116,26 @@
         RU5ErkJggg==
 </value>
   </data>
+  <data name="simpleButton74.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        sQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAMHSURBVFhH7ZXf
+        S1NhGMcP1W03/gFRVBfdFOFFWBGRRBpBkVh6U8bIolIrRRhRZkESkWlZFtUEf2JkLs3EaZKuTceZTrfW
+        1P10bTrnFs5C8san85w885yzV7fm6c4DHw7Py8Pz/Zy95z2jSJczMJvlCIQgFjQme0wM2b0li+OjX2sC
+        sQoY3ZOg7KGJgWIkFRiZDMLNl7WQJr8LBzIz4fiVPFDRJmIwh6QCT5XtbDgngMhu3SEGc0gqUFChiBA4
+        mn2RGMwhqUBJXVOEwOn8QmIwh6QCAw4PyO49CgscOpsFjSo1MZhjRYGk9PQEZlAZR3ldg4oUzGHzz0Cz
+        dgBuVzXAyZyrUFSpgN5hKzGY4+Grat+u5GQDR2Jq6tbFeIo6mJGxGZ+E40bZY2IwQtvdkFNaGbEFR2Tn
+        4U2XhhiOFJdVwI6kpDCJKSn7F+OXBPbmFcDOZjVc05qJ4SO+IGTffxIO5wsgh8/JoHtwhChQQI/DxnYH
+        bMnOX15gj7wYto/+hsuuOaJAtapXEC4WQOTlz4kCuQY/UJ9DsEn+IH6Botf1UQVOXSefBkkECp8tnf/l
+        BE4wX8X/JmCZCIDZ4xfQpjEIUOnIn+RVCdin/x49Emrm+JH4YrRJJ2CweQXD+FS9VRFRftIJ+tYE1gRW
+        JfDVPcVKkGjq7CPSrh2WTmAl+CErEZPAvku5sFvxDtJqlFBaUw+l1XVRqW3tiM6HTjjWqoeERhq2nbmw
+        vEA84LB4CAs4grMvhl3eekVLG8RDS09/XGjMdpfe6vlGMfs4L97Xf4G037HjAEZgxiQeavFOAz3qZt9+
+        rE0uH1uP+n4I+hDx0C6dGRo/qqFNPcjWeMca18W9OotrjnIGQ3nioRiMDUbXJFvjccMa/w3FvfyBSEef
+        UfAdwDvWuC7uHbR5GigAWM8Mes8fGiFg9SxgLaWAfsztZrI3sC8iSjgDoVxmO4zM0HnTuG8Km4YcE04M
+        0Y99t2JtmZj+yQ9H+EORzn7jAga2dNO/sMY71riuZep+5mdnHqiGyVxHURT1BwHAwFbXnyLsAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
   <data name="frmRepor_KepServer.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIzLjEsIFZlcnNpb249MjMuMS40

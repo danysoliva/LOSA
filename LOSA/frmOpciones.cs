@@ -3985,5 +3985,18 @@ namespace LOSA
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btnSolicitudDespachoConta_Click(object sender, EventArgs e)
+        {
+            frmSolicitudesDespachoLote frm = new frmSolicitudesDespachoLote(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnCertidicadPTMain_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
