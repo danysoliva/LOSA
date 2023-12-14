@@ -77,7 +77,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using LOSA.Accesos.Notificaciones;
 using LOSA.MigracionACS.RRHH.Vacaciones;
-using SAPbouiCOM;
+//using SAPbouiCOM;
 using DataTable = System.Data.DataTable;
 using LOSA.MigracionACS.Produccion.MedicionElectrica;
 
