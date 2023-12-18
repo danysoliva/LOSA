@@ -587,6 +587,29 @@
     <Compile Include="Autorizaciones\frmSolicitudAutorizacion.Designer.cs">
       <DependentUpon>frmSolicitudAutorizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\dsCertificado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCertificado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\frmCertificadoCalidadPTMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\frmCertificadoCalidadPTMain.Designer.cs">
+      <DependentUpon>frmCertificadoCalidadPTMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\frmCrearCertificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\frmCrearCertificado.Designer.cs">
+      <DependentUpon>frmCrearCertificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\rptCertificadoCalidad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\CertificadoCalidad\rptCertificadoCalidad.Designer.cs">
+      <DependentUpon>rptCertificadoCalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\ConfiguracionMP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1170,6 +1193,7 @@
     <Compile Include="Clases\Bodegas.cs" />
     <Compile Include="Clases\Boleta.cs" />
     <Compile Include="Clases\CajaDialogo.cs" />
+    <Compile Include="Clases\CertificadoPT_H.cs" />
     <Compile Include="Clases\CheckNewVersion.cs" />
     <Compile Include="Clases\DataOperations.cs" />
     <Compile Include="Clases\Despacho.cs" />
@@ -4307,6 +4331,17 @@
     <None Include="Autorizaciones\dsAutorizaciones.xss">
       <DependentUpon>dsAutorizaciones.xsd</DependentUpon>
     </None>
+    <None Include="Calidad\CertificadoCalidad\dsCertificado.xsc">
+      <DependentUpon>dsCertificado.xsd</DependentUpon>
+    </None>
+    <None Include="Calidad\CertificadoCalidad\dsCertificado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCertificado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Calidad\CertificadoCalidad\dsCertificado.xss">
+      <DependentUpon>dsCertificado.xsd</DependentUpon>
+    </None>
     <None Include="Calidad\drReporteCetificado.xsc">
       <DependentUpon>drReporteCetificado.xsd</DependentUpon>
     </None>
@@ -6644,6 +6679,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Autorizaciones\frmSolicitudAutorizacion.resx">
       <DependentUpon>frmSolicitudAutorizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CertificadoCalidad\frmCertificadoCalidadPTMain.resx">
+      <DependentUpon>frmCertificadoCalidadPTMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CertificadoCalidad\frmCrearCertificado.resx">
+      <DependentUpon>frmCrearCertificado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\CertificadoCalidad\rptCertificadoCalidad.resx">
+      <DependentUpon>rptCertificadoCalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\ConfiguracionMP.resx">
       <DependentUpon>ConfiguracionMP.cs</DependentUpon>
@@ -9224,6 +9268,7 @@
     <Content Include="Resources\cargo.png" />
     <None Include="Resources\CCT-2000C-SQ-800x800.jpg" />
     <None Include="Resources\Certificado_32px.png" />
+    <None Include="Resources\certificado_24X24.png" />
     <Content Include="Resources\check-in.png" />
     <None Include="Resources\edit-table%281%29.png" />
     <None Include="Resources\Container-icon32px.png" />
@@ -9285,6 +9330,7 @@
     <None Include="Resources\formula_local_32.png" />
     <None Include="Resources\formula_market_research.png" />
     <None Include="Resources\inventory.png" />
+    <None Include="Resources\home-automation_24X24.png" />
     <Content Include="Resources\key.png" />
     <None Include="Resources\Materia_Prima.png" />
     <None Include="Resources\logout.png" />
@@ -9326,6 +9372,8 @@
     <None Include="Resources\portapapeles32px.png" />
     <Content Include="Resources\production.png" />
     <None Include="Resources\Products_32x32.png" />
+    <None Include="Resources\prohibicion_16x16.png" />
+    <None Include="Resources\prohibicion_16x161.png" />
     <Content Include="Resources\raw-material.png" />
     <Content Include="Resources\raw-material1.png" />
     <None Include="Resources\seo-report24px.png" />
@@ -9340,6 +9388,9 @@
     <None Include="Resources\sack_black_32px.png" />
     <None Include="Resources\refresh_16x16.png" />
     <None Include="Resources\remove_24x24.png" />
+    <None Include="Resources\Sello de calidad.jpg" />
+    <None Include="Resources\Sello de calidad2.jpg" />
+    <None Include="Resources\Sello de calidad.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />

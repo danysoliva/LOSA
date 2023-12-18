@@ -29,6 +29,7 @@ using LOSA.MigracionACS.Produccion.DashBoard;
 using System.Threading;
 using LOSA.MigracionACS.DataSetx;
 using LOSA.TransaccionesPT;
+using LOSA.Calidad.CertificadoCalidad;
 
 namespace LOSA.Trazabilidad
 {
@@ -811,7 +812,8 @@ namespace LOSA.Trazabilidad
                 CajaDialogo.Error("Debe tener seleccionado un lote de PT para imprimir el certificado de calidad.");
                 return;
             }
-            rpt_certificado_calidad report = new rpt_certificado_calidad(LoteActual.LotePT_Num, UsuarioLogeado);
+            //rpt_certificado_calidad report = new rpt_certificado_calidad(LoteActual.LotePT_Num, UsuarioLogeado);
+            rptCertificadoCalidad report = new rptCertificadoCalidad(0,LoteActual.LotePT_Num);
             report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
             ReportPrintTool printReport = new ReportPrintTool(report);
             printReport.ShowPreview();
