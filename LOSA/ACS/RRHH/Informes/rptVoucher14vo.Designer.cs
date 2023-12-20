@@ -36,6 +36,10 @@ namespace LOSA.ACS.RRHH.Informes
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.xrLabel32 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine5 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLabel31 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine4 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine3 = new DevExpress.XtraReports.UI.XRLine();
             this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow10 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -134,10 +138,6 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrShape1 = new DevExpress.XtraReports.UI.XRShape();
             this.dsInformesRRHH1 = new LOSA.ACS.RRHH.Informes.dsInformesRRHH();
-            this.xrLine4 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel31 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine5 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel32 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -210,6 +210,44 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrShape1});
             this.PageHeader.HeightF = 958.8542F;
             this.PageHeader.Name = "PageHeader";
+            // 
+            // xrLabel32
+            // 
+            this.xrLabel32.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
+            this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 886.8542F);
+            this.xrLabel32.Multiline = true;
+            this.xrLabel32.Name = "xrLabel32";
+            this.xrLabel32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel32.SizeF = new System.Drawing.SizeF(281.7709F, 23.00003F);
+            this.xrLabel32.StylePriority.UseFont = false;
+            this.xrLabel32.StylePriority.UseTextAlignment = false;
+            this.xrLabel32.Text = "Recibi Conforme";
+            this.xrLabel32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLine5
+            // 
+            this.xrLine5.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 883.8542F);
+            this.xrLine5.Name = "xrLine5";
+            this.xrLine5.SizeF = new System.Drawing.SizeF(281.7709F, 8.416626F);
+            // 
+            // xrLabel31
+            // 
+            this.xrLabel31.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
+            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 403.4792F);
+            this.xrLabel31.Multiline = true;
+            this.xrLabel31.Name = "xrLabel31";
+            this.xrLabel31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel31.SizeF = new System.Drawing.SizeF(281.7709F, 23.00003F);
+            this.xrLabel31.StylePriority.UseFont = false;
+            this.xrLabel31.StylePriority.UseTextAlignment = false;
+            this.xrLabel31.Text = "Recibi Conforme";
+            this.xrLabel31.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLine4
+            // 
+            this.xrLine4.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 400.4792F);
+            this.xrLine4.Name = "xrLine4";
+            this.xrLine4.SizeF = new System.Drawing.SizeF(281.7709F, 8.416626F);
             // 
             // xrLine3
             // 
@@ -603,7 +641,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel30.SizeF = new System.Drawing.SizeF(186.354F, 23.00002F);
             this.xrLabel30.StylePriority.UseFont = false;
             this.xrLabel30.StylePriority.UseTextAlignment = false;
-            this.xrLabel30.Text = "05/06/2023";
+            this.xrLabel30.Text = "04/DIC/2023";
             this.xrLabel30.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel29
@@ -618,7 +656,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel29.StylePriority.UseTextAlignment = false;
             this.xrLabel29.Text = "xrLabel14";
             this.xrLabel29.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrLabel29.TextFormatString = "{0:d}";
+            this.xrLabel29.TextFormatString = "{0:dd-MMM-yyyy}";
             // 
             // xrLabel28
             // 
@@ -760,7 +798,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel18.SizeF = new System.Drawing.SizeF(572.9165F, 20.5625F);
             this.xrLabel18.StylePriority.UseFont = false;
             this.xrLabel18.StylePriority.UseTextAlignment = false;
-            this.xrLabel18.Text = "PLANILLA DE DECIMO CUARTO MES DE SALARIO";
+            this.xrLabel18.Text = "PLANILLA DE DECIMO TERCER MES DE SALARIO";
             this.xrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLine2
@@ -1187,7 +1225,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel15.SizeF = new System.Drawing.SizeF(186.354F, 23.00002F);
             this.xrLabel15.StylePriority.UseFont = false;
             this.xrLabel15.StylePriority.UseTextAlignment = false;
-            this.xrLabel15.Text = "05/06/2023";
+            this.xrLabel15.Text = "04/DIC/2023";
             this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel14
@@ -1202,7 +1240,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel14.StylePriority.UseTextAlignment = false;
             this.xrLabel14.Text = "xrLabel14";
             this.xrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrLabel14.TextFormatString = "{0:d}";
+            this.xrLabel14.TextFormatString = "{0:dd-MMM-yyyy}";
             // 
             // xrLabel13
             // 
@@ -1344,7 +1382,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.xrLabel3.SizeF = new System.Drawing.SizeF(572.9165F, 20.56249F);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "PLANILLA DE DECIMO CUARTO MES DE SALARIO";
+            this.xrLabel3.Text = "PLANILLA DE DECIMO TERCER MES DE SALARIO";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLine1
@@ -1397,44 +1435,6 @@ namespace LOSA.ACS.RRHH.Informes
             this.dsInformesRRHH1.DataSetName = "dsInformesRRHH";
             this.dsInformesRRHH1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // xrLine4
-            // 
-            this.xrLine4.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 400.4792F);
-            this.xrLine4.Name = "xrLine4";
-            this.xrLine4.SizeF = new System.Drawing.SizeF(281.7709F, 8.416626F);
-            // 
-            // xrLabel31
-            // 
-            this.xrLabel31.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
-            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 403.4792F);
-            this.xrLabel31.Multiline = true;
-            this.xrLabel31.Name = "xrLabel31";
-            this.xrLabel31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel31.SizeF = new System.Drawing.SizeF(281.7709F, 23.00003F);
-            this.xrLabel31.StylePriority.UseFont = false;
-            this.xrLabel31.StylePriority.UseTextAlignment = false;
-            this.xrLabel31.Text = "Recibi Conforme";
-            this.xrLabel31.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLine5
-            // 
-            this.xrLine5.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 883.8542F);
-            this.xrLine5.Name = "xrLine5";
-            this.xrLine5.SizeF = new System.Drawing.SizeF(281.7709F, 8.416626F);
-            // 
-            // xrLabel32
-            // 
-            this.xrLabel32.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
-            this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 886.8542F);
-            this.xrLabel32.Multiline = true;
-            this.xrLabel32.Name = "xrLabel32";
-            this.xrLabel32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel32.SizeF = new System.Drawing.SizeF(281.7709F, 23.00003F);
-            this.xrLabel32.StylePriority.UseFont = false;
-            this.xrLabel32.StylePriority.UseTextAlignment = false;
-            this.xrLabel32.Text = "Recibi Conforme";
-            this.xrLabel32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
             // rptVoucher14vo
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1448,7 +1448,7 @@ namespace LOSA.ACS.RRHH.Informes
             this.DataSource = this.dsInformesRRHH1;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Margins = new DevExpress.Drawing.DXMargins(50F, 81F, 24.47917F, 0F);
-            this.Version = "22.2";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
