@@ -77,9 +77,10 @@ using System.Reflection;
 using System.Windows.Forms;
 using LOSA.Accesos.Notificaciones;
 using LOSA.MigracionACS.RRHH.Vacaciones;
-using SAPbouiCOM;
+//using SAPbouiCOM;
 using DataTable = System.Data.DataTable;
 using LOSA.MigracionACS.Produccion.MedicionElectrica;
+using LOSA.Calidad.CertificadoCalidad;
 
 namespace LOSA
 {
@@ -455,7 +456,7 @@ namespace LOSA
             cmdUbicaciones.Enabled =
             simpleButton3.Enabled =
             btndespachos.Enabled =
-            btnReq_PT.Enabled =
+            //btnReq_PT.Enabled =
             simpleButton2.Enabled =
             btnPlantarimas.Enabled = false;
         }
@@ -722,9 +723,7 @@ namespace LOSA
 
         private void btnReq_PT_Click(object sender, EventArgs e)
         {
-            LOSA.Despachos.frm_Reqresumen_pt frm = new Despachos.frm_Reqresumen_pt(UsuarioLogeado);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            
         }
 
         private void btnreportes_Click(object sender, EventArgs e)
@@ -3437,7 +3436,9 @@ namespace LOSA
 
         private void btnPrioridadLotePT_Click(object sender, EventArgs e)
         {
-
+            frmAlimentacionBasculasMacros frm = new frmAlimentacionBasculasMacros();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
 
         private void cmdAprobarAjustesInvALOSY_Click(object sender, EventArgs e)
@@ -3967,6 +3968,38 @@ namespace LOSA
             frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+        }
+
+        private void btnSolicitudesDespachos_Click(object sender, EventArgs e)
+        {
+           
+            frmSolicitudesDespachoLote frm = new frmSolicitudesDespachoLote(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnSolicitudDespachoCalidad_Click(object sender, EventArgs e)
+        {
+            frmSolicitudesDespachoLote frm = new frmSolicitudesDespachoLote(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnSolicitudDespachoConta_Click(object sender, EventArgs e)
+        {
+            frmSolicitudesDespachoLote frm = new frmSolicitudesDespachoLote(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnCertidicadPTMain_Click(object sender, EventArgs e)
+        {
+            frmCertificadoCalidadPTMain frm = new frmCertificadoCalidadPTMain(UsuarioLogeado);
+
+            frm.ShowDialog();
         }
     }
 }

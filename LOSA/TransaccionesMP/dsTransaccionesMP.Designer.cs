@@ -2202,6 +2202,8 @@ namespace LOSA.TransaccionesMP {
             
             private global::System.Data.DataColumn _column_avance;
             
+            private global::System.Data.DataColumn columnen_proceso;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public requisiciones_dDataTable() {
@@ -2373,6 +2375,14 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn en_procesoColumn {
+                get {
+                    return this.columnen_proceso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2425,7 +2435,8 @@ namespace LOSA.TransaccionesMP {
                         int UdRestante, 
                         decimal consumo_inv, 
                         decimal consumo_without_inv, 
-                        decimal @__avance) {
+                        decimal @__avance, 
+                        decimal en_proceso) {
                 requisiciones_dRow rowrequisiciones_dRow = ((requisiciones_dRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2444,7 +2455,8 @@ namespace LOSA.TransaccionesMP {
                         UdRestante,
                         consumo_inv,
                         consumo_without_inv,
-                        @__avance};
+                        @__avance,
+                        en_proceso};
                 rowrequisiciones_dRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrequisiciones_dRow);
                 return rowrequisiciones_dRow;
@@ -2484,6 +2496,7 @@ namespace LOSA.TransaccionesMP {
                 this.columnconsumo_inv = base.Columns["consumo_inv"];
                 this.columnconsumo_without_inv = base.Columns["consumo_without_inv"];
                 this._column_avance = base.Columns["%avance"];
+                this.columnen_proceso = base.Columns["en_proceso"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2525,6 +2538,8 @@ namespace LOSA.TransaccionesMP {
                 this._column_avance.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_avance");
                 this._column_avance.ExtendedProperties.Add("Generator_UserColumnName", "%avance");
                 base.Columns.Add(this._column_avance);
+                this.columnen_proceso = new global::System.Data.DataColumn("en_proceso", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnen_proceso);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11040,6 +11055,22 @@ namespace LOSA.TransaccionesMP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal en_proceso {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablerequisiciones_d.en_procesoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'en_proceso\' de la tabla \'requisiciones_d\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerequisiciones_d.en_procesoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tablerequisiciones_d.idColumn);
             }
@@ -11240,6 +11271,18 @@ namespace LOSA.TransaccionesMP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set__avanceNull() {
                 this[this.tablerequisiciones_d.@__avanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isen_procesoNull() {
+                return this.IsNull(this.tablerequisiciones_d.en_procesoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Seten_procesoNull() {
+                this[this.tablerequisiciones_d.en_procesoColumn] = global::System.Convert.DBNull;
             }
         }
         

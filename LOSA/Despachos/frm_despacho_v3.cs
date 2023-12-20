@@ -529,17 +529,41 @@ namespace LOSA.Despachos
 
                     if (Permitir == false)
                     {
-                        Utileria.frmMensajeCalidad frmMensajeCalidad = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
-                        frmMensajeCalidad.ShowDialog();
+                        //La Validacion de Vencimiento y Tiempo Maximo de Despachos no Permite la Entrega!
+                        //Validaremos si hay una Solicitud Aprobada para Permitir el Escaneo!
+                        bool PermitirEscaneoPorAutorizacion = false;
+                        try
+                        {
+                            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                            conn.Open();
+                            SqlCommand cmd = new SqlCommand("sp_get_permitir_escaneo_por_autorizacion", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@lote_pt", tarimaEncontrada.LotePT);
+                            cmd.Parameters.AddWithValue("@tipo_noti", tipo_notificacion);
 
-                        EnviarCorreoConTarimasProximasAVencer(tarimaEncontrada.Id, tipo_notificacion);
+                            PermitirEscaneoPorAutorizacion = Convert.ToBoolean(cmd.ExecuteScalar());
+                            conn.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            CajaDialogo.Error(ex.Message);
+                        }
 
-                        beTarima.Text = "";
-                        txtCantidadT.Text = "0";
-                        txtPeso.Text = "0";
+                        if (!PermitirEscaneoPorAutorizacion)
+                        {
+                            Utileria.frmMensajeCalidad frmMensajeCalidad = new Utileria.frmMensajeCalidad(Utileria.frmMensajeCalidad.TipoMsj.error, mensaje);
+                            frmMensajeCalidad.ShowDialog();
+
+                            EnviarCorreoConTarimasProximasAVencer(tarimaEncontrada.Id, tipo_notificacion);
+
+                            beTarima.Text = "";
+                            txtCantidadT.Text = "0";
+                            txtPeso.Text = "0";
+
+                            beTarima.Focus();
+                            return;
+                        }
                         
-                        beTarima.Focus();
-                        return;
                     }
                 }
 

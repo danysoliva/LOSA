@@ -64,7 +64,6 @@ namespace LOSA.TransaccionesMP
             this.cmdHome.Appearance.Options.UseBackColor = true;
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
             this.cmdHome.Location = new System.Drawing.Point(315, 608);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(175, 48);
@@ -406,7 +405,6 @@ namespace LOSA.TransaccionesMP
             this.btnBasc2.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnBasc2.Appearance.Options.UseFont = true;
             this.btnBasc2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBasc2.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X32;
             this.btnBasc2.Location = new System.Drawing.Point(353, 555);
             this.btnBasc2.Name = "btnBasc2";
             this.btnBasc2.Size = new System.Drawing.Size(112, 49);
@@ -420,7 +418,6 @@ namespace LOSA.TransaccionesMP
             this.btnBasc1.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBasc1.Appearance.Options.UseFont = true;
             this.btnBasc1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnBasc1.ImageOptions.Image = global::LOSA.Properties.Resources.weighing_machine_32X321;
             this.btnBasc1.Location = new System.Drawing.Point(171, 555);
             this.btnBasc1.Name = "btnBasc1";
             this.btnBasc1.Size = new System.Drawing.Size(112, 49);

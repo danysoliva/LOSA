@@ -53,9 +53,19 @@ namespace LOSA.Produccion
             this.btnCancelBasc1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancelBasc2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnActualizar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBinActivo = new DevExpress.XtraEditors.SimpleButton();
+            this.gridTurno = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescrip = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTurno.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -88,7 +98,7 @@ namespace LOSA.Produccion
             // 
             // lblValorBascula1
             // 
-            this.lblValorBascula1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorBascula1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.lblValorBascula1.Appearance.Options.UseFont = true;
             this.lblValorBascula1.Appearance.Options.UseTextOptions = true;
             this.lblValorBascula1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -101,7 +111,7 @@ namespace LOSA.Produccion
             // 
             // lblBascula1
             // 
-            this.lblBascula1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBascula1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBascula1.Appearance.Options.UseFont = true;
             this.lblBascula1.Appearance.Options.UseTextOptions = true;
             this.lblBascula1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -115,7 +125,7 @@ namespace LOSA.Produccion
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseTextOptions = true;
             this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -129,7 +139,7 @@ namespace LOSA.Produccion
             // lblValorBascula2
             // 
             this.lblValorBascula2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblValorBascula2.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorBascula2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.lblValorBascula2.Appearance.Options.UseFont = true;
             this.lblValorBascula2.Appearance.Options.UseTextOptions = true;
             this.lblValorBascula2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -212,8 +222,8 @@ namespace LOSA.Produccion
             this.vGridControl2.LayoutStyle = DevExpress.XtraVerticalGrid.LayoutViewStyle.SingleRecordView;
             this.vGridControl2.Location = new System.Drawing.Point(814, 295);
             this.vGridControl2.Name = "vGridControl2";
-            this.vGridControl2.RecordWidth = 115;
-            this.vGridControl2.RowHeaderWidth = 85;
+            this.vGridControl2.RecordWidth = 134;
+            this.vGridControl2.RowHeaderWidth = 66;
             this.vGridControl2.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
             this.row_requisa1,
             this.rowLoteP,
@@ -228,7 +238,7 @@ namespace LOSA.Produccion
             this.rowpeso_prd1,
             this.rowbascula1,
             this.row1});
-            this.vGridControl2.Size = new System.Drawing.Size(389, 226);
+            this.vGridControl2.Size = new System.Drawing.Size(408, 226);
             this.vGridControl2.TabIndex = 119;
             // 
             // dsProduccion1
@@ -238,7 +248,7 @@ namespace LOSA.Produccion
             // 
             // row_requisa1
             // 
-            this.row_requisa1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.row_requisa1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.row_requisa1.AppearanceCell.Options.UseFont = true;
             this.row_requisa1.Name = "row_requisa1";
             this.row_requisa1.Properties.AllowEdit = false;
@@ -247,7 +257,7 @@ namespace LOSA.Produccion
             // 
             // rowLoteP
             // 
-            this.rowLoteP.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowLoteP.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowLoteP.AppearanceCell.Options.UseFont = true;
             this.rowLoteP.Name = "rowLoteP";
             this.rowLoteP.Properties.AllowEdit = false;
@@ -256,7 +266,7 @@ namespace LOSA.Produccion
             // 
             // rowmp1
             // 
-            this.rowmp1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowmp1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowmp1.AppearanceCell.Options.UseFont = true;
             this.rowmp1.Name = "rowmp1";
             this.rowmp1.Properties.AllowEdit = false;
@@ -265,7 +275,7 @@ namespace LOSA.Produccion
             // 
             // rowlote1
             // 
-            this.rowlote1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowlote1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowlote1.AppearanceCell.Options.UseFont = true;
             this.rowlote1.Name = "rowlote1";
             this.rowlote1.Properties.AllowEdit = false;
@@ -280,10 +290,11 @@ namespace LOSA.Produccion
             this.rowcodigo_barra1.Properties.AllowEdit = false;
             this.rowcodigo_barra1.Properties.Caption = "Codigo de Barra";
             this.rowcodigo_barra1.Properties.FieldName = "codigo_barra";
+            this.rowcodigo_barra1.Visible = false;
             // 
             // rowunidades1
             // 
-            this.rowunidades1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowunidades1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowunidades1.AppearanceCell.Options.UseFont = true;
             this.rowunidades1.Name = "rowunidades1";
             this.rowunidades1.Properties.AllowEdit = false;
@@ -298,10 +309,11 @@ namespace LOSA.Produccion
             this.rowPres.Properties.AllowEdit = false;
             this.rowPres.Properties.Caption = "Presentacion";
             this.rowPres.Properties.FieldName = "presentacion";
+            this.rowPres.Visible = false;
             // 
             // rowpeso1
             // 
-            this.rowpeso1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowpeso1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowpeso1.AppearanceCell.Options.UseFont = true;
             this.rowpeso1.Name = "rowpeso1";
             this.rowpeso1.Properties.AllowEdit = false;
@@ -310,7 +322,7 @@ namespace LOSA.Produccion
             // 
             // rowpeso_bruto1
             // 
-            this.rowpeso_bruto1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowpeso_bruto1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowpeso_bruto1.AppearanceCell.Options.UseFont = true;
             this.rowpeso_bruto1.Name = "rowpeso_bruto1";
             this.rowpeso_bruto1.Properties.AllowEdit = false;
@@ -355,10 +367,10 @@ namespace LOSA.Produccion
             this.vGridControl1.DataSource = this.dsProduccion1;
             this.vGridControl1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.vGridControl1.LayoutStyle = DevExpress.XtraVerticalGrid.LayoutViewStyle.SingleRecordView;
-            this.vGridControl1.Location = new System.Drawing.Point(135, 295);
+            this.vGridControl1.Location = new System.Drawing.Point(126, 295);
             this.vGridControl1.Name = "vGridControl1";
-            this.vGridControl1.RecordWidth = 115;
-            this.vGridControl1.RowHeaderWidth = 85;
+            this.vGridControl1.RecordWidth = 133;
+            this.vGridControl1.RowHeaderWidth = 67;
             this.vGridControl1.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
             this.row_requisa,
             this.rowLotePT,
@@ -369,16 +381,15 @@ namespace LOSA.Produccion
             this.rowPresentacion,
             this.rowpeso,
             this.rowpeso_bruto,
-            this.rowpeso_tara,
             this.rowpeso_prd,
             this.rowbascula,
             this.rowID});
-            this.vGridControl1.Size = new System.Drawing.Size(389, 226);
+            this.vGridControl1.Size = new System.Drawing.Size(408, 226);
             this.vGridControl1.TabIndex = 118;
             // 
             // row_requisa
             // 
-            this.row_requisa.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.row_requisa.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.row_requisa.AppearanceCell.Options.UseFont = true;
             this.row_requisa.Name = "row_requisa";
             this.row_requisa.Properties.AllowEdit = false;
@@ -387,7 +398,7 @@ namespace LOSA.Produccion
             // 
             // rowLotePT
             // 
-            this.rowLotePT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowLotePT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowLotePT.AppearanceCell.Options.UseFont = true;
             this.rowLotePT.Name = "rowLotePT";
             this.rowLotePT.Properties.AllowEdit = false;
@@ -396,7 +407,7 @@ namespace LOSA.Produccion
             // 
             // rowmp
             // 
-            this.rowmp.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowmp.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowmp.AppearanceCell.Options.UseFont = true;
             this.rowmp.Name = "rowmp";
             this.rowmp.Properties.AllowEdit = false;
@@ -405,7 +416,7 @@ namespace LOSA.Produccion
             // 
             // rowlote
             // 
-            this.rowlote.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowlote.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowlote.AppearanceCell.Options.UseFont = true;
             this.rowlote.Name = "rowlote";
             this.rowlote.Properties.AllowEdit = false;
@@ -420,10 +431,11 @@ namespace LOSA.Produccion
             this.rowcodigo_barra.Properties.AllowEdit = false;
             this.rowcodigo_barra.Properties.Caption = "Codigo de Barra";
             this.rowcodigo_barra.Properties.FieldName = "codigo_barra";
+            this.rowcodigo_barra.Visible = false;
             // 
             // rowunidades
             // 
-            this.rowunidades.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowunidades.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowunidades.AppearanceCell.Options.UseFont = true;
             this.rowunidades.Name = "rowunidades";
             this.rowunidades.Properties.AllowEdit = false;
@@ -438,10 +450,11 @@ namespace LOSA.Produccion
             this.rowPresentacion.Properties.AllowEdit = false;
             this.rowPresentacion.Properties.Caption = "Presentacion Saco";
             this.rowPresentacion.Properties.FieldName = "presentacion";
+            this.rowPresentacion.Visible = false;
             // 
             // rowpeso
             // 
-            this.rowpeso.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowpeso.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowpeso.AppearanceCell.Options.UseFont = true;
             this.rowpeso.Name = "rowpeso";
             this.rowpeso.Properties.AllowEdit = false;
@@ -450,8 +463,10 @@ namespace LOSA.Produccion
             // 
             // rowpeso_bruto
             // 
-            this.rowpeso_bruto.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.rowpeso_bruto.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.rowpeso_bruto.AppearanceCell.Options.UseFont = true;
+            this.rowpeso_bruto.ChildRows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
+            this.rowpeso_tara});
             this.rowpeso_bruto.Name = "rowpeso_bruto";
             this.rowpeso_bruto.Properties.AllowEdit = false;
             this.rowpeso_bruto.Properties.Caption = "Peso Inicial Bascula";
@@ -526,18 +541,99 @@ namespace LOSA.Produccion
             this.btnActualizar.Appearance.Options.UseFont = true;
             this.btnActualizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnActualizar.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnActualizar.ImageOptions.SvgImage")));
-            this.btnActualizar.Location = new System.Drawing.Point(612, 153);
+            this.btnActualizar.Location = new System.Drawing.Point(620, 206);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 74);
             this.btnActualizar.TabIndex = 122;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // btnBinActivo
+            // 
+            this.btnBinActivo.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBinActivo.Appearance.Options.UseFont = true;
+            this.btnBinActivo.ImageOptions.Image = global::LOSA.Properties.Resources.tanque;
+            this.btnBinActivo.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnBinActivo.Location = new System.Drawing.Point(12, 19);
+            this.btnBinActivo.Name = "btnBinActivo";
+            this.btnBinActivo.Size = new System.Drawing.Size(120, 68);
+            this.btnBinActivo.TabIndex = 123;
+            this.btnBinActivo.Text = "Bin Activo";
+            this.btnBinActivo.Click += new System.EventHandler(this.btnBinActivo_Click);
+            // 
+            // gridTurno
+            // 
+            this.gridTurno.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gridTurno.Location = new System.Drawing.Point(610, 115);
+            this.gridTurno.Name = "gridTurno";
+            this.gridTurno.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.gridTurno.Properties.Appearance.Options.UseFont = true;
+            this.gridTurno.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridTurno.Properties.DataSource = this.turnoBindingSource;
+            this.gridTurno.Properties.DisplayMember = "descrip";
+            this.gridTurno.Properties.NullText = "";
+            this.gridTurno.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridTurno.Properties.ValueMember = "id";
+            this.gridTurno.Size = new System.Drawing.Size(184, 32);
+            this.gridTurno.TabIndex = 124;
+            // 
+            // turnoBindingSource
+            // 
+            this.turnoBindingSource.DataMember = "turno";
+            this.turnoBindingSource.DataSource = this.dsProduccion1;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridLookUpEdit1View.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridLookUpEdit1View.Appearance.Row.Options.UseFont = true;
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.coldescrip});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            this.colid.OptionsColumn.AllowEdit = false;
+            // 
+            // coldescrip
+            // 
+            this.coldescrip.Caption = "Turno";
+            this.coldescrip.FieldName = "descrip";
+            this.coldescrip.Name = "coldescrip";
+            this.coldescrip.OptionsColumn.AllowEdit = false;
+            this.coldescrip.Visible = true;
+            this.coldescrip.VisibleIndex = 0;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(536, 118);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(77, 25);
+            this.labelControl3.TabIndex = 125;
+            this.labelControl3.Text = "Turno:";
+            // 
             // frmAlimentacionMacros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 765);
+            this.Controls.Add(this.gridTurno);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.btnBinActivo);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnCancelBasc2);
             this.Controls.Add(this.btnCancelBasc1);
@@ -558,6 +654,9 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduccion1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTurno.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -608,5 +707,12 @@ namespace LOSA.Produccion
         private DevExpress.XtraEditors.SimpleButton btnCancelBasc1;
         private DevExpress.XtraEditors.SimpleButton btnCancelBasc2;
         private DevExpress.XtraEditors.SimpleButton btnActualizar;
+        private DevExpress.XtraEditors.SimpleButton btnBinActivo;
+        private DevExpress.XtraEditors.GridLookUpEdit gridTurno;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.BindingSource turnoBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescrip;
     }
 }

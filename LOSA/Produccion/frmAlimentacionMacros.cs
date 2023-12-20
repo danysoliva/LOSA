@@ -17,6 +17,7 @@ namespace LOSA.Produccion
 {
     public partial class frmAlimentacionMacros : DevExpress.XtraEditors.XtraForm
     {
+        DataOperations dp = new DataOperations();
         UserLogin UsuarioLogueado;
         int Id_registro_bascula1;
         int Id_registro_bascula2;
@@ -35,11 +36,33 @@ namespace LOSA.Produccion
         {
             InitializeComponent();
             UsuarioLogueado = pUserLogin;
+            load_turno();
             cmdSelectTarima.Anchor = AnchorStyles.Top;
             
             timerBascula.Start();
 
             ValidarCargaEnProceso();
+        }
+
+        public void load_turno()
+        {
+            string query = @"[sp_losa_load_turno]";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsProduccion1.turno.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsProduccion1.turno);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void ValidarCargaEnProceso()
@@ -84,6 +107,7 @@ namespace LOSA.Produccion
                             Id_registro_bascula1 = frm.Id_RegistroBascula;
                             CargarDetalleBascula1(Id_registro_bascula1);
                             btnBascula1ON.Enabled = true;
+                            btnCancelBasc1.Enabled = true;
 
                             break;
 
@@ -91,6 +115,7 @@ namespace LOSA.Produccion
                             Id_registro_bascula2 = frm.Id_RegistroBascula;
                             CargarDetalleBascula2(Id_registro_bascula2);
                             btnBascula2ON.Enabled = true;
+                            btnCancelBasc2.Enabled = true;
 
                             break;
                         default:
@@ -119,7 +144,7 @@ namespace LOSA.Produccion
                 conn.Close();
 
                 btnBascula1Off.Enabled = true;
-                btnCancelBasc1.Enabled = true;
+            
             }
             catch (Exception ex)
             {
@@ -144,7 +169,7 @@ namespace LOSA.Produccion
                 conn.Close();
 
                 btnBascula2Off.Enabled = true;
-                btnCancelBasc2.Enabled = true;
+                
             }
             catch (Exception ex)
             {
@@ -186,6 +211,8 @@ namespace LOSA.Produccion
                 CajaDialogo.Error("No hay Peso en la Bascula 1");
                 return; 
             }
+            btnCancelBasc1.Enabled = false;
+            btnBascula1ON.Enabled = false;
 
             GuardarPesoBruto(Bascula.Bascula1);
 
@@ -222,12 +249,12 @@ namespace LOSA.Produccion
                 {
                     case Bascula.Bascula1:
                         CargarDetalleBascula1(Id_registro_bascula1);
-                        btnBascula1ON.Enabled = false;
+
 
                         break;
                     case Bascula.Bascula2:
                         CargarDetalleBascula2(Id_registro_bascula2);
-                        btnBascula2ON.Enabled = false;
+
 
                         break;
                     default:
@@ -247,12 +274,19 @@ namespace LOSA.Produccion
                 CajaDialogo.Error("No hay Peso en la Bascula 2");
                 return;
             }
-
+            btnCancelBasc2.Enabled = false;
+            btnBascula2ON.Enabled = false;
             GuardarPesoBruto(Bascula.Bascula2);
         }
 
         private void btnBascula1Off_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(gridTurno.Text))
+            {
+                CajaDialogo.Error("Debe Seleccionar un Turno!");
+                return;
+            }
+
             if (dsProduccion1.Bascula1.Count == 0)
             {
                 CajaDialogo.Error("No se a Cargado el Pesaje!");
@@ -277,7 +311,7 @@ namespace LOSA.Produccion
                 DataOperations dp = new DataOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_insert_requisa_entrega_a_prd_pesajeBascula", conn);
+                SqlCommand cmd = new SqlCommand("[sp_insert_requisa_entrega_a_prd_pesajeBasculaV2]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_tarima", AliBasculas.Id_Tarima);
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
@@ -286,6 +320,7 @@ namespace LOSA.Produccion
                 cmd.Parameters.AddWithValue("@peso", AliBasculas.Peso);
                 cmd.Parameters.AddWithValue("@peso_bascula", pesoBascula1);
                 cmd.Parameters.AddWithValue("@id_registro", Id_registro_bascula1);
+                cmd.Parameters.AddWithValue("@turno", gridTurno.EditValue);
                 //cmd.Parameters.AddWithValue("", AliBasculas.);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -318,6 +353,12 @@ namespace LOSA.Produccion
 
         private void btnBascula2Off_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(gridTurno.Text))
+            {
+                CajaDialogo.Error("Debe Seleccionar un Turno!");
+                return;
+            }
+
             if (dsProduccion1.Bascula2.Count == 0)
             {
                 CajaDialogo.Error("No se a Cargado el Pesaje!");
@@ -341,7 +382,7 @@ namespace LOSA.Produccion
                 DataOperations dp = new DataOperations();
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_insert_requisa_entrega_a_prd_pesajeBascula", conn);
+                SqlCommand cmd = new SqlCommand("[sp_insert_requisa_entrega_a_prd_pesajeBasculaV2]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_tarima", AliBasculas.Id_Tarima);
                 cmd.Parameters.AddWithValue("@id_usuario", UsuarioLogueado.Id);
@@ -350,6 +391,7 @@ namespace LOSA.Produccion
                 cmd.Parameters.AddWithValue("@peso", AliBasculas.Peso);
                 cmd.Parameters.AddWithValue("@peso_bascula", pesoBascula2);
                 cmd.Parameters.AddWithValue("@id_registro", Id_registro_bascula2);
+                cmd.Parameters.AddWithValue("@turno", gridTurno.EditValue);
                 //cmd.Parameters.AddWithValue("", AliBasculas.);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -457,6 +499,11 @@ namespace LOSA.Produccion
             ValidarCargaEnProceso();
         }
 
-    
+        private void btnBinActivo_Click(object sender, EventArgs e)
+        {
+            xfrmCheckActiveBin frm = new xfrmCheckActiveBin();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

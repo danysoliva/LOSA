@@ -1231,6 +1231,39 @@ namespace LOSA.Calidad
                 //Upload( full_path, fileName);
                 //CajaDialogo.Information("ARCHIVO CARGADO SATISFACTORIAMENTE");
                 pc_Mp.Image = Image.FromFile(full_pathImagen);
+
+                if (fileNameImagen != "")
+                {
+                    
+                    //string Path_2 = "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
+                    string Path_2 = string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
+                    //if (Upload(Path_2, full_pathImagen))
+                    FTP_Class ftp1 = new FTP_Class();
+                    if (ftp1.GuardarArchivo(UsuarioLogeado, Path_2, full_pathImagen))
+                    {
+                        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                        con.Open();
+                        SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGEN]", con);
+                        //cmd4.Transaction = transaction;
+                        cmd4.CommandType = CommandType.StoredProcedure;
+
+                        cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = dp.FTP_Tickets_LOSA + Path_2;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
+                        cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
+                        cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
+                        cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
+                        //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                        cmd4.Parameters.AddWithValue("@bit_pic", 1);
+                        cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                        cmd4.Parameters.AddWithValue("@id_mp", IdMP);
+                        cmd4.Parameters.AddWithValue("@lote_mp", Lote);
+                        cmd4.Parameters.AddWithValue("@cambio_imagen", cambioImagen);
+                        cmd4.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    
+                   
+                }
+
             }
         }
 
@@ -1755,115 +1788,59 @@ namespace LOSA.Calidad
 
                     //// Importar archivos adjuntos.
 
-                    //foreach (dsMantenimientoC.adjuntosRow row in dsMantenimientoC.adjuntos.Rows)
-                    //{
-                    //    if (row.bit_subido)
-                    //    {
-                    //        if (row.path == "")
-                    //        {
-                    //            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    //            con.Open();
-                    //            SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingresoV3]", con);
-                    //            //cmd4.Transaction = transaction;
-                    //            cmd4.CommandType = CommandType.StoredProcedure;
-
-                    //            cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = row.path_load;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
-                    //            cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = row.file_name;
-                    //            cmd4.Parameters.AddWithValue("@id_config", row.id_conf);
-                    //            cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                    //            //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                    //            cmd4.Parameters.AddWithValue("@bit_pic", 0);
-                    //            //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    //            cmd4.Parameters.AddWithValue("@id_mp", IdMP);
-                    //            cmd4.Parameters.AddWithValue("@lote_mp", Lote);
-                    //            cmd4.ExecuteNonQuery();
-                    //            con.Close();
-                    //        }
-                    //        else
-                    //        {
-                    //            string FileName = row.file_name;
-                    //            DataOperations dp = new DataOperations();
-                    //            //string Path_ = dp.FTP_Tickets_LOSA + row.id_conf + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + row.file_name;
-                    //            string Path_ = row.id_conf + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + row.file_name;
-                    //            //if (Upload(Path_, row.path))
-                    //            FTP_Class ftp1 = new FTP_Class();
-
-                    //            if (ftp1.GuardarArchivo(UsuarioLogeado, Path_, row.path))
-                    //            {
-                    //                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    //                con.Open();
-                    //                SqlCommand cmd4 = new SqlCommand("sp_insert_archivo_adjunto_ingresoV3", con);
-                    //                //cmd4.Transaction = transaction;
-                    //                cmd4.CommandType = CommandType.StoredProcedure;
-
-                    //                cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = Path_;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
-                    //                cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = row.file_name;
-                    //                cmd4.Parameters.AddWithValue("@id_config", row.id_conf);
-                    //                cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                    //                //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                    //                cmd4.Parameters.AddWithValue("@bit_pic", 0);
-                    //                //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    //                cmd4.Parameters.AddWithValue("@id_mp", IdMP);
-                    //                cmd4.Parameters.AddWithValue("@lote_mp", Lote);
-                    //                cmd4.ExecuteNonQuery();
-                    //                con.Close();
-                    //            }
-                    //        }
-                    //    }
-
-
-                    //}
-
                     //if (fileNameImagen != "")
                     //{
                     //    if (cambioImagen)
                     //    {
-                    //        //string Path_2 = dp.FTP_Tickets_LOSA + "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
-                    //        string Path_2 = "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
+
+                    //        //string Path_2 = "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
+                    //        string Path_2 = string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
                     //        //if (Upload(Path_2, full_pathImagen))
                     //        FTP_Class ftp1 = new FTP_Class();
                     //        if (ftp1.GuardarArchivo(UsuarioLogeado, Path_2, full_pathImagen))
                     //        {
                     //            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     //            con.Open();
-                    //            SqlCommand cmd4 = new SqlCommand("sp_insert_archivo_adjunto_ingresoV3", con);
+                    //            SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGEN]", con);
                     //            //cmd4.Transaction = transaction;
                     //            cmd4.CommandType = CommandType.StoredProcedure;
 
-                    //            cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = Path_2;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
+                    //            cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = dp.FTP_Tickets_LOSA + Path_2;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
                     //            cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
                     //            cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
                     //            cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                     //            //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                     //            cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                    //            //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                    //            cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
                     //            cmd4.Parameters.AddWithValue("@id_mp", IdMP);
                     //            cmd4.Parameters.AddWithValue("@lote_mp", Lote);
+                    //            cmd4.Parameters.AddWithValue("@cambio_imagen", cambioImagen);
                     //            cmd4.ExecuteNonQuery();
                     //            con.Close();
                     //        }
                     //    }
-                    //    else
-                    //    {
+                    //    //else
+                    //    //{
 
-                    //        SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    //        con.Open();
-                    //        SqlCommand cmd4 = new SqlCommand("sp_insert_archivo_adjunto_ingresoV3", con);
-                    //        //cmd4.Transaction = transaction;
-                    //        cmd4.CommandType = CommandType.StoredProcedure;
+                    //    //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                    //    //    con.Open();
+                    //    //    SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGEN]", con);
+                    //    //    //cmd4.Transaction = transaction;
+                    //    //    cmd4.CommandType = CommandType.StoredProcedure;
 
-                    //        cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = full_pathImagen;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
-                    //        cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
-                    //        cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
-                    //        cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                    //        //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                    //        cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                    //        //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    //        cmd4.Parameters.AddWithValue("@id_mp", IdMP);
-                    //        cmd4.Parameters.AddWithValue("@lote_mp", Lote);
-                    //        cmd4.ExecuteNonQuery();
-                    //        con.Close();
-                    //    }
+                    //    //    cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = full_pathImagen;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
+                    //    //    cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
+                    //    //    cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
+                    //    //    cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
+                    //    //    //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                    //    //    cmd4.Parameters.AddWithValue("@bit_pic", 1);
+                    //    //    cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                    //    //    cmd4.Parameters.AddWithValue("@id_mp", IdMP);
+                    //    //    cmd4.Parameters.AddWithValue("@lote_mp", Lote);
+                    //    //    cmd4.Parameters.AddWithValue("@cambio_imagen", cambioImagen);
+                    //    //    cmd4.ExecuteNonQuery();
+                    //    //    con.Close();
+                    //    //}
                     //}
 
                     cn.Open();
