@@ -133,7 +133,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.lueLote.Properties.NullText = "";
             this.lueLote.Properties.PopupView = this.searchLookUpEdit1View;
             this.lueLote.Properties.ValueMember = "lote_producto_terminado";
-            this.lueLote.Size = new System.Drawing.Size(150, 24);
+            this.lueLote.Size = new System.Drawing.Size(159, 24);
             this.lueLote.TabIndex = 1;
             this.lueLote.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 

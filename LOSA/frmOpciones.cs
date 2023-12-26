@@ -206,6 +206,7 @@ namespace LOSA
                 case GrupoUser.GrupoUsuario.Produccion:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
+                    TabOpcionesProduccion.SelectedTabPageIndex = 2;
                     //tabOpciones.TabPages[11].PageVisible = true;
                     break;
                 case GrupoUser.GrupoUsuario.ProduccionV2:
@@ -4000,6 +4001,708 @@ namespace LOSA
             frmCertificadoCalidadPTMain frm = new frmCertificadoCalidadPTMain(UsuarioLogeado);
 
             frm.ShowDialog();
+        }
+
+        private void navBarPanelOperador_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                PP_Operator_Panel_v2 frm = new PP_Operator_Panel_v2(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarTrazabilidadLote_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                RPT_Trazabilidad_Lote frm = new RPT_Trazabilidad_Lote(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+        private void navBarPlanProduccion_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                Prod_Ordenes_Produccion frm = new Prod_Ordenes_Produccion(ActiveUserCode, ActiveUserName, ActiveUserType, this.UsuarioLogeado);
+                //frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarItem57_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                PP_Main_Products_Order frm = new PP_Main_Products_Order(UsuarioLogeado);
+                frm.ActiveUserCodeP = ActiveUserCode;
+                frm.ActiveUserNameP = ActiveUserName;
+                frm.ActiveUserTypeP = ActiveUserType;
+                frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarPortafolio_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                PT_Productos frm = new PT_Productos(ActiveUserCode, ActiveUserName, ActiveUserType, this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarControlProduccion_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                string a = null;
+                int group = 0;
+                string Query = @"SELECT 
+                                      [id_group]
+                                  FROM [ACS].[dbo].[conf_usuarios]
+                                  where id = " + ActiveUserCode;
+                DataOperations dp = new DataOperations();
+
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(Query, cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    group = dr.GetInt32(0);
+                }
+                //PRB_Registro pp = new PRB_Registro(ActiveUserCode, group, this.UsuarioLogeado);
+                //pp.UsuarioLog1 = ActiveUserName;
+                //pp.CodigoUss = ActiveUserCode;
+                //pp.MdiParent = this.MdiParent;
+                //pp.Show();
+
+                try
+                {
+                    PRB_Registro frm = new PRB_Registro(ActiveUserCode, group, this.UsuarioLogeado);
+                    frm.UsuarioLog1 = ActiveUserName;
+                    frm.CodigoUss = ActiveUserCode;
+                    frm.MdiParent = this.MdiParent;
+                    if (!frm.CerrarForm)
+                        frm.Show();
+                    else
+                        frm.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+        private void navConsultaHoras_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmHorometrosLineas frm = new frmHorometrosLineas();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarItem60_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmDatosBrom frm = new frmDatosBrom(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarIntakeViewee2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                IntakeBatchViewerFull frm = new IntakeBatchViewerFull(UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+        private void navbarReporteBatch_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmintakeKepserver frm = new frmintakeKepserver(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navbarReporteEnsacadora_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmReporteEnsacadora frm = new frmReporteEnsacadora(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarReporSacosTurno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmSacosPorLote frm = new frmSacosPorLote(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navbarEficienciaTurno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmDashBoardEficiencia frm = new frmDashBoardEficiencia(UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navbarGestionLotes_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                PP_Gestion_lote frm = new PP_Gestion_lote(UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navbarReporteEficiencia_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmPrintReportEficiencia frm = new frmPrintReportEficiencia(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navbarEficienciaMolinos_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmEficienciaMolinos frm = new frmEficienciaMolinos(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navbarBannerTV_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmBannerMainTV_PRD frm = new frmBannerMainTV_PRD(UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarItem111_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmMantoPhotosTV frm = new frmMantoPhotosTV(UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navbarTemperatura_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+            try
+            {
+                xfrmMenuTemperatura frm = new xfrmMenuTemperatura(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navbarForeCastPRD_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmFCT_produccion frm = new frmFCT_produccion(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navbarConfiguraciones_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 9);//9 = AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                        break;
+                    case 2://Basic No Autorization
+                        break;
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                        accesoprevio = true;
+                        xfrmMainConfiguracion frm = new xfrmMainConfiguracion();
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
+                        break;
+                    case 5://Depth Without Delta
+                        break;
+                    default:
+                        break;
+                }
+
+                if (!accesoprevio)
+                {
+                    if (UsuarioLogeado.ValidarNivelPermisos(80))
+                    {
+                        xfrmMainConfiguracion frm = new xfrmMainConfiguracion();
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #80");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
+
+        private void navBarEficMolinos_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    xfrmEficienciaMolinos frm = new xfrmEficienciaMolinos(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(45))
+                {
+                    xfrmEficienciaMolinos frm = new xfrmEficienciaMolinos(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #45");
+                }
+            }
+        }
+
+        private void navBarMedicionElectrica_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            bool accesoprevio = false;
+
+
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmMedicionElectricaKWH frm = new frmMedicionElectricaKWH();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(45))
+                {
+                    frmMedicionElectricaKWH frm = new frmMedicionElectricaKWH();
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #45");
+                }
+            }
+        }
+
+        private void navBarPesajeBascula_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmAlimentacionMacros frm = new frmAlimentacionMacros(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void navBarPrinTarimas_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmPrintTM frm = new frmPrintTM(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarItem162_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frmactivacionPT frm = new frmactivacionPT(UsuarioLogeado);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navReportAlimentacion_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            frm_reporte_alimentacion frm = new frm_reporte_alimentacion();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarBinActivo_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            xfrmCheckActiveBin frm = new xfrmCheckActiveBin();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarLotesAConsumir_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+            xfrmReporteLotesAConsumir frm = new xfrmReporteLotesAConsumir();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarMpxbin_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            xfrmMP_Por_BIN frm = new xfrmMP_Por_BIN();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarTrasladoAceiteExterno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmOilRequest frm = new frmOilRequest(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarReporteTrasladoAceites_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmReporteTraslados frm = new frmReporteTraslados(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarTrasladosTanquesArriba_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmReporteTrasladosArribaAdvanced frm = new frmReporteTrasladosArribaAdvanced(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarSalidaAceite_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmReporteConsumoLinea frm = new frmReporteConsumoLinea(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarSetLoteGranel_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            if (UsuarioLogeado.ValidarNivelPermisos(8))
+            {
+                frmLoteActivoGraneles frm = new frmLoteActivoGraneles();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            else
+            {
+                CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #48");
+            }
+        }
+
+        private void navBarAceiteResumen_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frm_report_oil_in_and_out frm = new frm_report_oil_in_and_out(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarAceiteHAciaArriba_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmReporteTrasladosArribaByOrden frm = new frmReporteTrasladosArribaByOrden(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navBarResumenAceitesLote_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmReporteTrasladosArribaByLotePT frm = new frmReporteTrasladosArribaByLotePT(this.UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.WindowState = FormWindowState.Maximized;
+                if (!frm.CerrarForm)
+                    frm.Show();
+                else
+                    frm.Dispose();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }
