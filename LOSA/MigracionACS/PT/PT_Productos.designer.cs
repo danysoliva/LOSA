@@ -424,13 +424,9 @@
             this.colfechaSAP,
             this.colSubidoSAP});
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colespecie, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
             // 
             // colCodigo
@@ -449,7 +445,7 @@
             this.colDescripcion.Name = "colDescripcion";
             this.colDescripcion.OptionsColumn.ReadOnly = true;
             this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 1;
+            this.colDescripcion.VisibleIndex = 2;
             this.colDescripcion.Width = 323;
             // 
             // colformula_code
@@ -459,7 +455,7 @@
             this.colformula_code.Name = "colformula_code";
             this.colformula_code.OptionsColumn.ReadOnly = true;
             this.colformula_code.Visible = true;
-            this.colformula_code.VisibleIndex = 2;
+            this.colformula_code.VisibleIndex = 3;
             this.colformula_code.Width = 103;
             // 
             // colespecie
@@ -469,7 +465,7 @@
             this.colespecie.Name = "colespecie";
             this.colespecie.OptionsColumn.ReadOnly = true;
             this.colespecie.Visible = true;
-            this.colespecie.VisibleIndex = 4;
+            this.colespecie.VisibleIndex = 1;
             this.colespecie.Width = 84;
             // 
             // colsize
@@ -479,7 +475,7 @@
             this.colsize.Name = "colsize";
             this.colsize.OptionsColumn.ReadOnly = true;
             this.colsize.Visible = true;
-            this.colsize.VisibleIndex = 4;
+            this.colsize.VisibleIndex = 5;
             this.colsize.Width = 91;
             // 
             // coldescription
@@ -489,7 +485,7 @@
             this.coldescription.Name = "coldescription";
             this.coldescription.OptionsColumn.ReadOnly = true;
             this.coldescription.Visible = true;
-            this.coldescription.VisibleIndex = 5;
+            this.coldescription.VisibleIndex = 6;
             this.coldescription.Width = 114;
             // 
             // collong_name
@@ -514,7 +510,7 @@
             this.colcategoria.Name = "colcategoria";
             this.colcategoria.OptionsColumn.ReadOnly = true;
             this.colcategoria.Visible = true;
-            this.colcategoria.VisibleIndex = 6;
+            this.colcategoria.VisibleIndex = 7;
             this.colcategoria.Width = 95;
             // 
             // colproceso
@@ -536,7 +532,7 @@
             this.colFecha.Name = "colFecha";
             this.colFecha.OptionsColumn.ReadOnly = true;
             this.colFecha.Visible = true;
-            this.colFecha.VisibleIndex = 7;
+            this.colFecha.VisibleIndex = 8;
             this.colFecha.Width = 87;
             // 
             // colEstado
@@ -545,7 +541,7 @@
             this.colEstado.Name = "colEstado";
             this.colEstado.OptionsColumn.ReadOnly = true;
             this.colEstado.Visible = true;
-            this.colEstado.VisibleIndex = 8;
+            this.colEstado.VisibleIndex = 9;
             this.colEstado.Width = 62;
             // 
             // Editar
@@ -555,7 +551,7 @@
             this.Editar.Name = "Editar";
             this.Editar.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.Editar.Visible = true;
-            this.Editar.VisibleIndex = 11;
+            this.Editar.VisibleIndex = 12;
             this.Editar.Width = 53;
             // 
             // repositoryItemButtonEdit1
@@ -575,7 +571,7 @@
             this.oridescripcion.Name = "oridescripcion";
             this.oridescripcion.OptionsColumn.ReadOnly = true;
             this.oridescripcion.Visible = true;
-            this.oridescripcion.VisibleIndex = 9;
+            this.oridescripcion.VisibleIndex = 10;
             this.oridescripcion.Width = 76;
             // 
             // tamanio
@@ -593,7 +589,7 @@
             this.ColSAP.Name = "ColSAP";
             this.ColSAP.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.ColSAP.Visible = true;
-            this.ColSAP.VisibleIndex = 12;
+            this.ColSAP.VisibleIndex = 13;
             this.ColSAP.Width = 56;
             // 
             // btnSAP
@@ -614,7 +610,7 @@
             this.colcodigSAP.Name = "colcodigSAP";
             this.colcodigSAP.OptionsColumn.ReadOnly = true;
             this.colcodigSAP.Visible = true;
-            this.colcodigSAP.VisibleIndex = 3;
+            this.colcodigSAP.VisibleIndex = 4;
             this.colcodigSAP.Width = 109;
             // 
             // colfechaSAP
@@ -626,7 +622,7 @@
             this.colfechaSAP.Name = "colfechaSAP";
             this.colfechaSAP.OptionsColumn.ReadOnly = true;
             this.colfechaSAP.Visible = true;
-            this.colfechaSAP.VisibleIndex = 10;
+            this.colfechaSAP.VisibleIndex = 11;
             this.colfechaSAP.Width = 67;
             // 
             // colSubidoSAP
@@ -647,7 +643,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PT_Productos.IconOptions.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PT_Productos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

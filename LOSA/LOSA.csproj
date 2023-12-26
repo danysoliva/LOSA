@@ -3419,6 +3419,12 @@
     <Compile Include="MigracionACS\PT\PT_Productos.designer.cs">
       <DependentUpon>PT_Productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\PT\PT_ProductosV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\PT\PT_ProductosV2.Designer.cs">
+      <DependentUpon>PT_ProductosV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -7914,6 +7920,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\PT\PT_Productos.resx">
       <DependentUpon>PT_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\PT\PT_ProductosV2.resx">
+      <DependentUpon>PT_ProductosV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.resx">
       <DependentUpon>frm_Reporteador_Validate_byUser.cs</DependentUpon>

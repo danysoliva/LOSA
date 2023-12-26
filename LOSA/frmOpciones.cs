@@ -4087,6 +4087,8 @@ namespace LOSA
                     frm.Show();
                 else
                     frm.Dispose();
+
+
             }
             catch (Exception ex)
             {
