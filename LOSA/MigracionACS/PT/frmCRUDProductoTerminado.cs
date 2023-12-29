@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace LOSA.MigracionACS.PT
 {
-    public partial class PT_ProductosV2 : DevExpress.XtraEditors.XtraForm
+    public partial class frmCRUDProductoTerminado : DevExpress.XtraEditors.XtraForm
     {
-        public PT_ProductosV2()
+        public frmCRUDProductoTerminado()
         {
             InitializeComponent();
         }

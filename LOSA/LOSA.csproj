@@ -3389,6 +3389,12 @@
     <Compile Include="MigracionACS\PT\EditarProductos.designer.cs">
       <DependentUpon>EditarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\PT\frmCRUDProductoTerminado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\PT\frmCRUDProductoTerminado.Designer.cs">
+      <DependentUpon>frmCRUDProductoTerminado.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\PT\frmNewProductoUniversal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3418,12 +3424,6 @@
     </Compile>
     <Compile Include="MigracionACS\PT\PT_Productos.designer.cs">
       <DependentUpon>PT_Productos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_ProductosV2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigracionACS\PT\PT_ProductosV2.Designer.cs">
-      <DependentUpon>PT_ProductosV2.cs</DependentUpon>
     </Compile>
     <Compile Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.cs">
       <SubType>Form</SubType>
@@ -7906,6 +7906,9 @@
     <EmbeddedResource Include="MigracionACS\PT\EditarProductos.yo.resx">
       <DependentUpon>EditarProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\PT\frmCRUDProductoTerminado.resx">
+      <DependentUpon>frmCRUDProductoTerminado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\PT\frmNewProductoUniversal.resx">
       <DependentUpon>frmNewProductoUniversal.cs</DependentUpon>
     </EmbeddedResource>
@@ -7920,9 +7923,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\PT\PT_Productos.resx">
       <DependentUpon>PT_Productos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigracionACS\PT\PT_ProductosV2.resx">
-      <DependentUpon>PT_ProductosV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\RPTS\frm_Reporteador_Validate_byUser.resx">
       <DependentUpon>frm_Reporteador_Validate_byUser.cs</DependentUpon>
