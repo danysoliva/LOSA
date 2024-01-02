@@ -239,10 +239,7 @@ namespace LOSA.MigracionACS.PT
 
         }
 
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            refresh_grid();
-        }
+     
         void refresh_grid()
         {
             #region Cargado de Datos 
@@ -674,9 +671,16 @@ namespace LOSA.MigracionACS.PT
                 }
             }
         }
-    
 
-	
+        private void barButtonActualizar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            refresh_grid();
+        }
+
+        private void barButtonClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

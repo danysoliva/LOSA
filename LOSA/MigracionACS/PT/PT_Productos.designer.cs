@@ -44,7 +44,6 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_New = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonRecargar = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Activate = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Inactivate = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Export = new DevExpress.XtraBars.BarSubItem();
@@ -86,6 +85,9 @@
             this.colcodigSAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaSAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubidoSAP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.barButtonActualizar = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonClose = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -115,12 +117,13 @@
             this.barButtonItem1,
             this.barToggleSwitchItem1,
             this.barToggleSwitchItem2,
-            this.barButtonRecargar,
             this.barButtonItem2,
             this.barButtonItem3,
-            this.barEditItem1});
+            this.barEditItem1,
+            this.barButtonActualizar,
+            this.barButtonClose});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 14;
+            this.barManager1.MaxItemId = 16;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             // 
@@ -131,15 +134,13 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_New),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonRecargar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Activate),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Inactivate),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Export),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonActualizar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barToggleSwitchItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.barEditItem1, "", false, true, true, 175)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.barEditItem1, "", false, true, true, 175),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonClose, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
@@ -176,19 +177,6 @@
             this.btn_New.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
             this.btn_New.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_New_ItemClick);
             // 
-            // barButtonRecargar
-            // 
-            this.barButtonRecargar.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barButtonRecargar.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.barButtonRecargar.Caption = "Actualizar datos";
-            this.barButtonRecargar.Id = 10;
-            this.barButtonRecargar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonRecargar.ImageOptions.Image")));
-            this.barButtonRecargar.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.barButtonRecargar.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonRecargar.Name = "barButtonRecargar";
-            this.barButtonRecargar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barButtonRecargar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
-            // 
             // btn_Activate
             // 
             this.btn_Activate.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
@@ -213,9 +201,6 @@
             this.btn_Export.Caption = "Exportar";
             this.btn_Export.Id = 0;
             this.btn_Export.ImageOptions.Image = global::LOSA.Properties.Resources.export_32x32;
-            this.btn_Export.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Excel),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_pdf)});
             this.btn_Export.Name = "btn_Export";
             this.btn_Export.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
             // 
@@ -237,6 +222,7 @@
             // barToggleSwitchItem2
             // 
             this.barToggleSwitchItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barToggleSwitchItem2.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.barToggleSwitchItem2.Caption = "Mostar Inhabilitados";
             this.barToggleSwitchItem2.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Stretch;
             this.barToggleSwitchItem2.Id = 9;
@@ -631,12 +617,47 @@
             this.colSubidoSAP.FieldName = "SubidoSAP";
             this.colSubidoSAP.Name = "colSubidoSAP";
             // 
+            // bar1
+            // 
+            this.bar1.BarName = "Custom 3";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 1;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.Text = "Custom 3";
+            // 
+            // barButtonActualizar
+            // 
+            this.barButtonActualizar.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonActualizar.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.barButtonActualizar.Caption = "Actualizar Datos";
+            this.barButtonActualizar.Id = 14;
+            this.barButtonActualizar.ImageOptions.Image = global::LOSA.Properties.Resources.refresh_32x32;
+            this.barButtonActualizar.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.barButtonActualizar.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonActualizar.Name = "barButtonActualizar";
+            this.barButtonActualizar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonActualizar_ItemClick);
+            // 
+            // barButtonClose
+            // 
+            this.barButtonClose.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonClose.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.barButtonClose.Caption = "Cerrar";
+            this.barButtonClose.Id = 15;
+            this.barButtonClose.ImageOptions.Image = global::LOSA.Properties.Resources.close32px1;
+            this.barButtonClose.ItemAppearance.Disabled.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.barButtonClose.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonClose.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.barButtonClose.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonClose.Name = "barButtonClose";
+            this.barButtonClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonClose_ItemClick);
+            // 
             // PT_Productos
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1427, 625);
+            this.ControlBox = false;
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -696,7 +717,6 @@
         private DataSetx.DSProductos dsProductos1;
         private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem2;
         private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonRecargar;
         private DevExpress.XtraGrid.Columns.GridColumn oridescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn tamanio;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
@@ -709,5 +729,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colfechaSAP;
         private DevExpress.XtraGrid.Columns.GridColumn colSubidoSAP;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraBars.BarButtonItem barButtonActualizar;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarButtonItem barButtonClose;
     }
 }
