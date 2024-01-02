@@ -41,18 +41,6 @@ namespace LOSA.MigracionACS.PT
         }
 
 
-
-        private void OnEdit()
-        {
-            PT_NuevoProducto pt = new PT_NuevoProducto(ActiveUserCode, ActiveUserName, ActiveUserType);
-            pt.Action = "edit";
-            pt.ProductID = SelectedProduct;
-            if (pt.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                refresh_grid();
-            }
-        }
-
         #endregion
 
         public PT_Productos(string ActiveUserCode, string ActiveUserName, string ActiveUserType, UserLogin pUser)
@@ -172,7 +160,8 @@ namespace LOSA.MigracionACS.PT
             //PT_NuevoProducto pt = new PT_NuevoProducto(ActiveUserCode, ActiveUserName, ActiveUserType);//aqui
             if (UsuarioLogeado.ValidarNivelPermisos(16))
             {
-                frmNewProductoUniversal pt = new frmNewProductoUniversal(ActiveUserCode, ActiveUserName, ActiveUserType);
+                //frmNewProductoUniversal pt = new frmNewProductoUniversal(ActiveUserCode, ActiveUserName, ActiveUserType);
+                frmCRUDProductoTerminado pt = new frmCRUDProductoTerminado(UsuarioLogeado, frmCRUDProductoTerminado.TipoOperacion.Insert, 0);
                 if (pt.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     refresh_grid();
@@ -204,8 +193,14 @@ namespace LOSA.MigracionACS.PT
                 int dias_vencimiento = row.dias_vencimiento;
                 int f = row.formula_code;
 
-                EditarProductos NewForm = new EditarProductos(a, b, c, d, q, f, UsuarioLogeado, row.id, dias_vencimiento);
-                if (NewForm.ShowDialog() == DialogResult.OK)
+                //EditarProductos NewForm = new EditarProductos(a, b, c, d, q, f, UsuarioLogeado, row.id, dias_vencimiento);
+                //if (NewForm.ShowDialog() == DialogResult.OK)
+                //{
+                //    refresh_grid();
+                //}
+
+                frmCRUDProductoTerminado frm = new frmCRUDProductoTerminado(UsuarioLogeado, frmCRUDProductoTerminado.TipoOperacion.Update, row.id);
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
                     refresh_grid();
                 }
@@ -242,143 +237,172 @@ namespace LOSA.MigracionACS.PT
      
         void refresh_grid()
         {
-            #region Cargado de Datos 
-            //Segun habilitado o no
-            if (barToggleSwitchItem1.Checked == true)
+            try
             {
-
-                try
+                string FixedQuery = "sp_get_portafolio_pt";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringCostos);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(FixedQuery, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (barToggleSwitchItem1.Checked == true)
                 {
-                    string FixedQuery = @"SELECT A.id
-                                                ,A.[Codigo]
-                                                ,A.[Descripcion]
-	                                            ,coalesce(A.[Formula_code_V2], 0) as [formula_code] 
-	                                            ,F.Descripcion as especie
-                                                ,coalesce (A.[diametro], ' ') as [size]
-                                                ,coalesce (B.description , '') as description
-	                                            ,coalesce (D.short_name , '') as long_name
-	                                            ,coalesce (E.description , '')  as typesaco
-	                                            ,coalesce (C.description , '') as categoria
-	                                            ,coalesce (g.description , '') as proceso
-	                                            ,A.[Fecha] as Fecha
-	                                            ,CASE WHEN A.[Estado] = 'a' Then
-                                                'Habilitado'
-                                                    Else 
-                                                'Inhabilitado' end as Estado
-												,coalesce (h.descripcion, '') as oridescripcion
-												,coalesce (a.tamanio, '') as tamanio
-                                                ,coalesce(A.code_sap, 'NoConfig') as codeSAP
-                                                ,I.date as fechaSAP
-												,Case when coalesce(I.id_formula,0) = (Select top 1 
-																								R.id
-																						From [dbo].[FML_Formulas_v2] R
-																						Where R.[codigo] = A.formula_code_V2
-																							and (R.estado > 39 and R.estado < 90)
-																							and  R.available_date < = SYSDATETIME()
-																							order by R.id Desc) then 1
-													else 0 end as SubidoSAP
-                                                ,[dias_vencimiento]
-										  FROM [dbo].[PT_Productos] A left join
-                                               [dbo].[PT_Products_Bags] B on
-                                                 A.id_bag = B.id left join
-                                               [dbo].PT_Products_Category C on
-                                                 A.id_category = c.id left join
-                                               [dbo].[PT_Productos_Familias] D on
-                                                 A.family = D.id left join
-                                               [dbo].[PT_Products_Portafolio] E on
-                                                 A.id_portafolio = E.id left join
-                                               [dbo].[Conf_Especies] F on
-                                                 A.Especie = F.id left join
-                                               .dbo.PT_Products_Process G on
-                                                 A.id_proceso = g.id left join
-												 .dbo.PT_Products_Origen H on
-												 A.id_origen = H.id LEFT JOIN (Select top 1 *
-																				from dbo.pt_log_update_fml_SAP X
-																				order by 1 desc )  I on A.id = I.id_pt	
-                                          order by A.id desc";
-
-
-
-                    DataOperations dp = new DataOperations();
-                    SqlConnection conn = new SqlConnection(dp.ConnectionStringCostos);
-                    conn.Open();
-                    SqlDataAdapter Da = new SqlDataAdapter(FixedQuery, conn);
-                    dsProductos1.Productos.Clear();
-                    Da.Fill(dsProductos1.Productos);
-
+                    cmd.Parameters.AddWithValue("@estado", 1);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error al cargar la información\nDetalle del Error: " + ex.Message + "\n\nStack Trace: " + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cmd.Parameters.AddWithValue("@estado", 0);
                 }
+
+                
+                SqlDataAdapter Da = new SqlDataAdapter(cmd);
+                dsProductos1.Productos.Clear();
+                Da.Fill(dsProductos1.Productos);
+                conn.Close();
+
             }
-            if (barToggleSwitchItem1.Checked == false)
+            catch (Exception ex)
             {
-                try
-                {
-                    string FixedQuery = @"SELECT A.id
-                                                ,A.[Codigo]
-                                                ,A.[Descripcion]
-	                                            ,coalesce(A.[Formula_code_V2], 0) as [formula_code] 
-	                                            ,F.Descripcion as especie
-                                                ,coalesce (A.[diametro], ' ') as [size]
-                                                ,coalesce (B.description , '') as description
-	                                            ,coalesce (D.short_name , '') as long_name
-	                                            ,coalesce (E.description , '')  as typesaco
-	                                            ,coalesce (C.description , '') as categoria
-	                                            ,coalesce (g.description , '') as proceso
-	                                            ,A.[Fecha] as Fecha
-	                                            ,CASE WHEN A.[Estado] = 'a' Then
-                                                'Habilitado'
-                                                    Else 
-                                                'Inhabilitado' end as Estado
-												,coalesce (h.descripcion, '') as oridescripcion
-												,coalesce (a.tamanio, '') as tamanio
-                                                ,coalesce(A.code_sap, 'NoConfig') as codeSAP
-                                                ,I.date as fechaSAP
-												,Case when coalesce(I.id_formula,0) = (Select top 1 
-																								R.id
-																						From [dbo].[FML_Formulas_v2] R
-																						Where R.[codigo] = A.formula_code_V2
-																							and (R.estado > 39 and R.estado < 90)
-																							and  R.available_date < = SYSDATETIME()
-																							order by R.id Desc) then 1
-													else 0 end as SubidoSAP
-                                                ,[dias_vencimiento]
-										  FROM [dbo].[PT_Productos] A left join
-                                               [dbo].[PT_Products_Bags] B on
-                                                 A.id_bag = B.id left join
-                                               [dbo].PT_Products_Category C on
-                                                 A.id_category = c.id left join
-                                               [dbo].[PT_Productos_Familias] D on
-                                                 A.family = D.id left join
-                                               [dbo].[PT_Products_Portafolio] E on
-                                                 A.id_portafolio = E.id left join
-                                               [dbo].[Conf_Especies] F on
-                                                 A.Especie = F.id left join
-                                               .dbo.PT_Products_Process G on
-                                                 A.id_proceso = g.id left join
-												 .dbo.PT_Products_Origen H on
-												 A.id_origen = H.id LEFT JOIN (Select top 1 *
-																				from dbo.pt_log_update_fml_SAP X
-																				order by 1 desc )  I on A.id = I.id_pt	
-										  where A.Estado = 'a'
-                                          order by A.id desc";
-
-
-
-                    DataOperations dp = new DataOperations();
-                    SqlConnection conn = new SqlConnection(dp.ConnectionStringCostos);
-                    conn.Open();
-                    SqlDataAdapter Da = new SqlDataAdapter(FixedQuery, conn);
-                    dsProductos1.Productos.Clear();
-                    Da.Fill(dsProductos1.Productos);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar la información\nDetalle del Error: " + ex.Message + "\n\nStack Trace: " + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                CajaDialogo.Error(ex.Message);
             }
+
+            #region Cargado de Datos Anterior
+
+            ////Segun habilitado o no
+            //if (barToggleSwitchItem1.Checked == true)
+            //{
+
+            //    try
+            //    {
+            //        string FixedQuery = @"SELECT A.id
+            //                                    ,A.[Codigo]
+            //                                    ,A.[Descripcion]
+	           //                                 ,coalesce(A.[Formula_code_V2], 0) as [formula_code] 
+	           //                                 ,F.Descripcion as especie
+            //                                    ,coalesce (A.[diametro], ' ') as [size]
+            //                                    ,coalesce (B.description , '') as description
+	           //                                 ,coalesce (D.short_name , '') as long_name
+	           //                                 ,coalesce (E.description , '')  as typesaco
+	           //                                 ,coalesce (C.description , '') as categoria
+	           //                                 ,coalesce (g.description , '') as proceso
+	           //                                 ,A.[Fecha] as Fecha
+	           //                                 ,CASE WHEN A.[Estado] = 'a' Then
+            //                                    'Habilitado'
+            //                                        Else 
+            //                                    'Inhabilitado' end as Estado
+												//,coalesce (h.descripcion, '') as oridescripcion
+												//,coalesce (a.tamanio, '') as tamanio
+            //                                    ,coalesce(A.code_sap, 'NoConfig') as codeSAP
+            //                                    ,I.date as fechaSAP
+												//,Case when coalesce(I.id_formula,0) = (Select top 1 
+												//												R.id
+												//										From [dbo].[FML_Formulas_v2] R
+												//										Where R.[codigo] = A.formula_code_V2
+												//											and (R.estado > 39 and R.estado < 90)
+												//											and  R.available_date < = SYSDATETIME()
+												//											order by R.id Desc) then 1
+												//	else 0 end as SubidoSAP
+            //                                    ,[dias_vencimiento]
+										  //FROM [dbo].[PT_Productos] A left join
+            //                                   [dbo].[PT_Products_Bags] B on
+            //                                     A.id_bag = B.id left join
+            //                                   [dbo].PT_Products_Category C on
+            //                                     A.id_category = c.id left join
+            //                                   [dbo].[PT_Productos_Familias] D on
+            //                                     A.family = D.id left join
+            //                                   [dbo].[PT_Products_Portafolio] E on
+            //                                     A.id_portafolio = E.id left join
+            //                                   [dbo].[Conf_Especies] F on
+            //                                     A.Especie = F.id left join
+            //                                   .dbo.PT_Products_Process G on
+            //                                     A.id_proceso = g.id left join
+												// .dbo.PT_Products_Origen H on
+												// A.id_origen = H.id LEFT JOIN (Select top 1 *
+												//								from dbo.pt_log_update_fml_SAP X
+												//								order by 1 desc )  I on A.id = I.id_pt	
+            //                              order by A.id desc";
+
+
+
+            //        DataOperations dp = new DataOperations();
+            //        SqlConnection conn = new SqlConnection(dp.ConnectionStringCostos);
+            //        conn.Open();
+            //        SqlDataAdapter Da = new SqlDataAdapter(FixedQuery, conn);
+            //        dsProductos1.Productos.Clear();
+            //        Da.Fill(dsProductos1.Productos);
+
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Error al cargar la información\nDetalle del Error: " + ex.Message + "\n\nStack Trace: " + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+            //if (barToggleSwitchItem1.Checked == false)
+            //{
+            //    try
+            //    {
+            //        string FixedQuery = @"SELECT A.id
+            //                                    ,A.[Codigo]
+            //                                    ,A.[Descripcion]
+	           //                                 ,coalesce(A.[Formula_code_V2], 0) as [formula_code] 
+	           //                                 ,F.Descripcion as especie
+            //                                    ,coalesce (A.[diametro], ' ') as [size]
+            //                                    ,coalesce (B.description , '') as description
+	           //                                 ,coalesce (D.short_name , '') as long_name
+	           //                                 ,coalesce (E.description , '')  as typesaco
+	           //                                 ,coalesce (C.description , '') as categoria
+	           //                                 ,coalesce (g.description , '') as proceso
+	           //                                 ,A.[Fecha] as Fecha
+	           //                                 ,CASE WHEN A.[Estado] = 'a' Then
+            //                                    'Habilitado'
+            //                                        Else 
+            //                                    'Inhabilitado' end as Estado
+												//,coalesce (h.descripcion, '') as oridescripcion
+												//,coalesce (a.tamanio, '') as tamanio
+            //                                    ,coalesce(A.code_sap, 'NoConfig') as codeSAP
+            //                                    ,I.date as fechaSAP
+												//,Case when coalesce(I.id_formula,0) = (Select top 1 
+												//												R.id
+												//										From [dbo].[FML_Formulas_v2] R
+												//										Where R.[codigo] = A.formula_code_V2
+												//											and (R.estado > 39 and R.estado < 90)
+												//											and  R.available_date < = SYSDATETIME()
+												//											order by R.id Desc) then 1
+												//	else 0 end as SubidoSAP
+            //                                    ,[dias_vencimiento]
+										  //FROM [dbo].[PT_Productos] A left join
+            //                                   [dbo].[PT_Products_Bags] B on
+            //                                     A.id_bag = B.id left join
+            //                                   [dbo].PT_Products_Category C on
+            //                                     A.id_category = c.id left join
+            //                                   [dbo].[PT_Productos_Familias] D on
+            //                                     A.family = D.id left join
+            //                                   [dbo].[PT_Products_Portafolio] E on
+            //                                     A.id_portafolio = E.id left join
+            //                                   [dbo].[Conf_Especies] F on
+            //                                     A.Especie = F.id left join
+            //                                   .dbo.PT_Products_Process G on
+            //                                     A.id_proceso = g.id left join
+												// .dbo.PT_Products_Origen H on
+												// A.id_origen = H.id LEFT JOIN (Select top 1 *
+												//								from dbo.pt_log_update_fml_SAP X
+												//								order by 1 desc )  I on A.id = I.id_pt	
+										  //where A.Estado = 'a'
+            //                              order by A.id desc";
+
+
+
+            //        DataOperations dp = new DataOperations();
+            //        SqlConnection conn = new SqlConnection(dp.ConnectionStringCostos);
+            //        conn.Open();
+            //        SqlDataAdapter Da = new SqlDataAdapter(FixedQuery, conn);
+            //        dsProductos1.Productos.Clear();
+            //        Da.Fill(dsProductos1.Productos);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Error al cargar la información\nDetalle del Error: " + ex.Message + "\n\nStack Trace: " + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
             #endregion
         }
 

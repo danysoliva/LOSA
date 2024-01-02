@@ -1161,6 +1161,8 @@ namespace LOSA.MigracionACS.DataSetx {
             
             private global::System.Data.DataColumn columndias_vencimiento;
             
+            private global::System.Data.DataColumn columndescripcion_tecnica;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProductosDataTable() {
@@ -1364,6 +1366,14 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn descripcion_tecnicaColumn {
+                get {
+                    return this.columndescripcion_tecnica;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1420,7 +1430,8 @@ namespace LOSA.MigracionACS.DataSetx {
                         System.DateTime fechaSAP, 
                         bool SubidoSAP, 
                         int id, 
-                        int dias_vencimiento) {
+                        int dias_vencimiento, 
+                        string descripcion_tecnica) {
                 ProductosRow rowProductosRow = ((ProductosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Codigo,
@@ -1443,7 +1454,8 @@ namespace LOSA.MigracionACS.DataSetx {
                         fechaSAP,
                         SubidoSAP,
                         id,
-                        dias_vencimiento};
+                        dias_vencimiento,
+                        descripcion_tecnica};
                 rowProductosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductosRow);
                 return rowProductosRow;
@@ -1487,6 +1499,7 @@ namespace LOSA.MigracionACS.DataSetx {
                 this.columnSubidoSAP = base.Columns["SubidoSAP"];
                 this.columnid = base.Columns["id"];
                 this.columndias_vencimiento = base.Columns["dias_vencimiento"];
+                this.columndescripcion_tecnica = base.Columns["descripcion_tecnica"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1534,6 +1547,8 @@ namespace LOSA.MigracionACS.DataSetx {
                 base.Columns.Add(this.columnid);
                 this.columndias_vencimiento = new global::System.Data.DataColumn("dias_vencimiento", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndias_vencimiento);
+                this.columndescripcion_tecnica = new global::System.Data.DataColumn("descripcion_tecnica", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion_tecnica);
                 this.columnsize.DefaultValue = ((string)("0"));
             }
             
@@ -11274,6 +11289,22 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string descripcion_tecnica {
+                get {
+                    try {
+                        return ((string)(this[this.tableProductos.descripcion_tecnicaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion_tecnica\' de la tabla \'Productos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProductos.descripcion_tecnicaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCodigoNull() {
                 return this.IsNull(this.tableProductos.CodigoColumn);
             }
@@ -11522,6 +11553,18 @@ namespace LOSA.MigracionACS.DataSetx {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setdias_vencimientoNull() {
                 this[this.tableProductos.dias_vencimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdescripcion_tecnicaNull() {
+                return this.IsNull(this.tableProductos.descripcion_tecnicaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdescripcion_tecnicaNull() {
+                this[this.tableProductos.descripcion_tecnicaColumn] = global::System.Convert.DBNull;
             }
         }
         
