@@ -521,6 +521,7 @@
             // 
             // colcategoria
             // 
+            this.colcategoria.Caption = "Categoria";
             this.colcategoria.FieldName = "categoria";
             this.colcategoria.Name = "colcategoria";
             this.colcategoria.OptionsColumn.ReadOnly = true;
@@ -543,6 +544,8 @@
             // 
             // colFecha
             // 
+            this.colFecha.DisplayFormat.FormatString = "d";
+            this.colFecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colFecha.FieldName = "Fecha";
             this.colFecha.Name = "colFecha";
             this.colFecha.OptionsColumn.ReadOnly = true;
@@ -567,7 +570,6 @@
             this.Editar.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.Editar.Visible = true;
             this.Editar.VisibleIndex = 13;
-            this.Editar.Width = 60;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -605,7 +607,7 @@
             this.ColSAP.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.ColSAP.Visible = true;
             this.ColSAP.VisibleIndex = 14;
-            this.ColSAP.Width = 92;
+            this.ColSAP.Width = 77;
             // 
             // btnSAP
             // 

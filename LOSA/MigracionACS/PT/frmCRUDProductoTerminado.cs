@@ -19,13 +19,16 @@ namespace LOSA.MigracionACS.PT
 
         UserLogin UsuarioLogueado;
         DataOperations dp = new DataOperations();
-        string indiceFam, indiceCat, indiceBag, indiceTam;
+        string indiceFam, indiceCat, indiceBag, indiceTam; 
+        int Especie = 0;
         int IdProducto = 0;
+        decimal PesoSaco = 0;
 
         public enum TipoOperacion 
         {
             Insert = 1,
-            Update = 2
+            Update = 2,
+            SolicitudInsert = 3
         }
 
         TipoOperacion TipoOP;
@@ -42,15 +45,85 @@ namespace LOSA.MigracionACS.PT
 
                     spindDiasVenc.EditValue = 150;
                     spinDiasMinimos.EditValue = 60;
+                    TsEstado.IsOn = true;
+                    toggleSwitchEspecie.IsOn = true;
+                    lblCodUnite.Visible = false;
+                    txtCodUnite.Visible = false;
+                    lblProceso.Visible = false;
+                    gridLookProce.Visible = false;
+                    lblEstado.Visible = false;
+                    TsEstado.Visible = false;
+
                     GenerarCodigo();
                     LoadFamilia();
 
                     break;
                 case TipoOperacion.Update:
+                    toggleSwitchEspecie.Enabled = false;
                     IdProducto = pid_pt;
-
+                    LoadFamilia();
                     ProductoTerminado pt = new ProductoTerminado(dp.ConnectionStringCostos);
                     pt.Recuperar_producto(IdProducto);
+                    if (pt.especie == 1)
+                    {
+                        toggleSwitchEspecie.IsOn = true;
+                        Especie = 1;
+                    }
+                    else
+                    {
+                        toggleSwitchEspecie.IsOn = false;
+                        Especie = 2;
+                        lblCodUnite.Visible = true;
+                        txtCodUnite.Visible = true;
+                    }
+                    txtCodigo.Text = pt.Codigo;
+                    txtDescripcionFacturacion.Text = pt.descripcion;
+                    txtDescrpcionTecnica.Text = pt.descripcion_Tecnica;
+                    txtFormula.Text = pt.formula_code;
+                    grdCategoria.EditValue = pt.id_category;
+                    grdFamilia.EditValue = pt.family;
+                    grdtipoSaco.EditValue = pt.id_portafolio;
+                    grdPesoSaco.EditValue = pt.id_bag;
+                    if (Convert.ToInt32(grdPesoSaco.EditValue) > 0)
+                    {
+                        BagsPT pt_bag = new BagsPT();
+                        pt_bag.RecuperarRegistro(Convert.ToInt32(grdPesoSaco.EditValue));
+                        PesoSaco = pt_bag.net;
+                    }
+                    txtCodUnite.Text = pt.codigo_unite;
+                    txtTamano.Text = pt.tamaño;
+                    txtDiametroParticula.Text = pt.diametro;
+                    spindDiasVenc.EditValue = pt.dias_vencimiento;
+                    spinDiasMinimos.EditValue = pt.dias_venc_despacho;
+                    txtCodSAP.Text = pt.codesap;
+                    txtRegistro.Text = pt.registro;
+                    grdOrigen.EditValue = pt.idOr;
+                    spinProteina.EditValue = pt.proteinas;
+                    spinGrasas.EditValue = pt.grasa;
+                    if (pt.estado == "a")
+                        TsEstado.IsOn = true;
+                    else
+                        TsEstado.IsOn = false;
+                    
+                    LlenadoProce();
+                    gridLookProce.EditValue = pt.id_proceso;
+
+                    
+
+                    lblProceso.Visible = true;
+                    gridLookProce.Visible = true;
+                    lblEstado.Visible = true;
+                    TsEstado.Visible = true;
+
+
+                    break;
+                case TipoOperacion.SolicitudInsert:
+
+                    spindDiasVenc.EditValue = 150;
+                    spinDiasMinimos.EditValue = 60;
+                    toggleSwitchEspecie.IsOn = true;
+                    GenerarCodigo();
+                    LoadFamilia();
 
                     break;
                 default:
@@ -59,23 +132,46 @@ namespace LOSA.MigracionACS.PT
 
         }
 
+        private void LlenadoProce()
+        {
+            try
+            {
+                String Qry;
+                Qry = @"SELECT id
+                              ,description
+                        FROM [dbo].[PT_Products_Process]
+                        where enable = 1";
+                SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
+                con.Open();
+                SqlCommand cmd = new SqlCommand(Qry, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dSProductos1.Proceso);
+                con.Close();
+            }
+            catch (Exception es)
+            {
+                CajaDialogo.Error(es.Message);
+                throw;
+            }
+        }
+
         private void LoadFamilia()
         {
             try
             {
                 int esp;
                 //Load Familias
-                string Familias = @"SELECT [id] 
-                                      ,[short_name] as descripcion 
-                                      ,[enable] 
-                                FROM [dbo].[PT_Productos_Familias] 
-                                        where enable = 1";
+                //string Familias = @"SELECT [id] 
+                //                      ,[short_name] as descripcion 
+                //                      ,[enable] 
+                //                FROM [dbo].[PT_Productos_Familias] 
+                //                        where enable = 1";
 
                 SqlConnection con = new SqlConnection(dp.ConnectionStringCostos);
                 con.Open();
-                SqlDataAdapter Da = new SqlDataAdapter(Familias, con);
-                aCSDataSet21.Familia.Clear();
-                Da.Fill(aCSDataSet21.Familia);
+                //SqlDataAdapter Da = new SqlDataAdapter(Familias, con);
+                //aCSDataSet21.Familia.Clear();
+                //Da.Fill(aCSDataSet21.Familia);
 
 
 
@@ -107,19 +203,20 @@ namespace LOSA.MigracionACS.PT
                 //Load Bags
                 string bags = @"SELECT [id]
                                       ,[description] as Tamaño
+                                      ,[net] as Factor
                                 FROM [dbo].[PT_Products_Bags] 
                                     where enable = 1";
                 SqlDataAdapter DataBags = new SqlDataAdapter(bags, con);
                 aCSDataSet21.Bolsas.Clear();
                 DataBags.Fill(aCSDataSet21.Bolsas);
                 //Load Origen
-                if (toggleSwitchEspecie.IsOn)
-                {
-                    esp = 2;
-                }
-                else
+                if (toggleSwitchEspecie.IsOn) //Tilapia
                 {
                     esp = 1;
+                }
+                else //Camaron
+                {
+                    esp = 2;
                 }
                 string QueryOrigen;
                 QueryOrigen = @"SELECT  [id]
@@ -129,6 +226,16 @@ namespace LOSA.MigracionACS.PT
                 SqlDataAdapter datOr = new SqlDataAdapter(QueryOrigen, con);
                 aCSDataSet21.Origen.Clear();
                 datOr.Fill(aCSDataSet21.Origen);
+                
+
+                string FamiliasToggled = @"SELECT [id] 
+                                      ,[short_name] as descripcion 
+                                      ,[enable] 
+                                FROM [dbo].[PT_Productos_Familias] 
+                                        where enable = 1 and specie = " + esp;
+                SqlDataAdapter DaToggled = new SqlDataAdapter(FamiliasToggled, con);
+                aCSDataSet21.Familia.Clear();
+                DaToggled.Fill(aCSDataSet21.Familia);
                 con.Close();
             }
             catch (Exception ec)
@@ -137,720 +244,373 @@ namespace LOSA.MigracionACS.PT
             }
         }
 
-        private void InitializeComponent()
-        {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCRUDProductoTerminado));
-            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
-            this.toggleSwitchEspecie = new DevExpress.XtraEditors.ToggleSwitch();
-            this.txtCodigo = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDescripcionFacturacion = new DevExpress.XtraEditors.TextEdit();
-            this.txtDescrpcionTecnica = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtFormula = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtRegistro = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTamano = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.spindDiasVenc = new DevExpress.XtraEditors.SpinEdit();
-            this.spinDiasMinimos = new DevExpress.XtraEditors.SpinEdit();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.spinEdit4 = new DevExpress.XtraEditors.SpinEdit();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.txtCodSAP = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.grdCategoria = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.grdFamilia = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.grdtipoSaco = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.grdPesoSaco = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.grdOrigen = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.origenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aCSDataSet21 = new LOSA.MigracionACS.ACSDataSet2();
-            this.bolsasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.portafolioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.familiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchEspecie.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcionFacturacion.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescrpcionTecnica.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFormula.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRegistro.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTamano.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spindDiasVenc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinDiasMinimos.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodSAP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCategoria.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdFamilia.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdtipoSaco.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPesoSaco.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdOrigen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.origenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aCSDataSet21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bolsasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.portafolioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familiaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAtras.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnAtras.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Appearance.Options.UseBackColor = true;
-            this.btnAtras.Appearance.Options.UseFont = true;
-            this.btnAtras.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnAtras.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.ImageOptions.Image")));
-            this.btnAtras.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnAtras.Location = new System.Drawing.Point(423, 504);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(125, 42);
-            this.btnAtras.TabIndex = 85;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // cmdGuardar
-            // 
-            this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.cmdGuardar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdGuardar.Appearance.Options.UseBackColor = true;
-            this.cmdGuardar.Appearance.Options.UseFont = true;
-            this.cmdGuardar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdGuardar.ImageOptions.Image")));
-            this.cmdGuardar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(249, 504);
-            this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(125, 42);
-            this.cmdGuardar.TabIndex = 84;
-            this.cmdGuardar.Text = "Guardar";
-            // 
-            // toggleSwitchEspecie
-            // 
-            this.toggleSwitchEspecie.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.toggleSwitchEspecie.EditValue = true;
-            this.toggleSwitchEspecie.Location = new System.Drawing.Point(357, 8);
-            this.toggleSwitchEspecie.Name = "toggleSwitchEspecie";
-            this.toggleSwitchEspecie.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.toggleSwitchEspecie.Properties.Appearance.Options.UseFont = true;
-            this.toggleSwitchEspecie.Properties.OffText = "Camaron";
-            this.toggleSwitchEspecie.Properties.OnText = "Tilapia";
-            this.toggleSwitchEspecie.Size = new System.Drawing.Size(162, 26);
-            this.toggleSwitchEspecie.TabIndex = 89;
-            this.toggleSwitchEspecie.Toggled += new System.EventHandler(this.toggleSwitchEspecie_Toggled);
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(241, 58);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Properties.Appearance.Options.UseFont = true;
-            this.txtCodigo.Size = new System.Drawing.Size(163, 28);
-            this.txtCodigo.TabIndex = 88;
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(68, 61);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(87, 21);
-            this.labelControl15.TabIndex = 87;
-            this.labelControl15.Text = "Codigo AQF:";
-            // 
-            // txtDescripcionFacturacion
-            // 
-            this.txtDescripcionFacturacion.Location = new System.Drawing.Point(241, 137);
-            this.txtDescripcionFacturacion.Name = "txtDescripcionFacturacion";
-            this.txtDescripcionFacturacion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtDescripcionFacturacion.Properties.Appearance.Options.UseFont = true;
-            this.txtDescripcionFacturacion.Size = new System.Drawing.Size(229, 28);
-            this.txtDescripcionFacturacion.TabIndex = 90;
-            // 
-            // txtDescrpcionTecnica
-            // 
-            this.txtDescrpcionTecnica.Location = new System.Drawing.Point(241, 98);
-            this.txtDescrpcionTecnica.Name = "txtDescrpcionTecnica";
-            this.txtDescrpcionTecnica.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtDescrpcionTecnica.Properties.Appearance.Options.UseFont = true;
-            this.txtDescrpcionTecnica.Size = new System.Drawing.Size(229, 28);
-            this.txtDescrpcionTecnica.TabIndex = 91;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(68, 101);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(139, 21);
-            this.labelControl1.TabIndex = 92;
-            this.labelControl1.Text = "Descripcion Tecnica:";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(68, 140);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(168, 21);
-            this.labelControl2.TabIndex = 93;
-            this.labelControl2.Text = "Descripcion Facturacion:";
-            // 
-            // txtFormula
-            // 
-            this.txtFormula.Location = new System.Drawing.Point(241, 177);
-            this.txtFormula.Name = "txtFormula";
-            this.txtFormula.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtFormula.Properties.Appearance.Options.UseFont = true;
-            this.txtFormula.Size = new System.Drawing.Size(194, 28);
-            this.txtFormula.TabIndex = 94;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(68, 180);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(61, 21);
-            this.labelControl3.TabIndex = 95;
-            this.labelControl3.Text = "Formula:";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(68, 218);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(70, 21);
-            this.labelControl4.TabIndex = 96;
-            this.labelControl4.Text = "Categoria:";
-            // 
-            // txtRegistro
-            // 
-            this.txtRegistro.Location = new System.Drawing.Point(585, 137);
-            this.txtRegistro.Name = "txtRegistro";
-            this.txtRegistro.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtRegistro.Properties.Appearance.Options.UseFont = true;
-            this.txtRegistro.Size = new System.Drawing.Size(120, 28);
-            this.txtRegistro.TabIndex = 97;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(478, 101);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(59, 21);
-            this.labelControl5.TabIndex = 98;
-            this.labelControl5.Text = "Tamaño:";
-            // 
-            // txtTamano
-            // 
-            this.txtTamano.Location = new System.Drawing.Point(585, 98);
-            this.txtTamano.Name = "txtTamano";
-            this.txtTamano.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtTamano.Properties.Appearance.Options.UseFont = true;
-            this.txtTamano.Size = new System.Drawing.Size(120, 28);
-            this.txtTamano.TabIndex = 99;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(68, 257);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(53, 21);
-            this.labelControl6.TabIndex = 100;
-            this.labelControl6.Text = "Familia:";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(478, 140);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(61, 21);
-            this.labelControl7.TabIndex = 101;
-            this.labelControl7.Text = "Registro:";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(68, 298);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(91, 21);
-            this.labelControl8.TabIndex = 102;
-            this.labelControl8.Text = "Tipo de Saco:";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(480, 181);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(51, 21);
-            this.labelControl9.TabIndex = 103;
-            this.labelControl9.Text = "Origen:";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(68, 339);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(94, 21);
-            this.labelControl10.TabIndex = 104;
-            this.labelControl10.Text = "Peso de Saco:";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(478, 222);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(61, 21);
-            this.labelControl11.TabIndex = 105;
-            this.labelControl11.Text = "Proteina:";
-            // 
-            // spinEdit1
-            // 
-            this.spinEdit1.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spinEdit1.Location = new System.Drawing.Point(585, 219);
-            this.spinEdit1.Name = "spinEdit1";
-            this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.spinEdit1.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Size = new System.Drawing.Size(120, 28);
-            this.spinEdit1.TabIndex = 107;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(707, 222);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(13, 21);
-            this.labelControl12.TabIndex = 108;
-            this.labelControl12.Text = "%";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(68, 379);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(169, 21);
-            this.labelControl13.TabIndex = 109;
-            this.labelControl13.Text = "Diametro de la Particula:";
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(68, 418);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(145, 21);
-            this.labelControl14.TabIndex = 110;
-            this.labelControl14.Text = "Dias de Vencimiento:";
-            // 
-            // spindDiasVenc
-            // 
-            this.spindDiasVenc.EditValue = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
-            this.spindDiasVenc.Location = new System.Drawing.Point(241, 415);
-            this.spindDiasVenc.Name = "spindDiasVenc";
-            this.spindDiasVenc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.spindDiasVenc.Properties.Appearance.Options.UseFont = true;
-            this.spindDiasVenc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spindDiasVenc.Properties.EditValueChangedDelay = 150;
-            this.spindDiasVenc.Properties.MaxValue = new decimal(new int[] {
-            365,
-            0,
-            0,
-            0});
-            this.spindDiasVenc.Properties.MinValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.spindDiasVenc.Size = new System.Drawing.Size(95, 28);
-            this.spindDiasVenc.TabIndex = 111;
-            // 
-            // spinDiasMinimos
-            // 
-            this.spinDiasMinimos.EditValue = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
-            this.spinDiasMinimos.Location = new System.Drawing.Point(380, 447);
-            this.spinDiasMinimos.Name = "spinDiasMinimos";
-            this.spinDiasMinimos.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.spinDiasMinimos.Properties.Appearance.Options.UseFont = true;
-            this.spinDiasMinimos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinDiasMinimos.Properties.EditValueChangedDelay = 150;
-            this.spinDiasMinimos.Properties.MaxValue = new decimal(new int[] {
-            365,
-            0,
-            0,
-            0});
-            this.spinDiasMinimos.Properties.MinValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.spinDiasMinimos.Size = new System.Drawing.Size(90, 28);
-            this.spinDiasMinimos.TabIndex = 113;
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Appearance.Options.UseTextOptions = true;
-            this.labelControl16.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl16.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.labelControl16.Location = new System.Drawing.Point(68, 454);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(306, 21);
-            this.labelControl16.TabIndex = 112;
-            this.labelControl16.Text = "Dias Minimos para Despacho de Producto:";
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Location = new System.Drawing.Point(707, 262);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(13, 21);
-            this.labelControl17.TabIndex = 116;
-            this.labelControl17.Text = "%";
-            // 
-            // spinEdit4
-            // 
-            this.spinEdit4.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spinEdit4.Location = new System.Drawing.Point(585, 259);
-            this.spinEdit4.Name = "spinEdit4";
-            this.spinEdit4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.spinEdit4.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit4.Size = new System.Drawing.Size(120, 28);
-            this.spinEdit4.TabIndex = 115;
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(478, 262);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(50, 21);
-            this.labelControl18.TabIndex = 114;
-            this.labelControl18.Text = "Grasas:";
-            // 
-            // txtCodSAP
-            // 
-            this.txtCodSAP.Enabled = false;
-            this.txtCodSAP.Location = new System.Drawing.Point(585, 58);
-            this.txtCodSAP.Name = "txtCodSAP";
-            this.txtCodSAP.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodSAP.Properties.Appearance.Options.UseFont = true;
-            this.txtCodSAP.Size = new System.Drawing.Size(120, 28);
-            this.txtCodSAP.TabIndex = 118;
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.Location = new System.Drawing.Point(480, 61);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(85, 21);
-            this.labelControl19.TabIndex = 117;
-            this.labelControl19.Text = "Codigo SAP:";
-            // 
-            // grdCategoria
-            // 
-            this.grdCategoria.Location = new System.Drawing.Point(241, 215);
-            this.grdCategoria.Name = "grdCategoria";
-            this.grdCategoria.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.grdCategoria.Properties.Appearance.Options.UseFont = true;
-            this.grdCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grdCategoria.Properties.DataSource = this.categoriaBindingSource;
-            this.grdCategoria.Properties.DisplayMember = "descripcion";
-            this.grdCategoria.Properties.NullText = "";
-            this.grdCategoria.Properties.PopupView = this.gridLookUpEdit1View;
-            this.grdCategoria.Properties.ValueMember = "id";
-            this.grdCategoria.Size = new System.Drawing.Size(194, 28);
-            this.grdCategoria.TabIndex = 119;
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // grdFamilia
-            // 
-            this.grdFamilia.Location = new System.Drawing.Point(241, 254);
-            this.grdFamilia.Name = "grdFamilia";
-            this.grdFamilia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.grdFamilia.Properties.Appearance.Options.UseFont = true;
-            this.grdFamilia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grdFamilia.Properties.DataSource = this.familiaBindingSource;
-            this.grdFamilia.Properties.DisplayMember = "descripcion";
-            this.grdFamilia.Properties.NullText = "";
-            this.grdFamilia.Properties.PopupView = this.gridLookUpEdit2View;
-            this.grdFamilia.Properties.ValueMember = "id";
-            this.grdFamilia.Size = new System.Drawing.Size(194, 28);
-            this.grdFamilia.TabIndex = 120;
-            // 
-            // gridLookUpEdit2View
-            // 
-            this.gridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit2View.Name = "gridLookUpEdit2View";
-            this.gridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
-            // 
-            // grdtipoSaco
-            // 
-            this.grdtipoSaco.Location = new System.Drawing.Point(241, 295);
-            this.grdtipoSaco.Name = "grdtipoSaco";
-            this.grdtipoSaco.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.grdtipoSaco.Properties.Appearance.Options.UseFont = true;
-            this.grdtipoSaco.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grdtipoSaco.Properties.DataSource = this.portafolioBindingSource;
-            this.grdtipoSaco.Properties.DisplayMember = "descripcion";
-            this.grdtipoSaco.Properties.NullText = "";
-            this.grdtipoSaco.Properties.PopupView = this.gridView1;
-            this.grdtipoSaco.Properties.ValueMember = "id";
-            this.grdtipoSaco.Size = new System.Drawing.Size(194, 28);
-            this.grdtipoSaco.TabIndex = 121;
-            // 
-            // gridView1
-            // 
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // grdPesoSaco
-            // 
-            this.grdPesoSaco.Location = new System.Drawing.Point(241, 336);
-            this.grdPesoSaco.Name = "grdPesoSaco";
-            this.grdPesoSaco.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.grdPesoSaco.Properties.Appearance.Options.UseFont = true;
-            this.grdPesoSaco.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grdPesoSaco.Properties.DataSource = this.bolsasBindingSource;
-            this.grdPesoSaco.Properties.DisplayMember = "Tamaño";
-            this.grdPesoSaco.Properties.NullText = "";
-            this.grdPesoSaco.Properties.PopupView = this.gridView2;
-            this.grdPesoSaco.Properties.ValueMember = "id";
-            this.grdPesoSaco.Size = new System.Drawing.Size(194, 28);
-            this.grdPesoSaco.TabIndex = 122;
-            // 
-            // gridView2
-            // 
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // grdOrigen
-            // 
-            this.grdOrigen.Location = new System.Drawing.Point(585, 178);
-            this.grdOrigen.Name = "grdOrigen";
-            this.grdOrigen.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.grdOrigen.Properties.Appearance.Options.UseFont = true;
-            this.grdOrigen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.grdOrigen.Properties.DataSource = this.origenBindingSource;
-            this.grdOrigen.Properties.DisplayMember = "descripcion";
-            this.grdOrigen.Properties.NullText = "";
-            this.grdOrigen.Properties.PopupView = this.gridView3;
-            this.grdOrigen.Properties.ValueMember = "id";
-            this.grdOrigen.Size = new System.Drawing.Size(120, 28);
-            this.grdOrigen.TabIndex = 123;
-            // 
-            // gridView3
-            // 
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // origenBindingSource
-            // 
-            this.origenBindingSource.DataMember = "Origen";
-            this.origenBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // aCSDataSet21
-            // 
-            this.aCSDataSet21.DataSetName = "ACSDataSet2";
-            this.aCSDataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bolsasBindingSource
-            // 
-            this.bolsasBindingSource.DataMember = "Bolsas";
-            this.bolsasBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // portafolioBindingSource
-            // 
-            this.portafolioBindingSource.DataMember = "Portafolio";
-            this.portafolioBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // familiaBindingSource
-            // 
-            this.familiaBindingSource.DataMember = "Familia";
-            this.familiaBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // frmCRUDProductoTerminado
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 558);
-            this.Controls.Add(this.grdOrigen);
-            this.Controls.Add(this.grdPesoSaco);
-            this.Controls.Add(this.grdtipoSaco);
-            this.Controls.Add(this.grdFamilia);
-            this.Controls.Add(this.grdCategoria);
-            this.Controls.Add(this.txtCodSAP);
-            this.Controls.Add(this.labelControl19);
-            this.Controls.Add(this.labelControl17);
-            this.Controls.Add(this.spinEdit4);
-            this.Controls.Add(this.labelControl18);
-            this.Controls.Add(this.spinDiasMinimos);
-            this.Controls.Add(this.labelControl16);
-            this.Controls.Add(this.spindDiasVenc);
-            this.Controls.Add(this.labelControl14);
-            this.Controls.Add(this.labelControl13);
-            this.Controls.Add(this.labelControl12);
-            this.Controls.Add(this.spinEdit1);
-            this.Controls.Add(this.labelControl11);
-            this.Controls.Add(this.labelControl10);
-            this.Controls.Add(this.labelControl9);
-            this.Controls.Add(this.labelControl8);
-            this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.txtTamano);
-            this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.txtRegistro);
-            this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.txtFormula);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.txtDescrpcionTecnica);
-            this.Controls.Add(this.txtDescripcionFacturacion);
-            this.Controls.Add(this.toggleSwitchEspecie);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.labelControl15);
-            this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.cmdGuardar);
-            this.Name = "frmCRUDProductoTerminado";
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchEspecie.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescripcionFacturacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescrpcionTecnica.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFormula.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRegistro.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTamano.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spindDiasVenc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinDiasMinimos.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodSAP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCategoria.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdFamilia.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdtipoSaco.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPesoSaco.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdOrigen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.origenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aCSDataSet21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bolsasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.portafolioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familiaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-        }
+        
 
         private void GenerarCodigo()
         {
             ProductoTerminado prod = new ProductoTerminado(dp.ConnectionStringCostos);
             try
             {
-                if (toggleSwitchEspecie.IsOn)//Camaraon
-                {
-                    //Generar el codigo para Camaron
-                    txtCodigo.Text = prod.GenerarSiguienteCodigo(4);
-                }
-                else
+                if (toggleSwitchEspecie.IsOn)//Tilapia
                 {
                     //Generar el codigo para Tilapia
                     txtCodigo.Text = prod.GenerarSiguienteCodigo(3);
+                    lblCodUnite.Visible = false;
+                    txtCodUnite.Visible = false;
+                }
+                else
+                {
+                    //Generar el codigo para Camaron
+                    txtCodigo.Text = prod.GenerarSiguienteCodigo(4);
+                    lblCodUnite.Visible = true;
+                    txtCodUnite.Visible = true;
                 }
             }
             catch (Exception ec)
             {
                 MessageBox.Show("Error", ec.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txtCodigo.Text))
+            {
+                CajaDialogo.Error("El Campo Codigo AQF no puede estar Vacio!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtDescrpcionTecnica.Text))
+            {
+                CajaDialogo.Error("Este campo no puede estar vacio! (Descripcion Tecnica)");
+                txtDescrpcionTecnica.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtDescripcionFacturacion.Text))
+            {
+                CajaDialogo.Error("Este campo no puede estar vacio! (Descripcion Facturacion)");
+                txtDescripcionFacturacion.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtFormula.Text))
+            {
+                CajaDialogo.Error("Este campo no puede estar vacio! (Formula)");
+                txtFormula.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(grdCategoria.Text))
+            {
+                CajaDialogo.Error("Este campo no puede estar vacio! (Categoria)");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(grdFamilia.Text))
+            {
+                CajaDialogo.Error("Este campo no puede estar vacio! (Familia)");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(grdtipoSaco.Text))
+            {
+                CajaDialogo.Error("Este campo no puede estar vacio! (Tipo de Saco)");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(grdPesoSaco.Text))
+            {
+                CajaDialogo.Error("Este campo no puede estar vacio! (Peso Saco)");
+                return;
+            }
+
+            if (Convert.ToInt32(spindDiasVenc.EditValue) <= 0)
+            {
+                CajaDialogo.Error("Los Dias de Vencimiento no pueden ser Menor que (0)!");
+                return;
+            }
+
+            if (Convert.ToInt32(spinDiasMinimos.EditValue) <= 0)
+            {
+                CajaDialogo.Error("Los Dias Minimos de Despacho no pueden ser Menor que (0)!");
+                return;
+            }
+
+            if (Convert.ToInt32(spindDiasVenc.EditValue) < Convert.ToInt32(spinDiasMinimos.EditValue))
+            {
+                CajaDialogo.Error("Los Dias de Vencimiento del Producto no puede ser menor que los Dias Minimos de Despacho!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(grdOrigen.Text))
+            {
+                CajaDialogo.Error("Este campo no puede estar vacio! (Origen)");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtTamano.Text) || string.IsNullOrEmpty(txtDiametroParticula.Text))
+            {
+                CajaDialogo.Error("Este campo no puede estar vacio! (Tamaño || Diametro Particula)");
+                return;
+            }
+
+            switch (TipoOP)
+            {
+                case TipoOperacion.Insert:
+
+
+                    if (toggleSwitchEspecie.IsOn)
+                    {
+                        Especie = 1;//Tilapia
+                    }
+                    else
+                    {
+                        Especie = 2; //Camaron
+                        if (string.IsNullOrEmpty(txtCodUnite.Text))
+                        {
+                            CajaDialogo.Error("Este campo no puede estar vacio! (Codigo Unite)");
+                            return;
+                        }
+                    }
+
+                    DialogResult r = CajaDialogo.Pregunta("Se creara un nuevo Producto Terminado, esta seguro de continuar?");
+                    if (r != System.Windows.Forms.DialogResult.Yes)
+                        return;
+
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringCostos);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("[sp_insert_pt_productosV2]", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Codigo",txtCodigo.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Descripcion",txtDescripcionFacturacion.Text);
+                        cmd.Parameters.AddWithValue("@Proteina",spinProteina.EditValue);
+                        cmd.Parameters.AddWithValue("@Grasa",spinGrasas.EditValue);
+                        cmd.Parameters.AddWithValue("@Especie", Especie);
+                        cmd.Parameters.AddWithValue("@indiceFam", grdFamilia.EditValue); 
+                        cmd.Parameters.AddWithValue("@indiceTam", grdPesoSaco.EditValue);
+                        cmd.Parameters.AddWithValue("@formula_code",txtFormula.Text.Trim());
+                        cmd.Parameters.AddWithValue("@indiceCat", grdCategoria.EditValue);
+                        cmd.Parameters.AddWithValue("@indiceBag", grdtipoSaco.EditValue);
+                        cmd.Parameters.AddWithValue("@size", txtTamano.Text);
+                        cmd.Parameters.AddWithValue("@Orgi",grdOrigen.EditValue);
+                        cmd.Parameters.AddWithValue("@regist", txtRegistro.Text);
+                        cmd.Parameters.AddWithValue("@diam",txtDiametroParticula.Text);
+                        cmd.Parameters.AddWithValue("@dias_vencimiento", Convert.ToInt32(spindDiasVenc.EditValue));
+                        cmd.Parameters.AddWithValue("@dias_venc_despachos", Convert.ToInt32(spinDiasMinimos.EditValue));
+                        cmd.Parameters.AddWithValue("@cod_unite", txtCodUnite.Text);
+                        
+                        int IdPT_ACS = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (IdPT_ACS > 0) //si es Mayor que 0 se guardo en AQFSVR10.ACS vamos a Guardarlo a AQFSVR008.APMS
+                        {
+                            int Tipo;
+                            if (toggleSwitchEspecie.IsOn) //Tilapia
+                                Tipo = 3;
+                            else //Camaron
+                                Tipo = 4;
+
+                            SqlCommand cmdACS = new SqlCommand("sp_producto_update_codigo_aqf_correlativo", conn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@tipo", conn);
+                            cmd.ExecuteNonQuery();
+                            conn.Close();
+
+                            //Crear el registro en APMS
+                            string shortName = "";
+                            if (txtDescrpcionTecnica.Text.Length > 50)
+                            {
+                                shortName = txtDescrpcionTecnica.Text.Substring(0, 50);
+                            }
+                            else
+                            {
+                                shortName = txtDescrpcionTecnica.Text;
+                            }
+
+                            string LongName = "";
+                            if (txtDescrpcionTecnica.Text.Length > 70)
+                            {
+                                LongName = txtDescrpcionTecnica.Text.Substring(0, 70);
+                            }
+                            else
+                            {
+                                LongName = txtDescrpcionTecnica.Text;
+                            }
+
+                            SqlConnection connAPMS = new SqlConnection(dp.ConnectionStringAPMS);
+                            connAPMS.Open();
+                            SqlCommand cmdAPMS = new SqlCommand("sp_insert_finished_products", connAPMS);
+                            cmdAPMS.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@acs_id",IdPT_ACS);
+                            cmd.Parameters.AddWithValue("@code", txtFormula.Text.Trim());
+                            cmd.Parameters.AddWithValue("@short_name", txtDescrpcionTecnica.Text);
+                            cmd.Parameters.AddWithValue("@long_name", txtDescrpcionTecnica.Text);
+                            cmd.Parameters.AddWithValue("@specie", Especie);
+                            cmd.Parameters.AddWithValue("@product_group", 4);
+                            cmd.Parameters.AddWithValue("@product_subgroup", 10);
+                            cmd.Parameters.AddWithValue("@bag_size", PesoSaco);
+                            cmd.Parameters.AddWithValue("@id_bag", grdPesoSaco.EditValue);
+                            cmd.Parameters.AddWithValue("@id_family", grdFamilia.EditValue);
+                            cmd.Parameters.AddWithValue("@comercial_name", txtDescripcionFacturacion.Text);
+
+                            bool Guardado = Convert.ToBoolean(cmdAPMS.ExecuteScalar());
+
+                            if (Guardado)
+                            {
+                                #region CargaPTSAP
+
+                                #endregion
+
+                                CajaDialogo.Information("Producto Terminado Registrado!\nFavor Subirlo a SAP para Completar el Registro!");
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                            else
+                            {
+                                CajaDialogo.Error("El Registro no fue Creado en APMS.\nContacte al Dpto de Sistemas!");
+                            }
+                        }
+                        else
+                        {
+                            CajaDialogo.Error("El registro no fue guardado en ALOSY correctamente.\nLamentablemente para guardar el registro en APMS el Producto Terminado debe registrarse primero en ALOSY.\nContacte al Administrador del Sistema!");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+
+                    break;
+
+                case TipoOperacion.Update:
+
+
+
+                    string EstadoPT;
+                    if (!TsEstado.IsOn)
+                    {
+                        bool PermitirUpdate = false;
+                        //Si se esta enviando a Inactivo Vamos a validar que no este usando en Produccion Actualmente!
+                        //todavia no se a echo..
+
+                        try
+                        {
+
+                        }
+                        catch (Exception ex)
+                        {
+                            CajaDialogo.Error(ex.Message);
+                        }
+
+                        if (PermitirUpdate)
+                        {
+                            EstadoPT = "i";
+                        }
+                        else
+                        {
+                            CajaDialogo.Error("No se puede Desactivar este Producto.\nActualmente esta siendo usado!");
+                            return;
+                        }
+                        
+                    }
+                    else
+                    {
+                        EstadoPT = "a";
+                    }
+
+                    try
+                    {
+                        SqlConnection conn = new SqlConnection(dp.ConnectionStringCostos);
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_update_pt_portafolio", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdProducto", IdProducto);
+                        cmd.Parameters.AddWithValue("@Descripcion", txtDescripcionFacturacion.Text);
+                        cmd.Parameters.AddWithValue("@Proteina", spinProteina.EditValue);
+                        cmd.Parameters.AddWithValue("@Grasa", spinGrasas.EditValue);
+                        cmd.Parameters.AddWithValue("@PesoSaco", PesoSaco);
+                        cmd.Parameters.AddWithValue("@Estado", EstadoPT);
+                        cmd.Parameters.AddWithValue("@family", grdFamilia.EditValue);
+                        cmd.Parameters.AddWithValue("@id_bag", grdPesoSaco.EditValue);
+                        cmd.Parameters.AddWithValue("@formula_code", dp.ValidateNumberInt32(txtFormula.Text));
+                        cmd.Parameters.AddWithValue("@id_category", grdCategoria.EditValue);
+                        cmd.Parameters.AddWithValue("@id_proceso", gridLookProce.EditValue);
+                        cmd.Parameters.AddWithValue("@id_portafolio", grdtipoSaco.EditValue);
+                        cmd.Parameters.AddWithValue("@tamanio", txtTamano.Text);
+                        cmd.Parameters.AddWithValue("@id_origen", grdOrigen.EditValue);
+                        cmd.Parameters.AddWithValue("@Registro",txtRegistro.Text);
+                        cmd.Parameters.AddWithValue("@diametro", txtDiametroParticula.Text);
+                        cmd.Parameters.AddWithValue("@Descripcion_Tecnica", txtDescrpcionTecnica.Text);
+                        if (Especie == 1) //Tilapia
+                            cmd.Parameters.AddWithValue("@codigo_unite", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@codigo_unite", txtCodUnite.Text);
+                        cmd.Parameters.AddWithValue("@dias_vencimiento", spindDiasVenc.EditValue);
+                        cmd.Parameters.AddWithValue("@dias_venc_despachos", spinDiasMinimos.EditValue);
+                        cmd.ExecuteNonQuery();
+
+
+                        SqlConnection connAPMS = new SqlConnection(dp.ConnectionStringAPMS);
+                        connAPMS.Open();
+                        SqlCommand cmdAPMS = new SqlCommand("sp_update_pt_portafolio", connAPMS);
+                        cmdAPMS.CommandType = CommandType.StoredProcedure;
+                        cmdAPMS.Parameters.AddWithValue("@short_name", txtDescrpcionTecnica.Text);
+                        cmdAPMS.Parameters.AddWithValue("@long_name", txtDescrpcionTecnica.Text);
+                        //cmdAPMS.Parameters.AddWithValue("@product_group",);
+                        //cmdAPMS.Parameters.AddWithValue("@product_subgroup",);
+                        cmdAPMS.Parameters.AddWithValue("@bag_size", PesoSaco);
+                        if (EstadoPT == "a")
+                            cmdAPMS.Parameters.AddWithValue("@status", 40);//por alguna razon es Activo.
+                        else
+                            cmdAPMS.Parameters.AddWithValue("@status", 99);//No se por poner un numero..
+
+                        cmdAPMS.Parameters.AddWithValue("@id_bag", grdPesoSaco.EditValue);
+                        cmdAPMS.Parameters.AddWithValue("@id_family",grdFamilia.EditValue);
+                        //cmdAPMS.Parameters.AddWithValue("@code_sap", );
+                        cmdAPMS.Parameters.AddWithValue("@comercial_name",txtDescripcionFacturacion.Text);
+                        cmdAPMS.Parameters.AddWithValue("@IdProducto", IdProducto);
+                        cmdAPMS.ExecuteNonQuery();
+                        connAPMS.Close();
+
+                        CajaDialogo.Information("Producto Terminado Actualizado!");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+
+
+                    break;
+
+                case TipoOperacion.SolicitudInsert:
+                    //Esto lo haremos luego, quizas en Tickets vamos a ver.
+
+                    break;
+
+                default:
+
+                    CajaDialogo.Error("No se logro definir la Operacion(Insert-Update)\nContact al Departamento de IT");
+
+                    break;
+            }
+
+        }
+
+        private void grdPesoSaco_EditValueChanged(object sender, EventArgs e)
+        {
+            if (gridView2.RowCount <= 0)
+            {
+                this.PesoSaco = 0;
+            }
+            else
+            {
+                this.PesoSaco = Convert.ToDecimal(gridView2.GetFocusedRowCellValue(gridView2.Columns[2]).ToString());
             }
         }
 
@@ -862,6 +622,57 @@ namespace LOSA.MigracionACS.PT
         private void toggleSwitchEspecie_Toggled(object sender, EventArgs e)
         {
             GenerarCodigo();
+            LoadNewFam();
+        }
+
+        private void LoadNewFam()
+        {
+            String qery;
+
+            if (toggleSwitchEspecie.IsOn)//Tilapia
+            {
+                SqlConnection cox = new SqlConnection(dp.ConnectionStringCostos);
+                cox.Open();
+                qery = "SELECT " +
+                    "[id]" +
+                    ",[short_name] as descripcion" +
+                    ",[enable] " +
+                    "FROM [dbo].[PT_Productos_Familias] " +
+                    " where specie = 1";
+                SqlDataAdapter da = new SqlDataAdapter(qery, cox);
+                aCSDataSet21.Familia.Clear();
+                da.Fill(aCSDataSet21.Familia);
+                string QueryOrigen = @"SELECT  [id]
+                                  ,[descripcion]
+                              FROM [dbo].[PT_Products_Origen]
+                            where especie = 1 and enable = 1";
+                SqlDataAdapter datOr = new SqlDataAdapter(QueryOrigen, cox);
+                aCSDataSet21.Origen.Clear();
+                datOr.Fill(aCSDataSet21.Origen);
+                cox.Close();
+
+            }
+            else //Camaron
+            {
+                SqlConnection cox = new SqlConnection(dp.ConnectionStringCostos);
+                qery = "SELECT " +
+                    "[id]," +
+                    "[short_name] as descripcion," +
+                    "[enable]" +
+                    " FROM [dbo].[PT_Productos_Familias]" +
+                    " where specie = 2 ";
+                SqlDataAdapter da = new SqlDataAdapter(qery, cox);
+                aCSDataSet21.Familia.Clear();
+                da.Fill(aCSDataSet21.Familia);
+                string QueryOrigen = @"SELECT  [id]
+                                  ,[descripcion]
+                              FROM [dbo].[PT_Products_Origen]
+                            where especie = 2 and enable = 1";
+                SqlDataAdapter datOr = new SqlDataAdapter(QueryOrigen, cox);
+                aCSDataSet21.Origen.Clear();
+                datOr.Fill(aCSDataSet21.Origen);
+                cox.Close();
+            }
         }
     }
 }
