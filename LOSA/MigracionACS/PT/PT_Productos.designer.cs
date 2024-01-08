@@ -377,7 +377,6 @@
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // dsProductos1
             // 
@@ -570,6 +569,7 @@
             this.Editar.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.Editar.Visible = true;
             this.Editar.VisibleIndex = 13;
+            this.Editar.Width = 68;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -607,7 +607,7 @@
             this.ColSAP.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.ColSAP.Visible = true;
             this.ColSAP.VisibleIndex = 14;
-            this.ColSAP.Width = 77;
+            this.ColSAP.Width = 71;
             // 
             // btnSAP
             // 
@@ -640,7 +640,7 @@
             this.colfechaSAP.OptionsColumn.ReadOnly = true;
             this.colfechaSAP.Visible = true;
             this.colfechaSAP.VisibleIndex = 12;
-            this.colfechaSAP.Width = 54;
+            this.colfechaSAP.Width = 67;
             // 
             // colSubidoSAP
             // 

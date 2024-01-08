@@ -229,11 +229,6 @@ namespace LOSA.MigracionACS.PT
 
         }
 
-        private void gridControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
      
         void refresh_grid()
         {
@@ -440,9 +435,10 @@ namespace LOSA.MigracionACS.PT
         {
             if (btn_New.Visibility != DevExpress.XtraBars.BarItemVisibility.Never)
             {
-                int idformu;
+                //int idformu;
                 var gridview = (GridView)gridControl1.FocusedView;
                 var row = (DSProductos.ProductosRow)gridview.GetFocusedDataRow();
+
                 if (user != "")
                 {
                     if (ppass != "")
@@ -454,207 +450,237 @@ namespace LOSA.MigracionACS.PT
                         }
                         else
                         {
-                            #region VALIDACION DE ID ADICIONAL DENTRO DE SAP, REMPLAZADA POR VALIDACION CONFIGURADA EN PT_PRODUCTOS DE ACS
-                            #endregion
-                            if (row.codeSAP == "NoConfig")
-                            {
-                                MessageBox.Show("No se ha configurado el codigo SAP en ACS para este codigo de producto terminado", "ERROR: 00002", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                            else
-                            {
-                                #region Validar si existe la lista de Materiales o hay que hacer un UPDATE
-                                try
-                                {
-                                    try
-                                    {
-
-                                        string Query = @"sp_get_format_id_and_version_local_fml"; //Obtiene la ultima formula aprobada con este codigo 
-                                                                                                  // Y que este disponible a la fecha
-                                        SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
-                                        cn.Open();
-                                        SqlCommand cmd = new SqlCommand(Query, cn);
-                                        cmd.CommandType = CommandType.StoredProcedure;
-                                        cmd.Parameters.AddWithValue("@codigo", row.formula_code);
-                                        SqlDataReader dr = cmd.ExecuteReader();
-                                        int id_formad = 0;
-                                        int version = 0;
-                                        if (dr.Read())
-                                        {
-                                            id_formad = dr.IsDBNull(0) ? 0 : dr.GetInt32(0);
-                                            version = dr.IsDBNull(1) ? 0 : dr.GetInt32(1);
-                                            id_Formula = dr.IsDBNull(2) ? 0 : dr.GetInt32(2);
-                                            FMOP fml = new FMOP();
-                                            DataTable dt = fml.formula_get_structure_SAP(id_formad);
-                                            foreach (DataRow Valid in dt.Rows)
-                                            {
-                                                if (Valid["SAPcode"].ToString() == "--")
-                                                {
-                                                    MessageBox.Show("La materia prima:" + Valid["Materia Prima"].ToString() + " No tiene configurado el codigo de SAP");
-                                                    return;
-                                                }
-                                            }
-                                            SAPbobsCOM.Company Ob = dp.Company(user, ppass);
-                                            SAPbobsCOM.ProductTrees oProduct = (SAPbobsCOM.ProductTrees)Ob.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oProductTrees);
-                                            if (oProduct.GetByKey(row.codeSAP)) //Update
-                                            {
-
-                                                oProduct.UserFields.Fields.Item("U_Formula").Value = Convert.ToString(row.formula_code);
-                                                oProduct.UserFields.Fields.Item("U_Version").Value = Convert.ToString(version);
-                                                oProduct.Items.Delete();
-                                                int i = 0;
-                                                for (i = 0; i < oProduct.Items.Count; i++)
-                                                {
-                                                    oProduct.Items.SetCurrentLine(i);
-                                                    oProduct.Items.Delete();
-                                                }
-                                                i = 0;
-                                                foreach (DataRow Rows in dt.Rows)
-                                                {
-                                                    try
-                                                    {
-                                                        oProduct.Items.SetCurrentLine(i);
-                                                        oProduct.Items.ItemCode = Rows["SAPcode"].ToString();
-                                                        oProduct.Items.Warehouse = Rows["AlmacenPredeterminado"].ToString();
-                                                        oProduct.Items.ParentItem = row.codeSAP;
-                                                        oProduct.Items.Quantity = Convert.ToDouble(Rows["Kg x Batch"].ToString());
-                                                        oProduct.Items.Add();
-
-
-                                                        i++;
-                                                    }
-                                                    catch (Exception)
-                                                    {
-
-
-                                                    }
-                                                }
-                                                if (oProduct.Update() != 0)
-                                                {
-
-                                                    MessageBox.Show(Ob.GetLastErrorDescription());
-                                                    return;
-                                                }
-                                                else
-                                                {
-
-                                                    try
-                                                    {
-                                                        string query = @"sp_insert_log_fml_to_sap";
-                                                        cn = new SqlConnection(dp.ConnectionStringCostos);
-                                                        cn.Open();
-                                                        cmd = new SqlCommand(query, cn);
-                                                        cmd.CommandType = CommandType.StoredProcedure;
-                                                        cmd.Parameters.AddWithValue("@id_formula", id_Formula);
-                                                        cmd.Parameters.AddWithValue("@id_pt", row.id);
-                                                        cmd.ExecuteNonQuery();
-                                                        row.SubidoSAP = true;
-                                                        row.fechaSAP = DateTime.Now;
-                                                        row.AcceptChanges();
-
-                                                    }
-                                                    catch (Exception ex)
-                                                    {
-                                                        Console.WriteLine(ex.Message);
-                                                        MessageBox.Show("Error al momento de guardar si la formula fua actualizada, pero el proceso continuo normalmente.");
-                                                    }
-                                                    MessageBox.Show("Lista de materiales Actualizada", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                    return;
-                                                }
-
-                                            }
-                                            else//Createe
-                                            {
-                                                oProduct = (SAPbobsCOM.ProductTrees)Ob.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oProductTrees);
-                                                oProduct.TreeCode = row.codeSAP;
-                                                oProduct.Quantity = 1.00;
-                                                oProduct.UserFields.Fields.Item("U_Formula").Value = Convert.ToString(row.formula_code);
-                                                oProduct.UserFields.Fields.Item("U_Version").Value = Convert.ToString(version);
-                                                oProduct.UserFields.Fields.Item("U_CantidadKg").Value = 2500.00;
-                                                oProduct.TreeType = SAPbobsCOM.BoItemTreeTypes.iProductionTree;
-                                                oProduct.Warehouse = "BG007";
-                                                oProduct.Items.ParentItem = row.codeSAP;
-                                                int i = 0;
-                                                foreach (DataRow A in dt.Rows)
-                                                {
-
-                                                    oProduct.Items.SetCurrentLine(i);
-                                                    oProduct.Items.ParentItem = row.codeSAP;
-                                                    oProduct.Items.ItemCode = A["SAPcode"].ToString();
-                                                    oProduct.Items.Quantity = Convert.ToDouble(A["Kg x Batch"].ToString());
-                                                    oProduct.Items.Add();
-                                                    i = i + 1;
-                                                }
-                                                if (oProduct.Add() != 0)
-                                                {
-
-                                                    MessageBox.Show(Ob.GetLastErrorDescription());
-                                                    return;
-                                                }
-                                                else
-                                                {
-                                                    try
-                                                    {
-                                                        string query = @"sp_insert_log_fml_to_sap";
-                                                        cn = new SqlConnection(dp.ConnectionStringCostos);
-                                                        cn.Open();
-                                                        cmd = new SqlCommand(query, cn);
-                                                        cmd.CommandType = CommandType.StoredProcedure;
-                                                        cmd.Parameters.AddWithValue("@id_formula", id_Formula);
-                                                        cmd.Parameters.AddWithValue("@id_pt", row.id);
-                                                        cmd.ExecuteNonQuery();
-                                                        row.SubidoSAP = true;
-                                                        row.fechaSAP = DateTime.Now;
-                                                        row.AcceptChanges();
-                                                    }
-                                                    catch (Exception ex)
-                                                    {
-
-                                                        MessageBox.Show("Error al momento de guardar si la formula fua actualizada, pero el proceso continuo normalmente.");
-                                                    }
-                                                    MessageBox.Show("Lista de materiales creada", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                    return;
-                                                }
-                                            }
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("No se ha encontrado una formula aprobada para realizar esta actualizacion.");
-                                            return;
-                                        }
-                                    }
-                                    catch (Exception ex)
-                                    {
-
-                                        MessageBox.Show("Algo anda mal...  " + ex.Message);
-                                    }
-                                    #endregion
-
-
-                                }
-                                catch (Exception EX)
-                                {
-                                    MessageBox.Show(EX.Message);
-                                    return;
-                                }
-
-
-                            }
+                            
                         }
                     }
                     else
                     {
                         MessageBox.Show("Debe autentificarse con las credenciales de SAP para poder cargar las Listas de Materiales", "ERROR: 00003", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
-
                     }
-
                 }
                 else
                 {
                     MessageBox.Show("Debe autentificarse con las credenciales de SAP para poder cargar las Listas de Materiales", "ERROR: 00003", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+                #region Codigo Viejo
+
+                //                if (user != "")
+                //                {
+                //                    if (ppass != "")
+                //                    {
+                //                        if (row.formula_code == 0 || row.formula_code == 0)
+                //                        {
+                //                            MessageBox.Show("Antes de actualizar la lista de materiales de SAP. actualizar la formula de Producto terminado a la par del Boton de exportar.", "ERROR: 00001", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //                            return;
+                //                        }
+                //                        else
+                //                        {
+                //                            #region VALIDACION DE ID ADICIONAL DENTRO DE SAP, REMPLAZADA POR VALIDACION CONFIGURADA EN PT_PRODUCTOS DE ACS
+                //                            #endregion
+                //                            if (row.codeSAP == "NoConfig")
+                //                            {
+                //                                MessageBox.Show("No se ha configurado el codigo SAP en ACS para este codigo de producto terminado", "ERROR: 00002", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //                                return;
+                //                            }
+                //                            else
+                //                            {
+                //                                #region Validar si existe la lista de Materiales o hay que hacer un UPDATE
+                //                                try
+                //                                {
+                //                                    try
+                //                                    {
+
+                //                                        string Query = @"sp_get_format_id_and_version_local_fml"; //Obtiene la ultima formula aprobada con este codigo 
+                //                                        Y que este disponible a la fecha
+                //SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+                //                                        cn.Open();
+                //                                        SqlCommand cmd = new SqlCommand(Query, cn);
+                //                                        cmd.CommandType = CommandType.StoredProcedure;
+                //                                        cmd.Parameters.AddWithValue("@codigo", row.formula_code);
+                //                                        SqlDataReader dr = cmd.ExecuteReader();
+                //                                        int id_formad = 0;
+                //                                        int version = 0;
+                //                                        if (dr.Read())
+                //                                        {
+                //                                            id_formad = dr.IsDBNull(0) ? 0 : dr.GetInt32(0);
+                //                                            version = dr.IsDBNull(1) ? 0 : dr.GetInt32(1);
+                //                                            id_Formula = dr.IsDBNull(2) ? 0 : dr.GetInt32(2);
+                //                                            FMOP fml = new FMOP();
+                //                                            DataTable dt = fml.formula_get_structure_SAP(id_formad);
+                //                                            foreach (DataRow Valid in dt.Rows)
+                //                                            {
+                //                                                if (Valid["SAPcode"].ToString() == "--")
+                //                                                {
+                //                                                    MessageBox.Show("La materia prima:" + Valid["Materia Prima"].ToString() + " No tiene configurado el codigo de SAP");
+                //                                                    return;
+                //                                                }
+                //                                            }
+                //                                            SAPbobsCOM.Company Ob = dp.Company(user, ppass);
+                //                                            SAPbobsCOM.ProductTrees oProduct = (SAPbobsCOM.ProductTrees)Ob.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oProductTrees);
+                //                                            if (oProduct.GetByKey(row.codeSAP)) //Update
+                //                                            {
+
+                //                                                oProduct.UserFields.Fields.Item("U_Formula").Value = Convert.ToString(row.formula_code);
+                //                                                oProduct.UserFields.Fields.Item("U_Version").Value = Convert.ToString(version);
+                //                                                oProduct.Items.Delete();
+                //                                                int i = 0;
+                //                                                for (i = 0; i < oProduct.Items.Count; i++)
+                //                                                {
+                //                                                    oProduct.Items.SetCurrentLine(i);
+                //                                                    oProduct.Items.Delete();
+                //                                                }
+                //                                                i = 0;
+                //                                                foreach (DataRow Rows in dt.Rows)
+                //                                                {
+                //                                                    try
+                //                                                    {
+                //                                                        oProduct.Items.SetCurrentLine(i);
+                //                                                        oProduct.Items.ItemCode = Rows["SAPcode"].ToString();
+                //                                                        oProduct.Items.Warehouse = Rows["AlmacenPredeterminado"].ToString();
+                //                                                        oProduct.Items.ParentItem = row.codeSAP;
+                //                                                        oProduct.Items.Quantity = Convert.ToDouble(Rows["Kg x Batch"].ToString());
+                //                                                        oProduct.Items.Add();
+
+
+                //                                                        i++;
+                //                                                    }
+                //                                                    catch (Exception)
+                //                                                    {
+
+
+                //                                                    }
+                //                                                }
+                //                                                if (oProduct.Update() != 0)
+                //                                                {
+
+                //                                                    MessageBox.Show(Ob.GetLastErrorDescription());
+                //                                                    return;
+                //                                                }
+                //                                                else
+                //                                                {
+
+                //                                                    try
+                //                                                    {
+                //                                                        string query = @"sp_insert_log_fml_to_sap";
+                //                                                        cn = new SqlConnection(dp.ConnectionStringCostos);
+                //                                                        cn.Open();
+                //                                                        cmd = new SqlCommand(query, cn);
+                //                                                        cmd.CommandType = CommandType.StoredProcedure;
+                //                                                        cmd.Parameters.AddWithValue("@id_formula", id_Formula);
+                //                                                        cmd.Parameters.AddWithValue("@id_pt", row.id);
+                //                                                        cmd.ExecuteNonQuery();
+                //                                                        row.SubidoSAP = true;
+                //                                                        row.fechaSAP = DateTime.Now;
+                //                                                        row.AcceptChanges();
+
+                //                                                    }
+                //                                                    catch (Exception ex)
+                //                                                    {
+                //                                                        Console.WriteLine(ex.Message);
+                //                                                        MessageBox.Show("Error al momento de guardar si la formula fua actualizada, pero el proceso continuo normalmente.");
+                //                                                    }
+                //                                                    MessageBox.Show("Lista de materiales Actualizada", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //                                                    return;
+                //                                                }
+
+                //                                            }
+                //                                            else//Createe
+                //                                            {
+                //                                                oProduct = (SAPbobsCOM.ProductTrees)Ob.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oProductTrees);
+                //                                                oProduct.TreeCode = row.codeSAP;
+                //                                                oProduct.Quantity = 1.00;
+                //                                                oProduct.UserFields.Fields.Item("U_Formula").Value = Convert.ToString(row.formula_code);
+                //                                                oProduct.UserFields.Fields.Item("U_Version").Value = Convert.ToString(version);
+                //                                                oProduct.UserFields.Fields.Item("U_CantidadKg").Value = 2500.00;
+                //                                                oProduct.TreeType = SAPbobsCOM.BoItemTreeTypes.iProductionTree;
+                //                                                oProduct.Warehouse = "BG007";
+                //                                                oProduct.Items.ParentItem = row.codeSAP;
+                //                                                int i = 0;
+                //                                                foreach (DataRow A in dt.Rows)
+                //                                                {
+
+                //                                                    oProduct.Items.SetCurrentLine(i);
+                //                                                    oProduct.Items.ParentItem = row.codeSAP;
+                //                                                    oProduct.Items.ItemCode = A["SAPcode"].ToString();
+                //                                                    oProduct.Items.Quantity = Convert.ToDouble(A["Kg x Batch"].ToString());
+                //                                                    oProduct.Items.Add();
+                //                                                    i = i + 1;
+                //                                                }
+                //                                                if (oProduct.Add() != 0)
+                //                                                {
+
+                //                                                    MessageBox.Show(Ob.GetLastErrorDescription());
+                //                                                    return;
+                //                                                }
+                //                                                else
+                //                                                {
+                //                                                    try
+                //                                                    {
+                //                                                        string query = @"sp_insert_log_fml_to_sap";
+                //                                                        cn = new SqlConnection(dp.ConnectionStringCostos);
+                //                                                        cn.Open();
+                //                                                        cmd = new SqlCommand(query, cn);
+                //                                                        cmd.CommandType = CommandType.StoredProcedure;
+                //                                                        cmd.Parameters.AddWithValue("@id_formula", id_Formula);
+                //                                                        cmd.Parameters.AddWithValue("@id_pt", row.id);
+                //                                                        cmd.ExecuteNonQuery();
+                //                                                        row.SubidoSAP = true;
+                //                                                        row.fechaSAP = DateTime.Now;
+                //                                                        row.AcceptChanges();
+                //                                                    }
+                //                                                    catch (Exception ex)
+                //                                                    {
+
+                //                                                        MessageBox.Show("Error al momento de guardar si la formula fua actualizada, pero el proceso continuo normalmente.");
+                //                                                    }
+                //                                                    MessageBox.Show("Lista de materiales creada", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //                                                    return;
+                //                                                }
+                //                                            }
+                //                                        }
+                //                                        else
+                //                                        {
+                //                                            MessageBox.Show("No se ha encontrado una formula aprobada para realizar esta actualizacion.");
+                //                                            return;
+                //                                        }
+                //                                    }
+                //                                    catch (Exception ex)
+                //                                    {
+
+                //                                        MessageBox.Show("Algo anda mal...  " + ex.Message);
+                //                                    }
+                //                                    #endregion
+
+
+                //                                }
+                //                                catch (Exception EX)
+                //                                {
+                //                                    MessageBox.Show(EX.Message);
+                //                                    return;
+                //                                }
+
+
+                //                            }
+                //                        }
+                //                    }
+                //                    else
+                //                    {
+                //                        MessageBox.Show("Debe autentificarse con las credenciales de SAP para poder cargar las Listas de Materiales", "ERROR: 00003", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //                        return;
+
+                //                    }
+
+                //                }
+                //                else
+                //                {
+                //                    MessageBox.Show("Debe autentificarse con las credenciales de SAP para poder cargar las Listas de Materiales", "ERROR: 00003", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //                    return;
+                //                }
+
+                #endregion 
 
             }
 
