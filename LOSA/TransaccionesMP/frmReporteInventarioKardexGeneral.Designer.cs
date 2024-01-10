@@ -854,7 +854,7 @@ namespace LOSA.TransaccionesMP
             this.gridColumn6.Caption = "Lote";
             this.gridColumn6.FieldName = "lote";
             this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
             this.gridColumn6.Width = 98;
@@ -934,7 +934,7 @@ namespace LOSA.TransaccionesMP
             this.gridColumn15.Caption = "Codigo SAP";
             this.gridColumn15.FieldName = "code_sap";
             this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.OptionsColumn.AllowEdit = false;
+            this.gridColumn15.OptionsColumn.ReadOnly = true;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 0;
             this.gridColumn15.Width = 54;

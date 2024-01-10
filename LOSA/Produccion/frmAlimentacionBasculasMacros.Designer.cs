@@ -108,6 +108,7 @@ namespace LOSA.Produccion
             this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             // 
             // colTurno
@@ -119,6 +120,7 @@ namespace LOSA.Produccion
             this.colTurno.OptionsColumn.ReadOnly = true;
             this.colTurno.Visible = true;
             this.colTurno.VisibleIndex = 0;
+            this.colTurno.Width = 71;
             // 
             // colfecha_inicio
             // 
@@ -131,7 +133,7 @@ namespace LOSA.Produccion
             this.colfecha_inicio.OptionsColumn.ReadOnly = true;
             this.colfecha_inicio.Visible = true;
             this.colfecha_inicio.VisibleIndex = 1;
-            this.colfecha_inicio.Width = 132;
+            this.colfecha_inicio.Width = 125;
             // 
             // colDataColumn3
             // 
@@ -144,7 +146,7 @@ namespace LOSA.Produccion
             this.colDataColumn3.OptionsColumn.ReadOnly = true;
             this.colDataColumn3.Visible = true;
             this.colDataColumn3.VisibleIndex = 2;
-            this.colDataColumn3.Width = 120;
+            this.colDataColumn3.Width = 114;
             // 
             // colbascula
             // 
@@ -155,7 +157,7 @@ namespace LOSA.Produccion
             this.colbascula.OptionsColumn.ReadOnly = true;
             this.colbascula.Visible = true;
             this.colbascula.VisibleIndex = 3;
-            this.colbascula.Width = 57;
+            this.colbascula.Width = 54;
             // 
             // colnombre_comercial
             // 
@@ -165,7 +167,7 @@ namespace LOSA.Produccion
             this.colnombre_comercial.OptionsColumn.ReadOnly = true;
             this.colnombre_comercial.Visible = true;
             this.colnombre_comercial.VisibleIndex = 4;
-            this.colnombre_comercial.Width = 102;
+            this.colnombre_comercial.Width = 97;
             // 
             // collote_materia_prima
             // 
@@ -176,7 +178,7 @@ namespace LOSA.Produccion
             this.collote_materia_prima.OptionsColumn.ReadOnly = true;
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 5;
-            this.collote_materia_prima.Width = 134;
+            this.collote_materia_prima.Width = 127;
             // 
             // colLotePT
             // 
@@ -187,6 +189,7 @@ namespace LOSA.Produccion
             this.colLotePT.OptionsColumn.ReadOnly = true;
             this.colLotePT.Visible = true;
             this.colLotePT.VisibleIndex = 6;
+            this.colLotePT.Width = 71;
             // 
             // colpeso_inicial
             // 
@@ -199,7 +202,7 @@ namespace LOSA.Produccion
             this.colpeso_inicial.OptionsColumn.ReadOnly = true;
             this.colpeso_inicial.Visible = true;
             this.colpeso_inicial.VisibleIndex = 7;
-            this.colpeso_inicial.Width = 85;
+            this.colpeso_inicial.Width = 80;
             // 
             // colpeso_final
             // 
@@ -212,33 +215,37 @@ namespace LOSA.Produccion
             this.colpeso_final.OptionsColumn.ReadOnly = true;
             this.colpeso_final.Visible = true;
             this.colpeso_final.VisibleIndex = 8;
-            this.colpeso_final.Width = 78;
+            this.colpeso_final.Width = 84;
             // 
             // colpeso_producto_bascula
             // 
-            this.colpeso_producto_bascula.Caption = "P. Producto Bascula";
+            this.colpeso_producto_bascula.Caption = "Peso Neto Bascula";
             this.colpeso_producto_bascula.DisplayFormat.FormatString = "{0:##,###,##0.##} Kg";
             this.colpeso_producto_bascula.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso_producto_bascula.FieldName = "peso_producto_bascula";
             this.colpeso_producto_bascula.Name = "colpeso_producto_bascula";
             this.colpeso_producto_bascula.OptionsColumn.AllowEdit = false;
             this.colpeso_producto_bascula.OptionsColumn.ReadOnly = true;
+            this.colpeso_producto_bascula.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso_producto_bascula", "{0:##,###,##0.##} Kg")});
             this.colpeso_producto_bascula.Visible = true;
             this.colpeso_producto_bascula.VisibleIndex = 9;
-            this.colpeso_producto_bascula.Width = 134;
+            this.colpeso_producto_bascula.Width = 130;
             // 
             // colpeso_teorico
             // 
-            this.colpeso_teorico.Caption = "Peso Teorico";
+            this.colpeso_teorico.Caption = "Peso Neto Teorico";
             this.colpeso_teorico.DisplayFormat.FormatString = "{0:##,###,##0.##} Kg";
             this.colpeso_teorico.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colpeso_teorico.FieldName = "peso_teorico";
             this.colpeso_teorico.Name = "colpeso_teorico";
             this.colpeso_teorico.OptionsColumn.AllowEdit = false;
             this.colpeso_teorico.OptionsColumn.ReadOnly = true;
+            this.colpeso_teorico.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "peso_teorico", "{0:##,###,##0.##} Kg")});
             this.colpeso_teorico.Visible = true;
             this.colpeso_teorico.VisibleIndex = 10;
-            this.colpeso_teorico.Width = 136;
+            this.colpeso_teorico.Width = 130;
             // 
             // coldiferencia
             // 
@@ -249,9 +256,11 @@ namespace LOSA.Produccion
             this.coldiferencia.Name = "coldiferencia";
             this.coldiferencia.OptionsColumn.AllowEdit = false;
             this.coldiferencia.OptionsColumn.ReadOnly = true;
+            this.coldiferencia.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "diferencia", "{0:##,###,##0.##} Kg")});
             this.coldiferencia.Visible = true;
             this.coldiferencia.VisibleIndex = 11;
-            this.coldiferencia.Width = 70;
+            this.coldiferencia.Width = 72;
             // 
             // colcantsacos
             // 
@@ -264,7 +273,7 @@ namespace LOSA.Produccion
             this.colcantsacos.OptionsColumn.ReadOnly = true;
             this.colcantsacos.Visible = true;
             this.colcantsacos.VisibleIndex = 12;
-            this.colcantsacos.Width = 127;
+            this.colcantsacos.Width = 108;
             // 
             // colpresentacion
             // 
@@ -275,7 +284,7 @@ namespace LOSA.Produccion
             this.colpresentacion.OptionsColumn.ReadOnly = true;
             this.colpresentacion.Visible = true;
             this.colpresentacion.VisibleIndex = 13;
-            this.colpresentacion.Width = 105;
+            this.colpresentacion.Width = 89;
             // 
             // gridColumn1
             // 
@@ -287,7 +296,7 @@ namespace LOSA.Produccion
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 14;
-            this.gridColumn1.Width = 116;
+            this.gridColumn1.Width = 119;
             // 
             // cmdGuardar
             // 

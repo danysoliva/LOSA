@@ -33,8 +33,11 @@ namespace LOSA.Calidad.CertificadoCalidad
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             frmCrearCertificado frm = new frmCrearCertificado(UsuarioLog);
-
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_informacion_certificado();
+            }
+           
         }
 
         public void load_informacion_certificado()
