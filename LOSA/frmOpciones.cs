@@ -3999,7 +3999,6 @@ namespace LOSA
         private void btnCertidicadPTMain_Click(object sender, EventArgs e)
         {
             frmCertificadoCalidadPTMain frm = new frmCertificadoCalidadPTMain(UsuarioLogeado);
-
             frm.ShowDialog();
         }
 
