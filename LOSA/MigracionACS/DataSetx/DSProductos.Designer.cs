@@ -10531,6 +10531,8 @@ namespace LOSA.MigracionACS.DataSetx {
             
             private global::System.Data.DataColumn columnpeso_saco_promedio;
             
+            private global::System.Data.DataColumn columnitemcode;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public alimentacion_macrosDataTable() {
@@ -10686,6 +10688,14 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn itemcodeColumn {
+                get {
+                    return this.columnitemcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10721,7 +10731,23 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public alimentacion_macrosRow Addalimentacion_macrosRow(string Turno, System.DateTime fecha_inicio, int bascula, string nombre_comercial, string lote_materia_prima, int LotePT, decimal peso_inicial, decimal peso_final, decimal peso_producto_bascula, decimal peso_teorico, decimal diferencia, decimal cantsacos, string presentacion, System.DateTime fecha_final, decimal peso_saco_promedio) {
+            public alimentacion_macrosRow Addalimentacion_macrosRow(
+                        string Turno, 
+                        System.DateTime fecha_inicio, 
+                        int bascula, 
+                        string nombre_comercial, 
+                        string lote_materia_prima, 
+                        int LotePT, 
+                        decimal peso_inicial, 
+                        decimal peso_final, 
+                        decimal peso_producto_bascula, 
+                        decimal peso_teorico, 
+                        decimal diferencia, 
+                        decimal cantsacos, 
+                        string presentacion, 
+                        System.DateTime fecha_final, 
+                        decimal peso_saco_promedio, 
+                        string itemcode) {
                 alimentacion_macrosRow rowalimentacion_macrosRow = ((alimentacion_macrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Turno,
@@ -10738,7 +10764,8 @@ namespace LOSA.MigracionACS.DataSetx {
                         cantsacos,
                         presentacion,
                         fecha_final,
-                        peso_saco_promedio};
+                        peso_saco_promedio,
+                        itemcode};
                 rowalimentacion_macrosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowalimentacion_macrosRow);
                 return rowalimentacion_macrosRow;
@@ -10776,6 +10803,7 @@ namespace LOSA.MigracionACS.DataSetx {
                 this.columnpresentacion = base.Columns["presentacion"];
                 this.columnfecha_final = base.Columns["fecha_final"];
                 this.columnpeso_saco_promedio = base.Columns["peso_saco_promedio"];
+                this.columnitemcode = base.Columns["itemcode"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10811,6 +10839,8 @@ namespace LOSA.MigracionACS.DataSetx {
                 base.Columns.Add(this.columnfecha_final);
                 this.columnpeso_saco_promedio = new global::System.Data.DataColumn("peso_saco_promedio", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpeso_saco_promedio);
+                this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitemcode);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18656,6 +18686,22 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string itemcode {
+                get {
+                    try {
+                        return ((string)(this[this.tablealimentacion_macros.itemcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'itemcode\' de la tabla \'alimentacion_macros\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablealimentacion_macros.itemcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTurnoNull() {
                 return this.IsNull(this.tablealimentacion_macros.TurnoColumn);
             }
@@ -18832,6 +18878,18 @@ namespace LOSA.MigracionACS.DataSetx {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setpeso_saco_promedioNull() {
                 this[this.tablealimentacion_macros.peso_saco_promedioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsitemcodeNull() {
+                return this.IsNull(this.tablealimentacion_macros.itemcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetitemcodeNull() {
+                this[this.tablealimentacion_macros.itemcodeColumn] = global::System.Convert.DBNull;
             }
         }
         
