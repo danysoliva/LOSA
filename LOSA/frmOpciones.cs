@@ -4703,7 +4703,10 @@ namespace LOSA
 
         private void btnLotesCerrados_Click(object sender, EventArgs e)
         {
-
+            LotesFinalizados frm = new LotesFinalizados();
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }
