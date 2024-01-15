@@ -1028,11 +1028,6 @@ namespace LOSA
             frm.Show();
         }
 
-        private void btnAut_Tm_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabEntregaMP_Paint(object sender, PaintEventArgs e)
         {
 
@@ -4704,6 +4699,11 @@ namespace LOSA
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void btnLotesCerrados_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
