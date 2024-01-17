@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.Clases;
+using static DevExpress.Xpo.DB.DataStoreLongrunnersWatch;
 
 namespace LOSA.MigracionACS.PT
 {
@@ -53,6 +54,7 @@ namespace LOSA.MigracionACS.PT
                     gridLookProce.Visible = false;
                     lblEstado.Visible = false;
                     TsEstado.Visible = false;
+                    grdCodSAP.Visible = false;
 
                     GenerarCodigo();
                     LoadFamilia();
@@ -95,7 +97,28 @@ namespace LOSA.MigracionACS.PT
                     txtDiametroParticula.Text = pt.diametro;
                     spindDiasVenc.EditValue = pt.dias_vencimiento;
                     spinDiasMinimos.EditValue = pt.dias_venc_despacho;
-                    txtCodSAP.Text = pt.codesap;
+                    grdCodSAP.Text = pt.codesap;
+                    int TipoData;
+                    if (grdCodSAP.Text == "")
+                    {
+                        grdCodSAP.Enabled = true;
+
+                        if (string.IsNullOrEmpty(txtCodigo.Text))
+                            TipoData = 1; //ALL ITEMCODE
+                        else
+                            TipoData = 2;//FOR CODIGO AQF
+
+                        CargarCodigosSAP(TipoData);
+                    }
+                    else 
+                    {
+                        grdCodSAP.Enabled = false;
+                        TipoData = 2;
+                        CargarCodigosSAP(TipoData);
+                        grdCodSAP.EditValue = txtCodigo.EditValue;
+                    }
+
+
                     txtRegistro.Text = pt.registro;
                     grdOrigen.EditValue = pt.idOr;
                     spinProteina.EditValue = pt.proteinas;
@@ -130,6 +153,39 @@ namespace LOSA.MigracionACS.PT
                     break;
             }
 
+        }
+
+        private void CargarCodigosSAP(int tipoData)
+        {
+            try
+            {
+                string query = @"sp_get_obtener_codigos_sap";
+                DataOperations dpSAP = new DataOperations();
+                SqlConnection cn = new SqlConnection(dpSAP.ConnectionStringCostos);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo_aqf", txtCodigo.Text.Trim());
+                cmd.Parameters.AddWithValue("@tipo_data", tipoData);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                aCSDataSet21.CodigosSAP.Clear();
+                da.Fill(aCSDataSet21.CodigosSAP);
+                cn.Close();
+                //grdCodSAP.Text = "PTXXXX";
+                //foreach (DataRow row in aCSDataSet21.CodigosSAP)
+                //{
+                //    if (row["ODOO"].ToString() == codigo)
+                //    {
+                //        grdSAP.EditValue = codigo;
+                //        return;
+                //    }
+
+                //}
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error("No se pudo Realizar la Conexion con el Servidor de SAP!\nNotificar al Departamento de IT", ex);
+            }
         }
 
         private void LlenadoProce()
@@ -519,6 +575,12 @@ namespace LOSA.MigracionACS.PT
                     else
                     {
                         EstadoPT = "a";
+                    }
+
+                    if (grdCodSAP.Text == "PTXXXX")
+                    {
+                        CajaDialogo.Error("Debe seleccionar un Codigo de SAP, Valido!");
+                        return;
                     }
 
                     try
