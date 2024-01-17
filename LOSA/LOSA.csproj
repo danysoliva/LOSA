@@ -2112,6 +2112,9 @@
     <Compile Include="Micro\frmOpcionesMicro.Designer.cs">
       <DependentUpon>frmOpcionesMicro.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\ACSDataSet2.cs">
+      <DependentUpon>ACSDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\ACSDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -41,24 +41,30 @@ namespace LOSA.MigracionACS.PT
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.grdCategoria = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aCSDataSet21 = new LOSA.MigracionACS.ACSDataSet2();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdFamilia = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.familiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdtipoSaco = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.portafolioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpeso_saco = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdPesoSaco = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bolsasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTamaño = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFactor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grdOrigen = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.origenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtDiametroParticula = new DevExpress.XtraEditors.TextEdit();
@@ -73,17 +79,9 @@ namespace LOSA.MigracionACS.PT
             this.colid4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescription3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lblProceso = new DevExpress.XtraEditors.LabelControl();
-            this.grdCodSAP = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.origenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aCSDataSet21 = new LOSA.MigracionACS.ACSDataSet2();
-            this.bolsasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.portafolioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.familiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codigosSAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colCodeAQF = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colItemCodeSAP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdCodSAP = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitchEspecie.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcionFacturacion.Properties)).BeginInit();
@@ -96,14 +94,20 @@ namespace LOSA.MigracionACS.PT
             ((System.ComponentModel.ISupportInitialize)(this.spinDiasMinimos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinGrasas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCategoria.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCSDataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdFamilia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familiaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdtipoSaco.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portafolioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPesoSaco.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bolsasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdOrigen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.origenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiametroParticula.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodUnite.Properties)).BeginInit();
@@ -112,15 +116,9 @@ namespace LOSA.MigracionACS.PT
             ((System.ComponentModel.ISupportInitialize)(this.procesoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSProductos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCodSAP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.origenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aCSDataSet21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bolsasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.portafolioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familiaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codigosSAPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCodSAP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -511,6 +509,16 @@ namespace LOSA.MigracionACS.PT
             this.grdCategoria.Size = new System.Drawing.Size(194, 28);
             this.grdCategoria.TabIndex = 119;
             // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "Categoria";
+            this.categoriaBindingSource.DataSource = this.aCSDataSet21;
+            // 
+            // aCSDataSet21
+            // 
+            this.aCSDataSet21.DataSetName = "ACSDataSet2";
+            this.aCSDataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -550,6 +558,11 @@ namespace LOSA.MigracionACS.PT
             this.grdFamilia.Size = new System.Drawing.Size(194, 28);
             this.grdFamilia.TabIndex = 120;
             // 
+            // familiaBindingSource
+            // 
+            this.familiaBindingSource.DataMember = "Familia";
+            this.familiaBindingSource.DataSource = this.aCSDataSet21;
+            // 
             // gridLookUpEdit2View
             // 
             this.gridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -588,6 +601,11 @@ namespace LOSA.MigracionACS.PT
             this.grdtipoSaco.Properties.ValueMember = "id";
             this.grdtipoSaco.Size = new System.Drawing.Size(194, 28);
             this.grdtipoSaco.TabIndex = 121;
+            // 
+            // portafolioBindingSource
+            // 
+            this.portafolioBindingSource.DataMember = "Portafolio";
+            this.portafolioBindingSource.DataSource = this.aCSDataSet21;
             // 
             // gridView1
             // 
@@ -636,6 +654,11 @@ namespace LOSA.MigracionACS.PT
             this.grdPesoSaco.TabIndex = 122;
             this.grdPesoSaco.EditValueChanged += new System.EventHandler(this.grdPesoSaco_EditValueChanged);
             // 
+            // bolsasBindingSource
+            // 
+            this.bolsasBindingSource.DataMember = "Bolsas";
+            this.bolsasBindingSource.DataSource = this.aCSDataSet21;
+            // 
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -680,6 +703,11 @@ namespace LOSA.MigracionACS.PT
             this.grdOrigen.Properties.ValueMember = "id";
             this.grdOrigen.Size = new System.Drawing.Size(120, 28);
             this.grdOrigen.TabIndex = 123;
+            // 
+            // origenBindingSource
+            // 
+            this.origenBindingSource.DataMember = "Origen";
+            this.origenBindingSource.DataSource = this.aCSDataSet21;
             // 
             // gridView3
             // 
@@ -809,6 +837,11 @@ namespace LOSA.MigracionACS.PT
             this.lblProceso.TabIndex = 131;
             this.lblProceso.Text = "Proceso:";
             // 
+            // codigosSAPBindingSource
+            // 
+            this.codigosSAPBindingSource.DataMember = "CodigosSAP";
+            this.codigosSAPBindingSource.DataSource = this.aCSDataSet21;
+            // 
             // grdCodSAP
             // 
             this.grdCodSAP.Location = new System.Drawing.Point(607, 58);
@@ -820,71 +853,17 @@ namespace LOSA.MigracionACS.PT
             this.grdCodSAP.Properties.DataSource = this.codigosSAPBindingSource;
             this.grdCodSAP.Properties.DisplayMember = "ItemCodeSAP";
             this.grdCodSAP.Properties.NullText = "";
-            this.grdCodSAP.Properties.PopupView = this.gridView7;
+            this.grdCodSAP.Properties.PopupView = this.gridView5;
             this.grdCodSAP.Properties.ValueMember = "CodeAQF";
             this.grdCodSAP.Size = new System.Drawing.Size(120, 28);
-            this.grdCodSAP.TabIndex = 133;
+            this.grdCodSAP.TabIndex = 134;
             // 
-            // gridView7
+            // gridView5
             // 
-            this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCodeAQF,
-            this.colItemCodeSAP});
-            this.gridView7.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView7.Name = "gridView7";
-            this.gridView7.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView7.OptionsView.ShowGroupPanel = false;
-            // 
-            // origenBindingSource
-            // 
-            this.origenBindingSource.DataMember = "Origen";
-            this.origenBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // aCSDataSet21
-            // 
-            this.aCSDataSet21.DataSetName = "ACSDataSet2";
-            this.aCSDataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bolsasBindingSource
-            // 
-            this.bolsasBindingSource.DataMember = "Bolsas";
-            this.bolsasBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // portafolioBindingSource
-            // 
-            this.portafolioBindingSource.DataMember = "Portafolio";
-            this.portafolioBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // familiaBindingSource
-            // 
-            this.familiaBindingSource.DataMember = "Familia";
-            this.familiaBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // codigosSAPBindingSource
-            // 
-            this.codigosSAPBindingSource.DataMember = "CodigosSAP";
-            this.codigosSAPBindingSource.DataSource = this.aCSDataSet21;
-            // 
-            // colCodeAQF
-            // 
-            this.colCodeAQF.Caption = "Codigo AQF";
-            this.colCodeAQF.FieldName = "CodeAQF";
-            this.colCodeAQF.Name = "colCodeAQF";
-            this.colCodeAQF.Visible = true;
-            this.colCodeAQF.VisibleIndex = 0;
-            // 
-            // colItemCodeSAP
-            // 
-            this.colItemCodeSAP.Caption = "Item Code SAP";
-            this.colItemCodeSAP.FieldName = "ItemCodeSAP";
-            this.colItemCodeSAP.Name = "colItemCodeSAP";
-            this.colItemCodeSAP.Visible = true;
-            this.colItemCodeSAP.VisibleIndex = 1;
+            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView5.OptionsView.ShowGroupPanel = false;
             // 
             // frmCRUDProductoTerminado
             // 
@@ -949,14 +928,20 @@ namespace LOSA.MigracionACS.PT
             ((System.ComponentModel.ISupportInitialize)(this.spinDiasMinimos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinGrasas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCategoria.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCSDataSet21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdFamilia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.familiaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdtipoSaco.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portafolioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPesoSaco.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bolsasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdOrigen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.origenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiametroParticula.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodUnite.Properties)).EndInit();
@@ -965,15 +950,9 @@ namespace LOSA.MigracionACS.PT
             ((System.ComponentModel.ISupportInitialize)(this.procesoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSProductos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCodSAP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.origenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aCSDataSet21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bolsasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.portafolioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.familiaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codigosSAPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCodSAP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1054,10 +1033,8 @@ namespace LOSA.MigracionACS.PT
         private DevExpress.XtraEditors.LabelControl lblProceso;
         private System.Windows.Forms.BindingSource procesoBindingSource;
         private DataSetx.DSProductos dSProductos1;
-        private DevExpress.XtraEditors.GridLookUpEdit grdCodSAP;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
         private System.Windows.Forms.BindingSource codigosSAPBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colCodeAQF;
-        private DevExpress.XtraGrid.Columns.GridColumn colItemCodeSAP;
+        private DevExpress.XtraEditors.GridLookUpEdit grdCodSAP;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
     }
 }

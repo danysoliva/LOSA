@@ -12,6 +12,7 @@ using ACS.Classes;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using static DevExpress.Xpo.DB.DataStoreLongrunnersWatch;
+using DevExpress.Utils.Extensions;
 
 namespace LOSA.MigracionACS.PT
 {
@@ -24,6 +25,7 @@ namespace LOSA.MigracionACS.PT
         int Especie = 0;
         int IdProducto = 0;
         decimal PesoSaco = 0;
+        string CodigoAQF;
 
         public enum TipoOperacion 
         {
@@ -97,28 +99,18 @@ namespace LOSA.MigracionACS.PT
                     txtDiametroParticula.Text = pt.diametro;
                     spindDiasVenc.EditValue = pt.dias_vencimiento;
                     spinDiasMinimos.EditValue = pt.dias_venc_despacho;
-                    grdCodSAP.Text = pt.codesap;
+                    //CodeSAP = pt.codesap;
+                    CodigoAQF = txtCodigo.Text;
                     int TipoData;
-                    if (grdCodSAP.Text == "")
+
+                    if (!string.IsNullOrEmpty(txtCodigo.Text))
                     {
-                        grdCodSAP.Enabled = true;
-
-                        if (string.IsNullOrEmpty(txtCodigo.Text))
-                            TipoData = 1; //ALL ITEMCODE
-                        else
-                            TipoData = 2;//FOR CODIGO AQF
-
+                        TipoData = 1;
                         CargarCodigosSAP(TipoData);
-                    }
-                    else 
-                    {
-                        grdCodSAP.Enabled = false;
-                        TipoData = 2;
-                        CargarCodigosSAP(TipoData);
-                        grdCodSAP.EditValue = txtCodigo.EditValue;
-                    }
 
-
+                        
+                    }
+                   
                     txtRegistro.Text = pt.registro;
                     grdOrigen.EditValue = pt.idOr;
                     spinProteina.EditValue = pt.proteinas;
@@ -159,28 +151,50 @@ namespace LOSA.MigracionACS.PT
         {
             try
             {
-                string query = @"sp_get_obtener_codigos_sap";
-                DataOperations dpSAP = new DataOperations();
-                SqlConnection cn = new SqlConnection(dpSAP.ConnectionStringCostos);
-                cn.Open();
-                SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigo_aqf", txtCodigo.Text.Trim());
-                cmd.Parameters.AddWithValue("@tipo_data", tipoData);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                aCSDataSet21.CodigosSAP.Clear();
-                da.Fill(aCSDataSet21.CodigosSAP);
-                cn.Close();
-                //grdCodSAP.Text = "PTXXXX";
-                //foreach (DataRow row in aCSDataSet21.CodigosSAP)
-                //{
-                //    if (row["ODOO"].ToString() == codigo)
-                //    {
-                //        grdSAP.EditValue = codigo;
-                //        return;
-                //    }
+                if (tipoData == 1) 
+                {
+                    string query = @"sp_get_obtener_codigos_sap";
+                    DataOperations dpSAP = new DataOperations();
+                    SqlConnection cn = new SqlConnection(dpSAP.ConnectionStringCostos);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@codigo_aqf", txtCodigo.Text);
+                    cmd.Parameters.AddWithValue("@tipo_data", tipoData);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    aCSDataSet21.CodigosSAP.Clear();
+                    da.Fill(aCSDataSet21.CodigosSAP);
+                    cn.Close();
 
-                //}
+                    foreach (DataRow row in aCSDataSet21.CodigosSAP)
+                    {
+                        if (row["CodeAQF"].ToString() == CodigoAQF.ToString())
+                        {
+                            grdCodSAP.EditValue = CodigoAQF;
+                            grdCodSAP.Enabled = false;
+                            return;
+                        }
+
+                    }
+                }
+                else
+                {
+                    string query = @"sp_get_obtener_codigos_sap";
+                    DataOperations dpSAP = new DataOperations();
+                    SqlConnection cn = new SqlConnection(dpSAP.ConnectionStringCostos);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@codigo_aqf", Convert.ToInt32(txtCodigo.EditValue));
+                    cmd.Parameters.AddWithValue("@tipo_data", tipoData);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    aCSDataSet21.CodigosSAP.Clear();
+                    da.Fill(aCSDataSet21.CodigosSAP);
+                    cn.Close();
+
+                    
+                }
+
             }
             catch (Exception ex)
             {
