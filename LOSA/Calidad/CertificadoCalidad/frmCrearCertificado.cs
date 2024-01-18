@@ -166,8 +166,10 @@ namespace LOSA.Calidad.CertificadoCalidad
                 transaction.Commit();
                 cnx.Close();
 
-                this.DialogResult = DialogResult.OK;
+                
                 CajaDialogo.Information("DATOS GUARDADOS");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {

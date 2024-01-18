@@ -288,7 +288,6 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.colresultaod.Caption = "Resultado";
             this.colresultaod.FieldName = "resultaod";
             this.colresultaod.Name = "colresultaod";
-            this.colresultaod.OptionsColumn.ReadOnly = true;
             this.colresultaod.OptionsFilter.AllowFilter = false;
             this.colresultaod.Visible = true;
             this.colresultaod.VisibleIndex = 3;

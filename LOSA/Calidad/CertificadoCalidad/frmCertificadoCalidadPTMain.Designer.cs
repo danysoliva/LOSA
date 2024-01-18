@@ -305,6 +305,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.simpleButton3.Size = new System.Drawing.Size(108, 38);
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "Actualizar";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frmCertificadoCalidadPTMain
             // 

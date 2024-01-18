@@ -111,5 +111,10 @@ namespace LOSA.Calidad.CertificadoCalidad
                 }
             }
         }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            load_informacion_certificado();
+        }
     }
 }
