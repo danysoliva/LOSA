@@ -133,7 +133,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.lueLote.Properties.NullText = "";
             this.lueLote.Properties.PopupView = this.searchLookUpEdit1View;
             this.lueLote.Properties.ValueMember = "lote_producto_terminado";
-            this.lueLote.Size = new System.Drawing.Size(159, 24);
+            this.lueLote.Size = new System.Drawing.Size(173, 24);
             this.lueLote.TabIndex = 1;
             this.lueLote.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
@@ -237,6 +237,7 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
             // 
             // colid_parametro
             // 
@@ -288,7 +289,6 @@ namespace LOSA.Calidad.CertificadoCalidad
             this.colresultaod.Caption = "Resultado";
             this.colresultaod.FieldName = "resultaod";
             this.colresultaod.Name = "colresultaod";
-            this.colresultaod.OptionsColumn.ReadOnly = true;
             this.colresultaod.OptionsFilter.AllowFilter = false;
             this.colresultaod.Visible = true;
             this.colresultaod.VisibleIndex = 3;

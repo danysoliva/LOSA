@@ -11,7 +11,7 @@ namespace LOSA.Clases
     public class ProductoTerminado
     {
         string ConnectionString;
-        public string codigo, descripcion, fecha, estado, codesap,formula_code, tamaño, diametro, registro, codigo_unite;
+        public string codigo, descripcion, fecha, estado, codesap,formula_code, tamaño, diametro, registro, codigo_unite, descripcion_Tecnica;
         public TimeSpan horasP;
         public decimal proteinas, grasa, size;
         public int id, id_bag, id_category, id_proceso, id_portafolio, id_tamaño, especie, family, idOr, dias_vencimiento, dias_venc_despacho;
@@ -103,34 +103,38 @@ namespace LOSA.Clases
         {
             try
             {//Recupera las caracteristicas 
-                string sql = @"SELECT [id]
-                                      ,[Descripcion]
-                                      ,coalesce ([Proteina], 0.0) as [Proteina]
-                                      ,coalesce ([Grasa], 0.0) as [Grasa]
-                                      ,[Especie]
-                                      ,coalesce ([family], 0) as [family]
-                                      ,coalesce ([id_bag],0) as [id_bag]
-                                      ,coalesce ([size], 0) as [size]
-                                      ,coalesce ([formula_code], '') as [formula_code]
-                                      ,coalesce ([id_category], '0') as [id_category]
-                                      ,coalesce ([id_proceso], 0) as [id_proceso]
-                                      ,coalesce ([id_portafolio], 0) as [id_portafolio]
-                                      ,[proteina]
-                                      ,[grasa]
-                                      ,coalesce ([tamanio] , ' ') as [tamaño]
-                                      ,coalesce ([id_origen] , 0) as [id_origen]
-                                      ,coalesce ([Registro], ' ') as [Registro]
-                                      ,coalesce ([diametro], ' ') as [diametro]
-                                      ,Codigo
-                                      ,coalesce(codigo_unite,'N/A') as codigo_unite
-                                      ,coalesce ([dias_vencimiento], 0) as [dias_vencimiento]
-                                      ,coalesce ([dias_venc_despachos], 0) as [dias_venc_despachos]
-                                  FROM [ACS].[dbo].[PT_Productos]
-                                  where id = '" + IdProd + "'";
+                //string sql = @"SELECT [id]
+                //                      ,[Descripcion]
+                //                      ,coalesce ([Proteina], 0.0) as [Proteina]
+                //                      ,coalesce ([Grasa], 0.0) as [Grasa]
+                //                      ,[Especie]
+                //                      ,coalesce ([family], 0) as [family]
+                //                      ,coalesce ([id_bag],0) as [id_bag]
+                //                      ,coalesce ([size], 0) as [size]
+                //                      ,coalesce ([formula_code], '') as [formula_code]
+                //                      ,coalesce ([id_category], '0') as [id_category]
+                //                      ,coalesce ([id_proceso], 0) as [id_proceso]
+                //                      ,coalesce ([id_portafolio], 0) as [id_portafolio]
+                //                      ,[proteina]
+                //                      ,[grasa]
+                //                      ,coalesce ([tamanio] , ' ') as [tamaño]
+                //                      ,coalesce ([id_origen] , 0) as [id_origen]
+                //                      ,coalesce ([Registro], ' ') as [Registro]
+                //                      ,coalesce ([diametro], ' ') as [diametro]
+                //                      ,Codigo
+                //                      ,coalesce(codigo_unite,'N/A') as codigo_unite
+                //                      ,coalesce ([dias_vencimiento], 0) as [dias_vencimiento]
+                //                      ,coalesce ([dias_venc_despachos], 0) as [dias_venc_despachos]
+                //                       ,
+                //                  FROM [ACS].[dbo].[PT_Productos]
+                //                  where id = '" + IdProd + "'";
                 //,coalesce([HorasTon], '00:00:00 a.m.') as HorasP
+                string sql = "sp_get_product_class_for_id_pt";
                 SqlConnection con = new SqlConnection(ConnectionString);
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@IdProd", IdProd);
                 SqlDataReader dl = cmd.ExecuteReader();
                 if (dl.Read())
                 {
@@ -158,6 +162,9 @@ namespace LOSA.Clases
                     codigo_unite = dl.GetString(19);
                     dias_vencimiento = dl.GetInt32(20);
                     dias_venc_despacho = dl.GetInt32(21);
+                    descripcion_Tecnica = dl.GetString(22);
+                    codesap = dl.GetString(23);
+                    estado = dl.GetString(24);
                     recuperado = true;
                 }
             }

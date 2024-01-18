@@ -108,6 +108,7 @@ namespace LOSA.Produccion
                             CargarDetalleBascula1(Id_registro_bascula1);
                             btnBascula1ON.Enabled = true;
                             btnCancelBasc1.Enabled = true;
+                            btnBascula1Off.Enabled = false;
 
                             break;
 
@@ -116,6 +117,7 @@ namespace LOSA.Produccion
                             CargarDetalleBascula2(Id_registro_bascula2);
                             btnBascula2ON.Enabled = true;
                             btnCancelBasc2.Enabled = true;
+                            btnBascula2Off.Enabled = false;
 
                             break;
                         default:
@@ -502,8 +504,7 @@ namespace LOSA.Produccion
         private void btnBinActivo_Click(object sender, EventArgs e)
         {
             xfrmCheckActiveBin frm = new xfrmCheckActiveBin();
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            frm.ShowDialog();
         }
     }
 }

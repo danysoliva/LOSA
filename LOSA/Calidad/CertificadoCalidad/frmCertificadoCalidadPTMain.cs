@@ -33,8 +33,11 @@ namespace LOSA.Calidad.CertificadoCalidad
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             frmCrearCertificado frm = new frmCrearCertificado(UsuarioLog);
-
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_informacion_certificado();
+            }
+           
         }
 
         public void load_informacion_certificado()
@@ -107,6 +110,11 @@ namespace LOSA.Calidad.CertificadoCalidad
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            load_informacion_certificado();
         }
     }
 }

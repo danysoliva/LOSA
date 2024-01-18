@@ -182,7 +182,7 @@
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage2,
             this.tabNavigationPage3});
-            this.tabPane1.RegularSize = new System.Drawing.Size(858, 370);
+            this.tabPane1.RegularSize = new System.Drawing.Size(858, 355);
             this.tabPane1.SelectedPage = this.tabNavigationPage2;
             // 
             // tabNavigationPage2
@@ -362,10 +362,10 @@
             // mainRibbonPageGroup
             // 
             this.mainRibbonPageGroup.AllowTextClipping = false;
+            this.mainRibbonPageGroup.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiClose);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
-            this.mainRibbonPageGroup.ShowCaptionButton = false;
             resources.ApplyResources(this.mainRibbonPageGroup, "mainRibbonPageGroup");
             // 
             // sAPODOOBindingSource
@@ -525,7 +525,6 @@
             this.spingrasa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("spingrasa.Properties.Buttons"))))});
             this.spingrasa.Properties.NullValuePrompt = resources.GetString("spingrasa.Properties.NullValuePrompt");
-            this.spingrasa.Properties.NullValuePromptShowForEmptyValue = ((bool)(resources.GetObject("spingrasa.Properties.NullValuePromptShowForEmptyValue")));
             // 
             // spinProteina
             // 
@@ -537,7 +536,6 @@
             this.spinProteina.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("spinProteina.Properties.Buttons"))))});
             this.spinProteina.Properties.NullValuePrompt = resources.GetString("spinProteina.Properties.NullValuePrompt");
-            this.spinProteina.Properties.NullValuePromptShowForEmptyValue = ((bool)(resources.GetObject("spinProteina.Properties.NullValuePromptShowForEmptyValue")));
             // 
             // labelControl17
             // 
@@ -991,6 +989,7 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.mainRibbonControl);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("EditarProductos.IconOptions.Icon")));
             this.Name = "EditarProductos";
             this.Ribbon = this.mainRibbonControl;
             this.Load += new System.EventHandler(this.EditarProductos_Load);

@@ -42,23 +42,24 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_New = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonRecargar = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Activate = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Inactivate = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Export = new DevExpress.XtraBars.BarSubItem();
-            this.btn_Excel = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_pdf = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonActualizar = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barToggleSwitchItem2 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barButtonClose = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btn_Export = new DevExpress.XtraBars.BarSubItem();
             this.btn_Edit = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Activate = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Inactivate = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Excel = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_pdf = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -86,6 +87,8 @@
             this.colcodigSAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfechaSAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubidoSAP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bar1 = new DevExpress.XtraBars.Bar();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -115,12 +118,13 @@
             this.barButtonItem1,
             this.barToggleSwitchItem1,
             this.barToggleSwitchItem2,
-            this.barButtonRecargar,
             this.barButtonItem2,
             this.barButtonItem3,
-            this.barEditItem1});
+            this.barEditItem1,
+            this.barButtonActualizar,
+            this.barButtonClose});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 14;
+            this.barManager1.MaxItemId = 16;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             // 
@@ -131,35 +135,18 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_New),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonRecargar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Activate),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Inactivate),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Export),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonActualizar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barToggleSwitchItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.barEditItem1, "", false, true, true, 175)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.barEditItem1, "", false, true, true, 175),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonClose, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.DrawBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.ActAsDropDown = true;
-            this.barButtonItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barButtonItem2.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.barButtonItem2.Caption = "Exportar A Excel";
-            this.barButtonItem2.Id = 11;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = global::LOSA.Properties.Resources.excel_32x32;
-            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.barButtonItem2.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick_1);
             // 
             // btn_New
             // 
@@ -176,67 +163,37 @@
             this.btn_New.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.True;
             this.btn_New.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_New_ItemClick);
             // 
-            // barButtonRecargar
+            // barButtonActualizar
             // 
-            this.barButtonRecargar.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barButtonRecargar.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.barButtonRecargar.Caption = "Actualizar datos";
-            this.barButtonRecargar.Id = 10;
-            this.barButtonRecargar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonRecargar.ImageOptions.Image")));
-            this.barButtonRecargar.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.barButtonRecargar.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonRecargar.Name = "barButtonRecargar";
-            this.barButtonRecargar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barButtonRecargar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            this.barButtonActualizar.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonActualizar.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.barButtonActualizar.Caption = "Actualizar Datos";
+            this.barButtonActualizar.Id = 14;
+            this.barButtonActualizar.ImageOptions.Image = global::LOSA.Properties.Resources.refresh_32x32;
+            this.barButtonActualizar.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.barButtonActualizar.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonActualizar.Name = "barButtonActualizar";
+            this.barButtonActualizar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonActualizar_ItemClick);
             // 
-            // btn_Activate
+            // barButtonItem2
             // 
-            this.btn_Activate.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.btn_Activate.Caption = "Activar";
-            this.btn_Activate.Id = 3;
-            this.btn_Activate.ImageOptions.Image = global::LOSA.Properties.Resources.activate_32x32;
-            this.btn_Activate.Name = "btn_Activate";
-            this.btn_Activate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // btn_Inactivate
-            // 
-            this.btn_Inactivate.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.btn_Inactivate.Caption = "Inactivar";
-            this.btn_Inactivate.Id = 4;
-            this.btn_Inactivate.ImageOptions.Image = global::LOSA.Properties.Resources.disable_32x32;
-            this.btn_Inactivate.Name = "btn_Inactivate";
-            this.btn_Inactivate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            // 
-            // btn_Export
-            // 
-            this.btn_Export.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.btn_Export.Caption = "Exportar";
-            this.btn_Export.Id = 0;
-            this.btn_Export.ImageOptions.Image = global::LOSA.Properties.Resources.export_32x32;
-            this.btn_Export.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Excel),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_pdf)});
-            this.btn_Export.Name = "btn_Export";
-            this.btn_Export.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
-            // 
-            // btn_Excel
-            // 
-            this.btn_Excel.Caption = "Excel";
-            this.btn_Excel.Id = 5;
-            this.btn_Excel.ImageOptions.Image = global::LOSA.Properties.Resources.excel_24x24;
-            this.btn_Excel.Name = "btn_Excel";
-            this.btn_Excel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Excel_ItemClick);
-            // 
-            // btn_pdf
-            // 
-            this.btn_pdf.Caption = "PDF";
-            this.btn_pdf.Id = 6;
-            this.btn_pdf.ImageOptions.Image = global::LOSA.Properties.Resources.pdf_24x24;
-            this.btn_pdf.Name = "btn_pdf";
+            this.barButtonItem2.ActAsDropDown = true;
+            this.barButtonItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonItem2.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.barButtonItem2.Caption = "Exportar A Excel";
+            this.barButtonItem2.Id = 11;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = global::LOSA.Properties.Resources.excel_32x32;
+            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem2.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick_1);
             // 
             // barToggleSwitchItem2
             // 
             this.barToggleSwitchItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barToggleSwitchItem2.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.barToggleSwitchItem2.Caption = "Mostar Inhabilitados";
             this.barToggleSwitchItem2.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Stretch;
             this.barToggleSwitchItem2.Id = 9;
@@ -288,6 +245,20 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // barButtonClose
+            // 
+            this.barButtonClose.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonClose.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.barButtonClose.Caption = "Cerrar";
+            this.barButtonClose.Id = 15;
+            this.barButtonClose.ImageOptions.Image = global::LOSA.Properties.Resources.close32px1;
+            this.barButtonClose.ItemAppearance.Disabled.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.barButtonClose.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonClose.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.barButtonClose.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonClose.Name = "barButtonClose";
+            this.barButtonClose.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonClose_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -324,6 +295,15 @@
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 583);
             // 
+            // btn_Export
+            // 
+            this.btn_Export.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.btn_Export.Caption = "Exportar";
+            this.btn_Export.Id = 0;
+            this.btn_Export.ImageOptions.Image = global::LOSA.Properties.Resources.export_32x32;
+            this.btn_Export.Name = "btn_Export";
+            this.btn_Export.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu;
+            // 
             // btn_Edit
             // 
             this.btn_Edit.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
@@ -332,6 +312,39 @@
             this.btn_Edit.ImageOptions.Image = global::LOSA.Properties.Resources.edit_32x32;
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
+            // 
+            // btn_Activate
+            // 
+            this.btn_Activate.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.btn_Activate.Caption = "Activar";
+            this.btn_Activate.Id = 3;
+            this.btn_Activate.ImageOptions.Image = global::LOSA.Properties.Resources.activate_32x32;
+            this.btn_Activate.Name = "btn_Activate";
+            this.btn_Activate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // btn_Inactivate
+            // 
+            this.btn_Inactivate.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.btn_Inactivate.Caption = "Inactivar";
+            this.btn_Inactivate.Id = 4;
+            this.btn_Inactivate.ImageOptions.Image = global::LOSA.Properties.Resources.disable_32x32;
+            this.btn_Inactivate.Name = "btn_Inactivate";
+            this.btn_Inactivate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // btn_Excel
+            // 
+            this.btn_Excel.Caption = "Excel";
+            this.btn_Excel.Id = 5;
+            this.btn_Excel.ImageOptions.Image = global::LOSA.Properties.Resources.excel_24x24;
+            this.btn_Excel.Name = "btn_Excel";
+            this.btn_Excel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Excel_ItemClick);
+            // 
+            // btn_pdf
+            // 
+            this.btn_pdf.Caption = "PDF";
+            this.btn_pdf.Id = 6;
+            this.btn_pdf.ImageOptions.Image = global::LOSA.Properties.Resources.pdf_24x24;
+            this.btn_pdf.Name = "btn_pdf";
             // 
             // barButtonItem1
             // 
@@ -364,7 +377,6 @@
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // dsProductos1
             // 
@@ -422,35 +434,33 @@
             this.ColSAP,
             this.colcodigSAP,
             this.colfechaSAP,
-            this.colSubidoSAP});
+            this.colSubidoSAP,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colespecie, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
             // 
             // colCodigo
             // 
+            this.colCodigo.Caption = "Codigo AQF";
             this.colCodigo.FieldName = "Codigo";
             this.colCodigo.Name = "colCodigo";
             this.colCodigo.OptionsColumn.ReadOnly = true;
             this.colCodigo.Visible = true;
             this.colCodigo.VisibleIndex = 0;
-            this.colCodigo.Width = 89;
+            this.colCodigo.Width = 100;
             // 
             // colDescripcion
             // 
-            this.colDescripcion.Caption = "Nombre";
+            this.colDescripcion.Caption = "Nombre Comercial";
             this.colDescripcion.FieldName = "Descripcion";
             this.colDescripcion.Name = "colDescripcion";
             this.colDescripcion.OptionsColumn.ReadOnly = true;
             this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 1;
-            this.colDescripcion.Width = 323;
+            this.colDescripcion.VisibleIndex = 2;
+            this.colDescripcion.Width = 197;
             // 
             // colformula_code
             // 
@@ -459,8 +469,8 @@
             this.colformula_code.Name = "colformula_code";
             this.colformula_code.OptionsColumn.ReadOnly = true;
             this.colformula_code.Visible = true;
-            this.colformula_code.VisibleIndex = 2;
-            this.colformula_code.Width = 103;
+            this.colformula_code.VisibleIndex = 4;
+            this.colformula_code.Width = 116;
             // 
             // colespecie
             // 
@@ -469,8 +479,8 @@
             this.colespecie.Name = "colespecie";
             this.colespecie.OptionsColumn.ReadOnly = true;
             this.colespecie.Visible = true;
-            this.colespecie.VisibleIndex = 4;
-            this.colespecie.Width = 84;
+            this.colespecie.VisibleIndex = 1;
+            this.colespecie.Width = 77;
             // 
             // colsize
             // 
@@ -479,8 +489,8 @@
             this.colsize.Name = "colsize";
             this.colsize.OptionsColumn.ReadOnly = true;
             this.colsize.Visible = true;
-            this.colsize.VisibleIndex = 4;
-            this.colsize.Width = 91;
+            this.colsize.VisibleIndex = 6;
+            this.colsize.Width = 77;
             // 
             // coldescription
             // 
@@ -489,8 +499,8 @@
             this.coldescription.Name = "coldescription";
             this.coldescription.OptionsColumn.ReadOnly = true;
             this.coldescription.Visible = true;
-            this.coldescription.VisibleIndex = 5;
-            this.coldescription.Width = 114;
+            this.coldescription.VisibleIndex = 7;
+            this.coldescription.Width = 95;
             // 
             // collong_name
             // 
@@ -510,12 +520,13 @@
             // 
             // colcategoria
             // 
+            this.colcategoria.Caption = "Categoria";
             this.colcategoria.FieldName = "categoria";
             this.colcategoria.Name = "colcategoria";
             this.colcategoria.OptionsColumn.ReadOnly = true;
             this.colcategoria.Visible = true;
-            this.colcategoria.VisibleIndex = 6;
-            this.colcategoria.Width = 95;
+            this.colcategoria.VisibleIndex = 8;
+            this.colcategoria.Width = 79;
             // 
             // colproceso
             // 
@@ -532,12 +543,14 @@
             // 
             // colFecha
             // 
+            this.colFecha.DisplayFormat.FormatString = "d";
+            this.colFecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colFecha.FieldName = "Fecha";
             this.colFecha.Name = "colFecha";
             this.colFecha.OptionsColumn.ReadOnly = true;
             this.colFecha.Visible = true;
-            this.colFecha.VisibleIndex = 7;
-            this.colFecha.Width = 87;
+            this.colFecha.VisibleIndex = 9;
+            this.colFecha.Width = 74;
             // 
             // colEstado
             // 
@@ -545,8 +558,8 @@
             this.colEstado.Name = "colEstado";
             this.colEstado.OptionsColumn.ReadOnly = true;
             this.colEstado.Visible = true;
-            this.colEstado.VisibleIndex = 8;
-            this.colEstado.Width = 62;
+            this.colEstado.VisibleIndex = 10;
+            this.colEstado.Width = 50;
             // 
             // Editar
             // 
@@ -555,8 +568,8 @@
             this.Editar.Name = "Editar";
             this.Editar.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.Editar.Visible = true;
-            this.Editar.VisibleIndex = 11;
-            this.Editar.Width = 53;
+            this.Editar.VisibleIndex = 13;
+            this.Editar.Width = 68;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -575,8 +588,8 @@
             this.oridescripcion.Name = "oridescripcion";
             this.oridescripcion.OptionsColumn.ReadOnly = true;
             this.oridescripcion.Visible = true;
-            this.oridescripcion.VisibleIndex = 9;
-            this.oridescripcion.Width = 76;
+            this.oridescripcion.VisibleIndex = 11;
+            this.oridescripcion.Width = 62;
             // 
             // tamanio
             // 
@@ -593,8 +606,8 @@
             this.ColSAP.Name = "ColSAP";
             this.ColSAP.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.ColSAP.Visible = true;
-            this.ColSAP.VisibleIndex = 12;
-            this.ColSAP.Width = 56;
+            this.ColSAP.VisibleIndex = 14;
+            this.ColSAP.Width = 71;
             // 
             // btnSAP
             // 
@@ -614,8 +627,8 @@
             this.colcodigSAP.Name = "colcodigSAP";
             this.colcodigSAP.OptionsColumn.ReadOnly = true;
             this.colcodigSAP.Visible = true;
-            this.colcodigSAP.VisibleIndex = 3;
-            this.colcodigSAP.Width = 109;
+            this.colcodigSAP.VisibleIndex = 5;
+            this.colcodigSAP.Width = 102;
             // 
             // colfechaSAP
             // 
@@ -626,7 +639,7 @@
             this.colfechaSAP.Name = "colfechaSAP";
             this.colfechaSAP.OptionsColumn.ReadOnly = true;
             this.colfechaSAP.Visible = true;
-            this.colfechaSAP.VisibleIndex = 10;
+            this.colfechaSAP.VisibleIndex = 12;
             this.colfechaSAP.Width = 67;
             // 
             // colSubidoSAP
@@ -635,19 +648,38 @@
             this.colSubidoSAP.FieldName = "SubidoSAP";
             this.colSubidoSAP.Name = "colSubidoSAP";
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Nombre Tecnico";
+            this.gridColumn1.FieldName = "descripcion_tecnica";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.Width = 167;
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Custom 3";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 1;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.Text = "Custom 3";
+            // 
             // PT_Productos
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1427, 625);
+            this.ControlBox = false;
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("PT_Productos.IconOptions.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PT_Productos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -700,7 +732,6 @@
         private DataSetx.DSProductos dsProductos1;
         private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem2;
         private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonRecargar;
         private DevExpress.XtraGrid.Columns.GridColumn oridescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn tamanio;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
@@ -713,5 +744,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colfechaSAP;
         private DevExpress.XtraGrid.Columns.GridColumn colSubidoSAP;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraBars.BarButtonItem barButtonActualizar;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarButtonItem barButtonClose;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

@@ -44,7 +44,7 @@ namespace LOSA.MigracionACS.PT
             //this.pT_Productos_FamiliasTableAdapter.Fill(this.aCSDataSet1.PT_Productos_Familias);
             GenerarCodigo();
             labelControl4.Hide();
-            xCheckBoxODOO.Hide();
+            //xCheckBoxODOO.Hide();
 
             LoadFamilia();
             

@@ -1028,11 +1028,6 @@ namespace LOSA
             frm.Show();
         }
 
-        private void btnAut_Tm_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabEntregaMP_Paint(object sender, PaintEventArgs e)
         {
 
@@ -3999,7 +3994,6 @@ namespace LOSA
         private void btnCertidicadPTMain_Click(object sender, EventArgs e)
         {
             frmCertificadoCalidadPTMain frm = new frmCertificadoCalidadPTMain(UsuarioLogeado);
-
             frm.ShowDialog();
         }
 
@@ -4087,6 +4081,8 @@ namespace LOSA
                     frm.Show();
                 else
                     frm.Dispose();
+
+
             }
             catch (Exception ex)
             {
@@ -4703,6 +4699,14 @@ namespace LOSA
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void btnLotesCerrados_Click(object sender, EventArgs e)
+        {
+            LotesFinalizados frm = new LotesFinalizados();
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
         }
     }
 }
