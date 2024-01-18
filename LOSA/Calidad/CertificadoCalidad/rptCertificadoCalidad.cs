@@ -20,17 +20,16 @@ namespace LOSA.Calidad.CertificadoCalidad
 
             if (id_certificado!= 0)
             {
-
-            if (certificado.RecuperaRegistro(id_certificado))
-            {
-                tcAlimento.Text = certificado.Alimento;
-                tcFechaAnalisis.Text = certificado.FechaAnalisis.ToShortDateString();
-                tcFechaElaboracion.Text = certificado.FechaProduccion.ToShortDateString();
-                tcFechaVencimiento.Text = certificado.FechaVencimiento.ToShortDateString();
-                tcFFIF.Text = certificado.FFIF;
-                tcLote.Text = certificado.Lote_PT.ToString();
-
-            }
+                if (certificado.RecuperaRegistro(id_certificado))
+                {
+                    tcAlimento.Text = certificado.Alimento;
+                    tcFechaAnalisis.Text = certificado.FechaAnalisis.ToShortDateString();
+                    tcFechaElaboracion.Text = certificado.FechaProduccion.ToShortDateString();
+                    tcFechaVencimiento.Text = certificado.FechaVencimiento.ToShortDateString();
+                    tcFFIF.Text = certificado.FFIF;
+                    tcLote.Text = certificado.Lote_PT.ToString();
+                    xrUsuarioC.Text = certificado.Nombre_usuario;
+                }
             }
             else
             {
@@ -42,6 +41,7 @@ namespace LOSA.Calidad.CertificadoCalidad
                     tcFechaVencimiento.Text = certificado.FechaVencimiento.ToShortDateString();
                     tcFFIF.Text = certificado.FFIF;
                     tcLote.Text = certificado.Lote_PT.ToString();
+                    xrUsuarioC.Text = certificado.Nombre_usuario;
 
                 }
             }

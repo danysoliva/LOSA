@@ -1,5 +1,6 @@
 ﻿using ACS.Classes;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using LOSA.Clases;
 using System;
 using System.Collections.Generic;
@@ -244,6 +245,33 @@ namespace LOSA.Calidad.CertificadoCalidad
             {
                 CajaDialogo.Error(ex.Message);
                 return false;
+            }
+        }
+
+        private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var gridView = (GridView)gridControl2.FocusedView;
+            var row = (dsCertificado.Certificado_PT_DRow)gridView.GetFocusedDataRow();
+
+            switch (e.Column.FieldName)
+            {
+                case "resultaod":
+                    if (row.resultaod < row.min_plan)
+                    {
+                        CajaDialogo.Error("Parametro: " + row.parametro + " debe estar entre "+ row.min_plan +" y "+row.max_plan);
+                        row.resultaod = row.min_plan;
+                    }
+
+                    if (row.resultaod > row.max_plan)
+                    {
+                        CajaDialogo.Error("Parametro: " + row.parametro + " debe estar entre " + row.min_plan + " y " + row.max_plan);
+                        row.resultaod = row.max_plan;
+                    }
+
+                    break;
+
+                default:
+                    break;
             }
         }
     }

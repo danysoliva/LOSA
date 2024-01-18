@@ -21,6 +21,8 @@ namespace LOSA.Clases
         public DateTime FechaAnalisis { get; set; }
         public DateTime FechaProduccion { get; set; }
         public DateTime FechaVencimiento { get; set; }
+
+        public string Nombre_usuario { get; set; }
         //public decimal  MinPlan { get; set; }
         //public decimal  MaxPlan { get; set; }
         //public decimal  Resultado { get; set; }
@@ -55,7 +57,7 @@ namespace LOSA.Clases
                     FechaProduccion = Convert.ToDateTime( dr["fecha_produccion"].ToString());
                     FechaVencimiento = Convert.ToDateTime( dr["fecha_vencimiento"].ToString());
                     ItemCode = dr["itemcode"].ToString();
-
+                    Nombre_usuario = dr["usuario"].ToString();
                     Recuperado = true;
                 }
 
@@ -97,6 +99,7 @@ namespace LOSA.Clases
                     FechaProduccion = Convert.ToDateTime(dr["fecha_produccion"].ToString());
                     FechaVencimiento = Convert.ToDateTime(dr["fecha_vencimiento"].ToString());
                     ItemCode = dr["itemcode"].ToString();
+                    Nombre_usuario = dr["usuario"].ToString();
 
                     Recuperado = true;
                 }
