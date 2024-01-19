@@ -61,6 +61,10 @@ namespace LOSA.Finanzas
 
         private void cmdConfirma_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtResolucion.Text))
+            {
+                CajaDialogo.Error("Debe Colocar la Resolucion!");
+            }
             if (string.IsNullOrEmpty(txtAnio.Text))
             {
                 CajaDialogo.Error("Debe Seleccionar un Año valido!");
