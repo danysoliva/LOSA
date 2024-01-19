@@ -55,6 +55,8 @@ namespace LOSA.Finanzas
             this.reposCerrarPeriodo = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repostGestionPresupuesto = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaExoneracion)).BeginInit();
@@ -99,7 +101,9 @@ namespace LOSA.Finanzas
             this.colenable,
             this.colcerrado,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
             this.grdvListaExoneracion.GridControl = this.grdListaExoneracion;
             this.grdvListaExoneracion.Name = "grdvListaExoneracion";
             this.grdvListaExoneracion.OptionsBehavior.ReadOnly = true;
@@ -118,6 +122,7 @@ namespace LOSA.Finanzas
             this.colanio.Name = "colanio";
             this.colanio.Visible = true;
             this.colanio.VisibleIndex = 0;
+            this.colanio.Width = 134;
             // 
             // colinicio
             // 
@@ -125,7 +130,8 @@ namespace LOSA.Finanzas
             this.colinicio.FieldName = "inicio";
             this.colinicio.Name = "colinicio";
             this.colinicio.Visible = true;
-            this.colinicio.VisibleIndex = 1;
+            this.colinicio.VisibleIndex = 2;
+            this.colinicio.Width = 134;
             // 
             // colfinal
             // 
@@ -133,7 +139,8 @@ namespace LOSA.Finanzas
             this.colfinal.FieldName = "final";
             this.colfinal.Name = "colfinal";
             this.colfinal.Visible = true;
-            this.colfinal.VisibleIndex = 2;
+            this.colfinal.VisibleIndex = 3;
+            this.colfinal.Width = 134;
             // 
             // coluser_create
             // 
@@ -146,7 +153,8 @@ namespace LOSA.Finanzas
             this.coluser_name.FieldName = "user_name";
             this.coluser_name.Name = "coluser_name";
             this.coluser_name.Visible = true;
-            this.coluser_name.VisibleIndex = 3;
+            this.coluser_name.VisibleIndex = 4;
+            this.coluser_name.Width = 134;
             // 
             // colenable
             // 
@@ -159,7 +167,8 @@ namespace LOSA.Finanzas
             this.colcerrado.FieldName = "cerrado";
             this.colcerrado.Name = "colcerrado";
             this.colcerrado.Visible = true;
-            this.colcerrado.VisibleIndex = 4;
+            this.colcerrado.VisibleIndex = 6;
+            this.colcerrado.Width = 126;
             // 
             // gridColumn1
             // 
@@ -167,7 +176,8 @@ namespace LOSA.Finanzas
             this.gridColumn1.ColumnEdit = this.reposCerrarPeriodo;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
+            this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.Width = 126;
             // 
             // reposCerrarPeriodo
             // 
@@ -185,7 +195,8 @@ namespace LOSA.Finanzas
             this.gridColumn2.ColumnEdit = this.repostGestionPresupuesto;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.VisibleIndex = 8;
+            this.gridColumn2.Width = 130;
             // 
             // repostGestionPresupuesto
             // 
@@ -196,6 +207,28 @@ namespace LOSA.Finanzas
             this.repostGestionPresupuesto.Name = "repostGestionPresupuesto";
             this.repostGestionPresupuesto.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repostGestionPresupuesto.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repostGestionPresupuesto_ButtonClick);
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Resolucion Exonerada";
+            this.gridColumn3.FieldName = "resolucion_exonerada";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.ReadOnly = true;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 134;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Presupuesto Total Exonerado";
+            this.gridColumn4.DisplayFormat.FormatString = "{0:##,###,##0.##} Lps.";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn4.FieldName = "presupuesto_total";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 5;
+            this.gridColumn4.Width = 155;
             // 
             // btnAgregar
             // 
@@ -269,5 +302,7 @@ namespace LOSA.Finanzas
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposCerrarPeriodo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repostGestionPresupuesto;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

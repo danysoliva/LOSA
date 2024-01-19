@@ -23,6 +23,8 @@
               <xs:element name="user_name" msprop:Generator_ColumnVarNameInTable="columnuser_name" msprop:Generator_ColumnPropNameInRow="user_name" msprop:Generator_ColumnPropNameInTable="user_nameColumn" msprop:Generator_UserColumnName="user_name" type="xs:string" minOccurs="0" />
               <xs:element name="enable" msprop:Generator_ColumnVarNameInTable="columnenable" msprop:Generator_ColumnPropNameInRow="enable" msprop:Generator_ColumnPropNameInTable="enableColumn" msprop:Generator_UserColumnName="enable" type="xs:boolean" minOccurs="0" />
               <xs:element name="cerrado" msprop:Generator_ColumnVarNameInTable="columncerrado" msprop:Generator_ColumnPropNameInRow="cerrado" msprop:Generator_ColumnPropNameInTable="cerradoColumn" msprop:Generator_UserColumnName="cerrado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="resolucion_exonerada" msprop:Generator_ColumnVarNameInTable="columnresolucion_exonerada" msprop:Generator_ColumnPropNameInRow="resolucion_exonerada" msprop:Generator_ColumnPropNameInTable="resolucion_exoneradaColumn" msprop:Generator_UserColumnName="resolucion_exonerada" type="xs:string" minOccurs="0" />
+              <xs:element name="presupuesto_total" msprop:Generator_ColumnVarNameInTable="columnpresupuesto_total" msprop:Generator_ColumnPropNameInRow="presupuesto_total" msprop:Generator_ColumnPropNameInTable="presupuesto_totalColumn" msprop:Generator_UserColumnName="presupuesto_total" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

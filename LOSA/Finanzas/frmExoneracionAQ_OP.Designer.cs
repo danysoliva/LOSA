@@ -95,7 +95,7 @@ namespace LOSA.Finanzas
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(101, 138);
+            this.labelControl2.Location = new System.Drawing.Point(80, 138);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(126, 21);
             this.labelControl2.TabIndex = 15;
@@ -103,7 +103,7 @@ namespace LOSA.Finanzas
             // 
             // txtAnio
             // 
-            this.txtAnio.Location = new System.Drawing.Point(198, 135);
+            this.txtAnio.Location = new System.Drawing.Point(177, 135);
             this.txtAnio.Name = "txtAnio";
             this.txtAnio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtAnio.Properties.Appearance.Options.UseFont = true;
@@ -114,7 +114,7 @@ namespace LOSA.Finanzas
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(101, 197);
+            this.labelControl3.Location = new System.Drawing.Point(80, 197);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(109, 21);
             this.labelControl3.TabIndex = 17;
@@ -124,7 +124,7 @@ namespace LOSA.Finanzas
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(100, 253);
+            this.labelControl4.Location = new System.Drawing.Point(79, 253);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(105, 21);
             this.labelControl4.TabIndex = 19;
@@ -133,7 +133,7 @@ namespace LOSA.Finanzas
             // dtFechaInicio
             // 
             this.dtFechaInicio.EditValue = null;
-            this.dtFechaInicio.Location = new System.Drawing.Point(198, 194);
+            this.dtFechaInicio.Location = new System.Drawing.Point(177, 194);
             this.dtFechaInicio.Name = "dtFechaInicio";
             this.dtFechaInicio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtFechaInicio.Properties.Appearance.Options.UseFont = true;
@@ -143,19 +143,20 @@ namespace LOSA.Finanzas
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFechaInicio.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Classic;
             this.dtFechaInicio.Properties.DisplayFormat.FormatString = "";
+            this.dtFechaInicio.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtFechaInicio.Properties.EditFormat.FormatString = "";
+            this.dtFechaInicio.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtFechaInicio.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.dtFechaInicio.Properties.MaskSettings.Set("mask", "d");
-            this.dtFechaInicio.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.dtFechaInicio.Properties.UseMaskAsDisplayFormat = true;
             this.dtFechaInicio.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaInicio.Size = new System.Drawing.Size(149, 28);
+            this.dtFechaInicio.Size = new System.Drawing.Size(171, 28);
             this.dtFechaInicio.TabIndex = 21;
             // 
             // dtFechaFin
             // 
             this.dtFechaFin.EditValue = null;
-            this.dtFechaFin.Location = new System.Drawing.Point(198, 250);
+            this.dtFechaFin.Location = new System.Drawing.Point(177, 250);
             this.dtFechaFin.Name = "dtFechaFin";
             this.dtFechaFin.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtFechaFin.Properties.Appearance.Options.UseFont = true;
@@ -172,23 +173,23 @@ namespace LOSA.Finanzas
             this.dtFechaFin.Properties.MaskSettings.Set("mask", "d");
             this.dtFechaFin.Properties.UseMaskAsDisplayFormat = true;
             this.dtFechaFin.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dtFechaFin.Size = new System.Drawing.Size(149, 28);
+            this.dtFechaFin.Size = new System.Drawing.Size(171, 28);
             this.dtFechaFin.TabIndex = 22;
             // 
             // txtResolucion
             // 
-            this.txtResolucion.Location = new System.Drawing.Point(198, 80);
+            this.txtResolucion.Location = new System.Drawing.Point(177, 80);
             this.txtResolucion.Name = "txtResolucion";
             this.txtResolucion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtResolucion.Properties.Appearance.Options.UseFont = true;
-            this.txtResolucion.Size = new System.Drawing.Size(149, 28);
+            this.txtResolucion.Size = new System.Drawing.Size(171, 28);
             this.txtResolucion.TabIndex = 23;
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(100, 83);
+            this.labelControl5.Location = new System.Drawing.Point(79, 83);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(174, 21);
             this.labelControl5.TabIndex = 24;

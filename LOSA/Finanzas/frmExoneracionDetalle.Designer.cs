@@ -29,12 +29,12 @@ namespace LOSA.Finanzas
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExoneracionDetalle));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grdDetalle = new DevExpress.XtraGrid.GridControl();
             this.dsExoneracion1 = new LOSA.Finanzas.dsExoneracion();
             this.grdvDetalle = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,6 +50,7 @@ namespace LOSA.Finanzas
             this.repostEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnAgregar = new DevExpress.XtraEditors.SimpleButton();
             this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsExoneracion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdvDetalle)).BeginInit();
@@ -96,6 +97,7 @@ namespace LOSA.Finanzas
             this.grdvDetalle.GridControl = this.grdDetalle;
             this.grdvDetalle.Name = "grdvDetalle";
             this.grdvDetalle.OptionsView.ShowAutoFilterRow = true;
+            this.grdvDetalle.OptionsView.ShowFooter = true;
             // 
             // colid
             // 
@@ -169,6 +171,8 @@ namespace LOSA.Finanzas
             this.colmonto.Name = "colmonto";
             this.colmonto.OptionsColumn.AllowEdit = false;
             this.colmonto.OptionsColumn.ReadOnly = true;
+            this.colmonto.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "monto", "{0:#,###,##0.00}")});
             this.colmonto.Visible = true;
             this.colmonto.VisibleIndex = 4;
             this.colmonto.Width = 197;
@@ -185,9 +189,9 @@ namespace LOSA.Finanzas
             // repostEditar
             // 
             this.repostEditar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.repostEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repostEditar.Name = "repostEditar";
             this.repostEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repostEditar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repostEditar_ButtonClick);
@@ -198,6 +202,7 @@ namespace LOSA.Finanzas
             this.btnAgregar.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Appearance.Options.UseBackColor = true;
             this.btnAgregar.Appearance.Options.UseFont = true;
+            this.btnAgregar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.ImageOptions.Image")));
             this.btnAgregar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnAgregar.Location = new System.Drawing.Point(13, 18);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
@@ -224,11 +229,28 @@ namespace LOSA.Finanzas
             this.btnAtras.Text = "Atras";
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Appearance.BackColor = System.Drawing.Color.LightGreen;
+            this.btnExcel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Appearance.Options.UseBackColor = true;
+            this.btnExcel.Appearance.Options.UseFont = true;
+            this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnExcel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnExcel.Location = new System.Drawing.Point(201, 18);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(123, 45);
+            this.btnExcel.TabIndex = 32;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // frmExoneracionDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1277, 715);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.grdDetalle);
@@ -259,5 +281,6 @@ namespace LOSA.Finanzas
         private DevExpress.XtraGrid.Columns.GridColumn col_rubeo_descripcion;
         private DevExpress.XtraEditors.SimpleButton btnAtras;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.SimpleButton btnExcel;
     }
 }
