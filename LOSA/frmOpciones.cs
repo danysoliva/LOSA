@@ -2509,7 +2509,7 @@ namespace LOSA
 
             if (UsuarioLogeado.ValidarNivelPermisos(57))
             {
-                frmGestionAccesosEncuesta frm = new frmGestionAccesosEncuesta();
+                frmGestionAccesosEncuesta frm = new frmGestionAccesosEncuesta(this.UsuarioLogeado);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
