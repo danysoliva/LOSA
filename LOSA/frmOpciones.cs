@@ -2509,7 +2509,7 @@ namespace LOSA
 
             if (UsuarioLogeado.ValidarNivelPermisos(57))
             {
-                frmGestionAccesosEncuesta frm = new frmGestionAccesosEncuesta();
+                frmGestionAccesosEncuesta frm = new frmGestionAccesosEncuesta(this.UsuarioLogeado);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
@@ -3704,12 +3704,12 @@ namespace LOSA
                 case 3://Medium Autorization
                     break;
                 case 4://Depth With Delta
-                    break;
-                case 5://Depth Without Delta
                     accesoprevio = true;
                     frmExoneracionAQ frm5 = new frmExoneracionAQ(UsuarioLogeado);
                     frm5.MdiParent = this.MdiParent;
                     frm5.Show();
+                    break;
+                case 5://Depth Without Delta
                     break;
                 default:
                     break;

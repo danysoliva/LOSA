@@ -29,6 +29,7 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(xfrmGenerarEncuesta));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
@@ -41,10 +42,14 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
             this.cmdNuevo = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInstrucciones.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAnio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -93,6 +98,7 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
             this.txtCodigo.Properties.Appearance.Options.UseFont = true;
             this.txtCodigo.Size = new System.Drawing.Size(179, 28);
             this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.EditValueChanged += new System.EventHandler(this.txtCodigo_EditValueChanged);
             // 
             // labelControl3
             // 
@@ -114,6 +120,7 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
             this.txtAnio.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtAnio.Size = new System.Drawing.Size(179, 28);
             this.txtAnio.TabIndex = 7;
+            this.txtAnio.EditValueChanged += new System.EventHandler(this.txtAnio_EditValueChanged);
             // 
             // labelControl4
             // 
@@ -143,7 +150,7 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
             this.btnClose.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnClose.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnClose.ImageOptions.SvgImage")));
             this.btnClose.Location = new System.Drawing.Point(351, 285);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(159, 57);
@@ -160,6 +167,14 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
             this.labelControl5.Size = new System.Drawing.Size(131, 25);
             this.labelControl5.TabIndex = 10;
             this.labelControl5.Text = "Crear Encuesta";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
             // 
             // xfrmGenerarEncuesta
             // 
@@ -187,6 +202,8 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
             ((System.ComponentModel.ISupportInitialize)(this.txtInstrucciones.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAnio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +222,7 @@ namespace LOSA.MigracionACS.RRHH.Encuesta
         private DevExpress.XtraEditors.SimpleButton cmdNuevo;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.LabelControl labelControl5;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }
