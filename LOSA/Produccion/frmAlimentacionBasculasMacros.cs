@@ -12,6 +12,7 @@ using LOSA.Clases;
 using LOSA.Classes;
 using ACS.Classes;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Produccion
 {
@@ -70,6 +71,30 @@ namespace LOSA.Produccion
             {
                 gridControl1.ExportToXlsx(dialog.FileName);
             }
+        }
+
+        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+
+            if (e.RowHandle >= 0)
+            {
+                decimal Porcentaje = Convert.ToDecimal(View.GetRowCellDisplayText(e.RowHandle, View.Columns["diffporcentaje"]));
+
+                if (Porcentaje > 2 || Porcentaje < -2)
+                {
+
+                    e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
+                    e.HighPriority = true;
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
+                }
+
+            }
+
+
         }
     }
 }

@@ -223,6 +223,7 @@ namespace LOSA
                         case 1://Basic View
                             //BasicView();
                             tabOpciones.TabPages[4].PageVisible = true;
+                            BasicViewAnalistas();
                             UsuarioLogeado.Idnivel = idNivel;
                             break;
                         case 2://Basic No Autorization
@@ -442,6 +443,16 @@ namespace LOSA
                     tabOpciones.TabPages[i].PageVisible = true;
                     break;
             }
+        }
+
+        private void BasicViewAnalistas()
+        {
+            //Acceso a Calidad pero Solo Lo Necesario!!
+            tabOpciones.TabPages[2].PageVisible = true;
+            btnSolicitudDespachoCalidad.Enabled = false;
+            btnCertidicadPTMain.Enabled = false;
+            ManteIngresos.Enabled = false;
+
         }
 
         public void BasicView()

@@ -48,6 +48,8 @@ namespace LOSA.Produccion
             this.colcantsacos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpresentacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmdGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.btnExcelExport = new DevExpress.XtraEditors.SimpleButton();
@@ -55,7 +57,6 @@ namespace LOSA.Produccion
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesdeDisponibles = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -107,11 +108,13 @@ namespace LOSA.Produccion
             this.colcantsacos,
             this.colpresentacion,
             this.gridColumn1,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn3});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
             // 
             // colTurno
             // 
@@ -300,6 +303,24 @@ namespace LOSA.Produccion
             this.gridColumn1.VisibleIndex = 15;
             this.gridColumn1.Width = 119;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Codigo MP";
+            this.gridColumn2.FieldName = "itemcode";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 4;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "% Desviacion";
+            this.gridColumn3.DisplayFormat.FormatString = "{0:#,###,##0.00}";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn3.FieldName = "diffporcentaje";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            // 
             // cmdGuardar
             // 
             this.cmdGuardar.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -401,15 +422,6 @@ namespace LOSA.Produccion
             this.labelControl8.TabIndex = 100;
             this.labelControl8.Text = "Fecha Desde:";
             // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Codigo MP";
-            this.gridColumn2.FieldName = "itemcode";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 4;
-            // 
             // frmAlimentacionBasculasMacros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,5 +477,6 @@ namespace LOSA.Produccion
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }
