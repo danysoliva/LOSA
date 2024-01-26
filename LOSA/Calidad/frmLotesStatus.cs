@@ -25,29 +25,71 @@ namespace LOSA.Calidad
         public int id_mp;
         public string CodigoP;
         public string Articulo;
+        bool SoloProductoTerminado;
         public int tipo_tm;
         public int id_turno;
         DataOperations DpLocal;
         public frmLotesStatus(UserLogin Puser)
         {
             InitializeComponent();
+
             DpLocal = new DataOperations();
+            UsuarioLogeado = Puser;
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                txtVentana.Visible = true;
+
             dtFechaDesdeObservacion.DateTime =
             dtFechaDesdeDisponibles.DateTime = DpLocal.Now().AddDays(-3);
 
             dtFechaHastaObservacion.DateTime =
             dtFechaHastaDisponibles.DateTime = DpLocal.Now().AddDays(1);
+
+
+            switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+            {
+                //case GrupoUser.GrupoUsuario.Logistica:
+                //    break;
+                case GrupoUser.GrupoUsuario.Calidad:
+                    SoloProductoTerminado = false;
+                    LoadTarimasAvailables();
+                    LoadTarimasObs();
+                    LoadTarimasRet();
+                    LoadTarimasRechazadas();
+
+                    break;
+                case GrupoUser.GrupoUsuario.Administradores:
+                    SoloProductoTerminado = false;
+                    LoadTarimasAvailables();
+                    LoadTarimasObs();
+                    LoadTarimasRet();
+                    LoadTarimasRechazadas();
+                    break;
+                case GrupoUser.GrupoUsuario.Produccion:
+                    break;
+                case GrupoUser.GrupoUsuario.ProduccionV2:
+                    SoloProductoTerminado = true;
+                    LoadTarimasAvailables();
+                    LoadTarimasObs();
+                    LoadTarimasRet();
+                    LoadTarimasRechazadas();
+                    barButtonRechazarIngreso.Enabled = false;
+                    barButtonItem4.Enabled = false;
+                    //popupMenu1.ItemLinks.Select<>
+
+
+                    break;
+                //case GrupoUser.GrupoUsuario.Contabilidad:
+                //    break;
+                default:
+                    break;
+            }
+
+            
             
 
+            
 
-            UsuarioLogeado = Puser;
-            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
-                txtVentana.Visible = true;  
-
-            LoadTarimasAvailables();
-            LoadTarimasObs();
-            LoadTarimasRet();
-            LoadTarimasRechazadas();
+            
         }
 
         private void LoadTarimasAvailables()
@@ -60,10 +102,11 @@ namespace LOSA.Calidad
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
                     //bit_muestreo
-                    SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V3", con);
+                    SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V4", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     dsCalidad1.tarimas_disponibles.Clear();
                     SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                    cmd.Parameters.AddWithValue("@SoloProductoTerminado", SoloProductoTerminado);
                     adat.Fill(dsCalidad1.tarimas_disponibles);
                     gvMateriaPrima.CollapseAllGroups();
                     con.Close();
@@ -83,11 +126,12 @@ namespace LOSA.Calidad
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
                         //bit_muestreo
-                        SqlCommand cmd = new SqlCommand("sp_get_tarimas_habilitadas_calidad_V5", con);
+                        SqlCommand cmd = new SqlCommand("[sp_get_tarimas_habilitadas_calidad_V6]", con);
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.AddWithValue("@desde", dtFechaDesdeDisponibles.DateTime);
                         cmd.Parameters.AddWithValue("@hasta", dtFechaHastaDisponibles.DateTime);
+                        cmd.Parameters.AddWithValue("@SoloProductoTerminado", SoloProductoTerminado);
                         dsCalidad1.tarimas_disponibles.Clear();
                         SqlDataAdapter adat = new SqlDataAdapter(cmd);
                         adat.Fill(dsCalidad1.tarimas_disponibles);
@@ -134,8 +178,9 @@ namespace LOSA.Calidad
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad_v2", con);
+                    SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad_v4", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@SoloProductoTerminado", SoloProductoTerminado);
                     dsCalidad1.tarimas_obs.Clear();
                     SqlDataAdapter adat = new SqlDataAdapter(cmd);
                     adat.Fill(dsCalidad1.tarimas_obs);
@@ -157,10 +202,11 @@ namespace LOSA.Calidad
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
 
-                        SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad_v3", con);
+                        SqlCommand cmd = new SqlCommand("[sp_get_tarimas_obs_calidad_v5]", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@desde", dtFechaDesdeObservacion.DateTime);
                         cmd.Parameters.AddWithValue("@hasta", dtFechaHastaObservacion.DateTime);
+                        cmd.Parameters.AddWithValue("@SoloProductoTerminado", SoloProductoTerminado);
                         dsCalidad1.tarimas_obs.Clear();
                         SqlDataAdapter adat = new SqlDataAdapter(cmd);
                         adat.Fill(dsCalidad1.tarimas_obs);
@@ -188,8 +234,9 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarimas_ret_calidad_v2", con);
+                SqlCommand cmd = new SqlCommand("sp_get_tarimas_ret_calidad_v3", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SoloProductoTerminado", SoloProductoTerminado);
                 dsCalidad1.tarimas_ret.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsCalidad1.tarimas_ret);
@@ -1284,8 +1331,9 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("sp_get_tarimas_rechazadas_calidad", con);
+                SqlCommand cmd = new SqlCommand("sp_get_tarimas_rechazadas_calidadV2", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SoloProductoTerminado", SoloProductoTerminado);
                 dsCalidad1.tarimas_rechazadas.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsCalidad1.tarimas_rechazadas);
@@ -1723,10 +1771,132 @@ namespace LOSA.Calidad
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //Observacion
+            //Pasar a Observacion
             //ArrayList array = Grid_Get_Selected_Items();
             //UpdateEstado(2);
-            UpdateStatusTarimas(2);
+
+            switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+            {
+                //case GrupoUser.GrupoUsuario.Logistica:
+                //    break;
+                case GrupoUser.GrupoUsuario.Calidad:
+                    UpdateStatusTarimas(2);
+                    break;
+                case GrupoUser.GrupoUsuario.Administradores:
+                    break;
+                //case GrupoUser.GrupoUsuario.Produccion:
+                //    break;
+                case GrupoUser.GrupoUsuario.ProduccionV2:
+                    //De Retenido pasar a Observacion!
+                    try
+                    {
+                        DataOperations dp = new DataOperations();
+                        var gridViewRetenido = (GridView)gridRetenidos.FocusedView;
+                        ArrayList ListaTarimas = null;
+                        bool existeMuestra = false;
+                        string lotePar = "";
+
+                        switch (gridActual)
+                        {
+                            case 3: //Grid Retenidos
+
+                                var row1 = (dsCalidad.tarimas_retRow)gridViewRetenido.GetFocusedDataRow();
+
+                                if (ListaTarimas == null)
+                                    ListaTarimas = new ArrayList();
+                                tipo_tm = row1.id_tipotm;
+                                if (tipo_tm == 2)
+                                {
+                                    lotePar = row1.lote;
+                                }
+
+                                foreach (dsCalidad.tarimas_retRow rowHab in dsCalidad1.tarimas_ret.Rows)
+                                {
+                                    if (rowHab.seleccionado)
+                                    {
+                                        if (rowHab.lote != lotePar && tipo_tm == 2)
+                                        {
+                                            CajaDialogo.Error("En Producto Terminado, No puede seleccionar varios Lotes a la Vez");
+                                            return;
+                                        }
+                                        ListaTarimas.Add(rowHab.id);
+                                    }
+                                }
+
+                                existeMuestra = row1.bit_muestreo;
+                                tipo_tm = row1.id_tipotm;
+
+                                break;
+
+                            default:
+                                break;
+                        }
+
+                        if (ListaTarimas.Count <= 0)
+                        {
+                            CajaDialogo.Error("No se seleccionaron Tarimas!");
+                            return;
+                        }
+
+                        if (!existeMuestra)
+                        {
+                            bool AgregarMuestras = false;
+                            if (MessageBox.Show("No existe muestreo a la tarima seleccionada, deseas ingresar la informacion?", "Pregunta sobre Muestreo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                AgregarMuestras = true;
+                            }
+                            else
+                            {
+                                AgregarMuestras = false;
+                            }
+
+                            if (AgregarMuestras)
+                            {
+                                FrmRegistroMuestreo frm = new FrmRegistroMuestreo(ListaTarimas, lotePar, UsuarioLogeado);
+                                switch (frm.ShowDialog())
+                                {
+                                    case DialogResult.Cancel:
+                                        break;
+                                    case DialogResult.Yes:
+                                        //2 Tarimas Enviadas a Observacion para Liberacion de Calidad.
+                                        UpdateStatusTarimaPT(2, ListaTarimas);
+                                        break;
+                                    case DialogResult.No:
+                                        //4 Tarimas a Rechazadas
+                                        UpdateStatusTarimaPT(4, ListaTarimas);
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                int Estado = 2;//En Observacion
+                                UpdateStatusTarimaPT(Estado, ListaTarimas);
+                            }
+                        }
+                        else
+                        {
+                            int Estado = 2;//En Observacion
+                            UpdateStatusTarimaPT(Estado, ListaTarimas);
+                        }
+                       
+
+                    }
+                    catch (Exception ex)
+                    {
+                        CajaDialogo.Error(ex.Message);
+                    }
+
+                    break;
+                //case GrupoUser.GrupoUsuario.Contabilidad:
+                //    break;
+                default:
+                    break;
+            }
+
+
+
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

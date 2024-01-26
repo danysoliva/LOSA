@@ -748,6 +748,8 @@ namespace LOSA.Calidad.Parametros {
             
             private global::System.Data.DataColumn columntipo_rep_descr;
             
+            private global::System.Data.DataColumn columnllenado_por;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public paramteros_crudDataTable() {
@@ -839,6 +841,14 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn llenado_porColumn {
+                get {
+                    return this.columnllenado_por;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -874,7 +884,7 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public paramteros_crudRow Addparamteros_crudRow(int id, string parametro, int tipo_rep, bool enable, int id_categoria, string categoria, string tipo_rep_descr) {
+            public paramteros_crudRow Addparamteros_crudRow(int id, string parametro, int tipo_rep, bool enable, int id_categoria, string categoria, string tipo_rep_descr, string llenado_por) {
                 paramteros_crudRow rowparamteros_crudRow = ((paramteros_crudRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -883,7 +893,8 @@ namespace LOSA.Calidad.Parametros {
                         enable,
                         id_categoria,
                         categoria,
-                        tipo_rep_descr};
+                        tipo_rep_descr,
+                        llenado_por};
                 rowparamteros_crudRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowparamteros_crudRow);
                 return rowparamteros_crudRow;
@@ -913,6 +924,7 @@ namespace LOSA.Calidad.Parametros {
                 this.columnid_categoria = base.Columns["id_categoria"];
                 this.columncategoria = base.Columns["categoria"];
                 this.columntipo_rep_descr = base.Columns["tipo_rep_descr"];
+                this.columnllenado_por = base.Columns["llenado_por"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -932,6 +944,8 @@ namespace LOSA.Calidad.Parametros {
                 base.Columns.Add(this.columncategoria);
                 this.columntipo_rep_descr = new global::System.Data.DataColumn("tipo_rep_descr", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntipo_rep_descr);
+                this.columnllenado_por = new global::System.Data.DataColumn("llenado_por", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnllenado_por);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5000,6 +5014,22 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string llenado_por {
+                get {
+                    try {
+                        return ((string)(this[this.tableparamteros_crud.llenado_porColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'llenado_por\' de la tabla \'paramteros_crud\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableparamteros_crud.llenado_porColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableparamteros_crud.idColumn);
             }
@@ -5080,6 +5110,18 @@ namespace LOSA.Calidad.Parametros {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Settipo_rep_descrNull() {
                 this[this.tableparamteros_crud.tipo_rep_descrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isllenado_porNull() {
+                return this.IsNull(this.tableparamteros_crud.llenado_porColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setllenado_porNull() {
+                this[this.tableparamteros_crud.llenado_porColumn] = global::System.Convert.DBNull;
             }
         }
         

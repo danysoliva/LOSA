@@ -33,8 +33,8 @@ namespace LOSA.Calidad.Parametros
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                dsParametros.paramteros_crud.Clear();
-                da.Fill(dsParametros.paramteros_crud);
+                dsParametros1.paramteros_crud.Clear();
+                da.Fill(dsParametros1.paramteros_crud);
                 cn.Close();
             }
             catch (Exception ex)
@@ -68,6 +68,43 @@ namespace LOSA.Calidad.Parametros
                 {
                     load_informacion();
                 }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void reposTSCalidad_Toggled(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void reposTSCalidad_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            var gridview = (GridView)grd_data.FocusedView;
+            var row = (dsParametros.paramteros_crudRow)gridview.GetFocusedDataRow();
+
+            int llenado_porCalidad = 1;
+            if (Convert.ToBoolean(reposTSCalidad.ValueOn) == true)
+                llenado_porCalidad = 1;
+            else
+                llenado_porCalidad = 0;
+
+            try
+            {
+                //DataOperations dp = new DataOperations();
+                //SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                //conn.Open();
+                //SqlCommand cmd = new SqlCommand("",conn);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("",);
+                //cmd.Parameters.AddWithValue("",);
+                //cmd.ExecuteNonQuery();
+                //conn.Close();
+
+
             }
             catch (Exception ex)
             {

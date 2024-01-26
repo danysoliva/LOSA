@@ -96,7 +96,7 @@ namespace LOSA.Calidad.Parametros
                     grd_categoria.EditValue = dr.GetInt32(2);
                     tggenable.IsOn = dr.GetBoolean(3);
                     grd_aceptacion.EditValue = dr.GetInt32(4);
-                    
+                    tsLlenadoPor.IsOn = dr.GetBoolean(5);
                 }
                 dr.Close();
                 cn.Close();
@@ -126,7 +126,7 @@ namespace LOSA.Calidad.Parametros
                 }
                 if (operacion == Operacion.Editar)
                 {
-                    string query = @"sp_set_update_parametros_calidad";
+                    string query = @"sp_set_update_parametros_calidadV2";
                     SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(query, cn);
@@ -136,6 +136,7 @@ namespace LOSA.Calidad.Parametros
                     cmd.Parameters.AddWithValue("@tipo_rep", grd_aceptacion.EditValue);
                     cmd.Parameters.AddWithValue("@id", id_parametro);
                     cmd.Parameters.AddWithValue("@enable", tggenable.IsOn ? 1 : 0);
+                    cmd.Parameters.AddWithValue("@llenado_por", tsLlenadoPor.IsOn ? 1 : 0);
                     cmd.ExecuteNonQuery();
                     cn.Close();
                 }
@@ -149,6 +150,7 @@ namespace LOSA.Calidad.Parametros
                     cmd.Parameters.AddWithValue("@parametro", txtParametro.Text);
                     cmd.Parameters.AddWithValue("@id_categoria" , grd_categoria.EditValue);
                     cmd.Parameters.AddWithValue("@tipo_rep" , grd_aceptacion.EditValue);
+                    cmd.Parameters.AddWithValue("@llenado_por", tsLlenadoPor.IsOn ? 1 : 0);
                     cmd.ExecuteNonQuery();
                     cn.Close();
                 }

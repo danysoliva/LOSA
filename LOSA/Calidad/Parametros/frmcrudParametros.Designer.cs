@@ -30,15 +30,15 @@ namespace LOSA.Calidad.Parametros
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcrudParametros));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.grd_data = new DevExpress.XtraGrid.GridControl();
             this.paramteroscrudBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsParametros = new LOSA.Calidad.Parametros.dsParametros();
+            this.dsParametros1 = new LOSA.Calidad.Parametros.dsParametros();
             this.grdv_data = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colparametro = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,14 +49,17 @@ namespace LOSA.Calidad.Parametros
             this.coltipo_rep_descr = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEditqar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnEditar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposTSCalidad = new DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paramteroscrudBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsParametros1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposTSCalidad)).BeginInit();
             this.SuspendLayout();
             // 
             // grd_data
@@ -69,7 +72,8 @@ namespace LOSA.Calidad.Parametros
             this.grd_data.MainView = this.grdv_data;
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnEditar});
+            this.btnEditar,
+            this.reposTSCalidad});
             this.grd_data.Size = new System.Drawing.Size(1155, 559);
             this.grd_data.TabIndex = 0;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -78,12 +82,12 @@ namespace LOSA.Calidad.Parametros
             // paramteroscrudBindingSource
             // 
             this.paramteroscrudBindingSource.DataMember = "paramteros_crud";
-            this.paramteroscrudBindingSource.DataSource = this.dsParametros;
+            this.paramteroscrudBindingSource.DataSource = this.dsParametros1;
             // 
-            // dsParametros
+            // dsParametros1
             // 
-            this.dsParametros.DataSetName = "dsParametros";
-            this.dsParametros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsParametros1.DataSetName = "dsParametros";
+            this.dsParametros1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grdv_data
             // 
@@ -115,7 +119,8 @@ namespace LOSA.Calidad.Parametros
             this.colid_categoria,
             this.colcategoria,
             this.coltipo_rep_descr,
-            this.colEditqar});
+            this.colEditqar,
+            this.gridColumn1});
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
             this.grdv_data.OptionsView.ShowAutoFilterRow = true;
@@ -135,7 +140,7 @@ namespace LOSA.Calidad.Parametros
             this.colparametro.OptionsColumn.AllowEdit = false;
             this.colparametro.Visible = true;
             this.colparametro.VisibleIndex = 0;
-            this.colparametro.Width = 389;
+            this.colparametro.Width = 317;
             // 
             // coltipo_rep
             // 
@@ -163,7 +168,7 @@ namespace LOSA.Calidad.Parametros
             this.colcategoria.OptionsColumn.AllowEdit = false;
             this.colcategoria.Visible = true;
             this.colcategoria.VisibleIndex = 1;
-            this.colcategoria.Width = 415;
+            this.colcategoria.Width = 230;
             // 
             // coltipo_rep_descr
             // 
@@ -172,8 +177,8 @@ namespace LOSA.Calidad.Parametros
             this.coltipo_rep_descr.Name = "coltipo_rep_descr";
             this.coltipo_rep_descr.OptionsColumn.AllowEdit = false;
             this.coltipo_rep_descr.Visible = true;
-            this.coltipo_rep_descr.VisibleIndex = 2;
-            this.coltipo_rep_descr.Width = 333;
+            this.coltipo_rep_descr.VisibleIndex = 3;
+            this.coltipo_rep_descr.Width = 193;
             // 
             // colEditqar
             // 
@@ -181,17 +186,40 @@ namespace LOSA.Calidad.Parametros
             this.colEditqar.ColumnEdit = this.btnEditar;
             this.colEditqar.Name = "colEditqar";
             this.colEditqar.Visible = true;
-            this.colEditqar.VisibleIndex = 3;
+            this.colEditqar.VisibleIndex = 4;
+            this.colEditqar.Width = 135;
             // 
             // btnEditar
             // 
             this.btnEditar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btnEditar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Parametro Llenado por:";
+            this.gridColumn1.FieldName = "llenado_por";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            this.gridColumn1.Width = 255;
+            // 
+            // reposTSCalidad
+            // 
+            this.reposTSCalidad.AutoHeight = false;
+            this.reposTSCalidad.AutoWidth = true;
+            this.reposTSCalidad.ContentAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.reposTSCalidad.GlyphAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.reposTSCalidad.GlyphVerticalAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.reposTSCalidad.Name = "reposTSCalidad";
+            this.reposTSCalidad.OffText = "Produccion";
+            this.reposTSCalidad.OnText = "Calidad";
+            this.reposTSCalidad.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.reposTSCalidad_EditValueChanging);
             // 
             // btn_close
             // 
@@ -245,9 +273,10 @@ namespace LOSA.Calidad.Parametros
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paramteroscrudBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsParametros1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposTSCalidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,7 +289,7 @@ namespace LOSA.Calidad.Parametros
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.BindingSource paramteroscrudBindingSource;
-        private dsParametros dsParametros;
+        private dsParametros dsParametros1;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colparametro;
         private DevExpress.XtraGrid.Columns.GridColumn coltipo_rep;
@@ -270,5 +299,7 @@ namespace LOSA.Calidad.Parametros
         private DevExpress.XtraGrid.Columns.GridColumn coltipo_rep_descr;
         private DevExpress.XtraGrid.Columns.GridColumn colEditqar;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnEditar;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch reposTSCalidad;
     }
 }

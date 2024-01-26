@@ -76,7 +76,7 @@ namespace LOSA.Calidad.Parametros
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(Query,cn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_pt",id );
+                    cmd.Parameters.AddWithValue("@id_pt",id);
                     dsParametros1.parametroProducto.Clear();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dsParametros1.parametroProducto);
