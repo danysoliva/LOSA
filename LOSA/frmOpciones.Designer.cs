@@ -429,6 +429,8 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.btnRPTAlimentacionMacrosCalidad = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRPTAlimentacionMacrosLogistica = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -666,6 +668,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.btnRPTAlimentacionMacrosLogistica);
             this.TabMP_Sacos.Controls.Add(this.cmdGestionLotesGranel);
             this.TabMP_Sacos.Controls.Add(this.btnValidacionTarimas);
             this.TabMP_Sacos.Controls.Add(this.btnrutas_traz_logistica);
@@ -716,6 +719,7 @@
             this.btnValidacionTarimas.Size = new System.Drawing.Size(198, 42);
             this.btnValidacionTarimas.TabIndex = 51;
             this.btnValidacionTarimas.Text = "Recuento de Tarimas";
+            this.btnValidacionTarimas.Visible = false;
             this.btnValidacionTarimas.Click += new System.EventHandler(this.btnValidacionTarimas_Click);
             // 
             // btnrutas_traz_logistica
@@ -789,10 +793,10 @@
             this.simpleButton26.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.simpleButton26.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton26.ImageOptions.Image")));
-            this.simpleButton26.Location = new System.Drawing.Point(415, 14);
+            this.simpleButton26.Location = new System.Drawing.Point(416, 206);
             this.simpleButton26.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton26.Name = "simpleButton26";
-            this.simpleButton26.Size = new System.Drawing.Size(199, 42);
+            this.simpleButton26.Size = new System.Drawing.Size(199, 41);
             this.simpleButton26.TabIndex = 44;
             this.simpleButton26.Text = "Compras en transito";
             this.simpleButton26.Click += new System.EventHandler(this.simpleButton26_Click);
@@ -982,7 +986,7 @@
             this.btnajuste.Appearance.Options.UseFont = true;
             this.btnajuste.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnajuste.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnajuste.ImageOptions.Image")));
-            this.btnajuste.Location = new System.Drawing.Point(415, 206);
+            this.btnajuste.Location = new System.Drawing.Point(416, 353);
             this.btnajuste.Name = "btnajuste";
             this.btnajuste.Size = new System.Drawing.Size(199, 42);
             this.btnajuste.TabIndex = 31;
@@ -1492,6 +1496,7 @@
             // 
             // TabCalidad
             // 
+            this.TabCalidad.Controls.Add(this.btnRPTAlimentacionMacrosCalidad);
             this.TabCalidad.Controls.Add(this.btnCertidicadPTMain);
             this.TabCalidad.Controls.Add(this.btnSolicitudDespachoCalidad);
             this.TabCalidad.Controls.Add(this.frmRepor_KepServer);
@@ -6149,6 +6154,36 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // btnRPTAlimentacionMacrosCalidad
+            // 
+            this.btnRPTAlimentacionMacrosCalidad.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnRPTAlimentacionMacrosCalidad.Appearance.Options.UseFont = true;
+            this.btnRPTAlimentacionMacrosCalidad.Appearance.Options.UseTextOptions = true;
+            this.btnRPTAlimentacionMacrosCalidad.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnRPTAlimentacionMacrosCalidad.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnRPTAlimentacionMacrosCalidad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton74.ImageOptions.Image")));
+            this.btnRPTAlimentacionMacrosCalidad.Location = new System.Drawing.Point(627, 218);
+            this.btnRPTAlimentacionMacrosCalidad.Name = "btnRPTAlimentacionMacrosCalidad";
+            this.btnRPTAlimentacionMacrosCalidad.Size = new System.Drawing.Size(199, 59);
+            this.btnRPTAlimentacionMacrosCalidad.TabIndex = 57;
+            this.btnRPTAlimentacionMacrosCalidad.Text = "Reporte Alimentacion Bascula";
+            this.btnRPTAlimentacionMacrosCalidad.Click += new System.EventHandler(this.btnRPTAlimentacionMacrosCalidad_Click);
+            // 
+            // btnRPTAlimentacionMacrosLogistica
+            // 
+            this.btnRPTAlimentacionMacrosLogistica.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRPTAlimentacionMacrosLogistica.Appearance.Options.UseFont = true;
+            this.btnRPTAlimentacionMacrosLogistica.Appearance.Options.UseTextOptions = true;
+            this.btnRPTAlimentacionMacrosLogistica.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnRPTAlimentacionMacrosLogistica.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnRPTAlimentacionMacrosLogistica.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton74.ImageOptions.Image")));
+            this.btnRPTAlimentacionMacrosLogistica.Location = new System.Drawing.Point(415, 15);
+            this.btnRPTAlimentacionMacrosLogistica.Name = "btnRPTAlimentacionMacrosLogistica";
+            this.btnRPTAlimentacionMacrosLogistica.Size = new System.Drawing.Size(199, 42);
+            this.btnRPTAlimentacionMacrosLogistica.TabIndex = 58;
+            this.btnRPTAlimentacionMacrosLogistica.Text = "Reporte Alimentacion Basculas";
+            this.btnRPTAlimentacionMacrosLogistica.Click += new System.EventHandler(this.btnRPTAlimentacionMacrosLogistica_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6600,5 +6635,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem198;
         private DevExpress.XtraNavBar.NavBarItem navBarItem199;
         private DevExpress.XtraNavBar.NavBarItem navBarItem200;
+        private DevExpress.XtraEditors.SimpleButton btnRPTAlimentacionMacrosCalidad;
+        private DevExpress.XtraEditors.SimpleButton btnRPTAlimentacionMacrosLogistica;
     }
 }

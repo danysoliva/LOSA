@@ -36,6 +36,11 @@ namespace LOSA.Calidad.Parametros
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -53,12 +58,11 @@ namespace LOSA.Calidad.Parametros
             this.dt_fecharegistro = new DevExpress.XtraEditors.DateEdit();
             this.grd_turno_inicial = new DevExpress.XtraEditors.GridLookUpEdit();
             this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsParametros = new LOSA.Calidad.Parametros.dsParametros();
+            this.dsParametros1 = new LOSA.Calidad.Parametros.dsParametros();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colturno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.grd_decision = new DevExpress.XtraGrid.GridControl();
             this.grdv_decision = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colparametro1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,6 +73,7 @@ namespace LOSA.Calidad.Parametros
             this.colresultado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colvalorMostarMaximo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colvalorMostarMinimo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grd_rangos = new DevExpress.XtraGrid.GridControl();
             this.grdv_rangos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colparametro = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,6 +105,8 @@ namespace LOSA.Calidad.Parametros
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.btnSeleccionarPRD = new DevExpress.XtraEditors.ButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtformula.Properties)).BeginInit();
@@ -107,7 +114,7 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.dt_fecharegistro.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_turno_inicial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsParametros1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_decision)).BeginInit();
@@ -131,6 +138,7 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dthastaJornada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionarPRD.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -309,12 +317,12 @@ namespace LOSA.Calidad.Parametros
             // turnoBindingSource
             // 
             this.turnoBindingSource.DataMember = "turno";
-            this.turnoBindingSource.DataSource = this.dsParametros;
+            this.turnoBindingSource.DataSource = this.dsParametros1;
             // 
-            // dsParametros
+            // dsParametros1
             // 
-            this.dsParametros.DataSetName = "dsParametros";
-            this.dsParametros.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsParametros1.DataSetName = "dsParametros";
+            this.dsParametros1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridLookUpEdit1View
             // 
@@ -357,7 +365,6 @@ namespace LOSA.Calidad.Parametros
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.labelControl11);
             this.groupBox1.Controls.Add(this.grd_decision);
             this.groupBox1.Controls.Add(this.grd_rangos);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -368,24 +375,14 @@ namespace LOSA.Calidad.Parametros
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestion de Parametros";
             // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(6, 258);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(67, 17);
-            this.labelControl11.TabIndex = 6;
-            this.labelControl11.Text = "Aceptacion";
-            // 
             // grd_decision
             // 
             this.grd_decision.DataMember = "decision_minimos";
-            this.grd_decision.DataSource = this.dsParametros;
-            this.grd_decision.Location = new System.Drawing.Point(6, 281);
+            this.grd_decision.DataSource = this.dsParametros1;
+            this.grd_decision.Location = new System.Drawing.Point(1, 258);
             this.grd_decision.MainView = this.grdv_decision;
             this.grd_decision.Name = "grd_decision";
-            this.grd_decision.Size = new System.Drawing.Size(755, 179);
+            this.grd_decision.Size = new System.Drawing.Size(760, 202);
             this.grd_decision.TabIndex = 1;
             this.grd_decision.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_decision});
@@ -414,7 +411,8 @@ namespace LOSA.Calidad.Parametros
             this.colvalor,
             this.colresultado,
             this.colvalorMostarMaximo,
-            this.colvalorMostarMinimo});
+            this.colvalorMostarMinimo,
+            this.gridColumn3});
             this.grdv_decision.GridControl = this.grd_decision;
             this.grdv_decision.Name = "grdv_decision";
             this.grdv_decision.OptionsView.ShowAutoFilterRow = true;
@@ -491,10 +489,17 @@ namespace LOSA.Calidad.Parametros
             this.colvalorMostarMinimo.Visible = true;
             this.colvalorMostarMinimo.VisibleIndex = 1;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Ingresado por Calidad";
+            this.gridColumn3.FieldName = "calidad";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            // 
             // grd_rangos
             // 
             this.grd_rangos.DataMember = "parametros_decision";
-            this.grd_rangos.DataSource = this.dsParametros;
+            this.grd_rangos.DataSource = this.dsParametros1;
             this.grd_rangos.Location = new System.Drawing.Point(1, 24);
             this.grd_rangos.MainView = this.grdv_rangos;
             this.grd_rangos.Name = "grd_rangos";
@@ -593,15 +598,15 @@ namespace LOSA.Calidad.Parametros
             // decisionvaluesBindingSource
             // 
             this.decisionvaluesBindingSource.DataMember = "decision_values";
-            this.decisionvaluesBindingSource.DataSource = this.dsParametros;
+            this.decisionvaluesBindingSource.DataSource = this.dsParametros1;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtcomentarios);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(6, 728);
+            this.groupBox2.Location = new System.Drawing.Point(6, 722);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(766, 85);
+            this.groupBox2.Size = new System.Drawing.Size(766, 101);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Comentario";
@@ -611,7 +616,7 @@ namespace LOSA.Calidad.Parametros
             this.txtcomentarios.EditValue = "";
             this.txtcomentarios.Location = new System.Drawing.Point(6, 20);
             this.txtcomentarios.Name = "txtcomentarios";
-            this.txtcomentarios.Size = new System.Drawing.Size(749, 65);
+            this.txtcomentarios.Size = new System.Drawing.Size(749, 75);
             this.txtcomentarios.TabIndex = 0;
             this.txtcomentarios.Click += new System.EventHandler(this.txtcomentarios_Click);
             this.txtcomentarios.Enter += new System.EventHandler(this.txtcomentarios_Enter);
@@ -622,7 +627,7 @@ namespace LOSA.Calidad.Parametros
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(542, 8);
+            this.simpleButton1.Location = new System.Drawing.Point(537, 8);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(112, 52);
             this.simpleButton1.TabIndex = 24;
@@ -783,7 +788,7 @@ namespace LOSA.Calidad.Parametros
             // jornadaBindingSource
             // 
             this.jornadaBindingSource.DataMember = "jornada";
-            this.jornadaBindingSource.DataSource = this.dsParametros;
+            this.jornadaBindingSource.DataSource = this.dsParametros1;
             // 
             // gridView2
             // 
@@ -847,11 +852,36 @@ namespace LOSA.Calidad.Parametros
             this.coldescripcion1.Visible = true;
             this.coldescripcion1.VisibleIndex = 0;
             // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(434, 152);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(188, 17);
+            this.labelControl11.TabIndex = 34;
+            this.labelControl11.Text = "Seleccionar Control Produccion";
+            // 
+            // btnSeleccionarPRD
+            // 
+            this.btnSeleccionarPRD.Location = new System.Drawing.Point(628, 149);
+            this.btnSeleccionarPRD.Name = "btnSeleccionarPRD";
+            this.btnSeleccionarPRD.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSeleccionarPRD.Properties.Appearance.Options.UseFont = true;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btnSeleccionarPRD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnSeleccionarPRD.Size = new System.Drawing.Size(100, 24);
+            this.btnSeleccionarPRD.TabIndex = 35;
+            this.btnSeleccionarPRD.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnSeleccionarPRD_ButtonClick);
+            // 
             // FrmRegistroMuestreo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 825);
+            this.Controls.Add(this.btnSeleccionarPRD);
+            this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.dthastaJornada);
             this.Controls.Add(this.dtdesdeJornada);
             this.Controls.Add(this.labelControl13);
@@ -891,10 +921,9 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.dt_fecharegistro.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_turno_inicial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsParametros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsParametros1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_decision)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_decision)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_rangos)).EndInit();
@@ -916,6 +945,7 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dthastaJornada.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSeleccionarPRD.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -941,7 +971,6 @@ namespace LOSA.Calidad.Parametros
         private DevExpress.XtraEditors.GridLookUpEdit grd_turno_inicial;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraGrid.GridControl grd_decision;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_decision;
         private DevExpress.XtraGrid.GridControl grd_rangos;
@@ -950,7 +979,7 @@ namespace LOSA.Calidad.Parametros
         private DevExpress.XtraEditors.MemoEdit txtcomentarios;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.BindingSource turnoBindingSource;
-        private dsParametros dsParametros;
+        private dsParametros dsParametros1;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colturno;
         private DevExpress.XtraEditors.GridLookUpEdit grd_turno_fin;
@@ -987,5 +1016,8 @@ namespace LOSA.Calidad.Parametros
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn colid2;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.ButtonEdit btnSeleccionarPRD;
     }
 }

@@ -103,14 +103,15 @@ namespace LOSA.MigracionACS.PT
                     CodigoAQF = txtCodigo.Text;
                     int TipoData;
 
-                    if (!string.IsNullOrEmpty(txtCodigo.Text))
+                    if (pt.codesap == "PTXXX")
                     {
-                        TipoData = 1;
-                        CargarCodigosSAP(TipoData);
-
-                        
+                        if (!string.IsNullOrEmpty(txtCodigo.Text))
+                        {
+                            TipoData = 1;
+                            CargarCodigosSAP(TipoData);
+                        }
                     }
-                   
+
                     txtRegistro.Text = pt.registro;
                     grdOrigen.EditValue = pt.idOr;
                     spinProteina.EditValue = pt.proteinas;
@@ -165,6 +166,8 @@ namespace LOSA.MigracionACS.PT
                     aCSDataSet21.CodigosSAP.Clear();
                     da.Fill(aCSDataSet21.CodigosSAP);
                     cn.Close();
+
+
 
                     foreach (DataRow row in aCSDataSet21.CodigosSAP)
                     {
@@ -484,9 +487,9 @@ namespace LOSA.MigracionACS.PT
                                 Tipo = 4;
 
                             SqlCommand cmdACS = new SqlCommand("sp_producto_update_codigo_aqf_correlativo", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@tipo", conn);
-                            cmd.ExecuteNonQuery();
+                            cmdACS.CommandType = CommandType.StoredProcedure;
+                            cmdACS.Parameters.AddWithValue("@tipo", Tipo);
+                            cmdACS.ExecuteNonQuery();
                             conn.Close();
 
                             //Crear el registro en APMS
@@ -514,17 +517,17 @@ namespace LOSA.MigracionACS.PT
                             connAPMS.Open();
                             SqlCommand cmdAPMS = new SqlCommand("sp_insert_finished_products", connAPMS);
                             cmdAPMS.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@acs_id",IdPT_ACS);
-                            cmd.Parameters.AddWithValue("@code", txtFormula.Text.Trim());
-                            cmd.Parameters.AddWithValue("@short_name", txtDescrpcionTecnica.Text);
-                            cmd.Parameters.AddWithValue("@long_name", txtDescrpcionTecnica.Text);
-                            cmd.Parameters.AddWithValue("@specie", Especie);
-                            cmd.Parameters.AddWithValue("@product_group", 4);
-                            cmd.Parameters.AddWithValue("@product_subgroup", 10);
-                            cmd.Parameters.AddWithValue("@bag_size", PesoSaco);
-                            cmd.Parameters.AddWithValue("@id_bag", grdPesoSaco.EditValue);
-                            cmd.Parameters.AddWithValue("@id_family", grdFamilia.EditValue);
-                            cmd.Parameters.AddWithValue("@comercial_name", txtDescripcionFacturacion.Text);
+                            cmdAPMS.Parameters.AddWithValue("@acs_id",IdPT_ACS);
+                            cmdAPMS.Parameters.AddWithValue("@code", txtCodigo.Text.Trim());
+                            cmdAPMS.Parameters.AddWithValue("@short_name", txtDescrpcionTecnica.Text);
+                            cmdAPMS.Parameters.AddWithValue("@long_name", txtDescrpcionTecnica.Text);
+                            cmdAPMS.Parameters.AddWithValue("@specie", Especie);
+                            cmdAPMS.Parameters.AddWithValue("@product_group", 4);
+                            cmdAPMS.Parameters.AddWithValue("@product_subgroup", 10);
+                            cmdAPMS.Parameters.AddWithValue("@bag_size", PesoSaco);
+                            cmdAPMS.Parameters.AddWithValue("@id_bag", grdPesoSaco.EditValue);
+                            cmdAPMS.Parameters.AddWithValue("@id_family", grdFamilia.EditValue);
+                            cmdAPMS.Parameters.AddWithValue("@comercial_name", txtDescripcionFacturacion.Text);
 
                             bool Guardado = Convert.ToBoolean(cmdAPMS.ExecuteScalar());
 
@@ -626,6 +629,7 @@ namespace LOSA.MigracionACS.PT
                             cmd.Parameters.AddWithValue("@codigo_unite", txtCodUnite.Text);
                         cmd.Parameters.AddWithValue("@dias_vencimiento", spindDiasVenc.EditValue);
                         cmd.Parameters.AddWithValue("@dias_venc_despachos", spinDiasMinimos.EditValue);
+                        cmd.Parameters.AddWithValue("@code_sap", grdCodSAP.Text);
                         cmd.ExecuteNonQuery();
 
 
@@ -645,9 +649,10 @@ namespace LOSA.MigracionACS.PT
 
                         cmdAPMS.Parameters.AddWithValue("@id_bag", grdPesoSaco.EditValue);
                         cmdAPMS.Parameters.AddWithValue("@id_family",grdFamilia.EditValue);
-                        //cmdAPMS.Parameters.AddWithValue("@code_sap", );
+                        cmdAPMS.Parameters.AddWithValue("@code_sap", grdCodSAP.Text);
                         cmdAPMS.Parameters.AddWithValue("@comercial_name",txtDescripcionFacturacion.Text);
                         cmdAPMS.Parameters.AddWithValue("@IdProducto", IdProducto);
+                       
                         cmdAPMS.ExecuteNonQuery();
                         connAPMS.Close();
 

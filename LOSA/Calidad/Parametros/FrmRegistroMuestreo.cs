@@ -25,20 +25,44 @@ namespace LOSA.Calidad.Parametros
         string codigo_minmo;
         string codigo_maximo;
         UserLogin UsuarioLogeado;
+        bool ChkCalidad;
+      
         public FrmRegistroMuestreo(ArrayList ParametroTarimas, string ParametroLote, UserLogin Puser)
         {
             InitializeComponent();
             Lote = ParametroLote;
             Tarimas = ParametroTarimas;
+            UsuarioLogeado = Puser;
+            btnSeleccionarPRD.ReadOnly = true;
+
+            switch (Puser.GrupoUsuario.GrupoUsuarioActivo)
+            {
+              
+                case GrupoUser.GrupoUsuario.Calidad:
+                    ChkCalidad = true;
+                    break;
+                case GrupoUser.GrupoUsuario.Administradores:
+                    ChkCalidad = true;
+                    break;
+                //case GrupoUser.GrupoUsuario.Produccion:
+                //    break;
+                case GrupoUser.GrupoUsuario.ProduccionV2:
+                    ChkCalidad = false;
+                    break;
+                default:
+                    break;
+            }
+
             load_data();
             load_turno();
             load_parametros_fisicos_cumplo_no_cumple();
             load_parametros_fisicos_min_max();
+            
             load_decision();
             obtener_sacos();
             load_obtenet_rango();
             load_jornadas();
-            UsuarioLogeado = Puser;
+            
             load_data_ultimo_muestreo(Convert.ToInt32(Lote));
         }
 
@@ -78,8 +102,8 @@ namespace LOSA.Calidad.Parametros
                 SqlCommand cmd = new SqlCommand("sp_get_jornada_laboral_horas", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsParametros.jornada.Clear();
-                adat.Fill(dsParametros.jornada);
+                dsParametros1.jornada.Clear();
+                adat.Fill(dsParametros1.jornada);
                 conn.Close();
             }
             catch (Exception ex)
@@ -188,9 +212,9 @@ namespace LOSA.Calidad.Parametros
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                dsParametros.turno.Clear();
+                dsParametros1.turno.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsParametros.turno);
+                da.Fill(dsParametros1.turno);
                 cn.Close();
             }
             catch (Exception ex)
@@ -209,9 +233,9 @@ namespace LOSA.Calidad.Parametros
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                dsParametros.decision_values.Clear();
+                dsParametros1.decision_values.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsParametros.decision_values);
+                da.Fill(dsParametros1.decision_values);
                 cn.Close();
             }
             catch (Exception ex)
@@ -233,21 +257,24 @@ namespace LOSA.Calidad.Parametros
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_pt", id_pt);
-                dsParametros.parametros_decision.Clear();
+                dsParametros1.parametros_decision.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsParametros.parametros_decision);
+                da.Fill(dsParametros1.parametros_decision);
                 cn.Close();
+
+
+
+
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
         }
 
         public void load_parametros_fisicos_min_max()
         {
-            string query = @"sp_get_parametros_protuctos_revision_fisica_min_max";
+            string query = @"sp_get_parametros_protuctos_revision_fisica_min_maxV2";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             try
             {
@@ -255,18 +282,19 @@ namespace LOSA.Calidad.Parametros
                 SqlCommand cmd = new SqlCommand(query, cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_pt", id_pt);
-                dsParametros.decision_minimos.Clear();
+                dsParametros1.decision_minimos.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsParametros.decision_minimos);
+                da.Fill(dsParametros1.decision_minimos);
                 cn.Close();
+
+
+
             }
             catch (Exception ex)
             {
-
                 CajaDialogo.Error(ex.Message);
             }
         }
-
 
         public void load_data()
         {
@@ -490,7 +518,7 @@ namespace LOSA.Calidad.Parametros
             }
 
             bool AsNoCumple = false;
-            foreach (dsParametros.parametros_decisionRow row in dsParametros.parametros_decision.Rows)
+            foreach (dsParametros.parametros_decisionRow row in dsParametros1.parametros_decision.Rows)
             {
                 if (row.id_decision == 0)
                 {
@@ -502,7 +530,7 @@ namespace LOSA.Calidad.Parametros
                     AsNoCumple = true;
                 }
             }
-            foreach (dsParametros.decision_minimosRow row in dsParametros.decision_minimos.Rows)
+            foreach (dsParametros.decision_minimosRow row in dsParametros1.decision_minimos.Rows)
             {
                 if (row.resultado == "Pendiente")
                 {
@@ -565,7 +593,7 @@ namespace LOSA.Calidad.Parametros
                     int id_muestreo = 0;
                     id_muestreo = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    foreach (dsParametros.parametros_decisionRow row in dsParametros.parametros_decision.Rows)
+                    foreach (dsParametros.parametros_decisionRow row in dsParametros1.parametros_decision.Rows)
                     {
                         cmd = new SqlCommand("sp_set_insert_muestreo_detalle", cn);
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -580,7 +608,7 @@ namespace LOSA.Calidad.Parametros
                         cmd.ExecuteNonQuery();
                     }
 
-                    foreach (dsParametros.decision_minimosRow row in dsParametros.decision_minimos.Rows)
+                    foreach (dsParametros.decision_minimosRow row in dsParametros1.decision_minimos.Rows)
                     {
                         cmd = new SqlCommand("sp_set_insert_muestreo_detalle", cn);
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -594,11 +622,15 @@ namespace LOSA.Calidad.Parametros
                         cmd.Parameters.AddWithValue("@resultado_porcentaje",row.valor);
                         cmd.ExecuteNonQuery();
                     }
+                    
+                    
                     foreach (int tm in Tarimas)
                     {
-                        cmd = new SqlCommand("sp_set_bit_muestro_in_tarima", cn);
+                        cmd = new SqlCommand("sp_set_bit_muestro_in_tarimaV2", cn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_tm", tm);
+                        cmd.Parameters.AddWithValue("@id_muestreo", id_muestreo);
+                        cmd.Parameters.AddWithValue("@chkCalidad", ChkCalidad);
                         cmd.ExecuteNonQuery();
                     }
                     cn.Close();
@@ -619,6 +651,16 @@ namespace LOSA.Calidad.Parametros
                 {
                     this.DialogResult = DialogResult.Yes;
                 }
+            }
+        }
+
+        private void btnSeleccionarPRD_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            FrmSeleccionarRegistroProduccion frm = new FrmSeleccionarRegistroProduccion();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //IdRegistroControlPRD = frm.pIdRowPRB_H;
+                btnSeleccionarPRD.EditValue = frm.pIdRowPRB_H;
             }
         }
     }

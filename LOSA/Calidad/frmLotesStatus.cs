@@ -1826,60 +1826,62 @@ namespace LOSA.Calidad
                                 existeMuestra = row1.bit_muestreo;
                                 tipo_tm = row1.id_tipotm;
 
+                                if (ListaTarimas.Count <= 0)
+                                {
+                                    CajaDialogo.Error("No se seleccionaron Tarimas!");
+                                    return;
+                                }
+
+                                if (!existeMuestra)
+                                {
+                                    bool AgregarMuestras = false;
+                                    if (MessageBox.Show("No existe muestreo a la tarima seleccionada, deseas ingresar la informacion?", "Pregunta sobre Muestreo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                    {
+                                        AgregarMuestras = true;
+                                    }
+                                    else
+                                    {
+                                        AgregarMuestras = false;
+                                    }
+
+                                    if (AgregarMuestras)
+                                    {
+                                        FrmRegistroMuestreo frm = new FrmRegistroMuestreo(ListaTarimas, lotePar, UsuarioLogeado);
+                                        switch (frm.ShowDialog())
+                                        {
+                                            case DialogResult.Cancel:
+                                                break;
+                                            case DialogResult.Yes:
+                                                //2 Tarimas Enviadas a Observacion para Liberacion de Calidad.
+                                                UpdateStatusTarimaPT(2, ListaTarimas);
+                                                break;
+                                            case DialogResult.No:
+                                                //4 Tarimas a Rechazadas
+                                                UpdateStatusTarimaPT(4, ListaTarimas);
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        int Estado = 2;//En Observacion
+                                        UpdateStatusTarimaPT(Estado, ListaTarimas);
+                                    }
+                                }
+                                else
+                                {
+                                    int Estado = 2;//En Observacion
+                                    UpdateStatusTarimaPT(Estado, ListaTarimas);
+                                }
+
                                 break;
 
                             default:
                                 break;
                         }
 
-                        if (ListaTarimas.Count <= 0)
-                        {
-                            CajaDialogo.Error("No se seleccionaron Tarimas!");
-                            return;
-                        }
-
-                        if (!existeMuestra)
-                        {
-                            bool AgregarMuestras = false;
-                            if (MessageBox.Show("No existe muestreo a la tarima seleccionada, deseas ingresar la informacion?", "Pregunta sobre Muestreo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                            {
-                                AgregarMuestras = true;
-                            }
-                            else
-                            {
-                                AgregarMuestras = false;
-                            }
-
-                            if (AgregarMuestras)
-                            {
-                                FrmRegistroMuestreo frm = new FrmRegistroMuestreo(ListaTarimas, lotePar, UsuarioLogeado);
-                                switch (frm.ShowDialog())
-                                {
-                                    case DialogResult.Cancel:
-                                        break;
-                                    case DialogResult.Yes:
-                                        //2 Tarimas Enviadas a Observacion para Liberacion de Calidad.
-                                        UpdateStatusTarimaPT(2, ListaTarimas);
-                                        break;
-                                    case DialogResult.No:
-                                        //4 Tarimas a Rechazadas
-                                        UpdateStatusTarimaPT(4, ListaTarimas);
-                                        break;
-                                    default:
-                                        break;
-                                }
-                            }
-                            else
-                            {
-                                int Estado = 2;//En Observacion
-                                UpdateStatusTarimaPT(Estado, ListaTarimas);
-                            }
-                        }
-                        else
-                        {
-                            int Estado = 2;//En Observacion
-                            UpdateStatusTarimaPT(Estado, ListaTarimas);
-                        }
+                        
                        
 
                     }
@@ -1902,48 +1904,29 @@ namespace LOSA.Calidad
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ////Retenido
-            ////UpdateEstado(3);      
-            //int id = 0;
 
-            //ArrayList array = Grid_Get_Selected_Items();
-            //int tipo_tm = 0;
-            //int contadorTm_MP = 0;
-            //int contadorTm_PT = 0;
-            //foreach (DataRow item in array)
-            //{
-            //    tipo_tm = Convert.ToInt32(item["id_tipotm"]);
-            //    if (tipo_tm == 1)
-            //    {
-            //        contadorTm_MP = contadorTm_MP + 1;
-            //    }
-            //    else
-            //    {
-            //        contadorTm_PT = contadorTm_PT + 1;
-            //    }
-            //    if (contadorTm_MP != 0)
-            //    {
-            //        if (contadorTm_PT != 0)
-            //        {
-            //            CajaDialogo.Error("Solo puede seleccionar un tipo de tarima Ya sea producto terminado o Materia Prima");
-            //            return;
-            //        }
-            //    }
-
-
-            //}
-            //if (array.Count > 0)
-            //{
-            //    frm_asiganacion_causas frm = new frm_asiganacion_causas(UsuarioLogeado, array);
-            //    if (frm.ShowDialog() == DialogResult.OK)
-            //    {
-
-            //        LoadTarimasAvailables();
-            //        LoadTarimasObs();
-            //        LoadTarimasRet();
-            //        LoadTarimasRechazadas();
-            //    }
-            //}
-            UpdateStatusTarimas(3);
+            switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+            {
+                //case GrupoUser.GrupoUsuario.Logistica:
+                //    break;
+                case GrupoUser.GrupoUsuario.Calidad:
+                    UpdateStatusTarimas(3);
+                    break;
+                case GrupoUser.GrupoUsuario.Administradores:
+                    UpdateStatusTarimas(3);
+                    break;
+                //case GrupoUser.GrupoUsuario.Produccion:
+                //    break;
+                case GrupoUser.GrupoUsuario.ProduccionV2:
+                    UpdateStatusTarimas(3);
+                    break;
+                //case GrupoUser.GrupoUsuario.Contabilidad:
+                //    break;
+                default:
+                    CajaDialogo.Error("No tiene Acceso a Realizar esta Operacion!\nConsulte al Dpto de TI");
+                    break;
+            }
+           
         }
 
         private void checkDisponibles_CheckedChanged(object sender, EventArgs e)
