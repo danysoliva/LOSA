@@ -21,7 +21,7 @@ namespace LOSA.Calidad.Parametros
         DataOperations dp = new DataOperations();
         string Lote;
         ArrayList Tarimas;
-        int id_pt;
+        int id_pt, IdMuestreo;
         string codigo_minmo;
         string codigo_maximo;
         UserLogin UsuarioLogeado;
@@ -64,6 +64,134 @@ namespace LOSA.Calidad.Parametros
             load_jornadas();
             
             load_data_ultimo_muestreo(Convert.ToInt32(Lote));
+        }
+
+        public FrmRegistroMuestreo(ArrayList ParametroTarimas, string ParametroLote, UserLogin Puser, int pIdMuestreo)
+        {
+            InitializeComponent();
+
+            Lote = ParametroLote;
+            Tarimas = ParametroTarimas;
+            UsuarioLogeado = Puser;
+            IdMuestreo = pIdMuestreo;
+            btnSeleccionarPRD.Enabled = false;
+
+            switch (Puser.GrupoUsuario.GrupoUsuarioActivo)
+            {
+
+                case GrupoUser.GrupoUsuario.Calidad:
+                    ChkCalidad = true;
+                    break;
+                case GrupoUser.GrupoUsuario.Administradores:
+                    ChkCalidad = true;
+                    break;
+                //case GrupoUser.GrupoUsuario.Produccion:
+                //    break;
+                case GrupoUser.GrupoUsuario.ProduccionV2:
+                    ChkCalidad = false;
+                    break;
+                default:
+                    break;
+            }
+
+            load_turno();
+            load_decision();
+            load_jornadas();
+            //obtener_sacos();
+            if (IdMuestreo > 0)
+            {
+                LoadDataForIdMuestreo(IdMuestreo);
+                grd_turno_inicial.Enabled = false;
+                grd_turno_fin.Enabled = false;
+                txtcomentarios.Enabled = false;
+
+            }
+            else 
+            {
+                load_parametros_fisicos_cumplo_no_cumple();
+                load_parametros_fisicos_min_max();
+                obtener_sacos();
+                load_obtenet_rango();
+                load_data_ultimo_muestreo(Convert.ToInt32(Lote));
+
+            }
+            
+            
+            
+
+
+
+        }
+
+        private void LoadDataForIdMuestreo(int pIdMuestreo)
+        {
+
+            try
+            {
+                //Header
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmdHeader = new SqlCommand("sp_get_data_header_muestreo", conn);
+                cmdHeader.CommandType = CommandType.StoredProcedure;
+                cmdHeader.Parameters.AddWithValue("@id_muestreo", pIdMuestreo);
+                SqlDataReader dr = cmdHeader.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtnombre.Text = dr.IsDBNull(0) ? "" : dr.GetString(0);
+                    txtlote.Text = dr.IsDBNull(1) ? 0.ToString() : dr.GetInt32(1).ToString();
+                    id_pt = dr.IsDBNull(2) ? 0 : dr.GetInt32(2);
+                    txtformula.Text = dr.IsDBNull(3) ? "" : dr.GetString(3);
+                    txtCandidadSacos.EditValue = dr.GetDecimal(4);
+                    txtRango.Text = dr.GetString(5);
+                    btnSeleccionarPRD.EditValue = dr.GetInt32(6);
+                    if (btnSeleccionarPRD.Text == "0")
+                        btnSeleccionarPRD.Clear();
+                    dt_fecharegistro.EditValue = dp.Now();
+                    
+                    dr.Close();
+                }
+
+                SqlCommand cmdHeaderTurnos = new SqlCommand("[sp_get_last_parametro_por_lote]", conn);
+                cmdHeaderTurnos.CommandType = CommandType.StoredProcedure;
+                cmdHeaderTurnos.Parameters.AddWithValue("@lote_pt", Lote);
+                SqlDataReader drTurnos = cmdHeaderTurnos.ExecuteReader();
+                if (drTurnos.Read())
+                {
+                    grd_turno_inicial.EditValue = drTurnos.GetInt32(1);
+                    grd_turno_fin.EditValue = drTurnos.GetInt32(2);
+                    dtdesde.EditValue = drTurnos.GetDateTime(3);
+                    dtdesdeJornada.Text = drTurnos.GetString(4);
+                    dthasta.EditValue = drTurnos.GetDateTime(5);
+                    dthastaJornada.Text = drTurnos.GetString(6);
+                    txtcomentarios.Text = drTurnos.GetString(7);
+
+                    drTurnos.Close();
+                }
+
+                //Detalle Revision Fisica
+                SqlCommand cmdDFisicos = new SqlCommand("sp_get_parametros_revision_fisica_por_muestreo", conn);
+                cmdDFisicos.CommandType = CommandType.StoredProcedure;
+                cmdDFisicos.Parameters.AddWithValue("@id_muestreo", pIdMuestreo);
+                SqlDataAdapter adatDFisicos = new SqlDataAdapter(cmdDFisicos);
+                dsParametros1.parametros_decision.Clear();
+                adatDFisicos.Fill(dsParametros1.parametros_decision);
+
+                //Detalles Valores Maximos y Minimos
+                SqlCommand cmdDValorMaximos = new SqlCommand("sp_get_muestreo_pt_for_id_muestreo", conn);
+                cmdDValorMaximos.CommandType = CommandType.StoredProcedure;
+                cmdDValorMaximos.Parameters.AddWithValue("@id_muestreo", pIdMuestreo);
+                cmdDValorMaximos.Parameters.AddWithValue("@id_pt",id_pt);
+                SqlDataAdapter adatDMaximos = new SqlDataAdapter(cmdDValorMaximos);
+                dsParametros1.decision_minimos.Clear();
+                adatDMaximos.Fill(dsParametros1.decision_minimos);
+
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void load_data_ultimo_muestreo(int plote)
@@ -287,8 +415,6 @@ namespace LOSA.Calidad.Parametros
                 da.Fill(dsParametros1.decision_minimos);
                 cn.Close();
 
-
-
             }
             catch (Exception ex)
             {
@@ -477,6 +603,18 @@ namespace LOSA.Calidad.Parametros
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+
+            switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
+            {
+                case GrupoUser.GrupoUsuario.ProduccionV2:
+                    CajaDialogo.Error("Los Analistas deben Seleccionar un Registro de Control de Produccion!");
+                    return;
+                    break;
+                default:
+                    break;
+            }
+
+
             if (grd_turno_inicial.EditValue == null)
             {
                 CajaDialogo.Error("El turno no puede quedar vacio.");
@@ -532,11 +670,11 @@ namespace LOSA.Calidad.Parametros
             }
             foreach (dsParametros.decision_minimosRow row in dsParametros1.decision_minimos.Rows)
             {
-                if (row.resultado == "Pendiente")
-                {
-                    CajaDialogo.Error("El parametro "+ row.parametro + " Esta vacio. Por favor llenarlo.");
-                    return;
-                }
+                //if (row.resultado == "Pendiente")
+                //{
+                //    CajaDialogo.Error("El parametro "+ row.parametro + " Esta vacio. Por favor llenarlo.");
+                //    return;
+                //}
                 if (row.resultado == "No Cumple")
                 {
                     AsNoCumple = true;
@@ -568,79 +706,183 @@ namespace LOSA.Calidad.Parametros
 
             if (Save)
             {
-                string query = @"[sp_insert_muestreo_of_productV2]";
-                try
+                if (IdMuestreo > 0)
                 {
-                    SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
-                    cn.Open();
-                    SqlCommand cmd = new SqlCommand(query, cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_pt", id_pt);
-                    cmd.Parameters.AddWithValue("@lote_pt", Lote);
-                    cmd.Parameters.AddWithValue("@fecha_creacion", dt_fecharegistro.EditValue);
-                    cmd.Parameters.AddWithValue("@id_turno_inicial", grd_turno_inicial.EditValue);
-                    cmd.Parameters.AddWithValue("@id_turno_final", grd_turno_fin.EditValue);
-                    cmd.Parameters.AddWithValue("@user_creador", UsuarioLogeado.Id);
-                    cmd.Parameters.AddWithValue("@jornada_inicial", dtdesde.EditValue);
-                    cmd.Parameters.AddWithValue("@jornada_final", dthasta.EditValue);
-                    cmd.Parameters.AddWithValue("@cant_sacos", txtCandidadSacos.Text);
-                    cmd.Parameters.AddWithValue("@rango_inicial", codigo_minmo);
-                    cmd.Parameters.AddWithValue("@rango_final", codigo_maximo);
-                    cmd.Parameters.AddWithValue("@id_decision", AsNoCumple ?2 :1 );
-                    cmd.Parameters.AddWithValue("@jornada_hora_inicial",dtdesdeJornada.Text);
-                    cmd.Parameters.AddWithValue("@jornada_hora_final",dthastaJornada.Text);
-                    cmd.Parameters.AddWithValue("@comentario", txtcomentarios.Text);
-                    int id_muestreo = 0;
-                    id_muestreo = Convert.ToInt32(cmd.ExecuteScalar());
+                    SqlTransaction transaction = null;
 
-                    foreach (dsParametros.parametros_decisionRow row in dsParametros1.parametros_decision.Rows)
-                    {
-                        cmd = new SqlCommand("sp_set_insert_muestreo_detalle", cn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@bit_tipo", 1);
-                        cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
-                        cmd.Parameters.AddWithValue("@parametro", row.parametro);
-                        cmd.Parameters.AddWithValue("@id_decision", row.id_decision);
-                        cmd.Parameters.AddWithValue("@id_muestreo", id_muestreo);
-                        cmd.Parameters.AddWithValue("@min_plan", 0);
-                        cmd.Parameters.AddWithValue("@max_plan", 0);
-                        cmd.Parameters.AddWithValue("@resultado_porcentaje", 0);
-                        cmd.ExecuteNonQuery();
-                    }
+                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                    bool Guardar = false;
 
-                    foreach (dsParametros.decision_minimosRow row in dsParametros1.decision_minimos.Rows)
+                    try
                     {
-                        cmd = new SqlCommand("sp_set_insert_muestreo_detalle", cn);
+                        conn.Open();
+                        transaction = conn.BeginTransaction("Transaction Order");
+
+                        SqlCommand cmd = conn.CreateCommand();
+                        cmd.CommandText = "[sp_update_muestreo]";
+                        cmd.Connection = conn;
+                        cmd.Transaction = transaction;
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@bit_tipo", 0);
-                        cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
-                        cmd.Parameters.AddWithValue("@parametro", row.parametro);
-                        cmd.Parameters.AddWithValue("@id_decision", row.resultado == "No Cumple" ? 2 : 1  );
-                        cmd.Parameters.AddWithValue("@id_muestreo", id_muestreo);
-                        cmd.Parameters.AddWithValue("@min_plan", row.valorminimo);
-                        cmd.Parameters.AddWithValue("@max_plan", row.valormaximo);
-                        cmd.Parameters.AddWithValue("@resultado_porcentaje",row.valor);
+                        cmd.Parameters.AddWithValue("@id_decision", AsNoCumple ? 2 : 1);
+                        cmd.Parameters.AddWithValue("@jornada_hora_inicial", dtdesdeJornada.Text);
+                        cmd.Parameters.AddWithValue("@jornada_hora_final", dthastaJornada.Text);
+                        cmd.Parameters.AddWithValue("@id_muestreo", IdMuestreo);
                         cmd.ExecuteNonQuery();
+
+                        foreach (dsParametros.parametros_decisionRow row in dsParametros1.parametros_decision.Rows)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.CommandText = "sp_update_or_insert_parametros";
+                            cmd.Connection = conn;
+                            cmd.Transaction = transaction;
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@bit_tipo", 1);
+                            cmd.Parameters.AddWithValue("@id_muestreo", IdMuestreo);
+                            cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
+                            cmd.Parameters.AddWithValue("@parametro",row.parametro);
+                            cmd.Parameters.AddWithValue("@id_decision", row.id_decision);
+                            cmd.Parameters.AddWithValue("@min_plan",0);
+                            cmd.Parameters.AddWithValue("@max_plan",0);
+                            cmd.Parameters.AddWithValue("@resultado_porcentaje",0);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        foreach (dsParametros.decision_minimosRow row in dsParametros1.decision_minimos.Rows)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.CommandText = "sp_update_or_insert_parametros";
+                            cmd.Connection = conn;
+                            cmd.Transaction = transaction;
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@bit_tipo", 0);
+                            cmd.Parameters.AddWithValue("@id_muestreo", IdMuestreo);
+                            cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
+                            cmd.Parameters.AddWithValue("@parametro",row.parametro);
+                            cmd.Parameters.AddWithValue("@id_decision", row.resultado == "No Cumple" ? 2:1);
+                            cmd.Parameters.AddWithValue("@min_plan",row.valorminimo);
+                            cmd.Parameters.AddWithValue("@max_plan",row.valormaximo);
+                            cmd.Parameters.AddWithValue("@resultado_porcentaje",row.valor);
+                            cmd.ExecuteNonQuery();
+
+                        }
+
+                        foreach (int tm in Tarimas)
+                        {
+
+                            cmd.Parameters.Clear();
+                            cmd.CommandText = "sp_set_bit_muestro_in_tarimaV2";
+                            cmd.Connection = conn;
+                            cmd.Transaction = transaction;
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_tm", tm);
+                            cmd.Parameters.AddWithValue("@id_muestreo", IdMuestreo);
+                            cmd.Parameters.AddWithValue("@chkCalidad", ChkCalidad);                            
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                        Guardar = true;
+
                     }
-                    
-                    
-                    foreach (int tm in Tarimas)
+                    catch (Exception ec)
                     {
-                        cmd = new SqlCommand("sp_set_bit_muestro_in_tarimaV2", cn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id_tm", tm);
-                        cmd.Parameters.AddWithValue("@id_muestreo", id_muestreo);
-                        cmd.Parameters.AddWithValue("@chkCalidad", ChkCalidad);
-                        cmd.ExecuteNonQuery();
+                        transaction.Rollback();
+                        CajaDialogo.Error(ec.Message);
+                        Guardar = false;
                     }
-                    cn.Close();
                 }
-
-                catch (Exception ex)
+                else
                 {
+                    string query = @"[sp_insert_muestreo_of_productV2]";
+                    try
+                    {
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                        cn.Open();
+                        SqlCommand cmd = new SqlCommand(query, cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id_pt", id_pt);
+                        cmd.Parameters.AddWithValue("@lote_pt", Lote);
+                        cmd.Parameters.AddWithValue("@fecha_creacion", dt_fecharegistro.EditValue);
+                        cmd.Parameters.AddWithValue("@id_turno_inicial", grd_turno_inicial.EditValue);
+                        cmd.Parameters.AddWithValue("@id_turno_final", grd_turno_fin.EditValue);
+                        cmd.Parameters.AddWithValue("@user_creador", UsuarioLogeado.Id);
+                        cmd.Parameters.AddWithValue("@jornada_inicial", dtdesde.EditValue);
+                        cmd.Parameters.AddWithValue("@jornada_final", dthasta.EditValue);
+                        cmd.Parameters.AddWithValue("@cant_sacos", txtCandidadSacos.Text);
+                        cmd.Parameters.AddWithValue("@rango_inicial", codigo_minmo);
+                        cmd.Parameters.AddWithValue("@rango_final", codigo_maximo);
+                        cmd.Parameters.AddWithValue("@id_decision", AsNoCumple ? 2 : 1);
+                        cmd.Parameters.AddWithValue("@jornada_hora_inicial", dtdesdeJornada.Text);
+                        cmd.Parameters.AddWithValue("@jornada_hora_final", dthastaJornada.Text);
+                        cmd.Parameters.AddWithValue("@comentario", txtcomentarios.Text);
+                        if (string.IsNullOrEmpty(btnSeleccionarPRD.Text))
+                            cmd.Parameters.AddWithValue("@id_control_produccion", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@id_control_produccion", btnSeleccionarPRD.EditValue);
 
-                    CajaDialogo.Error(ex.Message);
+                        int id_muestreo = 0;
+                        id_muestreo = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        foreach (dsParametros.parametros_decisionRow row in dsParametros1.parametros_decision.Rows)
+                        {
+                            cmd = new SqlCommand("sp_set_insert_muestreo_detalle", cn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@bit_tipo", 1);
+                            cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
+                            cmd.Parameters.AddWithValue("@parametro", row.parametro);
+                            cmd.Parameters.AddWithValue("@id_decision", row.id_decision);
+                            cmd.Parameters.AddWithValue("@id_muestreo", id_muestreo);
+                            cmd.Parameters.AddWithValue("@min_plan", 0);
+                            cmd.Parameters.AddWithValue("@max_plan", 0);
+                            cmd.Parameters.AddWithValue("@resultado_porcentaje", 0);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        foreach (dsParametros.decision_minimosRow row in dsParametros1.decision_minimos.Rows)
+                        {
+                            bool Guardar;
+                            if (row.resultado == "Pendiente")
+                                Guardar = false;
+                            else
+                                Guardar = true;
+
+                            if (Guardar == true)
+                            {
+                                cmd = new SqlCommand("sp_set_insert_muestreo_detalle", cn);
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@bit_tipo", 0);
+                                cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
+                                cmd.Parameters.AddWithValue("@parametro", row.parametro);
+                                cmd.Parameters.AddWithValue("@id_decision", row.resultado == "No Cumple" ? 2 : 1);
+                                cmd.Parameters.AddWithValue("@id_muestreo", id_muestreo);
+                                cmd.Parameters.AddWithValue("@min_plan", row.valorminimo);
+                                cmd.Parameters.AddWithValue("@max_plan", row.valormaximo);
+                                cmd.Parameters.AddWithValue("@resultado_porcentaje", row.valor);
+                                cmd.ExecuteNonQuery();
+                            }
+
+                        }
+
+
+                        foreach (int tm in Tarimas)
+                        {
+                            cmd = new SqlCommand("sp_set_bit_muestro_in_tarimaV2", cn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_tm", tm);
+                            cmd.Parameters.AddWithValue("@id_muestreo", id_muestreo);
+                            cmd.Parameters.AddWithValue("@chkCalidad", ChkCalidad);
+                            cmd.ExecuteNonQuery();
+                        }
+                        cn.Close();
+                    }
+
+                    catch (Exception ex)
+                    {
+
+                        CajaDialogo.Error(ex.Message);
+                    }
                 }
+                
 
 
                 if (AsNoCumple)

@@ -152,24 +152,6 @@ namespace LOSA.Calidad
 
         private void LoadTarimasObs()
         {
-            //try
-            //{
-            //    DataOperations dp = new DataOperations();
-            //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-            //    con.Open();
-
-            //    SqlCommand cmd = new SqlCommand("sp_get_tarimas_obs_calidad_v2", con);
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    dsCalidad1.tarimas_obs.Clear();
-            //    SqlDataAdapter adat = new SqlDataAdapter(cmd);
-            //    adat.Fill(dsCalidad1.tarimas_obs);
-            //    con.Close();
-            //}
-            //catch (Exception ec)
-            //{
-            //    CajaDialogo.Error(ec.Message);
-            //}
-
             if (toggleSwitchVerTodos_Observacion.IsOn)
             {
                 try
@@ -761,8 +743,6 @@ namespace LOSA.Calidad
             try
             {
                 DataOperations dp = new DataOperations();
-                //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                //con.Open();
                 var gridViewHabilitado= (GridView)grDisponibles.FocusedView;
                 var gridViewObservacion = (GridView)gridObservacion.FocusedView;
                 var gridViewRetenido = (GridView)gridRetenidos.FocusedView;
@@ -775,16 +755,7 @@ namespace LOSA.Calidad
                     case 1://habilitado
                         
                         var row = (dsCalidad.tarimas_disponiblesRow)gridViewHabilitado.GetFocusedDataRow();
-                        //if (row.id_tipotm == 2)
-                        //{
-                        //    CajaDialogo.Information("Los movimientos por ingreso en producto terminado no estan habilitados.");
-                        //    return;
-                        //}
-                        //lote = row.lote;
-                        //ingreso = row.ingreso;
-                        //id_mp = row.id_mp;
-                        //CodigoP = row.codigomp;
-                        //Articulo = row.mp;
+                     
                         existeMuestra = row.bit_muestreo;
                         if (ListaTarimas == null)
                             ListaTarimas = new ArrayList();
@@ -813,16 +784,6 @@ namespace LOSA.Calidad
                     case 2://observacion
                         
                         var row1 = (dsCalidad.tarimas_obsRow)gridViewObservacion.GetFocusedDataRow();
-                        //if (row1.id_tipotm == 2)
-                        //{
-                        //    CajaDialogo.Information("Los movimientos por ingreso en producto terminado no estan habilitados.");
-                        //    return;
-                        //}
-                        //lote = row1.lote;
-                        //ingreso = row1.ingreso;
-                        //id_mp = row1.id_mp;
-                        //CodigoP = row1.codigomp;
-                        //Articulo = row1.mp;
                         if (ListaTarimas == null)
                             ListaTarimas = new ArrayList();
                         tipo_tm = row1.id_tipotm;
@@ -843,6 +804,7 @@ namespace LOSA.Calidad
                                 ListaTarimas.Add(rowHab.id);
                             }
                         }
+
 
                         existeMuestra = row1.bit_muestreo;
                         tipo_tm = row1.id_tipotm;
@@ -1765,8 +1727,94 @@ namespace LOSA.Calidad
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //UpdateEstado(1);
-            UpdateStatusTarimas(1);
+            //HABILITADO!
+            switch (gridActual)
+            {
+                case 1://Disponibles
+
+                    break;
+
+                case 2://Observacion
+                    var gridViewObservacion = (GridView)gridObservacion.FocusedView;
+
+                    ArrayList ListaTarimas = null;
+                    bool existeMuestra = false;
+                    string lotePar = "";
+                    int IdMuestreoGrupo = 0;
+                    var row1 = (dsCalidad.tarimas_obsRow)gridViewObservacion.GetFocusedDataRow();
+
+                    if (ListaTarimas == null)
+                        ListaTarimas = new ArrayList();
+                    tipo_tm = row1.id_tipotm;
+                    if (tipo_tm == 2)
+                    {
+                        lotePar = row1.lote;
+                    }
+
+                    IdMuestreoGrupo = row1.id_muestreo;
+
+                    foreach (dsCalidad.tarimas_obsRow rowHab in dsCalidad1.tarimas_obs.Rows)
+                    {
+                        if (rowHab.seleccionado)
+                        {
+                            if (rowHab.lote != lotePar && tipo_tm == 2)
+                            {
+                                CajaDialogo.Error("En Producto terminado, no puede liberar varios lotes a la vez.");
+                                return;
+                            }
+                            ListaTarimas.Add(rowHab.id);
+                            if (tipo_tm == 2)//PT
+                            {
+                                if (row1.id_muestreo != rowHab.id_muestreo)
+                                {
+                                    CajaDialogo.Error("Una Tarima no pertenece al mismo Registro de Muestreo!");
+                                    return;
+                                }
+                            }
+                        }
+                    }
+
+                    existeMuestra = row1.bit_muestreo;
+                    tipo_tm = row1.id_tipotm;
+
+                    if (tipo_tm == 1) //Materia Prima
+                    {
+                        UpdateStatusMPByTarima(1,ListaTarimas);
+                    }
+                    else if(tipo_tm == 2)//PT
+                    {
+                        //Vamos a Mostrar lo que hay Guardado, para llegar aqui
+                        //Segun Id Tarima!
+                        FrmRegistroMuestreo frm = new FrmRegistroMuestreo(ListaTarimas, lotePar, UsuarioLogeado, IdMuestreoGrupo);
+                        switch (frm.ShowDialog())
+                        {
+                            case DialogResult.Cancel:
+                                break;
+                            case DialogResult.Yes:
+                                UpdateStatusTarimaPT(1, ListaTarimas);
+                                break;
+                            case DialogResult.No:
+                                UpdateStatusTarimaPT(4,ListaTarimas);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    break;
+
+                case 3://Retenido
+                    UpdateStatusTarimas(1);
+                    break;
+
+                case 4://Rechazado
+                    UpdateStatusTarimas(1);
+                    break;
+
+                default:
+                    break;
+            }
+            
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

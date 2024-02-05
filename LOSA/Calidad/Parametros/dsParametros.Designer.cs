@@ -4270,7 +4270,7 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decision_minimosRow Adddecision_minimosRow(string parametro, int id_parametro, decimal valorminimo, decimal valormaximo, decimal valor, string resultado, string valorMostarMinimo, string valorMostarMaximo, bool calidad) {
+            public decision_minimosRow Adddecision_minimosRow(string parametro, int id_parametro, decimal valorminimo, decimal valormaximo, decimal valor, string resultado, string valorMostarMinimo, string valorMostarMaximo, string calidad) {
                 decision_minimosRow rowdecision_minimosRow = ((decision_minimosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         parametro,
@@ -4334,7 +4334,7 @@ namespace LOSA.Calidad.Parametros {
                 base.Columns.Add(this.columnvalorMostarMinimo);
                 this.columnvalorMostarMaximo = new global::System.Data.DataColumn("valorMostarMaximo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvalorMostarMaximo);
-                this.columncalidad = new global::System.Data.DataColumn("calidad", typeof(bool), null, global::System.Data.MappingType.Element);
+                this.columncalidad = new global::System.Data.DataColumn("calidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncalidad);
             }
             
@@ -7474,10 +7474,10 @@ namespace LOSA.Calidad.Parametros {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool calidad {
+            public string calidad {
                 get {
                     try {
-                        return ((bool)(this[this.tabledecision_minimos.calidadColumn]));
+                        return ((string)(this[this.tabledecision_minimos.calidadColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'calidad\' de la tabla \'decision_minimos\' es DBNull.", e);

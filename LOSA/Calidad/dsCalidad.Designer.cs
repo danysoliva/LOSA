@@ -1729,6 +1729,8 @@ namespace LOSA.Calidad {
             
             private global::System.Data.DataColumn columnbit_muestreo;
             
+            private global::System.Data.DataColumn columnid_muestreo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tarimas_obsDataTable() {
@@ -1924,6 +1926,14 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_muestreoColumn {
+                get {
+                    return this.columnid_muestreo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1979,7 +1989,8 @@ namespace LOSA.Calidad {
                         string lote1, 
                         string Odoo, 
                         bool seleccionado, 
-                        bool bit_muestreo) {
+                        bool bit_muestreo, 
+                        int id_muestreo) {
                 tarimas_obsRow rowtarimas_obsRow = ((tarimas_obsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2001,7 +2012,8 @@ namespace LOSA.Calidad {
                         lote1,
                         Odoo,
                         seleccionado,
-                        bit_muestreo};
+                        bit_muestreo,
+                        id_muestreo};
                 rowtarimas_obsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtarimas_obsRow);
                 return rowtarimas_obsRow;
@@ -2044,6 +2056,7 @@ namespace LOSA.Calidad {
                 this.columnOdoo = base.Columns["Odoo"];
                 this.columnseleccionado = base.Columns["seleccionado"];
                 this.columnbit_muestreo = base.Columns["bit_muestreo"];
+                this.columnid_muestreo = base.Columns["id_muestreo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2089,6 +2102,8 @@ namespace LOSA.Calidad {
                 base.Columns.Add(this.columnseleccionado);
                 this.columnbit_muestreo = new global::System.Data.DataColumn("bit_muestreo", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbit_muestreo);
+                this.columnid_muestreo = new global::System.Data.DataColumn("id_muestreo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_muestreo);
                 this.columnseleccionado.Caption = "Seleccionado";
                 this.columnbit_muestreo.DefaultValue = ((bool)(false));
             }
@@ -11354,6 +11369,22 @@ namespace LOSA.Calidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id_muestreo {
+                get {
+                    try {
+                        return ((int)(this[this.tabletarimas_obs.id_muestreoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_muestreo\' de la tabla \'tarimas_obs\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletarimas_obs.id_muestreoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabletarimas_obs.idColumn);
             }
@@ -11590,6 +11621,18 @@ namespace LOSA.Calidad {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setbit_muestreoNull() {
                 this[this.tabletarimas_obs.bit_muestreoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_muestreoNull() {
+                return this.IsNull(this.tabletarimas_obs.id_muestreoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_muestreoNull() {
+                this[this.tabletarimas_obs.id_muestreoColumn] = global::System.Convert.DBNull;
             }
         }
         
