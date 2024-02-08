@@ -297,7 +297,7 @@ namespace ACS.Classes
             }
             else
                 oCmp.Disconnect();
-            error = oCmp.GetLastErrorDescription();
+                error = oCmp.GetLastErrorDescription();
             oCmp.Disconnect();
             return false;
         }

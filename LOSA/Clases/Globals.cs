@@ -37,25 +37,25 @@ namespace ACS.Classes
         public static string DB_Pass = "AquaF33dHN2014";
 
         //ACS(Costos)
-        //public static string CTS_ServerAddress = "AQFSVR010\\AQFSVR010";
-        //public static string CTS_ServerName = "Servidor Productivo";
-        //public static string CTS_ActiveDB = "ACS";
-        //public static string CTS_DB_User = "losa_user_db";
-        //public static string CTS_DB_Pass = "AquaF33dHN2014";
+        public static string CTS_ServerAddress = "AQFSVR010\\AQFSVR010";
+        public static string CTS_ServerName = "Servidor Productivo";
+        public static string CTS_ActiveDB = "ACS";
+        public static string CTS_DB_User = "losa_user_db";
+        public static string CTS_DB_Pass = "AquaF33dHN2014";
 
-        //Bascula nueva version (desarrollo)
-        //public static string Bas_ServerAddress = "AQFSVR010\\AQFSVR010";
-        //public static string Bas_ServerName = "Servidor Produccion";
-        //public static string Bas_ActiveDB = "BASCULA";
-        //public static string Bas_DB_User = "losa_user_db";
-        //public static string Bas_DB_Pass = "AquaF33dHN2014";
+        //Bascula nueva version(desarrollo)
+        public static string Bas_ServerAddress = "AQFSVR010\\AQFSVR010";
+        public static string Bas_ServerName = "Servidor Produccion";
+        public static string Bas_ActiveDB = "BASCULA";
+        public static string Bas_DB_User = "losa_user_db";
+        public static string Bas_DB_Pass = "AquaF33dHN2014";
 
         //LOSA
-        //public static string LOSA_ServerAddress = "AQFSVR010\\AQFSVR010";
-        //public static string LOSA_ServerName = "AQFSVR010\\AQFSVR010";
-        //public static string LOSA_ActiveDB = "LOSA"; //BASE PRODUCTIVA
-        //public static string LOSA_DB_User = "losa_user_db";
-        //public static string LOSA_DB_Pass = " AquaF33dHN2014";
+        public static string LOSA_ServerAddress = "AQFSVR010\\AQFSVR010";
+        public static string LOSA_ServerName = "AQFSVR010\\AQFSVR010";
+        public static string LOSA_ActiveDB = "LOSA"; //BASE PRODUCTIVA
+        public static string LOSA_DB_User = "losa_user_db";
+        public static string LOSA_DB_Pass = " AquaF33dHN2014";
 
         //LOSA Servidor Produccion AQFSVR010
         //public static string LOSA_ServerAddress = "AQFSVR010";
@@ -93,11 +93,11 @@ namespace ACS.Classes
         public static string SAP_ACS_DB_Pass = "Aqua2018";
 
 
-        //// APMS(Aquafeed Pocess Management System)
-        //public static string APMS_Server = @"AQFSVR008\AQFSVR008";
-        //public static string APMS_DB_User = "sa";
-        //public static string APMS_DB_Pass = "AquaF33dHN2017";
-        //public static string APMS_ActiveDB = "APMS";
+        // APMS(Aquafeed Pocess Management System)
+        public static string APMS_Server = @"AQFSVR008\AQFSVR008";
+        public static string APMS_DB_User = "sa";
+        public static string APMS_DB_Pass = "AquaF33dHN2017";
+        public static string APMS_ActiveDB = "APMS";
 
         //AMS
         public static string AMS_ServerAddress = $"AQFSVR007\\AQFSVR007";
@@ -149,40 +149,40 @@ namespace ACS.Classes
         public static string prinin_DB_Pass = "";
 
         //SAP
-        public static string ActiveDBSDK = "AQUA_AF";
-        public static string ServerSDK = "10.50.11.31";
-        public static string ServerlicenseSDK = "10.50.11.31";
+        public static string ActiveDBSDK = "AQUA";
+        public static string ServerSDK = "AQFSVR006\\AQFSVR006";
+        public static string ServerlicenseSDK = "10.50.11.31:30000";
 
 
         #endregion
 
         #region Credenciales de Testing PC 6G1SST3 - Ruben
 
-        ////ACS(Costos)
-        public static string CTS_ServerAddress = "6G1SST3";
-        public static string CTS_ServerName = "6G1SST3";
-        public static string CTS_ActiveDB = "ACS";
-        public static string CTS_DB_User = "sa";
-        public static string CTS_DB_Pass = "Marathones00";
+        //////ACS(Costos)
+        //public static string CTS_ServerAddress = "6G1SST3";
+        //public static string CTS_ServerName = "6G1SST3";
+        //public static string CTS_ActiveDB = "ACS";
+        //public static string CTS_DB_User = "sa";
+        //public static string CTS_DB_Pass = "Marathones00";
 
-        ////LOSA
-        public static string LOSA_ServerAddress = "6G1SST3";
-        public static string LOSA_ServerName = "6G1SST3";
-        public static string LOSA_ActiveDB = "LOSA"; //BASE de Prueba 
-        public static string LOSA_DB_User = "sa";
-        public static string LOSA_DB_Pass = " Marathones00";
+        //////LOSA
+        //public static string LOSA_ServerAddress = "6G1SST3";
+        //public static string LOSA_ServerName = "6G1SST3";
+        //public static string LOSA_ActiveDB = "LOSA"; //BASE de Prueba 
+        //public static string LOSA_DB_User = "sa";
+        //public static string LOSA_DB_Pass = " Marathones00";
 
-        public static string Bas_ServerAddress = "6G1SST3";
-        public static string Bas_ServerName = "Servidor Desarrollo";
-        public static string Bas_ActiveDB = "BASCULA";
-        public static string Bas_DB_User = "sa";
-        public static string Bas_DB_Pass = "Marathones00";
+        //public static string Bas_ServerAddress = "6G1SST3";
+        //public static string Bas_ServerName = "Servidor Desarrollo";
+        //public static string Bas_ActiveDB = "BASCULA";
+        //public static string Bas_DB_User = "sa";
+        //public static string Bas_DB_Pass = "Marathones00";
 
-        // APMS(Aquafeed Pocess Management System)
-        public static string APMS_Server = @"6G1SST3";
-        public static string APMS_DB_User = "sa";
-        public static string APMS_DB_Pass = "Marathones00";
-        public static string APMS_ActiveDB = "APMS";
+        //// APMS(Aquafeed Pocess Management System)
+        //public static string APMS_Server = @"6G1SST3";
+        //public static string APMS_DB_User = "sa";
+        //public static string APMS_DB_Pass = "Marathones00";
+        //public static string APMS_ActiveDB = "APMS";
 
         #endregion
 

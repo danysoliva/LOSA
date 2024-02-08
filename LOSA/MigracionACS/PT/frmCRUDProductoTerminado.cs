@@ -103,14 +103,16 @@ namespace LOSA.MigracionACS.PT
                     CodigoAQF = txtCodigo.Text;
                     int TipoData;
 
-                    if (pt.codesap == "PTXXX")
+                    //if (pt.codesap == "PTXXXX")
+                    //{
+                    if (!string.IsNullOrEmpty(txtCodigo.Text))
                     {
-                        if (!string.IsNullOrEmpty(txtCodigo.Text))
-                        {
-                            TipoData = 1;
-                            CargarCodigosSAP(TipoData);
-                        }
+                        TipoData = 1;
+                        CargarCodigosSAP(TipoData);
                     }
+                    //}
+                    //else
+                    //    grdCodSAP.Text = pt.codesap;
 
                     txtRegistro.Text = pt.registro;
                     grdOrigen.EditValue = pt.idOr;
@@ -166,8 +168,6 @@ namespace LOSA.MigracionACS.PT
                     aCSDataSet21.CodigosSAP.Clear();
                     da.Fill(aCSDataSet21.CodigosSAP);
                     cn.Close();
-
-
 
                     foreach (DataRow row in aCSDataSet21.CodigosSAP)
                     {
@@ -475,6 +475,7 @@ namespace LOSA.MigracionACS.PT
                         cmd.Parameters.AddWithValue("@dias_vencimiento", Convert.ToInt32(spindDiasVenc.EditValue));
                         cmd.Parameters.AddWithValue("@dias_venc_despachos", Convert.ToInt32(spinDiasMinimos.EditValue));
                         cmd.Parameters.AddWithValue("@cod_unite", txtCodUnite.Text);
+                        cmd.Parameters.AddWithValue("@Descripcion_Tecnica",txtDescrpcionTecnica.Text);
                         
                         int IdPT_ACS = Convert.ToInt32(cmd.ExecuteScalar());
 

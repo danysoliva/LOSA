@@ -160,10 +160,20 @@ namespace LOSA.Calidad.Parametros
                     grd_turno_inicial.EditValue = drTurnos.GetInt32(1);
                     grd_turno_fin.EditValue = drTurnos.GetInt32(2);
                     dtdesde.EditValue = drTurnos.GetDateTime(3);
-                    dtdesdeJornada.Text = drTurnos.GetString(4);
+                    dtdesdeJornada.EditValue = drTurnos.GetString(4);
                     dthasta.EditValue = drTurnos.GetDateTime(5);
-                    dthastaJornada.Text = drTurnos.GetString(6);
+                    dthastaJornada.EditValue = drTurnos.GetString(6);
                     txtcomentarios.Text = drTurnos.GetString(7);
+
+                    if (dtdesdeJornada.EditValue.ToString() == "07:00 - 19:00")
+                        dtdesdeJornada.EditValue = 1;
+                    else
+                        dtdesdeJornada.EditValue = 2;
+
+                    if (dthastaJornada.EditValue.ToString() == "07:00 - 19:00")
+                        dthastaJornada.EditValue = 1;
+                    else
+                        dthastaJornada.EditValue = 2;
 
                     drTurnos.Close();
                 }
@@ -607,8 +617,13 @@ namespace LOSA.Calidad.Parametros
             switch (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo)
             {
                 case GrupoUser.GrupoUsuario.ProduccionV2:
-                    CajaDialogo.Error("Los Analistas deben Seleccionar un Registro de Control de Produccion!");
-                    return;
+
+                    if (btnSeleccionarPRD.Text == "")
+                    {
+                        CajaDialogo.Error("Los Analistas deben Seleccionar un Registro de Control de Produccion!");
+                        return;
+                    }
+
                     break;
                 default:
                     break;
@@ -708,10 +723,12 @@ namespace LOSA.Calidad.Parametros
             {
                 if (IdMuestreo > 0)
                 {
+                    #region Codigo con Transaction
+
                     SqlTransaction transaction = null;
 
                     SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                    bool Guardar = false;
+                    //bool Guardar = false;
 
                     try
                     {
@@ -724,45 +741,55 @@ namespace LOSA.Calidad.Parametros
                         cmd.Transaction = transaction;
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_decision", AsNoCumple ? 2 : 1);
-                        cmd.Parameters.AddWithValue("@jornada_hora_inicial", dtdesdeJornada.Text);
-                        cmd.Parameters.AddWithValue("@jornada_hora_final", dthastaJornada.Text);
+                        cmd.Parameters.AddWithValue("@jornada_hora_inicial", dtdesde.EditValue);
+                        cmd.Parameters.AddWithValue("@jornada_hora_final", dthasta.EditValue);
                         cmd.Parameters.AddWithValue("@id_muestreo", IdMuestreo);
                         cmd.ExecuteNonQuery();
 
                         foreach (dsParametros.parametros_decisionRow row in dsParametros1.parametros_decision.Rows)
                         {
                             cmd.Parameters.Clear();
-                            cmd.CommandText = "sp_update_or_insert_parametros";
+                            cmd.CommandText = "sp_update_or_insert_parametros_decision";
                             cmd.Connection = conn;
                             cmd.Transaction = transaction;
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@bit_tipo", 1);
                             cmd.Parameters.AddWithValue("@id_muestreo", IdMuestreo);
                             cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
-                            cmd.Parameters.AddWithValue("@parametro",row.parametro);
+                            cmd.Parameters.AddWithValue("@parametro", row.parametro);
                             cmd.Parameters.AddWithValue("@id_decision", row.id_decision);
-                            cmd.Parameters.AddWithValue("@min_plan",0);
-                            cmd.Parameters.AddWithValue("@max_plan",0);
-                            cmd.Parameters.AddWithValue("@resultado_porcentaje",0);
+                            cmd.Parameters.AddWithValue("@min_plan", 0);
+                            cmd.Parameters.AddWithValue("@max_plan", 0);
+                            cmd.Parameters.AddWithValue("@resultado_porcentaje", 0);
                             cmd.ExecuteNonQuery();
                         }
 
                         foreach (dsParametros.decision_minimosRow row in dsParametros1.decision_minimos.Rows)
                         {
-                            cmd.Parameters.Clear();
-                            cmd.CommandText = "sp_update_or_insert_parametros";
-                            cmd.Connection = conn;
-                            cmd.Transaction = transaction;
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@bit_tipo", 0);
-                            cmd.Parameters.AddWithValue("@id_muestreo", IdMuestreo);
-                            cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
-                            cmd.Parameters.AddWithValue("@parametro",row.parametro);
-                            cmd.Parameters.AddWithValue("@id_decision", row.resultado == "No Cumple" ? 2:1);
-                            cmd.Parameters.AddWithValue("@min_plan",row.valorminimo);
-                            cmd.Parameters.AddWithValue("@max_plan",row.valormaximo);
-                            cmd.Parameters.AddWithValue("@resultado_porcentaje",row.valor);
-                            cmd.ExecuteNonQuery();
+                            bool Guardar = false;
+                            if (row.resultado == "Pendiente")
+                                Guardar = false;
+                            else
+                                Guardar = true;
+
+                            if (Guardar)
+                            {
+                                cmd.Parameters.Clear();
+                                cmd.CommandText = "sp_update_or_insert_parametros";
+                                cmd.Connection = conn;
+                                cmd.Transaction = transaction;
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@bit_tipo", 0);
+                                cmd.Parameters.AddWithValue("@id_muestreo", IdMuestreo);
+                                cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
+                                cmd.Parameters.AddWithValue("@parametro", row.parametro);
+                                cmd.Parameters.AddWithValue("@id_decision", row.resultado == "No Cumple" ? 2 : 1);
+                                cmd.Parameters.AddWithValue("@min_plan", row.valorminimo);
+                                cmd.Parameters.AddWithValue("@max_plan", row.valormaximo);
+                                cmd.Parameters.AddWithValue("@resultado_porcentaje", row.valor);
+                                cmd.ExecuteNonQuery();
+                            }
+
 
                         }
 
@@ -776,20 +803,22 @@ namespace LOSA.Calidad.Parametros
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@id_tm", tm);
                             cmd.Parameters.AddWithValue("@id_muestreo", IdMuestreo);
-                            cmd.Parameters.AddWithValue("@chkCalidad", ChkCalidad);                            
+                            cmd.Parameters.AddWithValue("@chkCalidad", ChkCalidad);
                             cmd.ExecuteNonQuery();
                         }
 
                         transaction.Commit();
-                        Guardar = true;
+
 
                     }
                     catch (Exception ec)
                     {
                         transaction.Rollback();
                         CajaDialogo.Error(ec.Message);
-                        Guardar = false;
+
                     }
+
+                    #endregion
                 }
                 else
                 {
@@ -816,7 +845,7 @@ namespace LOSA.Calidad.Parametros
                         cmd.Parameters.AddWithValue("@jornada_hora_final", dthastaJornada.Text);
                         cmd.Parameters.AddWithValue("@comentario", txtcomentarios.Text);
                         if (string.IsNullOrEmpty(btnSeleccionarPRD.Text))
-                            cmd.Parameters.AddWithValue("@id_control_produccion", DBNull.Value);
+                            cmd.Parameters.AddWithValue("@id_control_produccion", 0);
                         else
                             cmd.Parameters.AddWithValue("@id_control_produccion", btnSeleccionarPRD.EditValue);
 
