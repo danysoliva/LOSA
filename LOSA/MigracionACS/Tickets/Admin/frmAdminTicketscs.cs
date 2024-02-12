@@ -331,5 +331,10 @@ namespace LOSA.MigracionACS.Tickets.Admin
             frmViewInfoTicket frm = new frmViewInfoTicket(row.id);
             frm.ShowDialog();
         }
+
+        private void grd_data_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

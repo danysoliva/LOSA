@@ -18,7 +18,7 @@ namespace LOSA.MigracionACS.Tickets.Admin
         public frmViewInfoTicket(int pNumTicket)
         {
             InitializeComponent();
-
+            int categoria;
             lblNumTicket.Text = Convert.ToString(pNumTicket);
 
             TicketInfo ticketInfo = new TicketInfo();
@@ -30,6 +30,20 @@ namespace LOSA.MigracionACS.Tickets.Admin
             txtTitulo.Text = ticketInfo.Titulo;
             dtFechaC.EditValue = ticketInfo.FechaCreacion;
             txtProyecto.Text = ticketInfo.Proyecto;
+            categoria = ticketInfo.Categoria;
+            
+            if (categoria== 1)
+            {
+                labelControl8.Text = "Proyecto:";
+            }
+            else
+            {
+                labelControl8.Text = "Equipo:";
+            }
+
+            
+
+           
 
         }
 
@@ -41,6 +55,13 @@ namespace LOSA.MigracionACS.Tickets.Admin
         private void txtTitulo_DoubleClick(object sender, EventArgs e)
         {
             CajaDialogo.Information(txtTitulo.Text);
+
+            
+        }
+
+        private void frmViewInfoTicket_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

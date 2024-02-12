@@ -29,19 +29,19 @@ namespace ACS.Classes
         public static string CMS_DB_Pass = "";
         public static string CMS_ActiveDB = "process_data";
 
-        //Ttrace
-        public static string ServerAddress = "AQFSVR010\\AQFSVR010";
-        public static string ServerName = "Servidor Productivo";
-        public static string ActiveDB = "ACS";
-        public static string DB_User = "losa_user_db";
-        public static string DB_Pass = "AquaF33dHN2014";
+        ////Ttrace
+        //public static string ServerAddress = "AQFSVR010\\AQFSVR010";
+        //public static string ServerName = "Servidor Productivo";
+        //public static string ActiveDB = "ACS";
+        //public static string DB_User = "losa_user_db";
+        //public static string DB_Pass = "AquaF33dHN2014";
 
         //ACS(Costos)
-        public static string CTS_ServerAddress = "AQFSVR010\\AQFSVR010";
-        public static string CTS_ServerName = "Servidor Productivo";
-        public static string CTS_ActiveDB = "ACS";
-        public static string CTS_DB_User = "losa_user_db";
-        public static string CTS_DB_Pass = "AquaF33dHN2014";
+        //public static string CTS_ServerAddress = "AQFSVR010\\AQFSVR010";
+        //public static string CTS_ServerName = "Servidor Productivo";
+        //public static string CTS_ActiveDB = "ACS";
+        //public static string CTS_DB_User = "losa_user_db";
+        //public static string CTS_DB_Pass = "AquaF33dHN2014";
 
         //Bascula nueva version (desarrollo)
         public static string Bas_ServerAddress = "AQFSVR010\\AQFSVR010";
@@ -50,12 +50,12 @@ namespace ACS.Classes
         public static string Bas_DB_User = "losa_user_db";
         public static string Bas_DB_Pass = "AquaF33dHN2014";
 
-        //LOSA
-        public static string LOSA_ServerAddress = "AQFSVR010\\AQFSVR010";
-        public static string LOSA_ServerName = "AQFSVR010\\AQFSVR010";
-        public static string LOSA_ActiveDB = "LOSA"; //BASE PRODUCTIVA
-        public static string LOSA_DB_User = "losa_user_db";
-        public static string LOSA_DB_Pass = " AquaF33dHN2014";
+        ////LOSA
+        //public static string LOSA_ServerAddress = "AQFSVR010\\AQFSVR010";
+        //public static string LOSA_ServerName = "AQFSVR010\\AQFSVR010";
+        //public static string LOSA_ActiveDB = "LOSA"; //BASE PRODUCTIVA
+        //public static string LOSA_DB_User = "losa_user_db";
+        //public static string LOSA_DB_Pass = " AquaF33dHN2014";
 
         //LOSA Servidor Produccion AQFSVR010
         //public static string LOSA_ServerAddress = "AQFSVR010";
@@ -201,6 +201,37 @@ namespace ACS.Classes
         //public static string LOSA_ActiveDB = "LOSA"; //BASE de Prueba 
         //public static string LOSA_DB_User = "sa";
         //public static string LOSA_DB_Pass = " Aq4x_3Fj2#";
+
+        #endregion
+
+        #region Credenciales de Testing PC 9SSCBV2 - Ever Erazo
+
+
+        //ACS
+        public static string CTS_ServerAddress = @"9SSCBV2\SQL_9SSCBV2";
+        public static string CTS_ServerName = @"9SSCBV2\SQL_9SSCBV2";
+        public static string CTS_ActiveDB = "ACS"; 
+        public static string CTS_DB_User = "sa";
+        public static string CTS_DB_Pass = "G3n3R@c10n2023&";
+
+        //LOSA
+        public static string LOSA_ServerAddress = @"9SSCBV2\SQL_9SSCBV2";
+        public static string LOSA_ServerName = @"9SSCBV2\SQL_9SSCBV2";
+        public static string LOSA_ActiveDB = "LOSA";
+        public static string LOSA_DB_User = "sa";
+        public static string LOSA_DB_Pass = "G3n3R@c10n2023&";
+
+        ////LOSA
+        //public static string LOSA_ServerAddress = @"9SSCBV2\SQL_9SSCBV2";
+        //public static string LOSA_ActiveDB = "LOSA"; //BASE DE PRUEBAS LOSA
+        //public static string LOSA_DB_User = "sa";
+        //public static string LOSA_DB_Pass = "G3n3R@c10n2023&";
+
+        ////ACS
+        //public static string ACS_ServerAddress = @"9SSCBV2\SQL_9SSCBV2";
+        //public static string ACS_ActiveDB = "ACS"; //BASE DE PRUEBAS ASC
+        //public static string ACS_DB_User = "sa";
+        //public static string ACS_DB_Pass = "G3n3R@c10n2023&";
 
         #endregion
 

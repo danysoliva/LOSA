@@ -248,5 +248,10 @@ namespace LOSA.MigracionACS.Tickets.EndUser
         {
             grdv_data.DeleteRow(grdv_data.FocusedRowHandle);
         }
+
+        private void frmTicketSeguimientoCRUD_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }

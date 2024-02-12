@@ -76,11 +76,11 @@
             this.btnEstado = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnUserAssigned = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.lblFormulario = new DevExpress.XtraEditors.LabelControl();
+            this.txtNameVentana = new DevExpress.XtraEditors.TextEdit();
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
             this.btnHistorial = new DevExpress.XtraEditors.SimpleButton();
             this.TimerN = new System.Windows.Forms.Timer(this.components);
-            this.txtNameVentana = new DevExpress.XtraEditors.TextEdit();
-            this.lblFormulario = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTickets)).BeginInit();
@@ -90,8 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnUserAssigned)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameVentana.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -428,6 +428,30 @@
             this.panelControl1.Size = new System.Drawing.Size(1239, 678);
             this.panelControl1.TabIndex = 12;
             // 
+            // lblFormulario
+            // 
+            this.lblFormulario.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.lblFormulario.Appearance.Options.UseFont = true;
+            this.lblFormulario.Location = new System.Drawing.Point(13, 12);
+            this.lblFormulario.Name = "lblFormulario";
+            this.lblFormulario.Size = new System.Drawing.Size(128, 16);
+            this.lblFormulario.TabIndex = 15;
+            this.lblFormulario.Text = "Nombre de la Ventana";
+            this.lblFormulario.Visible = false;
+            // 
+            // txtNameVentana
+            // 
+            this.txtNameVentana.EditValue = "frmMainUser";
+            this.txtNameVentana.Location = new System.Drawing.Point(150, 8);
+            this.txtNameVentana.MenuManager = this.barManager1;
+            this.txtNameVentana.Name = "txtNameVentana";
+            this.txtNameVentana.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txtNameVentana.Properties.Appearance.Options.UseFont = true;
+            this.txtNameVentana.Properties.ReadOnly = true;
+            this.txtNameVentana.Size = new System.Drawing.Size(141, 22);
+            this.txtNameVentana.TabIndex = 14;
+            this.txtNameVentana.Visible = false;
+            // 
             // toggleSwitch1
             // 
             this.toggleSwitch1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -461,30 +485,6 @@
             this.TimerN.Interval = 1000;
             this.TimerN.Tick += new System.EventHandler(this.TimerN_Tick);
             // 
-            // txtNameVentana
-            // 
-            this.txtNameVentana.EditValue = "frmMainUser";
-            this.txtNameVentana.Location = new System.Drawing.Point(150, 8);
-            this.txtNameVentana.MenuManager = this.barManager1;
-            this.txtNameVentana.Name = "txtNameVentana";
-            this.txtNameVentana.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txtNameVentana.Properties.Appearance.Options.UseFont = true;
-            this.txtNameVentana.Properties.ReadOnly = true;
-            this.txtNameVentana.Size = new System.Drawing.Size(141, 22);
-            this.txtNameVentana.TabIndex = 14;
-            this.txtNameVentana.Visible = false;
-            // 
-            // lblFormulario
-            // 
-            this.lblFormulario.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.lblFormulario.Appearance.Options.UseFont = true;
-            this.lblFormulario.Location = new System.Drawing.Point(13, 12);
-            this.lblFormulario.Name = "lblFormulario";
-            this.lblFormulario.Size = new System.Drawing.Size(128, 16);
-            this.lblFormulario.TabIndex = 15;
-            this.lblFormulario.Text = "Nombre de la Ventana";
-            this.lblFormulario.Visible = false;
-            // 
             // frmMainUser
             // 
             this.Appearance.Options.UseFont = true;
@@ -512,8 +512,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameVentana.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
