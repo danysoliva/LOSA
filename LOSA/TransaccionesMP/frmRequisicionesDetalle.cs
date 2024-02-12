@@ -40,7 +40,6 @@ namespace LOSA.TransaccionesMP
             if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
                 txtVentana.Visible = true;
 
-
             ValidarPermisosReqDetalle();
             if (dsTransaccionesMP1.estados_requisicion_list.Count > 0)
             {
@@ -55,6 +54,7 @@ namespace LOSA.TransaccionesMP
                 }
                 catch
                 {
+
                 }
             }
         }
@@ -85,9 +85,6 @@ namespace LOSA.TransaccionesMP
             {
                 ValidarPermisosFromId_permiso();
             }
-
-           
-
         }
 
         private void ValidarPermisosFromId_permiso()

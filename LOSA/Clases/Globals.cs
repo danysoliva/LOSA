@@ -43,7 +43,7 @@ namespace ACS.Classes
         //public static string CTS_DB_User = "losa_user_db";
         //public static string CTS_DB_Pass = "AquaF33dHN2014";
 
-        //Bascula nueva version (desarrollo)
+        //Bascula nueva version(desarrollo)
         public static string Bas_ServerAddress = "AQFSVR010\\AQFSVR010";
         public static string Bas_ServerName = "Servidor Produccion";
         public static string Bas_ActiveDB = "BASCULA";
@@ -149,9 +149,9 @@ namespace ACS.Classes
         public static string prinin_DB_Pass = "";
 
         //SAP
-        public static string ActiveDBSDK = "AQUA_AF";
-        public static string ServerSDK = "10.50.11.31";
-        public static string ServerlicenseSDK = "10.50.11.31";
+        public static string ActiveDBSDK = "AQUA";
+        public static string ServerSDK = "AQFSVR006\\AQFSVR006";
+        public static string ServerlicenseSDK = "10.50.11.31:30000";
 
 
         #endregion
@@ -177,6 +177,12 @@ namespace ACS.Classes
         //public static string Bas_ActiveDB = "BASCULA";
         //public static string Bas_DB_User = "sa";
         //public static string Bas_DB_Pass = "Marathones00";
+
+        //// APMS(Aquafeed Pocess Management System)
+        //public static string APMS_Server = @"6G1SST3";
+        //public static string APMS_DB_User = "sa";
+        //public static string APMS_DB_Pass = "Marathones00";
+        //public static string APMS_ActiveDB = "APMS";
 
         #endregion
 

@@ -103,14 +103,17 @@ namespace LOSA.MigracionACS.PT
                     CodigoAQF = txtCodigo.Text;
                     int TipoData;
 
+                    //if (pt.codesap == "PTXXXX")
+                    //{
                     if (!string.IsNullOrEmpty(txtCodigo.Text))
                     {
                         TipoData = 1;
                         CargarCodigosSAP(TipoData);
-
-                        
                     }
-                   
+                    //}
+                    //else
+                    //    grdCodSAP.Text = pt.codesap;
+
                     txtRegistro.Text = pt.registro;
                     grdOrigen.EditValue = pt.idOr;
                     spinProteina.EditValue = pt.proteinas;
@@ -137,8 +140,11 @@ namespace LOSA.MigracionACS.PT
                     spindDiasVenc.EditValue = 150;
                     spinDiasMinimos.EditValue = 60;
                     toggleSwitchEspecie.IsOn = true;
-                    GenerarCodigo();
+                    grdCodSAP.Enabled = false;
+
+                    //GenerarCodigo();
                     LoadFamilia();
+                    LlenadoProce();
 
                     break;
                 default:
@@ -345,11 +351,7 @@ namespace LOSA.MigracionACS.PT
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtCodigo.Text))
-            {
-                CajaDialogo.Error("El Campo Codigo AQF no puede estar Vacio!");
-                return;
-            }
+            
 
             if (string.IsNullOrEmpty(txtDescrpcionTecnica.Text))
             {
@@ -430,6 +432,11 @@ namespace LOSA.MigracionACS.PT
             {
                 case TipoOperacion.Insert:
 
+                    if (string.IsNullOrEmpty(txtCodigo.Text))
+                    {
+                        CajaDialogo.Error("El Campo Codigo AQF no puede estar Vacio!");
+                        return;
+                    }
 
                     if (toggleSwitchEspecie.IsOn)
                     {
@@ -472,6 +479,7 @@ namespace LOSA.MigracionACS.PT
                         cmd.Parameters.AddWithValue("@dias_vencimiento", Convert.ToInt32(spindDiasVenc.EditValue));
                         cmd.Parameters.AddWithValue("@dias_venc_despachos", Convert.ToInt32(spinDiasMinimos.EditValue));
                         cmd.Parameters.AddWithValue("@cod_unite", txtCodUnite.Text);
+                        cmd.Parameters.AddWithValue("@Descripcion_Tecnica",txtDescrpcionTecnica.Text);
                         
                         int IdPT_ACS = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -484,9 +492,9 @@ namespace LOSA.MigracionACS.PT
                                 Tipo = 4;
 
                             SqlCommand cmdACS = new SqlCommand("sp_producto_update_codigo_aqf_correlativo", conn);
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@tipo", conn);
-                            cmd.ExecuteNonQuery();
+                            cmdACS.CommandType = CommandType.StoredProcedure;
+                            cmdACS.Parameters.AddWithValue("@tipo", Tipo);
+                            cmdACS.ExecuteNonQuery();
                             conn.Close();
 
                             //Crear el registro en APMS
@@ -514,17 +522,17 @@ namespace LOSA.MigracionACS.PT
                             connAPMS.Open();
                             SqlCommand cmdAPMS = new SqlCommand("sp_insert_finished_products", connAPMS);
                             cmdAPMS.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@acs_id",IdPT_ACS);
-                            cmd.Parameters.AddWithValue("@code", txtFormula.Text.Trim());
-                            cmd.Parameters.AddWithValue("@short_name", txtDescrpcionTecnica.Text);
-                            cmd.Parameters.AddWithValue("@long_name", txtDescrpcionTecnica.Text);
-                            cmd.Parameters.AddWithValue("@specie", Especie);
-                            cmd.Parameters.AddWithValue("@product_group", 4);
-                            cmd.Parameters.AddWithValue("@product_subgroup", 10);
-                            cmd.Parameters.AddWithValue("@bag_size", PesoSaco);
-                            cmd.Parameters.AddWithValue("@id_bag", grdPesoSaco.EditValue);
-                            cmd.Parameters.AddWithValue("@id_family", grdFamilia.EditValue);
-                            cmd.Parameters.AddWithValue("@comercial_name", txtDescripcionFacturacion.Text);
+                            cmdAPMS.Parameters.AddWithValue("@acs_id",IdPT_ACS);
+                            cmdAPMS.Parameters.AddWithValue("@code", txtCodigo.Text.Trim());
+                            cmdAPMS.Parameters.AddWithValue("@short_name", txtDescrpcionTecnica.Text);
+                            cmdAPMS.Parameters.AddWithValue("@long_name", txtDescrpcionTecnica.Text);
+                            cmdAPMS.Parameters.AddWithValue("@specie", Especie);
+                            cmdAPMS.Parameters.AddWithValue("@product_group", 4);
+                            cmdAPMS.Parameters.AddWithValue("@product_subgroup", 10);
+                            cmdAPMS.Parameters.AddWithValue("@bag_size", PesoSaco);
+                            cmdAPMS.Parameters.AddWithValue("@id_bag", grdPesoSaco.EditValue);
+                            cmdAPMS.Parameters.AddWithValue("@id_family", grdFamilia.EditValue);
+                            cmdAPMS.Parameters.AddWithValue("@comercial_name", txtDescripcionFacturacion.Text);
 
                             bool Guardado = Convert.ToBoolean(cmdAPMS.ExecuteScalar());
 
@@ -557,7 +565,11 @@ namespace LOSA.MigracionACS.PT
 
                 case TipoOperacion.Update:
 
-
+                    if (string.IsNullOrEmpty(txtCodigo.Text))
+                    {
+                        CajaDialogo.Error("El Campo Codigo AQF no puede estar Vacio!");
+                        return;
+                    }
 
                     string EstadoPT;
                     if (!TsEstado.IsOn)
@@ -626,6 +638,7 @@ namespace LOSA.MigracionACS.PT
                             cmd.Parameters.AddWithValue("@codigo_unite", txtCodUnite.Text);
                         cmd.Parameters.AddWithValue("@dias_vencimiento", spindDiasVenc.EditValue);
                         cmd.Parameters.AddWithValue("@dias_venc_despachos", spinDiasMinimos.EditValue);
+                        cmd.Parameters.AddWithValue("@code_sap", grdCodSAP.Text);
                         cmd.ExecuteNonQuery();
 
 
@@ -645,9 +658,10 @@ namespace LOSA.MigracionACS.PT
 
                         cmdAPMS.Parameters.AddWithValue("@id_bag", grdPesoSaco.EditValue);
                         cmdAPMS.Parameters.AddWithValue("@id_family",grdFamilia.EditValue);
-                        //cmdAPMS.Parameters.AddWithValue("@code_sap", );
+                        cmdAPMS.Parameters.AddWithValue("@code_sap", grdCodSAP.Text);
                         cmdAPMS.Parameters.AddWithValue("@comercial_name",txtDescripcionFacturacion.Text);
                         cmdAPMS.Parameters.AddWithValue("@IdProducto", IdProducto);
+                       
                         cmdAPMS.ExecuteNonQuery();
                         connAPMS.Close();
 
@@ -665,13 +679,43 @@ namespace LOSA.MigracionACS.PT
                     break;
 
                 case TipoOperacion.SolicitudInsert:
+
                     //Esto lo haremos luego, quizas en Tickets vamos a ver.
+                    SqlConnection connB = new SqlConnection(dp.ConnectionStringCostos);
+                    connB.Open();
+                    SqlCommand cmdB = new SqlCommand("[sp_insert_pt_productos_solicitud_borrador]", connB);
+                    cmdB.CommandType = CommandType.StoredProcedure;
+                    cmdB.Parameters.AddWithValue("@Codigo", DBNull.Value);
+                    cmdB.Parameters.AddWithValue("@Descripcion", txtDescripcionFacturacion.Text);
+                    cmdB.Parameters.AddWithValue("@Proteina", spinProteina.EditValue);
+                    cmdB.Parameters.AddWithValue("@Grasa", spinGrasas.EditValue);
+                    cmdB.Parameters.AddWithValue("@Especie", Especie);
+                    cmdB.Parameters.AddWithValue("@indiceFam", grdFamilia.EditValue);
+                    cmdB.Parameters.AddWithValue("@indiceTam", grdPesoSaco.EditValue);
+                    cmdB.Parameters.AddWithValue("@formula_code", txtFormula.Text.Trim());
+                    cmdB.Parameters.AddWithValue("@indiceCat", grdCategoria.EditValue);
+                    cmdB.Parameters.AddWithValue("@indiceBag", grdtipoSaco.EditValue);
+                    cmdB.Parameters.AddWithValue("@size", txtTamano.Text);
+                    cmdB.Parameters.AddWithValue("@Orgi", grdOrigen.EditValue);
+                    cmdB.Parameters.AddWithValue("@regist", txtRegistro.Text);
+                    cmdB.Parameters.AddWithValue("@diam", txtDiametroParticula.Text);
+                    cmdB.Parameters.AddWithValue("@dias_vencimiento", Convert.ToInt32(spindDiasVenc.EditValue));
+                    cmdB.Parameters.AddWithValue("@dias_venc_despachos", Convert.ToInt32(spinDiasMinimos.EditValue));
+                    cmdB.Parameters.AddWithValue("@cod_unite", txtCodUnite.Text);
+                    cmdB.Parameters.AddWithValue("@Descripcion_Tecnica", txtDescrpcionTecnica.Text);
+
+                    cmdB.ExecuteNonQuery();
+                    connB.Close();
+
+                    CajaDialogo.Information("Solicitud de Producto Terminado Creada!");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
 
                     break;
 
                 default:
 
-                    CajaDialogo.Error("No se logro definir la Operacion(Insert-Update)\nContact al Departamento de IT");
+                    CajaDialogo.Error("No se logro definir la Operacion(Insert-Update)\nContacte al Departamento de IT");
 
                     break;
             }
@@ -697,8 +741,24 @@ namespace LOSA.MigracionACS.PT
 
         private void toggleSwitchEspecie_Toggled(object sender, EventArgs e)
         {
-            GenerarCodigo();
-            LoadNewFam();
+            switch (TipoOP)
+            {
+                case TipoOperacion.Insert:
+                    GenerarCodigo();
+                    LoadNewFam();
+                    break;
+                case TipoOperacion.Update:
+                    GenerarCodigo();
+                    LoadNewFam();
+                    break;
+                case TipoOperacion.SolicitudInsert:
+                    //GenerarCodigo();
+                    LoadNewFam();
+                    break;
+                default:
+                    break;
+            }
+            
         }
 
         private void LoadNewFam()

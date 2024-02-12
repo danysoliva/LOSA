@@ -4719,5 +4719,35 @@ namespace LOSA
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btnRPTAlimentacionMacrosLogistica_Click(object sender, EventArgs e)
+        {
+            frmAlimentacionBasculasMacros frm = new frmAlimentacionBasculasMacros();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnRPTAlimentacionMacrosCalidad_Click(object sender, EventArgs e)
+        {
+            frmAlimentacionBasculasMacros frm = new frmAlimentacionBasculasMacros();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarProductoBorrador_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                PT_Producto_Borrador frm = new PT_Producto_Borrador(UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
     }
 }

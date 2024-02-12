@@ -18,15 +18,15 @@ namespace LOSA.Calidad.Parametros
     {
         DataOperations dp = new DataOperations();
         int Id_pt;
-        public frmPickParametrs(int ParametroId_PT)
+        public frmPickParametrs(int ParametroId_PT, bool ParametroCalidad)
         {
             InitializeComponent();
             Id_pt = ParametroId_PT;
-            load_data();
+            load_data(ParametroCalidad);
         }
-        public void load_data()
+        public void load_data(bool pParametroCalidad)
         {
-            string query = @"sp_load_parametros_excluyendo_configurados_by_pt";
+            string query = @"[sp_load_parametros_excluyendo_configurados_by_ptV2]";
             try
             {
                 SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
@@ -34,12 +34,11 @@ namespace LOSA.Calidad.Parametros
                 SqlCommand cmd = new SqlCommand(query,cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_pt", Id_pt);
-                dsParametros.parametroToPick.Clear();
+                cmd.Parameters.AddWithValue("@parametro_calidad", pParametroCalidad);
+                dsParametros1.parametroToPick.Clear();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dsParametros.parametroToPick);
+                da.Fill(dsParametros1.parametroToPick);
                 cn.Close();
-
-
             }
             catch (Exception ex)
             {
@@ -55,7 +54,7 @@ namespace LOSA.Calidad.Parametros
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            var Cantidad = (from num in dsParametros.parametroToPick
+            var Cantidad = (from num in dsParametros1.parametroToPick
                             where num.Selected == true
                             select num).Count();
             if (Cantidad == 0)
@@ -72,7 +71,7 @@ namespace LOSA.Calidad.Parametros
                 cn.Open();
                 SqlCommand cmd = new SqlCommand(query, cn);
 
-                foreach (dsParametros.parametroToPickRow row in dsParametros.parametroToPick.Rows)
+                foreach (dsParametros.parametroToPickRow row in dsParametros1.parametroToPick.Rows)
                 {
                     if (row.Selected)
                     {

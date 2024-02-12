@@ -13,7 +13,7 @@ namespace LOSA.Clases
         string ConnectionString;
         public string codigo, descripcion, fecha, estado, codesap,formula_code, tamaño, diametro, registro, codigo_unite, descripcion_Tecnica;
         public TimeSpan horasP;
-        public decimal proteinas, grasa, size;
+        public decimal proteinas, grasa, size, peso_saco;
         public int id, id_bag, id_category, id_proceso, id_portafolio, id_tamaño, especie, family, idOr, dias_vencimiento, dias_venc_despacho;
         public bool recuperado;
         public string material, nombre_comercial, customer_visibility, oldCode, mixType, CodigoMP;
@@ -165,6 +165,7 @@ namespace LOSA.Clases
                     descripcion_Tecnica = dl.GetString(22);
                     codesap = dl.GetString(23);
                     estado = dl.GetString(24);
+                    peso_saco = dl.GetDecimal(25);
                     recuperado = true;
                 }
             }
