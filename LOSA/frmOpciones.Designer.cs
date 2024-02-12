@@ -5815,7 +5815,6 @@
             this.navBarProductoBorrador.Caption = "Solicitud de Creacion Producto Terminado";
             this.navBarProductoBorrador.ImageOptions.SmallImage = global::LOSA.Properties.Resources.pallet;
             this.navBarProductoBorrador.Name = "navBarProductoBorrador";
-            this.navBarProductoBorrador.Visible = false;
             this.navBarProductoBorrador.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarProductoBorrador_LinkClicked);
             // 
             // navBarItem2

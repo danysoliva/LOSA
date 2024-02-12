@@ -108,11 +108,24 @@ namespace LOSA.Calidad.Parametros
             }
             else 
             {
-                load_parametros_fisicos_cumplo_no_cumple();
-                load_parametros_fisicos_min_max();
-                obtener_sacos();
-                load_obtenet_rango();
-                load_data_ultimo_muestreo(Convert.ToInt32(Lote));
+                if (id_pt == 0)
+                {
+                    load_data();
+                    load_parametros_fisicos_cumplo_no_cumple();
+                    load_parametros_fisicos_min_max();
+                    obtener_sacos();
+                    load_obtenet_rango();
+                }
+                else 
+                {
+                    load_data_ultimo_muestreo(Convert.ToInt32(Lote));
+                    load_parametros_fisicos_cumplo_no_cumple();
+                    load_parametros_fisicos_min_max();
+                    obtener_sacos();
+                    load_obtenet_rango();
+                }
+                
+               
 
             }
             

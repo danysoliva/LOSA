@@ -4740,7 +4740,7 @@ namespace LOSA
             {
                 PT_Producto_Borrador frm = new PT_Producto_Borrador(UsuarioLogeado);
                 frm.MdiParent = this.MdiParent;
-                frm.ShowDialog();
+                frm.Show();
 
 
             }
