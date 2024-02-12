@@ -3925,6 +3925,12 @@
     <Compile Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.designer.cs">
       <DependentUpon>frmVerSeguimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\PT_Producto_Borrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\PT_Producto_Borrador.Designer.cs">
+      <DependentUpon>PT_Producto_Borrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -8173,6 +8179,9 @@
     <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.resx">
       <DependentUpon>frmVerSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\PT_Producto_Borrador.resx">
+      <DependentUpon>PT_Producto_Borrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.resx">
       <DependentUpon>xfrmChangeStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -8377,7 +8386,6 @@
     <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -9516,6 +9524,7 @@
     <None Include="Resources\plan_icon48X48.png" />
     <None Include="Resources\next_x16.png" />
     <None Include="Resources\Oxygen-Icons.org.png" />
+    <None Include="Resources\pallet.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />

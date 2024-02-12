@@ -140,8 +140,11 @@ namespace LOSA.MigracionACS.PT
                     spindDiasVenc.EditValue = 150;
                     spinDiasMinimos.EditValue = 60;
                     toggleSwitchEspecie.IsOn = true;
-                    GenerarCodigo();
+                    grdCodSAP.Enabled = false;
+
+                    //GenerarCodigo();
                     LoadFamilia();
+                    LlenadoProce();
 
                     break;
                 default:
@@ -672,6 +675,7 @@ namespace LOSA.MigracionACS.PT
 
                 case TipoOperacion.SolicitudInsert:
                     //Esto lo haremos luego, quizas en Tickets vamos a ver.
+
 
                     break;
 
