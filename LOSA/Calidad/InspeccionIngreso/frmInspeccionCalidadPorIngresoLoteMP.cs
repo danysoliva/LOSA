@@ -21,7 +21,7 @@ using LOSA.Trazabilidad.ReportesTRZ;
 using LOSA.Trazabilidad.Despachos;
 using LOSA.TransaccionesMP;
 using DevExpress.CodeParser;
-
+using LOSA.Calidad.InspeccionIngreso;
 
 namespace LOSA.Calidad
 {
@@ -99,6 +99,7 @@ namespace LOSA.Calidad
             IdMP = pIdMP;
             Lote = pLote;
             LoadDataInicialIngresos();
+            LoadDataTipoIngrediente();
             foreach (dsMantenimientoC.Ingresos_Lote_detalleRow item in dsMantenimientoC.Ingresos_Lote_detalle.Rows)
             {
                 if (item.numero_transaccion == NumeroTransaccion)
@@ -146,6 +147,26 @@ namespace LOSA.Calidad
             {
                 inicializar_criterios();
                 //Inicalizar_Archivo();
+            }
+        }
+
+        private void LoadDataTipoIngrediente()
+        {
+            string query = @"sp_get_tipo_ingrediente";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsMantenimientoC.tipo_ingrediente.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.tipo_ingrediente);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -1786,63 +1807,6 @@ namespace LOSA.Calidad
                     cmd.ExecuteNonQuery();
                     cn.Close();
 
-                    //// Importar archivos adjuntos.
-
-                    //if (fileNameImagen != "")
-                    //{
-                    //    if (cambioImagen)
-                    //    {
-
-                    //        //string Path_2 = "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
-                    //        string Path_2 = string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
-                    //        //if (Upload(Path_2, full_pathImagen))
-                    //        FTP_Class ftp1 = new FTP_Class();
-                    //        if (ftp1.GuardarArchivo(UsuarioLogeado, Path_2, full_pathImagen))
-                    //        {
-                    //            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    //            con.Open();
-                    //            SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGEN]", con);
-                    //            //cmd4.Transaction = transaction;
-                    //            cmd4.CommandType = CommandType.StoredProcedure;
-
-                    //            cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = dp.FTP_Tickets_LOSA + Path_2;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
-                    //            cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
-                    //            cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
-                    //            cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                    //            //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                    //            cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                    //            cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    //            cmd4.Parameters.AddWithValue("@id_mp", IdMP);
-                    //            cmd4.Parameters.AddWithValue("@lote_mp", Lote);
-                    //            cmd4.Parameters.AddWithValue("@cambio_imagen", cambioImagen);
-                    //            cmd4.ExecuteNonQuery();
-                    //            con.Close();
-                    //        }
-                    //    }
-                    //    //else
-                    //    //{
-
-                    //    //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    //    //    con.Open();
-                    //    //    SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGEN]", con);
-                    //    //    //cmd4.Transaction = transaction;
-                    //    //    cmd4.CommandType = CommandType.StoredProcedure;
-
-                    //    //    cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = full_pathImagen;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
-                    //    //    cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
-                    //    //    cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
-                    //    //    cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                    //    //    //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                    //    //    cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                    //    //    cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    //    //    cmd4.Parameters.AddWithValue("@id_mp", IdMP);
-                    //    //    cmd4.Parameters.AddWithValue("@lote_mp", Lote);
-                    //    //    cmd4.Parameters.AddWithValue("@cambio_imagen", cambioImagen);
-                    //    //    cmd4.ExecuteNonQuery();
-                    //    //    con.Close();
-                    //    //}
-                    //}
-
                     cn.Open();
 
                     Query = @"sp_update_ingresos_lotes_calidadV2";
@@ -2322,6 +2286,38 @@ namespace LOSA.Calidad
             
             
             
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmIngresoTipoMarino frm = new frmIngresoTipoMarino();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void grdTipoIngrediente_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(grdTipoIngrediente.Text))
+            {
+                switch (grdTipoIngrediente.EditValue)
+                {
+                    case 1:
+
+                        btnAdd.Enabled = true;
+
+                        break;
+                    default:
+
+                        btnAdd.Enabled = false;
+
+
+
+                        break;
+                }
+            }
+
         }
 
         private void gridView7_RowClick(object sender, RowClickEventArgs e)
