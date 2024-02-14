@@ -42,48 +42,6 @@ namespace LOSA.Calidad
       
 
         DataOperations dp = new DataOperations();
-        public frmInspeccionCalidadPorIngresoLoteMP(int id_ingreso_lote, UserLogin Puser)
-        {
-            InitializeComponent();
-            //Id_ingreso = id_ingreso_lote;
-            //UsuarioLogeado = Puser;
-
-            //tabPageLotesPT.Visible = false;
-            ////tabControl1.TabPages[4]
-            //load_data();
-            //load_data_ingreso();
-            //Load_cargas_nir();
-            //Inicializar_data_logistica();
-            //load_zonas();
-            //load_especie();
-            //load_tipo();
-            //load_paises();
-            //LoadLotesPT();
-            //LoadInventarioKardex();
-            ////Load_Despachos();
-            //if (ChCalidad)
-            //{
-            //    load_criterios_configurados();
-            //    Inicalizar_Archivo_configurados();
-            //    get_imagen();
-            //    load_empaque_estado_Mp();
-            //    load_trasporte_estado_transporte();
-            //    load_criterios_adicionales();
-
-            //    if (full_pathImagen != "")
-            //    {
-            //        pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
-            //    }
-            //}
-            //else
-            //{
-            //    inicializar_criterios();
-            //    Inicalizar_Archivo();
-            //}
-        }
-
-        
-
         public frmInspeccionCalidadPorIngresoLoteMP(int pNumeroIngreso, int pIdMP, string pLote, UserLogin Puser)
         {
             InitializeComponent();
@@ -106,7 +64,6 @@ namespace LOSA.Calidad
                     item.selected = true;
                 }
             }
-            
 
             tabPageLotesPT.Visible = false;
             load_data();
@@ -119,20 +76,20 @@ namespace LOSA.Calidad
             load_paises();
             LoadLotesPT();
             LoadInventarioKardex();
-            //Load_Despachos();
-
+       
             //Archivos Configurados
             Inicalizar_Archivo_configurados();
             Inicializar_data_logisticaRuta2(Lote);
             if (ChCalidad)
             {
                 load_criterios_configurados();
+                load_ingrediente_fabricante();
                 get_imagen();
                 //Inicalizar_Archivo_configurados();
                 load_empaque_estado_Mp();
                 load_trasporte_estado_transporte();
-                load_criterios_adicionales();
-
+                
+                
                 if (full_pathImagen != "")
                 {
                     //pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
@@ -143,6 +100,45 @@ namespace LOSA.Calidad
             {
                 inicializar_criterios();
                 //Inicalizar_Archivo();
+            }
+        }
+
+        private void load_ingrediente_fabricante()
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_load_trz_fabricante_ingrediente",conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp",IdMP);
+                cmd.Parameters.AddWithValue("@lote",Lote);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    idPlanta_Fabricante = dr.GetInt32(0);
+                    txtFabricante.Text = dr.GetString(1);
+                    grdTipoIngrediente.EditValue = dr.GetInt32(2);
+
+                    if (Convert.ToInt32(grdTipoIngrediente.EditValue) == 1) //Marino
+                    {
+                        btnAdd.Enabled = true;
+                        grdInfoAdicionalCalidad.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAdd.Enabled = false;
+                        grdInfoAdicionalCalidad.Enabled = false;
+                    }
+
+                }
+                dr.Close();
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
             }
         }
 
@@ -661,14 +657,14 @@ namespace LOSA.Calidad
         //}
         public void get_imagen()
         {
-            string query = @"[sp_get_imagen_of_ingreso_calidad_by_lotempv2]";
+            string query = @"[sp_get_imagen_of_ingreso_calidad_by_lotempV3]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@_lotemp", Lote);
             cmd.Parameters.AddWithValue("@idmp", IdMP);
-            cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
+            //cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -1286,7 +1282,7 @@ namespace LOSA.Calidad
                     {
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
-                        SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGEN]", con);
+                        SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGENV2]", con);
                         //cmd4.Transaction = transaction;
                         cmd4.CommandType = CommandType.StoredProcedure;
 
@@ -1296,7 +1292,7 @@ namespace LOSA.Calidad
                         cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                         //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                         cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                        cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                        //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
                         cmd4.Parameters.AddWithValue("@id_mp", IdMP);
                         cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                         cmd4.Parameters.AddWithValue("@cambio_imagen", cambioImagen);
@@ -1679,12 +1675,12 @@ namespace LOSA.Calidad
                     return;
                 }
 
-                if (string.IsNullOrEmpty(txtFabricante.Text))
-                {
-                    CajaDialogo.Error("Debe indicar el Fabricante!");
-                    simpleButton2.Focus();
-                    return;
-                }
+                //if (string.IsNullOrEmpty(txtFabricante.Text))
+                //{
+                //    CajaDialogo.Error("Debe indicar el Fabricante!");
+                //    simpleButton2.Focus();
+                //    return;
+                //}
 
                 if (Convert.ToInt32(grdTipoIngrediente.EditValue) == 1)
                 {
@@ -2452,25 +2448,25 @@ namespace LOSA.Calidad
         private void reposGrdOrigenEspecie_EditValueChanged(object sender, EventArgs e)
         {
 
-            try
-            {
-                if (reposGrdOrigenEspecie.ValueMember != null)
-                {
-                    foreach (dsMantenimientoC.origen_especieRow row in dsMantenimientoC.origen_especie.Rows)
-                    {
-                        if (Convert.ToInt32(reposGrdOrigenEspecie.ValueMember) == row.id)
-                        {
-                            row.fishsource = row.fishsource;
-                            row.iucn = row.iucn;
-                            dsMantenimientoC.info_adicional_marino.AcceptChanges();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
+            //try
+            //{
+            //    if (reposGrdOrigenEspecie.ValueMember != null)
+            //    {
+            //        foreach (dsMantenimientoC.origen_especieRow row in dsMantenimientoC.origen_especie.Rows)
+            //        {
+            //            if (Convert.ToInt32(reposGrdOrigenEspecie.ValueMember) == row.id)
+            //            {
+            //                row.fishsource = row.fishsource;
+            //                row.iucn = row.iucn;
+            //                dsMantenimientoC.info_adicional_marino.AcceptChanges();
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
         }
 
         private void gridView7_RowClick(object sender, RowClickEventArgs e)
@@ -2511,6 +2507,8 @@ namespace LOSA.Calidad
                 if (ChCalidad)
                 {
                     load_criterios_configurados();
+                    load_ingrediente_fabricante();
+
                     //Inicalizar_Archivo_configurados();
                     get_imagen();
                     load_empaque_estado_Mp();

@@ -312,6 +312,16 @@ namespace LOSA.Calidad
             this.labelControl78 = new DevExpress.XtraEditors.LabelControl();
             this.txtTM_inventarioActual = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coliucn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfishsource1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombreMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnumtraslado.Properties)).BeginInit();
@@ -745,12 +755,12 @@ namespace LOSA.Calidad
             // 
             this.grd_parametros.DataMember = "parametros";
             this.grd_parametros.DataSource = this.dsMantenimientoC;
-            this.grd_parametros.Location = new System.Drawing.Point(6, 5);
+            this.grd_parametros.Location = new System.Drawing.Point(6, 3);
             this.grd_parametros.MainView = this.grdv_parametros;
             this.grd_parametros.Name = "grd_parametros";
             this.grd_parametros.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnseleccionar});
-            this.grd_parametros.Size = new System.Drawing.Size(755, 217);
+            this.grd_parametros.Size = new System.Drawing.Size(791, 219);
             this.grd_parametros.TabIndex = 0;
             this.grd_parametros.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_parametros});
@@ -863,7 +873,7 @@ namespace LOSA.Calidad
             this.btnAdjuntarImagen.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdjuntarImagen.Appearance.Options.UseFont = true;
             this.btnAdjuntarImagen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdjuntarImagen.ImageOptions.Image")));
-            this.btnAdjuntarImagen.Location = new System.Drawing.Point(472, 3);
+            this.btnAdjuntarImagen.Location = new System.Drawing.Point(511, 5);
             this.btnAdjuntarImagen.Name = "btnAdjuntarImagen";
             this.btnAdjuntarImagen.Size = new System.Drawing.Size(137, 31);
             this.btnAdjuntarImagen.TabIndex = 2;
@@ -876,14 +886,14 @@ namespace LOSA.Calidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.grd_adjuntos.DataMember = "adjuntos";
             this.grd_adjuntos.DataSource = this.dsMantenimientoC;
-            this.grd_adjuntos.Location = new System.Drawing.Point(767, 3);
+            this.grd_adjuntos.Location = new System.Drawing.Point(803, 3);
             this.grd_adjuntos.MainView = this.grdv_adjuntos;
             this.grd_adjuntos.Name = "grd_adjuntos";
             this.grd_adjuntos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnAdjuntarDocumento,
             this.btnAbrirAdjunto,
             this.btnDesligar});
-            this.grd_adjuntos.Size = new System.Drawing.Size(563, 457);
+            this.grd_adjuntos.Size = new System.Drawing.Size(527, 457);
             this.grd_adjuntos.TabIndex = 38;
             this.grd_adjuntos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_adjuntos});
@@ -939,7 +949,7 @@ namespace LOSA.Calidad
             this.colAdjunto.OptionsColumn.AllowEdit = false;
             this.colAdjunto.Visible = true;
             this.colAdjunto.VisibleIndex = 0;
-            this.colAdjunto.Width = 245;
+            this.colAdjunto.Width = 256;
             // 
             // colpath
             // 
@@ -955,7 +965,7 @@ namespace LOSA.Calidad
             this.colbit_subido.OptionsColumn.AllowEdit = false;
             this.colbit_subido.Visible = true;
             this.colbit_subido.VisibleIndex = 1;
-            this.colbit_subido.Width = 70;
+            this.colbit_subido.Width = 65;
             // 
             // colpath_load
             // 
@@ -976,7 +986,7 @@ namespace LOSA.Calidad
             this.colAdjuntar.Name = "colAdjuntar";
             this.colAdjuntar.Visible = true;
             this.colAdjuntar.VisibleIndex = 2;
-            this.colAdjuntar.Width = 69;
+            this.colAdjuntar.Width = 66;
             // 
             // btnAdjuntarDocumento
             // 
@@ -995,7 +1005,7 @@ namespace LOSA.Calidad
             this.colabrir.Name = "colabrir";
             this.colabrir.Visible = true;
             this.colabrir.VisibleIndex = 3;
-            this.colabrir.Width = 55;
+            this.colabrir.Width = 50;
             // 
             // btnAbrirAdjunto
             // 
@@ -1019,12 +1029,12 @@ namespace LOSA.Calidad
             // 
             // Desadjuntar
             // 
-            this.Desadjuntar.Caption = "Desadjuntar";
+            this.Desadjuntar.Caption = "Eliminar";
             this.Desadjuntar.ColumnEdit = this.btnDesligar;
             this.Desadjuntar.Name = "Desadjuntar";
             this.Desadjuntar.Visible = true;
             this.Desadjuntar.VisibleIndex = 4;
-            this.Desadjuntar.Width = 99;
+            this.Desadjuntar.Width = 65;
             // 
             // btnDesligar
             // 
@@ -1038,8 +1048,6 @@ namespace LOSA.Calidad
             // 
             // panelControl3
             // 
-            this.panelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl3.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelControl3.Appearance.Options.UseBackColor = true;
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -1051,12 +1059,12 @@ namespace LOSA.Calidad
             this.panelControl3.Controls.Add(this.btnAdjuntarImagen);
             this.panelControl3.Location = new System.Drawing.Point(3, 223);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(758, 237);
+            this.panelControl3.Size = new System.Drawing.Size(794, 237);
             this.panelControl3.TabIndex = 49;
             // 
             // pc_Mp1
             // 
-            this.pc_Mp1.Location = new System.Drawing.Point(615, 10);
+            this.pc_Mp1.Location = new System.Drawing.Point(654, 10);
             this.pc_Mp1.Name = "pc_Mp1";
             this.pc_Mp1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -1065,8 +1073,9 @@ namespace LOSA.Calidad
             // 
             // grdInfoAdicionalCalidad
             // 
-            this.grdInfoAdicionalCalidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.grdInfoAdicionalCalidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grdInfoAdicionalCalidad.DataMember = "info_adicional_marino";
             this.grdInfoAdicionalCalidad.DataSource = this.dsMantenimientoC;
             this.grdInfoAdicionalCalidad.Enabled = false;
@@ -1083,7 +1092,7 @@ namespace LOSA.Calidad
             this.reposHyperLinkFishSource,
             this.reposHyperLinkIUCN,
             this.reposDelete});
-            this.grdInfoAdicionalCalidad.Size = new System.Drawing.Size(749, 194);
+            this.grdInfoAdicionalCalidad.Size = new System.Drawing.Size(788, 194);
             this.grdInfoAdicionalCalidad.TabIndex = 70;
             this.grdInfoAdicionalCalidad.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1103,6 +1112,7 @@ namespace LOSA.Calidad
             this.gridColumn3});
             this.gridView1.GridControl = this.grdInfoAdicionalCalidad;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colid_especio
@@ -1111,9 +1121,10 @@ namespace LOSA.Calidad
             this.colid_especio.ColumnEdit = this.reposGrdOrigenEspecie;
             this.colid_especio.FieldName = "id_especio";
             this.colid_especio.Name = "colid_especio";
+            this.colid_especio.OptionsColumn.AllowEdit = false;
             this.colid_especio.Visible = true;
             this.colid_especio.VisibleIndex = 0;
-            this.colid_especio.Width = 72;
+            this.colid_especio.Width = 85;
             // 
             // reposGrdOrigenEspecie
             // 
@@ -1135,6 +1146,11 @@ namespace LOSA.Calidad
             // 
             // repositoryItemGridLookUpEdit1View
             // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid2,
+            this.colnombre,
+            this.coliucn1,
+            this.colfishsource1});
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
             this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -1148,7 +1164,7 @@ namespace LOSA.Calidad
             this.colid_zona_pesca.Name = "colid_zona_pesca";
             this.colid_zona_pesca.Visible = true;
             this.colid_zona_pesca.VisibleIndex = 1;
-            this.colid_zona_pesca.Width = 72;
+            this.colid_zona_pesca.Width = 73;
             // 
             // reposGrdZonaPesca
             // 
@@ -1169,6 +1185,9 @@ namespace LOSA.Calidad
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid3,
+            this.coldescripcion2});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -1181,7 +1200,7 @@ namespace LOSA.Calidad
             this.colplanta_senasa.Name = "colplanta_senasa";
             this.colplanta_senasa.Visible = true;
             this.colplanta_senasa.VisibleIndex = 2;
-            this.colplanta_senasa.Width = 80;
+            this.colplanta_senasa.Width = 94;
             // 
             // colsustentable
             // 
@@ -1191,7 +1210,7 @@ namespace LOSA.Calidad
             this.colsustentable.Name = "colsustentable";
             this.colsustentable.Visible = true;
             this.colsustentable.VisibleIndex = 3;
-            this.colsustentable.Width = 82;
+            this.colsustentable.Width = 77;
             // 
             // repoSpinSustentable
             // 
@@ -1208,7 +1227,7 @@ namespace LOSA.Calidad
             this.colpais_origen.Name = "colpais_origen";
             this.colpais_origen.Visible = true;
             this.colpais_origen.VisibleIndex = 4;
-            this.colpais_origen.Width = 69;
+            this.colpais_origen.Width = 68;
             // 
             // reposGrdPaisOrigen
             // 
@@ -1229,6 +1248,9 @@ namespace LOSA.Calidad
             // 
             // gridView3
             // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid4,
+            this.coldescripcion3});
             this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -1242,7 +1264,7 @@ namespace LOSA.Calidad
             this.colfishsource.Name = "colfishsource";
             this.colfishsource.Visible = true;
             this.colfishsource.VisibleIndex = 5;
-            this.colfishsource.Width = 116;
+            this.colfishsource.Width = 118;
             // 
             // reposHyperLinkFishSource
             // 
@@ -1272,7 +1294,7 @@ namespace LOSA.Calidad
             this.coltipo.Name = "coltipo";
             this.coltipo.Visible = true;
             this.coltipo.VisibleIndex = 7;
-            this.coltipo.Width = 52;
+            this.coltipo.Width = 51;
             // 
             // reposGrdTipo
             // 
@@ -1293,6 +1315,9 @@ namespace LOSA.Calidad
             // 
             // gridView10
             // 
+            this.gridView10.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid5,
+            this.coldescripcion4});
             this.gridView10.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView10.Name = "gridView10";
             this.gridView10.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -1304,9 +1329,12 @@ namespace LOSA.Calidad
             this.colporce_tipo.ColumnEdit = this.reposSpinPorcTipo;
             this.colporce_tipo.FieldName = "porce_tipo";
             this.colporce_tipo.Name = "colporce_tipo";
+            this.colporce_tipo.OptionsColumn.AllowEdit = false;
+            this.colporce_tipo.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "porce_tipo", "%={0:0.##}")});
             this.colporce_tipo.Visible = true;
             this.colporce_tipo.VisibleIndex = 8;
-            this.colporce_tipo.Width = 47;
+            this.colporce_tipo.Width = 46;
             // 
             // reposSpinPorcTipo
             // 
@@ -1322,7 +1350,7 @@ namespace LOSA.Calidad
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 9;
-            this.gridColumn3.Width = 43;
+            this.gridColumn3.Width = 60;
             // 
             // reposDelete
             // 
@@ -1338,7 +1366,7 @@ namespace LOSA.Calidad
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(173, 13);
+            this.labelControl6.Location = new System.Drawing.Point(197, 13);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(99, 17);
             this.labelControl6.TabIndex = 69;
@@ -1346,7 +1374,7 @@ namespace LOSA.Calidad
             // 
             // grdTipoIngrediente
             // 
-            this.grdTipoIngrediente.Location = new System.Drawing.Point(275, 10);
+            this.grdTipoIngrediente.Location = new System.Drawing.Point(299, 10);
             this.grdTipoIngrediente.Name = "grdTipoIngrediente";
             this.grdTipoIngrediente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdTipoIngrediente.Properties.Appearance.Options.UseFont = true;
@@ -3166,6 +3194,73 @@ namespace LOSA.Calidad
             this.labelControl5.TabIndex = 90;
             this.labelControl5.Text = "Kg";
             // 
+            // colid2
+            // 
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
+            // 
+            // colnombre
+            // 
+            this.colnombre.FieldName = "nombre";
+            this.colnombre.Name = "colnombre";
+            this.colnombre.Visible = true;
+            this.colnombre.VisibleIndex = 0;
+            // 
+            // coliucn1
+            // 
+            this.coliucn1.FieldName = "iucn";
+            this.coliucn1.Name = "coliucn1";
+            // 
+            // colfishsource1
+            // 
+            this.colfishsource1.FieldName = "fishsource";
+            this.colfishsource1.Name = "colfishsource1";
+            // 
+            // colid3
+            // 
+            this.colid3.FieldName = "id";
+            this.colid3.Name = "colid3";
+            this.colid3.OptionsColumn.AllowEdit = false;
+            this.colid3.Visible = true;
+            this.colid3.VisibleIndex = 0;
+            // 
+            // coldescripcion2
+            // 
+            this.coldescripcion2.Caption = "Descripcion";
+            this.coldescripcion2.FieldName = "descripcion";
+            this.coldescripcion2.Name = "coldescripcion2";
+            this.coldescripcion2.Visible = true;
+            this.coldescripcion2.VisibleIndex = 1;
+            // 
+            // colid4
+            // 
+            this.colid4.FieldName = "id";
+            this.colid4.Name = "colid4";
+            this.colid4.OptionsColumn.AllowEdit = false;
+            this.colid4.Visible = true;
+            this.colid4.VisibleIndex = 0;
+            // 
+            // coldescripcion3
+            // 
+            this.coldescripcion3.Caption = "Descripcion";
+            this.coldescripcion3.FieldName = "descripcion";
+            this.coldescripcion3.Name = "coldescripcion3";
+            this.coldescripcion3.Visible = true;
+            this.coldescripcion3.VisibleIndex = 1;
+            // 
+            // colid5
+            // 
+            this.colid5.FieldName = "id";
+            this.colid5.Name = "colid5";
+            // 
+            // coldescripcion4
+            // 
+            this.coldescripcion4.Caption = "Descripcion";
+            this.coldescripcion4.FieldName = "descripcion";
+            this.coldescripcion4.Name = "coldescripcion4";
+            this.coldescripcion4.Visible = true;
+            this.coldescripcion4.VisibleIndex = 0;
+            // 
             // frmInspeccionCalidadPorIngresoLoteMP
             // 
             this.Appearance.Options.UseFont = true;
@@ -3575,5 +3670,15 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit reposSpinPorcTipo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposDelete;
+        private DevExpress.XtraGrid.Columns.GridColumn colid2;
+        private DevExpress.XtraGrid.Columns.GridColumn colnombre;
+        private DevExpress.XtraGrid.Columns.GridColumn coliucn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colfishsource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid3;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion2;
+        private DevExpress.XtraGrid.Columns.GridColumn colid4;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion3;
+        private DevExpress.XtraGrid.Columns.GridColumn colid5;
+        private DevExpress.XtraGrid.Columns.GridColumn coldescripcion4;
     }
 }
