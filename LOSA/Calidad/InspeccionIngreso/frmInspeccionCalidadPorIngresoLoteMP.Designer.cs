@@ -51,12 +51,17 @@ namespace LOSA.Calidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.cmdHome = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -95,7 +100,6 @@ namespace LOSA.Calidad
             this.ColSeleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnseleccionar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btnAdjuntarImagen = new DevExpress.XtraEditors.SimpleButton();
-            this.pc_Mp = new DevExpress.XtraEditors.PictureEdit();
             this.grd_adjuntos = new DevExpress.XtraGrid.GridControl();
             this.grdv_adjuntos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAdjunto = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -112,13 +116,43 @@ namespace LOSA.Calidad
             this.Desadjuntar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnDesligar = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.grdTipoIngrediente = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.pc_Mp1 = new DevExpress.XtraEditors.ImageEdit();
+            this.grdInfoAdicionalCalidad = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_especio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposGrdOrigenEspecie = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.origenespecieBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.paisesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid_zona_pesca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposGrdZonaPesca = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colplanta_senasa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsustentable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repoSpinSustentable = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.colpais_origen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposGrdPaisOrigen = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.paisesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colfishsource = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposHyperLinkFishSource = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.colIUCN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposHyperLinkIUCN = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.coltipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposGrdTipo = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colporce_tipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposSpinPorcTipo = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.grdTipoIngrediente = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.tipoingredienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView9 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.grd_logistica = new DevExpress.XtraGrid.GridControl();
             this.grdv_logistica = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colresp = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -278,13 +312,6 @@ namespace LOSA.Calidad
             this.labelControl78 = new DevExpress.XtraEditors.LabelControl();
             this.txtTM_inventarioActual = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.tipoingredienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colid6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl5 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.imageEdit1 = new DevExpress.XtraEditors.ImageEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombreMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnumtraslado.Properties)).BeginInit();
@@ -301,7 +328,6 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.grd_parametros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_parametros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pc_Mp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_adjuntos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_adjuntos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdjuntarDocumento)).BeginInit();
@@ -309,12 +335,29 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.btnDesligar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdTipoIngrediente.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pc_Mp1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdInfoAdicionalCalidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdOrigenEspecie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.origenespecieBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoingresoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paisesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdZonaPesca)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zonaPescaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoSpinSustentable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdPaisOrigen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposHyperLinkFishSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposHyperLinkIUCN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdTipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoingresoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposSpinPorcTipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTipoIngrediente.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoingredienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_logistica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_logistica)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -378,10 +421,6 @@ namespace LOSA.Calidad
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtboleta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTM_inventarioActual.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoingredienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -821,24 +860,15 @@ namespace LOSA.Calidad
             // 
             // btnAdjuntarImagen
             // 
-            this.btnAdjuntarImagen.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdjuntarImagen.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdjuntarImagen.Appearance.Options.UseFont = true;
             this.btnAdjuntarImagen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdjuntarImagen.ImageOptions.Image")));
-            this.btnAdjuntarImagen.Location = new System.Drawing.Point(564, 191);
+            this.btnAdjuntarImagen.Location = new System.Drawing.Point(472, 3);
             this.btnAdjuntarImagen.Name = "btnAdjuntarImagen";
-            this.btnAdjuntarImagen.Size = new System.Drawing.Size(188, 41);
+            this.btnAdjuntarImagen.Size = new System.Drawing.Size(137, 31);
             this.btnAdjuntarImagen.TabIndex = 2;
             this.btnAdjuntarImagen.Text = "Adjuntar Imagen";
             this.btnAdjuntarImagen.Click += new System.EventHandler(this.btnAdjuntarImagen_Click);
-            // 
-            // pc_Mp
-            // 
-            this.pc_Mp.Location = new System.Drawing.Point(564, 38);
-            this.pc_Mp.Name = "pc_Mp";
-            this.pc_Mp.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pc_Mp.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pc_Mp.Size = new System.Drawing.Size(188, 149);
-            this.pc_Mp.TabIndex = 1;
             // 
             // grd_adjuntos
             // 
@@ -846,14 +876,14 @@ namespace LOSA.Calidad
             | System.Windows.Forms.AnchorStyles.Left)));
             this.grd_adjuntos.DataMember = "adjuntos";
             this.grd_adjuntos.DataSource = this.dsMantenimientoC;
-            this.grd_adjuntos.Location = new System.Drawing.Point(767, 6);
+            this.grd_adjuntos.Location = new System.Drawing.Point(767, 3);
             this.grd_adjuntos.MainView = this.grdv_adjuntos;
             this.grd_adjuntos.Name = "grd_adjuntos";
             this.grd_adjuntos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnAdjuntarDocumento,
             this.btnAbrirAdjunto,
             this.btnDesligar});
-            this.grd_adjuntos.Size = new System.Drawing.Size(563, 454);
+            this.grd_adjuntos.Size = new System.Drawing.Size(563, 457);
             this.grd_adjuntos.TabIndex = 38;
             this.grd_adjuntos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_adjuntos});
@@ -1013,21 +1043,310 @@ namespace LOSA.Calidad
             this.panelControl3.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelControl3.Appearance.Options.UseBackColor = true;
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl3.Controls.Add(this.imageEdit1);
-            this.panelControl3.Controls.Add(this.gridControl5);
+            this.panelControl3.Controls.Add(this.pc_Mp1);
+            this.panelControl3.Controls.Add(this.grdInfoAdicionalCalidad);
             this.panelControl3.Controls.Add(this.labelControl6);
             this.panelControl3.Controls.Add(this.grdTipoIngrediente);
             this.panelControl3.Controls.Add(this.btnAdd);
-            this.panelControl3.Controls.Add(this.pc_Mp);
             this.panelControl3.Controls.Add(this.btnAdjuntarImagen);
             this.panelControl3.Location = new System.Drawing.Point(3, 223);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(758, 237);
             this.panelControl3.TabIndex = 49;
             // 
+            // pc_Mp1
+            // 
+            this.pc_Mp1.Location = new System.Drawing.Point(615, 10);
+            this.pc_Mp1.Name = "pc_Mp1";
+            this.pc_Mp1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.pc_Mp1.Size = new System.Drawing.Size(137, 20);
+            this.pc_Mp1.TabIndex = 71;
+            // 
+            // grdInfoAdicionalCalidad
+            // 
+            this.grdInfoAdicionalCalidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.grdInfoAdicionalCalidad.DataMember = "info_adicional_marino";
+            this.grdInfoAdicionalCalidad.DataSource = this.dsMantenimientoC;
+            this.grdInfoAdicionalCalidad.Enabled = false;
+            this.grdInfoAdicionalCalidad.Location = new System.Drawing.Point(3, 38);
+            this.grdInfoAdicionalCalidad.MainView = this.gridView1;
+            this.grdInfoAdicionalCalidad.Name = "grdInfoAdicionalCalidad";
+            this.grdInfoAdicionalCalidad.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.reposGrdOrigenEspecie,
+            this.reposGrdZonaPesca,
+            this.repoSpinSustentable,
+            this.reposGrdPaisOrigen,
+            this.reposGrdTipo,
+            this.reposSpinPorcTipo,
+            this.reposHyperLinkFishSource,
+            this.reposHyperLinkIUCN,
+            this.reposDelete});
+            this.grdInfoAdicionalCalidad.Size = new System.Drawing.Size(749, 194);
+            this.grdInfoAdicionalCalidad.TabIndex = 70;
+            this.grdInfoAdicionalCalidad.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid_especio,
+            this.colid_zona_pesca,
+            this.colplanta_senasa,
+            this.colsustentable,
+            this.colpais_origen,
+            this.colfishsource,
+            this.colIUCN,
+            this.coltipo,
+            this.colporce_tipo,
+            this.gridColumn3});
+            this.gridView1.GridControl = this.grdInfoAdicionalCalidad;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid_especio
+            // 
+            this.colid_especio.Caption = "Origen Especie";
+            this.colid_especio.ColumnEdit = this.reposGrdOrigenEspecie;
+            this.colid_especio.FieldName = "id_especio";
+            this.colid_especio.Name = "colid_especio";
+            this.colid_especio.Visible = true;
+            this.colid_especio.VisibleIndex = 0;
+            this.colid_especio.Width = 72;
+            // 
+            // reposGrdOrigenEspecie
+            // 
+            this.reposGrdOrigenEspecie.AutoHeight = false;
+            this.reposGrdOrigenEspecie.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGrdOrigenEspecie.DataSource = this.origenespecieBindingSource;
+            this.reposGrdOrigenEspecie.DisplayMember = "nombre";
+            this.reposGrdOrigenEspecie.Name = "reposGrdOrigenEspecie";
+            this.reposGrdOrigenEspecie.NullText = "";
+            this.reposGrdOrigenEspecie.PopupView = this.repositoryItemGridLookUpEdit1View;
+            this.reposGrdOrigenEspecie.ValueMember = "id";
+            this.reposGrdOrigenEspecie.EditValueChanged += new System.EventHandler(this.reposGrdOrigenEspecie_EditValueChanged);
+            // 
+            // origenespecieBindingSource
+            // 
+            this.origenespecieBindingSource.DataMember = "origen_especie";
+            this.origenespecieBindingSource.DataSource = this.dsMantenimientoC;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid_zona_pesca
+            // 
+            this.colid_zona_pesca.Caption = "Zona Pesca";
+            this.colid_zona_pesca.ColumnEdit = this.reposGrdZonaPesca;
+            this.colid_zona_pesca.FieldName = "id_zona_pesca";
+            this.colid_zona_pesca.Name = "colid_zona_pesca";
+            this.colid_zona_pesca.Visible = true;
+            this.colid_zona_pesca.VisibleIndex = 1;
+            this.colid_zona_pesca.Width = 72;
+            // 
+            // reposGrdZonaPesca
+            // 
+            this.reposGrdZonaPesca.AutoHeight = false;
+            this.reposGrdZonaPesca.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGrdZonaPesca.DataSource = this.zonaPescaBindingSource;
+            this.reposGrdZonaPesca.DisplayMember = "descripcion";
+            this.reposGrdZonaPesca.Name = "reposGrdZonaPesca";
+            this.reposGrdZonaPesca.NullText = "";
+            this.reposGrdZonaPesca.PopupView = this.gridView2;
+            this.reposGrdZonaPesca.ValueMember = "id";
+            // 
+            // zonaPescaBindingSource
+            // 
+            this.zonaPescaBindingSource.DataMember = "zonaPesca";
+            this.zonaPescaBindingSource.DataSource = this.dsMantenimientoC;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colplanta_senasa
+            // 
+            this.colplanta_senasa.Caption = "Planta Senasa";
+            this.colplanta_senasa.FieldName = "planta_senasa";
+            this.colplanta_senasa.Name = "colplanta_senasa";
+            this.colplanta_senasa.Visible = true;
+            this.colplanta_senasa.VisibleIndex = 2;
+            this.colplanta_senasa.Width = 80;
+            // 
+            // colsustentable
+            // 
+            this.colsustentable.Caption = "% Sustentable";
+            this.colsustentable.ColumnEdit = this.repoSpinSustentable;
+            this.colsustentable.FieldName = "sustentable";
+            this.colsustentable.Name = "colsustentable";
+            this.colsustentable.Visible = true;
+            this.colsustentable.VisibleIndex = 3;
+            this.colsustentable.Width = 82;
+            // 
+            // repoSpinSustentable
+            // 
+            this.repoSpinSustentable.AutoHeight = false;
+            this.repoSpinSustentable.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoSpinSustentable.Name = "repoSpinSustentable";
+            // 
+            // colpais_origen
+            // 
+            this.colpais_origen.Caption = "Pais Origen";
+            this.colpais_origen.ColumnEdit = this.reposGrdPaisOrigen;
+            this.colpais_origen.FieldName = "pais_origen";
+            this.colpais_origen.Name = "colpais_origen";
+            this.colpais_origen.Visible = true;
+            this.colpais_origen.VisibleIndex = 4;
+            this.colpais_origen.Width = 69;
+            // 
+            // reposGrdPaisOrigen
+            // 
+            this.reposGrdPaisOrigen.AutoHeight = false;
+            this.reposGrdPaisOrigen.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGrdPaisOrigen.DataSource = this.paisesBindingSource;
+            this.reposGrdPaisOrigen.DisplayMember = "descripcion";
+            this.reposGrdPaisOrigen.Name = "reposGrdPaisOrigen";
+            this.reposGrdPaisOrigen.NullText = "";
+            this.reposGrdPaisOrigen.PopupView = this.gridView3;
+            this.reposGrdPaisOrigen.ValueMember = "id";
+            // 
+            // paisesBindingSource
+            // 
+            this.paisesBindingSource.DataMember = "paises";
+            this.paisesBindingSource.DataSource = this.dsMantenimientoC;
+            // 
+            // gridView3
+            // 
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // colfishsource
+            // 
+            this.colfishsource.Caption = "Fishsource Indicator";
+            this.colfishsource.ColumnEdit = this.reposHyperLinkFishSource;
+            this.colfishsource.FieldName = "fishsource";
+            this.colfishsource.Name = "colfishsource";
+            this.colfishsource.Visible = true;
+            this.colfishsource.VisibleIndex = 5;
+            this.colfishsource.Width = 116;
+            // 
+            // reposHyperLinkFishSource
+            // 
+            this.reposHyperLinkFishSource.AutoHeight = false;
+            this.reposHyperLinkFishSource.Name = "reposHyperLinkFishSource";
+            // 
+            // colIUCN
+            // 
+            this.colIUCN.Caption = "Lista Roja IUCN";
+            this.colIUCN.ColumnEdit = this.reposHyperLinkIUCN;
+            this.colIUCN.FieldName = "IUCN";
+            this.colIUCN.Name = "colIUCN";
+            this.colIUCN.Visible = true;
+            this.colIUCN.VisibleIndex = 6;
+            this.colIUCN.Width = 91;
+            // 
+            // reposHyperLinkIUCN
+            // 
+            this.reposHyperLinkIUCN.AutoHeight = false;
+            this.reposHyperLinkIUCN.Name = "reposHyperLinkIUCN";
+            // 
+            // coltipo
+            // 
+            this.coltipo.Caption = "Tipo";
+            this.coltipo.ColumnEdit = this.reposGrdTipo;
+            this.coltipo.FieldName = "tipo";
+            this.coltipo.Name = "coltipo";
+            this.coltipo.Visible = true;
+            this.coltipo.VisibleIndex = 7;
+            this.coltipo.Width = 52;
+            // 
+            // reposGrdTipo
+            // 
+            this.reposGrdTipo.AutoHeight = false;
+            this.reposGrdTipo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGrdTipo.DataSource = this.tipoingresoBindingSource;
+            this.reposGrdTipo.DisplayMember = "descripcion";
+            this.reposGrdTipo.Name = "reposGrdTipo";
+            this.reposGrdTipo.NullText = "";
+            this.reposGrdTipo.PopupView = this.gridView10;
+            this.reposGrdTipo.ValueMember = "id";
+            // 
+            // tipoingresoBindingSource
+            // 
+            this.tipoingresoBindingSource.DataMember = "tipoingreso";
+            this.tipoingresoBindingSource.DataSource = this.dsMantenimientoC;
+            // 
+            // gridView10
+            // 
+            this.gridView10.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView10.Name = "gridView10";
+            this.gridView10.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView10.OptionsView.ShowGroupPanel = false;
+            // 
+            // colporce_tipo
+            // 
+            this.colporce_tipo.Caption = "% Tipo";
+            this.colporce_tipo.ColumnEdit = this.reposSpinPorcTipo;
+            this.colporce_tipo.FieldName = "porce_tipo";
+            this.colporce_tipo.Name = "colporce_tipo";
+            this.colporce_tipo.Visible = true;
+            this.colporce_tipo.VisibleIndex = 8;
+            this.colporce_tipo.Width = 47;
+            // 
+            // reposSpinPorcTipo
+            // 
+            this.reposSpinPorcTipo.AutoHeight = false;
+            this.reposSpinPorcTipo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposSpinPorcTipo.Name = "reposSpinPorcTipo";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Eliminar";
+            this.gridColumn3.ColumnEdit = this.reposDelete;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 9;
+            this.gridColumn3.Width = 43;
+            // 
+            // reposDelete
+            // 
+            this.reposDelete.AutoHeight = false;
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            this.reposDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposDelete.Name = "reposDelete";
+            this.reposDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.reposDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposDelete_ButtonClick);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(173, 13);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(99, 17);
+            this.labelControl6.TabIndex = 69;
+            this.labelControl6.Text = "Tipo Ingrediente:";
+            // 
             // grdTipoIngrediente
             // 
-            this.grdTipoIngrediente.Location = new System.Drawing.Point(251, 10);
+            this.grdTipoIngrediente.Location = new System.Drawing.Point(275, 10);
             this.grdTipoIngrediente.Name = "grdTipoIngrediente";
             this.grdTipoIngrediente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdTipoIngrediente.Properties.Appearance.Options.UseFont = true;
@@ -1042,10 +1361,10 @@ namespace LOSA.Calidad
             this.grdTipoIngrediente.TabIndex = 68;
             this.grdTipoIngrediente.EditValueChanged += new System.EventHandler(this.grdTipoIngrediente_EditValueChanged);
             // 
-            // origenespecieBindingSource
+            // tipoingredienteBindingSource
             // 
-            this.origenespecieBindingSource.DataMember = "origen_especie";
-            this.origenespecieBindingSource.DataSource = this.dsMantenimientoC;
+            this.tipoingredienteBindingSource.DataMember = "tipo_ingrediente";
+            this.tipoingredienteBindingSource.DataSource = this.dsMantenimientoC;
             // 
             // gridView9
             // 
@@ -1077,10 +1396,25 @@ namespace LOSA.Calidad
             this.gridView9.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView9.OptionsView.ShowGroupPanel = false;
             // 
+            // colid6
+            // 
+            this.colid6.FieldName = "id";
+            this.colid6.Name = "colid6";
+            this.colid6.OptionsColumn.AllowEdit = false;
+            // 
+            // coldescripcion6
+            // 
+            this.coldescripcion6.Caption = "Ingrediente";
+            this.coldescripcion6.FieldName = "descripcion";
+            this.coldescripcion6.Name = "coldescripcion6";
+            this.coldescripcion6.OptionsColumn.AllowEdit = false;
+            this.coldescripcion6.Visible = true;
+            this.coldescripcion6.VisibleIndex = 0;
+            // 
             // btnAdd
             // 
             this.btnAdd.Enabled = false;
-            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnAdd.Location = new System.Drawing.Point(3, 3);
             this.btnAdd.Name = "btnAdd";
@@ -1088,21 +1422,6 @@ namespace LOSA.Calidad
             this.btnAdd.Size = new System.Drawing.Size(45, 36);
             this.btnAdd.TabIndex = 67;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // tipoingresoBindingSource
-            // 
-            this.tipoingresoBindingSource.DataMember = "tipoingreso";
-            this.tipoingresoBindingSource.DataSource = this.dsMantenimientoC;
-            // 
-            // paisesBindingSource
-            // 
-            this.paisesBindingSource.DataMember = "paises";
-            this.paisesBindingSource.DataSource = this.dsMantenimientoC;
-            // 
-            // zonaPescaBindingSource
-            // 
-            this.zonaPescaBindingSource.DataMember = "zonaPesca";
-            this.zonaPescaBindingSource.DataSource = this.dsMantenimientoC;
             // 
             // grd_logistica
             // 
@@ -1994,9 +2313,9 @@ namespace LOSA.Calidad
             // cmdDespachoId
             // 
             this.cmdDespachoId.AutoHeight = false;
-            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
             this.cmdDespachoId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdDespachoId.Name = "cmdDespachoId";
             this.cmdDespachoId.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdDespachoId_ButtonClick);
             // 
@@ -2608,7 +2927,7 @@ namespace LOSA.Calidad
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
             this.simpleButton2.Location = new System.Drawing.Point(1214, 179);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(54, 30);
+            this.simpleButton2.Size = new System.Drawing.Size(57, 30);
             this.simpleButton2.TabIndex = 53;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -2811,7 +3130,7 @@ namespace LOSA.Calidad
             this.btnViewBoleta.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnViewBoleta.ImageOptions.SvgImage")));
             this.btnViewBoleta.Location = new System.Drawing.Point(1214, 211);
             this.btnViewBoleta.Name = "btnViewBoleta";
-            this.btnViewBoleta.Size = new System.Drawing.Size(54, 30);
+            this.btnViewBoleta.Size = new System.Drawing.Size(57, 30);
             this.btnViewBoleta.TabIndex = 58;
             this.btnViewBoleta.Click += new System.EventHandler(this.btnViewBoleta_Click);
             // 
@@ -2846,64 +3165,6 @@ namespace LOSA.Calidad
             this.labelControl5.Size = new System.Drawing.Size(16, 17);
             this.labelControl5.TabIndex = 90;
             this.labelControl5.Text = "Kg";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(149, 13);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(96, 17);
-            this.labelControl6.TabIndex = 69;
-            this.labelControl6.Text = "Tipo Ingrediente";
-            // 
-            // tipoingredienteBindingSource
-            // 
-            this.tipoingredienteBindingSource.DataMember = "tipo_ingrediente";
-            this.tipoingredienteBindingSource.DataSource = this.dsMantenimientoC;
-            // 
-            // colid6
-            // 
-            this.colid6.FieldName = "id";
-            this.colid6.Name = "colid6";
-            this.colid6.OptionsColumn.AllowEdit = false;
-            // 
-            // coldescripcion6
-            // 
-            this.coldescripcion6.Caption = "Ingrediente";
-            this.coldescripcion6.FieldName = "descripcion";
-            this.coldescripcion6.Name = "coldescripcion6";
-            this.coldescripcion6.OptionsColumn.AllowEdit = false;
-            this.coldescripcion6.Visible = true;
-            this.coldescripcion6.VisibleIndex = 0;
-            // 
-            // gridControl5
-            // 
-            this.gridControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl5.Location = new System.Drawing.Point(3, 38);
-            this.gridControl5.MainView = this.gridView1;
-            this.gridControl5.Name = "gridControl5";
-            this.gridControl5.Size = new System.Drawing.Size(555, 194);
-            this.gridControl5.TabIndex = 70;
-            this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl5;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // imageEdit1
-            // 
-            this.imageEdit1.Location = new System.Drawing.Point(564, 9);
-            this.imageEdit1.Name = "imageEdit1";
-            this.imageEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.imageEdit1.Size = new System.Drawing.Size(100, 20);
-            this.imageEdit1.TabIndex = 71;
             // 
             // frmInspeccionCalidadPorIngresoLoteMP
             // 
@@ -2960,7 +3221,6 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.grd_parametros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_parametros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pc_Mp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_adjuntos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_adjuntos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdjuntarDocumento)).EndInit();
@@ -2969,12 +3229,29 @@ namespace LOSA.Calidad
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdTipoIngrediente.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pc_Mp1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdInfoAdicionalCalidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdOrigenEspecie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.origenespecieBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoingresoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paisesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdZonaPesca)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zonaPescaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoSpinSustentable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdPaisOrigen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposHyperLinkFishSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposHyperLinkIUCN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdTipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoingresoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposSpinPorcTipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTipoIngrediente.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoingredienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_logistica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_logistica)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -3041,10 +3318,6 @@ namespace LOSA.Calidad
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtboleta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTM_inventarioActual.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoingredienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3067,7 +3340,6 @@ namespace LOSA.Calidad
         private DevExpress.XtraGrid.GridControl grd_nir;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_nir;
         private DevExpress.XtraEditors.SimpleButton btnAdjuntarImagen;
-        private DevExpress.XtraEditors.PictureEdit pc_Mp;
         private DevExpress.XtraGrid.GridControl grd_parametros;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_parametros;
         private DevExpress.XtraGrid.GridControl grd_adjuntos;
@@ -3277,8 +3549,31 @@ namespace LOSA.Calidad
         private System.Windows.Forms.BindingSource tipoingredienteBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colid6;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion6;
-        private DevExpress.XtraEditors.ImageEdit imageEdit1;
-        private DevExpress.XtraGrid.GridControl gridControl5;
+        private DevExpress.XtraEditors.ImageEdit pc_Mp1;
+        private DevExpress.XtraGrid.GridControl grdInfoAdicionalCalidad;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_especio;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_zona_pesca;
+        private DevExpress.XtraGrid.Columns.GridColumn colplanta_senasa;
+        private DevExpress.XtraGrid.Columns.GridColumn colsustentable;
+        private DevExpress.XtraGrid.Columns.GridColumn colpais_origen;
+        private DevExpress.XtraGrid.Columns.GridColumn colfishsource;
+        private DevExpress.XtraGrid.Columns.GridColumn colIUCN;
+        private DevExpress.XtraGrid.Columns.GridColumn coltipo;
+        private DevExpress.XtraGrid.Columns.GridColumn colporce_tipo;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit reposGrdOrigenEspecie;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit reposGrdZonaPesca;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repoSpinSustentable;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit reposGrdPaisOrigen;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit reposGrdTipo;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView10;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit reposHyperLinkFishSource;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit reposHyperLinkIUCN;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit reposSpinPorcTipo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposDelete;
     }
 }

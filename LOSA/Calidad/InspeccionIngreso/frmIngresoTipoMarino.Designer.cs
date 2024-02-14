@@ -41,6 +41,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             this.colfishsource = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.grd_pesca = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,12 +70,12 @@ namespace LOSA.Calidad.InspeccionIngreso
             this.spTipoporcentaje = new DevExpress.XtraEditors.SpinEdit();
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grd_origenespecie.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.origenespecieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMantenimientoC1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_pesca.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zonaPescaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spsustentable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hyIUCN.Properties)).BeginInit();
@@ -87,7 +88,6 @@ namespace LOSA.Calidad.InspeccionIngreso
             ((System.ComponentModel.ISupportInitialize)(this.tipoingresoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTipoporcentaje.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zonaPescaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grd_origenespecie
@@ -100,6 +100,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grd_origenespecie.Properties.DataSource = this.origenespecieBindingSource;
             this.grd_origenespecie.Properties.DisplayMember = "nombre";
+            this.grd_origenespecie.Properties.NullText = "";
             this.grd_origenespecie.Properties.PopupView = this.gridLookUpEdit1View;
             this.grd_origenespecie.Properties.ValueMember = "id";
             this.grd_origenespecie.Size = new System.Drawing.Size(160, 24);
@@ -183,7 +184,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             // 
             // grd_pesca
             // 
-            this.grd_pesca.Location = new System.Drawing.Point(246, 49);
+            this.grd_pesca.Location = new System.Drawing.Point(246, 52);
             this.grd_pesca.Name = "grd_pesca";
             this.grd_pesca.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.grd_pesca.Properties.Appearance.Options.UseFont = true;
@@ -191,10 +192,16 @@ namespace LOSA.Calidad.InspeccionIngreso
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grd_pesca.Properties.DataSource = this.zonaPescaBindingSource;
             this.grd_pesca.Properties.DisplayMember = "descripcion";
+            this.grd_pesca.Properties.NullText = "";
             this.grd_pesca.Properties.PopupView = this.gridView1;
             this.grd_pesca.Properties.ValueMember = "id";
             this.grd_pesca.Size = new System.Drawing.Size(160, 22);
             this.grd_pesca.TabIndex = 54;
+            // 
+            // zonaPescaBindingSource
+            // 
+            this.zonaPescaBindingSource.DataMember = "zonaPesca";
+            this.zonaPescaBindingSource.DataSource = this.dsMantenimientoC1;
             // 
             // gridView1
             // 
@@ -305,6 +312,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grd_origen.Properties.DataSource = this.paisBindingSource;
             this.grd_origen.Properties.DisplayMember = "descripcion";
+            this.grd_origen.Properties.NullText = "";
             this.grd_origen.Properties.PopupView = this.gridView2;
             this.grd_origen.Properties.ValueMember = "id";
             this.grd_origen.Size = new System.Drawing.Size(160, 22);
@@ -414,7 +422,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             // 
             // grd_tipo
             // 
-            this.grd_tipo.Location = new System.Drawing.Point(246, 236);
+            this.grd_tipo.Location = new System.Drawing.Point(246, 228);
             this.grd_tipo.Name = "grd_tipo";
             this.grd_tipo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.grd_tipo.Properties.Appearance.Options.UseFont = true;
@@ -422,6 +430,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.grd_tipo.Properties.DataSource = this.tipoingresoBindingSource;
             this.grd_tipo.Properties.DisplayMember = "descripcion";
+            this.grd_tipo.Properties.NullText = "";
             this.grd_tipo.Properties.PopupView = this.gridView3;
             this.grd_tipo.Properties.ValueMember = "id";
             this.grd_tipo.Size = new System.Drawing.Size(160, 22);
@@ -479,7 +488,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             // 
             this.labelControl27.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl27.Appearance.Options.UseFont = true;
-            this.labelControl27.Location = new System.Drawing.Point(190, 268);
+            this.labelControl27.Location = new System.Drawing.Point(190, 263);
             this.labelControl27.Name = "labelControl27";
             this.labelControl27.Size = new System.Drawing.Size(38, 13);
             this.labelControl27.TabIndex = 78;
@@ -489,7 +498,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             // 
             this.labelControl26.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl26.Appearance.Options.UseFont = true;
-            this.labelControl26.Location = new System.Drawing.Point(202, 240);
+            this.labelControl26.Location = new System.Drawing.Point(202, 233);
             this.labelControl26.Name = "labelControl26";
             this.labelControl26.Size = new System.Drawing.Size(26, 13);
             this.labelControl26.TabIndex = 77;
@@ -502,12 +511,13 @@ namespace LOSA.Calidad.InspeccionIngreso
             0,
             0,
             0});
-            this.spTipoporcentaje.Location = new System.Drawing.Point(246, 264);
+            this.spTipoporcentaje.Location = new System.Drawing.Point(246, 258);
             this.spTipoporcentaje.Name = "spTipoporcentaje";
             this.spTipoporcentaje.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.25F);
             this.spTipoporcentaje.Properties.Appearance.Options.UseFont = true;
             this.spTipoporcentaje.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spTipoporcentaje.Properties.MaxLength = 100;
             this.spTipoporcentaje.Size = new System.Drawing.Size(160, 22);
             this.spTipoporcentaje.TabIndex = 80;
             // 
@@ -522,7 +532,8 @@ namespace LOSA.Calidad.InspeccionIngreso
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 35);
             this.btnGuardar.TabIndex = 81;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Agregar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnClose
             // 
@@ -536,11 +547,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             this.btnClose.Size = new System.Drawing.Size(75, 35);
             this.btnClose.TabIndex = 82;
             this.btnClose.Text = "Cerrar";
-            // 
-            // zonaPescaBindingSource
-            // 
-            this.zonaPescaBindingSource.DataMember = "zonaPesca";
-            this.zonaPescaBindingSource.DataSource = this.dsMantenimientoC1;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmIngresoTipoMarino
             // 
@@ -574,6 +581,7 @@ namespace LOSA.Calidad.InspeccionIngreso
             ((System.ComponentModel.ISupportInitialize)(this.dsMantenimientoC1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_pesca.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zonaPescaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spsustentable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hyIUCN.Properties)).EndInit();
@@ -586,7 +594,6 @@ namespace LOSA.Calidad.InspeccionIngreso
             ((System.ComponentModel.ISupportInitialize)(this.tipoingresoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTipoporcentaje.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zonaPescaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,7 +16,18 @@ namespace LOSA.Calidad.InspeccionIngreso
     public partial class frmIngresoTipoMarino : DevExpress.XtraEditors.XtraForm
     {
         DataOperations dp = new DataOperations();
-        public frmIngresoTipoMarino()
+
+        public IngredienteMarino IM { get; private set; }
+
+        public enum TipoOperacion
+        {
+            Agregar = 1,
+            Editar = 2
+        }
+
+        decimal PorcentajeMarino = 0;
+
+        public frmIngresoTipoMarino(decimal pPorcentajeMarino)
         {
             InitializeComponent();
 
@@ -24,6 +35,8 @@ namespace LOSA.Calidad.InspeccionIngreso
             load_zonas();
             load_paises();
             load_tipo();
+
+            PorcentajeMarino = pPorcentajeMarino;
 
         }
 
@@ -131,6 +144,82 @@ namespace LOSA.Calidad.InspeccionIngreso
             {
                 CajaDialogo.Error(ex.Message);
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(grd_origenespecie.Text))
+            {
+                CajaDialogo.Error("Debe Seleccionar " + labelControl21.Text);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(grd_pesca.Text))
+            {
+                CajaDialogo.Error("Debe Seleccionar " + labelControl22.Text);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(grd_origen.Text))
+            {
+                CajaDialogo.Error("Debe Seleccionar: " + labelControl25.Text);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(grd_tipo.Text))
+            {
+                CajaDialogo.Error("Debe Seleccionar: " + labelControl26.Text);
+                return;
+            }
+
+            if (Convert.ToDecimal(spTipoporcentaje.EditValue) <= 0)
+            {
+                CajaDialogo.Error("El % Tipo debe ser entre 1 y 100");
+                return;
+            }
+
+            //Validemos Cantidad Porcentaje de Especie!
+            if (Convert.ToDecimal(spTipoporcentaje.EditValue) + PorcentajeMarino > 100)
+            {
+                decimal TotalMaximoAceptado = (100 - PorcentajeMarino);
+                CajaDialogo.Error("El Porcentaje supera el 100%\nPuede adicionar un Maximo de: "+ TotalMaximoAceptado);
+                return;
+            }
+
+            if (Convert.ToDecimal(spTipoporcentaje.EditValue) > 100)
+            {
+                CajaDialogo.Error("El % Tipo debe ser entre 1 y 100");
+                return;
+            }
+
+            try
+            {
+                IM = new IngredienteMarino();
+
+                IM.Origen = Convert.ToInt32(grd_origenespecie.EditValue);
+                IM.ZonaPesca = Convert.ToInt32(grd_pesca.EditValue);
+                IM.Planta = txtPLantaSenasa.Text;
+                IM.PorcentajeSustentable = Convert.ToDecimal(spsustentable.EditValue);
+                IM.PaisOrigen = Convert.ToInt32(grd_origen.EditValue);
+                IM.FishSurse =  hyfishsource.Text;
+                IM.IUCN = hyIUCN.Text;
+                IM.Tipo = Convert.ToInt32(grd_tipo.EditValue);
+                IM.PorcentajeTipo = Convert.ToDecimal(spTipoporcentaje.EditValue);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
