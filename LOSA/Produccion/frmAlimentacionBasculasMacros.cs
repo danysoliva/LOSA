@@ -13,6 +13,8 @@ using LOSA.Classes;
 using ACS.Classes;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
+using LOSA.MigracionACS.DataSetx;
+using LOSA.Trazabilidad;
 
 namespace LOSA.Produccion
 {
@@ -95,6 +97,19 @@ namespace LOSA.Produccion
             }
 
 
+        }
+
+        private void reposBtnRuta1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)gridControl1.FocusedView;
+            var row = (DSProductos.alimentacion_macrosRow)gridview.GetFocusedDataRow();
+
+            if (!string.IsNullOrEmpty(row.lote_materia_prima))
+            {
+                frmRutasTrazabilidad frm = new frmRutasTrazabilidad(row.lote_materia_prima);
+                frm.WindowState = FormWindowState.Maximized;
+                frm.ShowDialog();
+            }
         }
     }
 }

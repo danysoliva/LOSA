@@ -29,7 +29,12 @@ namespace LOSA.Produccion
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlimentacionBasculasMacros));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsProductos1 = new LOSA.MigracionACS.DataSetx.DSProductos();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -57,6 +62,7 @@ namespace LOSA.Produccion
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dtFechaDesdeDisponibles = new DevExpress.XtraEditors.DateEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.reposBtnRuta1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProductos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -64,6 +70,7 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposBtnRuta1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -76,6 +83,8 @@ namespace LOSA.Produccion
             this.gridControl1.Location = new System.Drawing.Point(3, 74);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.reposBtnRuta1});
             this.gridControl1.Size = new System.Drawing.Size(1496, 468);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -177,9 +186,9 @@ namespace LOSA.Produccion
             // collote_materia_prima
             // 
             this.collote_materia_prima.Caption = "Lote Materia Prima";
+            this.collote_materia_prima.ColumnEdit = this.reposBtnRuta1;
             this.collote_materia_prima.FieldName = "lote_materia_prima";
             this.collote_materia_prima.Name = "collote_materia_prima";
-            this.collote_materia_prima.OptionsColumn.AllowEdit = false;
             this.collote_materia_prima.OptionsColumn.ReadOnly = true;
             this.collote_materia_prima.Visible = true;
             this.collote_materia_prima.VisibleIndex = 6;
@@ -422,6 +431,15 @@ namespace LOSA.Produccion
             this.labelControl8.TabIndex = 100;
             this.labelControl8.Text = "Fecha Desde:";
             // 
+            // reposBtnRuta1
+            // 
+            this.reposBtnRuta1.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.reposBtnRuta1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.reposBtnRuta1.Name = "reposBtnRuta1";
+            this.reposBtnRuta1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.reposBtnRuta1_ButtonClick);
+            // 
             // frmAlimentacionBasculasMacros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,6 +462,7 @@ namespace LOSA.Produccion
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposBtnRuta1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,5 +497,6 @@ namespace LOSA.Produccion
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit reposBtnRuta1;
     }
 }

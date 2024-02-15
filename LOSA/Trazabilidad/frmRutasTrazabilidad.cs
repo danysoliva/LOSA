@@ -91,6 +91,39 @@ namespace LOSA.Trazabilidad
         int id_despacho;
         int NumId_despacho;
 
+        public frmRutasTrazabilidad(string LoteMP)
+        {
+            InitializeComponent();
+
+            acordionRuta1.Appearance.Normal.BackColor = Color.FromName("DeepSkyBlue");
+            acordionRuta1.Appearance.Normal.ForeColor = Color.White; //242,242,242
+
+            acordionRuta2.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta2.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta3.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta3.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+            acordionRuta4.Appearance.Normal.BackColor = Color.FromArgb(242, 242, 242);
+            acordionRuta4.Appearance.Normal.ForeColor = Color.FromArgb(80, 80, 80);
+
+
+            if (this.rutaActiva != 1)
+            {
+                //dsReportesTRZ.pt_list_trz.Clear();
+            }
+
+
+            this.rutaActiva = 1;
+
+            navigationFrame1.SelectedPage = npRuta1;
+
+            
+            txtLoteMPRuta1.Text = LoteMP;
+            LoadGenerateRuta1();
+            
+
+        }
 
         public frmRutasTrazabilidad(UserLogin log)
         {
@@ -99,6 +132,8 @@ namespace LOSA.Trazabilidad
             UsuarioLogeado = log;
             this.navigationFrame1.SelectedPage = npMain;
             txtLoteMP_Ruta2.Text = "";
+
+
         }
 
         private void acordionRuta1_Click(object sender, EventArgs e)
