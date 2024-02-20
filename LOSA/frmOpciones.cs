@@ -81,6 +81,7 @@ using LOSA.MigracionACS.RRHH.Vacaciones;
 using DataTable = System.Data.DataTable;
 using LOSA.MigracionACS.Produccion.MedicionElectrica;
 using LOSA.Calidad.CertificadoCalidad;
+using LOSA.Calidad.GestionLotesMP;
 
 namespace LOSA
 {
@@ -4714,7 +4715,7 @@ namespace LOSA
 
         private void btnLotesCerrados_Click(object sender, EventArgs e)
         {
-            LotesFinalizados frm = new LotesFinalizados();
+            frmLotesFinalizados frm = new frmLotesFinalizados();
             frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();

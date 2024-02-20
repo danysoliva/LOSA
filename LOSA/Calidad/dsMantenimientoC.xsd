@@ -306,6 +306,29 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tipo_ingrediente" msprop:Generator_TableClassName="tipo_ingredienteDataTable" msprop:Generator_TableVarName="tabletipo_ingrediente" msprop:Generator_RowChangedName="tipo_ingredienteRowChanged" msprop:Generator_TablePropName="tipo_ingrediente" msprop:Generator_RowDeletingName="tipo_ingredienteRowDeleting" msprop:Generator_RowChangingName="tipo_ingredienteRowChanging" msprop:Generator_RowEvHandlerName="tipo_ingredienteRowChangeEventHandler" msprop:Generator_RowDeletedName="tipo_ingredienteRowDeleted" msprop:Generator_RowClassName="tipo_ingredienteRow" msprop:Generator_UserTableName="tipo_ingrediente" msprop:Generator_RowEvArgName="tipo_ingredienteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="info_adicional_marino" msprop:Generator_TableClassName="info_adicional_marinoDataTable" msprop:Generator_TableVarName="tableinfo_adicional_marino" msprop:Generator_TablePropName="info_adicional_marino" msprop:Generator_RowDeletingName="info_adicional_marinoRowDeleting" msprop:Generator_RowChangingName="info_adicional_marinoRowChanging" msprop:Generator_RowEvHandlerName="info_adicional_marinoRowChangeEventHandler" msprop:Generator_RowDeletedName="info_adicional_marinoRowDeleted" msprop:Generator_UserTableName="info_adicional_marino" msprop:Generator_RowChangedName="info_adicional_marinoRowChanged" msprop:Generator_RowEvArgName="info_adicional_marinoRowChangeEvent" msprop:Generator_RowClassName="info_adicional_marinoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_especio" msprop:Generator_ColumnVarNameInTable="columnid_especio" msprop:Generator_ColumnPropNameInRow="id_especio" msprop:Generator_ColumnPropNameInTable="id_especioColumn" msprop:Generator_UserColumnName="id_especio" type="xs:int" minOccurs="0" />
+              <xs:element name="id_zona_pesca" msprop:Generator_ColumnVarNameInTable="columnid_zona_pesca" msprop:Generator_ColumnPropNameInRow="id_zona_pesca" msprop:Generator_ColumnPropNameInTable="id_zona_pescaColumn" msprop:Generator_UserColumnName="id_zona_pesca" type="xs:int" minOccurs="0" />
+              <xs:element name="planta_senasa" msprop:Generator_ColumnVarNameInTable="columnplanta_senasa" msprop:Generator_ColumnPropNameInRow="planta_senasa" msprop:Generator_ColumnPropNameInTable="planta_senasaColumn" msprop:Generator_UserColumnName="planta_senasa" type="xs:string" minOccurs="0" />
+              <xs:element name="sustentable" msprop:Generator_ColumnVarNameInTable="columnsustentable" msprop:Generator_ColumnPropNameInRow="sustentable" msprop:Generator_ColumnPropNameInTable="sustentableColumn" msprop:Generator_UserColumnName="sustentable" type="xs:decimal" minOccurs="0" />
+              <xs:element name="pais_origen" msprop:Generator_ColumnVarNameInTable="columnpais_origen" msprop:Generator_ColumnPropNameInRow="pais_origen" msprop:Generator_ColumnPropNameInTable="pais_origenColumn" msprop:Generator_UserColumnName="pais_origen" type="xs:int" minOccurs="0" />
+              <xs:element name="fishsource" msprop:Generator_ColumnVarNameInTable="columnfishsource" msprop:Generator_ColumnPropNameInRow="fishsource" msprop:Generator_ColumnPropNameInTable="fishsourceColumn" msprop:Generator_UserColumnName="fishsource" type="xs:string" minOccurs="0" />
+              <xs:element name="IUCN" msprop:Generator_ColumnVarNameInTable="columnIUCN" msprop:Generator_ColumnPropNameInRow="IUCN" msprop:Generator_ColumnPropNameInTable="IUCNColumn" msprop:Generator_UserColumnName="IUCN" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo" msprop:Generator_ColumnVarNameInTable="columntipo" msprop:Generator_ColumnPropNameInRow="tipo" msprop:Generator_ColumnPropNameInTable="tipoColumn" msprop:Generator_UserColumnName="tipo" type="xs:int" minOccurs="0" />
+              <xs:element name="porce_tipo" msprop:Generator_ColumnVarNameInTable="columnporce_tipo" msprop:Generator_ColumnPropNameInRow="porce_tipo" msprop:Generator_ColumnPropNameInTable="porce_tipoColumn" msprop:Generator_UserColumnName="porce_tipo" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

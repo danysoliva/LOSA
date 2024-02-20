@@ -72,10 +72,16 @@ namespace LOSA.Calidad
         {
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsTRZ_Reports.plantasRow)gridView.GetFocusedDataRow();
-            IdFabricanteSeleccionado = row.id;
-            NombreFabricanteSeleccionado = row.nombre;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+
+            if (gridView1.RowCount != 0)
+            {
+                IdFabricanteSeleccionado = row.id;
+                NombreFabricanteSeleccionado = row.nombre;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+
+           
         }
     }
 }
