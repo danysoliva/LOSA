@@ -550,6 +550,10 @@ namespace LOSA.Calidad.Parametros
                     row.id_decision = frm.id_respuesta;
                     row.Decision = frm.Respuesta;
                 }
+                else
+                {
+                    row.Decision = frm.Respuesta;
+                }
                 row.AcceptChanges();
             }
         }
@@ -686,7 +690,7 @@ namespace LOSA.Calidad.Parametros
             bool AsNoCumple = false;
             foreach (dsParametros.parametros_decisionRow row in dsParametros1.parametros_decision.Rows)
             {
-                if (row.id_decision == 0)
+                if (string.IsNullOrEmpty(row.Decision))
                 {
                     CajaDialogo.Error("Hay parametros que se estan dejando en vacio.");
                     return;
@@ -762,7 +766,7 @@ namespace LOSA.Calidad.Parametros
                         foreach (dsParametros.parametros_decisionRow row in dsParametros1.parametros_decision.Rows)
                         {
                             cmd.Parameters.Clear();
-                            cmd.CommandText = "sp_update_or_insert_parametros_decision";
+                            cmd.CommandText = "[sp_update_or_insert_parametros_decisionV2]";
                             cmd.Connection = conn;
                             cmd.Transaction = transaction;
                             cmd.CommandType = CommandType.StoredProcedure;
@@ -774,6 +778,11 @@ namespace LOSA.Calidad.Parametros
                             cmd.Parameters.AddWithValue("@min_plan", 0);
                             cmd.Parameters.AddWithValue("@max_plan", 0);
                             cmd.Parameters.AddWithValue("@resultado_porcentaje", 0);
+                            if (row.id_decision == 0)
+                                cmd.Parameters.AddWithValue("@respuesta_manual", row.Decision);
+                            else
+                                cmd.Parameters.AddWithValue("@respuesta_manual", DBNull.Value);
+
                             cmd.ExecuteNonQuery();
                         }
 
@@ -867,7 +876,7 @@ namespace LOSA.Calidad.Parametros
 
                         foreach (dsParametros.parametros_decisionRow row in dsParametros1.parametros_decision.Rows)
                         {
-                            cmd = new SqlCommand("sp_set_insert_muestreo_detalle", cn);
+                            cmd = new SqlCommand("[sp_set_insert_muestreo_detallevV2]", cn);
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@bit_tipo", 1);
                             cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
@@ -877,6 +886,10 @@ namespace LOSA.Calidad.Parametros
                             cmd.Parameters.AddWithValue("@min_plan", 0);
                             cmd.Parameters.AddWithValue("@max_plan", 0);
                             cmd.Parameters.AddWithValue("@resultado_porcentaje", 0);
+                            if (row.id_decision == 0)
+                                cmd.Parameters.AddWithValue("@respuesta_manual", row.Decision);
+                            else
+                                cmd.Parameters.AddWithValue("@respuesta_manual", DBNull.Value);
                             cmd.ExecuteNonQuery();
                         }
 
@@ -890,7 +903,7 @@ namespace LOSA.Calidad.Parametros
 
                             if (Guardar == true)
                             {
-                                cmd = new SqlCommand("sp_set_insert_muestreo_detalle", cn);
+                                cmd = new SqlCommand("[sp_set_insert_muestreo_detallevV2]", cn);
                                 cmd.CommandType = CommandType.StoredProcedure;
                                 cmd.Parameters.AddWithValue("@bit_tipo", 0);
                                 cmd.Parameters.AddWithValue("@id_parametro", row.id_parametro);
@@ -900,6 +913,7 @@ namespace LOSA.Calidad.Parametros
                                 cmd.Parameters.AddWithValue("@min_plan", row.valorminimo);
                                 cmd.Parameters.AddWithValue("@max_plan", row.valormaximo);
                                 cmd.Parameters.AddWithValue("@resultado_porcentaje", row.valor);
+                                cmd.Parameters.AddWithValue("@respuesta_manual", DBNull.Value);
                                 cmd.ExecuteNonQuery();
                             }
 
