@@ -113,6 +113,7 @@
             this.grd_data.TabIndex = 12;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
+            this.grd_data.Click += new System.EventHandler(this.grd_data_Click);
             // 
             // ticketsBindingSource
             // 
@@ -346,7 +347,7 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Impimir";
+            this.gridColumn3.Caption = "Imprimir";
             this.gridColumn3.ColumnEdit = this.btnPrint;
             this.gridColumn3.MinWidth = 21;
             this.gridColumn3.Name = "gridColumn3";
@@ -524,6 +525,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seguimiento Ticket TI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmTicketSeguimiento_TI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTickets)).EndInit();

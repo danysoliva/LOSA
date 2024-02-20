@@ -506,6 +506,7 @@
             this.Name = "frmTicketSeguimiento_TI_CRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Seguimiento";
+            this.Load += new System.EventHandler(this.frmTicketSeguimiento_TI_CRUD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtComentario.Properties)).EndInit();
             this.grdzonadrop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();

@@ -53,6 +53,9 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                 labelControl8.Text = "Equipo:";
             }
 
+            if (UsuarioLogeado.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+                lblFormulario.Visible = txtNameVentana.Visible = true;
+
         }
 
         //public frmVerSeguimiento(int pId_ticket)

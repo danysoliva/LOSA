@@ -174,45 +174,61 @@ namespace LOSA.MigracionACS.Tickets.EndUser
         {
             try
             {
-                var gridView = (GridView)grd_data.FocusedView;
-                var row = (dsTickets.ticketsRow)gridView.GetFocusedDataRow();
 
-                Ticket ticket = new Ticket(row.id);
 
-                ////frmTickets frm = new frmTickets(UsuarioLogeado, TipoSoporte, row.id);
-                //frmTicketsNew_IT frm = new frmTicketsNew_IT(UsuarioLogeado, row.id,row.id_cat_it, 1);
-                //frm.Size = new Size(950, 790);
+                var gv = (GridView)grd_data.FocusedView;
+                var row = (dsTickets.ticketsRow)gv.GetDataRow(gv.FocusedRowHandle);
 
-                //if (frm.ShowDialog() == DialogResult.OK)
-                //{
-                //    load_data();
-                //}
+                frmVerSeguimiento frm = new frmVerSeguimiento(row.id, UsuarioLogeado);
 
-                switch (id_tipo)
-                {
-                    case 1:
-                        frmTickets form = new frmTickets(UsuarioLogeado, frmTickets.TipoTicket.IT, row.id);
-                        if (form.ShowDialog() == DialogResult.OK)
-                        {
-                            load_data();
-                        }
-                        break;
-
-                    case 2:
-                        frmTickets frm = new frmTickets(UsuarioLogeado, frmTickets.TipoTicket.Manto,row.id);
-                        if (frm.ShowDialog() == DialogResult.OK)
-                        {
-                            load_data();
-                        }
-                        break;
-                }
-
+                frm.ShowDialog();
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                CajaDialogo.Error(ex.Message);
+            }
 
-            } 
+            //try
+            //{
+            //    var gridView = (GridView)grd_data.FocusedView;
+            //    var row = (dsTickets.ticketsRow)gridView.GetFocusedDataRow();
+
+            //    Ticket ticket = new Ticket(row.id);
+
+            //    ////frmTickets frm = new frmTickets(UsuarioLogeado, TipoSoporte, row.id);
+            //    //frmTicketsNew_IT frm = new frmTicketsNew_IT(UsuarioLogeado, row.id,row.id_cat_it, 1);
+            //    //frm.Size = new Size(950, 790);
+
+            //    //if (frm.ShowDialog() == DialogResult.OK)
+            //    //{
+            //    //    load_data();
+            //    //}
+
+            //    switch (id_tipo)
+            //    {
+            //        case 1:
+            //            frmTickets form = new frmTickets(UsuarioLogeado, frmTickets.TipoTicket.IT, row.id);
+            //            if (form.ShowDialog() == DialogResult.OK)
+            //            {
+            //                load_data();
+            //            }
+            //            break;
+
+            //        case 2:
+            //            frmTickets frm = new frmTickets(UsuarioLogeado, frmTickets.TipoTicket.Manto,row.id);
+            //            if (frm.ShowDialog() == DialogResult.OK)
+            //            {
+            //                load_data();
+            //            }
+            //            break;
+            //    }
+
+            //}
+            //catch (Exception ex )
+            //{
+            //    Console.WriteLine(ex.Message);
+
+            //} 
         }
 
         private void toggleSwitch1_Toggled(object sender, EventArgs e)
@@ -262,6 +278,29 @@ namespace LOSA.MigracionACS.Tickets.EndUser
         private void btnver_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
 
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSeguimiento_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gv = (GridView)grd_data.FocusedView;
+            var row = (dsTickets.ticketsRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+            frmTicketSeguimiento_TI_CRUD frm = new frmTicketSeguimiento_TI_CRUD(row.id, row.user_asignado, UsuarioLogeado.UserId, UsuarioLogeado);
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            load_data();
         }
     }
 }                                
