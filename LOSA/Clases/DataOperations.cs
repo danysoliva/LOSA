@@ -16,10 +16,10 @@ namespace ACS.Classes
     {
         #region Connection Credentials
 
-        internal string ConnectionStringTtrace = @"Server=" + Globals.ServerAddress + @";
-                                                   Database=" + Globals.ActiveDB + @";
-                                                   User Id=" + Globals.DB_User + @";
-                                                   Password=" + Globals.DB_Pass + ";";
+        internal string ConnectionStringTtrace = @"Server=" + Globals.Bas_ServerAddress + @";
+                                                   Database=" + Globals.Bas_ActiveDB + @";
+                                                   User Id=" + Globals.Bas_DB_User + @";
+                                                   Password=" + Globals.Bas_DB_Pass + ";";
 
         internal string ConnectionStringCostos = @"Server=" + Globals.CTS_ServerAddress + @";
                                                    Database=" + Globals.CTS_ActiveDB + @";

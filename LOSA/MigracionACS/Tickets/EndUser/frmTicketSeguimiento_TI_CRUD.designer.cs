@@ -97,23 +97,23 @@
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(24, 97);
+            this.txtComentario.Location = new System.Drawing.Point(21, 79);
             this.txtComentario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComentario.Properties.Appearance.Options.UseFont = true;
-            this.txtComentario.Properties.MaxLength = 100;
-            this.txtComentario.Size = new System.Drawing.Size(808, 112);
+            this.txtComentario.Properties.MaxLength = 300;
+            this.txtComentario.Size = new System.Drawing.Size(693, 91);
             this.txtComentario.TabIndex = 0;
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(24, 70);
+            this.labelControl1.Location = new System.Drawing.Point(21, 57);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(105, 21);
+            this.labelControl1.Size = new System.Drawing.Size(86, 17);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Comentario:";
             // 
@@ -124,11 +124,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdzonadrop.Controls.Add(this.grd_data);
             this.grdzonadrop.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.grdzonadrop.Location = new System.Drawing.Point(5, 620);
-            this.grdzonadrop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grdzonadrop.Location = new System.Drawing.Point(4, 504);
             this.grdzonadrop.Name = "grdzonadrop";
-            this.grdzonadrop.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grdzonadrop.Size = new System.Drawing.Size(840, 249);
+            this.grdzonadrop.Size = new System.Drawing.Size(720, 202);
             this.grdzonadrop.TabIndex = 14;
             this.grdzonadrop.TabStop = false;
             this.grdzonadrop.Text = "Archivos Adjuntos";
@@ -137,15 +135,13 @@
             // 
             this.grd_data.DataSource = this.archivosBindingSource;
             this.grd_data.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_data.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grd_data.Location = new System.Drawing.Point(3, 31);
+            this.grd_data.Location = new System.Drawing.Point(3, 25);
             this.grd_data.MainView = this.grdv_data;
-            this.grd_data.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grd_data.Name = "grd_data";
             this.grd_data.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btneliminar,
             this.btnDescargar});
-            this.grd_data.Size = new System.Drawing.Size(834, 214);
+            this.grd_data.Size = new System.Drawing.Size(714, 174);
             this.grd_data.TabIndex = 0;
             this.grd_data.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_data});
@@ -170,39 +166,35 @@
             this.coleliminar,
             this.colDescargar,
             this.gridColumn1});
-            this.grdv_data.DetailHeight = 431;
             this.grdv_data.GridControl = this.grd_data;
             this.grdv_data.Name = "grdv_data";
+            this.grdv_data.OptionsEditForm.PopupEditFormWidth = 686;
             this.grdv_data.OptionsView.ShowGroupPanel = false;
             // 
             // colPath
             // 
             this.colPath.FieldName = "Path";
-            this.colPath.MinWidth = 23;
             this.colPath.Name = "colPath";
             this.colPath.OptionsColumn.AllowEdit = false;
-            this.colPath.Width = 87;
             // 
             // colFileName
             // 
             this.colFileName.Caption = "Archivo";
             this.colFileName.FieldName = "FileName";
-            this.colFileName.MinWidth = 23;
             this.colFileName.Name = "colFileName";
             this.colFileName.OptionsColumn.AllowEdit = false;
             this.colFileName.Visible = true;
             this.colFileName.VisibleIndex = 0;
-            this.colFileName.Width = 574;
+            this.colFileName.Width = 492;
             // 
             // coleliminar
             // 
             this.coleliminar.Caption = "Eliminar";
             this.coleliminar.ColumnEdit = this.btneliminar;
-            this.coleliminar.MinWidth = 23;
             this.coleliminar.Name = "coleliminar";
             this.coleliminar.Visible = true;
             this.coleliminar.VisibleIndex = 1;
-            this.coleliminar.Width = 140;
+            this.coleliminar.Width = 120;
             // 
             // btneliminar
             // 
@@ -218,10 +210,10 @@
             // 
             this.colDescargar.Caption = "Descargar";
             this.colDescargar.ColumnEdit = this.btnDescargar;
-            this.colDescargar.MinWidth = 24;
+            this.colDescargar.MinWidth = 21;
             this.colDescargar.Name = "colDescargar";
             this.colDescargar.OptionsFilter.AllowFilter = false;
-            this.colDescargar.Width = 108;
+            this.colDescargar.Width = 93;
             // 
             // btnDescargar
             // 
@@ -234,18 +226,17 @@
             // gridColumn1
             // 
             this.gridColumn1.FieldName = "FileNameFTP";
-            this.gridColumn1.MinWidth = 23;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Width = 64;
             // 
             // btnExaminar
             // 
             this.btnExaminar.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExaminar.Appearance.Options.UseFont = true;
             this.btnExaminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExaminar.ImageOptions.Image")));
-            this.btnExaminar.Location = new System.Drawing.Point(624, 569);
-            this.btnExaminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExaminar.Location = new System.Drawing.Point(535, 462);
             this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(222, 44);
+            this.btnExaminar.Size = new System.Drawing.Size(190, 36);
             this.btnExaminar.TabIndex = 19;
             this.btnExaminar.Text = "Adjuntar..";
             this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
@@ -341,45 +332,40 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(846, 50);
+            this.barDockControlTop.Size = new System.Drawing.Size(725, 40);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 849);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 686);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(846, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(725, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 799);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 646);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(846, 50);
+            this.barDockControlRight.Location = new System.Drawing.Point(725, 40);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 799);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 646);
             // 
             // btnAgregarCopia
             // 
             this.btnAgregarCopia.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCopia.Appearance.Options.UseFont = true;
             this.btnAgregarCopia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCopia.ImageOptions.Image")));
-            this.btnAgregarCopia.Location = new System.Drawing.Point(23, 233);
-            this.btnAgregarCopia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregarCopia.Location = new System.Drawing.Point(20, 189);
             this.btnAgregarCopia.Name = "btnAgregarCopia";
-            this.btnAgregarCopia.Size = new System.Drawing.Size(310, 44);
+            this.btnAgregarCopia.Size = new System.Drawing.Size(266, 36);
             this.btnAgregarCopia.TabIndex = 34;
             this.btnAgregarCopia.Text = "Agregar copia de correos";
             this.btnAgregarCopia.Click += new System.EventHandler(this.btnAgregarCopia_Click);
@@ -389,10 +375,9 @@
             this.grd_correo.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grd_correo.AppearanceCaption.Options.UseFont = true;
             this.grd_correo.Controls.Add(this.grd_info);
-            this.grd_correo.Location = new System.Drawing.Point(23, 286);
-            this.grd_correo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grd_correo.Location = new System.Drawing.Point(20, 232);
             this.grd_correo.Name = "grd_correo";
-            this.grd_correo.Size = new System.Drawing.Size(811, 274);
+            this.grd_correo.Size = new System.Drawing.Size(695, 223);
             this.grd_correo.TabIndex = 33;
             this.grd_correo.Text = "Copiar de correos";
             // 
@@ -400,15 +385,13 @@
             // 
             this.grd_info.DataSource = this.enduserBindingSource;
             this.grd_info.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_info.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grd_info.Location = new System.Drawing.Point(2, 29);
+            this.grd_info.Location = new System.Drawing.Point(2, 23);
             this.grd_info.MainView = this.grdv_info;
-            this.grd_info.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grd_info.MenuManager = this.barManager1;
             this.grd_info.Name = "grd_info";
             this.grd_info.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_delete});
-            this.grd_info.Size = new System.Drawing.Size(807, 243);
+            this.grd_info.Size = new System.Drawing.Size(691, 198);
             this.grd_info.TabIndex = 0;
             this.grd_info.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_info});
@@ -445,9 +428,9 @@
             this.colCC,
             this.colid3,
             this.ColEliminar2});
-            this.grdv_info.DetailHeight = 431;
             this.grdv_info.GridControl = this.grd_info;
             this.grdv_info.Name = "grdv_info";
+            this.grdv_info.OptionsEditForm.PopupEditFormWidth = 686;
             this.grdv_info.OptionsView.ShowAutoFilterRow = true;
             this.grdv_info.OptionsView.ShowGroupPanel = false;
             // 
@@ -455,38 +438,33 @@
             // 
             this.colcorreo.Caption = "Correo";
             this.colcorreo.FieldName = "corro";
-            this.colcorreo.MinWidth = 23;
             this.colcorreo.Name = "colcorreo";
             this.colcorreo.Visible = true;
             this.colcorreo.VisibleIndex = 0;
-            this.colcorreo.Width = 255;
+            this.colcorreo.Width = 219;
             // 
             // colCC
             // 
             this.colCC.Caption = "Copia";
             this.colCC.FieldName = "CC";
-            this.colCC.MinWidth = 23;
             this.colCC.Name = "colCC";
             this.colCC.Visible = true;
             this.colCC.VisibleIndex = 1;
-            this.colCC.Width = 395;
+            this.colCC.Width = 339;
             // 
             // colid3
             // 
             this.colid3.FieldName = "id";
-            this.colid3.MinWidth = 23;
             this.colid3.Name = "colid3";
-            this.colid3.Width = 87;
             // 
             // ColEliminar2
             // 
             this.ColEliminar2.Caption = "Eliminar";
             this.ColEliminar2.ColumnEdit = this.btn_delete;
-            this.ColEliminar2.MinWidth = 23;
             this.ColEliminar2.Name = "ColEliminar2";
             this.ColEliminar2.Visible = true;
             this.ColEliminar2.VisibleIndex = 2;
-            this.ColEliminar2.Width = 117;
+            this.ColEliminar2.Width = 100;
             // 
             // btn_delete
             // 
@@ -508,9 +486,9 @@
             // 
             // frmTicketSeguimiento_TI_CRUD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 869);
+            this.ClientSize = new System.Drawing.Size(725, 706);
             this.Controls.Add(this.btnAgregarCopia);
             this.Controls.Add(this.grd_correo);
             this.Controls.Add(this.btnExaminar);
@@ -528,6 +506,7 @@
             this.Name = "frmTicketSeguimiento_TI_CRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Seguimiento";
+            this.Load += new System.EventHandler(this.frmTicketSeguimiento_TI_CRUD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtComentario.Properties)).EndInit();
             this.grdzonadrop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd_data)).EndInit();

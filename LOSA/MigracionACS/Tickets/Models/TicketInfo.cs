@@ -25,6 +25,8 @@ namespace LOSA.MigracionACS.Tickets.Models
         public List<string> copiaCorreos { get; set; }
         public string Prioridad { get; set; }
 
+        public int Categoria { get; set; }
+
         public string Proyecto { get; set; }
 
         public Boolean RecuperaRegistro(int id_ticket)
@@ -51,12 +53,14 @@ namespace LOSA.MigracionACS.Tickets.Models
                         FechaCreacion = dr.GetDateTime(3);
                         Comentario = dr.GetString(4);
                         Prioridad = dr.GetString(5);
-                        Titulo = dr.GetString(6);
-                        Informacion = dr.GetString(7);
-                        Estado = dr.GetString(8);
-                        UsuarioCreadorMail = dr.GetString(9);
-                        UsuarioAsignadoMail = dr.GetString(10);
-                        Proyecto = dr.GetString(11);
+                        Proyecto = dr.GetString(6);
+                        UsuarioCreadorMail = dr.GetString(7);
+                        UsuarioAsignadoMail = dr.GetString(8);
+                        Titulo = dr.GetString(9);
+                        Informacion = dr.GetString(10);
+                        Estado = dr.GetString(11);
+                        Categoria = dr.GetInt32(12);
+                        
                     }
 
 

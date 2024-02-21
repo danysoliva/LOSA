@@ -4186,6 +4186,8 @@ namespace LOSA.MigracionACS.Tickets.EndUser {
             
             private global::System.Data.DataColumn columnid_ticket;
             
+            private global::System.Data.DataColumn columnusuario_seguimiento;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SeguimientoDataTable() {
@@ -4253,6 +4255,14 @@ namespace LOSA.MigracionACS.Tickets.EndUser {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn usuario_seguimientoColumn {
+                get {
+                    return this.columnusuario_seguimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4288,13 +4298,14 @@ namespace LOSA.MigracionACS.Tickets.EndUser {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SeguimientoRow AddSeguimientoRow(int id, string comentario, System.DateTime fecha, int id_ticket) {
+            public SeguimientoRow AddSeguimientoRow(int id, string comentario, System.DateTime fecha, int id_ticket, string usuario_seguimiento) {
                 SeguimientoRow rowSeguimientoRow = ((SeguimientoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         comentario,
                         fecha,
-                        id_ticket};
+                        id_ticket,
+                        usuario_seguimiento};
                 rowSeguimientoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSeguimientoRow);
                 return rowSeguimientoRow;
@@ -4321,6 +4332,7 @@ namespace LOSA.MigracionACS.Tickets.EndUser {
                 this.columncomentario = base.Columns["comentario"];
                 this.columnfecha = base.Columns["fecha"];
                 this.columnid_ticket = base.Columns["id_ticket"];
+                this.columnusuario_seguimiento = base.Columns["usuario_seguimiento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4334,6 +4346,8 @@ namespace LOSA.MigracionACS.Tickets.EndUser {
                 base.Columns.Add(this.columnfecha);
                 this.columnid_ticket = new global::System.Data.DataColumn("id_ticket", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_ticket);
+                this.columnusuario_seguimiento = new global::System.Data.DataColumn("usuario_seguimiento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusuario_seguimiento);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6603,6 +6617,23 @@ namespace LOSA.MigracionACS.Tickets.EndUser {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string usuario_seguimiento {
+                get {
+                    try {
+                        return ((string)(this[this.tableSeguimiento.usuario_seguimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'usuario_seguimiento\' de la tabla \'Seguimiento\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSeguimiento.usuario_seguimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableSeguimiento.idColumn);
             }
@@ -6647,6 +6678,18 @@ namespace LOSA.MigracionACS.Tickets.EndUser {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_ticketNull() {
                 this[this.tableSeguimiento.id_ticketColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isusuario_seguimientoNull() {
+                return this.IsNull(this.tableSeguimiento.usuario_seguimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setusuario_seguimientoNull() {
+                this[this.tableSeguimiento.usuario_seguimientoColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -80,7 +80,7 @@ namespace LOSA.MicroIngredientes.Tickets.EndUser
             this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.tileBar1);
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(507, 368);
+            this.navigationPage1.Size = new System.Drawing.Size(592, 453);
             // 
             // tileBar1
             // 
@@ -96,9 +96,9 @@ namespace LOSA.MicroIngredientes.Tickets.EndUser
             this.tileBar1.MaxId = 5;
             this.tileBar1.Name = "tileBar1";
             this.tileBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileBar1.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.tileBar1.Padding = new System.Windows.Forms.Padding(20);
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar1.Size = new System.Drawing.Size(589, 368);
+            this.tileBar1.Size = new System.Drawing.Size(589, 453);
             this.tileBar1.TabIndex = 0;
             this.tileBar1.VerticalContentAlignment = DevExpress.Utils.VertAlignment.Center;
             this.tileBar1.WideTileWidth = 550;
@@ -205,7 +205,7 @@ namespace LOSA.MicroIngredientes.Tickets.EndUser
             this.navigationPage2.Caption = "navigationPage2";
             this.navigationPage2.Controls.Add(this.tileBar2);
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(507, 368);
+            this.navigationPage2.Size = new System.Drawing.Size(592, 453);
             // 
             // tileBar2
             // 
@@ -221,9 +221,9 @@ namespace LOSA.MicroIngredientes.Tickets.EndUser
             this.tileBar2.MaxId = 5;
             this.tileBar2.Name = "tileBar2";
             this.tileBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileBar2.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.tileBar2.Padding = new System.Windows.Forms.Padding(20);
             this.tileBar2.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar2.Size = new System.Drawing.Size(589, 368);
+            this.tileBar2.Size = new System.Drawing.Size(589, 453);
             this.tileBar2.TabIndex = 1;
             this.tileBar2.VerticalContentAlignment = DevExpress.Utils.VertAlignment.Center;
             this.tileBar2.WideTileWidth = 550;
@@ -333,7 +333,7 @@ namespace LOSA.MicroIngredientes.Tickets.EndUser
             this.tileControl1.Location = new System.Drawing.Point(68, 117);
             this.tileControl1.MaxId = 7;
             this.tileControl1.Name = "tileControl1";
-            this.tileControl1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.tileControl1.Padding = new System.Windows.Forms.Padding(10);
             this.tileControl1.Size = new System.Drawing.Size(333, 453);
             this.tileControl1.TabIndex = 1;
             this.tileControl1.Text = "tileControl1";
@@ -415,6 +415,7 @@ namespace LOSA.MicroIngredientes.Tickets.EndUser
             this.Controls.Add(this.navigationFrame1);
             this.Name = "frmTicketsNew";
             this.Text = "Reciba Ayuda de IT";
+            this.Load += new System.EventHandler(this.frmTicketsNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);

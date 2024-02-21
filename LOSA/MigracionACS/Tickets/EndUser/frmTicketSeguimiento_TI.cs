@@ -145,5 +145,20 @@ namespace LOSA.MigracionACS.Tickets.EndUser
         {
             load_data();
         }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grd_data_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmTicketSeguimiento_TI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

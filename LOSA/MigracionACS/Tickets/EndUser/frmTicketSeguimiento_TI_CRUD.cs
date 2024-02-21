@@ -154,8 +154,9 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                 cmd.Parameters.AddWithValue("@id_ticket", id_ticket);
                 cmd.Parameters.AddWithValue("@usuario_creador", usuario_creador);
                 cmd.Parameters.AddWithValue("@usuario_asignado", usuario_asignado);
+                cmd.Parameters.AddWithValue("@usuario_seguimiento", usuarioLogueado.UserId);
 
-               int id_seguimiento= Convert.ToInt32( cmd.ExecuteScalar());
+                int id_seguimiento= Convert.ToInt32( cmd.ExecuteScalar());
 
                 string query2 = @"sp_TK_insert_mensaje";
                 SqlCommand cmd2 = new SqlCommand(query2, transaction.Connection);
@@ -323,6 +324,11 @@ namespace LOSA.MigracionACS.Tickets.EndUser
         private void btneliminar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             grdv_data.DeleteRow(grdv_data.FocusedRowHandle);
+        }
+
+        private void frmTicketSeguimiento_TI_CRUD_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }

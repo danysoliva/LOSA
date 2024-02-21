@@ -252,55 +252,191 @@ namespace LOSA.Clases
 
         public string ParseTicketHTMLFormatBody(string Nombre, string body, string ticket, string estado, string usuario_asignado, string prioridad, string comentarios, string titulo)
         {
-            return @"<p>Hola " + Nombre + @",</p>
-            <p> El ticket [#" + ticket + @"] se ha creado, estaremos dando seguimiento y atención a su solicitud.</p>
+            return@"<head>
+                    <style>
+                    .myDiv {
+                            border: 5px  #0074ba;
+                            background-color: #0074ba;
+                            text-align: center;
+                           }
+
+                    </style>
+                    </head>
+                    <body>
+
+                    <div class=""myDiv""> 
+                         <h2 style = ""color:white;"" > Se ha creado el ticket # " + ticket + @"</h2>
+  	                     <p style = ""color:white;""> " + titulo + @"</p>
+                    </div>
+    
+                <p>Hola " + Nombre + @",</p>
+            <p> Se ha creado el ticket [#" + ticket + @"].</p>
+            <p> <b>Titulo:</b> " + titulo + @"</p>
+            
+            <p><b>Descripcion Requerimiento:</b> " + body + @"</p>
             <ul>
-                <li> <b>Requerimiento:</b> " + titulo + @"</li>
-                <li> <b>Usuario Asignado:</b> " + usuario_asignado+ @"</li>
+                <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
                 <li> <b>Estado: </b>" + estado + @"</li>
                 <li> <b>Prioridad:</b> " + prioridad + @" </li>
-                <li> <b>Comentarios:</b> " + comentarios + @" </li>
+            </ul>
+           <p>Estaremos dando seguimiento y atención a su solicitud. Vaya a la sección de <b>tickets</b> en la App de ALOSY para revisar el estado de su ticket. </p>
+            <div class=""myDiv""> 
+                 <p style = ""color:white;"" > IT DEPARTMENT 2024. </p>
+                 <p style = ""color:white;"" > AQUAFEED S.A.DE C.V. </p>
+             </div>
 
-            </ul>";
+         </body>";
+            //return @"<p>Hola " + Nombre + @",</p>
+            //<p> El ticket [#" + ticket + @"] se ha creado, estaremos dando seguimiento y atención a su solicitud.</p>
+            //<ul>
+            //    <li> <b>Requerimiento:</b> " + titulo + @"</li>
+            //    <li> <b>Usuario Asignado:</b> " + usuario_asignado+ @"</li>
+            //    <li> <b>Estado: </b>" + estado + @"</li>
+            //    <li> <b>Prioridad:</b> " + prioridad + @" </li>
+            //    <li> <b>Comentarios:</b> " + comentarios + @" </li>
+
+            //</ul>";
         }
 
         public string ParseTicketHTMLFormatBodyStatus(string Nombre, string body, string ticket, string estado, string usuario_asignado, string prioridad, string comentarios, string titulo)
         {
-            return @"<p>Hola " + Nombre + @",</p>
-            <p> El ticket [#" + ticket + @"] ha cambiado de estado.</p>
+            return @"<head>
+                    <style>
+                    .myDiv {
+                            border: 5px  #0074ba;
+                            background-color: #0074ba;
+                            text-align: center;
+                           }
+
+                    </style>
+                    </head>
+                    <body>
+
+                    <div class=""myDiv""> 
+                         <h2 style = ""color:white;"" > El ticket # " + ticket + @" ha cambiado de estado</h2>
+  	                     <p style = ""color:white;""> " + titulo + @"</p>
+                    </div>
+    
+                <p>Hola " + Nombre + @",</p>
+            <p> El ticket [#" + ticket + @"] ha cambiado de estado a: " + estado + @".</p>
+            <p> <b>Titulo:</b> " + titulo + @"</p>
+            
+            <p><b>Descripcion Requerimiento:</b> " + body + @"</p>
             <ul>
-                <li> <b>Requerimiento:</b> " + titulo + @"</li>
                 <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
-                <li> <b>Estado: </b>" + estado + @"</li>
                 <li> <b>Prioridad:</b> " + prioridad + @" </li>
-                <li> <b>Comentarios:</b> " + comentarios + @" </li>
-            </ul>";
+            </ul>
+           <p>Estaremos dando seguimiento y atención a su solicitud. Vaya a la sección de <b>tickets</b> en la App de ALOSY para revisar el estado de su ticket. </p>
+            <div class=""myDiv""> 
+                 <p style = ""color:white;"" > IT DEPARTMENT 2024. </p>
+                 <p style = ""color:white;"" > AQUAFEED S.A.DE C.V. </p>
+             </div>
+
+         </body>";
+            //return @"<p>Hola " + Nombre + @",</p>
+            //<p> El ticket [#" + ticket + @"] ha cambiado de estado.</p>
+            //<ul>
+            //    <li> <b>Requerimiento:</b> " + titulo + @"</li>
+            //    <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
+            //    <li> <b>Estado: </b>" + estado + @"</li>
+            //    <li> <b>Prioridad:</b> " + prioridad + @" </li>
+            //    <li> <b>Comentarios:</b> " + comentarios + @" </li>
+            //</ul>";
         }
 
         public string ParseTicketHTMLFormatBodyPriority(string Nombre, string body, string ticket, string estado, string usuario_asignado, string prioridad, string comentarios, string titulo)
         {
-            return @"<p>Hola " + Nombre + @",</p>
-            <p> El ticket [#" + ticket + @"] ha cambiado de prioridad.</p>
+            return @"<head>
+                    <style>
+                    .myDiv {
+                            border: 5px  #0074ba;
+                            background-color: #0074ba;
+                            text-align: center;
+                           }
+
+                    </style>
+                    </head>
+                    <body>
+
+                    <div class=""myDiv""> 
+                         <h2 style = ""color:white;"" > El ticket # " + ticket + @" ha cambiado de Prioridad</h2>
+  	                     <p style = ""color:white;""> " + titulo + @"</p>
+                    </div>
+    
+                <p>Hola " + Nombre + @",</p>
+            <p> El ticket [#" + ticket + @"] ha cambiado de prioridad a: " + prioridad + @".</p>
+            <p> <b>Titulo:</b> " + titulo + @"</p>
+            
+            <p><b>Descripcion Requerimiento:</b> " + body + @"</p>
             <ul>
-                <li> <b>Requerimiento:</b> " + titulo + @"</li>
-               <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
-                <li> <b>Estado: </b>" + estado + @"</li>
-                <li> <b>Prioridad:</b> " + prioridad + @" </li>
-                <li> <b>Comentarios:</b> " + comentarios + @" </li>
-            </ul>";
+                <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
+                
+                <li> <b>Estado:</b> " + estado + @" </li>
+            </ul>
+           <p>Estaremos dando seguimiento y atención a su solicitud. Vaya a la sección de <b>tickets</b> en la App de ALOSY para revisar el estado de su ticket. </p>
+            <div class=""myDiv""> 
+                 <p style = ""color:white;"" > IT DEPARTMENT 2024. </p>
+                 <p style = ""color:white;"" > AQUAFEED S.A.DE C.V. </p>
+             </div>
+
+         </body>";
+            //return @"<p>Hola " + Nombre + @",</p>
+            //<p> El ticket [#" + ticket + @"] ha cambiado de prioridad.</p>
+            //<ul>
+            //    <li> <b>Requerimiento:</b> " + titulo + @"</li>
+            //   <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
+            //    <li> <b>Estado: </b>" + estado + @"</li>
+            //    <li> <b>Prioridad:</b> " + prioridad + @" </li>
+            //    <li> <b>Comentarios:</b> " + comentarios + @" </li>
+            //</ul>";
         }
 
         public string ParseTicketHTMLFormatBodyUserAssgined(string Nombre, string body, string ticket, string estado, string usuario_asignado, string prioridad, string comentarios,string titulo)
         {
-            return @"<p>Hola " + Nombre + @",</p>
-            <p> El ticket [#" + ticket + @"] ha cambiado el usuario asignado.</p>
+
+            return @"<head>
+                    <style>
+                    .myDiv {
+                            border: 5px  #0074ba;
+                            background-color: #0074ba;
+                            text-align: center;
+                           }
+
+                    </style>
+                    </head>
+                    <body>
+
+                    <div class=""myDiv""> 
+                         <h2 style = ""color:white;"" > El ticket # " + ticket + @" ha cambiado de usuario asignado</h2>
+  	                     <p style = ""color:white;""> " + titulo + @"</p>
+                    </div>
+    
+                <p>Hola " + Nombre + @",</p>
+            <p> El ticket [#" + ticket + @"] ha cambiado de usuario asignado a: " + usuario_asignado + @".</p>
+            <p> <b>Titulo:</b> " + titulo + @"</p>
+            
+            <p><b>Descripcion Requerimiento:</b> " + body + @"</p>
             <ul>
-               <li> <b>Requerimiento:</b> " + titulo + @"</li>
-               <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
-                <li> <b>Estado: </b>" + estado + @"</li>
-                <li> <b>Prioridad:</b> " + prioridad + @" </li>
-                <li> <b>Comentarios:</b> " + comentarios + @" </li>
-            </ul>";
+                <li> <b>Prioridad:</b> " + prioridad + @"</li>
+                
+                <li> <b>Estado:</b> " + estado + @" </li>
+            </ul>
+           <p>Estaremos dando seguimiento y atención a su solicitud. Vaya a la sección de <b>tickets</b> en la App de ALOSY para revisar el estado de su ticket. </p>
+            <div class=""myDiv""> 
+                 <p style = ""color:white;"" > IT DEPARTMENT 2024. </p>
+                 <p style = ""color:white;"" > AQUAFEED S.A.DE C.V. </p>
+             </div>
+
+         </body>";
+            //return @"<p>Hola " + Nombre + @",</p>
+            //<p> El ticket [#" + ticket + @"] ha cambiado el usuario asignado.</p>
+            //<ul>
+            //   <li> <b>Requerimiento:</b> " + titulo + @"</li>
+            //   <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
+            //    <li> <b>Estado: </b>" + estado + @"</li>
+            //    <li> <b>Prioridad:</b> " + prioridad + @" </li>
+            //    <li> <b>Comentarios:</b> " + comentarios + @" </li>
+            //</ul>";
         }
 
         public void SendEmailTicketCreated(EmailTicketParams emailTicketParmas)
@@ -640,18 +776,42 @@ namespace LOSA.Clases
 
         public string ParseTicketHTMLFormatBodyFollowUp(string Nombre, string body, string ticket, string estado, string usuario_asignado, string prioridad, string titulo, string reque_descripcion)
         {
-            return @"<p>Hola " + Nombre + @",</p>
-            <p> Al ticket [#" + ticket + @"] se le a dado seguimiento.</p>
+            return @"<head>
+                    <style>
+                    .myDiv {
+                            border: 5px  #0074ba;
+                            background-color: #0074ba;
+                            text-align: center;
+                           }
+
+                    </style>
+                    </head>
+                    <body>
+
+                    <div class=""myDiv""> 
+                         <h2 style = ""color:white;"" > Este es un seguimiento del ticket # " + ticket + @"</h2>
+  	                     <p style = ""color:white;""> " + titulo + @"</p>
+                    </div>
+    
+                <p>Hola " + Nombre + @",</p>
+            <p> Se le ha dado seguimiento al ticket [#" + ticket + @"].</p>
+            <p> <b>Seguimiento:</b> " + body + @" </p>
+            <p> Vaya a la sección de <b>tickets</b> en la App de ALOSY para revisar el estado de su ticket. </p>
+            <p><b>Descripcion Requerimiento:</b> " + reque_descripcion + @"</p>
             <ul>
-                <li> <b>Requerimiento:</b> " + titulo + @"</li>
-                <li> <b>Descripcion Requerimiento:</b> " + reque_descripcion + @"</li>
                 <li> <b>Usuario Asignado:</b> " + usuario_asignado + @"</li>
                 <li> <b>Estado: </b>" + estado + @"</li>
                 <li> <b>Prioridad:</b> " + prioridad + @" </li>
-                <li> <b>Seguimiento:</b> " + body + @" </li>
             </ul>
-            <p> El Ticket sigue en proceso de realizacion. Se le informara al momento de su conclusion.</p>
-            <p> IT DEPARTMENT 2023. </p>";
+            <p> El Ticket sigue en proceso de realización. Se le informara al momento de su conclusión.</p>
+            <div class=""myDiv""> 
+                 <p style = ""color:white;"" > IT DEPARTMENT 2024. </p>
+                 <p style = ""color:white;"" > AQUAFEED S.A.DE C.V. </p>
+             </div>
+
+         </body>";
+
+
         }
     }
 }

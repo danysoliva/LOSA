@@ -251,6 +251,7 @@
             this.lblTitulo.Size = new System.Drawing.Size(881, 29);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "Enviar una solicitud de soporte";
+            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // lblPrimerNivel
             // 
@@ -689,6 +690,7 @@
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtTitulo.Properties.Appearance.Options.UseFont = true;
+            this.txtTitulo.Properties.MaxLength = 50;
             this.txtTitulo.Size = new System.Drawing.Size(910, 24);
             this.txtTitulo.TabIndex = 0;
             // 

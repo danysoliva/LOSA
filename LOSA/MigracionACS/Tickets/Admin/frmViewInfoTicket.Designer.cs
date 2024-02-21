@@ -122,6 +122,7 @@ namespace LOSA.MigracionACS.Tickets.Admin
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo.Properties.Appearance.Options.UseFont = true;
+            this.txtTitulo.Properties.MaxLength = 50;
             this.txtTitulo.Properties.ReadOnly = true;
             this.txtTitulo.Size = new System.Drawing.Size(508, 24);
             this.txtTitulo.TabIndex = 7;
@@ -261,6 +262,7 @@ namespace LOSA.MigracionACS.Tickets.Admin
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmViewInfoTicket";
+            this.Load += new System.EventHandler(this.frmViewInfoTicket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtUserCreador.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitulo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEstado.Properties)).EndInit();

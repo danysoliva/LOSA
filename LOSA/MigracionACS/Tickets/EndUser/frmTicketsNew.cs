@@ -91,5 +91,10 @@ namespace LOSA.MicroIngredientes.Tickets.EndUser
             frm.Show();
 
         }
+
+        private void frmTicketsNew_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -18,6 +18,7 @@ using LOSA.MigracionACS.Tickets.Models;
 using LOSA.Clases;
 using ACS.Classes;
 
+
 namespace LOSA.MigracionACS.Tickets.Admin
 {
     public partial class frmAdminTicketscs : DevExpress.XtraEditors.XtraForm
@@ -60,6 +61,51 @@ namespace LOSA.MigracionACS.Tickets.Admin
         private void btncerrar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        public void load_data()
+        {
+            string Query = @"[dbo].[sp_TK_get_tickets_by_seguimiento_TI]";
+            try
+            {
+                if (tsAbiertasCerradas.IsOn)
+                {
+                    DataOperations dp = new DataOperations();
+
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_user_asignado", 0);
+                    dsTickets1.tickets.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsTickets1.tickets);
+                    cn.Close();
+                }
+                else
+                {
+                    DataOperations dp = new DataOperations();
+
+                    SqlConnection cn = new SqlConnection(dp.ConnectionStringCostos);
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_user_asignado", UsuarioLogeado.UserId);
+                    dsTickets1.tickets.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsTickets1.tickets);
+                    cn.Close();
+                }
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         public void load_informacionI()
@@ -301,7 +347,7 @@ namespace LOSA.MigracionACS.Tickets.Admin
             var gv = (GridView)grd_data.FocusedView;
             var row = (dsAdminT.ticketsRow)gv.GetDataRow(gv.FocusedRowHandle);
 
-            rpt_Ticket_TI report = new rpt_Ticket_TI(row.id);
+            rpt_Ticket_Manto report = new rpt_Ticket_Manto(row.id);
 
             using (ReportPrintTool printTool = new ReportPrintTool(report))
             {
@@ -328,8 +374,50 @@ namespace LOSA.MigracionACS.Tickets.Admin
             var gv = (GridView)grd_data.FocusedView;
             var row = (dsAdminT.ticketsRow)gv.GetDataRow(gv.FocusedRowHandle);
 
-            frmViewInfoTicket frm = new frmViewInfoTicket(row.id);
+            frmVerSeguimiento frm = new frmVerSeguimiento(row.id,UsuarioLogeado);
             frm.ShowDialog();
+        }
+
+        private void grd_data_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSeguimiento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSeguimiento_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gv = (GridView)grd_data.FocusedView;
+            var row = (dsAdminT.ticketsRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+            frmTicketSeguimiento_TI_CRUD frm = new frmTicketSeguimiento_TI_CRUD(row.id, row.user_asignado, UsuarioLogeado.UserId, UsuarioLogeado);
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                load_data();
+            }
+        }
+
+        private void btnVer_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+
+
+                var gv = (GridView)grd_data.FocusedView;
+                var row = (dsAdminT.ticketsRow)gv.GetDataRow(gv.FocusedRowHandle);
+
+                frmVerSeguimiento frm = new frmVerSeguimiento(row.id, UsuarioLogeado);
+
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }
