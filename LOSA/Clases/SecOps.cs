@@ -795,7 +795,7 @@ namespace LOSA.Clases
     
                 <p>Hola " + Nombre + @",</p>
             <p> Se le ha dado seguimiento al ticket [#" + ticket + @"].</p>
-            <p> <b>Comentario:</b> " + body + @" </p>
+            <p> <b>Seguimiento:</b> " + body + @" </p>
             <p> Vaya a la sección de <b>tickets</b> en la App de ALOSY para revisar el estado de su ticket. </p>
             <p><b>Descripcion Requerimiento:</b> " + reque_descripcion + @"</p>
             <ul>

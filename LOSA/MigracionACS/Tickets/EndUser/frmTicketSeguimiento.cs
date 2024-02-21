@@ -110,5 +110,10 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                 printTool.ShowPreviewDialog();
             }
         }
+
+        private void grd_data_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
