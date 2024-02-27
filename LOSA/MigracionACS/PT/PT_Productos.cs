@@ -43,10 +43,19 @@ namespace LOSA.MigracionACS.PT
 
         #endregion
 
+        public enum EstadoConexionSAP
+        { 
+            Conectado = 1,
+            Desconectado = 2
+        }
+
+        EstadoConexionSAP EstadoConexionActual;
+
         public PT_Productos(string ActiveUserCode, string ActiveUserName, string ActiveUserType, UserLogin pUser)
         {
             InitializeComponent();
             this.UsuarioLogeado = pUser;
+            EstadoConexionActual = EstadoConexionSAP.Desconectado;
             ValidatePermisos();
             #region autentificacion de permisos
             GetAllowSkin();
@@ -102,6 +111,7 @@ namespace LOSA.MigracionACS.PT
                         btn_Activate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         btn_Inactivate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                         AccesoPrevio = true;
+               
                         break;
                     case 3://Medium Autorization
                     case 4://Depth With Delta
@@ -109,6 +119,7 @@ namespace LOSA.MigracionACS.PT
                         btn_New.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btn_Activate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
                         btn_Inactivate.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                      
                         AccesoPrevio = true;
                         break;
                     default:
@@ -435,36 +446,99 @@ namespace LOSA.MigracionACS.PT
         {
             if (btn_New.Visibility != DevExpress.XtraBars.BarItemVisibility.Never)
             {
-                //int idformu;
                 var gridview = (GridView)gridControl1.FocusedView;
                 var row = (DSProductos.ProductosRow)gridview.GetFocusedDataRow();
 
-                if (user != "")
+                if (row.SubidoSAP == true)
                 {
-                    if (ppass != "")
+                    CajaDialogo.Error("El Codigo " + row.codeSAP + " ya fue creado en SAP!");
+                    return;
+                }
+                else 
+                {
+                    if (EstadoConexionActual == EstadoConexionSAP.Conectado)
                     {
-                        if (row.formula_code == 0 || row.formula_code == 0)
-                        {
-                            MessageBox.Show("Antes de actualizar la lista de materiales de SAP. actualizar la formula de Producto terminado a la par del Boton de exportar.", "ERROR: 00001", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        DialogResult result = CajaDialogo.Pregunta("Esta seguro de subir este Producto Terminado a SAP?");
+                        if (result != DialogResult.Yes)
                             return;
-                        }
-                        else
+
+                        SAPbobsCOM.Company oCmp = dp.Company(user, ppass);
+
+                        //Encabezado del Items
+                        ProductoTerminado PT = new ProductoTerminado(dp.ConnectionStringCostos);
+                        if (PT.Recuperar_producto(row.id))
                         {
+                            SAPbobsCOM.Items ItemsCre = oCmp.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oItems);
                             
+                            string errMSg = "";
+                            int errNum = 0;
+                            string code_sap;
+                            ItemsCre.Series = 75; //Segun la tabla ese es
+                            //ItemsCre.ItemCode = oCmp.//oCmp.GetNewObjectKey();
+                            
+                            
+                            ItemsCre.ItemsGroupCode = 101;//Grupo de Articulos = Producto Terminado
+                            ItemsCre.ItemName = PT.descripcion; //Descripcion de Facturacion
+                            ItemsCre.ForeignName = PT.descripcion_Tecnica; //Descripcion Tecnica del Producto
+                            ItemsCre.ItemType = SAPbobsCOM.ItemTypeEnum.itItems; //Clase de Articulo = Articulos
+                            ItemsCre.WTLiable = SAPbobsCOM.BoYesNoEnum.tYES; //Sujeto de Retencion de Impuestos
+                            ItemsCre.VatLiable = SAPbobsCOM.BoYesNoEnum.tYES;//Sujeto a Impuesto
+                            ItemsCre.SWW = PT.Codigo; //Codigo AQF = ID Adicional
+                            ItemsCre.ManageBatchNumbers = SAPbobsCOM.BoYesNoEnum.tYES; //Gestionado por Lotes
+                            ItemsCre.ManageSerialNumbers = SAPbobsCOM.BoYesNoEnum.tNO;  //En algunas transacciones
+                            ItemsCre.PurchaseItem = SAPbobsCOM.BoYesNoEnum.tNO; ///Articulo de Compra
+
+                            //Datos Compra
+                            ItemsCre.PurchaseItemsPerUnit = 1; //Articulos por unidad de compra
+                            ItemsCre.PurchaseQtyPerPackUnit = 1; //Cantidad por Paquete
+                            //ItemsCre.s //Falta Peso Compra
+
+                            //Datos Venta
+                            ItemsCre.SalesUnit = "Sacos"; //Nombre de Unidad de Medida De
+                            //Falta Articulos por Unidad de Ventas
+                            ItemsCre.SalesItemsPerUnit = 1000; //Cantidad Por Paquete
+                            ItemsCre.SalesUnitWeight = Convert.ToDouble(PT.peso_saco);
+                            ItemsCre.SalesUnitWeight1 = Convert.ToDouble(PT.peso_saco);
+
+                            //Datos de Inventario
+                            ItemsCre.GLMethod = SAPbobsCOM.BoGLMethods.glm_WH; //Fijas Cuentas de Mayor, por Almacen
+                            ItemsCre.InventoryUOM = "Kg.";
+                            ItemsCre.InventoryWeight = Convert.ToDouble(PT.peso_saco);
+                            ItemsCre.ManageStockByWarehouse = SAPbobsCOM.BoYesNoEnum.tYES;
+                            ItemsCre.UserFields.Fields.Item("U_Batch").Value = Convert.ToDouble(2500.00);
+
+
+                            if (ItemsCre.Add() != 0)
+                            {
+                                errMSg = oCmp.GetLastErrorDescription();
+                                errNum = oCmp.GetLastErrorCode();
+                                CajaDialogo.Error("Error al Crear el Articulo de Producto Terminado!\n"+ errNum +" - "+ errMSg);
+                                return;
+                            }
+                            else
+                            {
+                                code_sap = oCmp.GetNewObjectKey();
+
+                                ActualizarRegistro(row.id, code_sap);
+
+                                CajaDialogo.Information("El Articulo se creo en SAP Exitosamente!");
+
+                            }
+
+
                         }
+
+
+                       
+
                     }
                     else
                     {
-                        MessageBox.Show("Debe autentificarse con las credenciales de SAP para poder cargar las Listas de Materiales", "ERROR: 00003", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Es necesario estar conectado a SAP para poder Subir el Producto", "ERROR: 00003", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Debe autentificarse con las credenciales de SAP para poder cargar las Listas de Materiales", "ERROR: 00003", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 #region Codigo Viejo
 
                 //                if (user != "")
@@ -686,12 +760,34 @@ namespace LOSA.MigracionACS.PT
 
         }
 
+        private void ActualizarRegistro(int pid, string pcodeSAP)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringCostos);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_actualizar_pt_code_sap", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idpt", pid);
+                cmd.Parameters.AddWithValue("@CodeSap", pcodeSAP);
+                cmd.ExecuteNonQuery();
+
+                refresh_grid();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SAP.frmLoginSAP Saperoco = new SAP.frmLoginSAP();
             if (Saperoco.ShowDialog() == DialogResult.OK)
             {
                 barEditItem1.EditValue = "Conectado a SAP";
+                EstadoConexionActual = EstadoConexionSAP.Conectado;
                 barEditItem1.Edit.Appearance.BackColor = Color.Green;
                 barEditItem1.Edit.Appearance.ForeColor = Color.Black;
                 user = Saperoco.user;

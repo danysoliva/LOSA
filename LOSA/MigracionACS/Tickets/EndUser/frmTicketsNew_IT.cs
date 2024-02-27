@@ -402,7 +402,7 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                 cmd.Parameters.AddWithValue("@user", UsuarioLogeado.UserId);
                 cmd.Parameters.AddWithValue("@comentario", txtcomentario.Text);
                 cmd.Parameters.AddWithValue("@name", UsuarioLogeado.NombreUser);
-                //cmd.Parameters.AddWithValue("@id_proyecto", grd_proyectoPrimerNivel.EditValue);
+                /*cmd.Parameters.AddWithValue("@id_proyecto", );*/
                 cmd.Parameters.AddWithValue("@comentario2", txtcomentario.Text);
 
 
@@ -440,7 +440,7 @@ namespace LOSA.MigracionACS.Tickets.EndUser
 
                         if (row.seleccionado == true)
                         {
-                            SqlCommand cmdProyecto = new SqlCommand("sp_tk_insert_proyectos_selected ", transaction.Connection);
+                            SqlCommand cmdProyecto = new SqlCommand("sp_tk_insert_proyectos_selected", transaction.Connection);
                             cmdProyecto.Transaction = transaction;
                             cmdProyecto.CommandType = CommandType.StoredProcedure;
 
@@ -904,6 +904,11 @@ namespace LOSA.MigracionACS.Tickets.EndUser
                 if (row1.ID != ItemSeleccionado)
                     row1.seleccionado = false;
             }
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

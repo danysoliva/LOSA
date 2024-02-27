@@ -409,7 +409,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="alimentacion_macros" msprop:Generator_TableClassName="alimentacion_macrosDataTable" msprop:Generator_TableVarName="tablealimentacion_macros" msprop:Generator_TablePropName="alimentacion_macros" msprop:Generator_RowDeletingName="alimentacion_macrosRowDeleting" msprop:Generator_RowChangingName="alimentacion_macrosRowChanging" msprop:Generator_RowEvHandlerName="alimentacion_macrosRowChangeEventHandler" msprop:Generator_RowDeletedName="alimentacion_macrosRowDeleted" msprop:Generator_UserTableName="alimentacion_macros" msprop:Generator_RowChangedName="alimentacion_macrosRowChanged" msprop:Generator_RowEvArgName="alimentacion_macrosRowChangeEvent" msprop:Generator_RowClassName="alimentacion_macrosRow">
+        <xs:element name="alimentacion_macros" msprop:Generator_TableClassName="alimentacion_macrosDataTable" msprop:Generator_TableVarName="tablealimentacion_macros" msprop:Generator_RowChangedName="alimentacion_macrosRowChanged" msprop:Generator_TablePropName="alimentacion_macros" msprop:Generator_RowDeletingName="alimentacion_macrosRowDeleting" msprop:Generator_RowChangingName="alimentacion_macrosRowChanging" msprop:Generator_RowEvHandlerName="alimentacion_macrosRowChangeEventHandler" msprop:Generator_RowDeletedName="alimentacion_macrosRowDeleted" msprop:Generator_RowClassName="alimentacion_macrosRow" msprop:Generator_UserTableName="alimentacion_macros" msprop:Generator_RowEvArgName="alimentacion_macrosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Turno" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" msprop:Generator_UserColumnName="Turno" type="xs:string" minOccurs="0" />
@@ -428,6 +428,7 @@
               <xs:element name="fecha_final" msprop:Generator_ColumnVarNameInTable="columnfecha_final" msprop:Generator_ColumnPropNameInRow="fecha_final" msprop:Generator_ColumnPropNameInTable="fecha_finalColumn" msprop:Generator_UserColumnName="fecha_final" type="xs:dateTime" minOccurs="0" />
               <xs:element name="peso_saco_promedio" msprop:Generator_ColumnVarNameInTable="columnpeso_saco_promedio" msprop:Generator_ColumnPropNameInRow="peso_saco_promedio" msprop:Generator_ColumnPropNameInTable="peso_saco_promedioColumn" msprop:Generator_UserColumnName="peso_saco_promedio" type="xs:decimal" minOccurs="0" />
               <xs:element name="itemcode" msprop:Generator_ColumnVarNameInTable="columnitemcode" msprop:Generator_ColumnPropNameInRow="itemcode" msprop:Generator_ColumnPropNameInTable="itemcodeColumn" msprop:Generator_UserColumnName="itemcode" type="xs:string" minOccurs="0" />
+              <xs:element name="diffporcentaje" msprop:Generator_ColumnVarNameInTable="columndiffporcentaje" msprop:Generator_ColumnPropNameInRow="diffporcentaje" msprop:Generator_ColumnPropNameInTable="diffporcentajeColumn" msprop:Generator_UserColumnName="diffporcentaje" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

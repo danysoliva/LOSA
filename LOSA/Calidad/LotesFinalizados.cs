@@ -66,15 +66,8 @@ namespace LOSA.Calidad
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LotesFinalizados));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
-            this.cmdRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.dsInventarioPT1 = new LOSA.Calidad.dsInventarioPT();
-            this.dtFechaHastaDisponibles = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.dtFechaDesdeDisponibles = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_mp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcode_sap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmp = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,9 +76,16 @@ namespace LOSA.Calidad
             this.coloperacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_referencia_kardex = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.dtFechaHastaDisponibles = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaDesdeDisponibles = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsInventarioPT1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties)).BeginInit();
@@ -107,6 +107,11 @@ namespace LOSA.Calidad
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // dsInventarioPT1
+            // 
+            this.dsInventarioPT1.DataSetName = "dsInventarioPT";
+            this.dsInventarioPT1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridView1
             // 
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,6 +129,85 @@ namespace LOSA.Calidad
             this.colusuario});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colfecha, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colid_mp
+            // 
+            this.colid_mp.FieldName = "id_mp";
+            this.colid_mp.Name = "colid_mp";
+            this.colid_mp.OptionsColumn.AllowEdit = false;
+            this.colid_mp.Width = 104;
+            // 
+            // colcode_sap
+            // 
+            this.colcode_sap.Caption = "Codigo SAP";
+            this.colcode_sap.FieldName = "code_sap";
+            this.colcode_sap.Name = "colcode_sap";
+            this.colcode_sap.OptionsColumn.ReadOnly = true;
+            this.colcode_sap.Visible = true;
+            this.colcode_sap.VisibleIndex = 0;
+            this.colcode_sap.Width = 104;
+            // 
+            // colmp
+            // 
+            this.colmp.Caption = "Materia Prima";
+            this.colmp.FieldName = "mp";
+            this.colmp.Name = "colmp";
+            this.colmp.OptionsColumn.AllowEdit = false;
+            this.colmp.Visible = true;
+            this.colmp.VisibleIndex = 1;
+            this.colmp.Width = 104;
+            // 
+            // collote_mp
+            // 
+            this.collote_mp.Caption = "Lote de MP";
+            this.collote_mp.FieldName = "lote_mp";
+            this.collote_mp.Name = "collote_mp";
+            this.collote_mp.OptionsColumn.ReadOnly = true;
+            this.collote_mp.Visible = true;
+            this.collote_mp.VisibleIndex = 2;
+            this.collote_mp.Width = 104;
+            // 
+            // colfecha
+            // 
+            this.colfecha.Caption = "Fecha";
+            this.colfecha.DisplayFormat.FormatString = "g";
+            this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colfecha.FieldName = "fecha";
+            this.colfecha.Name = "colfecha";
+            this.colfecha.OptionsColumn.AllowEdit = false;
+            this.colfecha.Visible = true;
+            this.colfecha.VisibleIndex = 3;
+            this.colfecha.Width = 104;
+            // 
+            // coloperacion
+            // 
+            this.coloperacion.Caption = "Tipo de Operacion";
+            this.coloperacion.FieldName = "operacion";
+            this.coloperacion.Name = "coloperacion";
+            this.coloperacion.OptionsColumn.AllowEdit = false;
+            this.coloperacion.Visible = true;
+            this.coloperacion.VisibleIndex = 5;
+            this.coloperacion.Width = 104;
+            // 
+            // colid_referencia_kardex
+            // 
+            this.colid_referencia_kardex.FieldName = "id_referencia_kardex";
+            this.colid_referencia_kardex.Name = "colid_referencia_kardex";
+            this.colid_referencia_kardex.OptionsColumn.AllowEdit = false;
+            this.colid_referencia_kardex.Width = 124;
+            // 
+            // colusuario
+            // 
+            this.colusuario.Caption = "Usuario";
+            this.colusuario.FieldName = "usuario";
+            this.colusuario.Name = "colusuario";
+            this.colusuario.OptionsColumn.AllowEdit = false;
+            this.colusuario.Visible = true;
+            this.colusuario.VisibleIndex = 4;
+            this.colusuario.Width = 91;
             // 
             // labelControl2
             // 
@@ -168,11 +252,6 @@ namespace LOSA.Calidad
             this.cmdRefresh.TabIndex = 56;
             this.cmdRefresh.Text = "Refresh";
             this.cmdRefresh.Click += new System.EventHandler(this.cmdRefresh_Click);
-            // 
-            // dsInventarioPT1
-            // 
-            this.dsInventarioPT1.DataSetName = "dsInventarioPT";
-            this.dsInventarioPT1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dtFechaHastaDisponibles
             // 
@@ -227,87 +306,12 @@ namespace LOSA.Calidad
             this.labelControl8.TabIndex = 100;
             this.labelControl8.Text = "Fecha Desde:";
             // 
-            // colid_mp
-            // 
-            this.colid_mp.FieldName = "id_mp";
-            this.colid_mp.Name = "colid_mp";
-            this.colid_mp.OptionsColumn.AllowEdit = false;
-            this.colid_mp.Width = 104;
-            // 
-            // colcode_sap
-            // 
-            this.colcode_sap.Caption = "Codigo SAP";
-            this.colcode_sap.FieldName = "code_sap";
-            this.colcode_sap.Name = "colcode_sap";
-            this.colcode_sap.OptionsColumn.AllowEdit = false;
-            this.colcode_sap.Visible = true;
-            this.colcode_sap.VisibleIndex = 0;
-            this.colcode_sap.Width = 104;
-            // 
-            // colmp
-            // 
-            this.colmp.Caption = "Materia Prima";
-            this.colmp.FieldName = "mp";
-            this.colmp.Name = "colmp";
-            this.colmp.OptionsColumn.AllowEdit = false;
-            this.colmp.Visible = true;
-            this.colmp.VisibleIndex = 1;
-            this.colmp.Width = 104;
-            // 
-            // collote_mp
-            // 
-            this.collote_mp.Caption = "Lote de MP";
-            this.collote_mp.FieldName = "lote_mp";
-            this.collote_mp.Name = "collote_mp";
-            this.collote_mp.OptionsColumn.AllowEdit = false;
-            this.collote_mp.Visible = true;
-            this.collote_mp.VisibleIndex = 2;
-            this.collote_mp.Width = 104;
-            // 
-            // colfecha
-            // 
-            this.colfecha.Caption = "Fecha";
-            this.colfecha.DisplayFormat.FormatString = "g";
-            this.colfecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colfecha.FieldName = "fecha";
-            this.colfecha.Name = "colfecha";
-            this.colfecha.OptionsColumn.AllowEdit = false;
-            this.colfecha.Visible = true;
-            this.colfecha.VisibleIndex = 3;
-            this.colfecha.Width = 104;
-            // 
-            // coloperacion
-            // 
-            this.coloperacion.Caption = "Tipo de Operacion";
-            this.coloperacion.FieldName = "operacion";
-            this.coloperacion.Name = "coloperacion";
-            this.coloperacion.OptionsColumn.AllowEdit = false;
-            this.coloperacion.Visible = true;
-            this.coloperacion.VisibleIndex = 5;
-            this.coloperacion.Width = 104;
-            // 
-            // colid_referencia_kardex
-            // 
-            this.colid_referencia_kardex.FieldName = "id_referencia_kardex";
-            this.colid_referencia_kardex.Name = "colid_referencia_kardex";
-            this.colid_referencia_kardex.OptionsColumn.AllowEdit = false;
-            this.colid_referencia_kardex.Width = 124;
-            // 
-            // colusuario
-            // 
-            this.colusuario.Caption = "Usuario";
-            this.colusuario.FieldName = "usuario";
-            this.colusuario.Name = "colusuario";
-            this.colusuario.OptionsColumn.AllowEdit = false;
-            this.colusuario.Visible = true;
-            this.colusuario.VisibleIndex = 4;
-            this.colusuario.Width = 91;
-            // 
             // LotesFinalizados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 533);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.dtFechaHastaDisponibles);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.dtFechaDesdeDisponibles);
@@ -315,11 +319,10 @@ namespace LOSA.Calidad
             this.Controls.Add(this.cmdRefresh);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.gridControl1);
             this.Name = "LotesFinalizados";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsInventarioPT1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaHastaDisponibles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFechaDesdeDisponibles.Properties.CalendarTimeProperties)).EndInit();

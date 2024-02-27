@@ -12,6 +12,9 @@ using LOSA.Clases;
 using LOSA.Classes;
 using ACS.Classes;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
+using LOSA.MigracionACS.DataSetx;
+using LOSA.Trazabilidad;
 
 namespace LOSA.Produccion
 {
@@ -69,6 +72,43 @@ namespace LOSA.Produccion
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 gridControl1.ExportToXlsx(dialog.FileName);
+            }
+        }
+
+        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+
+            if (e.RowHandle >= 0)
+            {
+                decimal Porcentaje = Convert.ToDecimal(View.GetRowCellDisplayText(e.RowHandle, View.Columns["diffporcentaje"]));
+
+                if (Porcentaje > 2 || Porcentaje < -2)
+                {
+
+                    e.Appearance.BackColor = Color.FromArgb(255, 102, 102); //Color.Red;
+                    e.HighPriority = true;
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.FromArgb(153, 255, 153);
+                }
+
+            }
+
+
+        }
+
+        private void reposBtnRuta1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            var gridview = (GridView)gridControl1.FocusedView;
+            var row = (DSProductos.alimentacion_macrosRow)gridview.GetFocusedDataRow();
+
+            if (!string.IsNullOrEmpty(row.lote_materia_prima))
+            {
+                frmRutasTrazabilidad frm = new frmRutasTrazabilidad(row.lote_materia_prima);
+                frm.WindowState = FormWindowState.Maximized;
+                frm.ShowDialog();
             }
         }
     }

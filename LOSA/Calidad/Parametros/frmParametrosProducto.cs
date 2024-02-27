@@ -22,6 +22,9 @@ namespace LOSA.Calidad.Parametros
         int id;
         string Descripcion;
         string Codigo;
+
+     
+
         public frmParametrosProducto(int ParametroID,
                                     string ParametroDesripcion,
                                     string ParametroCodigo)
@@ -32,6 +35,7 @@ namespace LOSA.Calidad.Parametros
             InitializeComponent();
             txtproducto.Text = "(" + Codigo + ") -" + Descripcion;
             load_data();
+            load_data_produccion();
             load_grupos();
         }
 
@@ -76,10 +80,40 @@ namespace LOSA.Calidad.Parametros
                     cn.Open();
                     SqlCommand cmd = new SqlCommand(Query,cn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_pt",id );
+                    cmd.Parameters.AddWithValue("@id_pt",id);
                     dsParametros1.parametroProducto.Clear();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dsParametros1.parametroProducto);
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    CajaDialogo.Error(ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        public void load_data_produccion()
+        {
+            try
+            {
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                string Query = @"[sp_get_parametros_and_producto_produccion]";
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_pt", id);
+                    dsParametros1.parametroProductoProducto.Clear();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dsParametros1.parametroProductoProducto);
                     cn.Close();
                 }
                 catch (Exception ex)
@@ -102,10 +136,27 @@ namespace LOSA.Calidad.Parametros
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmPickParametrs frm = new frmPickParametrs(id);
+            bool ParametroCalidad = true;
+            switch (xtraTabTipoParametro.SelectedTabPageIndex)
+            {
+                case 0:// Calidad
+                    ParametroCalidad = true;
+
+                    break;
+
+                case 1://
+                    ParametroCalidad = false;
+                    
+                    break;
+                default:
+                    break;
+            }
+
+            frmPickParametrs frm = new frmPickParametrs(id, ParametroCalidad);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 load_data();
+                load_data_produccion();
             }
         }
 
@@ -207,6 +258,110 @@ namespace LOSA.Calidad.Parametros
                 cmd.Parameters.AddWithValue("@is_printed_cef", row.id_printed_cef ? 1 : 0);
                 cmd.Parameters.AddWithValue("@especificaciones ", row.especificaciones);
                 cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)gridControl1.FocusedView;
+                var row = (dsParametros.parametroProductoProductoRow)gridView.GetFocusedDataRow();
+                if (e.Column.FieldName == "min")
+                {
+                    row.min = Convert.ToDecimal(e.Value);
+                    row.AcceptChanges();
+                }
+
+                if (e.Column.FieldName == "maximo")
+                {
+                    row.maximo = Convert.ToDecimal(e.Value);
+                    row.AcceptChanges();
+                }
+                if (e.Column.FieldName == "id_printed_cef")
+                {
+                    row.id_printed_cef = Convert.ToBoolean(e.Value);
+                    row.AcceptChanges();
+                }
+                if (e.Column.FieldName == "ficha_tecnica")
+                {
+                    row.especificaciones = Convert.ToString(e.Value);
+                    row.AcceptChanges();
+                }
+                string query = @"sp_update_producto_parametro";
+                SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;      
+                cmd.Parameters.AddWithValue("@id_parametros_producto", row.id);
+                cmd.Parameters.AddWithValue("@min", row.min);
+                cmd.Parameters.AddWithValue("@max", row.maximo);
+                cmd.Parameters.AddWithValue("@id_grupo", row.id_grupo);
+                cmd.Parameters.AddWithValue("@is_printed_cef", row.id_printed_cef ? 1 : 0);
+                if (string.IsNullOrEmpty(row.especificaciones))
+                    cmd.Parameters.AddWithValue("@especificaciones ", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@especificaciones ", row.especificaciones);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)gridControl1.FocusedView;
+                var row = (dsParametros.parametroProductoProductoRow)gridView.GetFocusedDataRow();
+                if (row.tipo_rep != 1 && (gridView.FocusedColumn.FieldName == "min"
+                    || grdv_data.FocusedColumn.FieldName == "maximo"))
+                {
+                    e.Cancel = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Desea borrar este parametro?", "Desea borrar este parametro?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    try
+                    {
+                        var gridView = (GridView)grd_data.FocusedView;
+                        var row = (dsParametros.parametroProductoRow)gridView.GetFocusedDataRow();
+                        string query = @"sp_delete_parametros_productos";
+                        SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+                        cn.Open();
+                        SqlCommand cmd = new SqlCommand(query, cn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", row.id);
+                        cmd.ExecuteNonQuery();
+                        grdv_data.DeleteRow(grdv_data.FocusedRowHandle);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        CajaDialogo.Error(ex.Message);
+                    }
+
+
+                }
             }
             catch (Exception ex)
             {

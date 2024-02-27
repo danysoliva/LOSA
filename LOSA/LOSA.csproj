@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA64\</PublishUrl>
+    <PublishUrl>\\aqfsvr003\Deploy%24\LOSA\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,9 +24,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA64\</InstallUrl>
+    <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>624</ApplicationRevision>
+    <ApplicationRevision>617</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -94,10 +94,11 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>DanysKey_x64_2024.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>58D92D2056CFE14B56A707F83EF92F159340168A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -183,6 +184,7 @@
     <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.Images.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -1083,12 +1085,19 @@
     <Compile Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.Designer.cs">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\InspeccionIngreso\frmIngresoTipoMarino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\InspeccionIngreso\frmIngresoTipoMarino.Designer.cs">
+      <DependentUpon>frmIngresoTipoMarino.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\InspeccionIngreso\frmInspeccionCalidadPorIngresoLoteMP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calidad\InspeccionIngreso\frmInspeccionCalidadPorIngresoLoteMP.Designer.cs">
       <DependentUpon>frmInspeccionCalidadPorIngresoLoteMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\InspeccionIngreso\IngredienteMarino.cs" />
     <Compile Include="Calidad\LoteConfConsumo\dsConfigLoteConsumo.cs">
       <DependentUpon>dsConfigLoteConsumo.xsd</DependentUpon>
     </Compile>
@@ -1174,6 +1183,12 @@
     </Compile>
     <Compile Include="Calidad\Parametros\FrmRegistroMuestreo.Designer.cs">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Parametros\FrmSeleccionarRegistroProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calidad\Parametros\FrmSeleccionarRegistroProduccion.Designer.cs">
+      <DependentUpon>FrmSeleccionarRegistroProduccion.cs</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Revision_Sanidad\DialogBoxRevision.cs">
       <SubType>Form</SubType>
@@ -3919,6 +3934,12 @@
     <Compile Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.designer.cs">
       <DependentUpon>frmVerSeguimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\PT_Producto_Borrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Tickets\EndUser\PT_Producto_Borrador.Designer.cs">
+      <DependentUpon>PT_Producto_Borrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4566,7 +4587,6 @@
     <None Include="Clases\dsColleccionesClases.xss">
       <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
     </None>
-    <None Include="DanysKey_x64_2024.pfx" />
     <None Include="Despachos\dsTransaccionesDespacho.xsc">
       <DependentUpon>dsTransaccionesDespacho.xsd</DependentUpon>
     </None>
@@ -4601,7 +4621,6 @@
     <None Include="Finanzas\dsExoneracion.xss">
       <DependentUpon>dsExoneracion.xsd</DependentUpon>
     </None>
-    <None Include="Key_2024_publishing_Danys.pfx" />
     <None Include="Liquidos\dsLiquidos_.xsc">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
@@ -4624,12 +4643,6 @@
     <None Include="Logistica\dsCierreMes.xss">
       <DependentUpon>dsCierreMes.xsd</DependentUpon>
     </None>
-    <None Include="Losa2023.pfx" />
-    <None Include="LOSA2_TEMP.pfx" />
-    <None Include="LOSA_1.pfx" />
-    <None Include="LOSA_1_TemporaryKey.pfx" />
-    <None Include="Losa_TEMP.pfx" />
-    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="MigracionACS\ACSDataSet2.xsc">
       <DependentUpon>ACSDataSet2.xsd</DependentUpon>
     </None>
@@ -6553,6 +6566,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMantoTrazabilidad.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmAddMP_PlantaFabricante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmAddMP_PlantaFabricante.Designer.cs">
+      <DependentUpon>frmAddMP_PlantaFabricante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmAdjuntar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -6983,6 +7002,9 @@
     <EmbeddedResource Include="Calidad\GestionLotesMP\frmSelectCausaRechazo.resx">
       <DependentUpon>frmSelectCausaRechazo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\InspeccionIngreso\frmIngresoTipoMarino.resx">
+      <DependentUpon>frmIngresoTipoMarino.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calidad\InspeccionIngreso\frmInspeccionCalidadPorIngresoLoteMP.resx">
       <DependentUpon>frmInspeccionCalidadPorIngresoLoteMP.cs</DependentUpon>
     </EmbeddedResource>
@@ -7018,6 +7040,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Parametros\FrmRegistroMuestreo.resx">
       <DependentUpon>FrmRegistroMuestreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Parametros\FrmSeleccionarRegistroProduccion.resx">
+      <DependentUpon>FrmSeleccionarRegistroProduccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\Revision_Sanidad\DialogBoxRevision.resx">
       <DependentUpon>DialogBoxRevision.cs</DependentUpon>
@@ -8164,6 +8189,9 @@
     <EmbeddedResource Include="MigracionACS\Tickets\EndUser\frmVerSeguimiento.resx">
       <DependentUpon>frmVerSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Tickets\EndUser\PT_Producto_Borrador.resx">
+      <DependentUpon>PT_Producto_Borrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Tickets\EndUser\xfrmChangeStatus.resx">
       <DependentUpon>xfrmChangeStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -8935,6 +8963,9 @@
     <EmbeddedResource Include="Trazabilidad\Despachos\frmDetalleDespacho.resx">
       <DependentUpon>frmDetalleDespacho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmAddMP_PlantaFabricante.resx">
+      <DependentUpon>frmAddMP_PlantaFabricante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmAdjuntar.resx">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
     </EmbeddedResource>
@@ -9507,6 +9538,7 @@
     <None Include="Resources\plan_icon48X48.png" />
     <None Include="Resources\next_x16.png" />
     <None Include="Resources\Oxygen-Icons.org.png" />
+    <None Include="Resources\pallet.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
@@ -9576,7 +9608,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

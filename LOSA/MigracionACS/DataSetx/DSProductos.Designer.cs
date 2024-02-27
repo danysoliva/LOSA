@@ -10533,6 +10533,8 @@ namespace LOSA.MigracionACS.DataSetx {
             
             private global::System.Data.DataColumn columnitemcode;
             
+            private global::System.Data.DataColumn columndiffporcentaje;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public alimentacion_macrosDataTable() {
@@ -10696,6 +10698,14 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn diffporcentajeColumn {
+                get {
+                    return this.columndiffporcentaje;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10747,7 +10757,8 @@ namespace LOSA.MigracionACS.DataSetx {
                         string presentacion, 
                         System.DateTime fecha_final, 
                         decimal peso_saco_promedio, 
-                        string itemcode) {
+                        string itemcode, 
+                        decimal diffporcentaje) {
                 alimentacion_macrosRow rowalimentacion_macrosRow = ((alimentacion_macrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Turno,
@@ -10765,7 +10776,8 @@ namespace LOSA.MigracionACS.DataSetx {
                         presentacion,
                         fecha_final,
                         peso_saco_promedio,
-                        itemcode};
+                        itemcode,
+                        diffporcentaje};
                 rowalimentacion_macrosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowalimentacion_macrosRow);
                 return rowalimentacion_macrosRow;
@@ -10804,6 +10816,7 @@ namespace LOSA.MigracionACS.DataSetx {
                 this.columnfecha_final = base.Columns["fecha_final"];
                 this.columnpeso_saco_promedio = base.Columns["peso_saco_promedio"];
                 this.columnitemcode = base.Columns["itemcode"];
+                this.columndiffporcentaje = base.Columns["diffporcentaje"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10841,6 +10854,8 @@ namespace LOSA.MigracionACS.DataSetx {
                 base.Columns.Add(this.columnpeso_saco_promedio);
                 this.columnitemcode = new global::System.Data.DataColumn("itemcode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitemcode);
+                this.columndiffporcentaje = new global::System.Data.DataColumn("diffporcentaje", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiffporcentaje);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18702,6 +18717,23 @@ namespace LOSA.MigracionACS.DataSetx {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal diffporcentaje {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablealimentacion_macros.diffporcentajeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'diffporcentaje\' de la tabla \'alimentacion_macros\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablealimentacion_macros.diffporcentajeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTurnoNull() {
                 return this.IsNull(this.tablealimentacion_macros.TurnoColumn);
             }
@@ -18890,6 +18922,18 @@ namespace LOSA.MigracionACS.DataSetx {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetitemcodeNull() {
                 this[this.tablealimentacion_macros.itemcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdiffporcentajeNull() {
+                return this.IsNull(this.tablealimentacion_macros.diffporcentajeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdiffporcentajeNull() {
+                this[this.tablealimentacion_macros.diffporcentajeColumn] = global::System.Convert.DBNull;
             }
         }
         

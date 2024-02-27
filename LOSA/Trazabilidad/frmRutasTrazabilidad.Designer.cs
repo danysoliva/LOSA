@@ -1674,7 +1674,7 @@ namespace LOSA.Trazabilidad
             this.reposLinkButtonMP,
             this.reposCantidadDosificadaLoteLink,
             this.reposLinkLoteMP});
-            this.GridRuta4_detalle_trz_lote_pt.Size = new System.Drawing.Size(1088, 423);
+            this.GridRuta4_detalle_trz_lote_pt.Size = new System.Drawing.Size(1088, 388);
             this.GridRuta4_detalle_trz_lote_pt.TabIndex = 40;
             this.GridRuta4_detalle_trz_lote_pt.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView20,
@@ -2036,7 +2036,7 @@ namespace LOSA.Trazabilidad
             this.gridControlClientesRecibieronPT.Location = new System.Drawing.Point(3, 3);
             this.gridControlClientesRecibieronPT.MainView = this.gridView25;
             this.gridControlClientesRecibieronPT.Name = "gridControlClientesRecibieronPT";
-            this.gridControlClientesRecibieronPT.Size = new System.Drawing.Size(1082, 404);
+            this.gridControlClientesRecibieronPT.Size = new System.Drawing.Size(1082, 390);
             this.gridControlClientesRecibieronPT.TabIndex = 0;
             this.gridControlClientesRecibieronPT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView25,
@@ -2201,7 +2201,7 @@ namespace LOSA.Trazabilidad
             this.npRuta4_V2,
             this.npDetalleDespacho_Ruta4});
             this.navigationFrame1.SelectedPage = this.npMain;
-            this.navigationFrame1.Size = new System.Drawing.Size(1096, 736);
+            this.navigationFrame1.Size = new System.Drawing.Size(1096, 722);
             this.navigationFrame1.TabIndex = 0;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
@@ -2217,7 +2217,7 @@ namespace LOSA.Trazabilidad
             this.npRuta2.Controls.Add(this.simpleButton5);
             this.npRuta2.Controls.Add(this.labelControl22);
             this.npRuta2.Name = "npRuta2";
-            this.npRuta2.Size = new System.Drawing.Size(939, 598);
+            this.npRuta2.Size = new System.Drawing.Size(1096, 722);
             // 
             // xtraTabControl4
             // 
@@ -2227,7 +2227,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl4.Location = new System.Drawing.Point(3, 109);
             this.xtraTabControl4.Name = "xtraTabControl4";
             this.xtraTabControl4.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl4.Size = new System.Drawing.Size(1090, 624);
+            this.xtraTabControl4.Size = new System.Drawing.Size(1090, 610);
             this.xtraTabControl4.TabIndex = 108;
             this.xtraTabControl4.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
@@ -2239,7 +2239,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage3.Controls.Add(this.gridTilapia_lotes_ruta2);
             this.xtraTabPage3.Controls.Add(this.gridPT_CamaronRuta2);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1088, 599);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1088, 585);
             this.xtraTabPage3.Text = "Detalle por Especie y Cliente";
             // 
             // gcDespachoRuta2
@@ -2255,7 +2255,7 @@ namespace LOSA.Trazabilidad
             this.gcDespachoRuta2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnLinkBoletaView_,
             this.cmdDespachoIdRuta});
-            this.gcDespachoRuta2.Size = new System.Drawing.Size(712, 593);
+            this.gcDespachoRuta2.Size = new System.Drawing.Size(712, 579);
             this.gcDespachoRuta2.TabIndex = 56;
             this.gcDespachoRuta2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDespacho});
@@ -2464,7 +2464,7 @@ namespace LOSA.Trazabilidad
             this.gridTilapia_lotes_ruta2.Name = "gridTilapia_lotes_ruta2";
             this.gridTilapia_lotes_ruta2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdTrz_Lote_PT_from_ruta3Tilapia});
-            this.gridTilapia_lotes_ruta2.Size = new System.Drawing.Size(364, 293);
+            this.gridTilapia_lotes_ruta2.Size = new System.Drawing.Size(364, 279);
             this.gridTilapia_lotes_ruta2.TabIndex = 107;
             this.gridTilapia_lotes_ruta2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -2608,7 +2608,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage9.Controls.Add(this.gridControl13);
             this.xtraTabPage9.Controls.Add(this.gridControlClientesRecibieronPT);
             this.xtraTabPage9.Name = "xtraTabPage9";
-            this.xtraTabPage9.Size = new System.Drawing.Size(1088, 599);
+            this.xtraTabPage9.Size = new System.Drawing.Size(1088, 585);
             this.xtraTabPage9.Text = "Clientes que recibieron el Producto";
             // 
             // label1
@@ -2616,7 +2616,7 @@ namespace LOSA.Trazabilidad
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(520, 413);
+            this.label1.Location = new System.Drawing.Point(520, 399);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 17);
             this.label1.TabIndex = 2;
@@ -2627,7 +2627,7 @@ namespace LOSA.Trazabilidad
             this.gridControl13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl13.DataMember = "kg_usados_por_pt";
             this.gridControl13.DataSource = this.dsTrazabilidadReports;
-            this.gridControl13.Location = new System.Drawing.Point(683, 413);
+            this.gridControl13.Location = new System.Drawing.Point(683, 399);
             this.gridControl13.MainView = this.gridView27;
             this.gridControl13.Name = "gridControl13";
             this.gridControl13.Size = new System.Drawing.Size(399, 186);
@@ -2779,7 +2779,7 @@ namespace LOSA.Trazabilidad
             this.npMain.Controls.Add(this.labelControl80);
             this.npMain.Controls.Add(this.labelControl79);
             this.npMain.Name = "npMain";
-            this.npMain.Size = new System.Drawing.Size(939, 598);
+            this.npMain.Size = new System.Drawing.Size(1096, 722);
             this.npMain.Paint += new System.Windows.Forms.PaintEventHandler(this.npMain_Paint);
             // 
             // btnSalir
@@ -2840,7 +2840,7 @@ namespace LOSA.Trazabilidad
             this.navigationPage3.Controls.Add(this.slueCliente);
             this.navigationPage3.Controls.Add(this.labelControl6);
             this.navigationPage3.Name = "navigationPage3";
-            this.navigationPage3.Size = new System.Drawing.Size(939, 598);
+            this.navigationPage3.Size = new System.Drawing.Size(1096, 722);
             // 
             // cmdExportExcelClientes_lotes
             // 
@@ -3460,7 +3460,7 @@ namespace LOSA.Trazabilidad
             this.grDetalle.Name = "grDetalle";
             this.grDetalle.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnVer});
-            this.grDetalle.Size = new System.Drawing.Size(1090, 568);
+            this.grDetalle.Size = new System.Drawing.Size(1090, 543);
             this.grDetalle.TabIndex = 84;
             this.grDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDespachado});
@@ -3774,7 +3774,7 @@ namespace LOSA.Trazabilidad
             this.npInfoLote.Controls.Add(this.labelControl26);
             this.npInfoLote.Controls.Add(this.simpleButton7);
             this.npInfoLote.Name = "npInfoLote";
-            this.npInfoLote.Size = new System.Drawing.Size(939, 598);
+            this.npInfoLote.Size = new System.Drawing.Size(1096, 722);
             // 
             // tabControl1
             // 
@@ -3791,7 +3791,7 @@ namespace LOSA.Trazabilidad
             this.tabControl1.Location = new System.Drawing.Point(3, 309);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1090, 424);
+            this.tabControl1.Size = new System.Drawing.Size(1090, 410);
             this.tabControl1.TabIndex = 92;
             // 
             // tabPage1
@@ -3800,8 +3800,8 @@ namespace LOSA.Trazabilidad
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(1082, 390);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1082, 376);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NIR";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -3820,7 +3820,7 @@ namespace LOSA.Trazabilidad
             this.PnNir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnNir.Location = new System.Drawing.Point(3, 3);
             this.PnNir.Name = "PnNir";
-            this.PnNir.Size = new System.Drawing.Size(1076, 384);
+            this.PnNir.Size = new System.Drawing.Size(1076, 370);
             this.PnNir.TabIndex = 1;
             // 
             // simpleButton9
@@ -3841,7 +3841,7 @@ namespace LOSA.Trazabilidad
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl9.Location = new System.Drawing.Point(0, 10);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(11, 364);
+            this.panelControl9.Size = new System.Drawing.Size(11, 350);
             this.panelControl9.TabIndex = 20;
             // 
             // panelControl2
@@ -3852,7 +3852,7 @@ namespace LOSA.Trazabilidad
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl2.Location = new System.Drawing.Point(1065, 10);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(11, 364);
+            this.panelControl2.Size = new System.Drawing.Size(11, 350);
             this.panelControl2.TabIndex = 19;
             // 
             // panelControl3
@@ -3861,7 +3861,7 @@ namespace LOSA.Trazabilidad
             this.panelControl3.Appearance.Options.UseBackColor = true;
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl3.Location = new System.Drawing.Point(0, 374);
+            this.panelControl3.Location = new System.Drawing.Point(0, 360);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1076, 10);
             this.panelControl3.TabIndex = 18;
@@ -3887,7 +3887,7 @@ namespace LOSA.Trazabilidad
             this.grd_nir.Location = new System.Drawing.Point(14, 60);
             this.grd_nir.MainView = this.grdv_nir;
             this.grd_nir.Name = "grd_nir";
-            this.grd_nir.Size = new System.Drawing.Size(1045, 308);
+            this.grd_nir.Size = new System.Drawing.Size(1045, 294);
             this.grd_nir.TabIndex = 1;
             this.grd_nir.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_nir});
@@ -4008,8 +4008,8 @@ namespace LOSA.Trazabilidad
             this.tabPage3.Controls.Add(this.panelControl4);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(1082, 390);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1082, 376);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Datos y Adjuntos";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -4027,7 +4027,7 @@ namespace LOSA.Trazabilidad
             this.btnAdjuntarDocumento,
             this.btnAbrirAdjunto,
             this.btnDesligar});
-            this.grd_adjuntos.Size = new System.Drawing.Size(402, 387);
+            this.grd_adjuntos.Size = new System.Drawing.Size(402, 373);
             this.grd_adjuntos.TabIndex = 38;
             this.grd_adjuntos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_adjuntos});
@@ -4316,7 +4316,7 @@ namespace LOSA.Trazabilidad
             this.panelControl4.Controls.Add(this.spTipoporcentaje);
             this.panelControl4.Location = new System.Drawing.Point(6, 179);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(665, 208);
+            this.panelControl4.Size = new System.Drawing.Size(665, 194);
             this.panelControl4.TabIndex = 49;
             // 
             // spsustentable
@@ -4752,8 +4752,8 @@ namespace LOSA.Trazabilidad
             this.tabPage4.Controls.Add(this.panelControl6);
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage4.Size = new System.Drawing.Size(1082, 390);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1082, 376);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Logistica";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -4771,7 +4771,7 @@ namespace LOSA.Trazabilidad
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(3, 3);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(1076, 384);
+            this.panelControl6.Size = new System.Drawing.Size(1076, 370);
             this.panelControl6.TabIndex = 51;
             // 
             // panelControl25
@@ -4789,7 +4789,7 @@ namespace LOSA.Trazabilidad
             this.panelControl25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl25.Location = new System.Drawing.Point(11, 11);
             this.panelControl25.Name = "panelControl25";
-            this.panelControl25.Size = new System.Drawing.Size(1054, 363);
+            this.panelControl25.Size = new System.Drawing.Size(1054, 349);
             this.panelControl25.TabIndex = 64;
             // 
             // labelControl52
@@ -4863,7 +4863,7 @@ namespace LOSA.Trazabilidad
             this.grd_logistica.Location = new System.Drawing.Point(3, 6);
             this.grd_logistica.MainView = this.grdv_logistica;
             this.grd_logistica.Name = "grd_logistica";
-            this.grd_logistica.Size = new System.Drawing.Size(633, 352);
+            this.grd_logistica.Size = new System.Drawing.Size(633, 338);
             this.grd_logistica.TabIndex = 39;
             this.grd_logistica.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_logistica});
@@ -4974,7 +4974,7 @@ namespace LOSA.Trazabilidad
             this.panelControl24.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl24.Location = new System.Drawing.Point(1065, 11);
             this.panelControl24.Name = "panelControl24";
-            this.panelControl24.Size = new System.Drawing.Size(11, 363);
+            this.panelControl24.Size = new System.Drawing.Size(11, 349);
             this.panelControl24.TabIndex = 61;
             // 
             // panelControl23
@@ -4983,7 +4983,7 @@ namespace LOSA.Trazabilidad
             this.panelControl23.Appearance.Options.UseBackColor = true;
             this.panelControl23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl23.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl23.Location = new System.Drawing.Point(11, 374);
+            this.panelControl23.Location = new System.Drawing.Point(11, 360);
             this.panelControl23.Name = "panelControl23";
             this.panelControl23.Size = new System.Drawing.Size(1065, 10);
             this.panelControl23.TabIndex = 60;
@@ -4996,7 +4996,7 @@ namespace LOSA.Trazabilidad
             this.panelControl22.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl22.Location = new System.Drawing.Point(0, 11);
             this.panelControl22.Name = "panelControl22";
-            this.panelControl22.Size = new System.Drawing.Size(11, 373);
+            this.panelControl22.Size = new System.Drawing.Size(11, 359);
             this.panelControl22.TabIndex = 59;
             // 
             // panelControl21
@@ -5016,8 +5016,8 @@ namespace LOSA.Trazabilidad
             this.tabPage2.Controls.Add(this.panelControl5);
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(1082, 390);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1082, 376);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Estado de Materia prima y transporte";
             // 
@@ -5068,7 +5068,7 @@ namespace LOSA.Trazabilidad
             this.panelControl5.Controls.Add(this.txtusercalidad);
             this.panelControl5.Location = new System.Drawing.Point(3, 0);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1742, 805);
+            this.panelControl5.Size = new System.Drawing.Size(1742, 791);
             this.panelControl5.TabIndex = 84;
             // 
             // cmdSelectUltimasCargas
@@ -5416,7 +5416,7 @@ namespace LOSA.Trazabilidad
             // radioGroup8
             // 
             this.radioGroup8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioGroup8.Location = new System.Drawing.Point(937, 822);
+            this.radioGroup8.Location = new System.Drawing.Point(937, 808);
             this.radioGroup8.Name = "radioGroup8";
             this.radioGroup8.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "ACEPTADO"),
@@ -5514,7 +5514,7 @@ namespace LOSA.Trazabilidad
             this.tabPageLotesPT.Controls.Add(this.gridControl7);
             this.tabPageLotesPT.Location = new System.Drawing.Point(4, 30);
             this.tabPageLotesPT.Name = "tabPageLotesPT";
-            this.tabPageLotesPT.Size = new System.Drawing.Size(1082, 390);
+            this.tabPageLotesPT.Size = new System.Drawing.Size(1082, 376);
             this.tabPageLotesPT.TabIndex = 4;
             this.tabPageLotesPT.Text = "Lotes PT";
             this.tabPageLotesPT.UseVisualStyleBackColor = true;
@@ -5532,7 +5532,7 @@ namespace LOSA.Trazabilidad
             this.gridControl6.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit4,
             this.repositoryItemButtonEdit3});
-            this.gridControl6.Size = new System.Drawing.Size(713, 382);
+            this.gridControl6.Size = new System.Drawing.Size(713, 366);
             this.gridControl6.TabIndex = 46;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView12});
@@ -5732,7 +5732,7 @@ namespace LOSA.Trazabilidad
             this.gridControl7.Location = new System.Drawing.Point(0, 3);
             this.gridControl7.MainView = this.gridView13;
             this.gridControl7.Name = "gridControl7";
-            this.gridControl7.Size = new System.Drawing.Size(361, 382);
+            this.gridControl7.Size = new System.Drawing.Size(361, 368);
             this.gridControl7.TabIndex = 1;
             this.gridControl7.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView13});
@@ -5788,8 +5788,8 @@ namespace LOSA.Trazabilidad
             this.tb_inventario.Controls.Add(this.gridControl8);
             this.tb_inventario.Location = new System.Drawing.Point(4, 30);
             this.tb_inventario.Name = "tb_inventario";
-            this.tb_inventario.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tb_inventario.Size = new System.Drawing.Size(1082, 390);
+            this.tb_inventario.Padding = new System.Windows.Forms.Padding(3);
+            this.tb_inventario.Size = new System.Drawing.Size(1082, 376);
             this.tb_inventario.TabIndex = 5;
             this.tb_inventario.Text = "Inventario de lote";
             this.tb_inventario.UseVisualStyleBackColor = true;
@@ -5802,7 +5802,7 @@ namespace LOSA.Trazabilidad
             this.gridControl8.Location = new System.Drawing.Point(3, 3);
             this.gridControl8.MainView = this.gridView14;
             this.gridControl8.Name = "gridControl8";
-            this.gridControl8.Size = new System.Drawing.Size(1076, 384);
+            this.gridControl8.Size = new System.Drawing.Size(1076, 370);
             this.gridControl8.TabIndex = 1;
             this.gridControl8.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView14});
@@ -6493,7 +6493,7 @@ namespace LOSA.Trazabilidad
             this.npReporteTrazabilidad.Controls.Add(this.labelControl18);
             this.npReporteTrazabilidad.Controls.Add(this.xtraTabControl1);
             this.npReporteTrazabilidad.Name = "npReporteTrazabilidad";
-            this.npReporteTrazabilidad.Size = new System.Drawing.Size(939, 598);
+            this.npReporteTrazabilidad.Size = new System.Drawing.Size(1096, 722);
             // 
             // btnReprocesoDetalleRuta4
             // 
@@ -7128,7 +7128,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabControl1.Location = new System.Drawing.Point(3, 246);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1090, 487);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1090, 462);
             this.xtraTabControl1.TabIndex = 108;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -7143,7 +7143,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage1.Controls.Add(this.btnExport);
             this.xtraTabPage1.Controls.Add(this.GridRuta4_detalle_trz_lote_pt);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1088, 458);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1088, 433);
             this.xtraTabPage1.Text = "Detalle MP";
             // 
             // btnExport
@@ -7165,7 +7165,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage2.Appearance.Header.Options.UseFont = true;
             this.xtraTabPage2.Controls.Add(this.gcClientesRecibieronLotePT);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1088, 458);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1088, 433);
             this.xtraTabPage2.Text = "Clientes que Recibieron el Lote PT";
             // 
             // gcClientesRecibieronLotePT
@@ -7180,7 +7180,7 @@ namespace LOSA.Trazabilidad
             this.btnLinkBoletaView,
             this.cmdDespachoId,
             this.btnTrazabilidadClientes});
-            this.gcClientesRecibieronLotePT.Size = new System.Drawing.Size(1088, 458);
+            this.gcClientesRecibieronLotePT.Size = new System.Drawing.Size(1088, 433);
             this.gcClientesRecibieronLotePT.TabIndex = 45;
             this.gcClientesRecibieronLotePT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvClientesRecibieronLote});
@@ -7426,7 +7426,7 @@ namespace LOSA.Trazabilidad
             this.PageInventario.Appearance.Header.Options.UseFont = true;
             this.PageInventario.Controls.Add(this.panelControl1);
             this.PageInventario.Name = "PageInventario";
-            this.PageInventario.Size = new System.Drawing.Size(1088, 458);
+            this.PageInventario.Size = new System.Drawing.Size(1088, 433);
             this.PageInventario.Text = "Inventario PT";
             // 
             // panelControl1
@@ -7436,7 +7436,7 @@ namespace LOSA.Trazabilidad
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1088, 458);
+            this.panelControl1.Size = new System.Drawing.Size(1088, 433);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl16
@@ -7468,7 +7468,7 @@ namespace LOSA.Trazabilidad
             // 
             this.splitContainerControl2.Panel2.Controls.Add(this.grd_resumen);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1081, 424);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1081, 399);
             this.splitContainerControl2.SplitterPosition = 244;
             this.splitContainerControl2.TabIndex = 37;
             // 
@@ -8156,7 +8156,7 @@ namespace LOSA.Trazabilidad
             this.grd_resumen.Location = new System.Drawing.Point(0, 0);
             this.grd_resumen.MainView = this.grdv_resumen;
             this.grd_resumen.Name = "grd_resumen";
-            this.grd_resumen.Size = new System.Drawing.Size(1081, 170);
+            this.grd_resumen.Size = new System.Drawing.Size(1081, 145);
             this.grd_resumen.TabIndex = 38;
             this.grd_resumen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_resumen});
@@ -8239,7 +8239,7 @@ namespace LOSA.Trazabilidad
             this.xtraTabPage8.Controls.Add(this.gridControlMuestreoPorLote);
             this.xtraTabPage8.Controls.Add(this.gridControlNoConformidades);
             this.xtraTabPage8.Name = "xtraTabPage8";
-            this.xtraTabPage8.Size = new System.Drawing.Size(1088, 458);
+            this.xtraTabPage8.Size = new System.Drawing.Size(1088, 433);
             this.xtraTabPage8.Text = "Monitoreos del Proceso";
             // 
             // labelControl82
@@ -8358,7 +8358,7 @@ namespace LOSA.Trazabilidad
             this.gridControlMuestreoPorLote.Location = new System.Drawing.Point(1, 210);
             this.gridControlMuestreoPorLote.MainView = this.gridView3;
             this.gridControlMuestreoPorLote.Name = "gridControlMuestreoPorLote";
-            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(1087, 245);
+            this.gridControlMuestreoPorLote.Size = new System.Drawing.Size(1087, 220);
             this.gridControlMuestreoPorLote.TabIndex = 1;
             this.gridControlMuestreoPorLote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -8684,7 +8684,7 @@ namespace LOSA.Trazabilidad
             this.npRuta3MP.Controls.Add(this.simpleButton2);
             this.npRuta3MP.Controls.Add(this.gcLotes);
             this.npRuta3MP.Name = "npRuta3MP";
-            this.npRuta3MP.Size = new System.Drawing.Size(939, 598);
+            this.npRuta3MP.Size = new System.Drawing.Size(1096, 722);
             // 
             // labelControl21
             // 
@@ -8859,7 +8859,7 @@ namespace LOSA.Trazabilidad
             this.cmdViewOC,
             this.cmdScaleDetails,
             this.linkTRZ_HaciaAdelante});
-            this.gcLotes.Size = new System.Drawing.Size(1090, 449);
+            this.gcLotes.Size = new System.Drawing.Size(1090, 435);
             this.gcLotes.TabIndex = 93;
             this.gcLotes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLotes});
@@ -9091,7 +9091,7 @@ namespace LOSA.Trazabilidad
             this.npRuta3DetalleDespacho.Controls.Add(this.simpleButton4);
             this.npRuta3DetalleDespacho.Controls.Add(this.gridControl1);
             this.npRuta3DetalleDespacho.Name = "npRuta3DetalleDespacho";
-            this.npRuta3DetalleDespacho.Size = new System.Drawing.Size(939, 598);
+            this.npRuta3DetalleDespacho.Size = new System.Drawing.Size(1096, 722);
             // 
             // cmdImprimirDespacho
             // 
@@ -9254,7 +9254,7 @@ namespace LOSA.Trazabilidad
             this.gridControl1.Location = new System.Drawing.Point(3, 203);
             this.gridControl1.MainView = this.gridView5;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1090, 530);
+            this.gridControl1.Size = new System.Drawing.Size(1090, 516);
             this.gridControl1.TabIndex = 49;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -9390,7 +9390,7 @@ namespace LOSA.Trazabilidad
             this.npBoletaView.Controls.Add(this.btnBackRuta1);
             this.npBoletaView.Controls.Add(this.vGridControl2);
             this.npBoletaView.Name = "npBoletaView";
-            this.npBoletaView.Size = new System.Drawing.Size(939, 598);
+            this.npBoletaView.Size = new System.Drawing.Size(1096, 722);
             // 
             // btnBackRuta1
             // 
@@ -9419,7 +9419,7 @@ namespace LOSA.Trazabilidad
             this.vGridControl2.OptionsView.AutoScaleBands = true;
             this.vGridControl2.RecordWidth = 200;
             this.vGridControl2.RowHeaderWidth = 200;
-            this.vGridControl2.Size = new System.Drawing.Size(2446, 1468);
+            this.vGridControl2.Size = new System.Drawing.Size(2446, 1454);
             this.vGridControl2.TabIndex = 1;
             // 
             // npRuta1
@@ -9444,7 +9444,7 @@ namespace LOSA.Trazabilidad
             this.npRuta1.Controls.Add(this.btnHome_Ruta1);
             this.npRuta1.Controls.Add(this.labelControl85);
             this.npRuta1.Name = "npRuta1";
-            this.npRuta1.Size = new System.Drawing.Size(939, 598);
+            this.npRuta1.Size = new System.Drawing.Size(1096, 722);
             // 
             // btnVerRuta2Clientes
             // 
@@ -9534,7 +9534,7 @@ namespace LOSA.Trazabilidad
             this.labelControl25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl25.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl25.Appearance.Options.UseFont = true;
-            this.labelControl25.Location = new System.Drawing.Point(177, 703);
+            this.labelControl25.Location = new System.Drawing.Point(177, 689);
             this.labelControl25.Name = "labelControl25";
             this.labelControl25.Size = new System.Drawing.Size(37, 21);
             this.labelControl25.TabIndex = 110;
@@ -9818,7 +9818,7 @@ namespace LOSA.Trazabilidad
             this.labelControl93.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl93.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.labelControl93.Appearance.Options.UseFont = true;
-            this.labelControl93.Location = new System.Drawing.Point(136, 1516);
+            this.labelControl93.Location = new System.Drawing.Point(136, 1502);
             this.labelControl93.Name = "labelControl93";
             this.labelControl93.Size = new System.Drawing.Size(91, 15);
             this.labelControl93.TabIndex = 107;
@@ -9828,7 +9828,7 @@ namespace LOSA.Trazabilidad
             // 
             this.txtTotalConsumidoRuta1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTotalConsumidoRuta1.EditValue = "0.00";
-            this.txtTotalConsumidoRuta1.Location = new System.Drawing.Point(231, 701);
+            this.txtTotalConsumidoRuta1.Location = new System.Drawing.Point(231, 687);
             this.txtTotalConsumidoRuta1.Name = "txtTotalConsumidoRuta1";
             this.txtTotalConsumidoRuta1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalConsumidoRuta1.Properties.Appearance.Options.UseFont = true;
@@ -9852,7 +9852,7 @@ namespace LOSA.Trazabilidad
             this.gridControl12.Name = "gridControl12";
             this.gridControl12.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdLink_PT_Ruta4_from_ruta1_Tilapia});
-            this.gridControl12.Size = new System.Drawing.Size(364, 279);
+            this.gridControl12.Size = new System.Drawing.Size(364, 265);
             this.gridControl12.TabIndex = 105;
             this.gridControl12.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView23});
@@ -9957,7 +9957,7 @@ namespace LOSA.Trazabilidad
             this.gridControl10.Name = "gridControl10";
             this.gridControl10.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdVerIngresoLote});
-            this.gridControl10.Size = new System.Drawing.Size(723, 319);
+            this.gridControl10.Size = new System.Drawing.Size(723, 305);
             this.gridControl10.TabIndex = 71;
             this.gridControl10.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView18});
@@ -10285,7 +10285,7 @@ namespace LOSA.Trazabilidad
             this.npRuta4_V2.Controls.Add(this.labelControl103);
             this.npRuta4_V2.Controls.Add(this.simpleButton15);
             this.npRuta4_V2.Name = "npRuta4_V2";
-            this.npRuta4_V2.Size = new System.Drawing.Size(939, 598);
+            this.npRuta4_V2.Size = new System.Drawing.Size(1096, 722);
             // 
             // labelControl78
             // 
@@ -10356,7 +10356,7 @@ namespace LOSA.Trazabilidad
             this.tabControl2.Location = new System.Drawing.Point(3, 317);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1093, 419);
+            this.tabControl2.Size = new System.Drawing.Size(1093, 405);
             this.tabControl2.TabIndex = 82;
             // 
             // tabPage5
@@ -10365,8 +10365,8 @@ namespace LOSA.Trazabilidad
             this.tabPage5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage5.Size = new System.Drawing.Size(1085, 385);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1085, 371);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "NIR";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -10385,7 +10385,7 @@ namespace LOSA.Trazabilidad
             this.panelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl7.Location = new System.Drawing.Point(3, 3);
             this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(1079, 379);
+            this.panelControl7.Size = new System.Drawing.Size(1079, 365);
             this.panelControl7.TabIndex = 1;
             // 
             // simpleButton16
@@ -10408,7 +10408,7 @@ namespace LOSA.Trazabilidad
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl10.Location = new System.Drawing.Point(0, 10);
             this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(11, 359);
+            this.panelControl10.Size = new System.Drawing.Size(11, 345);
             this.panelControl10.TabIndex = 20;
             // 
             // panelControl11
@@ -10419,7 +10419,7 @@ namespace LOSA.Trazabilidad
             this.panelControl11.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl11.Location = new System.Drawing.Point(1068, 10);
             this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(11, 359);
+            this.panelControl11.Size = new System.Drawing.Size(11, 345);
             this.panelControl11.TabIndex = 19;
             // 
             // panelControl12
@@ -10428,7 +10428,7 @@ namespace LOSA.Trazabilidad
             this.panelControl12.Appearance.Options.UseBackColor = true;
             this.panelControl12.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl12.Location = new System.Drawing.Point(0, 369);
+            this.panelControl12.Location = new System.Drawing.Point(0, 355);
             this.panelControl12.Name = "panelControl12";
             this.panelControl12.Size = new System.Drawing.Size(1079, 10);
             this.panelControl12.TabIndex = 18;
@@ -10454,7 +10454,7 @@ namespace LOSA.Trazabilidad
             this.grd_nir_Ruta4.Location = new System.Drawing.Point(14, 64);
             this.grd_nir_Ruta4.MainView = this.gvNIR_Ruta4;
             this.grd_nir_Ruta4.Name = "grd_nir_Ruta4";
-            this.grd_nir_Ruta4.Size = new System.Drawing.Size(1048, 300);
+            this.grd_nir_Ruta4.Size = new System.Drawing.Size(1048, 286);
             this.grd_nir_Ruta4.TabIndex = 1;
             this.grd_nir_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvNIR_Ruta4});
@@ -10566,8 +10566,8 @@ namespace LOSA.Trazabilidad
             this.tabPage6.Controls.Add(this.panelControl14);
             this.tabPage6.Location = new System.Drawing.Point(4, 30);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage6.Size = new System.Drawing.Size(1085, 385);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1085, 371);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Datos y Adjuntos";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -10584,7 +10584,7 @@ namespace LOSA.Trazabilidad
             this.gcDocumentosAdjuntos_Ruta4.Name = "gcDocumentosAdjuntos_Ruta4";
             this.gcDocumentosAdjuntos_Ruta4.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repostOpenDOc});
-            this.gcDocumentosAdjuntos_Ruta4.Size = new System.Drawing.Size(389, 378);
+            this.gcDocumentosAdjuntos_Ruta4.Size = new System.Drawing.Size(389, 364);
             this.gcDocumentosAdjuntos_Ruta4.TabIndex = 38;
             this.gcDocumentosAdjuntos_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDocumentosAdjuntos_Ruta4});
@@ -11308,8 +11308,8 @@ namespace LOSA.Trazabilidad
             this.tabPage7.Controls.Add(this.panelControl15);
             this.tabPage7.Location = new System.Drawing.Point(4, 30);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage7.Size = new System.Drawing.Size(1085, 385);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1085, 371);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Logistica";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -11327,7 +11327,7 @@ namespace LOSA.Trazabilidad
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl15.Location = new System.Drawing.Point(3, 3);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(1079, 379);
+            this.panelControl15.Size = new System.Drawing.Size(1079, 365);
             this.panelControl15.TabIndex = 51;
             // 
             // panelControl16
@@ -11345,7 +11345,7 @@ namespace LOSA.Trazabilidad
             this.panelControl16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl16.Location = new System.Drawing.Point(11, 11);
             this.panelControl16.Name = "panelControl16";
-            this.panelControl16.Size = new System.Drawing.Size(1057, 358);
+            this.panelControl16.Size = new System.Drawing.Size(1057, 344);
             this.panelControl16.TabIndex = 64;
             // 
             // labelControl113
@@ -11419,7 +11419,7 @@ namespace LOSA.Trazabilidad
             this.gridControl16.Location = new System.Drawing.Point(3, 6);
             this.gridControl16.MainView = this.gridView33;
             this.gridControl16.Name = "gridControl16";
-            this.gridControl16.Size = new System.Drawing.Size(633, 347);
+            this.gridControl16.Size = new System.Drawing.Size(633, 333);
             this.gridControl16.TabIndex = 39;
             this.gridControl16.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView33});
@@ -11530,7 +11530,7 @@ namespace LOSA.Trazabilidad
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl17.Location = new System.Drawing.Point(1068, 11);
             this.panelControl17.Name = "panelControl17";
-            this.panelControl17.Size = new System.Drawing.Size(11, 358);
+            this.panelControl17.Size = new System.Drawing.Size(11, 344);
             this.panelControl17.TabIndex = 61;
             // 
             // panelControl18
@@ -11539,7 +11539,7 @@ namespace LOSA.Trazabilidad
             this.panelControl18.Appearance.Options.UseBackColor = true;
             this.panelControl18.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl18.Location = new System.Drawing.Point(11, 369);
+            this.panelControl18.Location = new System.Drawing.Point(11, 355);
             this.panelControl18.Name = "panelControl18";
             this.panelControl18.Size = new System.Drawing.Size(1068, 10);
             this.panelControl18.TabIndex = 60;
@@ -11552,7 +11552,7 @@ namespace LOSA.Trazabilidad
             this.panelControl19.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl19.Location = new System.Drawing.Point(0, 11);
             this.panelControl19.Name = "panelControl19";
-            this.panelControl19.Size = new System.Drawing.Size(11, 368);
+            this.panelControl19.Size = new System.Drawing.Size(11, 354);
             this.panelControl19.TabIndex = 59;
             // 
             // panelControl20
@@ -11572,8 +11572,8 @@ namespace LOSA.Trazabilidad
             this.tabPage8.Controls.Add(this.panelControl26);
             this.tabPage8.Location = new System.Drawing.Point(4, 30);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage8.Size = new System.Drawing.Size(1085, 385);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1085, 371);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Estado de Materia prima y transporte";
             // 
@@ -11624,7 +11624,7 @@ namespace LOSA.Trazabilidad
             this.panelControl26.Controls.Add(this.txtusercalidad_Ruta4);
             this.panelControl26.Location = new System.Drawing.Point(3, 0);
             this.panelControl26.Name = "panelControl26";
-            this.panelControl26.Size = new System.Drawing.Size(2570, 2070);
+            this.panelControl26.Size = new System.Drawing.Size(2570, 2056);
             this.panelControl26.TabIndex = 84;
             // 
             // button2
@@ -11979,7 +11979,7 @@ namespace LOSA.Trazabilidad
             // radioGroup11
             // 
             this.radioGroup11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioGroup11.Location = new System.Drawing.Point(937, 2085);
+            this.radioGroup11.Location = new System.Drawing.Point(937, 2071);
             this.radioGroup11.Name = "radioGroup11";
             this.radioGroup11.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "ACEPTADO"),
@@ -12077,7 +12077,7 @@ namespace LOSA.Trazabilidad
             this.tabPage9.Controls.Add(this.gcLotePT_Ruta4);
             this.tabPage9.Location = new System.Drawing.Point(4, 30);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1085, 385);
+            this.tabPage9.Size = new System.Drawing.Size(1085, 371);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "Lotes PT";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -12094,7 +12094,7 @@ namespace LOSA.Trazabilidad
             this.gridControl18.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmdBoleta_Ruta4,
             this.cmdDespachoId_Ruta4});
-            this.gridControl18.Size = new System.Drawing.Size(712, 378);
+            this.gridControl18.Size = new System.Drawing.Size(712, 364);
             this.gridControl18.TabIndex = 46;
             this.gridControl18.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView35});
@@ -12303,7 +12303,7 @@ namespace LOSA.Trazabilidad
             this.gcLotePT_Ruta4.Name = "gcLotePT_Ruta4";
             this.gcLotePT_Ruta4.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repost_lote_pt_hacia_ruta_4});
-            this.gcLotePT_Ruta4.Size = new System.Drawing.Size(353, 378);
+            this.gcLotePT_Ruta4.Size = new System.Drawing.Size(353, 364);
             this.gcLotePT_Ruta4.TabIndex = 1;
             this.gcLotePT_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLotePT_Ruta4});
@@ -12377,8 +12377,8 @@ namespace LOSA.Trazabilidad
             this.tabPage10.Controls.Add(this.gridControl20);
             this.tabPage10.Location = new System.Drawing.Point(4, 30);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage10.Size = new System.Drawing.Size(1085, 385);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(1085, 371);
             this.tabPage10.TabIndex = 5;
             this.tabPage10.Text = "Ingresos del Lote";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -12393,7 +12393,7 @@ namespace LOSA.Trazabilidad
             this.gridControl14.Location = new System.Drawing.Point(3, 3);
             this.gridControl14.MainView = this.gridView36;
             this.gridControl14.Name = "gridControl14";
-            this.gridControl14.Size = new System.Drawing.Size(1079, 378);
+            this.gridControl14.Size = new System.Drawing.Size(1079, 364);
             this.gridControl14.TabIndex = 2;
             this.gridControl14.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView36});
@@ -13146,7 +13146,7 @@ namespace LOSA.Trazabilidad
             this.npDetalleDespacho_Ruta4.Controls.Add(this.cmdDespacho_Ruta4);
             this.npDetalleDespacho_Ruta4.Controls.Add(this.gcDetalleDespacho_Ruta4);
             this.npDetalleDespacho_Ruta4.Name = "npDetalleDespacho_Ruta4";
-            this.npDetalleDespacho_Ruta4.Size = new System.Drawing.Size(939, 598);
+            this.npDetalleDespacho_Ruta4.Size = new System.Drawing.Size(1096, 722);
             // 
             // cmdDespacho_Ruta4
             // 
@@ -13173,7 +13173,7 @@ namespace LOSA.Trazabilidad
             this.gcDetalleDespacho_Ruta4.Location = new System.Drawing.Point(3, 87);
             this.gcDetalleDespacho_Ruta4.MainView = this.gvDetalleDespacho_Ruta4;
             this.gcDetalleDespacho_Ruta4.Name = "gcDetalleDespacho_Ruta4";
-            this.gcDetalleDespacho_Ruta4.Size = new System.Drawing.Size(1090, 646);
+            this.gcDetalleDespacho_Ruta4.Size = new System.Drawing.Size(1090, 632);
             this.gcDetalleDespacho_Ruta4.TabIndex = 1;
             this.gcDetalleDespacho_Ruta4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDetalleDespacho_Ruta4});

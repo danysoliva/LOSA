@@ -361,7 +361,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
                 cmd.Parameters.AddWithValue("@ppprom_diario_extraor", SueldoBasePromedioDiarioMasExtraOrdinario);
                 cmd.Parameters.AddWithValue("@pdias_catorceavo", dDiasCat);
                 cmd.Parameters.AddWithValue("@pdias_treceavo", dDiastre);
-                cmd.Parameters.AddWithValue("@psalario_base_diario", SueldoBasePromedioDiario);
+                cmd.Parameters.AddWithValue("@psalario_base_diario",SueldoBasePromedioDiario);
                 //PgSqlDataAdapter adat = new PgSqlDataAdapter(cmd);
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 dsRRHH_1.derechos_calculo_liq.Clear();
@@ -546,6 +546,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
         private void CargarDetalleSalarios()
         {
             DateTime fdesde = dtIngreso.DateTime;
+            
             DateTime fhasta = dtEgreso.DateTime;//dp.Now();
 
             if (dtEgreso.DateTime.Year < 2000)

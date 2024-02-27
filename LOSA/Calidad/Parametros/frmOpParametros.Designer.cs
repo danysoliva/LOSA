@@ -50,6 +50,8 @@ namespace LOSA.Calidad.Parametros
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tggenable = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.tsLlenadoPor = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.txtParametro.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_categoria.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
@@ -59,6 +61,7 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tggenable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsLlenadoPor.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_close
@@ -98,7 +101,7 @@ namespace LOSA.Calidad.Parametros
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(41, 226);
+            this.labelControl3.Location = new System.Drawing.Point(41, 270);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(62, 17);
             this.labelControl3.TabIndex = 5;
@@ -262,21 +265,45 @@ namespace LOSA.Calidad.Parametros
             // 
             // tggenable
             // 
-            this.tggenable.Location = new System.Drawing.Point(169, 215);
+            this.tggenable.Location = new System.Drawing.Point(169, 268);
             this.tggenable.Name = "tggenable";
             this.tggenable.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tggenable.Properties.Appearance.Options.UseFont = true;
             this.tggenable.Properties.OffText = "Desactivado";
             this.tggenable.Properties.OnText = "Activado";
-            this.tggenable.Size = new System.Drawing.Size(264, 28);
+            this.tggenable.Size = new System.Drawing.Size(264, 22);
             this.tggenable.TabIndex = 11;
             this.tggenable.Visible = false;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(41, 228);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(75, 17);
+            this.labelControl5.TabIndex = 12;
+            this.labelControl5.Text = "Llenado por:";
+            // 
+            // tsLlenadoPor
+            // 
+            this.tsLlenadoPor.EditValue = true;
+            this.tsLlenadoPor.Location = new System.Drawing.Point(169, 226);
+            this.tsLlenadoPor.Name = "tsLlenadoPor";
+            this.tsLlenadoPor.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsLlenadoPor.Properties.Appearance.Options.UseFont = true;
+            this.tsLlenadoPor.Properties.OffText = "Produccion";
+            this.tsLlenadoPor.Properties.OnText = "Calidad";
+            this.tsLlenadoPor.Size = new System.Drawing.Size(264, 22);
+            this.tsLlenadoPor.TabIndex = 13;
             // 
             // frmOpParametros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 392);
+            this.Controls.Add(this.tsLlenadoPor);
+            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.tggenable);
             this.Controls.Add(this.grd_aceptacion);
             this.Controls.Add(this.grd_categoria);
@@ -299,6 +326,7 @@ namespace LOSA.Calidad.Parametros
             ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tggenable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsLlenadoPor.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,5 +353,7 @@ namespace LOSA.Calidad.Parametros
         private System.Windows.Forms.BindingSource tiposBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colid1;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion1;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.ToggleSwitch tsLlenadoPor;
     }
 }

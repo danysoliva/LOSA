@@ -81,6 +81,7 @@ using LOSA.MigracionACS.RRHH.Vacaciones;
 using DataTable = System.Data.DataTable;
 using LOSA.MigracionACS.Produccion.MedicionElectrica;
 using LOSA.Calidad.CertificadoCalidad;
+using LOSA.Calidad.GestionLotesMP;
 
 namespace LOSA
 {
@@ -223,6 +224,7 @@ namespace LOSA
                         case 1://Basic View
                             //BasicView();
                             tabOpciones.TabPages[4].PageVisible = true;
+                            BasicViewAnalistas();
                             UsuarioLogeado.Idnivel = idNivel;
                             break;
                         case 2://Basic No Autorization
@@ -442,6 +444,16 @@ namespace LOSA
                     tabOpciones.TabPages[i].PageVisible = true;
                     break;
             }
+        }
+
+        private void BasicViewAnalistas()
+        {
+            //Acceso a Calidad pero Solo Lo Necesario!!
+            tabOpciones.TabPages[2].PageVisible = true;
+            btnSolicitudDespachoCalidad.Enabled = false;
+            btnCertidicadPTMain.Enabled = false;
+            ManteIngresos.Enabled = false;
+
         }
 
         public void BasicView()
@@ -4703,10 +4715,40 @@ namespace LOSA
 
         private void btnLotesCerrados_Click(object sender, EventArgs e)
         {
-            LotesFinalizados frm = new LotesFinalizados();
+            frmLotesFinalizados frm = new frmLotesFinalizados();
             frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
+        }
+
+        private void btnRPTAlimentacionMacrosLogistica_Click(object sender, EventArgs e)
+        {
+            frmAlimentacionBasculasMacros frm = new frmAlimentacionBasculasMacros();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void btnRPTAlimentacionMacrosCalidad_Click(object sender, EventArgs e)
+        {
+            frmAlimentacionBasculasMacros frm = new frmAlimentacionBasculasMacros();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
+
+        private void navBarProductoBorrador_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                PT_Producto_Borrador frm = new PT_Producto_Borrador(UsuarioLogeado);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

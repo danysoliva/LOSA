@@ -1,27 +1,20 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using ACS.Classes;
-using LOSA.Clases;
+﻿using ACS.Classes;
 using DevExpress.XtraGrid.Views.Grid;
-using System.Net;
-using System.IO;
-using System.Diagnostics;
+using LOSA.Calidad.InspeccionIngreso;
+using LOSA.Clases;
 using LOSA.Nir;
-using LOSA.Trazabilidad;
-using LOSA.Trazabilidad.ReportesTRZ;
-using LOSA.Trazabilidad.Despachos;
 using LOSA.TransaccionesMP;
-using DevExpress.CodeParser;
-
+using LOSA.Trazabilidad;
+using LOSA.Trazabilidad.Despachos;
+using LOSA.Trazabilidad.ReportesTRZ;
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Net;
+using System.Windows.Forms;
 
 namespace LOSA.Calidad
 {
@@ -46,51 +39,9 @@ namespace LOSA.Calidad
         public int NumeroTransaccion;
         int IdMP;
         string Lote;
-        
+      
 
         DataOperations dp = new DataOperations();
-        public frmInspeccionCalidadPorIngresoLoteMP(int id_ingreso_lote, UserLogin Puser)
-        {
-            InitializeComponent();
-            //Id_ingreso = id_ingreso_lote;
-            //UsuarioLogeado = Puser;
-
-            //tabPageLotesPT.Visible = false;
-            ////tabControl1.TabPages[4]
-            //load_data();
-            //load_data_ingreso();
-            //Load_cargas_nir();
-            //Inicializar_data_logistica();
-            //load_zonas();
-            //load_especie();
-            //load_tipo();
-            //load_paises();
-            //LoadLotesPT();
-            //LoadInventarioKardex();
-            ////Load_Despachos();
-            //if (ChCalidad)
-            //{
-            //    load_criterios_configurados();
-            //    Inicalizar_Archivo_configurados();
-            //    get_imagen();
-            //    load_empaque_estado_Mp();
-            //    load_trasporte_estado_transporte();
-            //    load_criterios_adicionales();
-
-            //    if (full_pathImagen != "")
-            //    {
-            //        pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
-            //    }
-            //}
-            //else
-            //{
-            //    inicializar_criterios();
-            //    Inicalizar_Archivo();
-            //}
-        }
-
-        
-
         public frmInspeccionCalidadPorIngresoLoteMP(int pNumeroIngreso, int pIdMP, string pLote, UserLogin Puser)
         {
             InitializeComponent();
@@ -99,6 +50,9 @@ namespace LOSA.Calidad
             IdMP = pIdMP;
             Lote = pLote;
             LoadDataInicialIngresos();
+
+            LoadDataTipoIngrediente();
+            LaodCriterioAdicionales();
             foreach (dsMantenimientoC.Ingresos_Lote_detalleRow item in dsMantenimientoC.Ingresos_Lote_detalle.Rows)
             {
                 if (item.numero_transaccion == NumeroTransaccion)
@@ -110,7 +64,6 @@ namespace LOSA.Calidad
                     item.selected = true;
                 }
             }
-            
 
             tabPageLotesPT.Visible = false;
             load_data();
@@ -123,23 +76,24 @@ namespace LOSA.Calidad
             load_paises();
             LoadLotesPT();
             LoadInventarioKardex();
-            //Load_Despachos();
-
+       
             //Archivos Configurados
             Inicalizar_Archivo_configurados();
             Inicializar_data_logisticaRuta2(Lote);
             if (ChCalidad)
             {
                 load_criterios_configurados();
+                load_ingrediente_fabricante();
                 get_imagen();
                 //Inicalizar_Archivo_configurados();
                 load_empaque_estado_Mp();
                 load_trasporte_estado_transporte();
-                load_criterios_adicionales();
-
+                
+                
                 if (full_pathImagen != "")
                 {
-                    pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+                    //pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+                    pc_Mp1.Image = ByteToImage(GetImgByte(full_pathImagen));
                 }
             }
             else
@@ -147,6 +101,90 @@ namespace LOSA.Calidad
                 inicializar_criterios();
                 //Inicalizar_Archivo();
             }
+        }
+
+        private void load_ingrediente_fabricante()
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_load_trz_fabricante_ingrediente",conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp",IdMP);
+                cmd.Parameters.AddWithValue("@lote",Lote);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    idPlanta_Fabricante = dr.GetInt32(0);
+                    txtFabricante.Text = dr.GetString(1);
+                    grdTipoIngrediente.EditValue = dr.GetInt32(2);
+
+                    if (Convert.ToInt32(grdTipoIngrediente.EditValue) == 1) //Marino
+                    {
+                        btnAdd.Enabled = true;
+                        grdInfoAdicionalCalidad.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAdd.Enabled = false;
+                        grdInfoAdicionalCalidad.Enabled = false;
+                    }
+
+                }
+                dr.Close();
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void LaodCriterioAdicionales()
+        {
+            string query = @"sp_trz_get_criterios_adicionales_for_ingreso";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_mp",IdMP);
+                cmd.Parameters.AddWithValue("@lote",Lote);
+                //cmd.Parameters.AddWithValue("@num_transaccion",NumeroTransaccion);
+                dsMantenimientoC.info_adicional_marino.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.info_adicional_marino);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void LoadDataTipoIngrediente()
+        {
+            string query = @"sp_get_tipo_ingrediente";
+            SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
+            try
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                dsMantenimientoC.tipo_ingrediente.Clear();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dsMantenimientoC.tipo_ingrediente);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+
+
         }
 
         public frmInspeccionCalidadPorIngresoLoteMP(string pLoteMP,
@@ -412,16 +450,16 @@ namespace LOSA.Calidad
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                grd_origenespecie.EditValue = dr.IsDBNull(0) ? (object)DBNull.Value : dr.GetInt32(0);
-                grd_tipo.EditValue = dr.IsDBNull(1) ? (object)DBNull.Value : dr.GetInt32(1);
-                spTipoporcentaje.EditValue = dr.IsDBNull(2) ? (object)DBNull.Value : dr.GetDecimal(2);
-                grd_pesca.EditValue = dr.IsDBNull(3) ? (object)DBNull.Value : dr.GetInt32(3);
-                txtPLantaSenasa.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
-                spsustentable.EditValue = dr.IsDBNull(5) ? (object)DBNull.Value : dr.GetDecimal(5);
-                grd_origen.EditValue = dr.IsDBNull(6) ? (object)DBNull.Value : dr.GetInt32(6);
-                hyfishsource.EditValue = dr.IsDBNull(7) ? "" : dr.GetString(7);
-                hyIUCN.EditValue = dr.IsDBNull(8) ? "" : dr.GetString(8);
-                txtusercalidad.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
+                //grd_origenespecie.EditValue = dr.IsDBNull(0) ? (object)DBNull.Value : dr.GetInt32(0);
+                //grd_tipo.EditValue = dr.IsDBNull(1) ? (object)DBNull.Value : dr.GetInt32(1);
+                //spTipoporcentaje.EditValue = dr.IsDBNull(2) ? (object)DBNull.Value : dr.GetDecimal(2);
+                //grd_pesca.EditValue = dr.IsDBNull(3) ? (object)DBNull.Value : dr.GetInt32(3);
+                //txtPLantaSenasa.Text = dr.IsDBNull(4) ? "" : dr.GetString(4);
+                //spsustentable.EditValue = dr.IsDBNull(5) ? (object)DBNull.Value : dr.GetDecimal(5);
+                //grd_origen.EditValue = dr.IsDBNull(6) ? (object)DBNull.Value : dr.GetInt32(6);
+                //hyfishsource.EditValue = dr.IsDBNull(7) ? "" : dr.GetString(7);
+                //hyIUCN.EditValue = dr.IsDBNull(8) ? "" : dr.GetString(8);
+                //txtusercalidad.Text = dr.IsDBNull(9) ? "" : dr.GetString(9);
             }
             dr.Close();
         }
@@ -619,14 +657,14 @@ namespace LOSA.Calidad
         //}
         public void get_imagen()
         {
-            string query = @"[sp_get_imagen_of_ingreso_calidad_by_lotempv2]";
+            string query = @"[sp_get_imagen_of_ingreso_calidad_by_lotempV3]";
             SqlConnection cn = new SqlConnection(dp.ConnectionStringLOSA);
             cn.Open();
             SqlCommand cmd = new SqlCommand(query, cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@_lotemp", Lote);
             cmd.Parameters.AddWithValue("@idmp", IdMP);
-            cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
+            //cmd.Parameters.AddWithValue("@id_ingreso", NumeroTransaccion);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -1230,7 +1268,8 @@ namespace LOSA.Calidad
                 cambioImagen = true;
                 //Upload( full_path, fileName);
                 //CajaDialogo.Information("ARCHIVO CARGADO SATISFACTORIAMENTE");
-                pc_Mp.Image = Image.FromFile(full_pathImagen);
+                //pc_Mp.Image = Image.FromFile(full_pathImagen);
+                pc_Mp1.Image = Image.FromFile(full_pathImagen);
 
                 if (fileNameImagen != "")
                 {
@@ -1243,7 +1282,7 @@ namespace LOSA.Calidad
                     {
                         SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                         con.Open();
-                        SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGEN]", con);
+                        SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGENV2]", con);
                         //cmd4.Transaction = transaction;
                         cmd4.CommandType = CommandType.StoredProcedure;
 
@@ -1253,7 +1292,7 @@ namespace LOSA.Calidad
                         cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
                         //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
                         cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                        cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                        //cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
                         cmd4.Parameters.AddWithValue("@id_mp", IdMP);
                         cmd4.Parameters.AddWithValue("@lote_mp", Lote);
                         cmd4.Parameters.AddWithValue("@cambio_imagen", cambioImagen);
@@ -1580,27 +1619,7 @@ namespace LOSA.Calidad
             }
         }
 
-        private void grd_origenespecie_EditValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (grd_origenespecie.EditValue != null)
-                {
-                    foreach (dsMantenimientoC.origen_especieRow row in dsMantenimientoC.origen_especie.Rows)
-                    {
-                        if (Convert.ToInt32(grd_origenespecie.EditValue) == row.id)
-                        {
-                            hyfishsource.EditValue = row.fishsource;
-                            hyIUCN.EditValue = row.iucn;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
+       
         private bool Upload(string pathFile, string fileName)
         {
             bool r = false;
@@ -1648,6 +1667,50 @@ namespace LOSA.Calidad
             }
             else
             {
+                if (string.IsNullOrEmpty(grdTipoIngrediente.Text))
+                {
+                    CajaDialogo.Error("El Campo Tipo de Ingrediente se debe Completar.");
+                    tabControl1.SelectedIndex = 1;
+                    grdTipoIngrediente.Focus();
+                    return;
+                }
+
+                //if (string.IsNullOrEmpty(txtFabricante.Text))
+                //{
+                //    CajaDialogo.Error("Debe indicar el Fabricante!");
+                //    simpleButton2.Focus();
+                //    return;
+                //}
+
+                if (Convert.ToInt32(grdTipoIngrediente.EditValue) == 1)
+                {
+                    if (gridView1.RowCount == 0)
+                    {
+                        CajaDialogo.Error("El Tipo de Ingrediente es Marino!\nDebe adicionar especficiaciones.");
+                        tabControl1.SelectedIndex = 1;
+                        btnAdd.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        foreach (dsMantenimientoC.info_adicional_marinoRow item in dsMantenimientoC.info_adicional_marino.Rows)
+                        {
+                            if (item.porce_tipo == Convert.ToDecimal(0.00))
+                            {
+                                CajaDialogo.Error("El Porcentaje no Puede ser Valor 0.00");
+                                return;
+                            }
+                            string vacio = "";
+                            if (Convert.ToString(item.id_especio) == vacio)
+                            {
+                                CajaDialogo.Error("Debe Seleccionar una Especie de Origen!");
+                                return;
+                            }
+                        }
+                    }
+                }
+
+
                 foreach (dsMantenimientoC.parametrosRow row in dsMantenimientoC.parametros.Rows)
                 {
                     if (string.IsNullOrWhiteSpace(row.respuesta) || string.IsNullOrEmpty(row.respuesta))
@@ -1698,24 +1761,52 @@ namespace LOSA.Calidad
                         }
                     }
 
-                    Query = @"[sp_insert_trz_criterio_ingreso_calidad_adicionalesV2]";
-                    cmd = new SqlCommand(Query, cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                    cmd.Parameters.AddWithValue("@origen", grd_origenespecie.EditValue == null ? (object)DBNull.Value : grd_origenespecie.EditValue);
-                    cmd.Parameters.AddWithValue("@porcentajetipo", spTipoporcentaje.Text == "0" || spsustentable.Text == "" ? (object)DBNull.Value : spTipoporcentaje.Text);
-                    cmd.Parameters.AddWithValue("@zonapesca", grd_pesca.EditValue == null ? (object)DBNull.Value : grd_pesca.EditValue);
-                    cmd.Parameters.AddWithValue("@planta", txtPLantaSenasa.Text == "" ? (object)DBNull.Value : txtPLantaSenasa.Text);
-                    cmd.Parameters.AddWithValue("@porcentajesustentable", spsustentable.Text == "0" || spsustentable.Text == "" ? (object)DBNull.Value : spsustentable.Text);
-                    cmd.Parameters.AddWithValue("@paisorigen", grd_origen.EditValue == null ? (object)DBNull.Value : grd_origen.EditValue);
-                    cmd.Parameters.AddWithValue("@fishsurse", hyfishsource.Text == "" ? (object)DBNull.Value : hyfishsource.Text);
-                    cmd.Parameters.AddWithValue("@iucn", hyIUCN.Text == "" ? (object)DBNull.Value : hyIUCN.Text);
-                    cmd.Parameters.AddWithValue("@tipo", grd_tipo.EditValue == null ? (object)DBNull.Value : grd_tipo.EditValue);
-                    cmd.Parameters.AddWithValue("@user_register", UsuarioLogeado.Id);
-                    cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    cmd.Parameters.AddWithValue("@id_mp", IdMP);
-                    cmd.Parameters.AddWithValue("@lote_mp", Lote);
-                    cmd.ExecuteNonQuery();
+                    if (Convert.ToInt32(grdTipoIngrediente.EditValue) == 1) //1 Tipo Ingrediente Marino
+                    {
+                        foreach (dsMantenimientoC.info_adicional_marinoRow item in dsMantenimientoC.info_adicional_marino.Rows)
+                        {
+                            Query = @"[sp_insert_trz_criterio_ingreso_calidad_adicionalesV3]";
+                            cmd = new SqlCommand(Query, cn);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                            cmd.Parameters.AddWithValue("@origen", item.id_especio);
+                            cmd.Parameters.AddWithValue("@porcentajetipo", item.porce_tipo);
+                            cmd.Parameters.AddWithValue("@zonapesca", item.id_zona_pesca);
+                            cmd.Parameters.AddWithValue("@planta", item.planta_senasa ==""? (object)DBNull.Value : item.planta_senasa);
+                            cmd.Parameters.AddWithValue("@porcentajesustentable", item.sustentable);
+                            cmd.Parameters.AddWithValue("@paisorigen", item.pais_origen);
+                            cmd.Parameters.AddWithValue("@fishsurse", item.fishsource == "" ? (object)DBNull.Value : item.fishsource);
+                            cmd.Parameters.AddWithValue("@iucn", item.IUCN == "" ? (object)DBNull.Value : item.IUCN);
+                            cmd.Parameters.AddWithValue("@tipo", item.tipo);
+                            cmd.Parameters.AddWithValue("@user_register", UsuarioLogeado.Id);
+                            //cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                            cmd.Parameters.AddWithValue("@id_mp", IdMP);
+                            cmd.Parameters.AddWithValue("@lote_mp", Lote);
+                            cmd.ExecuteNonQuery();
+
+                            #region Codigo Viejo sin Ciclo Foreach
+                            //Query = @"[sp_insert_trz_criterio_ingreso_calidad_adicionalesV3]";
+                            //cmd = new SqlCommand(Query, cn);
+                            //cmd.CommandType = CommandType.StoredProcedure;
+                            //cmd.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
+                            //cmd.Parameters.AddWithValue("@origen", grd_origenespecie.EditValue == null ? (object)DBNull.Value : grd_origenespecie.EditValue);
+                            //cmd.Parameters.AddWithValue("@porcentajetipo", spTipoporcentaje.Text == "0" || spsustentable.Text == "" ? (object)DBNull.Value : spTipoporcentaje.Text);
+                            //cmd.Parameters.AddWithValue("@zonapesca", grd_pesca.EditValue == null ? (object)DBNull.Value : grd_pesca.EditValue);
+                            //cmd.Parameters.AddWithValue("@planta", txtPLantaSenasa.Text == "" ? (object)DBNull.Value : txtPLantaSenasa.Text);
+                            //cmd.Parameters.AddWithValue("@porcentajesustentable", spsustentable.Text == "0" || spsustentable.Text == "" ? (object)DBNull.Value : spsustentable.Text);
+                            //cmd.Parameters.AddWithValue("@paisorigen", grd_origen.EditValue == null ? (object)DBNull.Value : grd_origen.EditValue);
+                            //cmd.Parameters.AddWithValue("@fishsurse", hyfishsource.Text == "" ? (object)DBNull.Value : hyfishsource.Text);
+                            //cmd.Parameters.AddWithValue("@iucn", hyIUCN.Text == "" ? (object)DBNull.Value : hyIUCN.Text);
+                            //cmd.Parameters.AddWithValue("@tipo", grd_tipo.EditValue == null ? (object)DBNull.Value : grd_tipo.EditValue);
+                            //cmd.Parameters.AddWithValue("@user_register", UsuarioLogeado.Id);
+                            //cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
+                            //cmd.Parameters.AddWithValue("@id_mp", IdMP);
+                            //cmd.Parameters.AddWithValue("@lote_mp", Lote);
+                            //cmd.ExecuteNonQuery();
+
+                            #endregion
+                        }
+                    }
 
                     Query = @"sp_insert_trz_criterio_ingreso_empaqueV2";
                     cmd = new SqlCommand(Query, cn);
@@ -1730,6 +1821,15 @@ namespace LOSA.Calidad
                     cmd.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
                     cmd.Parameters.AddWithValue("@id_mp", IdMP);
                     cmd.Parameters.AddWithValue("@lote_mp", Lote);
+                    cmd.ExecuteNonQuery();
+
+                    Query = "sp_insert_update_trz_registros_adicionales_calidad";
+                    cmd = new SqlCommand(Query, cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id_fabricante_planta", idPlanta_Fabricante);
+                    cmd.Parameters.AddWithValue("@id_tipo_ingrediente", Convert.ToInt32(grdTipoIngrediente.EditValue));
+                    cmd.Parameters.AddWithValue("@id_mp", IdMP);
+                    cmd.Parameters.AddWithValue("@lote", Lote);
                     cmd.ExecuteNonQuery();
 
                     Query = @"sp_insert_trz_criterio_ingreso_transporteV2";
@@ -1785,63 +1885,6 @@ namespace LOSA.Calidad
                     cmd.Parameters.AddWithValue("@observaciones", txtobservacionTras.Text);
                     cmd.ExecuteNonQuery();
                     cn.Close();
-
-                    //// Importar archivos adjuntos.
-
-                    //if (fileNameImagen != "")
-                    //{
-                    //    if (cambioImagen)
-                    //    {
-
-                    //        //string Path_2 = "Imagen" + "_" + string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
-                    //        string Path_2 = string.Format("{0:MM_dd_yyyy_HH_mm_ss}", DateTime.Now) + "_" + fileNameImagen;
-                    //        //if (Upload(Path_2, full_pathImagen))
-                    //        FTP_Class ftp1 = new FTP_Class();
-                    //        if (ftp1.GuardarArchivo(UsuarioLogeado, Path_2, full_pathImagen))
-                    //        {
-                    //            SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    //            con.Open();
-                    //            SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGEN]", con);
-                    //            //cmd4.Transaction = transaction;
-                    //            cmd4.CommandType = CommandType.StoredProcedure;
-
-                    //            cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = dp.FTP_Tickets_LOSA + Path_2;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
-                    //            cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
-                    //            cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
-                    //            cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                    //            //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                    //            cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                    //            cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    //            cmd4.Parameters.AddWithValue("@id_mp", IdMP);
-                    //            cmd4.Parameters.AddWithValue("@lote_mp", Lote);
-                    //            cmd4.Parameters.AddWithValue("@cambio_imagen", cambioImagen);
-                    //            cmd4.ExecuteNonQuery();
-                    //            con.Close();
-                    //        }
-                    //    }
-                    //    //else
-                    //    //{
-
-                    //    //    SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                    //    //    con.Open();
-                    //    //    SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_ingreso_IMAGEN]", con);
-                    //    //    //cmd4.Transaction = transaction;
-                    //    //    cmd4.CommandType = CommandType.StoredProcedure;
-
-                    //    //    cmd4.Parameters.Add("@path", SqlDbType.VarChar).Value = full_pathImagen;//dp.FTP_Tickets_LOSA + vProveedorCodigo + "_" + lblArchivoName.Text;
-                    //    //    cmd4.Parameters.Add("@file_name", SqlDbType.VarChar).Value = fileNameImagen;
-                    //    //    cmd4.Parameters.AddWithValue("@id_config", (object)DBNull.Value);
-                    //    //    cmd4.Parameters.AddWithValue("@id_user", UsuarioLogeado.Id);
-                    //    //    //cmd4.Parameters.AddWithValue("@id_ingreso", Id_ingreso);
-                    //    //    cmd4.Parameters.AddWithValue("@bit_pic", 1);
-                    //    //    cmd4.Parameters.AddWithValue("@num_transaccion", NumeroTransaccion);
-                    //    //    cmd4.Parameters.AddWithValue("@id_mp", IdMP);
-                    //    //    cmd4.Parameters.AddWithValue("@lote_mp", Lote);
-                    //    //    cmd4.Parameters.AddWithValue("@cambio_imagen", cambioImagen);
-                    //    //    cmd4.ExecuteNonQuery();
-                    //    //    con.Close();
-                    //    //}
-                    //}
 
                     cn.Open();
 
@@ -2243,17 +2286,22 @@ namespace LOSA.Calidad
         {
             try
             {
-                DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
-                con.Open();
+                
 
-                SqlCommand cmd = new SqlCommand("sp_set_id_fabricante_ingreso_lote_alosy", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_lote", id_ingreso);
-                cmd.Parameters.AddWithValue("@id_fabricante", pIdPlantaFabricante);
-                cmd.ExecuteNonQuery();
+                #region Codigo Viejo
+                //DataOperations dp = new DataOperations();
+                //SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                //con.Open();
 
-                con.Close();
+                //SqlCommand cmd = new SqlCommand("sp_set_id_fabricante_ingreso_lote_alosy", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@id_lote", id_ingreso);
+                //cmd.Parameters.AddWithValue("@id_fabricante", pIdPlantaFabricante);
+                //cmd.ExecuteNonQuery();
+
+                //con.Close();
+                #endregion
+
             }
             catch (Exception ec)
             {
@@ -2267,8 +2315,8 @@ namespace LOSA.Calidad
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtFabricante.Text = frm.NombreFabricanteSeleccionado;
-                //frm.IdFabricanteSeleccionado;
-                UpdateFabricante(Id_ingreso, frm.IdFabricanteSeleccionado);
+                idPlanta_Fabricante = frm.IdFabricanteSeleccionado;
+                //UpdateFabricante(Id_ingreso, frm.IdFabricanteSeleccionado);
             }
         }
 
@@ -2324,6 +2372,103 @@ namespace LOSA.Calidad
             
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            decimal PorcentajeMarino = 0;
+
+            foreach (dsMantenimientoC.info_adicional_marinoRow row in dsMantenimientoC.info_adicional_marino.Rows)
+            {
+                PorcentajeMarino += row.porce_tipo;
+            }
+
+            frmIngresoTipoMarino frm = new frmIngresoTipoMarino(PorcentajeMarino);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                DataRow dr = dsMantenimientoC.info_adicional_marino.NewRow();
+                dr[0] = frm.IM.Origen;
+                dr[1] = frm.IM.ZonaPesca;
+                dr[2] = frm.IM.Planta;
+                dr[3] = frm.IM.PorcentajeSustentable;
+                dr[4] = frm.IM.PaisOrigen;
+                dr[5] = frm.IM.FishSurse;
+                dr[6] = frm.IM.IUCN;
+                dr[7] = frm.IM.Tipo;
+                dr[8] = frm.IM.PorcentajeTipo;
+                dsMantenimientoC.info_adicional_marino.Rows.Add(dr);
+                dsMantenimientoC.info_adicional_marino.AcceptChanges();
+
+            }
+        }
+
+        private void grdTipoIngrediente_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(grdTipoIngrediente.Text))
+            {
+                switch (grdTipoIngrediente.EditValue)
+                {
+                    case 1:
+
+                        btnAdd.Enabled = true;
+                        grdInfoAdicionalCalidad.Enabled = true;
+
+                        break;
+                    default:
+
+                        btnAdd.Enabled = false;
+                        grdInfoAdicionalCalidad.Enabled = false;
+                        dsMantenimientoC.info_adicional_marino.Clear();
+
+
+                        break;
+                }
+            }
+
+        }
+
+        private void reposDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DialogResult r = CajaDialogo.Pregunta("Desea eliminar este registro?\nDebera Guardar para efecturar los Cambios.");
+            if (r != System.Windows.Forms.DialogResult.Yes)
+                return;
+
+            var gridView1 = (GridView)grdInfoAdicionalCalidad.FocusedView;
+            var row = (dsMantenimientoC.info_adicional_marinoRow)gridView1.GetFocusedDataRow();
+
+            try
+            {
+                gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                dsMantenimientoC.AcceptChanges();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
+        private void reposGrdOrigenEspecie_EditValueChanged(object sender, EventArgs e)
+        {
+
+            //try
+            //{
+            //    if (reposGrdOrigenEspecie.ValueMember != null)
+            //    {
+            //        foreach (dsMantenimientoC.origen_especieRow row in dsMantenimientoC.origen_especie.Rows)
+            //        {
+            //            if (Convert.ToInt32(reposGrdOrigenEspecie.ValueMember) == row.id)
+            //            {
+            //                row.fishsource = row.fishsource;
+            //                row.iucn = row.iucn;
+            //                dsMantenimientoC.info_adicional_marino.AcceptChanges();
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    CajaDialogo.Error(ex.Message);
+            //}
+        }
+
         private void gridView7_RowClick(object sender, RowClickEventArgs e)
         {
             var gridview = (GridView)grid_Header_ingresos.FocusedView;
@@ -2343,6 +2488,10 @@ namespace LOSA.Calidad
 
             try
             {
+               
+                LoadDataTipoIngrediente();
+                LaodCriterioAdicionales();
+
                 load_data();
                 load_data_ingreso();
                 Load_cargas_nir();
@@ -2358,6 +2507,8 @@ namespace LOSA.Calidad
                 if (ChCalidad)
                 {
                     load_criterios_configurados();
+                    load_ingrediente_fabricante();
+
                     //Inicalizar_Archivo_configurados();
                     get_imagen();
                     load_empaque_estado_Mp();
@@ -2366,7 +2517,8 @@ namespace LOSA.Calidad
 
                     if (full_pathImagen != "")
                     {
-                        pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+                        //pc_Mp.Image = ByteToImage(GetImgByte(full_pathImagen));
+                        pc_Mp1.Image = ByteToImage(GetImgByte(full_pathImagen));
                     }
                 }
                 else

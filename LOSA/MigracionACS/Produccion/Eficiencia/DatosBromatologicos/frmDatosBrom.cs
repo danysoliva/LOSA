@@ -300,16 +300,5 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.DatosBromatologicos
                 CajaDialogo.Error(ec.Message);
             }
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 }
