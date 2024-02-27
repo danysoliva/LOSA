@@ -123,10 +123,16 @@ namespace LOSA.Calidad
             this.reposGrdOrigenEspecie = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.origenespecieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coliucn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colfishsource1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_zona_pesca = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposGrdZonaPesca = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.zonaPescaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colplanta_senasa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsustentable = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repoSpinSustentable = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
@@ -134,6 +140,8 @@ namespace LOSA.Calidad
             this.reposGrdPaisOrigen = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.paisesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfishsource = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposHyperLinkFishSource = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.colIUCN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -142,6 +150,8 @@ namespace LOSA.Calidad
             this.reposGrdTipo = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.tipoingresoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldescripcion4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colporce_tipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposSpinPorcTipo = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -312,16 +322,6 @@ namespace LOSA.Calidad
             this.labelControl78 = new DevExpress.XtraEditors.LabelControl();
             this.txtTM_inventarioActual = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.colid2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnombre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coliucn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfishsource1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldescripcion4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtloteMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnombreMP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnumtraslado.Properties)).BeginInit();
@@ -1156,6 +1156,28 @@ namespace LOSA.Calidad
             this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // colid2
+            // 
+            this.colid2.FieldName = "id";
+            this.colid2.Name = "colid2";
+            // 
+            // colnombre
+            // 
+            this.colnombre.FieldName = "nombre";
+            this.colnombre.Name = "colnombre";
+            this.colnombre.Visible = true;
+            this.colnombre.VisibleIndex = 0;
+            // 
+            // coliucn1
+            // 
+            this.coliucn1.FieldName = "iucn";
+            this.coliucn1.Name = "coliucn1";
+            // 
+            // colfishsource1
+            // 
+            this.colfishsource1.FieldName = "fishsource";
+            this.colfishsource1.Name = "colfishsource1";
+            // 
             // colid_zona_pesca
             // 
             this.colid_zona_pesca.Caption = "Zona Pesca";
@@ -1192,6 +1214,22 @@ namespace LOSA.Calidad
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid3
+            // 
+            this.colid3.FieldName = "id";
+            this.colid3.Name = "colid3";
+            this.colid3.OptionsColumn.AllowEdit = false;
+            this.colid3.Visible = true;
+            this.colid3.VisibleIndex = 0;
+            // 
+            // coldescripcion2
+            // 
+            this.coldescripcion2.Caption = "Descripcion";
+            this.coldescripcion2.FieldName = "descripcion";
+            this.coldescripcion2.Name = "coldescripcion2";
+            this.coldescripcion2.Visible = true;
+            this.coldescripcion2.VisibleIndex = 1;
             // 
             // colplanta_senasa
             // 
@@ -1255,6 +1293,22 @@ namespace LOSA.Calidad
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid4
+            // 
+            this.colid4.FieldName = "id";
+            this.colid4.Name = "colid4";
+            this.colid4.OptionsColumn.AllowEdit = false;
+            this.colid4.Visible = true;
+            this.colid4.VisibleIndex = 0;
+            // 
+            // coldescripcion3
+            // 
+            this.coldescripcion3.Caption = "Descripcion";
+            this.coldescripcion3.FieldName = "descripcion";
+            this.coldescripcion3.Name = "coldescripcion3";
+            this.coldescripcion3.Visible = true;
+            this.coldescripcion3.VisibleIndex = 1;
             // 
             // colfishsource
             // 
@@ -1322,6 +1376,19 @@ namespace LOSA.Calidad
             this.gridView10.Name = "gridView10";
             this.gridView10.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView10.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid5
+            // 
+            this.colid5.FieldName = "id";
+            this.colid5.Name = "colid5";
+            // 
+            // coldescripcion4
+            // 
+            this.coldescripcion4.Caption = "Descripcion";
+            this.coldescripcion4.FieldName = "descripcion";
+            this.coldescripcion4.Name = "coldescripcion4";
+            this.coldescripcion4.Visible = true;
+            this.coldescripcion4.VisibleIndex = 0;
             // 
             // colporce_tipo
             // 
@@ -2953,7 +3020,7 @@ namespace LOSA.Calidad
             // 
             this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(1214, 179);
+            this.simpleButton2.Location = new System.Drawing.Point(1214, 180);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(57, 30);
             this.simpleButton2.TabIndex = 53;
@@ -3156,7 +3223,7 @@ namespace LOSA.Calidad
             // 
             this.btnViewBoleta.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnViewBoleta.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnViewBoleta.ImageOptions.SvgImage")));
-            this.btnViewBoleta.Location = new System.Drawing.Point(1214, 211);
+            this.btnViewBoleta.Location = new System.Drawing.Point(1214, 212);
             this.btnViewBoleta.Name = "btnViewBoleta";
             this.btnViewBoleta.Size = new System.Drawing.Size(57, 30);
             this.btnViewBoleta.TabIndex = 58;
@@ -3193,73 +3260,6 @@ namespace LOSA.Calidad
             this.labelControl5.Size = new System.Drawing.Size(16, 17);
             this.labelControl5.TabIndex = 90;
             this.labelControl5.Text = "Kg";
-            // 
-            // colid2
-            // 
-            this.colid2.FieldName = "id";
-            this.colid2.Name = "colid2";
-            // 
-            // colnombre
-            // 
-            this.colnombre.FieldName = "nombre";
-            this.colnombre.Name = "colnombre";
-            this.colnombre.Visible = true;
-            this.colnombre.VisibleIndex = 0;
-            // 
-            // coliucn1
-            // 
-            this.coliucn1.FieldName = "iucn";
-            this.coliucn1.Name = "coliucn1";
-            // 
-            // colfishsource1
-            // 
-            this.colfishsource1.FieldName = "fishsource";
-            this.colfishsource1.Name = "colfishsource1";
-            // 
-            // colid3
-            // 
-            this.colid3.FieldName = "id";
-            this.colid3.Name = "colid3";
-            this.colid3.OptionsColumn.AllowEdit = false;
-            this.colid3.Visible = true;
-            this.colid3.VisibleIndex = 0;
-            // 
-            // coldescripcion2
-            // 
-            this.coldescripcion2.Caption = "Descripcion";
-            this.coldescripcion2.FieldName = "descripcion";
-            this.coldescripcion2.Name = "coldescripcion2";
-            this.coldescripcion2.Visible = true;
-            this.coldescripcion2.VisibleIndex = 1;
-            // 
-            // colid4
-            // 
-            this.colid4.FieldName = "id";
-            this.colid4.Name = "colid4";
-            this.colid4.OptionsColumn.AllowEdit = false;
-            this.colid4.Visible = true;
-            this.colid4.VisibleIndex = 0;
-            // 
-            // coldescripcion3
-            // 
-            this.coldescripcion3.Caption = "Descripcion";
-            this.coldescripcion3.FieldName = "descripcion";
-            this.coldescripcion3.Name = "coldescripcion3";
-            this.coldescripcion3.Visible = true;
-            this.coldescripcion3.VisibleIndex = 1;
-            // 
-            // colid5
-            // 
-            this.colid5.FieldName = "id";
-            this.colid5.Name = "colid5";
-            // 
-            // coldescripcion4
-            // 
-            this.coldescripcion4.Caption = "Descripcion";
-            this.coldescripcion4.FieldName = "descripcion";
-            this.coldescripcion4.Name = "coldescripcion4";
-            this.coldescripcion4.Visible = true;
-            this.coldescripcion4.VisibleIndex = 0;
             // 
             // frmInspeccionCalidadPorIngresoLoteMP
             // 

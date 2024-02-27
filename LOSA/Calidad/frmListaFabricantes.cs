@@ -19,17 +19,18 @@ namespace LOSA.Calidad
     {
         public int IdFabricanteSeleccionado;
         public string NombreFabricanteSeleccionado;
-        public frmListaFabricantes(string pproveedor, string provName)
+        public int IdMp;
+        public frmListaFabricantes(string pproveedor, string provName, int PidMP)
         {
             InitializeComponent();
             Proveedor prov = new Proveedor();
             prov.RecuperarRegistroWithRTN(pproveedor);
 
             txtproveedor.Text = pproveedor + " - " + prov.Nombre;
-            LoadFabricantes(pproveedor);
+            LoadFabricantes(pproveedor, PidMP);
         }
 
-        private void LoadFabricantes(string pProveedor)
+        private void LoadFabricantes(string pProveedor, int pid_mp)
         {
             try
             {
@@ -37,9 +38,10 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_get_lista_plantas_prv_trz]", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_lista_plantas_prv_trzV2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cardcode", pProveedor);
+                cmd.Parameters.AddWithValue("@id_mp", pid_mp);
                 dsTRZ_Reports1.plantas.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
                 adat.Fill(dsTRZ_Reports1.plantas);
