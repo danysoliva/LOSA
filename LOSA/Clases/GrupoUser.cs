@@ -23,7 +23,8 @@ namespace LOSA
             RRHH=8,
             Forecasting=9,
             Bascula=10,
-            Formulacion=11
+            Formulacion=11,
+            Tickets = 12
         }
 
         public GrupoUsuario GrupoUsuarioActivo;
