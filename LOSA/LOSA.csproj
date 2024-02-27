@@ -94,7 +94,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Key_2024_publishing_Danys.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>ACEF548BE057463EA4D5E65BCCA3FC75CA872EE8</ManifestCertificateThumbprint>
@@ -4586,7 +4587,6 @@
     <None Include="Clases\dsColleccionesClases.xss">
       <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
     </None>
-    <None Include="DanysKey_x64_2024.pfx" />
     <None Include="Despachos\dsTransaccionesDespacho.xsc">
       <DependentUpon>dsTransaccionesDespacho.xsd</DependentUpon>
     </None>
@@ -4621,7 +4621,6 @@
     <None Include="Finanzas\dsExoneracion.xss">
       <DependentUpon>dsExoneracion.xsd</DependentUpon>
     </None>
-    <None Include="Key_2024_publishing_Danys.pfx" />
     <None Include="Liquidos\dsLiquidos_.xsc">
       <DependentUpon>dsLiquidos_.xsd</DependentUpon>
     </None>
@@ -4644,12 +4643,6 @@
     <None Include="Logistica\dsCierreMes.xss">
       <DependentUpon>dsCierreMes.xsd</DependentUpon>
     </None>
-    <None Include="Losa2023.pfx" />
-    <None Include="LOSA2_TEMP.pfx" />
-    <None Include="LOSA_1.pfx" />
-    <None Include="LOSA_1_TemporaryKey.pfx" />
-    <None Include="Losa_TEMP.pfx" />
-    <None Include="LOSA_TemporaryKey.pfx" />
     <None Include="MigracionACS\ACSDataSet2.xsc">
       <DependentUpon>ACSDataSet2.xsd</DependentUpon>
     </None>
@@ -6573,6 +6566,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMantoTrazabilidad.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Trazabilidad\frmAddMP_PlantaFabricante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trazabilidad\frmAddMP_PlantaFabricante.Designer.cs">
+      <DependentUpon>frmAddMP_PlantaFabricante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trazabilidad\frmAdjuntar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -8397,7 +8396,7 @@
     <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -8963,6 +8962,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\Despachos\frmDetalleDespacho.resx">
       <DependentUpon>frmDetalleDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trazabilidad\frmAddMP_PlantaFabricante.resx">
+      <DependentUpon>frmAddMP_PlantaFabricante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trazabilidad\frmAdjuntar.resx">
       <DependentUpon>frmAdjuntar.cs</DependentUpon>
