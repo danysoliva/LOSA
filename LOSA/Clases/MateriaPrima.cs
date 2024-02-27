@@ -208,6 +208,38 @@ namespace LOSA.Clases
             }
             return Recuperado;
         }
+
+        public bool RecuperarRegistroFromID_MP(int pIdMP)
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("sp_get_clase_mp_from_id_MP", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idrm", pIdMP);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    IdMP_ACS = dr.GetInt32(0);
+                    Codigo = dr.GetString(1);
+                    NameComercial = Name = dr.GetString(2);
+                    //name sap = dr.GetString(3);
+                    CodeMP_SAP = dr.GetString(4);
+                }
+                dr.Close();
+                Recuperado = true;
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                Recuperado = false;
+                CajaDialogo.Error(ec.Message);
+            }
+            return Recuperado;
+        }
         public bool RecuperarRegistroFromID_RM_PT_ONLY(int pIdRM)
         {
             try
