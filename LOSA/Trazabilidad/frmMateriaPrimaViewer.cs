@@ -231,16 +231,30 @@ namespace LOSA.Logistica
 
         private void linkTRZ_HaciaAdelante_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            //Link Hacia Ruta 1 Trazabilidad
+
+            var gridview = (GridView)gcLotes.FocusedView;
+            var row = (dsMantoTrazabilidad.lista_lotes_mpRow)gridview.GetFocusedDataRow();
+
+            if (!string.IsNullOrEmpty(row.Lot))
+            {
+                frmRutasTrazabilidad frm = new frmRutasTrazabilidad(row.Lot);
+                frm.WindowState = FormWindowState.Maximized;
+                frm.ShowDialog();
+            }
+
+
+
             //Link hacia trazabilidad hacia adelante
-            
-            var gridView = (GridView)gcLotes.FocusedView;
-            var row = (dsMantoTrazabilidad.lista_lotes_mpRow)gridView.GetFocusedDataRow();
-            frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.Lot, row.Name);
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            if (this.MdiParent != null)
-                frm.MdiParent = this.MdiParent;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+
+            //var gridView = (GridView)gcLotes.FocusedView;
+            //var row = (dsMantoTrazabilidad.lista_lotes_mpRow)gridView.GetFocusedDataRow();
+            //frmTrazabilidadHaciaAdelanteByMP_Lot frm = new frmTrazabilidadHaciaAdelanteByMP_Lot(row.Lot, row.Name);
+            //frm.StartPosition = FormStartPosition.CenterScreen;
+            //if (this.MdiParent != null)
+            //    frm.MdiParent = this.MdiParent;
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.Show();
         }
     }
 }
