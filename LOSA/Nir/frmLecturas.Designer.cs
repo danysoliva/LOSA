@@ -80,9 +80,9 @@ namespace LOSA.Nir
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(593, 7);
+            this.cmdHome.Location = new System.Drawing.Point(622, 7);
             this.cmdHome.Name = "cmdHome";
-            this.cmdHome.Size = new System.Drawing.Size(199, 54);
+            this.cmdHome.Size = new System.Drawing.Size(152, 43);
             this.cmdHome.TabIndex = 7;
             this.cmdHome.Text = "Cerrar";
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
@@ -276,9 +276,9 @@ namespace LOSA.Nir
             this.btnNuevo.Appearance.Options.UseFont = true;
             this.btnNuevo.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.ImageOptions.Image")));
-            this.btnNuevo.Location = new System.Drawing.Point(12, 7);
+            this.btnNuevo.Location = new System.Drawing.Point(23, 7);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(180, 54);
+            this.btnNuevo.Size = new System.Drawing.Size(152, 43);
             this.btnNuevo.TabIndex = 34;
             this.btnNuevo.Text = "Nueva Lec.";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -302,9 +302,9 @@ namespace LOSA.Nir
             this.btn_ligar.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ligar.Appearance.Options.UseFont = true;
             this.btn_ligar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ligar.ImageOptions.Image")));
-            this.btn_ligar.Location = new System.Drawing.Point(593, 110);
+            this.btn_ligar.Location = new System.Drawing.Point(640, 115);
             this.btn_ligar.Name = "btn_ligar";
-            this.btn_ligar.Size = new System.Drawing.Size(199, 48);
+            this.btn_ligar.Size = new System.Drawing.Size(152, 43);
             this.btn_ligar.TabIndex = 36;
             this.btn_ligar.Text = "Ligar a ingreso";
             this.btn_ligar.Click += new System.EventHandler(this.btn_ligar_Click);
