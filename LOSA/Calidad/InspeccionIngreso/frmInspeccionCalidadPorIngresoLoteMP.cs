@@ -2273,7 +2273,7 @@ namespace LOSA.Calidad
 
         private void cmdSearchFabricantePrv_Click(object sender, EventArgs e)
         {
-            frmListaFabricantes frm = new frmListaFabricantes(CodeSAP_Proveedor,NombreSAP_Proveedor);
+            frmListaFabricantes frm = new frmListaFabricantes(CodeSAP_Proveedor,NombreSAP_Proveedor, IdMP);
             if(frm.ShowDialog()== DialogResult.OK)
             {
                 txtFabricante.Text = frm.NombreFabricanteSeleccionado;
