@@ -31,6 +31,43 @@ namespace LOSA.Trazabilidad
             LoadtiposArchivos();
         }
 
+        public frmAdjuntar(string nProveedorCode, UserLogin pUser, int pIdPlanta)
+        {
+            InitializeComponent();
+            vProveedorCodigo = nProveedorCode;
+            usuariologeado = pUser;
+            LoadtiposArchivos();
+            LoadPlantas();
+
+            if(dsMantoTrazabilidad1.plantas_list.Count > 0)
+            {
+                glePlanta.EditValue = pIdPlanta;
+            }
+        }
+
+        private void LoadPlantas()
+        {
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("dbo.sp_get_plantas_list_for_proveedor", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo", vProveedorCodigo);
+                dsMantoTrazabilidad1.plantas_list.Clear();
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                adat.Fill(dsMantoTrazabilidad1.plantas_list);
+
+                con.Close();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
+        }
+
         private void LoadtiposArchivos()
         {
             try
@@ -96,7 +133,7 @@ namespace LOSA.Trazabilidad
                 {
                     SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                     con.Open();
-                    SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto]", con);
+                    SqlCommand cmd4 = new SqlCommand("[sp_insert_archivo_adjunto_plantav2]", con);
                     //cmd4.Transaction = transaction;
                     cmd4.CommandType = CommandType.StoredProcedure;
 
@@ -105,6 +142,22 @@ namespace LOSA.Trazabilidad
                     cmd4.Parameters.AddWithValue("@proveedor", vProveedorCodigo);
                     cmd4.Parameters.AddWithValue("@idtipo", gridLookUpEdit1.EditValue);
                     cmd4.Parameters.AddWithValue("@descrip", txtDescripcion.Text);
+                    if (glePlanta.EditValue == null)
+                    {
+                        cmd4.Parameters.AddWithValue("@id_planta", DBNull.Value);
+                    }
+                    else
+                    {
+                        if (dp.ValidateNumberInt32(glePlanta.EditValue) == 0)
+                        {
+                            cmd4.Parameters.AddWithValue("@id_planta", DBNull.Value);
+                        }
+                        else
+                        {
+                            cmd4.Parameters.AddWithValue("@id_planta", glePlanta.EditValue);
+                        }
+                    }
+                    
                     cmd4.ExecuteNonQuery();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -135,7 +188,11 @@ namespace LOSA.Trazabilidad
                     DataOperations dp = new DataOperations();
 
                     FtpWebRequest request = (FtpWebRequest)WebRequest.Create(pathFile);//crear el archivo en el server
-                    request.Credentials = new NetworkCredential(usuariologeado.ADuser1, usuariologeado.Pass);
+                    if (string.IsNullOrEmpty(usuariologeado.Pass))
+                        request.Credentials = new NetworkCredential("operador", "Tempo1234");
+                    else
+                        request.Credentials = new NetworkCredential(usuariologeado.ADuser1, usuariologeado.Pass);
+
                     //request.Credentials = new NetworkCredential(UsuarioLogeado.AD_User, UsuarioLogeado.Password);
                     request.Method = WebRequestMethods.Ftp.UploadFile;
 

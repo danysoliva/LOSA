@@ -34,6 +34,8 @@
               <xs:element name="enabled" msprop:Generator_ColumnPropNameInTable="enabledColumn" msprop:Generator_ColumnPropNameInRow="enabled" msprop:Generator_UserColumnName="enabled" msprop:Generator_ColumnVarNameInTable="columnenabled" type="xs:boolean" minOccurs="0" />
               <xs:element name="id_tipo" msprop:Generator_ColumnPropNameInTable="id_tipoColumn" msprop:Generator_ColumnPropNameInRow="id_tipo" msprop:Generator_UserColumnName="id_tipo" msprop:Generator_ColumnVarNameInTable="columnid_tipo" type="xs:int" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_UserColumnName="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="id_planta" msdata:Caption="PlantaId" msprop:Generator_ColumnPropNameInRow="id_planta" msprop:Generator_ColumnPropNameInTable="id_plantaColumn" msprop:Generator_ColumnVarNameInTable="columnid_planta" msprop:Generator_UserColumnName="id_planta" type="xs:int" minOccurs="0" />
+              <xs:element name="planta_descripcion" msdata:Caption="Planta" msprop:Generator_ColumnPropNameInRow="planta_descripcion" msprop:Generator_ColumnPropNameInTable="planta_descripcionColumn" msprop:Generator_ColumnVarNameInTable="columnplanta_descripcion" msprop:Generator_UserColumnName="planta_descripcion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -249,11 +251,19 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="aprobacion_asc" msprop:Generator_RowEvHandlerName="aprobacion_ascRowChangeEventHandler" msprop:Generator_RowDeletedName="aprobacion_ascRowDeleted" msprop:Generator_RowDeletingName="aprobacion_ascRowDeleting" msprop:Generator_RowEvArgName="aprobacion_ascRowChangeEvent" msprop:Generator_TablePropName="aprobacion_asc" msprop:Generator_RowChangedName="aprobacion_ascRowChanged" msprop:Generator_RowChangingName="aprobacion_ascRowChanging" msprop:Generator_TableClassName="aprobacion_ascDataTable" msprop:Generator_RowClassName="aprobacion_ascRow" msprop:Generator_TableVarName="tableaprobacion_asc" msprop:Generator_UserTableName="aprobacion_asc">
+        <xs:element name="aprobacion_asc" msprop:Generator_RowEvHandlerName="aprobacion_ascRowChangeEventHandler" msprop:Generator_RowDeletedName="aprobacion_ascRowDeleted" msprop:Generator_RowDeletingName="aprobacion_ascRowDeleting" msprop:Generator_RowEvArgName="aprobacion_ascRowChangeEvent" msprop:Generator_TablePropName="aprobacion_asc" msprop:Generator_RowChangedName="aprobacion_ascRowChanged" msprop:Generator_UserTableName="aprobacion_asc" msprop:Generator_RowChangingName="aprobacion_ascRowChanging" msprop:Generator_RowClassName="aprobacion_ascRow" msprop:Generator_TableClassName="aprobacion_ascDataTable" msprop:Generator_TableVarName="tableaprobacion_asc">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
-              <xs:element name="descripcion" msdata:Caption="Descripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msdata:Caption="Descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_UserColumnName="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="plantas_list" msprop:Generator_RowClassName="plantas_listRow" msprop:Generator_RowEvHandlerName="plantas_listRowChangeEventHandler" msprop:Generator_RowDeletedName="plantas_listRowDeleted" msprop:Generator_RowDeletingName="plantas_listRowDeleting" msprop:Generator_RowEvArgName="plantas_listRowChangeEvent" msprop:Generator_TablePropName="plantas_list" msprop:Generator_RowChangedName="plantas_listRowChanged" msprop:Generator_UserTableName="plantas_list" msprop:Generator_RowChangingName="plantas_listRowChanging" msprop:Generator_TableClassName="plantas_listDataTable" msprop:Generator_TableVarName="tableplantas_list">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion" msdata:Caption="Descripcion" msprop:Generator_UserColumnName="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
