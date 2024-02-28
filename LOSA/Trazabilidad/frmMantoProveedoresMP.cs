@@ -724,6 +724,7 @@ namespace LOSA.Trazabilidad
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantoProveedoresMP));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -819,9 +820,9 @@ namespace LOSA.Trazabilidad
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject74 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject75 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject76 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantoProveedoresMP));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.TabPlantas = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdVerTodosAdjuntos = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl5 = new DevExpress.XtraGrid.GridControl();
             this.dsMantoTrazabilidad1 = new LOSA.Trazabilidad.dsMantoTrazabilidad();
@@ -956,7 +957,6 @@ namespace LOSA.Trazabilidad
             this.colid4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldescripcion3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.cmdVerTodosAdjuntos = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.TabPlantas.SuspendLayout();
@@ -1050,6 +1050,22 @@ namespace LOSA.Trazabilidad
             this.TabPlantas.Size = new System.Drawing.Size(1042, 341);
             this.TabPlantas.Text = "Fabricantes";
             // 
+            // cmdVerTodosAdjuntos
+            // 
+            this.cmdVerTodosAdjuntos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdVerTodosAdjuntos.Appearance.BackColor = System.Drawing.Color.White;
+            this.cmdVerTodosAdjuntos.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.cmdVerTodosAdjuntos.Appearance.Options.UseBackColor = true;
+            this.cmdVerTodosAdjuntos.Appearance.Options.UseFont = true;
+            this.cmdVerTodosAdjuntos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdVerTodosAdjuntos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdVerTodosAdjuntos.ImageOptions.Image")));
+            this.cmdVerTodosAdjuntos.Location = new System.Drawing.Point(747, 3);
+            this.cmdVerTodosAdjuntos.Name = "cmdVerTodosAdjuntos";
+            this.cmdVerTodosAdjuntos.Size = new System.Drawing.Size(142, 34);
+            this.cmdVerTodosAdjuntos.TabIndex = 14;
+            this.cmdVerTodosAdjuntos.Text = "Ver Todos";
+            this.cmdVerTodosAdjuntos.Click += new System.EventHandler(this.cmdVerTodosAdjuntos_Click);
+            // 
             // simpleButton5
             // 
             this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1140,6 +1156,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn4.ColumnEdit = this.repositoryItemGridLookUpEdit3;
             this.gridColumn4.FieldName = "id_tipo";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
             this.gridColumn4.Width = 152;
@@ -2378,22 +2395,6 @@ namespace LOSA.Trazabilidad
             this.labelControl13.Size = new System.Drawing.Size(78, 20);
             this.labelControl13.TabIndex = 31;
             this.labelControl13.Text = "Aprobación";
-            // 
-            // cmdVerTodosAdjuntos
-            // 
-            this.cmdVerTodosAdjuntos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdVerTodosAdjuntos.Appearance.BackColor = System.Drawing.Color.White;
-            this.cmdVerTodosAdjuntos.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.cmdVerTodosAdjuntos.Appearance.Options.UseBackColor = true;
-            this.cmdVerTodosAdjuntos.Appearance.Options.UseFont = true;
-            this.cmdVerTodosAdjuntos.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdVerTodosAdjuntos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.cmdVerTodosAdjuntos.Location = new System.Drawing.Point(747, 3);
-            this.cmdVerTodosAdjuntos.Name = "cmdVerTodosAdjuntos";
-            this.cmdVerTodosAdjuntos.Size = new System.Drawing.Size(142, 34);
-            this.cmdVerTodosAdjuntos.TabIndex = 14;
-            this.cmdVerTodosAdjuntos.Text = "Ver Todos";
-            this.cmdVerTodosAdjuntos.Click += new System.EventHandler(this.cmdVerTodosAdjuntos_Click);
             // 
             // frmMantoProveedoresMP
             // 
