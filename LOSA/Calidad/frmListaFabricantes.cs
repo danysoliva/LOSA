@@ -19,17 +19,18 @@ namespace LOSA.Calidad
     {
         public int IdFabricanteSeleccionado;
         public string NombreFabricanteSeleccionado;
-        public frmListaFabricantes(string pproveedor, string provName)
+        public int IdMp;
+        public frmListaFabricantes(string pproveedor, string provName, int PidMP)
         {
             InitializeComponent();
             Proveedor prov = new Proveedor();
             prov.RecuperarRegistroWithRTN(pproveedor);
 
             txtproveedor.Text = pproveedor + " - " + prov.Nombre;
-            LoadFabricantes(pproveedor);
+            LoadFabricantes(pproveedor, PidMP);
         }
 
-        private void LoadFabricantes(string pProveedor)
+        private void LoadFabricantes(string pProveedor, int pid_mp)
         {
             try
             {
@@ -37,12 +38,13 @@ namespace LOSA.Calidad
                 SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("[sp_get_lista_plantas_prv_trz]", con);
+                SqlCommand cmd = new SqlCommand("[sp_get_lista_plantas_prv_trzV2]", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cardcode", pProveedor);
-                dsTRZ_Reports1.plantas.Clear();
+                cmd.Parameters.AddWithValue("@id_mp", pid_mp);
+                dsTRZ_Reports1.plantas_por_materia_prima.Clear();
                 SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                adat.Fill(dsTRZ_Reports1.plantas);
+                adat.Fill(dsTRZ_Reports1.plantas_por_materia_prima);
 
                 con.Close();
             }
@@ -61,8 +63,8 @@ namespace LOSA.Calidad
         private void cmdSeleccionar_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             var gridView = (GridView)gridControl1.FocusedView;
-            var row = (dsTRZ_Reports.plantasRow)gridView.GetFocusedDataRow();
-            IdFabricanteSeleccionado = row.id;
+            var row = (dsTRZ_Reports.plantas_por_materia_primaRow)gridView.GetFocusedDataRow();
+            IdFabricanteSeleccionado = row.id_planta;
             NombreFabricanteSeleccionado = row.nombre;
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -71,11 +73,11 @@ namespace LOSA.Calidad
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             var gridView = (GridView)gridControl1.FocusedView;
-            var row = (dsTRZ_Reports.plantasRow)gridView.GetFocusedDataRow();
+            var row = (dsTRZ_Reports.plantas_por_materia_primaRow)gridView.GetFocusedDataRow();
 
             if (gridView1.RowCount != 0)
             {
-                IdFabricanteSeleccionado = row.id;
+                IdFabricanteSeleccionado = row.id_planta;
                 NombreFabricanteSeleccionado = row.nombre;
                 this.DialogResult = DialogResult.OK;
                 this.Close();

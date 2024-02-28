@@ -439,6 +439,27 @@ namespace LOSA
                     }
                     break;
 
+                case GrupoUser.GrupoUsuario.Tickets:
+                    int idNivel12 = pUser.idNivelAcceso(pUser.Id, 7);//ALOSY
+                    switch (idNivel12)
+                    {
+                        case 1://Basic View
+                        case 2://Basic No Autorization
+                        case 3://Medium Autorization
+                        case 4://Depth With Delta
+                        case 5://Depth Without Delta
+                            tabOpciones.SelectedTabPageIndex = 11;//Tickets
+                            tabOpciones.TabPages[11].PageVisible = true;
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = 11;//Tickets
+                            tabOpciones.TabPages[11].PageVisible = true;
+                            break;
+                    }
+
+
+                    break;
+
                 default:
                     tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
                     tabOpciones.TabPages[i].PageVisible = true;
