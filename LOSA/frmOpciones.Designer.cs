@@ -6287,6 +6287,7 @@
             this.navBarItem1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem1.Appearance.Options.UseFont = true;
             this.navBarItem1.Caption = "Mantenimiento Empleado";
+            this.navBarItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem1.ImageOptions.SvgImage")));
             this.navBarItem1.Name = "navBarItem1";
             // 
             // navBarItem3
@@ -6294,6 +6295,7 @@
             this.navBarItem3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem3.Appearance.Options.UseFont = true;
             this.navBarItem3.Caption = "Ordenes Combustible";
+            this.navBarItem3.ImageOptions.SmallImage = global::LOSA.Properties.Resources.bomba_de_gas_32X32;
             this.navBarItem3.Name = "navBarItem3";
             // 
             // navBarItem4
@@ -6301,6 +6303,7 @@
             this.navBarItem4.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem4.Appearance.Options.UseFont = true;
             this.navBarItem4.Caption = "Encuesta Clima Laboral";
+            this.navBarItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem4.ImageOptions.SvgImage")));
             this.navBarItem4.Name = "navBarItem4";
             // 
             // navBarItem5
@@ -6308,6 +6311,7 @@
             this.navBarItem5.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem5.Appearance.Options.UseFont = true;
             this.navBarItem5.Caption = "Resumen Horas Trabajadas";
+            this.navBarItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem5.ImageOptions.SvgImage")));
             this.navBarItem5.Name = "navBarItem5";
             // 
             // navBarItem6
@@ -6315,6 +6319,7 @@
             this.navBarItem6.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem6.Appearance.Options.UseFont = true;
             this.navBarItem6.Caption = "Resumen Horas Extras";
+            this.navBarItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem6.ImageOptions.SvgImage")));
             this.navBarItem6.Name = "navBarItem6";
             // 
             // navBarItem7
@@ -6322,6 +6327,7 @@
             this.navBarItem7.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem7.Appearance.Options.UseFont = true;
             this.navBarItem7.Caption = "Resumen Nomina";
+            this.navBarItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem7.ImageOptions.SvgImage")));
             this.navBarItem7.Name = "navBarItem7";
             // 
             // navBarItem8
@@ -6329,6 +6335,7 @@
             this.navBarItem8.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem8.Appearance.Options.UseFont = true;
             this.navBarItem8.Caption = "Resumen Inasistencias";
+            this.navBarItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem8.ImageOptions.SvgImage")));
             this.navBarItem8.Name = "navBarItem8";
             // 
             // navBarItem9
@@ -6336,6 +6343,7 @@
             this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem9.Appearance.Options.UseFont = true;
             this.navBarItem9.Caption = "Liquidaciones";
+            this.navBarItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem9.ImageOptions.SvgImage")));
             this.navBarItem9.Name = "navBarItem9";
             // 
             // navBarItem10
@@ -6343,6 +6351,7 @@
             this.navBarItem10.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem10.Appearance.Options.UseFont = true;
             this.navBarItem10.Caption = "Saldo Vacaciones";
+            this.navBarItem10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem10.ImageOptions.SvgImage")));
             this.navBarItem10.Name = "navBarItem10";
             // 
             // navBarItem12
@@ -6350,6 +6359,7 @@
             this.navBarItem12.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem12.Appearance.Options.UseFont = true;
             this.navBarItem12.Caption = "Imprimir Voucher(s)";
+            this.navBarItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem12.ImageOptions.SvgImage")));
             this.navBarItem12.Name = "navBarItem12";
             // 
             // navBarItem16
@@ -6357,6 +6367,7 @@
             this.navBarItem16.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem16.Appearance.Options.UseFont = true;
             this.navBarItem16.Caption = "Imprimir Voucher(s) Planilla";
+            this.navBarItem16.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem16.ImageOptions.SvgImage")));
             this.navBarItem16.Name = "navBarItem16";
             // 
             // navBarItem17
@@ -6364,6 +6375,7 @@
             this.navBarItem17.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem17.Appearance.Options.UseFont = true;
             this.navBarItem17.Caption = "Reporte Salidas Desecho";
+            this.navBarItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem17.ImageOptions.SvgImage")));
             this.navBarItem17.Name = "navBarItem17";
             // 
             // navBarItem18
@@ -6371,6 +6383,7 @@
             this.navBarItem18.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.navBarItem18.Appearance.Options.UseFont = true;
             this.navBarItem18.Caption = "Reporte Vacaciones";
+            this.navBarItem18.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem18.ImageOptions.SvgImage")));
             this.navBarItem18.Name = "navBarItem18";
             // 
             // frmOpciones
