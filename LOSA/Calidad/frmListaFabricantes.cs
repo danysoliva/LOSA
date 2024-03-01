@@ -65,9 +65,18 @@ namespace LOSA.Calidad
             var gridView = (GridView)gridControl1.FocusedView;
             var row = (dsTRZ_Reports.plantas_por_materia_primaRow)gridView.GetFocusedDataRow();
             IdFabricanteSeleccionado = row.id_planta;
+
             NombreFabricanteSeleccionado = row.nombre;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+
+            txtFabricante.Text = row.nombre;
+            txtTipo.Text = row.tipo_gmo;
+            if (row.aprobado_asc == "Si")
+                tsAprobadoASC.IsOn = true;
+            else
+                tsAprobadoASC.IsOn = false;
+
+            navigationFrame1.SelectedPageIndex = 1;
+            
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)

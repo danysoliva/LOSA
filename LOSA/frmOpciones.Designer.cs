@@ -433,6 +433,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.btnLogRecuentoInventario = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -670,6 +671,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.btnLogRecuentoInventario);
             this.TabMP_Sacos.Controls.Add(this.btnRPTAlimentacionMacrosLogistica);
             this.TabMP_Sacos.Controls.Add(this.cmdGestionLotesGranel);
             this.TabMP_Sacos.Controls.Add(this.btnValidacionTarimas);
@@ -731,7 +733,7 @@
             this.btnValidacionTarimas.Appearance.Options.UseFont = true;
             this.btnValidacionTarimas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnValidacionTarimas.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnValidacionTarimas.ImageOptions.SvgImage")));
-            this.btnValidacionTarimas.Location = new System.Drawing.Point(416, 158);
+            this.btnValidacionTarimas.Location = new System.Drawing.Point(622, 110);
             this.btnValidacionTarimas.Name = "btnValidacionTarimas";
             this.btnValidacionTarimas.Size = new System.Drawing.Size(198, 42);
             this.btnValidacionTarimas.TabIndex = 51;
@@ -6217,6 +6219,19 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // btnLogRecuentoInventario
+            // 
+            this.btnLogRecuentoInventario.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnLogRecuentoInventario.Appearance.Options.UseFont = true;
+            this.btnLogRecuentoInventario.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnLogRecuentoInventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton74.ImageOptions.Image")));
+            this.btnLogRecuentoInventario.Location = new System.Drawing.Point(414, 159);
+            this.btnLogRecuentoInventario.Name = "btnLogRecuentoInventario";
+            this.btnLogRecuentoInventario.Size = new System.Drawing.Size(200, 41);
+            this.btnLogRecuentoInventario.TabIndex = 59;
+            this.btnLogRecuentoInventario.Text = "Inventario Final\r\npor periodo";
+            this.btnLogRecuentoInventario.Click += new System.EventHandler(this.btnLogRecuentoInventario_Click);
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6672,5 +6687,6 @@
         private DevExpress.XtraEditors.SimpleButton btnRPTAlimentacionMacrosLogistica;
         private DevExpress.XtraNavBar.NavBarItem navBarProductoBorrador;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
+        private DevExpress.XtraEditors.SimpleButton btnLogRecuentoInventario;
     }
 }
