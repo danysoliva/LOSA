@@ -6253,15 +6253,17 @@
             this.navBarItem16,
             this.navBarItem17,
             this.navBarItem18});
-            this.navBarControl1.Location = new System.Drawing.Point(695, 3);
+            this.navBarControl1.Location = new System.Drawing.Point(678, 3);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.Size = new System.Drawing.Size(140, 478);
+            this.navBarControl1.Size = new System.Drawing.Size(157, 478);
             this.navBarControl1.TabIndex = 55;
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.Visible = false;
             // 
             // navBarGroup1
             // 
+            this.navBarGroup1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.navBarGroup1.Appearance.Options.UseFont = true;
             this.navBarGroup1.Caption = "General";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -6282,66 +6284,92 @@
             // 
             // navBarItem1
             // 
+            this.navBarItem1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem1.Appearance.Options.UseFont = true;
             this.navBarItem1.Caption = "Mantenimiento Empleado";
             this.navBarItem1.Name = "navBarItem1";
             // 
             // navBarItem3
             // 
+            this.navBarItem3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem3.Appearance.Options.UseFont = true;
             this.navBarItem3.Caption = "Ordenes Combustible";
             this.navBarItem3.Name = "navBarItem3";
             // 
             // navBarItem4
             // 
+            this.navBarItem4.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem4.Appearance.Options.UseFont = true;
             this.navBarItem4.Caption = "Encuesta Clima Laboral";
             this.navBarItem4.Name = "navBarItem4";
             // 
             // navBarItem5
             // 
+            this.navBarItem5.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem5.Appearance.Options.UseFont = true;
             this.navBarItem5.Caption = "Resumen Horas Trabajadas";
             this.navBarItem5.Name = "navBarItem5";
             // 
             // navBarItem6
             // 
+            this.navBarItem6.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem6.Appearance.Options.UseFont = true;
             this.navBarItem6.Caption = "Resumen Horas Extras";
             this.navBarItem6.Name = "navBarItem6";
             // 
             // navBarItem7
             // 
+            this.navBarItem7.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem7.Appearance.Options.UseFont = true;
             this.navBarItem7.Caption = "Resumen Nomina";
             this.navBarItem7.Name = "navBarItem7";
             // 
             // navBarItem8
             // 
+            this.navBarItem8.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem8.Appearance.Options.UseFont = true;
             this.navBarItem8.Caption = "Resumen Inasistencias";
             this.navBarItem8.Name = "navBarItem8";
             // 
             // navBarItem9
             // 
+            this.navBarItem9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem9.Appearance.Options.UseFont = true;
             this.navBarItem9.Caption = "Liquidaciones";
             this.navBarItem9.Name = "navBarItem9";
             // 
             // navBarItem10
             // 
+            this.navBarItem10.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem10.Appearance.Options.UseFont = true;
             this.navBarItem10.Caption = "Saldo Vacaciones";
             this.navBarItem10.Name = "navBarItem10";
             // 
             // navBarItem12
             // 
+            this.navBarItem12.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem12.Appearance.Options.UseFont = true;
             this.navBarItem12.Caption = "Imprimir Voucher(s)";
             this.navBarItem12.Name = "navBarItem12";
             // 
             // navBarItem16
             // 
+            this.navBarItem16.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem16.Appearance.Options.UseFont = true;
             this.navBarItem16.Caption = "Imprimir Voucher(s) Planilla";
             this.navBarItem16.Name = "navBarItem16";
             // 
             // navBarItem17
             // 
+            this.navBarItem17.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem17.Appearance.Options.UseFont = true;
             this.navBarItem17.Caption = "Reporte Salidas Desecho";
             this.navBarItem17.Name = "navBarItem17";
             // 
             // navBarItem18
             // 
+            this.navBarItem18.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.navBarItem18.Appearance.Options.UseFont = true;
             this.navBarItem18.Caption = "Reporte Vacaciones";
             this.navBarItem18.Name = "navBarItem18";
             // 
