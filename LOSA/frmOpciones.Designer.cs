@@ -6299,6 +6299,10 @@
             // 
             this.nbRRHH1.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH1.Appearance.Options.UseFont = true;
+            this.nbRRHH1.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH1.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH1.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH1.AppearancePressed.Options.UseFont = true;
             this.nbRRHH1.Caption = "Mantenimiento Empleado";
             this.nbRRHH1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem1.ImageOptions.SvgImage")));
             this.nbRRHH1.Name = "nbRRHH1";
@@ -6308,6 +6312,10 @@
             // 
             this.nbRRHH2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH2.Appearance.Options.UseFont = true;
+            this.nbRRHH2.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH2.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH2.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH2.AppearancePressed.Options.UseFont = true;
             this.nbRRHH2.Caption = "Ordenes Combustible";
             this.nbRRHH2.ImageOptions.SmallImage = global::LOSA.Properties.Resources.bomba_de_gas_32X32;
             this.nbRRHH2.Name = "nbRRHH2";
@@ -6317,6 +6325,10 @@
             // 
             this.nbRRHH3.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH3.Appearance.Options.UseFont = true;
+            this.nbRRHH3.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH3.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH3.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH3.AppearancePressed.Options.UseFont = true;
             this.nbRRHH3.Caption = "Encuesta Clima Laboral";
             this.nbRRHH3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem4.ImageOptions.SvgImage")));
             this.nbRRHH3.Name = "nbRRHH3";
@@ -6326,6 +6338,10 @@
             // 
             this.nbRRHH4.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH4.Appearance.Options.UseFont = true;
+            this.nbRRHH4.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH4.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH4.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH4.AppearancePressed.Options.UseFont = true;
             this.nbRRHH4.Caption = "Resumen Horas Trabajadas";
             this.nbRRHH4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem5.ImageOptions.SvgImage")));
             this.nbRRHH4.Name = "nbRRHH4";
@@ -6335,6 +6351,10 @@
             // 
             this.nbRRHH5.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH5.Appearance.Options.UseFont = true;
+            this.nbRRHH5.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH5.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH5.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH5.AppearancePressed.Options.UseFont = true;
             this.nbRRHH5.Caption = "Resumen Horas Extras";
             this.nbRRHH5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem6.ImageOptions.SvgImage")));
             this.nbRRHH5.Name = "nbRRHH5";
@@ -6344,6 +6364,10 @@
             // 
             this.nbRRHH6.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH6.Appearance.Options.UseFont = true;
+            this.nbRRHH6.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH6.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH6.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH6.AppearancePressed.Options.UseFont = true;
             this.nbRRHH6.Caption = "Resumen Nomina";
             this.nbRRHH6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem7.ImageOptions.SvgImage")));
             this.nbRRHH6.Name = "nbRRHH6";
@@ -6353,6 +6377,10 @@
             // 
             this.nbRRHH7.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH7.Appearance.Options.UseFont = true;
+            this.nbRRHH7.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH7.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH7.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH7.AppearancePressed.Options.UseFont = true;
             this.nbRRHH7.Caption = "Resumen Inasistencias";
             this.nbRRHH7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem8.ImageOptions.SvgImage")));
             this.nbRRHH7.Name = "nbRRHH7";
@@ -6362,6 +6390,10 @@
             // 
             this.nbRRHH8.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH8.Appearance.Options.UseFont = true;
+            this.nbRRHH8.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH8.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH8.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH8.AppearancePressed.Options.UseFont = true;
             this.nbRRHH8.Caption = "Liquidaciones";
             this.nbRRHH8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem9.ImageOptions.SvgImage")));
             this.nbRRHH8.Name = "nbRRHH8";
@@ -6371,6 +6403,10 @@
             // 
             this.nbRRHH9.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH9.Appearance.Options.UseFont = true;
+            this.nbRRHH9.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH9.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH9.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH9.AppearancePressed.Options.UseFont = true;
             this.nbRRHH9.Caption = "Saldo Vacaciones";
             this.nbRRHH9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem10.ImageOptions.SvgImage")));
             this.nbRRHH9.Name = "nbRRHH9";
@@ -6380,6 +6416,10 @@
             // 
             this.nbRRHH10.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH10.Appearance.Options.UseFont = true;
+            this.nbRRHH10.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH10.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH10.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH10.AppearancePressed.Options.UseFont = true;
             this.nbRRHH10.Caption = "Imprimir Voucher(s)";
             this.nbRRHH10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem12.ImageOptions.SvgImage")));
             this.nbRRHH10.Name = "nbRRHH10";
@@ -6389,6 +6429,10 @@
             // 
             this.nbRRHH11.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH11.Appearance.Options.UseFont = true;
+            this.nbRRHH11.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH11.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH11.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH11.AppearancePressed.Options.UseFont = true;
             this.nbRRHH11.Caption = "Imprimir Voucher(s) Planilla";
             this.nbRRHH11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem16.ImageOptions.SvgImage")));
             this.nbRRHH11.Name = "nbRRHH11";
@@ -6398,6 +6442,10 @@
             // 
             this.nbRRHH12.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH12.Appearance.Options.UseFont = true;
+            this.nbRRHH12.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH12.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH12.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH12.AppearancePressed.Options.UseFont = true;
             this.nbRRHH12.Caption = "Reporte Salidas Desecho";
             this.nbRRHH12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem17.ImageOptions.SvgImage")));
             this.nbRRHH12.Name = "nbRRHH12";
@@ -6407,6 +6455,10 @@
             // 
             this.nbRRHH13.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.nbRRHH13.Appearance.Options.UseFont = true;
+            this.nbRRHH13.AppearanceHotTracked.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH13.AppearanceHotTracked.Options.UseFont = true;
+            this.nbRRHH13.AppearancePressed.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.nbRRHH13.AppearancePressed.Options.UseFont = true;
             this.nbRRHH13.Caption = "Reporte Vacaciones";
             this.nbRRHH13.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarItem18.ImageOptions.SvgImage")));
             this.nbRRHH13.Name = "nbRRHH13";
