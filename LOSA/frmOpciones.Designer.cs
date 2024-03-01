@@ -4893,11 +4893,12 @@
             this.simpleButton5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(473, 202);
+            this.simpleButton5.Location = new System.Drawing.Point(686, 202);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton5.Size = new System.Drawing.Size(140, 71);
             this.simpleButton5.TabIndex = 54;
             this.simpleButton5.Text = "Reporte Vacaciones";
+            this.simpleButton5.Visible = false;
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click_2);
             // 
             // cmdReportSalidaDesechosRRHH
@@ -4908,11 +4909,12 @@
             this.cmdReportSalidaDesechosRRHH.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cmdReportSalidaDesechosRRHH.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdReportSalidaDesechosRRHH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdReportSalidaDesechosRRHH.ImageOptions.SvgImage")));
-            this.cmdReportSalidaDesechosRRHH.Location = new System.Drawing.Point(473, 116);
+            this.cmdReportSalidaDesechosRRHH.Location = new System.Drawing.Point(686, 116);
             this.cmdReportSalidaDesechosRRHH.Name = "cmdReportSalidaDesechosRRHH";
-            this.cmdReportSalidaDesechosRRHH.Size = new System.Drawing.Size(199, 71);
+            this.cmdReportSalidaDesechosRRHH.Size = new System.Drawing.Size(140, 71);
             this.cmdReportSalidaDesechosRRHH.TabIndex = 53;
             this.cmdReportSalidaDesechosRRHH.Text = "Reporte Salidas Desecho";
+            this.cmdReportSalidaDesechosRRHH.Visible = false;
             this.cmdReportSalidaDesechosRRHH.Click += new System.EventHandler(this.cmdReportSalidaDesechosRRHH_Click);
             // 
             // cmdPrintVouchersPlanillas
@@ -4923,11 +4925,12 @@
             this.cmdPrintVouchersPlanillas.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cmdPrintVouchersPlanillas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdPrintVouchersPlanillas.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdPrintVouchersPlanillas.ImageOptions.SvgImage")));
-            this.cmdPrintVouchersPlanillas.Location = new System.Drawing.Point(473, 30);
+            this.cmdPrintVouchersPlanillas.Location = new System.Drawing.Point(686, 30);
             this.cmdPrintVouchersPlanillas.Name = "cmdPrintVouchersPlanillas";
-            this.cmdPrintVouchersPlanillas.Size = new System.Drawing.Size(199, 71);
+            this.cmdPrintVouchersPlanillas.Size = new System.Drawing.Size(140, 71);
             this.cmdPrintVouchersPlanillas.TabIndex = 20;
             this.cmdPrintVouchersPlanillas.Text = "Imprimir Voucher(s) Planilla";
+            this.cmdPrintVouchersPlanillas.Visible = false;
             this.cmdPrintVouchersPlanillas.Click += new System.EventHandler(this.cmdPrintVouchersPlanillas_Click);
             // 
             // cmdImprimirVouchers
@@ -4938,11 +4941,12 @@
             this.cmdImprimirVouchers.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cmdImprimirVouchers.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdImprimirVouchers.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("cmdImprimirVouchers.ImageOptions.SvgImage")));
-            this.cmdImprimirVouchers.Location = new System.Drawing.Point(257, 374);
+            this.cmdImprimirVouchers.Location = new System.Drawing.Point(546, 372);
             this.cmdImprimirVouchers.Name = "cmdImprimirVouchers";
-            this.cmdImprimirVouchers.Size = new System.Drawing.Size(199, 71);
+            this.cmdImprimirVouchers.Size = new System.Drawing.Size(134, 71);
             this.cmdImprimirVouchers.TabIndex = 19;
             this.cmdImprimirVouchers.Text = "Imprimir Voucher(s)";
+            this.cmdImprimirVouchers.Visible = false;
             this.cmdImprimirVouchers.Click += new System.EventHandler(this.cmdImprimirVouchers_Click);
             // 
             // simpleButton46
@@ -4953,11 +4957,12 @@
             this.simpleButton46.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton46.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton46.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton46.ImageOptions.SvgImage")));
-            this.simpleButton46.Location = new System.Drawing.Point(257, 288);
+            this.simpleButton46.Location = new System.Drawing.Point(546, 286);
             this.simpleButton46.Name = "simpleButton46";
-            this.simpleButton46.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton46.Size = new System.Drawing.Size(134, 71);
             this.simpleButton46.TabIndex = 18;
             this.simpleButton46.Text = "Saldos de Vacaciones";
+            this.simpleButton46.Visible = false;
             this.simpleButton46.Click += new System.EventHandler(this.simpleButton46_Click);
             // 
             // simpleButton45
@@ -4968,11 +4973,12 @@
             this.simpleButton45.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton45.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton45.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton45.ImageOptions.SvgImage")));
-            this.simpleButton45.Location = new System.Drawing.Point(257, 202);
+            this.simpleButton45.Location = new System.Drawing.Point(546, 200);
             this.simpleButton45.Name = "simpleButton45";
-            this.simpleButton45.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton45.Size = new System.Drawing.Size(134, 71);
             this.simpleButton45.TabIndex = 17;
             this.simpleButton45.Text = "Liquidaciones";
+            this.simpleButton45.Visible = false;
             this.simpleButton45.Click += new System.EventHandler(this.simpleButton45_Click);
             // 
             // simpleButton44
@@ -4983,11 +4989,12 @@
             this.simpleButton44.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton44.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton44.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton44.ImageOptions.SvgImage")));
-            this.simpleButton44.Location = new System.Drawing.Point(257, 116);
+            this.simpleButton44.Location = new System.Drawing.Point(546, 114);
             this.simpleButton44.Name = "simpleButton44";
-            this.simpleButton44.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton44.Size = new System.Drawing.Size(134, 71);
             this.simpleButton44.TabIndex = 16;
             this.simpleButton44.Text = "Resumen Inasistencias";
+            this.simpleButton44.Visible = false;
             this.simpleButton44.Click += new System.EventHandler(this.simpleButton44_Click);
             // 
             // simpleButton43
@@ -4998,11 +5005,12 @@
             this.simpleButton43.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton43.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton43.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton43.ImageOptions.SvgImage")));
-            this.simpleButton43.Location = new System.Drawing.Point(257, 30);
+            this.simpleButton43.Location = new System.Drawing.Point(546, 28);
             this.simpleButton43.Name = "simpleButton43";
-            this.simpleButton43.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton43.Size = new System.Drawing.Size(134, 71);
             this.simpleButton43.TabIndex = 15;
             this.simpleButton43.Text = "Resumen Nómina";
+            this.simpleButton43.Visible = false;
             this.simpleButton43.Click += new System.EventHandler(this.simpleButton43_Click);
             // 
             // simpleButton42
@@ -5013,11 +5021,12 @@
             this.simpleButton42.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton42.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton42.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton42.ImageOptions.SvgImage")));
-            this.simpleButton42.Location = new System.Drawing.Point(28, 374);
+            this.simpleButton42.Location = new System.Drawing.Point(397, 372);
             this.simpleButton42.Name = "simpleButton42";
-            this.simpleButton42.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton42.Size = new System.Drawing.Size(134, 71);
             this.simpleButton42.TabIndex = 14;
             this.simpleButton42.Text = "Resumen Horas Extras";
+            this.simpleButton42.Visible = false;
             this.simpleButton42.Click += new System.EventHandler(this.simpleButton42_Click);
             // 
             // simpleButton41
@@ -5028,11 +5037,12 @@
             this.simpleButton41.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton41.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton41.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton41.ImageOptions.SvgImage")));
-            this.simpleButton41.Location = new System.Drawing.Point(28, 288);
+            this.simpleButton41.Location = new System.Drawing.Point(397, 286);
             this.simpleButton41.Name = "simpleButton41";
-            this.simpleButton41.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton41.Size = new System.Drawing.Size(134, 71);
             this.simpleButton41.TabIndex = 13;
             this.simpleButton41.Text = "Resumen Horas Trabajadas";
+            this.simpleButton41.Visible = false;
             this.simpleButton41.Click += new System.EventHandler(this.simpleButton41_Click);
             // 
             // simpleButton40
@@ -5043,11 +5053,12 @@
             this.simpleButton40.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton40.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton40.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton40.ImageOptions.Image")));
-            this.simpleButton40.Location = new System.Drawing.Point(28, 202);
+            this.simpleButton40.Location = new System.Drawing.Point(397, 200);
             this.simpleButton40.Name = "simpleButton40";
-            this.simpleButton40.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton40.Size = new System.Drawing.Size(134, 71);
             this.simpleButton40.TabIndex = 12;
             this.simpleButton40.Text = "Encuesta Clima Laboral";
+            this.simpleButton40.Visible = false;
             this.simpleButton40.Click += new System.EventHandler(this.simpleButton40_Click);
             // 
             // simpleButton39
@@ -5058,11 +5069,12 @@
             this.simpleButton39.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton39.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton39.ImageOptions.Image = global::LOSA.Properties.Resources.bomba_de_gas_32X32;
-            this.simpleButton39.Location = new System.Drawing.Point(28, 116);
+            this.simpleButton39.Location = new System.Drawing.Point(397, 114);
             this.simpleButton39.Name = "simpleButton39";
-            this.simpleButton39.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton39.Size = new System.Drawing.Size(134, 71);
             this.simpleButton39.TabIndex = 11;
             this.simpleButton39.Text = "Ordenes de Combustible";
+            this.simpleButton39.Visible = false;
             this.simpleButton39.Click += new System.EventHandler(this.simpleButton39_Click);
             // 
             // simpleButton38
@@ -5073,11 +5085,12 @@
             this.simpleButton38.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.simpleButton38.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.simpleButton38.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton38.ImageOptions.Image")));
-            this.simpleButton38.Location = new System.Drawing.Point(28, 30);
+            this.simpleButton38.Location = new System.Drawing.Point(397, 28);
             this.simpleButton38.Name = "simpleButton38";
-            this.simpleButton38.Size = new System.Drawing.Size(199, 71);
+            this.simpleButton38.Size = new System.Drawing.Size(134, 71);
             this.simpleButton38.TabIndex = 10;
             this.simpleButton38.Text = "Mantenimiento Empleado";
+            this.simpleButton38.Visible = false;
             this.simpleButton38.Click += new System.EventHandler(this.simpleButton38_Click);
             // 
             // TabForecasting
@@ -6237,6 +6250,7 @@
             // navBarControl1
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
+            this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
@@ -6253,12 +6267,11 @@
             this.nbRRHH11,
             this.nbRRHH12,
             this.nbRRHH13});
-            this.navBarControl1.Location = new System.Drawing.Point(678, 3);
+            this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.Size = new System.Drawing.Size(157, 478);
+            this.navBarControl1.Size = new System.Drawing.Size(334, 480);
             this.navBarControl1.TabIndex = 55;
             this.navBarControl1.Text = "navBarControl1";
-            this.navBarControl1.Visible = false;
             // 
             // navBarGroup1
             // 
