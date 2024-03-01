@@ -433,6 +433,21 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem17 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem18 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -467,6 +482,7 @@
             this.TabTickets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdHome
@@ -4849,6 +4865,7 @@
             // 
             // TabRRHH
             // 
+            this.TabRRHH.Controls.Add(this.navBarControl1);
             this.TabRRHH.Controls.Add(this.simpleButton5);
             this.TabRRHH.Controls.Add(this.cmdReportSalidaDesechosRRHH);
             this.TabRRHH.Controls.Add(this.cmdPrintVouchersPlanillas);
@@ -6217,6 +6234,117 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
+            // navBarControl1
+            // 
+            this.navBarControl1.ActiveGroup = this.navBarGroup1;
+            this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.navBarGroup1});
+            this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.navBarItem1,
+            this.navBarItem3,
+            this.navBarItem4,
+            this.navBarItem5,
+            this.navBarItem6,
+            this.navBarItem7,
+            this.navBarItem8,
+            this.navBarItem9,
+            this.navBarItem10,
+            this.navBarItem12,
+            this.navBarItem16,
+            this.navBarItem17,
+            this.navBarItem18});
+            this.navBarControl1.Location = new System.Drawing.Point(695, 3);
+            this.navBarControl1.Name = "navBarControl1";
+            this.navBarControl1.Size = new System.Drawing.Size(140, 478);
+            this.navBarControl1.TabIndex = 55;
+            this.navBarControl1.Text = "navBarControl1";
+            this.navBarControl1.Visible = false;
+            // 
+            // navBarGroup1
+            // 
+            this.navBarGroup1.Caption = "General";
+            this.navBarGroup1.Expanded = true;
+            this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem17),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem18)});
+            this.navBarGroup1.Name = "navBarGroup1";
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Mantenimiento Empleado";
+            this.navBarItem1.Name = "navBarItem1";
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Caption = "Ordenes Combustible";
+            this.navBarItem3.Name = "navBarItem3";
+            // 
+            // navBarItem4
+            // 
+            this.navBarItem4.Caption = "Encuesta Clima Laboral";
+            this.navBarItem4.Name = "navBarItem4";
+            // 
+            // navBarItem5
+            // 
+            this.navBarItem5.Caption = "Resumen Horas Trabajadas";
+            this.navBarItem5.Name = "navBarItem5";
+            // 
+            // navBarItem6
+            // 
+            this.navBarItem6.Caption = "Resumen Horas Extras";
+            this.navBarItem6.Name = "navBarItem6";
+            // 
+            // navBarItem7
+            // 
+            this.navBarItem7.Caption = "Resumen Nomina";
+            this.navBarItem7.Name = "navBarItem7";
+            // 
+            // navBarItem8
+            // 
+            this.navBarItem8.Caption = "Resumen Inasistencias";
+            this.navBarItem8.Name = "navBarItem8";
+            // 
+            // navBarItem9
+            // 
+            this.navBarItem9.Caption = "Liquidaciones";
+            this.navBarItem9.Name = "navBarItem9";
+            // 
+            // navBarItem10
+            // 
+            this.navBarItem10.Caption = "Saldo Vacaciones";
+            this.navBarItem10.Name = "navBarItem10";
+            // 
+            // navBarItem12
+            // 
+            this.navBarItem12.Caption = "Imprimir Voucher(s)";
+            this.navBarItem12.Name = "navBarItem12";
+            // 
+            // navBarItem16
+            // 
+            this.navBarItem16.Caption = "Imprimir Voucher(s) Planilla";
+            this.navBarItem16.Name = "navBarItem16";
+            // 
+            // navBarItem17
+            // 
+            this.navBarItem17.Caption = "Reporte Salidas Desecho";
+            this.navBarItem17.Name = "navBarItem17";
+            // 
+            // navBarItem18
+            // 
+            this.navBarItem18.Caption = "Reporte Vacaciones";
+            this.navBarItem18.Name = "navBarItem18";
+            // 
             // frmOpciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6264,6 +6392,7 @@
             this.TabTickets.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rd_OdooMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -6672,5 +6801,20 @@
         private DevExpress.XtraEditors.SimpleButton btnRPTAlimentacionMacrosLogistica;
         private DevExpress.XtraNavBar.NavBarItem navBarProductoBorrador;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
+        private DevExpress.XtraNavBar.NavBarControl navBarControl1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem5;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem7;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem8;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem10;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem12;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem16;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem17;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem18;
     }
 }
