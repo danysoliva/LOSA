@@ -65,6 +65,7 @@
             this.btnTransferencia = new DevExpress.XtraEditors.SimpleButton();
             this.btnajuste = new DevExpress.XtraEditors.SimpleButton();
             this.tabMP_Granel = new DevExpress.XtraTab.XtraTabPage();
+            this.cmdReporteSilosLog = new DevExpress.XtraEditors.SimpleButton();
             this.cmdLoteActivoGranel = new DevExpress.XtraEditors.SimpleButton();
             this.btnLoteActivoGranel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -92,7 +93,6 @@
             this.btn_salidapt = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.tabMasterData = new DevExpress.XtraTab.XtraTabPage();
-            this.simpleButton24 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton23 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_andenes = new DevExpress.XtraEditors.SimpleButton();
             this.tabReportes = new DevExpress.XtraTab.XtraTabPage();
@@ -449,7 +449,7 @@
             this.navBarItem45 = new DevExpress.XtraNavBar.NavBarItem();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.rd_OdooMenu = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
-            this.cmdReporteSilosLog = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRecuentoInventario = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabOpciones)).BeginInit();
             this.tabOpciones.SuspendLayout();
             this.TabMontacarga.SuspendLayout();
@@ -688,6 +688,7 @@
             // 
             this.TabMP_Sacos.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabMP_Sacos.Appearance.Header.Options.UseFont = true;
+            this.TabMP_Sacos.Controls.Add(this.btnRecuentoInventario);
             this.TabMP_Sacos.Controls.Add(this.btnRPTAlimentacionMacrosLogistica);
             this.TabMP_Sacos.Controls.Add(this.cmdGestionLotesGranel);
             this.TabMP_Sacos.Controls.Add(this.btnValidacionTarimas);
@@ -749,7 +750,7 @@
             this.btnValidacionTarimas.Appearance.Options.UseFont = true;
             this.btnValidacionTarimas.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.btnValidacionTarimas.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnValidacionTarimas.ImageOptions.SvgImage")));
-            this.btnValidacionTarimas.Location = new System.Drawing.Point(416, 158);
+            this.btnValidacionTarimas.Location = new System.Drawing.Point(622, 110);
             this.btnValidacionTarimas.Name = "btnValidacionTarimas";
             this.btnValidacionTarimas.Size = new System.Drawing.Size(198, 42);
             this.btnValidacionTarimas.TabIndex = 51;
@@ -1042,6 +1043,21 @@
             this.tabMP_Granel.Name = "tabMP_Granel";
             this.tabMP_Granel.Size = new System.Drawing.Size(833, 451);
             this.tabMP_Granel.Text = "MP Granel / Liquidos";
+            // 
+            // cmdReporteSilosLog
+            // 
+            this.cmdReporteSilosLog.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmdReporteSilosLog.Appearance.Options.UseFont = true;
+            this.cmdReporteSilosLog.Appearance.Options.UseTextOptions = true;
+            this.cmdReporteSilosLog.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.cmdReporteSilosLog.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.cmdReporteSilosLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdReporteSilosLog.ImageOptions.Image")));
+            this.cmdReporteSilosLog.Location = new System.Drawing.Point(5, 108);
+            this.cmdReporteSilosLog.Name = "cmdReporteSilosLog";
+            this.cmdReporteSilosLog.Size = new System.Drawing.Size(199, 42);
+            this.cmdReporteSilosLog.TabIndex = 55;
+            this.cmdReporteSilosLog.Text = "Reporte Silos";
+            this.cmdReporteSilosLog.Click += new System.EventHandler(this.cmdReporteSilosLog_Click);
             // 
             // cmdLoteActivoGranel
             // 
@@ -1427,26 +1443,12 @@
             // 
             this.tabMasterData.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.tabMasterData.Appearance.Header.Options.UseFont = true;
-            this.tabMasterData.Controls.Add(this.simpleButton24);
             this.tabMasterData.Controls.Add(this.simpleButton23);
             this.tabMasterData.Controls.Add(this.btn_andenes);
             this.tabMasterData.Name = "tabMasterData";
             this.tabMasterData.Size = new System.Drawing.Size(833, 451);
             this.tabMasterData.Text = "Configuraciones";
             this.tabMasterData.Paint += new System.Windows.Forms.PaintEventHandler(this.tabMasterData_Paint);
-            // 
-            // simpleButton24
-            // 
-            this.simpleButton24.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.simpleButton24.Appearance.Options.UseFont = true;
-            this.simpleButton24.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.simpleButton24.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton24.ImageOptions.Image")));
-            this.simpleButton24.Location = new System.Drawing.Point(8, 110);
-            this.simpleButton24.Name = "simpleButton24";
-            this.simpleButton24.Size = new System.Drawing.Size(199, 49);
-            this.simpleButton24.TabIndex = 41;
-            this.simpleButton24.Text = "Inventario Final\r\npor periodo";
-            this.simpleButton24.Click += new System.EventHandler(this.simpleButton24_Click);
             // 
             // simpleButton23
             // 
@@ -6484,20 +6486,18 @@
             this.rd_OdooMenu.AutoExpand = true;
             this.rd_OdooMenu.Name = "rd_OdooMenu";
             // 
-            // cmdReporteSilosLog
+            // btnRecuentoInventario
             // 
-            this.cmdReporteSilosLog.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmdReporteSilosLog.Appearance.Options.UseFont = true;
-            this.cmdReporteSilosLog.Appearance.Options.UseTextOptions = true;
-            this.cmdReporteSilosLog.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.cmdReporteSilosLog.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.cmdReporteSilosLog.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton74.ImageOptions.Image")));
-            this.cmdReporteSilosLog.Location = new System.Drawing.Point(5, 108);
-            this.cmdReporteSilosLog.Name = "cmdReporteSilosLog";
-            this.cmdReporteSilosLog.Size = new System.Drawing.Size(199, 42);
-            this.cmdReporteSilosLog.TabIndex = 55;
-            this.cmdReporteSilosLog.Text = "Reporte Silos";
-            this.cmdReporteSilosLog.Click += new System.EventHandler(this.cmdReporteSilosLog_Click);
+            this.btnRecuentoInventario.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnRecuentoInventario.Appearance.Options.UseFont = true;
+            this.btnRecuentoInventario.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnRecuentoInventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton74.ImageOptions.Image")));
+            this.btnRecuentoInventario.Location = new System.Drawing.Point(415, 159);
+            this.btnRecuentoInventario.Name = "btnRecuentoInventario";
+            this.btnRecuentoInventario.Size = new System.Drawing.Size(199, 42);
+            this.btnRecuentoInventario.TabIndex = 59;
+            this.btnRecuentoInventario.Text = "Recuento de Inventario";
+            this.btnRecuentoInventario.Click += new System.EventHandler(this.btnRecuentoInventario_Click);
             // 
             // frmOpciones
             // 
@@ -6631,7 +6631,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton22;
         private DevExpress.XtraEditors.SimpleButton simpleButton23;
         private DevExpress.XtraEditors.SimpleButton btnReporteProduccionDespachos;
-        private DevExpress.XtraEditors.SimpleButton simpleButton24;
         private DevExpress.XtraEditors.SimpleButton simpleButton25;
         private DevExpress.XtraEditors.SimpleButton simpleButton26;
         private DevExpress.XtraEditors.SimpleButton simpleButton27;
@@ -6972,5 +6971,6 @@
         private DevExpress.XtraNavBar.NavBarItem nbRRHH13;
         private DevExpress.XtraEditors.SimpleButton cmdReporteSilosPRD;
         private DevExpress.XtraEditors.SimpleButton cmdReporteSilosLog;
+        private DevExpress.XtraEditors.SimpleButton btnRecuentoInventario;
     }
 }
