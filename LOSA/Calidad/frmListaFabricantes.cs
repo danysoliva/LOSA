@@ -20,6 +20,7 @@ namespace LOSA.Calidad
         public int IdFabricanteSeleccionado;
         public string NombreFabricanteSeleccionado;
         public int IdMp;
+        public bool AprobadoASC;
         public frmListaFabricantes(string pproveedor, string provName, int PidMP)
         {
             InitializeComponent();
@@ -87,12 +88,34 @@ namespace LOSA.Calidad
             if (gridView1.RowCount != 0)
             {
                 IdFabricanteSeleccionado = row.id_planta;
+
                 NombreFabricanteSeleccionado = row.nombre;
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+
+                txtFabricante.Text = row.nombre;
+                txtTipo.Text = row.tipo_gmo;
+                if (row.aprobado_asc == "Si")
+                    tsAprobadoASC.IsOn = true;
+                else
+                    tsAprobadoASC.IsOn = false;
+
+                navigationFrame1.SelectedPageIndex = 1;
             }
 
            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            AprobadoASC = tsAprobadoASC.IsOn;
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            navigationFrame1.SelectedPageIndex = 0;
         }
     }
 }

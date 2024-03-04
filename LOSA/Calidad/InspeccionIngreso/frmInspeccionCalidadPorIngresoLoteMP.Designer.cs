@@ -22,11 +22,6 @@ namespace LOSA.Calidad
         }
 
         #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -451,7 +446,7 @@ namespace LOSA.Calidad
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
@@ -551,7 +546,7 @@ namespace LOSA.Calidad
             // 
             // labelControl14
             // 
-            this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelControl14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl14.Appearance.Options.UseFont = true;
@@ -636,8 +631,8 @@ namespace LOSA.Calidad
             // 
             // grd_nir
             // 
-            this.grd_nir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.grd_nir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grd_nir.DataMember = "show_nir";
             this.grd_nir.DataSource = this.dsMantenimientoC;
@@ -882,7 +877,7 @@ namespace LOSA.Calidad
             // 
             // grd_adjuntos
             // 
-            this.grd_adjuntos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.grd_adjuntos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.grd_adjuntos.DataMember = "adjuntos";
             this.grd_adjuntos.DataSource = this.dsMantenimientoC;
@@ -1073,8 +1068,8 @@ namespace LOSA.Calidad
             // 
             // grdInfoAdicionalCalidad
             // 
-            this.grdInfoAdicionalCalidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.grdInfoAdicionalCalidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdInfoAdicionalCalidad.DataMember = "info_adicional_marino";
             this.grdInfoAdicionalCalidad.DataSource = this.dsMantenimientoC;
@@ -1520,7 +1515,7 @@ namespace LOSA.Calidad
             // 
             // grd_logistica
             // 
-            this.grd_logistica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.grd_logistica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.grd_logistica.DataMember = "logisticaInformacion";
             this.grd_logistica.DataSource = this.dsMantenimientoC;
@@ -1587,8 +1582,8 @@ namespace LOSA.Calidad
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -1835,8 +1830,8 @@ namespace LOSA.Calidad
             // 
             // panelControl4
             // 
-            this.panelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl4.Controls.Add(this.cmdSelectUltimasCargas);
             this.panelControl4.Controls.Add(this.txtobservacionTras);
@@ -2086,7 +2081,7 @@ namespace LOSA.Calidad
             // 
             // labelControl50
             // 
-            this.labelControl50.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelControl50.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.labelControl50.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.labelControl50.Appearance.Options.UseFont = true;
@@ -2117,7 +2112,7 @@ namespace LOSA.Calidad
             // 
             // txtmp3
             // 
-            this.txtmp3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtmp3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtmp3.Location = new System.Drawing.Point(829, 383);
             this.txtmp3.Name = "txtmp3";
@@ -2160,7 +2155,7 @@ namespace LOSA.Calidad
             // 
             // txtmp2
             // 
-            this.txtmp2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtmp2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtmp2.Location = new System.Drawing.Point(829, 354);
             this.txtmp2.Name = "txtmp2";
@@ -2180,7 +2175,7 @@ namespace LOSA.Calidad
             // 
             // txtObseracionesMP
             // 
-            this.txtObseracionesMP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtObseracionesMP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtObseracionesMP.Location = new System.Drawing.Point(0, 85);
             this.txtObseracionesMP.Name = "txtObseracionesMP";
@@ -2191,7 +2186,7 @@ namespace LOSA.Calidad
             // 
             // txtmp1
             // 
-            this.txtmp1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtmp1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtmp1.Location = new System.Drawing.Point(828, 326);
             this.txtmp1.Name = "txtmp1";
@@ -2352,8 +2347,8 @@ namespace LOSA.Calidad
             // 
             // gridControl2
             // 
-            this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl2.DataMember = "detalle_destinos";
             this.gridControl2.DataSource = this.dsReportesTRZ1;
@@ -2567,7 +2562,7 @@ namespace LOSA.Calidad
             // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl1.DataMember = "pt_list_trz";
             this.gridControl1.DataSource = this.dsReportesTRZ1;
@@ -2632,8 +2627,8 @@ namespace LOSA.Calidad
             // 
             // gridControl4
             // 
-            this.gridControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gridControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl4.DataMember = "ingresos_lote_mp";
             this.gridControl4.DataSource = this.dsTarima1;
@@ -3417,9 +3412,7 @@ namespace LOSA.Calidad
             this.PerformLayout();
 
         }
-
         #endregion
-
         private DevExpress.XtraEditors.SimpleButton cmdHome;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -3434,52 +3427,53 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.PanelControl PnNir;
         private DevExpress.XtraGrid.GridControl grd_nir;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_nir;
-        private DevExpress.XtraEditors.SimpleButton btnAdjuntarImagen;
         private DevExpress.XtraGrid.GridControl grd_parametros;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_parametros;
+        private DevExpress.XtraEditors.SimpleButton btnAdjuntarImagen;
         private DevExpress.XtraGrid.GridControl grd_adjuntos;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_adjuntos;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        //private System.ComponentModel.IContainer components;
         private DevExpress.XtraGrid.GridControl grd_logistica;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_logistica;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.MemoEdit txtObseracionesMP;
-        private DevExpress.XtraEditors.LabelControl labelControl35;
-        private DevExpress.XtraEditors.LabelControl labelControl34;
-        private DevExpress.XtraEditors.LabelControl labelControl33;
-        private DevExpress.XtraEditors.LabelControl labelControl30;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.MemoEdit txtobservacionTras;
-        private DevExpress.XtraEditors.LabelControl labelControl51;
-        private DevExpress.XtraEditors.LabelControl labelControl50;
-        private DevExpress.XtraEditors.TextEdit txtmp3;
-        private DevExpress.XtraEditors.TextEdit txtmp2;
-        private DevExpress.XtraEditors.TextEdit txtmp1;
-        private DevExpress.XtraEditors.RadioGroup radioGroup8;
-        private DevExpress.XtraEditors.LabelControl labelControl49;
+        private DevExpress.XtraEditors.LabelControl labelControl30;
+        private DevExpress.XtraEditors.RadioGroup rdTranporte4;
+        private DevExpress.XtraEditors.LabelControl labelControl36;
+        private DevExpress.XtraEditors.LabelControl labelControl37;
         private DevExpress.XtraEditors.TextEdit txtdireccion;
+        private DevExpress.XtraEditors.LabelControl labelControl51;
         private DevExpress.XtraEditors.LabelControl labelControl48;
+        private DevExpress.XtraEditors.LabelControl labelControl38;
+        private DevExpress.XtraEditors.LabelControl labelControl33;
+        private DevExpress.XtraEditors.LabelControl labelControl50;
         private DevExpress.XtraEditors.TextEdit txttransporte;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
+        private DevExpress.XtraEditors.TextEdit txtmp3;
         private DevExpress.XtraEditors.LabelControl labelControl47;
+        private DevExpress.XtraEditors.LabelControl labelControl39;
+        private DevExpress.XtraEditors.LabelControl labelControl35;
+        private DevExpress.XtraEditors.TextEdit txtmp2;
         private DevExpress.XtraEditors.TextEdit txtTelefono;
+        private DevExpress.XtraEditors.MemoEdit txtObseracionesMP;
+        private DevExpress.XtraEditors.TextEdit txtmp1;
         private DevExpress.XtraEditors.LabelControl labelControl46;
+        private DevExpress.XtraEditors.LabelControl labelControl49;
+        private DevExpress.XtraEditors.LabelControl labelControl40;
+        private DevExpress.XtraEditors.RadioGroup radioGroup8;
         private DevExpress.XtraEditors.TextEdit txttransportista;
+        private DevExpress.XtraEditors.LabelControl labelControl43;
+        private DevExpress.XtraEditors.TextEdit txtuserlogistica;
+        private DevExpress.XtraEditors.TextEdit txtCoordinadorcalidad;
         private DevExpress.XtraEditors.LabelControl labelControl45;
         private DevExpress.XtraEditors.SimpleButton btnNoConformidad;
-        private DevExpress.XtraEditors.LabelControl labelControl43;
-        private DevExpress.XtraEditors.TextEdit txtCoordinadorcalidad;
+        private DevExpress.XtraEditors.LabelControl labelControl41;
         private DevExpress.XtraEditors.LabelControl labelControl42;
         private DevExpress.XtraEditors.TextEdit txtusercalidad;
-        private DevExpress.XtraEditors.LabelControl labelControl41;
-        private DevExpress.XtraEditors.TextEdit txtuserlogistica;
-        private DevExpress.XtraEditors.LabelControl labelControl40;
-        private DevExpress.XtraEditors.LabelControl labelControl39;
-        private DevExpress.XtraEditors.LabelControl labelControl38;
-        private DevExpress.XtraEditors.LabelControl labelControl37;
-        private DevExpress.XtraEditors.LabelControl labelControl36;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.RadioGroup rdTranporte4;
         private dsMantenimientoC dsMantenimientoC;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn coldefinicion;
@@ -3680,5 +3674,7 @@ namespace LOSA.Calidad
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion3;
         private DevExpress.XtraGrid.Columns.GridColumn colid5;
         private DevExpress.XtraGrid.Columns.GridColumn coldescripcion4;
+        private DevExpress.XtraEditors.ToggleSwitch tsElegible;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }

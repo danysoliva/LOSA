@@ -29,12 +29,12 @@ namespace LOSA.Calidad
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaFabricantes));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dsTRZ_Reports1 = new LOSA.Calidad.dsTRZ_Reports();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -54,15 +54,16 @@ namespace LOSA.Calidad
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.txtFabricante = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.tsAprobadoASC = new DevExpress.XtraEditors.ToggleSwitch();
+            this.txtTipo = new DevExpress.XtraEditors.TextEdit();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.tsElegible = new DevExpress.XtraEditors.ToggleSwitch();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.txtTipo = new DevExpress.XtraEditors.TextEdit();
+            this.tsAprobadoASC = new DevExpress.XtraEditors.ToggleSwitch();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtFabricante = new DevExpress.XtraEditors.TextEdit();
+            this.btnBack = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTRZ_Reports1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -74,10 +75,10 @@ namespace LOSA.Calidad
             this.navigationFrame1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFabricante.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsAprobadoASC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsElegible.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsElegible.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsAprobadoASC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFabricante.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -178,9 +179,9 @@ namespace LOSA.Calidad
             // cmdSeleccionar
             // 
             this.cmdSeleccionar.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
             this.cmdSeleccionar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmdSeleccionar.Name = "cmdSeleccionar";
             this.cmdSeleccionar.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.cmdSeleccionar.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmdSeleccionar_ButtonClick);
@@ -243,7 +244,7 @@ namespace LOSA.Calidad
             this.cmdHome.Appearance.Options.UseFont = true;
             this.cmdHome.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.cmdHome.ImageOptions.Image = global::LOSA.Properties.Resources.cancel;
-            this.cmdHome.Location = new System.Drawing.Point(667, 3);
+            this.cmdHome.Location = new System.Drawing.Point(645, 297);
             this.cmdHome.Name = "cmdHome";
             this.cmdHome.Size = new System.Drawing.Size(126, 42);
             this.cmdHome.TabIndex = 28;
@@ -266,12 +267,15 @@ namespace LOSA.Calidad
             // 
             // navigationPage1
             // 
+            this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.gridControl1);
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(789, 349);
             // 
             // navigationPage2
             // 
+            this.navigationPage2.Controls.Add(this.btnBack);
+            this.navigationPage2.Controls.Add(this.cmdHome);
             this.navigationPage2.Controls.Add(this.txtTipo);
             this.navigationPage2.Controls.Add(this.btnSave);
             this.navigationPage2.Controls.Add(this.tsElegible);
@@ -284,63 +288,34 @@ namespace LOSA.Calidad
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(789, 349);
             // 
-            // txtFabricante
+            // txtTipo
             // 
-            this.txtFabricante.Enabled = false;
-            this.txtFabricante.Location = new System.Drawing.Point(309, 51);
-            this.txtFabricante.Name = "txtFabricante";
-            this.txtFabricante.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtFabricante.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.txtFabricante.Properties.Appearance.Options.UseFont = true;
-            this.txtFabricante.Properties.Appearance.Options.UseForeColor = true;
-            this.txtFabricante.Properties.ReadOnly = true;
-            this.txtFabricante.Size = new System.Drawing.Size(216, 28);
-            this.txtFabricante.TabIndex = 27;
+            this.txtTipo.Enabled = false;
+            this.txtTipo.Location = new System.Drawing.Point(309, 108);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTipo.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtTipo.Properties.Appearance.Options.UseFont = true;
+            this.txtTipo.Properties.Appearance.Options.UseForeColor = true;
+            this.txtTipo.Properties.ReadOnly = true;
+            this.txtTipo.Size = new System.Drawing.Size(216, 28);
+            this.txtTipo.TabIndex = 36;
             // 
-            // labelControl2
+            // btnSave
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(234, 54);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(46, 21);
-            this.labelControl2.TabIndex = 28;
-            this.labelControl2.Text = "Planta:";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(234, 115);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(33, 21);
-            this.labelControl3.TabIndex = 30;
-            this.labelControl3.Text = "Tipo:";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Appearance.Options.UseTextOptions = true;
-            this.labelControl5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(234, 180);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(94, 47);
-            this.labelControl5.TabIndex = 31;
-            this.labelControl5.Text = "Aprobado por ASC:";
-            // 
-            // tsAprobadoASC
-            // 
-            this.tsAprobadoASC.Enabled = false;
-            this.tsAprobadoASC.Location = new System.Drawing.Point(364, 191);
-            this.tsAprobadoASC.Name = "tsAprobadoASC";
-            this.tsAprobadoASC.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tsAprobadoASC.Properties.Appearance.Options.UseFont = true;
-            this.tsAprobadoASC.Properties.OffText = "No";
-            this.tsAprobadoASC.Properties.OnText = "Si";
-            this.tsAprobadoASC.Size = new System.Drawing.Size(161, 26);
-            this.tsAprobadoASC.TabIndex = 32;
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Appearance.BackColor = System.Drawing.Color.White;
+            this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Appearance.Options.UseBackColor = true;
+            this.btnSave.Appearance.Options.UseFont = true;
+            this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.Location = new System.Drawing.Point(329, 297);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(126, 42);
+            this.btnSave.TabIndex = 35;
+            this.btnSave.Text = "Guardar";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tsElegible
             // 
@@ -364,33 +339,78 @@ namespace LOSA.Calidad
             this.labelControl6.TabIndex = 33;
             this.labelControl6.Text = "Es Elegible:";
             // 
-            // btnSave
+            // tsAprobadoASC
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Appearance.BackColor = System.Drawing.Color.White;
-            this.btnSave.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Appearance.Options.UseBackColor = true;
-            this.btnSave.Appearance.Options.UseFont = true;
-            this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(329, 297);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(126, 42);
-            this.btnSave.TabIndex = 35;
-            this.btnSave.Text = "Guardar";
+            this.tsAprobadoASC.Location = new System.Drawing.Point(364, 191);
+            this.tsAprobadoASC.Name = "tsAprobadoASC";
+            this.tsAprobadoASC.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tsAprobadoASC.Properties.Appearance.Options.UseFont = true;
+            this.tsAprobadoASC.Properties.OffText = "No";
+            this.tsAprobadoASC.Properties.OnText = "Si";
+            this.tsAprobadoASC.Size = new System.Drawing.Size(161, 26);
+            this.tsAprobadoASC.TabIndex = 32;
             // 
-            // txtTipo
+            // labelControl5
             // 
-            this.txtTipo.Enabled = false;
-            this.txtTipo.Location = new System.Drawing.Point(309, 108);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtTipo.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.txtTipo.Properties.Appearance.Options.UseFont = true;
-            this.txtTipo.Properties.Appearance.Options.UseForeColor = true;
-            this.txtTipo.Properties.ReadOnly = true;
-            this.txtTipo.Size = new System.Drawing.Size(216, 28);
-            this.txtTipo.TabIndex = 36;
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl5.Location = new System.Drawing.Point(234, 180);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(94, 47);
+            this.labelControl5.TabIndex = 31;
+            this.labelControl5.Text = "Aprobado por ASC:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(234, 115);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(33, 21);
+            this.labelControl3.TabIndex = 30;
+            this.labelControl3.Text = "Tipo:";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(234, 54);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(46, 21);
+            this.labelControl2.TabIndex = 28;
+            this.labelControl2.Text = "Planta:";
+            // 
+            // txtFabricante
+            // 
+            this.txtFabricante.Enabled = false;
+            this.txtFabricante.Location = new System.Drawing.Point(309, 51);
+            this.txtFabricante.Name = "txtFabricante";
+            this.txtFabricante.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtFabricante.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtFabricante.Properties.Appearance.Options.UseFont = true;
+            this.txtFabricante.Properties.Appearance.Options.UseForeColor = true;
+            this.txtFabricante.Properties.ReadOnly = true;
+            this.txtFabricante.Size = new System.Drawing.Size(216, 28);
+            this.txtFabricante.TabIndex = 27;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.Appearance.BackColor = System.Drawing.Color.White;
+            this.btnBack.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnBack.Appearance.Options.UseBackColor = true;
+            this.btnBack.Appearance.Options.UseFont = true;
+            this.btnBack.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btnBack.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnBack.Location = new System.Drawing.Point(21, 297);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(126, 42);
+            this.btnBack.TabIndex = 37;
+            this.btnBack.Text = "Atras";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmListaFabricantes
             // 
@@ -398,7 +418,6 @@ namespace LOSA.Calidad
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 433);
             this.Controls.Add(this.navigationFrame1);
-            this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtproveedor);
             this.Controls.Add(this.labelControl4);
@@ -416,10 +435,10 @@ namespace LOSA.Calidad
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
             this.navigationPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFabricante.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsAprobadoASC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsElegible.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsElegible.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsAprobadoASC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFabricante.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,5 +474,6 @@ namespace LOSA.Calidad
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.TextEdit txtTipo;
+        private DevExpress.XtraEditors.SimpleButton btnBack;
     }
 }

@@ -22,7 +22,7 @@ namespace LOSA.Calidad
     {
         public int Id_ingreso, Id_boleta;
         UserLogin UsuarioLogeado;
-        bool ChCalidad;
+        bool ChCalidad, AprobadoPorASC;
         //int id_materiaPrima;
         string full_pathImagen = "";
         string fileNameImagen = "";
@@ -109,7 +109,7 @@ namespace LOSA.Calidad
             {
                 SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("sp_load_trz_fabricante_ingrediente",conn);
+                SqlCommand cmd = new SqlCommand("[sp_load_trz_fabricante_ingredienteV2]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_mp",IdMP);
                 cmd.Parameters.AddWithValue("@lote",Lote);
@@ -119,7 +119,7 @@ namespace LOSA.Calidad
                     idPlanta_Fabricante = dr.GetInt32(0);
                     txtFabricante.Text = dr.GetString(1);
                     grdTipoIngrediente.EditValue = dr.GetInt32(2);
-
+                    tsElegible.IsOn = dr.GetBoolean(4);
                     if (Convert.ToInt32(grdTipoIngrediente.EditValue) == 1) //Marino
                     {
                         btnAdd.Enabled = true;
@@ -1823,13 +1823,17 @@ namespace LOSA.Calidad
                     cmd.Parameters.AddWithValue("@lote_mp", Lote);
                     cmd.ExecuteNonQuery();
 
-                    Query = "sp_insert_update_trz_registros_adicionales_calidad";
+                    Query = "sp_insert_update_trz_registros_adicionales_calidadV2";
                     cmd = new SqlCommand(Query, cn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_fabricante_planta", idPlanta_Fabricante);
                     cmd.Parameters.AddWithValue("@id_tipo_ingrediente", Convert.ToInt32(grdTipoIngrediente.EditValue));
                     cmd.Parameters.AddWithValue("@id_mp", IdMP);
                     cmd.Parameters.AddWithValue("@lote", Lote);
+                    if (AprobadoPorASC == true)
+                        cmd.Parameters.AddWithValue("@elegibleASC", 1);
+                    else
+                        cmd.Parameters.AddWithValue("@elegibleASC", 0);
                     cmd.ExecuteNonQuery();
 
                     Query = @"sp_insert_trz_criterio_ingreso_transporteV2";
@@ -2316,6 +2320,7 @@ namespace LOSA.Calidad
             {
                 txtFabricante.Text = frm.NombreFabricanteSeleccionado;
                 idPlanta_Fabricante = frm.IdFabricanteSeleccionado;
+                AprobadoPorASC = frm.AprobadoASC;
                 //UpdateFabricante(Id_ingreso, frm.IdFabricanteSeleccionado);
             }
         }
