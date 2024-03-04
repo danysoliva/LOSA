@@ -119,7 +119,7 @@ namespace LOSA.Calidad
                     idPlanta_Fabricante = dr.GetInt32(0);
                     txtFabricante.Text = dr.GetString(1);
                     grdTipoIngrediente.EditValue = dr.GetInt32(2);
-                    tsElegible.IsOn = dr.GetBoolean(4);
+                    teElegibleASC.IsOn = dr.GetBoolean(4);
                     if (Convert.ToInt32(grdTipoIngrediente.EditValue) == 1) //Marino
                     {
                         btnAdd.Enabled = true;
@@ -2321,6 +2321,10 @@ namespace LOSA.Calidad
                 txtFabricante.Text = frm.NombreFabricanteSeleccionado;
                 idPlanta_Fabricante = frm.IdFabricanteSeleccionado;
                 AprobadoPorASC = frm.AprobadoASC;
+                if (AprobadoPorASC)
+                    teElegibleASC.IsOn = true;
+                else
+                    teElegibleASC.IsOn = false;
                 //UpdateFabricante(Id_ingreso, frm.IdFabricanteSeleccionado);
             }
         }
