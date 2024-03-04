@@ -838,12 +838,12 @@ namespace LOSA.Trazabilidad
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit9 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.rpCMD_OPEN = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit10 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.rpCMD_DELETE = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit11 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.rpCMD_DOWNLOAD = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colid_planta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colplanta_descripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -966,9 +966,9 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipoArchivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpCMD_OPEN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpCMD_DELETE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpCMD_DOWNLOAD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDelete_)).BeginInit();
@@ -1094,9 +1094,9 @@ namespace LOSA.Trazabilidad
             this.gridControl5.Name = "gridControl5";
             this.gridControl5.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit3,
-            this.repositoryItemButtonEdit10,
-            this.repositoryItemButtonEdit9,
-            this.repositoryItemButtonEdit11});
+            this.rpCMD_DELETE,
+            this.rpCMD_OPEN,
+            this.rpCMD_DOWNLOAD});
             this.gridControl5.Size = new System.Drawing.Size(426, 295);
             this.gridControl5.TabIndex = 12;
             this.gridControl5.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1142,7 +1142,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 200;
             // 
             // gridColumn3
@@ -1158,7 +1158,7 @@ namespace LOSA.Trazabilidad
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
+            this.gridColumn4.VisibleIndex = 3;
             this.gridColumn4.Width = 152;
             // 
             // repositoryItemGridLookUpEdit3
@@ -1210,38 +1210,40 @@ namespace LOSA.Trazabilidad
             // gridColumn10
             // 
             this.gridColumn10.Caption = "Open";
-            this.gridColumn10.ColumnEdit = this.repositoryItemButtonEdit9;
+            this.gridColumn10.ColumnEdit = this.rpCMD_OPEN;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
+            this.gridColumn10.VisibleIndex = 4;
             this.gridColumn10.Width = 82;
             // 
-            // repositoryItemButtonEdit9
+            // rpCMD_OPEN
             // 
-            this.repositoryItemButtonEdit9.AutoHeight = false;
+            this.rpCMD_OPEN.AutoHeight = false;
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.repositoryItemButtonEdit9.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.rpCMD_OPEN.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit9.Name = "repositoryItemButtonEdit9";
-            this.repositoryItemButtonEdit9.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.rpCMD_OPEN.Name = "rpCMD_OPEN";
+            this.rpCMD_OPEN.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.rpCMD_OPEN.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.rpCMD_OPEN_ButtonClick);
             // 
             // gridColumn13
             // 
             this.gridColumn13.Caption = "Delete";
-            this.gridColumn13.ColumnEdit = this.repositoryItemButtonEdit10;
+            this.gridColumn13.ColumnEdit = this.rpCMD_DELETE;
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 5;
+            this.gridColumn13.VisibleIndex = 6;
             this.gridColumn13.Width = 71;
             // 
-            // repositoryItemButtonEdit10
+            // rpCMD_DELETE
             // 
-            this.repositoryItemButtonEdit10.AutoHeight = false;
+            this.rpCMD_DELETE.AutoHeight = false;
             editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            this.repositoryItemButtonEdit10.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.rpCMD_DELETE.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit10.Name = "repositoryItemButtonEdit10";
-            this.repositoryItemButtonEdit10.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.rpCMD_DELETE.Name = "rpCMD_DELETE";
+            this.rpCMD_DELETE.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.rpCMD_DELETE.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.rpCMD_DELETE_ButtonClick);
             // 
             // gridColumn14
             // 
@@ -1249,25 +1251,26 @@ namespace LOSA.Trazabilidad
             this.gridColumn14.FieldName = "descripcion";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 1;
+            this.gridColumn14.VisibleIndex = 2;
             this.gridColumn14.Width = 310;
             // 
             // gridColumn15
             // 
             this.gridColumn15.Caption = "Download";
-            this.gridColumn15.ColumnEdit = this.repositoryItemButtonEdit11;
+            this.gridColumn15.ColumnEdit = this.rpCMD_DOWNLOAD;
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 4;
+            this.gridColumn15.VisibleIndex = 5;
             // 
-            // repositoryItemButtonEdit11
+            // rpCMD_DOWNLOAD
             // 
-            this.repositoryItemButtonEdit11.AutoHeight = false;
+            this.rpCMD_DOWNLOAD.AutoHeight = false;
             editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            this.repositoryItemButtonEdit11.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.rpCMD_DOWNLOAD.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repositoryItemButtonEdit11.Name = "repositoryItemButtonEdit11";
-            this.repositoryItemButtonEdit11.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.rpCMD_DOWNLOAD.Name = "rpCMD_DOWNLOAD";
+            this.rpCMD_DOWNLOAD.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.rpCMD_DOWNLOAD.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.rpCMD_DOWNLOAD_ButtonClick);
             // 
             // colid_planta
             // 
@@ -1280,7 +1283,7 @@ namespace LOSA.Trazabilidad
             this.colplanta_descripcion.Name = "colplanta_descripcion";
             this.colplanta_descripcion.OptionsColumn.ReadOnly = true;
             this.colplanta_descripcion.Visible = true;
-            this.colplanta_descripcion.VisibleIndex = 6;
+            this.colplanta_descripcion.VisibleIndex = 0;
             // 
             // simpleButton2
             // 
@@ -2441,9 +2444,9 @@ namespace LOSA.Trazabilidad
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipoArchivos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpCMD_OPEN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpCMD_DELETE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rpCMD_DOWNLOAD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmdDelete_)).EndInit();
@@ -2514,6 +2517,77 @@ namespace LOSA.Trazabilidad
         private void cmdVerTodosAdjuntos_Click(object sender, EventArgs e)
         {
             LoadAdjuntosRows();
+        }
+
+        private void rpCMD_OPEN_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                string dir = @"C:\ALOSY_TMP";
+
+                // If directory does not exist, create it
+                if (!Directory.Exists(dir))
+                {
+                    Directory.CreateDirectory(dir);
+                }
+
+                var gridView = (GridView)gridControl5.FocusedView;
+                var row = (dsMantoTrazabilidad.archivosRow)gridView.GetFocusedDataRow();
+
+                OpenFile(row.Path, dir + @"\" + row.FileName);
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void rpCMD_DOWNLOAD_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                var gridView = (GridView)gridControl5.FocusedView;
+                var row = (dsMantoTrazabilidad.archivosRow)gridView.GetFocusedDataRow();
+
+                if (xtraFolderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    DownloadFile(row.Path, xtraFolderBrowserDialog1.SelectedPath + @"\" + row.FileName);
+                    //CajaDialogo.Information(xtraFolderBrowserDialog1.SelectedPath);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void rpCMD_DELETE_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DialogResult r = CajaDialogo.Pregunta("Realmente desea eliminar este Archivo?");
+            if (r != DialogResult.Yes)
+                return;
+
+            try
+            {
+                DataOperations dp = new DataOperations();
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
+                con.Open();
+
+                var gridView = (GridView)gridControl5.FocusedView;
+                var row = (dsMantoTrazabilidad.archivosRow)gridView.GetFocusedDataRow();
+
+                SqlCommand cmd = new SqlCommand("sp_set_disable_archivo_adjunto_trz_prv", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", row.id);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                LoadAdjuntosRows();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
         }
     }
 }

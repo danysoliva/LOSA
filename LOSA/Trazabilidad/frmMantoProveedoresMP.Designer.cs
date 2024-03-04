@@ -136,12 +136,12 @@ namespace LOSA.Trazabilidad
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit9;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit rpCMD_OPEN;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit10;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit rpCMD_DELETE;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit11;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit rpCMD_DOWNLOAD;
         private DevExpress.XtraGrid.Columns.GridColumn colid_planta;
         private DevExpress.XtraGrid.Columns.GridColumn colplanta_descripcion;
         private DevExpress.XtraEditors.SimpleButton cmdVerTodosAdjuntos;
