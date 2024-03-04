@@ -3331,6 +3331,12 @@
     <Compile Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.designer.cs">
       <DependentUpon>RPT_Trazabilidad_Lote.cs</DependentUpon>
     </Compile>
+    <Compile Include="MigracionACS\Produccion\Silos\frmSilosReporteHumedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionACS\Produccion\Silos\frmSilosReporteHumedades.Designer.cs">
+      <DependentUpon>frmSilosReporteHumedades.cs</DependentUpon>
+    </Compile>
     <Compile Include="MigracionACS\Produccion\TemperaturaMaquinas\dsTemperatura1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -7912,6 +7918,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\RPT_Trazabilidad_Lote.resx">
       <DependentUpon>RPT_Trazabilidad_Lote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionACS\Produccion\Silos\frmSilosReporteHumedades.resx">
+      <DependentUpon>frmSilosReporteHumedades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionACS\Produccion\TemperaturaMaquinas\Reportes\rptTemperaturas.resx">
       <DependentUpon>rptTemperaturas.cs</DependentUpon>
