@@ -82,6 +82,7 @@ using DataTable = System.Data.DataTable;
 using LOSA.MigracionACS.Produccion.MedicionElectrica;
 using LOSA.Calidad.CertificadoCalidad;
 using LOSA.Calidad.GestionLotesMP;
+using LOSA.MigracionACS.Produccion.Silos;
 
 namespace LOSA
 {
@@ -5017,6 +5018,86 @@ namespace LOSA
             frmVacacionesHome frm = new frmVacacionesHome();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+
+        private void cmdReporteSilosPRD_Click(object sender, EventArgs e)
+        {
+            //
+
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmSilosReporteHumedades frm = new frmSilosReporteHumedades(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(96))
+                {
+                    frmSilosReporteHumedades frm = new frmSilosReporteHumedades(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #96");
+                }
+            }
+        }
+
+        private void cmdReporteSilosLog_Click(object sender, EventArgs e)
+        {
+            bool accesoprevio = false;
+            int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//7 = ALOSY
+            switch (idNivel)
+            {
+                case 1://Basic View
+                    break;
+                case 2://Basic No Autorization
+                    break;
+                case 3://Medium Autorization
+                    break;
+                case 4://Depth With Delta
+                    accesoprevio = true;
+                    frmSilosReporteHumedades frm = new frmSilosReporteHumedades(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                    break;
+                case 5://Depth Without Delta
+                    break;
+                default:
+                    break;
+            }
+
+            if (!accesoprevio)
+            {
+                if (UsuarioLogeado.ValidarNivelPermisos(96))
+                {
+                    frmSilosReporteHumedades frm = new frmSilosReporteHumedades(this.UsuarioLogeado);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    CajaDialogo.Error("No tiene privilegios para esta función! Permiso Requerido #96");
+                }
+            }
         }
     }
 }
