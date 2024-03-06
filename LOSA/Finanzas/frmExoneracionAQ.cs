@@ -32,8 +32,8 @@ namespace LOSA.Finanzas
         {
             try
             {
-                string query = @"sp_get_header_exoneracion_aq";
-                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
+                string query = @"sp_cm_exoneracion_h";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -84,12 +84,12 @@ namespace LOSA.Finanzas
 
                 try
                 {
-                    SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("sp_update_cerrar_periodo_fiscal", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_header", row.id);
-                    cmd.ExecuteNonQuery();
+                    //SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
+                    //conn.Open();
+                    //SqlCommand cmd = new SqlCommand("sp_update_cerrar_periodo_fiscal", conn);
+                    //cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.AddWithValue("@id_header", row.id);
+                    //cmd.ExecuteNonQuery();
 
                     cargarheader();
                 }

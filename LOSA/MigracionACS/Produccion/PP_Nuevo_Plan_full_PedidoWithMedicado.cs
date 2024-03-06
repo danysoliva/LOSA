@@ -80,7 +80,7 @@ namespace LOSA.MigracionACS.Produccion
             UsuarioLogeado = pUsuarioLogeado;
             load_unidades_por_tarima();
             load_presentacion();
-            TypeTrans = 1;
+            TypeTrans = 2;
             btn_NewOP.Enabled = false;
             this.FormAction = "new";
             Id_Pedido1 = PiDPedido;
