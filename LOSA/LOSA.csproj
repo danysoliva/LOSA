@@ -1329,6 +1329,7 @@
     <Compile Include="Clases\FTP_Class.cs" />
     <Compile Include="Clases\Funciones.cs" />
     <Compile Include="Clases\Globals.cs" />
+    <Compile Include="Clases\Impuesto.cs" />
     <Compile Include="Clases\IngresoExternoD.cs" />
     <Compile Include="Clases\IngresoExternoH.cs" />
     <Compile Include="Clases\IngresoMP.cs" />
@@ -1349,6 +1350,7 @@
     <Compile Include="Clases\NotificacionesGenerales.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\OrdenesCombustible.cs" />
+    <Compile Include="Clases\OrdenesCompra.cs" />
     <Compile Include="Clases\OrdenProduccionH.cs" />
     <Compile Include="Clases\PlanillaHeader.cs" />
     <Compile Include="Clases\PlantaPrvTrz.cs" />
@@ -1373,6 +1375,23 @@
     <Compile Include="Clases\Ubicaciones.cs" />
     <Compile Include="Clases\Ubicacion_Tarima.cs" />
     <Compile Include="Clases\UserLogin.cs" />
+    <Compile Include="Compras\dsCompras.cs">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\dsCompras.Designer.cs">
+      <DependentUpon>dsCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\dsCompras1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmOrdenesCompraMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmOrdenesCompraMain.Designer.cs">
+      <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\dsTransaccionesDespacho.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -4584,6 +4603,18 @@
     <None Include="Clases\dsColleccionesClases.xss">
       <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
     </None>
+    <None Include="Compras\dsCompras.xsc">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Compras\dsCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCompras1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Compras\dsCompras.xss">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Compras\frmOrdenesCompraMain.resx.bak" />
     <None Include="Despachos\dsTransaccionesDespacho.xsc">
       <DependentUpon>dsTransaccionesDespacho.xsd</DependentUpon>
     </None>
@@ -7091,6 +7122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calidad\xrpCertificadoCalidad.resx">
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmOrdenesCompraMain.resx">
+      <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmCrearSolicitudAutorizacionLotePT.resx">
       <DependentUpon>frmCrearSolicitudAutorizacionLotePT.cs</DependentUpon>
