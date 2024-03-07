@@ -83,6 +83,7 @@ using LOSA.MigracionACS.Produccion.MedicionElectrica;
 using LOSA.Calidad.CertificadoCalidad;
 using LOSA.Calidad.GestionLotesMP;
 using LOSA.MigracionACS.Produccion.Silos;
+using LOSA.Compras;
 
 namespace LOSA
 {
@@ -198,6 +199,7 @@ namespace LOSA
                             tabOpciones.TabPages[8].PageVisible = true;
                             tabOpciones.TabPages[9].PageVisible = true;
                             tabOpciones.TabPages[10].PageVisible = true;
+                            tabOpciones.TabPages[12].PageVisible = true;
                             break;
                         default:
                             tabOpciones.SelectedTabPageIndex = Convert.ToInt32(pUser.GrupoUsuario.GrupoUsuarioActivo);
@@ -457,8 +459,32 @@ namespace LOSA
                             tabOpciones.TabPages[11].PageVisible = true;
                             break;
                     }
+                    break;
 
-
+                case GrupoUser.GrupoUsuario.Compras:
+                    int idNivel13 = pUser.idNivelAcceso(pUser.Id, 7);
+                    switch (idNivel13)
+                    {
+                        case 1://Basic View
+                            break;
+                        case 2://Basic No Autorization
+                            tabOpciones.TabPages[11].PageVisible = true;//Tickets
+                            tabOpciones.TabPages[12].PageVisible = true;
+                            break;
+                        case 3://Medium Autorization
+                        case 4://Depth With Delta
+                        case 5://Depth Without Delta
+                            tabOpciones.TabPages[11].PageVisible = true;//Tickets
+                            tabOpciones.TabPages[12].PageVisible = true;
+                            tabOpciones.TabPages[7].PageVisible = true;
+                            tabOpciones.SelectedTabPageIndex = 12;//TabCompras
+                            
+                            break;
+                        default:
+                            tabOpciones.SelectedTabPageIndex = 11;//Tickets
+                            tabOpciones.TabPages[11].PageVisible = true;
+                            break;
+                    }
                     break;
 
                 default:
@@ -5094,6 +5120,39 @@ namespace LOSA
                 CajaDialogo.Error(ex.Message);
 
             }
+        }
+
+        private void navOrdenCompra_LinkPressed(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                frmOrdenesCompraMain frm = new frmOrdenesCompraMain(UsuarioLogeado, frmOrdenesCompraMain.TipoOperacion.New);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+
+                //if (!accesoprevio)
+                //{
+                //    if (UsuarioLogeado.ValidarNivelPermisos(80))
+                //    {
+                //        xfrmMainConfiguracion frm = new xfrmMainConfiguracion();
+                //        frm.MdiParent = this.MdiParent;
+                //        frm.Show();
+                //    }
+                //    else
+                //    {
+                //        CajaDialogo.Error("No tiene privilegios para esta función!");
+                //    }
+                //}
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void navSubiOCSAP_LinkPressed(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
         }
     }
 }

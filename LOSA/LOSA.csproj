@@ -1336,6 +1336,7 @@
     <Compile Include="Clases\ItemBusqueda.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
     <Compile Include="Clases\ItemPesajeManualNucleo.cs" />
+    <Compile Include="Clases\ItemsSAP.cs" />
     <Compile Include="Clases\Kardex.cs" />
     <Compile Include="Clases\Liquidacion.cs" />
     <Compile Include="Clases\LoadXML.cs" />
@@ -9573,6 +9574,7 @@
     <None Include="Resources\next_x16.png" />
     <None Include="Resources\Oxygen-Icons.org.png" />
     <None Include="Resources\pallet.png" />
+    <None Include="Resources\orden de compra.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
@@ -9598,6 +9600,7 @@
     <None Include="Resources\Sello de calidad.jpg" />
     <None Include="Resources\Sello de calidad2.jpg" />
     <None Include="Resources\Sello de calidad.png" />
+    <None Include="Resources\savia.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />

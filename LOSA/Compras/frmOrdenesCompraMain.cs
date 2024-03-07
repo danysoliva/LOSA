@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ACS.Classes;
+using LOSA.Finanzas;
 
 namespace LOSA.Compras
 {
@@ -35,17 +36,24 @@ namespace LOSA.Compras
         public frmOrdenesCompraMain(UserLogin pUserLog, TipoOperacion ptipo)
         {
             InitializeComponent();
+            LoadTipoOrden();
+            TsExoOIsv.IsOn = true;
+            ObtenerExoneracionVigente();
+            CargarCapitulos();
+            CargarIVA();
+            CargarBodegas();
+            
             UsuarioLogueado = pUserLog;
-
-            LoadSucursales();
+            //CargarPartidas(grdCapitulos.EditValue.ToString());
             tipooperacion = ptipo;
             switch (tipooperacion)
             {
                 case TipoOperacion.New:
 
-                    txtUsuarioCreador.Text = UsuarioLogueado.Nombre;
+                    txtUsuarioCreador.Text = UsuarioLogueado.NombreUser;
                     //GetSigID();
-                    txtEstado.Text = "Nueva";
+                    txtDocNum.Text = "0";
+                    txtEstado.Text = "Borrador";
                     cmdNuevo.Enabled = false;
                     break;
                 case TipoOperacion.Update:
@@ -57,6 +65,89 @@ namespace LOSA.Compras
             ValidarAccesosSegunUsuario();
 
            
+        }
+
+        private void CargarBodegas()
+        {
+            try
+            {
+                string query = @"CM_sp_get_all_bodegas";
+                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_OnlySELECT);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("",);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsCompras1.bodegas.Clear();
+                adat.Fill(dsCompras1.bodegas);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void CargarIVA()
+        {
+            try
+            {
+                string query = @"CM_sp_get_IVA";
+                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_OnlySELECT);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("",);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsCompras1.iva.Clear();
+                adat.Fill(dsCompras1.iva);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void CargarCapitulos()
+        {
+            try
+            {
+                string query = @"sp_cm_exoneracion_all_capitulos_codigos";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("",);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsExoneracion1.capitulos.Clear();
+                adat.Fill(dsExoneracion1.capitulos);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
+
+        private void LoadTipoOrden()
+        {
+            string query = @"CM_sp_tipo_ordenes_compra";
+            try
+            {
+                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_OnlySELECT);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsCompras1.tipo_orden.Clear();
+                adat.Fill(dsCompras1.tipo_orden);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
 
         private void ValidarAccesosSegunUsuario()
@@ -81,40 +172,76 @@ namespace LOSA.Compras
 
         }
 
-        private void LoadSucursales()
+
+        private void txtCodProv_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            BuscarProveedor();
+           
+        }
+
+        private void BuscarProveedor()
+        {
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.Proveedores);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtCodProv.Text = frm.ItemSeleccionado.ItemCode;
+                txtProveedor.Text = frm.ItemSeleccionado.ItemName;
+                Proveedor prov = new Proveedor();
+                prov.RecuperarRegistroWithRTN(frm.ItemSeleccionado.ItemCode);
+                direccion = prov.Direccion;
+                txtContactoPerson.Text = prov.Contacto;
+                txtMoneda.Text = prov.Moneda;
+
+                if (txtMoneda.Text == "USD")
+                {
+                    TasaCambioActual();
+                    txtTasaCambio.Visible = true;
+                }
+                else
+                {
+                    txtTasaCambio.Visible = false;
+                }
+
+                cmdNuevo.Enabled = true;
+
+            }
+        }
+
+        private void TasaCambioActual()
+        {
+            bool ExisteTasa = true;
+            string Mensaje = "";
+
             try
             {
-                string query = @"[sp_get_lista_puntos_de_venta]";
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                string query = @"CM_get_tasa_cambio";
+
+                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_OnlySELECT);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(query,conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsCompras1.sucursales.Clear();
-                adat.Fill(dsCompras1.sucursales);
+                cmd.Parameters.AddWithValue("@fecha_conta", dtFechaContabilizacion.Value);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    ExisteTasa = dr.GetBoolean(0);
+                    txtTasaCambio.EditValue = dr.GetDecimal(1);
+                }
+                dr.Close();
                 conn.Close();
+
+                if (ExisteTasa == false)
+                {
+                    Mensaje = "No se a Definido la Tasa de Cambio de este dia!\nContacte al Dpto. de Finanzas";
+                    CajaDialogo.Error(Mensaje);
+                }
+
             }
             catch (Exception ex)
             {
                 CajaDialogo.Error(ex.Message);
             }
         }
-
-        private void txtCodProv_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            //frmSearchDefault frm = new frmSearchDefault(frmSearchDefault.TipoBusqueda.Proveedores);
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    txtCodProv.Text = frm.ItemSeleccionado.ItemCode;
-            //    txtProveedor.Text = frm.ItemSeleccionado.ItemName;
-            //    Proveedor prov = new Proveedor();
-            //    prov.RecuperarRegistroFromItemCode(frm.ItemSeleccionado.ItemCode);
-            //    direccion = prov._direccion;
-            //    cmdNuevo.Enabled = true;
-            //}
-        }
-
 
         private void btnShowPopu_Click(object sender, EventArgs e)
         {
@@ -218,26 +345,45 @@ namespace LOSA.Compras
 
         private void cmdAddDetalle_Click(object sender, EventArgs e)
         {
+            frmSearchMP frm = new frmSearchMP(frmSearchMP.TipoBusqueda.Items);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                bool Agregar = true;
+
+                foreach (dsCompras.oc_detalle_exoneradaRow item in dsCompras1.oc_detalle_exonerada.Rows)
+                {
+                    if (item.itemcode == frm.ItemSeleccionado.ItemCode)
+                    {
+                        item.cantidad = item.cantidad + 1;
+                        Agregar = false;
+                    }
+
+                }
+
+                if (Agregar)
+                {
+                    ItemsSAP items = new ItemsSAP();
+                    items.RecuperarRegistroItemSAP(frm.ItemSeleccionado.ItemCode);
+
+                    DataRow dr = dsCompras1.oc_detalle_exonerada.NewRow();
+                    dr[4] = items.ItemCode;
+                    dr[5] = items.DescripcionArticulo;
+                    dr[6] = 1; //Cantidad
+                    dr[7] = 0; //Precio por Unidad
+                    dr[9] = items.Bodega;
+                    dr[10] = 0; //Total
+
+                    dsCompras1.oc_detalle_exonerada.Rows.Add(dr);
+                }
+
+            }
+
             //frmSearchDefault frm = new frmSearchDefault(frmSearchDefault.TipoBusqueda.ProductoTerminado);
             //if (frm.ShowDialog() == DialogResult.OK)
             //{
             //    switch (tipooperacion)
             //    {
-            //        case TipoOperacion.New:
-            //            bool Agregar = true;
-
-            //            foreach (dsCompras.oc_detalleRow item in dsCompras1.oc_detalle)
-            //            {
-                            
-            //                if (item.itemcode == frm.ItemSeleccionado.ItemCode)
-            //                {
-            //                    item.cantidad = item.cantidad + 1;
-            //                    Agregar = false;
-
-            //                }
-                            
-                            
-            //            }
+            //        
 
             //            if (Agregar)
             //            {
@@ -260,7 +406,7 @@ namespace LOSA.Compras
             //        default:
             //            break;
             //    }
-                
+
             //}
         }
 
@@ -273,42 +419,19 @@ namespace LOSA.Compras
             }
 
             var grdvDetalle = (GridView)grDetalle.FocusedView;
-            var row = (dsCompras.oc_detalleRow)grdvDetalle.GetFocusedDataRow();
+            var row = (dsCompras.oc_detalle_exoneradaRow)grdvDetalle.GetFocusedDataRow();
 
+            try
+            {
+                grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
+                dsCompras1.AcceptChanges();
+                CalcularTotal();
+            }
+            catch (Exception ec)
+            {
+                CajaDialogo.Error(ec.Message);
+            }
             
-            if (row.id_detalle > 0)
-            {
-                try
-                {
-                    string a = @"sp_compras_orden_delete_detalle";
-                    SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(a, conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_detalle", row.id_detalle);
-                    cmd.ExecuteNonQuery();
-
-                    CargarDetalleOrdenCompra(IdOrdenCompraActual);
-                    CalcularTotal();
-                }
-                catch (Exception ex)
-                {
-                    CajaDialogo.Error(ex.Message);
-                }
-            }
-            else
-            {
-                try
-                {
-                    grdvDetalle.DeleteRow(grdvDetalle.FocusedRowHandle);
-                    dsCompras1.AcceptChanges();
-                    CalcularTotal();
-                }
-                catch (Exception ec)
-                {
-                    CajaDialogo.Error(ec.Message);
-                }
-            }
             
         }
 
@@ -462,16 +585,8 @@ namespace LOSA.Compras
 
         private void txtCodProv_Click(object sender, EventArgs e)
         {
-            //frmSearchDefault frm = new frmSearchDefault(frmSearchDefault.TipoBusqueda.Proveedores);
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    txtCodProv.Text = frm.ItemSeleccionado.ItemCode;
-            //    txtProveedor.Text = frm.ItemSeleccionado.ItemName;
-            //    Proveedor prov = new Proveedor();
-            //    prov.RecuperarRegistroFromItemCode(frm.ItemSeleccionado.ItemCode);
-            //    direccion = prov._direccion;
-            //    cmdNuevo.Enabled = true;
-            //}
+            BuscarProveedor();
+            
         }
 
         private void cmdClose_Click(object sender, EventArgs e)
@@ -785,12 +900,15 @@ namespace LOSA.Compras
 
         private void dtFechaContabilizacion_ValueChanged(object sender, EventArgs e)
         {
-            //if (dtFechaRegistro.Value > dtFechaContabilizacion.Value)
-            //{
-            //    CajaDialogo.Error("La Fecha de Contabilizacion no puede ser menor a la de Registro!");
-            //    dtFechaContabilizacion.Value = dtFechaRegistro.Value;
-            //    return;
-            //}
+            if (dtFechaRegistro.Value > dtFechaContabilizacion.Value)
+            {
+                CajaDialogo.Error("La Fecha de Contabilizacion no puede ser menor a la de Registro!");
+                dtFechaContabilizacion.Value = dtFechaRegistro.Value;
+                return;
+            }
+
+            TasaCambioActual();
+
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -936,6 +1054,54 @@ namespace LOSA.Compras
         private void grdSucursales_EditValueChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void TsTipoOrden_Toggled(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TsExoOIsv_Toggled(object sender, EventArgs e)
+        {
+            if (TsExoOIsv.IsOn)
+            {
+                txtExoneracion.Visible = true;
+                lblExoneracion.Visible = true;
+                ObtenerExoneracionVigente();
+
+            }
+            else
+            {
+                txtExoneracion.Text = "";
+                txtExoneracion.Visible = false;
+                lblExoneracion.Visible = false;
+            }
+        }
+
+        private void ObtenerExoneracionVigente()
+        {
+            try
+            {
+                string query = @"SELECT top 1 [resolucion_exonerada]
+                                  FROM [LOSA].[dbo].[CM_exoneracion_h]
+                                  where enable = 1 and cerrado = 0
+                                  order by 1 desc";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.Text;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtExoneracion.Text = dr.GetString(0);
+                }
+                dr.Close();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
         }
     }
 }

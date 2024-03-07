@@ -1903,6 +1903,16 @@ namespace LOSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap orden_de_compra {
+            get {
+                object obj = ResourceManager.GetObject("orden de compra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap orders_production_24px {
             get {
                 object obj = ResourceManager.GetObject("orders_production_24px", resourceCulture);
@@ -2596,6 +2606,16 @@ namespace LOSA.Properties {
         internal static System.Drawing.Bitmap saveChanges_32x32 {
             get {
                 object obj = ResourceManager.GetObject("saveChanges_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap savia {
+            get {
+                object obj = ResourceManager.GetObject("savia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
