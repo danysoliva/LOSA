@@ -3,44 +3,12 @@ namespace LOSA.Compras
 {
     partial class frmOrdenesCompraMain
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenesCompraMain));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtExoneracion = new System.Windows.Forms.TextBox();
             this.lblExoneracion = new DevExpress.XtraEditors.LabelControl();
@@ -100,6 +68,9 @@ namespace LOSA.Compras
             this.capitulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsExoneracion1 = new LOSA.Finanzas.dsExoneracion();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCode1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colU_AQUA_Desc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colconcat_2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colpartida_arancelaria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reposPartidaArancelaria = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.partidaarancelariaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -112,7 +83,16 @@ namespace LOSA.Compras
             this.reposGrdIndicadorIVA = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.ivaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbodega = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reposGrdBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colWhsCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colWhsName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colconcat_1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colreferencia_base = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -128,15 +108,6 @@ namespace LOSA.Compras
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.reposGrdBodega = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.bodegasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colWhsCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colWhsName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colconcat_1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTasaCambio.Properties)).BeginInit();
@@ -163,6 +134,9 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdIndicadorIVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -171,9 +145,6 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubtotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -213,7 +184,7 @@ namespace LOSA.Compras
             this.panelControl1.Controls.Add(this.labelControl6);
             this.panelControl1.Location = new System.Drawing.Point(4, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1359, 256);
+            this.panelControl1.Size = new System.Drawing.Size(1483, 256);
             this.panelControl1.TabIndex = 51;
             this.panelControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl1_MouseDown);
             // 
@@ -224,7 +195,7 @@ namespace LOSA.Compras
             this.txtExoneracion.Enabled = false;
             this.txtExoneracion.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtExoneracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtExoneracion.Location = new System.Drawing.Point(918, 205);
+            this.txtExoneracion.Location = new System.Drawing.Point(1164, 208);
             this.txtExoneracion.Name = "txtExoneracion";
             this.txtExoneracion.Size = new System.Drawing.Size(189, 19);
             this.txtExoneracion.TabIndex = 85;
@@ -233,7 +204,7 @@ namespace LOSA.Compras
             // 
             this.lblExoneracion.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblExoneracion.Appearance.Options.UseFont = true;
-            this.lblExoneracion.Location = new System.Drawing.Point(748, 205);
+            this.lblExoneracion.Location = new System.Drawing.Point(994, 208);
             this.lblExoneracion.Name = "lblExoneracion";
             this.lblExoneracion.Size = new System.Drawing.Size(249, 18);
             this.lblExoneracion.TabIndex = 84;
@@ -302,7 +273,7 @@ namespace LOSA.Compras
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1366, 41);
+            this.barDockControlTop.Size = new System.Drawing.Size(1490, 41);
             // 
             // barDockControlBottom
             // 
@@ -310,7 +281,7 @@ namespace LOSA.Compras
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 691);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1366, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1490, 20);
             // 
             // barDockControlLeft
             // 
@@ -324,7 +295,7 @@ namespace LOSA.Compras
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1366, 41);
+            this.barDockControlRight.Location = new System.Drawing.Point(1490, 41);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 650);
             // 
@@ -355,6 +326,12 @@ namespace LOSA.Compras
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEdit1.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxEdit1.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.comboBoxEdit1.Properties.AppearanceItemSelected.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxEdit1.Properties.AppearanceItemSelected.Options.UseFont = true;
+            this.comboBoxEdit1.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBoxEdit1.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
@@ -367,7 +344,7 @@ namespace LOSA.Compras
             // TsExoOIsv
             // 
             this.TsExoOIsv.EditValue = true;
-            this.TsExoOIsv.Location = new System.Drawing.Point(918, 176);
+            this.TsExoOIsv.Location = new System.Drawing.Point(1164, 176);
             this.TsExoOIsv.MenuManager = this.barManager1;
             this.TsExoOIsv.Name = "TsExoOIsv";
             this.TsExoOIsv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
@@ -382,7 +359,7 @@ namespace LOSA.Compras
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(748, 178);
+            this.labelControl13.Location = new System.Drawing.Point(994, 178);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(260, 18);
             this.labelControl13.TabIndex = 80;
@@ -390,7 +367,7 @@ namespace LOSA.Compras
             // 
             // grdTipoOrden
             // 
-            this.grdTipoOrden.Location = new System.Drawing.Point(918, 140);
+            this.grdTipoOrden.Location = new System.Drawing.Point(1164, 143);
             this.grdTipoOrden.MenuManager = this.barManager1;
             this.grdTipoOrden.Name = "grdTipoOrden";
             this.grdTipoOrden.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
@@ -470,7 +447,7 @@ namespace LOSA.Compras
             // 
             this.lblSucursal.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblSucursal.Appearance.Options.UseFont = true;
-            this.lblSucursal.Location = new System.Drawing.Point(748, 145);
+            this.lblSucursal.Location = new System.Drawing.Point(994, 148);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(285, 18);
             this.lblSucursal.TabIndex = 75;
@@ -494,9 +471,8 @@ namespace LOSA.Compras
             this.txtCodProv.Name = "txtCodProv";
             this.txtCodProv.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtCodProv.Properties.Appearance.Options.UseFont = true;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.txtCodProv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
             this.txtCodProv.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtCodProv.Properties.ReadOnly = true;
             this.txtCodProv.Size = new System.Drawing.Size(228, 24);
@@ -530,7 +506,7 @@ namespace LOSA.Compras
             // 
             this.dtFechaContabilizacion.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.dtFechaContabilizacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaContabilizacion.Location = new System.Drawing.Point(918, 80);
+            this.dtFechaContabilizacion.Location = new System.Drawing.Point(1164, 83);
             this.dtFechaContabilizacion.Name = "dtFechaContabilizacion";
             this.dtFechaContabilizacion.Size = new System.Drawing.Size(189, 26);
             this.dtFechaContabilizacion.TabIndex = 65;
@@ -540,7 +516,7 @@ namespace LOSA.Compras
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(748, 87);
+            this.labelControl4.Location = new System.Drawing.Point(994, 90);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(274, 18);
             this.labelControl4.TabIndex = 64;
@@ -551,7 +527,7 @@ namespace LOSA.Compras
             this.dtFechaRegistro.Enabled = false;
             this.dtFechaRegistro.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.dtFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaRegistro.Location = new System.Drawing.Point(918, 49);
+            this.dtFechaRegistro.Location = new System.Drawing.Point(1164, 52);
             this.dtFechaRegistro.Name = "dtFechaRegistro";
             this.dtFechaRegistro.Size = new System.Drawing.Size(189, 26);
             this.dtFechaRegistro.TabIndex = 63;
@@ -560,7 +536,7 @@ namespace LOSA.Compras
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(748, 57);
+            this.labelControl3.Location = new System.Drawing.Point(994, 60);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(223, 18);
             this.labelControl3.TabIndex = 62;
@@ -573,7 +549,7 @@ namespace LOSA.Compras
             this.txtEstado.Enabled = false;
             this.txtEstado.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.txtEstado.Location = new System.Drawing.Point(918, 113);
+            this.txtEstado.Location = new System.Drawing.Point(1164, 116);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(189, 19);
             this.txtEstado.TabIndex = 61;
@@ -582,7 +558,7 @@ namespace LOSA.Compras
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(748, 113);
+            this.labelControl2.Location = new System.Drawing.Point(994, 116);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(201, 18);
             this.labelControl2.TabIndex = 60;
@@ -615,7 +591,7 @@ namespace LOSA.Compras
             this.cmdClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmdClose.ImageOptions.Image")));
             this.cmdClose.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.cmdClose.Location = new System.Drawing.Point(1304, 12);
+            this.cmdClose.Location = new System.Drawing.Point(1428, 12);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(47, 33);
             this.cmdClose.TabIndex = 52;
@@ -740,7 +716,7 @@ namespace LOSA.Compras
             this.reposPartidaArancelaria,
             this.reposGrdIndicadorIVA,
             this.reposGrdBodega});
-            this.grDetalle.Size = new System.Drawing.Size(1359, 271);
+            this.grDetalle.Size = new System.Drawing.Size(1483, 271);
             this.grDetalle.TabIndex = 52;
             this.grDetalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdvDetalle});
@@ -790,11 +766,13 @@ namespace LOSA.Compras
             // 
             // colcapitulo
             // 
+            this.colcapitulo.Caption = "Capitulo";
             this.colcapitulo.ColumnEdit = this.reposGrdCapitulo;
             this.colcapitulo.FieldName = "capitulo";
             this.colcapitulo.Name = "colcapitulo";
             this.colcapitulo.Visible = true;
             this.colcapitulo.VisibleIndex = 2;
+            this.colcapitulo.Width = 102;
             // 
             // reposGrdCapitulo
             // 
@@ -807,6 +785,7 @@ namespace LOSA.Compras
             this.reposGrdCapitulo.NullText = "";
             this.reposGrdCapitulo.PopupView = this.repositoryItemGridLookUpEdit1View;
             this.reposGrdCapitulo.ValueMember = "Code";
+            this.reposGrdCapitulo.EditValueChanged += new System.EventHandler(this.reposGrdCapitulo_EditValueChanged);
             // 
             // capitulosBindingSource
             // 
@@ -820,18 +799,42 @@ namespace LOSA.Compras
             // 
             // repositoryItemGridLookUpEdit1View
             // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCode1,
+            this.colU_AQUA_Desc,
+            this.colconcat_2});
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
             this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // colCode1
+            // 
+            this.colCode1.FieldName = "Code";
+            this.colCode1.Name = "colCode1";
+            // 
+            // colU_AQUA_Desc
+            // 
+            this.colU_AQUA_Desc.FieldName = "U_AQUA_Desc";
+            this.colU_AQUA_Desc.Name = "colU_AQUA_Desc";
+            // 
+            // colconcat_2
+            // 
+            this.colconcat_2.FieldName = "concat_";
+            this.colconcat_2.MinWidth = 60;
+            this.colconcat_2.Name = "colconcat_2";
+            this.colconcat_2.Visible = true;
+            this.colconcat_2.VisibleIndex = 0;
+            // 
             // colpartida_arancelaria
             // 
+            this.colpartida_arancelaria.Caption = "Partida Arancelaria";
             this.colpartida_arancelaria.ColumnEdit = this.reposPartidaArancelaria;
             this.colpartida_arancelaria.FieldName = "partida_arancelaria";
             this.colpartida_arancelaria.Name = "colpartida_arancelaria";
             this.colpartida_arancelaria.Visible = true;
             this.colpartida_arancelaria.VisibleIndex = 3;
+            this.colpartida_arancelaria.Width = 102;
             // 
             // reposPartidaArancelaria
             // 
@@ -859,39 +862,49 @@ namespace LOSA.Compras
             // 
             // colitemcode
             // 
+            this.colitemcode.Caption = "Numero de Articulo";
             this.colitemcode.FieldName = "itemcode";
             this.colitemcode.Name = "colitemcode";
             this.colitemcode.Visible = true;
             this.colitemcode.VisibleIndex = 4;
+            this.colitemcode.Width = 102;
             // 
             // coldescripcion_articulo
             // 
+            this.coldescripcion_articulo.Caption = "Descripcion de Articulo";
             this.coldescripcion_articulo.FieldName = "descripcion_articulo";
             this.coldescripcion_articulo.Name = "coldescripcion_articulo";
             this.coldescripcion_articulo.Visible = true;
             this.coldescripcion_articulo.VisibleIndex = 5;
+            this.coldescripcion_articulo.Width = 102;
             // 
             // colcantidad
             // 
+            this.colcantidad.Caption = "Cantidad";
             this.colcantidad.FieldName = "cantidad";
             this.colcantidad.Name = "colcantidad";
             this.colcantidad.Visible = true;
             this.colcantidad.VisibleIndex = 6;
+            this.colcantidad.Width = 102;
             // 
             // colprecio_por_unidad
             // 
+            this.colprecio_por_unidad.Caption = "Precio por unidad";
             this.colprecio_por_unidad.FieldName = "precio_por_unidad";
             this.colprecio_por_unidad.Name = "colprecio_por_unidad";
             this.colprecio_por_unidad.Visible = true;
             this.colprecio_por_unidad.VisibleIndex = 7;
+            this.colprecio_por_unidad.Width = 102;
             // 
             // colindicador_impuesto
             // 
+            this.colindicador_impuesto.Caption = "Indicador de Impuestos";
             this.colindicador_impuesto.ColumnEdit = this.reposGrdIndicadorIVA;
             this.colindicador_impuesto.FieldName = "indicador_impuesto";
             this.colindicador_impuesto.Name = "colindicador_impuesto";
             this.colindicador_impuesto.Visible = true;
             this.colindicador_impuesto.VisibleIndex = 8;
+            this.colindicador_impuesto.Width = 102;
             // 
             // reposGrdIndicadorIVA
             // 
@@ -921,235 +934,6 @@ namespace LOSA.Compras
             this.repositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
-            // colbodega
-            // 
-            this.colbodega.FieldName = "bodega";
-            this.colbodega.Name = "colbodega";
-            this.colbodega.Visible = true;
-            this.colbodega.VisibleIndex = 9;
-            // 
-            // coltotal
-            // 
-            this.coltotal.FieldName = "total";
-            this.coltotal.Name = "coltotal";
-            this.coltotal.Visible = true;
-            this.coltotal.VisibleIndex = 10;
-            // 
-            // colreferencia_base
-            // 
-            this.colreferencia_base.FieldName = "referencia_base";
-            this.colreferencia_base.Name = "colreferencia_base";
-            this.colreferencia_base.Visible = true;
-            this.colreferencia_base.VisibleIndex = 11;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Eliminar";
-            this.gridColumn1.ColumnEdit = this.ButtonDeleteRow;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 12;
-            // 
-            // ButtonDeleteRow
-            // 
-            this.ButtonDeleteRow.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            this.ButtonDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.ButtonDeleteRow.Name = "ButtonDeleteRow";
-            this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl2.Controls.Add(this.txtComentarios);
-            this.panelControl2.Controls.Add(this.txtTotal);
-            this.panelControl2.Controls.Add(this.txtImpuesto);
-            this.panelControl2.Controls.Add(this.txtSubtotal);
-            this.panelControl2.Controls.Add(this.btnShowPopu);
-            this.panelControl2.Controls.Add(this.labelControl11);
-            this.panelControl2.Controls.Add(this.labelControl10);
-            this.panelControl2.Controls.Add(this.labelControl8);
-            this.panelControl2.Controls.Add(this.labelControl9);
-            this.panelControl2.Controls.Add(this.txtUsuarioCreador);
-            this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Location = new System.Drawing.Point(4, 526);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1359, 180);
-            this.panelControl2.TabIndex = 53;
-            this.panelControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
-            this.panelControl2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl2_MouseDown);
-            // 
-            // txtComentarios
-            // 
-            this.txtComentarios.Location = new System.Drawing.Point(154, 64);
-            this.txtComentarios.Name = "txtComentarios";
-            this.txtComentarios.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtComentarios.Properties.Appearance.Options.UseFont = true;
-            this.txtComentarios.Size = new System.Drawing.Size(408, 96);
-            this.txtComentarios.TabIndex = 85;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTotal.EditValue = "0.00";
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(918, 68);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtTotal.Properties.Appearance.Options.UseFont = true;
-            this.txtTotal.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtTotal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtTotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtTotal.Properties.MaskSettings.Set("mask", "c");
-            this.txtTotal.Properties.NullText = "0.00";
-            this.txtTotal.Properties.NullValuePrompt = "0.00";
-            this.txtTotal.Size = new System.Drawing.Size(130, 24);
-            this.txtTotal.TabIndex = 81;
-            // 
-            // txtImpuesto
-            // 
-            this.txtImpuesto.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtImpuesto.EditValue = "0.00";
-            this.txtImpuesto.Enabled = false;
-            this.txtImpuesto.Location = new System.Drawing.Point(918, 38);
-            this.txtImpuesto.Name = "txtImpuesto";
-            this.txtImpuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtImpuesto.Properties.Appearance.Options.UseFont = true;
-            this.txtImpuesto.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtImpuesto.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtImpuesto.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtImpuesto.Properties.MaskSettings.Set("mask", "c");
-            this.txtImpuesto.Properties.NullText = "0.00";
-            this.txtImpuesto.Size = new System.Drawing.Size(130, 24);
-            this.txtImpuesto.TabIndex = 80;
-            // 
-            // txtSubtotal
-            // 
-            this.txtSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSubtotal.EditValue = "0.00";
-            this.txtSubtotal.Enabled = false;
-            this.txtSubtotal.Location = new System.Drawing.Point(918, 9);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubtotal.Properties.Appearance.Options.UseFont = true;
-            this.txtSubtotal.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtSubtotal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtSubtotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txtSubtotal.Properties.MaskSettings.Set("mask", "c");
-            this.txtSubtotal.Properties.NullText = "0.00";
-            this.txtSubtotal.Size = new System.Drawing.Size(130, 24);
-            this.txtSubtotal.TabIndex = 79;
-            // 
-            // btnShowPopu
-            // 
-            this.btnShowPopu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnShowPopu.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowPopu.Appearance.Options.UseFont = true;
-            this.btnShowPopu.Location = new System.Drawing.Point(973, 139);
-            this.btnShowPopu.Name = "btnShowPopu";
-            this.btnShowPopu.Size = new System.Drawing.Size(248, 29);
-            this.btnShowPopu.TabIndex = 78;
-            this.btnShowPopu.Text = "Copiar de Solicitud de Compra";
-            this.btnShowPopu.Click += new System.EventHandler(this.btnShowPopu_Click);
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(5, 65);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(165, 18);
-            this.labelControl11.TabIndex = 77;
-            this.labelControl11.Text = "Comentarios_______";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(816, 15);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(137, 18);
-            this.labelControl10.TabIndex = 84;
-            this.labelControl10.Text = "SubTotal_______";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(816, 73);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(189, 18);
-            this.labelControl8.TabIndex = 82;
-            this.labelControl8.Text = "Total_______________";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(816, 45);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(141, 18);
-            this.labelControl9.TabIndex = 83;
-            this.labelControl9.Text = "Impuesto_______";
-            // 
-            // popupMenu1
-            // 
-            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnCancelOrden)});
-            this.popupMenu1.Manager = this.barManager1;
-            this.popupMenu1.Name = "popupMenu1";
-            // 
-            // reposGrdBodega
-            // 
-            this.reposGrdBodega.AutoHeight = false;
-            this.reposGrdBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.reposGrdBodega.DataSource = this.bodegasBindingSource;
-            this.reposGrdBodega.DisplayMember = "WhsCode";
-            this.reposGrdBodega.Name = "reposGrdBodega";
-            this.reposGrdBodega.PopupView = this.gridView2;
-            this.reposGrdBodega.ValueMember = "WhsCode";
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colWhsCode,
-            this.colWhsName,
-            this.colconcat_1});
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // bodegasBindingSource
-            // 
-            this.bodegasBindingSource.DataMember = "bodegas";
-            this.bodegasBindingSource.DataSource = this.dsCompras1;
-            // 
-            // colWhsCode
-            // 
-            this.colWhsCode.FieldName = "WhsCode";
-            this.colWhsCode.Name = "colWhsCode";
-            // 
-            // colWhsName
-            // 
-            this.colWhsName.FieldName = "WhsName";
-            this.colWhsName.Name = "colWhsName";
-            // 
-            // colconcat_1
-            // 
-            this.colconcat_1.Caption = "Seleccio de Bodega";
-            this.colconcat_1.FieldName = "concat_";
-            this.colconcat_1.Name = "colconcat_1";
-            this.colconcat_1.Visible = true;
-            this.colconcat_1.VisibleIndex = 0;
-            // 
             // colCode
             // 
             this.colCode.Caption = "Code";
@@ -1171,11 +955,247 @@ namespace LOSA.Compras
             this.colRate.FieldName = "Rate";
             this.colRate.Name = "colRate";
             // 
+            // colbodega
+            // 
+            this.colbodega.Caption = "Almacen";
+            this.colbodega.ColumnEdit = this.reposGrdBodega;
+            this.colbodega.FieldName = "bodega";
+            this.colbodega.Name = "colbodega";
+            this.colbodega.Visible = true;
+            this.colbodega.VisibleIndex = 9;
+            this.colbodega.Width = 102;
+            // 
+            // reposGrdBodega
+            // 
+            this.reposGrdBodega.AutoHeight = false;
+            this.reposGrdBodega.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.reposGrdBodega.DataSource = this.bodegasBindingSource;
+            this.reposGrdBodega.DisplayMember = "WhsCode";
+            this.reposGrdBodega.Name = "reposGrdBodega";
+            this.reposGrdBodega.PopupView = this.gridView2;
+            this.reposGrdBodega.ValueMember = "WhsCode";
+            // 
+            // bodegasBindingSource
+            // 
+            this.bodegasBindingSource.DataMember = "bodegas";
+            this.bodegasBindingSource.DataSource = this.dsCompras1;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colWhsCode,
+            this.colWhsName,
+            this.colconcat_1});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // colWhsCode
+            // 
+            this.colWhsCode.FieldName = "WhsCode";
+            this.colWhsCode.Name = "colWhsCode";
+            // 
+            // colWhsName
+            // 
+            this.colWhsName.FieldName = "WhsName";
+            this.colWhsName.Name = "colWhsName";
+            // 
+            // colconcat_1
+            // 
+            this.colconcat_1.Caption = "Seleccio de Bodega";
+            this.colconcat_1.FieldName = "concat_";
+            this.colconcat_1.Name = "colconcat_1";
+            this.colconcat_1.Visible = true;
+            this.colconcat_1.VisibleIndex = 0;
+            // 
+            // coltotal
+            // 
+            this.coltotal.Caption = "Total (doc.)";
+            this.coltotal.FieldName = "total";
+            this.coltotal.Name = "coltotal";
+            this.coltotal.Visible = true;
+            this.coltotal.VisibleIndex = 10;
+            this.coltotal.Width = 102;
+            // 
+            // colreferencia_base
+            // 
+            this.colreferencia_base.Caption = "Referencia Base";
+            this.colreferencia_base.FieldName = "referencia_base";
+            this.colreferencia_base.Name = "colreferencia_base";
+            this.colreferencia_base.Visible = true;
+            this.colreferencia_base.VisibleIndex = 11;
+            this.colreferencia_base.Width = 107;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Eliminar";
+            this.gridColumn1.ColumnEdit = this.ButtonDeleteRow;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 12;
+            this.gridColumn1.Width = 105;
+            // 
+            // ButtonDeleteRow
+            // 
+            this.ButtonDeleteRow.AutoHeight = false;
+            this.ButtonDeleteRow.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)});
+            this.ButtonDeleteRow.Name = "ButtonDeleteRow";
+            this.ButtonDeleteRow.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.ButtonDeleteRow.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonDeleteRow_ButtonClick);
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Controls.Add(this.txtComentarios);
+            this.panelControl2.Controls.Add(this.txtTotal);
+            this.panelControl2.Controls.Add(this.txtImpuesto);
+            this.panelControl2.Controls.Add(this.txtSubtotal);
+            this.panelControl2.Controls.Add(this.btnShowPopu);
+            this.panelControl2.Controls.Add(this.labelControl11);
+            this.panelControl2.Controls.Add(this.labelControl10);
+            this.panelControl2.Controls.Add(this.labelControl8);
+            this.panelControl2.Controls.Add(this.labelControl9);
+            this.panelControl2.Controls.Add(this.txtUsuarioCreador);
+            this.panelControl2.Controls.Add(this.labelControl1);
+            this.panelControl2.Location = new System.Drawing.Point(4, 526);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1483, 180);
+            this.panelControl2.TabIndex = 53;
+            this.panelControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
+            this.panelControl2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelControl2_MouseDown);
+            // 
+            // txtComentarios
+            // 
+            this.txtComentarios.Location = new System.Drawing.Point(154, 51);
+            this.txtComentarios.Name = "txtComentarios";
+            this.txtComentarios.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtComentarios.Properties.Appearance.Options.UseFont = true;
+            this.txtComentarios.Size = new System.Drawing.Size(448, 96);
+            this.txtComentarios.TabIndex = 85;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTotal.EditValue = "0.00";
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(1138, 64);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtTotal.Properties.Appearance.Options.UseFont = true;
+            this.txtTotal.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtTotal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtTotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtTotal.Properties.MaskSettings.Set("mask", "c");
+            this.txtTotal.Properties.NullText = "0.00";
+            this.txtTotal.Properties.NullValuePrompt = "0.00";
+            this.txtTotal.Size = new System.Drawing.Size(108, 24);
+            this.txtTotal.TabIndex = 81;
+            // 
+            // txtImpuesto
+            // 
+            this.txtImpuesto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtImpuesto.EditValue = "0.00";
+            this.txtImpuesto.Enabled = false;
+            this.txtImpuesto.Location = new System.Drawing.Point(1138, 34);
+            this.txtImpuesto.Name = "txtImpuesto";
+            this.txtImpuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtImpuesto.Properties.Appearance.Options.UseFont = true;
+            this.txtImpuesto.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtImpuesto.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtImpuesto.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtImpuesto.Properties.MaskSettings.Set("mask", "c");
+            this.txtImpuesto.Properties.NullText = "0.00";
+            this.txtImpuesto.Size = new System.Drawing.Size(108, 24);
+            this.txtImpuesto.TabIndex = 80;
+            // 
+            // txtSubtotal
+            // 
+            this.txtSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSubtotal.EditValue = "0.00";
+            this.txtSubtotal.Enabled = false;
+            this.txtSubtotal.Location = new System.Drawing.Point(1138, 5);
+            this.txtSubtotal.Name = "txtSubtotal";
+            this.txtSubtotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubtotal.Properties.Appearance.Options.UseFont = true;
+            this.txtSubtotal.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtSubtotal.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtSubtotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtSubtotal.Properties.MaskSettings.Set("mask", "c");
+            this.txtSubtotal.Properties.NullText = "0.00";
+            this.txtSubtotal.Size = new System.Drawing.Size(108, 24);
+            this.txtSubtotal.TabIndex = 79;
+            // 
+            // btnShowPopu
+            // 
+            this.btnShowPopu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnShowPopu.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowPopu.Appearance.Options.UseFont = true;
+            this.btnShowPopu.Location = new System.Drawing.Point(1213, 118);
+            this.btnShowPopu.Name = "btnShowPopu";
+            this.btnShowPopu.Size = new System.Drawing.Size(248, 29);
+            this.btnShowPopu.TabIndex = 78;
+            this.btnShowPopu.Text = "Copiar de Solicitud de Compra";
+            this.btnShowPopu.Click += new System.EventHandler(this.btnShowPopu_Click);
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(5, 52);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(165, 18);
+            this.labelControl11.TabIndex = 77;
+            this.labelControl11.Text = "Comentarios_______";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(1036, 11);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(137, 18);
+            this.labelControl10.TabIndex = 84;
+            this.labelControl10.Text = "SubTotal_______";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(1036, 69);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(189, 18);
+            this.labelControl8.TabIndex = 82;
+            this.labelControl8.Text = "Total_______________";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(1036, 41);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(141, 18);
+            this.labelControl9.TabIndex = 83;
+            this.labelControl9.Text = "Impuesto_______";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnCancelOrden)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
             // frmOrdenesCompraMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 711);
+            this.ClientSize = new System.Drawing.Size(1490, 711);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.grDetalle);
             this.Controls.Add(this.panelControl1);
@@ -1212,6 +1232,9 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.reposGrdIndicadorIVA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonDeleteRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -1221,25 +1244,26 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubtotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reposGrdBodega)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bodegasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
         #endregion
-
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private System.ComponentModel.IContainer components;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraGrid.GridControl grDetalle;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdvDetalle;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonDeleteRow;
+        private DevExpress.XtraEditors.ButtonEdit txtCodProv;
+        private DevExpress.XtraEditors.TextEdit txtProveedor;
+        private DevExpress.XtraEditors.SimpleButton cmdAddDetalle;
         private System.Windows.Forms.DateTimePicker dtFechaContabilizacion;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.DateTimePicker dtFechaRegistro;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.TextBox txtEstado;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private System.Windows.Forms.TextBox txtUsuarioCreador;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtDocNum;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton cmdClose;
@@ -1248,17 +1272,12 @@ namespace LOSA.Compras
         private DevExpress.XtraEditors.SimpleButton cmdBuscar;
         private DevExpress.XtraEditors.SimpleButton cmdSiguiente;
         private DevExpress.XtraEditors.SimpleButton cmdAnterior;
-        private DevExpress.XtraEditors.SimpleButton cmdAddDetalle;
-        private DevExpress.XtraGrid.GridControl grDetalle;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdvDetalle;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit ButtonDeleteRow;
-        private DevExpress.XtraEditors.TextEdit txtProveedor;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.ButtonEdit txtCodProv;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private System.Windows.Forms.TextBox txtUsuarioCreador;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnShowPopu;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
         private dsCompras dsCompras1;
         private DevExpress.XtraEditors.TextEdit txtTotal;
         private DevExpress.XtraEditors.TextEdit txtImpuesto;
@@ -1327,5 +1346,8 @@ namespace LOSA.Compras
         private DevExpress.XtraGrid.Columns.GridColumn colWhsCode;
         private DevExpress.XtraGrid.Columns.GridColumn colWhsName;
         private DevExpress.XtraGrid.Columns.GridColumn colconcat_1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCode1;
+        private DevExpress.XtraGrid.Columns.GridColumn colU_AQUA_Desc;
+        private DevExpress.XtraGrid.Columns.GridColumn colconcat_2;
     }
 }

@@ -37,20 +37,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="solicitudes" msprop:Generator_TableClassName="solicitudesDataTable" msprop:Generator_TableVarName="tablesolicitudes" msprop:Generator_TablePropName="solicitudes" msprop:Generator_RowDeletingName="solicitudesRowDeleting" msprop:Generator_RowChangingName="solicitudesRowChanging" msprop:Generator_RowEvHandlerName="solicitudesRowChangeEventHandler" msprop:Generator_RowDeletedName="solicitudesRowDeleted" msprop:Generator_UserTableName="solicitudes" msprop:Generator_RowChangedName="solicitudesRowChanged" msprop:Generator_RowEvArgName="solicitudesRowChangeEvent" msprop:Generator_RowClassName="solicitudesRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="id_solicitud" msprop:Generator_ColumnVarNameInTable="columnid_solicitud" msprop:Generator_ColumnPropNameInRow="id_solicitud" msprop:Generator_ColumnPropNameInTable="id_solicitudColumn" msprop:Generator_UserColumnName="id_solicitud" type="xs:int" minOccurs="0" />
-              <xs:element name="id_user" msprop:Generator_ColumnVarNameInTable="columnid_user" msprop:Generator_ColumnPropNameInRow="id_user" msprop:Generator_ColumnPropNameInTable="id_userColumn" msprop:Generator_UserColumnName="id_user" type="xs:int" minOccurs="0" />
-              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
-              <xs:element name="id_estado_solicitud" msprop:Generator_ColumnVarNameInTable="columnid_estado_solicitud" msprop:Generator_ColumnPropNameInRow="id_estado_solicitud" msprop:Generator_ColumnPropNameInTable="id_estado_solicitudColumn" msprop:Generator_UserColumnName="id_estado_solicitud" type="xs:int" minOccurs="0" />
-              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:string" minOccurs="0" />
-              <xs:element name="fecha_registro" msprop:Generator_ColumnVarNameInTable="columnfecha_registro" msprop:Generator_ColumnPropNameInRow="fecha_registro" msprop:Generator_ColumnPropNameInTable="fecha_registroColumn" msprop:Generator_UserColumnName="fecha_registro" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="fecha_contabilizacion" msprop:Generator_ColumnVarNameInTable="columnfecha_contabilizacion" msprop:Generator_ColumnPropNameInRow="fecha_contabilizacion" msprop:Generator_ColumnPropNameInTable="fecha_contabilizacionColumn" msprop:Generator_UserColumnName="fecha_contabilizacion" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="comentario" msprop:Generator_ColumnVarNameInTable="columncomentario" msprop:Generator_ColumnPropNameInRow="comentario" msprop:Generator_ColumnPropNameInTable="comentarioColumn" msprop:Generator_UserColumnName="comentario" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="orden_compra" msprop:Generator_TableClassName="orden_compraDataTable" msprop:Generator_TableVarName="tableorden_compra" msprop:Generator_TablePropName="orden_compra" msprop:Generator_RowDeletingName="orden_compraRowDeleting" msprop:Generator_RowChangingName="orden_compraRowChanging" msprop:Generator_RowEvHandlerName="orden_compraRowChangeEventHandler" msprop:Generator_RowDeletedName="orden_compraRowDeleted" msprop:Generator_UserTableName="orden_compra" msprop:Generator_RowChangedName="orden_compraRowChanged" msprop:Generator_RowEvArgName="orden_compraRowChangeEvent" msprop:Generator_RowClassName="orden_compraRow">
           <xs:complexType>
             <xs:sequence>
@@ -143,6 +129,17 @@
               <xs:element name="WhsCode" msprop:Generator_ColumnVarNameInTable="columnWhsCode" msprop:Generator_ColumnPropNameInRow="WhsCode" msprop:Generator_ColumnPropNameInTable="WhsCodeColumn" msprop:Generator_UserColumnName="WhsCode" type="xs:string" minOccurs="0" />
               <xs:element name="WhsName" msprop:Generator_ColumnVarNameInTable="columnWhsName" msprop:Generator_ColumnPropNameInRow="WhsName" msprop:Generator_ColumnPropNameInTable="WhsNameColumn" msprop:Generator_UserColumnName="WhsName" type="xs:string" minOccurs="0" />
               <xs:element name="concat_" msprop:Generator_ColumnVarNameInTable="columnconcat_" msprop:Generator_ColumnPropNameInRow="concat_" msprop:Generator_ColumnPropNameInTable="concat_Column" msprop:Generator_UserColumnName="concat_" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="solicitudes_compra" msprop:Generator_TableClassName="solicitudes_compraDataTable" msprop:Generator_TableVarName="tablesolicitudes_compra" msprop:Generator_TablePropName="solicitudes_compra" msprop:Generator_RowDeletingName="solicitudes_compraRowDeleting" msprop:Generator_RowChangingName="solicitudes_compraRowChanging" msprop:Generator_RowEvHandlerName="solicitudes_compraRowChangeEventHandler" msprop:Generator_RowDeletedName="solicitudes_compraRowDeleted" msprop:Generator_UserTableName="solicitudes_compra" msprop:Generator_RowChangedName="solicitudes_compraRowChanged" msprop:Generator_RowEvArgName="solicitudes_compraRowChangeEvent" msprop:Generator_RowClassName="solicitudes_compraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DocNum" msprop:Generator_ColumnVarNameInTable="columnDocNum" msprop:Generator_ColumnPropNameInRow="DocNum" msprop:Generator_ColumnPropNameInTable="DocNumColumn" msprop:Generator_UserColumnName="DocNum" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_contabilizacion" msprop:Generator_ColumnVarNameInTable="columnfecha_contabilizacion" msprop:Generator_ColumnPropNameInRow="fecha_contabilizacion" msprop:Generator_ColumnPropNameInTable="fecha_contabilizacionColumn" msprop:Generator_UserColumnName="fecha_contabilizacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="solicitantes" msprop:Generator_ColumnVarNameInTable="columnsolicitantes" msprop:Generator_ColumnPropNameInRow="solicitantes" msprop:Generator_ColumnPropNameInTable="solicitantesColumn" msprop:Generator_UserColumnName="solicitantes" type="xs:string" minOccurs="0" />
+              <xs:element name="comentarios" msprop:Generator_ColumnVarNameInTable="columncomentarios" msprop:Generator_ColumnPropNameInRow="comentarios" msprop:Generator_ColumnPropNameInTable="comentariosColumn" msprop:Generator_UserColumnName="comentarios" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_vencimiento" msprop:Generator_ColumnVarNameInTable="columnfecha_vencimiento" msprop:Generator_ColumnPropNameInRow="fecha_vencimiento" msprop:Generator_ColumnPropNameInTable="fecha_vencimientoColumn" msprop:Generator_UserColumnName="fecha_vencimiento" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
