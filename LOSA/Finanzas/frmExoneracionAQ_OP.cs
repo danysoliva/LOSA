@@ -84,7 +84,7 @@ namespace LOSA.Finanzas
                 CajaDialogo.Error("La Fecha Inicial no puede ser mayor que la Fecha Fin");
             }
 
-            SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
+            SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
             conn.Open();
 
             switch (tipoOperacion)
@@ -93,7 +93,7 @@ namespace LOSA.Finanzas
 
                     try
                     {
-                        SqlCommand cmdI = new SqlCommand("sp_insert_new_exoneracion_header", conn);
+                        SqlCommand cmdI = new SqlCommand("sp_cm_exoneracion_insert", conn);
                         cmdI.CommandType = CommandType.StoredProcedure;
                         cmdI.Parameters.AddWithValue("@anio", txtAnio.EditValue);
                         cmdI.Parameters.AddWithValue("@inicio", dtFechaInicio.EditValue);

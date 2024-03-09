@@ -42,6 +42,9 @@ namespace LOSA.Clases
         public DateTime FFinal { get => fFinal; set => fFinal = value; }
         public bool Enable { get => enable; set => enable = value; }
         public bool Cerrado { get => cerrado; set => cerrado = value; }
+        public string Resolucion_Ex { get => resolucion_Ex; set => resolucion_Ex = value; }
+
+        string resolucion_Ex;
 
         public bool RecuperarRegistro(int pid_detalle)
         {
@@ -80,9 +83,9 @@ namespace LOSA.Clases
             try
             {
                 DataOperations dp = new DataOperations();
-                SqlConnection con = new SqlConnection(dp.ConnectionSAP_ACS);
+                SqlConnection con = new SqlConnection(dp.ConnectionStringLOSA);
                 con.Open();
-                string sql = @"[sp_get_header_exoneracion_aq_CLASS]";
+                string sql = @"sp_cm_exoneracion_class";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_h", pid_h);
@@ -96,6 +99,7 @@ namespace LOSA.Clases
                     Id_user = dr.GetInt32(4);
                     Enable = dr.GetBoolean(5);
                     Cerrado = dr.GetBoolean(6);
+                    Resolucion_Ex = dr.GetString(7);
                 }
                 dr.Close();
                 con.Close();

@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\aqfsvr003\Deploy%24\LOSA\</InstallUrl>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>632</ApplicationRevision>
+    <ApplicationRevision>636</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1329,12 +1329,14 @@
     <Compile Include="Clases\FTP_Class.cs" />
     <Compile Include="Clases\Funciones.cs" />
     <Compile Include="Clases\Globals.cs" />
+    <Compile Include="Clases\Impuesto.cs" />
     <Compile Include="Clases\IngresoExternoD.cs" />
     <Compile Include="Clases\IngresoExternoH.cs" />
     <Compile Include="Clases\IngresoMP.cs" />
     <Compile Include="Clases\ItemBusqueda.cs" />
     <Compile Include="Clases\ItemMP_Lote.cs" />
     <Compile Include="Clases\ItemPesajeManualNucleo.cs" />
+    <Compile Include="Clases\ItemsSAP.cs" />
     <Compile Include="Clases\Kardex.cs" />
     <Compile Include="Clases\Liquidacion.cs" />
     <Compile Include="Clases\LoadXML.cs" />
@@ -1349,6 +1351,7 @@
     <Compile Include="Clases\NotificacionesGenerales.cs" />
     <Compile Include="Clases\opcionAbrirVentanaTarima.cs" />
     <Compile Include="Clases\OrdenesCombustible.cs" />
+    <Compile Include="Clases\OrdenesCompra.cs" />
     <Compile Include="Clases\OrdenProduccionH.cs" />
     <Compile Include="Clases\PlanillaHeader.cs" />
     <Compile Include="Clases\PlantaPrvTrz.cs" />
@@ -1373,6 +1376,29 @@
     <Compile Include="Clases\Ubicaciones.cs" />
     <Compile Include="Clases\Ubicacion_Tarima.cs" />
     <Compile Include="Clases\UserLogin.cs" />
+    <Compile Include="Compras\dsCompras.cs">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\dsCompras.Designer.cs">
+      <DependentUpon>dsCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\dsCompras1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmCopiarDeSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmCopiarDeSolicitud.Designer.cs">
+      <DependentUpon>frmCopiarDeSolicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmOrdenesCompraMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmOrdenesCompraMain.Designer.cs">
+      <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\dsTransaccionesDespacho.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -4584,6 +4610,18 @@
     <None Include="Clases\dsColleccionesClases.xss">
       <DependentUpon>dsColleccionesClases.xsd</DependentUpon>
     </None>
+    <None Include="Compras\dsCompras.xsc">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Compras\dsCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCompras1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Compras\dsCompras.xss">
+      <DependentUpon>dsCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Compras\frmOrdenesCompraMain.resx.bak" />
     <None Include="Despachos\dsTransaccionesDespacho.xsc">
       <DependentUpon>dsTransaccionesDespacho.xsd</DependentUpon>
     </None>
@@ -7092,6 +7130,12 @@
     <EmbeddedResource Include="Calidad\xrpCertificadoCalidad.resx">
       <DependentUpon>xrpCertificadoCalidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmCopiarDeSolicitud.resx">
+      <DependentUpon>frmCopiarDeSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmOrdenesCompraMain.resx">
+      <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmCrearSolicitudAutorizacionLotePT.resx">
       <DependentUpon>frmCrearSolicitudAutorizacionLotePT.cs</DependentUpon>
     </EmbeddedResource>
@@ -8396,7 +8440,7 @@
     <EmbeddedResource Include="Produccion\xtraReportRequisa.resx">
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
+    <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -9539,6 +9583,7 @@
     <None Include="Resources\next_x16.png" />
     <None Include="Resources\Oxygen-Icons.org.png" />
     <None Include="Resources\pallet.png" />
+    <None Include="Resources\orden de compra.png" />
     <Content Include="Resources\plus.png" />
     <None Include="Resources\produccion.png" />
     <None Include="Resources\Producto_terminado.png" />
@@ -9564,6 +9609,7 @@
     <None Include="Resources\Sello de calidad.jpg" />
     <None Include="Resources\Sello de calidad2.jpg" />
     <None Include="Resources\Sello de calidad.png" />
+    <None Include="Resources\savia.png" />
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\shipping.png" />
     <None Include="Resources\Status-dialog-information-icon72px.png" />

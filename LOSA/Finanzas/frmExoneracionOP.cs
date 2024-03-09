@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using LOSA.Clases;
 using ACS.Classes;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace LOSA.Finanzas
 {
@@ -39,25 +40,27 @@ namespace LOSA.Finanzas
             id_detalle_exo = pid_detalle_exo;
             tipo_operacion = ptipoOperacion;
             id_header = pId_header;
-            CargarRubros();
+            //CargarRubros();
             CargarCapitulos();
 
             switch (tipo_operacion)
             {
                 case TipoOperacion.insert:
-
+                    DetalleExoneracion Dh = new DetalleExoneracion();
+                    Dh.RecuperarHedaer(id_header);
+                    txtResolucionEx.Text = Dh.Resolucion_Ex;
 
                     break;
                 case TipoOperacion.update:
                     DetalleExoneracion dE = new DetalleExoneracion();
                     dE.RecuperarRegistro(id_detalle_exo);
-                    grdRubros.Enabled = false;
+                    //grdPartidaArancelaria.Enabled = false;
                     grdCapitulos.Enabled = false;
 
                     RubroOLD = dE.Rubro;
                     CapituloOLD = dE.Capitulo;
 
-                    grdRubros.EditValue = dE.Rubro;
+                    //grdPartidaArancelaria.EditValue = dE.Rubro;
                     grdCapitulos.EditValue = dE.Capitulo;
                     txtValorPresupuesto.EditValue = dE.Monto;
 
@@ -72,8 +75,8 @@ namespace LOSA.Finanzas
         {
             try
             {
-                string query = @"sp_get_all_capitulos";
-                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
+                string query = @"sp_cm_exoneracion_all_capitulos_codigos";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -89,27 +92,6 @@ namespace LOSA.Finanzas
             }
         }
 
-        private void CargarRubros()
-        {
-            try
-            {
-                string query = @"sp_get_all_rubros";
-                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_ACS);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("",);
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsExoneracion1.rubros.Clear();
-                adat.Fill(dsExoneracion1.rubros);
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                CajaDialogo.Error(ex.Message);
-            }
-        }
-
         private void cmdCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -117,11 +99,7 @@ namespace LOSA.Finanzas
 
         private void cmdConfirma_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(grdRubros.Text))
-            {
-                CajaDialogo.Error("Debe seleccionar un Rubro!");
-                grdRubros.Focus();
-            }
+            
 
             if (string.IsNullOrEmpty(grdCapitulos.Text))
             {
@@ -146,7 +124,7 @@ namespace LOSA.Finanzas
                         SqlCommand cmd = new SqlCommand("sp_insert_detalle_exoneracion", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_header", id_header);
-                        cmd.Parameters.AddWithValue("@rubro", grdRubros.EditValue.ToString());
+                        cmd.Parameters.AddWithValue("@rubro", grdPartidasA.EditValue.ToString());
                         cmd.Parameters.AddWithValue("@capitulo", grdCapitulos.EditValue.ToString());
                         cmd.Parameters.AddWithValue("@monto", txtValorPresupuesto.EditValue);
                         cmd.Parameters.AddWithValue("@user_creator", UsuarioLogueado.Id);
@@ -170,7 +148,7 @@ namespace LOSA.Finanzas
                         SqlCommand cmd = new SqlCommand("[sp_update_detalle_exoneracion]", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id_header", id_header);
-                        cmd.Parameters.AddWithValue("@rubro", grdRubros.EditValue.ToString());
+                        cmd.Parameters.AddWithValue("@rubro", grdPartidasA.EditValue.ToString());
                         cmd.Parameters.AddWithValue("@capitulo", grdCapitulos.EditValue.ToString());
                         cmd.Parameters.AddWithValue("@monto", txtValorPresupuesto.EditValue);
                         cmd.Parameters.AddWithValue("@id_detalle", id_detalle_exo);
@@ -197,12 +175,50 @@ namespace LOSA.Finanzas
             }
             else
             {
-                CajaDialogo.Error("Ya existe un Registro con el mismo Num. de Rubro y Capitulo!\nRubro: "+ grdRubros.EditValue.ToString() +" - Capitulo: " + grdCapitulos.EditValue.ToString());
+                CajaDialogo.Error("Ya existe un Registro con el mismo Num. de Rubro y Capitulo!\nRubro: "+ grdPartidasA.EditValue.ToString() +" - Capitulo: " + grdCapitulos.EditValue.ToString());
                 return;
             }
 
+        }
 
+        private void CargarPartidas(string Code)
+        {
+            try
+            {
+                string query = @"sp_cm_exoneracion_partida_arancelaria";
+                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Code", Code);
+                SqlDataAdapter adat = new SqlDataAdapter(cmd);
+                dsExoneracion1.partida_arancelaria.Clear();
+                adat.Fill(dsExoneracion1.partida_arancelaria);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+            }
+        }
 
+        private void grdCapitulos_EditValueChanged(object sender, EventArgs e)
+        {
+            
+            //Cargar Partidas Arancelarias.. si hubieran configuradas
+            CargarPartidas(grdCapitulos.EditValue.ToString());
+
+            //if (grdvPartidasA.RowCount == 0) //No existen partidas Relacionadas al Capitulo
+            //{
+            //    grdPartidasA.Enabled = false;
+            //    txtCantidad.Enabled = false;
+            //}
+            //else //Si existen Partidas
+            //{
+            //    grdPartidasA.Enabled = true;
+            //    txtCantidad.Enabled = true;
+            //}
+            
         }
     }
 }

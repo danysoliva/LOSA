@@ -38,6 +38,13 @@ namespace LOSA.AlmacenesExterno
             oc_h = pOC_h;
             UsuarioLogueado = pUser;
             ObtenerBodegas();
+
+            if (pUser.GrupoUsuario.GrupoUsuarioActivo == GrupoUser.GrupoUsuario.Administradores)
+            {
+                lblVentana.Visible = true;
+                txtVentana.Visible = true;
+            }
+
         }
 
         private void ObtenerBodegas()
@@ -371,11 +378,9 @@ namespace LOSA.AlmacenesExterno
                     {
                         //int IdLoteExterno = item2.
 
-
-
                         if (item2.id_pertenece == Id_EnMemoriaDeLaLineadeMP)
                         {
-                            SqlCommand cmd3 = new SqlCommand("sp_insert_lote_almacenes_externos_v2", transaction.Connection);
+                            SqlCommand cmd3 = new SqlCommand("sp_insert_lote_almacenes_externos_v3", transaction.Connection);
                             cmd3.Transaction = transaction;
                             cmd3.CommandType = CommandType.StoredProcedure;
                             cmd3.Parameters.AddWithValue("@lote",item2.lote);
@@ -384,7 +389,10 @@ namespace LOSA.AlmacenesExterno
                             cmd3.Parameters.AddWithValue("@id_detalle", id_d); 
                             cmd3.Parameters.AddWithValue("@fecha_vencimiento", item2.fecha_vencimiento);
                             cmd3.Parameters.AddWithValue("@fecha_produccion", item2.fecha_produccion);
-
+                            cmd3.Parameters.AddWithValue("@id_presentacion",item.id_presentacion);
+                            cmd3.Parameters.AddWithValue("@user_id", UsuarioLogueado.Id);
+                            cmd3.Parameters.AddWithValue("@id_mp",item.bodega);
+                            cmd3.Parameters.AddWithValue("@bodega",item.bodega);
                             cmd3.ExecuteNonQuery();
                         }
 
