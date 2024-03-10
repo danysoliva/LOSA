@@ -5170,7 +5170,9 @@ namespace LOSA
                     case 4://Depth With Delta
                     case 5://Depth Without Delta
                         accesoprevio = true;
-                        
+                        frmGestionAprobaciones frm = new frmGestionAprobaciones(this.UsuarioLogeado);
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
                         break;
                     default:
                         break;
