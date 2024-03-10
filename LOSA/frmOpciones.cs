@@ -5154,5 +5154,47 @@ namespace LOSA
         {
 
         }
+
+        private void nbarAprobacionOrdenesCompra_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                bool accesoprevio = false;
+                int idNivel = UsuarioLogeado.idNivelAcceso(UsuarioLogeado.UserId, 7);//9 = AMS
+                switch (idNivel)
+                {
+                    case 1://Basic View
+                    case 2://Basic No Autorization
+                    case 3://Medium Autorization
+                        break;
+                    case 4://Depth With Delta
+                    case 5://Depth Without Delta
+                        accesoprevio = true;
+                        
+                        break;
+                    default:
+                        break;
+                }
+
+                if (!accesoprevio)
+                {
+                    if (UsuarioLogeado.ValidarNivelPermisos(97))
+                    {
+                        frmGestionAprobaciones frm = new frmGestionAprobaciones(this.UsuarioLogeado);
+                        frm.MdiParent = this.MdiParent;
+                        frm.Show();
+                    }
+                    else
+                    {
+                        CajaDialogo.Error("No tiene privilegios para esta función! Permiso requerido #97");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                CajaDialogo.Error(ex.Message);
+
+            }
+        }
     }
 }
