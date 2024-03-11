@@ -2396,6 +2396,7 @@ namespace LOSA.Compras
             this.reposGrdIndicadorIVA.NullText = "";
             this.reposGrdIndicadorIVA.PopupView = this.repositoryItemGridLookUpEdit2View;
             this.reposGrdIndicadorIVA.ValueMember = "Code";
+            this.reposGrdIndicadorIVA.EditValueChanged += new System.EventHandler(this.reposGrdIndicadorIVA_EditValueChanged);
             // 
             // ivaBindingSource
             // 
@@ -2739,6 +2740,52 @@ namespace LOSA.Compras
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
+        }
+
+        private void reposGrdIndicadorIVA_EditValueChanged(object sender, EventArgs e)
+        {
+            //var gridview = (GridView)reposGrdIndicadorIVA.View;
+            //var row = (dsCompras.ivaRow)gridview.GetFocusedDataRow();
+
+            //var gridviewDetalle = (GridView)grDetalle.FocusedView;
+            //var rowD = (dsCompras.oc_detalle_exoneradaRow)gridviewDetalle.GetFocusedDataRow();
+
+            //switch (row.Code)
+            //{
+            //    case "EXE":
+
+            //        rowD.isv = 0;
+            //        CalcularTotal();
+            //        break;
+
+            //    case "EXO":
+
+            //        rowD.isv = 0;
+            //        CalcularTotal();
+            //        break;
+
+            //    case "ISV"://0.15
+
+            //        rowD.isv = rowD.total / row.Rate;
+
+            //        CalcularTotal();
+
+            //        break;
+
+            //    case "ISVE"://0.18
+
+            //        rowD.isv = rowD.total / row.Rate;
+
+            //        CalcularTotal();
+
+                    
+            //        break;
+
+
+            //    default:
+            //        break;
+            //}
 
         }
     }
