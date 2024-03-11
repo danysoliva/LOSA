@@ -43,7 +43,7 @@ namespace LOSA.Compras
             CargarCapitulos();
             CargarIVA();
             CargarBodegas();
-            
+            comboBoxEdit1.EditValue = "Moneda local";
             UsuarioLogueado = pUserLog;
             //CargarPartidas(grdCapitulos.EditValue.ToString());
             tipooperacion = ptipo;
@@ -205,6 +205,7 @@ namespace LOSA.Compras
                 }
 
                 cmdNuevo.Enabled = true;
+                btnShowPopu.Enabled = true;
 
             }
         }
@@ -255,11 +256,7 @@ namespace LOSA.Compras
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         IdSolicitud = frm.IdSolicitudSeleccionado;
-                        //Solicitud soli = new Solicitud();
-                        //soli.RecuperarRegistros(IdSolicitud);
-                        //txtComentarios.Text = soli.Comentario;
-
-                        CargarOrdenCompraFromSolicitud(frm.IdSolicitudSeleccionado);
+                        CargarOrdenCompraFromSolicitud(IdSolicitud);
 
                     }
 
@@ -277,15 +274,37 @@ namespace LOSA.Compras
         {
             try
             {
-                string query = @"sp_get_solicitud_detalle_for_oc";
-                SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
+                //Encabezado Tabla OPRQ
+                SolicitudesCompraSAP soliSAP = new SolicitudesCompraSAP();
+                soliSAP.RecuperarInfoHeaderSolicitud(idSolicitudSeleccionado);
+                grdTipoOrden.EditValue = soliSAP.TipoOrden;
+                txtComentarios.Text = soliSAP.Comentarios;
+
+                //Detalle PRQ1
+                SqlConnection conn = new SqlConnection(dp.ConnectionSAP_OnlySELECT);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_solicitud_h", idSolicitudSeleccionado);
-                SqlDataAdapter adat = new SqlDataAdapter(cmd);
-                dsCompras1.oc_detalle.Clear();
-                adat.Fill(dsCompras1.oc_detalle);
+                SqlCommand cmdD = new SqlCommand("sp_CM_get_detalle_solicitud_for_docnum", conn);
+                cmdD.CommandType = CommandType.StoredProcedure;
+                cmdD.Parameters.AddWithValue("@DocNum", idSolicitudSeleccionado);
+                SqlDataReader dr = cmdD.ExecuteReader();
+                while (dr.Read())
+                {
+                    DataRow row = dsCompras1.oc_detalle_exonerada.NewRow();
+
+                    row[4] = dr.GetString(0); //ItemCode
+                    row[5] = dr.GetString(1); //DescripcionArticulo
+                    row[6] = dr.GetDecimal(2); //Cantidad
+                    row[7] = dr.GetDecimal(3); //PrecioPorUnidad
+                    //row[9] = Impuesto..
+                    row[9] = dr.GetString(4); //Almacen
+                    row[10] = 0; //Total
+                    row[11] = dr.GetInt32(5); //BaseRef - Id de solicitud de compra
+
+                    dsCompras1.oc_detalle_exonerada.Rows.Add(row);
+                }
+                //SqlDataAdapter adat = new SqlDataAdapter(cmdD);
+                //dsCompras1.oc_detalle_exonerada.Clear();
+                //adat.Fill(dsCompras1.oc_detalle_exonerada);
                 conn.Close();
 
                 CalcularTotal();
@@ -333,7 +352,7 @@ namespace LOSA.Compras
                     CalcularTotal();
                 }
 
-                if (e.Column.FieldName == "precio")
+                if (e.Column.FieldName == "precio_por_unidad")
                 {
                     row.total = row.cantidad * row.precio_por_unidad;
                     CalcularTotal();
@@ -445,28 +464,50 @@ namespace LOSA.Compras
         {
             decimal SubTotal = 0;
             decimal valor_impuesto = 0;
+
             double isv15 = 0.15;
 
-            var gridview = (GridView)grDetalle.FocusedView;
-            for (int i = 0; i < gridview.DataRowCount; i++)
+            if (TsExoOIsv.IsOn == true) //Si, Exonerado
             {
-                DataRow row = gridview.GetDataRow(i);
+                var gridview = (GridView)grDetalle.FocusedView;
+                for (int i = 0; i < gridview.DataRowCount; i++)
+                {
+                    DataRow row = gridview.GetDataRow(i);
 
-                SubTotal = SubTotal + (Convert.ToDecimal(row["total"]));
+                    SubTotal = SubTotal + (Convert.ToDecimal(row["total"]));
+                }
+
+
+                txtSubtotal.EditValue = decimal.Round(SubTotal, 2, MidpointRounding.AwayFromZero);
+                txtImpuesto.EditValue = 0.00;
+                txtTotal.EditValue = decimal.Round(SubTotal + Convert.ToDecimal(txtImpuesto.EditValue), 2, MidpointRounding.AwayFromZero);
+            }
+            else //Con Impuesto
+            {
+                var gridview = (GridView)grDetalle.FocusedView;
+                for (int i = 0; i < gridview.DataRowCount; i++)
+                {
+                    DataRow row = gridview.GetDataRow(i);
+
+                    SubTotal = SubTotal + (Convert.ToDecimal(row["total"]));
+                }
+
+
+                txtSubtotal.EditValue = decimal.Round(SubTotal, 2, MidpointRounding.AwayFromZero);
+
+                Impuesto isv = new Impuesto();
+                if (isv.RecuperarRegistro(1))
+                {
+                    valor_impuesto = isv.Valor;
+                }
+                else
+                    valor_impuesto = Convert.ToDecimal(isv15);
+                txtImpuesto.EditValue = decimal.Round(SubTotal * valor_impuesto, 2, MidpointRounding.AwayFromZero);
+                txtTotal.EditValue = decimal.Round(SubTotal + Convert.ToDecimal(txtImpuesto.EditValue), 2, MidpointRounding.AwayFromZero);
             }
 
 
-            txtSubtotal.EditValue = decimal.Round(SubTotal, 2,MidpointRounding.AwayFromZero);
-
-            Impuesto isv = new Impuesto();
-            if (isv.RecuperarRegistro(1))
-            {
-                valor_impuesto = isv.Valor;
-            }
-            else
-                valor_impuesto = Convert.ToDecimal(isv15);
-            txtImpuesto.EditValue = decimal.Round(SubTotal * valor_impuesto, 2,MidpointRounding.AwayFromZero);
-            txtTotal.EditValue = decimal.Round(SubTotal + Convert.ToDecimal(txtImpuesto.EditValue),2,MidpointRounding.AwayFromZero);
+            
             
         }
 
@@ -503,14 +544,14 @@ namespace LOSA.Compras
 
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
-            //frmSearchOrdenesC frm = new frmSearchOrdenesC(frmSearchOrdenesC.FiltroOrdenesCompra.Todas, PuntoDeVentaActual, UsuarioLogueado);
-            //if (frm.ShowDialog() == DialogResult.OK)
-            //{
-            //    //CargarSolicitud(frm.IdSolicitudSeleccionado);
-            //    CargarInfoOrden(frm.IdOrdenesSeleccionado);
-            //}
+            frmSearchOrdenC frm = new frmSearchOrdenC(frmSearchOrdenC.FiltroOrdenesCompra.Todas, UsuarioLogueado);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //CargarSolicitud(frm.IdSolicitudSeleccionado);
+                CargarInfoOrden(frm.IdOrdenesSeleccionado);
+            }
 
-            //cmdNuevo.Enabled = true;
+            cmdNuevo.Enabled = true;
         }
 
         private void CargarInfoOrden(int pidOrdenesSeleccionado)
