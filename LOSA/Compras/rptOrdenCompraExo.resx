@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="xrLabel3.Text" xml:space="preserve">
+    <value>COMPRA LOCAL: El proveedor para aplicacion del credito fiscal: Debera emitir la factura comercial a nombre de Aquafeed S.A. De C.V., sin impuesto Sobre Venta y con fecha igual o posterior a la autorizacion de esta orden de compra exenta, siempre y cuando la resolucion este vigente.</value>
+  </data>
   <data name="xrLabel5.Text" xml:space="preserve">
     <value>Sirvase entregar libre de impuesto sobre ventas los bienes y servicios abajo descritos, los cuales seran utilizados exclusivamente en la ejecucion del proyecto (o empresa) amparado en la resolucion de exoneracion emitida por la Direccion General de Control de Franquicias Aduaneras (DGCFA) :</value>
   </data>
