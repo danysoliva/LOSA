@@ -4429,6 +4429,9 @@
       <DependentUpon>xtraReportRequisa.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Accesos\dsAccesos.xsc">
       <DependentUpon>dsAccesos.xsd</DependentUpon>
     </None>
@@ -7138,6 +7141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmCopiarDeSolicitud.resx">
       <DependentUpon>frmCopiarDeSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmGestionAprobaciones.resx">
+      <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmOrdenesCompraMain.resx">
       <DependentUpon>frmOrdenesCompraMain.cs</DependentUpon>
