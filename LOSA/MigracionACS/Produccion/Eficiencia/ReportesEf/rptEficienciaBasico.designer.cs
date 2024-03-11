@@ -423,7 +423,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrLabel23.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel23.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[por]")});
-            this.xrLabel23.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel23.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(584.5474F, 0F);
             this.xrLabel23.Multiline = true;
             this.xrLabel23.Name = "xrLabel23";
@@ -442,7 +442,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrLabel22.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[efi]")});
-            this.xrLabel22.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel22.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(475.4819F, 0F);
             this.xrLabel22.Multiline = true;
             this.xrLabel22.Name = "xrLabel22";
@@ -462,7 +462,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrLabel21.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel21.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[id_linea]")});
-            this.xrLabel21.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel21.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(366.4166F, 0F);
             this.xrLabel21.Multiline = true;
             this.xrLabel21.Name = "xrLabel21";
@@ -483,7 +483,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[reproceso_grupos].[total]")});
-            this.xrLabel18.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel18.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(257.3512F, 0F);
             this.xrLabel18.Multiline = true;
             this.xrLabel18.Name = "xrLabel18";
@@ -503,7 +503,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrLabel17.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[reproceso_grupos].[descripcion]")});
-            this.xrLabel17.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel17.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
             this.xrLabel17.Multiline = true;
             this.xrLabel17.Name = "xrLabel17";
@@ -553,7 +553,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrChart5.SizeF = new System.Drawing.SizeF(279.5703F, 272.3684F);
             this.xrChart5.StylePriority.UseBorderColor = false;
             this.xrChart5.StylePriority.UseBorders = false;
-            chartTitle1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle1.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             chartTitle1.Text = "Humedades por Turno";
             this.xrChart5.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle1});
@@ -594,7 +594,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrTable12.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable12.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable12.LocationFloat = new DevExpress.Utils.PointFloat(1226.423F, 583.4188F);
             this.xrTable12.Name = "xrTable12";
             this.xrTable12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -757,7 +757,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrTable10.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable10.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable10.LocationFloat = new DevExpress.Utils.PointFloat(1226.423F, 495.2873F);
             this.xrTable10.Name = "xrTable10";
             this.xrTable10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -954,7 +954,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrChart3.SizeF = new System.Drawing.SizeF(354.625F, 272.3684F);
             this.xrChart3.StylePriority.UseBorderColor = false;
             this.xrChart3.StylePriority.UseBorders = false;
-            chartTitle2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle2.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             chartTitle2.Text = "Horas Trabajadas";
             chartTitle2.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.xrChart3.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
@@ -966,7 +966,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrTable9.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable9.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable9.LocationFloat = new DevExpress.Utils.PointFloat(389.3815F, 278.0001F);
             this.xrTable9.Name = "xrTable9";
             this.xrTable9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -1137,7 +1137,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             // xrLabel10
             // 
-            this.xrLabel10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(322.3187F, 663.8268F);
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
@@ -1152,7 +1152,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrTable11.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable11.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable11.LocationFloat = new DevExpress.Utils.PointFloat(197.4621F, 294.6667F);
             this.xrTable11.Name = "xrTable11";
             this.xrTable11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -1280,7 +1280,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[eficiencia_global].[efi_global_planta]")});
-            this.xrLabel5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(452.3186F, 663.8268F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
@@ -1311,7 +1311,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable8.BorderWidth = 1F;
-            this.xrTable8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable8.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable8.LocationFloat = new DevExpress.Utils.PointFloat(7.934443F, 407.4584F);
             this.xrTable8.Name = "xrTable8";
             this.xrTable8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -1889,7 +1889,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrChart4.SizeF = new System.Drawing.SizeF(488.7919F, 251.7434F);
             this.xrChart4.StylePriority.UseBorderColor = false;
             this.xrChart4.StylePriority.UseBorders = false;
-            chartTitle3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle3.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             chartTitle3.Text = "Eficiencia por Turno";
             this.xrChart4.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle3});
@@ -1900,7 +1900,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrTable4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable4.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(632.2149F, 278.0001F);
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -2066,7 +2066,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrTable3.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable3.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(6.00001F, 305.0834F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -2215,7 +2215,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable2.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(510.7487F, 278.0001F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -2378,7 +2378,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable1.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(1226.423F, 408.0395F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -2570,7 +2570,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrChart1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
             this.xrChart1.SizeF = new System.Drawing.SizeF(377.6705F, 271.6667F);
-            chartTitle4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle4.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             chartTitle4.Indent = 2;
             chartTitle4.Text = "Producción Total (Linea Extruder y pellet)";
             chartTitle4.Visibility = DevExpress.Utils.DefaultBoolean.True;
@@ -2639,7 +2639,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrChart2.SizeF = new System.Drawing.SizeF(452.4618F, 253F);
             this.xrChart2.StylePriority.UseBorderColor = false;
             this.xrChart2.StylePriority.UseBorders = false;
-            chartTitle5.Font = new System.Drawing.Font("Tahoma", 10F);
+            chartTitle5.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 10F);
             chartTitle5.Text = "Producciones por Turno/Especie TM";
             this.xrChart2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle5});
@@ -2648,7 +2648,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             this.lblHasta.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[header].[hasta]")});
-            this.lblHasta.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHasta.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblHasta.LocationFloat = new DevExpress.Utils.PointFloat(649.9875F, 0F);
             this.lblHasta.Multiline = true;
             this.lblHasta.Name = "lblHasta";
@@ -2663,7 +2663,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             this.lblDesde.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[header].[desde]")});
-            this.lblDesde.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesde.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblDesde.LocationFloat = new DevExpress.Utils.PointFloat(389.3815F, 0F);
             this.lblDesde.Multiline = true;
             this.lblDesde.Name = "lblDesde";
@@ -2676,7 +2676,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(581.2374F, 0F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -2689,7 +2689,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(333.1315F, 0F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -2702,7 +2702,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -2720,7 +2720,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable7.BorderWidth = 1F;
-            this.xrTable7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable7.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable7.LocationFloat = new DevExpress.Utils.PointFloat(850.2081F, 35.41667F);
             this.xrTable7.Name = "xrTable7";
             this.xrTable7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -2960,7 +2960,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable5.BorderWidth = 1F;
-            this.xrTable5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable5.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable5.LocationFloat = new DevExpress.Utils.PointFloat(581.2374F, 35.41667F);
             this.xrTable5.Name = "xrTable5";
             this.xrTable5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -3200,7 +3200,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable6.BorderWidth = 1F;
-            this.xrTable6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable6.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable6.LocationFloat = new DevExpress.Utils.PointFloat(1105.344F, 35.41667F);
             this.xrTable6.Name = "xrTable6";
             this.xrTable6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -3514,7 +3514,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrChart7.SizeF = new System.Drawing.SizeF(263.5417F, 222.8748F);
             this.xrChart7.StylePriority.UseBorderColor = false;
             this.xrChart7.StylePriority.UseBorders = false;
-            chartTitle6.Font = new System.Drawing.Font("Tahoma", 10F);
+            chartTitle6.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 10F);
             chartTitle6.Text = "Reproceso Tilapia";
             this.xrChart7.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle6});
@@ -3550,7 +3550,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrChart6.SizeF = new System.Drawing.SizeF(266.6666F, 222.8748F);
             this.xrChart6.StylePriority.UseBorderColor = false;
             this.xrChart6.StylePriority.UseBorders = false;
-            chartTitle7.Font = new System.Drawing.Font("Tahoma", 10F);
+            chartTitle7.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 10F);
             chartTitle7.Text = "Reproceso Camarón";
             this.xrChart6.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle7});
@@ -3572,7 +3572,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             // xrLabel4
             // 
-            this.xrLabel4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(1004.186F, 0F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
@@ -3587,7 +3587,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             this.lblUsuario.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[header].[usuario]")});
-            this.lblUsuario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblUsuario.LocationFloat = new DevExpress.Utils.PointFloat(1153.144F, 0F);
             this.lblUsuario.Multiline = true;
             this.lblUsuario.Name = "lblUsuario";
@@ -3715,7 +3715,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.xrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[reproceso_grupos].[grupo]")});
-            this.xrLabel12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Arial", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
             this.xrLabel12.Multiline = true;
             this.xrLabel12.Name = "xrLabel12";
@@ -3834,7 +3834,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             // xrLabel24
             // 
-            this.xrLabel24.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel24.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(1004.186F, 0F);
             this.xrLabel24.Multiline = true;
             this.xrLabel24.Name = "xrLabel24";
@@ -3849,7 +3849,7 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             // 
             this.xrLabel25.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[header].[usuario]")});
-            this.xrLabel25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel25.Font = new DevExpress.Drawing.DXFont("Calibri", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(1153.144F, 0F);
             this.xrLabel25.Multiline = true;
             this.xrLabel25.Name = "xrLabel25";
@@ -3885,12 +3885,12 @@ namespace LOSA.MigracionACS.Produccion.Eficiencia.ReportesEf
             this.DataMember = "reproceso_grupos";
             this.DataSource = this.dsReporteEficiencia1;
             this.DataSourceSchema = resources.GetString("$this.DataSourceSchema");
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(25, 26, 6, 15);
+            this.Margins = new DevExpress.Drawing.DXMargins(25, 26, 6, 15);
             this.PageHeight = 850;
             this.PageWidth = 1400;
-            this.PaperKind = System.Drawing.Printing.PaperKind.Legal;
+            this.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Legal;
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();

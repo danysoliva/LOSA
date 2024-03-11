@@ -123,7 +123,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             this.xrTableCell14,
             this.xrTableCell15,
             this.xrTableCell17});
-            this.xrTableRow4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableRow4.Font = new DevExpress.Drawing.DXFont("Arial", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableRow4.Name = "xrTableRow4";
             this.xrTableRow4.StylePriority.UseFont = false;
             this.xrTableRow4.Weight = 0.59999973297119147D;
@@ -260,7 +260,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // xrTableCell9
             // 
             this.xrTableCell9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell9.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBackColor = false;
@@ -273,7 +273,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // xrTableCell10
             // 
             this.xrTableCell10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell10.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseBackColor = false;
@@ -299,7 +299,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // xrTableCell1
             // 
             this.xrTableCell1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBackColor = false;
@@ -310,7 +310,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // xrTableCell2
             // 
             this.xrTableCell2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell2.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseBackColor = false;
@@ -321,7 +321,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // xrTableCell8
             // 
             this.xrTableCell8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell8.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBackColor = false;
@@ -332,7 +332,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // xrTableCell3
             // 
             this.xrTableCell3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell3.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseBackColor = false;
@@ -343,7 +343,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // xrTableCell4
             // 
             this.xrTableCell4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell4.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBackColor = false;
@@ -354,7 +354,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // xrTableCell5
             // 
             this.xrTableCell5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell5.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBackColor = false;
@@ -365,7 +365,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // xrTableCell16
             // 
             this.xrTableCell16.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.xrTableCell16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell16.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell16.Multiline = true;
             this.xrTableCell16.Name = "xrTableCell16";
             this.xrTableCell16.StylePriority.UseBackColor = false;
@@ -375,7 +375,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(1.041667F, 34.20836F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -401,7 +401,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(1.041698F, 57.20835F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -427,7 +427,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // 
             // xrLabel5
             // 
-            this.xrLabel5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(425F, 34.20836F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
@@ -467,7 +467,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // 
             // xrLabel8
             // 
-            this.xrLabel8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(425F, 57.20836F);
             this.xrLabel8.Multiline = true;
             this.xrLabel8.Name = "xrLabel8";
@@ -480,7 +480,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // 
             // xrLabel9
             // 
-            this.xrLabel9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Arial", 15.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
@@ -500,7 +500,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // 
             // xrPageInfo1
             // 
-            this.xrPageInfo1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrPageInfo1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(433.3334F, 67.00001F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -512,7 +512,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // 
             // xrLabel24
             // 
-            this.xrLabel24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel24.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(319.7917F, 66.99995F);
             this.xrLabel24.Multiline = true;
             this.xrLabel24.Name = "xrLabel24";
@@ -555,7 +555,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // 
             // xrLabel12
             // 
-            this.xrLabel12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(0F, 80.20834F);
             this.xrLabel12.Multiline = true;
             this.xrLabel12.Name = "xrLabel12";
@@ -568,7 +568,7 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             // 
             // xrLabel11
             // 
-            this.xrLabel11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(425F, 80.20834F);
             this.xrLabel11.Multiline = true;
             this.xrLabel11.Name = "xrLabel11";
@@ -648,8 +648,8 @@ namespace ACS.Produccion.TemperaturaMaquinas.Reportes
             this.ReportFooter});
             this.DataMember = "Pellet_1";
             this.DataSourceSchema = resources.GetString("$this.DataSourceSchema");
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(50, 50, 43, 32);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(50, 50, 43, 32);
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();

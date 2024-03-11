@@ -231,7 +231,7 @@
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(1.271566E-05F, 197.5F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -274,7 +274,7 @@
             this.xrTableCell2,
             this.xrTableCell3,
             this.xrTableCell5});
-            this.xrTableRow1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableRow1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.StylePriority.UseFont = false;
             this.xrTableRow1.Weight = 1D;
@@ -323,7 +323,7 @@
             // xrTable3
             // 
             this.xrTable3.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
-            this.xrTable3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTable3.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 87.5F);
             this.xrTable3.Name = "xrTable3";
             this.xrTable3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
@@ -486,7 +486,7 @@
             // 
             // xrlIngreso
             // 
-            this.xrlIngreso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.xrlIngreso.Font = new DevExpress.Drawing.DXFont("Arial", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrlIngreso.LocationFloat = new DevExpress.Utils.PointFloat(1.271566E-05F, 230.8333F);
             this.xrlIngreso.Multiline = true;
             this.xrlIngreso.Name = "xrlIngreso";
@@ -499,7 +499,7 @@
             // 
             // xlrProveedor
             // 
-            this.xlrProveedor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.xlrProveedor.Font = new DevExpress.Drawing.DXFont("Arial", 12F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xlrProveedor.LocationFloat = new DevExpress.Utils.PointFloat(1.271566E-05F, 10F);
             this.xlrProveedor.Multiline = true;
             this.xlrProveedor.Name = "xlrProveedor";
@@ -512,7 +512,7 @@
             // 
             // xrlDireccion
             // 
-            this.xrlDireccion.Font = new System.Drawing.Font("Arial", 11F);
+            this.xrlDireccion.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.xrlDireccion.LocationFloat = new DevExpress.Utils.PointFloat(1.271566E-05F, 53F);
             this.xrlDireccion.Multiline = true;
             this.xrlDireccion.Name = "xrlDireccion";
@@ -525,7 +525,7 @@
             // 
             // xrlCiudad
             // 
-            this.xrlCiudad.Font = new System.Drawing.Font("Arial", 11F);
+            this.xrlCiudad.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.xrlCiudad.LocationFloat = new DevExpress.Utils.PointFloat(1.271566E-05F, 106.3333F);
             this.xrlCiudad.Multiline = true;
             this.xrlCiudad.Name = "xrlCiudad";
@@ -538,7 +538,7 @@
             // 
             // xrlPais
             // 
-            this.xrlPais.Font = new System.Drawing.Font("Arial", 11F);
+            this.xrlPais.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.xrlPais.LocationFloat = new DevExpress.Utils.PointFloat(1.271566E-05F, 129.3333F);
             this.xrlPais.Multiline = true;
             this.xrlPais.Name = "xrlPais";
@@ -551,7 +551,7 @@
             // 
             // xrlFecha
             // 
-            this.xrlFecha.Font = new System.Drawing.Font("Arial", 11F);
+            this.xrlFecha.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.xrlFecha.LocationFloat = new DevExpress.Utils.PointFloat(573.1598F, 10F);
             this.xrlFecha.Multiline = true;
             this.xrlFecha.Name = "xrlFecha";
@@ -564,7 +564,7 @@
             // 
             // xrlTiempo
             // 
-            this.xrlTiempo.Font = new System.Drawing.Font("Arial", 11F);
+            this.xrlTiempo.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.xrlTiempo.LocationFloat = new DevExpress.Utils.PointFloat(573.1598F, 53F);
             this.xrlTiempo.Multiline = true;
             this.xrlTiempo.Name = "xrlTiempo";
@@ -577,7 +577,7 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Arial", 11F);
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(478.3195F, 10F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -590,7 +590,7 @@
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Arial", 11F);
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(478.3195F, 53F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -639,8 +639,8 @@
             this.dsSalidasAlmacenesExternos1});
             this.DataMember = "reporte_ingreso_h_almacen_externo";
             this.DataSource = this.dsSalidasAlmacenesExternos1;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(60, 60, 100, 100);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(60, 60, 100, 100);
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();

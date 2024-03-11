@@ -134,7 +134,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel11
             // 
-            this.xrLabel11.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(7.947286E-06F, 150.4584F);
             this.xrLabel11.Multiline = true;
             this.xrLabel11.Name = "xrLabel11";
@@ -145,7 +145,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // txtcodigoCLiente
             // 
-            this.txtcodigoCLiente.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcodigoCLiente.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtcodigoCLiente.LocationFloat = new DevExpress.Utils.PointFloat(135.3334F, 150.4584F);
             this.txtcodigoCLiente.Multiline = true;
             this.txtcodigoCLiente.Name = "txtcodigoCLiente";
@@ -155,7 +155,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel13
             // 
-            this.xrLabel13.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel13.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(7.947286E-06F, 172.4584F);
             this.xrLabel13.Multiline = true;
             this.xrLabel13.Name = "xrLabel13";
@@ -166,7 +166,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // txtcliente
             // 
-            this.txtcliente.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcliente.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtcliente.LocationFloat = new DevExpress.Utils.PointFloat(135.3334F, 172.4584F);
             this.txtcliente.Multiline = true;
             this.txtcliente.Name = "txtcliente";
@@ -176,7 +176,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // txtboleta
             // 
-            this.txtboleta.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboleta.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtboleta.LocationFloat = new DevExpress.Utils.PointFloat(481.7917F, 34.45835F);
             this.txtboleta.Multiline = true;
             this.txtboleta.Name = "txtboleta";
@@ -186,7 +186,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel6
             // 
-            this.xrLabel6.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(313.125F, 34.45835F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
@@ -197,7 +197,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel7
             // 
-            this.xrLabel7.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel7.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(313.125F, 56.45835F);
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
@@ -208,7 +208,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // txtvehiculo
             // 
-            this.txtvehiculo.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtvehiculo.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtvehiculo.LocationFloat = new DevExpress.Utils.PointFloat(481.7917F, 56.45835F);
             this.txtvehiculo.Multiline = true;
             this.txtvehiculo.Name = "txtvehiculo";
@@ -218,7 +218,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel9
             // 
-            this.xrLabel9.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(313.125F, 78.45834F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
@@ -229,7 +229,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // txtfurgon
             // 
-            this.txtfurgon.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfurgon.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtfurgon.LocationFloat = new DevExpress.Utils.PointFloat(481.7917F, 78.45834F);
             this.txtfurgon.Multiline = true;
             this.txtfurgon.Name = "txtfurgon";
@@ -239,7 +239,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // txtfecha
             // 
-            this.txtfecha.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfecha.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtfecha.LocationFloat = new DevExpress.Utils.PointFloat(135.3334F, 61.08332F);
             this.txtfecha.Multiline = true;
             this.txtfecha.Name = "txtfecha";
@@ -249,7 +249,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel3
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 61.08332F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
@@ -260,7 +260,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 34.45835F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -271,7 +271,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // txtid_documento
             // 
-            this.txtid_documento.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtid_documento.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtid_documento.LocationFloat = new DevExpress.Utils.PointFloat(135.3334F, 34.45834F);
             this.txtid_documento.Multiline = true;
             this.txtid_documento.Name = "txtid_documento";
@@ -281,7 +281,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel1
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Segoe UI Semibold", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -314,7 +314,7 @@ namespace LOSA.Despachos.Reportes
             this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable1.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 14.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -344,7 +344,7 @@ namespace LOSA.Despachos.Reportes
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[itemcode]")});
-            this.xrTableCell1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBorders = false;
@@ -360,7 +360,7 @@ namespace LOSA.Despachos.Reportes
             this.xrTableCell2.CanGrow = false;
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[itemname]")});
-            this.xrTableCell2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseBorders = false;
@@ -375,7 +375,7 @@ namespace LOSA.Despachos.Reportes
             this.xrTableCell6.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[lot]")});
-            this.xrTableCell6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell6.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseBorders = false;
@@ -388,7 +388,7 @@ namespace LOSA.Despachos.Reportes
             this.xrTableCell7.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[cantidad]")});
-            this.xrTableCell7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell7.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableCell7.Multiline = true;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseBorders = false;
@@ -409,7 +409,7 @@ namespace LOSA.Despachos.Reportes
             // 
             this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right)));
-            this.xrTable2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTable2.Font = new DevExpress.Drawing.DXFont("Segoe UI Semibold", 14.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -438,7 +438,7 @@ namespace LOSA.Despachos.Reportes
             this.xrTableCell3.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell3.Font = new DevExpress.Drawing.DXFont("Segoe UI", 11.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseBorders = false;
@@ -453,7 +453,7 @@ namespace LOSA.Despachos.Reportes
             this.xrTableCell4.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell4.CanGrow = false;
-            this.xrTableCell4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell4.Font = new DevExpress.Drawing.DXFont("Segoe UI", 11.25F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell4.Multiline = true;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBorders = false;
@@ -467,7 +467,7 @@ namespace LOSA.Despachos.Reportes
             // 
             this.xrTableCell5.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell5.Font = new DevExpress.Drawing.DXFont("Segoe UI", 11.25F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseBorders = false;
@@ -479,7 +479,7 @@ namespace LOSA.Despachos.Reportes
             // 
             this.xrTableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell8.Font = new DevExpress.Drawing.DXFont("Segoe UI", 11.25F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.StylePriority.UseBorders = false;
@@ -503,7 +503,7 @@ namespace LOSA.Despachos.Reportes
             // 
             this.xrTableCell9.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell9.Font = new DevExpress.Drawing.DXFont("Segoe UI", 11.25F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.StylePriority.UseBorders = false;
@@ -518,7 +518,7 @@ namespace LOSA.Despachos.Reportes
             this.xrTableCell10.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[presentacion]")});
-            this.xrTableCell10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell10.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.StylePriority.UseBorders = false;
@@ -532,7 +532,7 @@ namespace LOSA.Despachos.Reportes
             // 
             this.xrTableCell11.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell11.Font = new DevExpress.Drawing.DXFont("Segoe UI", 11.25F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.StylePriority.UseBorders = false;
@@ -546,7 +546,7 @@ namespace LOSA.Despachos.Reportes
             // 
             this.xrTableCell12.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell12.Font = new DevExpress.Drawing.DXFont("Segoe UI", 11.25F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseBorders = false;
@@ -561,7 +561,7 @@ namespace LOSA.Despachos.Reportes
             this.xrTableCell13.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Kg_linea]")});
-            this.xrTableCell13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell13.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.StylePriority.UseBorders = false;
@@ -576,7 +576,7 @@ namespace LOSA.Despachos.Reportes
             this.xrTableCell14.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[tm_linea]")});
-            this.xrTableCell14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell14.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.StylePriority.UseBorders = false;
@@ -588,7 +588,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // lblVersionALOSY
             // 
-            this.lblVersionALOSY.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersionALOSY.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblVersionALOSY.LocationFloat = new DevExpress.Utils.PointFloat(521.2498F, 15.00001F);
             this.lblVersionALOSY.Multiline = true;
             this.lblVersionALOSY.Name = "lblVersionALOSY";
@@ -655,7 +655,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // txtMotorista
             // 
-            this.txtMotorista.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMotorista.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtMotorista.LocationFloat = new DevExpress.Utils.PointFloat(481.7917F, 102.4584F);
             this.txtMotorista.Multiline = true;
             this.txtMotorista.Name = "txtMotorista";
@@ -665,7 +665,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel14
             // 
-            this.xrLabel14.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel14.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(313.125F, 102.4583F);
             this.xrLabel14.Multiline = true;
             this.xrLabel14.Name = "xrLabel14";
@@ -676,7 +676,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel12
             // 
-            this.xrLabel12.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(313.125F, 126.4583F);
             this.xrLabel12.Multiline = true;
             this.xrLabel12.Name = "xrLabel12";
@@ -687,7 +687,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // lblIdentidadNumberMotorista
             // 
-            this.lblIdentidadNumberMotorista.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdentidadNumberMotorista.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblIdentidadNumberMotorista.LocationFloat = new DevExpress.Utils.PointFloat(481.7917F, 126.4583F);
             this.lblIdentidadNumberMotorista.Multiline = true;
             this.lblIdentidadNumberMotorista.Name = "lblIdentidadNumberMotorista";
@@ -697,7 +697,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // lblDestino
             // 
-            this.lblDestino.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDestino.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblDestino.LocationFloat = new DevExpress.Utils.PointFloat(135.3333F, 194.4584F);
             this.lblDestino.Multiline = true;
             this.lblDestino.Name = "lblDestino";
@@ -707,7 +707,7 @@ namespace LOSA.Despachos.Reportes
             // 
             // xrLabel17
             // 
-            this.xrLabel17.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel17.Font = new DevExpress.Drawing.DXFont("Segoe UI Light", 12F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(1.589457E-05F, 194.4584F);
             this.xrLabel17.Multiline = true;
             this.xrLabel17.Name = "xrLabel17";
@@ -740,8 +740,8 @@ namespace LOSA.Despachos.Reportes
             this.PageFooter});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.dsReporte1});
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(42, 39, 46, 100);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(42, 39, 46, 100);
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();

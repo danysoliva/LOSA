@@ -21,7 +21,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
         }
 
 
-        private void subReportCalculoMeses_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void subReportCalculoMeses_BeforePrint(object sender, CancelEventArgs e)
         {
             //XRSubreport xrSubReport = (XRSubreport)sender;
            

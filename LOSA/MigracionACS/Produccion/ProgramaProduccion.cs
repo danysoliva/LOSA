@@ -103,12 +103,12 @@ namespace LOSA.MigracionACS.Produccion
 
         }
 
-        private void xrLine6_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrLine6_BeforePrint(object sender, CancelEventArgs e)
         {
 
         }
 
-        private void ReportFooter_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void ReportFooter_BeforePrint(object sender, CancelEventArgs e)
         {
 
         }

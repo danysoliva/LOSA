@@ -243,7 +243,7 @@
             this.ReportHeader});
             this.DataSourceSchema = resources.GetString("$this.DataSourceSchema");
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(18, 21, 25, 0);
+            this.Margins = new DevExpress.Drawing.DXMargins(18, 21, 25, 0);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Version = "15.2";

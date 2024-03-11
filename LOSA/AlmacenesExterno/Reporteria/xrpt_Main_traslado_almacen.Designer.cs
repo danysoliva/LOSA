@@ -112,8 +112,8 @@ namespace LOSA.AlmacenesExterno.Reporteria
             this.TopMargin,
             this.BottomMargin,
             this.Detail});
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(50, 50, 50, 50);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(50, 50, 50, 50);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.id_h,
             this.tipo_id_reporte});

@@ -173,7 +173,7 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.xrTableCell1.BackColor = System.Drawing.Color.Gainsboro;
             this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrTableCell1.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseBackColor = false;
@@ -245,8 +245,8 @@ namespace LOSA.MigracionACS.RRHH.Liquidaciones
             this.sqlDataSource1});
             this.DataMember = "sp_get_vacaciones_liquidacion";
             this.DataSource = this.sqlDataSource1;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 13, 26);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(100, 100, 13, 26);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.p_anios,
             this.p_d_tomados});

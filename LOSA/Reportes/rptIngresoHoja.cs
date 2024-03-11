@@ -246,7 +246,7 @@ namespace LOSA.Reportes
         {
             
         }
-        private void ReportHeader1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void ReportHeader1_BeforePrint(object sender, CancelEventArgs e)
         {
              
 

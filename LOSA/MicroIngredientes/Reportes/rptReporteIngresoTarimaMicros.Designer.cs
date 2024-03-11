@@ -137,7 +137,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblCantKg.BorderWidth = 2F;
-            this.lblCantKg.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantKg.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 30F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblCantKg.LocationFloat = new DevExpress.Utils.PointFloat(618.2292F, 303.9792F);
             this.lblCantKg.Name = "lblCantKg";
             this.lblCantKg.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -154,7 +154,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel25.BorderWidth = 2F;
-            this.xrLabel25.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel25.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(429.6876F, 303.9792F);
             this.xrLabel25.Name = "xrLabel25";
             this.xrLabel25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -172,7 +172,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.txtcodigo.BorderWidth = 2F;
-            this.txtcodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcodigo.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 30F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.txtcodigo.LocationFloat = new DevExpress.Utils.PointFloat(459.6044F, 522.5416F);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -189,7 +189,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel4.BorderWidth = 2F;
-            this.xrLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(334.375F, 522.5416F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -204,7 +204,7 @@
             // BarCode2
             // 
             this.BarCode2.AutoModule = true;
-            this.BarCode2.Font = new System.Drawing.Font("Times New Roman", 14.25F);
+            this.BarCode2.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14.25F);
             this.BarCode2.LocationFloat = new DevExpress.Utils.PointFloat(207.3128F, 678.7501F);
             this.BarCode2.Name = "BarCode2";
             this.BarCode2.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
@@ -221,7 +221,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblLote.BorderWidth = 2F;
-            this.lblLote.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLote.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 60F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblLote.LocationFloat = new DevExpress.Utils.PointFloat(0.0001589457F, 593.6251F);
             this.lblLote.Name = "lblLote";
             this.lblLote.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -238,7 +238,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel9.BorderWidth = 2F;
-            this.xrLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 36F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(0.0001589457F, 522.5416F);
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -256,7 +256,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblFechadeVencimiento.BorderWidth = 2F;
-            this.lblFechadeVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblFechadeVencimiento.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold);
             this.lblFechadeVencimiento.LocationFloat = new DevExpress.Utils.PointFloat(334.375F, 485.1233F);
             this.lblFechadeVencimiento.Name = "lblFechadeVencimiento";
             this.lblFechadeVencimiento.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -273,7 +273,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel10.BorderWidth = 2F;
-            this.xrLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(0.0001589457F, 484.0833F);
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -291,7 +291,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel8.BorderWidth = 2F;
-            this.xrLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(0.0001589457F, 446.625F);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -309,7 +309,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblFechaProduccion.BorderWidth = 2F;
-            this.lblFechaProduccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaProduccion.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblFechaProduccion.LocationFloat = new DevExpress.Utils.PointFloat(334.375F, 446.625F);
             this.lblFechaProduccion.Name = "lblFechaProduccion";
             this.lblFechaProduccion.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -326,7 +326,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel6.BorderWidth = 2F;
-            this.xrLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(429.6876F, 375.7082F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -344,7 +344,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblCantidad.BorderWidth = 2F;
-            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 30F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblCantidad.LocationFloat = new DevExpress.Utils.PointFloat(618.2292F, 375.7082F);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -361,7 +361,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblNumeroIngreso.BorderWidth = 2F;
-            this.lblNumeroIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroIngreso.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 30F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblNumeroIngreso.LocationFloat = new DevExpress.Utils.PointFloat(230.2084F, 375.7082F);
             this.lblNumeroIngreso.Name = "lblNumeroIngreso";
             this.lblNumeroIngreso.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -378,7 +378,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel5.BorderWidth = 2F;
-            this.xrLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 21.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(9.536743E-05F, 375.7082F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -396,7 +396,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblFechaIngreso.BorderWidth = 2F;
-            this.lblFechaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaIngreso.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 24F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblFechaIngreso.LocationFloat = new DevExpress.Utils.PointFloat(230.2085F, 303.9792F);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
             this.lblFechaIngreso.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -413,7 +413,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel3.BorderWidth = 2F;
-            this.xrLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 18F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0.0001215467F, 303.9792F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -431,7 +431,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblProveedor.BorderWidth = 2F;
-            this.lblProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProveedor.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblProveedor.LocationFloat = new DevExpress.Utils.PointFloat(230.2085F, 244.6041F);
             this.lblProveedor.Name = "lblProveedor";
             this.lblProveedor.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -448,7 +448,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel2.BorderWidth = 2F;
-            this.xrLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 21.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 244.6041F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -466,7 +466,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.lblNombreProducto.BorderWidth = 2F;
-            this.lblNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreProducto.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 39.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblNombreProducto.LocationFloat = new DevExpress.Utils.PointFloat(6.357829E-05F, 155.7708F);
             this.lblNombreProducto.Name = "lblNombreProducto";
             this.lblNombreProducto.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -483,7 +483,7 @@
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrLabel1.BorderWidth = 2F;
-            this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 15.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(6.357829E-05F, 119.8333F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -498,7 +498,7 @@
             // BarCode1
             // 
             this.BarCode1.AutoModule = true;
-            this.BarCode1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BarCode1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 14.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.BarCode1.LocationFloat = new DevExpress.Utils.PointFloat(207.3127F, 0F);
             this.BarCode1.Name = "BarCode1";
             this.BarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
@@ -523,7 +523,7 @@
             // 
             this.xrLabel7.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel7.BorderWidth = 2F;
-            this.xrLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel7.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 21.75F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(12.0417F, 0F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -558,7 +558,7 @@
             // 
             this.xrLabel24.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel24.BorderWidth = 2F;
-            this.xrLabel24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel24.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(142.375F, 3.000005F);
             this.xrLabel24.Name = "xrLabel24";
             this.xrLabel24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -574,7 +574,7 @@
             // 
             this.xrLabel23.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel23.BorderWidth = 2F;
-            this.xrLabel23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel23.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(142.375F, 23.14584F);
             this.xrLabel23.Name = "xrLabel23";
             this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -590,7 +590,7 @@
             // 
             this.xrLabel22.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel22.BorderWidth = 2F;
-            this.xrLabel22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel22.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(142.375F, 45.29167F);
             this.xrLabel22.Name = "xrLabel22";
             this.xrLabel22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -619,7 +619,7 @@
             // 
             this.xrLabel20.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel20.BorderWidth = 2F;
-            this.xrLabel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel20.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(9.999974F, 4.729176F);
             this.xrLabel20.Name = "xrLabel20";
             this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -635,7 +635,7 @@
             // 
             this.xrLabel21.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel21.BorderWidth = 2F;
-            this.xrLabel21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel21.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(9.999974F, 22.87501F);
             this.xrLabel21.Name = "xrLabel21";
             this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -651,7 +651,7 @@
             // 
             this.xrLabel19.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel19.BorderWidth = 2F;
-            this.xrLabel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel19.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(3.999974F, 45.29167F);
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -667,7 +667,7 @@
             // 
             this.xrLabel18.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel18.BorderWidth = 2F;
-            this.xrLabel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel18.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(3.999974F, 23.14584F);
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -683,7 +683,7 @@
             // 
             this.xrLabel17.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel17.BorderWidth = 2F;
-            this.xrLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel17.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(3.999974F, 3.000007F);
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -725,7 +725,7 @@
             // 
             this.lblVersion.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.lblVersion.BorderWidth = 2F;
-            this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersion.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.lblVersion.LocationFloat = new DevExpress.Utils.PointFloat(9.999969F, 45.29168F);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -740,7 +740,7 @@
             // 
             this.xrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel12.BorderWidth = 2F;
-            this.xrLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(9.99999F, 28.125F);
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -756,7 +756,7 @@
             // 
             this.xrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel11.BorderWidth = 2F;
-            this.xrLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 12F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(9.99999F, 2.083333F);
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -785,7 +785,7 @@
             // 
             this.xrLabel15.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel15.BorderWidth = 2F;
-            this.xrLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel15.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(6.00001F, 4.729112F);
             this.xrLabel15.Name = "xrLabel15";
             this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -801,7 +801,7 @@
             // 
             this.xrLabel16.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel16.BorderWidth = 2F;
-            this.xrLabel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel16.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(5.999985F, 22.87501F);
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -830,7 +830,7 @@
             // 
             this.xrLabel14.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel14.BorderWidth = 2F;
-            this.xrLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel14.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 21.14584F);
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -846,7 +846,7 @@
             // 
             this.xrLabel13.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel13.BorderWidth = 2F;
-            this.xrLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel13.Font = new DevExpress.Drawing.DXFont("Microsoft Sans Serif", 11.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 3.000005F);
             this.xrLabel13.Name = "xrLabel13";
             this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -866,7 +866,7 @@
             this.BottomMargin,
             this.PageHeader,
             this.ReportHeader});
-            this.Margins = new System.Drawing.Printing.Margins(36, 38, 31, 10);
+            this.Margins = new DevExpress.Drawing.DXMargins(36, 38, 31, 10);
             this.ShowPrintMarginsWarning = false;
             this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
