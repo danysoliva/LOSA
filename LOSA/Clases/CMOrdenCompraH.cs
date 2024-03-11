@@ -85,9 +85,9 @@ namespace LOSA.Clases
 
 
                         if (reader.IsDBNull(reader.GetOrdinal("State")))
-                            State = Convert.ToChar("O");
+                            State = 'O';
                         else
-                            State = reader.GetChar(reader.GetOrdinal("State"));
+                            State = Convert.ToChar(reader.GetString(5));
 
 
                         if (reader.IsDBNull(reader.GetOrdinal("DocNum")))
@@ -105,14 +105,17 @@ namespace LOSA.Clases
                         Comments = reader.GetString(reader.GetOrdinal("Comments"));
                         ISV = reader.GetDecimal(reader.GetOrdinal("ISV"));
                         DocTotal = reader.GetDecimal(reader.GetOrdinal("DocTotal"));
-                        CurSource = reader.GetChar(reader.GetOrdinal("CurSource"));
-                        DocCur = reader.GetString(reader.GetOrdinal("DocCur"));
+                        CurSource = Convert.ToChar(reader.GetOrdinal("CurSource"));
+                        DocCur = Convert.ToString(reader.GetOrdinal("DocCur"));
                         DocRate = reader.GetDecimal(reader.GetOrdinal("DocRate"));
                         DocNumSolicitud = reader.GetInt32(reader.GetOrdinal("DocNumSolicitud"));
                         PostedInSAP = reader.GetBoolean(reader.GetOrdinal("posted_in_sap"));
                         ContactCode = reader.GetInt32(reader.GetOrdinal("ContactCode"));
                         IdEstado = reader.GetInt32(reader.GetOrdinal("id_estado"));
-                        IdUsuarioCreate = reader.GetInt32(reader.GetOrdinal("id_user_cre"));
+                        if (reader.IsDBNull(reader.GetOrdinal("id_user_cre")))
+                            IdUsuarioCreate = 0;
+                        else
+                            IdUsuarioCreate = reader.GetInt32(reader.GetOrdinal("id_user_cre"));
                         UsuarioName = reader.GetString(reader.GetOrdinal("usuario_cre"));
                     }
 

@@ -28,6 +28,8 @@ namespace LOSA.Clases
         public string Moneda;
         public int ContactCode;
         public string ContactName;
+
+        public string TerminoPago;
         public Proveedor()
         {
         }
@@ -100,6 +102,7 @@ namespace LOSA.Clases
                     Moneda = dr.GetString(12);
                     ContactCode = dr.GetInt32(13);
                     ContactName = dr.GetString(14);
+                    TerminoPago = dr.GetString(15);
                     Recuperado = true;
                 }
                 con.Close();

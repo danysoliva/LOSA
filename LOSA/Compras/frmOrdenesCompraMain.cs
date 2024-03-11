@@ -619,25 +619,24 @@ namespace LOSA.Compras
 
         private void CargarInfoOrden(int pidOrdenesSeleccionado)
         {
-            OrdenesCompra oc = new OrdenesCompra();
-            if (oc.RecuperarRegistos(pidOrdenesSeleccionado))
+            CMOrdenCompraH oc = new CMOrdenCompraH();
+            if (oc.RecuperarRegistro(pidOrdenesSeleccionado))
             {
-                txtUsuarioCreador.Text = oc.Usuario_Cre;
-                txtDocNum.Text = oc.DocNum1;
-                IdOrdenCompraActual = oc.Id_OrdenCompra;
+                txtUsuarioCreador.Text = oc.UsuarioName;
+                txtDocNum.Text = oc.DocNum.ToString();
+                IdOrdenCompraActual = oc.Id;
                 txtEstado.Text = oc.Estado;
-                dtFechaRegistro.Value = oc.Fecha_Registro;
-                dtFechaContabilizacion.EditValue = oc.Fecha_Contabilizacion;
-                txtComentarios.Text = oc.Comentario;
-                IdEstadoOrdenCompra = oc.Id_Estado;
-                IdSolicitud = oc.Id_Solicitud;
-                txtCodProv.Text = oc.Itemcode_Prov;
-                txtProveedor.Text = oc.Nombre_Prov;
-                direccion = oc.Direccion;
-                txtSubtotal.EditValue = oc.Subtotal;
-                txtImpuesto.EditValue = oc.Impuesto;
-                txtTotal.EditValue = oc.Total;
-                CargarDetalleOrdenCompra(oc.Id_OrdenCompra);
+                dtFechaRegistro.Value = oc.TaxDate;
+                dtFechaContabilizacion.EditValue = oc.DocDate;
+                txtComentarios.Text = oc.Comments;
+                IdEstadoOrdenCompra = oc.IdEstado;
+                txtCodProv.Text = oc.CardCode;
+                txtProveedor.Text = oc.CardName;
+                direccion = oc.Address;
+                txtSubtotal.EditValue = (oc.DocTotal - oc.ISV);
+                txtImpuesto.EditValue = oc.ISV;
+                txtTotal.EditValue = oc.DocTotal;
+                CargarDetalleOrdenCompra(oc.Id);
                 tipooperacion = TipoOperacion.Update;
 
                 switch (IdEstadoOrdenCompra)
