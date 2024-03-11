@@ -138,13 +138,26 @@ namespace LOSA.Despachos
 
                     bool LoteExiste = true;
 
+                    if (string.IsNullOrEmpty(grdTipoSoli.Text))
+                    {
+                        CajaDialogo.Error("Debe seleccionar Tipo Solicitud!");
+                        return;
+                    }
+
+                    if (string.IsNullOrEmpty(grdLotePT.Text))
+                    {
+                        CajaDialogo.Error("Debe seleccionar el Lote!");
+                        return;
+                    }
+
                     try
                     {
                         SqlConnection conn = new SqlConnection(dp.ConnectionStringLOSA);
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("[sp_validar_existencia_solicitud]", conn);
+                        SqlCommand cmd = new SqlCommand("[sp_validar_existencia_solicitudV2]", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@lote_pt", grdLotePT.EditValue);
+                        cmd.Parameters.AddWithValue("@tipo_soli", grdTipoSoli.EditValue);
                         LoteExiste = Convert.ToBoolean(cmd.ExecuteScalar());
                         conn.Close();
                     }
@@ -159,17 +172,7 @@ namespace LOSA.Despachos
                         return;
                     }
 
-                    if (string.IsNullOrEmpty(grdTipoSoli.Text))
-                    {
-                        CajaDialogo.Error("Debe seleccionar Tipo Solicitud!");
-                        return;
-                    }
-
-                    if (string.IsNullOrEmpty(grdLotePT.Text))
-                    {
-                        CajaDialogo.Error("Debe seleccionar el Lote!");
-                        return;
-                    }
+                    
 
                     if (string.IsNullOrEmpty(memoComentario.Text))
                     {

@@ -54,7 +54,7 @@ namespace LOSA.Clases
                 {
                     decimales *= 100;
                 }
-                NumeroEnLetras = (Num2Text(Convert.ToInt64(Decimal.Truncate(Convert.ToDecimal(dMonto))))) + MonedaString + " con " + Convert.ToInt32(decimales) + "/100 CTVS.";
+                NumeroEnLetras = (Num2Text(Convert.ToInt64(Decimal.Truncate(Convert.ToDecimal(dMonto))))) + " "+ MonedaString + " con " + Convert.ToInt32(decimales) + "/100 CTVS.";
 
                 if (Valor_Negativo)
                 {
