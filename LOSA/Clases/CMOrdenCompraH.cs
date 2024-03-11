@@ -95,8 +95,18 @@ namespace LOSA.Clases
                             DocNum = reader.GetInt32(reader.GetOrdinal("DocNum"));
 
 
-                        DocDate = reader.GetDateTime(reader.GetOrdinal("DocDate"));
-                        DocDueDate = reader.GetDateTime(reader.GetOrdinal("DocDueDate"));
+                        if (reader.IsDBNull(reader.GetOrdinal("DocDate")))
+                            DocDate = DateTime.MinValue;
+                        else
+                            DocDate = reader.GetDateTime(reader.GetOrdinal("DocDate"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("DocDueDate")))
+                            DocDueDate = reader.GetDateTime(reader.GetOrdinal("DocDueDate"));
+                        else
+                            DocDueDate = reader.GetDateTime(reader.GetOrdinal("DocDueDate"));
+
+
                         TaxDate = reader.GetDateTime(reader.GetOrdinal("TaxDate"));
                         U_TipoOrden = reader.GetInt32(reader.GetOrdinal("U_TipoOrden"));
                         U_AquaExoneracion = reader.GetString(reader.GetOrdinal("U_AquaExoneracion"));
