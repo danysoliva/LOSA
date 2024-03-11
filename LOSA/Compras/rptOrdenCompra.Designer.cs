@@ -67,6 +67,7 @@ namespace LOSA.Compras
         private DevExpress.XtraReports.UI.XRLabel xrLabel35;
         private DevExpress.XtraReports.UI.XRLabel xrLabel7;
         private DevExpress.XtraReports.UI.XRLabel lblComentario;
+        private DevExpress.XtraReports.UI.DetailBand Detail2;
         private dsCompras dsCompras1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel28;
         private DevExpress.XtraReports.UI.XRLabel xrLabel27;

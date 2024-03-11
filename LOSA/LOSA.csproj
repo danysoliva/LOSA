@@ -1420,6 +1420,12 @@
     <Compile Include="Compras\rptOrdenCompra.Designer.cs">
       <DependentUpon>rptOrdenCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\rptOrdenCompraExo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Compras\rptOrdenCompraExo.Designer.cs">
+      <DependentUpon>rptOrdenCompraExo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Despachos\dsTransaccionesDespacho.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -7168,6 +7174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\rptOrdenCompra.resx">
       <DependentUpon>rptOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\rptOrdenCompraExo.resx">
+      <DependentUpon>rptOrdenCompraExo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachos\frmCrearSolicitudAutorizacionLotePT.resx">
       <DependentUpon>frmCrearSolicitudAutorizacionLotePT.cs</DependentUpon>
