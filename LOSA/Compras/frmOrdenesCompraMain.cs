@@ -625,7 +625,7 @@ namespace LOSA.Compras
                 txtUsuarioCreador.Text = oc.UsuarioName;
                 txtDocNum.Text = oc.DocNum.ToString();
                 IdOrdenCompraActual = oc.Id;
-                txtEstado.Text = oc.Estado;
+                txtEstado.Text = oc.EstadoName;
                 dtFechaRegistro.Value = oc.TaxDate;
                 dtFechaContabilizacion.EditValue = oc.DocDate;
                 txtComentarios.Text = oc.Comments;
