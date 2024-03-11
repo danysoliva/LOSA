@@ -27,7 +27,7 @@ namespace LOSA.Clases
         public string Comments { get; set; }
         public decimal ISV { get; set; }
         public decimal DocTotal { get; set; }
-        public char CurSource { get; set; }
+        public string CurSource { get; set; }
         public string DocCur { get; set; }
         public decimal? DocRate { get; set; }
         public int DocNumSolicitud { get; set; }
@@ -37,6 +37,10 @@ namespace LOSA.Clases
         public string EstadoName { get; set; }
         public int IdUsuarioCreate { get; set; }
         public string UsuarioName { get; set; }
+        public int idUserAprobo { get; set; }
+        public string UserAprobo { get; set; }
+        public bool Recuperado { get; set; }
+        
 
         public CMOrdenCompraH() { }
 
@@ -150,16 +154,17 @@ namespace LOSA.Clases
                             DocTotal = reader.GetDecimal(reader.GetOrdinal("DocTotal"));
 
 
+                        //if (reader.IsDBNull(reader.GetOrdinal("CurSource")))
                         if (reader.IsDBNull(reader.GetOrdinal("CurSource")))
-                            CurSource = '_';
+                            CurSource = string.Empty;
                         else
-                            CurSource = Convert.ToChar(reader.GetOrdinal("CurSource"));
+                            CurSource = reader.GetString(16);
 
 
                         if (reader.IsDBNull(reader.GetOrdinal("DocCur")))
                             DocCur = string.Empty;
                         else
-                            DocCur = Convert.ToString(reader.GetOrdinal("DocCur"));
+                            DocCur = reader.GetString(17).Trim();
 
 
                         if (reader.IsDBNull(reader.GetOrdinal("DocRate")))
@@ -213,6 +218,18 @@ namespace LOSA.Clases
                         else
                             UsuarioName = reader.GetString(reader.GetOrdinal("usuario_cre"));
 
+
+                        if (reader.IsDBNull(reader.GetOrdinal("id_user_aprobo")))
+                            idUserAprobo = 0;
+                        else
+                            idUserAprobo = reader.GetInt32(reader.GetOrdinal("id_user_aprobo"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("user_aprobo_name")))
+                            UserAprobo = string.Empty;
+                        else
+                            UserAprobo = reader.GetString(reader.GetOrdinal("user_aprobo_name"));
+                        Recuperado = true;
                     }
 
                     reader.Close();
@@ -220,11 +237,12 @@ namespace LOSA.Clases
             }
             catch (Exception ex)
             {
+                Recuperado = false;
                 CajaDialogo.Error(ex.Message); return false;
             }
-            return true;
-            
-            
+            return Recuperado;
+
+
         }
     }
 }

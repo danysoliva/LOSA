@@ -625,7 +625,7 @@ namespace LOSA.Compras
                 txtUsuarioCreador.Text = oc.UsuarioName;
                 txtDocNum.Text = oc.DocNum.ToString();
                 IdOrdenCompraActual = oc.Id;
-                //txtEstado.Text = oc.Estado;
+                txtEstado.Text = oc.EstadoName;
                 dtFechaRegistro.Value = oc.TaxDate;
                 dtFechaContabilizacion.EditValue = oc.DocDate;
                 txtComentarios.Text = oc.Comments;
@@ -1072,22 +1072,12 @@ namespace LOSA.Compras
             IdOrdenCompraActual = 4;
             if (IdOrdenCompraActual > 0)
             {
-                if (TsExoOIsv.IsOn) //Exonerada
-                {
-                    rptOrdenCompraExo report = new rptOrdenCompraExo(IdOrdenCompraActual);
-                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                    ReportPrintTool reportPrint = new ReportPrintTool(report);
-                    reportPrint.ShowPreview();
-                }
-                else
-                {
-                    rptOrdenCompra report = new rptOrdenCompra(IdOrdenCompraActual);
-                    report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
-                    ReportPrintTool reportPrint = new ReportPrintTool(report);
-                    reportPrint.ShowPreview();
-                }
-             
                 
+             
+                rptOrdenCompra report = new rptOrdenCompra(IdOrdenCompraActual);
+                report.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                ReportPrintTool reportPrint = new ReportPrintTool(report);
+                reportPrint.ShowPreview();
             }
             else
             {
