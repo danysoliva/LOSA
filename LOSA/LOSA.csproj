@@ -1394,6 +1394,12 @@
     <Compile Include="Compras\frmCopiarDeSolicitud.Designer.cs">
       <DependentUpon>frmCopiarDeSolicitud.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frmGestionAprobaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmGestionAprobaciones.Designer.cs">
+      <DependentUpon>frmGestionAprobaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compras\frmOrdenesCompraMain.cs">
       <SubType>Form</SubType>
     </Compile>
