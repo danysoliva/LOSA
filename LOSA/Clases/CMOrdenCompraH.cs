@@ -96,29 +96,123 @@ namespace LOSA.Clases
                             DocNum = reader.GetInt32(reader.GetOrdinal("DocNum"));
 
 
-                        DocDate = reader.GetDateTime(reader.GetOrdinal("DocDate"));
-                        DocDueDate = reader.GetDateTime(reader.GetOrdinal("DocDueDate"));
-                        TaxDate = reader.GetDateTime(reader.GetOrdinal("TaxDate"));
-                        U_TipoOrden = reader.GetInt32(reader.GetOrdinal("U_TipoOrden"));
-                        U_AquaExoneracion = reader.GetString(reader.GetOrdinal("U_AquaExoneracion"));
-                        U_FechaExoneracion = reader.GetDateTime(reader.GetOrdinal("U_FechaExoneracion"));
-                        Comments = reader.GetString(reader.GetOrdinal("Comments"));
-                        ISV = reader.GetDecimal(reader.GetOrdinal("ISV"));
-                        DocTotal = reader.GetDecimal(reader.GetOrdinal("DocTotal"));
-                        //CurSource = reader.GetChars((reader.GetOrdinal("CurSource")));
-                        CurSource = Convert.ToChar(reader.GetString(16));
-                        //DocCur = reader.GetSqlChars((reader.GetOrdinal("DocCur"))).ToString();
-                        DocCur = reader.GetString(17);
-                        DocRate = reader.GetDecimal(reader.GetOrdinal("DocRate"));
-                        DocNumSolicitud = reader.GetInt32(reader.GetOrdinal("DocNumSolicitud"));
-                        PostedInSAP = reader.GetBoolean(reader.GetOrdinal("posted_in_sap"));
-                        ContactCode = reader.GetInt32(reader.GetOrdinal("ContactCode"));
-                        IdEstado = reader.GetInt32(reader.GetOrdinal("id_estado"));
+                        if (reader.IsDBNull(reader.GetOrdinal("DocDate")))
+                            DocDate = DateTime.MinValue;
+                        else
+                            DocDate = reader.GetDateTime(reader.GetOrdinal("DocDate"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("DocDueDate")))
+                            DocDueDate = DateTime.MinValue;
+                        else
+                            DocDueDate = reader.GetDateTime(reader.GetOrdinal("DocDueDate"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("TaxDate")))
+                            TaxDate = DateTime.MinValue;
+                        else
+                            TaxDate = reader.GetDateTime(reader.GetOrdinal("TaxDate"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("U_TipoOrden")))
+                            U_TipoOrden = 0;
+                        else
+                            U_TipoOrden = reader.GetInt32(reader.GetOrdinal("U_TipoOrden"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("U_AquaExoneracion")))
+                            U_AquaExoneracion = string.Empty;
+                        else
+                            U_AquaExoneracion = reader.GetString(reader.GetOrdinal("U_AquaExoneracion"));
+
+                        
+                        if (reader.IsDBNull(reader.GetOrdinal("U_FechaExoneracion")))
+                            U_FechaExoneracion = DateTime.MinValue;
+                        else
+                            U_FechaExoneracion = reader.GetDateTime(reader.GetOrdinal("U_FechaExoneracion"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("Comments")))
+                            Comments = string.Empty;
+                        else
+                            Comments = reader.GetString(reader.GetOrdinal("Comments"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("ISV")))
+                            ISV = 0;
+                        else
+                            ISV = reader.GetDecimal(reader.GetOrdinal("ISV"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("DocTotal")))
+                            DocTotal = 0;
+                        else
+                            DocTotal = reader.GetDecimal(reader.GetOrdinal("DocTotal"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("CurSource")))
+                            CurSource = '_';
+                        else
+                            CurSource = Convert.ToChar(reader.GetOrdinal("CurSource"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("DocCur")))
+                            DocCur = string.Empty;
+                        else
+                            DocCur = Convert.ToString(reader.GetOrdinal("DocCur"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("DocRate")))
+                            DocRate = 0;
+                        else
+                            DocRate = reader.GetDecimal(reader.GetOrdinal("DocRate"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("DocNumSolicitud")))
+                            DocNumSolicitud = 0;
+                        else
+                            DocNumSolicitud = reader.GetInt32(reader.GetOrdinal("DocNumSolicitud"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("posted_in_sap")))
+                            PostedInSAP = false; 
+                        else
+                            PostedInSAP = reader.GetBoolean(reader.GetOrdinal("posted_in_sap"));
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("ContactCode")))
+                            ContactCode = 0;
+                        else
+                            ContactCode = reader.GetInt32(reader.GetOrdinal("ContactCode"));
+
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("id_estado")))
+                            IdEstado = 0;
+                        else
+                            IdEstado = reader.GetInt32(reader.GetOrdinal("id_estado"));
+
+
+
+                        if (reader.IsDBNull(reader.GetOrdinal("estado_name")))
+                            EstadoName = string.Empty; 
+                        else
+                            EstadoName = reader.GetString(reader.GetOrdinal("estado_name"));
+
+
+
                         if (reader.IsDBNull(reader.GetOrdinal("id_user_cre")))
                             IdUsuarioCreate = 0;
                         else
                             IdUsuarioCreate = reader.GetInt32(reader.GetOrdinal("id_user_cre"));
-                        UsuarioName = reader.GetString(reader.GetOrdinal("usuario_cre"));
+
+                        
+
+                        if (reader.IsDBNull(reader.GetOrdinal("usuario_cre")))
+                            UsuarioName = string.Empty;
+                        else
+                            UsuarioName = reader.GetString(reader.GetOrdinal("usuario_cre"));
+
                     }
 
                     reader.Close();
